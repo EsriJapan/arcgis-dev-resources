@@ -5,7 +5,7 @@
 * __[開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md)__
 > ArcGIS で開発を始める際にまず必要となるのが開発者アカウントです。無償版でもすべての開発 API/SDK を使った開発を始めることができます。
 
-* __[地図サービスの公開](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/create-feature-service.md)__
+* __[地図サービスの公開](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-feature-service.md)__
 > ArcGIS for Developers では Web ブラウザー上で設定するだけで地図サービスを配信することが可能です。
 
 * __[Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md)__
