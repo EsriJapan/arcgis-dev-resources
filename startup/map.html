@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>ArcGIS for Developers - Startup Sample</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #FFF;
+        overflow: hidden;
+        font-family: "Meiryo";
+      }
+    </style>
+    <script src="http://js.arcgis.com/3.14/"></script>
+    <script>
+    	var map;
+
+	    require(["esri/arcgis/utils", "dojo/domReady!"], function(arcgisUtils) {
+
+	    	// マップの参照
+	    	//var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
+	    	var mapDeferred = arcgisUtils.createMap("d3ee769333954213b2f7e894e8e1032c", "mapDiv");
+	    	mapDeferred.then(function(response) { // マップの参照結果のコールバック
+	    		map = response.map; // マップ オブジェクトの取得
+	    	});
+
+	    });
+    </script>
+  </head>
+
+  <body>
+    <div id="mapDiv"></div>
+  </body>
+</html>

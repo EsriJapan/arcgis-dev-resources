@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>ArcGIS for Developers - Startup Sample</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #FFF;
+        overflow: hidden;
+        font-family: "Meiryo";
+      }
+      #searchDiv {
+         display: block;
+         position: absolute;
+         z-index: 2;
+         top: 20px;
+         left: 74px;
+      }
+    </style>
+    <script src="http://js.arcgis.com/3.14/"></script>
+    <script>
+      var map;
+      
+      require(["esri/arcgis/utils", "esri/dijit/Search", "esri/layers/FeatureLayer", "esri/InfoTemplate", "dojo/domReady!"], function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
+
+        // マップの参照
+        //var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
+        var mapDeferred = arcgisUtils.createMap("d3ee769333954213b2f7e894e8e1032c", "mapDiv");
+        mapDeferred.then(function(response) { // マップの参照結果のコールバック
+          map = response.map; // マップ オブジェクトの取得
+
+          // 検索ウィジェット
+          var search = new Search({
+              map: map,
+              sources: []
+          }, "searchDiv");
+
+          // 検索ソース
+          var sources = search.get("sources");
+          sources.push({
+            featureLayer: new FeatureLayer("http://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0"), // 検索ソースとなるフィーチャ レイヤー
+            placeholder: "検索キーワードの入力", // プレースホルダー
+            searchFields: ["Name"], // 検索対象となる属性フィールド
+            displayField: "Name", // 検索結果のポップアップに表示する属性フィールド
+            outFields: ["*"], // 結果として返す属性フィールド
+            name: "東京都", // 検索ソースの名前
+            infoTemplate: new InfoTemplate("東京都", "市区町村: ${Name}"), // 検索結果のポップアップ表示構成
+            enableSuggestions: true // 検索結果の候補リスト表示
+          });
+
+          // 検索ソースを検索ウィジェットに設定
+          search.set("sources", sources);
+          search.startup();
+        });
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="mapDiv"></div>
+    <div id="searchDiv"></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+# 開発者アカウントの作成
+
+ArcGIS for Developers の利用を開始するために新規アカウントを作成する手順を説明します。
+
+## ArcGIS for Developers とは
+
+ArcGIS for Developers は、Esri 製品を利用して様々なアプリを開発する開発者のための総合ポータルサイトであり、 地図/GIS アプリ開発者のための開発者向けサービスを提供しています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして 地図/GIS アプリを開発することができます。
+
+ArcGIS for Developers 開発者向けサービスには、無償プランと有償プランの ２ つのプランがあります。
+
+ArcGIS for Developers にアカウントを作成すると無償プランが有効になり、開発キットのダウンロードとアプリの開発を無償で行うことができます。また 米国 Esri 社がホストする GIS クラウド サービスであるジオコーディング サービス（住所⇄緯度経度）やネットワークサービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることができます（※無償プランでの GIS サービスの利用量には上限があります）。
+
+プランを有償プランにアップグレードするとより大規模な GIS データをホストしたり、GIS サービスを実運用で利用したりすることができます（※プランが無償プランから有償プランに自動で切り替わることはありません）。
+
+ArcGIS for Developers 開発者向けサービスの詳細については下記をご参照ください。
+
+* __[開発者向けサービスの詳細](http://www.esrij.com/products/arcgis-online-for-developers/details/)__
+
+  > ※ArcGIS for Developers 開発者向けサービス（ArcGIS Online 開発者向けプラン）は保守製品ではないため、Q&A サービスは含まれません。Q&A サービスをご希望の方は、開発者サポートをご契約下さい。開発者サポートの詳細については[こちら](http://www.esrij.com/services/dev-support/)をご参照下さい。
+
+
+## アカウントの作成
+
+### ArcGIS for Developers への新規アカウントの作成
+
+以下の手順で ArcGIS for Developers に新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまで[お問い合わせ](http://www.esrij.com/contact/)ください。
+
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/account/signup.gif" width="600px">
+
+1. [ArcGIS for Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、[SIGN UP NOW] をクリックします。
+
+2. 名前（__※名前には半角英字のみを使用してください__）および作成するアカウントで使用する E メールアドレスを入力し、[SIGN UP FOR ARCGIS FOR DEVELOPERS] をクリックします。
+
+3. 登録確認の E メール（Confirmation email）が送信された旨を報告するメッセージが表示されます。受信ボックスに Esri Customer Service からアカウントを有効化するためのメールが届きます（メールが届くまで時間がかかる場合があります）。
+
+4. 手順 2 で入力した Eメールアドレスの受信ボックスに届いた Esri Customer Service からのメールを開き、メール本文内のリンクをクリックするか、リンク URL をブラウザーにコピーしてページを表示します。
+新規に作成する開発者アカウントの詳細情報を入力するページが表示されます。次ページの内容を参考に必要な情報を入力（※情報はすべて半角英数字のみを使用してください）し、[CREATE MY ACCOUNT] をクリックします。
+> * 入力ホーム内で指定する ”ホームページ URL” は、開発者アカウントで利用できる ArcGIS Online 管理サイトの URL です。管理サイトから開発したアプリケーションや ArcGIS Online 上にホストする GIS データの管理などを行うことができます。
+> * 入力したアカウント名がすでに使用されている場合や、使用できない文字を入力した場合は入力欄が赤くハイライトされエラーメッセージが表示されます。その場合はエラーメッセージに従い、入力する情報を修正してください。
+
+5. アカウントの作成に成功すると、以下のようにダッシュボードページが表示されます。
+
+以上で ArcGIS for Developers の開発者アカウントの作成は完了です。以下では、ArcGIS for Developers
+サイトのダッシュボードからアクセスできる主なページの概要を紹介します。
+
+---
+
+[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)
