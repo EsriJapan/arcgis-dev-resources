@@ -23,7 +23,7 @@
   * [検索機能の追加](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app.md#検索機能の追加)
   > 地図アプリでもっとも利用頻度の高い検索機能を JavaScript API での実装例で紹介します。
 
-* __[認証](blob/master/pages/authentication.md)__
+* __[認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)__
   * [アプリの登録](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md#アプリの登録)
   > ArcGIS for Developers の OAuth 認証を利用するためにはアプリの登録が必要となります。
 
