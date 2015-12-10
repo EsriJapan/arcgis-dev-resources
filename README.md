@@ -39,6 +39,7 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
 * __タイル レイヤー__
   * [南海トラフ巨大地震の被害想定（震度/最大クラス）](http://www.arcgis.com/home/item.html?id=df91408d1b424117a24f8ffdc845f825)
   * [南海トラフ巨大地震の被害想定（液状化/最大クラス）](http://www.arcgis.com/home/item.html?id=9a115b3ff9164ddda9f5f3d9ee189a5b)
+
 ## サンプル コード
 
 GitHub にて開発サンプルとなるソースコードを公開しています。
