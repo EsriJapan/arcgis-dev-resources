@@ -27,9 +27,9 @@ ArcGIS for Developers 開発者向けサービスの詳細については下記�
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/account/signup.gif" width="600px">
 
-1. [ArcGIS for Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、[SIGN UP NOW] をクリックします。
+1. [ArcGIS for Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、[Sign Up For Free] をクリックします。
 
-2. 名前（__※名前には半角英字のみを使用してください__）および作成するアカウントで使用する E メールアドレスを入力し、[SIGN UP FOR ARCGIS FOR DEVELOPERS] をクリックします。
+2. 名前（__※名前には半角英字のみを使用してください__）および作成するアカウントで使用する E メールアドレスを入力し、[Sign Up For Free] をクリックします。
 
 3. 登録確認の E メール（Confirmation email）が送信された旨を報告するメッセージが表示されます。受信ボックスに Esri Customer Service からアカウントを有効化するためのメールが届きます（メールが届くまで時間がかかる場合があります）。
 
@@ -38,7 +38,7 @@ ArcGIS for Developers 開発者向けサービスの詳細については下記�
 > * 入力ホーム内で指定する ”ホームページ URL” は、開発者アカウントで利用できる ArcGIS Online 管理サイトの URL です。管理サイトから開発したアプリケーションや ArcGIS Online 上にホストする GIS データの管理などを行うことができます。
 > * 入力したアカウント名がすでに使用されている場合や、使用できない文字を入力した場合は入力欄が赤くハイライトされエラーメッセージが表示されます。その場合はエラーメッセージに従い、入力する情報を修正してください。
 
-5. アカウントの作成に成功すると、以下のようにダッシュボードページが表示されます。
+5. アカウントの作成に成功するとダッシュボードページが表示されます。
 
 以上で ArcGIS for Developers の開発者アカウントの作成は完了です。以下では、ArcGIS for Developers
 サイトのダッシュボードからアクセスできる主なページの概要を紹介します。

@@ -1,6 +1,6 @@
 # シンプルな地図アプリの作成
 
-ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。地図の表示と機能の追加は簡易な JavaScript API での実装例をお伝えしますが、ArcGIS Runtime SDK についても基本できることは変わりません。
+ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。地図の表示と機能の追加は簡易な JavaScript API での実装例をお伝えしますが、ArcGIS Runtime SDK についても基本的にできることは変わりません。
 
 ## サンプル コードのダウンロード
 
@@ -20,7 +20,7 @@ ArcGIS for Developers を利用した地図アプリの作成方法を紹介し�
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたサンプル コード（[arcgis-samples-js/simple/map.html](https://github.com/EsriJapan/arcgis-samples-js/blob/gh-pages/simple/map.html)）を Web ブラウザーにドラッグ＆ドロップします。
-> ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-samples-js/simple/map.html` のような localhost でのアクセスで OK です。
+> ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-samples-js/simple/map.html` のように localhost を指定してアクセスできます。
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
 
