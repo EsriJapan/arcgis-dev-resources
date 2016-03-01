@@ -1,4 +1,4 @@
-# ArcGIS for Developers リソース集
+# ArcGIS for Developers 開発リソース集
 
 ![](http://apps.esrij.com/arcgis-dev/guide/img/readme-banner.png)
 
@@ -10,23 +10,28 @@
 
 ArcGIS for Developers が提供する開発者向けサービスを利用して、地図アプリの開発を始めるのに必要な基本情報をまとめています。
 
-* __全般__
+* __マップの作成__
     * [開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md)
     * [地図サービスの公開](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-feature-service.md)
     * [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md)
-* __開発__
-    * [地図アプリの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app.md)
-    * [認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)
+* __アプリの作成__
+    * [JavaScript](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-js.md)
+    * [.NET](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-dotnet.md)
+    * [Android](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-android.md)
+    * [iOS](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-ios.md)
+* __認証__
+    * [認証パターン](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)
+    * [アプリの登録と認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)
 
 ## 開発ブログ記事
 
-ArcGIS for Developers 開発者のためのオンライン コミュニティ サイトにて ArcGIS 開発製品を使った開発に役立つ Tips などをブログ記事としてお届けしています。
+ArcGIS for Developers 開発者のためのオンライン コミュニティ サイト（GeoNet）にて ArcGIS 開発製品を使った開発に役立つ Tips などをブログ記事としてお届けしています。
 
-* __[API/SDK 別開発 Tips（開発ブログ）](http://arcg.is/1Lv7iof)__
+* __API/SDK 別開発 Tips（開発ブログ）__
+  * [JavaScript](http://arcg.is/1X5Q0Sl)
   * [.NET](http://arcg.is/1LPKAcf)
   * [Android](http://arcg.is/1PiwBfG)
   * [iOS](http://arcg.is/1LlUgpi)
-  * [JavaScript](http://arcg.is/1X5Q0Sl)
 
 ## サンプル データ
 
@@ -62,6 +67,9 @@ GitHub にて開発サンプルとなるソースコードを公開していま�
 
 弊社製品ページおよび各開発 API/SDK のヘルプページ（英語）です。
 
+* __ArcGIS API for JavaScript__
+  * [製品ページ](http://www.esrij.com/products/arcgis-api-for-javascript/)
+  * [ヘルプ（英語）](https://developers.arcgis.com/javascript/)
 * __ArcGIS Runtime SDK for .NET__
   * [製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)
   * [ヘルプ（英語）](https://developers.arcgis.com/net/)
@@ -71,9 +79,6 @@ GitHub にて開発サンプルとなるソースコードを公開していま�
 * __ArcGIS Runtime SDK for iOS__
   * [製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-ios/)
   * [ヘルプ（英語）](https://developers.arcgis.com/ios/)
-* __ArcGIS API for JavaScript__
-  * [製品ページ](http://www.esrij.com/products/arcgis-api-for-javascript/)
-  * [ヘルプ（英語）](https://developers.arcgis.com/javascript/)
 
 ## ライセンス
 Copyright 2015 Esri Japan Corporation.

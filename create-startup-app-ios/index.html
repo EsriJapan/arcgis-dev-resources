@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="https://developers.arcgis.com/" target="_brank">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">ホーム</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../create-startup-app-android">Android</a></li>
+											<li><a href="../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../authentication">認証パターン</a></li>
+											<li><a href="../register-app">アプリの登録と認証</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2>シンプルな地図アプリの作成（iOS）</h2>
+							<p>ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。ここでは ArcGIS Runtime SDK for iOS を用いたネイティブ地図アプリのサンプルを起動してどのように地図を実装するかを掴んでいただき、さらに簡単な機能を例に、機能をどのように追加していくのかをお伝えします。</p>
+						</header>
+						<div class="box">
+							<h2 id="sdk-">SDK のインストール</h2>
+							<p>ArcGIS Runtime SDK for iOS のライブラリをインストールします。</p>
+							<ol>
+							<li><p><a href="https://developers.arcgis.com/downloads">SDK のダウンロードページ</a> にアクセスします（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md">開発者アカウント</a> でサインインします）。</p>
+							</li>
+							<li><p>ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。</p>
+							<p><img src="http://s3-ap-northeast-1.amazonaws.com/test-ozawa/github-image/sdk-download.png" width="450px"></p>
+							</li>
+							<li><p>ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。</p>
+							</li>
+							</ol>
+							<h2 id="-">サンプル プロジェクトのダウンロード</h2>
+							<p>このリポジトリ（<a href="https://github.com/EsriJapan/arcgis-samples-ios">arcgis-samples-ios</a>）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。</p>
+							<ul>
+							<li><p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
+							<ol>
+							<li>GitHub にログインして、<a href="https://github.com/EsriJapan/arcgis-samples-ios">arcgis-samples-ios</a> ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。</li>
+							<li>Fork 後はご自身のローカル マシンにクローンを作成します。</li>
+							</ol>
+							</li>
+							</ul>
+							<ul>
+							<li><p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p>
+							<p><a href="https://github.com/EsriJapan/arcgis-samples-ios">arcgis-samples-ios</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
+							<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/sample-download.png" width="600px"></p>
+							</li>
+							</ul>
+							<h2 id="-">地図の表示</h2>
+							<p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</p>
+							<ol>
+							<li><p>ダウンロードしたサンプル プロジェクト（<a href="https://github.com/EsriJapan/arcgis-samples-ios/blob/gh-pages/simple/map.html">arcgis-samples-ios/simple/map.html</a>）を Xcode で開きます。</p>
+							</li>
+							<li><p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
+							<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="variable other object js"><span>self</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>webMap</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta function-call js"><span class="entity name function js"><span>AGSWebMap</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span>itemId</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>&lt;Web&nbsp;マップ&nbsp;ID&gt;</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;credential</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;nil</span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div></pre>
+							<p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c">サンプル Web マップ</a>をご利用ください。</p>
+							</li>
+							<li><p>サンプル プロジェクトを実行すると、以下のように地図が表示されます。</p>
+							<p><img src="http://s3-ap-northeast-1.amazonaws.com/test-ozawa/github-image/map-app.png" width="200px"></p>
+							<p>Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</p>
+							</li>
+							</ol>
+							<h2 id="-">現在位置の表示</h2>
+							<p>iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。</p>
+							<p> <img src="http://s3-ap-northeast-1.amazonaws.com/test-ozawa/github-image/location-app.png" width="200px"></p>
+							<ol>
+							<li><p>地図の読み込みが完了したイベントをハンドリングするために、デリゲート プロトコル(<code>AGSMapViewLayerDelegate</code>)
+							を宣言します。<code>ViewController.swift</code> の 13 行目を以下のコードに置き換えます。</p>
+							<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;デリゲート&nbsp;プロトコルの宣言</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span class="meta class js"><span class="storage type class js"><span>class</span></span><span>&nbsp;</span><span class="entity name type js"><span>ViewController</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;UIViewController</span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;AGSMapViewLayerDelegate&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div></pre>
+							</li>
+							<li><p>地図の読み込みのデリゲートを自身に設定します。<code>viewDidLoad()</code> 関数の最後に以下のコードを追加します。</p>
+							<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;AGSMapView&nbsp;のデリゲートを自身に設定</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>self</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>mapView</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>layerDelegate</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;self</span></span></div></pre>
+							</li>
+							<li><p>地図の読み込み完了時に実行されるデリゲート メソッド内に現在位置を表示する処理を記述します。<code>ViewController.swift</code> に以下のコードを記述します。</p>
+							<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;AGSMapView&nbsp;のデリゲート&nbsp;メソッド（地図の読み込み完了時に実行）</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>func&nbsp;</span><span class="meta method js"><span class="entity name function js"><span>mapViewDidLoad</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>mapView</span></span><span>:&nbsp;</span><span class="variable parameter function js"><span>AGSMapView</span></span><span>!</span><span class="punctuation definition parameters end js"><span>)</span></span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="punctuation whitespace comment leading js"><span>&nbsp;</span></span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;位置情報の表示モードを設定</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span><span class="variable other object js"><span>self</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>mapView</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>locationDisplay</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>autoPanMode</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>Default</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="punctuation whitespace comment leading js"><span>&nbsp;</span></span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;地図が現在位置にズームされる際の表示縮尺の設定</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span><span class="variable other object js"><span>self</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>mapView</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>locationDisplay</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>zoomScale</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="constant numeric js"><span>100000</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="punctuation whitespace comment leading js"><span>&nbsp;</span></span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;現在位置の表示を開始</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span><span class="variable other object js"><span>self</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>mapView</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>locationDisplay</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>startDataSource</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre>
+							</li>
+							<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
+							位置情報の表示モードについては<a href="https://geonet.esri.com/docs/DOC-6533">ナビゲーションに便利な位置情報の表示モード</a>をご覧ください。</p>
+							<p><img src="http://s3-ap-northeast-1.amazonaws.com/test-ozawa/github-image/location-app.gif" width="200px"></p>
+							<p>シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。</p>
+							<p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
+							</li>
+							</ol>
+						</div>
+					</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
