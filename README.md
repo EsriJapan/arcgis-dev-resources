@@ -11,17 +11,17 @@
 ArcGIS for Developers が提供する開発者向けサービスを利用して、地図アプリの開発を始めるのに必要な基本情報をまとめています。
 
 * __マップの作成__
-    * [開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md)
-    * [地図サービスの公開](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-feature-service.md)
-    * [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md)
+    * [開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/get-dev-account.md)
+    * [地図サービスの公開](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-feature-service.md)
+    * [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-webmap.md)
 * __アプリの作成__
-    * [JavaScript](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-js.md)
-    * [.NET](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-dotnet.md)
-    * [Android](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-android.md)
-    * [iOS](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-startup-app-ios.md)
+    * [JavaScript](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-startup-app-js.md)
+    * [.NET](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-startup-app-dotnet.md)
+    * [Android](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-startup-app-android.md)
+    * [iOS](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-startup-app-ios.md)
 * __認証__
-    * [認証パターン](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)
-    * [アプリの登録と認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/authentication.md)
+    * [認証パターン](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/authentication.md)
+    * [アプリの登録と認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/authentication.md)
 
 ## 開発ブログ記事
 
