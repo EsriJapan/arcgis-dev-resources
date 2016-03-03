@@ -3773,3 +3773,11 @@
 	.ej-logo {
 		width: 150px;
 	}
+
+	.community-image {
+		transition: opacity 0.7s;
+	}
+
+	.community-image:hover {
+		opacity: 0.5;
+	}
