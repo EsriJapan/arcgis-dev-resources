@@ -48,6 +48,12 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	@media screen and (max-width: 840px) {
+		img {
+			width: 100%;
+		}
+	}
+
 /* Box Model */
 
 	*, *:before, *:after {
