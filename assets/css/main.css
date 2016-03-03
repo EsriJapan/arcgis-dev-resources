@@ -3774,10 +3774,10 @@
 		width: 150px;
 	}
 
-	.community-image {
+	.featured {
 		transition: opacity 0.7s;
 	}
 
-	.community-image:hover {
+	.featured:hover {
 		opacity: 0.5;
 	}
