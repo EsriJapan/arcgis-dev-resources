@@ -3801,3 +3801,7 @@
 	.rrssb-buttons li a.popup:hover {
 		opacity: 1;
 	}
+
+	ul.navlist {
+		list-style: none;
+	}
