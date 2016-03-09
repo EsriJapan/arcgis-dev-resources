@@ -3780,9 +3780,9 @@
 		transition: opacity 0.7s;
 	}
 
-	.featured:hover {
+	/*.featured:hover {
 		opacity: 0.5;
-	}
+	}*/
 
 	div#social-buttons {
 		position: fixed;
