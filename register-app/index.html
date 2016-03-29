@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="https://developers.arcgis.com/" target="_brank">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html">ホーム</a></li>
+							<li><a href="../samples">サンプル集</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../create-startup-app-android">Android</a></li>
+											<li><a href="../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../authentication">認証パターン</a></li>
+											<li><a href="../register-app">アプリの登録と認証</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2>アプリの登録と認証</h2>
+							<p>ArcGIS for Developers の認証を利用するためにはアプリの登録が必要となります。ArcGIS for Developers サイト上でアプリを登録することで、ユーザー ログインあるいはアプリ認証を始めるための認証情報が付与されます。</p>
+						</header>
+						<div class="box">
+							<h2 id="-">アプリの登録</h2>
+							<ol>
+							<li>ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。</li>
+							<li>アプリ リストを開きます。</li>
+							<li>[REGISTER NEW APPLICATION] をクリックします。</li>
+							<li>アプリが登録されたら、アプリの概要を確認します。</li>
+							<li>作成するアプリの種類に従って、アプリ認証かユーザー ログインのいずれかを選択することができます。</li>
+							</ol>
+							<h2 id="-">ユーザー ログイン認証</h2>
+							<p>ユーザー名とパスワードを入力して認証を行うユーザー ログイン認証の概要を紹介します。</p>
+							<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/userlogin.jpg" alt="&#x30E6;&#x30FC;&#x30B6;&#x30FC; &#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x8A8D;&#x8A3C;"></p>
+							<p>アプリの登録を行って取得したアプリ ID（<code>client_id</code>）を使ってユーザー ログイン認証を行います。異なる環境でアクセス トークンをセキュアに取得するために OAuth 2.0 は複数の異なる承認タイプ（<code>grant_types</code>）を定義します。各承認タイプとアプリの種類の対応関係は以下の通りです。</p>
+							<table>
+							<thead>
+							<tr>
+							<th style="text-align:center">承認タイプ</th>
+							<th style="text-align:center">クライアントの種類</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td style="text-align:center">Implicit</td>
+							<td style="text-align:center">ブラウザー ベース</td>
+							</tr>
+							<tr>
+							<td style="text-align:center">Authorization</td>
+							<td style="text-align:center">モバイル、ネイティブ、サーバー サイド</td>
+							</tr>
+							</tbody>
+							</table>
+							<p>アプリと ArcGIS for Developers 間で行われるユーザー ログイン認証のフローは基本的には変わりません。以下はブラウザー ベースのアプリにおける認証フローです。</p>
+							<ol>
+							<li>ユーザーのアプリ ID（<code>client_id</code>）、<code>response_type=token</code>、リダイレクト URI（<code>redirect_uri</code>）とオプションで有効期限（<code>expiration</code>）を使って、ブラウザー内で認証用エンドポイント（<a href="https://www.arcgis.com/sharing/rest/oauth2/authorize">https://www.arcgis.com/sharing/rest/oauth2/authorize</a> ）にユーザーをダイレクトします。</li>
+							<li>ユーザー名とパスワードによる認証に成功したら、ステップ１のリダイレクト URI（<code>redirect_uri</code>）からアプリにリダイレクトされます。アクセス トークン（<code>access_token</code>）と追加情報がハッシュとして URL の末尾に追加されます（例：<a href="http://app.example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&amp;expires_in=3600">http://app.example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&amp;expires_in=3600</a> ）。アプリはユーザーのトークンによって URL をパースすることができます。</li>
+							<li>アクセス トークンが付与されたら、トークン（<code>token</code>）を要求する ArcGIS for Developers へのリクエストにトークンを含めます。</li>
+							</ol>
+							<h2 id="-">アプリ認証</h2>
+							<p>特定のアプリをログインなしで認証を行うアプリ認証の概要を紹介します。</p>
+							<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/applogin.jpg" alt="&#x30A2;&#x30D7;&#x30EA;&#x8A8D;&#x8A3C;"></p>
+							<p>アプリの登録を行って取得したアプリ ID（<code>client_id</code>）と秘密鍵（<code>client_secret</code>）を使ってアプリ認証を行います。以下は、アプリと ArcGIS for Developers 間で行われるアプリ認証のフローです。</p>
+							<ol>
+							<li>アプリ ID と秘密鍵を使って <a href="https://www.arcgis.com/sharing/rest/oauth2/token/">https://www.arcgis.com/sharing/rest/oauth2/token/</a> への POST リクエストを作成します。</li>
+							<li>JSON レスポンス内のアクセス トークン（<code>access_token</code>）を取得します。</li>
+							<li>token パラメーターが要求されるリクエストにはすべてアクセス トークンを追加します。</li>
+							</ol>
+							<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="storage type var js"><span>var</span></span><span>&nbsp;request&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>request</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;npm&nbsp;install&nbsp;request</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;generate&nbsp;a&nbsp;token&nbsp;with&nbsp;your&nbsp;client&nbsp;id&nbsp;and&nbsp;client&nbsp;secret</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>request</span></span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>post</span></span><span class="punctuation definition arguments begin js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;url</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span class="markup underline link https hyperlink"><span>https://www.arcgis.com/sharing/rest/oauth2/token/</span></span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;json</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="constant language boolean true js"><span>true</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;form</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>f</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>json</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>client_id</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>YOUR_APPLICATIONS_CLIENT_ID</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>client_secret</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>YOUR_APPLICATIONS_CLIENT_SECRET</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>grant_type</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>client_credentials</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>expiration</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>1440</span><span class="punctuation definition string end js"><span>&#39;</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>error</span></span><span class="meta object delimiter js"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function js"><span>response</span></span><span class="meta object delimiter js"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function js"><span>body</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="entity name type object js console"><span>console</span></span><span class="meta delimiter method period js"><span>.</span></span><span class="support function js console"><span>log</span></span><span class="meta brace round js"><span>(</span></span><span class="variable other object js"><span>body</span></span><span class="meta delimiter property period js"><span>.</span></span><span class="variable other property js"><span>access_token</span></span><span class="punctuation definition arguments end js"><span>)</span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ESRIJapan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<span><img class="ej-logo" src="../images/logo.png" /></span>
+						<ul class="copyright">
+							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
