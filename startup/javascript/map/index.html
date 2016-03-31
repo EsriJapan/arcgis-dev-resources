@@ -25,8 +25,8 @@
 	    require(["esri/arcgis/utils", "dojo/domReady!"], function(arcgisUtils) {
 
 	    	// マップの参照
-	    	//var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
-	    	var mapDeferred = arcgisUtils.createMap("d3ee769333954213b2f7e894e8e1032c", "mapDiv");
+	    	var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
+	    	//var mapDeferred = arcgisUtils.createMap("d3ee769333954213b2f7e894e8e1032c", "mapDiv");
 	    	mapDeferred.then(function(response) { // マップの参照結果のコールバック
 	    		map = response.map; // マップ オブジェクトの取得
 	    	});
