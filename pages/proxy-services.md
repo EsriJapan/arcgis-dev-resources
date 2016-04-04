@@ -6,7 +6,7 @@
 * ArcGIS Online にホストされたプロキシ サービス（Service Proxies）
 > ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します
 * 独自の Web サーバーにホストするプロキシ ファイル（Resource Proxy）
-> 米国 Esri 社によってプロキシ ファイルのソースコード（PHP、.NET、Java）を GitHub で公開しています
+> 米国 Esri 社がプロキシ ファイルのソースコード（PHP、.NET、Java）を GitHub で公開しています
 
 ## ArcGIS Online にホストされたプロキシ サービス
 
@@ -50,7 +50,7 @@
 
 ## 独自の Web サーバーにホストするプロキシ ファイル
 
-プロキシ ファイルは米国 Esri 社がメンテナンスしているソースコード（[Resource Proxy](https://github.com/Esri/resource-proxy)）が GitHub で公開されています。このプロキシ サービスにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。
+プロキシ ファイルは米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（[Resource Proxy](https://github.com/Esri/resource-proxy)）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px">
 
