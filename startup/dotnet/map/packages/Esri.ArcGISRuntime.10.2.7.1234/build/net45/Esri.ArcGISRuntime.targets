@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Reference Include="Esri.ArcGISRuntime">
+      <HintPath>$(MSBuildThisFileDirectory)..\..\sdk\net45\Esri.ArcGISRuntime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>REM copy runtime deployment folder to output directory
+pushd $(MSBuildThisFileDirectory)..\..\sdk\net45\
+for /d %%i in (arcgisruntime*) do (
+  xcopy "%%i" "$(TargetDir)%%i\" /S /Y
+)
+popd
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
+

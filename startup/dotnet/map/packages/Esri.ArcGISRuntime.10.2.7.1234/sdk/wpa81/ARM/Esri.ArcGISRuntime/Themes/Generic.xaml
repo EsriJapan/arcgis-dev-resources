@@ -1,0 +1,69 @@
+﻿<ResourceDictionary 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="using:Esri.ArcGISRuntime.Controls">
+	
+	<!-- Built-in style for Map -->
+	<Style TargetType="local:MapView">
+		<Setter Property="IsTabStop" Value="true" />
+		<Setter Property="ManipulationMode" Value="Scale,ScaleInertia,TranslateX,TranslateY,TranslateInertia,Rotate" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="local:MapView">
+					<Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+						<Grid>
+							<Border x:Name="MapSurface" />
+							<!-- Note: Before removing the following logo, please read the terms of use -->
+							<Image Source="/Esri.ArcGISRuntime/Logo.png"
+								   x:Name="EsriLogo"
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Bottom"
+								   Stretch="Fill"
+								   Margin="12"
+								   IsHitTestVisible="False"
+								   Width="56" Height="32" />
+                            <Border x:Name="Overlay" />
+						</Grid>
+					</Border>
+				</ControlTemplate>
+
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+    <Style TargetType="local:SceneView">
+        <Setter Property="IsTabStop"
+                Value="true" />
+        <Setter Property="ManipulationMode"
+                Value="Scale,ScaleInertia,TranslateX,TranslateY,TranslateInertia,Rotate" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SceneView">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Border x:Name="MapSurface" />
+                            <!-- Note: Before removing the following logo, please read the terms of use -->
+                            <Image Source="/Esri.ArcGISRuntime/Logo.png"
+                                   x:Name="EsriLogo"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Bottom"
+                                   Stretch="Fill"
+                                   Margin="12"
+                                   IsHitTestVisible="False"
+                                   Width="56"
+                                   Height="32" />
+                            <Border x:Name="Overlay" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+
