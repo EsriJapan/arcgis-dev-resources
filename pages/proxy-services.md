@@ -1,16 +1,17 @@
 # プロキシ サービスの利用
 
-ブラウザー ベースの Web アプリに秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用を推奨しています。プロキシ サービスを経由してアプリ ID と秘密鍵をリクエストに埋め込むことができます。
+ブラウザー ベースの Web アプリに秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用が推奨されています。プロキシ サービスを経由することでアプリ ID と秘密鍵をリクエストに埋め込むことができます。
 プロキシ サービスを利用する方法は以下の２通りあります。
 
 * ArcGIS Online にホストされたプロキシ サービス（Service Proxies）
 > ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します
+
 * 独自の Web サーバーにホストするプロキシ ファイル（Resource Proxy）
 > 米国 Esri 社がプロキシ ファイルのソースコード（PHP、.NET、Java）を GitHub で公開しています
 
 ## ArcGIS Online にホストされたプロキシ サービス
 
-1. ArcGIS for Developers の [Application] ページを開きます。
+1. [ArcGIS for Developers](https://developers.arcgis.com/) の [Application] ページを開きます。
 
 1. [REGISTER NEW APPLICATION] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。
 
