@@ -143,7 +143,7 @@ ArcGIS for Developers を利用した地図アプリの作成方法を紹介し�
 > `positon` プロパティで地図ビュー上の四隅への配置位置が指定できます。
 
 1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
-> <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-app.gif" width="450px">
+> <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-app-3d.gif" width="450px">
 
 ---
 
