@@ -21,7 +21,7 @@ ArcGIS for Developers が提供する開発者向けサービスを利用して�
     * [iOS](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/create-startup-app-ios.md)
 * __認証__
     * [認証パターン](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/authentication.md)
-    * [アプリの登録と認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/authentication.md)
+    * [アプリの登録と認証](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/pages/register-app.md)
 
 ## 開発ブログ記事
 

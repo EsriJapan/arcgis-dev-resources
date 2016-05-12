@@ -2,24 +2,27 @@
 
 ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。地図の表示と機能の追加は簡易な JavaScript API での実装例をお伝えしますが、ArcGIS Runtime SDK についても基本的にできることは変わりません。
 
-## サンプル コードのダウンロード
+## サンプル プロジェクトのダウンロード
 
-このリポジトリ（[arcgis-samples-js](https://github.com/EsriJapan/arcgis-samples-js)）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+このリポジトリ（[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources)）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
 
 * __リポジトリをご自身のアカウントに Fork（複製）__
-> 1. GitHub にログインして、[arcgis-samples-js](https://github.com/EsriJapan/arcgis-samples-js) ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
-> 1. Fork 後はご自身のローカル マシンにクローンを作成します。
+
+ 1. GitHub にログインして、[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
+ 1. Fork 後はご自身のローカル マシンにクローンを作成します。
+
 
 * __zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）__
-> [arcgis-samples-js](https://github.com/EsriJapan/arcgis-samples-js) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/sample-download.png" width="600px">
+ [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
 
 ## 地図の表示
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
-1. ダウンロードしたサンプル コード（[arcgis-samples-js/simple/map.html](https://github.com/EsriJapan/arcgis-samples-js/blob/gh-pages/simple/map.html)）を Web ブラウザーにドラッグ＆ドロップします。
+1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
 > ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-samples-js/simple/map.html` のように localhost を指定してアクセスできます。
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。

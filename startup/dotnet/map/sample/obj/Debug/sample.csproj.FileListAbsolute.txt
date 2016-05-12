@@ -1,0 +1,2 @@
+E:\tmp\sample\sample\bin\Debug\sample.exe.config
+E:\tmp\arcgis-dev-resources\startup\dotnet\map\sample\bin\Debug\sample.exe.config
