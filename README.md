@@ -1,6 +1,6 @@
 # ArcGIS for Developers 開発リソース集
 
-![](http://apps.esrij.com/arcgis-dev/guide/img/readme-banner.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/readme-banner-v2.png)
 
 弊社の開発者向けクラウド サービス [ArcGIS for Developers](https://developers.arcgis.com/en/) を使ってこれから開発を始められる方からすでに開発を進めている方まで、開発の参考になるドキュメントやサンプル等のリンクを本リポジトリにて公開しています。
 
