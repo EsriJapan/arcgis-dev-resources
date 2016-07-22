@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         
         let clientId:String = "<Applications_Client_Id>"
         let clientSecret:String = "<Applications_Client_Secret>"
+
         let expiration:String = "60" //1時間
         let grantType:String = "client_credentials"
         let requestStr:String = "client_id=" + clientId + "&client_secret=" + clientSecret + "&expiration=" + expiration + "&grant_type=" + grantType + "&f=json"
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
                             
                             let credential = AGSCredential(token: token as String)
                             let featureLayer = AGSFeatureLayer(URL: NSURL(string: "<Secure_Service_Layer_URL>"), mode: .OnDemand, credential: credential)
+                            
                             self.mapView.addMapLayer(featureLayer, withName:"Feature Service Layer")
                             
                         }
