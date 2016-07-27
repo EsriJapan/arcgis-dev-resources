@@ -61,126 +61,154 @@
 				<!-- Main -->
 					<section id="main" class="container">
 						<header>
-							<h2>プロキシ サービスの利用</h2>
+							<h2 id="-">プロキシ サービスの利用</h2>
+<p>ブラウザー ベースの Web アプリに秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用が推奨されています。プロキシ サービスを経由することでアプリ ID と秘密鍵をリクエストに埋め込むことができます。
+プロキシ サービスを利用する方法は以下の２通りあります。</p>
+
 						</header>
 						<div class="box">
-                            <p>ブラウザー ベースの Web アプリに秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用が推奨されています。プロキシ サービスを経由することでアプリ ID と秘密鍵をリクエストに埋め込むことができます。
-プロキシ サービスを利用する方法は以下の２通りあります。</p>
-                            <ul>
-                            <li><p>ArcGIS Online にホストされたプロキシ サービス（Service Proxies）</p>
-                            <blockquote>
-                            <p>ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します</p>
-                            </blockquote>
-                            </li>
-                            <li><p>独自の Web サーバーにホストするプロキシ ファイル（Resource Proxy）</p>
-                            <blockquote>
-                            <p>米国 Esri 社がプロキシ ファイルのソースコード（PHP、.NET、Java）を GitHub で公開しています</p>
-                            </blockquote>
-                            </li>
-                            </ul>
-                            <h2 id="arcgis-online-">ArcGIS Online にホストされたプロキシ サービス</h2>
-                            <ol>
-                            <li><p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Application] ページを開きます。</p>
-                            </li>
-                            <li><p>[REGISTER NEW APPLICATION] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p>
-                            </li>
-                            <li><p>[Authentication] タブをクリックします。</p>
-                            </li>
-                            <li><p>ページ下部の [Service Proxies] セクションまでスクロールします。</p>
-                            </li>
-                            <li><p>[Service] リストからプロキシ サービスを利用したい Esri 有償サービスの種類を選択します。</p>
-                            </li>
-                            <li><p>[Request Limit] にアクセス数の上限を設定します。</p>
-                            </li>
-                            <li><p>[Allowed Domains] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p>
-                            </li>
-                            </ol>
-                            <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/service-proxies.gif" width="600px"></p>
-                            <h3 id="-esri-">サービス プロキシを利用可能な Esri 有償サービス一覧</h3>
-                            <p>以下ではサービス プロキシがサポートしているサービス一覧です。リストにないサービスやコンテンツ（例：個人が保有するセキュアなマップ/レイヤー）を設定したい場合は Resource Proxy を使ってください。</p>
-                            <table>
-                            <thead>
-                            <tr>
-                            <th style="text-align:center">サービス</th>
-                            <th style="text-align:center">[Service] リストの値</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                            <td style="text-align:center"><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">ジオコーディング</a></td>
-                            <td style="text-align:center"><code>geocode</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">ジオエンリッチメント</a></td>
-                            <td style="text-align:center"><code>geoenrichment</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_synchronous_execution/02r300000036000000/">ルート解析</a></td>
-                            <td style="text-align:center"><code>route</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_asynchronous_execution/02r300000275000000/">ルート解析（非同期）</a></td>
-                            <td style="text-align:center"><code>asyncroute</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/">最寄り施設解析</a></td>
-                            <td style="text-align:center"><code>closestFacility</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_asynchronous_execution/02r30000020n000000/">最寄り施設解析（非同期）</a></td>
-                            <td style="text-align:center"><code>asyncClosestFacility</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_synchronous_execution/02r3000000n2000000/">到達圏解析</a></td>
-                            <td style="text-align:center"><code>serviceArea</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_asynchronous_execution/02r3000000n0000000/">到達圏解析（非同期）</a></td>
-                            <td style="text-align:center"><code>asyncServiceArea</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Location_Allocation_service/02r30000026s000000/">ロケーション-アロケーション解析</a></td>
-                            <td style="text-align:center"><code>asyncLocationAllocation</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析</a></td>
-                            <td style="text-align:center"><code>syncVRP</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析（非同期）</a></td>
-                            <td style="text-align:center"><code>asyncVRP</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Traffic_service/02r3000000n6000000/">交通量</a></td>
-                            <td style="text-align:center"><code>traffic</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">標高</a></td>
-                            <td style="text-align:center"><code>elevationSync</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">標高（非同期）</a></td>
-                            <td style="text-align:center"><code>elevation</code></td>
-                            </tr>
-                            <tr>
-                            <td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">水文解析</a></td>
-                            <td style="text-align:center"><code>hydrology</code></td>
-                            </tr>
-                            </tbody>
-                            </table>
-                            <h2 id="-web-">独自の Web サーバーにホストするプロキシ ファイル</h2>
-                            <p>プロキシ ファイルは米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（<a href="https://github.com/Esri/resource-proxy">Resource Proxy</a>）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。</p>
-                            <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px"></p>
-                            <h3 id="-">プロキシ サービスの設定</h3>
-                            <p>プロキシの設定ファイル（<code>proxy.config</code>）にアクセスを許可する Esri 有償サービスやプライベート コンテンツ（マップ/レイヤー）の情報を設定します。</p>
-                            <ol>
-                            <li><p><code>allowedReferers</code> 属性を使ってアクセスを許可する HTTP リファラを設定します。</p>
-                            </li>
-                            <li><p><code>rateLimit</code> と <code>rateLimitPeriod</code> 属性にて一定期間におけるアクセス数の上限を設定します。</p>
-                            </li>
-                            </ol>
-                            <p>以下は、プロキシ サービスの設定例です。</p>
-                            <pre class="editor-colors lang-xml"><div class="line"><span class="text xml"><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;</span></span><span class="entity name tag localname xml"><span>ProxyConfig</span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>mustMatch</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>true</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>logFile</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>proxy_log_xml.log</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>allowedReferers</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>example.com</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span><span class="punctuation definition tag xml"><span>&gt;</span></span></span></span></div><div class="line"><span class="text xml"><span>&nbsp;</span></span></div><div class="line"><span class="text xml"><span>&nbsp;&nbsp;</span><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;</span></span><span class="entity name tag localname xml"><span>serverUrls</span></span><span class="punctuation definition tag xml"><span>&gt;</span></span></span></span></div><div class="line"><span class="text xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;</span></span><span class="entity name tag localname xml"><span>serverUrl</span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>url</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>geoenrich.arcgis.com</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>oauth2Endpoint</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span class="markup underline link https hyperlink"><span>https://www.arcgis.com/sharing/oauth2</span></span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>clientId</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>6Xo1d-example-9Kn2</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>clientSecret</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>5a5d50-example-c867b6efcf969bdcc6a2</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>rateLimit</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>120</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>rateLimitPeriod</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>60</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>matchAll</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>true</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span><span class="punctuation definition tag xml"><span>/&gt;</span></span></span></span></div><div class="line"><span class="text xml"><span>&nbsp;</span></span></div><div class="line"><span class="text xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;</span></span><span class="entity name tag localname xml"><span>serverUrl</span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>url</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>route.arcgis.com</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>matchAll</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>true</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>oauth2Endpoint</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span class="markup underline link https hyperlink"><span>https://www.arcgis.com/sharing/oauth2</span></span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>clientId</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>6Xo1d-example-9Kn2</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>clientSecret</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>5a5d50-example-c867b6efcf969bdcc6a2</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>rateLimit</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>120</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span class="entity other attribute-name localname xml"><span>rateLimitPeriod</span></span><span>=</span><span class="string quoted double xml"><span class="punctuation definition string begin xml"><span>&quot;</span></span><span>60</span><span class="punctuation definition string end xml"><span>&quot;</span></span></span><span class="punctuation definition tag xml"><span>/&gt;</span></span></span></span></div><div class="line"><span class="text xml"><span>&nbsp;</span></span></div><div class="line"><span class="text xml"><span>&nbsp;&nbsp;</span><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;/</span></span><span class="entity name tag localname xml"><span>serverUrls</span></span><span class="punctuation definition tag xml"><span>&gt;</span></span></span></span></div><div class="line"><span class="text xml"><span class="meta tag xml"><span class="punctuation definition tag xml"><span>&lt;/</span></span><span class="entity name tag localname xml"><span>ProxyConfig</span></span><span class="punctuation definition tag xml"><span>&gt;</span></span></span></span></div></pre>
+							<ul>
+<li><p>ArcGIS Online にホストされたプロキシ サービス（Service Proxies）</p>
+<blockquote>
+<p>ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します</p>
+</blockquote>
+</li>
+<li><p>独自の Web サーバーにホストするプロキシ ファイル（Resource Proxy）</p>
+<blockquote>
+<p>米国 Esri 社がプロキシ ファイルのソースコード（PHP、.NET、Java）を GitHub で公開しています</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="arcgis-online-">ArcGIS Online にホストされたプロキシ サービス</h2>
+<ol>
+<li><p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Application] ページを開きます。</p>
+</li>
+<li><p>[REGISTER NEW APPLICATION] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p>
+</li>
+<li><p>[Authentication] タブをクリックします。</p>
+</li>
+<li><p>ページ下部の [Service Proxies] セクションまでスクロールします。</p>
+</li>
+<li><p>[Service] リストからプロキシ サービスを利用したい Esri 有償サービスの種類を選択します。</p>
+</li>
+<li><p>[Request Limit] にアクセス数の上限を設定します。</p>
+</li>
+<li><p>[Allowed Domains] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p>
+</li>
+</ol>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/service-proxies.gif" width="600px"></p>
+<h3 id="-esri-">サービス プロキシを利用可能な Esri 有償サービス一覧</h3>
+<p>以下ではサービス プロキシがサポートしているサービス一覧です。リストにないサービスやコンテンツ（例：個人が保有するセキュアなマップ/レイヤー）を設定したい場合は Resource Proxy を使ってください。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">サービス</th>
+<th style="text-align:center">[Service] リストの値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">ジオコーディング</a></td>
+<td style="text-align:center"><code>geocode</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">ジオエンリッチメント</a></td>
+<td style="text-align:center"><code>geoenrichment</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_synchronous_execution/02r300000036000000/">ルート解析</a></td>
+<td style="text-align:center"><code>route</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_asynchronous_execution/02r300000275000000/">ルート解析（非同期）</a></td>
+<td style="text-align:center"><code>asyncroute</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/">最寄り施設解析</a></td>
+<td style="text-align:center"><code>closestFacility</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_asynchronous_execution/02r30000020n000000/">最寄り施設解析（非同期）</a></td>
+<td style="text-align:center"><code>asyncClosestFacility</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_synchronous_execution/02r3000000n2000000/">到達圏解析</a></td>
+<td style="text-align:center"><code>serviceArea</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_asynchronous_execution/02r3000000n0000000/">到達圏解析（非同期）</a></td>
+<td style="text-align:center"><code>asyncServiceArea</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Location_Allocation_service/02r30000026s000000/">ロケーション-アロケーション解析</a></td>
+<td style="text-align:center"><code>asyncLocationAllocation</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析</a></td>
+<td style="text-align:center"><code>syncVRP</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析（非同期）</a></td>
+<td style="text-align:center"><code>asyncVRP</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Traffic_service/02r3000000n6000000/">交通量</a></td>
+<td style="text-align:center"><code>traffic</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">標高</a></td>
+<td style="text-align:center"><code>elevationSync</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">標高（非同期）</a></td>
+<td style="text-align:center"><code>elevation</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">水文解析</a></td>
+<td style="text-align:center"><code>hydrology</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="-web-">独自の Web サーバーにホストするプロキシ ファイル</h2>
+<p>プロキシ ファイルは米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（<a href="https://github.com/Esri/resource-proxy">Resource Proxy</a>）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px"></p>
+<h3 id="-">プロキシ サービスの設定</h3>
+<p>プロキシの設定ファイル（<code>proxy.config</code>）にアクセスを許可する Esri 有償サービスやプライベート コンテンツ（マップ/レイヤー）の情報を設定します。</p>
+<ol>
+<li><p><code>allowedReferers</code> 属性を使ってアクセスを許可する HTTP リファラを設定します。</p>
+</li>
+<li><p><code>rateLimit</code> と <code>rateLimitPeriod</code> 属性にて一定期間におけるアクセス数の上限を設定します。</p>
+</li>
+</ol>
+<p>以下は、プロキシ サービスの設定例です。</p>
+<pre><code class="lang-xml">&lt;ProxyConfig
+    mustMatch=&quot;true&quot;
+    logFile=&quot;proxy_log_xml.log&quot;
+    allowedReferers=&quot;example.com&quot;&gt;
+
+  &lt;serverUrls&gt;
+    &lt;serverUrl
+      url=&quot;geoenrich.arcgis.com&quot;
+      oauth2Endpoint=&quot;https://www.arcgis.com/sharing/oauth2&quot;
+      clientId=&quot;6Xo1d-example-9Kn2&quot;
+      clientSecret=&quot;5a5d50-example-c867b6efcf969bdcc6a2&quot;
+      rateLimit=&quot;120&quot;
+      rateLimitPeriod=&quot;60&quot;
+      matchAll=&quot;true&quot;/&gt;
+
+    &lt;serverUrl
+      url=&quot;route.arcgis.com&quot;
+      matchAll=&quot;true&quot;
+      oauth2Endpoint=&quot;https://www.arcgis.com/sharing/oauth2&quot;
+      clientId=&quot;6Xo1d-example-9Kn2&quot;
+      clientSecret=&quot;5a5d50-example-c867b6efcf969bdcc6a2&quot;
+      rateLimit=&quot;120&quot;
+      rateLimitPeriod=&quot;60&quot;/&gt;
+
+  &lt;/serverUrls&gt;
+&lt;/ProxyConfig&gt;
+</code></pre>
+
 						</div>
 					</section>
 
