@@ -88,7 +88,3 @@
   </serverUrls>
 </ProxyConfig>
 ```
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

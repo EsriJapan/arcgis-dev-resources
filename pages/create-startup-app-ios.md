@@ -2,7 +2,7 @@
 
 ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 
-1. [SDK のダウンロードページ](https://developers.arcgis.com/downloads) にアクセスします（[開発者アカウント](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md) でサインインします）。
+1. [SDK のダウンロードページ](https://developers.arcgis.com/downloads) にアクセスします（[開発者アカウント](../get-dev-account) でサインインします）。
 
 1. ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。
 
@@ -32,7 +32,7 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 
 1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。
 
-1. `ViewController.swift` の 24 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md) で作成した Web マップ ID を上書きします。
+1. `ViewController.swift` の 24 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap) で作成した Web マップ ID を上書きします。
 
  ```javascript
  self.webMap = AGSWebMap(itemId: "<Web マップ ID>", credential: nil)
@@ -93,5 +93,3 @@ iOS の位置情報サービスと連携し、端末の現在位置を地図上�
  シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。
 
  アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの `Info.plist` ファイルの `NSLocationWhenInUseUsageDescription` プロパティで設定できます。
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

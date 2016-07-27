@@ -5,7 +5,7 @@ ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必�
 また、この後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Nuget パッケージとして参照する方法を用いています。
 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方は ローカル環境にダウンロードしてお使いになりたい方は [ドキュメント ダウンロード](http://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/documents/)のページにあるインストール ガイドをご覧ください。
 
-なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md)」をご参照ください。
+なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](../get-dev-account)」をご参照ください。
 
 ## サンプル プロジェクトのダウンロード
 
@@ -32,7 +32,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
 1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/map/sample.sln）を Visual Studio で開きます。
 
-1. `mainWindow.xaml.cs` の 54 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md)で作成した Web マップ ID を上書きします。
+1. `mainWindow.xaml.cs` の 54 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
 
  ```C#
  var item = await ArcGISPortalItem.CreateAsync(portal, "Web マップ ID");
@@ -116,5 +116,3 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   await mainMapView.SetViewAsync((MapPoint)locatedPoint.Geometry, 36112);  
  ```
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px">
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

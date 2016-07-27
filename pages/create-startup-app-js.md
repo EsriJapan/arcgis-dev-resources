@@ -23,7 +23,7 @@
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
 
-1. `map.html` 29 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](create-webmap.md)で作成した Web マップ ID を上書きします。
+1. `map.html` 29 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
 > ```javascript
 > var mapDeferred = arcgisUtils.createMap("<Web マップ ID>", "mapDiv");
 > ```
@@ -124,7 +124,3 @@
 
 1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px">
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

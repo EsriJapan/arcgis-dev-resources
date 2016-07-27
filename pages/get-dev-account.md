@@ -38,7 +38,3 @@ ArcGIS for Developers 開発者向けサービスの詳細については下記�
 
 以上で ArcGIS for Developers の開発者アカウントの作成は完了です。以下では、ArcGIS for Developers
 サイトのダッシュボードからアクセスできる主なページの概要を紹介します。
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

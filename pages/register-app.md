@@ -74,7 +74,3 @@ request.post({
     console.log(body.access_token);
 });
 ```-->
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)
