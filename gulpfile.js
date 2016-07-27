@@ -31,7 +31,7 @@ gulp.task('build', function () {
   return gulp.src('./dist/*.html')
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
-      console.log('build ' + dirName + '.html');
+      console.log('build ' + dirName + '/index.html');
       return gulp.src('template.html')
         .pipe(gfi({
           '<!-- INSERT TITLE -->': './dist/header/' + dirName + '.html',
