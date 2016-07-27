@@ -1,9 +1,3 @@
-# シンプルな地図アプリの作成
-
-ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。
-
-ここでは ArcGIS Runtime SDK for Android を用いたネイティブ地図アプリのサンプルを起動してどのように地図を実装するかを掴んでいただき、さらに簡単な機能を例に、機能をどのように追加していくのかをお伝えします。
-
 ## 開発環境
 
 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
