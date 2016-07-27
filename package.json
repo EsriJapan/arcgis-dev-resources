@@ -1,0 +1,34 @@
+{
+  "name": "arcgis-dev-resources",
+  "version": "1.0.0",
+  "description": "Startup documents and samples to use ArcGIS for Developers to Japanses developers.",
+  "main": "index.html",
+  "scripts": {
+    "test": "http-server -p 5000 -c-1 -o",
+    "pre-build": "gulp pre-build & gulp pre-build-header",
+    "build": "gulp pre-build & gulp pre-build-header & gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsriJapan/arcgis-dev-resources.git"
+  },
+  "keywords": [
+    "arcgis"
+  ],
+  "author": "Yusuke Nunokawa (Esri Japan)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/EsriJapan/arcgis-dev-resources/issues"
+  },
+  "homepage": "https://github.com/EsriJapan/arcgis-dev-resources#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-file-insert": "^1.0.2",
+    "gulp-foreach": "^0.1.0",
+    "gulp-markdown": "^1.2.0",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "mkdirp": "^0.5.1",
+    "vinyl": "^1.1.1"
+  }
+}
