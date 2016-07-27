@@ -31,30 +31,21 @@ gulp.task('build', function () {
   return gulp.src('./dist/*.html')
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
-      if(dirName !== 'index') {
-        return gulp.src('template.html')
-          .pipe(gfi({
-            '<!-- INSERT TITLE -->': './dist/header/' + dirName + '.html',
-            '<!-- INSERT CONTENTS -->': './dist/' + dirName + '.html'
-          }))
-          .pipe(rename('index.html'))
-          .pipe(gulp.dest('./' + dirName + '/'));
-      }
+      console.log('build ' + dirName + '.html');
+      return gulp.src('template.html')
+        .pipe(gfi({
+          '<!-- INSERT TITLE -->': './dist/header/' + dirName + '.html',
+          '<!-- INSERT CONTENTS -->': './dist/' + dirName + '.html'
+        }))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./' + dirName + '/'));
     }));
 });
 
 gulp.task('pre-build-header', function () {
-  var dirName;
   mkdirp('./dist/header/');
   return gulp.src('./pages/header/*.md')
     .pipe(foreach(function (stream, file) {
-      dirName = returnName(file);
-      if(dirName !== 'index') {
-        mkdirp(dirName, function (err) {
-          if (err) console.error(err)
-          else console.log('mkdir ', dirName);
-        });
-      }
       return stream
         .pipe(markdown());
     }))
@@ -67,12 +58,10 @@ gulp.task('pre-build', function () {
   return gulp.src('./pages/*.md')
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
-      if(dirName !== 'index') {
-        mkdirp(dirName, function (err) {
-          if (err) console.error(err)
-          else console.log('mkdir ', dirName);
-        });
-      }
+      mkdirp(dirName, function (err) {
+        if (err) console.error(err)
+        else console.log('mkdir ', dirName);
+      });
       return stream
         .pipe(markdown());
     }))
