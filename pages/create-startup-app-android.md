@@ -1,9 +1,3 @@
-# シンプルな地図アプリの作成
-
-ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。
-
-ここでは ArcGIS Runtime SDK for Android を用いたネイティブ地図アプリのサンプルを起動してどのように地図を実装するかを掴んでいただき、さらに簡単な機能を例に、機能をどのように追加していくのかをお伝えします。
-
 ## 開発環境
 
 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
@@ -11,7 +5,7 @@ ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開
 またこの後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Android Library プロジェクトとして参照する方法を用いています。
 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方はこちらの [The SDK download](https://developers.arcgis.com/android/guide/install-and-set-up.htm#ESRI_SECTION1_4108D3B809C54DD4A0BD37E6397EBFA8)（英語）手順をご覧ください。
 
-なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/get-dev-account.md)」をご参照ください。
+なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](../get-dev-account)」をご参照ください。
 
 
 ## サンプル プロジェクトのダウンロード
@@ -34,7 +28,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
 1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/android/map）を Android Studio で開きます。
 
-1. `MainActivity.java` の 30 行目の `<Web マップ ID>` と記載されている箇所に [Web マップの作成](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/pages/create-webmap.md)で作成した Web マップ ID を上書きします。32 行目の以下のコードでは、上で設定した Web マップ ID を含んだ WebMap の URL を MapView へ受け渡しています。
+1. `MainActivity.java` の 30 行目の `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。32 行目の以下のコードでは、上で設定した Web マップ ID を含んだ WebMap の URL を MapView へ受け渡しています。
  ```java
   mapView = new MapView(this, webmapUrl, "", "");
  ```
@@ -112,6 +106,3 @@ Android の位置情報サービスと連携し、端末の現在位置を地図
  2. 左側の Devices タブで該当のエミュレータ名をクリックして選択し、右側の Emulator Control タブをクリックします。
  2. 下の方に Location Controls というセクションがあるので、その中の Manual タブを選択します。
  2. Longitude（経度）とLatitude（緯度）へ任意の値を入力します。
-
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

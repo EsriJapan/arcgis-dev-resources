@@ -1,7 +1,3 @@
-# アプリの登録と認証
-
-ArcGIS for Developers の認証を利用するためにはアプリの登録が必要となります。ArcGIS for Developers サイト上でアプリを登録することで、ユーザー ログインあるいはアプリ認証を始めるための認証情報が付与されます。
-
 ## アプリの登録
 
 1. ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。
@@ -78,7 +74,3 @@ request.post({
     console.log(body.access_token);
 });
 ```-->
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

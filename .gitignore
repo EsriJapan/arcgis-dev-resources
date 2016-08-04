@@ -6,5 +6,11 @@
 # BK
 _*
 src
-template.html
 test.html
+
+# Node
+node_modules
+npm-debug.log
+
+# Build Files
+dist

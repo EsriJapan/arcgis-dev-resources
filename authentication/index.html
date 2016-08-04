@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/github-gist.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
@@ -18,7 +19,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="https://developers.arcgis.com/" target="_brank">ArcGIS for Developers</a> 開発リソース集</h1>
+					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="../index.html">ホーム</a></li>
@@ -61,95 +62,97 @@
 				<!-- Main -->
 					<section id="main" class="container">
 						<header>
-							<h2>認証パターン</h2>
+							<h2 id="-">認証</h2>
+<p>ArcGIS for Developers で作成したアプリでは以下のように認証が必要となるケースがあります。</p>
+
 						</header>
 						<div class="box">
-							<p>ArcGIS for Developers で作成したアプリでは以下のように認証が必要となるケースがあります。</p>
 							<ul>
-							<li><strong>ユーザーが保有するプライベートなコンテンツへのアクセス</strong></li>
-							<li><strong>コンテンツの作成と公開</strong></li>
-							<li><strong>米国 Esri 社が提供する有償のコンテンツ（ジオコーディングやルート解析など）へのアクセス</strong></li>
-							</ul>
-							<h2 id="-">認証パターン</h2>
-							<p>ArcGIS for Developers の認証方法は以下の 2 つのパターンが存在します。</p>
-							<ul>
-							<li><strong>ユーザー ログイン認証</strong>: アプリを利用するユーザーがユーザー名とパスワードを入力して認証を行います</li>
-							<li><strong>アプリ認証</strong>: 特定のアプリをログインなしで認証を行います</li>
-							</ul>
-							<p>ユーザー ログインは組織契約の ArcGIS クラウド サービスである ArcGIS Online 組織向けプランのユーザーが利用することを想定しています。ArcGIS for Developers の開発者であれば、ArcGIS Online 組織向けプランを導入している組織に対してアプリを配布/販売することが可能です。</p>
-							<p>一方、ユーザーが ArcGIS ユーザーではなく、アノニマスにアクセスされる場合、特定のアプリでのみアクセスできるようにするためにアプリ認証の実装が必要となります。たとえば、有償のサービスであるルート解析機能を持ったアプリを開発する場合にアプリ認証を実装することで、クレジットの消費を開発者が担保し、ユーザーはログインの操作を行うことなくルート解析機能を利用することができます。</p>
-							<h3 id="-">認証パターンの比較</h3>
-							<table>
-							<thead>
-							<tr>
-							<th style="text-align:center">機能</th>
-							<th style="text-align:center">ユーザー ログイン認証 [1]</th>
-							<th style="text-align:center">アプリ認証 [2]</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-							<td style="text-align:center"><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">ジオコーディング</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔</td>
-							</tr>
-							<tr>
-							<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Overview_of_network_analysis_services/02r30000001s000000/">ルート解析</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔</td>
-							</tr>
-							<tr>
-							<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">統計データ</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔</td>
-							</tr>
-							<tr>
-							<td style="text-align:center"><a href="https://marketplace.arcgis.com/search.html#t=data">プレミアム レイヤー/イメージ</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔</td>
-							</tr>
-							<tr>
-							<td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">高度解析</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔</td>
-							</tr>
-							<tr>
-							<td style="text-align:center"><a href="https://developers.arcgis.com/rest/analysis/">空間解析</a></td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">-</td>
-							</tr>
-							<tr>
-							<td style="text-align:center">ユーザーが保有するプライベート コンテンツの閲覧</td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">✔ [3]</td>
-							</tr>
-							<tr>
-							<td style="text-align:center">ユーザーによって組織内共有されたコンテンツの閲覧</td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">-</td>
-							</tr>
-							<tr>
-							<td style="text-align:center">ユーザー コンテンツの作成/更新/削除</td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">-</td>
-							</tr>
-							<tr>
-							<td style="text-align:center">共有コンテンツの作成/更新/削除</td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">-</td>
-							</tr>
-							<tr>
-							<td style="text-align:center">他ユーザーのコンテンツの共有</td>
-							<td style="text-align:center">✔</td>
-							<td style="text-align:center">-</td>
-							</tr>
-							</tbody>
-							</table>
-							<ul>
-							<li>[1] ユーザーの所属する組織（ArcGIS Online 組織向けプラン）にクレジットを請求します</li>
-							<li>[2] アプリを作成したユーザーにクレジットを請求します</li>
-							<li>[3] この場合のコンテンツを保有するユーザーとはアプリを作成したユーザーを指します</li>
-							</ul>
+<li><strong>ユーザーが保有するプライベートなコンテンツへのアクセス</strong></li>
+<li><strong>コンテンツの作成と公開</strong></li>
+<li><strong>米国 Esri 社が提供する有償のコンテンツ（ジオコーディングやルート解析など）へのアクセス</strong></li>
+</ul>
+<h2 id="-">認証パターン</h2>
+<p>ArcGIS for Developers の認証方法は以下の 2 つのパターンが存在します。</p>
+<ul>
+<li><strong>ユーザー ログイン認証</strong>: アプリを利用するユーザーがユーザー名とパスワードを入力して認証を行います</li>
+<li><strong>アプリ認証</strong>: 特定のアプリをログインなしで認証を行います</li>
+</ul>
+<p>ユーザー ログインは組織契約の ArcGIS クラウド サービスである ArcGIS Online 組織向けプランのユーザーが利用することを想定しています。ArcGIS for Developers の開発者であれば、ArcGIS Online 組織向けプランを導入している組織に対してアプリを配布/販売することが可能です。</p>
+<p>一方、ユーザーが ArcGIS ユーザーではなく、アノニマスにアクセスされる場合、特定のアプリでのみアクセスできるようにするためにアプリ認証の実装が必要となります。たとえば、有償のサービスであるルート解析機能を持ったアプリを開発する場合にアプリ認証を実装することで、クレジットの消費を開発者が担保し、ユーザーはログインの操作を行うことなくルート解析機能を利用することができます。</p>
+<h3 id="-">認証パターンの比較</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">機能</th>
+<th style="text-align:center">ユーザー ログイン認証 [1]</th>
+<th style="text-align:center">アプリ認証 [2]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">ジオコーディング</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Overview_of_network_analysis_services/02r30000001s000000/">ルート解析</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">統計データ</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://marketplace.arcgis.com/search.html#t=data">プレミアム レイヤー/イメージ</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/elevation/">高度解析</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://developers.arcgis.com/rest/analysis/">空間解析</a></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ユーザーが保有するプライベート コンテンツの閲覧</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔ [3]</td>
+</tr>
+<tr>
+<td style="text-align:center">ユーザーによって組織内共有されたコンテンツの閲覧</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ユーザー コンテンツの作成/更新/削除</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">共有コンテンツの作成/更新/削除</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">他ユーザーのコンテンツの共有</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>[1] ユーザーの所属する組織（ArcGIS Online 組織向けプラン）にクレジットを請求します</li>
+<li>[2] アプリを作成したユーザーにクレジットを請求します</li>
+<li>[3] この場合のコンテンツを保有するユーザーとはアプリを作成したユーザーを指します</li>
+</ul>
+
 						</div>
 					</section>
 
@@ -176,6 +179,12 @@
 			<script src="../assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/highlight.pack.js"></script>
+			<script>
+				$(function() {
+				  hljs.initHighlightingOnLoad();
+				});
+			</script>
 
 	</body>
 </html>

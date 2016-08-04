@@ -1,7 +1,3 @@
-# Web マップの作成
-
-ArcGIS for Developers で提供される API/SDK を使って地図を作成する場合、以下の 2 つの方法に分かれます。
-
 * __Web マップを利用する方法__
 * __Web マップを利用しない方法__
 
@@ -59,7 +55,3 @@ Web マップとは背景地図や主題となる地図データを追加し、�
 
 1. 保存が完了すると、URL が自動的に変更されます。URL 末尾の `?webmap=<Web マップ ID>` が Web マップの ID です。メモしておきましょう。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/webmap/webmapid.png" width="600px">
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

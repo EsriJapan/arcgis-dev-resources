@@ -1,7 +1,3 @@
-# シンプルな地図アプリの作成（JavaScript）
-
-ArcGIS for Developers を利用した地図アプリの作成方法を紹介します。地図の表示と機能の追加は簡易な JavaScript API での実装例をお伝えしますが、ArcGIS Runtime SDK についても基本的にできることは変わりません。
-
 ## サンプル プロジェクトのダウンロード
 
 このリポジトリ（[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources)）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
@@ -27,7 +23,7 @@ ArcGIS for Developers を利用した地図アプリの作成方法を紹介し�
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
 
-1. `map.html` 29 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](create-webmap.md)で作成した Web マップ ID を上書きします。
+1. `map.html` 29 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
 > ```javascript
 > var mapDeferred = arcgisUtils.createMap("<Web マップ ID>", "mapDiv");
 > ```
@@ -128,7 +124,3 @@ ArcGIS for Developers を利用した地図アプリの作成方法を紹介し�
 
 1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px">
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

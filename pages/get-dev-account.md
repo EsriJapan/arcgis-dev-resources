@@ -1,7 +1,3 @@
-# 開発者アカウントの作成
-
-ArcGIS for Developers の利用を開始するために新規アカウントを作成する手順を説明します。
-
 ## ArcGIS for Developers とは
 
 ArcGIS for Developers は、Esri 製品を利用して様々なアプリを開発する開発者のための総合ポータルサイトであり、 地図/GIS アプリ開発者のための開発者向けサービスを提供しています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして 地図/GIS アプリを開発することができます。
@@ -42,7 +38,3 @@ ArcGIS for Developers 開発者向けサービスの詳細については下記�
 
 以上で ArcGIS for Developers の開発者アカウントの作成は完了です。以下では、ArcGIS for Developers
 サイトのダッシュボードからアクセスできる主なページの概要を紹介します。
-
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)
