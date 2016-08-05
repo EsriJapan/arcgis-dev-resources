@@ -1930,6 +1930,16 @@
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
 	}
+	
+	li > code {
+		background: #f8f8f8;
+		border-radius: 6px;
+		border: solid 1px #e5e5e5;
+		font-family: monospace;
+		font-size: 0.9em;
+		margin: 0 0.25em;
+		padding: 0.25em 0.65em;
+	}
 
 	.align-left {
 		text-align: left;

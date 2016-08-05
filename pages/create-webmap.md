@@ -1,9 +1,12 @@
-* __Web マップを利用する方法__
-* __Web マップを利用しない方法__
+## Web マップとは
 
-ArcGIS for Developers を利用した開発では、いずれの方法でも地図アプリを作成することができますが、Web マップを利用することで地図にかかる開発コストを大幅に削減することができます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webmap/webmap.gif" width="300px">
 
-Web マップとは背景地図や主題となる地図データを追加し、表示方法などを設定してクラウド上に保存した Web 上の地図です。Web マップの作成には ArcGIS クラウド サービスが提供する地図作成ツール（[マップ ビューアー](http://www.arcgis.com/home/webmap/viewer.html?useExisting=1)）を使用します。クラウド上に保存された Web マップを使えば、地図上に何をどのように表示するかを一つ一つコーディングする必要がなく、非常にローコストで地図アプリを作成することができます。
+Web マップとは背景地図や主題となる地図データを追加し、表示方法などを設定してクラウド上に JSON 形式で保存される Web 上の地図です。Web マップの作成には ArcGIS クラウド サービスが提供する地図作成ツール（[マップ ビューアー](http://www.arcgis.com/home/webmap/viewer.html?useExisting=1)）を使用します。クラウド上に保存された Web マップを使えば、地図上に何をどのように表示するかを一つ一つコーディングする必要がなく、非常にローコストで地図アプリを作成することができます。
+
+Web マップに含まれる情報は以下の JSON 仕様で確認できます。
+
+* [Web マップ仕様 (Web Map JSON)](https://developers.arcgis.com/web-map-specification/)
 
 ## Web マップの作成
 
