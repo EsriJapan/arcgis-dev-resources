@@ -14,20 +14,20 @@ class ViewController: UIViewController, AGSMapViewLayerDelegate {
 
     @IBOutlet var mapView: AGSMapView!
     
-    var webMap: AGSWebMap!
+    var webmap: AGSWebMap!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         // Web マップの取得
-        self.webMap = AGSWebMap(itemId: "<Web マップ ID>", credential: nil)
+        webmap = AGSWebMap(itemId: "<Web マップ ID>", credential: nil)
         
         // 地図を表示するビュー（AGSMapView クラス）上で、Web マップを開く
-        self.webMap.openIntoMapView(self.mapView)
+        webmap.open(into: self.mapView)
         
         // AGSMapView のデリゲートを自身に設定
-        self.mapView.layerDelegate = self
+        mapView.layerDelegate = self
  
     }
     
