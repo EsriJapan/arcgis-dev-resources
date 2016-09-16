@@ -10,7 +10,7 @@ import UIKit
 import ArcGIS
 
 // デリゲート プロトコルの宣言
-class ViewController: UIViewController, AGSMapViewLayerDelegate {
+class ViewController: UIViewController{
 
     @IBOutlet var mapView: AGSMapView!
     
@@ -25,9 +25,6 @@ class ViewController: UIViewController, AGSMapViewLayerDelegate {
         
         // 地図を表示するビュー（AGSMapView クラス）上で、Web マップを開く
         webmap.open(into: self.mapView)
-        
-        // AGSMapView のデリゲートを自身に設定
-        mapView.layerDelegate = self
  
     }
     
