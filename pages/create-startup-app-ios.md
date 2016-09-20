@@ -35,7 +35,7 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 1. `ViewController.swift` の 24 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap) で作成した Web マップ ID を上書きします。
 
  ```javascript
- self.webMap = AGSWebMap(itemId: "<Web マップ ID>", credential: nil)
+ webmap = AGSWebMap(itemId: "<Web マップ ID>", credential: nil)
  ```
 
  まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c)をご利用ください。
@@ -64,25 +64,25 @@ iOS の位置情報サービスと連携し、端末の現在位置を地図上�
 
  ```javascript
   // AGSMapView のデリゲートを自身に設定
- self.mapView.layerDelegate = self
+ mapView.layerDelegate = self
  ```
 
 1. 地図の読み込み完了時に実行されるデリゲート メソッド内に現在位置を表示する処理を記述します。`ViewController.swift` に以下のコードを記述します。
 
  ```javascript
   // AGSMapView のデリゲート メソッド（地図の読み込み完了時に実行）
-  func mapViewDidLoad(mapView: AGSMapView!) {
+  func mapViewDidLoad(_ mapView: AGSMapView!) {
 
-    // 位置情報の表示モードを設定
-    self.mapView.locationDisplay.autoPanMode = .Default
+      // 位置情報の表示モードを設定
+      mapView.locationDisplay.autoPanMode = .default
 
-    // 地図が現在位置にズームされる際の表示縮尺の設定
-    self.mapView.locationDisplay.zoomScale = 100000
+      // 地図が現在位置にズームされる際の表示縮尺の設定
+      mapView.locationDisplay.zoomScale = 100000
 
-    // 現在位置の表示を開始
-    self.mapView.locationDisplay.startDataSource()
+      // 現在位置の表示を開始
+      mapView.locationDisplay.startDataSource()
 
- }
+  }
  ```
 
 1. プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
