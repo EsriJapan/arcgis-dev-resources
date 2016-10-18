@@ -1,5 +1,3 @@
-# ArcGIS API for JavaScript ライブラリのインストール
-
 ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
