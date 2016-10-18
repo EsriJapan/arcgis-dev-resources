@@ -1,13 +1,3 @@
-## 開発ブログ記事
-
-ArcGIS for Developers 開発者のためのオンライン コミュニティ サイト（GeoNet）にて ArcGIS 開発製品を使った開発に役立つ Tips などをブログ記事としてお届けしています。
-
-* __API/SDK 別開発 Tips（開発ブログ）__
-  * [JavaScript](http://arcg.is/1X5Q0Sl)
-  * [.NET](http://arcg.is/1LPKAcf)
-  * [Android](http://arcg.is/1PiwBfG)
-  * [iOS](http://arcg.is/1LlUgpi)
-
 ## サンプル データ
 
 開発でサンプルとして利用可能なデータです。以下は抜粋ですので、他のサンプル データを探したい場合は、マップ ビューアーでレイヤー検索してみてください。
