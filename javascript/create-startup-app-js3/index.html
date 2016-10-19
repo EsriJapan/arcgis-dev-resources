@@ -9,10 +9,10 @@
 		<title>ArcGIS for Developers 開発リソース集</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/github-gist.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -22,35 +22,35 @@
 					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="../index.html">ホーム</a></li>
-							<li><a href="../tips">技術 Tips 集</a></li>
-							<li><a href="../samples">サンプル集</a></li>
+							<li><a href="../../index.html">ホーム</a></li>
+							<li><a href="../../tips">技術 Tips 集</a></li>
+							<li><a href="../../samples">サンプル集</a></li>
 							<li>
 								<a href="#" class="icon fa-angle-down">ページ</a>
 								<ul>
 									<li>
 										<a href="#">マップの作成</a>
 										<ul>
-											<li><a href="../get-dev-account">アカウントの作成</a></li>
-											<li><a href="../create-feature-service">地図サービスの公開</a></li>
-											<li><a href="../create-webmap">Web マップの作成</a></li>
+											<li><a href="../../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../../create-webmap">Web マップの作成</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="#">アプリの作成</a>
 										<ul>
-											<li><a href="../create-startup-app-js">JavaScript</a></li>
-											<li><a href="../create-startup-app-dotnet">.NET</a></li>
-											<li><a href="../create-startup-app-android">Android</a></li>
-											<li><a href="../create-startup-app-ios">iOS</a></li>
+											<li><a href="../../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../../create-startup-app-android">Android</a></li>
+											<li><a href="../../create-startup-app-ios">iOS</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="#">認証</a>
 										<ul>
-											<li><a href="../authentication">認証パターン</a></li>
-											<li><a href="../register-app">アプリの登録と認証</a></li>
-                                            <li><a href="../proxy-services">プロキシ サービスの利用</a></li>
+											<li><a href="../../authentication">認証パターン</a></li>
+											<li><a href="../../register-app">アプリの登録と認証</a></li>
+                                            <li><a href="../../proxy-services">プロキシ サービスの利用</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -87,71 +87,45 @@
 <h2 id="-">地図の表示</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
 <ol>
-<li><p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.0/map/index.html">arcgis-dev-resources/startup/javascript/4.0/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。</p>
+<li><p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html">arcgis-dev-resources/startup/javascript/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。</p>
 <blockquote>
-<p>※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-dev-resources/startup/javascript/4.0/map/index.html</code> のように localhost を指定してアクセスできます。</p>
+<p>※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-samples-js/simple/map.html</code> のように localhost を指定してアクセスできます。</p>
 </blockquote>
 </li>
 <li><p>この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。</p>
 </li>
-<li><p>26 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="create-webmap.md">Web マップの作成</a>で作成した Web マップ ID を上書きします。このコードで Web マップを参照します。</p>
+<li><p><code>map.html</code> 29 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
 <blockquote>
-<pre><code class="lang-javascript">// Web マップの参照
-   var map = new WebMap({
-  portalItem: {
-    id: &quot;&lt;Web マップ ID&gt;&quot;
-  }
-});
+<pre><code class="lang-javascript">var mapDeferred = arcgisUtils.createMap(&quot;&lt;Web マップ ID&gt;&quot;, &quot;mapDiv&quot;);
 </code></pre>
 <p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="http://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c">サンプル Web マップ</a>をご利用ください。</p>
 </blockquote>
 </li>
-<li><p>31～34 行目のコードは地図のビューを作成しています。先のコードで参照した Web マップを地図データのソースとして、実際に地図の表示を行います。2D 地図は <code>MapView</code>、3D 地図は <code>SceneView</code> を使用します。</p>
-<blockquote>
-<p><strong>2D の場合</strong></p>
-<pre><code class="lang-javascript">// 地図ビュー
-var view = new MapView({
-  map: map,
-  container: &quot;viewDiv&quot;
-});
-</code></pre>
-<p><strong>3D の場合</strong></p>
-<pre><code class="lang-javascript">// 地図ビュー
-var view = new SceneView({
-  map: map,
-  container: &quot;viewDiv&quot;
-});
-</code></pre>
-<p>このように地図のビューを切り替えるだけで簡単に 2D と 3D を使い分けることができます。</p>
-</blockquote>
-</li>
 <li><p>Web アプリを実行すると、以下のように地図が表示されます。</p>
 <blockquote>
-<p><strong>2D</strong></p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-2d.png" width="450px"></p>
-<p><strong>3D</strong></p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-3d.png" width="450px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/map-app.png" width="450px"></p>
 </blockquote>
 </li>
 </ol>
 <h2 id="-">検索機能の追加</h2>
-<p>検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には <code>esri/widgets/Search</code> モジュール（検索ウィジェット）を使用します。検索ソースには<a href="www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c">サンプル Web マップ</a>に含まれる東京都 23 区のデータを使用します。</p>
+<p>検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には <code>esri/dijit/Search</code> モジュール（検索ウィジェット）を使用します。検索ソースには<a href="www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c">サンプル Web マップ</a>に含まれる東京都 23 区のデータを使用します。</p>
 <blockquote>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-widget.png" alt="検索ウィジェット"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-widget.png" alt="検索ウィジェット"></p>
 <p>検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。</p>
 </blockquote>
 <ol>
 <li><p>ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは <code>require</code> 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。</p>
 <blockquote>
-<pre><code class="lang-javascript">require([&quot;esri/views/MapView&quot;, &quot;esri/WebMap&quot;, &quot;esri/widgets/Search&quot;, &quot;esri/layers/FeatureLayer&quot;, &quot;dojo/domReady!&quot;],
-function(MapView, WebMap, Search, FeatureLayer) {
+<pre><code class="lang-javascript">require([&quot;esri/arcgis/utils&quot;, &quot;esri/dijit/Search&quot;, &quot;esri/layers/FeatureLayer&quot;, &quot;esri/InfoTemplate&quot;, &quot;dojo/domReady!&quot;],
+function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
   ...
 });
 </code></pre>
 <p>以下は検索機能に必要なモジュール一覧です。</p>
 <ul>
-<li><code>&quot;esri/widgets/Search&quot;</code>: 検索ウィジェット</li>
+<li><code>&quot;esri/dijit/Search&quot;</code>: 検索ウィジェット</li>
 <li><code>&quot;esri/layers/FeatureLayer&quot;</code>: フィーチャ レイヤー（オプション）</li>
+<li><code>&quot;esri/InfoTemplate&quot;</code>: 情報テンプレート（オプション）</li>
 </ul>
 <p>フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。</p>
 <p>ここで以下の点に注意してください。</p>
@@ -161,33 +135,58 @@ function(MapView, WebMap, Search, FeatureLayer) {
 </ul>
 </blockquote>
 </li>
-<li><p>検索ウィジェット作成のスクリプトを記述します。</p>
+<li><p>検索ウィジェット用の DOM 要素を作成します。</p>
 <blockquote>
-<pre><code class="lang-javascript">// 検索ウィジェット
-var search = new Search({
-    view: view,
-    allPlaceholder: &quot;検索キーワードの入力&quot;,
-    sources: [{
-      featureLayer: new FeatureLayer({
-        url: &quot;//services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&quot;,
-        popupTemplate: {
-          title: &quot;東京都 {Name}&quot;,
-          overwriteActions: true
-        }
-      }), // 検索ソースとなるフィーチャ レイヤー
-      placeholder: &quot;検索キーワードの入力&quot;, // プレースホルダー
-      searchFields: [&quot;Name&quot;], // 検索対象となる属性フィールド
-      displayField: &quot;Name&quot;, // 検索結果のポップアップに表示する属性フィールド
-      outFields: [&quot;*&quot;], // 結果として返す属性フィールド
-      name: &quot;東京都&quot;, // 検索ソースの名前
-      exactMatch: false
-    }]
-});
-
-search.startup();
+<pre><code class="lang-html">&lt;div id=&quot;searchDiv&quot;&gt;&lt;/div&gt;
 </code></pre>
-<p><code>&quot;esri/widgets/Search&quot;</code> モジュールが定義する <code>Search</code> クラスは <code>require</code> 関数内でのみ動作します。</p>
-<p>対応するマップを指定するための <code>map</code> プロパティにはマップのオブジェクトを、検索ソースを指定するための <code>sources</code> プロパティには検索ソースの情報を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。</p>
+<p>ここで指定した DIV の ID は検索ウィジェットを作成する際に、JavaScript 側で使用します。</p>
+</blockquote>
+</li>
+<li><p>検索ウィジェットの表示位置を CSS で記述します。</p>
+<blockquote>
+<pre><code class="lang-css">#searchDiv {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 74px;
+}
+</code></pre>
+</blockquote>
+</li>
+<li><p><code>mapDeffered.then</code> の関数内で検索ウィジェット作成のスクリプトを記述します。</p>
+<blockquote>
+<pre><code class="lang-javascript">mapDeferred.then(function(response) {
+    map = response.map;
+    var search = new Search({
+        map: map,
+        sources: []
+    }, &quot;searchDiv&quot;);
+});
+</code></pre>
+<p><code>&quot;esri/dijit/Search&quot;</code> モジュールが定義する <code>Search</code> クラスは <code>require</code> 関数内でのみ動作します。</p>
+<p>マップのオブジェクトは <code>mapDeffered.then</code> の処理完了後の <code>Deferred</code> で取得できます。検索ウィジェットはマップのオブジェクトを使用するため、この位置に記述する必要があります。</p>
+<p>対応するマップを指定するための <code>map</code> プロパティにはマップのオブジェクトを、検索ソースを指定するための <code>sources</code> プロパティには空の配列を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。</p>
+</blockquote>
+</li>
+<li><p>検索ソースに検索対象とするフィーチャ レイヤーを定義します。</p>
+<blockquote>
+<pre><code class="lang-javascript">    var sources = search.get(&quot;sources&quot;);
+    sources.push({
+       featureLayer: new FeatureLayer(&quot;http://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&quot;), // 検索ソースとなるフィーチャ レイヤー
+       placeholder: &quot;検索キーワードの入力&quot;, // プレースホルダー
+       enableLabel: false, // 検索結果ラベルの表示
+       searchFields: [&quot;&lt;フィールド名&gt;&quot;], // 検索対象となる属性フィールド
+       displayField: &quot;&lt;フィールド名&gt;&quot;, // 検索結果のポップアップに表示する属性フィールド
+       outFields: [&quot;*&quot;] // 結果として返す属性フィールド
+       name: &quot;東京都&quot;, // 検索ソースの名前
+       infoTemplate: new InfoTemplate(&quot;東京都&quot;, &quot;市区町村: ${Name}&quot;), // 検索結果のポップアップ表示構成
+       enableSuggestions: true // 検索結果の候補リスト表示
+    });
+    // 検索ソースを検索ウィジェットに設定
+    search.set(&quot;sources&quot;, sources);
+    search.startup();
+</code></pre>
 <p><code>sources.featureLayer</code> には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。</p>
 <p>フィールド名の確認は次の手順で紹介します。</p>
 </blockquote>
@@ -202,24 +201,12 @@ search.startup();
 <p>検索結果のポップアップに表示する属性情報として利用したい場合は <code>displayField</code> にも入力してください。</p>
 </blockquote>
 </li>
-<li><p>最後に検索ウィジェットを地図ビュー上に配置します。</p>
-<blockquote>
-<pre><code class="lang-javascript">// 地図ビューに検索ウィジェットを配置
-view.ui.add(search, {
-  position: &quot;top-right&quot;
-});
-</code></pre>
-<p><code>positon</code> プロパティで地図ビュー上の四隅への配置位置が指定できます。</p>
-</blockquote>
-</li>
 <li><p>Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。</p>
 <blockquote>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-3d.gif" width="450px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px"></p>
 </blockquote>
 </li>
 </ol>
-<hr>
-<p><a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md">:back: メインページへ戻る</a></p>
 
 						</div>
 					</section>
@@ -231,7 +218,7 @@ view.ui.add(search, {
 							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
 						</ul>
-						<span><img class="ej-logo" src="../images/logo.png" /></span>
+						<span><img class="ej-logo" src="../../images/logo.png" /></span>
 						<ul class="copyright">
 							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
@@ -240,20 +227,20 @@ view.ui.add(search, {
 		</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.dropotron.min.js"></script>
-			<script src="../assets/js/jquery.scrollgress.min.js"></script>
-			<script src="../assets/js/skel.min.js"></script>
-			<script src="../assets/js/util.js"></script>
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="../assets/js/main.js"></script>
-			<script src="../assets/js/highlight.pack.js"></script>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/highlight.pack.js"></script>
 			<script>
 				$(function() {
 				  hljs.initHighlightingOnLoad();
 				});
 			</script>
-			<script src="../assets/js/ga.js"></script>
+			<script src="../../assets/js/ga.js"></script>
 
 	</body>
 </html>
