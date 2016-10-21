@@ -95,6 +95,3 @@ Esri がホストしている CDN にインターネット経由で参照する�
 </html>
 ```
 
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)

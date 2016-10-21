@@ -141,6 +141,3 @@
 1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-3d.gif" width="450px">
 
----
-
-[:back: メインページへ戻る](https://github.com/EsriJapan/arcgis-dev-resources/blob/gh-pages/README.md)
