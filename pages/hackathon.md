@@ -3,7 +3,7 @@
 [ArcGIS Open Data](http://opendata.arcgis.com/) では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
 自由に使える地理データを取得する方法を紹介します。
 
-* [オープンデータの入手 (ArcGIS Open Data コミュニティサイト)]()
+* [オープンデータの入手 (ArcGIS Open Data コミュニティサイト)](https://github.com/wakanasato/Hackathon-support/blob/master/GetOpenData.md)
 
 ## 地図にデータを可視化する
 
@@ -11,7 +11,7 @@
 なお、データ可視化の作業はコーディングが不要なので、プランナーやデザイナーの方でも取り組んでいただくことができます。
 
 * [データ可視化のワークフロー](https://github.com/ynunokawa/data-viz/tree/gh-pages/docs/workflow-with-arcgis)
-* [データ可視化の手順]()
+* [データ可視化の手順](https://github.com/wakanasato/Hackathon-support/blob/master/VisualizeMap.md)
 * [地図上に賢くデータを可視化するための 6 つの方法](https://github.com/ynunokawa/data-viz/tree/gh-pages/docs/6ways-to-improve-your-maps)
 
 ## アプリに地図を組み込む
