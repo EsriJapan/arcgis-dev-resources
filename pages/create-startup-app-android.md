@@ -106,3 +106,7 @@ Android の位置情報サービスと連携し、端末の現在位置を地図
  2. 左側の Devices タブで該当のエミュレータ名をクリックして選択し、右側の Emulator Control タブをクリックします。
  2. 下の方に Location Controls というセクションがあるので、その中の Manual タブを選択します。
  2. Longitude（経度）とLatitude（緯度）へ任意の値を入力します。
+
+---
+
+アプリの動作が確認できたら [ArcGIS の OAuth 認証について学びましょう！](../authentication)

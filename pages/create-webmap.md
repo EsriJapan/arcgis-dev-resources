@@ -58,3 +58,12 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
 
 1. 保存が完了すると、URL が自動的に変更されます。URL 末尾の `?webmap=<Web マップ ID>` が Web マップの ID です。メモしておきましょう。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/webmap/webmapid.png" width="600px">
+
+---
+
+アプリの作成を始めましょう！お使いの開発環境からお選びください。
+
+* [JavaScript](../create-startup-app-js)
+* [Android](../create-startup-app-android)
+* [iOS](../create-startup-app-ios)
+* [.NET](../create-startup-app-dotnet)

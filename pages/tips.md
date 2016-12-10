@@ -16,3 +16,9 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
   * [.NET](http://arcg.is/1LPKAcf)
   * [Android](http://arcg.is/1PiwBfG)
   * [iOS](http://arcg.is/1LlUgpi)
+
+## イベント向けページ
+
+開発者向けのイベント用に提供したページのリンクです。
+
+* [ハッカソン](../hackathon/)

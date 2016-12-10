@@ -19,6 +19,67 @@
 		<link rel="stylesheet" href="assets/css/rrssb.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+		<!-- RESAS API ハッカソンが終了したらコメントアウト -->
+		<style>
+			@media (max-width: 840px) {
+				#info-resas {
+					bottom: 0;
+					width: 100%;
+					height: 6%;
+					cursor: pointer;
+					position: fixed;
+					z-index: 10001;
+					transition: all .4s;
+					background-color: rgb(255, 100, 0);
+					border-bottom: none;
+					transform-origin: 0 0;
+					display: -webkit-flex;
+					display: flex;
+					-webkit-align-items: center;
+					align-items: center;
+					-webkit-justify-content: center;
+					justify-content: center;
+				}
+				#info-resas:before {
+					content: "RESAS API ハッカソン向けの利用ガイドを公開しました！";
+					color: #fff;
+					font-size: 0.8em;
+				}
+				div#social-buttons {
+					bottom: 5%;
+				}
+			}
+			@media (min-width: 841px) {
+				#info-resas {
+					width: 320px;
+					height: 90px;
+					cursor: pointer;
+					position: fixed;
+					z-index: 10001;
+					transition: all .4s;
+					background-color: rgb(255, 100, 0);
+					border-bottom: none;
+					transform-origin: 0 0;
+					border-radius: 0 0 18px 0;
+					display: -webkit-flex;
+					display: flex;
+					-webkit-align-items: center;
+					align-items: center;
+					-webkit-justify-content: center;
+					justify-content: center;
+				}
+				#info-resas:before {
+					content: "RESAS API ハッカソン向けの\A利用ガイドを公開しました！";
+					white-space: pre;
+					color: #fff;
+					font-size: 18px;
+				}
+				#info-resas:hover {
+					transform: scale(1.05, 1.05);
+				}
+			}
+		</style>
 	</head>
 	<body class="landing">
 		<div id="social-buttons">
@@ -43,11 +104,15 @@
 			<!-- Buttons end here -->
 		</div>
 
+		<!-- RESAS API ハッカソンが終了したらコメントアウト -->
+		<a id="info-resas" href="hackathon"></a>
+
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="https://developers.arcgis.com/" target="_brank">ArcGIS for Developers</a> 開発リソース集</h1>
+					<!-- RESAS API ハッカソンが終了したらコメントアウト外す -->
+					<h1><!--<a href="https://developers.arcgis.com/" target="_brank">ArcGIS for Developers</a> 開発リソース集--></h1>
 					<nav id="nav">
 						<ul class="navlist">
 							<li><a href="index.html">ホーム</a></li>
