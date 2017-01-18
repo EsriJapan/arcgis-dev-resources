@@ -6,7 +6,15 @@
   "scripts": {
     "test": "http-server -p 5000 -c-1 -o",
     "prebuild": "gulp prebuild:content & gulp prebuild:header",
-    "build": "npm run prebuild & gulp build"
+    "build": "gulp build",
+    "jspages-prebuild": "gulp jspages-prebuild:content & gulp jspages-prebuild:header",
+    "jspages-build": "npm run jspages-prebuild & gulp jspages-build",
+    "androidpages-prebuild": "gulp androidpages-prebuild:content & gulp androidpages-prebuild:header",
+    "androidpages-build": "npm run androidpages-prebuild & gulp androidpages-build",
+    "iospages-prebuild": "gulp iospages-prebuild:content & gulp iospages-prebuild:header",
+    "iospages-build": "npm run iospages-prebuild & iospages-gulp build",
+    "dotnetpages-prebuild": "gulp dotnetpages-prebuild:content & gulp dotnetpages-prebuild:header",
+    "dotnetpages-build": "npm run dotnetpages-prebuild & gulp dotnetpages-build"
   },
   "repository": {
     "type": "git",

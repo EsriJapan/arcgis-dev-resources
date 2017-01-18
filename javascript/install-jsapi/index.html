@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../../index.html">ホーム</a></li>
+							<li><a href="../../tips">技術 Tips 集</a></li>
+							<li><a href="../../samples">サンプル集</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../../create-startup-app-android">Android</a></li>
+											<li><a href="../../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../../authentication">認証パターン</a></li>
+											<li><a href="../../register-app">アプリの登録と認証</a></li>
+                                            <li><a href="../../proxy-services">プロキシ サービスの利用</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2 id="arcgis-api-for-javascript-">ArcGIS API for JavaScript ライブラリのインストール</h2>
+
+						</header>
+						<div class="box">
+							<p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
+<p>Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。</p>
+<h2 id="-">ライブラリのダウンロード</h2>
+<p>ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/">Downloads ページ</a>からダウンロードできます。[ArcGIS API for JavaScript] の [Download for Hosting Locally]　セクションにある [API] ボタンをクリックするとダウンロードが開始します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/developers-downloads.png" width="600px"></p>
+<blockquote>
+<p>ダウンロードするライブラリのバージョンはドロップダウン リストから選択することができます。</p>
+<p>[Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
+</blockquote>
+<h2 id="web-iis-">Web サーバー（IIS）に配置</h2>
+<p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
+<ol>
+<li>ダウンロードしたライブラリの zip ファイルを解凍します。</li>
+<li><code>\arcgis_js_api\library</code> とすべてのコンテンツをコピーして Web サーバー上に移動します（<code>C:\Inetpub\wwwroot\arcgis_js_api\library</code>）。</li>
+</ol>
+<h2 id="-">ビルドのインストール</h2>
+<p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
+<ol>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.1\4.1\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.1/4.1/</code> に置き換えます。</li>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.1\4.1\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.1/4.1/</code> に置き換えます。</li>
+</ol>
+<h2 id="-">インストールのテスト</h2>
+<p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
+<pre><code class="lang-html">&lt;script src=&quot;http://www.example.com/arcgis_js_api/library/4.1/4.1/init.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>インストールのテストには以下のコードを利用してください。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
+    &lt;title&gt;Test Map&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://www.example.com/arcgis_js_api/library/4.1/4.1/dijit/themes/claro/claro.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://www.example.com/arcgis_js_api/library/4.1/4.1/esri/css/main.css&quot; /&gt;
+    &lt;style&gt;
+      html, body, #ui-map-view {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+    &lt;/style&gt;
+    &lt;script src=&quot;http://www.example.com/arcgis_js_api/library/4.1/4.1/init.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      var myMap, view;
+      require([
+        &quot;esri/Basemap&quot;,
+        &quot;esri/layers/TileLayer&quot;,
+        &quot;esri/Map&quot;,
+        &quot;esri/views/MapView&quot;,
+        &quot;dojo/domReady!&quot;
+      ], function (Basemap, TileLayer, Map, MapView){
+        // --------------------------------------------------------------------
+        // パブリックなインターネット アクセスができない環境の場合、
+        // Basemap クラスとローカルにアクセス可能なキャッシュ サービスを利用します。
+        // --------------------------------------------------------------------
+        var layer = new TileLayer({
+          url: &quot;http://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer&quot;
+        });
+        var customBasemap = new Basemap({
+          baseLayers: [layer],
+          title: &quot;Custom Basemap&quot;,
+          id: &quot;myBasemap&quot;
+        });
+        myMap = new Map({
+          basemap: customBasemap
+        });
+        view = new MapView({
+          center: [139, 35],
+          container: &quot;ui-map-view&quot;,
+          map: myMap,
+          zoom: 5
+        });
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body class=&quot;claro&quot;&gt;
+    &lt;div id=&quot;ui-map-view&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ESRIJapan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<span><img class="ej-logo" src="../../images/logo.png" /></span>
+						<ul class="copyright">
+							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/highlight.pack.js"></script>
+			<script>
+				$(function() {
+				  hljs.initHighlightingOnLoad();
+				});
+			</script>
+			<script src="../../assets/js/ga.js"></script>
+
+	</body>
+</html>

@@ -74,3 +74,7 @@ request.post({
     console.log(body.access_token);
 });
 ```-->
+
+---
+
+Web アプリで認証を実装したい方は [プロキシ サービスの利用](../proxy-services) を併せてご参照ください。

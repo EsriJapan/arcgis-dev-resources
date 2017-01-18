@@ -116,3 +116,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   await mainMapView.SetViewAsync((MapPoint)locatedPoint.Geometry, 36112);  
  ```
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px">
+
+---
+
+アプリの動作が確認できたら [ArcGIS の OAuth 認証について学びましょう！](../authentication)

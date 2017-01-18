@@ -23,6 +23,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="../index.html">ホーム</a></li>
+							<li><a href="../tips">技術 Tips 集</a></li>
 							<li><a href="../samples">サンプル集</a></li>
 							<li>
 								<a href="#" class="icon fa-angle-down">ページ</a>
@@ -83,8 +84,10 @@
 </blockquote>
 </li>
 </ul>
-<p>タイル サービスの配信にはデスクトップ製品である ArcGIS for Desktop が別途必要となります。背景となる地図データ（タイル サービス）は無償で利用できるものが用意されているので、基本的にはフィーチャ サービスのみで要件を満たすことができます。
-以下で、地図サービス（フィーチャ サービス）の公開および配信方法をご紹介します。</p>
+<p>タイル サービスとしては Esri が配信している全世界の背景地図サービスを無償で利用できます。
+なお、タイル生成サービスを利用する場合は、<a href="http://www.esrij.com/products/arcgis-online/credits/maptile/">1,000 タイル生成につき、1 クレジット消費します</a>。
+ArcGIS for Developers のみでタイル サービスを公開する方法は ArcGIS Online ヘルプの<a href="http://doc.arcgis.com/ja/arcgis-online/share-maps/publish-tiles.htm#ESRI_SECTION1_F68FCBD33BD54117B23232D41A762E89">ホスト タイル レイヤーの公開</a>をご覧ください。</p>
+<p>以下では、主題データとして利用頻度のもっとも高いフィーチャ サービスの公開および配信方法をご紹介します。</p>
 <h2 id="-">フィーチャ サービスの作成・公開</h2>
 <p>フィーチャ サービスの公開には以下の 2 つの方法があります。</p>
 <ul>
@@ -95,7 +98,15 @@
 </li>
 <li><p><strong>地図データおよび住所データを使ってフィーチャ サービスを公開</strong></p>
 <blockquote>
-<p>地図データが持つ座標情報や住所情報をもとにフィーチャ サービスを公開します。</p>
+<p>地図データが持つ座標情報や住所情報をもとにフィーチャ サービスを公開します。ArcGIS for Developers のみで公開が可能なデータは以下の通りです。</p>
+<ul>
+<li>CSV</li>
+<li>GeoJSON</li>
+<li>シェープファイル（Zip 形式に圧縮）</li>
+<li>フィーチャ コレクション（JSON）</li>
+<li>ファイル ジオデータベース（Zip 形式に圧縮）</li>
+</ul>
+<p>詳細は ArcGIS Online ヘルプの<a href="http://doc.arcgis.com/ja/arcgis-online/share-maps/publish-features.htm">ホスト フィーチャ レイヤーの公開</a>をご覧ください。</p>
 </blockquote>
 </li>
 </ul>
@@ -189,6 +200,8 @@
 <li>フィーチャを追加すると、ポップアップが自動で開き、フィーチャの属性情報を編集することが可能です。</li>
 </ol>
 <p>ここまで作成してきたフィーチャ サービスは「<a href="../create-webmap">Web マップの作成</a>」で 1 レイヤーとして扱うことができます。自身が複数のデータをお持ちで、複数のレイヤーとして地図に表示したい場合でも、自由に追加して独自の地図をデザインすることが可能です。</p>
+<hr>
+<p><a href="../create-webmap">次のステップへ</a></p>
 
 						</div>
 					</section>
@@ -222,6 +235,7 @@
 				  hljs.initHighlightingOnLoad();
 				});
 			</script>
+			<script src="../assets/js/ga.js"></script>
 
 	</body>
 </html>
