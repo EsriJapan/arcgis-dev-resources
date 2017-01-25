@@ -30,12 +30,12 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
 
-1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/map/sample.sln）を Visual Studio で開きます。
+1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/map/sample.sln）を Visual Studio で開きます。
 
-1. `mainWindow.xaml.cs` の 54 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
+1. `mainWindow.xaml.cs` の 51 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
 
  ```C#
- var item = await ArcGISPortalItem.CreateAsync(portal, "Web マップ ID");
+ var item = await PortalItem.CreateAsync(portal, "Web マップ ID");
  ```
 
  まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c)をご利用ください。
@@ -65,55 +65,53 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   //ArcGIS Online ジオコーディングサービスの URL  
   private const string WORLD_GEOCODE_SERVICE_URL = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
   //住所検索用のジオコーディング タスク  
-  private OnlineLocatorTask onlineLocatorTask;
+  private LocatorTask onlineLocatorTask;
  ```
  
-1. コンストラクター内でメンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。
-
+1. メンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。
 
  ```C#
-  /// <summary>  
-  /// コンストラクタ  
-  /// </summary>  
-  public MainWindow()  
-  {  
-    InitializeComponent();  
+ //住所検索用のジオコーディング タスクを初期化
+ onlineLocatorTask = await LocatorTask.CreateAsync(new Uri(WORLD_GEOCODE_SERVICE_URL));
+ ```
+
+1. 住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には GeocodeParameters クラスを使用します。
  
-    //住所検索用のジオコーディング タスクを初期化  
-    onlineLocatorTask = new OnlineLocatorTask(new Uri(WORLD_GEOCODE_SERVICE_URL));  
-  }  
-```
-1. 住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には OnlineLocatorFindParameters クラスを使用します。
  ```C#
   //住所検索用のパラメータを作成  
-  OnlineLocatorFindParameters parameters = new OnlineLocatorFindParameters(addressTextBox.Text)  
-  {  
-    MaxLocations = 5,  
-    OutSpatialReference = SpatialReferences.WebMercator,  
-    OutFields = OutFields.All  
-  };  
+  var geocodeParams = new GeocodeParameters
+  {
+      MaxResults = 5,
+      OutputSpatialReference = SpatialReferences.WebMercator,
+      CountryCode = "Japan",
+      OutputLanguage = new System.Globalization.CultureInfo("ja-JP"),
+  }; 
  ```
  
-1. OnlineLocatorTask クラスの FindAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。
-
+1. OnlineLocatorTask クラスの GeocodeAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。
+ 
  ```C#
   //住所の検索  
-  IList<LocatorFindResult> resultCandidates = await onlineLocatorTask.FindAsync(parameters, CancellationToken.None);  
+  var resultCandidates = await onlineLocatorTask.GeocodeAsync(addressTextBox.Text, geocodeParams);
  ```
 
 1. 住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致していると思われる検索結果）を地図上に拡大表示します。
+ 
  ```C#
-  //常に最初の候補を採用  
-  LocatorFindResult candidate = resultCandidates.FirstOrDefault();  
+  //常に最初の候補を採用
+  var candidate = resultCandidates.FirstOrDefault();                 
   
-  //最初の候補からグラフィックを作成  
-  Graphic locatedPoint = new Graphic() { Geometry = candidate.Feature.Geometry };  
-  
-  //住所検索結果表示用のグラフィックスオーバーレイにグラフィックを追加  
-  geocodeResultGraphicsLayer.Graphics.Add(locatedPoint);  
-  
-  //追加したグラフィックの周辺に地図を拡大  
-  await mainMapView.SetViewAsync((MapPoint)locatedPoint.Geometry, 36112);  
+  //最初の候補からグラフィックを作成
+  Graphic locatedPoint = new Graphic()
+  {
+      Geometry = candidate.DisplayLocation
+  };
+
+  //住所検索結果表示用のグラフィックスオーバーレイにグラフィックを追加
+  geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
+
+  //追加したグラフィックの周辺に地図を拡大
+  await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 36112);   
  ```
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px">
 

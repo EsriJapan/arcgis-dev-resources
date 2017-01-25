@@ -63,23 +63,23 @@
 				<!-- Main -->
 					<section id="main" class="container">
 						<header>
-							<h2 id="-ios-">シンプルな地図アプリの作成 (iOS)</h2>
+							<h2 id="シンプルな地図アプリの作成-(ios)">シンプルな地図アプリの作成 (iOS)</h2>
 <p><a href="https://developers.arcgis.com/ios/">iOS SDK</a> を用いたモバイル地図アプリの作成方法を紹介します。</p>
 
 						</header>
 						<div class="box">
-							<h2 id="sdk-">SDK のインストール</h2>
+							<h2 id="sdk-のインストール">SDK のインストール</h2>
 <p>ArcGIS Runtime SDK for iOS のライブラリをインストールします。</p>
 <ol>
 <li><p><a href="https://developers.arcgis.com/downloads">SDK のダウンロードページ</a> にアクセスします（<a href="../get-dev-account">開発者アカウント</a> でサインインします）。</p>
 </li>
 <li><p>ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sdk-download.png" width="450px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sdk-download.png" width="450px"></p>
 </li>
 <li><p>ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。</p>
 </li>
 </ol>
-<h2 id="-">サンプル プロジェクトのダウンロード</h2>
+<h2 id="サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</h2>
 <p>このリポジトリ（<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a>）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。</p>
 <ul>
 <li><p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
@@ -92,63 +92,55 @@
 <ul>
 <li><p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p>
 <p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sample-download.png" width="600px"></p>
 </li>
 </ul>
-<h2 id="-">地図の表示</h2>
+<h2 id="地図の表示">地図の表示</h2>
 <p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</p>
 <ol>
-<li><p>ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。</p>
+<li><p>ダウンロードしたサンプル プロジェクト（<code>arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj</code>）を Xcode で開きます。</p>
 </li>
-<li><p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../create-webmap">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
-<pre><code class="lang-javascript">webmap = AGSWebMap(itemId: &quot;&lt;Web マップ ID&gt;&quot;, credential: nil)
+<li><p><code>${HOME}/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources</code> フォルダにある <code>ArcGIS.bundle</code> ファイルをプロジェクトに追加します。<code>ArcGIS.bundle</code> ファイルには、Esri ロゴ、GPS 位置のシンボル、ローカライズされた文字列などのリソースが含まれています。</p>
+</li>
+<li><p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="http://esrijapan.github.io/arcgis-dev-resources/create-webmap/">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
+<pre><code class="lang-javascript">let portalItem = AGSPortalItem(portal: portal, itemID: &quot;&lt;Web マップ ID&gt;&quot;)
 </code></pre>
 <p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c">サンプル Web マップ</a>をご利用ください。</p>
 </li>
 <li><p>サンプル プロジェクトを実行すると、以下のように地図が表示されます。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/map-app.png" width="200px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/map-app.png" width="200px"></p>
 <p>Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</p>
 </li>
 </ol>
-<h2 id="-">現在位置の表示</h2>
+<h2 id="現在位置の表示">現在位置の表示</h2>
 <p>iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。</p>
-<p> <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/location-app.png" width="200px"></p>
+<p> <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.png" width="200px"></p>
 <ol>
-<li><p>地図の読み込みが完了したイベントをハンドリングするために、デリゲート プロトコル(<code>AGSMapViewLayerDelegate</code>)
-を宣言します。<code>ViewController.swift</code> の 13 行目を以下のコードに置き換えます。</p>
-<pre><code class="lang-javascript">// デリゲート プロトコルの宣言
-class ViewController: UIViewController, AGSMapViewLayerDelegate {
-</code></pre>
-</li>
-<li><p>地図の読み込みのデリゲートを自身に設定します。<code>viewDidLoad()</code> 関数の最後に以下のコードを追加します。</p>
-<pre><code class="lang-javascript">// AGSMapView のデリゲートを自身に設定
-mapView.layerDelegate = self
-</code></pre>
-</li>
-<li><p>地図の読み込み完了時に実行されるデリゲート メソッド内に現在位置を表示する処理を記述します。<code>ViewController.swift</code> に以下のコードを記述します。</p>
-<pre><code class="lang-javascript">// AGSMapView のデリゲート メソッド（地図の読み込み完了時に実行）
-func mapViewDidLoad(_ mapView: AGSMapView!) {
+<li><p><code>ViewController.swift</code> の <code>viewDidLoad</code> 関数に現在位置を表示する処理を記述します。</p>
+<pre><code class="lang-javascript">// 位置情報の表示モードを設定
+self.mapView.locationDisplay.autoPanMode = .recenter
 
-   // 位置情報の表示モードを設定
-   mapView.locationDisplay.autoPanMode = .default
+// マップが現在位置にズームされる際の表示縮尺の設定
+self.mapView.locationDisplay.initialZoomScale = 100000
 
-   // 地図が現在位置にズームされる際の表示縮尺の設定
-   mapView.locationDisplay.zoomScale = 100000
-
-   // 現在位置の表示を開始
-   mapView.locationDisplay.startDataSource()
-
-}
+// 現在位置の表示を開始
+self.mapView.locationDisplay.start(completion: { (error) -&gt; Void in
+ if let error = error {
+    print(&quot;位置情報の取得のエラー:\(error.localizedDescription)&quot;)
+ } else {
+    print(&quot;位置情報の取得に成功&quot;)
+ }
+})
 </code></pre>
 </li>
 <li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
 位置情報の表示モードについては<a href="https://geonet.esri.com/docs/DOC-6533">ナビゲーションに便利な位置情報の表示モード</a>をご覧ください。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/location-app.gif" width="200px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px"></p>
 <p>シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。</p>
 <p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
+<hr>
 </li>
 </ol>
-<hr>
 <p>アプリの動作が確認できたら <a href="../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
 
 						</div>

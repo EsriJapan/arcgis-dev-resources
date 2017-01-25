@@ -63,7 +63,7 @@
 				<!-- Main -->
 					<section id="main" class="container">
 						<header>
-							<h2 id="-3-x-4-x-">バージョン 3.x から 4.x への移行</h2>
+							<h2 id="バージョン-3.x-から-4.x-への移行">バージョン 3.x から 4.x への移行</h2>
 
 						</header>
 						<div class="box">
@@ -78,7 +78,7 @@
 <li><strong><a href="#amd-の利用">AMD の利用</a></strong></li>
 <li><strong><a href="#廃止項目">廃止項目</a></strong></li>
 </ul>
-<h2 id="-">プロパティのハンドリング</h2>
+<h2 id="プロパティのハンドリング">プロパティのハンドリング</h2>
 <p>3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.0 ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。</p>
 <ul>
 <li><p><strong>オブジェクトに直接値を書き込む方法</strong></p>
@@ -101,14 +101,14 @@ var title = map.basemap.title;
 <p>4.0 では、以下に記述したように <code>.get()</code> または <code>.set()</code> を使用して、深い階層のプロパティにアクセスすることも可能です。</p>
 <pre><code class="lang-javascript">var basemapTitle = map.get(&quot;basemap.title&quot;);
 </code></pre>
-<h2 id="-">プロパティの変更の監視</h2>
+<h2 id="プロパティの変更の監視">プロパティの変更の監視</h2>
 <p>3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.0 ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、<code>.watch(property, callback)</code> メソッドを通してハンドリングされます。<code>property</code> に変更があると <code>callback</code> が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。</p>
 <pre><code class="lang-javascript">var propertyChangeHandler = function(newValue, oldValue, property, object){
   console.log(&quot;新しい値: &quot;,newValue, &quot;古い値: &quot;,oldValue,
   &quot;変更されたプロパティ: &quot;, property, &quot;監視しているオブジェクト: &quot;, object);
 };
 </code></pre>
-<h2 id="view-">View の利用</h2>
+<h2 id="view-の利用">View の利用</h2>
 <p>4.0 では、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> によって制御されるようになります。</p>
 <p>View は 4.0 で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。</p>
 <ul>
@@ -144,7 +144,7 @@ view = new SceneView({
 </code></pre>
 </li>
 </ul>
-<h2 id="map-layer-">Map と Layer の仕様</h2>
+<h2 id="map-と-layer-の仕様">Map と Layer の仕様</h2>
 <p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> と <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-Layer.html">Layer</a> には以下に挙げた重要な更新があります。</p>
 <ul>
 <li>Map の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#layers">layers</a> に <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap">basemap</a> は含まれません</li>
@@ -152,7 +152,7 @@ view = new SceneView({
 <li>グラフィック レイヤーは、マップのレイヤー コレクションの中のどこにでも追加することができます（3.x ではグラフィック レイヤーは他の形式のレイヤーよりも上に追加する必要がありました）</li>
 <li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html">GroupLayer</a> クラスが追加されました</li>
 </ul>
-<h2 id="-">モジュールとパッケージの更新</h2>
+<h2 id="モジュールとパッケージの更新">モジュールとパッケージの更新</h2>
 <p>詳細は<a href="https://developers.arcgis.com/javascript/latest/guide/functionality-matrix/index.html">3.x/4.x 機能比較表（英語）</a>を確認してください。以下に挙げた項目は、その中でも重要な更新です。</p>
 <ul>
 <li>パッケージ名の変更（例: <code>esri/dijit</code> が <code>esri/widgets</code> に変更）</li>
@@ -181,11 +181,11 @@ esriConfig.request.alwaysUseProxy = true;
 <li>各コンストラクタは JSON をサポートしません。代わりに、<code>fromJSON()</code> メソッド（例: <code>Graphic.fromJSON()</code> ）を使用してください。</li>
 <li><code>FeatureLayer</code> はグラフィックを保持しません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-LayerView.html">LayerView</a> が <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html">FeatureLayer</a> のフィーチャを表すグラフィックを描画します。</li>
 </ul>
-<h2 id="web-">Web マップのサポート</h2>
+<h2 id="web-マップのサポート">Web マップのサポート</h2>
 <p>4.x 以降でも、アプリケーションで <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html">Web マップ</a> を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WMS レイヤーなど）が含まれている場合、Web マップを表示することができません。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの編集はまだサポートされていないので注意してください。</p>
-<h2 id="amd-">AMD の利用</h2>
+<h2 id="amd-の利用">AMD の利用</h2>
 <p>3.x では AMD とレガシー モジュールの両方を利用できましたが、4.0 からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。</p>
-<h2 id="-">廃止項目</h2>
+<h2 id="廃止項目">廃止項目</h2>
 <p><code>Geocoder</code> ウィジェットはバージョン 3.13 で非推奨となり、4.0 では提供されません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html">Search</a> ウィジェットを使用してください。</p>
 
 						</div>
