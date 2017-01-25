@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../../index.html">ホーム</a></li>
+							<li><a href="../../tips">技術 Tips 集</a></li>
+							<li><a href="../../samples">サンプル集</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../../create-startup-app-android">Android</a></li>
+											<li><a href="../../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../../authentication">認証パターン</a></li>
+											<li><a href="../../register-app">アプリの登録と認証</a></li>
+                                            <li><a href="../../proxy-services">プロキシ サービスの利用</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2 id="インストール-ガイド（.net）">インストール ガイド（.NET）</h2>
+
+						</header>
+						<div class="box">
+							<p>このインストール ガイドは、ArcGIS Runtime SDK for .NET をご使用のマシンにインストールする手順を紹介します。</p>
+<h2 id="arcgis-runtime-sdk-for-.net-とは">ArcGIS Runtime SDK for .NET とは</h2>
+<p>ArcGIS Runtime SDK for .NET は、Windows 及び iOS、Android プラットフォーム向け GIS アプリケーションの開発キット（SDK）です。この SDK を利用することで、データ編集、ジオコーディング、ルート解析など様々な GIS 機能を持ったアプリケーションを Windows デスクトップや Windows タブレット、iOS、Android などの多様なプラットフォーム向けに開発することができます。
+詳細は、<a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/">ArcGIS Runtime SDK for .NET</a> をご参照ください。</p>
+<h2 id="arcgis-runtime-sdk-for-.net-の開発環境">ArcGIS Runtime SDK for .NET の開発環境</h2>
+<p>ArcGIS Runtime SDK for .NET を用いて、Windows プラットフォーム向けの GIS アプリケーションを開発するには、一般的に統合開発環境として Microsoft Visual Studio を使用します。本インストールガイドの手順を行う前に、ご使用のマシンに ArcGIS Runtime SDK for .NET がサポートするバージョンの Windows OS と Microsoft Visual Studio が適切にセットアップされている必要があります。ArcGIS Runtime SDK for .NET がサポートする最新の動作環境につきましては<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/environments/">動作環境</a>をご参照ください。</p>
+<h1 id="簡易-アプリケーションの開発">簡易 アプリケーションの開発</h1>
+<p>ここでは、Windows デスクトップ（WPF）および UWP アプリの新規プロジェクトを作成し、ArcGIS Runtime SDK for .NET を使って地図を表示する簡易 アプリケーションを作成するための基本的な手順を説明します。</p>
+<ul>
+<li><strong><a href="#windows-デスクトップアプリケーション（wpf）">Windows デスクトップアプリケーション（WPF）</a></strong></li>
+<li><strong><a href="#uwp-アプリケーション">UWP アプリケーション</a></strong></li>
+</ul>
+<h2 id="windows-デスクトップアプリケーション（wpf）">Windows デスクトップアプリケーション（WPF）</h2>
+<ol>
+<li><p>Visual Studio を起動して [ファイル] メニューから [新規作成] → [プロジェクト] を選択します。</p>
+</li>
+<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [テンプレート] → [Visual C#] → [Windows] →[クラシック デスクトップ] を選択します。テンプレートのリストから [WPF アプリケーション] を選択し、プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_1.png" width="550px"></p>
+</li>
+<li><p>新しい WPF アプリケーションのプロジェクトが作成されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_2.png" width="350px"></p>
+</li>
+<li><p>ArcGIS Runtime SDK for .NET をインストールするために 「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_WPF_NuGetPackageManager.png" width="350px"></p>
+</li>
+<li><p>NuGet パッケージの管理から目的の ArcGIS Runtime SDK をインストールします。
+NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに　『ArcGIS Runtime』　と入力して検索を行います。検索されたリストから 『Esri.ArcGISRuntime.WPF』 を選択して、インストールをクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeWPF.png" width="550px"></p>
+</li>
+<li><p>[プレビュー]画面が表示されますので、[OK]をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/preview_WPF.png" width="350px"></p>
+</li>
+<li><p>[ライセンスへの同意]画面が表示されますので、[同意する]をクリックします。[同意する]をクリックすることでインストールが実行されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_WPF.png" width="350px"></p>
+<p>※インストールが正常に終了した場合は以下の画面ようにインストール済みに表示されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeWPF.png" width="550px"></p>
+</li>
+<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml</code> の [XAML] ビューを開きます。</p>
+</li>
+<li><p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
+<pre><code class="lang-XML"> 　xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
+</code></pre>
+<pre><code class="lang-XML"> &lt;Window x:Class=&quot;MyDesktopApp.MainWindow&quot;
+         xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+         xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; 
+         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; 
+         xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
+         mc:Ignorable=&quot;d&quot; 
+         d:DesignHeight=&quot;350&quot; d:DesignWidth=&quot;525&quot;&gt;
+     &lt;Grid&gt;
+
+     &lt;/Grid&gt;
+ &lt;/Window&gt;
+</code></pre>
+<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+</li>
+<li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
+<pre><code class="lang-XML"> &lt;esri:MapView&gt;
+     &lt;esri:Map&gt;
+         &lt;esri:Map.Basemap&gt;
+             &lt;esri:Basemap Name=&quot;Basemap&quot;&gt;
+                 &lt;esri:ArcGISTiledLayer Name=&quot;World Topographic&quot;
+                 Source=&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;/&gt;
+             &lt;/esri:Basemap&gt;
+         &lt;/esri:Map.Basemap&gt;
+     &lt;/esri:Map&gt;
+ &lt;/esri:MapView&gt;
+</code></pre>
+<pre><code class="lang-XML"> &lt;Window x:Class=&quot;MyDesktopApp.MainWindow&quot;
+         xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+         xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; 
+         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; 
+         xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
+         mc:Ignorable=&quot;d&quot; 
+         d:DesignHeight=&quot;350&quot; d:DesignWidth=&quot;525&quot;&gt;
+     &lt;Grid&gt;
+         &lt;esri:MapView&gt;
+             &lt;esri:Map&gt;
+                 &lt;esri:Map.Basemap&gt;
+                     &lt;esri:Basemap Name=&quot;Basemap&quot;&gt;
+                         &lt;esri:ArcGISTiledLayer Name=&quot;World Topographic&quot;
+                 Source=&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;/&gt;
+                     &lt;/esri:Basemap&gt;
+                 &lt;/esri:Map.Basemap&gt;
+             &lt;/esri:Map&gt;
+         &lt;/esri:MapView&gt;
+     &lt;/Grid&gt;
+ &lt;/Window&gt;
+</code></pre>
+</li>
+<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/WPF_App.png" width="550px"></p>
+</li>
+</ol>
+<p><br/></p>
+<h2 id="uwp-アプリケーション">UWP アプリケーション</h2>
+<ol>
+<li><p>Visual Studio を起動して [ファイル] メニューから [新規作成] → [プロジェクト] を選択します。</p>
+</li>
+<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [テンプレート] → [Visual C#] → [Windows] → [ユニバーサル] を選択します。テンプレートのリストから [空のアプリ（ユニバーサル Windows）] を選択し、プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_1.png" width="550px"></p>
+</li>
+<li><p>ユニバーサル　Windows アプリケーションがサポートする最小のターゲット プラットフォームバージョンを選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Windows_Projects.png" width="350px"></p>
+</li>
+<li><p>新しい UWP アプリケーションのプロジェクトが作成されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_2.png" width="350px"></p>
+</li>
+<li><p>ArcGIS Runtime SDK for .NET をインストールするために 「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_UWP_NuGetPackageManager.png" width="350px"></p>
+</li>
+<li><p>NuGet パッケージの管理から目的の ArcGIS Runtime SDK をインストールします。
+NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに　『ArcGIS Runtime』　と入力して検索を行います。検索されたリストから 『Esri.ArcGISRuntime.UWP』 を選択して、インストールをクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeUWP.png" width="550px"></p>
+</li>
+<li><p>[プレビュー]画面が表示されますので、[OK]をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/preview_UWP.png" width="350px"></p>
+</li>
+<li><p>[ライセンスへの同意]画面が表示されますので、[同意する]をクリックします。[同意する]をクリックすることでインストールが実行されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_UWP.png" width="350px"></p>
+<p>※インストールが正常に終了した場合は以下の画面ようにインストール済みに表示されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeUWP.png" width="550px"></p>
+</li>
+<li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml</code> の [XAML] ビューを開きます。</p>
+</li>
+<li><p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
+<pre><code class="lang-XML">  xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
+</code></pre>
+<pre><code class="lang-XML"> &lt;Page
+     x:Class=&quot;MyUWPApp.MainPage&quot;
+     xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+     xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
+     xmlns:local=&quot;using:MyUWPApp&quot;
+     xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+     xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+     mc:Ignorable=&quot;d&quot;&gt;
+
+     &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+     &lt;/Grid&gt;
+ &lt;/Page&gt;
+</code></pre>
+<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+</li>
+<li><p>アプリケーションをビルドするために、プロジェクトのビルド ターゲットを指定する必要があります。[標準] メニューから [Debug] → [構成マネージャー] を選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Build_Target.png" width="350px"></p>
+</li>
+<li><p>[構成マネージャー] ダイアログで、アクティブ ソリューション プラットフォームを [x86] に変更し、[閉じる] を選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Configuration_Manager.png" width="450px"></p>
+</li>
+<li><p>目的のデバイスのプレビューを選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Device_Preview.png" width="350px"></p>
+<p> ※デバイス プレビューで確認する場合は、事前に Emulator はインストールを行う必要があります。
+ <a href="https://developer.microsoft.com/en-us/windows/downloads/sdk-archive">https://developer.microsoft.com/en-us/windows/downloads/sdk-archive</a></p>
+</li>
+<li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
+<pre><code class="lang-XML"> &lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
+</code></pre>
+<pre><code class="lang-XML:MainPage.xaml"> &lt;Page
+     x:Class=&quot;MyUWPApp.MainPage&quot;
+     xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+     xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
+     xmlns:local=&quot;using:MyUWPApp&quot;
+     xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+     xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+     mc:Ignorable=&quot;d&quot;
+     d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;
+
+     &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+         &lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
+     &lt;/Grid&gt;
+ &lt;/Page&gt;
+</code></pre>
+</li>
+<li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml.cs</code> を開きます。<code>MainPage.xaml.cs</code> を以下のように書き換えます。</p>
+<pre><code class="lang-C#:MainPage.xaml.cs"> using System;
+ using System.Collections.Generic;
+ using System.IO;
+ using System.Linq;
+ using System.Runtime.InteropServices.WindowsRuntime;
+ using Windows.Foundation;
+ using Windows.Foundation.Collections;
+ using Windows.UI.Xaml;
+ using Windows.UI.Xaml.Controls;
+ using Windows.UI.Xaml.Controls.Primitives;
+ using Windows.UI.Xaml.Data;
+ using Windows.UI.Xaml.Input;
+ using Windows.UI.Xaml.Media;
+ using Windows.UI.Xaml.Navigation;
+ using Esri.ArcGISRuntime.Mapping;
+
+ // 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=402352&amp;clcid=0x409 を参照してください
+
+ namespace MyUWPApp
+ {
+     /// &lt;summary&gt;
+     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
+     /// &lt;/summary&gt;
+     public sealed partial class MainPage : Page
+     {
+         public MainPage()
+         {
+             this.InitializeComponent();
+
+             Initialize();
+         }
+
+         private void Initialize()
+         {
+             // create a new Map with a streets basemap
+             var map = new Map(Basemap.CreateStreets());
+             // assign the map to MyMapView (MapView control)
+             MyMapView.Map = map;
+         }
+     }
+ }
+</code></pre>
+</li>
+<li><p>デバッグ実行環境を変更するために、[標準] メニューから [ローカル コンピューター] → [シミュレーター] を選択します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Simulator.png" width="350px"></p>
+</li>
+<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。シミュレーター内で UWP アプリが起動し、地図が表示されれば完了です。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/UWP_App.png" width="550px"></p>
+</li>
+</ol>
+
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ESRIJapan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<span><img class="ej-logo" src="../../images/logo.png" /></span>
+						<ul class="copyright">
+							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/highlight.pack.js"></script>
+			<script>
+				$(function() {
+				  hljs.initHighlightingOnLoad();
+				});
+			</script>
+			<script src="../../assets/js/ga.js"></script>
+
+	</body>
+</html>

@@ -12,7 +12,7 @@
     "androidpages-prebuild": "gulp androidpages-prebuild:content & gulp androidpages-prebuild:header",
     "androidpages-build": "npm run androidpages-prebuild & gulp androidpages-build",
     "iospages-prebuild": "gulp iospages-prebuild:content & gulp iospages-prebuild:header",
-    "iospages-build": "npm run iospages-prebuild & iospages-gulp build",
+    "iospages-build": "npm run iospages-prebuild & gulp iospages-build",
     "dotnetpages-prebuild": "gulp dotnetpages-prebuild:content & gulp dotnetpages-prebuild:header",
     "dotnetpages-build": "npm run dotnetpages-prebuild & gulp dotnetpages-build"
   },
