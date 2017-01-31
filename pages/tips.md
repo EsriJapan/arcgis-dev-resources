@@ -3,9 +3,11 @@
 各 API/SDK の開発をサポートするドキュメントです。
 
 * __JavaScript__
+  * [インストール ガイド](../javascript/install-jsapi/)
   * [バージョン 4.x と 3.x の選択](../javascript/choose-3.x-and-4.x/)
   * [バージョン 3.x から 4.x への移行](../javascript/migrating-from-3.x-to-4.0/)
-  * [ArcGIS API for JavaScript ライブラリのインストール](../javascript/install-jsapi/)
+  * [ウィジェット開発](../javascript/custom-widget/)
+  * [Arcade](../javascript/arcade/)
 
 * __.NET__
   * [インストール ガイド](../dotnet/install-dotnet-100.x/)
