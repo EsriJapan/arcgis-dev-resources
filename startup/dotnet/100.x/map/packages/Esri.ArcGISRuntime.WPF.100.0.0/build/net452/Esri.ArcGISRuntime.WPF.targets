@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <ArcGISRuntimeVersion>100.0</ArcGISRuntimeVersion>
+    <ArcGISRuntimeFolder>ArcGISRuntime$(ArcGISRuntimeVersion)</ArcGISRuntimeFolder>
+    <ArcGISRuntimeDeploymentRoot>$(MSBuildThisFileDirectory)..\..\lib\net452\$(ArcGISRuntimeFolder)\</ArcGISRuntimeDeploymentRoot>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <BuildDependsOn>$(BuildDependsOn);DeployArcGISRuntime</BuildDependsOn>
+    <CleanDependsOn>$(CleanDependsOn);CleanArcGISRuntime</CleanDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="DeployArcGISRuntime">
+    <ItemGroup>
+        <ArcGISRuntimeSourceX86 Include="$(ArcGISRuntimeDeploymentRoot)client32\**\*.*" />
+		<ArcGISRuntimeSourceX64 Include="$(ArcGISRuntimeDeploymentRoot)client64\**\*.*" />
+		<ArcGISRuntimeSourceResources Include="$(ArcGISRuntimeDeploymentRoot)resources\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ArcGISRuntimeSourceX86)" DestinationFolder="$(TargetDir)\$(ArcGISRuntimeFolder)\client32\%(RecursiveDir)" SkipUnchangedFiles="true"
+		  Condition="'$(PlatformTarget)' == 'x86' OR '$(PlatformTarget)' == 'AnyCPU'" />
+    <Copy SourceFiles="@(ArcGISRuntimeSourceX64)" DestinationFolder="$(TargetDir)\$(ArcGISRuntimeFolder)\client64\%(RecursiveDir)" SkipUnchangedFiles="true"
+		  Condition="('$(Prefer32Bit)' == 'false' and '$(PlatformTarget)' == 'AnyCPU') or '$(PlatformTarget)' == 'x64'" />
+	<Copy SourceFiles="@(ArcGISRuntimeSourceResources)" DestinationFolder="$(TargetDir)\$(ArcGISRuntimeFolder)\resources\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+  
+  <Target Name="CleanArcGISRuntime">
+    <RemoveDir Directories="$(TargetDir)\$(ArcGISRuntimeFolder)" />
+  </Target>
+
+</Project>
