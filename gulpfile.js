@@ -5,6 +5,25 @@ var markdown = require('gulp-markdown');
 var rename = require('gulp-rename');
 var File = require('vinyl');
 var mkdirp = require('mkdirp');
+var minimist = require("minimist");
+var argv = minimist(process.argv.slice(2));
+
+// gulp task -f filename
+// npm run build -- --f="filename"
+function checkFileName(){
+  var f = argv['f'];
+  if(f) {
+    if (f.length > 0) {
+      var ext = f.lastIndexOf('.md');
+      if (f.length-3 === ext) {
+        return f.substr(0, f.length-3);
+      } else {
+        return f;
+      }
+    }
+  }
+  return '*';
+}
 
 function returnName(fileData) {
   var file = new File(fileData);
@@ -13,8 +32,10 @@ function returnName(fileData) {
 
 /* build pages */
 
-gulp.task('build', function () {
-  return gulp.src('./dist/*.html')
+gulp.task('build', ['prebuild:header', 'prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/' + fileName + '.html';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       console.log('build ' + dirName + '/index.html');
@@ -30,7 +51,9 @@ gulp.task('build', function () {
 
 gulp.task('prebuild:header', function () {
   mkdirp('./dist/header/');
-  return gulp.src('./pages/header/*.md')
+  var fileName = checkFileName();
+  var src = './pages/header/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(markdown());
@@ -41,7 +64,9 @@ gulp.task('prebuild:header', function () {
 gulp.task('prebuild:content', function () {
   var dirName;
   mkdirp('./dist/');
-  return gulp.src('./pages/*.md')
+  var fileName = checkFileName();
+  var src = './pages/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       mkdirp(dirName, function (err) {
@@ -56,8 +81,10 @@ gulp.task('prebuild:content', function () {
 
 /* build pages for javascript tips */
 
-gulp.task('jspages-build', function () {
-  return gulp.src('./dist/javascript/*.html')
+gulp.task('jspages-build', ['jspages-prebuild:header', 'jspages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/javascript/' + fileName + '.html';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       console.log('build javascript/' + dirName + '/index.html');
@@ -73,7 +100,9 @@ gulp.task('jspages-build', function () {
 
 gulp.task('jspages-prebuild:header', function () {
   mkdirp('./dist/javascript/header/');
-  return gulp.src('./pages/javascript/header/*.md')
+  var fileName = checkFileName();
+  var src = './pages/javascript/header/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(markdown());
@@ -82,15 +111,11 @@ gulp.task('jspages-prebuild:header', function () {
 });
 
 gulp.task('jspages-prebuild:content', function () {
-  var dirName;
   mkdirp('./dist/javascript/');
-  return gulp.src('./pages/javascript/*.md')
+  var fileName = checkFileName();
+  var src = './pages/javascript/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
-      dirName = returnName(file);
-      mkdirp(dirName, function (err) {
-        if (err) console.error(err)
-        else console.log('mkdir ', dirName);
-      });
       return stream
         .pipe(markdown());
     }))
@@ -99,8 +124,10 @@ gulp.task('jspages-prebuild:content', function () {
 
 /* build pages for android tips */
 
-gulp.task('androidpages-build', function () {
-  return gulp.src('./dist/android/*.html')
+gulp.task('androidpages-build', ['androidpages-prebuild:header', 'androidpages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/android/' + fileName + '.html';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       console.log('build android/' + dirName + '/index.html');
@@ -116,7 +143,9 @@ gulp.task('androidpages-build', function () {
 
 gulp.task('androidpages-prebuild:header', function () {
   mkdirp('./dist/android/header/');
-  return gulp.src('./pages/android/header/*.md')
+  var fileName = checkFileName();
+  var src = './pages/android/header/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(markdown());
@@ -125,15 +154,11 @@ gulp.task('androidpages-prebuild:header', function () {
 });
 
 gulp.task('androidpages-prebuild:content', function () {
-  var dirName;
   mkdirp('./dist/android/');
-  return gulp.src('./pages/android/*.md')
+  var fileName = checkFileName();
+  var src = './pages/android/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
-      dirName = returnName(file);
-      mkdirp(dirName, function (err) {
-        if (err) console.error(err)
-        else console.log('mkdir ', dirName);
-      });
       return stream
         .pipe(markdown());
     }))
@@ -142,8 +167,10 @@ gulp.task('androidpages-prebuild:content', function () {
 
 /* build pages for ios tips */
 
-gulp.task('iospages-build', function () {
-  return gulp.src('./dist/ios/*.html')
+gulp.task('iospages-build', ['iospages-prebuild:header', 'iospages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/ios/' + fileName + '.html';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       console.log('build ios/' + dirName + '/index.html');
@@ -159,7 +186,9 @@ gulp.task('iospages-build', function () {
 
 gulp.task('iospages-prebuild:header', function () {
   mkdirp('./dist/ios/header/');
-  return gulp.src('./pages/ios/header/*.md')
+  var fileName = checkFileName();
+  var src = './pages/ios/header/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(markdown());
@@ -168,15 +197,11 @@ gulp.task('iospages-prebuild:header', function () {
 });
 
 gulp.task('iospages-prebuild:content', function () {
-  var dirName;
   mkdirp('./dist/ios/');
-  return gulp.src('./pages/ios/*.md')
+  var fileName = checkFileName();
+  var src = './pages/ios/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
-      dirName = returnName(file);
-      mkdirp(dirName, function (err) {
-        if (err) console.error(err)
-        else console.log('mkdir ', dirName);
-      });
       return stream
         .pipe(markdown());
     }))
@@ -185,8 +210,10 @@ gulp.task('iospages-prebuild:content', function () {
 
 /* build pages for dotnet tips */
 
-gulp.task('dotnetpages-build', function () {
-  return gulp.src('./dist/dotnet/*.html')
+gulp.task('dotnetpages-build', ['dotnetpages-prebuild:header', 'dotnetpages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/dotnet/' + fileName + '.html';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       dirName = returnName(file);
       console.log('build dotnet/' + dirName + '/index.html');
@@ -202,7 +229,9 @@ gulp.task('dotnetpages-build', function () {
 
 gulp.task('dotnetpages-prebuild:header', function () {
   mkdirp('./dist/dotnet/header/');
-  return gulp.src('./pages/dotnet/header/*.md')
+  var fileName = checkFileName();
+  var src = './pages/dotnet/header/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(markdown());
@@ -211,15 +240,11 @@ gulp.task('dotnetpages-prebuild:header', function () {
 });
 
 gulp.task('dotnetpages-prebuild:content', function () {
-  var dirName;
   mkdirp('./dist/dotnet/');
-  return gulp.src('./pages/dotnet/*.md')
+  var fileName = checkFileName();
+  var src = './pages/dotnet/' + fileName + '.md';
+  return gulp.src(src)
     .pipe(foreach(function (stream, file) {
-      dirName = returnName(file);
-      mkdirp(dirName, function (err) {
-        if (err) console.error(err)
-        else console.log('mkdir ', dirName);
-      });
       return stream
         .pipe(markdown());
     }))
