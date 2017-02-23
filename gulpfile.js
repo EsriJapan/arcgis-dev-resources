@@ -122,6 +122,49 @@ gulp.task('jspages-prebuild:content', function () {
     .pipe(gulp.dest('./dist/javascript/'));
 });
 
+/* build pages for web appbuilder tips */
+
+gulp.task('wabpages-build', ['wabpages-prebuild:header', 'wabpages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/webappbuilder/' + fileName + '.html';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      dirName = returnName(file);
+      console.log('build webappbuilder/' + dirName + '/index.html');
+      return gulp.src('template-tips-pages.html')
+        .pipe(gfi({
+          '<!-- INSERT TITLE -->': './dist/webappbuilder/header/' + dirName + '.html',
+          '<!-- INSERT CONTENTS -->': './dist/webappbuilder/' + dirName + '.html'
+        }))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./webappbuilder/' + dirName + '/'));
+    }));
+});
+
+gulp.task('wabpages-prebuild:header', function () {
+  mkdirp('./dist/webappbuilder/header/');
+  var fileName = checkFileName();
+  var src = './pages/webappbuilder/header/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/webappbuilder/header/'));
+});
+
+gulp.task('wabpages-prebuild:content', function () {
+  mkdirp('./dist/webappbuilder/');
+  var fileName = checkFileName();
+  var src = './pages/webappbuilder/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/webappbuilder/'));
+});
+
 /* build pages for android tips */
 
 gulp.task('androidpages-build', ['androidpages-prebuild:header', 'androidpages-prebuild:content'], function () {
