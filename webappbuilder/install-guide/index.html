@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../../index.html">ホーム</a></li>
+							<li><a href="../../tips">技術 Tips 集</a></li>
+							<li><a href="../../samples">サンプル集</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../../create-startup-app-android">Android</a></li>
+											<li><a href="../../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../../authentication">認証パターン</a></li>
+											<li><a href="../../register-app">アプリの登録と認証</a></li>
+                                            <li><a href="../../proxy-services">プロキシ サービスの利用</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2 id="web-appbuilder-for-arcgis-(developer-edition)-インストールガイド">Web AppBuilder for ArcGIS (Developer Edition) インストールガイド</h2>
+<p>Web AppBuilder for ArcGIS (Developer Edition) をインストールする手順を説明します。</p>
+
+						</header>
+						<div class="box">
+							<p><a href="https://www.esrij.com/products/arcgis-online/details/apps/#webappbuilderforarcgis" target="_blank">Web AppBuilder for ArcGIS</a> は <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a> あるいは <a href="https://www.esrij.com/products/arcgis-for-server/extensions/#extension1" target="_blank">Portal for ArcGIS</a> に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。
+<a href="https://www.esrij.com/products/web-appbuilder-for-arcgis-dev/" target="_blank">Developer Edition（開発者向けエディション）</a>はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide1.gif" alt="概要" width="600px"></p>
+<p>ここでは、Web AppBuilder for ArcGIS (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。</p>
+<ul>
+<li><a href="#インストール">インストール</a></li>
+<li><a href="#Web-AppBuilder-の起動">Web AppBuilder の起動</a></li>
+<li><a href="#ポータル-URL-の指定">ポータル URL の指定</a></li>
+<li><a href="#アプリケーション-ID-の設定">アプリケーション ID の設定</a></li>
+<li><a href="#インストールの確認">インストールの確認</a></li>
+</ul>
+<h2 id="インストール">インストール</h2>
+<ol>
+<li>Web AppBuilder の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/web-appbuilder/" target="_blank">ダウンロード</a>し、解凍します。<br>もし、サインイン ページが表示されたら、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。</li>
+<li>Web AppBuilder は <a href="https://nodejs.org/" target="_blank">Node.js</a> 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.jsをインストールする必要があります。</li>
+</ol>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide2.gif" alt="インストール" width="600px"></p>
+<h3 id="arcgis-api-for-javascript-の参照先を変更する（オプション）">ArcGIS API for JavaScript の参照先を変更する（オプション）</h3>
+<p>Web AppBuilder はデフォルトでは Esri の CDN で配信されている ArcGIS API for JavaScript を参照します。そのため、インターネットに接続できない環境で Web AppBuilder を使用する場合、ArcGIS API for JavaScript の参照先を変更する必要があります。ここでは Portal for ArcGIS に内蔵されている ArcGIS API for JavaScript へ参照先を変更する手順を説明します。</p>
+<ol>
+<li><code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\env.js</code> ファイルをテキストエディターで開きます。</li>
+<li><code>//apiUrl</code> を検索します。<blockquote>
+<p>API のバージョンは Web AppBuilder のバージョンにより異なります。通常、Web AppBuilder がリリースされた時点の最新バージョンの API が使われています。</p>
+</blockquote>
+</li>
+<li><code>apiUrl= &quot;https://&lt;ポータル URL&gt;/jsapi/jsapi/&quot;</code> に書き換え、上書き保存します。<blockquote>
+<p>Portal for ArcGIS が内蔵する API を使用する際は、内蔵されている API のバージョンに注意が必要です。Web AppBuilder が使用する API よりも下位の API の利用はサポートされません。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="web-appbuilder-の起動">Web AppBuilder の起動</h2>
+<ol>
+<li>Web AppBuilder を起動します。<ul>
+<li>Windows 端末<br>Windows をお使いの場合、解凍したフォルダーにある <code>startup.bat</code> ファイルをダブルクリックします。このバッチファイルはコマンド プロンプト上で Node.js サーバーを起動します。</li>
+<li>その他の端末<br>Windows 以外のマシンにインストールする場合は、直接 Node.js サーバーを起動するコマンドを実行します。<br>コマンド プロンプトを開き、<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server</code> のパスを指定します。続けて <code>node server.js</code> と入力します。</li>
+</ul>
+</li>
+</ol>
+<p>Web AppBuilder は Web ブラウザーで <code>http://[マシン名]:3344/webappbuilder</code> にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。</p>
+<ol>
+<li>Node.js がデフォルトで使用するポート番号は 3344 です。パラメーターを追加したり、他のポート番号を割り当てたり、Windows サービスとして起動したりしたい場合は、以下の手順を参照してください。<ul>
+<li>パラメーターを追加し、他のポート番号を割り当てる<ol>
+<li>コマンド プロンプトを開き、Web AppBuilder のサーバー ディレクトリ（<code>&lt;Web AppBuilderのインストール ディレクトリ&gt;\server</code>）へ移動します。割り当てたいポート番号と必要に応じてプロキシの URL を入力します。<ul>
+<li>64 ビット版 Windows<br><code>node_x64.exe server.js [-port=value] [-proxy=value]</code></li>
+<li>32 ビット版 Windows<br><code>node_x32.exe server.js [-port=value] [-proxy=value]</code></li>
+<li>その他のマシン<br><code>node server.js [-port=value] [-proxy=value]</code></li>
+</ul>
+</li>
+<li>Web ブラウザーを開き、上記で設定したポート番号を指定し、Web AppBuilder を起動します。<br><code>http://[マシン名]:[ポート番号]/webappbuilder</code></li>
+</ol>
+</li>
+<li>Windows サービスとして起動する<br>Web AppBuilder は、<code>startup.bat</code> ファイルをクリックして起動させるほかに、Windows サービスとして起動させることもできます。<ol>
+<li>Windows プラットフォームに Node.js をインストールします。</li>
+<li>管理者としてコマンドプロンプトを開きます。</li>
+<li>Web AppBuilder のサーバー ディレクトリ（<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server</code>）へ移動します。</li>
+<li><code>npm install</code> コマンドを実行します。</li>
+<li><code>npm run-script install-windows-service</code> コマンドを実行します。</li>
+<li>Windows の [サービス] ウィンドウを開き、ArcGISWebAppBuilder サービスを起動します。</li>
+<li>ArcGISWebAppBuilder サービスを削除するには、<code>npm run-script uninstall-windows-service</code> コマンドを実行します。<blockquote>
+<p>プロキシを利用したい場合は、<code>/~server/package.json</code> ファイルを開き、<code>&quot;start&quot;: &quot;node server.js&quot;</code> を <code>&quot;start&quot;: &quot;node server.js -proxy=&lt;http://your proxy&gt;&quot;</code> に変更してください。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide3.jpg" alt="起動"></p>
+<h2 id="ポータル-url-の指定">ポータル URL の指定</h2>
+<ol>
+<li><p>Web AppBuilder で使用するアカウントに紐づく ArcGIS Online またはPortal for ArcGIS の URL を指定します。</p>
+<blockquote>
+<p>開発者アカウントをご利用の方は、ArcGIS for Developers の [<a href="https://developers.arcgis.com/account/profile/">Account Settings</a>] ページにて URL をご確認ください。</p>
+</blockquote>
+</li>
+<li><p>[続行] をクリックします。</p>
+<blockquote>
+<p>Web 層認証を使用している場合、次のセクションはスキップしてください。ログイン後、<a href="#インストールの確認">インストールの確認</a>をしてください。<br>ArcGIS Online または Portal for ArcGIS で OAuth2 認証を使用する場合は、次のセクションでアプリケーション ID を設定する必要があります。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="アプリケーション-id-の設定">アプリケーション ID の設定</h2>
+<p>上記で指定した ArcGIS Online または Portal for ArcGIS ではじめて Web AppBuilder を使用する場合、OAuth2 認証を利用できるようにするため、アプリケーション ID を設定する必要があります。<br>アプリケーション ID を入手するには ArcGIS Online または Portal for ArcGIS に Web AppBuilder をアイテムとして追加します。</p>
+<ol>
+<li>指定したポータルへログインします。</li>
+<li>Web AppBuilder をポータルにアイテムとして追加します。  <ol>
+<li>[マイコンテンツ] を開きます。[アイテムの追加] をクリックし、[アプリケーション] を選択します。  </li>
+<li>[アプリケーション] ダイアログが表示されたら、[URL] オプションに Web AppBuilder の URL を入力します。任意のタイトルとタグを設定し、 [アイテムの追加] をクリックします。これで Web AppBuilder はアイテムとしてポータルに追加されました。<br><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide4.jpg" alt="アイテムの追加"></li>
+</ol>
+</li>
+<li>アイテムの追加が完了すると、追加したアイテムの詳細情報のページが表示されます。<ul>
+<li>ArcIGS Online：[設定] タブをクリックします。[アプリケーションの登録] セクションまでスクロールし、[登録] をクリックします。</li>
+<li>Portal for ArcGIS：[アプリケーションの登録] セクションまでスクロールし、[登録] をクリックします。</li>
+</ul>
+</li>
+<li>[登録] ダイアログが表示されます。[リダイレクト URI] オプションに <code>http://[マシン名]</code> または <code>https://[マシン名]</code> を入力して、[追加] をクリックします。HTTP と HTTPS プロトコルは異なる URI として認識されることに注意してください。リダイレクトに関する問題を避けるため、両方のプロトコルを登録することを推奨しています。<br><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide5.png" alt="アプリケーションの登録"></li>
+<li>[登録] をクリックします。これでアプリケーションの登録は完了です。</li>
+<li>Web AppBuilder の起動画面に戻ります。[アプリケーション ID] オプションに入手したアプリケーション ID を入力し、[続行] をクリックします。<br>もし、Invalid redirect_uri エラー ページが表示されたら、以下の手順に従ってください。<blockquote>
+<p>アプリケーション ID を入手する際に登録したリダイレクト URI に誤りがある場合、アプリケーション ID オプションにアプリケーション ID を入力し、[続行] をクリックすると、エラー ページが表示されることがあります。この場合、登録したアプリケーションの情報を修正する必要があります。</p>
+<ol>
+<li>Web AppBuilder のサーバー ディレクトリ（<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server</code>）を開き、<code>signininfo.json</code> ファイルを削除します。</li>
+<li>手順 3 に戻り、入力したリダイレクト URI を更新するか、アプリケーションを新しく登録して、新しいアプリケーション ID を入手します。</li>
+<li>起動中の Web AppBuilder のページを再読み込みします。</li>
+<li>[アプリケーション ID] オプションにアプリケーション ID を入力し、[続行] をクリックします。</li>
+</ol>
+</blockquote>
+</li>
+<li>[権限のリクエスト] ダイアログが表示されます。表示されたアカウント情報が正しいことを確認し [承認] をクリックします。</li>
+</ol>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide6.gif" alt="アプリケーション ID の設定" width="600px"></p>
+<p>アプリケーション ID は OAuth2 認証に必要とされています。詳細は <a href="https://esrijapan.github.io/arcgis-dev-resources/authentication/">認証</a>をご参照ください。もし、ログインに関する問題があるときは、<a href="https://developers.arcgis.com/web-appbuilder/guide/faqs.htm">FAQs</a> と <a href="https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm">アプリの追加とアプリの登録</a>をご参照ください。</p>
+<p>アプリケーション ID の登録手順の説明は以上です。これで 登録先のポータルへ OAuth2 認証を使用してサインインできるようになりました。次回からは Web AppBuilder を起動すると直接 Web AppBuilder のトップページが表示されます。</p>
+<p>これで Web AppBuilder のインストールは終了です。</p>
+<h2 id="インストールの確認">インストールの確認</h2>
+<p>ここでは Web AppBuilder が正常にインストールされていることを確認するために、アプリケーションの起動確認を行います。</p>
+<ol>
+<li>Web AppBuilder を起動します。</li>
+<li>トップページが表示されたら [新規作成] をクリックします。</li>
+<li>[デフォルト（2D）] を選択し、[次へ] をクリックします。</li>
+<li>新しい Web アプリの作成ページが開きます。任意のタイトルと説明を入力して [OK] をクリックします。</li>
+<li>アプリケーションの作成のページが表示されたらインストールの確認は完了です。</li>
+</ol>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide7.gif" alt="インストールの確認" width="600px"></p>
+
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ESRIJapan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<span><img class="ej-logo" src="../../images/logo.png" /></span>
+						<ul class="copyright">
+							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/highlight.pack.js"></script>
+			<script>
+				$(function() {
+				  hljs.initHighlightingOnLoad();
+				});
+			</script>
+			<script src="../../assets/js/ga.js"></script>
+
+	</body>
+</html>
