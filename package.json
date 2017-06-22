@@ -5,16 +5,12 @@
   "main": "index.html",
   "scripts": {
     "test": "http-server -p 5000 -c-1 -o",
-    "prebuild": "gulp prebuild:content & gulp prebuild:header",
     "build": "gulp build",
-    "jspages-prebuild": "gulp jspages-prebuild:content & gulp jspages-prebuild:header",
-    "jspages-build": "npm run jspages-prebuild & gulp jspages-build",
-    "androidpages-prebuild": "gulp androidpages-prebuild:content & gulp androidpages-prebuild:header",
-    "androidpages-build": "npm run androidpages-prebuild & gulp androidpages-build",
-    "iospages-prebuild": "gulp iospages-prebuild:content & gulp iospages-prebuild:header",
-    "iospages-build": "npm run iospages-prebuild & gulp iospages-build",
-    "dotnetpages-prebuild": "gulp dotnetpages-prebuild:content & gulp dotnetpages-prebuild:header",
-    "dotnetpages-build": "npm run dotnetpages-prebuild & gulp dotnetpages-build"
+    "jspages-build": "gulp jspages-build",
+    "wabpages-build": "gulp wabpages-build",
+    "androidpages-build": "gulp androidpages-build",
+    "iospages-build": "gulp iospages-build",
+    "dotnetpages-build": "gulp dotnetpages-build"
   },
   "repository": {
     "type": "git",
@@ -36,6 +32,7 @@
     "gulp-markdown": "git+https://github.com/EsriJapan/gulp-markdown.git",
     "gulp-rename": "^1.2.2",
     "http-server": "^0.9.0",
+    "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "vinyl": "^1.1.1"
   }

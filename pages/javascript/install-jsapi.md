@@ -4,13 +4,13 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ## ライブラリのダウンロード
 
-ライブラリとヘルプ ドキュメントは ArcGIS for Developers の [Downloads ページ](https://developers.arcgis.com/downloads/)からダウンロードできます。[ArcGIS API for JavaScript] の [Download for Hosting Locally]　セクションにある [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[ArcGIS API for JavaScript] の [Download for Hosting Locally]　セクションにある [API] ボタンをクリックするとダウンロードが開始します。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/developers-downloads.png" width="600px">
 
 > ダウンロードするライブラリのバージョンはドロップダウン リストから選択することができます。
 >
-> [Documentation] ボタンをクリックすると [https://developers.arcgis.com/javascript/](https://developers.arcgis.com/javascript/) で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+> [Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## Web サーバー（IIS）に配置
 
@@ -23,17 +23,17 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。
 
-1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.2\4.2\init.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.2/4.2/` に置き換えます。
-1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.2\4.2\dojo\dojo.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.2/4.2/` に置き換えます。
+1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.3\4.3\init.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.3/4.3/` に置き換えます。
+1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.3\4.3\dojo\dojo.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.3/4.3/` に置き換えます。
 
 ## インストールのテスト
 
 ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。
 
 ```html
-<script src="http://www.example.com/arcgis_js_api/library/4.2/4.2/init.js"></script>
+<script src="https://www.example.com/arcgis_js_api/library/4.3/4.3/init.js"></script>
 ```
 
 インストールのテストには以下のコードを利用してください。
@@ -45,8 +45,8 @@ Esri がホストしている CDN にインターネット経由で参照する�
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
     <title>Test Map</title>
-    <link rel="stylesheet" href="http://www.example.com/arcgis_js_api/library/4.2/4.2/dijit/themes/claro/claro.css" />
-    <link rel="stylesheet" href="http://www.example.com/arcgis_js_api/library/4.2/4.2/esri/css/main.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.3/4.3/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.3/4.3/esri/css/main.css" />
     <style>
       html, body, #ui-map-view {
         margin: 0;
@@ -55,7 +55,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
         height: 100%;
       }
     </style>
-    <script src="http://www.example.com/arcgis_js_api/library/4.2/4.2/init.js"></script>
+    <script src="https://www.example.com/arcgis_js_api/library/4.3/4.3/init.js"></script>
     <script>
       var myMap, view;
       require([
@@ -70,7 +70,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
         // Basemap クラスとローカルにアクセス可能なキャッシュ サービスを利用します。
         // --------------------------------------------------------------------
         var layer = new TileLayer({
-          url: "http://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer"
+          url: "https://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer"
         });
         var customBasemap = new Basemap({
           baseLayers: [layer],
@@ -94,4 +94,3 @@ Esri がホストしている CDN にインターネット経由で参照する�
   </body>
 </html>
 ```
-
