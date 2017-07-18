@@ -1,6 +1,6 @@
 ## オープンデータを入手する
 
-[ArcGIS Open Data](http://opendata.arcgis.com/) では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
+<a href="https://opendata.arcgis.com/" target="_blank">ArcGIS Open Data</a> では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
 自由に使える地理データを取得する方法を紹介します。
 
 * [オープンデータの入手 (ArcGIS Open Data コミュニティサイト)](https://github.com/wakanasato/Hackathon-support/blob/master/GetOpenData/README.md)
@@ -16,17 +16,27 @@
 
 ## アプリに地図を組み込む
 
-アプリに ArcGIS の地図を組み込む際に便利な開発キットやライブラリです。
+アプリに ArcGIS の地図を組み込む際に便利な開発キットやライブラリです。アプリ作成ツールを活用することで、ノンコーディングでアプリを作成することも可能です。
 
-### JavaScript
-  * __ArcGIS Web API__: [リファレンス (英語)](https://developers.arcgis.com/javascript/) | [日本語ガイド](../create-startup-app-js)
-  * __Leaflet.js (Esri Leaflet)__: [リファレンス (英語)](https://esri.github.io/esri-leaflet/) | [日本語ガイド(ブログ記事)](https://geonet.esri.com/groups/devcom-jp/content?query=Esri+Leaflet+Tips)
+### コードを書く
 
-### Android
-  * __ArcGIS Runtime SDK__: [リファレンス (英語)](https://developers.arcgis.com/android/latest/) | [日本語ガイド](../create-startup-app-android)
+#### JavaScript
+  * __ArcGIS Web API__: <a href="https://developers.arcgis.com/javascript/" target="_blank">リファレンス (英語)</a> | [日本語ガイド](../create-startup-app-js/)
+  * __Leaflet.js (Esri Leaflet)__: <a href="https://esri.github.io/esri-leaflet/" target="_blank">リファレンス (英語)</a> | [日本語ガイド(ブログ記事)](https://geonet.esri.com/groups/devcom-jp/content?query=Esri+Leaflet+Tips)
 
-### iOS
-  * __ArcGIS Runtime SDK__: [リファレンス (英語)](https://developers.arcgis.com/ios/latest/) | [日本語ガイド](../create-startup-app-ios)
+#### Android
+  * __ArcGIS Runtime SDK__: <a href="https://developers.arcgis.com/android/latest/" target="_blank">リファレンス (英語)</a> | [日本語ガイド](../create-startup-app-android/)
 
-### .NET (Xamarin)
-  * __ArcGIS Runtime SDK__: [リファレンス (英語)](https://developers.arcgis.com/net/latest/) | [日本語ガイド](../create-startup-app-dotnet)
+#### iOS
+  * __ArcGIS Runtime SDK__: <a href="https://developers.arcgis.com/ios/latest/" target="_blank">リファレンス (英語)</a> | [日本語ガイド](../create-startup-app-ios/)
+
+#### .NET (Xamarin)
+  * __ArcGIS Runtime SDK__: <a href="https://developers.arcgis.com/net/latest/" target="_blank">リファレンス (英語)</a> | [日本語ガイド](../create-startup-app-dotnet/)
+
+### コードを書かない
+
+#### アプリケーション ビルダー
+  * __Web AppBuilder for ArcGIS__: <a href="https://doc.arcgis.com/ja/web-appbuilder/" target="_blank">リファレンス</a> | [日本語ガイド](../webappbuilder/create-startup-app-wab/)
+
+#### ストーリーマップ
+  * __ストーリーマップ__: <a href="https://storymaps.arcgis.com/" target="_blank">リファレンス</a>
