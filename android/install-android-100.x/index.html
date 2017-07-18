@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ArcGIS for Developers 開発リソース集</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">ArcGIS for Developers</a> 開発リソース集</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../../index.html">ホーム</a></li>
+							<li><a href="../../tips">技術 Tips 集</a></li>
+							<li><a href="../../samples">サンプル集</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">ページ</a>
+								<ul>
+									<li>
+										<a href="#">マップの作成</a>
+										<ul>
+											<li><a href="../../get-dev-account">アカウントの作成</a></li>
+											<li><a href="../../create-feature-service">地図サービスの公開</a></li>
+											<li><a href="../../create-webmap">Web マップの作成</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">アプリの作成</a>
+										<ul>
+											<li><a href="../../create-startup-app-js">JavaScript</a></li>
+											<li><a href="../../create-startup-app-dotnet">.NET</a></li>
+											<li><a href="../../create-startup-app-android">Android</a></li>
+											<li><a href="../../create-startup-app-ios">iOS</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">認証</a>
+										<ul>
+											<li><a href="../../authentication">認証パターン</a></li>
+											<li><a href="../../register-app">アプリの登録と認証</a></li>
+                                            <li><a href="../../proxy-services">プロキシ サービスの利用</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/EsriJapan/arcgis-dev-resources" class="button">GitHub <i class="icon fa-github"></i></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<section id="main" class="container">
+						<header>
+							<h2 id="インストール-ガイド（android）">インストール ガイド（Android）</h2>
+
+						</header>
+						<div class="box">
+							<p>このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for Android を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。</p>
+<h2 id="arcgis-runtime-sdk-for-android-とは">ArcGIS Runtime SDK for Android とは</h2>
+<p>ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。
+この SDK には API やリファレンス、サンプルコードなどが含まれています。
+詳細は <a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-android/">ArcGIS Runtime SDK for Android</a> をご参照ください。</p>
+<h2 id="arcgis-runtime-sdk-for-android-の開発環境">ArcGIS Runtime SDK for Android の開発環境</h2>
+<p>ここでは次の開発環境にて ArcGIS Runtime SDK for Android を用いたモバイル マッピング アプリケーションの開発手順を説明します。
+開発手順を進める前に以下の開発環境をご使用のマシンにセットアップしてください。</p>
+<ul>
+<li>JDK(Java Development Kit) ※</li>
+<li>Android Studio</li>
+<li>Android 4.1.x (Jelly Bean) 以降</li>
+</ul>
+<p>※ JDK 6 または JDK 7 が必要です。Android 5.0 以上をターゲットとする場合は JDK 7 が必要です。</p>
+<p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境につきましては<a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/">動作環境</a>をご参照ください。</p>
+<h2 id="モバイル-マッピング-アプリケーションの開発">モバイル マッピング アプリケーションの開発</h2>
+<p>ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。</p>
+<ul>
+<li><a href="#プロジェクトの作成">プロジェクトの作成</a></li>
+<li><a href="#arcgis-runtime-sdkの設定">ArcGIS Runtime SDKの設定</a></li>
+<li><a href="#地図表示の実装">地図表示の実装</a></li>
+<li><a href="#モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</a></li>
+</ul>
+<h3 id="プロジェクトの作成">プロジェクトの作成</h3>
+<p>まず Android Studio 上に新しいプロジェクトを作成します。</p>
+<ol>
+<li><p>Android Studio を起動し [Start a new Android Studio project] をクリックします。すでに Android Studio のプロジェクトが開いている場合は Android Studio のメニューから [File] → [New Project] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_1.StartupAndroid.png" width="600px"></p>
+</li>
+<li><p>[Application name] にアプリケーションの名称を入力します。ここでは「HelloMap」としています。
+[Company Domain] にドメインを、[Project Location] に作成するディレクトリを入力して [Next] をクリックします。
+ここではドメインを「tutorials.esri.com」としています。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_2.makeProject.png" width="600px"></p>
+</li>
+<li><p>[Phone and Tablet] のみにチェックを入れ [Minimum SDK] のドロップダウン リストから 「API 16: Android 4.1」を選択して [Next] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_3.choseAndroidVersion.png" width="600px"></p>
+</li>
+<li><p>Activity を選択します。ここでは「Empty Activity」を選択して [Next] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_4.choseActivity.png" width="600px"></p>
+</li>
+<li><p>[Finish] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_5.makeActivity.png" width="600px"></p>
+</li>
+<li><p>以上で新しいプロジェクトが作成されます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/1_6.finish_startProject.png"  width="600px"></p>
+</li>
+</ol>
+<h3 id="arcgis-runtime-sdkの設定">ArcGIS Runtime SDKの設定</h3>
+<p>次に ArcGIS Runtime SDK for Android の API を使えるようにするための設定を行います。</p>
+<ol>
+<li><p>まずはこのアプリケーションが使用する機能に対して権限を付与します。
+Project ツールウィンドウ で「Android」を選択して「Manifests」フォルダの AndroidManifest.xml をダブルクリックして開きます。
+インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。</p>
+<pre><code class="lang-java">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-feature android:glEsVersion=&quot;0x00020000&quot; android:required=&quot;true&quot; /&gt;
+</code></pre>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_1.addPermission.png" width="600px"></p>
+</li>
+<li><p>Project ツールウィンドウ で「Project」を選択して build.gradle をダブルクリックして開きます。
+ArcGIS の Maven リポジトリの URL を追加します。</p>
+<pre><code class="lang-java">allprojects {
+  repositories {
+      jcenter()
+      // esri arcgis maven リポジトリの追加
+      maven {
+          url &#39;https://esri.bintray.com/arcgis&#39;
+      }
+  }
+}
+</code></pre>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_2.addMaven.png" width="600px"></p>
+</li>
+</ol>
+<ol>
+<li><p>Project ツールウィンドウ で「Android」を選択して [Gradle Scripts] の下にある build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「compile &#39;com.esri.arcgisruntime:arcgis-android:100.0.0&#39;」を追加します。</p>
+<pre><code class="lang-java">dependencies {
+  compile &#39;com.esri.arcgisruntime:arcgis-android:100.0.0&#39;
+  …
+}
+</code></pre>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_3.addRuntimeVersion.png" width="600px"></p>
+</li>
+<li><p>ツールバーの [Sync Project with Gradle Files] または build.gradle を変更した後に表示されるメッセージの右にある [Sync Now] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_4.sync project.png" width="600px"></p>
+</li>
+</ol>
+<p>これで準備が整いました。</p>
+<h3 id="地図表示の実装">地図表示の実装</h3>
+<p>ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。</p>
+<ol>
+<li><p>Project ツールウィンドウで [app] → [res] → [layout] と展開し activity_main.xml をダブルクリックして開きます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/3_1.openLayoutXml.png"  width="600px"></p>
+</li>
+<li><p>左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。</p>
+<pre><code class="lang-java">&lt;com.esri.arcgisruntime.mapping.view.MapView
+  android:id=&quot;@+id/mapView&quot;
+  android:layout_width=&quot;fill_parent&quot;
+  android:layout_height=&quot;fill_parent&quot; &gt;
+&lt;/com.esri.arcgisruntime.mapping.view.MapView&gt;
+</code></pre>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/3_2.addMapviewElement.png" width="600px"></p>
+</li>
+<li><p>Project ツールウィンドウで [app] → [res] → [java] と展開し MainActivity クラスを ダブルクリックして開き、地図表示のためのコードを設定します。</p>
+<ul>
+<li>MainActivity クラスへ次のクラスをインポートします。</li>
+</ul>
+<pre><code class="lang-java">import com.esri.arcgisruntime.mapping.view.MapView;
+import com.esri.arcgisruntime.mapping.Map;
+import com.esri.arcgisruntime.mapping.Basemap;
+</code></pre>
+<ul>
+<li>MainActivity クラスの先頭に次のクラス変数宣言を追加します。</li>
+</ul>
+<pre><code class="lang-java">private MapView mMapView;
+</code></pre>
+<ul>
+<li>onCreate() メソッド内の <code>setContentView()</code> を呼び出している後に以下のコードを追加します。
+このコードは、レイアウトに定義している MapView の参照を取得し、ベースマップのタイプや初期表示の範囲、縮尺レベルを設定した地図を <code>MapView</code> に設定します。
+ここではベースマップに地形図を設定し、初期表示範囲は永田町付近を表示するようにしています。</li>
+</ul>
+<pre><code class="lang-java">mMapView = (MapView) findViewById(R.id.mapView);
+Map map = new Map(Basemap.Type.TOPOGRAPHIC, 34.0405, -118.2450, 8);
+mMapView.setMap(map);
+</code></pre>
+<ul>
+<li>MainActivity クラスへ <code>onPause()</code> メソッド(一時停止)と <code>onResume()</code> メソッド(再開)を追加します。2つのメソッドへはそれぞれ次のコードを追加します。</li>
+</ul>
+<pre><code class="lang-java">@Override
+protected void onPause(){
+  mMapView.pause();
+  super.onPause();
+}
+@Override
+protected void onResume(){
+  super.onResume();
+  mMapView.resume();
+}
+</code></pre>
+<ul>
+<li>MainActivity は以下のようになります。</li>
+</ul>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/3_3.finishMapViewElement.png" width="600px"></p>
+</li>
+<li><p>ツールバーの [Make Project] または [Build] メニューから [Make Project] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/3_4.makeProject.png" width="600px"></p>
+</li>
+</ol>
+<h3 id="モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</h3>
+<p>ベースマップを表示するアプリケーションが作成できたので Android 端末にインストールして実行します。</p>
+<ol>
+<li><p>ツールバーの [Run ‘app’] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/4_1.runAppBottun.png" width="600px"></p>
+</li>
+<li><p>接続しているデバイスを選択し [OK] をクリックします。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/4_2.choseDevice.png" ></p>
+</li>
+<li><p>アプリケーションが起動し永田町付近の地図が表示されます。
+スワイプやピンチイン/ピンチアウトで地図を移動したり拡大/縮小したりすることができます。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/4_3.displayMap.png" ></p>
+</li>
+</ol>
+
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ESRIJapan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/esrijapan" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/esrijapan" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<span><img class="ej-logo" src="../../images/logo.png" /></span>
+						<ul class="copyright">
+							<li>&copy; Esri Japan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollgress.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/highlight.pack.js"></script>
+			<script>
+				$(function() {
+				  hljs.initHighlightingOnLoad();
+				});
+			</script>
+			<script src="../../assets/js/ga.js"></script>
+
+	</body>
+</html>
