@@ -1,0 +1,1 @@
+D:\ArcGIS Runtime SDK for .NET v100.1\arcgis-dev-resources\startup\dotnet\100.x\uwp\sample\sample\sample.csproj;x86
