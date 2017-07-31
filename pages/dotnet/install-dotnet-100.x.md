@@ -8,14 +8,15 @@ ArcGIS Runtime SDK for .NET は、Windows 及び iOS、Android プラットフ�
 
 ## ArcGIS Runtime SDK for .NET の開発環境
 
-ArcGIS Runtime SDK for .NET を用いて、Windows プラットフォーム向けの GIS アプリケーションを開発するには、一般的に統合開発環境として Microsoft Visual Studio を使用します。本インストールガイドの手順を行う前に、ご使用のマシンに ArcGIS Runtime SDK for .NET がサポートするバージョンの Windows OS と Microsoft Visual Studio が適切にセットアップされている必要があります。ArcGIS Runtime SDK for .NET がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/environments/)をご参照ください。
+ArcGIS Runtime SDK for .NET を用いて、Windows や iOS、Android プラットフォーム向けの GIS アプリケーションを開発するには、一般的に統合開発環境として Microsoft Visual Studio を使用します。本インストールガイドの手順を行う前に、ご使用のマシンに ArcGIS Runtime SDK for .NET がサポートするバージョンの Windows OS 、Mac OS 及び Microsoft Visual Studio が適切にセットアップされている必要があります。ArcGIS Runtime SDK for .NET がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/environments/)をご参照ください。
 
 # 簡易 アプリケーションの開発
 
-ここでは、Windows デスクトップ（WPF）および UWP アプリの新規プロジェクトを作成し、ArcGIS Runtime SDK for .NET を使って地図を表示する簡易 アプリケーションを作成するための基本的な手順を説明します。
+ここでは、Windows デスクトップ（WPF）および UWP アプリ、Xamarin.Forms の新規プロジェクトを作成し、ArcGIS Runtime SDK for .NET を使って地図を表示する簡易 アプリケーションを作成するための基本的な手順を説明します。
 
 * __[Windows デスクトップアプリケーション（WPF）](#windows-デスクトップアプリケーション（wpf）)__
 * __[UWP アプリケーション](#uwp-アプリケーション)__
+* __[Xamarin.Forms アプリケーション](#xamarin-アプリケーション)__
 
 ## Windows デスクトップアプリケーション（WPF）
 
@@ -274,3 +275,129 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
   
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/UWP_App.png" width="550px">
 
+<br/>
+
+## Xamarin.Forms アプリケーション
+
+1. Visual Studio for Mac を起動して [ファイル] メニューから [新しいソリューション] を選択します。
+
+1. [新しいプロジェクト] 画面が表示されます。ツリー ペインから [Multiplateform] を選択します。テンプレートのリストから [Blank Forms App] を選択し
+て [次へ] をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_1.png" width="500px">
+
+1. App Name を入力し、ターゲット プラットフォームを指定します。 Shard Code は、[Use Shared Library] を選択してください。すべての内容が問題なければ [次へ] をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_2.png" width="500px">
+
+1. プロジェクト名やソリューション名、プロジェクトの場所などを確認して、問題がなければ [作成] をクリックしてプロジェクトを作成します。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_3.png" width="500px">
+
+1. 新しい Xamarin.Forms アプリケーションのプロジェクトが作成されます。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project.png" width="550px">
+
+1. ArcGIS Runtime SDK for .NET をNuGet パッケージからインストールします。NuGet パッケージのインストールは、Android、iOS とそれぞれに対してインストールを行います。はじめに Android に対してインストールを行います。Android ソリューションの 『パッケージ』 を右クリックして、『パッケージの追加』 をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_4.png" width="250px">
+
+1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_5.png" width="400px">
+
+1. [ライセンスの同意] 画面で [マージの許可] をクリックしてパッケージの追加を行います。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_6.png" width="300px">
+
+1. 次に iOS に対してインストールを行います。iOS ソリューションの 『パッケージ』 を右クリックして、『パッケージの追加』 をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_7.png" width="250px">
+
+1. [パッケージを追加] 画面」が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_8.png" width="400px">
+
+1. [ライセンスの同意] 画面で [マージの許可] をクリックしてパッケージの追加を行います。
+
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_9.png" width="300px">
+
+1. [ソリューション] から `MyXamarinFormsAppPage.xaml` の [XAML] ビューを開きます。
+
+1. XAML エレメント内に以下の XML 名前空間参照を追加します。
+
+	```XML
+	 xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+	```
+
+	```XML
+	<?xml version="1.0" encoding="utf-8"?>
+	<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    	xmlns:local="clr-namespace:MyXamarinFormsApp" 
+    	xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+    	x:Class="MyXamarinFormsApp.MyXamarinFormsAppPage">
+
+    	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+
+	</ContentPage>
+	```
+
+上記のコードでは、`esriUI` と言う名称で API ライブラリへの参照が宣言されました。これにより、`esriUI` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。
+
+
+1. Grid XAML エレメント内に以下のコードを追加します。
+
+	```XML
+	<esriUI:MapView x:Name="MyMapView" />
+	```
+
+	```XML:MyXamarinFormsAppPage.xaml
+	<?xml version="1.0" encoding="utf-8"?>
+	<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    	xmlns:local="clr-namespace:MyXamarinFormsApp" 
+    	xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+    	x:Class="MyXamarinFormsApp.MyXamarinFormsAppPage">
+
+    	<esriUI:MapView x:Name="MyMapView"/>
+
+	</ContentPage>>
+	</Page>
+	```
+
+1. [ソリューション エクスプローラー] から `MyXamarinFormsAppPage.xaml.cs` を開きます。`MyXamarinFormsAppPage.xaml.cs` を以下のように書き換えます。
+
+	```C#:MyXamarinFormsAppPage.xaml.cs
+	using Xamarin.Forms;
+	using Esri.ArcGISRuntime.Mapping;
+
+	namespace MyXamarinFormsApp
+	{
+    	public partial class MyXamarinFormsAppPage : ContentPage
+    	{
+        	public MyXamarinFormsAppPage()
+        	{
+            	InitializeComponent();
+
+				Initialize();
+			}
+
+			private void Initialize()
+			{
+				// create a new Map with a streets basemap
+				var map = new Map(Basemap.CreateStreets());
+				// assign the map to MyMapView (MapView control)
+				MyMapView.Map = map;
+        	}
+    	}
+	}
+	```
+
+1. デバッグは iOS もしくは Android シュミレーターを選択して、目的の　[シミュレーター] を起動します。
+  
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px">
+
+1. iPhone シュミレーターが起動し、地図が表示されれば完了です（ここでは iPhone シュミレーターで確認していますが、Android シュミレーターでも同様の画面が表示されます）。
+  
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px">
