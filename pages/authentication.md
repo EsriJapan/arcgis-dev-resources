@@ -21,21 +21,20 @@ ArcGIS for Developers の認証方法は以下の 2 つのパターンが存在�
 
 |機能|ユーザー ログイン認証 [1]|アプリ認証 [2]|
 |:-:|:-:|:-:|
-|[ジオコーディング](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm)|✔|✔|
-|[ルート解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Overview_of_network_analysis_services/02r30000001s000000/)|✔|✔|
-|[統計データ](http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/)|✔|✔|
-|[プレミアム レイヤー/イメージ](https://marketplace.arcgis.com/search.html#t=data)|✔|✔|
-|[高度解析](https://developers.arcgis.com/rest/elevation/)|✔|✔|
+|[ジオコーディング](https://developers.arcgis.com/features/geocoding/)|✔|✔|
+|[ルート解析](https://developers.arcgis.com/features/directions/)|✔|✔|
+|[統計データ](https://developers.arcgis.com/features/geo-enrichment/)|✔|✔|
+|[プレミアム レイヤー/イメージ](https://www.arcgis.com/home/search.html?q=owner:esri)|✔|✔|
+|[高度解析](https://developers.arcgis.com/rest/elevation/api-reference/get-started-with-elevation-services.htm)|✔|✔|
 |[空間解析](https://developers.arcgis.com/rest/analysis/)|✔|-|
-|ユーザーが保有するプライベート コンテンツの閲覧|✔|✔ [3]|
-|ユーザーによって組織内共有されたコンテンツの閲覧|✔|-|
+|ユーザーが保有するプライベート コンテンツの参照|✔|-|
+|ユーザーによって組織内共有されたコンテンツの参照|✔|-|
 |ユーザー コンテンツの作成/更新/削除|✔|-|
 |共有コンテンツの作成/更新/削除|✔|-|
 |他ユーザーのコンテンツの共有|✔|-|
 
 * [1] ユーザーの所属する組織（ArcGIS Online 組織向けプラン）にクレジットを請求します
 * [2] アプリを作成したユーザーにクレジットを請求します
-* [3] この場合のコンテンツを保有するユーザーとはアプリを作成したユーザーを指します
 
 ---
 
