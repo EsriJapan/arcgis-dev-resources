@@ -38,7 +38,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
  var item = await ArcGISPortalItem.CreateAsync(portal, "Web マップ ID");
  ```
 
- まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c)をご利用ください。
+ まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
 
 1. サンプル プロジェクトを実行すると、以下のように地図が表示されます。
 
@@ -67,7 +67,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   //住所検索用のジオコーディング タスク  
   private OnlineLocatorTask onlineLocatorTask;
  ```
- 
+
 1. コンストラクター内でメンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。
 
 
@@ -78,7 +78,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   public MainWindow()  
   {  
     InitializeComponent();  
- 
+
     //住所検索用のジオコーディング タスクを初期化  
     onlineLocatorTask = new OnlineLocatorTask(new Uri(WORLD_GEOCODE_SERVICE_URL));  
   }  
@@ -93,7 +93,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
     OutFields = OutFields.All  
   };  
  ```
- 
+
 1. OnlineLocatorTask クラスの FindAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。
 
  ```C#
@@ -105,13 +105,13 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
  ```C#
   //常に最初の候補を採用  
   LocatorFindResult candidate = resultCandidates.FirstOrDefault();  
-  
+
   //最初の候補からグラフィックを作成  
   Graphic locatedPoint = new Graphic() { Geometry = candidate.Feature.Geometry };  
-  
+
   //住所検索結果表示用のグラフィックスオーバーレイにグラフィックを追加  
   geocodeResultGraphicsLayer.Graphics.Add(locatedPoint);  
-  
+
   //追加したグラフィックの周辺に地図を拡大  
   await mainMapView.SetViewAsync((MapPoint)locatedPoint.Geometry, 36112);  
  ```

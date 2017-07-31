@@ -33,7 +33,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
   mArcGISMap = new ArcGISMap("http://www.arcgis.com/home/item.html?id=<Web マップ ID>");
  ```
 
- まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](http://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c)をご利用ください。
+ まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
 
 1. サンプル プロジェクトを実行すると、以下のように地図が表示されます。
 
@@ -46,7 +46,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 Android の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
 
  <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/startup-android/GPS.png" width="200px">
- 
+
 では以下に倣ってソース コードを修正・追加してみてください。
 
 1. 現在位置の変化を受け取るための [LocationChangedListener](https://developers.arcgis.com/android/latest/api-reference/reference/com/esri/arcgisruntime/mapping/view/LocationDisplay.LocationChangedListener.html) を実装します。今回はすでに実装してあるコードを有効化します。
