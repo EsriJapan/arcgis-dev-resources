@@ -46,7 +46,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
  var item = await PortalItem.CreateAsync(portal, "Web マップ ID");
  ```
 
- まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ee769333954213b2f7e894e8e1032c)をご利用ください。
+ まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
 
 1. サンプル プロジェクトを実行すると、以下のように地図が表示されます。
 
@@ -75,7 +75,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
   //住所検索用のジオコーディング タスク  
   private LocatorTask onlineLocatorTask;
  ```
- 
+
 1. メンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。
 
  ```C#
@@ -84,7 +84,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
  ```
 
 1. 住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には GeocodeParameters クラスを使用します。
- 
+
  ```C#
   //住所検索用のパラメータを作成  
   var geocodeParams = new GeocodeParameters
@@ -93,22 +93,22 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
       OutputSpatialReference = SpatialReferences.WebMercator,
       CountryCode = "Japan",
       OutputLanguage = new System.Globalization.CultureInfo("ja-JP"),
-  }; 
+  };
  ```
- 
+
 1. OnlineLocatorTask クラスの GeocodeAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。
- 
+
  ```C#
   //住所の検索  
   var resultCandidates = await onlineLocatorTask.GeocodeAsync(addressTextBox.Text, geocodeParams);
  ```
 
 1. 住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致していると思われる検索結果）を地図上に拡大表示します。
- 
+
  ```C#
   //常に最初の候補を採用
   var candidate = resultCandidates.FirstOrDefault();                 
-  
+
   //最初の候補からグラフィックを作成
   Graphic locatedPoint = new Graphic()
   {
