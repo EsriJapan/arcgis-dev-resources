@@ -21,11 +21,10 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
 
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
-| Lite | ・地図表示<br>・フィーチャの表示/検索<br>・ルート検索<br>・住所検索 |
-| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャ編集<br>・ArcGIS Online の解析サービスの使用<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
-| Standard | ・Basic ライセンスで利用できるすべての機能<br>・画像ファイルやシェープファイルなどの直接参照<br>・ローカル サーバーの標準的な機能（WPF API のみ)|
+| Lite | ・地図表示<br>・フィーチャの表示/検索<br>・フィーチャ編集（パブリックなサービス）<br>・ルート検索<br>・住所検索 |
+| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャ編集（セキュアなサービス）<br>・ArcGIS Online の解析サービスの使用<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
+| Standard | ・Basic ライセンスで利用できるすべての機能<br>・ラスター データの直接参照<br>・ローカル サーバーの標準的な機能（WPF API のみ)|
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ) |
-
 
 ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-ios/details/license/)をご参照ください。
 
@@ -33,27 +32,41 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
 
 各ライセンス レベルで認証方法が異なります。使用するライセンス レベルのトピックをご参照ください。
 
-
 ## Lite ライセンスの認証
 アプリケーションを Lite レベルで認証するには、以下の 2 つの方法があります。
 
 1. __ライセンスキーを使用した認証__
-
- * ArcGIS Runtime Lite のライセンスキーを取得する必要があります。
-
+  * ArcGIS Runtime Lite のライセンスキーを取得する必要があります
+  * 認証の方法は、[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)をご参照ください
 1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
+  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(レベル1 または レベル2) が必要です
+  *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+  * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
- *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウントが必要です
- *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+## Basic ライセンスの認証
+アプリケーションを Basic レベルで認証するには、以下の 2 つの方法があります。
 
+1. __ライセンスキーを使用した認証__
+  * ArcGIS Runtime Basic の配布パックを購入する必要があります
+  * 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
+  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（レベル2）が必要です
+  *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+  * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
-### ライセンスキーを使用した認証
+## Standard ライセンスの認証
+アプリケーションを Standard レベルで認証するには、以下の方法があります。
 
-  ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
+1. __ライセンスキーを使用した認証__
+  * ArcGIS Runtime Standard の配布パックを購入する必要があります
+  * 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
-  最初に以下の手順で Lite レベルのライセンスキーを取得します。
+### Lite ライセンスキーを使用した認証
+ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
+最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
  1. [ArcGIS for Developers: Licensing Your ArcGIS Runtime App](https://developers.arcgis.com/arcgis-runtime/licensing/) ページにアクセスします（サインインを求められた場合は、ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は[開発者アカウントの作成](http://esrijapan.github.io/arcgis-dev-resources/get-dev-account/)をご参照ください。）
+
  1. [Show my ArcGIS Runtime Lite license key] をクリックします
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px">
 
@@ -67,9 +80,23 @@ string licenseKey = "runtimelite,1000,rud#########,day-month-year,##############
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 ```
 
-### ArcGIS Online / Portal for ArcGIS へのログインによる認証
+## 配布パックのライセンスキーを使用した認証
 
- アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する [ArcGIS Online 組織向けプラン](http://www.esrij.com/products/arcgis-online/plan/organization/) もしくは [Portal for ArcGIS](http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/) の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、Lite ライセンスを取得することができます。
+ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証することができます。
+
+ArcGIS Runtime の配布パックの購入については [ESRIジャパン](https://esrij.smartseminar.jp/public/application/add/356)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。
+
+アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。
+
+```javascript
+// ライセンスキーを設定して認証
+string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
+Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
+```
+
+## 指定ユーザー アカウントを使用した認証
+
+ アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する [ArcGIS Online 組織向けプラン](http://www.esrij.com/products/arcgis-online/plan/organization/) もしくは [Portal for ArcGIS](http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/) の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。
 
  アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してライセンスを取得します。
 
@@ -107,7 +134,6 @@ catch(Exception ex)
 
  この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となり Basic ライセンスを必要とする機能が使用できなくなります。
  
-
  以下のコードを使用して取得したライセンス情報を JSON 形式で出力することができます。出力したライセンス情報は任意の方法でローカルに保存してください。
 
 ```javascript
@@ -130,122 +156,19 @@ var localLicenseInfo = Esri.ArcGISRuntime.LicenseInfo.FromJson(licenseJson);
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(localLicenseInfo);
 ```
 
-## Basic ライセンスの認証
-
-アプリケーションを Basic レベルで認証するには、以下の 2 つの方法があります。
-
-
-1. __ライセンスキーを使用した認証__
- * ArcGIS Runtime Basic の配布パックを購入する必要があります
-
-1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
- *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウントが必要です
- *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
-
-
-### ライセンスキーを使用した認証
-
-  ArcGIS Runtime Basic の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを Basic ライセンスで認証することができます。
-
-  ArcGIS Runtime Basic の配布パックの購入については [ESRIジャパン](https://esrij.smartseminar.jp/public/application/add/356)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。
-
-  配布パックのライセンスキーを使用してアプリケーションを Basic レベルで認証するには以下のコードを使用します。
-
-```javascript
-// ライセンスキーを設定して認証
-string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
-Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
-```
-
-### ArcGIS Online / Portal for ArcGIS へのログインによる認証
-
- アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する [ArcGIS Online 組織向けプラン](http://www.esrij.com/products/arcgis-online/plan/organization/) もしくは [Portal for ArcGIS](http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/) の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、Basic ライセンスを取得することができます。
-
- アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してライセンスを取得します。
-
-```javascript
-CredentialRequestInfo loginInfo = new CredentialRequestInfo();
-
-loginInfo.GenerateTokenOptions = new GenerateTokenOptions
-{
-    TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit
-};
-
-loginInfo.ServiceUri = new Uri("http://www.arcgis.com/sharing/rest");
-
-try
-{
-    Credential cred = await AuthenticationManager.Current.GetCredentialAsync(loginInfo, false);
-
-    // ArcGIS Online / Portal for ArcGIS へ接続して認証情報を取得 
-    ArcGISPortal arcgisPortal = await ArcGISPortal.CreateAsync(loginInfo.ServiceUri, cred);
-    Esri.ArcGISRuntime.LicenseInfo licenseInfo = arcgisPortal.PortalInfo.LicenseInfo;
-
-    // ArcGIS Runtime にライセンスを設定
-    Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseInfo);
-
-catch(Exception ex)
-{
-    // ライセンス取得に失敗した場合はエラーを出力
-    Console.WriteLine("ライセンスを取得できませんでした: " + ex.Message);
-}
-```
-
- __アプリケーションが ArcGIS Online / Portal for ArcGIS に常にログインできない場合__
-
- 配布するアプリケーションがネットワークに接続できない環境で実行するなどの理由により、起動時に毎回 ArcGIS Online / Portal for ArcGIS にログインすることができない場合は、取得したライセンス情報を最大 30 日までローカルに保存しておくことができます。
-
- この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となり Basic ライセンスを必要とする機能が使用できなくなります。
-
-```javascript
-// ライセンス情報を JSON 形式で出力
-var licenseJson = licenseInfo.ToJson();
-
-// --- 出力したライセンス情報を保存するコードを記述 --- 
-```
-
- ローカルに保存した JSON 形式のライセンス情報を読み込み ArcGIS Runtime に設定するには、以下のコードを使用します。
-
-```javascript
-// --- 保存したライセンス情報を読み込むコードを記述 ---
-var licenseJSON = （ローカルに保存したライセンス情報の読み込み）
-
-//JSON 形式のライセンス情報からライセンスを復元
-var localLicenseInfo = Esri.ArcGISRuntime.LicenseInfo.FromJson(licenseJson);
-
-//ArcGIS Runtime にライセンスを設定
-Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(localLicenseInfo);
-```
-
-## Standard または Advanced ライセンスの認証
-
-アプリケーションを Standard または Advanced レベルで認証するには、ArcGIS Runtime Standard または Advanced 配布パックを購入する必要があります。
-
-ArcGIS Runtime Standard または Advanced の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを  Standard または Advanced ライセンスで認証することができます。
-
-ArcGIS Runtime Standard または Advanced 配布パックの購入については [ESRIジャパン](https://esrij.smartseminar.jp/public/application/add/356)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。
-
-配布パックのライセンスキーを使用してアプリケーションを Standard または Advanced レベルで認証するには以下のコードを使用します。
-
-```javascript
-// ライセンスキーを設定して認証
-string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
-Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
-```
-
 ## アプリケーションへの帰属の追加
 
 * __地図データへのクレジット__
 
- アプリケーション内で使用されている ArcGIS Online によって提供されている地図サービスのクレジット情報がアプリケーション内で明記されている必要があります。記載する必要があるテキストは地図サービスの REST サービスエンドポイントにおいて "Copyright Text" セクションに記載されています。
+アプリケーション内で使用されている ArcGIS Online によって提供されている地図サービスのクレジット情報がアプリケーション内で明記されている必要があります。記載する必要があるテキストは地図サービスの REST サービスエンドポイントにおいて "Copyright Text" セクションに記載されています。
 
- 例えば World_Imagery サービス を利用する場合に記載するテキストは以下の通りです。
+例えば World_Imagery サービス を利用する場合に記載するテキストは以下の通りです。
 
- *Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community*
+*Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community*
 
- ※ 上記テキストは [World_Imagery サービスの REST エンドポイント](https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer)の "Copyright Text" セクションに記載されています。
+※ 上記テキストは [World_Imagery サービスの REST エンドポイント](https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer)の "Copyright Text" セクションに記載されています。
 
 
- * __Esri 帰属の表示__
+* __Esri 帰属の表示__
 
-  開発したアプリケーションのマップ上に Esri への帰属を表示する必要があります。ArcGIS Runtime SDK を使用して開発したアプリケーションでは、マップ画面にデフォルトで "Powered by Esri" の帰属が表示されています。この帰属が他の要素と重ならないように注意してください。
+ 開発したアプリケーションのマップ上に Esri への帰属を表示する必要があります。ArcGIS Runtime SDK を使用して開発したアプリケーションでは、マップ画面にデフォルトで "Powered by Esri" の帰属が表示されています。この帰属が他の要素と重ならないように注意してください。
