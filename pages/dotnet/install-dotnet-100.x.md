@@ -298,7 +298,7 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project.png" width="550px">
 
-1. ArcGIS Runtime SDK for .NET をNuGet パッケージからインストールします。NuGet パッケージのインストールは、Android、iOS とそれぞれに対してインストールを行います。はじめに Android に対してインストールを行います。Android ソリューションの 『パッケージ』 を右クリックして、『パッケージの追加』 をクリックします。
+1. ArcGIS Runtime SDK for .NET を NuGet パッケージからインストールします。NuGet パッケージのインストールは、Android、iOS とそれぞれに対してインストールを行います。はじめに Android に対してインストールを行います。Android ソリューションの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_4.png" width="250px">
 
@@ -310,11 +310,11 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_6.png" width="300px">
 
-1. 次に iOS に対してインストールを行います。iOS ソリューションの 『パッケージ』 を右クリックして、『パッケージの追加』 をクリックします。
+1. 次に iOS に対してインストールを行います。iOS ソリューションの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_7.png" width="250px">
 
-1. [パッケージを追加] 画面」が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_8.png" width="400px">
 
@@ -394,7 +394,7 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 	}
 	```
 
-1. デバッグは iOS もしくは Android シュミレーターを選択して、目的の　[シミュレーター] を起動します。
+1. デバッグは iOS もしくは Android シュミレーターを選択して、目的の [シミュレーター] を起動します。
   
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px">
 
