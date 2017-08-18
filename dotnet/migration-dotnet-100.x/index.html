@@ -68,8 +68,7 @@
 
 						</header>
 						<div class="box">
-							<p>ここでは、主に Windows デスクトップ（WPF）の開発者向けの説明となっています。</p>
-<p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
+							<p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
 <p>ArcGIS Runtime SDK for .NET に関しては、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/">ESRIジャパン 製品ページ</a>をご参照ください。</p>
 <p>以下は、バージョン 100.x の主な変更点です。</p>
 <ul>
@@ -81,6 +80,7 @@
 <li><strong><a href="#個別属性表示">個別属性表示</a></strong></li>
 <li><strong><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></strong></li>
 <li><strong><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></strong></li>
+<li><strong><a href="#スケッチ-エディター">スケッチ エディター</a></strong></li>
 <li><strong><a href="#ローダブル-パターン">ローダブル パターン</a></strong></li>
 <li><strong><a href="#ローカルサーバー">ローカルサーバー</a></strong></li>
 <li><strong><a href="#既知の制限事項">既知の制限事項</a></strong></li>
@@ -125,6 +125,11 @@ MyMapView.Map = myMap;
 </tr>
 </tbody>
 </table>
+<p>現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。</p>
+<ul>
+<li>WMS サービス レイヤー（<code>WMSLayer</code>）</li>
+<li>KML サービス レイヤー（<code>KMLLayer</code>）</li>
+</ul>
 <p>100.x でサポートされているレイヤーのタイプについては、<a href="https://developers.arcgis.com/net/latest/wpf/guide/layers.htm">ArcGIS for Developers: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
 <pre><code class="lang-javascript">// 操作レイヤーとしてマップに追加する
@@ -233,6 +238,33 @@ MyMapView.GraphicsOverlays.Add(graphicsOverlay);
 <h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>Geometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
 <p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/edit-geometries.htm">ArcGIS for Developers: ジオメトリの編集（英語）</a>を参照してください 。</p>
+<h2 id="スケッチ-エディター">スケッチ エディター</h2>
+<p>スケッチ エディター（<code>SketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
+<p>次のコードは、<code>SketchEditor</code> の使用方法の例を示しています。</p>
+<pre><code class="lang-javascript">// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
+var config = MyMapView.SketchEditor.EditConfiguration;
+config.AllowVertexEditing = true;
+config.ResizeMode = SketchResizeMode.Uniform;
+config.AllowMove = true;
+// スケッチエディタをページのデータコンテキストとして設定する
+this.DataContext = MyMapView.SketchEditor;
+   ・・・・・・
+try
+{
+   // ジオメトリの種類を設定してスケッチを開始
+   geometry = await MyMapView.SketchEditor.StartAsync(creationMode, true);
+   ・・・・・・
+   // ジオメトリが更新された際の処理
+}
+catch (TaskCanceledException)
+{
+   // Ignore ... let the user cancel drawing
+}
+catch (Exception ex)
+{
+    // Report exceptions
+}
+</code></pre>
 <h2 id="ローダブル-パターン">ローダブル パターン</h2>
 <p>データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。</p>
@@ -255,7 +287,7 @@ await featureLayer.LoadAsync();
 <p>今回のリリースでは、Standard、Advanced、Analysis の各レベルにおいてローカルサーバーでサポートされている追加のツールも導入され、データ管理、分析、および Runtime コンテンツのパッケージ化のための新しいワークフローが追加されました。</p>
 <p>サポートされているツールの一覧は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/local-server-geoprocessing-tools-support.htm">ArcGIS for Developers: ローカルサーバージオプロセシングツール サポート（英語）</a> を参照してください。</p>
 <h2 id="既知の制限事項">既知の制限事項</h2>
-<p>現バージョン 100.0 での既知の制限事項が、<a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_910A9F432FAB47A78ACD89F608748DD1">ArcGIS Runtime SDK for .NET: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
+<p>現バージョン 100.1 での既知の制限事項が、<a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_910A9F432FAB47A78ACD89F608748DD1">ArcGIS Runtime SDK for .NET: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 <h2 id="関連リンク">関連リンク</h2>
 <ul>
 <li><a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm">ArcGIS for Developers: リリース ノート（英語）</a></li>
