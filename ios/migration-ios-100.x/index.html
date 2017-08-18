@@ -87,13 +87,12 @@
 <li><strong><a href="#既知の制限事項">既知の制限事項</a></strong></li>
 </ul>
 <h2 id="xcode-プロジェクトの変更">Xcode プロジェクトの変更</h2>
-<p>macOS 上の <code>ArcGIS.framework</code> のインストール場所が、10.2.x から変更されています。100.0 では、<code>$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static</code> にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの <code>Framework Search Paths</code> の設定と <code>ArcGIS.bundle</code> ファイルの参照先も更新してください。</p>
-<p>100.0 を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。</p>
+<p>macOS 上の <code>ArcGIS.framework</code> のインストール場所が、10.2.x から変更されています。100.x では、<code>$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static</code> にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの <code>Framework Search Paths</code> の設定と <code>ArcGIS.bundle</code> ファイルの参照先も更新してください。</p>
+<p>100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。</p>
 <p>ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップとシーン">マップとシーン</h2>
-<p>100.x では、<code>AGSMap</code> オブジェクト（2D表示用）と <code>AGSScene</code> オブジェクト（3D表示用）<sup>※1</sup> を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
+<p>100.x では、<code>AGSMap</code> オブジェクト（2D表示用）と <code>AGSScene</code> オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
 <p><code>AGSMap</code> オブジェクトと <code>AGSScene</code> オブジェクトは 、それらを表示する View と分離されています。<code>AGSMap</code> オブジェクトと <code>AGSScene</code> オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。</p>
-<p><sup>※1</sup> バージョン100.0 では、3D 関連の機能はベータ機能として提供されています</p>
 <h2 id="ビュー">ビュー</h2>
 <p><code>AGSMapView</code>（2D表示用）と <code>AGSSceneView</code>（3D表示用）は、UI コンポーネントです。<code>AGSMapView</code> クラスの <code>map</code> プロパティに、<code>AGSMap</code> オブジェクトを、<code>AGSMapSceneView</code> クラスの <code>scene</code> プロパティには <code>AGSScene</code> オブジェクトを設定します。</p>
 <p>100.x では、以下のようにマップを表示します。</p>
@@ -130,14 +129,9 @@ self.mapView.map = map
 </tr>
 </tbody>
 </table>
-<p>現バージョンの 100.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。</p>
+<p>現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。</p>
 <ul>
-<li>ArcGIS Server イメージ サービス レイヤー（<code>AGSImageServiceLayer</code>）</li>
 <li>WMS サービス レイヤー（<code>AGSWMSLayer</code>）</li>
-<li>WMTS サービス レイヤー（<code>AGSWMTSLayer</code>）</li>
-<li>OpenStreetMap レイヤー（<code>AGSOpenStreetMapLayer</code>）</li>
-<li>Bing Maps レイヤー（<code>AGSBingMapLayer</code>）</li>
-<li>Web タイル レイヤー（<code>AGSWebTiledLayer</code>）</li>
 </ul>
 <p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/ios/latest/swift/guide/layers.htm">ArcGIS Runtime SDK for iOS: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
@@ -282,7 +276,7 @@ func respondToGeometryChanged() {
 })
 </code></pre>
 <h2 id="既知の制限事項">既知の制限事項</h2>
-<p>現バージョン 100.0 での既知の制限事項が、<a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#GUID-2D204730-60B6-4004-BCB1-63F654F70AA3">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
+<p>現バージョン 100.1 での既知の制限事項が、<a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#GUID-9F6CC822-7328-4F30-8A42-45696DDD1DDD">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 <h2 id="関連リンク">関連リンク</h2>
 <ul>
 <li><a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a></li>

@@ -58,7 +58,7 @@ iOS の位置情報サービスと連携し、端末の現在位置を地図上�
 1. `ViewController.swift` の `viewDidLoad` 関数に現在位置を表示する処理を記述します。
 
  ```javascript
- // 位置情報の表示モードを設定
+ // 位置情報の表示モードを設定（現在位置を中心にマップをズームして表示する）
  self.mapView.locationDisplay.autoPanMode = .recenter
 
  // マップが現在位置にズームされる際の表示縮尺の設定
