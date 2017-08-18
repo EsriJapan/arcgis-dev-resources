@@ -30,7 +30,7 @@ Android Studio のビルド ツールは Gradle を使用し、maven リポジ�
         }
     }
     dependencies {
-        compile 'com.esri.arcgisruntime:arcgis-android:100.0.0'
+        compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'
     }
 ```
 
@@ -43,9 +43,7 @@ ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、[
 `ArcGISMap` オブジェクトは 、それを表示する View と分離されています。`ArcGISMap` オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。
 
 ## ビュー
-`MapView`（2D表示用）と `SceneView`（3D表示用）<sup>※1</sup>は、UI コンポーネントです。`MapView` クラスの `map` プロパティに、`ArcGISMap` オブジェクトを設定します。
-
-<sup>※1</sup> バージョン100.0 では、3D 関連の機能は未対応です。
+`MapView`（2D表示用）と `SceneView`（3D表示用）は、UI コンポーネントです。`MapView` クラスの `map` プロパティに、`ArcGISMap` オブジェクトを設定します。
 
 100.x では、以下のようにマップを表示します。
 ```java
@@ -66,13 +64,9 @@ mMapView.setMap(mArcGISMap);
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
-現バージョンの 100.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
-* ArcGIS Server イメージ サービス レイヤー（`ArcGISImageServiceLayer`）
+現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
 * KML サービス レイヤー（`KMLLayer`）
 * WMS サービス レイヤー（`WMSLayer`）
-* WMTS サービス レイヤー（`WMTSLayer`）
-* OpenStreetMap レイヤー（`OpenStreetMapLayer`）
-* Bing Maps レイヤー（`BingMapsLayer`）
 
 100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for Android: レイヤー（英語）](https://developers.arcgis.com/android/latest/guide/layers.htm)をご参照ください。
 
@@ -240,7 +234,7 @@ if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
 Java 言語で　`ListenableFuture`　というインターフェースで馴染みのある　Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。
 
 ## 既知の制限事項
-現バージョン 100.0 での既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
+現バージョン 100.1 での既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm)

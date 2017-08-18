@@ -94,15 +94,14 @@
         }
     }
     dependencies {
-        compile &#39;com.esri.arcgisruntime:arcgis-android:100.0.0&#39;
+        compile &#39;com.esri.arcgisruntime:arcgis-android:100.1.0&#39;
     }
 </code></pre><p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-Android/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップ">マップ</h2>
 <p>100.x では、<code>ArcGISMap</code> オブジェクトを API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
 <p><code>ArcGISMap</code> オブジェクトは 、それを表示する View と分離されています。<code>ArcGISMap</code> オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。</p>
 <h2 id="ビュー">ビュー</h2>
-<p><code>MapView</code>（2D表示用）と <code>SceneView</code>（3D表示用）<sup>※1</sup>は、UI コンポーネントです。<code>MapView</code> クラスの <code>map</code> プロパティに、<code>ArcGISMap</code> オブジェクトを設定します。</p>
-<p><sup>※1</sup> バージョン100.0 では、3D 関連の機能は未対応です。</p>
+<p><code>MapView</code>（2D表示用）と <code>SceneView</code>（3D表示用）は、UI コンポーネントです。<code>MapView</code> クラスの <code>map</code> プロパティに、<code>ArcGISMap</code> オブジェクトを設定します。</p>
 <p>100.x では、以下のようにマップを表示します。</p>
 <pre><code class="lang-java">// ベースマップを指定してマップを初期化
 ArcGISMap mArcGISMap = new ArcGISMap();
@@ -139,14 +138,10 @@ mMapView.setMap(mArcGISMap);
 </tr>
 </tbody>
 </table>
-<p>現バージョンの 100.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。</p>
+<p>現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。</p>
 <ul>
-<li>ArcGIS Server イメージ サービス レイヤー（<code>ArcGISImageServiceLayer</code>）</li>
 <li>KML サービス レイヤー（<code>KMLLayer</code>）</li>
 <li>WMS サービス レイヤー（<code>WMSLayer</code>）</li>
-<li>WMTS サービス レイヤー（<code>WMTSLayer</code>）</li>
-<li>OpenStreetMap レイヤー（<code>OpenStreetMapLayer</code>）</li>
-<li>Bing Maps レイヤー（<code>BingMapsLayer</code>）</li>
 </ul>
 <p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/android/latest/guide/layers.htm">ArcGIS Runtime SDK for Android: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
@@ -272,7 +267,7 @@ if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
 <h2 id="新しい同期パターン">新しい同期パターン</h2>
 <p>Java 言語で　<code>ListenableFuture</code>　というインターフェースで馴染みのある　Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。</p>
 <h2 id="既知の制限事項">既知の制限事項</h2>
-<p>現バージョン 100.0 での既知の制限事項が、<a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
+<p>現バージョン 100.1 での既知の制限事項が、<a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 <h2 id="関連リンク">関連リンク</h2>
 <ul>
 <li><a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a></li>
