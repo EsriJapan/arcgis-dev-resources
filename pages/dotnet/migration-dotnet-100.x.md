@@ -1,6 +1,4 @@
 
-ここでは、主に Windows デスクトップ（WPF）の開発者向けの説明となっています。
-
 ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
 
 ArcGIS Runtime SDK for .NET に関しては、[ESRIジャパン 製品ページ](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)をご参照ください。
@@ -15,6 +13,7 @@ ArcGIS Runtime SDK for .NET に関しては、[ESRIジャパン 製品ページ]
 * __[個別属性表示](#個別属性表示)__
 * __[グラフィックス オーバーレイ](#グラフィックス-オーバーレイ)__
 * __[ジオメトリとジオメトリ ビルダー](#ジオメトリとジオメトリ-ビルダー)__
+* __[スケッチ エディター](#スケッチ-エディター)__
 * __[ローダブル パターン](#ローダブル-パターン)__
 * __[ローカルサーバー](#ローカルサーバー)__
 * __[既知の制限事項](#既知の制限事項)__
@@ -27,7 +26,6 @@ ArcGIS Runtime SDK for .NET に関しては、[ESRIジャパン 製品ページ]
 <sup>※1</sup> バージョン100.0 では、モバイル環境において 3D 関連の機能はベータ機能として提供されています。
 
 ## ビュー
-
 `MapView`（2D表示用）と `SceneView`（3D表示用）は、UI コンポーネントです。`MapView` クラスの `map` プロパティに、`Map` オブジェクトを、`MapSceneView` クラスの `scene` プロパティには `Scene` オブジェクトを設定します。
 
 100.x では、以下のようにマップを表示します。
@@ -46,6 +44,11 @@ MyMapView.Map = myMap;
 |ArcGIS Server ダイナミック マップ サービス レイヤー|ArcGISDynamicMapServiceLayer|ArcGISMapImageLayer|
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
+
+現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
+
+* WMS サービス レイヤー（`WMSLayer`）
+* KML サービス レイヤー（`KMLLayer`）
 
 100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm)をご参照ください。
 
@@ -181,6 +184,37 @@ MyMapView.GraphicsOverlays.Add(graphicsOverlay);
 
 ジオメトリ ビルダー（`GeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、[ArcGIS for Developers: ジオメトリの編集（英語）](https://developers.arcgis.com/net/latest/wpf/guide/edit-geometries.htm)を参照してください 。
 
+## スケッチ エディター
+スケッチ エディター（`SketchEditor`）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。
+
+次のコードは、`SketchEditor` の使用方法の例を示しています。
+
+```javascript
+// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
+var config = MyMapView.SketchEditor.EditConfiguration;
+config.AllowVertexEditing = true;
+config.ResizeMode = SketchResizeMode.Uniform;
+config.AllowMove = true;
+// スケッチエディタをページのデータコンテキストとして設定する
+this.DataContext = MyMapView.SketchEditor;
+   ・・・・・・
+try
+{
+   // ジオメトリの種類を設定してスケッチを開始
+   geometry = await MyMapView.SketchEditor.StartAsync(creationMode, true);
+   ・・・・・・
+   // ジオメトリが更新された際の処理
+}
+catch (TaskCanceledException)
+{
+   // Ignore ... let the user cancel drawing
+}
+catch (Exception ex)
+{
+    // Report exceptions
+}
+```
+
 ## ローダブル パターン
 データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、`NotLoaded（ロードが開始していない`、`Loading（ロード中）`、`Loaded（ロードに成功）`、`FailedToLoad（ロードに失敗）` のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。
@@ -210,7 +244,7 @@ await featureLayer.LoadAsync();
 サポートされているツールの一覧は、[ArcGIS for Developers: ローカルサーバージオプロセシングツール サポート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server-geoprocessing-tools-support.htm) を参照してください。
 
 ## 既知の制限事項
-現バージョン 100.0 での既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_910A9F432FAB47A78ACD89F608748DD1)に記載されていますので、ご参照ください。
+現バージョン 100.1 での既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_910A9F432FAB47A78ACD89F608748DD1)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS for Developers: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm)
