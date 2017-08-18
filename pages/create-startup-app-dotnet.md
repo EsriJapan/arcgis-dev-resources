@@ -29,8 +29,16 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 ## 地図の表示
 
 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
+ここでは Windows デスクトップアプリケーション（WPF） の例で説明していますが、UWP、Xamarin でも同じアプリを実行することができます。
 
-1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/map/sample.sln）を Visual Studio で開きます。
+* __UWP__
+　サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
+
+* __Xamarin__
+　サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
+
+
+1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。
 
 1. `mainWindow.xaml.cs` の 51 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../create-webmap)で作成した Web マップ ID を上書きします。
 
