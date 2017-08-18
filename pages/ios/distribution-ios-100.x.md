@@ -67,6 +67,7 @@ ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイ�
 1. [ArcGIS for Developers: Licensing Your ArcGIS Runtime App](https://developers.arcgis.com/arcgis-runtime/licensing/) ページにアクセスします（サインインを求められた場合は、ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は[開発者アカウントの作成](http://esrijapan.github.io/arcgis-dev-resources/get-dev-account/)をご参照ください。）
 
 2. [Show my ArcGIS Runtime Lite license key] をクリックします
+
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px">
 
 3. 表示されたライセンスキーをコピーします
