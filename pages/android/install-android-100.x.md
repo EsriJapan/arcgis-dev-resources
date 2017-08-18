@@ -92,11 +92,11 @@ ArcGIS の Maven リポジトリの URL を追加します。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_2.addMaven.png" width="600px">
 
 
-1.	Project ツールウィンドウ で「Android」を選択して [Gradle Scripts] の下にある build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「compile 'com.esri.arcgisruntime:arcgis-android:100.0.0'」を追加します。
+1.	Project ツールウィンドウ で「Android」を選択して [Gradle Scripts] の下にある build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'」を追加します。
 
 	```java
 	dependencies {
-	    compile 'com.esri.arcgisruntime:arcgis-android:100.0.0'
+	    compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'
 	    …
 	}
 	```

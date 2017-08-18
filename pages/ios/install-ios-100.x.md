@@ -73,14 +73,14 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.0'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.1'
 end
 ```
 
 1.	ターミナル アプリケーションで、cd コマンドを使用して作成したプロジェクト ファイルのルートフォルダーに移動します。
 
  ```none
-$ cd /Users/<Username>/<ProjectFolder>/
+$ cd /<プロジェクト フォルダーのパス>/
 ```
 
 1.	以下のコマンドを実行して、CocoaPods をセットアップします。
@@ -106,7 +106,7 @@ pod install
 
 1.	ArcGIS for Developers の認証ページに遷移します。ArcGIS for Developers の開発者アカウント情報を入力してサインインして下さい。ArcGIS for Developers 開発者アカウントを お持ちでない方は、ArcGIS for Developers 開発リソース集の[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/get-dev-account/)を参考にしてアカウントを作成してください。
 
-1. ArcGIS Runtime SDK for iOS の [Version] をクリックし、表示されたバージョン選択画面で、ダウンロードするバージョンをチェックして、[DOWNLOAD] ボタンをクリックします。
+1. 表示された画面で ArcGIS Runtime SDK for iOS の [Download] ボタンをクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual01.png" width="450px">
 
