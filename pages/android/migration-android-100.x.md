@@ -30,7 +30,7 @@ Android Studio のビルド ツールは Gradle を使用し、maven リポジ�
         }
     }
     dependencies {
-        compile 'com.esri.arcgisruntime:arcgis-android:100.0.0'
+        compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'
     }
 ```
 
