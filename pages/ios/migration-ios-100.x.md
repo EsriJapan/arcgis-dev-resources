@@ -21,20 +21,19 @@ ArcGIS Runtime SDK for iOS に関しては、[ESRIジャパン 製品ページ](
 
 ## Xcode プロジェクトの変更
 
-macOS 上の `ArcGIS.framework` のインストール場所が、10.2.x から変更されています。100.0 では、`$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static` にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの `Framework Search Paths` の設定と `ArcGIS.bundle` ファイルの参照先も更新してください。
+macOS 上の `ArcGIS.framework` のインストール場所が、10.2.x から変更されています。100.x では、`$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static` にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの `Framework Search Paths` の設定と `ArcGIS.bundle` ファイルの参照先も更新してください。
 
-100.0 を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。
+100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、[ESRIジャパン 製品ページ（動作環境）](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
 
 ## マップとシーン
 
-100.x では、`AGSMap` オブジェクト（2D表示用）と `AGSScene` オブジェクト（3D表示用）<sup>※1</sup> を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
+100.x では、`AGSMap` オブジェクト（2D表示用）と `AGSScene` オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
 
 `AGSMap` オブジェクトと `AGSScene` オブジェクトは 、それらを表示する View と分離されています。`AGSMap` オブジェクトと `AGSScene` オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。
 
-<sup>※1</sup> バージョン100.0 では、3D 関連の機能はベータ機能として提供されています
 
 ## ビュー
 
@@ -58,13 +57,10 @@ self.mapView.map = map
 |タイル マップ サービス レイヤー|AGSTiledMapServiceLayer|AGSArcGISTiledLayer|
 |タイル パッケージ レイヤー|AGSLocalTiledLayer|AGSArcGISTiledLayer|
 
-現バージョンの 100.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
-* ArcGIS Server イメージ サービス レイヤー（`AGSImageServiceLayer`）
+現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
+
 * WMS サービス レイヤー（`AGSWMSLayer`）
-* WMTS サービス レイヤー（`AGSWMTSLayer`）
-* OpenStreetMap レイヤー（`AGSOpenStreetMapLayer`）
-* Bing Maps レイヤー（`AGSBingMapLayer`）
-* Web タイル レイヤー（`AGSWebTiledLayer`）
+
 
 100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for iOS: レイヤー（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm)をご参照ください。
 
@@ -254,7 +250,7 @@ self.mapView.locationDisplay.start(completion: { (error) -> Void in
 })
 ```
 ## 既知の制限事項
-現バージョン 100.0 での既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#GUID-2D204730-60B6-4004-BCB1-63F654F70AA3)に記載されていますので、ご参照ください。
+現バージョン 100.1 での既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#GUID-9F6CC822-7328-4F30-8A42-45696DDD1DDD)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm)
