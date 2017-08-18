@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    compile 'com.esri.arcgisruntime:arcgis-android:100.0.0'
+    compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.1.0'
