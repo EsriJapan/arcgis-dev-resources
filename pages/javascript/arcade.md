@@ -34,7 +34,7 @@ $feature.fieldName
 
 Arcade はいくつかのプロファイルにおける使用のためにデザインされました。
 プロファイルとは、理解し使用される命令語のコンテクストです。
-ArcGIS API 4.4 for JavaScript では、ビジュアライゼーションとポップアップコンテンツのプロファイルをサポートしています。
+ArcGIS API 4.4 for JavaScript では、ビジュアライゼーションとポップアップ コンテンツの２つのプロファイルをサポートしています。
 将来的には、ラベリングや、フィーチャ フィルタリングなどを考慮したプロファイルが追加される予定です。
 
 ### ビジュアライゼーション
@@ -134,7 +134,7 @@ renderer.visualVariables = [ opacityVV ];
 実際にビジュアライゼーションを行った結果はサンプル アプリ (<a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_blank">Create a custom visualization using Arcade</a>) で確認してみてください。
 
 ## ポップアップ
-Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank">` PopupTmplate `</a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank">`コンテンツ `</a> 内で参照することもできます。ビジュアライゼーションプロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">`FeatureLayer `</a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
+Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank">` PopupTmplate `</a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank">`コンテンツ `</a> 内で参照することもできます。ビジュアライゼーション プロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">`FeatureLayer `</a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
 例えば、サンプルアプリ （ <a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`Reference Arcade expressions in PopupTemplate`</a> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。
 
 ```js  
