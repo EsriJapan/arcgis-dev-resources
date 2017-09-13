@@ -85,14 +85,14 @@
 <h2 id="ビルドのインストール">ビルドのインストール</h2>
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
 <ol>
-<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.4\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.4/</code> に置き換えます。</li>
-<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.4\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.4/</code> に置き換えます。</li>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.3\4.3\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.3/4.3/</code> に置き換えます。</li>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.3\4.3\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.3/4.3/</code> に置き換えます。</li>
 </ol>
 <h2 id="インストールのテスト">インストールのテスト</h2>
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-<pre><code class="lang-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.4/init.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.3/4.3/init.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>インストールのテストには以下のコードを利用してください。</p>
 <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
@@ -101,8 +101,8 @@
     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
     &lt;title&gt;Test Map&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.4/dijit/themes/claro/claro.css&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.4/esri/css/main.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.3/4.3/dijit/themes/claro/claro.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.3/4.3/esri/css/main.css&quot; /&gt;
     &lt;style&gt;
       html, body, #ui-map-view {
         margin: 0;
@@ -111,7 +111,7 @@
         height: 100%;
       }
     &lt;/style&gt;
-    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.4/init.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.3/4.3/init.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
       var myMap, view;
       require([
