@@ -85,11 +85,11 @@
 </ul>
 <h2 id="arcgis-online-にホストされたプロキシ-サービス">ArcGIS Online にホストされたプロキシ サービス</h2>
 <ol>
-<li><p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Application] ページを開きます。</p>
+<li><p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Dashboard] ページを開きます。</p>
 </li>
-<li><p>[REGISTER NEW APPLICATION] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p>
+<li><p>[Create a New App] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p>
 </li>
-<li><p>[Authentication] タブをクリックします。</p>
+<li><p>[Services] タブをクリックします。</p>
 </li>
 <li><p>ページ下部の [Service Proxies] セクションまでスクロールします。</p>
 </li>
@@ -97,12 +97,12 @@
 </li>
 <li><p>[Request Limit] にアクセス数の上限を設定します。</p>
 </li>
-<li><p>[Allowed Domains] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p>
+<li><p>[Whitelisted Referrers] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p>
 </li>
 </ol>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/service-proxies.gif" width="600px"></p>
-<h3 id="サービス-プロキシを利用可能な-esri-有償サービス一覧">サービス プロキシを利用可能な Esri 有償サービス一覧</h3>
-<p>以下ではサービス プロキシがサポートしているサービス一覧です。リストにないサービスやコンテンツ（例：個人が保有するセキュアなマップ/レイヤー）を設定したい場合は Resource Proxy を使ってください。</p>
+<h3 id="サービス-プロキシを利用可能な-esri-サービス一覧">サービス プロキシを利用可能な Esri サービス一覧</h3>
+<p>以下ではサービス プロキシがサポートしているサービス一覧です。</p>
 <table>
 <thead>
 <tr>
@@ -126,6 +126,10 @@
 <tr>
 <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_asynchronous_execution/02r300000275000000/">ルート解析（非同期）</a></td>
 <td style="text-align:center"><code>asyncroute</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Utilities_GetToolInfo_Tool/02r3000002qs000000/">ユーティリティ </a></td>
+<td style="text-align:center"><code>routingUtilities</code></td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/">最寄り施設解析</a></td>
@@ -156,6 +160,10 @@
 <td style="text-align:center"><code>asyncVRP</code></td>
 </tr>
 <tr>
+<td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Origin_Destination_Cost_Matrix_Service/02r3000002r2000000/">OD コスト マトリックス解析（非同期）</a></td>
+<td style="text-align:center"><code>asyncODCostMatrix</code></td>
+</tr>
+<tr>
 <td style="text-align:center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Traffic_service/02r3000000n6000000/">交通量</a></td>
 <td style="text-align:center"><code>traffic</code></td>
 </tr>
@@ -174,7 +182,7 @@
 </tbody>
 </table>
 <h2 id="独自の-web-サーバーにホストするプロキシ-ファイル">独自の Web サーバーにホストするプロキシ ファイル</h2>
-<p>プロキシ ファイルは米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（<a href="https://github.com/Esri/resource-proxy">Resource Proxy</a>）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。</p>
+<p>米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（<a href="https://github.com/Esri/resource-proxy">Resource Proxy</a>）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。</p>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px"></p>
 <h3 id="プロキシ-サービスの設定">プロキシ サービスの設定</h3>
 <p>プロキシの設定ファイル（<code>proxy.config</code>）にアクセスを許可する Esri 有償サービスの情報を設定します。</p>
