@@ -34,8 +34,8 @@ $feature.fieldName
 
 Arcade はいくつかのプロファイルにおける使用のためにデザインされました。
 プロファイルとは、理解し使用される命令語のコンテクストです。
-ArcGIS API 4.2 for JavaScript では、ビジュアライゼーションのプロファイルをサポートしています。
-将来的には、ラベリングやポップアップ コンテンツ、フィーチャ フィルタリングなどを考慮したプロファイルが追加される予定です。
+ArcGIS API 4.4 for JavaScript では、ビジュアライゼーションとポップアップコンテンツのプロファイルをサポートしています。
+将来的には、ラベリングや、フィーチャ フィルタリングなどを考慮したプロファイルが追加される予定です。
 
 ### ビジュアライゼーション
 
@@ -132,3 +132,58 @@ renderer.visualVariables = [ opacityVV ];
 ```
 
 実際にビジュアライゼーションを行った結果はサンプル アプリ (<a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_blank">Create a custom visualization using Arcade</a>) で確認してみてください。
+
+## ポップアップ
+Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank">` PopupTmplate `</a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank">`コンテンツ `</a> 内で参照することもできます。ビジュアライゼーションプロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">`FeatureLayer `</a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
+例えば、サンプルアプリ （ <a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`Reference Arcade expressions in PopupTemplate`</a> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。
+
+```js  
+// 労働参加率を計算
+Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)
+```
+
+この式から返された値を使用して、レイヤーを視覚化したり、レイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#popupTemplate" target="_blank">`PopupTmplate`</a> に表示したりすることができます。ポップアップで値を表示するには、PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#expressionInfos" target="_blank">`expressioninfo`</a> プロパティで値を参照し、 ` name ` と`  title` を割り当てる必要があります。
+
+```js
+layer.popupTemplate = {　　
+  expressionInfos: [{　　
+    name: "participation-rate",　　
+    title: "% of population 16+ participating in the labor force",　　
+    expression: "Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)"　　
+  }],　　
+  content: "In {NAME} county, {expression/participation-rate}% of the population"　　
+    + " participates in the labor force."　　
+};　　
+```
+
+式が `expressionInfos` プロパティに存在すると、 PopupTemplate のコンテンツ内の`{expession/expression-name}` プレースホルダー テンプレートを使用して式から返された値を参照できます。
+ポップアップのコンテンツは、ユーザーが Greenlee , AZ を表現しているフィーチャーをクリックした後に次のように表示されます。
+
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" >
+
+
+また、PopupTmplate　のコンテンツ の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank">`fieldinfos`</a>　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの ` fieldName ` プロパティで式の名前を参照するだけです。なお、 `expression/expression-name` シンタックスを使用してください。
+
+```js
+layer.popupTemplate = {
+  expressionInfos: [{
+    name: "participation-rate",
+    title: "% of population 16+ participating in the labor force",
+    expression: "Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)"
+  }],
+  content: [{
+    type: "fields",
+    fieldInfos: [{
+      fieldName: "expression/participation-rate"
+    }]
+  }]
+};
+```
+
+ポップアップには以下のように表示されます。
+  
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" >
+
+PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank">`fieldinfos`</a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
+このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`PopupTemplate Reference Arcade`</a>）でご覧ください。
+
