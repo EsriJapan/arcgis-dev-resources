@@ -11,11 +11,11 @@
 
 ## ArcGIS Online にホストされたプロキシ サービス
 
-1. [ArcGIS for Developers](https://developers.arcgis.com/) の [Application] ページを開きます。
+1. [ArcGIS for Developers](https://developers.arcgis.com/) の [Dashboard] ページを開きます。
 
-1. [REGISTER NEW APPLICATION] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。
+1. [Create a New App] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。
 
-1. [Authentication] タブをクリックします。
+1. [Services] タブをクリックします。
 
 1. ページ下部の [Service Proxies] セクションまでスクロールします。
 
@@ -23,13 +23,13 @@
 
 1. [Request Limit] にアクセス数の上限を設定します。
 
-1. [Allowed Domains] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。
+1. [Whitelisted Referrers] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/service-proxies.gif" width="600px">
 
-### サービス プロキシを利用可能な Esri 有償サービス一覧
+### サービス プロキシを利用可能な Esri サービス一覧
 
-以下ではサービス プロキシがサポートしているサービス一覧です。リストにないサービスやコンテンツ（例：個人が保有するセキュアなマップ/レイヤー）を設定したい場合は Resource Proxy を使ってください。
+以下ではサービス プロキシがサポートしているサービス一覧です。
 
 |サービス|[Service] リストの値|
 |:-:|:-:|
@@ -37,6 +37,7 @@
 |[ジオエンリッチメント](http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/)|`geoenrichment`|
 |[ルート解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_synchronous_execution/02r300000036000000/)|`route`|
 |[ルート解析（非同期）](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_asynchronous_execution/02r300000275000000/)|`asyncroute`|
+|[ユーティリティ ](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Utilities_GetToolInfo_Tool/02r3000002qs000000/)|`routingUtilities`|
 |[最寄り施設解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/)|`closestFacility`|
 |[最寄り施設解析（非同期）](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_asynchronous_execution/02r30000020n000000/)|`asyncClosestFacility`|
 |[到達圏解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_synchronous_execution/02r3000000n2000000/)|`serviceArea`|
@@ -44,6 +45,7 @@
 |[ロケーション-アロケーション解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Location_Allocation_service/02r30000026s000000/)|`asyncLocationAllocation`|
 |[配車ルート解析](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/)|`syncVRP`|
 |[配車ルート解析（非同期）](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/)|`asyncVRP`|
+|[OD コスト マトリックス解析（非同期）](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Origin_Destination_Cost_Matrix_Service/02r3000002r2000000/)|`asyncODCostMatrix`|
 |[交通量](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Traffic_service/02r3000000n6000000/)|`traffic`|
 |[標高](https://developers.arcgis.com/rest/elevation/)|`elevationSync`|
 |[標高（非同期）](https://developers.arcgis.com/rest/elevation/)|`elevation`|
@@ -51,7 +53,7 @@
 
 ## 独自の Web サーバーにホストするプロキシ ファイル
 
-プロキシ ファイルは米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（[Resource Proxy](https://github.com/Esri/resource-proxy)）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。
+米国 Esri 社がメンテナンスしているプロキシ ファイルのソースコード（[Resource Proxy](https://github.com/Esri/resource-proxy)）が GitHub で公開されています。このプロキシ ファイルにはアプリ ID と秘密鍵を設定することができ、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px">
 

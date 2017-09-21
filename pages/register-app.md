@@ -4,7 +4,7 @@
 
 1. アプリ リストを開きます。
 
-1. [REGISTER NEW APPLICATION] をクリックします。
+1. [Create Your First App] または [Create a New App] をクリックします。
 
 1. アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。
 > <img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/get_client_id_secret.gif" width="600px">
