@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
     <title>ArcGIS for Developers - Startup Sample</title>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.21/esri/css/esri.css">
     <style>
       html, body, #mapDiv {
         height: 100%;
@@ -25,7 +25,7 @@
          left: 74px;
       }
     </style>
-    <script src="http://js.arcgis.com/3.14/"></script>
+    <script src="http://js.arcgis.com/3.21/"></script>
     <script>
       var map;
       
@@ -33,7 +33,7 @@
 
         // マップの参照
         //var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
-        var mapDeferred = arcgisUtils.createMap("d3ee769333954213b2f7e894e8e1032c", "mapDiv");
+        var mapDeferred = arcgisUtils.createMap("d3ffea931f4a455f9c3b6c2102e66eda", "mapDiv");
         mapDeferred.then(function(response) { // マップの参照結果のコールバック
           map = response.map; // マップ オブジェクトの取得
 
