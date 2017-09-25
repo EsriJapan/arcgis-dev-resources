@@ -293,3 +293,46 @@ gulp.task('dotnetpages-prebuild:content', function () {
     }))
     .pipe(gulp.dest('./dist/dotnet/'));
 });
+
+/* build pages for visualization tips */
+
+gulp.task('viz-build', ['viz-prebuild:header', 'viz-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/visualization/' + fileName + '.html';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      dirName = returnName(file);
+      console.log('build visualization/' + dirName + '/index.html');
+      return gulp.src('template-tips-pages.html')
+        .pipe(gfi({
+          '<!-- INSERT TITLE -->': './dist/visualization/header/' + dirName + '.html',
+          '<!-- INSERT CONTENTS -->': './dist/visualization/' + dirName + '.html'
+        }))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./visualization/' + dirName + '/'));
+    }));
+});
+
+gulp.task('viz-prebuild:header', function () {
+  mkdirp('./dist/visualization/header/');
+  var fileName = checkFileName();
+  var src = './pages/visualization/header/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/visualization/header/'));
+});
+
+gulp.task('viz-prebuild:content', function () {
+  mkdirp('./dist/visualization/');
+  var fileName = checkFileName();
+  var src = './pages/visualization/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/visualization/'));
+});
