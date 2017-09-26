@@ -1,8 +1,8 @@
-![](http://apps.esrij.com/arcgis-dev/guide/img/visualization/overlay-datavizjs.png)
-
 ArcGIS 開発者向けクラウド サービス（[ArcGIS for Developers]()）で提供されているビジュアライゼーション ツール（マップ ビューアー）を使用した地図上でのデータ可視化のプロセスを紹介します。最終的には地図作成にとどまらず、サードパーティのチャートなどのコンポーネントを組み合わせたアプリ開発をゴールとしています。
 
 本ワークフローで伝える方法はあくまで作成済みのデータに簡単な加工を施して可視化を行うことをクラウド上で実施することを前提としています。よって、デスクトップ GIS ソフトウェアなどを使ったデータ編集は除外しています。
+
+![](http://apps.esrij.com/arcgis-dev/guide/img/visualization/overlay-datavizjs.png)
 
 ### ワークフロー
 
@@ -33,7 +33,7 @@ ArcGIS のクラウド サービスが提供するビジュアライゼーショ
 
 サポートするデータ形式は以下の通りです。
 
-- ArcGIS Server Web サービス（GeoServices）
+- ArcGIS Server サービス（GeoServices）
 - シェープファイル
 - GeoJSON
 - CSV
@@ -55,13 +55,11 @@ ArcGIS のクラウド サービスが提供するビジュアライゼーショ
 
 ここで紹介するデータ加工はさまざまなデータ形式を１つの地図上に重ねて可視化する作業にあたります。前のステップで取得したデータをデータ ビジュアライゼーション ツールを使って地図上に可視化します。
 
-- ArcGIS Server Web サービスの場合
+- <a href="https://doc.arcgis.com/ja/arcgis-online/create-maps/add-layers.htm#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8" target="_blank">Web サービス（ArcGIS Server サービス、GeoRSS、KML、OGC）の場合</a>
 
-- 静的ファイル（シェープファイル、GeoJSON、GPX、GeoRSS、KML）の場合
+- <a href="https://doc.arcgis.com/ja/arcgis-online/create-maps/add-layers.htm#FILE" target="_blank">静的ファイル（シェープファイル、CSV、TXT、GPX）の場合</a>
 
-- テキスト ファイル（CSV、TXT）の場合
-
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/webmap/addlayer.gif" width="600px">
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webmap/addlayer.gif" width="600px"> 
 > ArcGIS Online で全世界に配信されているデータの検索および可視化
 
 ### データ処理
