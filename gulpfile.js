@@ -293,3 +293,46 @@ gulp.task('dotnetpages-prebuild:content', function () {
     }))
     .pipe(gulp.dest('./dist/dotnet/'));
 });
+
+/* build pages for tips */
+
+gulp.task('tips-build', ['tips-prebuild:header', 'tips-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/tips/' + fileName + '.html';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      dirName = returnName(file);
+      console.log('build tips/' + dirName + '/index.html');
+      return gulp.src('template-tips-pages.html')
+        .pipe(gfi({
+          '<!-- INSERT TITLE -->': './dist/tips/header/' + dirName + '.html',
+          '<!-- INSERT CONTENTS -->': './dist/tips/' + dirName + '.html'
+        }))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./tips/' + dirName + '/'));
+    }));
+});
+
+gulp.task('tips-prebuild:header', function () {
+  mkdirp('./dist/tips/header/');
+  var fileName = checkFileName();
+  var src = './pages/tips/header/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/tips/header/'));
+});
+
+gulp.task('tips-prebuild:content', function () {
+  mkdirp('./dist/tips/');
+  var fileName = checkFileName();
+  var src = './pages/tips/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/tips/'));
+});
