@@ -10,7 +10,8 @@
     "wabpages-build": "gulp wabpages-build",
     "androidpages-build": "gulp androidpages-build",
     "iospages-build": "gulp iospages-build",
-    "dotnetpages-build": "gulp dotnetpages-build"
+    "dotnetpages-build": "gulp dotnetpages-build",
+    "tips-build": "gulp tips-build"
   },
   "repository": {
     "type": "git",

@@ -42,8 +42,18 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
   * [Android](http://arcg.is/1PiwBfG)
   * [iOS](http://arcg.is/1LlUgpi)
 
-## イベント向けページ
+## テーマ別ページ
 
-開発者向けのイベント用に提供したページのリンクです。
+* __データ ビジュアライゼーション__  
+地図にデータを可視化する際の tips を紹介します。
+  * [データ可視化のワークフロー](../tips/workflow-with-arcgis)
+  * [データ可視化の手順](https://github.com/wakanasato/Hackathon-support/blob/master/VisualizeMap/README.md)
+  * [地図上に賢くデータを可視化するための 6 つの方法](../tips/6ways-to-improve-your-maps)
 
+<<<<<<< HEAD
 * [ミートアップ](../hackathon/)
+=======
+* __イベント向けページ__  
+開発者向けのイベント用に提供したページのリンクです。
+  * [ハッカソン](../hackathon/)
+>>>>>>> upstream/gh-pages
