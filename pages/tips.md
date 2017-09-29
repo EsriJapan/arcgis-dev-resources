@@ -47,7 +47,7 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
 * __データ ビジュアライゼーション__  
 地図にデータを可視化する際の tips を紹介します。
   * [データ可視化のワークフロー](../tips/workflow-with-arcgis)
-  * [データ可視化の手順](https://github.com/wakanasato/Hackathon-support/blob/master/VisualizeMap/README.md)
+  * [データ可視化の手順](../tips/data-visualization-procedure)
   * [地図上に賢くデータを可視化するための 6 つの方法](../tips/6ways-to-improve-your-maps)
 
 <<<<<<< HEAD
