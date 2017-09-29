@@ -50,6 +50,4 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
   * [データ可視化の手順](../tips/data-visualization-procedure)
   * [地図上に賢くデータを可視化するための 6 つの方法](../tips/6ways-to-improve-your-maps)
 
-* __イベント向けページ__  
-開発者向けのイベント用に提供したページのリンクです。
-  * [ハッカソン](../hackathon/)
+* [ミートアップ](../hackathon/)
