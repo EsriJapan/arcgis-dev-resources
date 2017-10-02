@@ -12,7 +12,7 @@ ArcGIS for Developers の開発者向けクラウド サービスではお手持
 
 タイル サービスとしては Esri が配信している全世界の背景地図サービスを無償で利用できます。
 なお、タイル生成サービスを利用する場合は、[1,000 タイル生成につき、1 クレジット消費します](http://www.esrij.com/products/arcgis-online/credits/maptile/)。
-ArcGIS for Developers のみでタイル サービスを公開する方法は ArcGIS Online ヘルプの[ホスト タイル レイヤーの公開](http://doc.arcgis.com/ja/arcgis-online/share-maps/publish-tiles-from-features.htm)をご覧ください。
+タイル サービスを公開する方法は ArcGIS Online ヘルプの[ホスト タイル レイヤーの公開](http://doc.arcgis.com/ja/arcgis-online/share-maps/publish-tiles-from-features.htm)をご覧ください。
 
 以下では、主題データとして利用頻度のもっとも高いフィーチャ サービスの公開および配信方法をご紹介します。
 
@@ -57,7 +57,7 @@ ArcGIS for Developers のみでタイル サービスを公開する方法は Ar
 > アプリケーションがデータにアクセスする際に使用します。デフォルトでは自動で Title と同じ文字が入力されますが、変更することも可能です。サービス名に使用できる文字はアルファベット、数字、スペースおよびアンダースコアのみです。
 
 * Tags（タグ）
-> ArcGIS for Developers のサイト上でフィーチャ サービスを検索する際に利用します。
+> ArcGIS for Developers のサイト上でフィーチャ サービスを検索する際に利用します。作成するフィーチャー サービスのキーワードとなる語句を入力し、Enter キー を押すとタグが作成されます。
 
 入力が完了したら、[Geometry] をクリックして次へ進みます。
 
