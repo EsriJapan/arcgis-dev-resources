@@ -23,7 +23,7 @@ ArcGIS Runtime SDK for iOS に関しては、[ESRIジャパン 製品ページ](
 
 macOS 上の `ArcGIS.framework` のインストール場所が、10.2.x から変更されています。100.x では、`$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static` にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの `Framework Search Paths` の設定と `ArcGIS.bundle` ファイルの参照先も更新してください。
 
-100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。
+100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 以降がサポートされています。
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、[ESRIジャパン 製品ページ（動作環境）](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
@@ -67,7 +67,7 @@ self.mapView.map = map
 作成した各レイヤーは、以下の方法でマップに追加します。
 ```javascript
 // 操作レイヤーとしてマップに追加する
-self.map.operationalLayers.addObject(arcgis_map_image_layer)
+self.map.operationalLayers.add(arcgis_map_image_layer)
 
 // ベースマップとしてマップに追加する
 self.map.basemap = AGSBasemap(baseLayer: arcgis_tiled_layer)
@@ -136,11 +136,11 @@ self.featureTable.populateFromService(with: params, clearCache: true, outFields:
 
 #### フィーチャの検索
 フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
-`AGSArcGISFeatureTable` または `AGSGeodatabaseFeatureTable` クラスの `queryFeaturesWithParameters` メソッドを使用します。
+`AGSServiceFeatureTable` または `AGSGeodatabaseFeatureTable` クラスの `queryFeaturesWithParameters` メソッドを使用します。
 
 次のコードは、フィーチャ サービスから作成したフィーチャ テーブルからフィーチャを検索する方法を示しています。
 ```javascript
-featureTable.queryFeatures(with: queryParameters, fields: .loadAll, completion:{ (result, error) -> Void in
+featureTable.queryFeatures(with: queryParameters, queryFeatureFields: .loadAll, completion:{ (result, error) -> Void in
            if let error = error {   
                print("Error:\(error.localizedDescription)")
            } else {
@@ -201,16 +201,15 @@ self.mapView.graphicsOverlays.add(graphicsOverlay)
 ```javascript
 // マップ ビューにスケッチ エディターを設定
 self.sketchEditor = AGSSketchEditor()
-self.mapView.sketchEditor =  
+self.mapView.sketchEditor = self.sketchEditor
 // ジオメトリの種類を設定してスケッチを開始
-self.sketchEditor
 self.sketchEditor.start(with: AGSGeometryType.polygon)
 // スケッチ中のジオメトリの更新を監視
 NotificationCenter.default.addObserver(self, selector: #selector(ViewController.respondToGeometryChanged), name: NSNotification.Name.AGSSketchEditorGeometryDidChange, object: nil)
 
 ・・・・・・
 
-func respondToGeometryChanged() {
+@objc func respondToGeometryChanged() {
   // ジオメトリが更新された際の処理
 }
 ```

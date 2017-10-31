@@ -88,7 +88,6 @@
 <li><strong><a href="#standard-ライセンスの認証">Standard ライセンスの認証</a></strong></li>
 </ul>
 </li>
-<li><strong><a href="#アプリケーションへの帰属の追加">アプリケーションへの帰属の追加</a></strong></li>
 </ol>
 <h2 id="使用するライセンスの選択">使用するライセンスの選択</h2>
 <p>ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</p>
@@ -226,7 +225,7 @@ print(&quot;Error: \(error)&quot;)
 <pre><code class="lang-javascript"> var licenseDictionary: NSDictionary?
  do {
   // ライセンス情報を配列で出力
-  let licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
+  licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
  } catch {
   print(&quot;ライセンス情報が無効です&quot;)
  }
@@ -251,20 +250,6 @@ print(&quot;Error: \(error)&quot;)
   print(&quot;Error: \(error.localizedDescription)&quot;)
  }
 </code></pre>
-<h2 id="アプリケーションへの帰属の追加">アプリケーションへの帰属の追加</h2>
-<ul>
-<li><p><strong>地図データへのクレジット</strong></p>
-<p>アプリケーション内で使用されている ArcGIS Online によって提供されている地図サービスのクレジット情報がアプリケーション内で明記されている必要があります。記載する必要があるテキストは地図サービスの REST サービスエンドポイントにおいて &quot;Copyright Text&quot; セクションに記載されています。</p>
-<p>例えば World_Imagery サービス を利用する場合に記載するテキストは以下の通りです。</p>
-<p><em>Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community</em></p>
-<p>※ 上記テキストは <a href="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer">World_Imagery サービスの REST エンドポイント</a>の &quot;Copyright Text&quot; セクションに記載されています。</p>
-</li>
-</ul>
-<ul>
-<li><p><strong>Esri 帰属の表示</strong></p>
-<p>開発したアプリケーションのマップ上に Esri への帰属を表示する必要があります。ArcGIS Runtime SDK を使用して開発したアプリケーションでは、マップ画面にデフォルトで &quot;Powered by Esri&quot; の帰属が表示されています。この帰属が他の要素と重ならないように注意してください。</p>
-</li>
-</ul>
 
 						</div>
 					</section>
