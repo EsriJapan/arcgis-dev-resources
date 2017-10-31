@@ -37,7 +37,7 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
 
 1.	Xcode を起動して、表示されたダイアログで [Create a new Xcode project] をクリックします。
 
-1.	[Single View Application] テンプレートを選択して、[Next] をクリックします。
+1.	[Single View App] テンプレートを選択して、[Next] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/project01.png" width="450px">
 
@@ -73,7 +73,7 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.1'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.1.1'
 end
 ```
 

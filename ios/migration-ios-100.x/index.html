@@ -98,7 +98,7 @@
 </ul>
 <h2 id="xcode-プロジェクトの変更">Xcode プロジェクトの変更</h2>
 <p>macOS 上の <code>ArcGIS.framework</code> のインストール場所が、10.2.x から変更されています。100.x では、<code>$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static</code> にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの <code>Framework Search Paths</code> の設定と <code>ArcGIS.bundle</code> ファイルの参照先も更新してください。</p>
-<p>100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 及び iOS 10 がサポートされています。</p>
+<p>100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 以降がサポートされています。</p>
 <p>ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップとシーン">マップとシーン</h2>
 <p>100.x では、<code>AGSMap</code> オブジェクト（2D表示用）と <code>AGSScene</code> オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
@@ -146,7 +146,7 @@ self.mapView.map = map
 <p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/ios/latest/swift/guide/layers.htm">ArcGIS Runtime SDK for iOS: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
 <pre><code class="lang-javascript">// 操作レイヤーとしてマップに追加する
-self.map.operationalLayers.addObject(arcgis_map_image_layer)
+self.map.operationalLayers.add(arcgis_map_image_layer)
 
 // ベースマップとしてマップに追加する
 self.map.basemap = AGSBasemap(baseLayer: arcgis_tiled_layer)
@@ -198,9 +198,9 @@ self.featureTable.populateFromService(with: params, clearCache: true, outFields:
 <a href="https://developers.arcgis.com/ios/latest/swift/guide/edit-features.htm">ArcGIS Runtime SDK for iOS: フィーチャの編集（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
-<code>AGSArcGISFeatureTable</code> または <code>AGSGeodatabaseFeatureTable</code> クラスの <code>queryFeaturesWithParameters</code> メソッドを使用します。</p>
+<code>AGSServiceFeatureTable</code> または <code>AGSGeodatabaseFeatureTable</code> クラスの <code>queryFeaturesWithParameters</code> メソッドを使用します。</p>
 <p>次のコードは、フィーチャ サービスから作成したフィーチャ テーブルからフィーチャを検索する方法を示しています。</p>
-<pre><code class="lang-javascript">featureTable.queryFeatures(with: queryParameters, fields: .loadAll, completion:{ (result, error) -&gt; Void in
+<pre><code class="lang-javascript">featureTable.queryFeatures(with: queryParameters, queryFeatureFields: .loadAll, completion:{ (result, error) -&gt; Void in
            if let error = error {   
                print(&quot;Error:\(error.localizedDescription)&quot;)
            } else {
@@ -246,16 +246,15 @@ self.mapView.graphicsOverlays.add(graphicsOverlay)
 <p>次のコードは、<code>AGSSketchEditor</code> の使用方法の例を示しています。</p>
 <pre><code class="lang-javascript">// マップ ビューにスケッチ エディターを設定
 self.sketchEditor = AGSSketchEditor()
-self.mapView.sketchEditor =  
+self.mapView.sketchEditor = self.sketchEditor
 // ジオメトリの種類を設定してスケッチを開始
-self.sketchEditor
 self.sketchEditor.start(with: AGSGeometryType.polygon)
 // スケッチ中のジオメトリの更新を監視
 NotificationCenter.default.addObserver(self, selector: #selector(ViewController.respondToGeometryChanged), name: NSNotification.Name.AGSSketchEditorGeometryDidChange, object: nil)
 
 ・・・・・・
 
-func respondToGeometryChanged() {
+@objc func respondToGeometryChanged() {
   // ジオメトリが更新された際の処理
 }
 </code></pre>
