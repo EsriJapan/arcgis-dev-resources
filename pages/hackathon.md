@@ -10,9 +10,10 @@
 座標情報を持った地理データや住所情報を持ったテキストデータなどを可視化して、アプリに組み込むための地図を作成する方法や Tips を紹介します。
 なお、データ可視化の作業はコーディングが不要なので、プランナーやデザイナーの方でも取り組んでいただくことができます。
 
-* [データ可視化のワークフロー](http://esrijapan.github.io/arcgis-dev-resources/tips/workflow-with-arcgis)
-* [データ可視化の手順](http://esrijapan.github.io/arcgis-dev-resources/tips/data-visualization-procedure)
-* [地図上に賢くデータを可視化するための 6 つの方法](http://esrijapan.github.io/arcgis-dev-resources/tips/6ways-to-improve-your-maps)
+* [データ可視化のワークフロー](../tips/workflow-with-arcgis)
+* [データ可視化の手順](../tips/data-visualization-procedure)
+* [データ可視化の手順（3D）](../tips/data-visualization-procedure-3d)
+* [地図上に賢くデータを可視化するための 6 つの方法](../tips/6ways-to-improve-your-maps)
 
 ## アプリに地図を組み込む
 
