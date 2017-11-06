@@ -17,7 +17,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-1. `\arcgis_js_api\library` とすべてのコンテンツをコピーして Web サーバー上に移動します（`C:\Inetpub\wwwroot\arcgis_js_api\library`）。
+1. `\arcgis_js_api\library` とすべてのコンテンツをコピーして Web サーバー上に移動します。（`C:\Inetpub\wwwroot\arcgis_js_api\library`）
 
 ## ビルドのインストール
 
