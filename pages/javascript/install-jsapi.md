@@ -23,17 +23,17 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。
 
-1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.4\4.4\init.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.4/4.4/` に置き換えます。
-1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.4\4.4\dojo\dojo.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.4/4.4/` に置き換えます。
+1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.5\init.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.5/` に置き換えます。
+1. `C:\Inetpub\wwwroot\arcgis_js_api\library\4.5\dojo\dojo.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.5/` に置き換えます。
 
 ## インストールのテスト
 
 ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。
 
 ```html
-<script src="https://www.example.com/arcgis_js_api/library/4.4/4.4/init.js"></script>
+<script src="https://www.example.com/arcgis_js_api/library/4.5/init.js"></script>
 ```
 
 インストールのテストには以下のコードを利用してください。
@@ -45,8 +45,8 @@ Esri がホストしている CDN にインターネット経由で参照する�
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
     <title>Test Map</title>
-    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.4/4.4/dijit/themes/claro/claro.css" />
-    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.4/4.4/esri/css/main.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.5/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.5/esri/css/main.css" />
     <style>
       html, body, #ui-map-view {
         margin: 0;
@@ -55,7 +55,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
         height: 100%;
       }
     </style>
-    <script src="https://www.example.com/arcgis_js_api/library/4.4/4.4/init.js"></script>
+    <script src="https://www.example.com/arcgis_js_api/library/4.5/init.js"></script>
     <script>
       var myMap, view;
       require([
