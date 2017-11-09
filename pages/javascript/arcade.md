@@ -29,13 +29,33 @@ $feature.fieldName
 ($feature.DEM_VOTES / $feature.TURNOUT ) * 100
 ```
 
+Arcade はコンテクスト内、または Arcade が理解されるプロファイル内でのみ実行可能です。JavaScript アプリでは、式は常に文字列の値として参照されます。Arcade は、シンプルな一行の式、または、より複雑な複数行からなる式として書かれます。
+
+一行の式を書くとき、シンプルにダブルまたはシングル クォーテーションで囲みます。
+
+```js
+renderer.valueExpression = "Round( ($feature.AGE_18UP / $feature.TOTAL_POP) * 100 )";
+```
+
+複数行に渡る式を書くとき、JavaScript の外に `<script>` タグを分け、タイプを `text/plain` に設定し、JavaScript から参照できるようユニークな ID を付与して配置することが推奨されます。
+
+```html
+<script type="text/plain" id="adult-population">
+  // 複数行の式を記述
+</script>
+```
+
+そして、JavaScript は、`document.getElementById()` メソッドを呼ぶことで、文字列として参照します。
+
+```js
+renderer.valueExpression = document.getElementById("adult-population").text;
+```
+
+下記のスニペットや <a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_balnk">Create a custom visualization using an Arcade expression サンプル</a>を参照ください。
 
 ## プロファイル
 
-Arcade はいくつかのプロファイルにおける使用のためにデザインされました。
-プロファイルとは、理解し使用される命令語のコンテクストです。
-ArcGIS API 4.4 for JavaScript では、ビジュアライゼーションとポップアップ コンテンツの２つのプロファイルをサポートしています。
-将来的には、ラベリングや、フィーチャ フィルタリングなどを考慮したプロファイルが追加される予定です。
+Arcade はいくつかのプロファイルにおける使用のためにデザインされました。プロファイルとは、理解し使用される命令語のコンテクストです。ArcGIS API 4.5 for JavaScript では、ビジュアライゼーション、ポップアップ、ラベリング（3D のみサポート）の３つのプロファイルをサポートしています。3D では、Arcade を使用することにより、フィーチャの標高を計算することも可能です。
 
 ### ビジュアライゼーション
 
@@ -133,7 +153,7 @@ renderer.visualVariables = [ opacityVV ];
 
 実際にビジュアライゼーションを行った結果はサンプル アプリ (<a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_blank">Create a custom visualization using Arcade</a>) で確認してみてください。
 
-## ポップアップ
+### ポップアップ
 Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank">` PopupTmplate `</a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank">`コンテンツ `</a> 内で参照することもできます。ビジュアライゼーション プロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">`FeatureLayer `</a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
 例えば、サンプルアプリ （ <a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`Reference Arcade expressions in PopupTemplate`</a> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。
 
@@ -187,3 +207,84 @@ layer.popupTemplate = {
 PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank">`fieldinfos`</a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
 このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`PopupTemplate Reference Arcade`</a>）でご覧ください。
 
+### ラベリング
+
+> ラベリングは、現在、3D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html" target="_blank">SceneView</a> のみサポートしています。2D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html" target="_blank">MapView</a> でのラベリングは将来のリリースで追加される予定です。
+
+Arcade は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">FeatureLayer</a> または <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SceneLayer.html" target="_blank">SceneLayer</a> に含まれるフィーチャのラベルの式を作成するためにも使用されます。バージョン 4.5 からは、フィーチャをラベリングするためにサポートされた唯一の方法です。
+
+少なくともひとつの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> をレイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelingInfo" target="_blank">LabelingInfo</a> プロパティへ追加し、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelsVisible" target="_blank">labelsVisible</a> プロパティを `true` へ設定する必要があります。式は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#labelExpressionInfo" target="_blank">labelExpressionInfo</a> オブジェクトの `expression` プロパティへ文字列として渡します。
+
+```js
+// レイヤーのフィールド値を返す
+// フィールド値は各フィーチャのラベルに使用される
+var arcade = "$feature.STATION_NAME";
+
+// new LabelClass() の autocast オブジェクト
+var labelClass = {
+  // 式を labelExpressionInfo の `expression` プロパティに設定する
+  labelExpressionInfo: {
+    expression: arcade
+  },
+  labelPlacement: "below-right",
+  minScale: 2500000,
+  symbol: {
+    type: "label-3d",
+    symbolLayers: [{
+      type: "text",
+      material: { color: "white" },
+      halo: {
+        color: "black",
+        size: 1
+      },
+      size: 8
+    }]
+  }
+};
+
+// LabelClass を FeatureLayer へ設定
+featureLayer.labelingInfo = [ labelClass ];
+featureLayer.labelsVisible = true;
+```
+
+Arcade で書かれたラベル式は、数学的で論理的な操作を実行する複数行に渡るもっと複雑な式になるかもしれません。例えば、<a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-labeling-3d/" target="_blank">Label features using Arcade expressions サンプル</a>は、より複雑な複数行に渡るラベル式を示しています。この式は２つの数値フィールドの値を変数に入れ、評価し、文字列を返します。Arcade の <a href="https://developers.arcgis.com/arcade/function-reference/logical_functions/#when" target="_blank">When()</a> は、風向き（0 - 360 度）を評価し、`N`、`NE`、`E`、`SE`、`S`、`SW`、`W` または `NW` のいずれかの関連する方角を返します。風力が `0` のとき、方角は返されません。式の最後で、ラベル（WIND 変数の値）を返します。
+
+```html
+<script type="text/plain" id="wind-direction">
+  var DEG = $feature.WIND_DIRECT;
+  var SPEED = $feature.WIND_SPEED;
+  var DIR = When( SPEED == 0, '',
+    (DEG < 22.5 && DEG >= 0) || DEG > 337.5, 'N',
+     DEG >= 22.5 && DEG < 67.5, 'NE',
+     DEG >= 67.5 && DEG < 112.5, 'E',
+     DEG >= 112.5 && DEG < 157.5, 'SE',
+     DEG >= 157.5 && DEG < 202.5, 'S',
+     DEG >= 202.5 && DEG < 247.5, 'SW',
+     DEG >= 247.5 && DEG < 292.5, 'W',
+     DEG >= 292.5 && DEG < 337.5, 'NW', '' );
+  var WIND = SPEED + ' mph ' + DIR;
+  return WIND;
+</script>
+```
+
+そのほかにも、テキスト整形のロジックを提供するテキスト関数を含む、ラベリングに役立つ多くの関数が用意されています。詳細は <a href="https://developers.arcgis.com/arcade/">Arcade</a> をご参照ください。
+
+## その他のケース
+
+### 標高
+
+3D SceneView では、<a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> を使用してフィーチャごとに独自の標高を設定できます。フィーチャは Z 値を持つことができますが、属性値や Z 値を使用した計算式をもとに高さを演算したい場合に有効です。さらに、Z 値を含まないが、属性フィールドに Z 値に関連する情報を持つデータの場合、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html#elevationInfo" target="_blank">featureExpressionInfo.expression</a> プロパティに式を設定できます。例として、<a href="https://developers.arcgis.com/javascript/latest/sample-code/scene-elevationinfo/index.html" target="_blank">Elevation options</a> サンプルは Arcade を使用してポイント シンボルの高さがどのように変化するのかを示しています。
+
+```js
+layer.elevationInfo = {
+  mode: "absolute-height",
+  featureExpressionInfo: {
+    expression: "Geometry($feature).z + $feature.HEIGHT"
+  },
+  unit: "meters"
+};
+```
+
+上記の例では、独自の HEIGHT 属性がジオメトリの Z 値として、グラフィックの標高に設定されます。ラインまたはポリゴン フィーチャにおいて、すべてのフィーチャの頂点は `expression` の戻り値の標高を持ちます。
+
+<a href="https://developers.arcgis.com/arcade/playground/" target="_blank">プレイグラウンド</a>では、入力フィーチャ サービスからインポートしたフィールド値をもとに、ブラウザーから式をビルド、デバッグ、テストできます。<a href="https://developers.arcgis.com/arcade/function-reference/text_functions/#Console" target="_blank">Console()</a> 機能を使い、複雑なスクリプトをデバッグすることも可能です。
