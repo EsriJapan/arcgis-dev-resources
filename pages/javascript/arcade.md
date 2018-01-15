@@ -5,9 +5,9 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 Arcade が他のスクリプト言語に比べてユニークなのは、<a href="https://developers.arcgis.com/arcade/function-reference/geometry_functions/" target="_blank">ジオメトリ関数</a>を含んでいるところです。
 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。
 現在のリリースでは、ジオメトリの作成と参照が可能です。
-しかし、<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13">Arcade バージョン 1.3</a> で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
+しかし、<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
 
-> <a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13">Arcade バージョン 1.3</a> で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+> <a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、<a href="https://developers.arcgis.com/javascript/3/jsapi/esri.support.expressionutils-amd.html" target="_blank">バージョン 3.23</a> 以上で使用できます。将来的には、4.x でのサポートを予定しています。
 
 ## シンタックス
 
