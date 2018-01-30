@@ -4,12 +4,10 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ## ライブラリのダウンロード
 
-ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[ArcGIS API for JavaScript] の [Download for Hosting Locally]　セクションにある [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。 
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/developers-downloads.png" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.PNG" width="600px">
 
-> ダウンロードするライブラリのバージョンはドロップダウン リストから選択することができます。
->
 > [Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## Web サーバー（IIS）に配置
