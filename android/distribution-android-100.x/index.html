@@ -106,7 +106,7 @@
 </tr>
 <tr>
 <td style="text-align:left">Basic</td>
-<td style="text-align:left">・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオンライン/オフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
+<td style="text-align:left">・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
 </tr>
 <tr>
 <td style="text-align:left">Standard</td>
@@ -162,7 +162,7 @@
 <ol>
 <li><p><a href="https://developers.arcgis.com/arcgis-runtime/licensing/">ArcGIS for Developers: Licensing Your ArcGIS Runtime App</a> ページにアクセスします（サインインを求められた場合は、ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は<a href="http://esrijapan.github.io/arcgis-dev-resources/get-dev-account/">開発者アカウントの作成</a>をご参照ください。）</p>
 </li>
-<li><p>[Show my ArcGIS Runtime Lite license key] をクリックします
+<li><p>[Show my ArcGIS Runtime Lite license key] をクリックします</br>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px"></p>
 </li>
 <li><p>表示されたライセンスキーをコピーします</p>
@@ -174,7 +174,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
  Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
 }else{
  // TODO ライセンスが無効の場合の処理
-ﾂꀀ ﾂꀀLog.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+ Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
 }
 </code></pre>
 </li>
@@ -189,7 +189,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
- ﾂꀀ ﾂꀀLog.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+    Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
 }
 </code></pre>
 <h2 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h2>
@@ -229,11 +229,11 @@ portal.addDoneLoadingListener(new Runnable() {
 <p> <strong>アプリケーションが ArcGIS Online / Portal for ArcGIS に常にログインできない場合</strong></p>
 <p> 配布するアプリケーションがネットワークに接続できない環境で実行するなどの理由により、起動時に毎回 ArcGIS Online / Portal for ArcGIS にログインすることができない場合は、取得したライセンス情報を最大 30 日までローカルに保存しておくことができます。</p>
 <p> この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となり該当するライセンスを必要とする機能が使用できなくなります。</p>
-<pre><code class="lang-java"> ﾂꀀ// ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
- ﾂꀀLicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
-　String licenseInfoJson = licenseInfo.toJson();
+<pre><code class="lang-java">  // ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
+  LicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
+  String licenseInfoJson = licenseInfo.toJson();
 
- ﾂꀀ// オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
+  // オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
   LicenseInfo licenseInfo = new LicenseInfo(licenseInfoJson);
 
   // 作成したライセンス情報を設定します。

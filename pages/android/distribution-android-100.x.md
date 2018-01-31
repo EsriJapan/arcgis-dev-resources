@@ -20,7 +20,7 @@ ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライ
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
 | Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
-| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオンライン/オフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
+| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-Android/details/license/)をご参照ください。
@@ -65,7 +65,7 @@ ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイ�
 
 1. [ArcGIS for Developers: Licensing Your ArcGIS Runtime App](https://developers.arcgis.com/arcgis-runtime/licensing/) ページにアクセスします（サインインを求められた場合は、ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は[開発者アカウントの作成](http://esrijapan.github.io/arcgis-dev-resources/get-dev-account/)をご参照ください。）
 
-2. [Show my ArcGIS Runtime Lite license key] をクリックします
+2. [Show my ArcGIS Runtime Lite license key] をクリックします</br>
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px">
 
 3. 表示されたライセンスキーをコピーします
@@ -79,7 +79,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
- ﾂꀀ ﾂꀀLog.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
+    Log.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
 }
  ```
 
@@ -98,7 +98,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
- ﾂꀀ ﾂꀀLog.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
+    Log.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
 }
  ```
 
@@ -129,7 +129,7 @@ portal.addDoneLoadingListener(new Runnable() {
 
             // 取得したライセンスを設定します
             LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(licenseInfo);
-            
+
             if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
                 Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
             }else{
@@ -148,14 +148,13 @@ portal.addDoneLoadingListener(new Runnable() {
  この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となり該当するライセンスを必要とする機能が使用できなくなります。
 
   ```java
- ﾂꀀ// ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
- ﾂꀀLicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
-　String licenseInfoJson = licenseInfo.toJson();
+  // ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
+  LicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
+  String licenseInfoJson = licenseInfo.toJson();
 
- ﾂꀀ// オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
+  // オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
   LicenseInfo licenseInfo = new LicenseInfo(licenseInfoJson);
 
   // 作成したライセンス情報を設定します。
   ArcGISRuntimeEnvironment.setLicense(licenseInfo);
   ```
-
