@@ -57,13 +57,6 @@ self.mapView.map = map
 |タイル マップ サービス レイヤー|AGSTiledMapServiceLayer|AGSArcGISTiledLayer|
 |タイル パッケージ レイヤー|AGSLocalTiledLayer|AGSArcGISTiledLayer|
 
-現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
-
-* WMS サービス レイヤー（`AGSWMSLayer`）
-
-
-100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for iOS: レイヤー（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm)をご参照ください。
-
 作成した各レイヤーは、以下の方法でマップに追加します。
 ```javascript
 // 操作レイヤーとしてマップに追加する
@@ -249,7 +242,7 @@ self.mapView.locationDisplay.start(completion: { (error) -> Void in
 })
 ```
 ## 既知の制限事項
-現バージョン 100.1 での既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#GUID-9F6CC822-7328-4F30-8A42-45696DDD1DDD)に記載されていますので、ご参照ください。
+現バージョン 100.2 での既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm)
