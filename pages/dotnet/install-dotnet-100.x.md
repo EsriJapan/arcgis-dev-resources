@@ -35,13 +35,9 @@ ArcGIS Runtime SDK for .NET を用いて、Windows や iOS、Android プラッ�
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_WPF_NuGetPackageManager.png" width="350px">
 
 1. NuGet パッケージの管理から目的の ArcGIS Runtime SDK をインストールします。
-NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに　『ArcGIS Runtime』　と入力して検索を行います。検索されたリストから 『Esri.ArcGISRuntime.WPF』 を選択して、インストールをクリックします。
+NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから『Esri.ArcGISRuntime.WPF』を選択して、インストールをクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeWPF.png" width="550px">
-
-1. [プレビュー]画面が表示されますので、[OK]をクリックします。
-
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/preview_WPF.png" width="350px">
 
 1. [ライセンスへの同意]画面が表示されますので、[同意する]をクリックします。[同意する]をクリックすることでインストールが実行されます。
 
@@ -140,13 +136,9 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_UWP_NuGetPackageManager.png" width="350px">
 
 1. NuGet パッケージの管理から目的の ArcGIS Runtime SDK をインストールします。
-NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに　『ArcGIS Runtime』　と入力して検索を行います。検索されたリストから 『Esri.ArcGISRuntime.UWP』 を選択して、インストールをクリックします。
+NuGet は 67,000以上のパッケージを提供しているため、検索ボックスを使用して ArcGIS Runtime パッケージを検索する必要があります。検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから『Esri.ArcGISRuntime.UWP』を選択して、インストールをクリックします。
 
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeUWP.png" width="550px">
-
-1. [プレビュー]画面が表示されますので、[OK]をクリックします。
-
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/preview_UWP.png" width="350px">
 
 1. [ライセンスへの同意]画面が表示されますので、[同意する]をクリックします。[同意する]をクリックすることでインストールが実行されます。
 
@@ -281,12 +273,12 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
 1. Visual Studio for Mac を起動して [ファイル] メニューから [新しいソリューション] を選択します。
 
-1. [新しいプロジェクト] 画面が表示されます。ツリー ペインから [Multiplateform] を選択します。テンプレートのリストから [Blank Forms App] を選択し
+1. [新しいプロジェクト] 画面が表示されます。ツリー ペインから [空白フォームのアプリ] を選択します。テンプレートのリストから [Blank Forms App] を選択し
 て [次へ] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_1.png" width="500px">
 
-1. App Name を入力し、ターゲット プラットフォームを指定します。 Shard Code は、[Use Shared Library] を選択してください。すべての内容が問題なければ [次へ] をクリックします。
+1. アプリ名を入力し、ターゲット プラットフォームを指定します。 共有コードは、[共有ライブラリの使用] を選択してください。すべての内容が問題なければ [次へ] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_2.png" width="500px">
 
@@ -302,11 +294,11 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_4.png" width="250px">
 
-1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_5.png" width="400px">
 
-1. [ライセンスの同意] 画面で [マージの許可] をクリックしてパッケージの追加を行います。
+1. [ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_6.png" width="300px">
 
@@ -314,11 +306,11 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_7.png" width="250px">
 
-1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [ArcGISRuntime SDK for .NET - Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+1. [パッケージを追加] 画面が起動しますので、検索項目の欄に esri と入力して検索を行います。 いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_8.png" width="400px">
 
-1. [ライセンスの同意] 画面で [マージの許可] をクリックしてパッケージの追加を行います。
+1. [ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_9.png" width="300px">
 

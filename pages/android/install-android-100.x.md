@@ -16,7 +16,7 @@ ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネ�
 * Android Studio
 * Android 4.1.x (Jelly Bean) 以降
 
-※ JDK 6 または JDK 7 が必要です。Android 5.0 以上をターゲットとする場合は JDK 7 が必要です。
+※ JDK 6 または JDK 7 以上が必要です。Android 5.0 以上をターゲットとする場合は JDK 7 以上が必要です。
 
 ArcGIS Runtime SDK for Android がサポートする最新の動作環境につきましては[動作環境](http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)をご参照ください。
 
@@ -92,11 +92,11 @@ ArcGIS の Maven リポジトリの URL を追加します。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/2_2.addMaven.png" width="600px">
 
 
-1.	Project ツールウィンドウ で「Android」を選択して [Gradle Scripts] の下にある build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'」を追加します。
+1.	Project ツールウィンドウ で「Android」を選択して [Gradle Scripts] の下にある build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「compile 'com.esri.arcgisruntime:arcgis-android:100.2.0'」を追加します。
 
 	```java
 	dependencies {
-	    compile 'com.esri.arcgisruntime:arcgis-android:100.1.0'
+	    compile 'com.esri.arcgisruntime:arcgis-android:100.2.0'
 	    …
 	}
 	```
