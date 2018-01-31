@@ -157,18 +157,3 @@ var localLicenseInfo = Esri.ArcGISRuntime.LicenseInfo.FromJson(licenseJson);
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(localLicenseInfo);
 ```
 
-## アプリケーションへの帰属の追加
-
-* __地図データへのクレジット__
-
-  アプリケーション内で使用されている ArcGIS Online によって提供されている地図サービスのクレジット情報がアプリケーション内で明記されている必要があります。記載する必要があるテキストは地図サービスの REST サービスエンドポイントにおいて "Copyright Text" セクションに記載されています。
-
-  例えば World_Imagery サービス を利用する場合に記載するテキストは以下の通りです。
-
-  *Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community*
-
-  ※ 上記テキストは [World_Imagery サービスの REST エンドポイント](https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer)の "Copyright Text" セクションに記載されています。
-
-* __Esri 帰属の表示__
-
-  開発したアプリケーションのマップ上に Esri への帰属を表示する必要があります。ArcGIS Runtime SDK を使用して開発したアプリケーションでは、マップ画面にデフォルトで "Powered by Esri" の帰属が表示されています。この帰属が他の要素と重ならないように注意してください。
