@@ -10,7 +10,6 @@ ArcGIS Runtime SDK for Android を使用して開発したアプリケーショ�
 	* __[Lite ライセンスの認証](#lite-ライセンスの認証)__
 	* __[Basic ライセンスの認証](#basic-ライセンスの認証)__
 	* __[Standard ライセンスの認証](#standard-ライセンスの認証)__
-1. __[アプリケーションへの帰属の追加](#アプリケーションへの帰属の追加)__
 
 ## 使用するライセンスの選択
 
@@ -20,9 +19,9 @@ ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライ
 
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
-| Lite | ・地図表示<br>・フィーチャの表示/検索<br>・フィーチャ編集（パブリックなサービス）<br>・ルート検索<br>・住所検索 |
-| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャ編集（セキュアなサービス）<br>・ArcGIS Online の解析サービスの使用<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
-| Standard | ・Basic ライセンスで利用できるすべての機能<br>・ラスター データの直接参照 |
+| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
+| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオンライン/オフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
+| Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-Android/details/license/)をご参照ください。
 
@@ -80,7 +79,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
-    Log.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
+ ﾂꀀ ﾂꀀLog.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
 }
  ```
 
@@ -99,7 +98,7 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
-    Log.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
+ ﾂꀀ ﾂꀀLog.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
 }
  ```
 
@@ -149,30 +148,14 @@ portal.addDoneLoadingListener(new Runnable() {
  この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となり該当するライセンスを必要とする機能が使用できなくなります。
 
   ```java
-  // ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
-  LicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
+ ﾂꀀ// ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
+ ﾂꀀLicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
 　String licenseInfoJson = licenseInfo.toJson();
 
-  // オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
+ ﾂꀀ// オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
   LicenseInfo licenseInfo = new LicenseInfo(licenseInfoJson);
 
   // 作成したライセンス情報を設定します。
   ArcGISRuntimeEnvironment.setLicense(licenseInfo);
   ```
 
-## アプリケーションへの帰属の追加
-
-* __地図データへのクレジット__
-
- アプリケーション内で使用されている ArcGIS Online によって提供されている地図サービスのクレジット情報がアプリケーション内で明記されている必要があります。記載する必要があるテキストは地図サービスの REST サービスエンドポイントにおいて "Copyright Text" セクションに記載されています。
-
- 例えば World_Imagery サービス を利用する場合に記載するテキストは以下の通りです。
-
- *Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community*
-
- ※ 上記テキストは [World_Imagery サービスの REST エンドポイント](https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer)の "Copyright Text" セクションに記載されています。
-
-
- * __Esri 帰属の表示__
-
-  開発したアプリケーションのマップ上に Esri への帰属を表示する必要があります。ArcGIS Runtime SDK を使用して開発したアプリケーションでは、マップ画面にデフォルトで "Powered by Esri" の帰属が表示されています。この帰属が他の要素と重ならないように注意してください。
