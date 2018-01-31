@@ -26,7 +26,7 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ)|
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ) |
 
-ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-ios/details/license/)をご参照ください。
+ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/)をご参照ください。
 
 ## ライセンスの認証
 

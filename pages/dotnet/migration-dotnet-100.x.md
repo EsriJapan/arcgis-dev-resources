@@ -243,7 +243,7 @@ await featureLayer.LoadAsync();
 サポートされているツールの一覧は、[ArcGIS for Developers: ローカルサーバージオプロセシングツール サポート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server-geoprocessing-tools-support.htm) を参照してください。
 
 ## 既知の制限事項
-現バージョン 100.1 での既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_910A9F432FAB47A78ACD89F608748DD1)に記載されていますので、ご参照ください。
+現バージョン 100.2 での既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS for Developers: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm)
