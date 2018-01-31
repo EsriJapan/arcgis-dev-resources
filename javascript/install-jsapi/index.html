@@ -80,10 +80,9 @@
 							<p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
 <p>Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。</p>
 <h2 id="ライブラリのダウンロード">ライブラリのダウンロード</h2>
-<p>ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[ArcGIS API for JavaScript] の [Download for Hosting Locally]　セクションにある [API] ボタンをクリックするとダウンロードが開始します。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/developers-downloads.png" width="600px"></p>
+<p>ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。 </p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.PNG" width="600px"></p>
 <blockquote>
-<p>ダウンロードするライブラリのバージョンはドロップダウン リストから選択することができます。</p>
 <p>[Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
 </blockquote>
 <h2 id="web-サーバー（iis）に配置">Web サーバー（IIS）に配置</h2>
@@ -95,14 +94,14 @@
 <h2 id="ビルドのインストール">ビルドのインストール</h2>
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
 <ol>
-<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.5\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.5/</code> に置き換えます。</li>
-<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.5\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.5/</code> に置き換えます。</li>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.6\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.6/</code> に置き換えます。</li>
+<li><code>C:\Inetpub\wwwroot\arcgis_js_api\library\4.6\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.6/</code> に置き換えます。</li>
 </ol>
 <h2 id="インストールのテスト">インストールのテスト</h2>
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-<pre><code class="lang-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.5/init.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.6/init.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>インストールのテストには以下のコードを利用してください。</p>
 <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
@@ -111,8 +110,8 @@
     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
     &lt;title&gt;Test Map&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.5/dijit/themes/claro/claro.css&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.5/esri/css/main.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.6/dijit/themes/claro/claro.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.6/esri/css/main.css&quot; /&gt;
     &lt;style&gt;
       html, body, #ui-map-view {
         margin: 0;
@@ -121,7 +120,7 @@
         height: 100%;
       }
     &lt;/style&gt;
-    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.5/init.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.6/init.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
       var myMap, view;
       require([
