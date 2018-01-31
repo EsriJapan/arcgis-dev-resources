@@ -17,8 +17,8 @@ ArcGIS Runtime SDK for iOS を使うと ArcGIS の機能を iOS のネイティ�
 
 開発手順を進める前に以下の開発環境をご使用のマシンにセットアップしてください。
 
-*	macOS 10.11 (El Capitan) 以降
-*	Xcode 8 (iOS SDK 10) 以降
+*	High Sierra (macOS 10.13) または Sierra (macOS 10.12)
+*	Xcode 9 (iOS SDK 11)
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
@@ -73,7 +73,7 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.1.1'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.1.2'
 end
 ```
 
