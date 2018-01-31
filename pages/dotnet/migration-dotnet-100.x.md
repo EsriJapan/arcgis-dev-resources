@@ -45,9 +45,8 @@ MyMapView.Map = myMap;
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
-現バージョンの 100.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
+現バージョンの 100.2 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
 
-* WMS サービス レイヤー（`WMSLayer`）
 * KML サービス レイヤー（`KMLLayer`）
 
 100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm)をご参照ください。
