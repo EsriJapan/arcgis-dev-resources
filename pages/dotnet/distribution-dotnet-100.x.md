@@ -10,8 +10,6 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
   * __[Lite ライセンスの認証](#lite-ライセンスの認証)__
   * __[Basic ライセンスの認証](#basic-ライセンスの認証)__
   * __[Standard または Advanced ライセンスの認証](#standard-または-advanced-ライセンスの認証)__
-1. __[アプリケーションへの帰属の追加](#アプリケーションへの帰属の追加)__
-
 
 ## 使用するライセンスの選択
 
@@ -54,8 +52,8 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
   *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
   * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
-## Standard ライセンスの認証
-アプリケーションを Standard レベルで認証するには、以下の方法があります。
+## Standard または Advanced ライセンスの認証
+アプリケーションを Standard または Advanced レベルで認証するには、以下の方法があります。
 
 1. __ライセンスキーを使用した認証__
   * ArcGIS Runtime Standard の配布パックを購入する必要があります
