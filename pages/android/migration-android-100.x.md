@@ -30,7 +30,7 @@ Android Studio のビルド ツールは Gradle を使用し、maven リポジ�
         }
     }
     dependencies {
-        compile 'com.esri.arcgisruntime:arcgis-android:100.2.0'
+        compile 'com.esri.arcgisruntime:arcgis-android:100.2.1'
     }
 ```
 
@@ -64,7 +64,7 @@ mMapView.setMap(mArcGISMap);
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
-現バージョンの 100.2.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
+現バージョンの 100.2.1 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
 * KML サービス レイヤー（`KMLLayer`）
 
 100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for Android: レイヤー（英語）](https://developers.arcgis.com/android/latest/guide/layers.htm)をご参照ください。
@@ -233,7 +233,7 @@ if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
 Java 言語で　`ListenableFuture`　というインターフェースで馴染みのある　Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。
 
 ## 既知の制限事項
-現バージョン 100.2.0 での既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
+現バージョン 100.2.1 での既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm)
