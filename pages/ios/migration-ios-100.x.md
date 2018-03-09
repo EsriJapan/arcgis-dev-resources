@@ -242,7 +242,7 @@ self.mapView.locationDisplay.start(completion: { (error) -> Void in
 })
 ```
 ## 既知の制限事項
-現バージョン 100.2 での既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm)
