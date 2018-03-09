@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\workspace\ejresources\arcgis-dev-resources\startup\android\100.x\map\app\app.iml" filepath="D:\workspace\ejresources\arcgis-dev-resources\startup\android\100.x\map\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/map.iml" filepath="$PROJECT_DIR$/map.iml" />
-      <module fileurl="file://D:\workspace\ejresources\arcgis-dev-resources\startup\android\100.x\map\map.iml" filepath="D:\workspace\ejresources\arcgis-dev-resources\startup\android\100.x\map\map.iml" />
     </modules>
   </component>
 </project>
