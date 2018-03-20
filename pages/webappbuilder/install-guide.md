@@ -38,7 +38,7 @@ Web AppBuilder はデフォルトでは Esri の CDN で配信されている Ar
   Windows 以外のマシンにインストールする場合は、直接 Node.js サーバーを起動するコマンドを実行します。  
   コマンド プロンプトを開き、`<Web AppBuilder のインストール ディレクトリ>\server` のパスを指定します。続けて `node server.js` と入力します。
 
-Web AppBuilder は Web ブラウザーで `http://[マシン名]:3344/webappbuilder` にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。
+Web AppBuilder は Web ブラウザーで `http://[FQDN]:3344/webappbuilder` にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。
 
 2. Node.js がデフォルトで使用するポート番号は 3344 です。パラメーターを追加したり、他のポート番号を割り当てたり、Windows サービスとして起動したりしたい場合は、以下の手順を参照してください。
   * パラメーターを追加し、他のポート番号を割り当てる
