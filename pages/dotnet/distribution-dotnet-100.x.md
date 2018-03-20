@@ -10,8 +10,6 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
   * __[Lite ライセンスの認証](#lite-ライセンスの認証)__
   * __[Basic ライセンスの認証](#basic-ライセンスの認証)__
   * __[Standard または Advanced ライセンスの認証](#standard-または-advanced-ライセンスの認証)__
-1. __[アプリケーションへの帰属の追加](#アプリケーションへの帰属の追加)__
-
 
 ## 使用するライセンスの選択
 
@@ -22,11 +20,11 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
 | Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
-| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオンライン/オフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
+| Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ)|
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ) |
 
-ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-ios/details/license/)をご参照ください。
+ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/)をご参照ください。
 
 ## ライセンスの認証
 
@@ -54,8 +52,8 @@ ArcGIS Runtime SDK には Lite、Basic、Standard、Advanced の 4 つのライ�
   *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
   * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
-## Standard ライセンスの認証
-アプリケーションを Standard レベルで認証するには、以下の方法があります。
+## Standard または Advanced ライセンスの認証
+アプリケーションを Standard または Advanced レベルで認証するには、以下の方法があります。
 
 1. __ライセンスキーを使用した認証__
   * ArcGIS Runtime Standard の配布パックを購入する必要があります

@@ -73,7 +73,7 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.1.2'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.2.1'
 end
 ```
 
