@@ -98,7 +98,7 @@
 </ul>
 <h2 id="xcode-プロジェクトの変更">Xcode プロジェクトの変更</h2>
 <p>macOS 上の <code>ArcGIS.framework</code> のインストール場所が、10.2.x から変更されています。100.x では、<code>$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static</code> にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの <code>Framework Search Paths</code> の設定と <code>ArcGIS.bundle</code> ファイルの参照先も更新してください。</p>
-<p>100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 以降がサポートされています。</p>
+<p>100.x を使用した開発では、Xcode 9 及び iOS 11 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 10 以降がサポートされています。</p>
 <p>ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップとシーン">マップとシーン</h2>
 <p>100.x では、<code>AGSMap</code> オブジェクト（2D表示用）と <code>AGSScene</code> オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
@@ -186,7 +186,7 @@ self.featureTable.populateFromService(with: params, clearCache: true, outFields:
 </li>
 </ul>
 <p>リクエスト モードの詳細は、
-<a href="https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#GUID-925AD533-12E7-4E93-AB88-3F9577906818">ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
+<a href="https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D">ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの編集">フィーチャの編集</h4>
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
 <p>フィーチャの編集方法は、
@@ -283,6 +283,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(ViewController.
 <p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 <h2 id="関連リンク">関連リンク</h2>
 <ul>
+<li><a href="https://developers.arcgis.com/ios/latest/swift/guide/migrate-to-100-0.htm">ArcGIS Runtime SDK for iOS: バージョン 100.x への移行（英語）</a></li>
 <li><a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a></li>
 </ul>
 

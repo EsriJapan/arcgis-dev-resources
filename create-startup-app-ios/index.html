@@ -143,11 +143,11 @@ self.mapView.locationDisplay.start(completion: { (error) -&gt; Void in
 })
 </code></pre>
 </li>
-<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
-位置情報の表示モードについては<a href="https://geonet.esri.com/docs/DOC-6533">ナビゲーションに便利な位置情報の表示モード</a>をご覧ください。</p>
+<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。</p>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px"></p>
 <p>シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。</p>
 <p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
+<p>位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</p>
 <hr>
 </li>
 </ol>
