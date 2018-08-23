@@ -57,13 +57,14 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
 	```XML
 	<Window x:Class="MyDesktopApp.MainWindow"
-	        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-	        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        	xmlns:local="clr-namespace:MyDesktopApp"
 	        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
-	        mc:Ignorable="d" 
-	        d:DesignHeight="350" d:DesignWidth="525">
+        	mc:Ignorable="d"
+        	Title="MainWindow" Height="450" Width="800">
 	    <Grid>
 
 		</Grid>
@@ -88,13 +89,14 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
 	```XML
 	<Window x:Class="MyDesktopApp.MainWindow"
-	        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-	        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        	xmlns:local="clr-namespace:MyDesktopApp"
 	        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
-	        mc:Ignorable="d" 
-	        d:DesignHeight="350" d:DesignWidth="525">
+        	mc:Ignorable="d"
+        	Title="MainWindow" Height="450" Width="800">
 	    <Grid>
 	        <esri:MapView>
 	            <esri:Map>
@@ -158,18 +160,19 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
 	```XML
 	<Page
-	    x:Class="MyUWPApp.MainPage"
-	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	    xmlns:esriUI="using:Esri.ArcGISRuntime.UI.Controls"
-	    xmlns:local="using:MyUWPApp"
-	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	    mc:Ignorable="d">
+		x:Class="MyUWPApp.MainPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:MyUWPApp"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:esriUI="using:Esri.ArcGISRuntime.UI.Controls"
+		mc:Ignorable="d"
+		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid>
 
-	    </Grid>
+		</Grid>
 	</Page>
 	```
 上記のコードでは、`esriUI` と言う名称で API ライブラリへの参照が宣言されました。これにより、`esriUI` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。
@@ -197,19 +200,19 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 
 	```XML:MainPage.xaml
 	<Page
-	    x:Class="MyUWPApp.MainPage"
-	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	    xmlns:esriUI="using:Esri.ArcGISRuntime.UI.Controls"
-	    xmlns:local="using:MyUWPApp"
-	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	    mc:Ignorable="d"
-	    d:DesignHeight="300" d:DesignWidth="300">
+		x:Class="MyUWPApp.MainPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:MyUWPApp"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:esriUI="using:Esri.ArcGISRuntime.UI.Controls"
+		mc:Ignorable="d"
+		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	        <esriUI:MapView x:Name="MyMapView" />
-	    </Grid>
+		<Grid>
+			<esriUI:MapView x:Name="MyMapView" />
+		</Grid>
 	</Page>
 	```
 
@@ -232,7 +235,7 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 	using Windows.UI.Xaml.Navigation;
 	using Esri.ArcGISRuntime.Mapping;
 
-	// 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 を参照してください
+	// 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
 	namespace MyUWPApp
 	{
