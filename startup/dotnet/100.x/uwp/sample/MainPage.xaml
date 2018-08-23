@@ -12,7 +12,7 @@
         <esriUI:MapView x:Name="MyMapView" Loaded="MyMapView_Loaded" />
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
             <TextBox Width="200" x:Name="addressTextBox"/>
-            <Button x:Name="geocoording" Content=" 検索 " Margin="5,0,0,0"  Click="geocoording_Click">
+            <Button x:Name="geocoording" Content=" 検索 " Margin="5,0,0,0"  Click="Geocoording_Click">
             </Button>
         </StackPanel>
     </Grid>

@@ -120,11 +120,12 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 <pre><code class="lang-XML"> &lt;Window x:Class=&quot;MyDesktopApp.MainWindow&quot;
          xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
          xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; 
-         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; 
+         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+         xmlns:local=&quot;clr-namespace:MyDesktopApp&quot;
          xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
-         mc:Ignorable=&quot;d&quot; 
-         d:DesignHeight=&quot;350&quot; d:DesignWidth=&quot;525&quot;&gt;
+         mc:Ignorable=&quot;d&quot;
+         Title=&quot;MainWindow&quot; Height=&quot;450&quot; Width=&quot;800&quot;&gt;
      &lt;Grid&gt;
 
      &lt;/Grid&gt;
@@ -147,11 +148,12 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
 <pre><code class="lang-XML"> &lt;Window x:Class=&quot;MyDesktopApp.MainWindow&quot;
          xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
          xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; 
-         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; 
+         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+         xmlns:local=&quot;clr-namespace:MyDesktopApp&quot;
          xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
-         mc:Ignorable=&quot;d&quot; 
-         d:DesignHeight=&quot;350&quot; d:DesignWidth=&quot;525&quot;&gt;
+         mc:Ignorable=&quot;d&quot;
+         Title=&quot;MainWindow&quot; Height=&quot;450&quot; Width=&quot;800&quot;&gt;
      &lt;Grid&gt;
          &lt;esri:MapView&gt;
              &lt;esri:Map&gt;
@@ -206,13 +208,14 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
      x:Class=&quot;MyUWPApp.MainPage&quot;
      xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
      xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
      xmlns:local=&quot;using:MyUWPApp&quot;
      xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
      xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
-     mc:Ignorable=&quot;d&quot;&gt;
+     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
+     mc:Ignorable=&quot;d&quot;
+     Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
 
-     &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+     &lt;Grid&gt;
 
      &lt;/Grid&gt;
  &lt;/Page&gt;
@@ -237,14 +240,14 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
      x:Class=&quot;MyUWPApp.MainPage&quot;
      xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
      xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
      xmlns:local=&quot;using:MyUWPApp&quot;
      xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
      xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+     xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
      mc:Ignorable=&quot;d&quot;
-     d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;
+     Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
 
-     &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+     &lt;Grid&gt;
          &lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
      &lt;/Grid&gt;
  &lt;/Page&gt;
@@ -267,7 +270,7 @@ NuGet は 67,000以上のパッケージを提供しているため、検索ボ�
  using Windows.UI.Xaml.Navigation;
  using Esri.ArcGISRuntime.Mapping;
 
- // 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=402352&amp;clcid=0x409 を参照してください
+ // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&amp;clcid=0x411 を参照してください
 
  namespace MyUWPApp
  {
