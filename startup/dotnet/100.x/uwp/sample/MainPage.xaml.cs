@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-using Colors = Windows.UI.Colors;
+using Colors = System.Drawing.Color;
 
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Portal;
@@ -74,7 +74,7 @@ namespace sample
             {
                 geocodeResultGraphicsOverlay = new GraphicsOverlay()
                 {
-                    Renderer = createGeocoordingSymbol(),
+                    Renderer = CreateGeocoordingSymbol(),
                 };
                 MyMapView.GraphicsOverlays.Add(geocodeResultGraphicsOverlay);
             }
@@ -82,7 +82,7 @@ namespace sample
             isMapReady = true;
         }
 
-        private async void geocoording_Click(object sender, RoutedEventArgs e)
+        private async void Geocoording_Click(object sender, RoutedEventArgs e)
         {
             //マップが準備できていなければ処理を行わない
             if (!isMapReady) return;
@@ -140,7 +140,7 @@ namespace sample
         /// <summary>
         /// 住所検索結果用のシンボル作成
         /// </summary>
-        private SimpleRenderer createGeocoordingSymbol()
+        private SimpleRenderer CreateGeocoordingSymbol()
         {
             SimpleMarkerSymbol resultGeocoordingSymbol = new SimpleMarkerSymbol()
             {

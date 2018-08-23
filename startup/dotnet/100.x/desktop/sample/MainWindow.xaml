@@ -1,9 +1,9 @@
 ﻿<Window x:Class="sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"       
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"      
         xmlns:local="clr-namespace:sample"
         mc:Ignorable="d"
         Title="シンプル アプリ" Height="500" Width="750">
@@ -11,7 +11,7 @@
         <esri:MapView x:Name="MyMapView" Loaded="MyMapView_Loaded" />
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
             <TextBox Width="200" x:Name="addressTextBox"/>
-            <Button x:Name="geocoording" Content=" 検索 " Margin="5,0,0,0"  Click="geocoording_Click">
+            <Button x:Name="Geocoording" Content=" 検索 " Margin="5,0,0,0"  Click="Geocoording_Click">
             </Button>
         </StackPanel>
     </Grid>

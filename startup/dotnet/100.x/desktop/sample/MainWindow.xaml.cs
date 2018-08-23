@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media;
+using System.Drawing;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Portal;
 using Esri.ArcGISRuntime.Geometry;
@@ -59,7 +59,7 @@ namespace sample
             {
                 geocodeResultGraphicsOverlay = new GraphicsOverlay()
                 {
-                    Renderer = createGeocoordingSymbol(),
+                    Renderer = CreateGeocoordingSymbol(),
                 };
                 MyMapView.GraphicsOverlays.Add(geocodeResultGraphicsOverlay);
             }
@@ -67,7 +67,7 @@ namespace sample
             isMapReady = true;
         }
         
-        private async void geocoording_Click(object sender, RoutedEventArgs e)
+        private async void Geocoording_Click(object sender, RoutedEventArgs e)
         {
             //マップが準備できていなければ処理を行わない
             if (!isMapReady) return;
@@ -123,13 +123,13 @@ namespace sample
         /// <summary>
         /// 住所検索結果用のシンボル作成
         /// </summary>
-        private SimpleRenderer createGeocoordingSymbol()
+        private SimpleRenderer CreateGeocoordingSymbol()
         {
             SimpleMarkerSymbol resultGeocoordingSymbol = new SimpleMarkerSymbol()
             {
                 Style = SimpleMarkerSymbolStyle.Circle,
                 Size = 12,
-                Color = Colors.Blue,
+                Color = Color.Blue,
             };
 
             SimpleRenderer resultRenderer = new SimpleRenderer() { Symbol = resultGeocoordingSymbol };
