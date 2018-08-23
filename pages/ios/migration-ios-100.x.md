@@ -23,7 +23,7 @@ ArcGIS Runtime SDK for iOS に関しては、[ESRIジャパン 製品ページ](
 
 macOS 上の `ArcGIS.framework` のインストール場所が、10.2.x から変更されています。100.x では、`$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static` にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの `Framework Search Paths` の設定と `ArcGIS.bundle` ファイルの参照先も更新してください。
 
-100.x を使用した開発では、Xcode 8 及び iOS 10 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 9 以降がサポートされています。
+100.x を使用した開発では、Xcode 9 及び iOS 11 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 10 以降がサポートされています。
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、[ESRIジャパン 製品ページ（動作環境）](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
@@ -118,7 +118,7 @@ self.featureTable.populateFromService(with: params, clearCache: true, outFields:
 ```
 
 リクエスト モードの詳細は、
-[ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#GUID-925AD533-12E7-4E93-AB88-3F9577906818)をご参照ください。
+[ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D)をご参照ください。
 
 
 #### フィーチャの編集
@@ -245,4 +245,5 @@ self.mapView.locationDisplay.start(completion: { (error) -> Void in
 現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
+* [ArcGIS Runtime SDK for iOS: バージョン 100.x への移行（英語）](https://developers.arcgis.com/ios/latest/swift/guide/migrate-to-100-0.htm)
 * [ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm)
