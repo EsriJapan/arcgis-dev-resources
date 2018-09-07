@@ -336,3 +336,46 @@ gulp.task('tips-prebuild:content', function () {
     }))
     .pipe(gulp.dest('./dist/tips/'));
 });
+
+/* build pages for python tips */
+
+gulp.task('pythonpages-build', ['pythonpages-prebuild:header', 'pythonpages-prebuild:content'], function () {
+  var fileName = checkFileName();
+  var src = './dist/python/' + fileName + '.html';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      dirName = returnName(file);
+      console.log('build python/' + dirName + '/index.html');
+      return gulp.src('template-tips-pages.html')
+        .pipe(gfi({
+          '<!-- INSERT TITLE -->': './dist/python/header/' + dirName + '.html',
+          '<!-- INSERT CONTENTS -->': './dist/python/' + dirName + '.html'
+        }))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./python/' + dirName + '/'));
+    }));
+});
+
+gulp.task('pythonpages-prebuild:header', function () {
+  mkdirp('./dist/python/header/');
+  var fileName = checkFileName();
+  var src = './pages/python/header/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/python/header/'));
+});
+
+gulp.task('pythonpages-prebuild:content', function () {
+  mkdirp('./dist/python/');
+  var fileName = checkFileName();
+  var src = './pages/python/' + fileName + '.md';
+  return gulp.src(src)
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(markdown());
+    }))
+    .pipe(gulp.dest('./dist/python/'));
+});
