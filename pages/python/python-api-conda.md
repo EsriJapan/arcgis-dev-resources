@@ -30,13 +30,12 @@ conda は、Python や関連パッケージ・ライブラリのインストー�
  <p>Anaconda 上の仮想環境イメージ</p>
 </div>
 
-<font color="Blue" size="+2" >★Tips★</font></br>
-**ArcGIS Pro と Anaconda の共存**
-
-2 つのソフトウェアは 1 つのマシンに共存することができます。
-ArcGIS Pro は ArcGIS Pro の Python ライブラリ管理のために conda 内包しています。
-Anaconda は Anaconda 内の Python ライブラリを管理します。Python の動作は、それぞれのソフトウェア内で完結しています。
-ただし、端末に依存する環境変数の設定は、ArcGIS 製品を優先いただくことを推奨します。
+>**Tips：ArcGIS Pro と Anaconda の共存**
+>
+>2 つのソフトウェアは 1 つのマシンに共存することができます。
+>ArcGIS Pro は ArcGIS Pro の Python ライブラリ管理のために conda 内包しています。
+>Anaconda は Anaconda 内の Python ライブラリを管理します。Python の動作は、それぞれのソフトウェア内で完結しています。
+>ただし、端末に依存する環境変数の設定は、ArcGIS 製品を優先いただくことを推奨します。
 
 ### ArcGIS Pro の conda 環境と管理ツール
 
@@ -141,19 +140,18 @@ Python API を含む新しいパッケージを追加したい場合は次のコ
 
 conda コマンドや 他オプションの使用方法の詳細については[パッケージの管理](https://conda.io/docs/user-guide/tasks/manage-pkgs.html)を参照してください。
 
-<font color="Blue" size="+2" >★Tips★</font></br>
-**conda からパッケージをインストールできる仕組み**
-
-Conda は、プラットフォームに依存しないパッケージマネージャアプリケーションで、Python パッケージをインストール、更新、および削除できます。
-パッケージは、チャネルと呼ばれるさまざまなリポジトリのいずれかに格納されているソフトウェアおよびサポートファイルのバンドルです。
-チャネルは、Anaconda クラウドなどの既定のクラウドロケーションのセット、または個人または組織によって作成されたプライベートレポジトリである場合があります。 condaは、パッケージのリスト表示またはインストール時にデフォルトのチャネルセットを検索します。
-
-arcgis パッケージを格納するために esri という名前のチャネルに conda リポジトリが作成されています。 `conda install` コマンドは、チャネルにアクセスし、特定の conda 環境にパッケージをインストールしています。
-
-<div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/esrianaconda150.jpg" width="600px">
- <p>Anaconda クラウド上の esri チャネル<p>
-</div>
+>**Tips：conda からパッケージをインストールできる仕組み**
+>
+>Conda は、プラットフォームに依存しないパッケージマネージャアプリケーションで、Python パッケージをインストール、更新、および削除できます。
+>パッケージは、チャネルと呼ばれるさまざまなリポジトリのいずれかに格納されているソフトウェアおよびサポートファイルのバンドルです。
+>チャネルは、Anaconda クラウドなどの既定のクラウドロケーションのセット、または個人または組織によって作成されたプライベートレポジトリである場合があります。 condaは、パッケージのリスト表示またはインストール時にデフォルトのチャネルセットを検索します。
+>
+>arcgis パッケージを格納するために esri という名前のチャネルに conda リポジトリが作成されています。 `conda install` コマンドは、チャネルにアクセスし、特定の conda 環境にパッケージをインストールしています。
+>
+><div align="center">
+> <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/esrianaconda150.jpg" width="600px">
+> <p>Anaconda クラウド上の esri チャネル<p>
+></div>
 
 このページについて、詳しくは [米国Esri ガイドページ：Understanding Conda](https://developers.arcgis.com/python/guide/understanding-conda/)をご覧ください。
 

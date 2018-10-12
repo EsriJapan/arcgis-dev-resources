@@ -1,7 +1,7 @@
 ## ArcGIS API for Python とは
 
-ArcGIS API for Pythonは、Web GIS (ArcGIS Online / ArcGIS Enterprise）製品を支える効果的な開発者向け製品です。
-シンプルで使いやすい Python ライブラリとして、GIS データの視覚化と解析やコンテンツ、ユーザー、グループ管理を対話形式で実行できるとともに、GIS システム管理タスクなどをスクリプトから実行できる機能を提供します。
+ArcGIS API for Pythonは、Web GIS ([ArcGIS Online](https://www.esrij.com/products/arcgis-online/) / [ArcGIS Enterprise](https://www.esrij.com/products/arcgis-enterprise/)）製品を支える効果的な開発者向け製品です。 
+シンプルで使いやすい Python ライブラリとして、GIS データの可視化や GIS 解析の実行、コンテンツ、ユーザー、グループ管理を対話形式で実行できるとともに、GIS システム管理タスクなどをスクリプトから実行できる機能を提供します。
 
 <div align="center">
  <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/PythonAPI_GitHub.png" width="500px">
