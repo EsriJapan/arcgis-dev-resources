@@ -32,6 +32,12 @@
   * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../ios/migration-ios-100.x/)
 
+* __Python__
+  * [ArcGIS API for Python のコンセプト](../python/python-api-concepts/)
+  * [ArcGIS API for Python のための基礎環境：conda入門](../python/python-api-conda/)
+  * [インストール ガイド](../python/python-api-install/)
+
+
 ## 開発ブログ記事
 
 ArcGIS for Developers 開発者のためのオンライン コミュニティ サイト（GeoNet）にて ArcGIS 開発製品を使った開発に役立つ Tips などをブログ記事としてお届けしています。
