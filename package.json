@@ -11,6 +11,7 @@
     "androidpages-build": "gulp androidpages-build",
     "iospages-build": "gulp iospages-build",
     "dotnetpages-build": "gulp dotnetpages-build",
+    "pythonpages-build": "gulp pythonpages-build",
     "tips-build": "gulp tips-build"
   },
   "repository": {
