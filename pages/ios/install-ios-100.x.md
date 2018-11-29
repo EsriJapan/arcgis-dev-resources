@@ -15,10 +15,7 @@ ArcGIS Runtime SDK for iOS を使うと ArcGIS の機能を iOS のネイティ�
 
 ここでは次の開発環境にて ArcGIS Runtime SDK for iOS を用いたモバイル マッピング アプリケーションの開発手順を説明します。
 
-開発手順を進める前に以下の開発環境をご使用のマシンにセットアップしてください。
-
-*	High Sierra (macOS 10.13) または Sierra (macOS 10.12)
-*	Xcode 9 (iOS SDK 11)
+開発手順を進める前に以下のご使用のマシン（macOS）に Xcode をインストールしてください。
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
@@ -73,7 +70,7 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.3'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.4'
 end
 ```
 

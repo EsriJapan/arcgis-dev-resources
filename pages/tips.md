@@ -2,7 +2,7 @@
 
 各 API/SDK の開発をサポートするドキュメントです。
 
-* __JavaScript__
+* __ArcGIS API for JavaScript__
   * [インストール ガイド](../javascript/install-jsapi/)
   * [バージョン 4.x と 3.x の選択](../javascript/choose-3.x-and-4.x/)
   * [バージョン 3.x から 4.x への移行](../javascript/migrating-from-3.x-to-4.0/)
@@ -14,25 +14,25 @@
   * [カスタム ウィジェット開発ガイド](../webappbuilder/development-guide/)
   * [アプリケーションのデプロイ](../webappbuilder/deploy-your-app/)
 
-* __.NET__
+* __ArcGIS Runtime SDK for .NET__
   * [インストール ガイド](../dotnet/install-dotnet-100.x/)
   * [アプリケーション配布ガイド](../dotnet/distribution-dotnet-100.x/)
   * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../dotnet/migration-dotnet-100.x/)
 
-* __Android__
+* __ArcGIS Runtime SDK for Android__
   * [インストール ガイド](../android/install-android-100.x/)
   * [アプリケーション配布ガイド](../android/distribution-android-100.x/)
   * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../android/migration-android-100.x/)
 
-* __iOS__
+* __ArcGIS Runtime SDK for iOS__
   * [インストール ガイド](../ios/install-ios-100.x/)
   * [アプリケーション配布ガイド](../ios/distribution-ios-100.x/)
   * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../ios/migration-ios-100.x/)
 
-* __Python__
+* __ArcGIS API for Python__
   * [ArcGIS API for Python のコンセプト](../python/python-api-concepts/)
   * [ArcGIS API for Python のための基礎環境：conda入門](../python/python-api-conda/)
   * [インストール ガイド](../python/python-api-install/)
@@ -56,4 +56,6 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
   * [データ可視化の手順](../tips/data-visualization-procedure)
   * [地図上に賢くデータを可視化するための 6 つの方法](../tips/6ways-to-improve-your-maps)
 
-* [ミートアップ](../hackathon/)
+* __イベント向けページ__  
+開発者向けのイベント用に提供したページのリンクです。
+  * [ミートアップ](../hackathon/)
