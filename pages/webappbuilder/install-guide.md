@@ -14,7 +14,7 @@
 ## インストール
 
 1. Web AppBuilder の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/web-appbuilder/" target="_blank">ダウンロード</a>し、解凍します。  
-もし、サインイン ページが表示されたら、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。
+サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。
 2. Web AppBuilder は <a href="https://nodejs.org/" target="_blank">Node.js</a> 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.jsをインストールする必要があります。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide2.gif" alt="インストール" width="600px">
@@ -27,7 +27,8 @@ Web AppBuilder はデフォルトでは Esri の CDN で配信されている Ar
 2. `//apiUrl` を検索します。
 > API のバージョンは Web AppBuilder のバージョンにより異なります。通常、Web AppBuilder がリリースされた時点の最新バージョンの API が使われています。
 3. `apiUrl= "https://<ポータル URL>/jsapi/jsapi/"` に書き換え、上書き保存します。
-> Portal for ArcGIS が内蔵する API を使用する際は、内蔵されている API のバージョンに注意が必要です。Web AppBuilder が使用する API よりも下位の API の利用はサポートされません。
+> Portal for ArcGIS が内蔵する API を使用する際は、内蔵されている API のバージョンに注意が必要です。Web AppBuilder が使用する API のバージョンと異なるバージョンの API の利用はサポートされません。  
+> Web AppBuilder のバージョンと API のバージョンの関係については <a href="https://developers.arcgis.com/web-appbuilder/guide/about-versions.htm" target="_blank">About release versions</a> を参照ください。
 
 ## Web AppBuilder の起動
 
@@ -38,7 +39,8 @@ Web AppBuilder はデフォルトでは Esri の CDN で配信されている Ar
   Windows 以外のマシンにインストールする場合は、直接 Node.js サーバーを起動するコマンドを実行します。  
   コマンド プロンプトを開き、`<Web AppBuilder のインストール ディレクトリ>\server` のパスを指定します。続けて `node server.js` と入力します。
 
-Web AppBuilder は Web ブラウザーで `http://[FQDN]:3344/webappbuilder` にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。
+Web AppBuilder は Web ブラウザーで `http://[マシン名]:3344/webappbuilder` にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。
+> 利用するマシンがドメインに参加しているとき、Web AppBuilder へのアクセスにドメインを含める必要がある場合があります。その際は、`http://[マシン名].[ドメイン]:3344/webappbuilder` のようにドメインを含めてアクセスしてください。
 
 2. Node.js がデフォルトで使用するポート番号は 3344 です。パラメーターを追加したり、他のポート番号を割り当てたり、Windows サービスとして起動したりしたい場合は、以下の手順を参照してください。
   * パラメーターを追加し、他のポート番号を割り当てる
@@ -90,7 +92,8 @@ ArcGIS Online または Portal for ArcGIS で OAuth2 認証を使用する場合
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide5.png" alt="アプリケーションの登録">
 5. [登録] をクリックします。これでアプリケーションの登録は完了です。
 6. Web AppBuilder の起動画面に戻ります。[アプリケーション ID] オプションに入手したアプリケーション ID を入力し、[続行] をクリックします。  
-もし、Invalid redirect_uri エラー ページが表示されたら、以下の手順に従ってください。
+> Invalid redirect_uri エラー ページが表示される場合は、以下の手順に従ってください。  
+>   
 > アプリケーション ID を入手する際に登録したリダイレクト URI に誤りがある場合、アプリケーション ID オプションにアプリケーション ID を入力し、[続行] をクリックすると、エラー ページが表示されることがあります。この場合、登録したアプリケーションの情報を修正する必要があります。
   1. Web AppBuilder のサーバー ディレクトリ（`<Web AppBuilder のインストール ディレクトリ>\server`）を開き、`signininfo.json` ファイルを削除します。
   2. 手順 3 に戻り、入力したリダイレクト URI を更新するか、アプリケーションを新しく登録して、新しいアプリケーション ID を入手します。
@@ -100,7 +103,9 @@ ArcGIS Online または Portal for ArcGIS で OAuth2 認証を使用する場合
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide6.gif" alt="アプリケーション ID の設定" width="600px">
 
-アプリケーション ID は OAuth2 認証に必要とされています。詳細は [認証](https://esrijapan.github.io/arcgis-dev-resources/authentication/)をご参照ください。もし、ログインに関する問題があるときは、[FAQs](https://developers.arcgis.com/web-appbuilder/guide/faqs.htm) と [アプリの追加とアプリの登録](https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm)をご参照ください。
+アプリケーション ID は OAuth2 認証に必要です。詳細は [認証](https://esrijapan.github.io/arcgis-dev-resources/authentication/)をご参照ください。ログインに関する問題は、[FAQs](https://developers.arcgis.com/web-appbuilder/guide/faqs.htm) および [アプリの追加とアプリの登録](https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm)をご参照ください。
+> Web AppBuilder は、デフォルトで HTTPS をサポートするために Node.js で自己署名証明書を使用しています。  
+> 独自に用意した証明書を使用したい場合は、Web AppBuilder のサーバー ディレクトリ（`<Web AppBuilder のインストール ディレクトリ>\server`）にある `cakey.pem` と `cacert.pem` を置き換えてください。
 
 アプリケーション ID の登録手順の説明は以上です。これで 登録先のポータルへ OAuth2 認証を使用してサインインできるようになりました。次回からは Web AppBuilder を起動すると直接 Web AppBuilder のトップページが表示されます。
 
