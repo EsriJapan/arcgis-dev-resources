@@ -19,11 +19,9 @@ ArcGIS Runtime SDK for .NET に関しては、[ESRIジャパン 製品ページ]
 * __[既知の制限事項](#既知の制限事項)__
 
 ## マップとシーン
-100.x では、`Map` オブジェクト（2D表示用）と `Scene` オブジェクト（3D表示用）<sup>※1</sup> を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
+100.x では、`Map` オブジェクト（2D表示用）と `Scene` オブジェクト（3D表示用） を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
 
 `Map` オブジェクトと `Scene` オブジェクトは 、それらを表示する View と分離されています。`Map` オブジェクトと `Scene` オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。
-
-<sup>※1</sup> バージョン100.0 では、モバイル環境において 3D 関連の機能はベータ機能として提供されています。
 
 ## ビュー
 `MapView`（2D表示用）と `SceneView`（3D表示用）は、UI コンポーネントです。`MapView` クラスの `map` プロパティに、`Map` オブジェクトを、`MapSceneView` クラスの `scene` プロパティには `Scene` オブジェクトを設定します。
@@ -45,9 +43,6 @@ MyMapView.Map = myMap;
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
-現バージョンの 100.3.0 では、10.2.x で提供されていた、以下のレイヤーがサポートされていませんので、ご注意ください。
-
-* KML サービス レイヤー（`KMLLayer`）
 
 100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm)をご参照ください。
 
@@ -61,7 +56,7 @@ myMap.Basemap.BaseLayers.Add(arcgis_tiled_layer);
 
 ## フィーチャ レイヤーの表示
 フィーチャ サービスや端末のローカルに格納されたジオデータベースのデータをマップに表示するにはフィーチャ レイヤーを使用します。
-フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーとして表示するに場合は `ServiceFeatureTable ` オブジェクト、ジオデータベースのデータ表示する場合は `GeodatabaseFeatureTable ` オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として `FeatureLayer` オブジェクトを作成し、`Map` オブジェクトの `OperationalLayers` に追加します。
+フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーとして表示するに場合は `ServiceFeatureTable` オブジェクト、ジオデータベースのデータ表示する場合は `GeodatabaseFeatureTable` オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として `FeatureLayer` オブジェクトを作成し、`Map` オブジェクトの `OperationalLayers` に追加します。
 
 次のコードは、フィーチャ サービスのデータを `FeatureLayer` として追加する方法を示しています。
 
@@ -69,7 +64,7 @@ myMap.Basemap.BaseLayers.Add(arcgis_tiled_layer);
 // フィーチャ サービスの URL からフィーチャ テーブルを作成
 ServiceFeatureTable featureTable = new ServiceFeatureTable(new Uri("https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0"));
 // フィーチャ テーブルからフィーチャ レイヤーを作成
-FeatureLayer featureLayer = FeatureLayer(featureTable)
+FeatureLayer featureLayer = new FeatureLayer(featureTable);
 // フィーチャ レイヤーをマップの操作レイヤーに追加
 myMap.OperationalLayers.Add(featureLayer);
 ```
@@ -98,11 +93,11 @@ queryParameters.WhereClause = "1 = 1";
 // 検索結果にフィーチャのすべての属性情報（outFields の配列に "*" を指定）を含める
 var outputFields = new string[] { "*" };
 // クエリの条件に基づいてフィーチャ テーブルにデータを設定する
-await _featureTable.PopulateFromServiceAsync(queryParameters, true, outputFields);
+await featureTable.PopulateFromServiceAsync(queryParameters, true, outputFields);
 ```
 
 リクエスト モードの詳細は、
-[ArcGIS for Developers: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm#GUID-925AD533-12E7-4E93-AB88-3F9577906818)をご参照ください。
+[ArcGIS for Developers: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D)をご参照ください。
 
 #### フィーチャの編集
 フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。
@@ -121,8 +116,8 @@ try
     // フィーチャの取得（検索）時のパラメーターを設定
     QueryParameters queryParams = new QueryParameters();
     // 検索条件を設定
-    queryParams.WhereClause = "upper(KEN_NAME) LIKE '%" + (kenName.ToUpper()) + "%'";
-    // フィーチャ テーブルから検索条件を取得 
+    queryParams.WhereClause = "upper(KEN) LIKE '%東京%'";
+    // フィーチャ テーブルから検索条件を取得
     FeatureQueryResult queryResult = await _featureTable.QueryFeaturesAsync(queryParams);
     // 結果に問い合わせるためにリストを取得
     var features = queryResult.ToList();
@@ -133,30 +128,30 @@ try
     }
     else
     {
-        MessageBox.Show("KEN Not Found!", "Add a valid ken name.");
+        MessageBox.Show("検索結果が見つかりませんでした。");
     }
 }
 catch (Exception ex)
 {
-    MessageBox.Show("Sample error", "An error occurred" + ex.ToString());
+    MessageBox.Show("処理エラー", "検索処理でエラーが発生しました：" + ex.ToString());
 }
 ```
 
 ## 個別属性表示
 マップ上で特定の場所をタップして、その位置にあるフィーチャをすべてのレイヤーから検索して取得することができます。その操作はビューに対して行います。次のコードは、`MapView` クラスの `IdentifyLayerResult` メソッドを使用してフィーチャを取得する方法を示しています。
 ```javascript
-// MapViewのすべてのレイヤーを識別し、タップポイント、許容値、リターンタイプ、最大結果を渡します
+// MapView のすべてのレイヤーを識別し、タップしたポイント、許容値、戻り値のタイプ、最大結果数を渡します
 IReadOnlyList<IdentifyLayerResult> idLayerResults = await MyMapView.IdentifyLayersAsync(tapScreenPoint, pixelTolerance, returnPopupsOnly, maxLayerResults);
 foreach (IdentifyLayerResult idResults in idLayerResults)
 {
-    // get the layer identified and cast it to FeatureLayer
+    // 検索されたレイヤーを取得して FeatureLayer にキャストする
     FeatureLayer idLayer = idResults.LayerContent as FeatureLayer;
-    // iterate each identified GeoElement in the results for this layer
+    // 反復処理を行い、検索されたレイヤー内の GeoElement を取得する
     foreach (GeoElement idElement in idResults.GeoElements)
     {
-        // cast the result GeoElement to Feature
+        // GeoElement を Feature にキャストする
         Feature idFeature = idElement as Feature;
-        // select this feature in the feature layer
+        // フィーチャ レイヤーでフィーチャを選択状態にする
         idLayer.SelectFeature(idFeature);
     }
 }
@@ -172,8 +167,8 @@ foreach (IdentifyLayerResult idResults in idLayerResults)
 // ジオメトリとシンボルを使用してグラフィックを作成
 var pointGraphic = new Graphic(pointGeometry, poitnSymbol);
 // グラフィックス オーバーレイに作成したグラフィックを追加
-GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
-graphicsOverlay.Graphics.add(pointGraphic)
+var graphicsOverlay = new GraphicsOverlay();
+graphicsOverlay.Graphics.add(pointGraphic);
 // MapView の GraphicsOverlays に作成したグラフィックス オーバーレイを追加
 MyMapView.GraphicsOverlays.Add(graphicsOverlay);
 ```
@@ -195,7 +190,7 @@ config.AllowVertexEditing = true;
 config.ResizeMode = SketchResizeMode.Uniform;
 config.AllowMove = true;
 // スケッチエディタをページのデータコンテキストとして設定する
-this.DataContext = MyMapView.SketchEditor;
+DataContext = MyMapView.SketchEditor;
    ・・・・・・
 try
 {
@@ -206,11 +201,11 @@ try
 }
 catch (TaskCanceledException)
 {
-   // Ignore ... let the user cancel drawing
+   // スケッチのキャンセル
 }
 catch (Exception ex)
 {
-    // Report exceptions
+    // スケッチのエラー
 }
 ```
 
@@ -226,8 +221,8 @@ catch (Exception ex)
 featureLayer.Loaded += (s, e) =>
 {
     // フィーチャ レイヤーのプロパティにアクセス
-    Debug.Assert(censusLayer.MinScale == 5000);
-    Debug.Assert(censusLayer.MaxScale == 1000000);
+    Debug.Assert(featureLayer.MinScale == 5000);
+    Debug.Assert(featureLayer.MaxScale == 1000000);
 };
 
 // フィーチャ レイヤーのロード
@@ -235,15 +230,11 @@ await featureLayer.LoadAsync();
 ```
 
 ## ローカルサーバー
-ローカルサーバーの機能は使用することができますが、使用する場合は別途インストールが必要となります。
-詳細は、[ArcGIS for Developers: ローカルサーバー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server.htm)を参照してください。
+ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、[ArcGIS for Developers: ローカル サーバー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server.htm#ESRI_SECTION1_F84DC74EFFBA455AAFDB353E02471CB7)を参照してください。
 
-今回のリリースでは、Standard、Advanced、Analysis の各レベルにおいてローカルサーバーでサポートされている追加のツールも導入され、データ管理、分析、および Runtime コンテンツのパッケージ化のための新しいワークフローが追加されました。
-
-サポートされているツールの一覧は、[ArcGIS for Developers: ローカルサーバージオプロセシングツール サポート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server-geoprocessing-tools-support.htm) を参照してください。
 
 ## 既知の制限事項
-現バージョン 100.3.0 での既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS for Developers: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm)

@@ -38,7 +38,7 @@ namespace sample
         private const string PORTAL_URL = "https://www.arcgis.com/sharing/rest";
 
         //ArcGIS Online ジオコーディングサービスの URL
-        private const string WORLD_GEOCODE_SERVICE_URL = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+        private const string WORLD_GEOCODE_SERVICE_URL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
 
         //住所検索結果表示用のグラフィックスオーバーレイ
         private GraphicsOverlay geocodeResultGraphicsOverlay;
@@ -61,7 +61,7 @@ namespace sample
             ArcGISPortal arcGISOnline = await ArcGISPortal.CreateAsync(new Uri(PORTAL_URL));
 
             // ID を基にアイテムを取得
-            var portalItem = await PortalItem.CreateAsync(arcGISOnline, "Web マップ ID");
+            var portalItem = await PortalItem.CreateAsync(arcGISOnline, "Web マップの ID");
 
             //アイテムから Map オブジェクトを作成
             var Map = new Map(portalItem);
@@ -91,7 +91,6 @@ namespace sample
             var geocodeParams = new GeocodeParameters
             {
                 MaxResults = 5,
-                OutputSpatialReference = SpatialReferences.WebMercator,
                 CountryCode = "Japan",
                 OutputLanguage = new System.Globalization.CultureInfo("ja-JP"),
             };
@@ -120,7 +119,7 @@ namespace sample
                     geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
 
                     //追加したグラフィックの周辺に地図を拡大
-                    await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 36112);
+                    await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 30000);
                 }
                 //候補が一つも見つからない場合の処理
                 else
