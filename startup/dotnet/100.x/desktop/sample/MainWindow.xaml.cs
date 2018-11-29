@@ -21,7 +21,7 @@ namespace sample
         private const string PORTAL_URL = "https://www.arcgis.com/sharing/rest";
 
         //ArcGIS Online ジオコーディングサービスの URL
-        private const string WORLD_GEOCODE_SERVICE_URL = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+        private const string WORLD_GEOCODE_SERVICE_URL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
 
         //住所検索結果表示用のグラフィックスオーバーレイ
         private GraphicsOverlay geocodeResultGraphicsOverlay;
@@ -76,7 +76,6 @@ namespace sample
             var geocodeParams = new GeocodeParameters
             {
                 MaxResults = 5,
-                OutputSpatialReference = SpatialReferences.WebMercator,
                 CountryCode = "Japan",
                 OutputLanguage = new System.Globalization.CultureInfo("ja-JP"),
             };
@@ -101,11 +100,11 @@ namespace sample
                         Geometry = candidate.DisplayLocation,
                     };
                     
-                    //住所検索結果表示用のグラフィックスオーバーレイにグラフィックを追加
+                    //住所検索結果表示用のグラフィックス オーバーレイにグラフィックを追加
                     geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
 
                     //追加したグラフィックの周辺に地図を拡大
-                    await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 36112);
+                    await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 30000);
                 }
                 //候補が一つも見つからない場合の処理
                 else

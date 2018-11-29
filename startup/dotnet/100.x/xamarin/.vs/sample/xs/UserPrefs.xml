@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{858292BA-46F2-4956-875E-2E44C512D03B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sample.Android/Resources/values/styles.xml">
+    <Files>
+      <File FileName="sample/MainPage.xaml.cs" Line="16" Column="1" />
+      <File FileName="sample/MainPage.xaml" Line="14" Column="15" />
+      <File FileName="sample.Android/Resources/values/styles.xml" Line="2" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.sample FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.sample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CE475188-7ABE-4AD4-8D64-F256067102DD" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../Desktop/xamarin/.vs/sample/xs/iOS/obj/iPhoneSimulator/Debug/sample.iOS.samplePage.xaml.g.cs" line="30" offsetX="1043" offsetY="435" expression="global::Xamarin.Forms" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.sample.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MultiItemStartupConfigurations />
+</Properties>
