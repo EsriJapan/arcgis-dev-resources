@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<link rel="stylesheet" href="../../assets/css/github-gist.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106471746-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments)};
+			gtag('js', new Date());
+
+			gtag('config', 'UA-106471746-1');
+		</script>
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -81,7 +91,7 @@
 </ul>
 <h2 id="インストール">インストール</h2>
 <ol>
-<li>Web AppBuilder の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/web-appbuilder/" target="_blank">ダウンロード</a>し、解凍します。<br>もし、サインイン ページが表示されたら、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。</li>
+<li>Web AppBuilder の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/web-appbuilder/" target="_blank">ダウンロード</a>し、解凍します。<br>サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。</li>
 <li>Web AppBuilder は <a href="https://nodejs.org/" target="_blank">Node.js</a> 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.jsをインストールする必要があります。</li>
 </ol>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide2.gif" alt="インストール" width="600px"></p>
@@ -94,7 +104,7 @@
 </blockquote>
 </li>
 <li><code>apiUrl= &quot;https://&lt;ポータル URL&gt;/jsapi/jsapi/&quot;</code> に書き換え、上書き保存します。<blockquote>
-<p>Portal for ArcGIS が内蔵する API を使用する際は、内蔵されている API のバージョンに注意が必要です。Web AppBuilder が使用する API よりも下位の API の利用はサポートされません。</p>
+<p>Portal for ArcGIS が内蔵する API を使用する際は、内蔵されている API のバージョンに注意が必要です。Web AppBuilder が使用する API のバージョンと異なるバージョンの API の利用はサポートされません。<br>Web AppBuilder のバージョンと API のバージョンの関係については <a href="https://developers.arcgis.com/web-appbuilder/guide/about-versions.htm" target="_blank">About release versions</a> を参照ください。</p>
 </blockquote>
 </li>
 </ol>
@@ -106,7 +116,10 @@
 </ul>
 </li>
 </ol>
-<p>Web AppBuilder は Web ブラウザーで <code>http://[FQDN]:3344/webappbuilder</code> にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。</p>
+<p>Web AppBuilder は Web ブラウザーで <code>http://[マシン名]:3344/webappbuilder</code> にアクセスすると起動します。コマンド プロンプト上で Node.js が起動している間はいつでも、どの Web ブラウザーからでも Web AppBuilder を開くことができます。</p>
+<blockquote>
+<p>利用するマシンがドメインに参加しているとき、Web AppBuilder へのアクセスにドメインを含める必要がある場合があります。その際は、<code>http://[マシン名].[ドメイン]:3344/webappbuilder</code> のようにドメインを含めてアクセスしてください。</p>
+</blockquote>
 <ol>
 <li>Node.js がデフォルトで使用するポート番号は 3344 です。パラメーターを追加したり、他のポート番号を割り当てたり、Windows サービスとして起動したりしたい場合は、以下の手順を参照してください。<ul>
 <li>パラメーターを追加し、他のポート番号を割り当てる<ol>
@@ -165,7 +178,8 @@
 </li>
 <li>[登録] ダイアログが表示されます。[リダイレクト URI] オプションに <code>http://[マシン名]</code> または <code>https://[マシン名]</code> を入力して、[追加] をクリックします。HTTP と HTTPS プロトコルは異なる URI として認識されることに注意してください。リダイレクトに関する問題を避けるため、両方のプロトコルを登録することを推奨しています。<br><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide5.png" alt="アプリケーションの登録"></li>
 <li>[登録] をクリックします。これでアプリケーションの登録は完了です。</li>
-<li>Web AppBuilder の起動画面に戻ります。[アプリケーション ID] オプションに入手したアプリケーション ID を入力し、[続行] をクリックします。<br>もし、Invalid redirect_uri エラー ページが表示されたら、以下の手順に従ってください。<blockquote>
+<li>Web AppBuilder の起動画面に戻ります。[アプリケーション ID] オプションに入手したアプリケーション ID を入力し、[続行] をクリックします。  <blockquote>
+<p>Invalid redirect_uri エラー ページが表示される場合は、以下の手順に従ってください。  </p>
 <p>アプリケーション ID を入手する際に登録したリダイレクト URI に誤りがある場合、アプリケーション ID オプションにアプリケーション ID を入力し、[続行] をクリックすると、エラー ページが表示されることがあります。この場合、登録したアプリケーションの情報を修正する必要があります。</p>
 <ol>
 <li>Web AppBuilder のサーバー ディレクトリ（<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server</code>）を開き、<code>signininfo.json</code> ファイルを削除します。</li>
@@ -178,7 +192,10 @@
 <li>[権限のリクエスト] ダイアログが表示されます。表示されたアカウント情報が正しいことを確認し [承認] をクリックします。</li>
 </ol>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide6.gif" alt="アプリケーション ID の設定" width="600px"></p>
-<p>アプリケーション ID は OAuth2 認証に必要とされています。詳細は <a href="https://esrijapan.github.io/arcgis-dev-resources/authentication/">認証</a>をご参照ください。もし、ログインに関する問題があるときは、<a href="https://developers.arcgis.com/web-appbuilder/guide/faqs.htm">FAQs</a> と <a href="https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm">アプリの追加とアプリの登録</a>をご参照ください。</p>
+<p>アプリケーション ID は OAuth2 認証に必要です。詳細は <a href="https://esrijapan.github.io/arcgis-dev-resources/authentication/">認証</a>をご参照ください。ログインに関する問題は、<a href="https://developers.arcgis.com/web-appbuilder/guide/faqs.htm">FAQs</a> および <a href="https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm">アプリの追加とアプリの登録</a>をご参照ください。</p>
+<blockquote>
+<p>Web AppBuilder は、デフォルトで HTTPS をサポートするために Node.js で自己署名証明書を使用しています。<br>独自に用意した証明書を使用したい場合は、Web AppBuilder のサーバー ディレクトリ（<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server</code>）にある <code>cakey.pem</code> と <code>cacert.pem</code> を置き換えてください。</p>
+</blockquote>
 <p>アプリケーション ID の登録手順の説明は以上です。これで 登録先のポータルへ OAuth2 認証を使用してサインインできるようになりました。次回からは Web AppBuilder を起動すると直接 Web AppBuilder のトップページが表示されます。</p>
 <p>これで Web AppBuilder のインストールは終了です。</p>
 <h2 id="インストールの確認">インストールの確認</h2>
