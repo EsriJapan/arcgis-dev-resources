@@ -23,7 +23,7 @@ Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作�
   必要に応じて、使用するプロキシを `proxy` プロパティに追加します。プロキシの詳細は <a href="https://developers.arcgis.com/web-appbuilder/guide/use-proxy.htm" target="_blank">Use proxy</a> をご参照ください。
   2. アプリケーション ID  
   アプリケーション ID を `appId` プロパティへ設定します。アプリケーション ID を入手するには、アプリの追加、登録が必要です。詳細は<a href="https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm" target="_blank">アプリの追加およびアプリの登録</a>をご参照ください。
-  > OAuth と SAML を用いたプラットフォーム認証を活用するために、アプリケーション ID を使用することを推奨しています。IE9 でアプリを動作させるには、設定ファイルにプロキシを追加する必要があります。
+  > OAuth と SAML を用いたプラットフォーム認証を活用するために、アプリケーション ID を使用することを推奨しています。
 
 アプリをカスタマイズするには、以下のドキュメントを参照してください。
 * アプリとウィジェットの設定：<a href="https://developers.arcgis.com/web-appbuilder/api-reference/app-configuration.htm" target="_blank">App configuration</a>
@@ -42,16 +42,18 @@ Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作�
 アプリがサポートしているブラウザーは以下の通りです。
 
 * 2D
-  * Chrome
+  * Google Chrome
   * Firefox
-  * Safari 3+
-  * Edge
-  * Internet Explorer 9+
-  > IE11 または Edge で OAuth 認証を使用してアプリを開くとき、ポップアップが表示されることがあります。**はい**をクリックすると、ポップアップは消えますが、アプリは読み込まれません。この場合は、ブラウザーの設定から `.arcgis.com` を信頼済みサイトとして追加してください。
-* 3D
-  * Chrome
-  * Firefox
-  * Safari 7.1+
+  * Safari（Mac）
   * Edge
   * Internet Explorer 11
-> 3D アプリには WebGL をサポートしているデスクトップの Web ブラウザーが必要です。ほとんどの最新バージョンのデスクトップ Web ブラウザーは WebGL を内蔵しています。ご利用の Web ブラウザーが WebGL を利用可能かどうかは <a href="http://get.webgl.org/" target="_blank">get.webgl.org</a> で確認できます。WebGL に関するトラブルシューティングは <a href="https://get.webgl.org/troubleshooting/" target="_blank">WebGL Troubleshooting</a> をご参照ください。また、シーン ビューアーについての詳細は <a href="https://doc.arcgis.com/ja/arcgis-online/reference/scene-viewer-requirements.htm" target="_blank">シーン ビューアーの要件</a> をご参照ください。
+  > IE11 または Edge で OAuth 認証を使用してアプリを開くとき、ポップアップが表示されることがあります。**はい**をクリックすると、ポップアップは消えますが、アプリは読み込まれません。この場合は、ブラウザーの設定から `.arcgis.com` を信頼済みサイトとして追加してください。
+  * Safari（iOS）
+  * Google Chrome（Android）
+* 3D
+  * Google Chrome
+  * Firefox
+  * Safari（Mac）
+  * Edge
+  * Internet Explorer 11
+> 3D アプリには WebGL をサポートしているデスクトップの Web ブラウザーが必要です。ほとんどの最新バージョンのデスクトップ Web ブラウザーは WebGL を内蔵しています。ご利用の Web ブラウザーが WebGL を利用可能かどうかは <a href="https://get.webgl.org/" target="_blank">get.webgl.org</a> で確認できます。WebGL に関するトラブルシューティングは <a href="https://get.webgl.org/troubleshooting/" target="_blank">WebGL Troubleshooting</a> をご参照ください。また、シーン ビューアーについての詳細は <a href="https://doc.arcgis.com/ja/arcgis-online/reference/scene-viewer-requirements.htm" target="_blank">シーン ビューアーの要件</a> をご参照ください。
