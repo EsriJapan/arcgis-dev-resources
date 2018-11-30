@@ -10,6 +10,7 @@ ArcGIS Runtime SDK for Android を使用して開発したアプリケーショ�
 	* __[Lite ライセンスの認証](#lite-ライセンスの認証)__
 	* __[Basic ライセンスの認証](#basic-ライセンスの認証)__
 	* __[Standard ライセンスの認証](#standard-ライセンスの認証)__
+	* __[Analysis Extension ライセンスの認証](#analysis-extension-ライセンスの認証)__
 
 ## 使用するライセンスの選択
 
@@ -22,6 +23,7 @@ ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライ
 | Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
+| Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション<br>・オフラインでの到達圏解析/最寄り施設検索 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-runtime-sdk-for-Android/details/license/)をご参照ください。
 
@@ -58,6 +60,14 @@ ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライ
 	* ArcGIS Runtime Standard の配布パックを購入する必要があります
 	* 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
+## Analysis Extension ライセンスの認証
+アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。
+
+1. __ライセンスキーを使用した認証__
+	* ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
+	* 基本ライセンス（Standard）と併せて認証する必要があります
+	* 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+
 
 ## Lite ライセンスキーを使用した認証
 ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
@@ -92,13 +102,27 @@ if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
   アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。
 
  ```java
- // ライセンスキーを設定して認証
- LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense("runtimelite,1000,rud#########,day-month-year,####################");
+ // ライセンスキーを設定して認証:runtimebasic/runtimestandard/runtimeadvanced
+ LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense("runtimebasic,1000,rud#########,day-month-year,####################");
 if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
     Log.d(TAG,"ライセンスは有効です:" + licenseResult.getLicenseStatus());
 }else{
     // TODO ライセンスが無効の場合の処理
     Log.d(TAG,"ライセンスは無効です:" + licenseResult.getLicenseStatus());
+}
+ ```
+
+  Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
+
+ ```java
+ // ライセンスキーを設定して認証
+ LicenseResult extLicenseResult = ArcGISRuntimeEnvironment.setLicense("runtimestandard,1000,rud#########,day-month-year,####################",
+        Arrays.asList("runtimeanalysis,1000,rud#########,day-month-year,####################", "another license extension code"));
+if(extLicenseResult.getLicenseStatus() == LicenseStatus.VALID){
+    Log.d(TAG,"ライセンスは有効です:" + extLicenseResult.getLicenseStatus());
+}else{
+    // TODO ライセンスが無効の場合の処理
+    Log.d(TAG,"ライセンスは無効です:" + extLicenseResult.getLicenseStatus());
 }
  ```
 
