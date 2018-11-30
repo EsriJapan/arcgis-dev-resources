@@ -10,6 +10,7 @@ ArcGIS Runtime SDK for iOS を使用して開発したアプリケーション�
 	* __[Lite ライセンスの認証](#lite-ライセンスの認証)__
 	* __[Basic ライセンスの認証](#basic-ライセンスの認証)__
 	* __[Standard ライセンスの認証](#standard-ライセンスの認証)__
+	* __[Analysis Extension ライセンスの認証](#analysis-extension-ライセンスの認証)__
 
 ## 使用するライセンスの選択
 
@@ -22,6 +23,7 @@ ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセ�
 | Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
+| Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/details/license/licensing/)をご参照ください。
 
@@ -58,6 +60,13 @@ ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセ�
 	* ArcGIS Runtime Standard の配布パックを購入する必要があります
 	* 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
+## Analysis Extension ライセンスの認証
+アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。
+
+1. __ライセンスキーを使用した認証__
+	* ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
+	* 基本ライセンス（Standard）と併せて認証する必要があります
+	* 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 ## Lite ライセンスキーを使用した認証
 ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
@@ -96,7 +105,7 @@ catch let error as NSError {
   ```javascript
   // ライセンスキーを設定して認証
   do {
-   let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimelite,1000,rud#########,day-month-year,####################")
+   let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimestandard,1000,rud#########,day-month-year,####################")
    print("License Result: \(result.licenseStatus)")
   }
   catch let error as NSError {
@@ -104,6 +113,17 @@ catch let error as NSError {
    print("Error: \(error)")
   }
   ```
+
+ Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
+ ```javascript
+ do {
+	let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimestandard,1000,rud#########,day-month-year,####################",extensions: ["runtimeanalysis,1000,rud#########,day-month-year,####################"])
+	print("License Result: \(result.licenseStatus)")	 
+ }
+ catch let error as NSError {
+	print("Error: \(error)")
+ }
+ ```
 
 ## 指定ユーザー アカウントを使用した認証
 

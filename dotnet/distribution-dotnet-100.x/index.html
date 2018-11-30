@@ -86,7 +86,7 @@
 <li><strong><a href="#lite-ライセンスの認証">Lite ライセンスの認証</a></strong></li>
 <li><strong><a href="#basic-ライセンスの認証">Basic ライセンスの認証</a></strong></li>
 <li><strong><a href="#standard-または-advanced-ライセンスの認証">Standard または Advanced ライセンスの認証</a></strong></li>
-<li><strong><a href="#エクステンション（analysis）ライセンスの認証">エクステンション（Analysis）ライセンスの認証</a></strong></li>
+<li><strong><a href="#analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</a></strong></li>
 </ul>
 </li>
 </ol>
@@ -111,15 +111,15 @@
 </tr>
 <tr>
 <td style="text-align:left">Standard</td>
-<td style="text-align:left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ)</td>
+<td style="text-align:left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ）</td>
 </tr>
 <tr>
 <td style="text-align:left">Advanced</td>
-<td style="text-align:left">・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ)</td>
+<td style="text-align:left">・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ）</td>
 </tr>
 <tr>
-<td style="text-align:left">エクステンション（Analysis）</td>
-<td style="text-align:left">・Standard ライセンス以上で利用可能なエクステンション（Spatial/3D/Network）ライセンス（WPF API のみ)</td>
+<td style="text-align:left">Analysis Extension</td>
+<td style="text-align:left">・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部（WPF API のみ）</td>
 </tr>
 </tbody>
 </table>
@@ -165,8 +165,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="エクステンション（analysis）ライセンスの認証">エクステンション（Analysis）ライセンスの認証</h2>
-<p>  アプリケーションをエクステンション（Analysis）ライセンスで認証するには、以下の方法があります。</p>
+<h2 id="analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</h2>
+<p>  アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。</p>
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong><ul>
 <li>ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります</li>
@@ -201,14 +201,14 @@ Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 string licenseKey = &quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;;
 ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 </code></pre>
-<p>エクステンション ライセンスを認証する場合は以下のコードを使用します。</p>
+<p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
 <pre><code class="lang-javascript">// 基本ライセンス（Standard または Advanced）のライセンスキーの設定
 string licenseKey = &quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;;
 
-// エクステンション ライセンスのライセンスキーの設定
+// Analysis Extension ライセンスのライセンスキーの設定
 string[] extensions = { &quot;runtimeanalysis,1000,rud#########,day-month-year,####################&quot; };
 
-// 基本ライセンスとエクステンション ライセンスの認証
+// 基本ライセンスと Analysis Extension ライセンスの認証
 ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 </code></pre>
 <h2 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h2>

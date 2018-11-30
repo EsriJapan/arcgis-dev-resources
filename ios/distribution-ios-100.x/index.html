@@ -86,6 +86,7 @@
 <li><strong><a href="#lite-ライセンスの認証">Lite ライセンスの認証</a></strong></li>
 <li><strong><a href="#basic-ライセンスの認証">Basic ライセンスの認証</a></strong></li>
 <li><strong><a href="#standard-ライセンスの認証">Standard ライセンスの認証</a></strong></li>
+<li><strong><a href="#analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</a></strong></li>
 </ul>
 </li>
 </ol>
@@ -111,6 +112,10 @@
 <tr>
 <td style="text-align:left">Standard</td>
 <td style="text-align:left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示</td>
+</tr>
+<tr>
+<td style="text-align:left">Analysis Extension</td>
+<td style="text-align:left">・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索</td>
 </tr>
 </tbody>
 </table>
@@ -156,6 +161,16 @@
 </ul>
 </li>
 </ol>
+<h2 id="analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</h2>
+<p>アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。</p>
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong><ul>
+<li>ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります</li>
+<li>基本ライセンス（Standard）と併せて認証する必要があります</li>
+<li>認証の方法は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
+</ol>
 <h2 id="lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</h2>
 <p>ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。</p>
@@ -186,13 +201,22 @@ print(&quot;Error: \(error)&quot;)
 <p>  アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。</p>
 <pre><code class="lang-javascript">  // ライセンスキーを設定して認証
   do {
-   let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimelite,1000,rud#########,day-month-year,####################&quot;)
+   let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;)
    print(&quot;License Result: \(result.licenseStatus)&quot;)
   }
   catch let error as NSError {
    // 認証に失敗した場合はエラーを出力
    print(&quot;Error: \(error)&quot;)
   }
+</code></pre>
+<p> Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
+<pre><code class="lang-javascript"> do {
+    let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;,extensions: [&quot;runtimeanalysis,1000,rud#########,day-month-year,####################&quot;])
+    print(&quot;License Result: \(result.licenseStatus)&quot;)     
+ }
+ catch let error as NSError {
+    print(&quot;Error: \(error)&quot;)
+ }
 </code></pre>
 <h2 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h2>
 <p> アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する <a href="http://www.esrij.com/products/arcgis-online/plan/organization/">ArcGIS Online 組織向けプラン</a> もしくは <a href="http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/">Portal for ArcGIS</a> の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>

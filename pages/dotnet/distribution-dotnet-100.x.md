@@ -10,7 +10,7 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
   * __[Lite ライセンスの認証](#lite-ライセンスの認証)__
   * __[Basic ライセンスの認証](#basic-ライセンスの認証)__
   * __[Standard または Advanced ライセンスの認証](#standard-または-advanced-ライセンスの認証)__
-  * __[エクステンション（Analysis）ライセンスの認証](#エクステンション（analysis）ライセンスの認証)__
+  * __[Analysis Extension ライセンスの認証](#analysis-extension-ライセンスの認証)__
 
 
 ## 使用するライセンスの選択
@@ -23,9 +23,9 @@ ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つ�
 |:-----|:-----|
 | Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
-| Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ)|
-| Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ) |
-| エクステンション（Analysis）| ・Standard ライセンス以上で利用可能なエクステンション（Spatial/3D/Network）ライセンス（WPF API のみ)|
+| Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ） |
+| Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ） |
+| Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部（WPF API のみ） |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/licensing/)をご参照ください。
 
@@ -62,8 +62,8 @@ ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つ�
   * ArcGIS Runtime Standard または Advanced の配布パックを購入する必要があります
   * 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
-## エクステンション（Analysis）ライセンスの認証
-  アプリケーションをエクステンション（Analysis）ライセンスで認証するには、以下の方法があります。
+## Analysis Extension ライセンスの認証
+  アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。
 
   1. __ライセンスキーを使用した認証__
     * ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
@@ -104,15 +104,15 @@ string licenseKey = "runtimestandard,1000,rud#########,day-month-year,##########
 ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 ```
 
-エクステンション ライセンスを認証する場合は以下のコードを使用します。
+Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
 ```javascript
 // 基本ライセンス（Standard または Advanced）のライセンスキーの設定
 string licenseKey = "runtimestandard,1000,rud#########,day-month-year,####################";
 
-// エクステンション ライセンスのライセンスキーの設定
+// Analysis Extension ライセンスのライセンスキーの設定
 string[] extensions = { "runtimeanalysis,1000,rud#########,day-month-year,####################" };
 
-// 基本ライセンスとエクステンション ライセンスの認証
+// 基本ライセンスと Analysis Extension ライセンスの認証
 ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 ```
 
