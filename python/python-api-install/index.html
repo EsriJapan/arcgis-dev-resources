@@ -99,8 +99,10 @@ conda は Python と Python で使用できるライブラリのインストー�
 </ul>
 <h3 id="step-3:[`arcgis`-パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)">STEP 3:<a href="#arcgis-パッケージをアップグレードする"><code>arcgis</code> パッケージをアップグレードする</a></h3>
 <ul>
+<li><a href="#arcgis-pro-2.2-の環境でアップグレードする">ArcGIS Pro 2.2 の環境でアップグレードする</a></li>
 <li><a href="#arcgis-pro-2.1-の環境でアップグレードする">ArcGIS Pro 2.1 の環境でアップグレードする</a></li>
 <li><a href="#arcgis-pro-1.4.x-以上と2.0x-と-anaconda-の環境でアップグレードする">ArcGIS Pro 1.4.x 以上と 2.0.x と Anaconda の環境でアップグレードする</a></li>
+<li><a href="#hogehoge">【注意】ArcGIS Pro 2.1 と 2.2 における Python パッケージマネージャの違い</a></li>
 </ul>
 <h3 id="step-4:[arcgis-api-for-python-を実行する](#arcgis-api-for-python-を実行する)">STEP 4:<a href="#arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</a></h3>
 <ul>
@@ -171,6 +173,72 @@ Python API は Python 3.5 以降を必要とするため、<a href="https://www.
   インストールが完了したら、<a href="#arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
 <hr>
 <h2 id="arcgis-パッケージをアップグレードする">arcgis パッケージをアップグレードする</h2>
+<h3 id="arcgis-pro-2.2-の環境でアップグレードする">ArcGIS Pro 2.2 の環境でアップグレードする</h3>
+<p>ArcGIS Pro 2.2 には ArcGIS API for Python 1.4.1 がインストールされています。 ArcGIS Pro インストール時には &quot;arcgispro-py3&quot; という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、<code>Python Package Manager</code>を使用して、新しい環境を作成し、Python API の最新バージョンをインストールします。</p>
+<ul>
+<li>新しい空のプロジェクトで ArcGIS Pro を開きます</li>
+<li>[プロジェクト]タブを選択して、Pro の詳細オプションを表示します（下記のスクリーンショットを参照）</li>
+<li>[Python]メニューオプションを選択します</li>
+<li>[環境の管理]ボタンをクリックしウィンドウを開いて、[新規作成]ボタンを選択します</li>
+</ul>
+<div align="center">
+ &lt;img src=file:///D:\workspace\ejresources\newpicts\ppm_createNew.png&quot; width=&quot;500px&quot;&gt;
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>新しい環境の名前を入力してを[保存]を選択します</li>
+</ul>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>ダイアログの下部にある青色の進行状況バーを完了させます。これが完了する前に進めば、不完全な環境が正しく実行されない可能性があります。</li>
+</ul>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>アクティブなラジオボタンを選択して、新しい環境をアクティブにします。</li>
+</ul>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>環境の管理ダイアログを閉じ、ArcGIS Proを閉じます</li>
+<li>Python コマンドプロンプトを開きます</br>またはスタートメニュー&gt;すべてのプログラム&gt; ArcGIS&gt; Pythonコマンドプロンプトで開きます</li>
+<li>次のコマンドを入力します。</li>
+</ul>
+<p><code>conda upgrade -c esri arcgis</code></p>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>「Proceed([y]/n)?」 の表示は <code>y</code> を入力して実行します。</li>
+</ul>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<ul>
+<li>アップグレードしたバージョンを確認するには次のコマンドを入力します。</li>
+</ul>
+<p><code>conda list arcgis</code></p>
+<div align="center">
+ <img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="500px">
+ <p>画像入れる</p>
+</div>
+
+<p>アップデートが完了したら、<a href="#arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
 <h3 id="arcgis-pro-2.1-の環境でアップグレードする">ArcGIS Pro 2.1 の環境でアップグレードする</h3>
 <p>ArcGIS Pro 2.1 には ArcGIS API for Python 1.2.5 がインストールされています。 最新のバージョンに更新するには、arcgispro-py3 環境を有効にしたターミナルウィンドウまたは Python コマンド プロンプトから以下のコマンドを実行します。&lt;</p>
 <p><code>conda upgrade -c esri --no-pin arcgis</code></p>
@@ -199,6 +267,7 @@ Anaconda で作成した環境でも同様に、更新対象の Python API が�
 </div>
 
 <p>アップデートが完了したら、<a href="#arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
+<h3 id="【注意】arcgis-pro-2.1-と-2.2-における-python-パッケージマネージャの違い">【注意】ArcGIS Pro 2.1 と 2.2 における Python パッケージマネージャの違い</h3>
 <hr>
 <h2 id="arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</h2>
 <h3 id="jupyter-notebook-を起動する">Jupyter Notebook を起動する</h3>
