@@ -159,7 +159,7 @@ ArcGIS Pro 2.2 には ArcGIS API for Python 1.4.1 がインストールされて
 
 <div align="left">
  <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/cmd_upgrade_y.png" width="700px">
-<p>インストールするパッケージ計画が表示され、この計画でよい場合は"y"を選択します</p>
+<p align="center">インストールするパッケージ計画が表示され、この計画でよい場合は"y"を選択します</p>
 </div>
 
 * アップグレードしたバージョンを確認するには次のコマンドを入力します。

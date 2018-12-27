@@ -119,6 +119,9 @@ gis = GIS()
 map = gis.map()
 map
 ```
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay.png" width="600px">
+</div>
 
 #### Web マップ と Web シーン
 
@@ -137,6 +140,10 @@ webscene = WebScene(webscene_item)
 webscene
 ```
 
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay2d3d.png" width="600px">
+</div>
+
 #### プログラムによるウィンドウの制御
 
 地図をどのような新しいウィンドウで表示するか、Python プログラムから制御することができます。`MapView` ウィジェットの各インスタンスには、`tab_mode` プロパティと `toggle_window_view（）` メソッドがあります。`tab_mode` を設定すると、地図ウィジェットの新しいウィンドウへの移動方法が変更されます。 この動作を試すには、以下のコードを実行してみてください。
@@ -154,6 +161,10 @@ map
 #map.tab_mode = "tab-after"
 ```
 
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout.gif" width="600px">
+</div>
+
 UI ボタンによる新しいウィンドウでの地図表示は、メソッドを呼び出すことでも制御できます。次のコードでは、マップが表示されたら、`toggle_window_view（）` メソッドを呼び出してマップを新しいウィンドウに移動できます。新しいウィンドウに戻すときも、このメソッドを使用できます。(このメソッドの利用はボタンを押すことと同等の機能です）</br>以下のコードを実行してみてください。
 
 ```
@@ -167,6 +178,11 @@ map
 map.toggle_window_view()
 ```
 
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_toggle.gif" width="600px">
+</div>
+
+
 表示する地図には一時的なタイトル（タブに表示されるテキスト）を付けて、これに対して `tab_mode` をプログラムで指定することもできます。次のプグラムは、一時的にタイトルを付けたマップを一定時間で `tab_mode` が持つ表示制御を順番に表現します。
 
 ```
@@ -177,9 +193,7 @@ map
 ```
 #このセルを実行して、新しいウィンドウに地図を移動して表示します
 map.toggle_window_view(title="My 3D Map", tab_mode="split-top")
-```
-```
-#次にこのセルを実行して、ノートブックの後ろにします
+# タブを戻す
 map.toggle_window_view()
 ```
 ```
@@ -189,15 +203,20 @@ import time
 tab_modes = ['auto', 'split-top' 'split-bottom', 'split-left',
              'split-right', 'tab-before', 'tab-after']
 for tab_mode in tab_modes:
-    #to new window
+    #指定のタブ形式で表示する
     map.toggle_window_view(title=tab_mode, tab_mode=tab_mode)
-    time.sleep(4) #4秒間隔
-    #to original notebook
+    time.sleep(3) #2秒間隔
+    #デフォルトのタブに戻す
     map.toggle_window_view()
-    time.sleep(4) #4秒間隔
+    time.sleep(2) #2秒間隔
 ```
 
-最後に、3 つ以上の Web シーンを表示すると仮定します。各マップ ID で構成したリストから、1 度だけ処理を実行し、3 つの　Web シーンを一度にすべて新しいタブに表示します。
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_interval.gif" width="600px">
+</div>
+
+
+最後に、3 つ以上の Web シーンを表示すると仮定した表示方法をご紹介します。各マップ ID で構成したリストから、1 度だけ処理を実行し、3 つの　Web シーンを一度にすべて新しいタブに表示します。
 
 ```
 #このセルの内容を1度で実行する
@@ -211,5 +230,9 @@ for webscene_id in ['31874da8a16d45bfbc1273422f772270',
     map = MapView(gis=gis, item=webscene_item, mode="3D") 
     map.toggle_window_view(title=webscene_item.title, tab_mode='tab-after')
 ```
+
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_3scenes.gif" width="600px">
+</div>
 
 ぜひ、実行してみてください！
