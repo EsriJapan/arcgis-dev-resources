@@ -86,8 +86,8 @@
 
 <p>JupyterLab は、ノートブック、ターミナル、テキストエディタ、ファイルブラウザ、ipywidgets などの Jupyter Notebook の主要コンポーネントの機能の全てをベースに、より柔軟で強力な開発をサポートします。JupyterLab の詳細は <a href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">JupyterLab のブログ</a>や <a href="https://github.com/jupyterlab/jupyterlab">GitHub</a> をご参照ください。</p>
 <h2 id="jupyterlab-をはじめる">JupyterLab をはじめる</h2>
-<p>Python API を Jupyter Lab で使用するためには、いくつかインストールなどの設定が必要です。</br>
-JupyterLab 自体は Jupyter Notebook と同様に、Anaconda 等の Python パッケージにはデフォルトでインストールされています。（ArcGIS Pro も同様）しかし、次のコマンドで実行できない場合は、<a href="https://anaconda.org/conda-forge/jupyterlab">conda コマンドからインストール</a>する必要があります。</p>
+<p>Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。</br>
+JupyterLab は Jupyter Notebook と同様に、Anaconda 等の Python パッケージにはデフォルトでインストールされています。（ArcGIS Pro も同様）しかし、次のコマンドで実行できない場合は、<a href="https://anaconda.org/conda-forge/jupyterlab">conda コマンドからインストール</a>する必要があります。</p>
 <p><code>jupyter lab</code></p>
 <h3 id="インストール">インストール</h3>
 <ol>
@@ -99,45 +99,45 @@ JupyterLab 自体は Jupyter Notebook と同様に、Anaconda 等の Python パ�
 <font color="Red">重要</font></br>・バージョン番号の部分（1.5.1）は使用する Python API のバージョン番号に合わせて実行します。</br>
 ・エラー等で正常に完了できない場合は、お使いの端末または現在の環境に <code>npm</code> および <code>nodejs</code> をインストールする必要があります。nodejs をインストールすると、npm もインストールすることができます。<a href="https://anaconda.org/conda-forge/nodejs">Anaconda の nodejs インストールコマンド</a> をご参照ください。</p>
 </li>
-<li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで Jupyter Lab をビルドします。</p>
+<li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。</p>
 <p> <code>jupyter lab build</code></p>
-<p> ArcGIS Online の背景地図を表示するなどの部分は、Jupyter Lab のエクステンション機能として動作しています。正常にエクステンションのインストールが完了すると、次のコマンドでその内容を確認できます。</p>
+<p> ArcGIS Online の背景地図を表示するなどの部分は、JupyterLab のエクステンション機能として動作しています。正常にエクステンションのインストールが完了すると、次のコマンドでその内容を確認できます。</p>
 <p> <code>jupyter labextension list</code></p>
 <pre><code> Known labextensions:
     app dir: D:\&lt;your own path&gt;\anaconda3\share\jupyter\lab
          @jupyter-widgets/jupyterlab-manager v0.38.1 enabled  ok
          arcgis-map-ipywidget v1.5.1 enabled  ok
 </code></pre></li>
-<li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで Jupyter Lab を起動します。</p>
+<li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab を起動します。</p>
 <p> <code>jupyter lab</code></p>
 <p> 任意のフォルダ配下をホーム（ダッシュボード）として起動したい場合は、<code>cd</code> コマンドによりフォルダを移動してから起動コマンドを実行します。</p>
 </li>
 </ol>
 <h3 id="ファイルエクスプローラー">ファイルエクスプローラー</h3>
-<p>Jupyter Lab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 Jupyter Lab のファイルエクスプローラは、メインビューの左側のウィンドウです。</p>
+<p>JupyterLab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 JupyterLab のファイルエクスプローラは、メインビューの左側のウィンドウです。</p>
 <div align="center">
  <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_file_explorer.gif" width="600px">
  <p>エクスプローラーでファイル/フォルダを操作する</p>
 </div>
 
-<p>Jupyter Lab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースです。</p>
+<p>JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースです。</p>
 <h3 id="ウィンドウとタブを使用する">ウィンドウとタブを使用する</h3>
-<p>Jupyter Lab には、Jupyter Notebookとは違って、&quot;ウィンドウ&quot;と&quot;タブ&quot;という概念があります。 これにより、ノートブックを積み重ねたり、ノートブックを横に並べたり、タブでノートブックを整理したりすることができます。以下のように「タブ」をクリックしてドラッグするだけです。
-これは、Jupyter Lab　の非常に強力な機能のひとつです。</p>
+<p>JupyterLab には、Jupyter Notebookとは違って、&quot;ウィンドウ&quot;と&quot;タブ&quot;という概念があります。 これにより、ノートブックを積み重ねたり、ノートブックを横に並べたり、タブでノートブックを整理したりすることができます。以下のように「タブ」をクリックしてドラッグするだけです。
+これは、JupyterLab　の強力な機能のひとつです。</p>
 <div align="center">
  <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_navigate_windows.gif" width="600px">
  <p>エクスプローラーでファイル/フォルダを操作する</p>
 </div>
 
-<p>どのようなウィンドウでもドラッグできます。 Jupyter Lab を使用すると、上記のように、新しいウィンドウで <em>.csv、</em>.json などのファイルタイプを表示および編集できます。</p>
+<p>どのようなウィンドウでもドラッグできます。 JupyterLab を使用すると、上記のように、新しいウィンドウで <em>.csv、</em>.json などのファイルタイプを表示および編集できます。</p>
 <h3 id="セルの使用">セルの使用</h3>
-<p>上記のウィンドウとタブと同様に、Jupyter Lab ではノートブックのセルをドラッグアンドドロップして移動することができます。 Jupyter Lab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします.</p>
+<p>上記のウィンドウとタブと同様に、JupyterLab ではノートブックのセルをドラッグアンドドロップして移動することができます。 JupyterLab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします.</p>
 <div align="center">
  <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_1.gif" width="600px">
  <p>セルをドラッグして移動する</p>
 </div>
 
-<p>Jupyter Lab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして[セルをコピー]を選択してコピーします。 Jupyter Lab には、&#39;出力のための新しいビューを作成する&#39;オプションを含む、右クリックのコンテキストメニューに多くのオプションがあります。 これにより、任意のセル出力を取得して新しいウィンドウで複製することができ、スタックしたり、並べて表示することができます。</p>
+<p>JupyterLab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして[セルをコピー]を選択してコピーします。 JupyterLab には、&#39;出力のための新しいビューを作成する&#39;オプションを含む、右クリックのコンテキストメニューに多くのオプションがあります。 これにより、任意のセル出力を取得して新しいウィンドウで複製することができ、スタックしたり、並べて表示することができます。</p>
 <div align="center">
  <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_2.gif" width="600px">
  <p>セルをドラッグして移動する</p>
@@ -148,7 +148,7 @@ JupyterLab 自体は Jupyter Notebook と同様に、Anaconda 等の Python パ�
 <p>バージョン 1.5.0 以上の Python API には、2D 回転、3D モード、3D レンダラのサポートなどマップウィジェットの新機能が多数追加されています。新しいウィジェットのこれらの他の機能の詳細については、<a href="https://developers.arcgis.com/python/guide/advanced-map-widget-useage/">ガイドページ（米国ESRI ページ）</a>でご紹介しています。マップウィジェットは JupyterLab での地図操作をよりシームレスにしています。</p>
 <div align="center">
  <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_widget_1.gif" width="600px">
- <p>マップウィジェットから Jupyter Lab で地図を表示する</p>
+ <p>マップウィジェットから JupyterLab で地図を表示する</p>
 </div>
 
 <p>Python API の <code>MapView</code> クラスのデフォルトの表示動作は、Jupyter Notebook と同じです。ウィジェットはセルの出力領域に表示されます。 JupyterLab では、これに加えて UI ボタンが表示されることがあります。</p>
