@@ -36,6 +36,8 @@
   * [ArcGIS API for Python のコンセプト](../python/python-api-concepts/)
   * [ArcGIS API for Python のための基礎環境：conda入門](../python/python-api-conda/)
   * [インストール ガイド](../python/python-api-install/)
+  * [Jupyter Notebook を使ってみよう](../python/python-api-jnsetup/)
+  * [Jupyter Lab を使ってみよう](../python/python-api-jnlabsetup/)
 
 
 ## 開発ブログ記事
