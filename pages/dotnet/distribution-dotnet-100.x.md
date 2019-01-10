@@ -40,7 +40,7 @@ ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つ�
   * ArcGIS Runtime Lite のライセンスキーを取得する必要があります
   * 認証の方法は、[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)をご参照ください
 1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(レベル1 または レベル2) が必要です
+  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(レベル1 または Viewer タイプ以上) が必要です
   *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
   * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
@@ -51,7 +51,7 @@ ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つ�
   * ArcGIS Runtime Basic の配布パックを購入する必要があります
   * 認証の方法は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（レベル2）が必要です
+  *  アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（レベル2 または Editor タイプ以上）が必要です
   *  アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
   * 認証の方法は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
