@@ -97,9 +97,9 @@
 <h2 id="地図の表示">地図の表示</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
 <ol>
-<li><p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.0/map/index.html">arcgis-dev-resources/startup/javascript/4.0/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。</p>
+<li><p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.x/map/index.html">arcgis-dev-resources/startup/javascript/4.x/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。</p>
 <blockquote>
-<p>※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-dev-resources/startup/javascript/4.0/map/index.html</code> のように localhost を指定してアクセスできます。</p>
+<p>※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-dev-resources/startup/javascript/4.x/map/index.html</code> のように localhost を指定してアクセスできます。</p>
 </blockquote>
 </li>
 <li><p>この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。</p>
@@ -153,7 +153,7 @@ var view = new SceneView({
 <ol>
 <li><p>ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは <code>require</code> 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。</p>
 <blockquote>
-<pre><code class="lang-javascript">require([&quot;esri/views/MapView&quot;, &quot;esri/WebMap&quot;, &quot;esri/widgets/Search&quot;, &quot;esri/layers/FeatureLayer&quot;, &quot;dojo/domReady!&quot;],
+<pre><code class="lang-javascript">require([&quot;esri/views/MapView&quot;, &quot;esri/WebMap&quot;, &quot;esri/widgets/Search&quot;, &quot;esri/layers/FeatureLayer&quot;],
 function(MapView, WebMap, Search, FeatureLayer) {
   ...
 });
@@ -166,7 +166,6 @@ function(MapView, WebMap, Search, FeatureLayer) {
 <p>フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。</p>
 <p>ここで以下の点に注意してください。</p>
 <ul>
-<li>配列の一番最後のモジュールは必ず <code>&quot;dojo/domReady!&quot;</code> になるようにしてください</li>
 <li><code>require</code> 関数の第ニ引数の無名関数の引数にはモジュールに対応したクラス名（任意）を定義しますが、これは配列内のモジュールの順序と対応している必要があります</li>
 </ul>
 </blockquote>

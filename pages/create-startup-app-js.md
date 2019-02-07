@@ -18,8 +18,8 @@
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
-1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/4.0/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.0/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
-> ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-dev-resources/startup/javascript/4.0/map/index.html` のように localhost を指定してアクセスできます。
+1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/4.x/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.x/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
+> ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-dev-resources/startup/javascript/4.x/map/index.html` のように localhost を指定してアクセスできます。
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
 
@@ -72,7 +72,7 @@
 
 1. ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは `require` 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。
 > ```javascript
-> require(["esri/views/MapView", "esri/WebMap", "esri/widgets/Search", "esri/layers/FeatureLayer", "dojo/domReady!"],
+> require(["esri/views/MapView", "esri/WebMap", "esri/widgets/Search", "esri/layers/FeatureLayer"],
 > function(MapView, WebMap, Search, FeatureLayer) {
 >   ...
 > });
@@ -85,7 +85,6 @@
 > フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。
 >
 > ここで以下の点に注意してください。
-> * 配列の一番最後のモジュールは必ず `"dojo/domReady!"` になるようにしてください
 > * `require` 関数の第ニ引数の無名関数の引数にはモジュールに対応したクラス名（任意）を定義しますが、これは配列内のモジュールの順序と対応している必要があります
 
 1. 検索ウィジェット作成のスクリプトを記述します。

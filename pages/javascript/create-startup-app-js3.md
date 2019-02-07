@@ -18,7 +18,7 @@
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
-1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
+1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/3.x/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
 > ※Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-samples-js/simple/map.html` のように localhost を指定してアクセスできます。
 
 1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
