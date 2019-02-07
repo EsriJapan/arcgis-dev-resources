@@ -4,18 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
     <title>ArcGIS for Developers - Startup Sample</title>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.21/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <style>
       html, body, #mapDiv {
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
-      }
-      body {
-        background-color: #FFF;
-        overflow: hidden;
-        font-family: "Meiryo";
       }
       #searchDiv {
          display: block;
@@ -25,11 +20,17 @@
          left: 74px;
       }
     </style>
-    <script src="http://js.arcgis.com/3.21/"></script>
+    <script src="https://js.arcgis.com/3.27/"></script>
     <script>
       var map;
       
-      require(["esri/arcgis/utils", "esri/dijit/Search", "esri/layers/FeatureLayer", "esri/InfoTemplate", "dojo/domReady!"], function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
+      require([
+        "esri/arcgis/utils",
+        "esri/dijit/Search",
+        "esri/layers/FeatureLayer",
+        "esri/InfoTemplate",
+        "dojo/domReady!"
+      ], function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
 
         // マップの参照
         //var mapDeferred = esriUtils.createMap("<Web マップ ID>", "mapDiv");
