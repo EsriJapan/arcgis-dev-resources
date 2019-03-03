@@ -1,14 +1,14 @@
 ## ArcGIS for Developers とは
 
-ArcGIS for Developers は、Esri 製品を利用して様々なアプリを開発する開発者のための総合ポータルサイトであり、 地図/GIS アプリ開発者のための開発者向けサービスを提供しています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして 地図/GIS アプリを開発することができます。
+ArcGIS for Developers は、Esri 製品を利用して様々なアプリを開発する開発者のための総合ポータルサイトであり、地図/GIS アプリ開発者のための開発者向けサービスを提供しています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして地図/GIS アプリの開発を開始することができます。
 
-ArcGIS for Developers では、システム開発に必要なリソース（開発キット、サービス/コンテンツ、ソフトウェア）を揃えるためのサブスクリプション プログラム（[ArcGIS Developer Subscription](https://www.esrij.com/products/arcgis-for-developers/details/)）と開発から運用までをカバーする開発者向けクラウド サービス（[ArcGIS Online Deployment Plan](https://www.esrij.com/products/arcgis-for-developers/details/deployment-plan/)）を提供します。ArcGIS Online Deployment Plan には、無償プランと有償プランの ２ つのプランがあります。
+ArcGIS for Developers では、システム開発に必要なリソース（開発キット、サービス/コンテンツ、ソフトウェア）を揃えるためのサブスクリプション プログラム（[ArcGIS Developer Subscription](https://www.esrij.com/products/arcgis-for-developers/details/)）を提供します。
 
-ArcGIS for Developers に開発者アカウントを作成すると ArcGIS Online Deployment Plan の無償プランが有効になり、開発キットのダウンロードとアプリの開発を無償で行うことができます。また 米国 Esri 社がホストする GIS クラウド サービスであるジオコーディング サービス（住所⇄緯度経度）やネットワークサービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることができます（※無償プランでの GIS サービスの利用量には上限があります）。
+ArcGIS for Developers に開発者アカウントを作成すると [ArcGIS Online (開発者向け) Subscription](https://www.esrij.com/products/arcgis-for-developers/details/deployment-plan/) が有効になり、開発キットのダウンロードとアプリの開発を無償で開始することができます。また 米国 Esri 社がホストする GIS クラウド サービスであるジオコーディング サービス（住所⇄緯度経度）やネットワーク サービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、50 [クレジット](https://www.esrij.com/products/arcgis-online/credits/)/月の範囲で可能です。
 
-プランを有償プランにアップグレードするとより大規模な GIS データをホストしたり、GIS サービスを実運用で利用したりすることができます（※プランが無償プランから有償プランに自動で切り替わることはありません）。
+アプリを商用利用で運用される場合は、別途 ArcGIS Developer Subscription の有償プランを契約いただく必要があります。
 
-ArcGIS for Developers の開発者向けサービスについては [ESRIジャパン製品ページ](http://www.esrij.com/products/arcgis-for-developers/)をご参照ください。
+ArcGIS Developer Subscription の各プランの詳細や提供しているサービスについては [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/details/)をご参照ください。
 
 
 ## アカウントの作成
