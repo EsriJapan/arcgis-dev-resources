@@ -25,6 +25,7 @@ conda は Python と Python で使用できるライブラリのインストー�
   * [Jupyter Notebook を起動する](#jupyter-notebook-を起動する)
   * [Jupyter Notebook で地図を表示してみる](#jupyter-notebook-で地図を表示してみる)
 
+#### [オフライン時のインストール方法](#オフライン時のインストール方法)
 
 ***
 
@@ -271,6 +272,25 @@ my_gis.map()
 from arcgis.gis import arcgis
 arcgis.__version__
 ```
+
+### オフライン時のインストール方法
+
+インターネットに接続していない環境でも、次の手順で Python API をインストールすることが可能です。
+ただし、事前に [Anaconda クラウドの ESRI チャネル](https://anaconda.org/Esri/arcgis/files)から、対象の OS と使用している Python のバージョンに適した Python API の最新バージョンのファイルをダウンロードしておきます。
+
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/anacondacloudesric.png" width="800px">
+</div>
+
+例えば、Windows 64 bit のマシンで、Python 3.7 をお使いの場合は、win-64/arcgis-1.6.0-py37h62639d4_1.tar.bz2 のファイルをクリックし任意の格納先にダウンロードします。
+
+ファイルダウンロード後は、ターミナルアプリケーションを起動して次のコマンドでインストールします。(ファイル格納場所まで移動します)
+
+```
+conda install arcgis-1.6.0-py37h62639d4_1.tar.bz2
+```
+
+"done"が表示されればインストール完了です。
 
 
 より詳しい情報は 米国Esri ガイドページ：[Install and set up](https://developers.arcgis.com/python/guide/install-and-set-up/) をご覧ください

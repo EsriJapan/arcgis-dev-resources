@@ -108,6 +108,7 @@ conda は Python と Python で使用できるライブラリのインストー�
 <li><a href="#jupyter-notebook-を起動する">Jupyter Notebook を起動する</a></li>
 <li><a href="#jupyter-notebook-で地図を表示してみる">Jupyter Notebook で地図を表示してみる</a></li>
 </ul>
+<h4 id="[オフライン時のインストール方法](#オフライン時のインストール方法)"><a href="#オフライン時のインストール方法">オフライン時のインストール方法</a></h4>
 <hr>
 <h2 id="conda-をインストールする">Conda をインストールする</h2>
 <h3 id="arcgis-pro-で-conda-をインストールする">ArcGIS Pro で conda をインストールする</h3>
@@ -309,7 +310,18 @@ my_gis.map()
 <p>次のコードを実行することで、現在お使いのバージョンを確認することができます。</p>
 <pre><code>from arcgis.gis import arcgis
 arcgis.__version__
-</code></pre><p>より詳しい情報は 米国Esri ガイドページ：<a href="https://developers.arcgis.com/python/guide/install-and-set-up/">Install and set up</a> をご覧ください</p>
+</code></pre><h3 id="オフライン時のインストール方法">オフライン時のインストール方法</h3>
+<p>インターネットに接続していない環境でも、次の手順で Python API をインストールすることが可能です。
+ただし、事前に <a href="https://anaconda.org/Esri/arcgis/files">Anaconda クラウドの ESRI チャネル</a>から、対象の OS と使用している Python のバージョンに適した Python API の最新バージョンのファイルをダウンロードしておきます。</p>
+<div align="center">
+ <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/anacondacloudesric.png" width="800px">
+</div>
+
+<p>例えば、Windows 64 bit のマシンで、Python 3.7 をお使いの場合は、win-64/arcgis-1.6.0-py37h62639d4_1.tar.bz2 のファイルをクリックし任意の格納先にダウンロードします。</p>
+<p>ファイルダウンロード後は、ターミナルアプリケーションを起動して次のコマンドでインストールします。(ファイル格納場所まで移動します)</p>
+<pre><code>conda install arcgis-1.6.0-py37h62639d4_1.tar.bz2
+</code></pre><p>&quot;done&quot;が表示されればインストール完了です。</p>
+<p>より詳しい情報は 米国Esri ガイドページ：<a href="https://developers.arcgis.com/python/guide/install-and-set-up/">Install and set up</a> をご覧ください</p>
 <p>ESRIジャパンが運営する <a href="https://community.esri.com/groups/devcom-jp">GIS アプリ開発者のためのコミュニティ グループ</a> では、Python API の機能や実際のコードを<a href="https://community.esri.com/docs/DOC-11401">ArcGIS API for Python を使ってみよう</a>シリーズブログにてご紹介しています。</br>
 <a href="https://github.com/EsriJapan/arcgis-samples-python-api">GitHub</a> にも日本語による解説付きのコードを公開していますので、是非ご参照ください。</p>
 
