@@ -80,8 +80,8 @@
 						<div class="box">
 							<p>JupyterLab とは、コードやデータを Jupyter Notebook のノートブック形式（*.ipynb）で作業できる最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。</br> ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降では、このツールでも ArcGIS Online が配信する地図を表示してよりダイナミックに見せることができます。JupyterLab で Python API を使用することで、より便利で印象的な開発経験となります。</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_workflow.gif" width="600px">
- <p>JupyterLab で GIS データとグラフの操作</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_workflow.gif" width="600px">
+<p>JupyterLab で GIS データとグラフの操作</p>
 </div>
 
 <p>JupyterLab は、ノートブック、ターミナル、テキストエディタ、ファイルブラウザ、ipywidgets などの Jupyter Notebook の主要コンポーネントの機能の全てをベースに、より柔軟で強力な開発をサポートします。JupyterLab の詳細は <a href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">JupyterLab のブログ</a>や <a href="https://github.com/jupyterlab/jupyterlab">GitHub</a> をご参照ください。</p>
@@ -91,33 +91,36 @@ JupyterLab は Jupyter Notebook と同様に、Anaconda 等の Python パッケ�
 <p><code>jupyter lab</code></p>
 <h3 id="インストール">インストール</h3>
 <ol>
-<li><p>バージョン 1.5.0 以上の Python API をインストールまたはアップデートする</br>ターゲットの仮想環境がある場合は、アクティベート（<code>activate</code>）してから行います。インストールまたはアップデートの方法は<a href="http://esrijapan.github.io/arcgis-dev-resources/python/python-api-install/">インストールガイド</a>をご覧ください。</p>
+<li><p>バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする</br>
+ターゲットの仮想環境がある場合は、アクティベート（<code>activate</code>）してから行います。Python API のインストールまたはアップデートの方法は<a href="http://esrijapan.github.io/arcgis-dev-resources/python/python-api-install/">インストールガイド</a>をご覧ください。</p>
 </li>
 <li><p>次の 2 つのコマンドを実行します</br>
 <code>jupyter labextension install @jupyter-widgets/jupyterlab-manager</code></br>
-<code>jupyter labextension install arcgis-map-ipywidget@1.5.1</code></br></br>
-<font color="Red">重要</font></br>・バージョン番号の部分（1.5.1）は使用する Python API のバージョン番号に合わせて実行します。</br>
+<code>jupyter labextension install arcgis-map-ipywidget@バージョン番号</code></br></br>
+<font color="Red">重要</font></br>・2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.0)。</br>
 ・エラー等で正常に完了できない場合は、お使いの端末または現在の環境に <code>npm</code> および <code>nodejs</code> をインストールする必要があります。nodejs をインストールすると、npm もインストールすることができます。<a href="https://anaconda.org/conda-forge/nodejs">Anaconda の nodejs インストールコマンド</a> をご参照ください。</p>
 </li>
 <li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。</p>
-<p> <code>jupyter lab build</code></p>
-<p> ArcGIS Online の背景地図を表示するなどの部分は、JupyterLab のエクステンション機能として動作しています。正常にエクステンションのインストールが完了すると、次のコマンドでその内容を確認できます。</p>
-<p> <code>jupyter labextension list</code></p>
-<pre><code> Known labextensions:
-    app dir: D:\&lt;your own path&gt;\anaconda3\share\jupyter\lab
-         @jupyter-widgets/jupyterlab-manager v0.38.1 enabled  ok
-         arcgis-map-ipywidget v1.5.1 enabled  ok
-</code></pre></li>
-<li><p>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab を起動します。</p>
-<p> <code>jupyter lab</code></p>
-<p> 任意のフォルダ配下をホーム（ダッシュボード）として起動したい場合は、<code>cd</code> コマンドによりフォルダを移動してから起動コマンドを実行します。</p>
 </li>
 </ol>
+<p><code>jupyter lab build</code></p>
+<p>ArcGIS Online の背景地図を表示するなどの部分は、JupyterLab のエクステンション機能として動作しています。正常にエクステンションのインストールが完了すると、次のコマンドでその内容を確認できます。</p>
+<p><code>jupyter labextension list</code></p>
+<pre><code class="lang-text">Known labextensions:
+app dir: D:\&lt;your own path&gt;\anaconda3\share\jupyter\lab
+@jupyter-widgets/jupyterlab-manager v0.38.1 enabled  ok
+arcgis-map-ipywidget v1.5.1 enabled  ok
+</code></pre>
+<ol>
+<li>以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab を起動します。</li>
+</ol>
+<p><code>jupyter lab</code></p>
+<p>任意のフォルダ配下をホーム（ダッシュボード）として起動したい場合は、<code>cd</code> コマンドによりフォルダを移動してから起動コマンドを実行します。</p>
 <h3 id="ファイルエクスプローラー">ファイルエクスプローラー</h3>
 <p>JupyterLab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 JupyterLab のファイルエクスプローラは、メインビューの左側のウィンドウです。</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_file_explorer.gif" width="600px">
- <p>エクスプローラーでファイル/フォルダを操作する</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_file_explorer.gif" width="600px">
+<p>エクスプローラーでファイル/フォルダを操作する</p>
 </div>
 
 <p>JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースです。</p>
@@ -125,132 +128,143 @@ JupyterLab は Jupyter Notebook と同様に、Anaconda 等の Python パッケ�
 <p>JupyterLab には、Jupyter Notebookとは違って、&quot;ウィンドウ&quot;と&quot;タブ&quot;という概念があります。 これにより、ノートブックを積み重ねたり、ノートブックを横に並べたり、タブでノートブックを整理したりすることができます。以下のように「タブ」をクリックしてドラッグするだけです。
 これは、JupyterLab　の強力な機能のひとつです。</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_navigate_windows.gif" width="600px">
- <p>エクスプローラーでファイル/フォルダを操作する</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_navigate_windows.gif" width="600px">
+<p>エクスプローラーでファイル/フォルダを操作する</p>
 </div>
 
 <p>どのようなウィンドウでもドラッグできます。 JupyterLab を使用すると、上記のように、新しいウィンドウで <em>.csv、</em>.json などのファイルタイプを表示および編集できます。</p>
 <h3 id="セルの使用">セルの使用</h3>
 <p>上記のウィンドウとタブと同様に、JupyterLab ではノートブックのセルをドラッグアンドドロップして移動することができます。 JupyterLab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします.</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_1.gif" width="600px">
- <p>セルをドラッグして移動する</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_1.gif" width="600px">
+<p>セルをドラッグして移動する</p>
 </div>
 
 <p>JupyterLab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして[セルをコピー]を選択してコピーします。 JupyterLab には、&#39;出力のための新しいビューを作成する&#39;オプションを含む、右クリックのコンテキストメニューに多くのオプションがあります。 これにより、任意のセル出力を取得して新しいウィンドウで複製することができ、スタックしたり、並べて表示することができます。</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_2.gif" width="600px">
- <p>セルをドラッグして移動する</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_2.gif" width="600px">
+<p>セルをドラッグして移動する</p>
 </div>
 
 <p>まだまだセルの操作はできることがあります!是非見つけてみてください。</p>
 <h3 id="マップウィジェットの操作">マップウィジェットの操作</h3>
 <p>バージョン 1.5.0 以上の Python API には、2D 回転、3D モード、3D レンダラのサポートなどマップウィジェットの新機能が多数追加されています。新しいウィジェットのこれらの他の機能の詳細については、<a href="https://developers.arcgis.com/python/guide/advanced-map-widget-useage/">ガイドページ（米国ESRI ページ）</a>でご紹介しています。マップウィジェットは JupyterLab での地図操作をよりシームレスにしています。</p>
 <div align="center">
- <img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_widget_1.gif" width="600px">
- <p>マップウィジェットから JupyterLab で地図を表示する</p>
+<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_widget_1.gif" width="600px">
+<p>マップウィジェットから JupyterLab で地図を表示する</p>
 </div>
 
 <p>Python API の <code>MapView</code> クラスのデフォルトの表示動作は、Jupyter Notebook と同じです。ウィジェットはセルの出力領域に表示されます。 JupyterLab では、これに加えて UI ボタンが表示されることがあります。</p>
 <div align="left">
- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAIIxu7mQQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABI0lEQVRYw+1Wy3GDMBTch3JLBanA+TQR0gDz4JB0Y1xISkBAA4EqHOeYU6qAzYVkPAyWYSLii/Ymzb63q89qBAQEXBgyNamquYhs5zSw1v72SNOUp3gkd2VZ5uP5K1dzkrslqxnzRWQD4MVV4zQw5XguP8uyDckGwBeAm1M10Rrnqqq3fd+3JEVEYhc3WkMcQDMM46IoPv7NQJIkdyLS/oiXZXk4VxP5FDfGNEvEz17Cuciy7J7kGwB0XRfXdX0Yp+NoZ/waGMQbABzE35ekKfIkDhF5mhJf7Q6o6sOReFwUxd7BzdM0ffR5BALglaQAiK21eydZZEsSAFpfBkjy2Rhz7Vr5qimoqurTR4JWeYqDgWDAWwpUNb+ogbn/woCAgL/gG9knfWwKBGcvAAAAAElFTkSuQmC" >
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAIIxu7mQQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABI0lEQVRYw+1Wy3GDMBTch3JLBanA+TQR0gDz4JB0Y1xISkBAA4EqHOeYU6qAzYVkPAyWYSLii/Ymzb63q89qBAQEXBgyNamquYhs5zSw1v72SNOUp3gkd2VZ5uP5K1dzkrslqxnzRWQD4MVV4zQw5XguP8uyDckGwBeAm1M10Rrnqqq3fd+3JEVEYhc3WkMcQDMM46IoPv7NQJIkdyLS/oiXZXk4VxP5FDfGNEvEz17Cuciy7J7kGwB0XRfXdX0Yp+NoZ/waGMQbABzE35ekKfIkDhF5mhJf7Q6o6sOReFwUxd7BzdM0ffR5BALglaQAiK21eydZZEsSAFpfBkjy2Rhz7Vr5qimoqurTR4JWeYqDgWDAWwpUNb+ogbn/woCAgL/gG9knfWwKBGcvAAAAAElFTkSuQmC" >
 </div>
 
 <p>このボタンを押すと、ウィジェットはセルの出力領域から新しいウィンドウに移動します。 このウィンドウは、他のすべてのウィンドウと同様に、タブでの表示、分割などが可能です。 ウィジェットを元のノートブックに復元するには、このボタンを押します。</p>
 <div align="left">
- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAYsnoHHlAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABG0lEQVRYw+2WMVLDMBBF/9q+BBUlAS5hn8BeqQk1B8HcBgpLowtgnyJwGWtTkFAEOzIgkmHQLzXjeW9nV2sBKSn/PTR1yMwtET3EBInIo7W2PTwvQh9FqfJIMUcFpoy/E6XUrEB27hlIAkngxwJa65umaS7PIsDMt977gYie55ZaKMXM4hhEJFi5iLy87yu5ByDRBIwxA4AhAO93spUxZnOyFtR1fb2rHERUdV23iT6ESqmSmdspeJ7nfSz4rICIlIc/EGZe7eHjOEaBL24BM68AfMCdc6+x9kDxFbiIlM65t5MtIq311R4OoLLWRoUHBUSkJyLJsqz8DfiSFlwAePLe3zHz5ENl6rZEnQEAa6JPW7Zd8txKSfkT2QKASXQbvOVu9AAAAABJRU5ErkJggg==" >
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAYsnoHHlAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABG0lEQVRYw+2WMVLDMBBF/9q+BBUlAS5hn8BeqQk1B8HcBgpLowtgnyJwGWtTkFAEOzIgkmHQLzXjeW9nV2sBKSn/PTR1yMwtET3EBInIo7W2PTwvQh9FqfJIMUcFpoy/E6XUrEB27hlIAkngxwJa65umaS7PIsDMt977gYie55ZaKMXM4hhEJFi5iLy87yu5ByDRBIwxA4AhAO93spUxZnOyFtR1fb2rHERUdV23iT6ESqmSmdspeJ7nfSz4rICIlIc/EGZe7eHjOEaBL24BM68AfMCdc6+x9kDxFbiIlM65t5MtIq311R4OoLLWRoUHBUSkJyLJsqz8DfiSFlwAePLe3zHz5ENl6rZEnQEAa6JPW7Zd8txKSfkT2QKASXQbvOVu9AAAAABJRU5ErkJggg==" >
 </div>
 
 <p>ここからは、実際にコードを試してみましょう。</br>
 以下のセルを実行します。</p>
-<pre><code>from arcgis.gis import GIS
+<pre><code class="lang-python">from arcgis.gis import GIS
 
 # JupyterLab へ地図を表示する
 gis = GIS()
 map = gis.map()
 map
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay.png" width="600px">
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay.png" width="600px">
 </div>
 
 <h4 id="web-マップ-と-web-シーン">Web マップ と Web シーン</h4>
 <p>Web マップ、Web シーン ともに表示させると、UI ボタンから別の新しいウィンドウへの表示を 切り替えることができます。次の 2 つのコードをそれぞれ別のセルで実行して、UI ボタンで切り替えてみましょう。</p>
-<pre><code>from arcgis.mapping import WebMap
+<pre><code class="lang-python">from arcgis.mapping import WebMap
 webmap_item = gis.content.get(&quot;ab42b088573d4253a22a8b38ee698ccd&quot;)
 webmap = WebMap(webmap_item)
 webmap
-</code></pre><pre><code>from arcgis.mapping import WebScene
+</code></pre>
+<pre><code class="lang-python">from arcgis.mapping import WebScene
 webscene_item = gis.content.get(&quot;421433baeb8d487b903d4a89df79149b&quot;)
 webscene = WebScene(webscene_item)
 webscene
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay2d3d.png" width="600px">
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay2d3d.png" width="600px">
 </div>
 
 <h4 id="プログラムによるウィンドウの制御">プログラムによるウィンドウの制御</h4>
 <p>地図をどのような新しいウィンドウで表示するか、Python プログラムから制御することができます。<code>MapView</code> ウィジェットの各インスタンスには、<code>tab_mode</code> プロパティと <code>toggle_window_view（）</code> メソッドがあります。<code>tab_mode</code> を設定すると、地図ウィジェットの新しいウィンドウへの移動方法が変更されます。 この動作を試すには、以下のコードを実行してみてください。</p>
-<pre><code>#対象の地図を表示する
+<pre><code class="lang-python">#対象の地図を表示する
 map = gis.map()
 map
-</code></pre><pre><code># コメントをひとつずつオフにして実行し、map で表示している地図の UI ボタンを都度押してみてください。
+</code></pre>
+<pre><code class="lang-python"># コメントをひとつずつオフにして実行し、map で表示している地図の UI ボタンを都度押してみてください。
 #map.tab_mode = &quot;split-bottom&quot;
 #map.tab_mode = &quot;split-right&quot;
 #map.tab_mode = &quot;auto&quot;
 #map.tab_mode = &quot;tab-after&quot;
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout.gif" width="600px">
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout.gif" width="600px">
 </div>
 
 <p>UI ボタンによる新しいウィンドウでの地図表示は、メソッドを呼び出すことでも制御できます。次のコードでは、マップが表示されたら、<code>toggle_window_view（）</code> メソッドを呼び出してマップを新しいウィンドウに移動できます。新しいウィンドウに戻すときも、このメソッドを使用できます。(このメソッドの利用はボタンを押すことと同等の機能です）</br>以下のコードを実行してみてください。</p>
-<pre><code>from arcgis.widgets import MapView
+<pre><code class="lang-python">from arcgis.widgets import MapView
 #対象の地図を表示する
 map = MapView(gis=gis)
 map
-</code></pre><pre><code>#このセルを連続して実行する
+</code></pre>
+<pre><code class="lang-python">#このセルを連続して実行する
 map.toggle_window_view()
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_toggle.gif" width="600px">
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_toggle.gif" width="600px">
 </div>
 
 
 <p>表示する地図には一時的なタイトル（タブに表示されるテキスト）を付けて、これに対して <code>tab_mode</code> をプログラムで指定することもできます。次のプグラムは、一時的にタイトルを付けたマップを一定時間で <code>tab_mode</code> が持つ表示制御を順番に表現します。</p>
-<pre><code>#対象の地図を表示する
+<pre><code class="lang-python">#対象の地図を表示する
 map = gis.map(mode=&quot;3D&quot;)
 map
-</code></pre><pre><code>#このセルを実行して、新しいウィンドウに地図を移動して表示します
+</code></pre>
+<pre><code class="lang-python">#このセルを実行して、新しいウィンドウに地図を移動して表示します
 map.toggle_window_view(title=&quot;My 3D Map&quot;, tab_mode=&quot;split-top&quot;)
 # タブを戻す
 map.toggle_window_view()
-</code></pre><pre><code>#このセルを実行してすべてのタブ挙動をみることができます
+</code></pre>
+<pre><code class="lang-python">#このセルを実行してすべてのタブ挙動をみることができます
 import time
 
 tab_modes = [&#39;auto&#39;, &#39;split-top&#39; &#39;split-bottom&#39;, &#39;split-left&#39;,
-             &#39;split-right&#39;, &#39;tab-before&#39;, &#39;tab-after&#39;]
+&#39;split-right&#39;, &#39;tab-before&#39;, &#39;tab-after&#39;]
 for tab_mode in tab_modes:
-    #指定のタブ形式で表示する
-    map.toggle_window_view(title=tab_mode, tab_mode=tab_mode)
-    time.sleep(3) #2秒間隔
-    #デフォルトのタブに戻す
-    map.toggle_window_view()
-    time.sleep(2) #2秒間隔
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_interval.gif" width="600px">
+#指定のタブ形式で表示する
+map.toggle_window_view(title=tab_mode, tab_mode=tab_mode)
+time.sleep(3) #2秒間隔
+#デフォルトのタブに戻す
+map.toggle_window_view()
+time.sleep(2) #2秒間隔
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_interval.gif" width="600px">
 </div>
 
 
 <p>最後に、3 つ以上の Web シーンを表示すると仮定した表示方法をご紹介します。各マップ ID で構成したリストから、1 度だけ処理を実行し、3 つの　Web シーンを一度にすべて新しいタブに表示します。</p>
-<pre><code>#このセルの内容を1度で実行する
+<pre><code class="lang-python">#このセルの内容を1度で実行する
 from arcgis.gis import GIS
 from arcgis.widgets import MapView
 gis = GIS()
 for webscene_id in [&#39;31874da8a16d45bfbc1273422f772270&#39;,
-                    &#39;91b46c2b162c48dba264b2190e1dbcff&#39;,
-                    &#39;46c47340708f446ba7f112f139e8ae5e&#39;]:
-    webscene_item = gis.content.get(webscene_id)
-    map = MapView(gis=gis, item=webscene_item, mode=&quot;3D&quot;) 
-    map.toggle_window_view(title=webscene_item.title, tab_mode=&#39;tab-after&#39;)
-</code></pre><div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_3scenes.gif" width="600px">
+&#39;91b46c2b162c48dba264b2190e1dbcff&#39;,
+&#39;46c47340708f446ba7f112f139e8ae5e&#39;]:
+webscene_item = gis.content.get(webscene_id)
+map = MapView(gis=gis, item=webscene_item, mode=&quot;3D&quot;) 
+map.toggle_window_view(title=webscene_item.title, tab_mode=&#39;tab-after&#39;)
+</code></pre>
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_3scenes.gif" width="600px">
 </div>
 
 <p>ぜひ、実行してみてください！</p>

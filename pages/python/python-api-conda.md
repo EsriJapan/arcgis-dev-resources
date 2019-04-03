@@ -1,8 +1,8 @@
 ArcGIS API for Python（以下、Python API）を使用するために、PC端末 に conda と Python API がインストールされている必要があります。</br>
-ここでは、conda の基本について簡単に説明します。この後[インストールと設定ガイド](../python-api-install)を参照すると環境作成をスムーズに実施することができます。
+ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後の[インストールガイド](../python-api-install)での環境作成を行いやすくなります。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/conda.png" width="500px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/conda.png" width="500px">
 </div>
 
 ### conda の基本
@@ -26,16 +26,17 @@ conda は、Python や関連パッケージ・ライブラリのインストー�
 詳細な説明と手順については、[環境の管理に関する conda のドキュメント](https://conda.io/docs/user-guide/tasks/manage-environments.html)を参照してください。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/github_virtual_Environment.jpg" width="300px">
- <p>Anaconda 上の仮想環境イメージ</p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/github_virtual_Environment.jpg" width="300px">
+<p>Anaconda 上の仮想環境イメージ</p>
 </div>
 
->**Tips：ArcGIS Pro と Anaconda の共存**
+<!-- memo:一旦非表示にしておく -->
+<!-- >**Tips：ArcGIS Pro と Anaconda の共存**
 >
 >2 つのソフトウェアは 1 つのマシンに共存することができます。
->ArcGIS Pro は ArcGIS Pro の Python ライブラリ管理のために conda 内包しています。
+>ArcGIS Pro は ArcGIS Pro の Python ライブラリ管理のために conda を内包しています。
 >Anaconda は Anaconda 内の Python ライブラリを管理します。Python の動作は、それぞれのソフトウェア内で完結しています。
->ただし、端末に依存する環境変数の設定は、ArcGIS 製品を優先いただくことを推奨します。
+>ただし、端末に依存する環境変数の設定は、ArcGIS 製品を優先いただくことを推奨します。 -->
 
 ### ArcGIS Pro の conda 環境と管理ツール
 
@@ -45,41 +46,41 @@ ArcGIS Pro には、製品をインストールした時点ですでに conda �
 ArcGIS Pro にすでに設定された環境を 2 つ確認することができます。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/condalist_Pro.png" width="800px">
- <p>ArcGIS Pro の conda 上の初期環境</p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/condalist_Pro.png" width="800px">
+<p>ArcGIS Pro の conda 上の初期環境</p>
 </div>
 
 * `arcgispro-py3`</br>
-  この環境には、ArcPy と arcgispro パッケージで必要なすべての機能を含む Python ライブラリが含まれています。ArcGIS と連携する場合はこちらの環境を使用します。
+この環境には、ArcPy と arcgispro パッケージで必要なすべての機能を含む Python ライブラリが含まれています。ArcGIS と連携する場合はこちらの環境を使用します。
 
 * `root`</br>
-  この環境には Minaconda のインストールが含まれています。Miniconda には必要最小限の conda、Python、依存するパッケージなどが設定されています。
+この環境には Minaconda のインストールが含まれています。Miniconda には必要最小限の conda、Python、依存するパッケージなどが設定されています。
 
 ■管理ツール
 
 ArcGIS Pro の conda で Python が動作する環境は、次の 3 つの方法を使用して管理できます。 どれを使用してもそれぞれパッケージのインストール、更新、削除のための機能を提供します。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool.jpg" width="900px">
- <p>Python パッケージ マネージャー・Python コマンド プロンプト・コマンド プロンプト(windows)<p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool.jpg" width="900px">
+<p>Python パッケージ マネージャー・Python コマンド プロンプト・コマンド プロンプト(windows)<p>
 </div>
 
 * Python パッケージ マネージャー</br>
-  ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。
+ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。
 
 * Python コマンド プロンプト</br>
-  ArcGIS Pro や ArcPy が使用できる環境をアクティブにするコマンドラインショートカット。Windows ではメニューから起動する。
+ArcGIS Pro や ArcPy が使用できる環境をアクティブにするコマンドラインショートカット。Windows ではメニューから起動する。
 
 * コマンド プロンプト(windows)</br>
-  標準の MS-DOS Windows コマンドラインアプリケーション。
+標準の MS-DOS Windows コマンドラインアプリケーション。
 
 ### Anaconda と管理ツール
 
 Anaconda の場合は、次で説明する Anaconda プロンプトを立ち上げて `conda env list` のコマンドを入力すると次の利用可能な環境を確認することができます。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/AnacondaPrmptRoot00.png" width="600px">
- <p>Anaconda プロンプト 初期の環境<p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/AnacondaPrmptRoot00.png" width="600px">
+<p>Anaconda プロンプト 初期の環境<p>
 </div>
 
 * `base`
@@ -91,15 +92,15 @@ Anaconda の場合は、次で説明する Anaconda プロンプトを立ち上�
 次の 2 つの方法を使用して conda を管理することができます。 どれを使用してもそれぞれパッケージのインストール、更新、削除のための機能を提供します。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool2.jpg" width="600px">
- <p>Anaconda プロンプト・Anaconda Navigator<p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool2.jpg" width="600px">
+<p>Anaconda プロンプト・Anaconda Navigator<p>
 </div>
 
 * Terminal Application (Anaconda プロンプト)</br>
-  Anaconda をインストールすると使用できる標準コマンドラインターミナルアプリケーション。対象の OS（Windows、macOS、または Linux）で共通で使用可能。
+Anaconda をインストールすると使用できる標準コマンドラインターミナルアプリケーション。対象の OS（Windows、macOS、または Linux）で共通で使用可能。
 
 * [Anaconda Navigator](https://docs.anaconda.com/anaconda/navigator/)</br>
-  conda を管理するための GUI アプリケーション。
+conda を管理するための GUI アプリケーション。
 
 どちらのツールも、標準的なインストールが成功すれば、Windowsではメニューから起動ができます。
 
@@ -108,8 +109,8 @@ Anaconda の場合は、次で説明する Anaconda プロンプトを立ち上�
 ArcGIS Pro から Python コマンド プロンプト を起動する、または Anaconda から Terminal Application(Anaconda プロンプト) を起動すると、次のような表示が確認できます。
 
 <div align="center">
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/activate_base.png" width="800px">
- <p>Anaconda プロンプト から起動したとき</p>
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/activate_base.png" width="800px">
+<p>Anaconda プロンプト から起動したとき</p>
 </div>
 
 `(base)`が現在 conda で起動している Python が使用できる(アクティベートされた)環境です。
@@ -142,9 +143,9 @@ conda コマンドや 他オプションの使用方法の詳細については[
 
 >**Tips：conda からパッケージをインストールできる仕組み**
 >
->Conda は、プラットフォームに依存しないパッケージマネージャアプリケーションで、Python パッケージをインストール、更新、および削除できます。
+>Conda は、プラットフォームに依存しないパッケージ マネージャー アプリケーションで、Python パッケージをインストール、更新、および削除できます。
 >パッケージは、チャネルと呼ばれるさまざまなリポジトリのいずれかに格納されているソフトウェアおよびサポートファイルのバンドルです。
->チャネルは、Anaconda クラウドなどの既定のクラウドロケーションのセット、または個人または組織によって作成されたプライベートレポジトリである場合があります。 condaは、パッケージのリスト表示またはインストール時にデフォルトのチャネルセットを検索します。
+>チャネルは、Anaconda クラウドなどの既定のクラウド ロケーションのセット、または個人または組織によって作成されたプライベートレポジトリである場合があります。 condaは、パッケージのリスト表示またはインストール時にデフォルトのチャネルセットを検索します。
 >
 >arcgis パッケージを格納するために esri という名前のチャネルに conda リポジトリが作成されています。 `conda install` コマンドは、チャネルにアクセスし、特定の conda 環境にパッケージをインストールしています。
 >
