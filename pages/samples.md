@@ -27,3 +27,5 @@ GitHub にて開発サンプルとなるソースコードを公開していま�
 * __iOS__
   * [arcgis-samples-ios](https://github.com/EsriJapan/arcgis-samples-ios): ArcGIS Runtime SDK for iOS (Objective-C/Swift) のサンプル集
   * [startup-swift-ios](https://github.com/EsriJapan/startup-swift-ios): iOS SDK のスタートアップ サンプル アプリケーション
+* __Python__
+  * [arcgis-samples-python-api](https://github.com/EsriJapan/arcgis-samples-python-api)
