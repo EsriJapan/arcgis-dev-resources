@@ -49,6 +49,7 @@ ArcGIS for Developers 開発者のためのオンライン コミュニティ �
   * [.NET](http://arcg.is/1LPKAcf)
   * [Android](http://arcg.is/1PiwBfG)
   * [iOS](http://arcg.is/1LlUgpi)
+  * [Python](https://bit.ly/2IkdDbS)
 
 ## テーマ別ページ
 
