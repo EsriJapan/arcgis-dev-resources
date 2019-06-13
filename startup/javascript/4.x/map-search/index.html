@@ -15,8 +15,8 @@
     }
   </style>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.10/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.11/"></script>
 
   <script>
   	require([
@@ -44,7 +44,7 @@
         view: view,
         allPlaceholder: "検索キーワードの入力",
         sources: [{
-          featureLayer: new FeatureLayer({
+          layer: new FeatureLayer({
             url: "https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0",
             popupTemplate: {
               title: "東京都 {Name}",

@@ -94,7 +94,7 @@
 >     view: view,
 >     allPlaceholder: "検索キーワードの入力",
 >     sources: [{
->       featureLayer: new FeatureLayer({
+>       layer: new FeatureLayer({
 >         url: "//services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0",
 >         popupTemplate: {
 >           title: "東京都 {Name}",
@@ -117,7 +117,7 @@
 >
 > 対応するマップを指定するための `map` プロパティにはマップのオブジェクトを、検索ソースを指定するための `sources` プロパティには検索ソースの情報を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。
 >
-> `sources.featureLayer` には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。
+> `sources.layer` には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。
 >
 > フィールド名の確認は次の手順で紹介します。
 

@@ -97,12 +97,12 @@
 > ```javascript
 >     var sources = search.get("sources");
 >     sources.push({
->        featureLayer: new FeatureLayer("http://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0"), // 検索ソースとなるフィーチャ レイヤー
+>        featureLayer: new FeatureLayer("https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0"), // 検索ソースとなるフィーチャ レイヤー
 >        placeholder: "検索キーワードの入力", // プレースホルダー
 >        enableLabel: false, // 検索結果ラベルの表示
 >        searchFields: ["<フィールド名>"], // 検索対象となる属性フィールド
 >        displayField: "<フィールド名>", // 検索結果のポップアップに表示する属性フィールド
->        outFields: ["*"] // 結果として返す属性フィールド
+>        outFields: ["*"], // 結果として返す属性フィールド
 >        name: "東京都", // 検索ソースの名前
 >        infoTemplate: new InfoTemplate("東京都", "市区町村: ${Name}"), // 検索結果のポップアップ表示構成
 >        enableSuggestions: true // 検索結果の候補リスト表示

@@ -183,12 +183,12 @@ function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
 <blockquote>
 <pre><code class="lang-javascript">    var sources = search.get(&quot;sources&quot;);
     sources.push({
-       featureLayer: new FeatureLayer(&quot;http://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&quot;), // 検索ソースとなるフィーチャ レイヤー
+       featureLayer: new FeatureLayer(&quot;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&quot;), // 検索ソースとなるフィーチャ レイヤー
        placeholder: &quot;検索キーワードの入力&quot;, // プレースホルダー
        enableLabel: false, // 検索結果ラベルの表示
        searchFields: [&quot;&lt;フィールド名&gt;&quot;], // 検索対象となる属性フィールド
        displayField: &quot;&lt;フィールド名&gt;&quot;, // 検索結果のポップアップに表示する属性フィールド
-       outFields: [&quot;*&quot;] // 結果として返す属性フィールド
+       outFields: [&quot;*&quot;], // 結果として返す属性フィールド
        name: &quot;東京都&quot;, // 検索ソースの名前
        infoTemplate: new InfoTemplate(&quot;東京都&quot;, &quot;市区町村: ${Name}&quot;), // 検索結果のポップアップ表示構成
        enableSuggestions: true // 検索結果の候補リスト表示

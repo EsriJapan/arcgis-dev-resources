@@ -1,10 +1,10 @@
 ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-
+M
 ## ライブラリのダウンロード
 
-ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。 
+ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.PNG" width="600px">
 
@@ -21,17 +21,17 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。
 
-1. `C:\inetpub\wwwroot\arcgis_js_api\library\4.10\init.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.10/` に置き換えます。
-1. `C:\inetpub\wwwroot\arcgis_js_api\library\4.10\dojo\dojo.js` をテキスト エディターで開きます。
-1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.10/` に置き換えます。
+1. `C:\inetpub\wwwroot\arcgis_js_api\library\4.11\init.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.11/` に置き換えます。
+1. `C:\inetpub\wwwroot\arcgis_js_api\library\4.11\dojo\dojo.js` をテキスト エディターで開きます。
+1. `[HOSTNAME_AND_PATH_TO_JSAPI]` を検索して `fqdn.tld/arcgis_js_api/library/4.11/` に置き換えます。
 
 ## インストールのテスト
 
 ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。
 
 ```html
-<script src="https://www.example.com/arcgis_js_api/library/4.10/init.js"></script>
+<script src="https://www.example.com/arcgis_js_api/library/4.11/init.js"></script>
 ```
 
 インストールのテストには以下のコードを利用してください。
@@ -43,8 +43,8 @@ Esri がホストしている CDN にインターネット経由で参照する�
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
     <title>Test Map</title>
-    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.10/dijit/themes/claro/claro.css" />
-    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.10/esri/css/main.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.11/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.11/esri/css/main.css" />
     <style>
       html, body, #ui-map-view {
         margin: 0;
@@ -53,7 +53,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
         height: 100%;
       }
     </style>
-    <script src="https://www.example.com/arcgis_js_api/library/4.10/init.js"></script>
+    <script src="https://www.example.com/arcgis_js_api/library/4.11/init.js"></script>
     <script>
       var myMap, view;
       require([
