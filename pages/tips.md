@@ -8,6 +8,8 @@
   * [バージョン 3.x から 4.x への移行](../javascript/migrating-from-3.x-to-4.0/)
   * [ウィジェット開発](../javascript/custom-widget/)
   * [Arcade](../javascript/arcade/)
+  * [カスタム フォント](../javascript/font/)
+
 
 * __Web AppBuilder for ArcGIS (Developer Edition)__
   * [インストール ガイド](../webappbuilder/install-guide/)
