@@ -32,8 +32,6 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 
 1. ダウンロードしたサンプル プロジェクト（`arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj`）を Xcode で開きます。
 
-1. 	`${HOME}/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources` フォルダにある `ArcGIS.bundle` ファイルをプロジェクトに追加します。`ArcGIS.bundle` ファイルには、Esri ロゴ、GPS 位置のシンボル、ローカライズされた文字列などのリソースが含まれています。
-
 1. `ViewController.swift` の 24 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](http://esrijapan.github.io/arcgis-dev-resources/create-webmap/) で作成した Web マップ ID を上書きします。
 
  ```javascript

@@ -70,7 +70,7 @@ $ sudo gem install cocoapods
  ```none
 target '<プロジェクト名>' do
 use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.4'
+pod 'ArcGIS-Runtime-SDK-iOS', '100.5'
 end
 ```
 
@@ -89,7 +89,7 @@ $ pod setup
 1.	CocoaPods のセットアップに成功したら、以下のコマンドを実行して、ArcGIS Runtime SDK for iOS をインストールします。これにより ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pods ディレクトリに配置されます。また、ArcGIS フレームワークを正しく参照するために、必要な変更が自動で設定されます。
 
  ```none
-pod install
+$ pod install
 ```
 
 1.	Xcode プロジェクトを一度閉じて、プロジェクト フォルダを参照し、新しく作成されたワークスペース ファイル（.xcworkspace）を開きます。
@@ -118,45 +118,32 @@ pod install
 SDK を手動でインストールした場合、各 Xcode プロジェクトで API を使用できるように設定を行う必要があります。設定項目は以下です。
 
  * __[ArcGIS フレームワークの追加](#arcgis-フレームワークの追加)__
- * __[ビルド フラグの追加](#ビルド-フラグの追加)__
- * __[関連ライブラリの設定](#関連ライブラリの設定)__
- * __[ArcGIS リソース バンドルの追加](#arcgis-リソース-バンドルの追加)__
+ * __[Run Script フェーズの追加](#run-script-フェーズの追加)__
 
 ##### ArcGIS フレームワークの追加
 
  1. __[プロジェクトの作成](#プロジェクトの作成)__ で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。
 
- 1. [Build Settings] タブを開きます。
-
- 1. [Framework Search Paths] セクションに `$(HOME)/Library/SDKs/ArcGIS/iOS/Frameworks/Static` と入力します。
+ 1. [General] タブを開き、`$(HOME)/Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic` フォルダにある ArcGIS.framework ファイルを [Embedded Binaries] セクションにドラッグ&ドロップします。
 
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.png" width="650px">
 
-##### ビルド フラグの追加
- [Build Settings] タブにある [Other Linker Flags] セクションに `-ObjC -framework ArcGIS -l c++`と入力します。
+  * `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。
+
+     ```none
+  $ chflags nohidden ~/Library/
+ ```
+
+
+##### Run Script フェーズの追加
+
+  1. [Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh"` を入力します。
 
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.png" width="650px">
 
-##### 関連ライブラリの設定
-[Build Settings] タブにある [Enable Modules (C and Objective-C)] セクションで `Yes` を設定します。
 
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual05.png" width="650px">
+  * ArcGIS フレームワークの追加とRun Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。
 
-##### ArcGIS リソース バンドルの追加
-Esri ロゴ、GPS 位置のシンボル、ローカライズされた文字列などのリソースは、ArcGIS.bundle ファイルに含まれています。この ArcGIS リソース バンドルをプロジェクトに追加するには、次の手順を実行します。
-
-1.	Xcode アプリケーションのメニューで、[File] → [Add Files to <プロジェクト名>] を選択します。
-
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual06.png" width="350px">
-
-1. 	`${HOME}/Library/SDKs/ArcGIS/iOS/Frameworks/Static/ArcGIS.framework/Versions/Current/Resources` フォルダを参照します。
-
-1. ArcGIS.bundle ファイルを選択し、[Add] をクリックします。
- * `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。
-
-    ```none
- $ chflags nohidden ~/Library/
-```
 
 これでモバイル マッピング アプリケーションを開発するための準備が整いました。
 

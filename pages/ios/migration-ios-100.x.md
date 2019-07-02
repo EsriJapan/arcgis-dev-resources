@@ -5,7 +5,6 @@ ArcGIS Runtime SDK for iOS に関しては、[ESRIジャパン 製品ページ](
 
 以下は、バージョン 100.x の主な変更点です。
 
-* __[Xcode プロジェクトの変更](#xcode-プロジェクトの変更)__
 * __[マップとシーン](#マップとシーン)__
 * __[ビュー](#ビュー)__
 * __[レイヤー クラス名の変更](#レイヤー-クラス名の変更)__
@@ -18,14 +17,6 @@ ArcGIS Runtime SDK for iOS に関しては、[ESRIジャパン 製品ページ](
 * __[ローダブル パターン](#ローダブル-パターン)__
 * __[ブロックを使用した非同期プログラミング](#ブロックを使用した非同期プログラミング)__
 * __[既知の制限事項](#既知の制限事項)__
-
-## Xcode プロジェクトの変更
-
-macOS 上の `ArcGIS.framework` のインストール場所が、10.2.x から変更されています。100.x では、`$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static` にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの `Framework Search Paths` の設定と `ArcGIS.bundle` ファイルの参照先も更新してください。
-
-100.x を使用した開発では、Xcode 9 及び iOS 11 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 10 以降がサポートされています。
-
-ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、[ESRIジャパン 製品ページ（動作環境）](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
 
 
 ## マップとシーン

@@ -82,7 +82,6 @@
 <p>ArcGIS Runtime SDK for iOS に関しては、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios">ESRIジャパン 製品ページ</a>をご参照ください。</p>
 <p>以下は、バージョン 100.x の主な変更点です。</p>
 <ul>
-<li><strong><a href="#xcode-プロジェクトの変更">Xcode プロジェクトの変更</a></strong></li>
 <li><strong><a href="#マップとシーン">マップとシーン</a></strong></li>
 <li><strong><a href="#ビュー">ビュー</a></strong></li>
 <li><strong><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></strong></li>
@@ -96,10 +95,6 @@
 <li><strong><a href="#ブロックを使用した非同期プログラミング">ブロックを使用した非同期プログラミング</a></strong></li>
 <li><strong><a href="#既知の制限事項">既知の制限事項</a></strong></li>
 </ul>
-<h2 id="xcode-プロジェクトの変更">Xcode プロジェクトの変更</h2>
-<p>macOS 上の <code>ArcGIS.framework</code> のインストール場所が、10.2.x から変更されています。100.x では、<code>$HOME/Library/SDKs/ArcGIS/iOS/Frameworks/Static</code> にインストールされます（「Static」フォルダが追加された点に注意してください）。Xcode プロジェクトの <code>Framework Search Paths</code> の設定と <code>ArcGIS.bundle</code> ファイルの参照先も更新してください。</p>
-<p>100.x を使用した開発では、Xcode 9 及び iOS 11 SDK 以上が必要です。開発したアプリケーションの実行環境は iOS 10 以降がサポートされています。</p>
-<p>ArcGIS Runtime SDK for iOS がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップとシーン">マップとシーン</h2>
 <p>100.x では、<code>AGSMap</code> オブジェクト（2D表示用）と <code>AGSScene</code> オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
 <p><code>AGSMap</code> オブジェクトと <code>AGSScene</code> オブジェクトは 、それらを表示する View と分離されています。<code>AGSMap</code> オブジェクトと <code>AGSScene</code> オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。</p>
