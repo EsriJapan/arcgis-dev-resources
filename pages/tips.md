@@ -19,19 +19,16 @@
 * __ArcGIS Runtime SDK for .NET__
   * [インストール ガイド](../dotnet/install-dotnet-100.x/)
   * [アプリケーション配布ガイド](../dotnet/distribution-dotnet-100.x/)
-  * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../dotnet/migration-dotnet-100.x/)
 
 * __ArcGIS Runtime SDK for Android__
   * [インストール ガイド](../android/install-android-100.x/)
   * [アプリケーション配布ガイド](../android/distribution-android-100.x/)
-  * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../android/migration-android-100.x/)
 
 * __ArcGIS Runtime SDK for iOS__
   * [インストール ガイド](../ios/install-ios-100.x/)
   * [アプリケーション配布ガイド](../ios/distribution-ios-100.x/)
-  * [バージョン 100.x と 10.2.x の選択](../choosing-version-runtime/)
   * [バージョン 10.2.x から 100.x への移行](../ios/migration-ios-100.x/)
 
 * __ArcGIS API for Python__
