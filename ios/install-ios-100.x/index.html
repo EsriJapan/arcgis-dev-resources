@@ -178,7 +178,7 @@ end
 <li><p><strong><a href="#プロジェクトの作成">プロジェクトの作成</a></strong> で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。</p>
 </li>
 <li><p>[General] タブを開き、<code>$(HOME)/Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic</code> フォルダにある ArcGIS.framework ファイルを [Embedded Binaries] セクションにドラッグ&amp;ドロップします。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.png" width="650px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.gif" width="650px"></p>
 <ul>
 <li><p><code>${HOME}/Library</code> フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。</p>
 <pre><code class="lang-none">$ chflags nohidden ~/Library/
@@ -190,7 +190,7 @@ end
 <h5 id="run-script-フェーズの追加">Run Script フェーズの追加</h5>
 <ol>
 <li><p>[Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、<code>bash &quot;${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh&quot;</code> を入力します。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.png" width="650px"></p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif" width="650px"></p>
 </li>
 </ol>
 <ul>

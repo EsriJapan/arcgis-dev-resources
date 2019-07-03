@@ -126,7 +126,7 @@ SDK を手動でインストールした場合、各 Xcode プロジェクトで
 
  1. [General] タブを開き、`$(HOME)/Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic` フォルダにある ArcGIS.framework ファイルを [Embedded Binaries] セクションにドラッグ&ドロップします。
 
-  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.png" width="650px">
+  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.gif" width="650px">
 
   * `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。
 
@@ -139,7 +139,7 @@ SDK を手動でインストールした場合、各 Xcode プロジェクトで
 
   1. [Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh"` を入力します。
 
-  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.png" width="650px">
+  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif" width="650px">
 
 
   * ArcGIS フレームワークの追加とRun Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。
