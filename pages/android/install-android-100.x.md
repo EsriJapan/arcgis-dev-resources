@@ -12,7 +12,6 @@ ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネ�
 ここでは次の開発環境にて ArcGIS Runtime SDK for Android を用いたモバイル マッピング アプリケーションの開発手順を説明します。
 開発手順を進める前に以下の開発環境をご使用のマシンにセットアップしてください。
 
-* JDK(Java Development Kit)  ※JDK 7 以上を推奨します。
 * Android Studio
 * Android 4.4 (Kitkat: API レベル 19) 以降
 
@@ -96,11 +95,11 @@ ArcGIS の Maven リポジトリの URL を追加します。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px">
 
-1.	build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation 'com.esri.arcgisruntime:arcgis-android:100.4.0'」を追加します。
+1.	build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation 'com.esri.arcgisruntime:arcgis-android:100.5.0'」を追加します。
 
 	```java
 	dependencies {
-	    implementation 'com.esri.arcgisruntime:arcgis-android:100.4.0'
+	    implementation 'com.esri.arcgisruntime:arcgis-android:100.5.0'
 	    …
 	}
 	```
