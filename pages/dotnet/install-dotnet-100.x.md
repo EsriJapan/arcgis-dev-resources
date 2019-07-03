@@ -359,6 +359,6 @@ macOS を使用して開発する場合の手順を紹介します。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px">
 
- ※ Android プロジェクトのビルドで `The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.` のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーで iOS プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で `x86_64` のチェックを外します。
+ ※ Android プロジェクトのビルドで `The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.` のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーで Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で `x86_64` のチェックを外します。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_12.png" width="500px">
