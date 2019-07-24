@@ -23,7 +23,7 @@ JupyterLab は Jupyter Notebook と同様に、Anaconda 等の Python パッケ�
 1. 次の 2 つのコマンドを実行します</br>
 `jupyter labextension install @jupyter-widgets/jupyterlab-manager`</br>
 `jupyter labextension install arcgis-map-ipywidget@バージョン番号`</br></br>
-<font color="Red">重要</font></br>・2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.0)。</br>
+<font color="Red">重要</font></br>・2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。</br>
 ・エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。nodejs をインストールすると、npm もインストールすることができます。[Anaconda の nodejs インストールコマンド](https://anaconda.org/conda-forge/nodejs) をご参照ください。
 
 1. 以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。
