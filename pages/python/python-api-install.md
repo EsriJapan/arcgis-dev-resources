@@ -1,33 +1,27 @@
 
-ArcGIS API for Python (以下、Python API) を使用するための環境構築方法はいくつかあります。</br>
-Python API は、`arcgis`という名前で conda パッケージとして配布されています。
-conda は広く使われている Python のパッケージと環境管理のためのアプリケーションで、Python API と依存するパッケージのインストールやアップデートが可能です。
+ArcGIS API for Python (以下、Python API) を使用するための環境構築方法は主に 2 つあります。</br>
+Python API は、`arcgis`という名前のパッケージで [Anaconda Cloud](https://anaconda.org/) 等で配布されています。
+インストール、バージョン管理には conda が利用されますが、conda は Python のパッケージと環境管理のためのアプリケーションで、
+Python API 及び依存するパッケージのインストールやアップデートが可能です。
 
-このページでは、conda と `arcgis` パッケージの両方をインストールする手順について解説します。</br>
+Python API を使うための環境構築について解説します。</br>
 > **<font color="#EB8686" size="+2" >*Tips*</font></br>**
-> ※ conda は ArcGIS Pro 経由でインストールするか、Anaconda Distribution (以下、Anaconda) でインストールする方法がありますが、
+> ※ Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、
  **PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。**
+
 
 インストールが済みましたら、実行環境である [Jupyter Notebook について説明したページ](../python-api-jnsetup) や、更に便利な [Jupyter Lab について説明したページ](../python-api-jnlabsetup) もございますので、併せてご参照ください。
     
-### STEP 1:[Conda をインストールする](#conda-をインストールする)
-* [ArcGIS Pro で conda をインストールする](#arcgis-pro-で-conda-をインストールする)
-    * [ArcGIS Pro 2.1 以上の場合](#arcgis-pro-2.1-以上の場合)
-    * [ArcGIS Pro 1.4.x 以上と2.0.x の場合](#arcgis-pro-1.4.x-以上と-2.0.x-の場合)
-* [Aaconda 経由で conda をインストールする](#anaconda-経由で-conda-をインストールする)
+### STEP 1:[Python API をインストールする](#Python-API-をインストールする)
+* [ArcGIS Pro でインストールする](#arcgis-pro-でインストールする)
+* [Aaconda 経由でインストールする](#anaconda-経由でインストールする)
 
-### STEP 2:[`arcgis` パッケージをインストールする](#arcgis-パッケージをインストールする)
-* [ArcGIS Pro の Python パッケージマネージャーからインストールする](#arcgis-pro-の-python-パッケージマネージャーからインストールする)
-* [ArcGIS の Python コマンドプロンプトでインストールする](#arcgis-の-python-コマンドプロンプトでインストールする)
-* [Anaconda からインストールする](#anaconda-からインストールする)
+### STEP 2:[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
+* [ArcGIS Pro 2.3 環境の場合](#arcgis-pro-2.3-環境の場合)
+* [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-2.2-環境の場合)
+* [Anaconda 環境の場合](#anaconda-環境の場合)
 
-### STEP 3:[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
-* [ArcGIS Pro 2.3 の環境でアップグレードする](#arcgis-pro-2.3-の環境でアップグレードする)
-* [ArcGIS Pro 2.2 の環境でアップグレードする](#arcgis-pro-2.2-の環境でアップグレードする)
-* [ArcGIS Pro 2.1 の環境でアップグレードする](#arcgis-pro-2.1-の環境でアップグレードする)
-* [ArcGIS Pro 1.4.x 以上と 2.0.x と Anaconda の環境でアップグレードする](#arcgis-pro-1.4.x-以上と-2.0.x-と-anaconda-の環境でアップグレードする)
-
-### STEP 4:[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
+### STEP 3:[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
 * [Jupyter Notebook を起動する](#jupyter-notebook-を起動する)
 * [Jupyter Notebook で地図を表示してみる](#jupyter-notebook-で地図を表示してみる)
 
@@ -35,69 +29,22 @@ conda は広く使われている Python のパッケージと環境管理のた
 
 ***
 
-## Conda をインストールする
+## Python API をインストールする
 
-### ArcGIS Pro で conda をインストールする
+### ArcGIS Pro でインストールする
 
-* #### ArcGIS Pro 2.1 以上の場合
-ArcGIS Pro 2.1 以降のリリースには conda と `arcgis` パッケージがプリインストールされています。</br>
+ArcGIS Pro では、2.1 以降のリリースから conda と `arcgis` パッケージがプリインストールされるようになりました。</br>
 [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。バージョンが最新でない場合は[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)を参照して Python API を更新します。
 
-* #### ArcGIS Pro 1.4.x 以上と 2.0.x の場合
-
-ArcGIS Pro 1.4 以上のバージョンには conda がすでにインストールされています。</br>
-[arcgis パッケージをインストールする](#arcgis-パッケージをインストールする)の項を参照して Python API をインストールしましょう。バージョンを最新にする際は[ArcGIS Pro 1.4.x 以上と 2.0.x と Anaconda の環境でアップグレードする](#arcgis-pro-1.4.x-以上と-2.0.x-と-anaconda-の環境でアップグレードする)を参照して Python API を更新します。
-
-### Anaconda 経由で conda をインストールする
+### Anaconda 経由でインストールする
 
 ArcGIS Pro をお持ちでない場合は、Anaconda をインストールします。</br>
-Anaconda は Python やパッケージ管理用の conda とその他多くの便利な Python パッケージのインストールやパッケージバージョンを管理します。 </br>
-Python API は Python 3.5 以降を必要とするため、[Anaconda ダウンロードページ](https://www.anaconda.com/download/)から、Anaconda ソフトウェアの適切な 3x バージョンをダウンロードしてください。
+Anaconda は Python やパッケージ管理用の conda とその他多くの便利な Python パッケージのインストールやバージョン管理を可能にします。 </br>
+Python API は Python 3.5 以降を必要とするため、[Anaconda ダウンロードページ](https://www.anaconda.com/download/)から、適切なバージョンをダウンロードしてください。 </br>
+※ Python API は、国内では Windows 版のサポートを提供しています。
 <!-- macOS/Linux は Python API の国内サポート対象外のため、現時点ではコメントアウトしておく -->
 <!-- * [macOS](https://www.anaconda.com/download/#macos) -->
 <!-- * [Linux](https://www.anaconda.com/download/#linux) -->
-* [Windows](https://www.anaconda.com/download/#windows)
-
-Anaconda がインストールされたら、STEP2 の [Anaconda からインストールする](#anaconda-からインストールする) へ進み `arcgis` パッケージをインストールします。
-
-***
-
-## arcgis パッケージをインストールする
-
-### ArcGIS Pro の Python パッケージマネージャーからインストールする
-
-ArcGIS Pro 1.4 以降では、Python パッケージ マネージャー（GUI）を使用して、任意の conda パッケージをダウンロードしてインストールできます。 ArcGIS Pro の詳細オプションからアクセスします。
-
-* 新しい空のプロジェクトで ArcGIS Pro を開きます
-* [プロジェクト]タブを選択して、Pro の詳細オプションを表示します（下記のスクリーンショットを参照）
-* [Python]メニューオプションを選択してください
-* [パッケージの追加]ボタンをクリックし、検索バーに"arcgis"を入力します
-* 利用可能なリリースのリストを確認するには、「更新」ボタンをクリックする必要がある場合があります。インストールできるバージョンが最新バージョンではない場合、インストール後に[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)を参照してアップデートしてください。ただし、ArcGIS Pro のバージョンによっては最新版にアップグレードできない場合があります。その場合は ArcGIS Pro のバージョンアップをご検討ください。
-* [インストール]ボタンを選択します
-* [インストール]をクリックし、利用規約に同意します
-
-<div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_installandsetup_03.png" width="800px">
-</div>
-
-※パッケージ名が表示されないなど、この方法がうまくいかない場合は、[ArcGIS の Python コマンドプロンプトでインストールする](#arcgis-の-python-コマンドプロンプトでインストールする)ことをお試しください。
-
-### ArcGIS の Python コマンドプロンプトでインストールする
-
-ArcGIS Pro 付属の Python コマンドプロンプトを使用してインストールします。
-
-* スタートメニュー>すべてのプログラム> ArcGIS> Pythonコマンドプロンプト を選択します。
-* 起動した Python コマンド プロンプトで次のように入力します。:
-
-`conda install -c esri arcgis`
-
-<div align="left">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/python_command_prompt.png" width="700px">
-</div>
-
-Pro のインストール方法によっては、このプロンプトは[管理者権限](https://pro.arcgis.com/ja/pro-app/arcpy/get-started/using-conda-with-arcgis-pro.htm#ESRI_SECTION2_10DDF8A21C394B9988C9CD785391DDD2)で起動する必要があります。
-
-### Anaconda からインストールする
 
 ターミナルアプリケーション（ここでは Anaconda プロンプト）を開き、次のコマンドを使用して `arcgis` パッケージをインストールします。
 
@@ -114,7 +61,7 @@ Pro のインストール方法によっては、このプロンプトは[管理
 
 ## arcgis パッケージをアップグレードする
 
-### ArcGIS Pro 2.3 の環境でアップグレードする
+### ArcGIS Pro 2.3 環境の場合
 
 ArcGIS Pro 2.3 には ArcGIS API for Python 1.5.1 が最初からインストールされています。</br>
 ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
@@ -192,9 +139,7 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 
 アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
 
-
-
-### ArcGIS Pro 2.2 の環境でアップグレードする
+### ArcGIS Pro 2.2 環境の場合
 
 ArcGIS Pro 2.2 には ArcGIS API for Python 1.4.1 がインストールされています。</br>
 ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
@@ -202,7 +147,7 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 * 新しい空のプロジェクトで ArcGIS Pro を開きます。
 * [プロジェクト]タブを選択して、ArcGIS Pro の詳細オプションを表示します。（下記のスクリーンショットを参照）
 * [Python]メニューオプションを選択します。
-* [環境の管理]ボタンをクリックしウィンドウを開いて、[新規作成]ボタンを選択します。
+* [環境の管理]ボタンをクリックしウィンドウを開いて、[新規作成]ボタンを選択します。                                                                      
 
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/ppm_mng_env.png" width="800px">
@@ -259,46 +204,12 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 
 アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
 
-### ArcGIS Pro 2.1 の環境でアップグレードする
-<!-- **<font color="#EB8686" size="+2" >重要</font>**：</br>
-ArcGIS Pro 2.1 においてはデフォルト環境は読み取り専用になっておらず、変更できるようになっています。しかし、各種パッケージのインストール等に伴い何らかの理由で不具合が発生した場合に備えて、デフォルト環境は改変せずに保持しておくことをお勧めします。</br>
-デフォルトの環境を一度クローンして新たな環境を作成し、その環境で Python API をアップグレードしてください。</br>
-また、デフォルト環境を保持するために、ArcGIS Pro 2.2 以降のバージョンでは、デフォルト環境は読み取り専用になっています。[参考 (英語)](https://community.esri.com/docs/DOC-12021-python-at-arcgispro-22)</br> -->
-
-ArcGIS Pro 2.1 には ArcGIS API for Python 1.2.5 がプリインストールされています。 最新のバージョンに更新するには、arcgispro-py3 環境を有効にしたターミナルウィンドウまたは Python コマンド プロンプトから以下のコマンドを実行します。
-
-`conda upgrade -c esri --no-pin arcgis`
-
-<div align="left">
-<img src="https://community.esri.com/servlet/JiveServlet/downloadImage/102-11966-7-412235/pastedImage_16.png" width="700px">
-</div>
-
-アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
-
-### ArcGIS Pro 1.4.x 以上と 2.0.x と Anaconda の環境でアップグレードする
-
-コマンドプロンプトなどのターミナルまたは Python コマンド プロンプト、Python パッケージ マネージャーを使用してアップデートします。
-Python パッケージ マネージャー 以外のコマンドで行う場合は、`arcgis` パッケージを含む環境を有効にして、次のように入力します。
-Anaconda で作成した環境でも同様に、更新対象の Python API が存在する環境を有効にして同じコマンドを使用します。
-
+### Anaconda 環境の場合
+Anaconda プロンプトのようなターミナルアプリケーションを開き、次のコマンドを使用して `arcgis` を実行してアップグレードします。
 `conda upgrade -c esri arcgis`
-
-Python パッケージ マネージャーを使用してアップデートする場合は、次の手順を実行します。
-
-* 新しい空のプロジェクトで ArcGIS Pro を開く
-* [プロジェクト]タブを選択して、ArcGIS Pro の詳細オプションにアクセスします（下記のスクリーンショットを参照）
-* 'Python'メニューオプションを選択してください
-* 適切な環境を選択するには、「プロジェクト環境」ドロップダウンを使用します。
-* [パッケージの更新]オプションを選択します。
-* 最近更新されたパッケージのリストから適切なバージョンのリリースを選択してください
-* [update(更新)]ボタンをクリックして、アップデートしたバージョンを確認します。
-
-<div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/python_package_manager_update_pkg.png" width="800px">
-</div>
+インストールするパッケージの計画が表示されるので、"y"を選択し、アップグレードします。
 
 アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
-
 
 ***
 
@@ -316,11 +227,12 @@ Windowsの場合
 
 または、スタートメニュー>すべてのプログラム> ArcGIS>Jupyter Notebook を選択しても起動することができます。
 
-macOS and Linux の場合
+<!-- 現在は未サポートのためコメントアウト -->
+<!-- macOS and Linux の場合
 
 * 端末のターミナルを開きます
 * ノートブックがあるディレクトリ、またはノートブックを作成したいディレクトリに変更します
-* 以下を入力してjupyterを起動します
+* 以下を入力してjupyterを起動します -->
 
 `jupyter notebook`
 
