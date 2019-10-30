@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>データ ビジュアライゼーション on ArcGIS for Developer 開発リソース集</title>
-    <link>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/</link>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/</link>
     <description>Recent content in データ ビジュアライゼーション on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="https://yozaw.github.io/arcgis-dev-resources/tips/visualization/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>データ可視化のワークフロー</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/</guid>
       <description>ArcGIS 開発者向けクラウド サービス（ArcGIS for Developers）で提供されているビジュアライゼーション ツール（マップ ビューアー）を使用した地図上でのデータ可視化のプロセスを紹介します。最終的には地図作成にとどまらず、サードパーティのチャートなどのコンポーネントを組み合わせたアプリ開発をゴールとしています。
 本ワークフローで伝える方法はあくまで作成済みのデータに簡単な加工を施して可視化を行うことをクラウド上で実施することを前提としています。よって、デスクトップ GIS ソフトウェアなどを使ったデータ編集は除外しています。
 ワークフロー ５ステップをベースに、各ステップで使用するツールやプラットフォームとその簡単な使用方法を以下で紹介していきます。
@@ -34,10 +34,10 @@
     
     <item>
       <title>データ可視化の手順</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure/</guid>
       <description>ArcGIS Online 上のデータを可視化するための方法  マップを作成したい シンボルを変更したい ラベルを変更したい  マップを作成したい マップ ビューアー → [追加] → [保存]
 緯度経度の情報を持ったCSV ファイルなどを、レイヤーとしてマップに追加し、様々なレイヤーを組み合わせてマップを作成することができます。マップの保存には、コンテンツを作成する権限が必要です（権限を持っていない場合でもマップは作成できますが、保存することはできません）。
  マップ ビューアーを開きます。マップ ビューアーを開いた時点でベースとなる背景地図(ベースマップ)は自動的に表示されます。
@@ -52,10 +52,10 @@ Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サー�
     
     <item>
       <title>地図上に賢くデータを可視化するための 6 つの方法</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/</guid>
       <description>ArcGIS のデータ ビジュアライゼーション ツール（マップ ビューアー）を使って地図データを賢く可視化するために おさえておくべき６つの方法を紹介します。
  色について考える パターンを発見する アウトラインを調整する 透過率を調整してパターンをハイライトする ２つの属性データをサイズと色で表現する もっとも大きい値を発見する  色について考える 主題となるデータに色を加える場合に考えるべき事項は以下の 3 つです。
  背景地図 ストーリー カラーランプ  地図を使ったデータ可視化ではほとんどの場合、背景地図の上に主題となるデータが重なります。 そのため、色は背景地図の配色に応じて見やすい適切な色を選択するべきです。 ただし、データ可視化においてはむしろ背景地図を使わないという選択肢も１つのテクニックになり得ます。
@@ -76,10 +76,10 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
     
     <item>
       <title>データ可視化の手順（3D）</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure-3d/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure-3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure-3d/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/data-visualization-procedure-3d/</guid>
       <description>ArcGIS Online が提供するシーン ビューアーを使用して、3D マップにデータを可視化する方法を紹介します。
  3D マップを作成したい シンボルを変更したい 高さを表現したい  3D マップを作成したい シーン ビューアー → [新しいシーン] → [レイヤーの追加] → [シーンの保存]
 ArcGIS Online などに公開されている Web サービスを、レイヤーとしてマップに追加し、様々なレイヤーを組み合わせて 3D マップを作成することができます。3D マップの保存には、コンテンツを作成する権限が必要です（権限を持っていない場合でも 3D マップは作成できますが、保存することはできません）。

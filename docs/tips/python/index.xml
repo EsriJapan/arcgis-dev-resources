@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArcGIS API for Python on ArcGIS for Developer 開発リソース集</title>
-    <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/</link>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</link>
     <description>Recent content in ArcGIS API for Python on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="https://yozaw.github.io/arcgis-dev-resources/tips/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ArcGIS API for Python のコンセプト</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</guid>
       <description>ArcGIS API for Python のコンセプト ArcGIS API for Python (以下、Python API) は、Web GIS (ArcGIS Online / ArcGIS Enterprise) を活用してマップと地理空間データを扱うための Python ベースの API です。
 Python のベスト プラクティスに基づき、標準的なイディオムやデータ構造を用いた、シンプルで使いやすい設計になっており、GIS データの可視化や解析の実行だけでなく、ユーザー、グループ、アイテムなどを管理するためのシンプルで使いやすいツールを提供します。 さらに、自身が所有しているデータだけでなく、Esri 等が提供するすぐに使えるマップやデータにアクセスすることも可能です。 また、Pandas や Jupyter Notebook といった、他の Python 向けのライブラリやツールとの連携で、より豊富な機能を活用することが可能です。
  ArcGIS API for Python がどのようなモジュールから成り立っているのかを解説します。 * [動作要件](#動作要件) OS などシステム要件と推奨する開発環境をご紹介します。 * [ガイドページとサンプルコード](#ガイドページとサンプルコード) 用途別に、初めの一歩として有用なサンプルをご紹介します。 -- Python API のアーキテクチャ Python API は、Web GIS プラットフォームを使用する目的で実装されています。 Python API には、ArcGIS プラットフォーム上で利用するデータやユーザの認証情報など、各オブジェクトを管理して作業するためのモジュール、クラス、関数、およびタイプがあります。
@@ -24,10 +24,10 @@ Python API は arcgis パッケージとして配布されています。 この
     
     <item>
       <title>ArcGIS API for Python のための基礎環境：conda入門</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-conda/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-conda/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</guid>
       <description>ArcGIS API for Python (以下、Python API) を使用する際、conda を利用すると Python の環境やパッケージを管理することが容易になります。 ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後のインストールガイドでの環境作成を行いやすくなります。
  conda の基本 conda の基本について説明します。conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。 conda を使用する場合、次の 2 つの選択肢があります。
  Anaconda Distribution : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。 Miniconda : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。  Anaconda と Miniconda の詳しい違いは Anaconda or Miniconda (英語) のページをご覧ください。 ※ pip でも Python API をインストールすることができますが、初心者には conda が推奨されています。参考: ArcGIS API for Python - Install and set up (英語)</description>
@@ -35,10 +35,10 @@ Python API は arcgis パッケージとして配布されています。 この
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-install/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-install/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</guid>
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgisという名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
  Tips ※ Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
  https://community.esri.com/docs/DOC-13655   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
@@ -46,10 +46,10 @@ Python API は arcgis パッケージとして配布されています。 この
     
     <item>
       <title>Jupyter Notebook を使ってみよう</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</guid>
       <description>ここでは、対話的に Python コードを実行し、出力を地図やグラフとして視覚化することができる Jupyter Notebook をご紹介します。Jupyter Notebook はオープンソ－スとして公開されている開発ツールのひとつで、ArcGIS API for Python (以下、Python API)はこのツール上でマップ等を表示することができます。 Jupyter Notebook の詳細については、Jupyter の公式マニュアルおよびクイックスタートガイドを参照してください。 また、サポートされているブラウザについてもご確認ください。Jupyter Notebook がサポートしていないブラウザ（Internet Explorer 等）ではマップ等が表示されないことがあります。
 Jupyter Notebook の起動 conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) に次のコマンドを入力して Jupyter Notebook を起動します。
  jupyter notebook  もし起動できなかった場合は次のコマンドをお試しください (参考: Jupyter fails to start)。
@@ -59,10 +59,10 @@ Jupyter Notebook の起動 conda と Python API がインストールされた�
     
     <item>
       <title>Jupyter Lab を使ってみよう</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</guid>
       <description>JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。 ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。
 JupyterLab で GIS データとグラフの操作
  JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は JupyterLab のブログや GitHub をご参照ください。

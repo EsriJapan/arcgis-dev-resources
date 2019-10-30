@@ -9,7 +9,7 @@ description = ""
 
 
 # ArcGIS for Developer 開発リソース集
-ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、ArcGIS for Developer を利用したアプリ開発の基本的な流れを紹介します。
+ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、ArcGIS for Developers を利用したアプリ開発の基本的な流れを紹介します。
 
 ArcGIS for Developers が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
 

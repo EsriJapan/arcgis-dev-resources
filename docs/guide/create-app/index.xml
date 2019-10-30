@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>アプリの作成 on ArcGIS for Developer 開発リソース集</title>
-    <link>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/</link>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</link>
     <description>Recent content in アプリの作成 on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="https://yozaw.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaScript</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
       <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
  リポジトリをご自身のアカウントに Fork（複製）
  GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
@@ -29,10 +29,10 @@
     
     <item>
       <title>.NET</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
       <description>開発環境 ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必要です。
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
 サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
@@ -47,10 +47,10 @@
     
     <item>
       <title>Android</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</guid>
       <description>開発環境 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
 またこの後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Android Library プロジェクトとして参照する方法を用いています。 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方はこちらの SDK download（英語）手順をご覧ください。
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
@@ -64,10 +64,10 @@
     
     <item>
       <title>iOS</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
       <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
  SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。　 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
  リポジトリをご自身のアカウントに Fork（複製）

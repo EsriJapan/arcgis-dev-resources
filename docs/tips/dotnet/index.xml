@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArcGIS Runtime SDK for .NET on ArcGIS for Developer 開発リソース集</title>
-    <link>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/</link>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/</link>
     <description>Recent content in ArcGIS Runtime SDK for .NET on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/</guid>
       <description>このインストール ガイドは、ArcGIS Runtime SDK for .NET をご使用のマシンにインストールする手順を紹介します。
 ArcGIS Runtime SDK for .NET とは ArcGIS Runtime SDK for .NET は、Windows 及び iOS、Android プラットフォーム向け GIS アプリケーションの開発キット（SDK）です。この SDK を利用することで、データ編集、ジオコーディング、ルート解析など様々な GIS 機能を持ったアプリケーションを Windows デスクトップや Windows タブレット、iOS、Android などの多様なプラットフォーム向けに開発することができます。 詳細は、ArcGIS Runtime SDK for .NET をご参照ください。
 ArcGIS Runtime SDK for .NET の開発環境 ArcGIS Runtime SDK for .NET を用いて、Windows や iOS、Android プラットフォーム向けの GIS アプリケーションを開発するには、統合開発環境として Microsoft Visual Studio を使用します。本インストールガイドの手順を行う前に、ご使用のマシンに ArcGIS Runtime SDK for .NET がサポートするバージョンの Windows OS 、Mac OS 及び Microsoft Visual Studio が適切にセットアップされている必要があります。ArcGIS Runtime SDK for .</description>
@@ -23,10 +23,10 @@ ArcGIS Runtime SDK for .NET の開発環境 ArcGIS Runtime SDK for .NET を用�
     
     <item>
       <title>アプリケーション配布ガイド</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</guid>
       <description>﻿ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
  使用するライセンスの選択 ライセンスの認証  Lite ライセンスの認証 Basic ライセンスの認証 Standard または Advanced ライセンスの認証 Analysis Extension ライセンスの認証   使用するライセンスの選択 ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
@@ -43,10 +43,10 @@ ArcGIS Runtime SDK for .NET の開発環境 ArcGIS Runtime SDK for .NET を用�
     
     <item>
       <title>バージョン 10.2.x から 100.x への移行</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</guid>
       <description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
 ArcGIS Runtime SDK for .NET に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
@@ -56,10 +56,10 @@ Map オブジェクトと Scene オブジェクトは 、それらを表示す�
     
     <item>
       <title>スタートアップ ガイド（10.2.x）</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/create-startup-app-dotnet10.2/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/create-startup-app-dotnet10.2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/dotnet/create-startup-app-dotnet10.2/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/create-startup-app-dotnet10.2/</guid>
       <description>﻿## 開発環境
 ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必要です。
 また、この後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Nuget パッケージとして参照する方法を用いています。 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方は ローカル環境にダウンロードしてお使いになりたい方は ドキュメント ダウンロードのページにあるインストール ガイドをご覧ください。

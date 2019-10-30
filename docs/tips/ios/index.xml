@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArcGIS Runtime SDK for iOS on ArcGIS for Developer 開発リソース集</title>
-    <link>https://yozaw.github.io/arcgis-dev-resources/tips/ios/</link>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</link>
     <description>Recent content in ArcGIS Runtime SDK for iOS on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="https://yozaw.github.io/arcgis-dev-resources/tips/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</guid>
       <description>このインストール ガイドでは、初めて ArcGIS Runtime SDK for iOS を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。
 このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for iOS を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。
 ArcGIS Runtime SDK for iOS とは ArcGIS Runtime SDK for iOS を使うと ArcGIS の機能を iOS のネイティブ アプリケーションとして実装することができます。
@@ -27,10 +27,10 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
     
     <item>
       <title>アプリケーション配布ガイド</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</guid>
       <description>ArcGIS Runtime SDK for iOS を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
  使用するライセンスの選択 ライセンスの認証  Lite ライセンスの認証 Basic ライセンスの認証 Standard ライセンスの認証 Analysis Extension ライセンスの認証   使用するライセンスの選択 ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
@@ -47,10 +47,10 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
     
     <item>
       <title>バージョン 10.2.x から 100.x への移行</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</guid>
       <description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
 ArcGIS Runtime SDK for iOS に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
@@ -61,10 +61,10 @@ AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表�
     
     <item>
       <title>スタートアップ ガイド（10.2.x）</title>
-      <link>https://yozaw.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</link>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yozaw.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</guid>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</guid>
       <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
  SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
  リポジトリをご自身のアカウントに Fork（複製）
