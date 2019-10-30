@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customize website look and feel on My New Hugo Site</title>
+    <link>https://yozaw.github.io/sitename/content-organisation/customize-style/</link>
+    <description>Recent content in Customize website look and feel on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="https://yozaw.github.io/sitename/content-organisation/customize-style/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Disable features</title>
+      <link>https://yozaw.github.io/sitename/content-organisation/customize-style/disable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/content-organisation/customize-style/disable/</guid>
+      <description> You can disable feature in docdock by changing some params in config.toml
+hide Next / Prev Chevrons [params] disableNavChevron = true  hide Search box in side menu [params] disableSearch = true  hide the icon in side bar [params] disableHomeIcon = true  </description>
+    </item>
+    
+    <item>
+      <title>Theme styles</title>
+      <link>https://yozaw.github.io/sitename/content-organisation/customize-style/themestyle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/content-organisation/customize-style/themestyle/</guid>
+      <description> In site configuration file, you can set a subtheme name of this theme to load a specific css.
+add a param themeStyle = &amp;quot;STYLE_NAME&amp;quot; in the [params] part of config.toml file.
+Style &amp;ldquo;original&amp;rdquo; [params] themeStyle = &amp;quot;original&amp;quot;  Style &amp;ldquo;flex&amp;rdquo; (work in progress) [params] themeStyle = &amp;quot;flex&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Theme variants</title>
+      <link>https://yozaw.github.io/sitename/content-organisation/customize-style/theme-variants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/content-organisation/customize-style/theme-variants/</guid>
+      <description> In site configuration file, you can set a variant name of this theme to load a specific css, with different color specifications.
+add a param themeVariant = &amp;quot;VARIANT_NAME&amp;quot; in the [params] part of config.toml file.
+Available variants change only colors at this momentVariant &amp;ldquo;gray&amp;rdquo; [params] themeVariant = &amp;quot;gray&amp;quot;  Variant &amp;ldquo;gold&amp;rdquo; [params] themeVariant = &amp;quot;gold&amp;quot;  Variant &amp;ldquo;green&amp;rdquo; [params] themeVariant = &amp;quot;green&amp;quot;`  </description>
+    </item>
+    
+  </channel>
+</rss>
