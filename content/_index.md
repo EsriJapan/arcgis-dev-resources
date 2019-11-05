@@ -3,15 +3,17 @@ title = "ArcGIS for Developer 開発リソース集"
 description = ""
 +++
 
+{{% alert theme="warning" %}}サイトをリニューアルしました。リニューアルの内容は[こちら](https://community.esri.com/docs/DOC-14122)をご覧ください{{% /alert %}}
+
 <span id="sidebar-toggle-span">
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
 
 # ArcGIS for Developer 開発リソース集
-ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、ArcGIS for Developers を利用したアプリ開発の基本的な流れを紹介します。
+ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、**[ArcGIS for Developers](https://developers.arcgis.com/)** を利用したアプリ開発の基本的な流れを紹介します。
 
-ArcGIS for Developers が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
+**[ArcGIS for Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
 
 {{% panel theme="success" header="スタートアップ ガイド" %}}
 * [マップの作成](guide/create-map)
@@ -38,7 +40,11 @@ ArcGIS for Developers が提供するサービスの詳細は [ESRIジャパン�
 
 　　　
 #### 開発者オープン コミュニティ
+* [Esri GitHub](https://esri.github.io/)
+ * 米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。
 * [Esri Japan GitHub](https://esrijapan.github.io/)
- * ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。ArcGIS プラットフォームを利用した GIS アプリケーションの開発に役立ててください。
-* [GeoNet](https://geonet.esri.com/groups/devcom-jp)
- * 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。弊社では、開発者向けの技術ブログを発信しています。
+ * ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。
+* [GeoNet](https://community.esri.com/)
+ * 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。
+* [GeoNet ArcGIS 開発者コミュニティ](https://community.esri.com/groups/devcom-jp)
+ * ESRIジャパンのスタッフが GeoNet 上で開発者向けの技術ブログを発信しています。
