@@ -1,10 +1,10 @@
-# ArcGIS for Developers 開発リソース集
+# ArcGIS for Developer 開発リソース集
 
 ![](http://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources.png)
 
 ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、[ArcGIS for Developers](https://developers.arcgis.com/) を利用したアプリ開発の基本的な流れを紹介します。
 
-- [ArcGIS for Developers 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
+- [ArcGIS for Developer 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
 
 ## ライセンス
 Copyright 2019 Esri Japan Corporation.
