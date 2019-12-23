@@ -1,13 +1,13 @@
 +++
 title = "バージョン 3.x から 4.x への移行"
-description = "バージョン 3.x の API で作成した既存のアプリケーションを 4.0 に移行するために必要な情報を紹介します。"
+description = "バージョン 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を紹介します。"
 weight = 3
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
 
-バージョン 4.0 では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
+バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 
-本トピックでは 3.x の API で作成した既存のアプリケーションを 4.0 に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。  
+本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。  
 
   * __[プロパティのハンドリング](#プロパティのハンドリング)__  
   * __[View の利用](#view-の利用)__
@@ -19,7 +19,7 @@ aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 
 ## プロパティのハンドリング
 
-3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.0 ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
+3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
 
 * __オブジェクトに直接値を書き込む方法__
 
@@ -39,13 +39,13 @@ var title = map.basemap.title;
  ```javascript
 myFeatureLayer.setDefinitionExpression(expression);
 ```
-4.0 では、以下の様に記述します。
+4.x では、以下の様に記述します。
 
  ```javascript
 myFeatureLayer.definitionExpression = expression;
 ```
 
-4.0 では、以下に記述したように `.get()` または `.set()` を使用して、深い階層のプロパティにアクセスすることも可能です。
+4.x では、以下に記述したように `.get()` または `.set()` を使用して、深い階層のプロパティにアクセスすることも可能です。
 
  ```javascript
 var basemapTitle = map.get("basemap.title");
@@ -53,7 +53,7 @@ var basemapTitle = map.get("basemap.title");
 
 ## プロパティの変更の監視
 
-3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.0 ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、`.watch(property, callback)` メソッドを通してハンドリングされます。`property` に変更があると `callback` が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。
+3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.x ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、`.watch(property, callback)` メソッドを通してハンドリングされます。`property` に変更があると `callback` が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。
 ```javascript
 var propertyChangeHandler = function(newValue, oldValue, property, object){
   console.log("新しい値: ",newValue, "古い値: ",oldValue,
@@ -63,9 +63,9 @@ var propertyChangeHandler = function(newValue, oldValue, property, object){
 
 ## View の利用
 
-4.0 では、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) によって制御されるようになります。
+4.x では、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) によって制御されるようになります。
 
-View は 4.0 で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。
+View は 4.x で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。
 
 * __2D で表示する場合: [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)__
 * __3D で表示する場合: [SceneView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html)__
@@ -127,7 +127,7 @@ esriConfig.defaults.geometryService = new GeometryService("<ジオメトリ サ�
 ```
 
  ```javascript
-// 4.0
+// 4.x
 esriConfig.geometryService = new GeometryService("<ジオメトリ サービスのURL>");
 ```
 
@@ -139,7 +139,7 @@ esriConfig.defaults.io.alwaysUseProxy = true;
 ```
 
  ```javascript
-// 4.0
+// 4.x
 esriConfig.request.alwaysUseProxy = true;
 ```
 
@@ -151,7 +151,7 @@ esriConfig.request.alwaysUseProxy = true;
 4.x 以降でも、アプリケーションで [Web マップ](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WMS レイヤーなど）が含まれている場合、Web マップを表示することができません。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの編集はまだサポートされていないので注意してください。
 
 ## AMD の利用
-3.x では AMD とレガシー モジュールの両方を利用できましたが、4.0 からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。
+3.x では AMD とレガシー モジュールの両方を利用できましたが、4.x からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。
 
 ## 廃止項目
-`Geocoder` ウィジェットはバージョン 3.13 で非推奨となり、4.0 では提供されません。代わりに [Search](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html) ウィジェットを使用してください。
+`Geocoder` ウィジェットはバージョン 3.13 で非推奨となり、4.x では提供されません。代わりに [Search](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html) ウィジェットを使用してください。

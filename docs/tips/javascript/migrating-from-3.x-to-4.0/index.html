@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-12-09T12:36:28 JST">
+<meta name="revised" content="2019-12-23T12:21:55 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="バージョン 3.x の API で作成した既存のアプリケーションを 4.0 に移行するために必要な情報を紹介します。">
+<meta name="description" content="バージョン 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を紹介します。">
 
 
 
@@ -514,9 +514,9 @@
     
     
 
-<p>バージョン 4.0 では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。</p>
+<p>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。</p>
 
-<p>本トピックでは 3.x の API で作成した既存のアプリケーションを 4.0 に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。</p>
+<p>本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。</p>
 
 <ul>
 <li><strong><a href="#プロパティのハンドリング">プロパティのハンドリング</a></strong><br /></li>
@@ -530,7 +530,7 @@
 
 <h2 id="プロパティのハンドリング">プロパティのハンドリング</h2>
 
-<p>3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.0 ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。</p>
+<p>3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。</p>
 
 <ul>
 <li><strong>オブジェクトに直接値を書き込む方法</strong></li>
@@ -553,19 +553,19 @@ var title = map.basemap.title;
 <pre><code class="language-javascript">myFeatureLayer.setDefinitionExpression(expression);
 </code></pre>
 
-<p>4.0 では、以下の様に記述します。</p>
+<p>4.x では、以下の様に記述します。</p>
 
 <pre><code class="language-javascript">myFeatureLayer.definitionExpression = expression;
 </code></pre>
 
-<p>4.0 では、以下に記述したように <code>.get()</code> または <code>.set()</code> を使用して、深い階層のプロパティにアクセスすることも可能です。</p>
+<p>4.x では、以下に記述したように <code>.get()</code> または <code>.set()</code> を使用して、深い階層のプロパティにアクセスすることも可能です。</p>
 
 <pre><code class="language-javascript">var basemapTitle = map.get(&quot;basemap.title&quot;);
 </code></pre>
 
 <h2 id="プロパティの変更の監視">プロパティの変更の監視</h2>
 
-<p>3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.0 ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、<code>.watch(property, callback)</code> メソッドを通してハンドリングされます。<code>property</code> に変更があると <code>callback</code> が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。</p>
+<p>3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.x ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、<code>.watch(property, callback)</code> メソッドを通してハンドリングされます。<code>property</code> に変更があると <code>callback</code> が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。</p>
 
 <pre><code class="language-javascript">var propertyChangeHandler = function(newValue, oldValue, property, object){
   console.log(&quot;新しい値: &quot;,newValue, &quot;古い値: &quot;,oldValue,
@@ -575,9 +575,9 @@ var title = map.basemap.title;
 
 <h2 id="view-の利用">View の利用</h2>
 
-<p>4.0 では、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> によって制御されるようになります。</p>
+<p>4.x では、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> によって制御されるようになります。</p>
 
-<p>View は 4.0 で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。</p>
+<p>View は 4.x で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。</p>
 
 <ul>
 <li><strong>2D で表示する場合: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">MapView</a></strong></li>
@@ -647,7 +647,7 @@ var title = map.basemap.title;
 esriConfig.defaults.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
 </code></pre>
 
-<pre><code class="language-javascript">// 4.0
+<pre><code class="language-javascript">// 4.x
 esriConfig.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
 </code></pre>
 
@@ -659,7 +659,7 @@ esriConfig.geometryService = new GeometryService(&quot;&lt;ジオメトリ サ�
 esriConfig.defaults.io.alwaysUseProxy = true;
 </code></pre>
 
-<pre><code class="language-javascript">// 4.0
+<pre><code class="language-javascript">// 4.x
 esriConfig.request.alwaysUseProxy = true;
 </code></pre>
 
@@ -675,11 +675,11 @@ esriConfig.request.alwaysUseProxy = true;
 
 <h2 id="amd-の利用">AMD の利用</h2>
 
-<p>3.x では AMD とレガシー モジュールの両方を利用できましたが、4.0 からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。</p>
+<p>3.x では AMD とレガシー モジュールの両方を利用できましたが、4.x からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。</p>
 
 <h2 id="廃止項目">廃止項目</h2>
 
-<p><code>Geocoder</code> ウィジェットはバージョン 3.13 で非推奨となり、4.0 では提供されません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html">Search</a> ウィジェットを使用してください。</p>
+<p><code>Geocoder</code> ウィジェットはバージョン 3.13 で非推奨となり、4.x では提供されません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html">Search</a> ウィジェットを使用してください。</p>
 
 
     
