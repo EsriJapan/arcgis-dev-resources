@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T12:53:56 JST">
+<meta name="revised" content="2020-01-22T14:31:31 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -222,6 +222,13 @@
         <div>
           <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
             インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy_pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy_pattern/">
+            デプロイ パターン
           </a>
         </div>
     </li>
@@ -661,13 +668,13 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
 <ol>
 <li><p>表示されたライセンスキーをコピーします</p></li>
 
-<li><p>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</p></li>
-</ol>
+<li><p>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</p>
 
 <pre><code class="language-javascript">// ライセンスキーを設定して認証
 string licenseKey = &quot;runtimelite,1000,rud#########,day-month-year,####################&quot;;
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h2 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h2>
 

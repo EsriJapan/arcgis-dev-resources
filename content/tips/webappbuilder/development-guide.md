@@ -1,7 +1,7 @@
 +++
 title = "カスタム ウィジェット開発ガイド"
 description = "カスタム ウィジェットを開発する手順を紹介します。"
-weight = 2
+weight = 3
 aliases = ["/webappbuilder/development-guide/"]
 +++
 
