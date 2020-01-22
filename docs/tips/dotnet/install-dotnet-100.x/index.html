@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T12:53:55 JST">
+<meta name="revised" content="2020-01-22T15:32:51 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -232,10 +232,17 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            アプリケーションのデプロイ
+            Web アプリケーションのデプロイ
           </a>
         </div>
     </li>
@@ -592,10 +599,12 @@
 
     &lt;/Grid&gt;
 &lt;/Window&gt;
-</code></pre>
+</code></pre></li>
+</ol>
 
-<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p></li>
+<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
 
+<ol>
 <li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
 
 <pre><code class="language-XML">&lt;esri:MapView x:Name=&quot;MyMapView&quot; /&gt;
@@ -616,32 +625,30 @@
 &lt;/Window&gt;
 </code></pre></li>
 
-<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p></li>
-</ol>
+<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
 
-<pre><code class="language-C#:MainPage.xaml.cs">  using Esri.ArcGISRuntime.Mapping;
+<pre><code class="language-C#:MainPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
 
-  namespace MyDesktopApp
+namespace MyDesktopApp
+{
+  public partial class MainWindow : Window
   {
-      public partial class MainWindow : Window
+      public MainWindow()
       {
-          public MainWindow()
-          {
-              InitializeComponent();
-              Initialize();
-          }
+          InitializeComponent();
+          Initialize();
+      }
 
-          private void Initialize()
-          {
-              var map = new Map(Basemap.CreateStreets());
-              MyMapView.Map = map;
-          }
+      private void Initialize()
+      {
+          var map = new Map(Basemap.CreateStreets());
+          MyMapView.Map = map;
       }
   }
-</code></pre>
+}
+</code></pre></li>
 
-<ol>
-<li>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</li>
+<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</p></li>
 </ol>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/WPF_App.png" width="550px"></p>
@@ -715,10 +722,12 @@
 
     &lt;/Grid&gt;
 &lt;/Page&gt;
-</code></pre>
+</code></pre></li>
+</ol>
 
-<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p></li>
+<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
 
+<ol>
 <li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
 
 <pre><code class="language-XML">&lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
@@ -886,33 +895,28 @@ namespace MyUWPApp
 
 <li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
 
-<p>```C#:MyXamarinFormsAppPage.xaml.cs
-using Esri.ArcGISRuntime.Mapping;</p></li>
-</ol>
+<pre><code class="language-C#:MyXamarinFormsAppPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
 
-<p>namespace MyXamarinFormsApp
+namespace MyXamarinFormsApp
+{
+public partial class MainPage : ContentPage
+{
+  public MainPage()
   {
-    public partial class MainPage : ContentPage
-    {
-      public MainPage()
-      {
-        InitializeComponent();
-        Initialize();
-      }</p>
+    InitializeComponent();
+    Initialize();
+  }
 
-<pre><code>  private void Initialize()
+  private void Initialize()
   {
     var map = new Map(Basemap.CreateStreets());
     MyMapView.Map = map;
   }
 }
-</code></pre>
+}
+</code></pre></li>
 
-<p>}
-    ```</p>
-
-<ol>
-<li>iOS または Android プロジェクトを選択して、ビルドします。</li>
+<li><p>iOS または Android プロジェクトを選択して、ビルドします。</p></li>
 </ol>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px"></p>

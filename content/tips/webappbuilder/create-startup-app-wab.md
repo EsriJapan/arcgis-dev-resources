@@ -1,7 +1,7 @@
 +++
 title = "スタートアップ ガイド"
 description = ""
-weight = 4
+weight = 20
 hidden = true
 aliases = ["/webappbuilder/create-startup-app-wab/"]
 +++

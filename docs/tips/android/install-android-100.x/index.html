@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T12:53:55 JST">
+<meta name="revised" content="2020-01-22T15:32:51 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -232,10 +232,17 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            アプリケーションのデプロイ
+            Web アプリケーションのデプロイ
           </a>
         </div>
     </li>
@@ -574,50 +581,58 @@
 <p>次に ArcGIS Runtime SDK for Android の API を使えるようにするための設定を行います。</p>
 
 <ol>
-<li>まずはこのアプリケーションが使用する機能に対して権限を付与します。
+<li><p>まずはこのアプリケーションが使用する機能に対して権限を付与します。
 Project ツールウィンドウ で「Android」を選択して「Manifests」フォルダの AndroidManifest.xml をダブルクリックして開きます。
-インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。
-<code>java
-&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。</p>
+
+<pre><code class="language-java">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
 &lt;uses-feature android:glEsVersion=&quot;0x00020000&quot; android:required=&quot;true&quot; /&gt;
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_1.addPermission.png" width="700px"></li>
-<li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
-<code>java
-allprojects {
-repositories {
-    jcenter()
-    // esri arcgis maven リポジトリの追加
-    maven {
-        url 'https://esri.bintray.com/arcgis'
-    }
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_1.addPermission.png" width="700px"></p></li>
+
+<li><p>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。</p>
+
+<pre><code class="language-java">allprojects {
+	repositories {
+		jcenter()
+		// esri arcgis maven リポジトリの追加
+		maven {
+			url 'https://esri.bintray.com/arcgis'
+		}
+	}
 }
-}
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>
-<li>build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation &lsquo;com.esri.arcgisruntime:arcgis-android:100.6.0&rsquo;」を追加します。
-<code>java
-dependencies {
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></p></li>
+
+<li><p>build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation &lsquo;com.esri.arcgisruntime:arcgis-android:100.6.0&rsquo;」を追加します。</p>
+
+<pre><code class="language-java">dependencies {
     implementation 'com.esri.arcgisruntime:arcgis-android:100.6.0'
     …
 }
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_3.addRuntimeVersion.png" width="700px"></li>
-<li>続いて、Java 8 での機能を使用する設定を<code>android</code>中に追加します。
-Java 8 で使用可能なラムダ式や特殊なアノーテーションを使用する場合ために、次のようにアプリケーションモジュールの互換性を設定します。
-<code>java
-android {
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_3.addRuntimeVersion.png" width="700px"></p></li>
+
+<li><p>続いて、Java 8 での機能を使用する設定を<code>android</code>中に追加します。
+Java 8 で使用可能なラムダ式や特殊なアノーテーションを使用する場合ために、次のようにアプリケーションモジュールの互換性を設定します。</p>
+
+<pre><code class="language-java">android {
     …
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
 }
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_4.addjava8conf.png" width="700px"></li>
-<li>ツールバーの [Sync Project with Gradle Files] または build.gradle を変更した後に表示されるメッセージの右にある [Sync Now] をクリックします。
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_4.addjava8conf.png" width="700px"></p></li>
+
+<li><p>ツールバーの [Sync Project with Gradle Files] または build.gradle を変更した後に表示されるメッセージの右にある [Sync Now] をクリックします。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_5.syncproject.png" width="600px">
-これで準備が整いました。</li>
+これで準備が整いました。</p></li>
 </ol>
 
 <h2 id="地図表示の実装">地図表示の実装</h2>
@@ -627,45 +642,43 @@ android {
 <ol>
 <li>Project ツールウィンドウで [app] → [res] → [layout] と展開し activity_main.xml をダブルクリックして開きます。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_1.openLayoutXml.png"  width="700px"></li>
-<li>左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。
-<code>java
-&lt;com.esri.arcgisruntime.mapping.view.MapView
+
+<li><p>左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。</p>
+
+<pre><code class="language-java">&lt;com.esri.arcgisruntime.mapping.view.MapView
     android:id=&quot;@+id/mapView&quot;
     android:layout_width=&quot;fill_parent&quot;
     android:layout_height=&quot;fill_parent&quot; &gt;
 &lt;/com.esri.arcgisruntime.mapping.view.MapView&gt;
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_2.addMapviewElement.png" width="700px"></li>
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_2.addMapviewElement.png" width="700px"></p></li>
 
 <li><p>Project ツールウィンドウで [app] → [res] → [java] と展開し MainActivity クラスを ダブルクリックして開き、地図表示のためのコードを設定します。</p>
 
 <ul>
-<li>MainActivity クラスへ次のクラスをインポートします。</li>
-</ul>
+<li><p>MainActivity クラスへ次のクラスをインポートします。</p>
 
 <pre><code class="language-java">import com.esri.arcgisruntime.mapping.view.MapView;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>MainActivity クラスの先頭に次のクラス変数宣言を追加します。</li>
-</ul>
+<li><p>MainActivity クラスの先頭に次のクラス変数宣言を追加します。</p>
 
 <pre><code class="language-java">private MapView mMapView;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>onCreate() メソッド内の <code>setContentView()</code> を呼び出している後に以下のコードを追加します。
+<li><p>onCreate() メソッド内の <code>setContentView()</code> を呼び出している後に以下のコードを追加します。
 このコードは、レイアウトに定義している MapView の参照を取得し、ベースマップのタイプや初期表示の範囲、縮尺レベルを設定した地図を <code>MapView</code> に設定します。
-ここではベースマップに地形図を設定し、初期表示範囲は永田町付近を表示するようにしています。
-<code>java
-mMapView = (MapView) findViewById(R.id.mapView);
+ここではベースマップに地形図を設定し、初期表示範囲は永田町付近を表示するようにしています。</p>
+
+<pre><code class="language-java">mMapView = (MapView) findViewById(R.id.mapView);
 ArcGISMap map = new Map(Basemap.Type.TOPOGRAPHIC, 35.665731,139.731088, 16);
 mMapView.setMap(map);
-</code></li>
-<li>MainActivity クラスへ <code>onPause()</code> メソッド(一時停止)と <code>onResume()</code> メソッド(再開)を追加します。2つのメソッドへはそれぞれ次のコードを追加します。</li>
-</ul>
+</code></pre></li>
+
+<li><p>MainActivity クラスへ <code>onPause()</code> メソッド(一時停止)と <code>onResume()</code> メソッド(再開)を追加します。2つのメソッドへはそれぞれ次のコードを追加します。</p>
 
 <pre><code class="language-java">@Override
 protected void onPause(){
@@ -678,11 +691,10 @@ protected void onResume(){
 　　super.onResume();
 　　mMapView.resume();
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>MainActivity は以下のようになります。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_3.finishMapViewElement.png" width="700px"></li>
+<li><p>MainActivity は以下のようになります。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_3.finishMapViewElement.png" width="700px"></p></li>
 </ul></li>
 
 <li><p>ツールバーの [Make Project] または [Build] メニューから [Make Project] をクリックします。

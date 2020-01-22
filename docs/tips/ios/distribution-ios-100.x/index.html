@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T12:53:56 JST">
+<meta name="revised" content="2020-01-22T15:32:51 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -232,10 +232,17 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            アプリケーションのデプロイ
+            Web アプリケーションのデプロイ
           </a>
         </div>
     </li>
@@ -649,19 +656,20 @@
 <li>[Show my ArcGIS Runtime Lite license key] をクリックします
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px"></li>
 <li>表示されたライセンスキーをコピーします</li>
-<li>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</li>
-</ol>
+
+<li><p>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</p>
 
 <pre><code class="language-javascript">do {
- // ライセンスキーを設定して認証
- let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimelite,1000,rud#########,none,####################&quot;)
- print(&quot;License Result: \(result.licenseStatus)&quot;)
+// ライセンスキーを設定して認証
+let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimelite,1000,rud#########,none,####################&quot;)
+print(&quot;License Result: \(result.licenseStatus)&quot;)
 }
 catch let error as NSError {
- // 認証に失敗した場合はエラーを出力
- print(&quot;Error: \(error)&quot;)
+// 認証に失敗した場合はエラーを出力
+print(&quot;Error: \(error)&quot;)
 }
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h2 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h2>
 
@@ -685,11 +693,11 @@ catch let error as NSError {
 <p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
 
 <pre><code class="language-javascript"> do {
-    let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;,extensions: [&quot;runtimeanalysis,1000,rud#########,day-month-year,####################&quot;])
-    print(&quot;License Result: \(result.licenseStatus)&quot;)     
+	let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;,extensions: [&quot;runtimeanalysis,1000,rud#########,day-month-year,####################&quot;])
+	print(&quot;License Result: \(result.licenseStatus)&quot;)	 
  }
  catch let error as NSError {
-    print(&quot;Error: \(error)&quot;)
+	print(&quot;Error: \(error)&quot;)
  }
 </code></pre>
 
