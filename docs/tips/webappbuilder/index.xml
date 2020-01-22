@@ -23,17 +23,6 @@
     </item>
     
     <item>
-      <title>デプロイ パターン</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</guid>
-      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ テンプレートをデプロイ  概要 Web AppBuilder for ArcGIS (Developer Edition) (以下 Web AppBuilder) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
-Web アプリケーションをデプロイ 全体像  Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。   必要なコンポーネント  開発時  Node.js Web AppBuilder  運用時  ArcGIS Enterprise または ArcGIS Online Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)   手順概要 以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。
- カスタム ウィジェットを含む web アプリケーションを作成  Web AppBuilder を用いたウィジェットの開発や web アプリケーションの作成には Node.</description>
-    </item>
-    
-    <item>
       <title>カスタム ウィジェット開発ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -50,12 +39,23 @@ Web AppBuilder のインストール方法に関しては、Web AppBuilder for A
     </item>
     
     <item>
-      <title>アプリケーションのデプロイ</title>
+      <title>デプロイ パターン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</guid>
+      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ テンプレートをデプロイ  概要 Web AppBuilder for ArcGIS (Developer Edition) (以下 Web AppBuilder) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
+Web アプリケーションをデプロイ 全体像  Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。   必要なコンポーネント  開発時  Node.js Web AppBuilder  運用時  ArcGIS Enterprise または ArcGIS Online Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)   手順概要 以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。
+ カスタム ウィジェットを含む web アプリケーションを作成  Web AppBuilder を用いたウィジェットの開発や web アプリケーションの作成には Node.</description>
+    </item>
+    
+    <item>
+      <title>Web アプリケーションのデプロイ</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</guid>
-      <description>トピック  アプリのダウンロード アプリのデプロイ グループ アクセスの設定 動作環境  Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作成したアプリはダウンロードして、独自の Web サーバーにホストすることができます。もしアプリが未共有のアイテムを参照しているとき、ダウンロードしたアプリは ArcGIS Online または Portal for ArcGIS に登録する必要があります。 アプリをデプロイする場所にかかわらず、Web マップへのアクセスは必須です。
+      <description>トピック  アプリのダウンロード アプリのデプロイ グループ アクセスの設定 動作環境  Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作成したWeb アプリケーション (以下、アプリ) はダウンロードして、独自の Web サーバーにホストすることができます。もしアプリが未共有のアイテムを参照しているとき、ダウンロードしたアプリは ArcGIS Online または Portal for ArcGIS に登録する必要があります。 アプリをデプロイする場所にかかわらず、Web マップへのアクセスは必須です。
 その他のデプロイ パターンについてはデプロイ パターンのページをご覧下さい。
 アプリのダウンロード  Web AppBuilder を起動し、トップページを開いたら、アプリのダウンロードボタンをクリックします。 アプリケーションは ZIP ファイルでダウンロードされます。保存ダイアログが表示されたら、任意のフォルダーを指定し、[保存] をクリックします。これで、アプリケーションはローカル ドライブに保存されます。  アプリのデプロイ  ダウンロードしたアプリを解凍します。 解凍したアプリを Web サーバーへ配置します。 アプリのルート ディレクトリにある config.json ファイルを開き、以下の項目を編集します。  プロキシ
 必要に応じて、使用するプロキシを proxy プロパティに追加します。プロキシの詳細は Use proxy をご参照ください。 アプリケーション ID
