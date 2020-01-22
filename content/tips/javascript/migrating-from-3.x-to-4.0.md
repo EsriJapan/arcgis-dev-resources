@@ -148,7 +148,7 @@ esriConfig.request.alwaysUseProxy = true;
 * `FeatureLayer` はグラフィックを保持しません。代わりに [LayerView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-LayerView.html) が [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html) のフィーチャを表すグラフィックを描画します。
 
 ## Web マップのサポート
-4.x 以降でも、アプリケーションで [Web マップ](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WMS レイヤーなど）が含まれている場合、Web マップを表示することができません。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの編集はまだサポートされていないので注意してください。
+4.x 以降でも、アプリケーションで [Web マップ](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WFS レイヤーなど）が含まれている場合でも、Web マップを表示することができます。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの保存はバージョン 4.14 からサポートされています。
 
 ## AMD の利用
 3.x では AMD とレガシー モジュールの両方を利用できましたが、4.x からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。
