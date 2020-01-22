@@ -425,11 +425,9 @@ AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表�
 本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
  プロパティのハンドリング
  View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
- オブジェクトに直接値を書き込む方法
-// ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;  オブジェクトから直接値を読み取る方法
-// ベースマップのタイトルを取得 var title = map.basemap.title;   例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
+ オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;   オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title;  例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
 myFeatureLayer.setDefinitionExpression(expression);  4.x では、以下の様に記述します。
-myFeatureLayer.definitionExpression = expression;  4.x では、以下に記述したように .</description>
+myFeatureLayer.definitionExpression = expression;  4.</description>
     </item>
     
     <item>
@@ -470,23 +468,6 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
     </item>
     
     <item>
-      <title>iOS</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
-      <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
- SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。　 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
- Fork 後はご自身のローカル マシンにクローンを作成します。
-  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
- ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj）を Xcode で開きます。
- ViewController.</description>
-    </item>
-    
-    <item>
       <title>Jupyter Notebook を使ってみよう</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -510,6 +491,23 @@ Jupyter Notebook の起動 conda と Python API がインストールされた�
 アプリのダウンロード  Web AppBuilder を起動し、トップページを開いたら、アプリのダウンロードボタンをクリックします。 アプリケーションは ZIP ファイルでダウンロードされます。保存ダイアログが表示されたら、任意のフォルダーを指定し、[保存] をクリックします。これで、アプリケーションはローカル ドライブに保存されます。  アプリのデプロイ  ダウンロードしたアプリを解凍します。 解凍したアプリを Web サーバーへ配置します。 アプリのルート ディレクトリにある config.json ファイルを開き、以下の項目を編集します。  プロキシ
 必要に応じて、使用するプロキシを proxy プロパティに追加します。プロキシの詳細は Use proxy をご参照ください。 アプリケーション ID
 アプリケーション ID を appId プロパティへ設定します。アプリケーション ID を入手するには、アプリの追加、登録が必要です。詳細はアプリの追加およびアプリの登録をご参照ください。 OAuth と SAML を用いたプラットフォーム認証を活用するために、アプリケーション ID を使用することを推奨しています。   アプリをカスタマイズするには、以下のドキュメントを参照してください。</description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
+      <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
+ SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。　 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+ リポジトリをご自身のアカウントに Fork（複製）
+ GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
+ Fork 後はご自身のローカル マシンにクローンを作成します。
+  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
+  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
+ ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj）を Xcode で開きます。
+ ViewController.</description>
     </item>
     
     <item>
@@ -656,8 +654,7 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
 pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
 https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
 pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
- node-fontnik をクローンします。
-git clone https://github.</description>
+ node-fontnik をクローンします。  git clone https://github.</description>
     </item>
     
     <item>

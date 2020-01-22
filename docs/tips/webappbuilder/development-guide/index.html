@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T15:32:51 JST">
+<meta name="revised" content="2020-01-22T15:42:48 JST">
 <title>カスタム ウィジェット開発ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -601,17 +601,16 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 </code></pre>
 
 <ul>
-<li><p>nls\ja\strings.js：各言語フォルダーにある strings.js ファイルで表示する文字を設定</p>
-
-<pre><code class="language-js">define({
+<li>nls\ja\strings.js：各言語フォルダーにある strings.js ファイルで表示する文字を設定
+<code>js
+define({
 label1: &quot;こんにちは&quot;
 });
-</code></pre></li>
-
-<li><p>Widget.html：文字を表示</p>
-
-<pre><code class="language-html">&lt;label&gt;${nls.label1}&lt;/label&gt;
-</code></pre></li>
+</code></li>
+<li>Widget.html：文字を表示
+<code>html
+&lt;label&gt;${nls.label1}&lt;/label&gt;
+</code></li>
 </ul>
 
 <h4 id="images-icon-png">images\icon.png</h4>
@@ -929,16 +928,18 @@ _clickHandler: function(evt) {
 <p><strong>使用例：</strong></p>
 
 <ul>
-<li><p>Widget.js：</p>
+<li>Widget.js：</li>
+</ul>
 
 <pre><code class="language-js">this.mapIdNode.innerHTML = 'マップのID：' + this.map.id;
-</code></pre></li>
+</code></pre>
 
-<li><p>Widget.html：</p>
+<ul>
+<li>Widget.html：</li>
+</ul>
 
 <pre><code class="language-html">&lt;div data-dojo-attach-point=&quot;mapIdNode&quot;&gt;&lt;/div&gt;
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>その他に利用可能なプロパティは以下です。</p>
 

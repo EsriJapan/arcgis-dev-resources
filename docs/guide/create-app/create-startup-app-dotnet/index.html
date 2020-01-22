@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T15:32:51 JST">
+<meta name="revised" content="2020-01-22T15:42:48 JST">
 <title>.NET :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -536,11 +536,11 @@
 <ol>
 <li><p>ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。</p></li>
 
-<li><p><code>MainWindow.xaml.cs</code> の 49 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-map/create-webmap/">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
-
-<pre><code class="language-C#">var item = await PortalItem.CreateAsync(portal, &quot;Web マップ ID&quot;);
-</code></pre></li>
+<li><p><code>MainWindow.xaml.cs</code> の 49 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-map/create-webmap/">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p></li>
 </ol>
+
+<pre><code class="language-C#"> var item = await PortalItem.CreateAsync(portal, &quot;Web マップ ID&quot;);
+</code></pre>
 
 <p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
 
@@ -566,56 +566,64 @@
 ArcGIS Online のジオコーディング サービスの URL です。ArcGIS for Developers の開発者はこのクラウド サービスを利用して住所検索を実行することができます。</p></li>
 
 <li><p>onlineLocatorTask<br />
-住所検索を実行するための OnlineLocatorTask クラスです。</p>
-
-<pre><code class="language-C#">//ArcGIS Online ジオコーディングサービスの URL  
-private const string WORLD_GEOCODE_SERVICE_URL = &quot;https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer&quot;;
-//住所検索用のジオコーディング タスク  
-private LocatorTask onlineLocatorTask;
-</code></pre></li>
+住所検索を実行するための OnlineLocatorTask クラスです。</p></li>
 </ul></li>
-
-<li><p>メンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。</p>
-
-<pre><code class="language-C#">//住所検索用のジオコーディング タスクを初期化
-onlineLocatorTask = await LocatorTask.CreateAsync(new Uri(WORLD_GEOCODE_SERVICE_URL));
-</code></pre></li>
-
-<li><p>住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には GeocodeParameters クラスを使用します。</p>
-
-<pre><code class="language-C#">//住所検索用のパラメータを作成  
-var geocodeParams = new GeocodeParameters
-{
-  MaxResults = 5,
-  CountryCode = &quot;Japan&quot;,
-  OutputLanguage = new System.Globalization.CultureInfo(&quot;ja-JP&quot;),
-};
-</code></pre></li>
-
-<li><p>OnlineLocatorTask クラスの GeocodeAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。</p>
-
-<pre><code class="language-C#">//住所の検索  
-var resultCandidates = await onlineLocatorTask.GeocodeAsync(addressTextBox.Text, geocodeParams);
-</code></pre></li>
-
-<li><p>住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致している検索結果）を地図上に拡大表示します。</p>
-
-<pre><code class="language-C#">//常に最初の候補を採用
-var candidate = resultCandidates.FirstOrDefault();                 
-
-//最初の候補からグラフィックを作成
-Graphic locatedPoint = new Graphic()
-{
-  Geometry = candidate.DisplayLocation
-};
-
-//住所検索結果表示用のグラフィックス オーバーレイにグラフィックを追加
-geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
-
-//追加したグラフィックの周辺に地図を拡大
-await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 30000);   
-</code></pre></li>
 </ol>
+
+<pre><code class="language-C#">  //ArcGIS Online ジオコーディングサービスの URL  
+  private const string WORLD_GEOCODE_SERVICE_URL = &quot;https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer&quot;;
+  //住所検索用のジオコーディング タスク  
+  private LocatorTask onlineLocatorTask;
+</code></pre>
+
+<ol>
+<li>メンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。</li>
+</ol>
+
+<pre><code class="language-C#"> //住所検索用のジオコーディング タスクを初期化
+ onlineLocatorTask = await LocatorTask.CreateAsync(new Uri(WORLD_GEOCODE_SERVICE_URL));
+</code></pre>
+
+<ol>
+<li>住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には GeocodeParameters クラスを使用します。</li>
+</ol>
+
+<pre><code class="language-C#">  //住所検索用のパラメータを作成  
+  var geocodeParams = new GeocodeParameters
+  {
+      MaxResults = 5,
+      CountryCode = &quot;Japan&quot;,
+      OutputLanguage = new System.Globalization.CultureInfo(&quot;ja-JP&quot;),
+  };
+</code></pre>
+
+<ol>
+<li>OnlineLocatorTask クラスの GeocodeAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。</li>
+</ol>
+
+<pre><code class="language-C#">  //住所の検索  
+  var resultCandidates = await onlineLocatorTask.GeocodeAsync(addressTextBox.Text, geocodeParams);
+</code></pre>
+
+<ol>
+<li>住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致している検索結果）を地図上に拡大表示します。</li>
+</ol>
+
+<pre><code class="language-C#">  //常に最初の候補を採用
+  var candidate = resultCandidates.FirstOrDefault();                 
+
+  //最初の候補からグラフィックを作成
+  Graphic locatedPoint = new Graphic()
+  {
+      Geometry = candidate.DisplayLocation
+  };
+
+  //住所検索結果表示用のグラフィックス オーバーレイにグラフィックを追加
+  geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
+
+  //追加したグラフィックの周辺に地図を拡大
+  await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 30000);   
+</code></pre>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px"></p>
 

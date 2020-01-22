@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T15:32:51 JST">
+<meta name="revised" content="2020-01-22T15:42:48 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -599,12 +599,10 @@
 
     &lt;/Grid&gt;
 &lt;/Window&gt;
-</code></pre></li>
-</ol>
+</code></pre>
 
-<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p></li>
 
-<ol>
 <li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
 
 <pre><code class="language-XML">&lt;esri:MapView x:Name=&quot;MyMapView&quot; /&gt;
@@ -625,30 +623,32 @@
 &lt;/Window&gt;
 </code></pre></li>
 
-<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
+<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p></li>
+</ol>
 
-<pre><code class="language-C#:MainPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
+<pre><code class="language-C#:MainPage.xaml.cs">  using Esri.ArcGISRuntime.Mapping;
 
-namespace MyDesktopApp
-{
-  public partial class MainWindow : Window
+  namespace MyDesktopApp
   {
-      public MainWindow()
+      public partial class MainWindow : Window
       {
-          InitializeComponent();
-          Initialize();
-      }
+          public MainWindow()
+          {
+              InitializeComponent();
+              Initialize();
+          }
 
-      private void Initialize()
-      {
-          var map = new Map(Basemap.CreateStreets());
-          MyMapView.Map = map;
+          private void Initialize()
+          {
+              var map = new Map(Basemap.CreateStreets());
+              MyMapView.Map = map;
+          }
       }
   }
-}
-</code></pre></li>
+</code></pre>
 
-<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</p></li>
+<ol>
+<li>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</li>
 </ol>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/WPF_App.png" width="550px"></p>
@@ -722,12 +722,10 @@ namespace MyDesktopApp
 
     &lt;/Grid&gt;
 &lt;/Page&gt;
-</code></pre></li>
-</ol>
+</code></pre>
 
-<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p></li>
 
-<ol>
 <li><p>Grid XAML エレメント内に以下のコードを追加します。</p>
 
 <pre><code class="language-XML">&lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
@@ -895,28 +893,33 @@ namespace MyUWPApp
 
 <li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
 
-<pre><code class="language-C#:MyXamarinFormsAppPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
+<p>```C#:MyXamarinFormsAppPage.xaml.cs
+using Esri.ArcGISRuntime.Mapping;</p></li>
+</ol>
 
-namespace MyXamarinFormsApp
-{
-public partial class MainPage : ContentPage
-{
-  public MainPage()
+<p>namespace MyXamarinFormsApp
   {
-    InitializeComponent();
-    Initialize();
-  }
+    public partial class MainPage : ContentPage
+    {
+      public MainPage()
+      {
+        InitializeComponent();
+        Initialize();
+      }</p>
 
-  private void Initialize()
+<pre><code>  private void Initialize()
   {
     var map = new Map(Basemap.CreateStreets());
     MyMapView.Map = map;
   }
 }
-}
-</code></pre></li>
+</code></pre>
 
-<li><p>iOS または Android プロジェクトを選択して、ビルドします。</p></li>
+<p>}
+    ```</p>
+
+<ol>
+<li>iOS または Android プロジェクトを選択して、ビルドします。</li>
 </ol>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px"></p>
