@@ -1,7 +1,7 @@
 +++
 title = "アプリケーションのデプロイ"
 description = "Web AppBuilder for ArcGIS (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。"
-weight = 3
+weight = 4
 aliases = ["/webappbuilder/deploy-your-app/"]
 +++
 
@@ -14,6 +14,8 @@ aliases = ["/webappbuilder/deploy-your-app/"]
 
 Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作成したアプリはダウンロードして、独自の Web サーバーにホストすることができます。もしアプリが未共有のアイテムを参照しているとき、ダウンロードしたアプリは ArcGIS Online または Portal for ArcGIS に登録する必要があります。
 アプリをデプロイする場所にかかわらず、Web マップへのアクセスは必須です。
+
+その他のデプロイ パターンについては[デプロイ パターン](https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/)のページをご覧下さい。
 
 ## アプリのダウンロード
 

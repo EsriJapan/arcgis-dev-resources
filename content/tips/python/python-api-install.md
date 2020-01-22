@@ -15,31 +15,31 @@ Python API は、`arcgis`という名前のパッケージで [Anaconda Cloud](h
 >
 > * https://community.esri.com/docs/DOC-13655
 
-## STEP 1: [Python API をインストールする](#Python-API-をインストールする)
+### STEP 1: [Python API をインストールする](#python-api-をインストールする)
 * [ArcGIS Pro でインストールする](#arcgis-pro-でインストールする)
 * [Aaconda 経由でインストールする](#anaconda-経由でインストールする)
 
-## STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
+### STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
 * [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-2.3-以上の環境の場合)
 * [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-2.2-環境の場合)
 * [Anaconda 環境の場合](#anaconda-環境の場合)
 
-## STEP 3: [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
+### STEP 3: [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
 * [Jupyter Notebook を起動する](#jupyter-notebook-を起動する)
 * [Jupyter Notebook で地図を表示してみる](#jupyter-notebook-で地図を表示してみる)
 
-## 参考: [オフライン時のインストール方法](#オフライン時のインストール方法)
+### 参考: [オフライン時のインストール方法](#オフライン時のインストール方法)
 
 ***
 
-## Python API をインストールする
+### Python API をインストールする
 
-### ArcGIS Pro でインストールする
+#### ArcGIS Pro でインストールする
 
 ArcGIS Pro では、2.1 以降のリリースから conda と `arcgis` パッケージが最初からインストールされています。</br>
 [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。バージョンが最新でない場合は[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)を参照して Python API を更新します。
 
-### Anaconda 経由でインストールする
+#### Anaconda 経由でインストールする
 
 ArcGIS Pro をお持ちでない場合は、Anaconda をインストールします。</br>
 Anaconda は Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです。 </br>
@@ -63,9 +63,9 @@ Python API は Python 3.5 以降を必要とするため、[Anaconda ダウン�
 
 ***
 
-## arcgis パッケージをアップグレードする
+### arcgis パッケージをアップグレードする
 
-### ArcGIS Pro 2.3 以上の環境の場合
+#### ArcGIS Pro 2.3 以上の環境の場合
 
 ArcGIS Pro 2.3 以上では Python API が最初からインストールされています。</br>
 ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
@@ -144,7 +144,7 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 
 アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
 
-### ArcGIS Pro 2.2 環境の場合
+#### ArcGIS Pro 2.2 環境の場合
 
 ArcGIS Pro 2.2 には ArcGIS API for Python 1.4.1 がインストールされています。</br>
 ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
@@ -209,7 +209,7 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 
 アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
 
-### Anaconda 環境の場合
+#### Anaconda 環境の場合
 Anaconda Prompt のようなターミナルアプリケーションを開き、次のコマンドを使用して `arcgis` を実行してアップグレードします。
 * `conda upgrade -c esri arcgis`
 
@@ -219,9 +219,9 @@ Anaconda Prompt のようなターミナルアプリケーションを開き、�
 
 ***
 
-## ArcGIS API for Python を実行する
+### ArcGIS API for Python を実行する
 
-### Jupyter Notebook を起動する
+#### Jupyter Notebook を起動する
 
 <!-- macOS、Linuxは未サポートのためコメントアウト -->
 <!-- #### Windowsの場合 -->
@@ -248,7 +248,7 @@ Jupyter Notebook の詳しい操作は [Jupyter Notebook を使ってみよう](
 Python API バージョン 1.5.0 以降からは、Jupyter Lab からも操作が可能です。[Jupyter Lab を使ってみよう](../python-api-jnlabsetup)も是非ご覧ください。
 
 
-### Jupyter Notebook で地図を表示してみる
+#### Jupyter Notebook で地図を表示してみる
 
 次の手順で、地図を表示するための新しいノートブックを作成します。
 * Click New > Python 3
@@ -278,14 +278,14 @@ my_gis.map()
 > arcgis.__version__
 > ```
 
-### オフライン時のインストール方法
+#### オフライン時のインストール方法
 
 インターネットに接続していない環境の場合、次の手順で Python API のインストールが可能です。<br>
 ただし、この場合、すべての依存パッケージがインストールされるわけではないため、Jupyter Notebook の利用など、一部の機能が制限される可能性があります (※ 組織やコンテンツの管理など特定のタスクは以下手順でインストールする [six](https://pypi.org/project/six/) パッケージのみで可能です。)<br>
 依存パッケージについては米国Esri 社のガイドページ：[System requirements](https://developers.arcgis.com/python/guide/system-requirements/) を参照ください。
 
 
-#### 1. インターネットに接続できる環境で以下の必要なソフトウェアをダウンロードします。
+##### 1. インターネットに接続できる環境で以下の必要なソフトウェアをダウンロードします。
 * 最新の Python 3.x 用の Anaconda
 * 適切なバージョンの Python API のファイル
     * [Anaconda クラウドの Esri のチャネル](https://anaconda.org/Esri/arcgis/files)からダウンロード可能です。
@@ -300,7 +300,7 @@ my_gis.map()
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/anacondacloudesric.png" width="800px">
 </div>
 
-#### 2. オフライン環境で Anaconda を設定
+##### 2. オフライン環境で Anaconda を設定
 * Anaconda をインストールします。
 * 次のコマンドで[オフライン モード](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#offline-mode-only-offline)に設定します。
     * `conda config --set offline True`

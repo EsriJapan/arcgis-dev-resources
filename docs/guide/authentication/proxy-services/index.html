@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T12:53:56 JST">
+<meta name="revised" content="2020-01-22T14:31:32 JST">
 <title>プロキシ サービスの利用 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -222,6 +222,13 @@
         <div>
           <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
             インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy_pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy_pattern/">
+            デプロイ パターン
           </a>
         </div>
     </li>
@@ -652,10 +659,11 @@
 <li>「アプリケーション プール」が4.0以上であることを確認します。</li>
 </ul></li>
 </ul></li>
-<li>プロキシがインストールされて利用可能であることをテストします。
-<code>html
-http://[yourmachine]/DotNet/proxy.ashx?ping
-</code></li>
+
+<li><p>プロキシがインストールされて利用可能であることをテストします。</p>
+
+<pre><code class="language-html">http://[yourmachine]/DotNet/proxy.ashx?ping
+</code></pre></li>
 
 <li><p>プロキシがブラウザで直接リクエストを転送できることをテストします。</p>
 

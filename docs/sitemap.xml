@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy_pattern/</loc>
   </url>
   
   <url>
@@ -119,11 +119,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
   </url>
   
   <url>
@@ -155,19 +155,19 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
-  </url>
-  
-  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/create-startup-app-wab/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</loc>
   </url>
   
   <url>
@@ -179,11 +179,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
   </url>
   
   <url>
@@ -231,17 +231,19 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/create-startup-app-wab/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/</loc>
   </url>
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
