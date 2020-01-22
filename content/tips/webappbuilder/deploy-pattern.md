@@ -1,7 +1,7 @@
 +++
 title = "デプロイ パターン"
 description = "Web AppBuilder for ArcGIS (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。"
-weight = 2
+weight = 3
 aliases = ["/webappbuilder/deploy-pattern/"]
 +++
 
