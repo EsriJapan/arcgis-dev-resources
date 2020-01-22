@@ -3,6 +3,8 @@ title = "ArcGIS for Developer 開発リソース集"
 description = ""
 +++
 
+{{% alert theme="warning" %}}サイトをリニューアルしました。リニューアルの内容は[こちら](https://community.esri.com/docs/DOC-14122)をご覧ください{{% /alert %}}
+
 <span id="sidebar-toggle-span">
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
