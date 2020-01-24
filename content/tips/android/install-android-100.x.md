@@ -16,10 +16,10 @@ ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネ�
 ## ArcGIS Runtime SDK for Android の開発環境
 
 ここでは次の開発環境にて ArcGIS Runtime SDK for Android を用いたモバイル マッピング アプリケーションの開発手順を説明します。
-開発手順を進める前に以下の開発環境をご使用のマシンにセットアップしてください。
 
 * Android Studio
 * Android 4.4 (Kitkat: API レベル 19) 以降
+* OpenGL ES 3.0 以上
 
 ArcGIS Runtime SDK for Android がサポートする最新の動作環境につきましては[動作環境](http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)をご参照ください。
 
