@@ -152,7 +152,7 @@ portal.addDoneLoadingListener(new Runnable() {
         if (portal.getLoadStatus() == LoadStatus.LOADED) {
 
             // ポータルからライセンス情報を取得します
-            LicenseInfo licenseInfo = portal.getPortalInfo();
+            LicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
 
             // 取得したライセンスを設定します
             LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(licenseInfo);
@@ -176,7 +176,7 @@ portal.addDoneLoadingListener(new Runnable() {
 
 ```java
 // ネットワーク接続可能時に Json 形式でライセンス情報を取得します。
-LicenseInfo licenseInfo = portal.getPortalInfo();
+LicenseInfo licenseInfo = portal.getPortalInfo().getLicenseInfo();
 String licenseInfoJson = licenseInfo.toJson();
 
 // オフライン状態の場合は、作成済みの文字列で保存したライセンス情報を取得します。
