@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-22T15:42:48 JST">
+<meta name="revised" content="2020-01-30T15:01:53 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -518,8 +518,7 @@
     
     
 
-<p>﻿
-ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。</p>
+<p>ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。</p>
 
 <h2 id="ライセンス認証のステップ">ライセンス認証のステップ</h2>
 
@@ -527,13 +526,21 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
 
 <ol>
 <li><strong><a href="#使用するライセンスの選択">使用するライセンスの選択</a></strong></li>
+<li><strong><a href="#ライセンスの認証方法方法">ライセンスの認証方法</a></strong>
+
+<ul>
+<li><strong><a href="#lite-ライセンスの認証方法">Lite ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#basic-ライセンスの認証方法">Basic ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#standard-ライセンスの認証方法">Standard ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</a></strong></li>
+</ul></li>
 <li><strong><a href="#ライセンスの認証">ライセンスの認証</a></strong>
 
 <ul>
-<li><strong><a href="#lite-ライセンスの認証">Lite ライセンスの認証</a></strong></li>
-<li><strong><a href="#basic-ライセンスの認証">Basic ライセンスの認証</a></strong></li>
-<li><strong><a href="#standard-または-advanced-ライセンスの認証">Standard または Advanced ライセンスの認証</a></strong></li>
-<li><strong><a href="#analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</a></strong></li>
+<li><strong><a href="#lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</a></strong></li>
+<li><strong><a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a></strong></li>
+<li><strong><a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a></strong></li>
 </ul></li>
 </ol>
 
@@ -581,66 +588,162 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
 
 <p>ライセンスの詳細は<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/">ESRIジャパン製品ページ</a>をご参照ください。</p>
 
-<h2 id="ライセンスの認証">ライセンスの認証</h2>
+<h2 id="ライセンスの認証方法">ライセンスの認証方法</h2>
 
-<p>各ライセンス レベルで認証方法が異なります。使用するライセンス レベルのトピックをご参照ください。</p>
+<p>ライセンスの認証は次の2つの方法があります。</p>
 
-<h2 id="lite-ライセンスの認証">Lite ライセンスの認証</h2>
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
 
-<p>アプリケーションを Lite レベルで認証するには、以下の 2 つの方法があります。</p>
+<ul>
+<li>ライセンスキーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。
+<p></p></li>
+</ul></li>
+<li><strong>指定ユーザーによるアカウント認証</strong><br />
+
+<ul>
+<li>指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。<br></li>
+<li>ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。</li>
+</ul></li>
+</ol>
+
+<h5 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h5>
+
+<p><strong>■ ArcGIS Online または ArcGIS Enterprise 次期バージョン 10.8（国内リリース時期未定） 以降をご利用の場合 <br></strong>※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">User Type</th>
+<th align="left">Runtime Level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Viewer</td>
+<td align="left">Lite</td>
+</tr>
+
+<tr>
+<td align="left">Editor / Field Worker</td>
+<td align="left">Basic</td>
+</tr>
+
+<tr>
+<td align="left">Creator / GIS Professional Basic</td>
+<td align="left">Standard ※</td>
+</tr>
+
+<tr>
+<td align="left">GIS Professional Standard / GIS Professional Advanced</td>
+<td align="left">Advanced ※</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>■ ArcGIS Enterprise 10.7 以前をご利用の場合</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">User Type</th>
+<th align="left">Runtime Level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">レベル1 または Viewer タイプ以上</td>
+<td align="left">Lite</td>
+</tr>
+
+<tr>
+<td align="left">レベル2 または Editor タイプ以上</td>
+<td align="left">Basic</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="lite-ライセンスの認証方法">Lite ライセンスの認証方法</h3>
 
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
 
 <ul>
 <li>ArcGIS Runtime Lite のライセンスキーを取得する必要があります</li>
-<li>認証の方法は、<a href="#lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</a>をご参照ください</li>
+<li>認証の方法は、<a href="#lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
 </ul></li>
 <li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
 
 <ul>
-<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(レベル1 または Viewer タイプ以上) が必要です</li>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Liteライセンスレベルを保有する) が必要です</li>
 <li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
-<li>認証の方法は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
 </ul></li>
 </ol>
 
-<h2 id="basic-ライセンスの認証">Basic ライセンスの認証</h2>
-
-<p>アプリケーションを Basic レベルで認証するには、以下の 2 つの方法があります。</p>
+<h3 id="basic-ライセンスの認証方法">Basic ライセンスの認証方法</h3>
 
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
 
 <ul>
 <li>ArcGIS Runtime Basic の配布パックを購入する必要があります</li>
-<li>認証の方法は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
 </ul></li>
 <li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
 
 <ul>
-<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（レベル2 または Editor タイプ以上）が必要です</li>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Basicライセンスレベルを保有する) が必要です</li>
 <li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
-<li>認証の方法は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
 </ul></li>
 </ol>
 
-<h2 id="standard-または-advanced-ライセンスの認証">Standard または Advanced ライセンスの認証</h2>
-
-<p>アプリケーションを Standard または Advanced レベルで認証するには、以下の方法があります。</p>
+<h3 id="standard-ライセンスの認証方法">Standard ライセンスの認証方法</h3>
 
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
 
 <ul>
-<li>ArcGIS Runtime Standard または Advanced の配布パックを購入する必要があります</li>
-<li>認証の方法は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+<li>ArcGIS Runtime Standard の配布パックを購入する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Standardライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
 </ul></li>
 </ol>
 
-<h2 id="analysis-extension-ライセンスの認証">Analysis Extension ライセンスの認証</h2>
+<h3 id="advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</h3>
 
-<p>アプリケーションを Analysis Extension ライセンスで認証するには、以下の方法があります。</p>
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
+<ul>
+<li>ArcGIS Runtime Advanced の配布パックを購入する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Advancedライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
+</ol>
+
+<h3 id="analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</h3>
 
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
@@ -648,9 +751,23 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
 <ul>
 <li>ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります</li>
 <li>基本ライセンス（Standard または Advanced）と併せて認証する必要があります</li>
-<li>認証の方法は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません<br>
+注-Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Analysisアドオンライセンス拡張機能を割り当てられた) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
 </ul></li>
 </ol>
+
+<h2 id="ライセンスの認証">ライセンスの認証</h2>
+
+<p>以下の認証に応じた作業を行ってください。</p>
 
 <h3 id="lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</h3>
 
@@ -658,17 +775,12 @@ ArcGIS Runtime SDK for .NET を使用して開発したアプリケーション�
 最初に以下の手順で Lite レベルのライセンスキーを取得します。</p>
 
 <ol>
-<li><p><a href="https://developers.arcgis.com/arcgis-runtime/licensing/">ArcGIS for Developers: Licensing Your ArcGIS Runtime App</a> ページにアクセスします（サインインを求められた場合は、ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#アカウントの作成">開発者アカウントの作成</a></p></li>
-
-<li><p>[Show my ArcGIS Runtime Lite license key] をクリックします</p></li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/show_lite_license.png" width="400px"></p>
-
-<ol>
-<li><p>表示されたライセンスキーをコピーします</p></li>
-
-<li><p>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</p></li>
+<li><a href="https://developers.arcgis.com/arcgis-runtime/licensing/">ArcGIS for Developers: Licensing Your ArcGIS Runtime App</a> ページにアクセスします</li>
+<li>Lite の枠に表示されている [Sign Up] をクリックします</li>
+<li>画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#アカウントの作成">開発者アカウントの作成</a></li>
+<li>表示されたライセンスキーをコピーします
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px"></li>
+<li>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</li>
 </ol>
 
 <pre><code class="language-javascript">// ライセンスキーを設定して認証
@@ -676,7 +788,7 @@ string licenseKey = &quot;runtimelite,1000,rud#########,day-month-year,#########
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 </code></pre>
 
-<h2 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h2>
+<h3 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h3>
 
 <p>ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証することができます。</p>
 
@@ -701,7 +813,7 @@ string[] extensions = { &quot;runtimeanalysis,1000,rud#########,day-month-year,#
 ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 </code></pre>
 
-<h2 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h2>
+<h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
 
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する <a href="http://www.esrij.com/products/arcgis-online/plan/organization/">ArcGIS Online 組織向けプラン</a> もしくは <a href="http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/">Portal for ArcGIS</a> の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
 
@@ -719,7 +831,7 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
     ArcGISPortal arcgisPortal = await ArcGISPortal.CreateAsync(serviceUri, credential);
 
     // ライセンス情報を取得
-    LicenseInfo licenseInfo = arcgisPortal.PortalInfo.LicenseInfo;
+    LicenseInfo licenseInfo = await arcgisPortal.GetLicenseInfoAsync();
 
     // ArcGIS Runtime にライセンスを設定
     ArcGISRuntimeEnvironment.SetLicense(licenseInfo);
@@ -729,6 +841,11 @@ catch (Exception ex)
 {
     MessageBox.Show(ex.Message, &quot;認証のエラー&quot;);
 }
+</code></pre>
+
+<pre><code class="language-javascript">注意：
+上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい GetLicenseInfoAsync() APIを使用しています。
+バージョン 100.7 以降では GetLicenseInfoAsync()、バージョン 100.6 以前では Portal.portalInfo.licenseInfo を使用します。
 </code></pre>
 
 <p><strong>アプリケーションが ArcGIS Online / Portal for ArcGIS に常にログインできない場合</strong></p>

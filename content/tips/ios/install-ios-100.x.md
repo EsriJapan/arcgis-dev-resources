@@ -67,7 +67,7 @@ ArcGIS Runtime SDK for iOS は、[CocoaPods](https://cocoapods.org/) を利用�
     ```none
     target '<プロジェクト名>' do
     use_frameworks!
-    pod 'ArcGIS-Runtime-SDK-iOS', '100.6'
+    pod 'ArcGIS-Runtime-SDK-iOS', '100.7'
     end
     ```
 
@@ -101,11 +101,9 @@ ArcGIS Runtime SDK for iOS は、[CocoaPods](https://cocoapods.org/) を利用�
 1.	ArcGIS for Developers の認証ページに遷移します。ArcGIS for Developers の開発者アカウント情報を入力してサインインして下さい。ArcGIS for Developers 開発者アカウントを お持ちでない方は、ArcGIS for Developers 開発リソース集の[開発者アカウントの作成](../../../guide/create-map/get-dev-account/)を参考にしてアカウントを作成してください。
 
 1. 表示された画面で ArcGIS Runtime SDK for iOS の [Download] ボタンをクリックします。
-
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual01.png" width="450px">
 
-1.	ダウンロードした .pkg ファイルをダブルクリックし、表示された画面に従って SDK をインストールします。
-
+1. ダウンロードした .pkg ファイルをダブルクリックし、表示された画面に従って SDK をインストールします。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual02.png" width="350px">
 
   * `${HOME}/Library` フォルダへの書き込み権限があることを確認してください。
