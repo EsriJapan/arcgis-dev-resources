@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T15:01:53 JST">
+<meta name="revised" content="2020-01-30T19:41:15 JST">
 <title>デプロイ パターン :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -531,7 +531,7 @@
 
 <h2 id="概要">概要</h2>
 
-<p>Web AppBuilder for ArcGIS (Developer Edition) (以下 Web AppBuilder) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
+<p>Web AppBuilder for ArcGIS (Developer Edition) (以下 Developer Edition) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
 
 <hr />
 
@@ -551,7 +551,7 @@
 
 <ul>
 <li>Node.js</li>
-<li>Web AppBuilder</li>
+<li>Developer Edition</li>
 </ul></li>
 <li>運用時
 
@@ -569,7 +569,7 @@
 <li>カスタム ウィジェットを含む web アプリケーションを作成
 
 <ul>
-<li>Web AppBuilder を用いたウィジェットの開発や web アプリケーションの作成には Node.jsが必要です。</li>
+<li>Developer Edition を用いたウィジェットの開発や web アプリケーションの作成には Node.jsが必要です。</li>
 <li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/">インストールガイド</a>をご覧下さい。</li>
 <li>カスタム ウィジェットを開発する際は、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/">カスタム ウィジェット開発ガイド</a>をご覧ください。</li>
 </ul></li>
@@ -598,7 +598,7 @@
 <h2 id="ウィジェットをデプロイ">ウィジェットをデプロイ</h2>
 
 <ul>
-<li>WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise の  を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの Web AppBuilder のウィジェットには無い機能を拡張したい場合に活用できます。
+<li>WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの Web AppBuilder for ArcGIS のウィジェットには無い機能を拡張したい場合に活用できます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern2.png" alt="widget" />
 <br /></li>
 </ul>
@@ -610,7 +610,7 @@
 
 <ul>
 <li>Node.js</li>
-<li>Web AppBuilder</li>
+<li>Developer Edition</li>
 </ul></li>
 <li>運用時
 
@@ -628,7 +628,7 @@
 <li>カスタムウィジェットを作成
 
 <ul>
-<li>Web AppBuilder  を用いたウィジェットの作成には Node.jsが必要です。</li>
+<li>Developer Edition を用いたウィジェットの作成には Node.jsが必要です。</li>
 <li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/">インストールガイド</a>をご覧下さい。</li>
 <li>カスタムウィジェット開発の詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/">カスタム ウィジェット開発ガイド</a>をご覧下さい。</li>
 </ul></li>
@@ -637,7 +637,7 @@
 <ul>
 <li>ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。</li>
 <li>※ ウィジェットを配置するサーバーが自己署名証明書を使用している場合、Portal for ArcGIS に証明書をインポートする必要があります。詳しい方法は<a href="https://enterprise.arcgis.com/ja/portal/latest/administer/windows/import-a-certificate-into-the-portal.htm">ポータルへの証明書のインポート</a>をご覧ください。</li>
-<li>Web サーバーに配置後、ArcGIS Enterprise に組み込まれている Web AppBuilder  にカスタムウィジェットを追加します。
+<li>Web サーバーに配置後、ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS にカスタムウィジェットを追加します。
 
 <ul>
 <li>詳しくは、<a href="https://enterprise.arcgis.com/ja/portal/latest/use/add-custom-widgets.htm">カスタム ウィジェットの追加</a>をご覧ください。</li>
@@ -647,7 +647,7 @@
 <li>ウィジェットを使った web アプリケーションの作成・利用
 
 <ul>
-<li>ユーザーが ArcGIS Enterprise に組み込まれている Web AppBuilder を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。</li>
+<li>ユーザーが ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。</li>
 <li>内部的には、アプリは Web サーバーでホストされているカスタムウィジェットを参照して動作します。</li>
 </ul></li>
 </ol>
@@ -657,7 +657,7 @@
 <h2 id="テンプレートをデプロイ">テンプレートをデプロイ</h2>
 
 <ul>
-<li>Esri が用意している <a href="https://enterprise.arcgis.com/ja/portal/latest/use/application-templates.htm">web アプリケーションのテンプレート</a>とは別に、Web AppBuilder  で作成した web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。</li>
+<li>Esri が用意している <a href="https://enterprise.arcgis.com/ja/portal/latest/use/application-templates.htm">web アプリケーションのテンプレート</a>とは別に、Developer Edition で作成した web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。</li>
 <li>ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern3.png" alt="template" /></li>
 </ul>
@@ -669,13 +669,13 @@
 
 <ul>
 <li>Node.js</li>
-<li>Web AppBuilder</li>
+<li>Developer Edition</li>
 </ul></li>
 <li>運用時
 
 <ul>
 <li>Node.js</li>
-<li>Web AppBuilder</li>
+<li>Developer Edition</li>
 <li>ArcGIS Online または ArcGIS Enterprise</li>
 </ul></li>
 </ul>
@@ -688,17 +688,17 @@
 <li>カスタムウィジェットを含む web アプリケーションを作成
 
 <ul>
-<li>Web AppBuilder  を用いたウィジェットの作成には Node.jsが必要です。</li>
+<li>Developer Edition を用いたウィジェットの作成には Node.jsが必要です。</li>
 <li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/">インストールガイド</a>をご覧下さい。</li>
 <li>カスタム ウィジェットを開発する際は、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/">カスタム ウィジェット開発ガイド</a>をご覧ください。</li>
 </ul></li>
 <li>web アプリケーションをテンプレートとして保存 (登録)
 
 <ul>
-<li>Web AppBuilder  で作成した web アプリケーションを組織にエクスポートします。
+<li>Developer Edition で作成した web アプリケーションを組織にエクスポートします。
 
 <ul>
-<li>Web AppBuilder  でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートとしてエクスポート] をクリックします。
+<li>Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートとしてエクスポート] をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern4.png" alt="export_as_template" /></li>
 <li>構成可能にするパラメーターを設定した後、組織にエクスポートをクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern5.png" alt="config_params" /></li>
@@ -718,8 +718,8 @@
 
 <ul>
 <li>ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから web アプリケーションを作成・利用します。</li>
-<li>内部的には、アプリは Web AppBuilder  のテンプレートを参照して動作します。</li>
-<li>※ 上記理由から、運用時においてもユーザーが Web AppBuilder  にアクセスできる必要があります。</li>
+<li>内部的には、アプリは Developer Edition のテンプレートを参照して動作します。</li>
+<li>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</li>
 </ul></li>
 </ol>
 
@@ -739,7 +739,7 @@
 <tbody>
 <tr>
 <td><a href="#web-アプリケーションをデプロイ">Web アプリケーションをデプロイ</a></td>
-<td>Node.js、Web AppBuilder</td>
+<td>Node.js、Developer Edition</td>
 <td>Web サーバー、ArcGIS Online もしくは ArcGIS Enterprise</td>
 <td>〇</td>
 <td>〇</td>
@@ -747,7 +747,7 @@
 
 <tr>
 <td><a href="#ウィジェットをデプロイ">ウィジェットをデプロイ</a></td>
-<td>Node.js、Web AppBuilder</td>
+<td>Node.js、Developer Edition</td>
 <td>Web サーバー、 ArcGIS Enterprise</td>
 <td>×</td>
 <td>〇</td>
@@ -755,8 +755,8 @@
 
 <tr>
 <td><a href="#テンプレートをデプロイ">テンプレートをデプロイ</a></td>
-<td>Node.js、Web AppBuilder</td>
-<td>Web AppBuilder、ArcGIS Online もしくは ArcGIS Enterprise</td>
+<td>Node.js、Developer Edition</td>
+<td>Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise</td>
 <td>〇</td>
 <td>〇</td>
 </tr>

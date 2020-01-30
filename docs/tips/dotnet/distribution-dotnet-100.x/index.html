@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T15:01:53 JST">
+<meta name="revised" content="2020-01-30T19:41:14 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -780,13 +780,14 @@
 <li>画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#アカウントの作成">開発者アカウントの作成</a></li>
 <li>表示されたライセンスキーをコピーします
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px"></li>
-<li>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</li>
-</ol>
+
+<li><p>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</p>
 
 <pre><code class="language-javascript">// ライセンスキーを設定して認証
 string licenseKey = &quot;runtimelite,1000,rud#########,day-month-year,####################&quot;;
 Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h3 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h3>
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T15:01:54 JST">
+<meta name="revised" content="2020-01-30T19:41:15 JST">
 <title>カスタム フォント :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -544,21 +544,26 @@
 <p>pbf ファイルは <a href="https://github.com/mapbox/node-fontnik">node-fontnik</a> を使用して、ttf や otf 等のフォントファイルから変換して作成できます。</p>
 
 <ol>
-<li>node-fontnik をクローンします。
-<code>
-git clone https://github.com/mapbox/node-fontnik.git
-</code></li>
-<li>node-fontnik フォルダに移動して、モジュールをインストールします。
-<code>
-npm install
-</code></li>
-<li>fonts フォルダを作成し、作成したフォルダにダウンロードした Google フォントを配置します。</li>
-<li>glyphs フォルダと変換後のファイルを出力するサブフォルダ（例: glyphs/KosugiMaru-Regular）を作成します。</li>
-<li>build-glyphs を実行して pbf ファイルを作成します。
-<code>
-node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
-</code></li>
-<li>glyphs/KosugiMaru-Regular フォルダにユニコード文字範囲の pdf ファイル群が作成されていることを確認します。</li>
+<li><p>node-fontnik をクローンします。</p>
+
+<pre><code>git clone https://github.com/mapbox/node-fontnik.git
+</code></pre></li>
+
+<li><p>node-fontnik フォルダに移動して、モジュールをインストールします。</p>
+
+<pre><code>npm install
+</code></pre></li>
+
+<li><p>fonts フォルダを作成し、作成したフォルダにダウンロードした Google フォントを配置します。</p></li>
+
+<li><p>glyphs フォルダと変換後のファイルを出力するサブフォルダ（例: glyphs/KosugiMaru-Regular）を作成します。</p></li>
+
+<li><p>build-glyphs を実行して pbf ファイルを作成します。</p>
+
+<pre><code>node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
+</code></pre></li>
+
+<li><p>glyphs/KosugiMaru-Regular フォルダにユニコード文字範囲の pdf ファイル群が作成されていることを確認します。</p></li>
 </ol>
 
 <h2 id="pbf-フォントの配置">PBF フォントの配置</h2>

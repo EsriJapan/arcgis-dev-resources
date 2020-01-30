@@ -45,9 +45,11 @@ Esri がホストしている CDN にインターネット経由で参照する�
 本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
  プロパティのハンドリング
  View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
- オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;   オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title;  例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
+ オブジェクトに直接値を書き込む方法
+// ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;  オブジェクトから直接値を読み取る方法
+// ベースマップのタイトルを取得 var title = map.basemap.title;   例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
 myFeatureLayer.setDefinitionExpression(expression);  4.x では、以下の様に記述します。
-myFeatureLayer.definitionExpression = expression;  4.</description>
+myFeatureLayer.definitionExpression = expression;  4.x では、以下に記述したように .</description>
     </item>
     
     <item>
@@ -111,7 +113,8 @@ $feature.fieldName  このように、ランタイムでフィールド値を使
 pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
 https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
 pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
- node-fontnik をクローンします。  git clone https://github.</description>
+ node-fontnik をクローンします。
+git clone https://github.</description>
     </item>
     
   </channel>

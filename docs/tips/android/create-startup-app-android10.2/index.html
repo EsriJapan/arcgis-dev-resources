@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T15:01:53 JST">
+<meta name="revised" content="2020-01-30T19:41:15 JST">
 <title>スタートアップ ガイド（10.2.x） :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -579,19 +579,19 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
 <ol>
 <li><p>現在位置の変化を受け取るための <a href="http://developer.android.com/intl/ja/reference/android/location/LocationListener.html">LocationListner</a> を実装します。今回はすでに実装してあるコードを有効化します。
-<code>MainActivity.java</code> の 41 行目から 70 行目までのコメント化されたコードをコメント解除してください。（コメント解除したい範囲を選択して <code>Ctrl + /</code> を押下）
-```java
-// LocationListner を実装
-private class MyLocationListener implements LocationListener {</p>
+<code>MainActivity.java</code> の 41 行目から 70 行目までのコメント化されたコードをコメント解除してください。（コメント解除したい範囲を選択して <code>Ctrl + /</code> を押下）</p>
 
-<p>public MyLocationListener() {
+<pre><code class="language-java">// LocationListner を実装
+private class MyLocationListener implements LocationListener {
+
+public MyLocationListener() {
   super();
 }
 Point mLocation = null;
 SpatialReference wm = SpatialReference.create(102100);
-SpatialReference egs = SpatialReference.create(4326);</p>
+SpatialReference egs = SpatialReference.create(4326);
 
-<p>public void onLocationChanged(Location loc) {
+public void onLocationChanged(Location loc) {
   if (loc == null)
     return;
   // 現在位置を取得する
@@ -599,38 +599,39 @@ SpatialReference egs = SpatialReference.create(4326);</p>
   Point point = (Point) GeometryEngine.project(mLocation, egs, wm);
   // 表示縮尺を設定して現在位置へズーム
   mapView.zoomToResolution(point, 20.0);
-}</p>
+}
 
-<p>public void onProviderDisabled(String provider) {
-}</p>
+public void onProviderDisabled(String provider) {
+}
 
-<p>public void onProviderEnabled(String provider) {
-}</p>
+public void onProviderEnabled(String provider) {
+}
 
-<p>public void onStatusChanged(String provider, int status, Bundle extras) {
-}</p></li>
+public void onStatusChanged(String provider, int status, Bundle extras) {
+}
+
+}
+</code></pre></li>
 </ol>
 
-<p>}</p>
-
-<pre><code> この中で現在位置を取得しています。
-
-1. `onCreate` メソッド（38 行目）へ以下のコードを追加します。
- ```java
-  // MapView 上に現在位置を表示するために LocationDisplayManager を取得
-  LocationDisplayManager locationDisplayManager;
-  locationDisplayManager = mapView.getLocationDisplayManager();
-  // LocationDisplayManager に LocationListner を設定
-  locationDisplayManager.setLocationListener(new MyLocationListener());
-  // 現在位置を中央にして地図を表示する設定
-  locationDisplayManager.setAutoPanMode(LocationDisplayManager.AutoPanMode.LOCATION);
-  // 現在位置の表示を開始
-  locationDisplayManager.start();
-</code></pre>
+<p>この中で現在位置を取得しています。</p>
 
 <ol>
-<li>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/startup-android/Android_GPS.gif" width="230px"></li>
+<li><p><code>onCreate</code> メソッド（38 行目）へ以下のコードを追加します。</p>
+
+<pre><code class="language-java">// MapView 上に現在位置を表示するために LocationDisplayManager を取得
+LocationDisplayManager locationDisplayManager;
+locationDisplayManager = mapView.getLocationDisplayManager();
+// LocationDisplayManager に LocationListner を設定
+locationDisplayManager.setLocationListener(new MyLocationListener());
+// 現在位置を中央にして地図を表示する設定
+locationDisplayManager.setAutoPanMode(LocationDisplayManager.AutoPanMode.LOCATION);
+// 現在位置の表示を開始
+locationDisplayManager.start();
+</code></pre></li>
+
+<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/startup-android/Android_GPS.gif" width="230px"></p></li>
 </ol>
 
 <p>エミュレータで実行する場合は以下の要領で位置情報を疑似的に有効にします。
