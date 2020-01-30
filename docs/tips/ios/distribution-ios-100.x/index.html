@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T14:12:35 JST">
+<meta name="revised" content="2020-01-30T15:01:53 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -760,13 +760,13 @@
 </ol>
 
 <pre><code class="language-javascript">do {
- // ライセンスキーを設定して認証
- let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimelite,1000,rud#########,none,####################&quot;)
- print(&quot;License Result: \(result.licenseStatus)&quot;)
+  // ライセンスキーを設定して認証
+  let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimelite,1000,rud#########,day-month-year,####################&quot;)
+  print(&quot;License Result : \(result.licenseStatus)&quot;)
 }
 catch let error as NSError {
- // 認証に失敗した場合はエラーを出力
- print(&quot;Error: \(error)&quot;)
+  // 認証に失敗した場合はエラーを出力
+  print(&quot;error: \(error)&quot;)
 }
 </code></pre>
 
@@ -778,15 +778,15 @@ catch let error as NSError {
 
 <p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。</p>
 
-<pre><code class="language-javascript">  // ライセンスキーを設定して認証
-  do {
-   let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;)
-   print(&quot;License Result: \(result.licenseStatus)&quot;)
-  }
-  catch let error as NSError {
-   // 認証に失敗した場合はエラーを出力
-   print(&quot;Error: \(error)&quot;)
-  }
+<pre><code class="language-javascript">do {
+  // ライセンスキーを設定して認証
+  let result = try AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;)
+  print(&quot;License Result: \(result.licenseStatus)&quot;)
+}
+catch let error as NSError {
+  // 認証に失敗した場合はエラーを出力
+  print(&quot;Error: \(error)&quot;)
+}
 </code></pre>
 
 <p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
@@ -804,34 +804,34 @@ AGSArcGISRuntimeEnvironment.setLicenseKey(&quot;runtimeadvanced,1000,rud########
 
 <p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してライセンスを取得します。</p>
 
-<pre><code class="language-javascript"> // 表示される入力フォームから ArcGIS Online / Portal for ArcGIS にログインし認証情報を取得   
- let theURL = URL(string: &quot;https://www.arcgis.com&quot;)
- let portal = AGSPortal(url: theURL!, loginRequired: true)
+<pre><code class="language-javascript">// 表示される入力フォームから ArcGIS Online / Portal for ArcGIS にログインし認証情報を取得   
+let theURL = URL(string: &quot;https://www.arcgis.com&quot;)
+let portal = AGSPortal(url: theURL!, loginRequired: true)
     
- portal.load { (error) in
+portal.load { (error) in
   if let error = error {
-   print(error)
+    print(error)
   }
   else {
   
-   // ポータルからユーザーライセンス情報を取得           
-   portal.fetchLicenseInfo { (licenseInfo,error) in
+    // ポータルからユーザーライセンス情報を取得           
+    portal.fetchLicenseInfo { (licenseInfo,error) in
 
-     guard let error = error {
-       print(&quot;ユーザーライセンスの取得エラー \(error)&quot;)
-       return
-     }
-     // 指定ユーザーのライセンス情報を使用してライセンスを設定します
-     do {
-       let result = try AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!) 
-     }
-     catch let error as NSError {
-       print(&quot;error: \(error.localizedDescription)&quot;)
-     }
+      guard let error = error {
+        print(&quot;ユーザーライセンスの取得エラー \(error)&quot;)
+        return
+      }
 
-   }   
+      // 指定ユーザーのライセンス情報を使用してライセンスを設定します
+      do {
+        let result = try AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!) 
+      }
+      catch let error as NSError {
+        print(&quot;error: \(error.localizedDescription)&quot;)
+      }
+    }   
   }
- }
+}
 </code></pre>
 
 <pre><code class="language-javascript">注意：
@@ -847,66 +847,63 @@ Portal.portalInfo.licenseInfo を使用します。
 
 <p>出力したライセンス情報は任意の方法でローカルに保存してください。以下のコードでは、ライセンス情報を配列で出力し、AGSKeychainItem クラスを使用して Keychain に保存しています（iOS シミュレータで実行する場合は、Xcode の Capabilities 設定画面で [Keychain Sharing] を ON にしてください）。</p>
 
-<pre><code class="language-javascript">
- // 表示される入力フォームから ArcGIS Online / Portal for ArcGIS にログインし認証情報を取得   
- let theURL = URL(string: &quot;https://www.arcgis.com&quot;)
- let portal = AGSPortal(url: theURL!, loginRequired: true)
+<pre><code class="language-javascript">// 表示される入力フォームから ArcGIS Online / Portal for ArcGIS にログインし認証情報を取得   
+let theURL = URL(string: &quot;https://www.arcgis.com&quot;)
+let portal = AGSPortal(url: theURL!, loginRequired: true)
     
- portal.load { (error) in
+portal.load { (error) in
   if let error = error {
-   print(error)
+    print(error)
   }
   else {
   
-   // ポータルからユーザーライセンス情報を取得           
-   portal.fetchLicenseInfo { (licenseInfo,error) in
+    // ポータルからユーザーライセンス情報を取得           
+    portal.fetchLicenseInfo { (licenseInfo,error) in
 
-     guard let error = error {
-       print(&quot;ユーザーライセンスの取得エラー \(error)&quot;)
-       return
-     }
-     // 指定ユーザーのライセンス情報を使用してライセンスを設定します
-     do {
-       let result = try AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!) 
-     }
-     catch let error as NSError {
-       print(&quot;error: \(error.localizedDescription)&quot;)
-     }
+      guard let error = error {
+        print(&quot;ユーザーライセンスの取得エラー \(error)&quot;)
+        return
+      }
+      // 指定ユーザーのライセンス情報を使用してライセンスを設定します
+      do {
+        let result = try AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!) 
+      }
+      catch let error as NSError {
+        print(&quot;error: \(error.localizedDescription)&quot;)
+      }
 
-     // ライセンス情報を保存して、アプリを起動してオフラインでライセンスを取得
-     // この例では、licenseDictionary はキーチェーンに保存              
-     var licenseDictionary: NSDictionary?
+      // ライセンス情報を保存して、アプリを起動してオフラインでライセンスを取得
+      // この例では、licenseDictionary はキーチェーンに保存              
+      var licenseDictionary: NSDictionary?
             
-     do {licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
-     } catch {
-       print(&quot;ライセンス情報が無効です&quot;)
-     }
+      do {licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
+      } catch {
+        print(&quot;ライセンス情報が無効です&quot;)
+      }
 
-     let keychainItem = AGSKeychainItem(identifier: &quot;com.your_org.your_app_name&quot;, accessGroup: nil, acrossDevices: false)
-     keychainItem.writeObject(toKeychain: licenseDictionary!, completion: { (writeError) in
-       if let error = writeError {
-         print(&quot;Keychain への書き込みエラー \(error)&quot;)
-       }
-     }) 
-
-   }   
+      let keychainItem = AGSKeychainItem(identifier: &quot;com.your_org.your_app_name&quot;, accessGroup: nil, acrossDevices: false)
+      keychainItem.writeObject(toKeychain: licenseDictionary!, completion: { (writeError) in
+        if let error = writeError {
+          print(&quot;Keychain への書き込みエラー \(error)&quot;)
+        }
+      }) 
+    }   
   }
- }
+}
 
- ・・・・・・
- 
- // Keychain からライセンス情報を取得
- let keychainItem = AGSKeychainItem(identifier: &quot;com.your_org.your_app_name&quot;, accessGroup: nil, acrossDevices: false)
+・・・・・・
+
+// Keychain からライセンス情報を取得
+let keychainItem = AGSKeychainItem(identifier: &quot;com.your_org.your_app_name&quot;, accessGroup: nil, acrossDevices: false)
         
- //　キーチェーンから JSON 形式でライセンスを取得                
- let licenseDictionary = keychainItem.readObjectFromKeychain() as? NSDictionary
+//　キーチェーンから JSON 形式でライセンスを取得                
+let licenseDictionary = keychainItem.readObjectFromKeychain() as? NSDictionary
 
- // JSON からライセンス情報を生成
- let licenseInfo = try! AGSLicenseInfo.fromJSON(licenseDictionary!) as? AGSLicenseInfo
+// JSON からライセンス情報を生成
+let licenseInfo = try! AGSLicenseInfo.fromJSON(licenseDictionary!) as? AGSLicenseInfo
 
- // ライセンスキーを設定して認証
- AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!, error: errorPointer)
-
+// ライセンスキーを設定して認証
+AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!, error: errorPointer)
 </code></pre>
 
 
