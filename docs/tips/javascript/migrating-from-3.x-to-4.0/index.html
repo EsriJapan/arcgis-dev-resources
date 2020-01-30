@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-30T19:41:15 JST">
+<meta name="revised" content="2020-01-30T19:49:30 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -540,18 +540,20 @@
 <p>3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。</p>
 
 <ul>
-<li><p><strong>オブジェクトに直接値を書き込む方法</strong></p>
+<li><strong>オブジェクトに直接値を書き込む方法</strong></li>
+</ul>
 
 <pre><code class="language-javascript">// ベースマップのタイプを設定
 map.basemap = 'oceans';
-</code></pre></li>
+</code></pre>
 
-<li><p><strong>オブジェクトから直接値を読み取る方法</strong></p>
+<ul>
+<li><strong>オブジェクトから直接値を読み取る方法</strong></li>
+</ul>
 
 <pre><code class="language-javascript">// ベースマップのタイトルを取得
 var title = map.basemap.title;
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。</p>
 
@@ -594,33 +596,35 @@ var title = map.basemap.title;
 <p>下記の構文は、作成した Map を 2D（MapView）と 3D（SceneView）で表示する方法を示しています。</p>
 
 <ul>
-<li><p><strong>2D（MapView）で表示する方法</strong></p>
+<li><strong>2D（MapView）で表示する方法</strong></li>
+</ul>
 
 <pre><code class="language-javascript">function (Map, MapView){
-map = new Map({
-basemap: &quot;topo&quot;
-});
-view = new MapView({
-container: &quot;viewDiv&quot;,
-map: map,
-scale: 2400000
-});
+  map = new Map({
+    basemap: &quot;topo&quot;
+  });
+  view = new MapView({
+    container: &quot;viewDiv&quot;,
+    map: map,
+    scale: 2400000
+  });
 }
-</code></pre></li>
+</code></pre>
 
-<li><p><strong>3D（SceneView）で表示する方法</strong></p>
-
-<pre><code class="language-javascript">function (Map, SceneView){
-map = new Map({
-  basemap: &quot;topo&quot;
-});
-view = new SceneView({
-  container: &quot;viewDiv&quot;,
-  map: map,
-  scale: 2400000
-});
-</code></pre></li>
+<ul>
+<li><strong>3D（SceneView）で表示する方法</strong></li>
 </ul>
+
+<pre><code class="language-javascript">  function (Map, SceneView){
+    map = new Map({
+      basemap: &quot;topo&quot;
+    });
+    view = new SceneView({
+      container: &quot;viewDiv&quot;,
+      map: map,
+      scale: 2400000
+    });
+</code></pre>
 
 <h2 id="map-と-layer-の仕様">Map と Layer の仕様</h2>
 
@@ -643,8 +647,8 @@ view = new SceneView({
 <li>モジュール名の統一（全てのモジュール名は大文字から始まります）</li>
 <li>サポート クラスは、API リファレンスをより組織化するために support フォルダに
 移動しました(例: <code>esri/layers/support</code>, <code>esri/tasks/support</code>)。</li>
-
-<li><p><code>esri/config</code> の構成が変更され、 <code>esriConfig.defaults</code> のプロパティは <code>esriConfig</code> に移動しました。以下は、デフォルトで使用されるジオメトリ サービスの設定方法の例です。</p>
+<li><code>esri/config</code> の構成が変更され、 <code>esriConfig.defaults</code> のプロパティは <code>esriConfig</code> に移動しました。以下は、デフォルトで使用されるジオメトリ サービスの設定方法の例です。</li>
+</ul>
 
 <pre><code class="language-javascript">// 3.x
 esriConfig.defaults.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
@@ -652,9 +656,11 @@ esriConfig.defaults.geometryService = new GeometryService(&quot;&lt;ジオメト
 
 <pre><code class="language-javascript">// 4.x
 esriConfig.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
-</code></pre></li>
+</code></pre>
 
-<li><p><code>defaults.io</code> オブジェクトは <code>esriConfig.request</code> に移動しました。</p>
+<ul>
+<li><code>defaults.io</code> オブジェクトは <code>esriConfig.request</code> に移動しました。</li>
+</ul>
 
 <pre><code class="language-javascript">// 3.x
 esriConfig.defaults.io.alwaysUseProxy = true;
@@ -662,13 +668,12 @@ esriConfig.defaults.io.alwaysUseProxy = true;
 
 <pre><code class="language-javascript">// 4.x
 esriConfig.request.alwaysUseProxy = true;
-</code></pre></li>
+</code></pre>
 
-<li><p>3 つの <code>*-all</code> レガシー モジュール（<code>Editor-all</code>, <code>AttributeInspector-all</code>, <code>TemplatePicker-all</code>）は削除されました。</p></li>
-
-<li><p>各コンストラクタは JSON をサポートしません。代わりに、<code>fromJSON()</code> メソッド（例: <code>Graphic.fromJSON()</code> ）を使用してください。</p></li>
-
-<li><p><code>FeatureLayer</code> はグラフィックを保持しません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-LayerView.html">LayerView</a> が <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html">FeatureLayer</a> のフィーチャを表すグラフィックを描画します。</p></li>
+<ul>
+<li>3 つの <code>*-all</code> レガシー モジュール（<code>Editor-all</code>, <code>AttributeInspector-all</code>, <code>TemplatePicker-all</code>）は削除されました。</li>
+<li>各コンストラクタは JSON をサポートしません。代わりに、<code>fromJSON()</code> メソッド（例: <code>Graphic.fromJSON()</code> ）を使用してください。</li>
+<li><code>FeatureLayer</code> はグラフィックを保持しません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-LayerView.html">LayerView</a> が <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html">FeatureLayer</a> のフィーチャを表すグラフィックを描画します。</li>
 </ul>
 
 <h2 id="web-マップのサポート">Web マップのサポート</h2>
