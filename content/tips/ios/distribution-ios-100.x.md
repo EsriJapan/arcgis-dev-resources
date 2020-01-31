@@ -247,8 +247,8 @@ portal.load { (error) in
         print("error: \(error.localizedDescription)")
       }
 
-      // ライセンス情報を保存して、アプリを起動してオフラインでライセンスを取得
-      // この例では、licenseDictionary はキーチェーンに保存              
+      // ライセンス情報を保存して、アプリを起動してオフラインでライセンスを取得
+      // この例では、licenseDictionary はキーチェーンに保存              
       var licenseDictionary: NSDictionary?
             
       do {licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
