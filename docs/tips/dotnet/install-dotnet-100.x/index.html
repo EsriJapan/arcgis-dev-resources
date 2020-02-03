@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-31T10:26:48 JST">
+<meta name="revised" content="2020-01-31T17:19:25 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -544,46 +544,29 @@
 <ol>
 <li><p>Visual Studio を起動して [ファイル] メニューから [新規作成] → [プロジェクト] を選択します。</p></li>
 
-<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [インストール済み] → [Visual C#] → [Windows デスクトップ] → [WPF アプリ] を選択します。プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。</p></li>
-</ol>
+<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [インストール済み] → [Visual C#] → [Windows デスクトップ] → [WPF アプリ] を選択します。プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。
+　<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_1.png" width="550px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_1.png" width="550px"></p>
+<li><p>新しい WPF アプリケーションのプロジェクトが作成されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_2.png" width="350px"></p></li>
 
-<ol>
-<li>新しい WPF アプリケーションのプロジェクトが作成されます。</li>
-</ol>
+<li><p>ArcGIS Runtime SDK for .NET をインストールするために「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_WPF_NuGetPackageManager.png" width="350px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_WPF_Projects_2.png" width="350px"></p>
+<li><p>NuGet パッケージの管理から ArcGIS Runtime SDK をインストールします。
+検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから「Esri.ArcGISRuntime.WPF」を選択して、インストールをクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeWPF.png" width="550px"></p></li>
 
-<ol>
-<li>ArcGIS Runtime SDK for .NET をインストールするために「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。</li>
-</ol>
+<li><p>[ライセンスへの同意] 画面が表示されるので、[同意する] をクリックします。[同意する] をクリックすることでインストールが実行されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_WPF.png" width="350px">
+    ※インストールが正常に終了した場合は、以下の画面のようにインストール済みの一覧に Esri.ArcGISRuntime.WPF が表示されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeWPF.png" width="550px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_WPF_NuGetPackageManager.png" width="350px"></p>
-
-<ol>
-<li>NuGet パッケージの管理から ArcGIS Runtime SDK をインストールします。
-検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから「Esri.ArcGISRuntime.WPF」を選択して、インストールをクリックします。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeWPF.png" width="550px"></p>
-
-<ol>
-<li>[ライセンスへの同意] 画面が表示されるので、[同意する] をクリックします。[同意する] をクリックすることでインストールが実行されます。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_WPF.png" width="350px"></p>
-
-<p>※インストールが正常に終了した場合は以下の画面ように、インストール済みの一覧に Esri.ArcGISRuntime.WPF が表示されます。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeWPF.png" width="550px"></p>
-
-<ol>
 <li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml</code> の [XAML] ビューを開きます。</p></li>
 
 <li><p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 
-<pre><code class="language-XML">　xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
+<pre><code class="language-XML">xmlns:esri=&quot;http://schemas.esri.com/arcgis/runtime/2013&quot;
 </code></pre>
 
 <pre><code class="language-XML">&lt;Window x:Class=&quot;MyDesktopApp.MainWindow&quot;
@@ -623,32 +606,30 @@
 &lt;/Window&gt;
 </code></pre></li>
 
-<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p></li>
-</ol>
+<li><p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
 
-<pre><code class="language-C#:MainPage.xaml.cs">  using Esri.ArcGISRuntime.Mapping;
+<pre><code class="language-C#:MainPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
 
-  namespace MyDesktopApp
-  {
-      public partial class MainWindow : Window
-      {
-          public MainWindow()
-          {
-              InitializeComponent();
-              Initialize();
-          }
+namespace MyDesktopApp
+{
+   public partial class MainWindow : Window
+   {
+       public MainWindow()
+       {
+           InitializeComponent();
+           Initialize();
+       }
 
-          private void Initialize()
-          {
-              var map = new Map(Basemap.CreateStreets());
-              MyMapView.Map = map;
-          }
-      }
-  }
-</code></pre>
+       private void Initialize()
+       {
+           var map = new Map(Basemap.CreateStreets());
+           MyMapView.Map = map;
+       }
+    }
+}
+</code></pre></li>
 
-<ol>
-<li>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</li>
+<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。WPF アプリケーションが起動し、地図が表示されれば完了です。</p></li>
 </ol>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/WPF_App.png" width="550px"></p>
@@ -660,51 +641,31 @@
 <ol>
 <li><p>Visual Studio を起動して [ファイル] メニューから [新規作成] → [プロジェクト] を選択します。</p></li>
 
-<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [インストール済み] → [Visual C#] → [Windows ユニバーサル] → [空白のアプリ] を選択し、プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。</p></li>
-</ol>
+<li><p>[新しいプロジェクト] ダイアログが表示されます。ツリー ペインから [インストール済み] → [Visual C#] → [Windows ユニバーサル] → [空白のアプリ] を選択し、プロジェクトの名前とプロジェクトを保存するディレクトリを指定して [OK] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_1.png" width="550px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_1.png" width="550px"></p>
+<li><p>アプリケーションがサポートするプラットフォームのバージョンを選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Windows_Projects.png" width="350px"></p></li>
 
-<ol>
-<li>アプリケーションがサポートするプラットフォームのバージョンを選択します。</li>
-</ol>
+<li><p>新しい UWP アプリケーションのプロジェクトが作成されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_2.png" width="350px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Windows_Projects.png" width="350px"></p>
+<li><p>ArcGIS Runtime SDK for .NET をインストールするために「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_UWP_NuGetPackageManager.png" width="350px"></p></li>
 
-<ol>
-<li>新しい UWP アプリケーションのプロジェクトが作成されます。</li>
-</ol>
+<li><p>NuGet パッケージの管理から ArcGIS Runtime SDK をインストールします。検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから「Esri.ArcGISRuntime.UWP」を選択して、インストールをクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeUWP.png" width="550px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_UWP_Projects_2.png" width="350px"></p>
+<li><p>[ライセンスへの同意] 画面が表示されますので、[同意する] をクリックします。[同意する] をクリックすることでインストールが実行されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_UWP.png" width="350px">
+※インストールが正常に終了した場合は以下の画面ように、インストール済みの一覧に Esri.ArcGISRuntime.UWP が表示されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeUWP.png" width="550px"></p></li>
 
-<ol>
-<li>ArcGIS Runtime SDK for .NET をインストールするために「NuGet パッケージの管理」を開きます。[ソリューション エクスプローラー] から [参照] を右クリックし、[NuGet パッケージの管理] を選択します。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/start_UWP_NuGetPackageManager.png" width="350px"></p>
-
-<ol>
-<li>NuGet パッケージの管理から ArcGIS Runtime SDK をインストールします。検索ボックスに『ArcGIS Runtime』と入力して検索を行います。検索されたリストから「Esri.ArcGISRuntime.UWP」を選択して、インストールをクリックします。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Install_ArcGISRuntimeUWP.png" width="550px"></p>
-
-<ol>
-<li>[ライセンスへの同意] 画面が表示されますので、[同意する] をクリックします。[同意する] をクリックすることでインストールが実行されます。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/license_agreement_UWP.png" width="350px"></p>
-
-<p>※インストールが正常に終了した場合は以下の画面ように、インストール済みの一覧に Esri.ArcGISRuntime.UWP が表示されます。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Installed_ArcGISRuntimeUWP.png" width="550px"></p>
-
-<ol>
 <li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml</code> の [XAML] ビューを開きます。</p></li>
 
 <li><p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 
-<pre><code class="language-XML"> xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
+<pre><code class="language-XML">xmlns:esriUI=&quot;using:Esri.ArcGISRuntime.UI.Controls&quot;
 </code></pre>
 
 <pre><code class="language-XML">&lt;Page
@@ -771,111 +732,76 @@ namespace MyUWPApp
 }
 </code></pre></li>
 
-<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。UWP アプリが起動し、地図が表示されれば完了です。</p></li>
+<li><p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。UWP アプリが起動し、地図が表示されれば完了です。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/UWP_App.png" width="550px"></p></li>
 </ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/UWP_App.png" width="550px"></p>
 
 <p><br/></p>
 
 <h2 id="xamarin-forms-アプリケーション">Xamarin Forms アプリケーション</h2>
 
-<p>macOS を使用して開発する場合の手順を紹介します。
-1. Visual Studio for Mac を起動して [ファイル] メニューから [新しいソリューション] を選択します。</p>
+<p>macOS を使用した開発の手順を紹介します。</p>
 
 <ol>
-<li>[新しいプロジェクト] 画面が表示されます。ツリー ペインから [マルチプラットフォーム] → [アプリ] → [空白フォームのアプリ] を選択します。</li>
-</ol>
+<li><p>Visual Studio for Mac を起動して [ファイル] メニューから [新しいソリューション] を選択します。</p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_1.png" width="500px"></p>
+<li><p>[新しいプロジェクト] 画面が表示されます。ツリー ペインから [マルチプラットフォーム] → [アプリ] → [空白フォームのアプリ] を選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_1.png" width="500px"></p></li>
 
-<ol>
-<li>アプリ名を入力し、ターゲット プラットフォームを選択します。[次へ] をクリックします。</li>
-</ol>
+<li><p>アプリ名を入力し、ターゲット プラットフォームを選択します。[次へ] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_2.png" width="500px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_2.png" width="500px"></p>
+<li><p>プロジェクト名やソリューション名、プロジェクトの場所などを確認して、問題がなければ [作成] をクリックしてプロジェクトを作成します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_3.png" width="500px"></p></li>
 
-<ol>
-<li>プロジェクト名やソリューション名、プロジェクトの場所などを確認して、問題がなければ [作成] をクリックしてプロジェクトを作成します。</li>
-</ol>
+<li><p>新しい Xamarin.Forms アプリケーションのプロジェクトが作成されます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project.png" width="550px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_3.png" width="500px"></p>
+<li><p>ArcGIS Runtime SDK for .NET を NuGet パッケージからインストールします。NuGet パッケージのインストールは、Android、iOS とそれぞれに対してインストールを行います。はじめに Android に対してインストールを行います。Android プロジェクトの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_4.png" width="250px"></p></li>
 
-<ol>
-<li>新しい Xamarin.Forms アプリケーションのプロジェクトが作成されます。</li>
-</ol>
+<li><p>[パッケージを追加] 画面が起動するので、検索項目の欄に『ArcGIS Runtime』と入力して検索を行います。いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_5.png" width="400px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project.png" width="550px"></p>
+<li><p>[ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_6.png" width="300px"></p></li>
 
-<ol>
-<li>ArcGIS Runtime SDK for .NET を NuGet パッケージからインストールします。NuGet パッケージのインストールは、Android、iOS とそれぞれに対してインストールを行います。はじめに Android に対してインストールを行います。Android プロジェクトの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。</li>
-</ol>
+<li><p>同様の手順で iOS に対してもインストールを行います。iOS プロジェクトの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_7.png" width="250px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_4.png" width="250px"></p>
+<li><p>[パッケージを追加] 画面が起動するので、検索項目の欄に『ArcGIS Runtime』と入力して検索を行います。いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_8.png" width="400px"></p></li>
 
-<ol>
-<li>[パッケージを追加] 画面が起動するので、検索項目の欄に『ArcGIS Runtime』と入力して検索を行います。いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。</li>
-</ol>
+<li><p>[ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_9.png" width="300px"></p></li>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_5.png" width="400px"></p>
+<li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml</code> の [XAML] ビューを開きます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_11.png" width="500px"></p></li>
 
-<ol>
-<li>[ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_6.png" width="300px"></p>
-
-<ol>
-<li>同様の手順で iOS に対してもインストールを行います。iOS プロジェクトの [パッケージ] を右クリックして、[パッケージの追加] をクリックします。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_7.png" width="250px"></p>
-
-<ol>
-<li>[パッケージを追加] 画面が起動するので、検索項目の欄に『ArcGIS Runtime』と入力して検索を行います。いくつかパッケージが表示されますが　Xamarin.Forms 用の [Esri.ArcGISRuntime.Xamarin.Forms] を選択して、[パッケージを追加] をクリックします。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_8.png" width="400px"></p>
-
-<ol>
-<li>[ライセンスの同意] 画面で [同意する] をクリックしてパッケージの追加を行います。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_9.png" width="300px"></p>
-
-<ol>
-<li>[ソリューション エクスプローラー] から <code>MainPage.xaml</code> の [XAML] ビューを開きます。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_11.png" width="500px"></p>
-
-<ol>
 <li><p>XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 
-<pre><code class="language-XML"> xmlns:esriUI=&quot;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&quot;
+<pre><code class="language-XML">xmlns:esriUI=&quot;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&quot;
 </code></pre>
 
 <pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
-           xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
-           xmlns:local=&quot;clr-namespace:MyXamarinFormsApp&quot;
-           xmlns:esriUI=&quot;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&quot;
-           x:Class=&quot;MyXamarinFormsApp.MainPage&quot;&gt;
-  &lt;StackLayout&gt;
-      &lt;!-- Place new controls here --&gt;
-      &lt;Label Text=&quot;Welcome to Xamarin.Forms!&quot; HorizontalOptions=&quot;Center&quot; VerticalOptions=&quot;CenterAndExpand&quot; /&gt;
-  &lt;/StackLayout&gt;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+        xmlns:local=&quot;clr-namespace:MyXamarinFormsApp&quot;
+        xmlns:esriUI=&quot;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&quot;
+        x:Class=&quot;MyXamarinFormsApp.MainPage&quot;&gt;
+    &lt;StackLayout&gt;
+    &lt;!-- Place new controls here --&gt;
+    &lt;Label Text=&quot;Welcome to Xamarin.Forms!&quot; HorizontalOptions=&quot;Center&quot; VerticalOptions=&quot;CenterAndExpand&quot; /&gt;
+    &lt;/StackLayout&gt;
 &lt;/ContentPage&gt;
-</code></pre></li>
-</ol>
+</code></pre>
 
-<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+<p>上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p></li>
 
-<ol>
 <li><p>StackLayout エレメントを以下のコードに置き換えます。</p>
 
 <pre><code class="language-XML">&lt;Grid&gt;
-  &lt;esriUI:MapView x:Name=&quot;MyMapView&quot;/&gt;
+   &lt;esriUI:MapView x:Name=&quot;MyMapView&quot;/&gt;
 &lt;/Grid&gt;
 </code></pre>
 
@@ -885,52 +811,43 @@ namespace MyUWPApp
            xmlns:local=&quot;clr-namespace:MyXamarinFormsApp&quot;
            xmlns:esriUI=&quot;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&quot;
            x:Class=&quot;MyXamarinFormsApp.MainPage&quot;&gt;
-  &lt;Grid&gt;
-      &lt;esriUI:MapView x:Name=&quot;MyMapView&quot;/&gt;
-  &lt;/Grid&gt;
+    &lt;Grid&gt;
+       &lt;esriUI:MapView x:Name=&quot;MyMapView&quot;/&gt;
+    &lt;/Grid&gt;
 &lt;/ContentPage&gt;
 </code></pre></li>
 
 <li><p>[ソリューション エクスプローラー] から <code>MainPage.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
 
-<p>```C#:MyXamarinFormsAppPage.xaml.cs
-using Esri.ArcGISRuntime.Mapping;</p></li>
-</ol>
+<pre><code class="language-C#:MyXamarinFormsAppPage.xaml.cs">using Esri.ArcGISRuntime.Mapping;
 
-<p>namespace MyXamarinFormsApp
-  {
+namespace MyXamarinFormsApp
+{
     public partial class MainPage : ContentPage
     {
-      public MainPage()
-      {
-        InitializeComponent();
-        Initialize();
-      }</p>
+        public MainPage()
+        {
+            InitializeComponent();
+            Initialize();
+        }
 
-<pre><code>  private void Initialize()
-  {
-    var map = new Map(Basemap.CreateStreets());
-    MyMapView.Map = map;
-  }
+        private void Initialize()
+        {
+            var map = new Map(Basemap.CreateStreets());
+            MyMapView.Map = map;
+        }
+    }
 }
-</code></pre>
+</code></pre></li>
 
-<p>}
-    ```</p>
+<li><p>iOS または Android プロジェクトを選択して、ビルドします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px"></p></li>
 
-<ol>
-<li>iOS または Android プロジェクトを選択して、ビルドします。</li>
+<li><p>アプリが起動し地図が表示されれば完了です。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px"></p></li>
 </ol>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_10.png" width="500px"></p>
-
-<ol>
-<li>アプリが起動し地図が表示されれば完了です。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px"></p>
-
-<p>※ Android プロジェクトのビルドで <code>The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.</code> のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーで Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で <code>x86_64</code> のチェックを外します。</p>
+<h6 id="android-プロジェクトのビルドで-the-esri-arcgisruntime-xamarin-android-package-does-not-currently-support-building-for-the-x86-64-architecture-のエラーが発生してビルドに失敗する場合は-ソリューション-エクスプローラーの-android-プロジェクトの右クリックから-オプション-を選択して-プロジェクト-オプション-画面を開き-ビルド-android-のビルド-詳細設定-サポートされる-abi-で-x86-64-のチェックを外します">※ Android プロジェクトのビルドで「<code>The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.</code> 」のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーの Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で <code>x86_64</code> のチェックを外します。</h6>
 
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_12.png" width="500px"></p>
 
