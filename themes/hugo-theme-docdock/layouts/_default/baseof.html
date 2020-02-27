@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {{ template "_internal/google_analytics_async.html" . }}
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{if .Site.Params.themeStyle}}
       {{ partial (printf "%s/head.html" .Site.Params.themeStyle) . }}
