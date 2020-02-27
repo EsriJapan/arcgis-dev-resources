@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
     <title>ArcGIS for Developer 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-31T17:19:25 JST">
+<meta name="revised" content="2020-02-27T13:49:08 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -59,6 +71,100 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-map/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-map/">マップの作成</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリの作成</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/authentication/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/authentication/">認証</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/authentication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/authentication/">
+            認証パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/register-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/register-app/">
+            アプリの登録と認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/proxy-services/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/proxy-services/">
+            プロキシ サービスの利用
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
@@ -498,13 +604,13 @@ Project ツールウィンドウ で「Android」を選択して「Manifests」�
 <li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
 <code>java
 allprojects {
-repositories {
-    jcenter()
-    // esri arcgis maven リポジトリの追加
-    maven {
-        url 'https://esri.bintray.com/arcgis'
-    }
-}
+	repositories {
+		jcenter()
+		// esri arcgis maven リポジトリの追加
+		maven {
+			url 'https://esri.bintray.com/arcgis'
+		}
+	}
 }
 </code>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>
