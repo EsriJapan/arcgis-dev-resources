@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-02-27T13:49:08 JST">
+<meta name="revised" content="2020-03-09T18:25:37 JST">
 <title>ArcGIS API for Python のための基礎環境：conda入門 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -396,6 +396,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
@@ -496,6 +503,7 @@ if (!doNotTrack) {
       <option value="/arcgis-dev-resources/tips/python/python-api-install/" >-- インストール ガイド</option>
       <option value="/arcgis-dev-resources/tips/python/python-api-jnsetup/" >-- Jupyter Notebook を使ってみよう</option>
       <option value="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" >-- Jupyter Lab を使ってみよう</option>
+      <option value="/arcgis-dev-resources/tips/python/automate-tasks/" >-- スクリプト実行の自動化</option>
   
     <option value="/arcgis-dev-resources/tips/visualization/" >
   - 
@@ -538,7 +546,7 @@ if (!doNotTrack) {
 ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後の<a href="../python-api-install">インストールガイド</a>での環境作成を行いやすくなります。</p>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/conda.png" width="500px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/conda.png" width="500px">
 </div>
 
 <h2 id="conda-の基本">conda の基本</h2>
@@ -587,7 +595,7 @@ conda を使用する場合、次の 2 つの選択肢があります。</p>
 </ul>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/condalist_Pro.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/condalist_Pro.png" width="800px">
 <p>ArcGIS Pro の conda 上の初期環境</p>
 </div>
 
@@ -607,7 +615,7 @@ ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。<
 </ul>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool.jpg" width="900px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool.jpg" width="900px">
 <p>(左) Python パッケージ マネージャー、(中) Python コマンド プロンプト、(右) コマンド プロンプト (windows)<p>
 </div>
 
@@ -616,7 +624,7 @@ ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。<
 <p>Anaconda をインストールすると Python、conda、その他多数のパッケージが <code>base</code> という 1 つの環境にインストールされます。</p>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/AnacondaPrmptRoot00.png" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/AnacondaPrmptRoot00.png" width="600px">
 <p>Anaconda Prompt 初期の環境<p>
 </div>
 
@@ -635,7 +643,7 @@ conda の環境を包括的に管理するための GUI アプリケーション
 </ul>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/managementTool2.jpg" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool2.jpg" width="600px">
 <p>Anaconda Navigator (左) と Anaconda Prompt (右)<p>
 </div>
 
@@ -658,11 +666,6 @@ conda の環境を包括的に管理するための GUI アプリケーション
 <!-- * macOS と Linux
 
 `source activate <environment_name>` -->
-
-<div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/activate_base.png" width="800px">
-<p>Anaconda Prompt から起動したとき</p>
-</div>
 
 <p>その他のコマンドの詳細については、<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html#activating-an-environment">環境のアクティブ化 (英語)</a>を参照してください。</p>
 
@@ -690,7 +693,7 @@ conda の環境を包括的に管理するための GUI アプリケーション
 <p>arcgis パッケージを格納するために esri という名前のチャネルに conda リポジトリが作成されています。 <code>conda install</code> コマンドは、チャネルにアクセスし、特定の conda 環境にパッケージをインストールしています。</p>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/esrianaconda150.jpg" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/esrianaconda150.jpg" width="600px">
 <p>Anaconda クラウド上の esri チャネル<p>
 </div>
 </blockquote>

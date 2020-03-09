@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-02-27T13:49:08 JST">
+<meta name="revised" content="2020-03-09T18:25:37 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -393,6 +393,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
             Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
           </a>
         </div>
     </li>
@@ -774,10 +781,10 @@ if (!doNotTrack) {
 <pre><code class="language-java"> // ライセンスキーを設定して認証
  LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(&quot;runtimelite,1000,rud#########,day-month-year,####################&quot;);
  if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
- 	Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
+    Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
  }else{
- 	// TODO ライセンスが無効の場合の処理
- 	Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+    // TODO ライセンスが無効の場合の処理
+    Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
  }
 </code></pre>
 
@@ -792,10 +799,10 @@ if (!doNotTrack) {
 <pre><code class="language-java">// ライセンスキーを設定して認証:runtimebasic/runtimestandard/runtimeadvanced
 LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(&quot;runtimebasic,1000,rud#########,day-month-year,####################&quot;);
 if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
-	Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
+    Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
 }else{
-	// TODO ライセンスが無効の場合の処理
-	Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+    // TODO ライセンスが無効の場合の処理
+    Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
 }
 </code></pre>
 

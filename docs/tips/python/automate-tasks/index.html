@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-03-09T18:25:37 JST">
-<title>ArcGIS Runtime SDK for Android :: ArcGIS for Developer 開発リソース集</title>
+<title>スクリプト実行の自動化 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -29,13 +29,13 @@ if (!doNotTrack) {
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="ArcGIS Runtime SDK for Android の開発に役立つガイド集です。">
+<meta name="description" content="タスクスケジューラや cron を使用した Python スクリプトの実行の自動化について紹介します。">
 
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/android/">
+  <body data-url="/arcgis-dev-resources/tips/python/automate-tasks/">
     
       <header>
   <div class="logo">
@@ -296,11 +296,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item parent active haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
@@ -355,10 +354,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
@@ -396,7 +396,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
             スクリプト実行の自動化
@@ -489,19 +489,22 @@ if (!doNotTrack) {
     <option value="/arcgis-dev-resources/tips/dotnet/" >
   - 
    ArcGIS Runtime SDK for .NET</option>
-    <option value="/arcgis-dev-resources/tips/android/"  selected>
+    <option value="/arcgis-dev-resources/tips/android/" >
   - 
-   ArcGIS Runtime SDK for Android</option> 
-      <option value="/arcgis-dev-resources/tips/android/install-android-100.x/" >-- インストール ガイド</option>
-      <option value="/arcgis-dev-resources/tips/android/distribution-android-100.x/" >-- アプリケーション配布ガイド</option>
-      <option value="/arcgis-dev-resources/tips/android/migration-android-100.x/" >-- バージョン 10.2.x から 100.x への移行</option>
-  
+   ArcGIS Runtime SDK for Android</option>
     <option value="/arcgis-dev-resources/tips/ios/" >
   - 
    ArcGIS Runtime SDK for iOS</option>
     <option value="/arcgis-dev-resources/tips/python/" >
   - 
-   ArcGIS API for Python</option>
+   ArcGIS API for Python</option> 
+      <option value="/arcgis-dev-resources/tips/python/python-api-concepts/" >-- ArcGIS API for Python のコンセプト</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-conda/" >-- ArcGIS API for Python のための基礎環境：conda入門</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-install/" >-- インストール ガイド</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-jnsetup/" >-- Jupyter Notebook を使ってみよう</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" >-- Jupyter Lab を使ってみよう</option>
+      <option value="/arcgis-dev-resources/tips/python/automate-tasks/"  selected>-- スクリプト実行の自動化</option>
+  
     <option value="/arcgis-dev-resources/tips/visualization/" >
   - 
    データ ビジュアライゼーション</option>
@@ -531,37 +534,182 @@ if (!doNotTrack) {
       </div>
     
 
-    <h1>ArcGIS Runtime SDK for Android</h1>
+    <h1>スクリプト実行の自動化</h1>
     
     
     
+    
 
-<p>ArcGIS Runtime SDK for Android の開発に役立つガイド集です。</p>
+<p>ArcGIS API for Python や ArcPy を使うことで、様々な GIS タスクを自動化することが可能です。<br>
+ここでは、例として以下のようなディレクトリ構成で実行する Python スクリプトを作成したと想定し、そのスクリプトを Windows 及び Linux で 30 分ごとに無期限で定期実行する方法を紹介します。</p>
 
+<p>py-script/<br>
+　├ config.ini<br>
+　└ task.py</p>
 
+<p>task.py は実行する Python スクリプト、config.ini は task.py の実行に必要なパラメータを記載した設定ファイルとします。</p>
 
-<ul class="children children-li">
+<h3 id="windows-のタスク-スケジューラを使用する場合">Windows のタスク スケジューラを使用する場合</h3>
 
-<span><li>
-		<a href="/arcgis-dev-resources/tips/android/install-android-100.x/" >インストール ガイド</a></li>
-<p>初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。</p>
-</span>
+<p>Windows では<a href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%B9%E3%82%AF%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%A9">タスク スケジューラ</a>を使用することでプログラムやスクリプトを決められた時間や一定の間隔で実行することができます。</p>
 
-<span><li>
-		<a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/" >アプリケーション配布ガイド</a></li>
-<p>ArcGIS Runtime SDK for Android を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を紹介します。</p>
-</span>
+<p>タスク スケジューラは以下の手順で設定します。</p>
 
-<span><li>
-		<a href="/arcgis-dev-resources/tips/android/migration-android-100.x/" >バージョン 10.2.x から 100.x への移行</a></li>
-<p>今まで ArcGIS Runtime SDK for Android バージョン 10.2.x を使用してアプリケーションを開発されていた開発者向けのガイドです。</p>
-</span>
+<ul>
+<li><p>タスク スケジューラを開く</p>
+
+<ul>
+<li>スタート メニューからタスク スケジューラを検索して開く
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/task-scheduler.png" width="600px">
+</div></li>
+</ul></li>
+
+<li><p>右側の [操作] ペインから [タスクの作成] をクリック</p>
+
+<ul>
+<li>新規タスクを作成するウィザードが開きます
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/create-task.png" width="300px">
+</div></li>
+</ul></li>
+
+<li><p>[全般] タブ内のパラメーターを設定する</p>
+
+<ul>
+<li>名前：タスクの名前</li>
+<li>説明：タスクの説明を記載</li>
+<li>セキュリティ オプション：
+
+<ul>
+<li>タスク実行時に使う Windows のユーザーアカウントを指定</li>
+<li>[ユーザーがログオンしているかどうかにかかわらず実行する] をクリック</li>
+<li>[最上位の特権で実行する] にチェックを入れる</li>
+</ul></li>
+<li>[構成] は使用してしている Windows のバージョンに合わせる (今回は Windows 10)
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
+</div></li>
+</ul></li>
+
+<li><p>[トリガー] タブ内のパラメーターを設定する</p>
+
+<ul>
+<li>[新規] をクリックし、新しいトリガーを作成</li>
+<li>[タスクの開始] は [スケジュールに従う] をドロップダウンから選択</li>
+<li>任意の開始時間を指定</li>
+<li>[繰り返し間隔] にチェックを入れ、30分間を指定</li>
+<li>[継続時間] は [無期限] を指定
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/trigger.png" width="450px">
+</div></li>
+</ul></li>
+
+<li><p>[操作] タブのパラメーターを設定する</p>
+
+<ul>
+<li>[操作] のドロップダウンから [プログラムの開始] を選択</li>
+<li>[プログラム/スクリプト] で実行する Python の エグゼキュータブル ファイルのパスを指定
+
+<ul>
+<li>上の画像では ArcGIS Pro の Python パッケージ マネージャー で作成した環境の Python を指定しています。</li>
+<li>パスが不明な場合、実行したい環境で ArcGIS Pro を起動し、Python ウィンドウを表示させて以下のコードを実行することで確認することができます。
+
+<ul>
+<li>import sys</li>
+<li>sys.executable</li>
+</ul></li>
+</ul></li>
+<li>[引数の追加 (オプション)] で実行する Python スクリプトのファイル名を指定</li>
+<li>[開始 (オプション)] で Python スクリプトが格納されているディレクトリを指定
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/operation.png" width="350px">
+</div></li>
+</ul></li>
 </ul>
 
+<div class="notices warning" ><p>指定するパス等にスペースが含まれている場合はダブル クォーテーションで囲んでください。<br>
+また半角括弧 <code>()</code> が含まれるパスを指定すると正常に動作しないため、ディレクトリ名などを変更してください</p>
+</div>
 
 
+<ul>
+<li>OK ボタンをクリックし、要求された場合はユーザーアカウント情報を入力</li>
+</ul>
+
+<h3 id="linux-の-cron-を使用する場合">Linux の cron を使用する場合</h3>
+
+<p>Linux で特定のタスクを定期実行する場合は <a href="https://help.ubuntu.com/community/CronHowto?_ga=2.178480100.1147189719.1582793769-2017084658.1580817129">cron</a> が用いられます。<br>
+cron は任意のタスクを任意の時間にバックグラウンドで実行するデーモンです。実行する内容は crontab と呼ばれるテキスト ファイルに記述します。<br>
+設定方法は以下のとおりです。</p>
+
+<h4 id="crontab-を開く">crontab を開く</h4>
+
+<ul>
+<li>以下のコマンドを Bash ターミナルから実行</li>
+</ul>
+
+<pre><code>    crontab -e
+</code></pre>
+
+<ul>
+<li>次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/select-editor.png" width="350px">
+</div></li>
+</ul>
+
+<h4 id="crontab-を編集する">crontab を編集する</h4>
+
+<ul>
+<li>crontab の編集画面が開くので次のとおり実行する内容を記述</li>
+</ul>
+
+<pre><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
+</code></pre>
+
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
+</div>
+
+<ul>
+<li>記述した内容の概要は以下のとおりです
+
+<ul>
+<li><code>*/30 * * * *</code>
+
+<ul>
+<li>30分に一回の実行間隔を指定</li>
+</ul></li>
+<li><code>cd /home/&lt;ユーザー名&gt;/py-script</code>
+
+<ul>
+<li>コマンドでカレントのディレクトリを移動</li>
+</ul></li>
+<li><code>/home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python</code>
+
+<ul>
+<li>実行する Python のパスを指定</li>
+</ul></li>
+<li><code>task.py</code>
+
+<ul>
+<li>実行する Python スクリプトを指定</li>
+</ul></li>
+<li><code>&amp;&amp;</code>
+
+<ul>
+<li>連続してコマンドを実行する場合に用いるオペレーター</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="notices note" ><p>上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は<a href="../python-api">インストールガイド</a>を参照ください。</p>
+</div>
 
 
+<div class="notices info" ><p>より詳細な cron の使い方はubuntu の Community Help Wiki の <a href="https://help.ubuntu.com/community/CronHowto">Cron How to</a> をご覧下さい。</p>
+</div>
 
 
 
@@ -569,8 +717,8 @@ if (!doNotTrack) {
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/" title="バージョン 10.2.x から 100.x への移行"> <i class="fa fa-chevron-left"></i><label>バージョン 10.2.x から 100.x への移行</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/android/install-android-100.x/" title="インストール ガイド" style="margin-right: 0px;"><label>インストール ガイド</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" title="Jupyter Lab を使ってみよう"> <i class="fa fa-chevron-left"></i><label>Jupyter Lab を使ってみよう</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/visualization/" title="データ ビジュアライゼーション" style="margin-right: 0px;"><label>データ ビジュアライゼーション</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

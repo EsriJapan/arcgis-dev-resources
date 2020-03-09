@@ -352,9 +352,10 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</guid>
-      <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgisという名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
- Tips ※ Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- https://community.esri.com/docs/DOC-13655   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+      <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
+Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
+ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
     </item>
     
     <item>
@@ -467,9 +468,9 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</guid>
       <description>ここでは、対話的に Python コードを実行し、出力を地図やグラフとして視覚化することができる Jupyter Notebook をご紹介します。Jupyter Notebook はオープンソ－スとして公開されている開発ツールのひとつで、ArcGIS API for Python (以下、Python API)はこのツール上でマップ等を表示することができます。 Jupyter Notebook の詳細については、Jupyter の公式マニュアルおよびクイックスタートガイドを参照してください。 また、サポートされているブラウザについてもご確認ください。Jupyter Notebook がサポートしていないブラウザ（Internet Explorer 等）ではマップ等が表示されないことがあります。
-Jupyter Notebook の起動 conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) に次のコマンドを入力して Jupyter Notebook を起動します。
- jupyter notebook  もし起動できなかった場合は次のコマンドをお試しください (参考: Jupyter fails to start)。
- jupyter-notebook  他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。 Windows のコマンドプロンプトからコマンドを実行した場合
+Jupyter Notebook の起動 conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) 等のターミナル アプリケーションに次のコマンドを入力して Jupyter Notebook を起動します。
+jupyter notebook  もし起動できなかった場合は次のコマンドをお試しください (参考: Jupyter fails to start)。
+jupyter-notebook  他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。 Windows のコマンドプロンプトからコマンドを実行した場合
  Python API を root 以外の仮想環境を作成しインストールした場合、Jupyter Notebook を起動する前にその仮想環境をアクティベートする必要があります。root 以外の仮想環境を使用するメリットと仮想環境の作成および管理する方法の詳細については、公式のマニュアルページを参照してください。</description>
     </item>
     
@@ -563,7 +564,7 @@ JupyterLab で GIS データとグラフの操作
 JupyterLab をはじめる Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。
 インストール  バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
  次の 2 つのコマンドを実行します
- jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号 重要</description>
+ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号  * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
     </item>
     
     <item>
@@ -648,6 +649,26 @@ pbf フォントの作成 pbf ファイルは符号付き距離フィールド�
 https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
 pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
  node-fontnik をクローンします。  git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>スクリプト実行の自動化</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/automate-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/automate-tasks/</guid>
+      <description>ArcGIS API for Python や ArcPy を使うことで、様々な GIS タスクを自動化することが可能です。
+ここでは、例として以下のようなディレクトリ構成で実行する Python スクリプトを作成したと想定し、そのスクリプトを Windows 及び Linux で 30 分ごとに無期限で定期実行する方法を紹介します。
+py-script/
+├ config.ini
+└ task.py
+task.py は実行する Python スクリプト、config.ini は task.py の実行に必要なパラメータを記載した設定ファイルとします。
+Windows のタスク スケジューラを使用する場合 Windows ではタスク スケジューラを使用することでプログラムやスクリプトを決められた時間や一定の間隔で実行することができます。
+タスク スケジューラは以下の手順で設定します。
+ タスク スケジューラを開く
+ スタート メニューからタスク スケジューラを検索して開く   右側の [操作] ペインから [タスクの作成] をクリック
+ 新規タスクを作成するウィザードが開きます   [全般] タブ内のパラメーターを設定する
+ 名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる  [構成] は使用してしている Windows のバージョンに合わせる (今回は Windows 10)   [トリガー] タブ内のパラメーターを設定する</description>
     </item>
     
     <item>
