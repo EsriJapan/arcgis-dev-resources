@@ -385,7 +385,7 @@ Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API
 sudo apt install wget bzip2
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/bzip-wget.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/bzip-wget.png" width="400px">
 </div>
 
 * Linux 版の Anaconda の [ダウンロード URL](https://www.anaconda.com/distribution/#download-section) を確認し、wget でファイルをダウンロードします
@@ -404,17 +404,17 @@ wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 sh Anaconda3-2019.10-Linux-x86_64.sh
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="500px">
 </div>
 
 * インストールするディレクトリは任意のディレクトリを選ぶことができます。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="400px">
 </div>
 
 * 最後に PATH を通すか確認されます。ここでは [Anaconda のドキュメント](https://docs.anaconda.com/anaconda/user-guide/faq/#id2)に従い、yes として進めます。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="400px">
 </div>
 
 
@@ -458,7 +458,7 @@ conda install -c esri arcgis=1.7.1
 conda list arcgis
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="800px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="500px">
 </div>
 
 ESRIジャパンが運営する [GIS アプリ開発者のためのコミュニティ グループ](https://community.esri.com/groups/devcom-jp) では、Python API の機能や実際のコードを[ブログ](https://community.esri.com/groups/devcom-jp/content?filterID=contentstatus[published]~category[web-%E9%96%8B%E7%99%BA]&query=python)でご紹介しています。</br>
