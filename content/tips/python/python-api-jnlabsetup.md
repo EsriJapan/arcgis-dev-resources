@@ -26,10 +26,11 @@ Python API を JupyterLab で使用するためには、いくつかインスト
 1. 次の 2 つのコマンドを実行します</br>
     * `jupyter labextension install @jupyter-widgets/jupyterlab-manager`</br>
     * `jupyter labextension install arcgis-map-ipywidget@バージョン番号`</br></br>
-<font color="Red">重要</font></br>
 
-        * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。</br>
-        * エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。ダウンロードには [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
+    {{% notice info %}}
+    * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。</br>
+    * エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。ダウンロードには [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
+    {{% /notice %}}
 
 <!-- 1. 以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。
 
@@ -114,7 +115,7 @@ map = gis.map()
 map
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay.png" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay.png" width="600px">
 </div>
 
 ### Web マップ と Web シーン
@@ -136,7 +137,7 @@ webscene
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/map_labdisplay2d3d.png" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay2d3d.png" width="600px">
 </div>
 
 #### プログラムによるウィンドウの制御
@@ -158,7 +159,7 @@ map
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout.gif" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout.gif" width="600px">
 </div>
 
 UI ボタンによる新しいウィンドウでの地図表示は、`toggle_window_view（）` メソッドを使用することでも制御できます。次のコードでは、マップが表示されたらメソッドを使用して新しいウィンドウで表示させます。新しいウィンドウに戻すときも、このメソッドを使用可能です。</br>
@@ -175,7 +176,7 @@ map.toggle_window_view()
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_toggle.gif" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_toggle.gif" width="600px">
 </div>
 
 
@@ -208,7 +209,7 @@ for tab_mode in tab_modes:
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_interval.gif" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_interval.gif" width="600px">
 </div>
 
 
@@ -226,7 +227,7 @@ for webscene_id in ['31874da8a16d45bfbc1273422f772270', '91b46c2b162c48dba264b21
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-jnlabsetup/tab_layout_3scenes.gif" width="600px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_3scenes.gif" width="600px">
 </div>
 
 より詳細な情報は、マップ ウィジェットの [API リファレンス](https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.widgets.html#arcgis.widgets.MapView.toggle_window_view)を参照してください。

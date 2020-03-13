@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-02-27T13:49:08 JST">
+<meta name="revised" content="2020-03-13T17:28:26 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -396,6 +396,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
@@ -604,13 +611,13 @@ Project ツールウィンドウ で「Android」を選択して「Manifests」�
 <li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
 <code>java
 allprojects {
-	repositories {
-		jcenter()
-		// esri arcgis maven リポジトリの追加
-		maven {
-			url 'https://esri.bintray.com/arcgis'
-		}
-	}
+repositories {
+    jcenter()
+    // esri arcgis maven リポジトリの追加
+    maven {
+        url 'https://esri.bintray.com/arcgis'
+    }
+}
 }
 </code>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>

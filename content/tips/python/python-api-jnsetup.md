@@ -11,13 +11,17 @@ Jupyter Notebook の詳細については、[Jupyter の公式マニュアル](h
 
 ## Jupyter Notebook の起動
 
-conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) に次のコマンドを入力して Jupyter Notebook を起動します。
+conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) 等のターミナル アプリケーションに次のコマンドを入力して Jupyter Notebook を起動します。
 
-* `jupyter notebook`
+```
+jupyter notebook
+```
 
 もし起動できなかった場合は次のコマンドをお試しください (参考: [Jupyter fails to start](https://jupyter-notebook.readthedocs.io/en/stable/troubleshooting.html#jupyter-fails-to-start))。
 
-* `jupyter-notebook`
+```
+jupyter-notebook
+```
 
 他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。
 <!-- 同様に、Mac または Linux OS を実行している場合は、ターミナルで実行できます。 -->
