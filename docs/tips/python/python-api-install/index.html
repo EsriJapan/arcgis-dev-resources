@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-09T18:59:09 JST">
+<meta name="revised" content="2020-03-13T17:28:26 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -579,7 +579,7 @@ Python API は、<code>arcgis</code> という名前のパッケージで <a hre
 
 <ul>
 <li><a href="#1-オフライン時のインストール方法">1. オフライン時のインストール方法</a></li>
-<li><a href="#2-linux-版のインストール">2. Linux 版のインストール</a></li>
+<li><a href="#2-linux-へのインストール">2. Linux へのインストール</a></li>
 </ul>
 
 <hr />
@@ -963,33 +963,18 @@ arcgis.__version__
 
 <p><br></p>
 
-<h4 id="2-linux-版のインストール">2. Linux 版のインストール</h4>
+<h4 id="2-linux-へのインストール">2. Linux へのインストール</h4>
 
 <p>ArcGIS API for Python は Linux マシンにもインストールすることができます。<br>
-ここでは、例として <a href="https://ubuntu.com/download/server">Ubuntu Server</a> に Linux 版をインストールする手順をご紹介します。<br></p>
+ここでは、例として <a href="https://ubuntu.com/download/server">Ubuntu Server</a> にインストールする手順をご紹介します。<br></p>
 
-<div class="notices warning" ><p>Linux 版は現在国内未サポートです。Linux 版の利用そのものを妨げるものではありませんが、ご利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。</p>
+<div class="notices warning" ><p>現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。</p>
 </div>
 
 
 <h5 id="anaconda-をインストール">Anaconda をインストール</h5>
 
 <p>Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API for Python をインストールします。</p>
-
-<ul>
-<li>bzip2 と wget をインストール
-
-<ul>
-<li>次のコマンドで <code>bzip</code> と <code>wget</code> をインストールします。</li>
-</ul></li>
-</ul>
-
-<pre><code>sudo apt install wget bzip2
-</code></pre>
-
-<div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/bzip-wget.png" width="500px">
-</div>
 
 <ul>
 <li>Linux 版の Anaconda の <a href="https://www.anaconda.com/distribution/#download-section">ダウンロード URL</a> を確認し、wget でファイルをダウンロードします
@@ -1018,7 +1003,7 @@ arcgis.__version__
 </div>
 
 <ul>
-<li><p>インストールするディレクトリは任意のディレクトリを選ぶことができます。
+<li><p>インストールするディレクトリは任意のディレクトリを選ぶことができます。ここではデフォルトの設定である、ログイン ユーザーのホーム ディレクトリにインストールすることにします。
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="500px">
 </div></p></li>

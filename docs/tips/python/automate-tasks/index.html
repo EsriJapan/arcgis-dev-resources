@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-09T18:59:09 JST">
+<meta name="revised" content="2020-03-13T17:28:26 JST">
 <title>スクリプト実行の自動化 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -540,7 +540,7 @@ if (!doNotTrack) {
     
     
 
-<p>ArcGIS API for Python や ArcPy を使うことで、様々な GIS タスクを自動化することが可能です。<br>
+<p>ArcGIS API for Python や ArcPy は、タスク スケジューラなどと組み合わせることで、様々な GIS タスクの実行を自動化することが可能です。<br>
 ここでは、例として以下のようなディレクトリ構成で実行する Python スクリプトを作成したと想定し、そのスクリプトを Windows 及び Linux で 30 分ごとに無期限で定期実行する方法を紹介します。</p>
 
 <p>py-script/<br>
@@ -586,7 +586,7 @@ if (!doNotTrack) {
 <li>[ユーザーがログオンしているかどうかにかかわらず実行する] をクリック</li>
 <li>[最上位の特権で実行する] にチェックを入れる</li>
 </ul></li>
-<li>[構成] は使用してしている Windows のバージョンに合わせる (今回は Windows 10)
+<li>[構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
 </div></li>
@@ -684,7 +684,13 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <li><code>cd /home/&lt;ユーザー名&gt;/py-script</code>
 
 <ul>
-<li>コマンドでカレントのディレクトリを移動</li>
+<li>cd コマンドでカレントのディレクトリを実行するスクリプトと設定ファイルが格納されているディレクトリに移動</li>
+<li>※ ここではログインしているユーザーのホーム ディレクトリ直下に配置していると想定</li>
+</ul></li>
+<li><code>&amp;&amp;</code>
+
+<ul>
+<li>連続してコマンドを実行する場合に用いるオペレーター</li>
 </ul></li>
 <li><code>/home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python</code>
 
@@ -694,17 +700,13 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <li><code>task.py</code>
 
 <ul>
-<li>実行する Python スクリプトを指定</li>
-</ul></li>
-<li><code>&amp;&amp;</code>
-
-<ul>
-<li>連続してコマンドを実行する場合に用いるオペレーター</li>
+<li>実行する Python スクリプトを指定
+<br /></li>
 </ul></li>
 </ul></li>
 </ul>
 
-<div class="notices note" ><p>上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は<a href="../python-api">インストールガイド</a>を参照ください。</p>
+<div class="notices note" ><p>上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は<a href="../python-api-install#2-linux-へのインストール">インストールガイド</a>を参照ください。</p>
 </div>
 
 

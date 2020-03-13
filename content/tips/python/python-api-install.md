@@ -31,7 +31,7 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
 
 ### [参考](#参考)
 * [1. オフライン時のインストール方法](#1-オフライン時のインストール方法)
-* [2. Linux 版のインストール](#2-linux-版のインストール)
+* [2. Linux へのインストール](#2-linux-へのインストール)
 
 ***
 
@@ -369,26 +369,16 @@ conda install <事前にダウンロードしたファイルのパス>
 
 <br>
 
-#### 2. Linux 版のインストール
+#### 2. Linux へのインストール
 ArcGIS API for Python は Linux マシンにもインストールすることができます。<br>
-ここでは、例として [Ubuntu Server](https://ubuntu.com/download/server) に Linux 版をインストールする手順をご紹介します。<br>
+ここでは、例として [Ubuntu Server](https://ubuntu.com/download/server) にインストールする手順をご紹介します。<br>
 
 {{% notice warning %}}
-Linux 版は現在国内未サポートです。Linux 版の利用そのものを妨げるものではありませんが、ご利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。
+現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。
 {{% /notice %}}
 
 ##### Anaconda をインストール
 Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API for Python をインストールします。
-
-* bzip2 と wget をインストール
-    * 次のコマンドで `bzip` と `wget` をインストールします。
-
-```
-sudo apt install wget bzip2
-```
-<div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/bzip-wget.png" width="500px">
-</div>
 
 * Linux 版の Anaconda の [ダウンロード URL](https://www.anaconda.com/distribution/#download-section) を確認し、wget でファイルをダウンロードします
     * ここでは Anaconda 2019.10 for Linux をダウンロードします。
@@ -409,7 +399,7 @@ sh Anaconda3-2019.10-Linux-x86_64.sh
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="500px">
 </div>
 
-* インストールするディレクトリは任意のディレクトリを選ぶことができます。
+* インストールするディレクトリは任意のディレクトリを選ぶことができます。ここではデフォルトの設定である、ログイン ユーザーのホーム ディレクトリにインストールすることにします。
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="500px">
 </div>

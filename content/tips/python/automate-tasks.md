@@ -5,7 +5,7 @@ weight = 6
 aliases = ["/python/task-automation/"]
 +++
 
-ArcGIS API for Python や ArcPy を使うことで、様々な GIS タスクを自動化することが可能です。<br>
+ArcGIS API for Python や ArcPy は、タスク スケジューラなどと組み合わせることで、様々な GIS タスクの実行を自動化することが可能です。<br>
 ここでは、例として以下のようなディレクトリ構成で実行する Python スクリプトを作成したと想定し、そのスクリプトを Windows 及び Linux で 30 分ごとに無期限で定期実行する方法を紹介します。
 
 py-script/<br>
@@ -38,7 +38,7 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
         * タスク実行時に使う Windows のユーザーアカウントを指定
         * [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック
         * [最上位の特権で実行する] にチェックを入れる
-    * [構成] は使用してしている Windows のバージョンに合わせる (今回は Windows 10)
+    * [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
 </div>
@@ -104,16 +104,18 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
     * `*/30 * * * *`
         * 30分に一回の実行間隔を指定
     * `cd /home/<ユーザー名>/py-script`
-        * コマンドでカレントのディレクトリを移動
+        * cd コマンドでカレントのディレクトリを実行するスクリプトと設定ファイルが格納されているディレクトリに移動
+        * ※ ここではログインしているユーザーのホーム ディレクトリ直下に配置していると想定
+    * `&&`
+        * 連続してコマンドを実行する場合に用いるオペレーター
     * `/home/<ユーザー名>/anaconda3/envs/arcgis171/bin/python`
         * 実行する Python のパスを指定
     * `task.py`
         * 実行する Python スクリプトを指定
-    * `&&`
-        * 連続してコマンドを実行する場合に用いるオペレーター
+    
 
 {{% notice note %}}
-上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は[インストールガイド](../python-api)を参照ください。
+上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は[インストールガイド](../python-api-install#2-linux-へのインストール)を参照ください。
 {{% /notice %}}
 
 {{% notice info %}}
