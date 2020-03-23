@@ -23,6 +23,15 @@ Python API は arcgis パッケージとして配布されています。 この
     </item>
     
     <item>
+      <title>ArcGIS とは</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
+      <description> ArcGIS とは&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
       <title>JavaScript</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -169,6 +178,15 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
  UWP サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
  Xamarin サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
    ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。</description>
+    </item>
+    
+    <item>
+      <title>APIs、SDKs、Apps</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
+      <description> APIs、SDKs、Apps&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -355,7 +373,16 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+    </item>
+    
+    <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</guid>
+      <description> セキュリティと認証&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -539,6 +566,15 @@ var mapDeferred = arcgisUtils.createMap(&amp;quot;&amp;lt;Web マップ ID&amp;g
     </item>
     
     <item>
+      <title>レイヤー</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
+      <description> レイヤー&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
       <title>Arcade</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -565,6 +601,15 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
 インストール  バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
  次の 2 つのコマンドを実行します
  jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号  * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
+    </item>
+    
+    <item>
+      <title>Web マップ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
+      <description> Web マップ&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -636,6 +681,15 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
     </item>
     
     <item>
+      <title>Web シーン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
+      <description> Web シーン&amp;rdquo;&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
       <title>カスタム フォント</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -669,6 +723,15 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
  スタート メニューからタスク スケジューラを検索して開く   右側の [操作] ペインから [タスクの作成] をクリック
  新規タスクを作成するウィザードが開きます   [全般] タブ内のパラメーターを設定する
  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる  [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)   [トリガー] タブ内のパラメーターを設定する</description>
+    </item>
+    
+    <item>
+      <title>REST API</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
+      <description> REST API&amp;hellip;.　 </description>
     </item>
     
     <item>

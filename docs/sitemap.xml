@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</loc>
   </url>
   
@@ -35,7 +39,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/</loc>
   </url>
   
   <url>
@@ -52,6 +56,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</loc>
   </url>
   
   <url>
@@ -80,6 +88,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/</loc>
   </url>
   
   <url>
@@ -120,6 +132,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</loc>
   </url>
   
   <url>
@@ -175,6 +191,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/authentication/</loc>
   </url>
   
@@ -188,6 +208,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</loc>
   </url>
   
   <url>
@@ -211,6 +235,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</loc>
   </url>
   
@@ -220,6 +248,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</loc>
   </url>
   
   <url>

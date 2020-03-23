@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>コアコンセプト on ArcGIS for Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/</link>
+    <description>Recent content in コアコンセプト on ArcGIS for Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/core-concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArcGIS とは</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
+      <description> ArcGIS とは&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>APIs、SDKs、Apps</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
+      <description> APIs、SDKs、Apps&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</guid>
+      <description> セキュリティと認証&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>レイヤー</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
+      <description> レイヤー&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>Web マップ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
+      <description> Web マップ&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>Web シーン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
+      <description> Web シーン&amp;rdquo;&amp;hellip;.　 </description>
+    </item>
+    
+    <item>
+      <title>REST API</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
+      <description> REST API&amp;hellip;.　 </description>
+    </item>
+    
+  </channel>
+</rss>
