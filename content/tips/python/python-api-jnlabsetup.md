@@ -20,17 +20,17 @@ Python API を JupyterLab で使用するためには、いくつかインスト
 
 ### インストール
 
-1. バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする</br>
+* バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする
 ターゲットの仮想環境がある場合は、アクティベート（`activate`）してから行います。Python API のインストールまたはアップデートの方法は[インストールガイド](http://esrijapan.github.io/arcgis-dev-resources/python/python-api-install/)をご覧ください。
 
-1. 次の 2 つのコマンドを実行します</br>
-    * `jupyter labextension install @jupyter-widgets/jupyterlab-manager`</br>
-    * `jupyter labextension install arcgis-map-ipywidget@バージョン番号`</br></br>
+* 次の 2 つのコマンドを実行します</br>
+    * `jupyter labextension install @jupyter-widgets/jupyterlab-manager`
+    * `jupyter labextension install arcgis-map-ipywidget@バージョン番号`
 
-    {{% notice info %}}
-    * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。</br>
-    * エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。ダウンロードには [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
-    {{% /notice %}}
+{{% notice info %}}
+2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。<br>
+エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。ダウンロードには [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
+{{% /notice %}}
 
 <!-- 1. 以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。
 
@@ -47,8 +47,7 @@ app dir: D:\<your own path>\anaconda3\share\jupyter\lab
 arcgis-map-ipywidget v1.5.1 enabled  ok
 ``` -->
 
-1. 以上の設定が完了したら、次のコマンドで JupyterLab を起動します。
-
+* 以上の設定が完了したら、次のコマンドで JupyterLab を起動します。
     * `jupyter lab`
 
 任意のディレクトリをルート ディレクトリとして起動したい場合は、`cd` コマンドでディレクトリを移動してから起動コマンドを実行します。

@@ -70,7 +70,7 @@ JupyterLab で GIS データとグラフの操作
 JupyterLab をはじめる Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。
 インストール  バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
  次の 2 つのコマンドを実行します
- jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号  * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
+ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号   2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
     </item>
     
     <item>
@@ -91,6 +91,22 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
  スタート メニューからタスク スケジューラを検索して開く   右側の [操作] ペインから [タスクの作成] をクリック
  新規タスクを作成するウィザードが開きます   [全般] タブ内のパラメーターを設定する
  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる  [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)   [トリガー] タブ内のパラメーターを設定する</description>
+    </item>
+    
+    <item>
+      <title>matplotlib での日本語利用について</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</guid>
+      <description>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際のメソッドでは主に matplotlib が使用されています。
+matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
+対応環境 ここで説明する方法は、次の環境で設定しました。
+ ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  matplotlib 3.1.0 以上から tcc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。 それ以前のバージョンをご利用されている場合は、matplotlib のバージョンアップをご検討ください。
+設定方法 設定方法は主に以下の 2 通りがあります。
+ スクリプトで matplotlib の設定を都度変更する matplotlib の設定ファイル (matplotlibrc) を編集する  前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。 どちらが適しているかはご自身の状況に合わせて選択してください。
+スクリプトで matplotlib の設定を都度変更する 次のコードをスクリプトの最初に実行することでフォント設定を変更することが可能です。
+import matplotlib.pyplot as plt from matplotlib import rcParams rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39; rcParams[&#39;font.sans-serif&#39;] = [&amp;quot;Meiryo&amp;quot;]  rcParams は matplotlib のデフォルト設定が入っているオブジェクトです。</description>
     </item>
     
   </channel>
