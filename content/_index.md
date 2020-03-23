@@ -7,6 +7,10 @@ description = ""
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
+#### TOPページの編集
+
+#### ArcGIS コアコンセプト
+* [コアコンセプト](core-concepts)
 
 # ArcGIS for Developer 開発リソース集
 ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、**[ArcGIS for Developers](https://developers.arcgis.com/)** を利用したアプリ開発の基本的な流れを紹介します。
