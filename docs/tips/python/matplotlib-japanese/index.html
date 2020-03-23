@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T20:52:17 JST">
+<meta name="revised" content="2020-03-23T21:39:20 JST">
 <title>matplotlib での日本語利用について :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -618,10 +618,18 @@ matplotlibrc が格納されているパスへ移動し、ファイルをコピ�
 matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</li>
 </ol>
 
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+</div>
+
 <p>198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
 フォント ファミリーはデフォルトが sans-serif なので、ここではデフォルト設定のままにしておきます。<br>
 210 行目のフォント設定の行で、<code>#</code> を削除し、<code>:</code> の後に日本語のフォントを追加しましょう。<br>
 ここでは <code>Meiryo</code> に設定します。設定後の画面は以下のようになります。</p>
+
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="700px">
+</div>
 
 <ol>
 <li>キャッシュの再構築
@@ -659,18 +667,19 @@ plt.show()
 
 <p>次のようなグラフが描ければ成功です。</p>
 
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
+</div>
+
 <h3 id="参考">参考</h3>
 
 <ul>
-<li>qiita
+<li><a href="https://qiita.com/yniji/items/3fac25c2ffa316990d0c">matplotlibで日本語 - Qiita</a></li>
+<li>matplotlib 公式ドキュメント
 
 <ul>
-<li></li>
-</ul></li>
-<li>matplotlib リファレンス
-
-<ul>
-<li></li>
+<li><a href="https://matplotlib.org/gallery/api/font_family_rc_sgskip.html">Configuring the font family</a></li>
+<li><a href="https://matplotlib.org/tutorials/introductory/customizing.html#the-matplotlibrc-file">The matplotlibrc file</a></li>
 </ul></li>
 </ul>
 

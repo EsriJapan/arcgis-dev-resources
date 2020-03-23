@@ -21,8 +21,8 @@ matplotlib 3.1.0 以上から tcc ファイルに対応するようになった�
 ### 設定方法
 設定方法は主に以下の 2 通りがあります。
 
-1. [スクリプトで matplotlib の設定を都度変更する](#スクリプトで-matplotlib-の設定を都度変更する)
-1. [matplotlib の設定ファイル (matplotlibrc) を編集する](#matplotlib-の設定ファイル-(matplotlibrc)-を編集する)
+1. スクリプトで matplotlib の設定を都度変更する
+1. matplotlib の設定ファイル (matplotlibrc) を編集する
 
 前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。
 どちらが適しているかはご自身の状況に合わせて選択してください。
@@ -46,7 +46,8 @@ rcParams['font.sans-serif'] = ["Meiryo"]
 
 上記の設定方法では毎回スクリプトの最初にコードを実行する必要がありますが、以下の方法でデフォルトのフォントを恒久的に変更することが可能です。
 
-1. matplotlibrc のパスを確認
+##### matplotlibrc のパスを確認
+
 次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。
 
 ```python
@@ -54,25 +55,29 @@ import matplotlib as mpl
 mpl.matplotlib_fname()
 ```
 
-2. matplotlibrc を user/.matplotlib にコピー & ペーストで配置
+##### matplotlibrc を user/.matplotlib にコピー & ペーストで配置
 matplotlibrc が格納されているパスへ移動し、ファイルをコピーしたら以下のディレクトリにペーストします。
 
 * `C:\Users\<ユーザー名>\.matplotlib`
 
-3. matplotlibrc の内容を修正
+##### matplotlibrc の内容を修正
 ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
 matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。
 
-
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+</div>
 
 198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
 フォント ファミリーはデフォルトが sans-serif なので、ここではデフォルト設定のままにしておきます。<br>
 210 行目のフォント設定の行で、`#` を削除し、`:` の後に日本語のフォントを追加しましょう。<br>
 ここでは `Meiryo` に設定します。設定後の画面は以下のようになります。
 
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
+</div>
 
-
-4. キャッシュの再構築
+##### キャッシュの再構築
 以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。
 
 ```python
@@ -108,12 +113,12 @@ plt.show()
 
 次のようなグラフが描ければ成功です。
 
-
-
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
+</div>
 
 ### 参考
-
-* qiita
-    * 
-* matplotlib リファレンス
-    * 
+* [matplotlibで日本語 - Qiita](https://qiita.com/yniji/items/3fac25c2ffa316990d0c)
+* matplotlib 公式ドキュメント
+    * [Configuring the font family](https://matplotlib.org/gallery/api/font_family_rc_sgskip.html)
+    * [The matplotlibrc file](https://matplotlib.org/tutorials/introductory/customizing.html#the-matplotlibrc-file)
