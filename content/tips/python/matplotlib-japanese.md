@@ -5,7 +5,7 @@ weight = 7
 aliases = ["/python/matplotlib-japanese/"]
 +++
 
-ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際のメソッドでは主に matplotlib が使用されています。<br>
+ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。<br>
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
 
 ### 対応環境
