@@ -99,7 +99,7 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</guid>
-      <description>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際のメソッドでは主に matplotlib が使用されています。
+      <description>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
 対応環境 ここで説明する方法は、次の環境で設定しました。
  ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  matplotlib 3.1.0 以上から tcc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。 それ以前のバージョンをご利用されている場合は、matplotlib のバージョンアップをご検討ください。

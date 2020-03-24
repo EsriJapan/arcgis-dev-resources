@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T21:39:20 JST">
+<meta name="revised" content="2020-03-24T12:54:37 JST">
 <title>matplotlib での日本語利用について :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -354,35 +354,6 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/">
-            データ可視化のワークフロー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/">
-            データ可視化の手順
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/">
-            地図上に賢くデータを可視化するための 6 つの方法
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
     <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item parent haschildren
         ">
       <div>
@@ -436,6 +407,35 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
             matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
           </a>
         </div>
     </li>
@@ -502,9 +502,6 @@ if (!doNotTrack) {
     <option value="/arcgis-dev-resources/tips/ios/" >
   - 
    ArcGIS Runtime SDK for iOS</option>
-    <option value="/arcgis-dev-resources/tips/visualization/" >
-  - 
-   データ ビジュアライゼーション</option>
     <option value="/arcgis-dev-resources/tips/python/" >
   - 
    ArcGIS API for Python</option> 
@@ -516,6 +513,9 @@ if (!doNotTrack) {
       <option value="/arcgis-dev-resources/tips/python/automate-tasks/" >-- スクリプト実行の自動化</option>
       <option value="/arcgis-dev-resources/tips/python/matplotlib-japanese/"  selected>-- matplotlib での日本語利用について</option>
   
+    <option value="/arcgis-dev-resources/tips/visualization/" >
+  - 
+   データ ビジュアライゼーション</option>
       <option value="/arcgis-dev-resources/tips/hackathon/" >- ミートアップ</option>
   
     <option value="/arcgis-dev-resources/samples/" >
@@ -548,7 +548,7 @@ if (!doNotTrack) {
     
     
 
-<p>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際のメソッドでは主に matplotlib が使用されています。<br>
+<p>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。<br>
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。</p>
 
 <h3 id="対応環境">対応環境</h3>
@@ -569,8 +569,8 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 <p>設定方法は主に以下の 2 通りがあります。</p>
 
 <ol>
-<li><a href="#スクリプトで-matplotlib-の設定を都度変更する">スクリプトで matplotlib の設定を都度変更する</a></li>
-<li><a href="#matplotlib-の設定ファイル-(matplotlibrc)-を編集する">matplotlib の設定ファイル (matplotlibrc) を編集する</a></li>
+<li>スクリプトで matplotlib の設定を都度変更する</li>
+<li>matplotlib の設定ファイル (matplotlibrc) を編集する</li>
 </ol>
 
 <p>前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。
@@ -594,29 +594,26 @@ rcParams['font.sans-serif'] = [&quot;Meiryo&quot;]
 
 <p>上記の設定方法では毎回スクリプトの最初にコードを実行する必要がありますが、以下の方法でデフォルトのフォントを恒久的に変更することが可能です。</p>
 
-<ol>
-<li>matplotlibrc のパスを確認
-次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。</li>
-</ol>
+<h5 id="matplotlibrc-のパスを確認">matplotlibrc のパスを確認</h5>
+
+<p>次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。</p>
 
 <pre><code class="language-python">import matplotlib as mpl
 mpl.matplotlib_fname()
 </code></pre>
 
-<ol>
-<li>matplotlibrc を user/.matplotlib にコピー &amp; ペーストで配置
-matplotlibrc が格納されているパスへ移動し、ファイルをコピーしたら以下のディレクトリにペーストします。</li>
-</ol>
+<h5 id="matplotlibrc-を-user-matplotlib-にコピー-ペーストで配置">matplotlibrc を user/.matplotlib にコピー &amp; ペーストで配置</h5>
+
+<p>matplotlibrc が格納されているパスへ移動し、ファイルをコピーしたら以下のディレクトリにペーストします。</p>
 
 <ul>
 <li><code>C:\Users\&lt;ユーザー名&gt;\.matplotlib</code></li>
 </ul>
 
-<ol>
-<li>matplotlibrc の内容を修正
-ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
-matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</li>
-</ol>
+<h5 id="matplotlibrc-の内容を修正">matplotlibrc の内容を修正</h5>
+
+<p>ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
+matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</p>
 
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
@@ -628,13 +625,12 @@ matplotlibrc は非常に長いファイルですが、160 行目あたりから
 ここでは <code>Meiryo</code> に設定します。設定後の画面は以下のようになります。</p>
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="700px">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
 </div>
 
-<ol>
-<li>キャッシュの再構築
-以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</li>
-</ol>
+<h5 id="キャッシュの再構築">キャッシュの再構築</h5>
+
+<p>以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</p>
 
 <pre><code class="language-python">import matplotlib
 matplotlib.font_manager._rebuild()
@@ -689,7 +685,7 @@ plt.show()
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/automate-tasks/" title="スクリプト実行の自動化"> <i class="fa fa-chevron-left"></i><label>スクリプト実行の自動化</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/hackathon/" title="ミートアップ" style="margin-right: 0px;"><label>ミートアップ</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/visualization/" title="データ ビジュアライゼーション" style="margin-right: 0px;"><label>データ ビジュアライゼーション</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
