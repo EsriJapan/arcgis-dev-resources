@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
-      <description> ArcGIS とは&amp;hellip;.　 </description>
+      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+ArcGIS プラットフォーム ArcGIS プラットフォームは、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
+ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。ポータル を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、REST APIを使って直接データを操作することもできます。
+ ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer - 2D マップの作成, データの編集, データの分析 SceneViewer - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張やスクリプトの実行をすることもできます。ArcGIS Desktop 製品の機能概要については、ArcGIS Desktop Web サイトを参照してください。</description>
     </item>
     
     <item>
@@ -52,7 +55,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
-      <description> Web マップ&amp;hellip;.　 </description>
+      <description>Web マップとは？ Web マップは、異なるアプリケーション間で作成、スタイル設定、共有できる 2D マップです。Web マップは Web マップ仕様に基づいた JSON で構成されており、マップの範囲、ベースマップ、レイヤ、レイヤ スタイル、ポップアップなどの設定が含まれています。
+ArcGIS Online の Web マップの例としては、サンタ モニカの公園とオープン スペース、トレイル、トレイルヘッドがあります。
+なぜ Web マップを使うのか？ Web マップは、ArcGIS Online および ArcGIS Pro で作成し、Navigator、Collector、ArcGIS StoryMaps、ArcGIS Configurable Apps や ArcGIS API および SDK を使用して構築されたアプリなど、多くのアプリケーションで表示することができます。アプリケーションが Web マップをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体での 2D マップの共有が容易になります。
+例えば、ArcGIS Online でポップアップを使用するために作成され、スタイルの設定がされた Web マップを REST API を使って参照したり、ArcGIS API for JavaScript を使用して Web ページに表示したり、ArcGIS Pro にインポートしたりすることができます。
+Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web マップを共有、作成、編集、可視化、参照などをすることができます。</description>
     </item>
     
     <item>
