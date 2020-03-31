@@ -9,16 +9,22 @@ ArcGIS API for Python では様々な オープンソース ライブラリを�
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
 
 ### 対応環境
-ここで説明する方法は、次の環境で設定しました。
+ここでは、次の環境を用いた場合の設定方法を説明します。
 
 * ArcGIS Pro 2.5
 * ArcGIS API for Python 1.7.0
 * matplotlib 3.1.1
 
-matplotlib 3.1.0 以上から tcc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。
-それ以前のバージョンをご利用されている場合は、matplotlib のバージョンアップをご検討ください。
+日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。
 
-### 設定方法
+1. ArcGIS Pro のアップグレード
+    * ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。
+1. ArcGIS API for Python をアップグレード
+    * Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。
+1. matplotlib を単体でアップグレード
+    * 推奨は上記 2 つですが、難しい場合は単体でのアップグレードも可能です。
+
+### matplotlib での日本語フォントの設定方法
 設定方法は主に以下の 2 通りがあります。
 
 1. スクリプトで matplotlib の設定を都度変更する
@@ -34,8 +40,8 @@ matplotlib 3.1.0 以上から tcc ファイルに対応するようになった�
 ``` python
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = ["Meiryo"]
+rcParams["font.family"] = "sans-serif"
+rcParams["font.sans-serif"] = ["Meiryo"]
 ```
 
 `rcParams` は matplotlib のデフォルト設定が入っているオブジェクトです。<br>
@@ -55,10 +61,17 @@ import matplotlib as mpl
 mpl.matplotlib_fname()
 ```
 
-##### matplotlibrc を user/.matplotlib にコピー & ペーストで配置
-matplotlibrc が格納されているパスへ移動し、ファイルをコピーしたら以下のディレクトリにペーストします。
+##### matplotlibrc を C:\Users\\<ユーザー名>\\.matplotlib にコピー & ペーストで配置
+matplotlibrc が格納されているパスへ移動しファイルをコピーしたら、以下のディレクトリにペーストします。
 
 * `C:\Users\<ユーザー名>\.matplotlib`
+
+{{% notice tip %}}
+
+conda を使用して複数の環境を作成・利用している場合、それぞれの環境が matplotlibrc を保持しています。<br>
+上記のパスに配置された matplotlibrc は各環境の matplotlibrc よりも優先されるため、当該ファイルを修正するだけで全ての環境で日本語のフォントを設定することができます。
+
+{{% /notice %}}
 
 ##### matplotlibrc の内容を修正
 ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
@@ -85,7 +98,7 @@ import matplotlib
 matplotlib.font_manager._rebuild()
 ```
 
-設定が完了したらしたら[サンプル コード](#サンプル-コード)を実行してみましょう。
+設定が完了したらしたら以下のサンプルコードを実行してみましょう。
 
 
 #### サンプル コード

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-30T20:49:57 JST">
+<meta name="revised" content="2020-03-31T19:33:14 JST">
 <title>matplotlib での日本語利用について :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -553,7 +553,7 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 
 <h3 id="対応環境">対応環境</h3>
 
-<p>ここで説明する方法は、次の環境で設定しました。</p>
+<p>ここでは、次の環境を用いた場合の設定方法を説明します。</p>
 
 <ul>
 <li>ArcGIS Pro 2.5</li>
@@ -561,10 +561,27 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 <li>matplotlib 3.1.1</li>
 </ul>
 
-<p>matplotlib 3.1.0 以上から tcc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。
-それ以前のバージョンをご利用されている場合は、matplotlib のバージョンアップをご検討ください。</p>
+<p>日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。</p>
 
-<h3 id="設定方法">設定方法</h3>
+<ol>
+<li>ArcGIS Pro のアップグレード
+
+<ul>
+<li>ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。</li>
+</ul></li>
+<li>ArcGIS API for Python をアップグレード
+
+<ul>
+<li>Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。</li>
+</ul></li>
+<li>matplotlib を単体でアップグレード
+
+<ul>
+<li>推奨は上記 2 つですが、難しい場合は単体でのアップグレードも可能です。</li>
+</ul></li>
+</ol>
+
+<h3 id="matplotlib-での日本語フォントの設定方法">matplotlib での日本語フォントの設定方法</h3>
 
 <p>設定方法は主に以下の 2 通りがあります。</p>
 
@@ -582,8 +599,8 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 
 <pre><code class="language-python">import matplotlib.pyplot as plt
 from matplotlib import rcParams
-rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = [&quot;Meiryo&quot;]
+rcParams[&quot;font.family&quot;] = &quot;sans-serif&quot;
+rcParams[&quot;font.sans-serif&quot;] = [&quot;Meiryo&quot;]
 </code></pre>
 
 <p><code>rcParams</code> は matplotlib のデフォルト設定が入っているオブジェクトです。<br>
@@ -602,13 +619,18 @@ rcParams['font.sans-serif'] = [&quot;Meiryo&quot;]
 mpl.matplotlib_fname()
 </code></pre>
 
-<h5 id="matplotlibrc-を-user-matplotlib-にコピー-ペーストで配置">matplotlibrc を user/.matplotlib にコピー &amp; ペーストで配置</h5>
+<h5 id="matplotlibrc-を-c-users-ユーザー名-matplotlib-にコピー-ペーストで配置">matplotlibrc を C:\Users\&lt;ユーザー名&gt;\.matplotlib にコピー &amp; ペーストで配置</h5>
 
-<p>matplotlibrc が格納されているパスへ移動し、ファイルをコピーしたら以下のディレクトリにペーストします。</p>
+<p>matplotlibrc が格納されているパスへ移動しファイルをコピーしたら、以下のディレクトリにペーストします。</p>
 
 <ul>
 <li><code>C:\Users\&lt;ユーザー名&gt;\.matplotlib</code></li>
 </ul>
+
+<div class="notices tip" ><p>conda を使用して複数の環境を作成・利用している場合、それぞれの環境が matplotlibrc を保持しています。<br>
+上記のパスに配置された matplotlibrc は各環境の matplotlibrc よりも優先されるため、当該ファイルを修正するだけで全ての環境で日本語のフォントを設定することができます。</p>
+</div>
+
 
 <h5 id="matplotlibrc-の内容を修正">matplotlibrc の内容を修正</h5>
 
@@ -636,7 +658,7 @@ matplotlibrc は非常に長いファイルですが、160 行目あたりから
 matplotlib.font_manager._rebuild()
 </code></pre>
 
-<p>設定が完了したらしたら<a href="#サンプル-コード">サンプル コード</a>を実行してみましょう。</p>
+<p>設定が完了したらしたら以下のサンプルコードを実行してみましょう。</p>
 
 <h4 id="サンプル-コード">サンプル コード</h4>
 

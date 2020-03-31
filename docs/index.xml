@@ -679,12 +679,9 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</guid>
       <description>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
-対応環境 ここで説明する方法は、次の環境で設定しました。
- ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  matplotlib 3.1.0 以上から tcc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。 それ以前のバージョンをご利用されている場合は、matplotlib のバージョンアップをご検討ください。
-設定方法 設定方法は主に以下の 2 通りがあります。
- スクリプトで matplotlib の設定を都度変更する matplotlib の設定ファイル (matplotlibrc) を編集する  前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。 どちらが適しているかはご自身の状況に合わせて選択してください。
-スクリプトで matplotlib の設定を都度変更する 次のコードをスクリプトの最初に実行することでフォント設定を変更することが可能です。
-import matplotlib.pyplot as plt from matplotlib import rcParams rcParams[&#39;font.family&#39;] = &#39;sans-serif&#39; rcParams[&#39;font.sans-serif&#39;] = [&amp;quot;Meiryo&amp;quot;]  rcParams は matplotlib のデフォルト設定が入っているオブジェクトです。</description>
+対応環境 ここでは、次の環境を用いた場合の設定方法を説明します。
+ ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。
+ ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。  ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。  matplotlib を単体でアップグレード  推奨は上記 2 つですが、難しい場合は単体でのアップグレードも可能です。   matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
     </item>
     
     <item>
