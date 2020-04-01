@@ -681,7 +681,7 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
 matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
 対応環境 ここでは、次の環境を用いた場合の設定方法を説明します。
  ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。
- ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。  ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。  matplotlib を単体でアップグレード  推奨は上記 2 つですが、難しい場合は単体でのアップグレードも可能です。   matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
+ ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。  ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。   matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
     </item>
     
     <item>

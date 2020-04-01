@@ -21,8 +21,6 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
     * ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。
 1. ArcGIS API for Python をアップグレード
     * Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。
-1. matplotlib を単体でアップグレード
-    * 推奨は上記 2 つですが、難しい場合は単体でのアップグレードも可能です。
 
 ### matplotlib での日本語フォントの設定方法
 設定方法は主に以下の 2 通りがあります。
@@ -94,7 +92,7 @@ matplotlibrc は非常に長いファイルですが、160 行目あたりから
 以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。
 
 ```python
-import matplotlib
+import matplotlib.font_manager
 matplotlib.font_manager._rebuild()
 ```
 
