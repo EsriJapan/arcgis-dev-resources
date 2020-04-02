@@ -1,6 +1,6 @@
 +++
 title = "ArcGIS とは"
-description = ""
+description = "ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。"
 Weight=1
 aliases = ["/what-is-arcgis/"]
 +++
