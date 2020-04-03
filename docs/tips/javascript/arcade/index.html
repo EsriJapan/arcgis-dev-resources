@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-03T15:21:31 JST">
 <title>Arcade :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -606,217 +606,285 @@ if (!doNotTrack) {
     
     
     
-    <p><!-- raw HTML omitted -->Arcade<!-- raw HTML omitted --> とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。
+    
+
+<p><a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。
 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。
-ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を <!-- raw HTML omitted -->ArcGIS Pro<!-- raw HTML omitted --> や <!-- raw HTML omitted -->ArcGIS Online<!-- raw HTML omitted -->、<!-- raw HTML omitted -->ArcGIS Runtime SDK<!-- raw HTML omitted -->、<!-- raw HTML omitted -->ArcGIS API for JavaScript<!-- raw HTML omitted --> で編集・共有・実行することができます。</p>
-<p>Arcade が他のスクリプト言語に比べてユニークなのは、<!-- raw HTML omitted -->ジオメトリ関数<!-- raw HTML omitted -->を含んでいるところです。
+ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を <a href="https://www.esrij.com/products/arcgis-pro/" target="_blank">ArcGIS Pro</a> や <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a>、<a href="https://developers.arcgis.com/arcgis-runtime/" target="_blank">ArcGIS Runtime SDK</a>、<a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a> で編集・共有・実行することができます。</p>
+
+<p>Arcade が他のスクリプト言語に比べてユニークなのは、<a href="https://developers.arcgis.com/arcade/function-reference/geometry_functions/" target="_blank">ジオメトリ関数</a>を含んでいるところです。
 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。
 現在のリリースでは、ジオメトリの作成と参照が可能です。
-しかし、<!-- raw HTML omitted -->Arcade バージョン 1.3<!-- raw HTML omitted --> で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。</p>
-<p><!-- raw HTML omitted -->Arcade バージョン 1.3<!-- raw HTML omitted --> で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、<!-- raw HTML omitted -->バージョン 3.23<!-- raw HTML omitted --> 以上で使用できます。将来的には、4.x でのサポートを予定しています。</p>
+しかし、<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。</p>
+
+<p><a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、<a href="https://developers.arcgis.com/javascript/3/jsapi/esri.support.expressionutils-amd.html" target="_blank">バージョン 3.23</a> 以上で使用できます。将来的には、4.x でのサポートを予定しています。</p>
+
 <h2 id="シンタックス">シンタックス</h2>
+
 <p>Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。
 しかし、二つの言語間にはいくつか異なる部分があります。
-記述方法の詳細については、<!-- raw HTML omitted -->Arcade ドキュメント（英語）<!-- raw HTML omitted -->をご参照ください。
-また、<!-- raw HTML omitted -->ArcGIS Arcade Playground<!-- raw HTML omitted --> では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</p>
+記述方法の詳細については、<a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade ドキュメント（英語）</a>をご参照ください。
+また、<a href="https://developers.arcgis.com/arcade/playground/" target="_blank">ArcGIS Arcade Playground</a> では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</p>
+
 <p>Arcade には外部データにアクセスするためのグローバル変数が用意されています。
 <code>$feature</code> というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。
 以下のシンタックスを使用することでフィールド値を参照できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">fieldName</span>
-</code></pre></div><p>このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 民主党候補者に投票した人の割合（%）を計算
-</span><span style="color:#75715e"></span>(<span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">DEM_VOTES</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">TURNOUT</span> ) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
-</code></pre></div><p>Arcade はコンテクスト内、または Arcade が理解されるプロファイル内でのみ実行可能です。JavaScript アプリでは、式は常に文字列の値として参照されます。Arcade は、シンプルな一行の式、または、より複雑な複数行からなる式として書かれます。</p>
+
+<pre><code class="language-js">$feature.fieldName
+</code></pre>
+
+<p>このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。</p>
+
+<pre><code class="language-js">// 民主党候補者に投票した人の割合（%）を計算
+($feature.DEM_VOTES / $feature.TURNOUT ) * 100
+</code></pre>
+
+<p>Arcade はコンテクスト内、または Arcade が理解されるプロファイル内でのみ実行可能です。JavaScript アプリでは、式は常に文字列の値として参照されます。Arcade は、シンプルな一行の式、または、より複雑な複数行からなる式として書かれます。</p>
+
 <p>一行の式を書くとき、シンプルにダブルまたはシングル クォーテーションで囲みます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Round( ($feature.AGE_18UP / $feature.TOTAL_POP) * 100 )&#34;</span>;
-</code></pre></div><p>複数行に渡る式を書くとき、JavaScript の外に <code>&lt;script&gt;</code> タグを分け、タイプを <code>text/plain</code> に設定し、JavaScript から参照できるようユニークな ID を付与して配置することが推奨されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;adult-population&#34;</span>&gt;
-  <span style="color:#75715e">// 複数行の式を記述
-</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>そして、JavaScript は、<code>document.getElementById()</code> メソッドを呼ぶことで、文字列として参照します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;adult-population&#34;</span>).<span style="color:#a6e22e">text</span>;
-</code></pre></div><p>下記のスニペットや <!-- raw HTML omitted -->Create a custom visualization using an Arcade expression サンプル<!-- raw HTML omitted -->を参照ください。</p>
+
+<pre><code class="language-js">renderer.valueExpression = &quot;Round( ($feature.AGE_18UP / $feature.TOTAL_POP) * 100 )&quot;;
+</code></pre>
+
+<p>複数行に渡る式を書くとき、JavaScript の外に <code>&lt;script&gt;</code> タグを分け、タイプを <code>text/plain</code> に設定し、JavaScript から参照できるようユニークな ID を付与して配置することが推奨されます。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/plain&quot; id=&quot;adult-population&quot;&gt;
+  // 複数行の式を記述
+&lt;/script&gt;
+</code></pre>
+
+<p>そして、JavaScript は、<code>document.getElementById()</code> メソッドを呼ぶことで、文字列として参照します。</p>
+
+<pre><code class="language-js">renderer.valueExpression = document.getElementById(&quot;adult-population&quot;).text;
+</code></pre>
+
+<p>下記のスニペットや <a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_balnk">Create a custom visualization using an Arcade expression サンプル</a>を参照ください。</p>
+
 <h2 id="プロファイル">プロファイル</h2>
+
 <p>Arcade はいくつかのプロファイルにおける使用のためにデザインされました。プロファイルとは、理解し使用される命令語のコンテクストです。ArcGIS API 4.5 for JavaScript では、ビジュアライゼーション、ポップアップ、ラベリング（3D のみサポート）の３つのプロファイルをサポートしています。3D では、Arcade を使用することにより、フィーチャの標高を計算することも可能です。</p>
+
 <h3 id="ビジュアライゼーション">ビジュアライゼーション</h3>
-<p>ビジュアライゼーション プロファイルにおいて、Arcade を使ってランタイムで <!-- raw HTML omitted --><code>FeatureLayer</code><!-- raw HTML omitted --> (フィーチャ レイヤー) あるいは <!-- raw HTML omitted --><code>SceneLayer</code><!-- raw HTML omitted --> (シーン レイヤー) 内の各フィーチャが持つ値を計算することができます。
+
+<p>ビジュアライゼーション プロファイルにおいて、Arcade を使ってランタイムで <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank"><code>FeatureLayer</code></a> (フィーチャ レイヤー) あるいは <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SceneLayer.html" target="_blank"><code>SceneLayer</code></a> (シーン レイヤー) 内の各フィーチャが持つ値を計算することができます。
 また、データドリブンな可視化のための基盤として、それらの値を使用することができます。
 これは、レイヤー内の単一フィールド値をもとにしたデータ ビジュアライゼーションを作成するための別のアプローチになります。
-これによって、Arcade 命令語は <code>field</code>/<code>normarizationField</code> あるいは JavaScript 関数の代わりに <!-- raw HTML omitted --><code>ClassBreaksRenderer</code><!-- raw HTML omitted --> (数値分類) や <!-- raw HTML omitted --><code>UniqueValueRenderer</code><!-- raw HTML omitted --> (個別値分類)、その他の可視化変数 (<!-- raw HTML omitted --><code>color</code><!-- raw HTML omitted -->, <!-- raw HTML omitted --><code>size</code><!-- raw HTML omitted -->, <!-- raw HTML omitted --><code>opacity</code><!-- raw HTML omitted -->, <!-- raw HTML omitted --><code>rotation</code><!-- raw HTML omitted -->) の <code>valueExpression</code> プロパティに渡されます。</p>
+これによって、Arcade 命令語は <code>field</code>/<code>normarizationField</code> あるいは JavaScript 関数の代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-ClassBreaksRenderer.html#valueExpression" target="_blank"><code>ClassBreaksRenderer</code></a> (数値分類) や <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html#valueExpression" target="_blank"><code>UniqueValueRenderer</code></a> (個別値分類)、その他の可視化変数 (<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-Renderer.html#ColorVisualVariable" target="_blank"><code>color</code></a>, <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-Renderer.html#SizeVisualVariable" target="_blank"><code>size</code></a>, <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-Renderer.html#OpacityVisualVariable" target="_blank"><code>opacity</code></a>, <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-Renderer.html#RotationVisualVariable" target="_blank"><code>rotation</code></a>) の <code>valueExpression</code> プロパティに渡されます。</p>
+
 <p>Arcade は <code>FeatureLayer</code> と <code>SceneLayer</code> におけるビジュアライゼーションの作成のみサポートします。
-<code>ClassBreaks</code> と <code>UniqueValueRenderer</code> を利用できる他のレイヤー (例えば、<!-- raw HTML omitted --><code>MapImageLayer</code><!-- raw HTML omitted -->) は Arcade をサポートしていません。</p>
+<code>ClassBreaks</code> と <code>UniqueValueRenderer</code> を利用できる他のレイヤー (例えば、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html" target="_blank"><code>MapImageLayer</code></a>) は Arcade をサポートしていません。</p>
+
 <p><code>ClassBreaksRenderer</code> あるいはその他の可視化変数を使用する際、命令語は必ず数値を評価してください。
 <code>UniqueValueRenderer</code> は文字列と数値のいずれも評価して構いません。</p>
-<p>以下の例では、Arcade 命令語が <code>UniqueValueRenderer</code> の <!-- raw HTML omitted --><code>valueExpression</code><!-- raw HTML omitted --> プロパティを使用しています。
+
+<p>以下の例では、Arcade 命令語が <code>UniqueValueRenderer</code> の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html#valueExpression" target="_blank"><code>valueExpression</code></a> プロパティを使用しています。
 アメリカの州を表すフィーチャ レイヤーのためにビジュアライゼーションを作成します。
 このサービスは各州における共和党、民主党、無所属に対する得票数という 3 つのフィールドを持ちます。
 そこで、得票数で勝った党を各州で可視化したいとします。
 サービスには優勢な党を示すフィールドが含まれていません。
 したがって、Arcade を使ってその党を明らかにしましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Max() 関数を使って最大数を算出し、
-</span><span style="color:#75715e"></span><span style="color:#75715e">// 最大数を持つ党を判定するために Decode() 関数を使います。
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arcade</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;var republican = $feature.MP06025a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var democrat = $feature.MP06024a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var independent = $feature.MP06026a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var parties = [republican, democrat, independent];&#34;</span>
-  <span style="color:#75715e">// Decode() と Max() は Arcade 組み込みの関数です。
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Decode( Max(parties),&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;        republican, &#39;republican&#39;,&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;        democrat, &#39;democrat&#39;,&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;        independent, &#39;independent&#39;,&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;        &#39;n/a&#39;);&#34;</span>;
 
-<span style="color:#75715e">// `valueExpression` プロパティに Arcade で記述した式を割り当て、
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Decode() で処理された値をもとに個別値の情報を設定します。
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">renderer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UniqueValueRenderer</span>({
-  <span style="color:#a6e22e">valueExpression</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">arcade</span>,
-  <span style="color:#a6e22e">valueExpressionTitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Counties by dominant party among registered voters&#34;</span>,
-  <span style="color:#a6e22e">uniqueValueInfos</span><span style="color:#f92672">:</span> [{
-    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;democrat&#34;</span>,
-    <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">createSymbol</span>(<span style="color:#e6db74">&#34;#00c3ff&#34;</span>),
-    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Democrat&#34;</span>
+<pre><code class="language-js">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
+// Max() 関数を使って最大数を算出し、
+// 最大数を持つ党を判定するために Decode() 関数を使います。
+
+var arcade = &quot;var republican = $feature.MP06025a_B;&quot;
+  + &quot;var democrat = $feature.MP06024a_B;&quot;
+  + &quot;var independent = $feature.MP06026a_B;&quot;
+  + &quot;var parties = [republican, democrat, independent];&quot;
+  // Decode() と Max() は Arcade 組み込みの関数です。
+  + &quot;Decode( Max(parties),&quot;
+  + &quot;        republican, 'republican',&quot;
+  + &quot;        democrat, 'democrat',&quot;
+  + &quot;        independent, 'independent',&quot;
+  + &quot;        'n/a');&quot;;
+
+// `valueExpression` プロパティに Arcade で記述した式を割り当て、
+// Decode() で処理された値をもとに個別値の情報を設定します。
+
+var renderer = new UniqueValueRenderer({
+  valueExpression: arcade,
+  valueExpressionTitle: &quot;Counties by dominant party among registered voters&quot;,
+  uniqueValueInfos: [{
+    value: &quot;democrat&quot;,
+    symbol: createSymbol(&quot;#00c3ff&quot;),
+    label: &quot;Democrat&quot;
   }, {
-    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;republican&#34;</span>,
-    <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">createSymbol</span>(<span style="color:#e6db74">&#34;#ff002e&#34;</span>),
-    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Republican&#34;</span>
+    value: &quot;republican&quot;,
+    symbol: createSymbol(&quot;#ff002e&quot;),
+    label: &quot;Republican&quot;
   }, {
-    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;independent&#34;</span>,
-    <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">createSymbol</span>(<span style="color:#e6db74">&#34;#faff00&#34;</span>),
-    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Independent/non-affiliated&#34;</span>
+    value: &quot;independent&quot;,
+    symbol: createSymbol(&quot;#faff00&quot;),
+    label: &quot;Independent/non-affiliated&quot;
   }]
 });
-</code></pre></div><p>また、各州における優勢な党の相対的な力を示すために <code>renderer</code> に対して <code>opacity</code> の可視化変数を追加します。
-より多くの人々が特定の党に投票している州を高い透過率でし、各党に対する得票数が拮抗している州は低い透過率で描画してみましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Max() 関数を使って最大数を、
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Sum() 関数ですべての党の得票数の合計値を算出します。
-</span><span style="color:#75715e"></span><span style="color:#75715e">// 合計値に対するもっとも多くの投票を得た党の得票数の割合をパーセントで返します。
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opacityArcade</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;var republican = $feature.MP06025a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var democrat = $feature.MP06024a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var independent = $feature.MP06026a_B;&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var parties = [republican, democrat, independent];&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var total = Sum(parties);&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;var max = Max(parties);&#34;</span>
-  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;return (max / total) * 100;&#34;</span>;
+</code></pre>
 
-<span style="color:#75715e">// `valueExpression` プロパティに Arcade で記述した式を割り当て、
-</span><span style="color:#75715e"></span><span style="color:#75715e">// 返り値であるパーセントに応じて透過率を設定します。
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opacityVV</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;opacity&#34;</span>,
-  <span style="color:#a6e22e">valueExpression</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">opacityArcade</span>,
-  <span style="color:#a6e22e">stops</span><span style="color:#f92672">:</span> [
-    { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">33</span>, <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.1</span> },
-    { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>, <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0</span> }
+<p>また、各州における優勢な党の相対的な力を示すために <code>renderer</code> に対して <code>opacity</code> の可視化変数を追加します。
+より多くの人々が特定の党に投票している州を高い透過率でし、各党に対する得票数が拮抗している州は低い透過率で描画してみましょう。</p>
+
+<pre><code class="language-js">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
+// Max() 関数を使って最大数を、
+// Sum() 関数ですべての党の得票数の合計値を算出します。
+// 合計値に対するもっとも多くの投票を得た党の得票数の割合をパーセントで返します。
+
+var opacityArcade = &quot;var republican = $feature.MP06025a_B;&quot;
+  + &quot;var democrat = $feature.MP06024a_B;&quot;
+  + &quot;var independent = $feature.MP06026a_B;&quot;
+  + &quot;var parties = [republican, democrat, independent];&quot;
+  + &quot;var total = Sum(parties);&quot;
+  + &quot;var max = Max(parties);&quot;
+  + &quot;return (max / total) * 100;&quot;;
+
+// `valueExpression` プロパティに Arcade で記述した式を割り当て、
+// 返り値であるパーセントに応じて透過率を設定します。
+
+var opacityVV = {
+  type: &quot;opacity&quot;,
+  valueExpression: opacityArcade,
+  stops: [
+    { value: 33, opacity: 0.1 },
+    { value: 50, opacity: 1.0 }
   ]
 };
 
-<span style="color:#75715e">// 先に作成したレンダラーに透過率による可視化変数を追加します。
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">visualVariables</span> <span style="color:#f92672">=</span> [ <span style="color:#a6e22e">opacityVV</span> ];
-</code></pre></div><p>実際にビジュアライゼーションを行った結果はサンプル アプリ (<!-- raw HTML omitted -->Create a custom visualization using Arcade<!-- raw HTML omitted -->) で確認してみてください。</p>
+// 先に作成したレンダラーに透過率による可視化変数を追加します。
+
+renderer.visualVariables = [ opacityVV ];
+</code></pre>
+
+<p>実際にビジュアライゼーションを行った結果はサンプル アプリ (<a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_blank">Create a custom visualization using Arcade</a>) で確認してみてください。</p>
+
 <h3 id="ポップアップ">ポップアップ</h3>
-<p>Arcadeを <!-- raw HTML omitted --><code>PopupTmplate</code><!-- raw HTML omitted --> の<!-- raw HTML omitted --><code>コンテンツ </code><!-- raw HTML omitted --> 内で参照することもできます。ビジュアライゼーション プロファイルと同様に、 <!-- raw HTML omitted --><code>FeatureLayer </code><!-- raw HTML omitted --> インスタンスに属性値として存在しないデータを表示する場合に便利です。
-例えば、サンプルアプリ （ <!-- raw HTML omitted --><code>Reference Arcade expressions in PopupTemplate</code><!-- raw HTML omitted --> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 労働参加率を計算
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">Round</span>((<span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">CIVLBFR_CY</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">POP_16UP</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)
-</code></pre></div><p>この式から返された値を使用して、レイヤーを視覚化したり、レイヤーの <!-- raw HTML omitted --><code>PopupTmplate</code><!-- raw HTML omitted --> に表示したりすることができます。ポップアップで値を表示するには、PopupTmplate の <!-- raw HTML omitted --><code>expressioninfo</code><!-- raw HTML omitted --> プロパティで値を参照し、 <code>name</code> と<code>  title</code> を割り当てる必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {　　
-  <span style="color:#a6e22e">expressionInfos</span><span style="color:#f92672">:</span> [{　　
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;participation-rate&#34;</span>,　　
-    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;% of population 16+ participating in the labor force&#34;</span>,　　
-    <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)&#34;</span>　　
+
+<p>Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank"><code>PopupTmplate</code></a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank"><code>コンテンツ</code></a> 内で参照することもできます。ビジュアライゼーション プロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank"><code>FeatureLayer</code></a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
+例えば、サンプルアプリ （ <a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank"><code>Reference Arcade expressions in PopupTemplate</code></a> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。</p>
+
+<pre><code class="language-js">// 労働参加率を計算
+Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)
+</code></pre>
+
+<p>この式から返された値を使用して、レイヤーを視覚化したり、レイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#popupTemplate" target="_blank"><code>PopupTmplate</code></a> に表示したりすることができます。ポップアップで値を表示するには、PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#expressionInfos" target="_blank"><code>expressioninfo</code></a> プロパティで値を参照し、 <code>name</code> と<code>title</code> を割り当てる必要があります。</p>
+
+<pre><code class="language-js">layer.popupTemplate = {　　
+  expressionInfos: [{　　
+    name: &quot;participation-rate&quot;,　　
+    title: &quot;% of population 16+ participating in the labor force&quot;,　　
+    expression: &quot;Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)&quot;　　
   }],　　
-  <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;In {NAME} county, {expression/participation-rate}% of the population&#34;</span>　　
-    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; participates in the labor force.&#34;</span>　　
+  content: &quot;In {NAME} county, {expression/participation-rate}% of the population&quot;　　
+    + &quot; participates in the labor force.&quot;　　
 };　　
-</code></pre></div><p>式が <code>expressionInfos</code> プロパティに存在すると、 PopupTemplate のコンテンツ内の<code>{expession/expression-name}</code> プレースホルダー テンプレートを使用して式から返された値を参照できます。
+</code></pre>
+
+<p>式が <code>expressionInfos</code> プロパティに存在すると、 PopupTemplate のコンテンツ内の<code>{expession/expression-name}</code> プレースホルダー テンプレートを使用して式から返された値を参照できます。
 ポップアップのコンテンツは、ユーザーが Greenlee , AZ を表現しているフィーチャーをクリックした後に次のように表示されます。</p>
-<p><!-- raw HTML omitted --></p>
-<p>また、PopupTmplate　のコンテンツ の <!-- raw HTML omitted --><code>fieldinfos</code><!-- raw HTML omitted -->　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの <code>fieldName</code> プロパティで式の名前を参照するだけです。なお、 <code>expression/expression-name</code> シンタックスを使用してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">expressionInfos</span><span style="color:#f92672">:</span> [{
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;participation-rate&#34;</span>,
-    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;% of population 16+ participating in the labor force&#34;</span>,
-    <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)&#34;</span>
+
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" ></p>
+
+<p>また、PopupTmplate　のコンテンツ の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a>　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの <code>fieldName</code> プロパティで式の名前を参照するだけです。なお、 <code>expression/expression-name</code> シンタックスを使用してください。</p>
+
+<pre><code class="language-js">layer.popupTemplate = {
+  expressionInfos: [{
+    name: &quot;participation-rate&quot;,
+    title: &quot;% of population 16+ participating in the labor force&quot;,
+    expression: &quot;Round(($feature.CIVLBFR_CY / $feature.POP_16UP)*100,2)&quot;
   }],
-  <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> [{
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fields&#34;</span>,
-    <span style="color:#a6e22e">fieldInfos</span><span style="color:#f92672">:</span> [{
-      <span style="color:#a6e22e">fieldName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;expression/participation-rate&#34;</span>
+  content: [{
+    type: &quot;fields&quot;,
+    fieldInfos: [{
+      fieldName: &quot;expression/participation-rate&quot;
     }]
   }]
 };
-</code></pre></div><p>ポップアップには以下のように表示されます。</p>
-<p><!-- raw HTML omitted --></p>
-<p>PopupTmplate の <!-- raw HTML omitted --><code>fieldinfos</code><!-- raw HTML omitted --> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
-このワークフローはサンプルアプリ（<!-- raw HTML omitted --><code>PopupTemplate Reference Arcade</code><!-- raw HTML omitted -->）でご覧ください。</p>
-<h3 id="ラベリング">ラベリング</h3>
-<p>ラベリングは、現在、3D <!-- raw HTML omitted -->SceneView<!-- raw HTML omitted --> のみサポートしています。2D <!-- raw HTML omitted -->MapView<!-- raw HTML omitted --> でのラベリングは将来のリリースで追加される予定です。</p>
-<p>Arcade は、<!-- raw HTML omitted -->FeatureLayer<!-- raw HTML omitted --> または <!-- raw HTML omitted -->SceneLayer<!-- raw HTML omitted --> に含まれるフィーチャのラベルの式を作成するためにも使用されます。バージョン 4.5 からは、フィーチャをラベリングするためにサポートされた唯一の方法です。</p>
-<p>少なくともひとつの <!-- raw HTML omitted -->LabelClass<!-- raw HTML omitted --> をレイヤーの <!-- raw HTML omitted -->LabelingInfo<!-- raw HTML omitted --> プロパティへ追加し、<!-- raw HTML omitted -->labelsVisible<!-- raw HTML omitted --> プロパティを <code>true</code> へ設定する必要があります。式は、<!-- raw HTML omitted -->LabelClass<!-- raw HTML omitted --> の <!-- raw HTML omitted -->labelExpressionInfo<!-- raw HTML omitted --> オブジェクトの <code>expression</code> プロパティへ文字列として渡します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// レイヤーのフィールド値を返す
-</span><span style="color:#75715e"></span><span style="color:#75715e">// フィールド値は各フィーチャのラベルに使用される
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arcade</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$feature.STATION_NAME&#34;</span>;
+</code></pre>
 
-<span style="color:#75715e">// new LabelClass() の autocast オブジェクト
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">labelClass</span> <span style="color:#f92672">=</span> {
-  <span style="color:#75715e">// 式を labelExpressionInfo の `expression` プロパティに設定する
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">labelExpressionInfo</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">arcade</span>
+<p>ポップアップには以下のように表示されます。</p>
+
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" ></p>
+
+<p>PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
+このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank"><code>PopupTemplate Reference Arcade</code></a>）でご覧ください。</p>
+
+<h3 id="ラベリング">ラベリング</h3>
+
+<p>ラベリングは、現在、3D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html" target="_blank">SceneView</a> のみサポートしています。2D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html" target="_blank">MapView</a> でのラベリングは将来のリリースで追加される予定です。</p>
+
+<p>Arcade は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">FeatureLayer</a> または <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SceneLayer.html" target="_blank">SceneLayer</a> に含まれるフィーチャのラベルの式を作成するためにも使用されます。バージョン 4.5 からは、フィーチャをラベリングするためにサポートされた唯一の方法です。</p>
+
+<p>少なくともひとつの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> をレイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelingInfo" target="_blank">LabelingInfo</a> プロパティへ追加し、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelsVisible" target="_blank">labelsVisible</a> プロパティを <code>true</code> へ設定する必要があります。式は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#labelExpressionInfo" target="_blank">labelExpressionInfo</a> オブジェクトの <code>expression</code> プロパティへ文字列として渡します。</p>
+
+<pre><code class="language-js">// レイヤーのフィールド値を返す
+// フィールド値は各フィーチャのラベルに使用される
+var arcade = &quot;$feature.STATION_NAME&quot;;
+
+// new LabelClass() の autocast オブジェクト
+var labelClass = {
+  // 式を labelExpressionInfo の `expression` プロパティに設定する
+  labelExpressionInfo: {
+    expression: arcade
   },
-  <span style="color:#a6e22e">labelPlacement</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;below-right&#34;</span>,
-  <span style="color:#a6e22e">minScale</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2500000</span>,
-  <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;label-3d&#34;</span>,
-    <span style="color:#a6e22e">symbolLayers</span><span style="color:#f92672">:</span> [{
-      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
-      <span style="color:#a6e22e">material</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;white&#34;</span> },
-      <span style="color:#a6e22e">halo</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;black&#34;</span>,
-        <span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>
+  labelPlacement: &quot;below-right&quot;,
+  minScale: 2500000,
+  symbol: {
+    type: &quot;label-3d&quot;,
+    symbolLayers: [{
+      type: &quot;text&quot;,
+      material: { color: &quot;white&quot; },
+      halo: {
+        color: &quot;black&quot;,
+        size: 1
       },
-      <span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>
+      size: 8
     }]
   }
 };
 
-<span style="color:#75715e">// LabelClass を FeatureLayer へ設定
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">labelingInfo</span> <span style="color:#f92672">=</span> [ <span style="color:#a6e22e">labelClass</span> ];
-<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">labelsVisible</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><p>Arcade で書かれたラベル式は、数学的で論理的な操作を実行する複数行に渡るもっと複雑な式になるかもしれません。例えば、<!-- raw HTML omitted -->Label features using Arcade expressions サンプル<!-- raw HTML omitted -->は、より複雑な複数行に渡るラベル式を示しています。この式は２つの数値フィールドの値を変数に入れ、評価し、文字列を返します。Arcade の <!-- raw HTML omitted -->When()<!-- raw HTML omitted --> は、風向き（0 - 360 度）を評価し、<code>N</code>、<code>NE</code>、<code>E</code>、<code>SE</code>、<code>S</code>、<code>SW</code>、<code>W</code> または <code>NW</code> のいずれかの関連する方角を返します。風力が <code>0</code> のとき、方角は返されません。式の最後で、ラベル（WIND 変数の値）を返します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wind-direction&#34;</span>&gt;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">WIND_DIRECT</span>;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">SPEED</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">WIND_SPEED</span>;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">DIR</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">When</span>( <span style="color:#a6e22e">SPEED</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;&#39;</span>,
-    (<span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">22.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">337.5</span>, <span style="color:#e6db74">&#39;N&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">22.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">67.5</span>, <span style="color:#e6db74">&#39;NE&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">67.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">112.5</span>, <span style="color:#e6db74">&#39;E&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">112.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">157.5</span>, <span style="color:#e6db74">&#39;SE&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">157.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">202.5</span>, <span style="color:#e6db74">&#39;S&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">202.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">247.5</span>, <span style="color:#e6db74">&#39;SW&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">247.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">292.5</span>, <span style="color:#e6db74">&#39;W&#39;</span>,
-     <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">292.5</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">337.5</span>, <span style="color:#e6db74">&#39;NW&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span> );
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">WIND</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SPEED</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; mph &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">DIR</span>;
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">WIND</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>そのほかにも、テキスト整形のロジックを提供するテキスト関数を含む、ラベリングに役立つ多くの関数が用意されています。詳細は <!-- raw HTML omitted -->Arcade<!-- raw HTML omitted --> をご参照ください。</p>
+// LabelClass を FeatureLayer へ設定
+featureLayer.labelingInfo = [ labelClass ];
+featureLayer.labelsVisible = true;
+</code></pre>
+
+<p>Arcade で書かれたラベル式は、数学的で論理的な操作を実行する複数行に渡るもっと複雑な式になるかもしれません。例えば、<a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-labeling-3d/" target="_blank">Label features using Arcade expressions サンプル</a>は、より複雑な複数行に渡るラベル式を示しています。この式は２つの数値フィールドの値を変数に入れ、評価し、文字列を返します。Arcade の <a href="https://developers.arcgis.com/arcade/function-reference/logical_functions/#when" target="_blank">When()</a> は、風向き（0 - 360 度）を評価し、<code>N</code>、<code>NE</code>、<code>E</code>、<code>SE</code>、<code>S</code>、<code>SW</code>、<code>W</code> または <code>NW</code> のいずれかの関連する方角を返します。風力が <code>0</code> のとき、方角は返されません。式の最後で、ラベル（WIND 変数の値）を返します。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/plain&quot; id=&quot;wind-direction&quot;&gt;
+  var DEG = $feature.WIND_DIRECT;
+  var SPEED = $feature.WIND_SPEED;
+  var DIR = When( SPEED == 0, '',
+    (DEG &lt; 22.5 &amp;&amp; DEG &gt;= 0) || DEG &gt; 337.5, 'N',
+     DEG &gt;= 22.5 &amp;&amp; DEG &lt; 67.5, 'NE',
+     DEG &gt;= 67.5 &amp;&amp; DEG &lt; 112.5, 'E',
+     DEG &gt;= 112.5 &amp;&amp; DEG &lt; 157.5, 'SE',
+     DEG &gt;= 157.5 &amp;&amp; DEG &lt; 202.5, 'S',
+     DEG &gt;= 202.5 &amp;&amp; DEG &lt; 247.5, 'SW',
+     DEG &gt;= 247.5 &amp;&amp; DEG &lt; 292.5, 'W',
+     DEG &gt;= 292.5 &amp;&amp; DEG &lt; 337.5, 'NW', '' );
+  var WIND = SPEED + ' mph ' + DIR;
+  return WIND;
+&lt;/script&gt;
+</code></pre>
+
+<p>そのほかにも、テキスト整形のロジックを提供するテキスト関数を含む、ラベリングに役立つ多くの関数が用意されています。詳細は <a href="https://developers.arcgis.com/arcade/">Arcade</a> をご参照ください。</p>
+
 <h2 id="その他のケース">その他のケース</h2>
+
 <h3 id="標高">標高</h3>
-<p>3D SceneView では、<!-- raw HTML omitted -->Arcade<!-- raw HTML omitted --> を使用してフィーチャごとに独自の標高を設定できます。フィーチャは Z 値を持つことができますが、属性値や Z 値を使用した計算式をもとに高さを演算したい場合に有効です。さらに、Z 値を含まないが、属性フィールドに Z 値に関連する情報を持つデータの場合、<!-- raw HTML omitted -->featureExpressionInfo.expression<!-- raw HTML omitted --> プロパティに式を設定できます。例として、<!-- raw HTML omitted -->Elevation options<!-- raw HTML omitted --> サンプルは Arcade を使用してポイント シンボルの高さがどのように変化するのかを示しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">elevationInfo</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;absolute-height&#34;</span>,
-  <span style="color:#a6e22e">featureExpressionInfo</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Geometry($feature).z + $feature.HEIGHT&#34;</span>
+
+<p>3D SceneView では、<a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> を使用してフィーチャごとに独自の標高を設定できます。フィーチャは Z 値を持つことができますが、属性値や Z 値を使用した計算式をもとに高さを演算したい場合に有効です。さらに、Z 値を含まないが、属性フィールドに Z 値に関連する情報を持つデータの場合、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html#elevationInfo" target="_blank">featureExpressionInfo.expression</a> プロパティに式を設定できます。例として、<a href="https://developers.arcgis.com/javascript/latest/sample-code/scene-elevationinfo/index.html" target="_blank">Elevation options</a> サンプルは Arcade を使用してポイント シンボルの高さがどのように変化するのかを示しています。</p>
+
+<pre><code class="language-js">layer.elevationInfo = {
+  mode: &quot;absolute-height&quot;,
+  featureExpressionInfo: {
+    expression: &quot;Geometry($feature).z + $feature.HEIGHT&quot;
   },
-  <span style="color:#a6e22e">unit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;meters&#34;</span>
+  unit: &quot;meters&quot;
 };
-</code></pre></div><p>上記の例では、独自の HEIGHT 属性がジオメトリの Z 値として、グラフィックの標高に設定されます。ラインまたはポリゴン フィーチャにおいて、すべてのフィーチャの頂点は <code>expression</code> の戻り値の標高を持ちます。</p>
-<p><!-- raw HTML omitted -->プレイグラウンド<!-- raw HTML omitted -->では、入力フィーチャ サービスからインポートしたフィールド値をもとに、ブラウザーから式をビルド、デバッグ、テストできます。<!-- raw HTML omitted -->Console()<!-- raw HTML omitted --> 機能を使い、複雑なスクリプトをデバッグすることも可能です。</p>
+</code></pre>
+
+<p>上記の例では、独自の HEIGHT 属性がジオメトリの Z 値として、グラフィックの標高に設定されます。ラインまたはポリゴン フィーチャにおいて、すべてのフィーチャの頂点は <code>expression</code> の戻り値の標高を持ちます。</p>
+
+<p><a href="https://developers.arcgis.com/arcade/playground/" target="_blank">プレイグラウンド</a>では、入力フィーチャ サービスからインポートしたフィールド値をもとに、ブラウザーから式をビルド、デバッグ、テストできます。<a href="https://developers.arcgis.com/arcade/function-reference/text_functions/#Console" target="_blank">Console()</a> 機能を使い、複雑なスクリプトをデバッグすることも可能です。</p>
 
 
     

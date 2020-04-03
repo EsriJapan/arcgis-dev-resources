@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-03T15:21:31 JST">
 <title>地図上に賢くデータを可視化するための 6 つの方法 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -603,84 +603,121 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS のデータ ビジュアライゼーション ツール（マップ ビューアー）を使って地図データを賢く可視化するために
+    
+
+<p>ArcGIS のデータ ビジュアライゼーション ツール（マップ ビューアー）を使って地図データを賢く可視化するために
 おさえておくべき６つの方法を紹介します。</p>
+
 <ol>
-<li><a href="#%E8%89%B2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B">色について考える</a></li>
-<li><a href="#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E7%99%BA%E8%A6%8B%E3%81%99%E3%82%8B">パターンを発見する</a></li>
-<li><a href="#%E3%82%A2%E3%82%A6%E3%83%88%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%92%E8%AA%BF%E6%95%B4%E3%81%99%E3%82%8B">アウトラインを調整する</a></li>
-<li><a href="#%E9%80%8F%E9%81%8E%E7%8E%87%E3%82%92%E8%AA%BF%E6%95%B4%E3%81%97%E3%81%A6%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%99%E3%82%8B">透過率を調整してパターンをハイライトする</a></li>
-<li><a href="#%EF%BC%92%E3%81%A4%E3%81%AE%E5%B1%9E%E6%80%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%A8%E8%89%B2%E3%81%A7%E8%A1%A8%E7%8F%BE%E3%81%99%E3%82%8B">２つの属性データをサイズと色で表現する</a></li>
-<li><a href="#%E3%82%82%E3%81%A3%E3%81%A8%E3%82%82%E5%A4%A7%E3%81%8D%E3%81%84%E5%80%A4%E3%82%92%E7%99%BA%E8%A6%8B%E3%81%99%E3%82%8B">もっとも大きい値を発見する</a></li>
+<li><a href="#色について考える">色について考える</a></li>
+<li><a href="#パターンを発見する">パターンを発見する</a></li>
+<li><a href="#アウトラインを調整する">アウトラインを調整する</a></li>
+<li><a href="#透過率を調整してパターンをハイライトする">透過率を調整してパターンをハイライトする</a></li>
+<li><a href="#２つの属性データをサイズと色で表現する">２つの属性データをサイズと色で表現する</a></li>
+<li><a href="#もっとも大きい値を発見する">もっとも大きい値を発見する</a></li>
 </ol>
+
 <h3 id="色について考える">色について考える</h3>
+
 <p>主題となるデータに色を加える場合に考えるべき事項は以下の 3 つです。</p>
+
 <ul>
 <li>背景地図</li>
 <li>ストーリー</li>
 <li>カラーランプ</li>
 </ul>
-<p>地図を使ったデータ可視化ではほとんどの場合、__背景地図__の上に主題となるデータが重なります。
+
+<p>地図を使ったデータ可視化ではほとんどの場合、<strong>背景地図</strong>の上に主題となるデータが重なります。
 そのため、色は背景地図の配色に応じて見やすい適切な色を選択するべきです。
 ただし、データ可視化においてはむしろ背景地図を使わないという選択肢も１つのテクニックになり得ます。</p>
-<p>データ可視化には必ず伝えたい__ストーリー__があります。
+
+<p>データ可視化には必ず伝えたい<strong>ストーリー</strong>があります。
 そのストーリーを説明するような説得力のある色を選びましょう。</p>
-<p><!-- raw HTML omitted --></p>
-<p>最後に__カラーランプ__ですが、数値データに対してその値の範囲をカラーランプ（色の変化）で表現します。
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Atascadero-Water-Use.png" width="450" /></p>
+
+<p>最後に<strong>カラーランプ</strong>ですが、数値データに対してその値の範囲をカラーランプ（色の変化）で表現します。
 上記のストーリーとデータのもつ意味を照らし合わせて、どの色からどの色へ変化すべきなのか考えてみましょう。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Themes.png" alt=""></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Themes.png" alt="" /></p>
+
 <h3 id="パターンを発見する">パターンを発見する</h3>
+
 <p>データ可視化の主題となるデータからパターンを導き出すことは重要です。
 パターンを浮かび上がらせるためにはいくつかの方法があります。
 たとえば、数値データに対しての表現として以下がまず前提となる２つの項目です。</p>
+
 <ul>
 <li>色を使うか？サイズを使うか？</li>
 <li>クラスで分類するか？しないか？</li>
 </ul>
+
 <p>たとえば、公園の面積で大中小のような３段階の規模でカテゴライズして可視化したい場合、
 色よりもサイズで規模を表現したほうが意図を伝えやすいと思います。
 そして、面積に比例してシンボルが変化するより、３段階でクラス分類すべきでしょう。</p>
+
 <p>ArcGIS のビジュアライゼーション ツールにはヒストグラムを掛け合わせたスライダーを操作することによって、
 動的に見栄えを確認しながら変化させることができます。
 ストーリーとの関連から、基点となる数字に意味を持たせるのもよいと思いますが、
 このスライダーを使ってあくまで地図上で可視化されたグラフィックの集合から、
 あるパターンを浮かび上がらせるには便利なツールです。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/slider.gif" alt=""></p>
-<p><!-- raw HTML omitted --> <!-- raw HTML omitted -->
-変化前（左）と変化後（右）</p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/slider.gif" alt="" /></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Average-Income.png" height="200" /> <img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Average-Income-Changes.png" height="200" />
+ 変化前（左）と変化後（右）</p>
+
 <h3 id="アウトラインを調整する">アウトラインを調整する</h3>
+
 <p>ポイントとポリゴンのシンボルはアウトライン（枠線）があります。
 アウトラインはデータをそれぞれ視認するのには役立ちますが、
 適切に調整をしないで使用すると視覚的には邪魔な要素となり、
 地図上の主題データが伝えるストーリーを理解するための焦点を逸らしてしまいかねません。</p>
+
 <p>色と透過率を用いて、強調しないようなアウトラインの表現に調整してみてください。
 場合によっては、完全にアウトラインをなくしてしまうことも選択肢として考えられます。</p>
-<p><!-- raw HTML omitted --> <!-- raw HTML omitted -->
-調整前（左）と調整後（右）</p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Heavy-Outlines.png" height="200" /> <img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Transparent-Lines-1024x620.png" height="200" />
+ 調整前（左）と調整後（右）</p>
+
 <h3 id="透過率を調整してパターンをハイライトする">透過率を調整してパターンをハイライトする</h3>
+
 <p>パターンを発見/可視化するためのシンボル表現として色あるいはサイズを選択することを伝えましたが、
 もう１つ値の変化を表現する方法として透過率を利用する方法があります。
 パターンや基点となるような重要な値をハイライトする際に採用することをお薦めします。</p>
+
 <p>透過率もスライダーで動的にレンジを調整することが可能です。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/trasnparency1.png" alt=""></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/trasnparency1.png" alt="" /></p>
+
 <h3 id="２つの属性データをサイズと色で表現する">２つの属性データをサイズと色で表現する</h3>
+
 <p>従来、地図上で属性データを可視化する場合は単一の属性値に基づいて色やサイズで表現することが基本でした。
 マップ ビューアーのビジュアライゼーション機能では、
 ２つのデータを色とサイズでそれぞれ表現することで１つのシンボルに対して２つの意味を含めることが可能です。</p>
-<p><!-- raw HTML omitted --></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Single-Mothers.png" width="450" /></p>
+
 <p>たとえば、エリアごとの家賃相場を色、居住者の平均年収をサイズで表現することで、
 家賃相場と居住者の収入の関連を単一の主題図で可視化することができます。</p>
+
 <h3 id="もっとも大きい値を発見する">もっとも大きい値を発見する</h3>
+
 <p>ビジュアライゼーション機能のなかでもっともユニークなものとして、
 複数の属性値を比較してもっとも大きい値を占める属性を可視化する機能があります。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/predominance_options.png" alt=""></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/predominance_options.png" alt="" /></p>
+
 <p>たとえば、選挙マップを作って各選挙区でどの政党がもっとも優勢かを表したいときに有効な表現です。
 選挙区の属性値として政党ごとの得票数が A 党 100、B 党 150、C 党 50 といったように格納されている場合に、
 A 党は赤、B 党は青、C 党は黄と色を割り振って、
 値の割合に応じて色をブレンドして１つの色で表現します。</p>
+
 <p>B 党がもっとも優勢なので、色味としては青が強い色になり、
 各政党が拮抗している場合には色彩の弱い色になります。</p>
-<p><!-- raw HTML omitted --></p>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Predominance.png" width="450" /></p>
+
 <p>以上、６つの方法を紹介してきましたが、
 まずはそれぞれの機能を実際に使ってみて表現を確かめてコツをつかんでみてください。</p>
 
