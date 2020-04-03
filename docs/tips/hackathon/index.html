@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T14:39:19 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>ミートアップ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -417,48 +418,6 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
-            ArcGIS API for Python のコンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
-            ArcGIS API for Python のための基礎環境：conda入門
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
-            Jupyter Notebook を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
-            Jupyter Lab を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
-            スクリプト実行の自動化
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
@@ -523,7 +482,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -589,74 +556,50 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ミートアップ参加者を支援するリソースをまとめています。</p>
-
+    <p>ミートアップ参加者を支援するリソースをまとめています。</p>
 <h2 id="オープンデータを入手する">オープンデータを入手する</h2>
-
-<p><a href="https://opendata.arcgis.com/" target="_blank">ArcGIS Open Data</a> では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
+<p><!-- raw HTML omitted -->ArcGIS Open Data<!-- raw HTML omitted --> では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
 自由に使える地理データを取得する方法を紹介します。</p>
-
 <ul>
 <li><a href="https://github.com/wakanasato/Hackathon-support/blob/master/GetOpenData/README.md">オープンデータの入手 (ArcGIS Open Data コミュニティサイト)</a></li>
 </ul>
-
 <h2 id="地図にデータを可視化する">地図にデータを可視化する</h2>
-
 <p>座標情報を持った地理データや住所情報を持ったテキストデータなどを可視化して、アプリに組み込むための地図を作成する方法や Tips を紹介します。
 なお、データ可視化の作業はコーディングが不要なので、プランナーやデザイナーの方でも取り組んでいただくことができます。</p>
-
 <ul>
 <li><a href="../visualization/workflow-with-arcgis">データ可視化のワークフロー</a></li>
 <li><a href="../visualization/data-visualization-procedure">データ可視化の手順</a></li>
 <li><a href="../visualization/data-visualization-procedure-3d">データ可視化の手順（3D）</a></li>
 <li><a href="../visualization/6ways-to-improve-your-maps">地図上に賢くデータを可視化するための 6 つの方法</a></li>
 </ul>
-
 <h2 id="アプリに地図を組み込む">アプリに地図を組み込む</h2>
-
 <p>アプリに ArcGIS の地図を組み込む際に便利な開発キットやライブラリです。アプリ作成ツールを活用することで、ノンコーディングでアプリを作成することも可能です。</p>
-
 <h3 id="コードを書く">コードを書く</h3>
-
 <h4 id="javascript">JavaScript</h4>
-
 <ul>
-<li><strong>ArcGIS Web API</strong>: <a href="https://developers.arcgis.com/javascript/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-js/">日本語ガイド</a></li>
-<li><strong>Leaflet.js (Esri Leaflet)</strong>: <a href="https://esri.github.io/esri-leaflet/" target="_blank">リファレンス (英語)</a> | <a href="https://geonet.esri.com/groups/devcom-jp/content?query=Esri+Leaflet+Tips">日本語ガイド(ブログ記事)</a></li>
+<li><strong>ArcGIS Web API</strong>: <!-- raw HTML omitted -->リファレンス (英語)<!-- raw HTML omitted --> | <a href="../../guide/create-app/create-startup-app-js/">日本語ガイド</a></li>
+<li><strong>Leaflet.js (Esri Leaflet)</strong>: <!-- raw HTML omitted -->リファレンス (英語)<!-- raw HTML omitted --> | <a href="https://geonet.esri.com/groups/devcom-jp/content?query=Esri+Leaflet+Tips">日本語ガイド(ブログ記事)</a></li>
 </ul>
-
 <h4 id="android">Android</h4>
-
 <ul>
-<li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/android/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-android/">日本語ガイド</a></li>
+<li><strong>ArcGIS Runtime SDK</strong>: <!-- raw HTML omitted -->リファレンス (英語)<!-- raw HTML omitted --> | <a href="../../guide/create-app/create-startup-app-android/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="ios">iOS</h4>
-
 <ul>
-<li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/ios/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-ios/">日本語ガイド</a></li>
+<li><strong>ArcGIS Runtime SDK</strong>: <!-- raw HTML omitted -->リファレンス (英語)<!-- raw HTML omitted --> | <a href="../../guide/create-app/create-startup-app-ios/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="net">.NET</h4>
-
 <ul>
-<li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/net/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-dotnet/">日本語ガイド</a></li>
+<li><strong>ArcGIS Runtime SDK</strong>: <!-- raw HTML omitted -->リファレンス (英語)<!-- raw HTML omitted --> | <a href="../../guide/create-app/create-startup-app-dotnet/">日本語ガイド</a></li>
 </ul>
-
 <h3 id="コードを書かない">コードを書かない</h3>
-
 <h4 id="アプリケーション-ビルダー">アプリケーション ビルダー</h4>
-
 <ul>
-<li><strong>Web AppBuilder for ArcGIS</strong>: <a href="https://doc.arcgis.com/ja/web-appbuilder/" target="_blank">リファレンス</a> | <a href="../webappbuilder/create-startup-app-wab/">日本語ガイド</a></li>
+<li><strong>Web AppBuilder for ArcGIS</strong>: <!-- raw HTML omitted -->リファレンス<!-- raw HTML omitted --> | <a href="../webappbuilder/create-startup-app-wab/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="ストーリーマップ">ストーリーマップ</h4>
-
 <ul>
-<li><strong>ストーリーマップ</strong>: <a href="https://storymaps.arcgis.com/" target="_blank">リファレンス</a></li>
+<li><strong>ストーリーマップ</strong>: <!-- raw HTML omitted -->リファレンス<!-- raw HTML omitted --></li>
 </ul>
 
 

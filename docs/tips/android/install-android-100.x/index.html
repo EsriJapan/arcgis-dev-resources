@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T14:39:18 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -524,7 +525,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -594,202 +603,129 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for Android を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。</p>
-
+    <p>このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for Android を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。</p>
 <h2 id="arcgis-runtime-sdk-for-android-とは">ArcGIS Runtime SDK for Android とは</h2>
-
 <p>ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。
 この SDK には API やリファレンス、サンプルコードなどが含まれています。
 詳細は <a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-android/">ArcGIS Runtime SDK for Android</a> をご参照ください。</p>
-
 <h2 id="arcgis-runtime-sdk-for-android-の開発環境">ArcGIS Runtime SDK for Android の開発環境</h2>
-
 <p>ここでは次の開発環境にて ArcGIS Runtime SDK for Android を用いたモバイル マッピング アプリケーションの開発手順を説明します。</p>
-
 <ul>
 <li>Android Studio</li>
 <li>Android 4.4 (Kitkat: API レベル 19) 以降</li>
 <li>OpenGL ES 3.0 以上</li>
 </ul>
-
 <p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境につきましては<a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/">動作環境</a>をご参照ください。</p>
-
 <h3 id="java-8-の使用">Java 8 の使用</h3>
-
-<p>Android Studio 3.0 以降では、プラットフォームのバージョンごとに異なる Java 7 のすべての言語機能と Java 8 の言語機能のサブセットをサポートしています。</br>
-これらの言語機能は、ArcGIS Runtime SDK の Android ドキュメントおよび<a href="https://github.com/Esri/arcgis-runtime-samples-android/tree/master/java">サンプル</a>でも使用されています。</br>
-これらのコード例がアプリで使用されるときにコンパイルされるようにするには、Java 8 言語機能を使用するように Android Studio でアプリケーションモジュールの互換性を設定します。</br>
-設定方法は<a href="#ArcGIS Runtime SDKの設定">ArcGIS Runtime SDK の設定</a>内を参照してください。</p>
-
+<p>Android Studio 3.0 以降では、プラットフォームのバージョンごとに異なる Java 7 のすべての言語機能と Java 8 の言語機能のサブセットをサポートしています。<!-- raw HTML omitted -->
+これらの言語機能は、ArcGIS Runtime SDK の Android ドキュメントおよび<a href="https://github.com/Esri/arcgis-runtime-samples-android/tree/master/java">サンプル</a>でも使用されています。<!-- raw HTML omitted -->
+これらのコード例がアプリで使用されるときにコンパイルされるようにするには、Java 8 言語機能を使用するように Android Studio でアプリケーションモジュールの互換性を設定します。<!-- raw HTML omitted -->
+設定方法は[ArcGIS Runtime SDK の設定](#ArcGIS Runtime SDKの設定)内を参照してください。</p>
 <h2 id="モバイル-マッピング-アプリケーションの開発">モバイル マッピング アプリケーションの開発</h2>
-
 <p>ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。</p>
-
 <ul>
-<li><strong><a href="#プロジェクトの作成">プロジェクトの作成</a></strong></li>
-<li><strong><a href="#arcgis-runtime-sdkの設定">ArcGIS Runtime SDKの設定</a></strong></li>
-<li><strong><a href="#地図表示の実装">地図表示の実装</a></strong></li>
-<li><strong><a href="#モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</a></strong></li>
+<li><strong><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">プロジェクトの作成</a></strong></li>
+<li><strong><a href="#arcgis-runtime-sdk%E3%81%AE%E8%A8%AD%E5%AE%9A">ArcGIS Runtime SDKの設定</a></strong></li>
+<li><strong><a href="#%E5%9C%B0%E5%9B%B3%E8%A1%A8%E7%A4%BA%E3%81%AE%E5%AE%9F%E8%A3%85">地図表示の実装</a></strong></li>
+<li><strong><a href="#%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB-%E3%83%9E%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%AE%9F%E8%A1%8C">モバイル マッピング アプリケーションの実行</a></strong></li>
 </ul>
-
 <h2 id="プロジェクトの作成">プロジェクトの作成</h2>
-
 <p>まず Android Studio 上に新しいプロジェクトを作成します。</p>
-
 <ol>
 <li>Android Studio を起動し [Start a new Android Studio project] をクリックします。すでに Android Studio のプロジェクトが開いている場合は Android Studio のメニューから [File] → [New Project] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_1.StartupAndroid.png" width="600px"></li>
+<!-- raw HTML omitted --></li>
 <li>[Application name] にアプリケーションの名称を入力します。ここでは「HelloMap」としています。[Company Domain] にドメインを、[Project Location] に作成するディレクトリを入力して [Next] をクリックします。
 ここではドメインを「tutorials.esri.com」としています。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_2.makeProject.png" width="600px"></li>
+<!-- raw HTML omitted --></li>
 <li>[Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから 「API 24: Android 7.0 (Nougat)」を選択して [Next] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_3.choseAndroidVersion.png" width="600px"></li>
+<!-- raw HTML omitted --></li>
 <li>Activity を選択します。ここでは「Empty Activity」を選択して [Next] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_4.choseActivity.png" width="600px"></li>
+<!-- raw HTML omitted --></li>
 <li>[Finish] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_5.makeActivity.png" width="600px"></li>
+<!-- raw HTML omitted --></li>
 <li>以上で新しいプロジェクトが作成されます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_6.finish_startProject.png"  width="600px"></li>
+<!-- raw HTML omitted --></li>
 </ol>
-
 <h2 id="arcgis-runtime-sdkの設定">ArcGIS Runtime SDKの設定</h2>
-
 <p>次に ArcGIS Runtime SDK for Android の API を使えるようにするための設定を行います。</p>
-
 <ol>
 <li>まずはこのアプリケーションが使用する機能に対して権限を付与します。
 Project ツールウィンドウ で「Android」を選択して「Manifests」フォルダの AndroidManifest.xml をダブルクリックして開きます。
-インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。
-<code>java
-&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
-&lt;uses-feature android:glEsVersion=&quot;0x00020000&quot; android:required=&quot;true&quot; /&gt;
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_1.addPermission.png" width="700px"></li>
-<li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
-<code>java
-allprojects {
-	repositories {
-		jcenter()
-		// esri arcgis maven リポジトリの追加
-		maven {
-			url 'https://esri.bintray.com/arcgis'
-		}
-	}
-}
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>
-<li>build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation &lsquo;com.esri.arcgisruntime:arcgis-android:100.6.0&rsquo;」を追加します。
-<code>java
-dependencies {
-    implementation 'com.esri.arcgisruntime:arcgis-android:100.6.0'
-    …
-}
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_3.addRuntimeVersion.png" width="700px"></li>
-<li>続いて、Java 8 での機能を使用する設定を<code>android</code>中に追加します。
-Java 8 で使用可能なラムダ式や特殊なアノーテーションを使用する場合ために、次のようにアプリケーションモジュールの互換性を設定します。
-<code>java
-android {
-    …
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
-    }
-}
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_4.addjava8conf.png" width="700px"></li>
-<li>ツールバーの [Sync Project with Gradle Files] または build.gradle を変更した後に表示されるメッセージの右にある [Sync Now] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_5.syncproject.png" width="600px">
-これで準備が整いました。</li>
+インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。</li>
 </ol>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>uses<span style="color:#f92672">-</span>permission android<span style="color:#f92672">:</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span>uses<span style="color:#f92672">-</span>feature android<span style="color:#f92672">:</span>glEsVersion<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0x00020000&#34;</span> android<span style="color:#f92672">:</span>required<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h2 id="地図表示の実装">地図表示の実装</h2>
-
 <p>ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。</p>
-
 <ol>
 <li>Project ツールウィンドウで [app] → [res] → [layout] と展開し activity_main.xml をダブルクリックして開きます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_1.openLayoutXml.png"  width="700px"></li>
-<li>左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。
-<code>java
-&lt;com.esri.arcgisruntime.mapping.view.MapView
-    android:id=&quot;@+id/mapView&quot;
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;fill_parent&quot; &gt;
-&lt;/com.esri.arcgisruntime.mapping.view.MapView&gt;
-</code>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_2.addMapviewElement.png" width="700px"></li>
-
-<li><p>Project ツールウィンドウで [app] → [res] → [java] と展開し MainActivity クラスを ダブルクリックして開き、地図表示のためのコードを設定します。</p>
-
-<ul>
-<li>MainActivity クラスへ次のクラスをインポートします。</li>
-</ul>
-
-<pre><code class="language-java">import com.esri.arcgisruntime.mapping.view.MapView;
-import com.esri.arcgisruntime.mapping.ArcGISMap;
-import com.esri.arcgisruntime.mapping.Basemap;
-</code></pre>
-
-<ul>
-<li>MainActivity クラスの先頭に次のクラス変数宣言を追加します。</li>
-</ul>
-
-<pre><code class="language-java">private MapView mMapView;
-</code></pre>
-
-<ul>
-<li>onCreate() メソッド内の <code>setContentView()</code> を呼び出している後に以下のコードを追加します。
-このコードは、レイアウトに定義している MapView の参照を取得し、ベースマップのタイプや初期表示の範囲、縮尺レベルを設定した地図を <code>MapView</code> に設定します。
-ここではベースマップに地形図を設定し、初期表示範囲は永田町付近を表示するようにしています。
-<code>java
-mMapView = (MapView) findViewById(R.id.mapView);
-ArcGISMap map = new Map(Basemap.Type.TOPOGRAPHIC, 35.665731,139.731088, 16);
-mMapView.setMap(map);
-</code></li>
-<li>MainActivity クラスへ <code>onPause()</code> メソッド(一時停止)と <code>onResume()</code> メソッド(再開)を追加します。2つのメソッドへはそれぞれ次のコードを追加します。</li>
-</ul>
-
-<pre><code class="language-java">@Override
-protected void onPause(){
-　　mMapView.pause();
-　　super.onPause();
-}
-
-@Override
-protected void onResume(){
-　　super.onResume();
-　　mMapView.resume();
-}
-</code></pre>
-
-<ul>
-<li>MainActivity は以下のようになります。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_3.finishMapViewElement.png" width="700px"></li>
-</ul></li>
-
-<li><p>ツールバーの [Make Project] または [Build] メニューから [Make Project] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_4.makeProject.png" width="600px"></p></li>
+<!-- raw HTML omitted --></li>
+<li>左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。</li>
 </ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   <span style="color:#f92672">&lt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mapping</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MapView</span>
+       android<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/mapView&#34;</span>
+       android<span style="color:#f92672">:</span>layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill_parent&#34;</span>
+       android<span style="color:#f92672">:</span>layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill_parent&#34;</span> <span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;</span><span style="color:#f92672">/</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mapping</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MapView</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_2.addMapviewElement.png&#34;</span> width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;700px&#34;</span><span style="color:#f92672">&gt;</span>
+1<span style="color:#f92672">.</span> Project ツールウィンドウで <span style="color:#f92672">[</span>app<span style="color:#f92672">]</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#f92672">[</span>res<span style="color:#f92672">]</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#f92672">[</span>java<span style="color:#f92672">]</span> と展開し MainActivity クラスを ダブルクリックして開き<span style="color:#960050;background-color:#1e0010">、</span>地図表示のためのコードを設定します<span style="color:#960050;background-color:#1e0010">。</span>
+  <span style="color:#f92672">*</span> MainActivity クラスへ次のクラスをインポートします<span style="color:#960050;background-color:#1e0010">。</span>
 
-<h2 id="モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</h2>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>java
+   <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.view.MapView<span style="color:#f92672">;</span>
+   <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.ArcGISMap<span style="color:#f92672">;</span>
+   <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.Basemap<span style="color:#f92672">;</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>
+  <span style="color:#f92672">*</span> MainActivity クラスの先頭に次のクラス変数宣言を追加します<span style="color:#960050;background-color:#1e0010">。</span>
 
-<p>ベースマップを表示するアプリケーションが作成できたので Android 端末にインストールして実行します。</p>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>java
+   <span style="color:#66d9ef">private</span> MapView mMapView<span style="color:#f92672">;</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>
+  <span style="color:#f92672">*</span> onCreate<span style="color:#f92672">(</span><span style="color:#f92672">)</span> メソッド内の <span style="color:#960050;background-color:#1e0010">`</span>setContentView<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">`</span> を呼び出している後に以下のコードを追加します<span style="color:#960050;background-color:#1e0010">。</span>
+このコードは<span style="color:#960050;background-color:#1e0010">、</span>レイアウトに定義している MapView の参照を取得し<span style="color:#960050;background-color:#1e0010">、</span>ベースマップのタイプや初期表示の範囲<span style="color:#960050;background-color:#1e0010">、</span>縮尺レベルを設定した地図を <span style="color:#960050;background-color:#1e0010">`</span>MapView<span style="color:#960050;background-color:#1e0010">`</span> に設定します<span style="color:#960050;background-color:#1e0010">。</span>
+ここではベースマップに地形図を設定し<span style="color:#960050;background-color:#1e0010">、</span>初期表示範囲は永田町付近を表示するようにしています<span style="color:#960050;background-color:#1e0010">。</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>java
+   mMapView <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>MapView<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mapView</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   ArcGISMap map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Map<span style="color:#f92672">(</span>Basemap<span style="color:#f92672">.</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">.</span><span style="color:#a6e22e">TOPOGRAPHIC</span><span style="color:#f92672">,</span> 35<span style="color:#f92672">.</span><span style="color:#a6e22e">665731</span><span style="color:#f92672">,</span>139<span style="color:#f92672">.</span><span style="color:#a6e22e">731088</span><span style="color:#f92672">,</span> 16<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   mMapView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMap</span><span style="color:#f92672">(</span>map<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>
+  <span style="color:#f92672">*</span> MainActivity クラスへ <span style="color:#960050;background-color:#1e0010">`</span>onPause<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">`</span> メソッド<span style="color:#f92672">(</span>一時停止<span style="color:#f92672">)</span>と <span style="color:#960050;background-color:#1e0010">`</span>onResume<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">`</span> メソッド<span style="color:#f92672">(</span>再開<span style="color:#f92672">)</span>を追加します<span style="color:#960050;background-color:#1e0010">。</span>2つのメソッドへはそれぞれ次のコードを追加します<span style="color:#960050;background-color:#1e0010">。</span>
 
-<ol>
-<li><p>ツールバーの [Run ‘app’] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_1.runAppBottun.png" width="600px"></p></li>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>java
+   <span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onPause</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+   　　mMapView<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   　　<span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onPause</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
 
-<li><p>接続しているデバイスを選択し [OK] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_2.choseDevice.png" ></p></li>
+   <span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResume</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+   　　<span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onResume</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   　　mMapView<span style="color:#f92672">.</span><span style="color:#a6e22e">resume</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+   <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#960050;background-color:#1e0010">`</span>
+  <span style="color:#f92672">*</span> MainActivity は以下のようになります<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_3.finishMapViewElement.png&#34;</span> width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;700px&#34;</span><span style="color:#f92672">&gt;</span>
 
-<li><p>アプリケーションが起動し東京ミッドタウン付近の地図が表示されます。
-スワイプやピンチイン/ピンチアウトで地図を移動したり拡大/縮小したりすることができます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_3.displayMap.png"  width="300px"></p></li>
-</ol>
+1<span style="color:#f92672">.</span> ツールバーの <span style="color:#f92672">[</span>Make Project<span style="color:#f92672">]</span> または <span style="color:#f92672">[</span>Build<span style="color:#f92672">]</span> メニューから <span style="color:#f92672">[</span>Make Project<span style="color:#f92672">]</span> をクリックします<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_4.makeProject.png&#34;</span> width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;600px&#34;</span><span style="color:#f92672">&gt;</span>
 
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">#</span> モバイル マッピング アプリケーションの実行
+
+ベースマップを表示するアプリケーションが作成できたので Android 端末にインストールして実行します<span style="color:#960050;background-color:#1e0010">。</span>
+
+1<span style="color:#f92672">.</span> ツールバーの <span style="color:#f92672">[</span>Run <span style="color:#960050;background-color:#1e0010">‘</span>app<span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">]</span> をクリックします<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_1.runAppBottun.png&#34;</span> width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;600px&#34;</span><span style="color:#f92672">&gt;</span>
+
+1<span style="color:#f92672">.</span> 接続しているデバイスを選択し <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span> をクリックします<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_2.choseDevice.png&#34;</span> <span style="color:#f92672">&gt;</span>
+
+1<span style="color:#f92672">.</span> アプリケーションが起動し東京ミッドタウン付近の地図が表示されます<span style="color:#960050;background-color:#1e0010">。</span>
+スワイプやピンチイン<span style="color:#f92672">/</span>ピンチアウトで地図を移動したり拡大<span style="color:#f92672">/</span>縮小したりすることができます<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#f92672">&lt;</span>img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_3.displayMap.png&#34;</span>  width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300px&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div>
 
     
     

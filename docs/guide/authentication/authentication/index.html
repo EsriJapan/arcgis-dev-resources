@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T14:39:18 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>認証パターン :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -523,7 +524,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -570,33 +579,22 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="認証が必要なケース">認証が必要なケース</h2>
-
+    <h2 id="認証が必要なケース">認証が必要なケース</h2>
 <p>ArcGIS for Developers で作成したアプリでは以下のように認証が必要となるケースがあります。</p>
-
 <ul>
 <li><strong>ユーザーが保有するプライベートなコンテンツへのアクセス</strong></li>
 <li><strong>コンテンツの作成と公開</strong></li>
 <li><strong>米国 Esri 社が提供する有償のコンテンツ（ジオコーディングやルート解析など）へのアクセス</strong></li>
 </ul>
-
 <h2 id="認証パターン">認証パターン</h2>
-
 <p>ArcGIS for Developers の認証方法は以下の 2 つのパターンが存在します。</p>
-
 <ul>
 <li><strong>ユーザー ログイン認証</strong>: アプリを利用するユーザーがユーザー名とパスワードを入力して認証を行います</li>
 <li><strong>アプリ認証</strong>: 特定のアプリをログインなしで認証を行います</li>
 </ul>
-
 <p>ユーザー ログインは組織契約の ArcGIS クラウド サービスである ArcGIS Online 組織向けプランのユーザーが利用することを想定しています。ArcGIS for Developers の開発者であれば、ArcGIS Online 組織向けプランを導入している組織に対してアプリを配布/販売することが可能です。</p>
-
 <p>一方、ユーザーが ArcGIS ユーザーではなく、アノニマスにアクセスされる場合、特定のアプリでのみアクセスできるようにするためにアプリ認証の実装が必要となります。たとえば、有償のサービスであるルート解析機能を持ったアプリを開発する場合にアプリ認証を実装することで、クレジットの消費を開発者が担保し、ユーザーはログインの操作を行うことなくルート解析機能を利用することができます。</p>
-
 <h3 id="認証パターンの比較">認証パターンの比較</h3>
-
 <table>
 <thead>
 <tr>
@@ -605,68 +603,57 @@ if (!doNotTrack) {
 <th align="center">アプリ認証 [2]</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/features/geocoding/">ジオコーディング</a></td>
 <td align="center">✔</td>
 <td align="center">✔</td>
 </tr>
-
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/features/directions/">ルート解析</a></td>
 <td align="center">✔</td>
 <td align="center">✔</td>
 </tr>
-
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/features/geo-enrichment/">統計データ</a></td>
 <td align="center">✔</td>
 <td align="center">✔</td>
 </tr>
-
 <tr>
 <td align="center"><a href="https://www.arcgis.com/home/search.html?q=owner:esri">プレミアム レイヤー/イメージ</a></td>
 <td align="center">✔</td>
 <td align="center">✔</td>
 </tr>
-
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/elevation/api-reference/get-started-with-elevation-services.htm">高度解析</a></td>
 <td align="center">✔</td>
 <td align="center">✔</td>
 </tr>
-
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/analysis/">空間解析</a></td>
 <td align="center">✔</td>
 <td align="center">-</td>
 </tr>
-
 <tr>
 <td align="center">ユーザーが保有するプライベート コンテンツの参照</td>
 <td align="center">✔</td>
 <td align="center">-</td>
 </tr>
-
 <tr>
 <td align="center">ユーザーによって組織内共有されたコンテンツの参照</td>
 <td align="center">✔</td>
 <td align="center">-</td>
 </tr>
-
 <tr>
 <td align="center">ユーザー コンテンツの作成/更新/削除</td>
 <td align="center">✔</td>
 <td align="center">-</td>
 </tr>
-
 <tr>
 <td align="center">共有コンテンツの作成/更新/削除</td>
 <td align="center">✔</td>
 <td align="center">-</td>
 </tr>
-
 <tr>
 <td align="center">他ユーザーのコンテンツの共有</td>
 <td align="center">✔</td>
@@ -674,7 +661,6 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>[1] ユーザーの所属する組織（ArcGIS Online 組織向けプラン）にクレジットを請求します</li>
 <li>[2] アプリを作成したユーザーにクレジットを請求します</li>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技術 Tips 集 on ArcGIS for Developer 開発リソース集</title>
@@ -17,10 +17,10 @@
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/hackathon/</guid>
       <description>ミートアップ参加者を支援するリソースをまとめています。
-オープンデータを入手する ArcGIS Open Data では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。 自由に使える地理データを取得する方法を紹介します。
+オープンデータを入手する ArcGIS Open Dataでは ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。 自由に使える地理データを取得する方法を紹介します。
  オープンデータの入手 (ArcGIS Open Data コミュニティサイト)  地図にデータを可視化する 座標情報を持った地理データや住所情報を持ったテキストデータなどを可視化して、アプリに組み込むための地図を作成する方法や Tips を紹介します。 なお、データ可視化の作業はコーディングが不要なので、プランナーやデザイナーの方でも取り組んでいただくことができます。
  データ可視化のワークフロー データ可視化の手順 データ可視化の手順（3D） 地図上に賢くデータを可視化するための 6 つの方法  アプリに地図を組み込む アプリに ArcGIS の地図を組み込む際に便利な開発キットやライブラリです。アプリ作成ツールを活用することで、ノンコーディングでアプリを作成することも可能です。
-コードを書く JavaScript  ArcGIS Web API: リファレンス (英語) | 日本語ガイド Leaflet.js (Esri Leaflet): リファレンス (英語) | 日本語ガイド(ブログ記事)  Android  ArcGIS Runtime SDK: リファレンス (英語) | 日本語ガイド  iOS  ArcGIS Runtime SDK: リファレンス (英語) | 日本語ガイド  .</description>
+コードを書く JavaScript  ArcGIS Web API: リファレンス (英語)| 日本語ガイド Leaflet.js (Esri Leaflet): リファレンス (英語)| 日本語ガイド(ブログ記事)  Android  ArcGIS Runtime SDK: リファレンス (英語)| 日本語ガイド  iOS  ArcGIS Runtime SDK: リファレンス (英語)| 日本語ガイド  .NET  ArcGIS Runtime SDK: リファレンス (英語)| 日本語ガイド  コードを書かない アプリケーション ビルダー  Web AppBuilder for ArcGIS: リファレンス| 日本語ガイド  ストーリーマップ  ストーリーマップ: リファレンス  </description>
     </item>
     
   </channel>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T14:39:19 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>スタートアップ ガイド（10.2.x） :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -524,7 +525,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -594,104 +603,85 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="sdk-のインストール">SDK のインストール</h2>
-
+    <h2 id="sdk-のインストール">SDK のインストール</h2>
 <p>ArcGIS Runtime SDK for iOS のライブラリをインストールします。</p>
-
 <ol>
 <li><a href="https://developers.arcgis.com/downloads">SDK のダウンロードページ</a> にアクセスします（<a href="../../../guide/create-map/get-dev-account">開発者アカウント</a> でサインインします）。</li>
 <li>ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sdk-download.png" width="450px"></li>
+<!-- raw HTML omitted --></li>
 <li>ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。</li>
 </ol>
-
 <h2 id="サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</h2>
-
 <p>このリポジトリ（<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a>）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。</p>
-
 <ul>
-<li><p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
-
+<li><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></li>
+</ul>
 <ol>
 <li>GitHub にログインして、<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。</li>
 <li>Fork 後はご自身のローカル マシンにクローンを作成します。</li>
-</ol></li>
-
-<li><p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p></li>
+</ol>
+<ul>
+<li><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></li>
 </ul>
-
 <p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px"></p>
-
+<!-- raw HTML omitted -->
 <h2 id="地図の表示">地図の表示</h2>
-
 <p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</p>
-
 <ol>
-<li>ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。</li>
-
-<li><p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../../guide/create-map/create-webmap">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
-
-<pre><code class="language-javascript"> webmap = AGSWebMap(itemId: &quot;&lt;Web マップ ID&gt;&quot;, credential: nil)
-</code></pre>
-
-<p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p></li>
-
-<li><p>サンプル プロジェクトを実行すると、以下のように地図が表示されます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/map-app.png" width="200px">
-Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</p></li>
+<li>
+<p>ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。</p>
+</li>
+<li>
+<p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../../guide/create-map/create-webmap">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">webmap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSWebMap</span>(<span style="color:#a6e22e">itemId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>, <span style="color:#a6e22e">credential</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">nil</span>)
+</code></pre></div></li>
 </ol>
-
+<p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
+<ol>
+<li>サンプル プロジェクトを実行すると、以下のように地図が表示されます。
+<!-- raw HTML omitted -->
+Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</li>
+</ol>
 <h2 id="現在位置の表示">現在位置の表示</h2>
-
 <p>iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/location-app.png" width="200px"></p>
-
+<!-- raw HTML omitted --></p>
 <ol>
-<li><p>地図の読み込みが完了したイベントをハンドリングするために、デリゲート プロトコル(<code>AGSMapViewLayerDelegate</code>)
+<li>
+<p>地図の読み込みが完了したイベントをハンドリングするために、デリゲート プロトコル(<code>AGSMapViewLayerDelegate</code>)
 を宣言します。<code>ViewController.swift</code> の 13 行目を以下のコードに置き換えます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// デリゲート プロトコルの宣言
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">UIViewController</span>, <span style="color:#a6e22e">AGSMapViewLayerDelegate</span> {
+</code></pre></div></li>
+<li>
+<p>地図の読み込みのデリゲートを自身に設定します。<code>viewDidLoad()</code> 関数の最後に以下のコードを追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#75715e">// AGSMapView のデリゲートを自身に設定
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">layerDelegate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">self</span>
+</code></pre></div></li>
+<li>
+<p>地図の読み込み完了時に実行されるデリゲート メソッド内に現在位置を表示する処理を記述します。<code>ViewController.swift</code> に以下のコードを記述します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#75715e">// AGSMapView のデリゲート メソッド（地図の読み込み完了時に実行）
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">func</span> <span style="color:#a6e22e">mapViewDidLoad</span>(<span style="color:#a6e22e">_</span> <span style="color:#a6e22e">mapView</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">AGSMapView</span><span style="color:#f92672">!</span>) {
 
-<pre><code class="language-javascript"> // デリゲート プロトコルの宣言
- class ViewController: UIViewController, AGSMapViewLayerDelegate {
-</code></pre></li>
+     <span style="color:#75715e">// 位置情報の表示モードを設定
+</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">locationDisplay</span>.<span style="color:#a6e22e">autoPanMode</span> <span style="color:#f92672">=</span> .<span style="color:#66d9ef">default</span>
 
-<li><p>地図の読み込みのデリゲートを自身に設定します。<code>viewDidLoad()</code> 関数の最後に以下のコードを追加します。</p>
+     <span style="color:#75715e">// 地図が現在位置にズームされる際の表示縮尺の設定
+</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">locationDisplay</span>.<span style="color:#a6e22e">zoomScale</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100000</span>
 
-<pre><code class="language-javascript">  // AGSMapView のデリゲートを自身に設定
- mapView.layerDelegate = self
-</code></pre></li>
+     <span style="color:#75715e">// 現在位置の表示を開始
+</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">locationDisplay</span>.<span style="color:#a6e22e">startDataSource</span>()
 
-<li><p>地図の読み込み完了時に実行されるデリゲート メソッド内に現在位置を表示する処理を記述します。<code>ViewController.swift</code> に以下のコードを記述します。</p>
-
-<pre><code class="language-javascript">  // AGSMapView のデリゲート メソッド（地図の読み込み完了時に実行）
-  func mapViewDidLoad(_ mapView: AGSMapView!) {
-
-      // 位置情報の表示モードを設定
-      mapView.locationDisplay.autoPanMode = .default
-
-      // 地図が現在位置にズームされる際の表示縮尺の設定
-      mapView.locationDisplay.zoomScale = 100000
-
-      // 現在位置の表示を開始
-      mapView.locationDisplay.startDataSource()
-
-  }
-</code></pre></li>
-
-<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
+ }
+</code></pre></div></li>
+<li>
+<p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
 位置情報の表示モードについては<a href="https://geonet.esri.com/docs/DOC-6533">ナビゲーションに便利な位置情報の表示モード</a>をご覧ください。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/location-app.gif" width="200px"></p></li>
+<!-- raw HTML omitted --></p>
+</li>
 </ol>
-
 <p>シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。</p>
-
 <p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
-
-<hr />
-
+<hr>
 <p>アプリの動作が確認できたら <a href="../../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
 
 

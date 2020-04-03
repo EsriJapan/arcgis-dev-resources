@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コアコンセプト on ArcGIS for Developer 開発リソース集</title>
@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
-      <description> ArcGIS とは&amp;hellip;.　 </description>
+      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+ArcGIS プラットフォーム ArcGIS プラットフォームは、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
+ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。ポータル を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、REST APIを使って直接データを操作することもできます。
+ ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer - 2D マップの作成, データの編集, データの分析 SceneViewer - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張やスクリプトの実行をすることもできます。ArcGIS Desktop 製品の機能概要については、ArcGIS Desktop Web サイトを参照してください。</description>
     </item>
     
     <item>
@@ -25,7 +28,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
-      <description> APIs、SDKs、Apps&amp;hellip;.　 </description>
+      <description>APIs、SDKs、Apps&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -34,7 +37,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</guid>
-      <description> セキュリティと認証&amp;hellip;.　 </description>
+      <description>ArcGIS での認証 セキュリティとは、ネットワーク上で利用可能なリソースを保護することですが、許可されたアクセスのみを目的としています。インターネットはそのようなネットワークの 1 つであるが、VPN やイントラネットも可能である。一般に共有されていないリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションのユーザは、資格のある機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
+アプリケーションが以下の操作を行うとする場合は、認証が必要になります。
+ ユーザのプライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツおよびサービスには、クレジット ベース モデルで動作するサービスの ArcGIS プラットフォームが含まれます。ユーザーは、ArcGIS Online 組織のためにクレジットを購入、またはその他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジットの数は、サービスによって異なります。クレジットが必要なサービスの詳細およびクレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには実費がかかり、コンテンツの出版および編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービス、およびメカニズムを提供しています。
+実装:   セキュリティ手法や ArcGIS 認証パターンに精通している場合は、実装に固有の詳細を参照してください。
+Android　iOS　Java
+JavaScript　.NET　Qt
+Esri Leaflet　REST
+  セキュリティの方法論 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+  OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザの真正性を判断し、トークンがクライアント アプリに提供されます。このトークンは、その後のセキュア リソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.3 以降で利用可能です。</description>
     </item>
     
     <item>
@@ -43,7 +54,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
-      <description> レイヤー&amp;hellip;.　 </description>
+      <description>レイヤー&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -52,7 +63,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
-      <description> Web マップ&amp;hellip;.　 </description>
+      <description>Web マップとは？ Web マップは、異なるアプリケーション間で作成、スタイル設定、共有できる 2D マップです。Web マップは Web マップ仕様に基づいた JSON で構成されており、マップの範囲、ベースマップ、レイヤ、レイヤ スタイル、ポップアップなどの設定が含まれています。
+ArcGIS Online の Web マップの例としては、サンタ モニカの公園とオープン スペース、トレイル、トレイルヘッドがあります。
+なぜ Web マップを使うのか？ Web マップは、ArcGIS Online および ArcGIS Pro で作成し、Navigator、Collector、ArcGIS StoryMaps、ArcGIS Configurable Apps や ArcGIS API および SDK を使用して構築されたアプリなど、多くのアプリケーションで表示することができます。アプリケーションが Web マップをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体での 2D マップの共有が容易になります。
+例えば、ArcGIS Online でポップアップを使用するために作成され、スタイルの設定がされた Web マップを REST API を使って参照したり、ArcGIS API for JavaScript を使用して Web ページに表示したり、ArcGIS Pro にインポートしたりすることができます。
+Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web マップを共有、作成、編集、可視化、参照などをすることができます。</description>
     </item>
     
     <item>
@@ -61,7 +76,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
-      <description> Web シーン&amp;rdquo;&amp;hellip;.　 </description>
+      <description>Web シーン&amp;rdquo;&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -70,7 +85,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
-      <description> REST API&amp;hellip;.　 </description>
+      <description>ArcGIS では、ArcGIS REST API を使用して地理空間サービス、マッピングサービス、および管理サービスを提供しています。
+以下では、API で最も一般的に使用されるコンポーネントの概要を説明します。
+位置情報ベースのサービス ArcGIS Online は、ジオコーディング、ルーティング、および空間分析などのロケーションベースの RESTful サービスをホストしています。一般的に、これらのサービスはクレジットを消費します。
+ Geocoding and search API Routing API Demographic and geoenrichment API Spatial API Elevation API  ArcGIS Enterprise API ArcGIS Enterprise REST API は、ArcGIS Online または ArcGIS Enterprise が独自のインフラストラクチャ上でホストしています。ArcGIS Enterprise API は、マップ、レイヤー、およびその他のコンテンツなどのアイテムの管理や、組織内のユーザーの特権や認証の処理に使用されます。ArcGIS Portal API の一般的なユースケースとしては、ユーザー、グループ、およびアイテムの操作や検索 API へのアクセスなどがあります。
+ホスティングされたデータ サービス ArcGIS Server REST API を使用すると、ArcGIS Enterprise または ArcGIS Online のいずれかに公開してホストされたデータ サービスを操作することができます。たとえば、ArcGIS Online にデータをインポートすると、ArcGIS Server のインスタンス上でホストされているフィーチャ レイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤにアクセスすることができます。ArcGIS Server が提供するレイヤーやサービスには、次のようなさまざまな ArcGIS ツールで作成して公開できるものがあります。</description>
     </item>
     
   </channel>

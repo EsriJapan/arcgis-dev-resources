@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-23T14:39:19 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>スタートアップ ガイド（3.x） :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -524,7 +525,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -597,147 +606,126 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</h2>
-
+    <h2 id="サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</h2>
 <p>このリポジトリ（<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a>）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。</p>
-
 <ul>
-<li><p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
-
+<li><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></li>
+</ul>
 <ol>
 <li>GitHub にログインして、<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。</li>
 <li>Fork 後はご自身のローカル マシンにクローンを作成します。</li>
-</ol></li>
-
-<li><p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p></li>
-</ul>
-
-<p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px"></p>
-
-<h2 id="地図の表示">地図の表示</h2>
-
-<p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
-
-<ol>
-<li><p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html">arcgis-dev-resources/startup/javascript/3.x/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。
-Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-samples-js/simple/map.html</code> のように localhost を指定してアクセスできます。</p></li>
-
-<li><p>この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。</p></li>
-
-<li><p><code>map.html</code> 29 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../../guide/create-map/create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
-
-<pre><code class="language-javascript">var mapDeferred = arcgisUtils.createMap(&quot;&lt;Web マップ ID&gt;&quot;, &quot;mapDiv&quot;);
-</code></pre>
-
-<p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p></li>
-
-<li><p>Web アプリを実行すると、以下のように地図が表示されます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/map-app.png" width="450px"></p></li>
 </ol>
-
-<h2 id="検索機能の追加">検索機能の追加</h2>
-
-<p>検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には <code>esri/dijit/Search</code> モジュール（検索ウィジェット）を使用します。検索ソースには<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>に含まれる東京都 23 区のデータを使用します。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-widget.png" alt="検索ウィジェット" /></p>
-
-<p>検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。</p>
-
-<ol>
-<li><p>ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは <code>require</code> 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。</p>
-
-<pre><code class="language-javascript">require([&quot;esri/arcgis/utils&quot;, &quot;esri/dijit/Search&quot;, &quot;esri/layers/FeatureLayer&quot;, &quot;esri/InfoTemplate&quot;, &quot;dojo/domReady!&quot;],
-function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {
-...
-});
-</code></pre>
-
-<p>以下は検索機能に必要なモジュール一覧です。</p>
-
 <ul>
-<li><code>&quot;esri/dijit/Search&quot;</code>: 検索ウィジェット</li>
-<li><code>&quot;esri/layers/FeatureLayer&quot;</code>: フィーチャ レイヤー（オプション）</li>
-<li><code>&quot;esri/InfoTemplate&quot;</code>: 情報テンプレート（オプション）</li>
+<li><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></li>
 </ul>
-
-<p>フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。
-ここで以下の点に注意してください。</p>
-
-<ul>
-<li>配列の一番最後のモジュールは必ず <code>&quot;dojo/domReady!&quot;</code> になるようにしてください</li>
-<li><code>require</code> 関数の第ニ引数の無名関数の引数にはモジュールに対応したクラス名（任意）を定義しますが、これは配列内のモジュールの順序と対応している必要があります</li>
-</ul></li>
-
-<li><p>検索ウィジェット用の DOM 要素を作成します。</p>
-
-<pre><code class="language-html">&lt;div id=&quot;searchDiv&quot;&gt;&lt;/div&gt;
-</code></pre>
-
-<p>ここで指定した DIV の ID は検索ウィジェットを作成する際に、JavaScript 側で使用します。</p></li>
-
-<li><p>検索ウィジェットの表示位置を CSS で記述します。</p>
-
-<pre><code class="language-css">#searchDiv {
-display: block;
-position: absolute;
-z-index: 2;
-top: 20px;
-left: 74px;
-}
-</code></pre></li>
-
-<li><p><code>mapDeffered.then</code> の関数内で検索ウィジェット作成のスクリプトを記述します。</p>
-
-<pre><code class="language-javascript">mapDeferred.then(function(response) {
- map = response.map;
- var search = new Search({
-     map: map,
-     sources: []
- }, &quot;searchDiv&quot;);
+<p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
+<!-- raw HTML omitted -->
+<h2 id="地図の表示">地図の表示</h2>
+<p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
+<ol>
+<li>
+<p>ダウンロードしたサンプル コード（<a href="https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/map/index.html">arcgis-dev-resources/startup/javascript/3.x/map/index.html</a>）を Web ブラウザーにドラッグ＆ドロップします。
+Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。<code>http://localhost/arcgis-samples-js/simple/map.html</code> のように localhost を指定してアクセスできます。</p>
+</li>
+<li>
+<p>この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。</p>
+</li>
+<li>
+<p><code>map.html</code> 29 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../../guide/create-map/create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapDeferred</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arcgisUtils</span>.<span style="color:#a6e22e">createMap</span>(<span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>, <span style="color:#e6db74">&#34;mapDiv&#34;</span>);
+</code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
+<ol>
+<li>Web アプリを実行すると、以下のように地図が表示されます。
+<!-- raw HTML omitted --></li>
+</ol>
+<h2 id="検索機能の追加">検索機能の追加</h2>
+<p>検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には <code>esri/dijit/Search</code> モジュール（検索ウィジェット）を使用します。検索ソースには<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>に含まれる東京都 23 区のデータを使用します。</p>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-widget.png" alt="検索ウィジェット"></p>
+<p>検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。</p>
+<ol>
+<li>ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは <code>require</code> 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/arcgis/utils&#34;</span>, <span style="color:#e6db74">&#34;esri/dijit/Search&#34;</span>, <span style="color:#e6db74">&#34;esri/layers/FeatureLayer&#34;</span>, <span style="color:#e6db74">&#34;esri/InfoTemplate&#34;</span>, <span style="color:#e6db74">&#34;dojo/domReady!&#34;</span>],
+<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arcgisUtils</span>, <span style="color:#a6e22e">Search</span>, <span style="color:#a6e22e">FeatureLayer</span>, <span style="color:#a6e22e">InfoTemplate</span>) {
+  ...
 });
+</code></pre></div><p>以下は検索機能に必要なモジュール一覧です。</p>
+<pre><code> * `&quot;esri/dijit/Search&quot;`: 検索ウィジェット
+ * `&quot;esri/layers/FeatureLayer&quot;`: フィーチャ レイヤー（オプション）
+ * `&quot;esri/InfoTemplate&quot;`: 情報テンプレート（オプション）
+
+ フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。
 </code></pre>
-
-<p><code>&quot;esri/dijit/Search&quot;</code> モジュールが定義する <code>Search</code> クラスは <code>require</code> 関数内でのみ動作します。</p>
-
-<p>マップのオブジェクトは <code>mapDeffered.then</code> の処理完了後の <code>Deferred</code> で取得できます。検索ウィジェットはマップのオブジェクトを使用するため、この位置に記述する必要があります。</p>
-
-<p>対応するマップを指定するための <code>map</code> プロパティにはマップのオブジェクトを、検索ソースを指定するための <code>sources</code> プロパティには空の配列を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。</p></li>
-
-<li><p>検索ソースに検索対象とするフィーチャ レイヤーを定義します。</p>
-
-<pre><code class="language-javascript"> var sources = search.get(&quot;sources&quot;);
- sources.push({
-    featureLayer: new FeatureLayer(&quot;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&quot;), // 検索ソースとなるフィーチャ レイヤー
-    placeholder: &quot;検索キーワードの入力&quot;, // プレースホルダー
-    enableLabel: false, // 検索結果ラベルの表示
-    searchFields: [&quot;&lt;フィールド名&gt;&quot;], // 検索対象となる属性フィールド
-    displayField: &quot;&lt;フィールド名&gt;&quot;, // 検索結果のポップアップに表示する属性フィールド
-    outFields: [&quot;*&quot;], // 結果として返す属性フィールド
-    name: &quot;東京都&quot;, // 検索ソースの名前
-    infoTemplate: new InfoTemplate(&quot;東京都&quot;, &quot;市区町村: ${Name}&quot;), // 検索結果のポップアップ表示構成
-    enableSuggestions: true // 検索結果の候補リスト表示
- });
- // 検索ソースを検索ウィジェットに設定
- search.set(&quot;sources&quot;, sources);
- search.startup();
+<p>ここで以下の点に注意してください。</p>
+<pre><code> * 配列の一番最後のモジュールは必ず `&quot;dojo/domReady!&quot;` になるようにしてください
+ * `require` 関数の第ニ引数の無名関数の引数にはモジュールに対応したクラス名（任意）を定義しますが、これは配列内のモジュールの順序と対応している必要があります
 </code></pre>
+<ol>
+<li>検索ウィジェット用の DOM 要素を作成します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;searchDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>ここで指定した DIV の ID は検索ウィジェットを作成する際に、JavaScript 側で使用します。</p>
+<ol>
+<li>検索ウィジェットの表示位置を CSS で記述します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#searchDiv {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">74</span><span style="color:#66d9ef">px</span>;
+}
+</code></pre></div><ol>
+<li><code>mapDeffered.then</code> の関数内で検索ウィジェット作成のスクリプトを記述します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">mapDeferred</span>.<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
+    <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">map</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">search</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Search</span>({
+        <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
+        <span style="color:#a6e22e">sources</span><span style="color:#f92672">:</span> []
+    }, <span style="color:#e6db74">&#34;searchDiv&#34;</span>);
+});
+</code></pre></div><p><code>&quot;esri/dijit/Search&quot;</code> モジュールが定義する <code>Search</code> クラスは <code>require</code> 関数内でのみ動作します。</p>
+<pre><code>マップのオブジェクトは `mapDeffered.then` の処理完了後の `Deferred` で取得できます。検索ウィジェットはマップのオブジェクトを使用するため、この位置に記述する必要があります。
 
-<p><code>sources.featureLayer</code> には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。</p>
-
-<p>フィールド名の確認は次の手順で紹介します。</p></li>
-
-<li><p>検索対象とするレイヤーの詳細ページにて、[レイヤー] の項目から対象とするレイヤーをクリックして [サービスの URL] を選択します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/view-fields.gif" width="450px"></p></li>
-
-<li><p>[Fields] という項目にレイヤーのフィールド情報のリストが表示されているので、検索対象とするフィールド名をコピーして <code>searchFields</code> の配列に追加します。
-検索結果のポップアップに表示する属性情報として利用したい場合は <code>displayField</code> にも入力してください。</p></li>
-
-<li><p>Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px"></p></li>
+対応するマップを指定するための `map` プロパティにはマップのオブジェクトを、検索ソースを指定するための `sources` プロパティには空の配列を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。
+</code></pre>
+<ol>
+<li>検索ソースに検索対象とするフィーチャ レイヤーを定義します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sources</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;sources&#34;</span>);
+    <span style="color:#a6e22e">sources</span>.<span style="color:#a6e22e">push</span>({
+       <span style="color:#a6e22e">featureLayer</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>(<span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&#34;</span>), <span style="color:#75715e">// 検索ソースとなるフィーチャ レイヤー
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;検索キーワードの入力&#34;</span>, <span style="color:#75715e">// プレースホルダー
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">enableLabel</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// 検索結果ラベルの表示
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">searchFields</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;&lt;フィールド名&gt;&#34;</span>], <span style="color:#75715e">// 検索対象となる属性フィールド
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">displayField</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;フィールド名&gt;&#34;</span>, <span style="color:#75715e">// 検索結果のポップアップに表示する属性フィールド
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">outFields</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;*&#34;</span>], <span style="color:#75715e">// 結果として返す属性フィールド
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;東京都&#34;</span>, <span style="color:#75715e">// 検索ソースの名前
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">infoTemplate</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">InfoTemplate</span>(<span style="color:#e6db74">&#34;東京都&#34;</span>, <span style="color:#e6db74">&#34;市区町村: ${Name}&#34;</span>), <span style="color:#75715e">// 検索結果のポップアップ表示構成
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">enableSuggestions</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">// 検索結果の候補リスト表示
+</span><span style="color:#75715e"></span>    });
+    <span style="color:#75715e">// 検索ソースを検索ウィジェットに設定
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;sources&#34;</span>, <span style="color:#a6e22e">sources</span>);
+    <span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">startup</span>();
+</code></pre></div><p><code>sources.featureLayer</code> には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。</p>
+<pre><code>フィールド名の確認は次の手順で紹介します。
+</code></pre>
+<ol>
+<li>
+<p>検索対象とするレイヤーの詳細ページにて、[レイヤー] の項目から対象とするレイヤーをクリックして [サービスの URL] を選択します。
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>[Fields] という項目にレイヤーのフィールド情報のリストが表示されているので、検索対象とするフィールド名をコピーして <code>searchFields</code> の配列に追加します。
+検索結果のポップアップに表示する属性情報として利用したい場合は <code>displayField</code> にも入力してください。</p>
+</li>
+<li>
+<p>Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
+<!-- raw HTML omitted --></p>
+</li>
 </ol>
 
 
