@@ -5,6 +5,6 @@ Weight=1
 alwaysopen = true
 +++
 
-コアコンセプト
+ArcGIS のコンセプトについて紹介します。
 
 {{% children description="true"   %}}

@@ -1,6 +1,6 @@
 +++
 title = "セキュリティと認証"
-description = "ArcGIS での"
+description = "一般に共有されていないリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションのユーザは、資格のある機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。ArcGIS でのセキュリティの方法論や認証パターンなどについて紹介します。"
 Weight=3
 aliases = ["/security-and-authentication/"]
 +++
