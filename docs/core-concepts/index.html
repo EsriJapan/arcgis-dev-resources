@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>コアコンセプト :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@ if (!doNotTrack) {
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="ArcGIS コンセプト">
+<meta name="description" content="ArcGIS のコンセプトについて紹介します。">
 
 
 
@@ -64,7 +64,7 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item parent active haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item parent active alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
@@ -575,59 +575,29 @@ if (!doNotTrack) {
     
     
 
-<p>コンセプトの紹介</p>
-
-
-
-<ul class="children children-li">
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >ArcGIS とは</a></li>
-<p>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
-ArcGIS プラットフォーム ArcGIS プラットフォームは、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
-ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。ポータル を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、REST APIを使って直接データを操作することもできます。
- ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer - 2D マップの作成, データの編集, データの分析 SceneViewer - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張やスクリプトの実行をすることもできます。ArcGIS Desktop 製品の機能概要については、ArcGIS Desktop Web サイトを参照してください。</p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >APIs、SDKs、Apps</a></li>
-<p> APIs、SDKs、Apps&hellip;.　 </p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/security-and-authentication/" >セキュリティと認証</a></li>
-<p> セキュリティと認証&hellip;.　 </p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/layers/" >レイヤー</a></li>
-<p> レイヤー&hellip;.　 </p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/web-maps/" >Web マップ</a></li>
-<p>Web マップとは？ Web マップは、異なるアプリケーション間で作成、スタイル設定、共有できる 2D マップです。Web マップは Web マップ仕様に基づいた JSON で構成されており、マップの範囲、ベースマップ、レイヤ、レイヤ スタイル、ポップアップなどの設定が含まれています。
-ArcGIS Online の Web マップの例としては、サンタ モニカの公園とオープン スペース、トレイル、トレイルヘッドがあります。
-なぜ Web マップを使うのか？ Web マップは、ArcGIS Online および ArcGIS Pro で作成し、Navigator、Collector、ArcGIS StoryMaps、ArcGIS Configurable Apps や ArcGIS API および SDK を使用して構築されたアプリなど、多くのアプリケーションで表示することができます。アプリケーションが Web マップをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体での 2D マップの共有が容易になります。
-例えば、ArcGIS Online でポップアップを使用するために作成され、スタイルの設定がされた Web マップを REST API を使って参照したり、ArcGIS API for JavaScript を使用して Web ページに表示したり、ArcGIS Pro にインポートしたりすることができます。
-Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web マップを共有、作成、編集、可視化、参照などをすることができます。</p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/web-scenes/" >Web シーン</a></li>
-<p> Web シーン&rdquo;&hellip;.　 </p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/core-concepts/rest-api/" >REST API</a></li>
-<p> REST API&hellip;.　 </p>
-</span>
-</ul>
-
-
-
-
-
+<p>ArcGIS のコンセプトについて紹介します。</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->ArcGIS とは<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->APIs、SDKs、Apps<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->セキュリティと認証<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->レイヤー<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Web マップ<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Web シーン<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->REST API<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 
 
 

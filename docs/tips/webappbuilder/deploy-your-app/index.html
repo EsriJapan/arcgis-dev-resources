@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T14:55:54 JST">
 <title>Web アプリケーションのデプロイ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -524,7 +525,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -596,91 +605,70 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="トピック">トピック</h2>
-
+    <h2 id="トピック">トピック</h2>
 <ul>
-<li><a href="#アプリのダウンロード">アプリのダウンロード</a></li>
-<li><a href="#アプリのデプロイ">アプリのデプロイ</a></li>
-<li><a href="#グループ-アクセスの設定">グループ アクセスの設定</a></li>
-<li><a href="#動作環境">動作環境</a></li>
+<li><a href="#%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89">アプリのダウンロード</a></li>
+<li><a href="#%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">アプリのデプロイ</a></li>
+<li><a href="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A">グループ アクセスの設定</a></li>
+<li><a href="#%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83">動作環境</a></li>
 </ul>
-
 <p>Web AppBuilder for ArcGIS (Developer Edition)（以下 Web AppBuilder）で作成したWeb アプリケーション (以下、アプリ) はダウンロードして、独自の Web サーバーにホストすることができます。もしアプリが未共有のアイテムを参照しているとき、ダウンロードしたアプリは ArcGIS Online または Portal for ArcGIS に登録する必要があります。
 アプリをデプロイする場所にかかわらず、Web マップへのアクセスは必須です。</p>
-
 <p>その他のデプロイ パターンについては<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">デプロイ パターン</a>のページをご覧下さい。</p>
-
 <h2 id="アプリのダウンロード">アプリのダウンロード</h2>
-
 <ol>
 <li>Web AppBuilder を起動し、トップページを開いたら、アプリのダウンロードボタンをクリックします。</li>
 <li>アプリケーションは ZIP ファイルでダウンロードされます。保存ダイアログが表示されたら、任意のフォルダーを指定し、[保存] をクリックします。これで、アプリケーションはローカル ドライブに保存されます。</li>
 </ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-your-app.gif" alt="ダウンロード" width="600px"></p>
-
+<!-- raw HTML omitted -->
 <h2 id="アプリのデプロイ">アプリのデプロイ</h2>
-
 <ol>
 <li>ダウンロードしたアプリを解凍します。</li>
 <li>解凍したアプリを Web サーバーへ配置します。</li>
-<li>アプリのルート ディレクトリにある <code>config.json</code> ファイルを開き、以下の項目を編集します。
-
-<ol>
-<li>プロキシ<br />
-必要に応じて、使用するプロキシを <code>proxy</code> プロパティに追加します。プロキシの詳細は <a href="https://developers.arcgis.com/web-appbuilder/guide/use-proxy.htm" target="_blank">Use proxy</a> をご参照ください。</li>
-<li>アプリケーション ID<br />
-アプリケーション ID を <code>appId</code> プロパティへ設定します。アプリケーション ID を入手するには、アプリの追加、登録が必要です。詳細は<a href="https://doc.arcgis.com/ja/arcgis-online/share-maps/add-items.htm" target="_blank">アプリの追加およびアプリの登録</a>をご参照ください。
+<li>アプリのルート ディレクトリにある <code>config.json</code> ファイルを開き、以下の項目を編集します。</li>
+<li>プロキシ<br>
+必要に応じて、使用するプロキシを <code>proxy</code> プロパティに追加します。プロキシの詳細は <!-- raw HTML omitted -->Use proxy<!-- raw HTML omitted --> をご参照ください。</li>
+<li>アプリケーション ID<br>
+アプリケーション ID を <code>appId</code> プロパティへ設定します。アプリケーション ID を入手するには、アプリの追加、登録が必要です。詳細は<!-- raw HTML omitted -->アプリの追加およびアプリの登録<!-- raw HTML omitted -->をご参照ください。
 OAuth と SAML を用いたプラットフォーム認証を活用するために、アプリケーション ID を使用することを推奨しています。</li>
-</ol></li>
 </ol>
-
 <p>アプリをカスタマイズするには、以下のドキュメントを参照してください。</p>
-
 <ul>
-<li>アプリとウィジェットの設定：<a href="https://developers.arcgis.com/web-appbuilder/api-reference/app-configuration.htm" target="_blank">App configuration</a></li>
+<li>アプリとウィジェットの設定：<!-- raw HTML omitted -->App configuration<!-- raw HTML omitted --></li>
 <li>ArcGIS API for JavaScript の変更：<a href="../install-guide/">ArcGIS API for JavaScript の参照先を変更する（オプション）</a></li>
 </ul>
-
 <h2 id="グループ-アクセスの設定">グループ アクセスの設定</h2>
-
 <p>もしアプリがグループや異なる組織間のメンバーで共有している、パブリックではない Web マップを使用しているとき、すべてのグループのメンバーがWeb マップにアクセスできるように設定します。</p>
-
 <ol>
 <li>アプリの <code>config.json</code> ファイルを開きます。</li>
 <li><code>portalUrl</code> プロパティの値を <code>www.arcgis.com</code> に変更します。</li>
 <li><code>map</code> プロパティに <code>portalUrl</code> プロパティが含まれている場合は、値を <code>www.arcgis.com</code> に変更します。</li>
 </ol>
-
 <h2 id="動作環境">動作環境</h2>
-
 <p>アプリがサポートしているブラウザーは以下の通りです。</p>
-
 <ul>
 <li>2D
-
 <ul>
 <li>Google Chrome</li>
 <li>Firefox</li>
 <li>Safari（Mac）</li>
 <li>Edge</li>
-<li>Internet Explorer 11<br />
+<li>Internet Explorer 11<br>
 IE11 または Edge で OAuth 認証を使用してアプリを開くとき、ポップアップが表示されることがあります。<strong>はい</strong>をクリックすると、ポップアップは消えますが、アプリは読み込まれません。この場合は、ブラウザーの設定から <code>.arcgis.com</code> を信頼済みサイトとして追加してください。</li>
 <li>Safari（iOS）</li>
 <li>Google Chrome（Android）</li>
-</ul></li>
+</ul>
+</li>
 <li>3D
-
 <ul>
 <li>Google Chrome</li>
 <li>Firefox</li>
 <li>Safari（Mac）</li>
 <li>Edge</li>
-<li>Internet Explorer 11<br />
-3D アプリには WebGL をサポートしているデスクトップの Web ブラウザーが必要です。ほとんどの最新バージョンのデスクトップ Web ブラウザーは WebGL を内蔵しています。ご利用の Web ブラウザーが WebGL を利用可能かどうかは <a href="https://get.webgl.org/" target="_blank">get.webgl.org</a> で確認できます。WebGL に関するトラブルシューティングは <a href="https://get.webgl.org/troubleshooting/" target="_blank">WebGL Troubleshooting</a> をご参照ください。また、シーン ビューアーについての詳細は <a href="https://doc.arcgis.com/ja/arcgis-online/reference/scene-viewer-requirements.htm" target="_blank">シーン ビューアーの要件</a> をご参照ください。</li>
-</ul></li>
+<li>Internet Explorer 11<br>
+3D アプリには WebGL をサポートしているデスクトップの Web ブラウザーが必要です。ほとんどの最新バージョンのデスクトップ Web ブラウザーは WebGL を内蔵しています。ご利用の Web ブラウザーが WebGL を利用可能かどうかは <!-- raw HTML omitted -->get.webgl.org<!-- raw HTML omitted --> で確認できます。WebGL に関するトラブルシューティングは <!-- raw HTML omitted -->WebGL Troubleshooting<!-- raw HTML omitted --> をご参照ください。また、シーン ビューアーについての詳細は <!-- raw HTML omitted -->シーン ビューアーの要件<!-- raw HTML omitted --> をご参照ください。</li>
+</ul>
+</li>
 </ul>
 
 

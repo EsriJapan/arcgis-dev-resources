@@ -1,9 +1,10 @@
 +++
 title = "コアコンセプト"
+description = "ArcGIS のコンセプトについて紹介します。"
 Weight=1
-description = "ArcGIS コンセプト"
+alwaysopen = true
 +++
 
-コンセプトの紹介
+ArcGIS のコンセプトについて紹介します。
 
 {{% children description="true"   %}}
