@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T11:36:01 JST">
 <title>iOS :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -523,7 +524,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -571,69 +580,61 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="sdk-のインストール">SDK のインストール</h2>
-
+    <h2 id="sdk-のインストール">SDK のインストール</h2>
 <p>ArcGIS Runtime SDK for iOS のライブラリをインストールします。</p>
-
 <ol>
 <li><a href="https://developers.arcgis.com/downloads">SDK のダウンロードページ</a> にアクセスします（<a href="../get-dev-account">開発者アカウント</a> でサインインします）。　　</li>
 <li>ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sdk-download.png" width="450px">　　</li>
+<!-- raw HTML omitted -->　　</li>
 <li>ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。</li>
 </ol>
-
 <h2 id="サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</h2>
-
 <p>このリポジトリ（<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a>）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。</p>
-
 <ul>
-<li><p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
-
+<li>
+<p><strong>リポジトリをご自身のアカウントに Fork（複製）</strong></p>
 <ol>
-<li><p>GitHub にログインして、<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。</p></li>
-
-<li><p>Fork 後はご自身のローカル マシンにクローンを作成します。</p></li>
-</ol></li>
-
-<li><p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p></li>
-</ul>
-
-<p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sample-download.png" width="600px"></p>
-
-<h2 id="地図の表示">地図の表示</h2>
-
-<p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</p>
-
-<ol>
-<li><p>ダウンロードしたサンプル プロジェクト（<code>arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj</code>）を Xcode で開きます。</p></li>
-
-<li><p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-map/create-webmap/">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
-
-<pre><code class="language-javascript">let portalItem = AGSPortalItem(portal: portal, itemID: &quot;&lt;Web マップ ID&gt;&quot;)
-</code></pre>
-
-<p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。　　</p></li>
-
-<li><p>サンプル プロジェクトを実行すると、以下のように地図が表示されます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/map-app.png" width="200px">
-Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</p></li>
+<li>
+<p>GitHub にログインして、<a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。</p>
+</li>
+<li>
+<p>Fork 後はご自身のローカル マシンにクローンを作成します。</p>
+</li>
 </ol>
-
-<h2 id="現在位置の表示">現在位置の表示</h2>
-
-<p>iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.png" width="200px"></p>
-
+</li>
+<li>
+<p><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></p>
+</li>
+</ul>
+<p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+<!-- raw HTML omitted --></p>
+<h2 id="地図の表示">地図の表示</h2>
+<p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</p>
 <ol>
-<li><p><code>ViewController.swift</code> の <code>viewDidLoad</code> 関数に現在位置を表示する処理を記述します。</p>
-
-<pre><code class="language-javascript">// 位置情報の表示モードを設定（現在位置を中心にマップをズームして表示する）
-self.mapView.locationDisplay.autoPanMode = .recenter
-
-// マップが現在位置にズームされる際の表示縮尺の設定
+<li>
+<p>ダウンロードしたサンプル プロジェクト（<code>arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj</code>）を Xcode で開きます。</p>
+</li>
+<li>
+<p><code>ViewController.swift</code> の 24 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-map/create-webmap/">Web マップの作成</a> で作成した Web マップ ID を上書きします。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">portalItem</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSPortalItem</span>(<span style="color:#a6e22e">portal</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">portal</span>, <span style="color:#a6e22e">itemID</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>)
+</code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。　　</p>
+<ol>
+<li>サンプル プロジェクトを実行すると、以下のように地図が表示されます。
+<!-- raw HTML omitted -->
+Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。</li>
+</ol>
+<h2 id="現在位置の表示">現在位置の表示</h2>
+<p>iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
+<!-- raw HTML omitted --></p>
+<ol>
+<li><code>ViewController.swift</code> の <code>viewDidLoad</code> 関数に現在位置を表示する処理を記述します。
+```javascript
+// 位置情報の表示モードを設定（現在位置を中心にマップをズームして表示する）
+self.mapView.locationDisplay.autoPanMode = .recenter</li>
+</ol>
+<pre><code>// マップが現在位置にズームされる際の表示縮尺の設定
 self.mapView.locationDisplay.initialZoomScale = 100000
 
 // 現在位置の表示を開始
@@ -644,20 +645,14 @@ self.mapView.locationDisplay.start(completion: { (error) -&gt; Void in
      print(&quot;位置情報の取得に成功&quot;)
   }
 })
-</code></pre></li>
-
-<li><p>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。</p></li>
+```
+</code></pre>
+<ol>
+<li>プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。</li>
 </ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px">
- シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。</p>
-
+<!-- raw HTML omitted -->
 <p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
-
-<p>位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</p>
-
-<hr />
-
+<h2 id="位置情報の表示モードにはoffズームしないで現在位置のシンボルをマップ上に表示するrecenter現在位置を中心にマップをズームするnavigation現在位置を常にマップの下部に表示して端末の進行方向によってマップを回転するcompassnavigation現在位置を常にマップの中心に表示して端末の向いている方向によってマップを回転するの-4-つのモードが用意されています">位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</h2>
 <p>アプリの動作が確認できたら <a href="../../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
 
 

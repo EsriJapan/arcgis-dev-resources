@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T11:36:01 JST">
 <title>データ可視化の手順 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -287,38 +288,52 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/webappbuilder/">Web AppBuilder for ArcGIS (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
-            インストール ガイド
+          <a href="/arcgis-dev-resources/core-concepts/what-is-arcgis/">
+            ArcGIS とは
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
-            カスタム ウィジェット開発ガイド
+          <a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/">
+            APIs、SDKs、Apps
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/security-and-authentication/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
-            デプロイ パターン
+          <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
+            セキュリティと認証
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/layers/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            Web アプリケーションのデプロイ
+          <a href="/arcgis-dev-resources/core-concepts/layers/">
+            レイヤー
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-maps/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">
-            ウィジェット一覧表
+          <a href="/arcgis-dev-resources/core-concepts/web-maps/">
+            Web マップ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-scenes/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/web-scenes/">
+            Web シーン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/rest-api/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/rest-api/">
+            REST API
           </a>
         </div>
     </li>
@@ -524,7 +539,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -594,306 +617,250 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h1 id="arcgis-online-上のデータを可視化するための方法">ArcGIS Online 上のデータを可視化するための方法</h1>
-
+    <h1 id="arcgis-online-上のデータを可視化するための方法">ArcGIS Online 上のデータを可視化するための方法</h1>
 <ol>
-<li><a href="#マップを作成したい">マップを作成したい</a></li>
-<li><a href="#シンボルを変更したい">シンボルを変更したい</a></li>
-<li><a href="#ラベルを変更したい">ラベルを変更したい</a></li>
+<li><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9F%E3%81%84">マップを作成したい</a></li>
+<li><a href="#%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AB%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E3%81%84">シンボルを変更したい</a></li>
+<li><a href="#%E3%83%A9%E3%83%99%E3%83%AB%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E3%81%84">ラベルを変更したい</a></li>
 </ol>
-
 <h2 id="マップを作成したい">マップを作成したい</h2>
-
 <p>マップ ビューアー → [追加] → [保存]</p>
-
 <p>緯度経度の情報を持ったCSV ファイルなどを、レイヤーとしてマップに追加し、様々なレイヤーを組み合わせてマップを作成することができます。マップの保存には、コンテンツを作成する権限が必要です（権限を持っていない場合でもマップは作成できますが、保存することはできません）。</p>
-
 <ol>
-<li><p>マップ ビューアーを開きます。マップ ビューアーを開いた時点でベースとなる背景地図(ベースマップ)は自動的に表示されます。</p></li>
-
-<li><p>[追加] をクリックします。</p></li>
-
-<li><p>[レイヤーの検索]、[Living Atlas レイヤーの参照]、[Web からレイヤーを追加]、[ファイルからレイヤーを追加]、[マップ メモの追加] いずれかのレイヤーの追加方法を選択します。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/map-viewer.png" width="200px"></p></li>
+<li>
+<p>マップ ビューアーを開きます。マップ ビューアーを開いた時点でベースとなる背景地図(ベースマップ)は自動的に表示されます。</p>
+</li>
+<li>
+<p>[追加] をクリックします。</p>
+</li>
+<li>
+<p>[レイヤーの検索]、[Living Atlas レイヤーの参照]、[Web からレイヤーを追加]、[ファイルからレイヤーを追加]、[マップ メモの追加] いずれかのレイヤーの追加方法を選択します。</p>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>それぞれのレイヤー追加方法は、以下の通りです。</p>
-
 <h3 id="レイヤーの検索">レイヤーの検索</h3>
-
 <ol>
-<li>[検索] ボックスにキーワードを入力し、[検索] をクリックします。
-[検索先] ドロップダウン リストでは、検索する場所を限定することができ、また、[マップ エリア内] のチェックボックスをオンにすると、マップ ビューアーの表示範囲にあるレイヤーを検索することができます。</li>
-
-<li><p>検索結果は下部のボックス内に表示され、レイヤー名の右にある [追加] をクリックするか❶、レイヤー名をクリックしたのちに❷、[マップに追加] ❸をクリックします。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/layer-search.png"></p></li>
-
-<li><p>[レイヤーの追加を完了] をクリックし、レイヤーの追加を終了します。</p></li>
+<li>
+<p>[検索] ボックスにキーワードを入力し、[検索] をクリックします。
+[検索先] ドロップダウン リストでは、検索する場所を限定することができ、また、[マップ エリア内] のチェックボックスをオンにすると、マップ ビューアーの表示範囲にあるレイヤーを検索することができます。</p>
+</li>
+<li>
+<p>検索結果は下部のボックス内に表示され、レイヤー名の右にある [追加] をクリックするか❶、レイヤー名をクリックしたのちに❷、[マップに追加] ❸をクリックします。</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>[レイヤーの追加を完了] をクリックし、レイヤーの追加を終了します。</p>
+</li>
 </ol>
-
 <h3 id="living-atlas-レイヤーの参照">Living Atlas レイヤーの参照</h3>
-
 <p>米国 Esri 社やほかのユーザーが提供する高品質マップ レイヤーをマップに追加します。レイヤーの詳細は、アイテム説明で確認できます。レイヤーによっては、組織向けアカウントでのサイン インが必要であったり、クレジットを消費するものがあります。</p>
-
 <h3 id="web-からレイヤーの追加">Web からレイヤーの追加</h3>
-
 <p>URL を指定して、ArcGIS Server Web サービス、OGC WMS Web サービス、OGC WMTS Web サービス、Web サーバー上にあるタイル レイヤー、KML ファイル、GeoRSS ファイル、および CSV ファイルのレイヤーを追加することができます。</p>
-
 <h3 id="ファイルからレイヤーを追加">ファイルからレイヤーを追加</h3>
-
 <ol>
-<li><p>[ファイルを選択] をクリックして、コンピューター上のファイル（区切りテキスト ファイル（*.csv または <em>.txt）、GPS Exchange Format（</em>.gpx）ファイル、またはシェープファイル（*.zip に圧縮済み））を選択します。</p>
-
+<li>[ファイルを選択] をクリックして、コンピューター上のファイル（区切りテキスト ファイル（<em>.csv または <em>.txt）、GPS Exchange Format（</em>.gpx）ファイル、またはシェープファイル（</em>.zip に圧縮済み））を選択します。</li>
+</ol>
 <pre><code>この方法で追加できるレイヤーのフィーチャ数の上限は、1,000フィーチャです。
 1,000フィーチャ以上のデータを持つファイルを追加する場合、[マイ コンテンツ] ページの [アイテムの追加] で行う方法があります。
-</code></pre></li>
-
-<li><p>[レイヤーのインポート] をクリックします。</p></li>
-
-<li><p>[CSV レイヤーの追加] ダイアログが表示された場合は、緯度/経度あるいは住所の情報を含んでいるフィールドを選択します。[レイヤーの追加] をクリックして、レイヤーの追加を終了します。</p></li>
+</code></pre><ol start="2">
+<li>[レイヤーのインポート] をクリックします。</li>
+<li>[CSV レイヤーの追加] ダイアログが表示された場合は、緯度/経度あるいは住所の情報を含んでいるフィールドを選択します。[レイヤーの追加] をクリックして、レイヤーの追加を終了します。</li>
 </ol>
-
 <h3 id="マップ-メモの追加">マップ メモの追加</h3>
-
 <ol>
-<li><p>[マップ メモの追加] ダイアログで、[名前] フィールドでレイヤー名を、[テンプレート] ドロップダウン リストから任意のマップ メモのテンプレートを選択します。</p></li>
-
-<li><p>[マップ メモの追加] ダイアログで、名前を入力し、テンプレートをドロップダウン リストから選択して、[作成] をクリックします。</p></li>
-
-<li><p>フィーチャの追加パネルが表示されるので、マップに追加するシンボルを選択します。</p></li>
-
-<li><p>マップの任意の位置をクリックすると、その位置にシンボルが表示されると同時にポップアップが開き、タイトルや説明などを入力することができます。</p></li>
-
-<li><p>コンテンツ パネルでレイヤーが追加されたことを確認し、追加されたレイヤー名にマウス オンするかレイヤー名をクリックし、から [レイヤーの保存] をクリックします。</p></li>
-
-<li><p>[アイテムの作成] ダイアログでレイヤーのタイトル、タグ、サマリー（説明）を入力し、保存するフォルダーを選択して [アイテムの作成] をクリックします。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/item-create.png"></p>
-
-<pre><code>タグを入力して、Enter キーを押すと、入力文字を確定できます。
-</code></pre></li>
-
-<li><p>マップを保存するために、[保存] → [保存] をクリックします。</p>
-
+<li>
+<p>[マップ メモの追加] ダイアログで、[名前] フィールドでレイヤー名を、[テンプレート] ドロップダウン リストから任意のマップ メモのテンプレートを選択します。</p>
+</li>
+<li>
+<p>[マップ メモの追加] ダイアログで、名前を入力し、テンプレートをドロップダウン リストから選択して、[作成] をクリックします。</p>
+</li>
+<li>
+<p>フィーチャの追加パネルが表示されるので、マップに追加するシンボルを選択します。</p>
+</li>
+<li>
+<p>マップの任意の位置をクリックすると、その位置にシンボルが表示されると同時にポップアップが開き、タイトルや説明などを入力することができます。</p>
+</li>
+<li>
+<p>コンテンツ パネルでレイヤーが追加されたことを確認し、追加されたレイヤー名にマウス オンするかレイヤー名をクリックし、から [レイヤーの保存] をクリックします。</p>
+</li>
+<li>
+<p>[アイテムの作成] ダイアログでレイヤーのタイトル、タグ、サマリー（説明）を入力し、保存するフォルダーを選択して [アイテムの作成] をクリックします。</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>マップを保存するために、[保存] → [保存] をクリックします。</p>
 <pre><code>マップの保存では、マップ ビューアー上で参照しているレイヤーやその表示設定などが保存されます。
 マップ上で設定したレイヤーのシンボルなどは、レイヤー自体には保存されないため、他のマップでそのレイヤーを追加したときには、
 再度、シンボルの設定等を行う必要があります。
 </code></pre></li>
-
-<li><p>タイトル、タグ、サマリー（説明）を入力し、保存するフォルダーを選択し、[マップの保存]   をクリックします。</p></li>
-
-<li><p>[マイ コンテンツ] ページに移動し、マップが   のような地図のアイコンで保存されていることを確認できます。</p>
-
+<li>
+<p>タイトル、タグ、サマリー（説明）を入力し、保存するフォルダーを選択し、[マップの保存]   をクリックします。</p>
+</li>
+<li>
+<p>[マイ コンテンツ] ページに移動し、マップが   のような地図のアイコンで保存されていることを確認できます。</p>
 <p>緯度経度、または住所情報を含むテキスト ファイル（ *.txt、 *.csv）であれば、マップ表示エリアにファイルをドラッグ &amp; ドロップすることで、ポイント フィーチャ レイヤーとしてマップに追加できます。フィールドはカンマ、セミコロン、またはタブで区切る必要があり、その他の区切り文字はサポートされていません。また、緯度経度は、10進度である必要があります。Google Chrome、Mozilla Firefox、Internet Explorer 10以降で利用可能です。</p>
-
 <ol>
 <li>日本語を含むテキストファイルを使用するためには、Windows の「メモ帳」でファイルを開き、[ファイル] メニュー → [名前を付けて保存] をクリックし、[名前を付けて保存] ダイアログの下部に表示される [文字コード] ドロップダウン リストから [UTF-8] を指定して [保存] ボタンをクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/csv-save.png"></li>
+<!-- raw HTML omitted --></li>
 <li>保存したファイルを、マップ ビューアー上にドラッグ &amp; ドロップします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/drag-drop.png"></li>
+<!-- raw HTML omitted --></li>
 <li>[CSV レイヤーの追加] 画面が表示されます。住所が入力されている場合は、[使用しているフィーチャの特定] では [住所] を指定し、[国] ドロップダウン リストから 「日本」 を選択します。</li>
 <li>住所が入力されているフィールド名をクリックし、[場所フィールド] で [住所/大字町丁目以降] を選択します。</li>
 <li>[レイヤーの追加]  ボタンをクリックします。</li>
-</ol></li>
 </ol>
-
+</li>
+</ol>
 <h2 id="シンボルを変更したい">シンボルを変更したい</h2>
-
 <p>マップ ビューアー → [詳細] → [コンテンツ] → レイヤー名にマウス オン / クリック → [スタイルの変更]</p>
-
 <p>シンボルの色や形を変更します。コンテンツを作成する権限を持っている場合に可能です。</p>
-
 <ol>
-<li><p>マップ ビューアーの [詳細] が選択されていることを確認し、[コンテンツ] をクリックします。</p></li>
-
-<li><p>シンボルを変更したいレイヤー名にマウス オン / クリックし、[スタイルの変更] のアイコンをクリックします。</p></li>
-
-<li><p>[スタイルの変更] パネルが表示されます。</p></li>
-
-<li><p>[①表示する属性を選択] ドロップダウン リストから、シンボルの設定をする属性フィールドを選択します。
-属性値でシンボル設定をしない場合は、[場所のみ表示] を選択します。</p></li>
-
-<li><p>[②描画スタイルの選択] で、変更したい描画方法の [選択] をクリックします。既に選択されている描画スタイルは [オプション] と表示されます。</p>
-
+<li>
+<p>マップ ビューアーの [詳細] が選択されていることを確認し、[コンテンツ] をクリックします。</p>
+</li>
+<li>
+<p>シンボルを変更したいレイヤー名にマウス オン / クリックし、[スタイルの変更] のアイコンをクリックします。</p>
+</li>
+<li>
+<p>[スタイルの変更] パネルが表示されます。</p>
+</li>
+<li>
+<p>[①表示する属性を選択] ドロップダウン リストから、シンボルの設定をする属性フィールドを選択します。
+属性値でシンボル設定をしない場合は、[場所のみ表示] を選択します。</p>
+</li>
+<li>
+<p>[②描画スタイルの選択] で、変更したい描画方法の [選択] をクリックします。既に選択されている描画スタイルは [オプション] と表示されます。</p>
 <h3 id="一種類の属性フィールドによるシンボル設定">一種類の属性フィールドによるシンボル設定</h3>
-
-<h4 id="場所-単一シンボル">場所（単一シンボル）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-simple.png" alt="" />
+<h4 id="場所単一シンボル">場所（単一シンボル）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-simple.png" alt="">
 すべてのフィーチャを同じシンボルで表現します。</p>
-
 <h4 id="種類-個別値シンボル">種類 (個別値シンボル)</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-simple.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-simple.png" alt="">
 樹木の種類、道路クラス、都道府県名など、属性のカテゴリごとにシンボルを割り当てて描画します。</p>
-
-<h4 id="数と量-サイズ">数と量（サイズ）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-size.png" alt="" />
+<h4 id="数と量サイズ">数と量（サイズ）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-size.png" alt="">
 数値またはランク付けされたデータをシンボルの大きさで表現します。データの数値が大きいほど、シンボルの大きさも大きく表示されます。</p>
-
-<h4 id="数と量-色">数と量（色）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color.png" alt="" />
+<h4 id="数と量色">数と量（色）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color.png" alt="">
 数値またはランク付けされたデータを色の濃淡で表現します。データの数値が大きいほど濃い色で、小さいほど淡い色で表示することなどができます。</p>
-
 <h4 id="ヒート-マップ">ヒート マップ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-heatmap.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-heatmap.png" alt="">
 ポイントが集中しているエリアを一目で確認できるような表現ができます。</p>
-
 <h3 id="日付データによるシンボル設定">日付データによるシンボル設定</h3>
-
 <p>属性フィールドに日付データを含むフィールドを選択すると、時系列データのスタイルの変更が提示されます。</p>
-
-<h4 id="連続タイムライン-サイズ">連続タイムライン（サイズ）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/timeline-size.png" alt="" />
+<h4 id="連続タイムラインサイズ">連続タイムライン（サイズ）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/timeline-size.png" alt="">
 日付データをシンボルの大きさで表現します。新しい日付から古い日付をシンボルの大きさで表示することができます。</p>
-
-<h4 id="連続タイムライン-色">連続タイムライン（色）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/timeline-color.png" alt="" />
+<h4 id="連続タイムライン色">連続タイムライン（色）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/timeline-color.png" alt="">
 日付データを色の濃淡で表現します。新しい日付から古い日付を濃い色から薄い色で表示することなどができます。また、特定の日付の前後で色を変えることもできます。</p>
-
-<h4 id="期間-サイズ">期間（サイズ）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/term-size.png" alt="" />
+<h4 id="期間サイズ">期間（サイズ）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/term-size.png" alt="">
 設定した開始と終了日の期間の長さをシンボルの大きさで表現します。期間が長いほどシンボルの大きさも大きく表示されます。</p>
-
-<h4 id="期間-色">期間（色）</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/term-color.png" alt="" />
+<h4 id="期間色">期間（色）</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/term-color.png" alt="">
 設定した開始と終了日の期間の長さを色の濃淡で表現します。期間の長さを濃淡で表現したり、所定日の前後で色を変える設定ができます。</p>
-
-<p>※レイヤーが持つ属性フィールドのタイプに応じて選択できる種類が異なります。例えば、文字列型のフィールドのみで構成されるレイヤーでは、[種類] ドロップダウン リストでサイズや色の指定はできません。</p></li>
-
-<li><p>[オプション] をクリックすると、シンボルの詳細な設定をすることができます。</p></li>
+<p>※レイヤーが持つ属性フィールドのタイプに応じて選択できる種類が異なります。例えば、文字列型のフィールドのみで構成されるレイヤーでは、[種類] ドロップダウン リストでサイズや色の指定はできません。</p>
+</li>
+<li>
+<p>[オプション] をクリックすると、シンボルの詳細な設定をすることができます。</p>
+</li>
 </ol>
-
-<h4 id="場所-単一シンボル-の場合">場所（単一シンボル）の場合</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-simple.png" alt="" />
+<h4 id="場所単一シンボルの場合">場所（単一シンボル）の場合</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-simple.png" alt="">
 [シンボル] をクリックし、形状や大きさ、塗りつぶし色、アウトラインの設定などを行います。</p>
-
-<h4 id="種類-個別値シンボル-の場合">種類（個別値シンボル）の場合</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-unique.png" alt="" />
-- ❶ 各シンボルの形状や大きさ、塗りつぶし色、アウトラインの設定などを行うことができます。<br />
-- ❷ 凡例で表示するラベル名を直接入力して変更することができます。<br />
-- ❸ ドラッグし、目的の位置でドロップすることで、各シンボルの順序を変更できます。<br />
-- ❹ チェックボックスをオンにすると、シンボルが設定されている値以外の図形（例えば、属性値が入力されていない図形）が「その他」として表示されます。<br />
-※個別値が11種類以上ある場合は、一部のデータが「その他」にグループ化されます。ラベル欄の「その他」の右にある       をクリックすると、一括してグループ化を解除できます。また、「その他」の中にはグループ化された個別値が表示され、各個別値の    をクリックすることで、個々にグループから除外することもできます。</p>
-
-<h4 id="数と量-サイズ-の場合">数と量（サイズ）の場合</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-size.png" width="600px"><br />
-- ❺ スライダーの上部、下部のバーを動かして、最大 / 最小クラスの閾値を変更できます。また、数値をクリックして、直接入力することもできます。<br />
-- ❻ ポイントのシンボルを変更できます。<br />
-- ❼ 最小/最大クラスのポイントのサイズを変更できます。<br />
-- ❽ チェックボックスをオンにすると、クラスの分類数や分類方法、各クラスの閾値を設定することができます。各クラスの閾値は、スライダーを動かして変更するか、クラスの閾値の数値をクリックして、直接、入力することもできます❾。</p>
-
-<h4 id="数と量-色-の場合">数と量（色）の場合</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-color.png" alt="" />
-- ❿ スライダーの上部、下部のバーを動かして、最小/ 最大クラスの閾値を変更できます。また、数値をクリックして、直接入力することもできます。<br />
-- ⓫ ここをクリックすることで、色のパターンなどを変更できます。<br />
-- ⓬ チェックボックスをオンにすると、クラスの分類数や分類方法、各クラスの閾値を設定することができます。設定方法は「数と量（サイズ）（16ページ）」をご参照ください。</p>
-
+<h4 id="種類個別値シンボルの場合">種類（個別値シンボル）の場合</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-unique.png" alt=""></p>
+<ul>
+<li>❶ 各シンボルの形状や大きさ、塗りつぶし色、アウトラインの設定などを行うことができます。</li>
+<li>❷ 凡例で表示するラベル名を直接入力して変更することができます。</li>
+<li>❸ ドラッグし、目的の位置でドロップすることで、各シンボルの順序を変更できます。</li>
+<li>❹ チェックボックスをオンにすると、シンボルが設定されている値以外の図形（例えば、属性値が入力されていない図形）が「その他」として表示されます。<br>
+※個別値が11種類以上ある場合は、一部のデータが「その他」にグループ化されます。ラベル欄の「その他」の右にある       をクリックすると、一括してグループ化を解除できます。また、「その他」の中にはグループ化された個別値が表示され、各個別値の    をクリックすることで、個々にグループから除外することもできます。</li>
+</ul>
+<h4 id="数と量サイズの場合">数と量（サイズ）の場合</h4>
+<!-- raw HTML omitted -->
+<h4 id="数と量色の場合">数と量（色）の場合</h4>
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-color.png" alt=""></p>
+<ul>
+<li>❿ スライダーの上部、下部のバーを動かして、最小/ 最大クラスの閾値を変更できます。また、数値をクリックして、直接入力することもできます。</li>
+<li>⓫ ここをクリックすることで、色のパターンなどを変更できます。</li>
+<li>⓬ チェックボックスをオンにすると、クラスの分類数や分類方法、各クラスの閾値を設定することができます。設定方法は「数と量（サイズ）（16ページ）」をご参照ください。</li>
+</ul>
 <h4 id="ヒートマップの場合">ヒートマップの場合</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-heatmap.png" alt="" />
-- ⓭ スライダーの上部、下部のバーを動かして、密集度の高いエリアや低いエリアを変更できます。<br />
-- ⓮ 色のパターンを選択できます。<br />
-- ⓯ スライダーを左右に動かして、影響範囲を変更できます。</p>
-
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/style-heatmap.png" alt=""></p>
+<ul>
+<li>⓭ スライダーの上部、下部のバーを動かして、密集度の高いエリアや低いエリアを変更できます。</li>
+<li>⓮ 色のパターンを選択できます。</li>
+<li>⓯ スライダーを左右に動かして、影響範囲を変更できます。</li>
+</ul>
 <h3 id="二種類の属性フィールドによるシンボル設定">二種類の属性フィールドによるシンボル設定</h3>
-
-<ol>
+<ol start="7">
 <li>各パネルにおいて [OK]   をクリックし、[完了]   をクリックします。</li>
-<li>一つ目の属性フィールドを選択すると表示される、[属性の追加]   をクリックします。<br />
+<li>一つ目の属性フィールドを選択すると表示される、[属性の追加]   をクリックします。<br>
 ※数値型および文字列型のフィールド タイプを持つレイヤーに対してのみ、 [属性の追加] が表示されます。ここで、二つ目の属性フィールドを選択します。（一つ目に選択する属性フィールドを A、二つ目に選択する属性フィールドは B とします。）
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/multi-fields.png" alt="" /></li>
-
-<li><p>[②描画スタイルの選択] で、変更したい描画方法の [選択]   をクリックします。既に選択されている描画スタイルは [オプション] と表示されます。</p>
-
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/multi-fields.png" alt=""></li>
+<li>[②描画スタイルの選択] で、変更したい描画方法の [選択]   をクリックします。既に選択されている描画スタイルは [オプション] と表示されます。</li>
+</ol>
 <h4 id="色とサイズ">色とサイズ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size.png" alt="">
 Ａの属性は、色の濃淡で数値を表現し、Bの属性に対してはシンボルのサイズで数値を表現します。
 選択した属性フィールドが日付型の場合は、時系列表示のシンボル設定がおこなえます。</p>
-
 <h4 id="色-期間-とサイズ">色 (期間) とサイズ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size2.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size2.png" alt="">
 A の属性は、期間を色の濃淡で表現し、B の属性に対しては日付の新旧をシンボルのサイズで表現します。</p>
-
 <h4 id="色とサイズ-期間">色とサイズ (期間)</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size3.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-color-size3.png" alt="">
 A の属性は、日付の新旧をシンボルのサイズで表現し、B の属性に対しては期間を色の濃淡で表現します。</p>
-
 <h4 id="a-を-b-と比較">A を B と比較</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-compare.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-compare.png" alt="">
 Bの属性に対し、Ａの属性の比率や割合を表現します。また、二つの属性の合計に対するAの属性の割合を表示します。</p>
-
 <h4 id="タイプとサイズ">タイプとサイズ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-type-size.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-type-size.png" alt="">
 一意のシンボル（個別値）をサイズで表現します。A、B どちらかが文字列型の属性である場合は、文字列型の属性の方に個別値シンボルが自動的に適用され、他方の属性にサイズが適用されます。
 選択した属性フィールドが日付型の場合は、時系列表示のシンボル設定がおこなえます。</p>
-
 <h4 id="タイプとサイズ-期間">タイプとサイズ (期間)</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-type-size2.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-type-size2.png" alt="">
 一意のシンボル（個別値）ごとに期間の長さをシンボルの大きさで表現します。 A、B どちらかが文字列型の属性である場合は、その属性の方に個別値シンボルが自動的に適用され、日付型の属性にサイズが適用されます。</p>
-
 <h4 id="主要カテゴリ">主要カテゴリ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-category.png" alt="" />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-category.png" alt="">
 複数の属性フィールドの値を比較して、一番高い値を持つ属性フィールドに設定した色を表示します。同時に、他の値と比べてどれほど優位かを透過で表現します。</p>
-
 <h4 id="主要カテゴリおよびサイズ">主要カテゴリおよびサイズ</h4>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-category-size.png" alt="" />
-上記の「主要カテゴリ」に加え、複数の属性値の合計を円の大きさで表します。</p></li>
-
-<li><p>[オプション] をクリックすると、シンボルの詳細な設定をすることができます。</p></li>
-
-<li><p>設定後、各パネルにおいて [OK]   をクリックし、[完了]   をクリックします。<br />
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/symbol-category-size.png" alt="">
+上記の「主要カテゴリ」に加え、複数の属性値の合計を円の大きさで表します。
+10.	[オプション] をクリックすると、シンボルの詳細な設定をすることができます。
+11.	設定後、各パネルにおいて [OK]   をクリックし、[完了]   をクリックします。<br>
 ※独自のシンボルを表示したい場合は、シンボルとして表示させたい画像をあらかじめWeb 上にアップロードしておき、[スタイルの変更] パネル → [場所（単一シンボル）] あるいは [種類（個別値シンボル）] → [選択] → [オプション] で、シンボルをクリックし、[画像の使用] をクリックします。参照する URL をボックス内に入力し、プラスマークをクリックすると、独自のシンボルとして利用することができます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/original-symbol.png" alt="" /></p></li>
-</ol>
-
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/original-symbol.png" alt=""></p>
 <h2 id="ラベルを変更したい">ラベルを変更したい</h2>
-
 <p>マップ ビューアー → [詳細] → [コンテンツ] → レイヤー名にマウス オン / クリック → [その他のオプション] → [ラベルの作成]</p>
-
 <p>マップ上のフィーチャに簡単にテキストを追加することができます。ラベルのテキスト文字列はフィーチャの属性情報を利用して設定することができます。コンテンツを作成する権限を持っている必要があります。</p>
-
 <ol>
-<li><p>マップ ビューアーの [詳細]   が選択されていることを確認し、[コンテンツ]   をクリックします。</p></li>
-
-<li><p>ラベルを変更したいレイヤー名にマウス オン / クリックし、[その他のオプション]   から [ラベルの作成] を選択します。</p></li>
-
-<li><p>[ラベル フィーチャ] パネルが表示されます。[ラベル フィーチャ] チェックボックスをオンにして、ラベルを表示します❶。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/label-feature.png"></p></li>
-
-<li><p>[テキスト] フィールドに、ラベルとして表示したい属性を持つフィールドを入力します。複数の属性を表示したい場合は、右の   ボタンで任意のフィールドを追加することができます❷。｛｝(中かっこ)でフィールド名を囲むと各フィーチャの属性が表示されます。</p></li>
-
-<li><p>テキストのサイズ、太字、斜体、アンダーライン、色を変更することができます❸。</p></li>
-
-<li><p>[整列] で、ラベル配置を指定します❹。</p></li>
-
-<li><p>[OK] をクリックし、ラベルの設定を終了します。</p></li>
-
-<li><p>ラベルの設定をした状態でレイヤーを保存することで、他のマップでもラベルが設定された状態でレイヤーを利用することができます。そのためには、レイヤー名にマウス オン / クリックし、[その他のオプション]   から [レイヤーの保存] を選択します。</p></li>
+<li>
+<p>マップ ビューアーの [詳細]   が選択されていることを確認し、[コンテンツ]   をクリックします。</p>
+</li>
+<li>
+<p>ラベルを変更したいレイヤー名にマウス オン / クリックし、[その他のオプション]   から [ラベルの作成] を選択します。</p>
+</li>
+<li>
+<p>[ラベル フィーチャ] パネルが表示されます。[ラベル フィーチャ] チェックボックスをオンにして、ラベルを表示します❶。</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>[テキスト] フィールドに、ラベルとして表示したい属性を持つフィールドを入力します。複数の属性を表示したい場合は、右の   ボタンで任意のフィールドを追加することができます❷。｛｝(中かっこ)でフィールド名を囲むと各フィーチャの属性が表示されます。</p>
+</li>
+<li>
+<p>テキストのサイズ、太字、斜体、アンダーライン、色を変更することができます❸。</p>
+</li>
+<li>
+<p>[整列] で、ラベル配置を指定します❹。</p>
+</li>
+<li>
+<p>[OK] をクリックし、ラベルの設定を終了します。</p>
+</li>
+<li>
+<p>ラベルの設定をした状態でレイヤーを保存することで、他のマップでもラベルが設定された状態でレイヤーを利用することができます。そのためには、レイヤー名にマウス オン / クリックし、[その他のオプション]   から [レイヤーの保存] を選択します。</p>
+</li>
 </ol>
 
 

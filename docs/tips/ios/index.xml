@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArcGIS Runtime SDK for iOS on ArcGIS for Developer 開発リソース集</title>
@@ -33,14 +33,9 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</guid>
       <description>ArcGIS Runtime SDK for iOS を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
- 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法  ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証   使用するライセンスの選択 ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証   Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証  使用するライセンスの選択 ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
-   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）
-・フィーチャの表示/検索
-・フィーチャのオンライン編集（パブリックなフィーチャ サービス）
-・ルート検索/到達圏解析/最寄り施設検索
-・住所検索/リバース ジオコーディング   Basic ・Lite ライセンスで利用できるすべての機能
-・フィーチャのオンライン編集（セキュアなフィーチャ サービス）</description>
+   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）・フィーチャの表示/検索・フィーチャのオンライン編集（パブリックなフィーチャ サービス）・ルート検索/到達圏解析/最寄り施設検索・住所検索/リバース ジオコーディング   Basic ・Lite ライセンスで利用できるすべての機能・フィーチャのオンライン編集（セキュアなフィーチャ サービス）・フィーチャのオフライン編集・ArcGIS Online/Portal for ArcGIS のコンテンツの編集   Standard ・Basic ライセンスで利用できるすべての機能・シェープファイルの表示/編集・GeoPackage の表示/編集・KML（ローカル ファイル）の表示・ラスター データの表示/解析・航海用電子海図（ENC）の表示   Analysis Extension ・Standard ライセンス以上で利用可能なエクステンション・オフラインでの到達圏解析/最寄り施設検索    ライセンスの詳細はESRIジャパン製品ページをご参照ください。</description>
     </item>
     
     <item>
@@ -65,11 +60,10 @@ AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</guid>
       <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
  SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
- ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。 ViewController.swift の 24 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成 で作成した Web マップ ID を上書きします。</description>
+  ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。
+  ViewController.swift の 24 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成 で作成した Web マップ ID を上書きします。</description>
     </item>
     
   </channel>

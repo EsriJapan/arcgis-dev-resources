@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T11:36:01 JST">
 <title>サンプル集 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -387,27 +388,6 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/migration-ios-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
@@ -522,7 +502,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -567,68 +555,60 @@ if (!doNotTrack) {
     
     
 
-
-
 <p>開発にすぐに使えるサンプル データ/コードを紹介します。</p>
-
 <h2 id="サンプル-データ">サンプル データ</h2>
-
 <p>開発でサンプルとして利用可能なデータです。以下は抜粋ですので、他のサンプル データを探したい場合は、マップ ビューアーでレイヤー検索してみてください。</p>
-
 <ul>
 <li><strong>マップ</strong>
-
 <ul>
 <li><a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">Web マップ</a>（ArcGIS for Developers 開発ガイドのサンプル Web マップ）</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>フィーチャ レイヤー</strong>
-
 <ul>
 <li><a href="http://www.arcgis.com/home/item.html?id=78435abcb1e34327bcf1959d9006a8a5">tokyo_23</a>（東京都における東京23区、市部、町村部（郡部）（町村部（島部）以外））</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>タイル レイヤー</strong>
-
 <ul>
 <li><a href="https://www.arcgis.com/home/item.html?id=df91408d1b424117a24f8ffdc845f825">南海トラフ巨大地震の被害想定（震度/最大クラス）</a></li>
 <li><a href="https://www.arcgis.com/home/item.html?id=9a115b3ff9164ddda9f5f3d9ee189a5b">南海トラフ巨大地震の被害想定（液状化/最大クラス）</a></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="サンプル-コード">サンプル コード</h2>
-
 <p>GitHub にて開発サンプルとなるソースコードを公開しています。</p>
-
 <ul>
 <li><strong>JavaScript</strong>
-
 <ul>
 <li><a href="https://github.com/EsriJapan/arcgis-samples-js">arcgis-samples-js</a>: ArcGIS API for JavaScript のサンプル集</li>
 <li><a href="https://github.com/EsriJapan/data-visualization-js">data-visualization-js</a>: JavaScript で始めるデータ ビジュアライゼーションのサンプル</li>
 <li><a href="https://github.com/EsriJapan/webmap-startup-template-js">webmap-startup-template-js</a>: Web マップを使用した開発手法を伝えるためのアプリケーション テンプレートのサンプル</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>.NET</strong>
-
 <ul>
 <li><a href="https://github.com/EsriJapan/arcgis-samples-dotnet">arcgis-samples-dotnet</a>: ArcGIS Runtime SDK for .NET のサンプル集</li>
 <li><a href="https://github.com/EsriJapan/startup-sample-dotnet">startup-sample-dotnet</a>: .NET SDK のスタートアップ サンプル アプリケーション</li>
 <li><a href="https://github.com/EsriJapan/webmap-startup-template-dotnet">webmap-startup-template-dotnet</a>: Web マップを使用した開発手法を伝えるためのアプリケーションのサンプル</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>Android</strong>
-
 <ul>
 <li><a href="https://github.com/EsriJapan/arcgis-samples-android">arcgis-samples-android</a>: ArcGIS Runtime SDK for Android のサンプル集</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>iOS</strong>
-
 <ul>
 <li><a href="https://github.com/EsriJapan/arcgis-samples-ios">arcgis-samples-ios</a>: ArcGIS Runtime SDK for iOS (Objective-C/Swift) のサンプル集</li>
 <li><a href="https://github.com/EsriJapan/startup-swift-ios">startup-swift-ios</a>: iOS SDK のスタートアップ サンプル アプリケーション</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>Python</strong>
-
 <ul>
 <li><a href="https://github.com/EsriJapan/arcgis-samples-python-api">arcgis-samples-python-api</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 

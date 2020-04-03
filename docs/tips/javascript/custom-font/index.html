@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T15:34:18 JST">
+<meta name="revised" content="2020-04-03T11:36:01 JST">
 <title>カスタム フォント :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -64,10 +64,11 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
@@ -524,7 +525,15 @@ if (!doNotTrack) {
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option>
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -597,159 +606,139 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。
+    <p>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。
 デフォルトでは、pbf フォントは Esri が <code>https://static.arcgis.com/fonts</code> でホストしているフォントを使用できます。
-利用可能なフォントの一覧は、Esri の<a href="https://developers.arcgis.com/javascript/latest/guide/labeling/index.html#fonts-for-featurelayer%2C-csvlayer%2C-and-streamlayer">ガイド</a>で確認できます（&rdquo;Read more&rdquo; をクリックしてページを展開してください）。</p>
-
+利用可能なフォントの一覧は、Esri の<a href="https://developers.arcgis.com/javascript/latest/guide/labeling/index.html#fonts-for-featurelayer%2C-csvlayer%2C-and-streamlayer">ガイド</a>で確認できます（&ldquo;Read more&rdquo; をクリックしてページを展開してください）。</p>
 <p>デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。</p>
-
 <p>※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。</p>
-
 <h2 id="フォントの入手">フォントの入手</h2>
-
 <p>今回は、<a href="https://fonts.google.com/?subset=japanese">Google フォント</a> からダウンロードして PBF に変換します。</p>
-
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_download.gif" width=80%></p>
-
+<!-- raw HTML omitted -->
 <h2 id="pbf-フォントの作成">pbf フォントの作成</h2>
-
 <p>pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。</p>
-
 <p><code>https://fonts/&lt;フォントスタック&gt;/&lt;ユニコード文字範囲&gt;.pbf</code></p>
-
 <p>pbf ファイルは <a href="https://github.com/mapbox/node-fontnik">node-fontnik</a> を使用して、ttf や otf 等のフォントファイルから変換して作成できます。</p>
-
 <ol>
-<li>node-fontnik をクローンします。
-<code>
-git clone https://github.com/mapbox/node-fontnik.git
-</code></li>
-<li>node-fontnik フォルダに移動して、モジュールをインストールします。
-<code>
-npm install
-</code></li>
+<li>node-fontnik をクローンします。</li>
+</ol>
+<pre><code>git clone https://github.com/mapbox/node-fontnik.git
+</code></pre><ol>
+<li>node-fontnik フォルダに移動して、モジュールをインストールします。</li>
+</ol>
+<pre><code>npm install
+</code></pre><ol>
 <li>fonts フォルダを作成し、作成したフォルダにダウンロードした Google フォントを配置します。</li>
 <li>glyphs フォルダと変換後のファイルを出力するサブフォルダ（例: glyphs/KosugiMaru-Regular）を作成します。</li>
-<li>build-glyphs を実行して pbf ファイルを作成します。
-<code>
-node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
-</code></li>
+<li>build-glyphs を実行して pbf ファイルを作成します。</li>
+</ol>
+<pre><code>node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
+</code></pre><ol>
 <li>glyphs/KosugiMaru-Regular フォルダにユニコード文字範囲の pdf ファイル群が作成されていることを確認します。</li>
 </ol>
-
 <h2 id="pbf-フォントの配置">PBF フォントの配置</h2>
-
 <p>以下のディレクトリ構成にして Web サーバーへ配置します。
 IIS を使用する場合は、MIME に .pbf (binary/octet-stream) を登録します。</p>
-
-<p>「fonts」 フォルダ<br />
-　　|&ndash;「&lt;フォントファミリー&gt;-&lt;ウェイト&gt;-&lt;スタイル&gt;」フォルダ（例：arial-bold-italic） ※<br />
+<p>「fonts」 フォルダ<br>
+　　|&ndash;「&lt;フォントファミリー&gt;-&lt;ウェイト&gt;-&lt;スタイル&gt;」フォルダ（例：arial-bold-italic） ※<br>
 　　　|&ndash; pbf ファイル群</p>
-
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png" alt="フォントの配置" /></p>
-
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png" alt="フォントの配置"></p>
 <p>※ &lt;スタイル&gt; は省略可能です。今回は「KosugiMaru-Regular」フォルダを作成します。
 詳細は「API の設定」の項目を参照してください。</p>
-
 <h2 id="api-の設定">API の設定</h2>
-
 <ol>
-<li><p>ArcGIS API for JavaScript で参照するフォント リソースの URL を変更します。
-フォントの URL の設定は、esri/config クラスの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#fontsUrl">fontsUrl</a> プロパティを使用します。</p></li>
-
-<li><p>マップに表示するフォントを作成します。
+<li>
+<p>ArcGIS API for JavaScript で参照するフォント リソースの URL を変更します。
+フォントの URL の設定は、esri/config クラスの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#fontsUrl">fontsUrl</a> プロパティを使用します。</p>
+</li>
+<li>
+<p>マップに表示するフォントを作成します。
 フォントの作成は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Font.html">Font</a> クラスを使用します。
 family、weight、style の各プロパティに設定した値をもとに設定したフォント URL へリクエストが実行されます。
 例えば、family に &ldquo;arial&rdquo;、weight に &ldquo;bold&rdquo;、style に &ldquo;italic&rdquo; を設定した場合は、https://&lt;サーバー名&gt;/fonts/arial-bold-italic フォルダにある pbf ファイルを取得します。
 フォントに複数スタイルが存在しない場合は style プロパティは省略可能です。
-また、weight プロパティも省略可能ですが、API で指定しない場合は regular が自動で設定され、https://&lt;サーバー名&gt;/fonts/arial-regular がリクエストされます。</p></li>
+また、weight プロパティも省略可能ですが、API で指定しない場合は regular が自動で設定され、https://&lt;サーバー名&gt;/fonts/arial-regular がリクエストされます。</p>
+</li>
 </ol>
-
 <p>以下は作成した pbf フォントをテキスト シンボルで表示した画面とサンプルコードです。</p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png" alt="フォントの表示"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#f92672">!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1,maximum-scale=1,user-scalable=no&#34;</span><span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">font_mapView</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
 
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png" alt="フォントの表示" /></p>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.11/esri/themes/light/main.css&#34;</span> <span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
 
-<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1,maximum-scale=1,user-scalable=no&quot;/&gt;
-    &lt;title&gt;font_mapView&lt;/title&gt;
-
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://js.arcgis.com/4.11/esri/themes/light/main.css&quot; /&gt;
-
-    &lt;style&gt;
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        background-color: black;
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">style</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#a6e22e">html</span>,
+      <span style="color:#a6e22e">body</span>,
+      <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">viewDiv</span> {
+        <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;
+        <span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">black</span>;
       }
-    &lt;/style&gt;
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
 
-    &lt;script src=&quot;https://js.arcgis.com/4.11/&quot;&gt;&lt;/script&gt;
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.11/&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
 
-    &lt;script&gt;
-      require([
-        &quot;esri/Map&quot;,
-        &quot;esri/views/MapView&quot;,
-        &quot;esri/Graphic&quot;,
-        &quot;esri/config&quot;
-      ], function(Map, MapView, Graphic, esriConfig) {
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#a6e22e">require</span>([
+        <span style="color:#e6db74">&#34;esri/Map&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/Graphic&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/config&#34;</span>
+      ], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>, <span style="color:#a6e22e">Graphic</span>, <span style="color:#a6e22e">esriConfig</span>) {
 
-        // .pbfファイルを独自に配信するURL
-        esriConfig.fontsUrl = &quot;http://&lt;サーバー名&gt;/fonts&quot;;
+        <span style="color:#75715e">// .pbfファイルを独自に配信するURL
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">fontsUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://&lt;サーバー名&gt;/fonts&#34;</span>;
 
-        // テキストシンボルの作成
-        var textSymbol = {
-          type: &quot;text&quot;,
-          color: &quot;white&quot;,
-          text: &quot;KosugiMaru フォントです&quot;, // 表示する文字列
-          font: {
-            size: 15,
-            family: 'KosugiMaru' // フォントファミリー
-          }
+        <span style="color:#75715e">// テキストシンボルの作成
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">textSymbol</span> <span style="color:#f92672">=</span> {
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
+          <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;white&#34;</span>,
+          <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;KosugiMaru フォントです&#34;</span>, <span style="color:#75715e">// 表示する文字列
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">font</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>,
+            <span style="color:#a6e22e">family</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;KosugiMaru&#39;</span> <span style="color:#75715e">// フォントファミリー
+</span><span style="color:#75715e"></span>          }
         };
 
-        var point = {
-          type: &quot;point&quot;,
-          longitude: 139.751068,
-          latitude: 35.684482
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">point</span> <span style="color:#f92672">=</span> {
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;point&#34;</span>,
+          <span style="color:#a6e22e">longitude</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">139.751068</span>,
+          <span style="color:#a6e22e">latitude</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">35.684482</span>
         };
 
-        var pointGraphic = new Graphic({
-          geometry: point,
-          symbol: textSymbol
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>({
+          <span style="color:#a6e22e">geometry</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">point</span>,
+          <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">textSymbol</span>
         });
 
-        var map = new Map({
-          basemap: &quot;dark-gray-vector&quot;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
+          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dark-gray-vector&#34;</span>
         });
 
-        const view = new MapView({
-          container: &quot;viewDiv&quot;,
-          map: map,
-          center: [139.751068, 35.684482],
-          zoom: 12
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
+          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
+          <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
+          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">139.751068</span>, <span style="color:#ae81ff">35.684482</span>],
+          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
         });
 
-        view.graphics.add(pointGraphic);
+        <span style="color:#a6e22e">view</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">pointGraphic</span>);
 
       });
-    &lt;/script&gt;
-  &lt;/head&gt;
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
 
-  &lt;body&gt;
-    &lt;div id=&quot;viewDiv&quot;&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewDiv&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">v</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"></span>
+</code></pre></div>
 
     
     
