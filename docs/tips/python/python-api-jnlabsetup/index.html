@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-13T17:28:26 JST">
+<meta name="revised" content="2020-04-01T17:13:02 JST">
 <title>Jupyter Lab を使ってみよう :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -403,6 +403,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
@@ -504,6 +511,7 @@ if (!doNotTrack) {
       <option value="/arcgis-dev-resources/tips/python/python-api-jnsetup/" >-- Jupyter Notebook を使ってみよう</option>
       <option value="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/"  selected>-- Jupyter Lab を使ってみよう</option>
       <option value="/arcgis-dev-resources/tips/python/automate-tasks/" >-- スクリプト実行の自動化</option>
+      <option value="/arcgis-dev-resources/tips/python/matplotlib-japanese/" >-- matplotlib での日本語利用について</option>
   
     <option value="/arcgis-dev-resources/tips/visualization/" >
   - 
@@ -555,23 +563,22 @@ if (!doNotTrack) {
 
 <h3 id="インストール">インストール</h3>
 
-<ol>
-<li><p>バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする</br>
+<ul>
+<li><p>バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする
 ターゲットの仮想環境がある場合は、アクティベート（<code>activate</code>）してから行います。Python API のインストールまたはアップデートの方法は<a href="http://esrijapan.github.io/arcgis-dev-resources/python/python-api-install/">インストールガイド</a>をご覧ください。</p></li>
 
 <li><p>次の 2 つのコマンドを実行します</br></p>
 
 <ul>
-<li><code>jupyter labextension install @jupyter-widgets/jupyterlab-manager</code></br></li>
-<li><code>jupyter labextension install arcgis-map-ipywidget@バージョン番号</code></br></br></li>
+<li><code>jupyter labextension install @jupyter-widgets/jupyterlab-manager</code></li>
+<li><code>jupyter labextension install arcgis-map-ipywidget@バージョン番号</code></li>
+</ul></li>
 </ul>
 
-<div class="notices info" ><pre><code>* 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。&lt;/br&gt;
-* エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。ダウンロードには [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
-</code></pre>
+<div class="notices info" ><p>2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。<br>
+エラー等で正常に完了できない場合は、お使いの端末または現在の環境に <code>npm</code> および <code>nodejs</code> をインストールする必要があります。インストールの詳細は <a href="https://www.npmjs.com/get-npm">npm のウェブサイト</a>、または <a href="https://nodejs.org/en/">node.js のウェブサイト</a>を参照してください。</p>
 </div>
-</li>
-</ol>
+
 
 <!-- 1. 以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。
 
@@ -588,13 +595,13 @@ app dir: D:\<your own path>\anaconda3\share\jupyter\lab
 arcgis-map-ipywidget v1.5.1 enabled  ok
 ``` -->
 
-<ol>
-<li><p>以上の設定が完了したら、次のコマンドで JupyterLab を起動します。</p>
+<ul>
+<li>以上の設定が完了したら、次のコマンドで JupyterLab を起動します。
 
 <ul>
 <li><code>jupyter lab</code></li>
 </ul></li>
-</ol>
+</ul>
 
 <p>任意のディレクトリをルート ディレクトリとして起動したい場合は、<code>cd</code> コマンドでディレクトリを移動してから起動コマンドを実行します。</p>
 
