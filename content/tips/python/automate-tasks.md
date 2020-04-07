@@ -115,9 +115,6 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
     
 
 {{% notice note %}}
-上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は[インストールガイド](../python-api-install#2-linux-へのインストール)を参照ください。
-{{% /notice %}}
-
-{{% notice info %}}
+上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は[インストールガイド](../python-api-install#2-linux-へのインストール)を参照ください。<br>
 より詳細な cron の使い方はubuntu の Community Help Wiki の [Cron How to](https://help.ubuntu.com/community/CronHowto) をご覧下さい。
 {{% /notice %}}

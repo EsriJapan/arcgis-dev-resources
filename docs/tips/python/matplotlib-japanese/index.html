@@ -17,16 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<meta name="revised" content="2020-04-03T15:21:31 JST">
-=======
-<meta name="revised" content="2020-04-07T14:09:17 JST">
->>>>>>> develop
-=======
 <meta name="revised" content="2020-04-01T17:13:02 JST">
->>>>>>> upstream/master
-<title>データ ビジュアライゼーション :: ArcGIS for Developer 開発リソース集</title>
+<title>matplotlib での日本語利用について :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -37,13 +29,13 @@ if (!doNotTrack) {
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="地図にデータを可視化する際の Tips を紹介します。">
+<meta name="description" content="ArcGIS API for Python で利用されているグラフ描画ライブラリの matplotlib で日本語を使う方法を説明します。">
 
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/visualization/">
+  <body data-url="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
     
       <header>
   <div class="logo">
@@ -72,64 +64,6 @@ if (!doNotTrack) {
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/what-is-arcgis/">
-            ArcGIS とは
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/">
-            APIs、SDKs、Apps
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/security-and-authentication/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
-            セキュリティと認証
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/layers/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/layers/">
-            レイヤー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/web-maps/">
-            Web マップ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-scenes/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/web-scenes/">
-            Web シーン
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/rest-api/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/core-concepts/rest-api/">
-            REST API
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
     <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
         ">
       <div>
@@ -420,10 +354,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
@@ -468,7 +403,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
             matplotlib での日本語利用について
@@ -477,11 +412,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item parent active haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
@@ -539,16 +473,6 @@ if (!doNotTrack) {
       <center>メニュー: 
         <select onchange="javascript:location.href = this.value;">
           
-    <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option> 
-      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
-      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
-      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
-      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
-      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
-      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
-      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
-  
     <option value="/arcgis-dev-resources/guide/" >
    スタートアップ ガイド</option> 
     <option value="/arcgis-dev-resources/guide/create-map/" >
@@ -580,14 +504,18 @@ if (!doNotTrack) {
    ArcGIS Runtime SDK for iOS</option>
     <option value="/arcgis-dev-resources/tips/python/" >
   - 
-   ArcGIS API for Python</option>
-    <option value="/arcgis-dev-resources/tips/visualization/"  selected>
-  - 
-   データ ビジュアライゼーション</option> 
-      <option value="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" >-- データ可視化のワークフロー</option>
-      <option value="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" >-- データ可視化の手順</option>
-      <option value="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" >-- 地図上に賢くデータを可視化するための 6 つの方法</option>
+   ArcGIS API for Python</option> 
+      <option value="/arcgis-dev-resources/tips/python/python-api-concepts/" >-- ArcGIS API for Python のコンセプト</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-conda/" >-- ArcGIS API for Python のための基礎環境：conda入門</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-install/" >-- インストール ガイド</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-jnsetup/" >-- Jupyter Notebook を使ってみよう</option>
+      <option value="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" >-- Jupyter Lab を使ってみよう</option>
+      <option value="/arcgis-dev-resources/tips/python/automate-tasks/" >-- スクリプト実行の自動化</option>
+      <option value="/arcgis-dev-resources/tips/python/matplotlib-japanese/"  selected>-- matplotlib での日本語利用について</option>
   
+    <option value="/arcgis-dev-resources/tips/visualization/" >
+  - 
+   データ ビジュアライゼーション</option>
       <option value="/arcgis-dev-resources/tips/hackathon/" >- ミートアップ</option>
   
     <option value="/arcgis-dev-resources/samples/" >
@@ -614,46 +542,167 @@ if (!doNotTrack) {
       </div>
     
 
-    <h1>データ ビジュアライゼーション</h1>
+    <h1>matplotlib での日本語利用について</h1>
     
     
     
+    
 
-<p>地図にデータを可視化する際の Tips を紹介します。</p>
+<p>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。<br>
+matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。</p>
 
+<h3 id="対応環境">対応環境</h3>
 
+<p>ここでは、次の環境を用いた場合の設定方法を説明します。</p>
 
-<ul class="children children-li">
-
-<span><li>
-		<a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" >データ可視化のワークフロー</a></li>
-<p>マップ ビューアーを使用した地図上でのデータ可視化のプロセスを紹介します。</p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" >データ可視化の手順</a></li>
-<p>ArcGIS Online 上のデータを可視化するための方法を紹介します。</p>
-</span>
-
-<span><li>
-		<a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" >地図上に賢くデータを可視化するための 6 つの方法</a></li>
-<p>マップ ビューアーを使って地図データを賢く可視化するために おさえておくべき６つの方法を紹介します。</p>
-</span>
+<ul>
+<li>ArcGIS Pro 2.5</li>
+<li>ArcGIS API for Python 1.7.0</li>
+<li>matplotlib 3.1.1</li>
 </ul>
 
+<p>日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。</p>
+
+<ol>
+<li>ArcGIS Pro のアップグレード
+
+<ul>
+<li>ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。</li>
+</ul></li>
+<li>ArcGIS API for Python をアップグレード
+
+<ul>
+<li>Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。</li>
+</ul></li>
+</ol>
+
+<h3 id="matplotlib-での日本語フォントの設定方法">matplotlib での日本語フォントの設定方法</h3>
+
+<p>設定方法は主に以下の 2 通りがあります。</p>
+
+<ol>
+<li>スクリプトで matplotlib の設定を都度変更する</li>
+<li>matplotlib の設定ファイル (matplotlibrc) を編集する</li>
+</ol>
+
+<p>前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。
+どちらが適しているかはご自身の状況に合わせて選択してください。</p>
+
+<h4 id="スクリプトで-matplotlib-の設定を都度変更する">スクリプトで matplotlib の設定を都度変更する</h4>
+
+<p>次のコードをスクリプトの最初に実行することでフォント設定を変更することが可能です。<br></p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+from matplotlib import rcParams
+rcParams[&quot;font.family&quot;] = &quot;sans-serif&quot;
+rcParams[&quot;font.sans-serif&quot;] = [&quot;Meiryo&quot;]
+</code></pre>
+
+<p><code>rcParams</code> は matplotlib のデフォルト設定が入っているオブジェクトです。<br>
+上記では Windows で利用可能な Meriyo に変更していますが、ご自身の OS 等に応じて適宜フォントファミリー、フォントを変更してください。<br>
+設定したら<a href="#サンプル-コード">サンプル コード</a>を実行してみましょう。</p>
+
+<h4 id="matplotlib-の設定ファイル-matplotlibrc-を編集する">matplotlib の設定ファイル (matplotlibrc) を編集する</h4>
+
+<p>上記の設定方法では毎回スクリプトの最初にコードを実行する必要がありますが、以下の方法でデフォルトのフォントを恒久的に変更することが可能です。</p>
+
+<h5 id="matplotlibrc-のパスを確認">matplotlibrc のパスを確認</h5>
+
+<p>次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。</p>
+
+<pre><code class="language-python">import matplotlib as mpl
+mpl.matplotlib_fname()
+</code></pre>
+
+<h5 id="matplotlibrc-を-c-users-ユーザー名-matplotlib-にコピー-ペーストで配置">matplotlibrc を C:\Users\&lt;ユーザー名&gt;\.matplotlib にコピー &amp; ペーストで配置</h5>
+
+<p>matplotlibrc が格納されているパスへ移動しファイルをコピーしたら、以下のディレクトリにペーストします。</p>
+
+<ul>
+<li><code>C:\Users\&lt;ユーザー名&gt;\.matplotlib</code></li>
+</ul>
+
+<div class="notices tip" ><p>conda を使用して複数の環境を作成・利用している場合、それぞれの環境が matplotlibrc を保持しています。<br>
+上記のパスに配置された matplotlibrc は各環境の matplotlibrc よりも優先されるため、当該ファイルを修正するだけで全ての環境で日本語のフォントを設定することができます。</p>
+</div>
 
 
+<h5 id="matplotlibrc-の内容を修正">matplotlibrc の内容を修正</h5>
 
+<p>ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
+matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</p>
 
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+</div>
 
+<p>198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
+フォント ファミリーはデフォルトが sans-serif なので、ここではデフォルト設定のままにしておきます。<br>
+210 行目のフォント設定の行で、<code>#</code> を削除し、<code>:</code> の後に日本語のフォントを追加しましょう。<br>
+ここでは <code>Meiryo</code> に設定します。設定後の画面は以下のようになります。</p>
+
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
+</div>
+
+<h5 id="キャッシュの再構築">キャッシュの再構築</h5>
+
+<p>以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</p>
+
+<pre><code class="language-python">import matplotlib.font_manager
+matplotlib.font_manager._rebuild()
+</code></pre>
+
+<p>設定が完了したらしたら以下のサンプルコードを実行してみましょう。</p>
+
+<h4 id="サンプル-コード">サンプル コード</h4>
+
+<p>フォント設定が完了したら以下のサンプル コードを実行してみましょう。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+def test_function(x):
+    return 3*x**3 + 2*x**2 + 4*x - 10
+
+x = np.linspace(-3, 3, 200)
+
+plt.plot(x, test_function(x), color = &quot;cornflowerblue&quot;, label = &quot;日本語のラベル&quot;)
+
+plt.legend(loc = &quot;upper left&quot;)
+plt.ylim(-120, 120)
+plt.title(&quot;日本語のタイトル&quot;)
+plt.xlabel(&quot;日本語のX軸&quot;)
+plt.ylabel(&quot;日本語のY軸&quot;)
+plt.grid(True)
+plt.show()
+</code></pre>
+
+<p>次のようなグラフが描ければ成功です。</p>
+
+<div align="center">
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
+</div>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="https://qiita.com/yniji/items/3fac25c2ffa316990d0c">matplotlibで日本語 - Qiita</a></li>
+<li>matplotlib 公式ドキュメント
+
+<ul>
+<li><a href="https://matplotlib.org/gallery/api/font_family_rc_sgskip.html">Configuring the font family</a></li>
+<li><a href="https://matplotlib.org/tutorials/introductory/customizing.html#the-matplotlibrc-file">The matplotlibrc file</a></li>
+</ul></li>
+</ul>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/matplotlib-japanese/" title="matplotlib での日本語利用について"> <i class="fa fa-chevron-left"></i><label>matplotlib での日本語利用について</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" title="データ可視化のワークフロー" style="margin-right: 0px;"><label>データ可視化のワークフロー</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/automate-tasks/" title="スクリプト実行の自動化"> <i class="fa fa-chevron-left"></i><label>スクリプト実行の自動化</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/visualization/" title="データ ビジュアライゼーション" style="margin-right: 0px;"><label>データ ビジュアライゼーション</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

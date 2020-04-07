@@ -18,7 +18,7 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
 
 ### STEP 1: [Python API をインストールする](#python-api-をインストールする)
 * [ArcGIS Pro でインストールする](#arcgis-pro-でインストールする)
-* [Aaconda 経由でインストールする](#anaconda-経由でインストールする)
+* [Anaconda 経由でインストールする](#anaconda-経由でインストールする)
 
 ### STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
 * [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-2-3-以上の環境の場合)
