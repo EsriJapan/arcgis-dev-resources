@@ -376,8 +376,24 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  
-STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+    </item>
+    
+    <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</guid>
+      <description>ArcGIS での認証 セキュリティとは、ネットワーク上で利用可能なリソースを保護することですが、許可されたアクセスのみを目的としています。インターネットはそのようなネットワークの 1 つであるが、VPN やイントラネットも可能である。一般に共有されていないリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションのユーザは、資格のある機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
+アプリケーションが以下の操作を行うとする場合は、認証が必要になります。
+ ユーザのプライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツおよびサービスには、クレジット ベース モデルで動作するサービスの ArcGIS プラットフォームが含まれます。ユーザーは、ArcGIS Online 組織のためにクレジットを購入、またはその他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジットの数は、サービスによって異なります。クレジットが必要なサービスの詳細およびクレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには実費がかかり、コンテンツの出版および編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービス、およびメカニズムを提供しています。
+実装:   セキュリティ手法や ArcGIS 認証パターンに精通している場合は、実装に固有の詳細を参照してください。
+Android　iOS　Java
+JavaScript　.NET　Qt
+Esri Leaflet　REST
+  セキュリティの方法論 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+ OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザの真正性を判断し、トークンがクライアント アプリに提供されます。このトークンは、その後のセキュア リソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.3 以降で利用可能です。</description>
     </item>
     
     <item>
@@ -722,6 +738,19 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
  スタート メニューからタスク スケジューラを検索して開く   右側の [操作] ペインから [タスクの作成] をクリック
  新規タスクを作成するウィザードが開きます   [全般] タブ内のパラメーターを設定する
  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる  [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)   [トリガー] タブ内のパラメーターを設定する</description>
+    </item>
+    
+    <item>
+      <title>REST API</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
+      <description>ArcGIS では、ArcGIS REST API を使用して地理空間サービス、マッピングサービス、および管理サービスを提供しています。
+以下では、API で最も一般的に使用されるコンポーネントの概要を説明します。
+位置情報ベースのサービス ArcGIS Online は、ジオコーディング、ルーティング、および空間分析などのロケーションベースの RESTful サービスをホストしています。一般的に、これらのサービスはクレジットを消費します。
+ Geocoding and search API Routing API Demographic and geoenrichment API Spatial API Elevation API  ArcGIS Enterprise API ArcGIS Enterprise REST API は、ArcGIS Online または ArcGIS Enterprise が独自のインフラストラクチャ上でホストしています。ArcGIS Enterprise API は、マップ、レイヤー、およびその他のコンテンツなどのアイテムの管理や、組織内のユーザーの特権や認証の処理に使用されます。ArcGIS Portal API の一般的なユースケースとしては、ユーザー、グループ、およびアイテムの操作や検索 API へのアクセスなどがあります。
+ホスティングされたデータ サービス ArcGIS Server REST API を使用すると、ArcGIS Enterprise または ArcGIS Online のいずれかに公開してホストされたデータ サービスを操作することができます。たとえば、ArcGIS Online にデータをインポートすると、ArcGIS Server のインスタンス上でホストされているフィーチャ レイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤにアクセスすることができます。ArcGIS Server が提供するレイヤーやサービスには、次のようなさまざまな ArcGIS ツールで作成して公開できるものがあります。</description>
     </item>
     
     <item>
