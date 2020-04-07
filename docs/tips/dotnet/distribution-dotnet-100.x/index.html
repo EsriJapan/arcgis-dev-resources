@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-07T14:09:17 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -603,31 +603,40 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。</p>
+    
+
+<p>ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。</p>
+
 <h2 id="ライセンス認証のステップ">ライセンス認証のステップ</h2>
+
 <p>開発したアプリケーションのライセンス認証のステップは以下の通りです。</p>
+
 <ol>
-<li><strong><a href="#%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E9%81%B8%E6%8A%9E">使用するライセンスの選択</a></strong></li>
-<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">ライセンスの認証方法</a></strong></li>
-</ol>
+<li><strong><a href="#使用するライセンスの選択">使用するライセンスの選択</a></strong></li>
+<li><strong><a href="#ライセンスの認証方法">ライセンスの認証方法</a></strong>
+
 <ul>
-<li><strong><a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Lite ライセンスの認証方法</a></strong></li>
-<li><strong><a href="#basic-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Basic ライセンスの認証方法</a></strong></li>
-<li><strong><a href="#standard-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Standard ライセンスの認証方法</a></strong></li>
-<li><strong><a href="#advanced-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Advanced ライセンスの認証方法</a></strong></li>
-<li><strong><a href="#analysis-extension-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Analysis Extension ライセンスの認証方法</a></strong></li>
-</ul>
-<ol>
-<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC">ライセンスの認証</a></strong></li>
-</ol>
+<li><strong><a href="#lite-ライセンスの認証方法">Lite ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#basic-ライセンスの認証方法">Basic ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#standard-ライセンスの認証方法">Standard ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</a></strong></li>
+<li><strong><a href="#analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</a></strong></li>
+</ul></li>
+<li><strong><a href="#ライセンスの認証">ライセンスの認証</a></strong>
+
 <ul>
-<li><strong><a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">Lite ライセンスキーを使用した認証</a></strong></li>
-<li><strong><a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a></strong></li>
-<li><strong><a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a></strong></li>
-</ul>
+<li><strong><a href="#lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</a></strong></li>
+<li><strong><a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a></strong></li>
+<li><strong><a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a></strong></li>
+</ul></li>
+</ol>
+
 <h2 id="使用するライセンスの選択">使用するライセンスの選択</h2>
+
 <p>ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</p>
+
 <p>各ライセンスで利用可能な機能の概要は以下の表をご参照ください。</p>
+
 <table>
 <thead>
 <tr>
@@ -635,41 +644,60 @@ if (!doNotTrack) {
 <th align="left">利用できる機能</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">Lite</td>
-<td align="left">・地図表示（2D/3D）<!-- raw HTML omitted -->・フィーチャの表示/検索<!-- raw HTML omitted -->・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<!-- raw HTML omitted -->・ルート検索/到達圏解析/最寄り施設検索<!-- raw HTML omitted -->・住所検索/リバース ジオコーディング</td>
+<td align="left">・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング</td>
 </tr>
+
 <tr>
 <td align="left">Basic</td>
-<td align="left">・Lite ライセンスで利用できるすべての機能<!-- raw HTML omitted -->・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<!-- raw HTML omitted -->・フィーチャのオフライン編集<!-- raw HTML omitted -->・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
+<td align="left">・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン編集（セキュアなフィーチャ サービス）<br>・フィーチャのオフライン編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
 </tr>
+
 <tr>
 <td align="left">Standard</td>
-<td align="left">・Basic ライセンスで利用できるすべての機能<!-- raw HTML omitted -->・シェープファイルの表示/編集<!-- raw HTML omitted -->・GeoPackage の表示/編集<!-- raw HTML omitted -->・KML（ローカル ファイル）の表示<!-- raw HTML omitted -->・ラスター データの表示/解析<!-- raw HTML omitted -->・航海用電子海図（ENC）の表示<!-- raw HTML omitted -->・ローカル サーバーの標準的な機能（WPF API のみ）</td>
+<td align="left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能（WPF API のみ）</td>
 </tr>
+
 <tr>
 <td align="left">Advanced</td>
-<td align="left">・Standard ライセンスで利用できるすべての機能<!-- raw HTML omitted -->・ローカル サーバーの高度な機能（WPF API のみ）</td>
+<td align="left">・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能（WPF API のみ）</td>
 </tr>
+
 <tr>
 <td align="left">Analysis Extension</td>
-<td align="left">・Standard ライセンス以上で利用可能なエクステンション<!-- raw HTML omitted -->・オフラインでの到達圏解析/最寄り施設検索<!-- raw HTML omitted -->・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部（WPF API のみ）</td>
+<td align="left">・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部（WPF API のみ）</td>
 </tr>
 </tbody>
 </table>
+
 <p>ライセンスの詳細は<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/">ESRIジャパン製品ページ</a>をご参照ください。</p>
+
 <h2 id="ライセンスの認証方法">ライセンスの認証方法</h2>
+
 <p>ライセンスの認証は次の2つの方法があります。</p>
+
 <ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
 <ul>
-<li>ライセンスキーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。</li>
-</ul>
-<!-- raw HTML omitted -->
+<li>ライセンスキーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。
+<p></p></li>
+</ul></li>
+<li><strong>指定ユーザーによるアカウント認証</strong><br />
+
+<ul>
+<li>指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。<br></li>
+<li>ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。</li>
+</ul></li>
+</ol>
+
 <h5 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h5>
-<p><strong>■ ArcGIS Online または ArcGIS Enterprise 次期バージョン 10.8（国内リリース時期未定） 以降をご利用の場合 <!-- raw HTML omitted --></strong>※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております</p>
+
+<p><strong>■ ArcGIS Online または ArcGIS Enterprise 次期バージョン 10.8（国内リリース時期未定） 以降をご利用の場合 <br></strong>※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております</p>
+
 <table>
 <thead>
 <tr>
@@ -677,26 +705,32 @@ if (!doNotTrack) {
 <th align="left">Runtime Level</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">Viewer</td>
 <td align="left">Lite</td>
 </tr>
+
 <tr>
 <td align="left">Editor / Field Worker</td>
 <td align="left">Basic</td>
 </tr>
+
 <tr>
 <td align="left">Creator / GIS Professional Basic</td>
 <td align="left">Standard ※</td>
 </tr>
+
 <tr>
 <td align="left">GIS Professional Standard / GIS Professional Advanced</td>
 <td align="left">Advanced ※</td>
 </tr>
 </tbody>
 </table>
+
 <p><strong>■ ArcGIS Enterprise 10.7 以前をご利用の場合</strong></p>
+
 <table>
 <thead>
 <tr>
@@ -704,138 +738,228 @@ if (!doNotTrack) {
 <th align="left">Runtime Level</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">レベル1 または Viewer タイプ以上</td>
 <td align="left">Lite</td>
 </tr>
+
 <tr>
 <td align="left">レベル2 または Editor タイプ以上</td>
 <td align="left">Basic</td>
 </tr>
 </tbody>
 </table>
+
 <h3 id="lite-ライセンスの認証方法">Lite ライセンスの認証方法</h3>
-<ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
-<ul>
-<li>ArcGIS Runtime Lite のライセンスキーを取得する必要があります</li>
-<li>認証の方法は、<a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">Lite ライセンスキーを使用した認証</a>をご参照ください</li>
-</ul>
-<!-- raw HTML omitted -->
-<h3 id="basic-ライセンスの認証方法">Basic ライセンスの認証方法</h3>
-<ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
-<ul>
-<li>ArcGIS Runtime Basic の配布パックを購入する必要があります</li>
-<li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
-</ul>
-<!-- raw HTML omitted -->
-<h3 id="standard-ライセンスの認証方法">Standard ライセンスの認証方法</h3>
-<ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
-<ul>
-<li>ArcGIS Runtime Standard の配布パックを購入する必要があります</li>
-<li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
-</ul>
-<!-- raw HTML omitted -->
-<h3 id="advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</h3>
-<ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
-<ul>
-<li>ArcGIS Runtime Advanced の配布パックを購入する必要があります</li>
-<li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
-</ul>
-<!-- raw HTML omitted -->
-<h3 id="analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</h3>
+
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
-* ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
-* 基本ライセンス（Standard または Advanced）と併せて認証する必要があります
-* 認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+
+<ul>
+<li>ArcGIS Runtime Lite のライセンスキーを取得する必要があります</li>
+<li>認証の方法は、<a href="#lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Liteライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
 </ol>
-<!-- raw HTML omitted -->
+
+<h3 id="basic-ライセンスの認証方法">Basic ライセンスの認証方法</h3>
+
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
+<ul>
+<li>ArcGIS Runtime Basic の配布パックを購入する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Basicライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
+</ol>
+
+<h3 id="standard-ライセンスの認証方法">Standard ライセンスの認証方法</h3>
+
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
+<ul>
+<li>ArcGIS Runtime Standard の配布パックを購入する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Standardライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
+</ol>
+
+<h3 id="advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</h3>
+
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
+<ul>
+<li>ArcGIS Runtime Advanced の配布パックを購入する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Advancedライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
+</ol>
+
+<h3 id="analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</h3>
+
+<ol>
+<li><strong>ライセンスキーを使用した認証</strong>
+
+<ul>
+<li>ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります</li>
+<li>基本ライセンス（Standard または Advanced）と併せて認証する必要があります</li>
+<li>認証の手順は、<a href="#配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</a>をご参照ください
+<p></p></li>
+</ul></li>
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません<br>
+注-Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7以前のバージョンでは使用できません
+
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Analysisアドオンライセンス拡張機能を割り当てられた) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul></li>
+</ol>
+
 <h2 id="ライセンスの認証">ライセンスの認証</h2>
+
 <p>以下の認証に応じた作業を行ってください。</p>
+
 <h3 id="lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</h3>
+
 <p>ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。</p>
+
 <ol>
 <li><a href="https://developers.arcgis.com/arcgis-runtime/licensing/">ArcGIS for Developers: Licensing Your ArcGIS Runtime App</a> ページにアクセスします</li>
 <li>Lite の枠に表示されている [Sign Up] をクリックします</li>
-<li>画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">開発者アカウントの作成</a></li>
+<li>画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#アカウントの作成">開発者アカウントの作成</a></li>
 <li>表示されたライセンスキーをコピーします
-<!-- raw HTML omitted --></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px"></li>
 <li>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ライセンスキーを設定して認証
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">licenseKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;runtimelite,1000,rud#########,day-month-year,####################&#34;</span>;
-<span style="color:#a6e22e">Esri</span>.<span style="color:#a6e22e">ArcGISRuntime</span>.<span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>);
-</code></pre></div><h3 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h3>
+
+<pre><code class="language-javascript">// ライセンスキーを設定して認証
+string licenseKey = &quot;runtimelite,1000,rud#########,day-month-year,####################&quot;;
+Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey);
+</code></pre>
+
+<h3 id="配布パックのライセンスキーを使用した認証">配布パックのライセンスキーを使用した認証</h3>
+
 <p>ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証することができます。</p>
+
 <p>ArcGIS Runtime の配布パックの購入については <a href="https://esrij.smartseminar.jp/public/application/add/356">ESRIジャパン</a>にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。</p>
+
 <p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ライセンスキーを設定して認証
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">licenseKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;runtimestandard,1000,rud#########,day-month-year,####################&#34;</span>;
-<span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>);
-</code></pre></div><p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 基本ライセンス（Standard または Advanced）のライセンスキーの設定
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">licenseKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;runtimestandard,1000,rud#########,day-month-year,####################&#34;</span>;
 
-<span style="color:#75715e">// Analysis Extension ライセンスのライセンスキーの設定
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span>[] <span style="color:#a6e22e">extensions</span> <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;runtimeanalysis,1000,rud#########,day-month-year,####################&#34;</span> };
+<pre><code class="language-javascript">// ライセンスキーを設定して認証
+string licenseKey = &quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;;
+ArcGISRuntimeEnvironment.SetLicense(licenseKey);
+</code></pre>
 
-<span style="color:#75715e">// 基本ライセンスと Analysis Extension ライセンスの認証
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>, <span style="color:#a6e22e">extensions</span>);
-</code></pre></div><h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
+<p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
+
+<pre><code class="language-javascript">// 基本ライセンス（Standard または Advanced）のライセンスキーの設定
+string licenseKey = &quot;runtimestandard,1000,rud#########,day-month-year,####################&quot;;
+
+// Analysis Extension ライセンスのライセンスキーの設定
+string[] extensions = { &quot;runtimeanalysis,1000,rud#########,day-month-year,####################&quot; };
+
+// 基本ライセンスと Analysis Extension ライセンスの認証
+ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
+</code></pre>
+
+<h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
+
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する <a href="http://www.esrij.com/products/arcgis-online/plan/organization/">ArcGIS Online 組織向けプラン</a> もしくは <a href="http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/">Portal for ArcGIS</a> の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
+
 <p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下の認証方法は、指定ユーザーのユーザー名とパスワードをコードに埋め込んで認証する簡単な例です。認証方法の詳細については <a href="https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm">ArcGIS for Developers: 認証マネージャーの使用（英語）</a>をご参照ください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">try</span>
+
+<pre><code class="language-javascript">try
 {
-    <span style="color:#75715e">// 認証先のポータルの URL を設定
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Uri</span> <span style="color:#a6e22e">serviceUri</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uri</span>(<span style="color:#e6db74">&#34;https://www.arcgis.com/sharing/rest&#34;</span>);
+    // 認証先のポータルの URL を設定
+    Uri serviceUri = new Uri(&quot;https://www.arcgis.com/sharing/rest&quot;);
 
-    <span style="color:#75715e">// 認証情報の作成
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Credential</span> <span style="color:#a6e22e">credential</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">AuthenticationManager</span>.<span style="color:#a6e22e">Current</span>.<span style="color:#a6e22e">GenerateCredentialAsync</span>(<span style="color:#a6e22e">serviceUri</span>, <span style="color:#e6db74">&#34;&lt;ユーザー名&gt;&#34;</span>, <span style="color:#e6db74">&#34;&lt;パスワード&gt;&#34;</span>);
+    // 認証情報の作成
+    Credential credential = await AuthenticationManager.Current.GenerateCredentialAsync(serviceUri, &quot;&lt;ユーザー名&gt;&quot;, &quot;&lt;パスワード&gt;&quot;);
 
-    <span style="color:#75715e">// 認証情報を設定してポータルへ接続
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ArcGISPortal</span> <span style="color:#a6e22e">arcgisPortal</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">ArcGISPortal</span>.<span style="color:#a6e22e">CreateAsync</span>(<span style="color:#a6e22e">serviceUri</span>, <span style="color:#a6e22e">credential</span>);
+    // 認証情報を設定してポータルへ接続
+    ArcGISPortal arcgisPortal = await ArcGISPortal.CreateAsync(serviceUri, credential);
 
-    <span style="color:#75715e">// ライセンス情報を取得
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">LicenseInfo</span> <span style="color:#a6e22e">licenseInfo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">arcgisPortal</span>.<span style="color:#a6e22e">GetLicenseInfoAsync</span>();
+    // ライセンス情報を取得
+    LicenseInfo licenseInfo = await arcgisPortal.GetLicenseInfoAsync();
 
-    <span style="color:#75715e">// ArcGIS Runtime にライセンスを設定
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseInfo</span>);
+    // ArcGIS Runtime にライセンスを設定
+    ArcGISRuntimeEnvironment.SetLicense(licenseInfo);
 
 }
-<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">ex</span>)
+catch (Exception ex)
 {
-    <span style="color:#a6e22e">MessageBox</span>.<span style="color:#a6e22e">Show</span>(<span style="color:#a6e22e">ex</span>.<span style="color:#a6e22e">Message</span>, <span style="color:#e6db74">&#34;認証のエラー&#34;</span>);
+    MessageBox.Show(ex.Message, &quot;認証のエラー&quot;);
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">注意</span><span style="color:#960050;background-color:#1e0010">：</span>
-<span style="color:#a6e22e">上記のコードスニペットは</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">ArcGIS</span> <span style="color:#a6e22e">Runtime</span> <span style="color:#ae81ff">100.7</span> <span style="color:#a6e22e">で導入された新しい</span> <span style="color:#a6e22e">GetLicenseInfoAsync</span>() <span style="color:#a6e22e">APIを使用しています</span><span style="color:#960050;background-color:#1e0010">。</span>
-<span style="color:#a6e22e">バージョン</span> <span style="color:#ae81ff">100.7</span> <span style="color:#a6e22e">以降では</span> <span style="color:#a6e22e">GetLicenseInfoAsync</span>()<span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">バージョン</span> <span style="color:#ae81ff">100.6</span> <span style="color:#a6e22e">以前では</span> <span style="color:#a6e22e">Portal</span>.<span style="color:#a6e22e">portalInfo</span>.<span style="color:#a6e22e">licenseInfo</span> <span style="color:#a6e22e">を使用します</span><span style="color:#960050;background-color:#1e0010">。</span>
-</code></pre></div><p><strong>アプリケーションが ArcGIS Online / Portal for ArcGIS に常にログインできない場合</strong></p>
+</code></pre>
+
+<pre><code class="language-javascript">注意：
+上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい GetLicenseInfoAsync() APIを使用しています。
+バージョン 100.7 以降では GetLicenseInfoAsync()、バージョン 100.6 以前では Portal.portalInfo.licenseInfo を使用します。
+</code></pre>
+
+<p><strong>アプリケーションが ArcGIS Online / Portal for ArcGIS に常にログインできない場合</strong></p>
+
 <p>配布するアプリケーションがネットワークに接続できない環境で実行するなどの理由により、起動時に毎回 ArcGIS Online / Portal for ArcGIS にログインすることができない場合は、取得したライセンス情報を最大 30 日までローカルに保存しておくことができます。</p>
+
 <p>この方法を使用する場合、少なくとも 30 日に 1 回はアプリケーションから ArcGIS Online / Portal for ArcGIS にログインし、ローカルのライセンス情報を更新する必要があります。最後にログインしてから 30 日以上経過した場合は、ライセンスが無効となりそのライセンスを必要とする機能が使用できなくなります。</p>
+
 <p>以下のコードを使用して取得したライセンス情報を JSON 形式で出力することができます。出力したライセンス情報は任意の方法でローカルに保存してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ライセンス情報を JSON 形式で出力
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">licenseJson</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">licenseInfo</span>.<span style="color:#a6e22e">ToJson</span>();
 
-<span style="color:#75715e">// --- 出力したライセンス情報を保存するコードを記述 ---
-</span></code></pre></div><p>ローカルに保存した JSON 形式のライセンス情報を読み込み ArcGIS Runtime に設定するには、以下のコードを使用します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// --- 保存したライセンス情報を読み込むコードを記述 ---
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">//JSON 形式のライセンス情報からライセンスを復元
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">localLicenseInfo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LicenseInfo</span>.<span style="color:#a6e22e">FromJson</span>(<span style="color:#a6e22e">licenseJson</span>);
+<pre><code class="language-javascript">// ライセンス情報を JSON 形式で出力
+var licenseJson = licenseInfo.ToJson();
 
-<span style="color:#75715e">//ArcGIS Runtime にライセンスを設定
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">localLicenseInfo</span>);
-</code></pre></div>
+// --- 出力したライセンス情報を保存するコードを記述 ---
+</code></pre>
+
+<p>ローカルに保存した JSON 形式のライセンス情報を読み込み ArcGIS Runtime に設定するには、以下のコードを使用します。</p>
+
+<pre><code class="language-javascript">// --- 保存したライセンス情報を読み込むコードを記述 ---
+
+//JSON 形式のライセンス情報からライセンスを復元
+var localLicenseInfo = LicenseInfo.FromJson(licenseJson);
+
+//ArcGIS Runtime にライセンスを設定
+ArcGISRuntimeEnvironment.SetLicense(localLicenseInfo);
+</code></pre>
+
 
     
     

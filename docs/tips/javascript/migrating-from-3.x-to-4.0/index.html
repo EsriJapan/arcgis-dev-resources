@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-07T14:09:17 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -606,85 +606,128 @@ if (!doNotTrack) {
     
     
     
-    <p>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。</p>
+    
+
+<p>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。</p>
+
 <p>本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。</p>
+
 <ul>
-<li><strong><a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AE%E3%83%8F%E3%83%B3%E3%83%89%E3%83%AA%E3%83%B3%E3%82%B0">プロパティのハンドリング</a></strong></li>
-<li><strong><a href="#view-%E3%81%AE%E5%88%A9%E7%94%A8">View の利用</a></strong></li>
-<li><strong><a href="#map-%E3%81%A8-layer-%E3%81%AE%E4%BB%95%E6%A7%98">Map と Layer の仕様</a></strong></li>
-<li><strong><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%A8%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E6%9B%B4%E6%96%B0">モジュールとパッケージの更新</a></strong></li>
-<li><strong><a href="#web-%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">Web マップのサポート</a></strong></li>
-<li><strong><a href="#amd-%E3%81%AE%E5%88%A9%E7%94%A8">AMD の利用</a></strong></li>
-<li><strong><a href="#%E5%BB%83%E6%AD%A2%E9%A0%85%E7%9B%AE">廃止項目</a></strong></li>
+<li><strong><a href="#プロパティのハンドリング">プロパティのハンドリング</a></strong><br /></li>
+<li><strong><a href="#view-の利用">View の利用</a></strong></li>
+<li><strong><a href="#map-と-layer-の仕様">Map と Layer の仕様</a></strong></li>
+<li><strong><a href="#モジュールとパッケージの更新">モジュールとパッケージの更新</a></strong></li>
+<li><strong><a href="#web-マップのサポート">Web マップのサポート</a></strong></li>
+<li><strong><a href="#amd-の利用">AMD の利用</a></strong></li>
+<li><strong><a href="#廃止項目">廃止項目</a></strong></li>
 </ul>
+
 <h2 id="プロパティのハンドリング">プロパティのハンドリング</h2>
+
 <p>3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。</p>
+
 <ul>
 <li><strong>オブジェクトに直接値を書き込む方法</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップのタイプを設定
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">basemap</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;oceans&#39;</span>;
-</code></pre></div><ul>
+
+<pre><code class="language-javascript">// ベースマップのタイプを設定
+map.basemap = 'oceans';
+</code></pre>
+
+<ul>
 <li><strong>オブジェクトから直接値を読み取る方法</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップのタイトルを取得
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">basemap</span>.<span style="color:#a6e22e">title</span>;
-</code></pre></div><p>例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">setDefinitionExpression</span>(<span style="color:#a6e22e">expression</span>);
-</code></pre></div><p>4.x では、以下の様に記述します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">definitionExpression</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">expression</span>;
-</code></pre></div><p>4.x では、以下に記述したように <code>.get()</code> または <code>.set()</code> を使用して、深い階層のプロパティにアクセスすることも可能です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">basemapTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;basemap.title&#34;</span>);
-</code></pre></div><h2 id="プロパティの変更の監視">プロパティの変更の監視</h2>
+
+<pre><code class="language-javascript">// ベースマップのタイトルを取得
+var title = map.basemap.title;
+</code></pre>
+
+<p>例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。</p>
+
+<pre><code class="language-javascript">myFeatureLayer.setDefinitionExpression(expression);
+</code></pre>
+
+<p>4.x では、以下の様に記述します。</p>
+
+<pre><code class="language-javascript">myFeatureLayer.definitionExpression = expression;
+</code></pre>
+
+<p>4.x では、以下に記述したように <code>.get()</code> または <code>.set()</code> を使用して、深い階層のプロパティにアクセスすることも可能です。</p>
+
+<pre><code class="language-javascript">var basemapTitle = map.get(&quot;basemap.title&quot;);
+</code></pre>
+
+<h2 id="プロパティの変更の監視">プロパティの変更の監視</h2>
+
 <p>3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.x ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、<code>.watch(property, callback)</code> メソッドを通してハンドリングされます。<code>property</code> に変更があると <code>callback</code> が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">propertyChangeHandler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newValue</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">property</span>, <span style="color:#a6e22e">object</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;新しい値: &#34;</span>,<span style="color:#a6e22e">newValue</span>, <span style="color:#e6db74">&#34;古い値: &#34;</span>,<span style="color:#a6e22e">oldValue</span>,
-  <span style="color:#e6db74">&#34;変更されたプロパティ: &#34;</span>, <span style="color:#a6e22e">property</span>, <span style="color:#e6db74">&#34;監視しているオブジェクト: &#34;</span>, <span style="color:#a6e22e">object</span>);
+
+<pre><code class="language-javascript">var propertyChangeHandler = function(newValue, oldValue, property, object){
+  console.log(&quot;新しい値: &quot;,newValue, &quot;古い値: &quot;,oldValue,
+  &quot;変更されたプロパティ: &quot;, property, &quot;監視しているオブジェクト: &quot;, object);
 };
-</code></pre></div><h2 id="view-の利用">View の利用</h2>
+</code></pre>
+
+<h2 id="view-の利用">View の利用</h2>
+
 <p>4.x では、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> は 2D または 3D で表示することができます。それに併せ、マップの描画ロジックも修正され、マップとレイヤーの描画は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> によって制御されるようになります。</p>
+
 <p>View は 4.x で導入されたコンセプトです。View は 2 つのタイプのうちのどちらか1つを使用します。</p>
+
 <ul>
 <li><strong>2D で表示する場合: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">MapView</a></strong></li>
 <li><strong>3D で表示する場合: <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html">SceneView</a></strong></li>
 </ul>
+
 <p>View は 2D または 3D のデータを可視化するのに使用します。Map は実際のデータまたはデータを表示するためのレイヤーを含み、View はそれらのデータの表示を処理します。どのように、データを表示するかは、2D または 3D のどちらを使用するかによって異なります。View から Map を参照（例: <code>view.map</code>）できますが、Map から View を参照することはできません。重要なのは1つの Map が複数の View を利用することができる点です。</p>
+
 <p>下記の構文は、作成した Map を 2D（MapView）と 3D（SceneView）で表示する方法を示しています。</p>
+
 <ul>
 <li><strong>2D（MapView）で表示する方法</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>){
- <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
-   <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;topo&#34;</span>
- });
- <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
-   <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
-   <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-   <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2400000</span>
- });
+
+<pre><code class="language-javascript">function (Map, MapView){
+  map = new Map({
+    basemap: &quot;topo&quot;
+  });
+  view = new MapView({
+    container: &quot;viewDiv&quot;,
+    map: map,
+    scale: 2400000
+  });
 }
-</code></pre></div><ul>
+</code></pre>
+
+<ul>
 <li><strong>3D（SceneView）で表示する方法</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">SceneView</span>){
-   <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
-     <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;topo&#34;</span>
-   });
-   <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SceneView</span>({
-     <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
-     <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-     <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2400000</span>
-   });
-</code></pre></div><h2 id="map-と-layer-の仕様">Map と Layer の仕様</h2>
+
+<pre><code class="language-javascript">  function (Map, SceneView){
+    map = new Map({
+      basemap: &quot;topo&quot;
+    });
+    view = new SceneView({
+      container: &quot;viewDiv&quot;,
+      map: map,
+      scale: 2400000
+    });
+</code></pre>
+
+<h2 id="map-と-layer-の仕様">Map と Layer の仕様</h2>
+
 <p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> と <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-Layer.html">Layer</a> には以下に挙げた重要な更新があります。</p>
+
 <ul>
 <li>Map の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#layers">layers</a> に <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap">basemap</a> は含まれません</li>
 <li>2D と 3D の両方でマップの<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#rotation">回転</a>が可能になりました</li>
 <li>グラフィック レイヤーは、マップのレイヤー コレクションの中のどこにでも追加することができます（3.x ではグラフィック レイヤーは他の形式のレイヤーよりも上に追加する必要がありました）</li>
 <li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html">GroupLayer</a> クラスが追加されました</li>
 </ul>
+
 <h2 id="モジュールとパッケージの更新">モジュールとパッケージの更新</h2>
+
 <p>詳細は<a href="https://developers.arcgis.com/javascript/latest/guide/functionality-matrix/index.html">3.x/4.x 機能比較表（英語）</a>を確認してください。以下に挙げた項目は、その中でも重要な更新です。</p>
+
 <ul>
 <li>パッケージ名の変更（例: <code>esri/dijit</code> が <code>esri/widgets</code> に変更）</li>
 <li>モジュール名の短縮（例: <code>ArcGISTiledMapServiceLayer</code> が <code>TileLayer</code> に変更）</li>
@@ -693,27 +736,43 @@ if (!doNotTrack) {
 移動しました(例: <code>esri/layers/support</code>, <code>esri/tasks/support</code>)。</li>
 <li><code>esri/config</code> の構成が変更され、 <code>esriConfig.defaults</code> のプロパティは <code>esriConfig</code> に移動しました。以下は、デフォルトで使用されるジオメトリ サービスの設定方法の例です。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">geometryService</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GeometryService</span>(<span style="color:#e6db74">&#34;&lt;ジオメトリ サービスのURL&gt;&#34;</span>);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">geometryService</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GeometryService</span>(<span style="color:#e6db74">&#34;&lt;ジオメトリ サービスのURL&gt;&#34;</span>);
-</code></pre></div><ul>
+
+<pre><code class="language-javascript">// 3.x
+esriConfig.defaults.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
+</code></pre>
+
+<pre><code class="language-javascript">// 4.x
+esriConfig.geometryService = new GeometryService(&quot;&lt;ジオメトリ サービスのURL&gt;&quot;);
+</code></pre>
+
+<ul>
 <li><code>defaults.io</code> オブジェクトは <code>esriConfig.request</code> に移動しました。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><ul>
+
+<pre><code class="language-javascript">// 3.x
+esriConfig.defaults.io.alwaysUseProxy = true;
+</code></pre>
+
+<pre><code class="language-javascript">// 4.x
+esriConfig.request.alwaysUseProxy = true;
+</code></pre>
+
+<ul>
 <li>3 つの <code>*-all</code> レガシー モジュール（<code>Editor-all</code>, <code>AttributeInspector-all</code>, <code>TemplatePicker-all</code>）は削除されました。</li>
 <li>各コンストラクタは JSON をサポートしません。代わりに、<code>fromJSON()</code> メソッド（例: <code>Graphic.fromJSON()</code> ）を使用してください。</li>
 <li><code>FeatureLayer</code> はグラフィックを保持しません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-LayerView.html">LayerView</a> が <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html">FeatureLayer</a> のフィーチャを表すグラフィックを描画します。</li>
 </ul>
+
 <h2 id="web-マップのサポート">Web マップのサポート</h2>
+
 <p>4.x 以降でも、アプリケーションで <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html">Web マップ</a> を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WFS レイヤーなど）が含まれている場合でも、Web マップを表示することができます。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの保存はバージョン 4.14 からサポートされています。</p>
+
 <h2 id="amd-の利用">AMD の利用</h2>
+
 <p>3.x では AMD とレガシー モジュールの両方を利用できましたが、4.x からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。</p>
+
 <h2 id="廃止項目">廃止項目</h2>
+
 <p><code>Geocoder</code> ウィジェットはバージョン 3.13 で非推奨となり、4.x では提供されません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html">Search</a> ウィジェットを使用してください。</p>
 
 

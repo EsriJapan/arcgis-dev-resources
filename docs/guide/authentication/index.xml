@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>認証 on ArcGIS for Developer 開発リソース集</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/authentication/authentication/</guid>
-      <description>認証が必要なケース ArcGIS for Developers で作成したアプリでは以下のように認証が必要となるケースがあります。
+      <description> 認証が必要なケース ArcGIS for Developers で作成したアプリでは以下のように認証が必要となるケースがあります。
  ユーザーが保有するプライベートなコンテンツへのアクセス コンテンツの作成と公開 米国 Esri 社が提供する有償のコンテンツ（ジオコーディングやルート解析など）へのアクセス  認証パターン ArcGIS for Developers の認証方法は以下の 2 つのパターンが存在します。
  ユーザー ログイン認証: アプリを利用するユーザーがユーザー名とパスワードを入力して認証を行います アプリ認証: 特定のアプリをログインなしで認証を行います  ユーザー ログインは組織契約の ArcGIS クラウド サービスである ArcGIS Online 組織向けプランのユーザーが利用することを想定しています。ArcGIS for Developers の開発者であれば、ArcGIS Online 組織向けプランを導入している組織に対してアプリを配布/販売することが可能です。
 一方、ユーザーが ArcGIS ユーザーではなく、アノニマスにアクセスされる場合、特定のアプリでのみアクセスできるようにするためにアプリ認証の実装が必要となります。たとえば、有償のサービスであるルート解析機能を持ったアプリを開発する場合にアプリ認証を実装することで、クレジットの消費を開発者が担保し、ユーザーはログインの操作を行うことなくルート解析機能を利用することができます。
@@ -29,11 +29,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/authentication/register-app/</guid>
-      <description>アプリの登録   ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。
-  アプリ リストを開きます。
-  [Create Your First App] または [Create a New App] をクリックします。
-  アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。   [Authentication] タブをクリックします。
-  認証を許可するアプリの URL を [Redirect URIs] に追加します。
+      <description>アプリの登録  ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。
+ アプリ リストを開きます。
+ [Create Your First App] または [Create a New App] をクリックします。
+ アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。  [Authentication] タブをクリックします。
+ 認証を許可するアプリの URL を [Redirect URIs] に追加します。
   ユーザー ログイン認証 ユーザー名とパスワードを入力して認証を行うユーザー ログイン認証の概要を紹介します。
 アプリの登録を行って取得したアプリ ID（client_id）を使ってユーザー ログイン認証を行います。異なる環境でアクセス トークンをセキュアに取得するために OAuth 2.0 は複数の異なる承認タイプ（grant_types）を定義します。各承認タイプとアプリの種類の対応関係は以下の通りです。
    承認タイプ クライアントの種類     Implicit ブラウザー ベース   Authorization モバイル、ネイティブ、サーバー サイド    アプリと ArcGIS for Developers 間で行われるユーザー ログイン認証のフローは基本的には変わりません。以下はブラウザー ベースのアプリにおける認証フローです。</description>
@@ -47,9 +47,9 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/authentication/proxy-services/</guid>
       <description>プロキシ サービスとは ルート解析 や ジオエンリッチメント などの、ArcGIS Online の有償サービス にアクセスするためにはトークンが必要です。アプリケーションがブラウザー ベースであるかネイティブ アプリケーションであるか、ハイブリッド であるかにかかわらず、秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用が推奨されています。プロキシ サービスを経由することでクライアント側からのリクエストに秘密の情報を追加してサービスに転送し、結果をレスポンスとしてアプリに返します。
 プロキシ サービスを利用する方法は以下の２通りあります。
-  ArcGIS Online にホストされたプロキシ サービス（Service Proxies）
- ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します    独自の Web サーバーにホストするプロキシ サービス（Resource Proxy）
- 米国 Esri 社が PHP、.NET、Java でプロキシ サービスのソースコード（PHP、.NET、Java）を GitHub で公開しています    また、ArcGIS API for JavaScript 4.9 から CORS でのリクエストが標準 になりました。Web サーバー 側で CORS を有効化することが推奨される方法ですが、Webサーバー / ブラウザー がCORSに対応していない場合には、自分の Webサーバー にプロキシ サービスをホストする必要があります。</description>
+ ArcGIS Online にホストされたプロキシ サービス（Service Proxies）
+ ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します  独自の Web サーバーにホストするプロキシ サービス（Resource Proxy）
+ 米国 Esri 社が PHP、.NET、Java でプロキシ サービスのソースコード（PHP、.NET、Java）を GitHub で公開しています   また、ArcGIS API for JavaScript 4.9 から CORS でのリクエストが標準 になりました。Web サーバー 側で CORS を有効化することが推奨される方法ですが、Webサーバー / ブラウザー がCORSに対応していない場合には、自分の Webサーバー にプロキシ サービスをホストする必要があります。</description>
     </item>
     
   </channel>

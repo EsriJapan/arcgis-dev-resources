@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-07T14:09:17 JST">
 <title>プロキシ サービスの利用 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -579,51 +579,54 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="プロキシ-サービスとは">プロキシ サービスとは</h2>
+    
+
+<h2 id="プロキシ-サービスとは">プロキシ サービスとは</h2>
+
 <p><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_synchronous_execution/02r300000036000000/">ルート解析</a> や <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">ジオエンリッチメント</a> などの、ArcGIS Online の有償サービス にアクセスするためにはトークンが必要です。アプリケーションがブラウザー ベースであるかネイティブ アプリケーションであるか、ハイブリッド であるかにかかわらず、秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用が推奨されています。プロキシ サービスを経由することでクライアント側からのリクエストに秘密の情報を追加してサービスに転送し、結果をレスポンスとしてアプリに返します。</p>
+
 <p>プロキシ サービスを利用する方法は以下の２通りあります。</p>
+
 <ul>
-<li>
-<p>ArcGIS Online にホストされたプロキシ サービス（Service Proxies）</p>
+<li><p>ArcGIS Online にホストされたプロキシ サービス（Service Proxies）</p>
+
 <ul>
 <li>ArcGIS for Developers の Web サイト上での設定のみで Esri の有償サービスへのアクセス権を持った URL を発行します</li>
-</ul>
-</li>
-<li>
-<p>独自の Web サーバーにホストするプロキシ サービス（Resource Proxy）</p>
+</ul></li>
+
+<li><p>独自の Web サーバーにホストするプロキシ サービス（Resource Proxy）</p>
+
 <ul>
 <li>米国 Esri 社が PHP、.NET、Java でプロキシ サービスのソースコード（PHP、.NET、Java）を GitHub で公開しています</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>また、<a href="https://www.esrij.com/products/arcgis-api-for-javascript/details/whats-new/#4.9">ArcGIS API for JavaScript 4.9 から CORS でのリクエストが標準</a> になりました。Web サーバー 側で CORS を有効化することが推奨される方法ですが、Webサーバー / ブラウザー がCORSに対応していない場合には、自分の Webサーバー にプロキシ サービスをホストする必要があります。</p>
+
 <h2 id="arcgis-online-にホストされたプロキシ-サービス">ArcGIS Online にホストされたプロキシ サービス</h2>
+
 <ol>
-<li>
-<p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Dashboard] ページを開きます。</p>
-</li>
-<li>
-<p>[Create a New App] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p>
-</li>
-<li>
-<p>[Services] タブをクリックします。</p>
-</li>
-<li>
-<p>ページ下部の [Service Proxies] セクションまでスクロールします。</p>
-</li>
-<li>
-<p>[Service] リストからプロキシ サービスを利用したい Esri 有償サービスの種類を選択します。</p>
-</li>
-<li>
-<p>[Request Limit] にアクセス数の上限を設定します。</p>
-</li>
-<li>
-<p>[Whitelisted Referrers] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p>
-</li>
+<li><p><a href="https://developers.arcgis.com/">ArcGIS for Developers</a> の [Dashboard] ページを開きます。</p></li>
+
+<li><p>[Create a New App] をクリックしてアプリを登録します（登録済みのアプリであれば、アプリのページを開きます）。</p></li>
+
+<li><p>[Services] タブをクリックします。</p></li>
+
+<li><p>ページ下部の [Service Proxies] セクションまでスクロールします。</p></li>
+
+<li><p>[Service] リストからプロキシ サービスを利用したい Esri 有償サービスの種類を選択します。</p></li>
+
+<li><p>[Request Limit] にアクセス数の上限を設定します。</p></li>
+
+<li><p>[Whitelisted Referrers] にてプロキシへのアクセス権を与えるリファラのホワイトリストにドメインを追加します。</p></li>
 </ol>
-<!-- raw HTML omitted -->
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/service-proxies.gif" width="600px"></p>
+
 <h3 id="利用可能な-esri-のサービス一覧">利用可能な Esri のサービス一覧</h3>
+
 <p>以下ではプロキシ サービスが利用可能なサービス一覧です。</p>
+
 <table>
 <thead>
 <tr>
@@ -631,165 +634,205 @@ if (!doNotTrack) {
 <th align="center">[Service] リストの値</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">ジオコーディング</a></td>
 <td align="center"><code>geocode</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/GeoEnrichment_Service_Overview/02r30000021r000000/">ジオエンリッチメント</a></td>
 <td align="center"><code>geoenrichment</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_synchronous_execution/02r300000036000000/">ルート解析</a></td>
 <td align="center"><code>route</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Route_service_with_asynchronous_execution/02r300000275000000/">ルート解析（非同期）</a></td>
 <td align="center"><code>asyncroute</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Utilities_GetToolInfo_Tool/02r3000002qs000000/">ユーティリティ </a></td>
 <td align="center"><code>routingUtilities</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/">最寄り施設解析</a></td>
 <td align="center"><code>closestFacility</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Closest_Facility_service_with_asynchronous_execution/02r30000020n000000/">最寄り施設解析（非同期）</a></td>
 <td align="center"><code>asyncClosestFacility</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_synchronous_execution/02r3000000n2000000/">到達圏解析</a></td>
 <td align="center"><code>serviceArea</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Service_Area_service_with_asynchronous_execution/02r3000000n0000000/">到達圏解析（非同期）</a></td>
 <td align="center"><code>asyncServiceArea</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Location_Allocation_service/02r30000026s000000/">ロケーション-アロケーション解析</a></td>
 <td align="center"><code>asyncLocationAllocation</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析</a></td>
 <td align="center"><code>syncVRP</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Vehicle_Routing_Problem_service/02r3000000n4000000/">配車ルート解析（非同期）</a></td>
 <td align="center"><code>asyncVRP</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Origin_Destination_Cost_Matrix_Service/02r3000002r2000000/">OD コスト マトリックス解析（非同期）</a></td>
 <td align="center"><code>asyncODCostMatrix</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Traffic_service/02r3000000n6000000/">交通量</a></td>
 <td align="center"><code>traffic</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/elevation/">標高</a></td>
 <td align="center"><code>elevationSync</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/elevation/">標高（非同期）</a></td>
 <td align="center"><code>elevation</code></td>
 </tr>
+
 <tr>
 <td align="center"><a href="https://developers.arcgis.com/rest/elevation/">水文解析</a></td>
 <td align="center"><code>hydrology</code></td>
 </tr>
 </tbody>
 </table>
+
 <h2 id="独自の-web-サーバーにホストするプロキシ-サービス">独自の Web サーバーにホストするプロキシ サービス</h2>
+
 <p>米国 Esri 社が <a href="https://github.com/Esri/resource-proxy/tree/master/PHP">PHP</a>、<a href="https://github.com/Esri/resource-proxy/tree/master/DotNet">.NET</a>、<a href="https://github.com/Esri/resource-proxy/tree/master/Java">Java</a> でプロキシ サービスのソースコードを GitHub で公開しています。このプロキシ サービスを設定することにより、<a href="https://developers.arcgis.com/arcgis-runtime">ArcGIS Runtime SDK</a>、<a href="https://developers.arcgis.com/javascript">ArcGIS API for JavaScript</a> 等と共に使用すると、Esri 有償サービスを利用するためのトークンとの交換を代替してくれます。</p>
-<!-- raw HTML omitted -->
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/resource-proxy.png" width="600px"></p>
+
 <h3 id="プロキシ-サービスの設定">プロキシ サービスの設定</h3>
+
 <p><a href="https://github.com/Esri/resource-proxy">プロキシ サービス（Resource Proxy）</a> から自分の環境にあわせて <a href="https://github.com/Esri/resource-proxy/tree/master/PHP">PHP</a>、<a href="https://github.com/Esri/resource-proxy/tree/master/DotNet">.NET</a>、<a href="https://github.com/Esri/resource-proxy/tree/master/Java">Java</a> のいずれかの言語の <code>Instructions</code> に書かれている設定方法に従って設定します。
 ここでは例として .NETでの設定方法を記載しています。</p>
+
 <ul>
 <li>zipファイルをダウンロードして解凍するか、リポジトリをクローンします。<a href="https://github.com/Esri/resource-proxy/releases">リリース版</a>（推奨）または最新のデイリービルドをダウンロード可能です。</li>
 <li>.NET 4.0 以降のアプリケーション プールを指定して、<code>DotNet</code>フォルダの内容を .NET Webアプリケーションとしてインストールします。たとえば、次の手順で行います。
+
 <ul>
 <li>IIS マネージャを開きます
+
 <ul>
 <li>wwwroot 下に <code>DotNet</code>フォルダ を置いた場合は、それを右クリックして [アプリケーションに変換] を選択します。</li>
 <li>「アプリケーション プール」が4.0以上であることを確認します。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>プロキシがインストールされて利用可能であることをテストします。</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  http://[yourmachine]/DotNet/proxy.ashx?ping
-</code></pre></div><ul>
-<li>プロキシがブラウザで直接リクエストを転送できることをテストします。</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  http://[yourmachine]/DotNet/proxy.ashx?http://services.arcgisonline.com/ArcGIS/rest/services/?f=pjson
-</code></pre></div><ul>
-<li>トラブルシューティング：404.3というエラーメッセージが表示された場合は、ASP.NETがセットアップされていない可能性があります。
+</ul></li>
+</ul></li>
+<li>プロキシがインストールされて利用可能であることをテストします。
+<code>html
+http://[yourmachine]/DotNet/proxy.ashx?ping
+</code></li>
+
+<li><p>プロキシがブラウザで直接リクエストを転送できることをテストします。</p>
+
+<pre><code class="language-html">http://[yourmachine]/DotNet/proxy.ashx?http://services.arcgisonline.com/ArcGIS/rest/services/?f=pjson
+</code></pre></li>
+
+<li><p>トラブルシューティング：404.3というエラーメッセージが表示された場合は、ASP.NETがセットアップされていない可能性があります。</p>
+
 <ul>
 <li>Windows 8の場合は、「Windowsの機能の有効化または無効化」 - &gt;「インターネットインフォメーションサービス」 - &gt;「World Wide Webサービス」 - &gt;「アプリケーション開発機能」 - &gt;「ASP .NET 4.5」の順に選択します。</li>
+</ul></li>
+
+<li><p>テキストエディタで<code>proxy.config</code>ファイルを編集して、プロキシの設定をします。</p></li>
+
+<li><p>指定されたサービスにプロキシを使用するようにアプリケーションを更新してください。このJavaScriptの例では、route.arcgis.comへのリクエストはプロキシを利用します。</p>
+
+<pre><code class="language-js">urlUtils.addProxyRule({
+    urlPrefix: &quot;route.arcgis.com&quot;,
+    proxyUrl: &quot;http://[yourmachine]/proxy/proxy.ashx&quot;
+});
+</code></pre></li>
+
+<li><p>セキュリティに関するヒント：デフォルトでは、<code>proxy.config</code> は任意の参照元を許可します。これを制限するに <code>allowedReferers</code> プロパティ <code>*</code> の部分を独自のアプリケーションURL に置き換えます。</p></li>
 </ul>
-</li>
-<li>テキストエディタで<code>proxy.config</code>ファイルを編集して、プロキシの設定をします。</li>
-<li>指定されたサービスにプロキシを使用するようにアプリケーションを更新してください。このJavaScriptの例では、route.arcgis.comへのリクエストはプロキシを利用します。</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">urlUtils</span>.<span style="color:#a6e22e">addProxyRule</span>({
-        <span style="color:#a6e22e">urlPrefix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;route.arcgis.com&#34;</span>,
-        <span style="color:#a6e22e">proxyUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://[yourmachine]/proxy/proxy.ashx&#34;</span>
-    });
-</code></pre></div><ul>
-<li>セキュリティに関するヒント：デフォルトでは、<code>proxy.config</code> は任意の参照元を許可します。これを制限するに <code>allowedReferers</code> プロパティ <code>*</code> の部分を独自のアプリケーションURL に置き換えます。</li>
-</ul>
-<p><strong>※</strong> 最新の<code>DotNet</code> の Proxy Version &ldquo;1.1.2&quot;では 561 行目で TLS 1.2 に対しての実装がされていますが、リクエスト先のサーバーが TLS 1.2 に対応していない場合は 500 のエラーになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-    <span style="color:#f92672">&#34;code&#34;</span>: <span style="color:#ae81ff">500</span>,
-    <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;要求は中止されました: SSL/TLS のセキュリティで保護されているチャネルを作成できませんでした&#34;</span>
+
+<p><strong>※</strong> 最新の<code>DotNet</code> の Proxy Version &ldquo;1.1.2&rdquo;では 561 行目で TLS 1.2 に対しての実装がされていますが、リクエスト先のサーバーが TLS 1.2 に対応していない場合は 500 のエラーになります。</p>
+
+<pre><code class="language-json">&quot;error&quot;: {
+    &quot;code&quot;: 500,
+    &quot;message&quot;: &quot;要求は中止されました: SSL/TLS のセキュリティで保護されているチャネルを作成できませんでした&quot;
 }
-</code></pre></div><p>外部のサーバーで TLS 1.2 にすぐに変更できない場合は、TLS 1.0 , TLS 1.1 にも対応するようにコードを変更します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-</code></pre></div><p>⇒</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-</code></pre></div><h3 id="プロキシ-サービス-の設定ファイルの設定">プロキシ サービス の設定ファイルの設定</h3>
+</code></pre>
+
+<p>外部のサーバーで TLS 1.2 にすぐに変更できない場合は、TLS 1.0 , TLS 1.1 にも対応するようにコードを変更します。</p>
+
+<pre><code class="language-C#">ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+</code></pre>
+
+<p>⇒</p>
+
+<pre><code class="language-C#">ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+</code></pre>
+
+<h3 id="プロキシ-サービス-の設定ファイルの設定">プロキシ サービス の設定ファイルの設定</h3>
+
 <p>プロキシの設定ファイル（<code>proxy.config</code>）にアクセスを許可する Esri 有償サービスの情報を設定します。</p>
+
 <ol>
-<li>
-<p><code>allowedReferers</code> 属性を使ってアクセスを許可する HTTP リファラを設定します。</p>
-</li>
-<li>
-<p><code>rateLimit</code> と <code>rateLimitPeriod</code> 属性にて一定期間におけるアクセス数の上限を設定します。</p>
-</li>
+<li><p><code>allowedReferers</code> 属性を使ってアクセスを許可する HTTP リファラを設定します。</p></li>
+
+<li><p><code>rateLimit</code> と <code>rateLimitPeriod</code> 属性にて一定期間におけるアクセス数の上限を設定します。</p></li>
 </ol>
+
 <p>以下は、プロキシ サービスの設定例です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ProxyConfig</span>
-    <span style="color:#a6e22e">mustMatch=</span><span style="color:#e6db74">&#34;true&#34;</span>
-    <span style="color:#a6e22e">logFile=</span><span style="color:#e6db74">&#34;proxy_log_xml.log&#34;</span>
-    <span style="color:#a6e22e">allowedReferers=</span><span style="color:#e6db74">&#34;example.com&#34;</span><span style="color:#f92672">&gt;</span>
 
-  <span style="color:#f92672">&lt;serverUrls</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;serverUrl</span>
-      <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;geoenrich.arcgis.com&#34;</span>
-      <span style="color:#a6e22e">oauth2Endpoint=</span><span style="color:#e6db74">&#34;https://www.arcgis.com/sharing/oauth2&#34;</span>
-      <span style="color:#a6e22e">clientId=</span><span style="color:#e6db74">&#34;6Xo1d-example-9Kn2&#34;</span>
-      <span style="color:#a6e22e">clientSecret=</span><span style="color:#e6db74">&#34;5a5d50-example-c867b6efcf969bdcc6a2&#34;</span>
-      <span style="color:#a6e22e">rateLimit=</span><span style="color:#e6db74">&#34;120&#34;</span>
-      <span style="color:#a6e22e">rateLimitPeriod=</span><span style="color:#e6db74">&#34;60&#34;</span>
-      <span style="color:#a6e22e">matchAll=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+<pre><code class="language-xml">&lt;ProxyConfig
+    mustMatch=&quot;true&quot;
+    logFile=&quot;proxy_log_xml.log&quot;
+    allowedReferers=&quot;example.com&quot;&gt;
 
-    <span style="color:#f92672">&lt;serverUrl</span>
-      <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;route.arcgis.com&#34;</span>
-      <span style="color:#a6e22e">matchAll=</span><span style="color:#e6db74">&#34;true&#34;</span>
-      <span style="color:#a6e22e">oauth2Endpoint=</span><span style="color:#e6db74">&#34;https://www.arcgis.com/sharing/oauth2&#34;</span>
-      <span style="color:#a6e22e">clientId=</span><span style="color:#e6db74">&#34;6Xo1d-example-9Kn2&#34;</span>
-      <span style="color:#a6e22e">clientSecret=</span><span style="color:#e6db74">&#34;5a5d50-example-c867b6efcf969bdcc6a2&#34;</span>
-      <span style="color:#a6e22e">rateLimit=</span><span style="color:#e6db74">&#34;120&#34;</span>
-      <span style="color:#a6e22e">rateLimitPeriod=</span><span style="color:#e6db74">&#34;60&#34;</span><span style="color:#f92672">/&gt;</span>
+  &lt;serverUrls&gt;
+    &lt;serverUrl
+      url=&quot;geoenrich.arcgis.com&quot;
+      oauth2Endpoint=&quot;https://www.arcgis.com/sharing/oauth2&quot;
+      clientId=&quot;6Xo1d-example-9Kn2&quot;
+      clientSecret=&quot;5a5d50-example-c867b6efcf969bdcc6a2&quot;
+      rateLimit=&quot;120&quot;
+      rateLimitPeriod=&quot;60&quot;
+      matchAll=&quot;true&quot;/&gt;
 
-  <span style="color:#f92672">&lt;/serverUrls&gt;</span>
-<span style="color:#f92672">&lt;/ProxyConfig&gt;</span>
-</code></pre></div>
+    &lt;serverUrl
+      url=&quot;route.arcgis.com&quot;
+      matchAll=&quot;true&quot;
+      oauth2Endpoint=&quot;https://www.arcgis.com/sharing/oauth2&quot;
+      clientId=&quot;6Xo1d-example-9Kn2&quot;
+      clientSecret=&quot;5a5d50-example-c867b6efcf969bdcc6a2&quot;
+      rateLimit=&quot;120&quot;
+      rateLimitPeriod=&quot;60&quot;/&gt;
+
+  &lt;/serverUrls&gt;
+&lt;/ProxyConfig&gt;
+</code></pre>
+
 
     
     
