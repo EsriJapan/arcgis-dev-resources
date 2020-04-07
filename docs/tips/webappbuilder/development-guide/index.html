@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-07T14:09:17 JST">
 <title>カスタム ウィジェット開発ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -605,336 +605,431 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="はじめに">はじめに</h2>
+    
+
+<h2 id="はじめに">はじめに</h2>
+
 <h3 id="このガイドについて">このガイドについて</h3>
-<p>このガイドは Web AppBuilder for ArcGIS (Developer Edition) （以下、Web AppBuilder）で使用するカスタム ウィジェットを作成する方法を説明します。<br>
-Web AppBuilder のインストール方法に関しては、<a href="../install-guide/">Web AppBuilder for ArcGIS (Developer Edition) インストールガイド</a>をご参照ください。<br>
+
+<p>このガイドは Web AppBuilder for ArcGIS (Developer Edition) （以下、Web AppBuilder）で使用するカスタム ウィジェットを作成する方法を説明します。<br />
+Web AppBuilder のインストール方法に関しては、<a href="../install-guide/">Web AppBuilder for ArcGIS (Developer Edition) インストールガイド</a>をご参照ください。<br />
 また <a href="https://github.com/EsriJapan/arcgis-webappbuilder-widgets-themes">Esri Japan GitHub</a> では、Web AppBuilder のカスタム ウィジェット/テーマが共有されています。このガイドで作成するウィジェットの完成版も公開されています。</p>
+
 <h4 id="既成ウィジェットのソースコードの確認">既成ウィジェットのソースコードの確認</h4>
-<p>Web AppBuilder で使われる全てのウィジェットは <code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> に格納されていて、ソースコードを確認できます。開発したカスタム ウィジェットも同様にこのディレクトリに配置します。<br>
+
+<p>Web AppBuilder で使われる全てのウィジェットは <code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> に格納されていて、ソースコードを確認できます。開発したカスタム ウィジェットも同様にこのディレクトリに配置します。<br />
 上記ディレクトリにある <code>samplewidgets</code> フォルダーには簡易機能のサンプル ウィジェットが用意されています（本ガイドではウィジェット作成の雛形となるコードが記述されたテンプレートである <code>CustomWidgetTemplate</code> を使用します）。</p>
+
 <h4 id="ウィジェットのフォルダー構成">ウィジェットのフォルダー構成</h4>
+
 <p>カスタム ウィジェットを作成する際に使用するファイルは以下です。全ファイルが必須ではなく、ウィジェットの UI を設ける、ウィジェットをローカライズする、設定画面を設ける等の目的に応じてファイルを準備します。</p>
-<!-- raw HTML omitted -->
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide1.jpg" alt="フォルダー構成"></p>
+
 <h2 id="カスタム-ウィジェットの開発">カスタム ウィジェットの開発</h2>
+
 <h3 id="1-ウィジェット-ボタンを配置する">1. ウィジェット ボタンを配置する</h3>
+
 <p>Web AppBuilder のウィジェットは2 種類に分けられます。1 つは「描画」ウィジェットのようなパネルを表示して使用するウィジェットです（Web AppBuilder では In-Panel ウィジェットと呼びます）。もう 1 つは、「現在位置」ウィジェットのように画面上にボタンのみを配置するパネルを表示しないウィジェットです（Off-Panel ウィジェットと呼びます）。</p>
-<!-- raw HTML omitted -->
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide2.jpg" alt="ウィジェットの種類"></p>
+
 <p>本ガイドでは簡単なバッファー検索を行う In-Panel ウィジェットを開発していきます。ウィジェットを追加するには <code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> にウィジェットのフォルダーを配置します。</p>
-<!-- raw HTML omitted -->
-<h4 id="manifestjson">manifest.json</h4>
-<p>ウィジェットの名前やバージョンなどのウィジェットの属性を設定するファイルです。<code>properties</code> 属性でカスタム ウィジェットのプロパティを構成できます。<code>inPanel</code> を <code>false</code> に設定すると Web AppBuilder のウィジェットの追加画面に表示されなくなります。ウィジェットのプロパティについては<!-- raw HTML omitted -->Widget manifest<!-- raw HTML omitted -->をご参照ください。</p>
-<!-- raw HTML omitted -->
-<h4 id="nls-フォルダー">nls フォルダー</h4>
-<p>カスタム ウィジェットを多言語化する場合に使用します（アクセスするブラウザーのロケールにより該当する言語が表示されます）。<code>_widgetLabel</code> はウィジェット追加時に表示されるラベルをローカライズするための固有の属性です。</p>
-<p><strong>使用例</strong></p>
-<ul>
-<li>nls\strings.js：「Widget.html」でローカライズするストリングを指定</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
-  <span style="color:#a6e22e">root</span><span style="color:#f92672">:</span> ({
-    <span style="color:#a6e22e">label1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+
+<ol start="1">
+<li>`<Web AppBuilder のインストール ディレクトリ>\client\stemapp\widgets\samplewidgets` にある `CustomWidgetTemplate` フォルダーを `<Web AppBuilder のインストール ディレクトリ>\client\stemapp\widgets` にコピーします。</li>
+<li>`CustomWidgetTemplate` フォルダーの名前を `Buffer` に変えます。<br>
+フォルダー名は半角英数字である必要があります。<br>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide3.jpg" alt="フォルダー名"></li>
+<li>`Buffer` フォルダー直下にある `manifest.json` ファイルを開きます。</li>
+<li>`name` 属性の値を `Buffer` に変更します。</li>
+<li>文字コードに UTF8 を指定して、`manifest.json` ファイルを保存します。  
+以降で紹介する手順においてもファイルを保存する際は、文字コードを UTF8 に指定して保存するようにしてください。</li>
+</ol>
+
+<h4 id="manifest-json">manifest.json</h4>
+
+<p>ウィジェットの名前やバージョンなどのウィジェットの属性を設定するファイルです。<code>properties</code> 属性でカスタム ウィジェットのプロパティを構成できます。<code>inPanel</code> を <code>false</code> に設定すると Web AppBuilder のウィジェットの追加画面に表示されなくなります。ウィジェットのプロパティについては<a href="https://developers.arcgis.com/web-appbuilder/guide/widget-manifest.htm" target="_blank">Widget manifest</a>をご参照ください。</p>
+
+<ol start="6">
+<li>Web AppBuilder のウィジェットの追加画面で表示されるウィジェット名をローカライズします。ウィジェットのローカライズは `Buffer` フォルダーの直下にある `nls` フォルダーで設定します。`Buffer\nls` フォルダーにある `strings.js` ファイルを開き、以下のコードを入力し保存します。  
+<pre><code class="lang-js">define({
+  root: ({
+    _widgetLabel: "Buffer"
   }),
-  <span style="color:#e6db74">&#34;ja&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// 日本語ロケールを使用する場合に 1 と設定
-</span><span style="color:#75715e"></span>});
-</code></pre></div><ul>
-<li>nls\ja\strings.js：各言語フォルダーにある strings.js ファイルで表示する文字を設定</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
-  <span style="color:#a6e22e">label1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;こんにちは&#34;</span>
+  "ja": 1
+});</code></pre>
+</li>
+<li>`nls` フォルダー直下に `ja` フォルダーを作成します。</li>
+<li>`ja` フォルダーに `strings.js` ファイルを作成し、以下のコードを入力し保存します。  
+<pre><code class="lang-js">define({
+  _widgetLabel: "バッファー検索"
+});</code></pre>
+</li>
+<li>Web AppBuilder を起動してアプリケーションを作成すると、ウィジェットの追加画面に「バッファー検索」というウィジェットが新しく表示されます。<br>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide4.jpg" alt="追加画面"><br>
+※ 作成する Web アプリに表示するウィジェット名は Web AppBuilder のウィジェット構成画面で変更可能です。
+</li>
+</ol>
+
+<h4 id="nls-フォルダー">nls フォルダー</h4>
+
+<p>カスタム ウィジェットを多言語化する場合に使用します（アクセスするブラウザーのロケールにより該当する言語が表示されます）。<code>_widgetLabel</code> はウィジェット追加時に表示されるラベルをローカライズするための固有の属性です。</p>
+
+<p><strong>使用例</strong>
+* nls\strings.js：「Widget.html」でローカライズするストリングを指定</p>
+
+<pre><code class="language-js">define({
+  root: ({
+    label1: &quot;Hello&quot;
+  }),
+  &quot;ja&quot;: 1 // 日本語ロケールを使用する場合に 1 と設定
 });
-</code></pre></div><ul>
-<li>Widget.html：文字を表示</li>
+</code></pre>
+
+<ul>
+<li>nls\ja\strings.js：各言語フォルダーにある strings.js ファイルで表示する文字を設定
+<code>js
+define({
+label1: &quot;こんにちは&quot;
+});
+</code></li>
+<li>Widget.html：文字を表示
+<code>html
+&lt;label&gt;${nls.label1}&lt;/label&gt;
+</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">label</span>&gt;${nls.label1}&lt;/<span style="color:#f92672">label</span>&gt;
-</code></pre></div><h4 id="imagesiconpng">images\icon.png</h4>
-<p>カスタム ウィジェットのボタンのアイコンを変更したい場合は、このファイルを置き換えます。<br>
-<!-- raw HTML omitted --></p>
+
+<h4 id="images-icon-png">images\icon.png</h4>
+
+<p>カスタム ウィジェットのボタンのアイコンを変更したい場合は、このファイルを置き換えます。<br />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide5.png" alt="アイコン変更"></p>
+
 <h3 id="2-ウィジェットの構成画面を作成する">2. ウィジェットの構成画面を作成する</h3>
+
 <p>Web AppBuilder でウィジェットの構成を行う画面を作成します。ここでは検索に使用するバッファーの距離単位を設定する画面を作成します。</p>
+
 <ol>
-<li>
-<p><code>Buffer</code> フォルダーに <code>setting</code> フォルダーを作成します。</p>
-</li>
-<li>
-<p><code>setting</code> フォルダーに <code>Setting.html</code> ファイルを作成し、以下のコードを入力します。</p>
-</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-  &lt;<span style="color:#f92672">table</span>&gt;
-    &lt;<span style="color:#f92672">tbody</span>&gt;
-      &lt;<span style="color:#f92672">td</span>&gt;距離単位&lt;/<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">td</span>&gt;
-          &lt;<span style="color:#f92672">div</span>&gt;
-            &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectLengthUnit&#34;</span> <span style="color:#a6e22e">data-dojo-type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dijit/form/Select&#34;</span>&gt;
-              &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;kilometers&#34;</span> <span style="color:#a6e22e">selected</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selected&#34;</span>&gt;キロメートル&lt;/<span style="color:#f92672">option</span>&gt;
-              &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;meters&#34;</span>&gt;メートル&lt;/<span style="color:#f92672">option</span>&gt;
-            &lt;/<span style="color:#f92672">select</span>&gt;
-          &lt;/<span style="color:#f92672">div</span>&gt;
-        &lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tbody</span>&gt;
-  &lt;/<span style="color:#f92672">table</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><ol start="3">
-<li><code>setting</code> フォルダーに <code>Setting.js</code> ファイルを作成し、以下のコードを入力します。</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
-  <span style="color:#e6db74">&#39;dojo/_base/declare&#39;</span>,
-  <span style="color:#e6db74">&#39;dijit/_WidgetsInTemplateMixin&#39;</span>,
-  <span style="color:#e6db74">&#39;jimu/BaseWidgetSetting&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/units&#39;</span>,
-  <span style="color:#e6db74">&#39;dijit/form/Select&#39;</span>
-], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">declare</span>, <span style="color:#a6e22e">_WidgetsInTemplateMixin</span>, <span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#a6e22e">esriUnits</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">declare</span>([<span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#a6e22e">_WidgetsInTemplateMixin</span>], {
-    <span style="color:#a6e22e">baseClass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jimu-widget-buffer-setting&#39;</span>,
+<li><p><code>Buffer</code> フォルダーに <code>setting</code> フォルダーを作成します。</p></li>
 
-    <span style="color:#a6e22e">startup</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inherited</span>(<span style="color:#a6e22e">arguments</span>);
+<li><p><code>setting</code> フォルダーに <code>Setting.html</code> ファイルを作成し、以下のコードを入力します。</p>
 
-      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span> <span style="color:#f92672">=</span> {};
-      }
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setConfig</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>);
-    },
+<pre><code class="language-html">&lt;div&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;td&gt;距離単位&lt;/td&gt;
+      &lt;td&gt;
+        &lt;div&gt;
+          &lt;select data-dojo-attach-point=&quot;selectLengthUnit&quot; data-dojo-type=&quot;dijit/form/Select&quot;&gt;
+            &lt;option value=&quot;kilometers&quot; selected=&quot;selected&quot;&gt;キロメートル&lt;/option&gt;
+            &lt;option value=&quot;meters&quot;&gt;メートル&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</code></pre></li>
 
-    <span style="color:#a6e22e">setConfig</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">config</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>;
-      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">LengthUnit</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selectLengthUnit</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;value&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">LengthUnit</span>);
-      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// デフォルトで表示される単位をキロメートルに設定
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selectLengthUnit</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;value&#39;</span>, <span style="color:#e6db74">&#39;kilometers&#39;</span>);
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">UnitLabel</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;キロメートル&#39;</span>;
-      }
-    },
+<li><p><code>setting</code> フォルダーに <code>Setting.js</code> ファイルを作成し、以下のコードを入力します。</p>
 
-    <span style="color:#a6e22e">getConfig</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#75715e">// ユーザーが単位を変更した時に config.json にその値を格納
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">LengthUnit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selectLengthUnit</span>.<span style="color:#a6e22e">value</span>;
-      <span style="color:#75715e">// ウィジェットのパネルに表示する単位ラベルに使用
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">LengthUnit</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;kilometers&#39;</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">UnitLabel</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;キロメートル&#39;</span>;
-      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">UnitLabel</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;メートル&#39;</span>;
-      }
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>;
-    }
-  });
-});
-</code></pre></div><ol start="4">
-<li><code>Buffer</code> フォルダーの <code>config.json</code> ファイルを開き、以下のコードを入力します。</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;measurement&#34;</span>: {}
+<pre><code class="language-js">define([
+'dojo/_base/declare',
+'dijit/_WidgetsInTemplateMixin',
+'jimu/BaseWidgetSetting',
+'esri/units',
+'dijit/form/Select'
+], function(declare, _WidgetsInTemplateMixin, BaseWidgetSetting, esriUnits) {
+return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
+baseClass: 'jimu-widget-buffer-setting',
+
+startup: function() {
+  this.inherited(arguments);
+
+  if (!this.config.measurement) {
+    this.config.measurement = {};
+  }
+  this.setConfig(this.config);
+},
+
+setConfig: function(config) {
+  this.config = config;
+  if (this.config.measurement.LengthUnit) {
+    this.selectLengthUnit.set('value', this.config.measurement.LengthUnit);
+  } else {
+    // デフォルトで表示される単位をキロメートルに設定
+    this.selectLengthUnit.set('value', 'kilometers');
+    this.config.measurement.UnitLabel = 'キロメートル';
+  }
+},
+
+getConfig: function() {
+  // ユーザーが単位を変更した時に config.json にその値を格納
+  this.config.measurement.LengthUnit = this.selectLengthUnit.value;
+  // ウィジェットのパネルに表示する単位ラベルに使用
+  if (this.config.measurement.LengthUnit === 'kilometers') {
+    this.config.measurement.UnitLabel = 'キロメートル';
+  } else {
+    this.config.measurement.UnitLabel = 'メートル';
+  }
+  return this.config;
 }
-</code></pre></div><ol start="5">
-<li><code>Buffer\manifest.json</code> を開き <code>hasSettingLocale</code> と <code>hasSettingStyle</code> 属性を <code>false</code> にします。<br>
-<code>setting</code> フォルダーに <code>css</code> や <code>nls</code> フォルダーを作成することで、構成画面用のスタイル定義、ローカライズが可能ですが、ここでは使用しないため <code>false</code> にします。</li>
-<li>ブラウザーを更新して、バッファー検索ウィジェットを追加すると、ウィジェットの構成画面が表示されます。<br>
+});
+});
+</code></pre></li>
+
+<li><p><code>Buffer</code> フォルダーの <code>config.json</code> ファイルを開き、以下のコードを入力します。</p>
+
+<pre><code class="language-json">{
+&quot;measurement&quot;: {}
+}
+</code></pre></li>
+
+<li><p><code>Buffer\manifest.json</code> を開き <code>hasSettingLocale</code> と <code>hasSettingStyle</code> 属性を <code>false</code> にします。<br />
+<code>setting</code> フォルダーに <code>css</code> や <code>nls</code> フォルダーを作成することで、構成画面用のスタイル定義、ローカライズが可能ですが、ここでは使用しないため <code>false</code> にします。</p></li>
+
+<li><p>ブラウザーを更新して、バッファー検索ウィジェットを追加すると、ウィジェットの構成画面が表示されます。<br />
 変更を反映するために Web AppBuilder を再起動（Node.js の再起動およびブラウザーで Web AppBuilder を更新）する必要がある場合があります。
-<!-- raw HTML omitted --></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide6.png" alt="構成画面"></p></li>
 </ol>
-<h4 id="settingsettinghtml">Setting\Setting.html</h4>
+
+<h4 id="setting-setting-html">Setting\Setting.html</h4>
+
 <p>Web AppBuilder でウィジェットの設定を行う画面を作成します。</p>
-<h4 id="settingsettingjs">Setting\Setting.js</h4>
+
+<h4 id="setting-setting-js">Setting\Setting.js</h4>
+
 <p>Web AppBuilder でウィジェットの設定を行う際の処理を実装します。<code>jimu/BaseWidgetSetting</code> の子クラスを作成し、<code>baseClass</code> に <code>jimu-widget-&lt;ウィジェット名&gt;-setting</code> を指定します。以下のイベントが用意されています。</p>
+
 <ul>
 <li>setConfig：設定画面の初期化時</li>
 <li>getConfig：設定変更時（変更内容を <code>config.json</code> のオブジェクトに格納）</li>
 </ul>
-<h4 id="configjson">config.json</h4>
+
+<h4 id="config-json">config.json</h4>
+
 <p>JSON 形式のオブジェクト格納ファイルです。Web AppBuilder でウィジェットの設定を行う場合は、<code>config.json</code> に用意した空のオブジェクトに値を格納して、 <code>Widget.html</code> や <code>Widget.js</code> からそのオブジェクトを取得します。
  </p>
+
 <h3 id="3-ウィジェットの処理を実装する">3. ウィジェットの処理を実装する</h3>
+
 <ol>
-<li>
-<p><code>Buffer</code> フォルダーにある <code>Widget.html</code> ファイルを開き編集します。バッファーの半径（inputNode）とマップ上にあるレイヤーから検索対象のレイヤーを選択（layerSelectNode）する画面を作成します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
-  &lt;<span style="color:#f92672">table</span>&gt;
-    &lt;<span style="color:#f92672">tr</span>&gt;
-      &lt;<span style="color:#f92672">td</span>&gt;半径を入力（${config.measurement.UnitLabel}）&lt;/<span style="color:#f92672">td</span>&gt;
-      &lt;<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jimu-input&#34;</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputNode&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
-      &lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-    &lt;<span style="color:#f92672">tr</span>&gt;
-      &lt;<span style="color:#f92672">td</span>&gt;検索レイヤーを選択&lt;/<span style="color:#f92672">td</span>&gt;
-      &lt;<span style="color:#f92672">td</span>&gt;
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layerSelectNode&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-      &lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;/<span style="color:#f92672">tr</span>&gt;
-  &lt;/<span style="color:#f92672">table</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div></li>
-<li>
-<p><code>Buffer</code> フォルダーにある <code>Widget.js</code> ファイルを開き編集します。</p>
-</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
-  <span style="color:#e6db74">&#39;dojo/_base/declare&#39;</span>,
-  <span style="color:#e6db74">&#39;dojo/_base/lang&#39;</span>,
-  <span style="color:#e6db74">&#39;jimu/BaseWidget&#39;</span>,
-  <span style="color:#e6db74">&#39;jimu/LayerStructure&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/geometry/geometryEngine&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/symbols/SimpleMarkerSymbol&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/symbols/SimpleLineSymbol&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/symbols/SimpleFillSymbol&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/Color&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/graphic&#39;</span>,
-  <span style="color:#e6db74">&#39;esri/tasks/query&#39;</span>,
-  <span style="color:#e6db74">&#39;dijit/form/Select&#39;</span>
-], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">declare</span>, <span style="color:#a6e22e">lang</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">LayerStructure</span>, <span style="color:#a6e22e">geometryEngine</span>, <span style="color:#a6e22e">SimpleMarkerSymbol</span>, <span style="color:#a6e22e">SimpleLineSymbol</span>, <span style="color:#a6e22e">SimpleFillSymbol</span>, <span style="color:#a6e22e">Color</span>, <span style="color:#a6e22e">Graphic</span>, <span style="color:#a6e22e">Query</span>, <span style="color:#a6e22e">Select</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">declare</span>([<span style="color:#a6e22e">BaseWidget</span>], {
-    <span style="color:#a6e22e">baseClass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jimu-widget-buffer&#39;</span>,
+<li><p><code>Buffer</code> フォルダーにある <code>Widget.html</code> ファイルを開き編集します。バッファーの半径（inputNode）とマップ上にあるレイヤーから検索対象のレイヤーを選択（layerSelectNode）する画面を作成します。</p>
 
-    <span style="color:#a6e22e">ckickfunction</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
-    <span style="color:#a6e22e">layerList</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
-    <span style="color:#a6e22e">layerId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+<pre><code class="language-html">&lt;div&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;半径を入力（${config.measurement.UnitLabel}）&lt;/td&gt;
+      &lt;td&gt;
+        &lt;input class=&quot;jimu-input&quot; data-dojo-attach-point=&quot;inputNode&quot; value=&quot;1000&quot;&gt;&lt;/input&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;検索レイヤーを選択&lt;/td&gt;
+      &lt;td&gt;
+        &lt;div data-dojo-attach-point=&quot;layerSelectNode&quot;&gt;&lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre></li>
 
-    <span style="color:#75715e">// スタートアップ時に実行されるメソッド
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">startup</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inherited</span>(<span style="color:#a6e22e">arguments</span>);
+<li><p><code>Buffer</code> フォルダーにある <code>Widget.js</code> ファイルを開き編集します。</p>
 
-      <span style="color:#75715e">// マップ上のレイヤーを取得し、レイヤー一覧を作成
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> [];
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">layerStructure</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LayerStructure</span>.<span style="color:#a6e22e">getInstance</span>();
-      <span style="color:#a6e22e">layerStructure</span>.<span style="color:#a6e22e">traversal</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">layerNode</span>) {
-        <span style="color:#a6e22e">layerNode</span>.<span style="color:#a6e22e">getLayerType</span>()
-          .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">type</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;FeatureLayer&#39;</span>) {
-              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">option</span> <span style="color:#f92672">=</span> {
-                <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">layerNode</span>.<span style="color:#a6e22e">id</span>,
-                <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">layerNode</span>.<span style="color:#a6e22e">title</span>
-              };
-              <span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">option</span>);
-            }
-          })
-          .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">err</span>) {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
-          });
+<pre><code class="language-js">define([
+'dojo/_base/declare',
+'dojo/_base/lang',
+'jimu/BaseWidget',
+'jimu/LayerStructure',
+'esri/geometry/geometryEngine',
+'esri/symbols/SimpleMarkerSymbol',
+'esri/symbols/SimpleLineSymbol',
+'esri/symbols/SimpleFillSymbol',
+'esri/Color',
+'esri/graphic',
+'esri/tasks/query',
+'dijit/form/Select'
+], function(declare, lang, BaseWidget, LayerStructure, geometryEngine, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, Color, Graphic, Query, Select) {
+return declare([BaseWidget], {
+baseClass: 'jimu-widget-buffer',
+
+ckickfunction: null,
+layerList: null,
+layerId: null,
+
+// スタートアップ時に実行されるメソッド
+startup: function() {
+  this.inherited(arguments);
+
+  // マップ上のレイヤーを取得し、レイヤー一覧を作成
+  var options = [];
+  var layerStructure = LayerStructure.getInstance();
+  layerStructure.traversal(function(layerNode) {
+    layerNode.getLayerType()
+      .then(function(type) {
+        if (type === 'FeatureLayer') {
+          var option = {
+            value: layerNode.id,
+            label: layerNode.title
+          };
+          options.push(option);
+        }
+      })
+      .catch(function(err) {
+        console.log(err);
       });
-
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Select</span>({
-        <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">options</span>
-      }, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerSelectNode</span>);
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerList</span>.<span style="color:#a6e22e">startup</span>();
-
-      <span style="color:#75715e">// レイヤー一覧を変更したときのイベント
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerList</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;change&#34;</span>, <span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">hitch</span>(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">val</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">val</span>;
-      }));
-    },
-
-    <span style="color:#75715e">// ウィジェットのパネルを開くときに実行されるメソッド
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">onOpen</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inherited</span>(<span style="color:#a6e22e">arguments</span>);
-
-      <span style="color:#75715e">// マップをクリックしたときのイベント ハンドラ
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ckickfunction</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">hitch</span>(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_clickHandler</span>));
-    },
-
-    <span style="color:#75715e">// ウィジェットのパネルを閉じるときに実行されるメソッド
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">onClose</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inherited</span>(<span style="color:#a6e22e">arguments</span>);
-
-      <span style="color:#75715e">// マップに表示されているグラフィックを削除
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">clear</span>();
-
-      <span style="color:#75715e">// マップのクリック イベントを削除
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ckickfunction</span>.<span style="color:#a6e22e">remove</span>();
-    },
-
-    <span style="color:#75715e">// マップのクリック イベント
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">_clickHandler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">evt</span>) {
-      <span style="color:#75715e">// マップ コンストラクタを取得
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>;
-
-      <span style="color:#75715e">// マップに表示されているグラフィックを削除
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">clear</span>();
-
-      <span style="color:#75715e">// inputNode に入力された半径の値を取得
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">distance</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inputNode</span>.<span style="color:#a6e22e">value</span>;
-
-      <span style="color:#75715e">// ウィジェット構成時に設定した半径の単位を config.json から取得
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">unit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">measurement</span>.<span style="color:#a6e22e">LengthUnit</span>;
-
-      <span style="color:#75715e">// クリック地点から指定した半径のバッファーを作成
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bufferGeometry</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">geometryEngine</span>.<span style="color:#a6e22e">buffer</span>(<span style="color:#a6e22e">evt</span>.<span style="color:#a6e22e">mapPoint</span>, <span style="color:#a6e22e">distance</span>, <span style="color:#a6e22e">unit</span>);
-      <span style="color:#75715e">// 作成したバッファーをマップに表示
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sfs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleFillSymbol</span>(<span style="color:#a6e22e">SimpleFillSymbol</span>.<span style="color:#a6e22e">STYLE_SOLID</span>,
-        <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleLineSymbol</span>(<span style="color:#a6e22e">SimpleLineSymbol</span>.<span style="color:#a6e22e">STYLE_DASHDOT</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#ae81ff">2</span>),
-        <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.25</span>]));
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>(<span style="color:#a6e22e">bufferGeometry</span>, <span style="color:#a6e22e">sfs</span>);
-      <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">graphic</span>);
-
-      <span style="color:#75715e">// バッファー内のフィーチャを検索
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Query</span>();
-      <span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">graphic</span>.<span style="color:#a6e22e">geometry</span>;
-      <span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">spatialRelationship</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Query</span>.<span style="color:#a6e22e">SPATIAL_REL_CONTAINS</span>;
-      <span style="color:#75715e">// マップからレイヤー ID を指定してフィーチャ レイヤーを取得
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">layer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">getLayer</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">layerId</span>);
-      <span style="color:#75715e">// フィーチャ レイヤーに対してクエリを実行
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">queryFeatures</span>(<span style="color:#a6e22e">query</span>)
-        .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">featureSet</span>) {
-          <span style="color:#75715e">// ポイント、ライン、ポリゴンごとにシンボルを設定
-</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">highlightSymbol</span>;
-          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">geometryType</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;esriGeometryPoint&#34;</span>) {
-            <span style="color:#a6e22e">highlightSymbol</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleMarkerSymbol</span>();
-            <span style="color:#a6e22e">highlightSymbol</span>.<span style="color:#a6e22e">setColor</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>(<span style="color:#e6db74">&#34;#f00&#34;</span>));
-            <span style="color:#a6e22e">highlightSymbol</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleMarkerSymbol</span>(<span style="color:#a6e22e">SimpleMarkerSymbol</span>.<span style="color:#a6e22e">STYLE_CIRCLE</span>, <span style="color:#ae81ff">16</span>,
-              <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleLineSymbol</span>(<span style="color:#a6e22e">SimpleLineSymbol</span>.<span style="color:#a6e22e">STYLE_SOLID</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#ae81ff">1</span>),
-              <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.5</span>]));
-          } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">geometryType</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;esriGeometryPolyline&#34;</span>) {
-            <span style="color:#a6e22e">highlightSymbol</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleLineSymbol</span>(<span style="color:#a6e22e">SimpleLineSymbol</span>.<span style="color:#a6e22e">STYLE_SOLID</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.5</span>]), <span style="color:#ae81ff">6</span>);
-          } <span style="color:#66d9ef">else</span> {
-            <span style="color:#a6e22e">highlightSymbol</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleFillSymbol</span>(<span style="color:#a6e22e">SimpleFillSymbol</span>.<span style="color:#a6e22e">STYLE_SOLID</span>,
-              <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleLineSymbol</span>(<span style="color:#a6e22e">SimpleLineSymbol</span>.<span style="color:#a6e22e">STYLE_SOLID</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#ae81ff">3</span>),
-              <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Color</span>([<span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">0.5</span>]));
-          }
-          <span style="color:#75715e">// 結果を表示
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">featureSet</span>.<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">feature</span>) {
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">queryGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>(<span style="color:#a6e22e">feature</span>.<span style="color:#a6e22e">geometry</span>, <span style="color:#a6e22e">highlightSymbol</span>);
-            <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">queryGraphic</span>);
-          });
-        });
-    }
   });
-});
-</code></pre></div><ol start="3">
-<li>Web AppBuilder で新しくアプリケーションを作成します。</li>
-<li>Web AppBuilder でフィーチャ サービスをレイヤーとして追加した Web マップを表示します（このウィジェットはフィーチャ レイヤーに対してバッファー検索を行います）。</li>
-<li>バッファー検索ウィジェットを追加し、バッファー検索ウィジェットのボタンをクリックして、半径とレイヤーを設定します。<br>
-<!-- raw HTML omitted --></li>
-<li>マップ上をクリックすると、バッファー内にあるフィーチャがハイライト表示されます。<br>
-<!-- raw HTML omitted --></li>
-</ol>
-<h4 id="widgethtml">Widget.html</h4>
-<p>ウィジェットの画面を作成します。Web AppBuilder には、デフォルトでいくつかの <!-- raw HTML omitted -->css クラス<!-- raw HTML omitted -->が含まれており、アプリのデザインを統一させることができます。各クラスの詳細は css ファイル（jimu.js/css/jimu.css）を参照ください。</p>
-<p><strong>使用例：</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jimu-input&#34;</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputNode&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10000&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
-<h4 id="cssstylecss">css\style.css</h4>
-<p><code>Widget.html</code> のスタイル定義ファイルです。</p>
-<p><strong>使用例：</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">jimu-widget-</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">ウィジェット名</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">div</span>:<span style="color:#a6e22e">first-child</span> {
-     <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
+
+  this.layerList = new Select({
+    options: options
+  }, this.layerSelectNode);
+  this.layerList.startup();
+
+  // レイヤー一覧を変更したときのイベント
+  this.layerList.on(&quot;change&quot;, lang.hitch(this, function(val) {
+    this.layerId = val;
+  }));
+},
+
+// ウィジェットのパネルを開くときに実行されるメソッド
+onOpen: function() {
+  this.inherited(arguments);
+
+  // マップをクリックしたときのイベント ハンドラ
+  this.ckickfunction = this.map.on(&quot;click&quot;, lang.hitch(this, this._clickHandler));
+},
+
+// ウィジェットのパネルを閉じるときに実行されるメソッド
+onClose: function() {
+  this.inherited(arguments);
+
+  // マップに表示されているグラフィックを削除
+  this.map.graphics.clear();
+
+  // マップのクリック イベントを削除
+  this.ckickfunction.remove();
+},
+
+// マップのクリック イベント
+_clickHandler: function(evt) {
+  // マップ コンストラクタを取得
+  var map = this.map;
+
+  // マップに表示されているグラフィックを削除
+  map.graphics.clear();
+
+  // inputNode に入力された半径の値を取得
+  var distance = this.inputNode.value;
+
+  // ウィジェット構成時に設定した半径の単位を config.json から取得
+  var unit = this.config.measurement.LengthUnit;
+
+  // クリック地点から指定した半径のバッファーを作成
+  var bufferGeometry = geometryEngine.buffer(evt.mapPoint, distance, unit);
+  // 作成したバッファーをマップに表示
+  var sfs = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+    new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASHDOT, new Color([255, 0, 0]), 2),
+    new Color([255, 255, 0, 0.25]));
+  var graphic = new Graphic(bufferGeometry, sfs);
+  map.graphics.add(graphic);
+
+  // バッファー内のフィーチャを検索
+  var query = new Query();
+  query.geometry = graphic.geometry;
+  query.spatialRelationship = Query.SPATIAL_REL_CONTAINS;
+  // マップからレイヤー ID を指定してフィーチャ レイヤーを取得
+  var layer = map.getLayer(this.layerId);
+  // フィーチャ レイヤーに対してクエリを実行
+  layer.queryFeatures(query)
+    .then(function(featureSet) {
+      // ポイント、ライン、ポリゴンごとにシンボルを設定
+      var highlightSymbol;
+      if (layer.geometryType == &quot;esriGeometryPoint&quot;) {
+        highlightSymbol = new SimpleMarkerSymbol();
+        highlightSymbol.setColor(new Color(&quot;#f00&quot;));
+        highlightSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 16,
+          new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 0, 0]), 1),
+          new Color([255, 0, 0, 0.5]));
+      } else if (layer.geometryType == &quot;esriGeometryPolyline&quot;) {
+        highlightSymbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 0, 0, 0.5]), 6);
+      } else {
+        highlightSymbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+          new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 0, 0]), 3),
+          new Color([125, 125, 125, 0.5]));
+      }
+      // 結果を表示
+      featureSet.features.forEach(function(feature) {
+        var queryGraphic = new Graphic(feature.geometry, highlightSymbol);
+        map.graphics.add(queryGraphic);
+      });
+    });
 }
-</code></pre></div><!-- raw HTML omitted -->
-<h4 id="widgetjs">Widget.js</h4>
-<p>ウィジェットの機能を実装するファイルです。<code>jimu/BaseWidget</code> の子クラスを作成し、<code>&quot;baseClass&quot;</code> に <code>jimu-widget-&lt;ウィジェット名&gt;</code> を指定します。<br>
-<code>&quot;baseClass&quot;</code> は、ウィジェットの css クラスとして適用されるためスタイルの競合を避けることができ、スタイルを定義する際に役立ちます。</p>
-<h5 id="ウィジェットのプロパティ">ウィジェットのプロパティ</h5>
-<p>Web AppBuilder で表示しているマップには <code>map</code> プロパティを使用してアクセスします。</p>
+});
+});
+</code></pre></li>
+
+<li><p>Web AppBuilder で新しくアプリケーションを作成します。</p></li>
+
+<li><p>Web AppBuilder でフィーチャ サービスをレイヤーとして追加した Web マップを表示します（このウィジェットはフィーチャ レイヤーに対してバッファー検索を行います）。</p></li>
+
+<li><p>バッファー検索ウィジェットを追加し、バッファー検索ウィジェットのボタンをクリックして、半径とレイヤーを設定します。<br />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide7.png" alt="バッファー検索設定"></p></li>
+
+<li><p>マップ上をクリックすると、バッファー内にあるフィーチャがハイライト表示されます。<br />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide8.jpg" alt="バッファー検索実行"></p></li>
+</ol>
+
+<h4 id="widget-html">Widget.html</h4>
+
+<p>ウィジェットの画面を作成します。Web AppBuilder には、デフォルトでいくつかの <a href="https://developers.arcgis.com/web-appbuilder/api-reference/css-framework.htm" target="_blank">css クラス</a>が含まれており、アプリのデザインを統一させることができます。各クラスの詳細は css ファイル（jimu.js/css/jimu.css）を参照ください。</p>
+
 <p><strong>使用例：</strong></p>
+
+<pre><code class="language-html">&lt;input class=&quot;jimu-input&quot; data-dojo-attach-point=&quot;inputNode&quot; value=&quot;10000&quot;&gt;&lt;/input&gt;
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide9.png" alt="Widget.html"></p>
+
+<h4 id="css-style-css">css\style.css</h4>
+
+<p><code>Widget.html</code> のスタイル定義ファイルです。</p>
+
+<p><strong>使用例：</strong></p>
+
+<pre><code class="language-css">jimu-widget-&lt;ウィジェット名&gt; div:first-child {
+     color: red;
+}
+</code></pre>
+
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide10.png" alt="Widget.html"></p>
+
+<h4 id="widget-js">Widget.js</h4>
+
+<p>ウィジェットの機能を実装するファイルです。<code>jimu/BaseWidget</code> の子クラスを作成し、<code>&quot;baseClass&quot;</code> に <code>jimu-widget-&lt;ウィジェット名&gt;</code> を指定します。<br />
+<code>&quot;baseClass&quot;</code> は、ウィジェットの css クラスとして適用されるためスタイルの競合を避けることができ、スタイルを定義する際に役立ちます。</p>
+
+<h5 id="ウィジェットのプロパティ">ウィジェットのプロパティ</h5>
+
+<p>Web AppBuilder で表示しているマップには <code>map</code> プロパティを使用してアクセスします。</p>
+
+<p><strong>使用例：</strong></p>
+
 <ul>
 <li>Widget.js：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mapIdNode</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;マップのID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">id</span>;
-</code></pre></div><ul>
+
+<pre><code class="language-js">this.mapIdNode.innerHTML = 'マップのID：' + this.map.id;
+</code></pre>
+
+<ul>
 <li>Widget.html：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapIdNode&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>その他に利用可能なプロパティは以下です。</p>
+
+<pre><code class="language-html">&lt;div data-dojo-attach-point=&quot;mapIdNode&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<p>その他に利用可能なプロパティは以下です。</p>
+
 <ul>
 <li>id</li>
 <li>label</li>
@@ -951,15 +1046,22 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <li>baseClass</li>
 <li>templateString</li>
 </ul>
+
 <h5 id="ウィジェットのメソッド">ウィジェットのメソッド</h5>
-<p>ウィジェットは、読み込みやウィジェットの開閉などのイベントの発生で実行されるメソッドが定義されています（<!-- raw HTML omitted -->ウィジェット ライフサイクル<!-- raw HTML omitted -->）。このメソッド内に処理を追加することで、ウィジェットをカスタマイズしていきます。<br>
+
+<p>ウィジェットは、読み込みやウィジェットの開閉などのイベントの発生で実行されるメソッドが定義されています（<a href="https://developers.arcgis.com/web-appbuilder/guide/widget-life-cycle.htm" target="_blank">ウィジェット ライフサイクル</a>）。このメソッド内に処理を追加することで、ウィジェットをカスタマイズしていきます。<br />
 例えば、ウィジェットが開かれた時に処理を実行するには <code>onOpen</code> メソッドを使用します。</p>
+
 <p><strong>使用例：</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">onOpen</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>;
-  <span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>その他に利用可能なメソッドは以下です。</p>
+
+<pre><code class="language-js">onOpen: function() {
+  var map = this.map;
+  // ...
+}
+</code></pre>
+
+<p>その他に利用可能なメソッドは以下です。</p>
+
 <ul>
 <li>onOpen</li>
 <li>onClose</li>
@@ -972,10 +1074,13 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <li>onSignOut</li>
 <li>onPositionChange</li>
 </ul>
+
 <h5 id="利用可能な-dojo-のウィジェット">利用可能な Dojo のウィジェット</h5>
-<p>Web AppBuilder では Dojo Toolkit が提供している<!-- raw HTML omitted -->ウィジェット（dijit）<!-- raw HTML omitted -->を使用することができます。<br>
-さらに、Web AppBuilder 独自の<!-- raw HTML omitted -->ウィジェット（jimu.js/dijit）<!-- raw HTML omitted -->も提供されています。<br>
+
+<p>Web AppBuilder では Dojo Toolkit が提供している<a href="https://dojotoolkit.org/reference-guide/1.10/dijit/" target="_blank">ウィジェット（dijit）</a>を使用することができます。<br />
+さらに、Web AppBuilder 独自の<a href="https://developers.arcgis.com/web-appbuilder/guide/widget-life-cycle.htm" target="_blank">ウィジェット（jimu.js/dijit）</a>も提供されています。<br />
 ヘルプに使用方法は記載されていませんが、Web AppBuilder に含まれている以下のウィジェットも使用できます。</p>
+
 <ul>
 <li>CheckBox</li>
 <li>RadioBtn</li>
@@ -990,30 +1095,43 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <li>PopupConfig</li>
 <li>SymbolChooser</li>
 </ul>
+
 <h5 id="nls">nls</h5>
+
 <p>ウィジェットで表示されるメニューを多言語化する場合に使用します。ウィジェット名をローカライズした方法と同様の手順でローカライズできます。</p>
+
 <h3 id="ウィジェットの更新">ウィジェットの更新</h3>
+
 <h4 id="web-appbuilder-に追加する場合">Web AppBuilder に追加する場合</h4>
-<p><code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> にフォルダーを配置します。ウィジェットの構成用ファイルを更新した場合は、ブラウザーで Web AppBuilder を更新することで、更新内容が Web AppBuilder に反映されます。<br>
+
+<p><code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> にフォルダーを配置します。ウィジェットの構成用ファイルを更新した場合は、ブラウザーで Web AppBuilder を更新することで、更新内容が Web AppBuilder に反映されます。<br />
 ※ 更新前に作成したアプリケーションには更新内容は反映されません。新たに設置したカスタム ウィジェットを利用したい場合は、新たにアプリケーションを作成する必要があります。</p>
+
 <h4 id="ダウンロードした-webアプリケーションに追加する場合">ダウンロードした Webアプリケーションに追加する場合</h4>
+
 <p>ダウンロードしたアプリケーションの <code>widgets</code> フォルダーの直下にカスタム ウィジェットのフォルダーを配置し、アプリケーションのルート フォルダーにある <code>config.json</code> の <code>widgetOnScreen</code>（マップ上に表示）または <code>widgetPool</code>（ツールバー上に表示）セクションの <code>widgets</code> 属性にウィジェットの参照先等を設定します。</p>
+
 <p><strong>widgetPool にウィジェットを追加する例：</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
-  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;ウィジェット名&gt;&#34;</span>,
-  <span style="color:#e6db74">&#34;label&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;アプリで表示する名前&gt;&#34;</span>,
-  <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;widgets/&lt;ウィジェット名&gt;/Widget&#34;</span>
+
+<pre><code class="language-js">{
+  &quot;name&quot;: &quot;&lt;ウィジェット名&gt;&quot;,
+  &quot;label&quot;: &quot;&lt;アプリで表示する名前&gt;&quot;,
+  &quot;uri&quot;: &quot;widgets/&lt;ウィジェット名&gt;/Widget&quot;
 }
-</code></pre></div><h3 id="ウィジェット開発時の-tips">ウィジェット開発時の Tips</h3>
-<p>Web AppBuilder では新規にアプリケーションを作成するときに、<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> フォルダーに配置されたウィジェットが読み込まれます。作成済みの既存アプリケーションには、ウィジェットの更新内容は反映されないため、ウィジェットを更新する度に新規にアプリケーションを作成する作業が発生してしまい、非常に面倒です。<br>
+</code></pre>
+
+<h3 id="ウィジェット開発時の-tips">ウィジェット開発時の Tips</h3>
+
+<p>Web AppBuilder では新規にアプリケーションを作成するときに、<code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\client\stemapp\widgets</code> フォルダーに配置されたウィジェットが読み込まれます。作成済みの既存アプリケーションには、ウィジェットの更新内容は反映されないため、ウィジェットを更新する度に新規にアプリケーションを作成する作業が発生してしまい、非常に面倒です。<br />
 開発段階でウィジェットの更新や動作確認を行うには、以下の手順が便利です。</p>
+
 <ol>
 <li>Web AppBuilder で新規にアプリケーションを作成します。</li>
-<li><code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server\apps</code> フォルダーを開きます。このフォルダーには Web AppBuilder で作成したアプリケーションが配置されています。<br>
-フォルダー名にはアプリケーションの作成順に数字が割り当てられます。<br>
-<!-- raw HTML omitted --></li>
-<li>手順1で作成したアプリケーションのフォルダーを開き、ウィジェットの構成ファイルを更新します。アプリケーション名は、各アプリケーションのルート フォルダーにある <code>config.json</code> ファイルに記載された JSON の <code>title</code> 属性で確認できます。<br>
-<!-- raw HTML omitted --></li>
+<li><code>&lt;Web AppBuilder のインストール ディレクトリ&gt;\server\apps</code> フォルダーを開きます。このフォルダーには Web AppBuilder で作成したアプリケーションが配置されています。<br />
+フォルダー名にはアプリケーションの作成順に数字が割り当てられます。<br />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide11.jpg" alt="フォルダー"></li>
+<li>手順1で作成したアプリケーションのフォルダーを開き、ウィジェットの構成ファイルを更新します。アプリケーション名は、各アプリケーションのルート フォルダーにある <code>config.json</code> ファイルに記載された JSON の <code>title</code> 属性で確認できます。<br />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide12.jpg" alt="config.json"></li>
 <li>Web AppBuilder で該当するアプリケーションを開きます。既に開いている場合はブラウザーを更新します。</li>
 </ol>
 

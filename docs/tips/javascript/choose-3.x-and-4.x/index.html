@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-03T14:55:54 JST">
+<meta name="revised" content="2020-04-07T14:09:17 JST">
 <title>バージョン 4.x と 3.x の選択 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -607,11 +607,14 @@ if (!doNotTrack) {
     
     
     <p>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。</p>
+
 <p>また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、<a href="https://www.esrij.com/question/120581/">3.x のロードマップと技術サポートに関する FAQ</a> も併せて参照してください。</p>
+
 <ul>
 <li>アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください</li>
 <li>アプリケーションで、WFS レイヤーのようなバージョン 4.x でまだ利用できない機能が必要な場合は、バージョン 3.x を使用してください</li>
 </ul>
+
 <table>
 <thead>
 <tr>
@@ -620,92 +623,110 @@ if (!doNotTrack) {
 <th align="left">4.14</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">3D 表示</td>
 <td align="left">×</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">2D 表示</td>
 <td align="left">○</td>
 <td align="left">○（部分的なサポート）</td>
 </tr>
+
 <tr>
 <td align="left">ベクター タイル レイヤー</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">ラスター タイル レイヤー</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">イメージ レイヤー</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">マップ イメージ レイヤー（ダイナミック レイヤー）</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">フィーチャ レイヤー</td>
 <td align="left">○</td>
 <td align="left">○（現バージョンでは表示とクエリをサポート）</td>
 </tr>
+
 <tr>
 <td align="left">ジオメトリ エンジン</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">印刷</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">ルート &amp; ルート案内</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">Web マップ</td>
 <td align="left">○</td>
 <td align="left">○（部分的なサポート）</td>
 </tr>
+
 <tr>
 <td align="left">Web シーン</td>
 <td align="left">×</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">ポータル アイテムのレイヤーの直接参照</td>
 <td align="left">×</td>
 <td align="left">○（部分的なサポート）</td>
 </tr>
+
 <tr>
 <td align="left">編集と図形描画</td>
 <td align="left">○</td>
 <td align="left">○（部分的なサポート）</td>
 </tr>
+
 <tr>
 <td align="left">OGC レイヤー（WMS、WMTS、KML）</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">OGC レイヤー（WFS）</td>
 <td align="left">○</td>
 <td align="left">×（今後のバージョンで対応予定）</td>
 </tr>
+
 <tr>
 <td align="left">時系列データ</td>
 <td align="left">○</td>
 <td align="left">○</td>
 </tr>
+
 <tr>
 <td align="left">GIS 解析ウィジェット</td>
 <td align="left">○</td>
@@ -713,6 +734,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+
 <p>全機能の比較は <a href="https://developers.arcgis.com/javascript/latest/guide/functionality-matrix/index.html">3.x/4.x 機能比較表（英語）</a>を参照してください。</p>
 
 

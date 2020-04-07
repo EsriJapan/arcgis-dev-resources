@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コアコンセプト on ArcGIS for Developer 開発リソース集</title>
@@ -28,7 +28,7 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
-      <description>APIs、SDKs、Apps&amp;hellip;.　 </description>
+      <description> APIs、SDKs、Apps&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ Android　iOS　Java
 JavaScript　.NET　Qt
 Esri Leaflet　REST
   セキュリティの方法論 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
-  OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザの真正性を判断し、トークンがクライアント アプリに提供されます。このトークンは、その後のセキュア リソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.3 以降で利用可能です。</description>
+ OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザの真正性を判断し、トークンがクライアント アプリに提供されます。このトークンは、その後のセキュア リソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.3 以降で利用可能です。</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ Esri Leaflet　REST
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
-      <description>レイヤー&amp;hellip;.　 </description>
+      <description> レイヤー&amp;hellip;.　 </description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づい�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
-      <description>Web シーン&amp;rdquo;&amp;hellip;.　 </description>
+      <description> Web シーン&amp;rdquo;&amp;hellip;.　 </description>
     </item>
     
     <item>
