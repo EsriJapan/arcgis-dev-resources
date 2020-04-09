@@ -235,6 +235,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</loc>
   </url>
   
@@ -247,11 +251,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</loc>
   </url>
   
   <url>

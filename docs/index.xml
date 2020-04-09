@@ -376,7 +376,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Aaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
     </item>
     
     <item>
@@ -611,7 +611,7 @@ JupyterLab で GIS データとグラフの操作
 JupyterLab をはじめる Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。
 インストール  バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
  次の 2 つのコマンドを実行します
- jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号  * 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
+ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号   2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
     </item>
     
     <item>
@@ -751,6 +751,19 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
 位置情報ベースのサービス ArcGIS Online は、ジオコーディング、ルーティング、および空間分析などのロケーションベースの RESTful サービスをホストしています。一般的に、これらのサービスはクレジットを消費します。
  Geocoding and search API Routing API Demographic and geoenrichment API Spatial API Elevation API  ArcGIS Enterprise API ArcGIS Enterprise REST API は、ArcGIS Online または ArcGIS Enterprise が独自のインフラストラクチャ上でホストしています。ArcGIS Enterprise API は、マップ、レイヤー、およびその他のコンテンツなどのアイテムの管理や、組織内のユーザーの特権や認証の処理に使用されます。ArcGIS Portal API の一般的なユースケースとしては、ユーザー、グループ、およびアイテムの操作や検索 API へのアクセスなどがあります。
 ホスティングされたデータ サービス ArcGIS Server REST API を使用すると、ArcGIS Enterprise または ArcGIS Online のいずれかに公開してホストされたデータ サービスを操作することができます。たとえば、ArcGIS Online にデータをインポートすると、ArcGIS Server のインスタンス上でホストされているフィーチャ レイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤにアクセスすることができます。ArcGIS Server が提供するレイヤーやサービスには、次のようなさまざまな ArcGIS ツールで作成して公開できるものがあります。</description>
+    </item>
+    
+    <item>
+      <title>matplotlib での日本語利用について</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</guid>
+      <description>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。
+matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。
+対応環境 ここでは、次の環境を用いた場合の設定方法を説明します。
+ ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。
+ ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。  ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。   matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
     </item>
     
     <item>
