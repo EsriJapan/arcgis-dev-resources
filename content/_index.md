@@ -7,38 +7,23 @@ description = ""
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
-#### TOPページの編集
-
-#### ArcGIS コアコンセプト
-* [コアコンセプト](core-concepts)
-
 # ArcGIS for Developer 開発リソース集
-ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、**[ArcGIS for Developers](https://developers.arcgis.com/)** を利用したアプリ開発の基本的な流れを紹介します。
+本サイトは、ArcGIS をはじめて使う開発者の方向けに、API/SDK を利用した開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、環境構築から簡単なアプリケーション作成までのガイド、技術者の方に役立つTips集を紹介しています。
 
 **[ArcGIS for Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
 
-{{% panel theme="success" header="スタートアップ ガイド" %}}
-* [マップの作成](guide/create-map)
- * ArcGIS をはじめて使う方向けに開発者アカウントやマップの作成方法を紹介します。
-* [アプリの作成](guide/create-app)
- * API/SDK を使用したシンプルな地図アプリの作成方法を紹介します。
-* [認証](guide/authentication)
- * 有償のサービスやプライベート コンテンツへアクセスするアプリに必要な認証について紹介します。
+
+{{% panel theme="success" header="目次" %}}
+* [コアコンセプト](core-concepts)
+ * ArcGIS とは何か？ プラットフォームとしての理解や、それぞれの API/SDK でできること、データの扱いなど開発を始める前に知っておきたい情報をまとめてあります。
+  
+* [スタートアップガイド](guide)
+ * 初級者の方が開発を始めるために必要な知識、 API を使った開発の流れ、SDKの選定、データ作成から開発、デプロイまでの基本的な内容を手順を追って学習できるものとなっています。
+
+* [技術 Tips 集](tips)
+ * 各 API/SDK を使用した開発をサポートするドキュメントをまとめて公開しています。
 {{% /panel %}}
 
-その他にも各 API/SDK を使用した開発をサポートするドキュメントをまとめた[技術 Tips 集](/arcgis-dev-resources/tips/)も公開していますので、ArcGIS for Developer を利用したアプリ開発の基本的な流れを理解した後はこちらも併せてご覧ください。
-　　　
-#### API/SDK
-* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
- * Web ブラウザー ベースのアプリを効率よく開発するための最適な開発用 API です。１つのアプリでデスクトップ、タブレット、スマートフォンに対応が可能です。GIS の基本機能から HTML5 を採用した高度な機能までサポートします。
-* [ArcGIS Runtime SDK for .NET](https://developers.arcgis.com/net/)
- * Windows プラットフォーム上で動作するネイティブ GIS アプリの開発キットです。Windows デスクトップ、Windows ストア、Windows Phone の 3 つのプラットフォームに開発ライブラリを提供します。
-* [ArcGIS Runtime SDK for Android](https://developers.arcgis.com/android/)
- * GIS 機能を搭載した Android ネイティブ アプリの開発を支援する開発キットです。Google の提供する Android アプリ開発に最適化した統合開発環境である Android Studio に対応しています。
-* [ArcGIS Runtime SDK for iOS](https://developers.arcgis.com/ios/)
- * iOS 専用のネイティブ GIS アプリの開発キットです。Objective-C または Swift を使用して iOS 専用の カスタム アプリを開発したり、既存のアプリに GIS の機能を統合することができます。
-* [ArcGIS API for Python](https://developers.arcgis.com/python/)
- * Web GIS (ArcGIS Online / ArcGIS Enterprise) を活用してマップと地理空間データを扱うための Python ベースの API です。GIS データの可視化や解析の実行だけでなく、ユーザー、グループ、アイテムなどを管理するためのシンプルで使いやすいツールを提供します。
 
 　　　
 #### 開発者オープン コミュニティ
