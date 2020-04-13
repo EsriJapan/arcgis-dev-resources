@@ -189,7 +189,10 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
-      <description> APIs、SDKs、Apps&amp;hellip;.　 </description>
+      <description>アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+ArcGIS アプリ ArcGIS プラットフォームには、一般的なユースケースをカバーする様々なアプリケーションが含まれています。これらのアプリケーションには、以下のものが含まれます。
+ ArcGIS Desktop - ArcGIS Pro や ArcMap などの GIS アプリケーションのデスクトップ Collector for ArcGIS - モバイル データ収集アプリ Navigator for ArcGIS - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS ダッシュボード - リアルタイムでカスタマイズ可能なダッシュボード Explorer for ArcGIS - 組織内の GIS データの発見と表示 Workforce for ArcGIS - フィールドワークを調整するためのモバイル・Web アプリ Survey123 For ArcGIS - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトの作成や拡張したりすることができます。
+設定可能なアプリと App builder ArcGIS Online および ArcGIS Enterprise には、カスタマイズや拡張が可能な多くの構成可能なアプリケーションがあらかじめ組み込まれています。これらのアプリケーションは、開発者がダウンロードしてカスタマイズすることができます。ArcGIS Online のヘルプには、構成可能なアプリケーションの比較が記載されています。</description>
     </item>
     
     <item>
@@ -701,7 +704,12 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
-      <description> Web シーン&amp;rdquo;&amp;hellip;.　 </description>
+      <description>Web シーンとは？ Web シーンは、異なるアプリケーション間で作成、スタイル設定、共有できる 3D マップです。Web シーンは、2 次元の Web マップとは異なり、一般的に都市や自然環境、建物、交通システムを表す 3D 地理空間データを含むシーンです。Web シーンは、Web シーン仕様に基づいた JSON で構成されており、マップの範囲、カメラの高さと角度、ベースマップ、レイヤー、レイヤースタイルなど、シーンをセットアップするために必要なすべての設定が含まれています。
+ArcGIS Online の Web シーンの例としては、オレゴン州ポートランド市の 3D 風景があります。
+なぜ Web シーンを使うのか？ Web シーンは、ArcGIS Online や ArcGIS Pro で作成し、ストーリー マップや ArcGIS の API および SDK を使用して構築されたアプリケーションなどの他の製品で表示することができます。アプリケーションが Web シーンをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体での 3D シーンの共有が容易になります。
+例えば、ポートランド市の Web シーンのコピーを作成し、ArcGIS Online で人口統計データを含む別のフィーチャ レイヤーを追加し、ArcGIS API for JavaScript を使用してアプリ上で新しい Web シーンを表示することができます。
+Web シーンの仕様 Web シーンの仕様は、JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web シーンを共有、作成、編集、可視化、参照などをすることができます。
+JSON ファイルとして、Web シーンは ArcGIS Online または ArcGIS Enterprise でホストされ、REST API を介して使用することができます。技術的な側面で言うと、Web シーンは、ArcGIS Online または ArcGIS Enterprise に保存されたコンテンツ アイテムのことを指します。</description>
     </item>
     
     <item>

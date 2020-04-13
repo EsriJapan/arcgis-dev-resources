@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-07T15:35:06 JST">
+<meta name="revised" content="2020-04-09T19:01:38 JST">
 <title>Web シーン :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -583,7 +583,210 @@ if (!doNotTrack) {
     
     
 
-<h2 id="web-シーン">Web シーン&rdquo;&hellip;.　</h2>
+<h2 id="web-シーンとは">Web シーンとは？</h2>
+
+<p>Web シーンは、異なるアプリケーション間で作成、スタイル設定、共有できる 3D マップです。Web シーンは、2 次元の <a href="https://developers.arcgis.com/glossary/web-map/">Web マップ</a>とは異なり、一般的に都市や自然環境、建物、交通システムを表す 3D 地理空間データを含むシーンです。Web シーンは、Web シーン仕様に基づいた JSON で構成されており、マップの範囲、カメラの高さと角度、ベースマップ、レイヤー、レイヤースタイルなど、シーンをセットアップするために必要なすべての設定が含まれています。</p>
+
+<p>ArcGIS Online の Web シーンの例としては、<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=2b721b9e7bef45e2b7ff78a398a33acc">オレゴン州ポートランド市の 3D 風景</a>があります。</p>
+
+<h2 id="なぜ-web-シーンを使うのか">なぜ Web シーンを使うのか？</h2>
+
+<p>Web シーンは、<a href="https://developers.arcgis.com/glossary/arcgis-online/">ArcGIS Online</a> や <a href="https://developers.arcgis.com/glossary/arcgis-pro/">ArcGIS Pro</a> で作成し、<a href="https://storymaps.arcgis.com/stories">ストーリー マップ</a>や <a href="https://developers.arcgis.com/documentation/#sdks">ArcGIS の API および SDK</a> を使用して構築されたアプリケーションなどの他の製品で表示することができます。アプリケーションが Web シーンをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や <a href="https://developers.arcgis.com/glossary/arcgis-platform/">ArcGIS プラットフォーム</a>全体での 3D シーンの共有が容易になります。</p>
+
+<p>例えば、ポートランド市の Web シーンのコピーを作成し、ArcGIS Online で人口統計データを含む別のフィーチャ レイヤーを追加し、ArcGIS API for JavaScript を使用してアプリ上で新しい Web シーンを表示することができます。</p>
+
+<h2 id="web-シーンの仕様">Web シーンの仕様</h2>
+
+<p><a href="https://developers.arcgis.com/web-scene-specification/">Web シーンの仕様</a>は、<a href="https://www.json.org/json-en.html">JSON</a> の仕様に基づいており、ArcGIS プラットフォーム全体で Web シーンを共有、作成、編集、可視化、参照などをすることができます。</p>
+
+<p>JSON ファイルとして、Web シーンは ArcGIS Online または ArcGIS Enterprise でホストされ、REST API を介して使用することができます。技術的な側面で言うと、Web シーンは、ArcGIS Online または ArcGIS Enterprise に保存された<a href="https://developers.arcgis.com/rest/users-groups-and-items/item.htm">コンテンツ アイテム</a>のことを指します。</p>
+
+<p>すべてのウェブシーンには一意の ID があり、パブリックに公開したり、特定のグループやユーザーに制限して公開することもできます。</p>
+
+<p>例えば、<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=2b721b9e7bef45e2b7ff78a398a33acc">ポートランド市の Web シーン</a> はパブリックに公開されており、一意の ID：2b721b9e7bef45e2b7ff78a398a33acc を持っています。</p>
+
+<p>この Web マップは、以下の URL で REST API の<a href="https://developers.arcgis.com/rest/users-groups-and-items/user-item-link-.htm">コンテンツ アイテム操作</a>リクエストを行うことで、JSON形式で表示することができます。</p>
+
+<pre><code>https://www.arcgis.com/sharing/rest/content/items/2b721b9e7bef45e2b7ff78a398a33acc/data
+</code></pre>
+
+<p>この REST で取得できる JSON は以下の通りです(一部抜粋)。</p>
+
+<pre><code class="language-json">{
+    &quot;operationalLayers&quot;: [
+        {
+            &quot;id&quot;: &quot;14a3b7e8769-layer5&quot;,
+            &quot;opacity&quot;: 1,
+            &quot;title&quot;: &quot;Topographic Map 3D&quot;,
+            &quot;url&quot;: &quot;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Portland_v1/MapServer&quot;,
+            &quot;visibility&quot;: true,
+            &quot;layerType&quot;: &quot;ArcGISTiledMapServiceLayer&quot;,
+            &quot;itemId&quot;: &quot;77618c5b716a4417a2e72d75ccc62f30&quot;
+        },
+        {
+            &quot;id&quot;: &quot;159085c4486-layer-4&quot;,
+            &quot;showLegend&quot;: true,
+            &quot;opacity&quot;: 1,
+            &quot;disablePopup&quot;: false,
+            &quot;title&quot;: &quot;Buildings&quot;,
+            &quot;url&quot;: &quot;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Buildings_Portland/SceneServer/layers/0&quot;,
+            &quot;visibility&quot;: true,
+            &quot;layerType&quot;: &quot;ArcGISSceneServiceLayer&quot;,
+            &quot;itemId&quot;: &quot;d96440302be847f6aa6e6ac0012c53b0&quot;,
+            &quot;layerDefinition&quot;: {
+                &quot;elevationInfo&quot;: {
+                    &quot;mode&quot;: &quot;absoluteHeight&quot;
+                },
+                &quot;drawingInfo&quot;: {
+                    &quot;renderer&quot;: {
+                        &quot;authoringInfo&quot;: {},
+                        &quot;type&quot;: &quot;simple&quot;,
+                        &quot;label&quot;: &quot;&quot;,
+                        &quot;symbol&quot;: {
+                            &quot;type&quot;: &quot;MeshSymbol3D&quot;,
+                            &quot;symbolLayers&quot;: [
+                                {
+                                    &quot;material&quot;: {
+                                        &quot;color&quot;: [
+                                            255,
+                                            255,
+                                            255
+                                        ]
+                                    },
+                                    &quot;type&quot;: &quot;Fill&quot;,
+                                    &quot;edges&quot;: {
+                                        &quot;type&quot;: &quot;solid&quot;,
+                                        &quot;color&quot;: [
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        &quot;transparency&quot;: 60,
+                                        &quot;size&quot;: 1
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            &quot;showLabels&quot;: false
+        }
+    ],
+    &quot;baseMap&quot;: {
+        &quot;baseMapLayers&quot;: [
+            {
+                &quot;id&quot;: &quot;159085c1a03-layer-0&quot;,
+                &quot;opacity&quot;: 1,
+                &quot;title&quot;: &quot;World Topo Map&quot;,
+                &quot;url&quot;: &quot;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;,
+                &quot;visibility&quot;: true,
+                &quot;layerType&quot;: &quot;ArcGISTiledMapServiceLayer&quot;
+            }
+        ],
+        &quot;id&quot;: &quot;basemap&quot;,
+        &quot;title&quot;: &quot;Topographic&quot;,
+        &quot;elevationLayers&quot;: [
+            {
+                &quot;id&quot;: &quot;globalElevation&quot;,
+                &quot;listMode&quot;: &quot;hide&quot;,
+                &quot;title&quot;: &quot;Terrain3D&quot;,
+                &quot;url&quot;: &quot;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&quot;,
+                &quot;visibility&quot;: true,
+                &quot;layerType&quot;: &quot;ArcGISTiledElevationServiceLayer&quot;
+            }
+        ]
+    },
+    &quot;ground&quot;: {
+        &quot;layers&quot;: [
+            {
+                &quot;id&quot;: &quot;globalElevation&quot;,
+                &quot;listMode&quot;: &quot;hide&quot;,
+                &quot;title&quot;: &quot;Terrain3D&quot;,
+                &quot;url&quot;: &quot;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&quot;,
+                &quot;visibility&quot;: true,
+                &quot;layerType&quot;: &quot;ArcGISTiledElevationServiceLayer&quot;
+            }
+        ]
+    },
+    &quot;heightModelInfo&quot;: {
+        &quot;heightModel&quot;: &quot;gravity_related_height&quot;,
+        &quot;heightUnit&quot;: &quot;meter&quot;
+    },
+    &quot;version&quot;: &quot;1.10&quot;,
+    &quot;authoringApp&quot;: &quot;WebSceneViewer&quot;,
+    &quot;authoringAppVersion&quot;: &quot;6.1.0.0&quot;,
+    &quot;presentation&quot;: {
+        /* omitted */
+    },
+    &quot;initialState&quot;: {
+        &quot;environment&quot;: {
+            &quot;lighting&quot;: {
+                &quot;datetime&quot;: 1458072640000,
+                &quot;displayUTCOffset&quot;: -8
+            }
+        },
+        &quot;viewpoint&quot;: {
+            &quot;rotation&quot;: 12.457625182769334,
+            &quot;scale&quot;: 6263.2876185532195,
+            &quot;targetGeometry&quot;: {
+                &quot;spatialReference&quot;: {
+                    &quot;latestWkid&quot;: 3857,
+                    &quot;wkid&quot;: 102100
+                },
+                &quot;x&quot;: -1.365579170165746E7,
+                &quot;y&quot;: 5704194.302859826,
+                &quot;z&quot;: 27.754899251274765
+            },
+            &quot;camera&quot;: {
+                &quot;position&quot;: {
+                    &quot;spatialReference&quot;: {
+                        &quot;latestWkid&quot;: 3857,
+                        &quot;wkid&quot;: 102100
+                    },
+                    &quot;x&quot;: -1.3655391201614857E7,
+                    &quot;y&quot;: 5702381.612632008,
+                    &quot;z&quot;: 754.9944650307298
+                },
+                &quot;heading&quot;: 347.54237481723067,
+                &quot;tilt&quot;: 60.786972566225145
+            }
+        }
+    },
+    &quot;spatialReference&quot;: {
+        &quot;latestWkid&quot;: 3857,
+        &quot;wkid&quot;: 102100
+    },
+    &quot;viewingMode&quot;: &quot;global&quot;
+}
+</code></pre>
+
+<h3 id="web-シーンの作成">Web シーンの作成</h3>
+
+<p>テキスト エディタを使用して Web マップを作成することもできますが、Esri は Web シーンを簡単に作成するための多くのツールを提供しています。</p>
+
+<h3 id="arcgis-online">ArcGIS Online</h3>
+
+<p>ArcGIS Online を使用することが Web シーンを作成する最も簡単な方法です。
+<a href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-scenes.htm">ArcGIS Online のドキュメント</a>や ArcGIS Tutorials の <a href="https://developers.arcgis.com/labs/arcgisonline/create-a-web-scene/index.html">Create a web scene</a> を参照して Web シーンを作成することができます。</p>
+
+<h3 id="arcgis-pro">ArcGIS Pro</h3>
+
+<p>ArcGIS Pro では、Web シーンの作成と共有がサポートされています。ArcGIS Pro ヘルプの <a href="https://pro.arcgis.com/en/pro-app/help/mapping/map-authoring/author-a-web-scene.htm">Author a web scene</a> を参照してください。</p>
+
+<h3 id="arcgis-api-for-javascript">ArcGIS API for JavaScript</h3>
+
+<p>ArcGIS API for JavaScript では、Web シーンを ArcGIS Online に戻して保存することができます。詳細は <a href="https://developers.arcgis.com/javascript/latest/sample-code/webscene-save/index.html">Save a web scene</a> のサンプルを参照してください。</p>
+
+<h2 id="web-シーンの表示">Web シーンの表示</h2>
+
+<h3 id="arcgis-api-for-javascript-1">ArcGIS API for JavaScript</h3>
+
+<p>ArcGIS API for JavaScript を使用して Web シーンを表示する方法については、<a href="https://developers.arcgis.com/javascript/latest/sample-code/webscene-basic/index.html">Load a basic web scene</a> のサンプルを参照してください。</p>
+
+<h3 id="arcgis-configurable-apps">ArcGIS Configurable apps</h3>
+
+<p>ArcGIS Configurable apps を使用した Web シーンを ArcGIS Online で 表示することもできます。アプリケーションを作成するには <a href="https://learn.arcgis.com/en/projects/create-a-scene/">Create a Scene</a> または、<a href="https://doc.arcgis.com/en/arcgis-online/create-maps/choose-configurable-app.htm">ArcGIS Configurable apps を使用したサンプル</a> を参照してください。</p>
 
 
     
