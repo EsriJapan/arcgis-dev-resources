@@ -376,7 +376,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
     </item>
     
     <item>
@@ -582,7 +582,13 @@ var mapDeferred = arcgisUtils.createMap(&amp;quot;&amp;lt;Web マップ ID&amp;g
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
-      <description> レイヤー&amp;hellip;.　 </description>
+      <description>ArcGIS を使用してアプリケーションを構築する場合に、レイヤーは主要なコンテンツとなります。 ArcGIS で利用できるレイヤーは、ディスク上またはネットワーク経由で利用可能な ArcGIS REST API 、CSV ファイル、GeoJSON 、また他のファイルを介して公開される Web サービスに基づいています。 レイヤーは、ArcGIS の開発者製品である API および SDK を使用して、ネットワーク経由またはディスク上からロードされた任意のデータから作成することができます。
+また、一時的なグラフィックは、API で作成できるグラフィック レイヤーを使用して地図上に表示することも可能です。
+レイヤーは、マップやアプリケーションを作成するときに使用される地理的データの論理的集合で、大まかにフィーチャ レイヤーかタイル レイヤーのいずれかに分類することができます。
+   レイヤー タイプ 概要     フィーチャ レイヤー ポイントやポリゴンのような フィーチャ を扱うレイヤー
+ジオメトリおよび属性情報の編集または更新、オフラインデータベースと同期が可能   タイル レイヤー 事前にキャッシュを作成し、サーバー上にキャッシュを配置しているレイヤー    タイル レイヤー の例として、ベクター タイル マップはタイル レイヤーとなります。3D を表示するシーン レイヤーも、アプリケーション内でできるだけスムーズに表示を行うために建物などの 3D オブジェクトを含むフィーチャをキャッシュすることから、タイル レイヤーに分類することができます。
+ArcGIS の主なレイヤー ArcGIS Online と ArcGIS Enterprise は、編集、オフライン同期、ベースマップの使用など、地図アプリを開発・利用する上で一般的なユースケースを実現するためのさまざまなタイプのレイヤーをサポートしています。ArcGIS を使用してアプリケーションを作成するには、これらの種類のレイヤーを使用する方法を考慮することが重要です。
+この表は、アプリケーション構築時に使用する主なレイヤータイプの一般的な使用例をまとめたものです。</description>
     </item>
     
     <item>
