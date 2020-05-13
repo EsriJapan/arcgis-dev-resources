@@ -856,10 +856,10 @@ if (!doNotTrack) {
 <pre><code class="language-java"> // ライセンスキーを設定して認証
  LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(&quot;runtimelite,1000,rud#########,day-month-year,####################&quot;);
  if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
- 	Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
+    Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
  }else{
- 	// TODO ライセンスが無効の場合の処理
- 	Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+    // TODO ライセンスが無効の場合の処理
+    Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
  }
 </code></pre>
 
@@ -874,10 +874,10 @@ if (!doNotTrack) {
 <pre><code class="language-java">// ライセンスキーを設定して認証:runtimebasic/runtimestandard/runtimeadvanced
 LicenseResult licenseResult = ArcGISRuntimeEnvironment.setLicense(&quot;runtimebasic,1000,rud#########,day-month-year,####################&quot;);
 if(licenseResult.getLicenseStatus() == LicenseStatus.VALID){
-	Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
+    Log.d(TAG,&quot;ライセンスは有効です:&quot; + licenseResult.getLicenseStatus());
 }else{
-	// TODO ライセンスが無効の場合の処理
-	Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
+    // TODO ライセンスが無効の場合の処理
+    Log.d(TAG,&quot;ライセンスは無効です:&quot; + licenseResult.getLicenseStatus());
 }
 </code></pre>
 

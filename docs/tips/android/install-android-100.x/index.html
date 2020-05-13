@@ -686,13 +686,13 @@ Project ツールウィンドウ で「Android」を選択して「Manifests」�
 <li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
 <code>java
 allprojects {
-	repositories {
-		jcenter()
-		// esri arcgis maven リポジトリの追加
-		maven {
-			url 'https://esri.bintray.com/arcgis'
-		}
-	}
+repositories {
+    jcenter()
+    // esri arcgis maven リポジトリの追加
+    maven {
+        url 'https://esri.bintray.com/arcgis'
+    }
+}
 }
 </code>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>
