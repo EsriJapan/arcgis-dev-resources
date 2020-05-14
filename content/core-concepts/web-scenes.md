@@ -1,6 +1,6 @@
 +++
 title = "Web シーン"
-description = "〜 coming soon 〜"
+description = "〜 Under Construction 〜"
 Weight=6
 aliases = ["/web-scenes/"]
 +++

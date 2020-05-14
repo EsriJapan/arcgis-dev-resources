@@ -1,6 +1,6 @@
 +++
 title = "REST API"
-description = "〜 coming soon 〜"
+description = "〜 Under Construction 〜"
 Weight=7
 aliases = ["/rest-api/"]
 +++

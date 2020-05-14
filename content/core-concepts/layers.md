@@ -1,6 +1,6 @@
 +++
 title = "レイヤー"
-description = "〜 coming soon 〜 "
+description = "〜 Under Construction 〜 "
 Weight=4
 aliases = ["/layers/"]
 +++

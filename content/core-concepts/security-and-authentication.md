@@ -1,6 +1,6 @@
 +++
 title = "セキュリティと認証"
-description = "〜 coming soon 〜"
+description = "〜 Under Construction 〜"
 Weight=3
 aliases = ["/security-and-authentication/"]
 +++

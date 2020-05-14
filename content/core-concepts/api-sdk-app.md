@@ -1,6 +1,6 @@
 +++
 title = "API、SDK、アプリ"
-description = "〜 coming soon 〜"
+description = "〜 Under Construction 〜"
 Weight=2
 aliases = ["/api-sdk-app/"]
 +++

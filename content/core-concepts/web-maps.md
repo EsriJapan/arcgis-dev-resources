@@ -1,6 +1,6 @@
 +++
 title = "Web マップ"
-description = "〜 coming soon 〜"
+description = "〜 Under Construction 〜"
 Weight=5
 aliases = ["/web-maps/"]
 +++
