@@ -6,7 +6,7 @@ aliases = ["/what-is-arcgis/"]
 +++
 
 ## ArcGIS とは
-ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
 
 ## ArcGIS プラットフォーム
 [ArcGIS プラットフォーム](https://www.esrij.com/question/85268/)は、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
@@ -15,8 +15,8 @@ ArcGIS は、空間データの作成、管理、共有、分析を行う組織�
 [ArcGIS Online](https://www.esrij.com/products/arcgis-online/) と [ArcGIS Enterprise](https://www.esrij.com/products/arcgis-enterprise/) が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。[ポータル](https://www.esrij.com/products/arcgis-enterprise/details/portal-for-arcgis/) を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、[REST API](https://developers.arcgis.com/documentation/core-concepts/rest-api/) を使って直接データを操作することもできます。
 
 * [ArcGIS Online](https://www.esrij.com/products/arcgis-online/) - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有
-* [MapViewer](https://www.arcgis.com/home/webmap/viewer.html) - 2D マップの作成, データの編集, データの分析
-* [SceneViewer](https://www.arcgis.com/home/webscene/viewer.html) - 3D マップの作成, スライドの作成
+* [MapViewer（マップ ビューアー）](https://www.arcgis.com/home/webmap/viewer.html) - 2D マップの作成, データの編集, データの分析
+* [SceneViewer（シーン ビューアー）](https://www.arcgis.com/home/webscene/viewer.html) - 3D マップの作成, スライドの作成
 * [ArcGIS REST API](https://developers.arcgis.com/documentation/core-concepts/rest-api/)
 
 ## ArcGIS Desktop
@@ -27,7 +27,7 @@ ArcGIS Online および ArcGIS Enterprise と連携できるアプリケーシ�
 
 * [Collector for ArcGIS](https://www.esrij.com/products/collector-for-arcgis/) - モバイル端末から GIS データを現地で直接収集や更新できるアプリケーション
 * [Navigator for ArcGIS](https://www.esri.com/en-us/arcgis/products/navigator-for-arcgis/overview) - モバイル端末から最適経路を探索するためのアプリケーション ※
-* [ArcGIS Dashboard](https://www.esrij.com/products/arcgis-dashboards/) - 地図上のリアルタイム データを監視、追跡、および評価することに特化したダッシュボード アプリケーション
+* [ArcGIS Dashboards](https://www.esrij.com/products/arcgis-dashboards/) - 地図上のリアルタイム データを監視、追跡、および評価することに特化したダッシュボード アプリケーション
 * [Explorer for ArcGIS](https://www.esrij.com/products/explorer-for-arcgis/) - iOS と Android 上で動作する、無料のマップ閲覧アプリケーション
 * [Workforce for ArcGIS](https://www.esrij.com/products/workforce/) - 現地調査作業の計画と調整を行うアプリケーション
 * [Survey123 For ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - シンプルで直感的な調査票で GIS データを収集できるアプリケーション
