@@ -28,10 +28,10 @@ Python API は arcgis パッケージとして配布されています。 この
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
-      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、および開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）に展開するか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
 ArcGIS プラットフォーム ArcGIS プラットフォームは、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
 ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。ポータル を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、REST API を使って直接データを操作することもできます。
- ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer - 2D マップの作成, データの編集, データの分析 SceneViewer - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張や処理の自動化をすることもできます。</description>
+ ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer（マップ ビューアー） - 2D マップの作成, データの編集, データの分析 SceneViewer（シーン ビューアー） - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張や処理の自動化をすることもできます。</description>
     </item>
     
     <item>
@@ -181,6 +181,15 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
  UWP サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
  Xamarin サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
    ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。</description>
+    </item>
+    
+    <item>
+      <title>API、SDK、アプリ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/api-sdk-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/api-sdk-app/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -371,6 +380,15 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
     </item>
     
     <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/security-and-authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>デプロイ パターン</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -551,6 +569,15 @@ var mapDeferred = arcgisUtils.createMap(&amp;quot;&amp;lt;Web マップ ID&amp;g
     </item>
     
     <item>
+      <title>レイヤー</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Arcade</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -577,6 +604,15 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
 インストール  バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
  次の 2 つのコマンドを実行します
  jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号   2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
+    </item>
+    
+    <item>
+      <title>Web マップ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -648,6 +684,15 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
     </item>
     
     <item>
+      <title>Web シーン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>カスタム フォント</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -681,6 +726,15 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
  スタート メニューからタスク スケジューラを検索して開く   右側の [操作] ペインから [タスクの作成] をクリック
  新規タスクを作成するウィザードが開きます   [全般] タブ内のパラメーターを設定する
  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる  [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)   [トリガー] タブ内のパラメーターを設定する</description>
+    </item>
+    
+    <item>
+      <title>REST API</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
+      <description></description>
     </item>
     
     <item>
