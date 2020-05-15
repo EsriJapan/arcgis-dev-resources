@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-13T19:30:58 JST">
+<meta name="revised" content="2020-05-14T18:33:07 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -78,10 +78,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/api-sdk-app/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/">
-            APIs、SDKs、Apps
+          <a href="/arcgis-dev-resources/core-concepts/api-sdk-app/">
+            API、SDK、アプリ
           </a>
         </div>
     </li>
@@ -534,7 +534,7 @@ if (!doNotTrack) {
     <option value="/arcgis-dev-resources/core-concepts/" >
    コアコンセプト</option> 
       <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
-      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- APIs、SDKs、Apps</option>
+      <option value="/arcgis-dev-resources/core-concepts/api-sdk-app/" >- API、SDK、アプリ</option>
       <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
       <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
       <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
@@ -686,13 +686,13 @@ Project ツールウィンドウ で「Android」を選択して「Manifests」�
 <li>build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
 <code>java
 allprojects {
-repositories {
-    jcenter()
-    // esri arcgis maven リポジトリの追加
-    maven {
-        url 'https://esri.bintray.com/arcgis'
-    }
-}
+	repositories {
+		jcenter()
+		// esri arcgis maven リポジトリの追加
+		maven {
+			url 'https://esri.bintray.com/arcgis'
+		}
+	}
 }
 </code>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px"></li>
