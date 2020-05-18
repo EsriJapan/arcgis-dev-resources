@@ -5,7 +5,7 @@ weight = 10
 +++
 
 
-Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-appbuilder/)、[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)、[Developer Edition 版](https://developers.arcgis.com/web-appbuilder/)）のウィジェット一覧です。ArcGIS Online のアップデートや ArcGIS Enterprise、Developer Edition の各バージョンごとに提供されているウィジェットが確認できます。
+Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-appbuilder/)、[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)、[Developer Edition 版](https://developers.arcgis.com/web-appbuilder/)）のウィジェット一覧です。ArcGIS Online のアップデートや ArcGIS Enterprise、Developer Edition のバージョンごとに提供されているウィジェットが確認できます。
 
 |ARCGIS ONLINE|ARCGIS ENTERPRISE|DEVELOPER EDITION|
 |---|---|---|

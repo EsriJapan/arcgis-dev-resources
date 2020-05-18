@@ -466,7 +466,7 @@
 	"title": "ウィジェット一覧表（リリース バージョン）",
 	"tags": [],
 	"description": "Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。",
-	"content": "Web AppBuilder for ArcGIS（ArcGIS Online 版、ArcGIS Enterprise 版、Developer Edition 版）のウィジェット一覧です。ArcGIS Online のアップデートや ArcGIS Enterprise、Developer Edition の各バージョンごとに提供されているウィジェットが確認できます。\n   ARCGIS ONLINE ARCGIS ENTERPRISE DEVELOPER EDITION     2020 年 3月 アップデート バージョン 10.8 バージョン 2.16   2019 年 12月 アップデート バージョン 10.7.1 バージョン 2.15   2019 年 10月 アップデート バージョン 10.7.1 バージョン 2.14   2019 年 6月 アップデート バージョン 10.7.1 バージョン 2.13    "
+	"content": "Web AppBuilder for ArcGIS（ArcGIS Online 版、ArcGIS Enterprise 版、Developer Edition 版）のウィジェット一覧です。ArcGIS Online のアップデートや ArcGIS Enterprise、Developer Edition のバージョンごとに提供されているウィジェットが確認できます。\n   ARCGIS ONLINE ARCGIS ENTERPRISE DEVELOPER EDITION     2020 年 3月 アップデート バージョン 10.8 バージョン 2.16   2019 年 12月 アップデート バージョン 10.7.1 バージョン 2.15   2019 年 10月 アップデート バージョン 10.7.1 バージョン 2.14   2019 年 6月 アップデート バージョン 10.7.1 バージョン 2.13    "
 },
 {
 	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/2.16/",
