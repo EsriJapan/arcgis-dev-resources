@@ -52,7 +52,7 @@ ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つ�
   * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。
 
 ##### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-__■ ArcGIS Online または ArcGIS Enterprise 次期バージョン 10.8（国内リリース時期未定） 以降をご利用の場合 <br>__※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております
+__■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降をご利用の場合 <br>__※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております
 
 | User Type | Runtime Level |
 |:-----------|:------------|

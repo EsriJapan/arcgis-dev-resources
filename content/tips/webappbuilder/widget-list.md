@@ -1,16 +1,10 @@
 +++
-title = "ウィジェット一覧表 (2.13)"
+title = "ウィジェット一覧表"
 description = "Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。"
-weight = 14
+weight = 10
 +++
 
-## Web AppBuilder for ArcGIS ウィジェット一覧表
-
-以下のバージョンで提供されているウィジェット一覧表になります。  
-
-- ArcGIS Online [2019 年 6月 アップデート]  
-- ArcGIS Enterprise  [バージョン 10.7.1]  
-- Developer Edition  [バージョン 2.13]
+# Web AppBuilder for ArcGIS ウィジェット一覧表
 
 Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-appbuilder/)、[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)、[Developer Edition 版](https://developers.arcgis.com/web-appbuilder/) <sup>[※1](#補足事項)</sup>）で提供されているウィジェットの一覧表です。
 
@@ -23,7 +17,7 @@ Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-ap
 
 ## 2D ウィジェット
 
-| ウィジェット                                    | 機能概要                                                                                                                                                                                                           |                                    ArcGIS Online (2019 年 6 月アップデート)                                   |                                      ArcGIS Enterprise バージョン 10.7.1                                     |                         Developer Edition  バージョン 2.13 <sup>[※1](#補足事項)</sup>                        |
+| ウィジェット                                    | 機能概要                                                                                                                                                                                                           |                                    ArcGIS Online (2019 年 12 月アップデート)                                   |                                      ArcGIS Enterprise バージョン 10.7.1                                     |                         Developer Edition  バージョン 2.15 <sup>[※1](#補足事項)</sup>                        |
 |-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------:|
 | 情報                                            | 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。                                                                                                                                                 |                   [〇](https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-about.htm)                  |                   [〇](https://enterprise.arcgis.com/ja/portal/latest/use/widget-about.htm)                  |                   [〇](https://developers.arcgis.com/web-appbuilder/guide/widget-about.htm)                  |
 | データ追加                                      | データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。       |                 [〇](https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-add-data.htm)                 |                 [〇](https://enterprise.arcgis.com/ja/portal/latest/use/widget-add-data.htm)                 |                 [〇](https://developers.arcgis.com/web-appbuilder/guide/widget-add-data.htm)                 |
@@ -93,7 +87,7 @@ Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-ap
 
 ## 3D ウィジェット
 
-| ウィジェット            | 機能概要                                                                                                                                                                    |                         ArcGIS Online (2019 年 10 月アップデート)                        |                           ArcGIS Enterprise バージョン 10.7.1                          |              Developer Edition  バージョン 2.13 <sup>[※1](#補足事項)</sup>             |
+| ウィジェット            | 機能概要                                                                                                                                                                    |                         ArcGIS Online (2019 年 12 月アップデート)                        |                           ArcGIS Enterprise バージョン 10.7.1                          |              Developer Edition  バージョン 2.15 <sup>[※1](#補足事項)</sup>             |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
 | 3DFx                    | 3DFx ウィジェットが提供する一連の 3D アニメーション アプローチを使用して、地理情報を直感的で対話的な 3D 環境で視覚化および解析することができます。                          |       [〇](https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-3dfx-3d.htm)      |       [〇](https://enterprise.arcgis.com/ja/portal/latest/use/widget-3dfx-3d.htm)      |       [〇](https://developers.arcgis.com/web-appbuilder/guide/widget-3dfx-3d.htm)      |
 | 情報                    | 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。                                                                                                          |      [〇](https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-about-3d.htm)      |      [〇](https://enterprise.arcgis.com/ja/portal/latest/use/widget-about-3d.htm)      |      [〇](https://developers.arcgis.com/web-appbuilder/guide/widget-about-3d.htm)      |
