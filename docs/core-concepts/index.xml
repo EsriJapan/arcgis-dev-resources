@@ -55,7 +55,11 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</guid>
-      <description></description>
+      <description>Web マップとは？ Web マップは、異なるアプリケーション間で作成、スタイル設定、共有できる 2D マップです。Web マップは Web マップ仕様に基づいた JSON で構成されており、マップの範囲、ベースマップ、レイヤー、レイヤー スタイル、ポップアップなどの設定が含まれています。
+ArcGIS Online の Web マップの例としては、サンタ モニカの公園とオープン スペース、トレイル、トレイルヘッドがあります。
+なぜ Web マップを使うのか？ Web マップは、ArcGIS Online および ArcGIS Pro で作成し、Collector for ArcGIS、Survey123 for ArcGIS、ArcGIS StoryMaps や ArcGIS API および SDK を使用して構築されたアプリなど、多くのアプリケーションで表示することができます。アプリケーションが Web マップをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体でのマップの共有が容易になります。
+例えば、ArcGIS Online でポップアップを使用するために作成され、スタイルの設定がされた Web マップを REST API を使って参照したり、ArcGIS API for JavaScript を使用して Web ページに表示したり、ArcGIS Pro にインポートしたりすることができます。
+Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web マップを共有、作成、編集、可視化、参照などをすることができます。</description>
     </item>
     
     <item>
@@ -64,7 +68,12 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</guid>
-      <description></description>
+      <description>Web シーンとは？ Web シーンは、異なるアプリケーション間で作成、スタイル設定、共有できる 3D マップです。Web シーンは、2 次元の Web マップとは異なり、一般的に都市や自然環境、建物、交通システムを表す 3D 地理空間データを含むシーンです。Web シーンは、Web シーン仕様に基づいた JSON で構成されており、マップの範囲、カメラの高さと角度、ベースマップ、レイヤー、レイヤースタイルなどの設定が含まれています。
+ArcGIS Online の Web シーンの例としては、オレゴン州ポートランド市の 3D 風景があります。
+なぜ Web シーンを使うのか？ Web シーンは、ArcGIS Online や ArcGIS Pro で作成し、ArcGIS StoryMapsや ArcGIS の API および SDK を使用して構築されたアプリケーションなどの他の製品で表示することができます。アプリケーションが Web シーンをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体での 3D シーンの共有が容易になります。
+例えば、ポートランド市の Web シーンのコピーを作成し、ArcGIS Online で人口統計データを含む別のフィーチャ レイヤーを追加し、ArcGIS API for JavaScript を使用してアプリ上で新しい Web シーンを表示することができます。
+Web シーンの仕様 Web シーンの仕様は、JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web シーンを共有、作成、編集、可視化、参照などをすることができます。
+Web シーンは JSON として、ArcGIS Online または ArcGIS Enterprise でホストされ、REST API を介して使用することができます。技術的な側面で言うと、Web シーンは、ArcGIS Online または ArcGIS Enterprise に保存されたコンテンツ アイテムのことを指します。</description>
     </item>
     
     <item>
@@ -73,7 +82,11 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</guid>
-      <description></description>
+      <description>ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。
+以下では、API で一般的に使用されるコンポーネントの概要を紹介します。
+ロケーション ベースのサービス ArcGIS Online は、ジオコーディング、ネットワーク解析、空間解析などのロケーションベースの RESTful なサービスを提供しています。これらのサービスを使用するとクレジットを消費します。
+ Geocoding and search API Routing API Demographic and geoenrichment API Spatial API Elevation API  ArcGIS Enterprise API ArcGIS Enterprise REST API は、ArcGIS Onlineや独自のインフラストラクチャー上に構築可能な ArcGIS Enterpriseによって提供されています。ArcGIS Enterprise API は、マップ、レイヤー、コンテンツなどのアイテムの管理や、組織内のユーザーの権限設定や認証の処理に使用されます。 ArcGIS Portal API の一般的な使用例は、ユーザー、グループ、アイテムの操作やポータル上のアイテムの検索などがあります。
+ホスト サービス ArcGIS Server REST API を使用すると、ArcGIS Enterprise、ArcGIS Online のいずれかに公開した ホスト サービスを操作することができます。たとえば、ArcGIS Online にデータを登録すると、ArcGIS Server のインスタンス上でホストされているフィーチャレイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤーにアクセスすることができます。ArcGIS Server のサービスには、次のようなさまざまな ArcGIS で作成して公開できるものがあります。</description>
     </item>
     
   </channel>

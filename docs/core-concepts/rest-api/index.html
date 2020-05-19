@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-18T19:56:26 JST">
+<meta name="revised" content="2020-05-19T14:02:12 JST">
 <title>REST API :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@ if (!doNotTrack) {
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="〜 Under Construction 〜">
+<meta name="description" content="ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。ArcGIS REST API の概要について紹介します。">
 
 
 
@@ -315,41 +315,12 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表（リリース バージョン）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.16/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.16/">
-            ウィジェット一覧表 (2.16)
+          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">
+            ウィジェット一覧表
           </a>
         </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.15/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.15/">
-            ウィジェット一覧表 (2.15)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.14/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.14/">
-            ウィジェット一覧表 (2.14)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.13/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/2.13/">
-            ウィジェット一覧表 (2.13)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -610,7 +581,39 @@ if (!doNotTrack) {
     
     
     
-    <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/core-concepts/5063.jpg" width="400px"></p>
+    
+
+<p>ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。</p>
+
+<p>以下では、API で一般的に使用されるコンポーネントの概要を紹介します。</p>
+
+<h2 id="ロケーション-ベースのサービス">ロケーション ベースのサービス</h2>
+
+<p><a href="https://www.esrij.com/products/arcgis-online">ArcGIS Online</a> は、ジオコーディング、ネットワーク解析、空間解析などのロケーションベースの RESTful なサービスを提供しています。これらのサービスを使用すると<a href="https://www.esrij.com/products/arcgis-online/credits/">クレジット</a>を消費します。</p>
+
+<ul>
+<li><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">Geocoding and search API</a></li>
+<li><a href="https://developers.arcgis.com/rest/network/api-reference/overview-of-network-analysis-services.htm">Routing API</a></li>
+<li><a href="https://developers.arcgis.com/rest/geoenrichment/api-reference/geoenrichment-service-overview.htm">Demographic and geoenrichment API</a></li>
+<li><a href="https://developers.arcgis.com/rest/analysis/api-reference/getting-started.htm">Spatial API</a></li>
+<li><a href="https://developers.arcgis.com/rest/elevation/api-reference/get-started-with-elevation-services.htm">Elevation API</a></li>
+</ul>
+
+<h2 id="arcgis-enterprise-api">ArcGIS Enterprise API</h2>
+
+<p>ArcGIS Enterprise REST API は、<a href="https://www.esrij.com/products/arcgis-online">ArcGIS Online</a>や独自のインフラストラクチャー上に構築可能な <a href="https://www.esrij.com/products/arcgis-enterprise/">ArcGIS Enterprise</a>によって提供されています。ArcGIS Enterprise API は、マップ、レイヤー、コンテンツなどのアイテムの管理や、組織内のユーザーの権限設定や認証の処理に使用されます。
+ArcGIS Portal API の一般的な使用例は、<a href="https://developers.arcgis.com/rest/users-groups-and-items/working-with-users-groups-and-items.htm">ユーザー、グループ、アイテムの操作</a>やポータル上の<a href="https://developers.arcgis.com/rest/users-groups-and-items/search.htm">アイテムの検索</a>などがあります。</p>
+
+<h2 id="ホスト-サービス">ホスト サービス</h2>
+
+<p>ArcGIS Server REST API を使用すると、ArcGIS Enterprise、ArcGIS Online のいずれかに公開した <a href="https://developers.arcgis.com/rest/services-reference/working-with-services-you-ve-published.htm">ホスト サービス</a>を操作することができます。たとえば、ArcGIS Online にデータを登録すると、ArcGIS Server のインスタンス上でホストされているフィーチャレイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤーにアクセスすることができます。ArcGIS Server のサービスには、次のようなさまざまな ArcGIS で作成して公開できるものがあります。</p>
+
+<ul>
+<li><a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm">フィーチャー サービス</a></li>
+<li><a href="https://developers.arcgis.com/rest/services-reference/map-service.htm">マップ サービス</a></li>
+<li><a href="https://developers.arcgis.com/rest/services-reference/gp-service.htm">ジオプロセシング サービス</a></li>
+<li><a href="https://developers.arcgis.com/rest/services-reference/image-service.htm">イメージ サービス</a></li>
+</ul>
 
 
     
