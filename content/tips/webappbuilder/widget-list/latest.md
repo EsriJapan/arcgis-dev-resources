@@ -1,5 +1,5 @@
 +++
-title = "ウィジェット一覧表 (2.16)"
+title = "最新版"
 description = "Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。"
 weight = 11
 +++
