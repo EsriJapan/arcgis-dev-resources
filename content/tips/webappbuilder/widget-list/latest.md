@@ -1,18 +1,12 @@
 +++
-title = "最新版"
+title = "ウィジェット一覧表（最新）"
 description = "Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。"
 weight = 11
 +++
 
 ## Web AppBuilder for ArcGIS ウィジェット一覧表
 
-以下のバージョンで提供されているウィジェット一覧表になります。  
-
-- ArcGIS Online [2020年 3月 アップデート]  
-- ArcGIS Enterprise [バージョン 10.8]  
-- Developer Edition [バージョン 2.16]
-
-Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-appbuilder/)、[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)、[Developer Edition 版](https://developers.arcgis.com/web-appbuilder/) <sup>[※1](#補足事項)</sup>）で提供されているウィジェットの一覧表です。
+Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-appbuilder/)、[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)、[Developer Edition 版](https://developers.arcgis.com/web-appbuilder/) <sup>[※1](#補足事項)</sup>）で提供されている最新版のウィジェットの一覧表です。
 
 表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
 

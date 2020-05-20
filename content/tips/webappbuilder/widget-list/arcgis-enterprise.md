@@ -1,17 +1,13 @@
 +++
-title = "ArcGIS Enterprise 10.7.1"
+title = "ウィジェット一覧表 (ArcGIS Enterprise)"
 description = "Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。"
-weight = 18
-aliases = ["/10.7.1/"]
+weight = 13
+aliases = ["/arcgis-enterprise/"]
 +++
 
 ## Web AppBuilder for ArcGIS ウィジェット一覧表
 
-以下のバージョンで提供されているウィジェット一覧表になります。  
-
-- ArcGIS Enterprise [10.7.1]  
-
-Web AppBuilder for ArcGIS（[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)）で提供されているウィジェットの一覧表です。
+Web AppBuilder for ArcGIS（[ArcGIS Enterprise 版](https://enterprise.arcgis.com/ja/portal/latest/use/welcome.htm)）で提供されている過去のウィジェットの一覧表です。
 
 表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
 

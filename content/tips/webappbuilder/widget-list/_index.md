@@ -12,15 +12,12 @@ Web AppBuilder for ArcGIS（[ArcGIS Online 版](https://doc.arcgis.com/ja/web-ap
 |[2020 年 3月 アップデート](./latest)|[バージョン 10.8](./latest)|[バージョン 2.16](./latest)|
 
 
-### ArcGIS Online
-- [2019 年 6月 アップデート](./arcgis-online/2019-06/)
-- [2019 年 10月 アップデート](./arcgis-online/2019-10/)
-- [2019 年 12月 アップデート](./arcgis-online/2019-12/)
+#### ArcGIS Online
+- [バージョン履歴](./arcgis-online/)
 
-### ArcGIS Enterprise
-- [バージョン 10.7.1](./arcgis-enterprise/10.7.1/)
+#### ArcGIS Enterprise
+- [バージョン履歴](./arcgis-enterprise/)
 
-### Developer Edition
-- [バージョン 2.13](./developer-edition/2.13/)
-- [バージョン 2.14](./developer-edition/2.14/)
-- [バージョン 2.15](./developer-edition/2.15/)
+#### Developer Edition
+- [バージョン履歴](./developer-edition/)
+
