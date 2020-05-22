@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-22T17:01:12 JST">
+<meta name="revised" content="2020-05-22T18:17:40 JST">
 <title>レイヤー :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@ if (!doNotTrack) {
 <script type="text/javascript">
       var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
 </script>
-<meta name="description" content="ArcGIS を使用してアプリケーションを構築する場合に、レイヤーは主要なコンテンツとなります。ArcGIS で利用できるレイヤーは、ディスク上またはネットワーク経由で利用可能な ArcGIS REST API 、CSV ファイル、GeoJSON、また他のファイルを介して公開される Web サービスに基づいています。レイヤーの種類と特長について紹介します。">
+<meta name="description" content="レイヤーは、ArcGIS を使用して構築するアプリケーションの主要なコンテンツです。ArcGIS で利用できるレイヤーは、ディスク上またはネットワーク経由で利用可能な ArcGIS REST API 、CSV ファイル、GeoJSON、また他のファイルを介して公開される Web サービスに基づいています。レイヤーの種類と特長について紹介します。">
 
 
 
@@ -583,12 +583,10 @@ if (!doNotTrack) {
     
     
 
-<p>ArcGIS を使用してアプリケーションを構築する場合に、レイヤーは主要なコンテンツとなります。
-ArcGIS で利用できるレイヤーは、ディスク上またはネットワーク経由で利用可能な ArcGIS REST API 、CSV ファイル、GeoJSON 、また他のファイルを介して公開される Web サービスに基づいています。
-レイヤーは、ArcGIS の開発者製品である API および SDK を使用して、ネットワーク経由またはディスク上からロードされた任意のデータから作成することができます。<br />
-また、一時的なグラフィックは、API で作成できるグラフィック レイヤーを使用して地図上に表示することも可能です。</p>
+<p>レイヤーは、ArcGIS を使用して構築するアプリケーションの主要なコンテンツです。ArcGIS REST API、GeoJSON、CSVファイルや、ローカルまたはネットワーク経由で利用可能なその他のファイルを介して公開されるサービスに基づいて作成することができます。また、ArcGIS API および SDK を使用して、ディスク上やネットワーク経由で利用可能なデータを使用して、アプリケーションの中でレイヤーを作成することもできます。
+他にも、一時的にデータをグラフィックとしてマップに表示するためのグラフィックス レイヤーも用意されています。</p>
 
-<p>レイヤーは、マップやアプリケーションを作成するときに使用される地理的データの論理的集合で、大まかにフィーチャ レイヤーかタイル レイヤーのいずれかに分類することができます。</p>
+<p>レイヤーは、マップやアプリケーションを作成するために使用できる地理データの論理的なコレクションであり、フィーチャ レイヤーまたはタイル レイヤーのいずれかに分類されます。</p>
 
 <table>
 <thead>
@@ -601,17 +599,15 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 <tbody>
 <tr>
 <td>フィーチャ レイヤー</td>
-<td>ポイントやポリゴンのような <a href="https://developers.arcgis.com/documentation/core-concepts/features-and-geometries/">フィーチャ</a> を扱うレイヤー<br>ジオメトリおよび属性情報の編集または更新、オフラインデータベースと同期が可能</td>
+<td>ポイントやポリゴンのような <a href="https://developers.arcgis.com/documentation/core-concepts/features-and-geometries/">フィーチャ</a> を格納<br>ジオメトリおよび属性情報の編集または更新、オフラインデータベースと同期が可能</td>
 </tr>
 
 <tr>
 <td>タイル レイヤー</td>
-<td>事前にキャッシュを作成し、サーバー上にキャッシュを配置しているレイヤー</td>
+<td>タイル レイヤーは事前に作成され、サーバー上にキャッシュされます <br><br>※例えば、ベクター タイル ベース マップもタイル レイヤーに分類されます。シーン レイヤーも ３D を表示するアプリケーションで迅速な表示を行うために、建物などの ３D オブジェクトを含むフィーチャをキャッシュするのでタイル レイヤーと考えることができます。</td>
 </tr>
 </tbody>
 </table>
-
-<p>タイル レイヤー の例として、ベクター タイル マップはタイル レイヤーとなります。3D を表示するシーン レイヤーも、アプリケーション内でできるだけスムーズに表示を行うために建物などの 3D オブジェクトを含むフィーチャをキャッシュすることから、タイル レイヤーに分類することができます。</p>
 
 <h3 id="arcgis-の主なレイヤー">ArcGIS の主なレイヤー</h3>
 
@@ -633,7 +629,7 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 
 <tbody>
 <tr>
-<td align="center">Feature Layer<br>(フィーチャレイヤー)</td>
+<td align="center">Feature Layer<br>(フィーチャ レイヤー)</td>
 <td align="center"><a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm">Feature Service</a></td>
 <td align="center">〇</td>
 <td align="center">〇</td>
@@ -647,7 +643,7 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 <td align="center">〇</td>
 <td align="center">〇</td>
 <td align="center">〇</td>
-<td align="left">変更頻度が低いベースマップやその他の複雑なデータセットに利用</td>
+<td align="left">変更頻度が低いベースマップやその他の複雑なデータ セットに利用</td>
 </tr>
 
 <tr>
@@ -656,7 +652,7 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 <td align="center">〇</td>
 <td align="center">〇</td>
 <td align="center">〇</td>
-<td align="left">変更頻度が低いベースマップやその他の複雑なデータセットに利用</td>
+<td align="left">変更頻度が低いベースマップやその他の複雑なデータ セットに利用</td>
 </tr>
 
 <tr>
@@ -665,7 +661,7 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 <td align="center">-</td>
 <td align="center">〇</td>
 <td align="center">-</td>
-<td align="left">頻繁に変更される、または複雑なレンダリング要件が必要なデータセットを表示するために利用</td>
+<td align="left">頻繁に変更される、または複雑なレンダリング要件が必要なデータ セットを表示するために利用</td>
 </tr>
 
 <tr>
@@ -683,13 +679,13 @@ ArcGIS で利用できるレイヤーは、ディスク上またはネットワ�
 <td align="center">〇</td>
 <td align="center">〇</td>
 <td align="center">〇</td>
-<td align="left">3Dデータセットの表示とレンダリングに利用</td>
+<td align="left">3D データ セットの表示とレンダリングに利用</td>
 </tr>
 </tbody>
 </table>
 
 <p>※1：ArcGIS Onlineではホストできないレイヤーもありますが、ArcGIS EnterpriseでホストされているレイヤーはArcGIS Onlineと共有できます。 <a href="https://doc.arcgis.com/en/arcgis-online/reference/arcgis-server-services.htm">ArcGIS Server Webサービス</a> を参照してください。<br />
-※2：キャッシュされたレイヤーは事前に表示のための処理が行われるため、クライアントへ高速に配信することができます。キャッシュされていないレイヤーはデータベースクエリを作成し、HTTPキャッシュのみを利用します。</p>
+※2：キャッシュされたレイヤーは事前に表示のための処理が行われるため、クライアントへ高速に配信することができます。キャッシュされていないレイヤーはデータベースクエリを作成し、HTTP キャッシュのみを利用します。</p>
 
 <h3 id="その他のレイヤー-タイプ">その他のレイヤー タイプ</h3>
 
@@ -711,7 +707,7 @@ CSV、GeoRSS、KML などの一般的なファイルの種類のサポートに�
 ArcGIS の API / SDK は、REST API を包含して設計されています。どの API / SDK もサポートするレイヤーをマップに追加することができます。<br />
 また、レイヤーの種類毎にクラスとして実装されており、実行可能な処理はメソッドとして定義しています。REST API を使用して同様の処理を行う場合に比べ、より扱いやすくなっています。<br><br>
 レイヤーの扱い方は、リファレンスだけでなくサンプルをご紹介するページやガイドページからでも学ぶことができます。<br />
-ArcGIS API for JavaScript では、Intro to layers の sandbox で学習することができます。（このページを翻訳したはじめてのWeb マッピングアプリケーション開発：レイヤー表示編もご覧ください）ArcGIS Runtime SDK の各 OS では、ガイドページの基礎（Fundamentals）にレイヤーについての記述があります。（例：ArcGIS Runtime SDK for .NETのレイヤー）</p></li>
+ArcGIS API for JavaScript では、<a href="https://developers.arcgis.com/javascript/latest/sample-code/intro-layers/index.html">Intro to layers</a> の sandbox で学習することができます。ArcGIS Runtime SDK の各 OS では、ガイドページの基礎（Fundamentals）にレイヤーについての記述があります。（例：<a href="https://developers.arcgis.com/net/latest/wpf/guide/layer-types-described.htm">ArcGIS Runtime SDK for .NETのレイヤー</a>）</p></li>
 
 <li><p><b>Web マップで使用する</b><br />
 ArcGIS プラットフォームで利用できる Web マップでは、各レイヤーを追加してひとつの主題図を作成することが可能です。<br />
@@ -726,11 +722,11 @@ Web マップを使用すると、開発者は、複数のアプリやユーザ�
 <h4 id="フィーチャ-レイヤー">フィーチャ レイヤー</h4>
 
 <ul>
-<li>ArcGISチュートリアル：<a href="https://developers.arcgis.com/labs/arcgisonline/import-data/">CSV、GeoJSON、Shapefile、またはファイルGeoDatabaseのインポート</a></li>
-<li>ArcGISチュートリアル：<a href="https://developers.arcgis.com/labs/arcgisonline/create-a-new-dataset/">新しい空のフィーチャレイヤーのスキーマを定義します</a></li>
-<li>ArcGIS Online：<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm">さまざまな形式のアイテムを使ったフィーチャレイヤーの公開</a></li>
-<li>ArcGIS Enterprise：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-features.htm">フィーチャレイヤーの公開</a></li>
-<li>ArcGIS Pro：<a href="https://pro.arcgis.com/ja/pro-app/help/sharing/overview/web-feature-layer.htm">フィーチャレイヤーの作成と ArcGIS Pro との共有</a></li>
+<li>ArcGIS チュートリアル：<a href="https://developers.arcgis.com/labs/arcgisonline/import-data/">CSV、GeoJSON、Shapefile、またはファイルGeoDatabaseのインポート</a></li>
+<li>ArcGIS チュートリアル：<a href="https://developers.arcgis.com/labs/arcgisonline/create-a-new-dataset/">新しい空のフィーチャ レイヤーのスキーマを定義します</a></li>
+<li>ArcGIS Online：<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm">さまざまな形式のアイテムを使ったフィーチャ レイヤーの公開</a></li>
+<li>ArcGIS Enterprise：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-features.htm">フィーチャ レイヤーの公開</a></li>
+<li>ArcGIS Pro：<a href="https://pro.arcgis.com/ja/pro-app/help/sharing/overview/web-feature-layer.htm">ArcGIS Pro を使用したフィーチャ レイヤーの作成と共有</a></li>
 </ul>
 
 <h4 id="タイル-レイヤー">タイル レイヤー</h4>
@@ -743,26 +739,26 @@ Web マップを使用すると、開発者は、複数のアプリやユーザ�
 <h4 id="ベクトル-タイル-レイヤー">ベクトル タイル レイヤー</h4>
 
 <ul>
-<li>ArcGIS Pro：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-vector-tiles.htm">ベクタータイルの公開</a></li>
+<li>ArcGIS Pro：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-vector-tiles.htm">ベクター タイルの公開</a></li>
 </ul>
 
 <h4 id="シーン-レイヤー">シーン レイヤー</h4>
 
 <ul>
-<li>ArcGIS Online：<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/publish-scenes.htm">フィーチャサービスからのシーンレイヤーの公開（ベータ）</a></li>
-<li>ArcGIS Pro：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-scenes.htm">シーンレイヤーの公開</a></li>
+<li>ArcGIS Online：<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/publish-scenes.htm">フィーチャ サービスからのシーン レイヤーの公開（ベータ）</a></li>
+<li>ArcGIS Pro：<a href="https://enterprise.arcgis.com/ja/portal/latest/use/publish-scenes.htm">シーン レイヤーの公開</a></li>
 </ul>
 
 <h4 id="ダイナミック-マップ-レイヤー">ダイナミック マップ レイヤー</h4>
 
 <ul>
-<li>ArcMap：<a href="https://enterprise.arcgis.com/ja/server/latest/publish-services/windows/how-to-publish-a-service.htm">マップサービスの公開</a></li>
+<li>ArcMap：<a href="https://enterprise.arcgis.com/ja/server/latest/publish-services/windows/how-to-publish-a-service.htm">マップ サービスの公開</a></li>
 </ul>
 
 <h4 id="イメージ-レイヤー">イメージ レイヤー</h4>
 
 <ul>
-<li>ArcMap：<a href="https://desktop.arcgis.com/ja/arcmap/latest/manage-data/raster-and-images/ex-1-creating-a-mosaic-dataset.htm">モザイクデータセットを作成する</a></li>
+<li>ArcMap：<a href="https://desktop.arcgis.com/ja/arcmap/latest/manage-data/raster-and-images/ex-1-creating-a-mosaic-dataset.htm">モザイク データ セットを作成する</a></li>
 </ul>
 
 
