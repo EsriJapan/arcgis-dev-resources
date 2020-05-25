@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-21T17:09:57 JST">
+<meta name="revised" content="2020-05-25T17:02:06 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -710,8 +710,12 @@ Python API は Python 3.5 以降を必要とするため、<a href="https://www.
 
 <p>インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br></p>
 
-<pre><code>conda install -c esri arcgis=1.7.1
+<pre><code>conda install -c esri arcgis=1.8.0
 </code></pre>
+
+<div class="notices note" ><p>Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に <a href="https://pypi.org/project/pyshp/">pyshp</a> を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。</p>
+</div>
+
 
 <p>インストールが完了したら、<a href="#arcgis-api-for-python-を実行する">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
 
@@ -786,7 +790,7 @@ ArcGIS Pro をインストールすると、デフォルトで &ldquo;arcgispro-
 <pre><code>conda upgrade -c esri arcgis --no-pin
 </code></pre>
 
-<div class="notices tip" ><p>ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
+<div class="notices note" ><p>ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
 <code>conda upgrade -c esri --no-pin arcgis</code> のうち、<code>--no-pin</code> がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
 ただし、デフォルトの設定が変更されるわけではないため、アップグレード後に他のパッケージをインストールしようとすると、設定された上限のバージョンにダウングレードするように conda で計画されます。</br>
 その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し <code>arcgis</code> パッケージをアップグレードしてください。
