@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <title>ArcGIS for Developer 開発リソース集</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-05-19T22:07:30 JST">
+<title>ArcGIS Online 2019/06 :: ArcGIS for Developer 開発リソース集</title>
+<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
+<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+</script>
+<meta name="description" content="Web AppBuilder for ArcGIS で提供されているウィジェットの一覧表です。">
+
+
+
+    
+  </head>
+  <body data-url="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-06/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS for Developer 開発リソース集</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/EsriJapan/arcgis-dev-resources"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+          <a href="/arcgis-dev-resources/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/core-concepts/">コアコンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/what-is-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/what-is-arcgis/">
+            ArcGIS とは
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/api-sdk-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/api-sdk-app/">
+            API、SDK、アプリ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/security-and-authentication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
+            セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/layers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/layers/">
+            レイヤー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/web-maps/">
+            Web マップ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/web-scenes/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/web-scenes/">
+            Web シーン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/rest-api/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/rest-api/">
+            REST API
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-map/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-map/">マップの作成</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-map/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-map/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリの作成</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/authentication/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/authentication/">認証</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/authentication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/authentication/">
+            認証パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/register-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/register-app/">
+            アプリの登録と認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/authentication/proxy-services/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/authentication/proxy-services/">
+            プロキシ サービスの利用
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/">
+            バージョン 4.x と 3.x の選択
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
+            バージョン 3.x から 4.x への移行
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-widget/">
+            ウィジェット開発
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/arcade/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/arcade/">
+            Arcade
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
+            カスタム フォント
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">Web AppBuilder for ArcGIS (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
+            カスタム ウィジェット開発ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
+            Web アプリケーションのデプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表（バージョン）</a>
+      </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/latest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/latest/">
+            最新版
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-06/" class="dd-item active">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-06/">
+            ArcGIS Online 2019/06
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-10/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-10/">
+            ArcGIS Online 2019/10
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-12/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-12/">
+            ArcGIS Online 2019/12
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/arcgis-enterprise/10.7.1/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/arcgis-enterprise/10.7.1/">
+            ArcGIS Enterprise 10.7.1
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.13/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.13/">
+            Developer Edition 2.13
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.14/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.14/">
+            Developer Edition 2.14
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.15/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.15/">
+            Developer Edition 2.15
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/hackathon/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/hackathon/">
+            ミートアップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/samples/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/samples/">サンプル集</a>
+      </div>
+    </li>
+
+
+
+
+    </ul>
+    <section><center>
+<br>© Esri Japan. All rights reserved.<br>
+</center>
+
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>メニュー: 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/arcgis-dev-resources/core-concepts/" >
+   コアコンセプト</option> 
+      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
+      <option value="/arcgis-dev-resources/core-concepts/api-sdk-app/" >- API、SDK、アプリ</option>
+      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
+      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
+      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
+      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
+  
+    <option value="/arcgis-dev-resources/guide/" >
+   スタートアップ ガイド</option> 
+    <option value="/arcgis-dev-resources/guide/create-map/" >
+  - 
+   マップの作成</option>
+    <option value="/arcgis-dev-resources/guide/create-app/" >
+  - 
+   アプリの作成</option>
+    <option value="/arcgis-dev-resources/guide/authentication/" >
+  - 
+   認証</option>
+  
+    <option value="/arcgis-dev-resources/tips/" >
+   技術 Tips 集</option> 
+    <option value="/arcgis-dev-resources/tips/javascript/" >
+  - 
+   ArcGIS API for JavaScript</option>
+    <option value="/arcgis-dev-resources/tips/webappbuilder/" >
+  - 
+   Web AppBuilder for ArcGIS (Developer Edition)</option> 
+      <option value="/arcgis-dev-resources/tips/webappbuilder/install-guide/" >-- インストール ガイド</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/development-guide/" >-- カスタム ウィジェット開発ガイド</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" >-- デプロイ パターン</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" >-- Web アプリケーションのデプロイ</option>
+    <option value="/arcgis-dev-resources/tips/webappbuilder/widget-list/" >
+  -- 
+   ウィジェット一覧表（バージョン）</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/latest/" >-- 最新版</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-06/"  selected>-- ArcGIS Online 2019/06</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-10/" >-- ArcGIS Online 2019/10</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-12/" >-- ArcGIS Online 2019/12</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/arcgis-enterprise/10.7.1/" >-- ArcGIS Enterprise 10.7.1</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.13/" >-- Developer Edition 2.13</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.14/" >-- Developer Edition 2.14</option>
+      <option value="/arcgis-dev-resources/tips/webappbuilder/developer-edition/2.15/" >-- Developer Edition 2.15</option>
+  
+    <option value="/arcgis-dev-resources/tips/dotnet/" >
+  - 
+   ArcGIS Runtime SDK for .NET</option>
+    <option value="/arcgis-dev-resources/tips/android/" >
+  - 
+   ArcGIS Runtime SDK for Android</option>
+    <option value="/arcgis-dev-resources/tips/ios/" >
+  - 
+   ArcGIS Runtime SDK for iOS</option>
+    <option value="/arcgis-dev-resources/tips/python/" >
+  - 
+   ArcGIS API for Python</option>
+    <option value="/arcgis-dev-resources/tips/visualization/" >
+  - 
+   データ ビジュアライゼーション</option>
+      <option value="/arcgis-dev-resources/tips/hackathon/" >- ミートアップ</option>
+  
+    <option value="/arcgis-dev-resources/samples/" >
+   サンプル集</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="検索...">
+        </div>
+        <script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+        <link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+          
+        </script>
+        <script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
+      </div>
+    
+
+    <h1>ArcGIS Online 2019/06</h1>
+    
+    
+    
+    
+
+<h2 id="web-appbuilder-for-arcgis-ウィジェット一覧表">Web AppBuilder for ArcGIS ウィジェット一覧表</h2>
+
+<p>以下のバージョンで提供されているウィジェット一覧表になります。</p>
+
+<ul>
+<li>ArcGIS Online [2019 年 6月 アップデート]<br /></li>
+</ul>
+
+<p>Web AppBuilder for ArcGIS（<a href="https://doc.arcgis.com/ja/web-appbuilder/">ArcGIS Online 版</a>)で提供されているウィジェットの一覧表です。</p>
+
+<p>表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。</p>
+
+<ul>
+<li><a href="#2d-ウィジェット">2D ウィジェット</a></li>
+<li><a href="#3d-ウィジェット">3D ウィジェット</a></li>
+<li><a href="#補足事項">補足事項</a></li>
+</ul>
+
+<h2 id="2d-ウィジェット">2D ウィジェット</h2>
+
+<table>
+<thead>
+<tr>
+<th>ウィジェット</th>
+<th>機能概要</th>
+<th>ArcGIS Online (2019 年 6 月アップデート)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>情報</td>
+<td>情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-about.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>データ追加</td>
+<td>データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise   のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-add-data.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>解析</td>
+<td>解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise   の空間解析ツールを簡単に利用できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-analysis.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>属性テーブル</td>
+<td>属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-attribute-table.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>属性一括編集</td>
+<td>属性の一括編集ウィジェットではフィーチャ   (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-batch-attribute-editor.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ベースマップ ギャラリー</td>
+<td>ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1   つのベースマップを選択してアプリのベースマップにすることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-basemap.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ブックマーク</td>
+<td>ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-bookmark.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>Business Analyst</td>
+<td>Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン   フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-business-analyst.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>チャート</td>
+<td>チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-chart.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>コントローラー</td>
+<td>コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2   種類のコントローラーが事前に組み込まれています。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-header-controller-and-sidebar-controller.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>座標</td>
+<td>座標ウィジェットは、マップ上に X と Y の座標値を表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-coordinates.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>座標変換</td>
+<td>座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-coordinate-conversion.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>コスト解析</td>
+<td>コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-cost-analysis.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>データ集約（ベータ版）</td>
+<td>データ集約ウィジェットを使用すると、CSV (カンマ区切り値)   ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット   レイヤーのフィールド情報を関連付ける方法を定義できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-data-aggregation-beta-.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ルート案内</td>
+<td>ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-directions.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>地域検索</td>
+<td>地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント   フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-district-lookup.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>距離と方向</td>
+<td>距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-distance-and-direction.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>描画</td>
+<td>描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-draw.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>編集</td>
+<td>このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-edit.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>緊急時応急措置指針</td>
+<td>ERG (緊急時応急措置指針)   ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-emergency-response-guide.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>範囲移動</td>
+<td>範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-extent-navigate.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>フィルター</td>
+<td>フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-filter.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>全画面</td>
+<td>全画面ウィジェットでは、全画面モードを使用できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-full-screen.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ジオコーダー</td>
+<td>ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-geocoder.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>地理検索</td>
+<td>地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV   ファイル内の位置リストに情報を付加します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-geolookup.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ジオプロセシング</td>
+<td>ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー   インターフェイスが組み込まれています。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-geoprocessing.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>グリッド オーバーレイ</td>
+<td>グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.S. MGRS   (Military Grid Reference System) グリッドをすばやくレンダリングできます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-grid-overlay.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>インデックス格子線</td>
+<td>インデックス格子線 (GRG) を使用すると、アナリストは対象地理領域を分割する際に使用するグリッドを作成できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-gridded-reference-graphic.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>グループ フィルター</td>
+<td>グループ フィルター ウィジェットでは、マップ内の 1 つ以上のレイヤーに基づき、マップにフィルターを適用できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-group-filter.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ホーム ボタン</td>
+<td>ホーム ボタン ウィジェットは、マップを初期表示範囲にズームします。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-home-button.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>画像計測</td>
+<td>画像計測ウィジェットでは、計測機能を使用してイメージ サービスで測定を実行できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-image-measurement.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>インシデント解析</td>
+<td>インシデント解析ウィジェットを使用すると、マップ上でインシデントを特定し、インシデントから指定した距離内にあるさまざまなフィーチャ   レイヤーの情報を解析できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-incident-analysis.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>インフォグラフィック</td>
+<td>インフォグラフィック ウィジェットが提供する 8 種類のグラフィックス テンプレートを使用すると、マップ内とその他のデータ   ソースからの属性と統計情報データを視覚化してモニタリングできます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-infographic.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>情報サマリー</td>
+<td>情報サマリー ウィジェットを使用して、指定したレイヤーごとに、現在のマップ範囲内のフィーチャの数を表示できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-info-summary.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>レイヤー リスト</td>
+<td>レイヤー リスト   ウィジェットでは、操作レイヤーとそのシンボルがリスト形式で表示され、レイヤーを個別に表示または非表示にすることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-layer-list.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>凡例</td>
+<td>凡例ウィジェットには、マップ内のレイヤーのラベルとシンボルが表示されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-legend.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>計測</td>
+<td>計測ウィジェットでは、ポリゴンの面積やラインの長さを計測したり、ポイントの座標を検索したりすることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-measurement.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>現在地</td>
+<td>現在地ウィジェットでは、ネットワークを使用してユーザーの物理的な位置を特定し、マップ上でその位置にズームできます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-my-location.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>近隣検索</td>
+<td>近隣検索ウィジェットを使用して、定義した住所または位置のバッファー内のフィーチャを検索したり、それらのフィーチャに関する詳細な情報を表示したり、選択したフィーチャまでのルート案内を取得したりすることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-near-me.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ネットワーク トレース<sup><a href="#補足事項">※1</a></sup></td>
+<td>ネットワーク トレース ウィジェットは、任意のジオプロセシング サービスを呼び出して操作するように設計されています。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-network-trace.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>傾斜ビューアー</td>
+<td>傾斜ビューアー ウィジェットは、ArcGIS の [画像座標系 (ICS)]   を使用して、ネイティブの座標系で画像を表示し、カメラ位置から自然なビューを提供します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-oblique-viewer.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>概観図</td>
+<td>概観図ウィジェットは、より大きなエリア内でマップの現在の範囲を表示し、マップ範囲が変更されるたびに更新します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-overview-map.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>パーセル ドラフター</td>
+<td>パーセル ドラフターは、マッピング技術者が土地境界の説明を入力し、クロージャ エラーをチェックするために使用できる Web   AppBuilder for ArcGIS の構成です。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-parcel-drafter.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>印刷</td>
+<td>印刷ウィジェットでは、Web アプリを印刷サービスに接続して、現在のマップを印刷できるようにします。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-print.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>パブリック通知</td>
+<td>パブリック通知は、Web AppBuilder for ArcGIS の構成の 1   つで、地方自治体の職員が、所有者および占有者の財産を特定し、宛名ラベルや構造化テキスト ファイルを作成できるようにします。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-public-notification.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>クエリ</td>
+<td>クエリ ウィジェットを使用すると、事前に定義されたクエリを実行して、ソース データから情報を取得することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-query.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>関連テーブル チャート</td>
+<td>関連テーブル チャート ウィジェットを使用して、フィーチャ レイヤーの関連テーブルの値のチャート (バー チャート、パイ   チャート、または極座標チャート) を作成できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-related-table-charts.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>フィーチャ レポート</td>
+<td>フィーチャ レポート ウィジェットでは、ユーザーからのデータ品質のフィードバックを収集および管理できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-report-feature.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>レビューアー ダッシュボード</td>
+<td>レビューアー ダッシュボード ウィジェットには、ユーザーの GIS   データで特定されたデータ品質の問題を集計し、インフォグラフィックスとしてデータ品質結果の統計情報が円グラフおよび棒グラフで表示されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-reviewer-dashboard.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>縮尺記号</td>
+<td>縮尺記号ウィジェットは、マップに縮尺記号を表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-scalebar.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スクリーニング</td>
+<td>スクリーニング ウィジェットを使用すると、対象地域を定義し、指定されたレイヤーを解析して、潜在的な影響がないか確認できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-screening.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>検索</td>
+<td>検索ウィジェットを使用すると、エンド ユーザーはマップ上で場所を見つけたり、フィーチャを検索したりできます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-search.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>選択</td>
+<td>選択ウィジェットを使用すると、マップ上のフィーチャを対話的に選択し、選択したフィーチャに対してアクションを行えます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-select.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>共有</td>
+<td>共有ウィジェットでは、アプリをソーシャル メディア アカウントにポストしたり、リンクを電子メールで送信したり、Web   サイトやブログに埋め込んだりして共有することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-share.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>状況認識</td>
+<td>状況認識ウィジェットでは、マップ上の位置を指定し、指定の領域内にあるフィーチャ レイヤーの情報を解析することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-situation-awareness.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スマート エディター</td>
+<td>スマート エディター ウィジェットを使用すると、フィーチャおよびその関連レコードを容易に編集できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-smart-editor.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スプラッシュ</td>
+<td>スプラッシュ ウィジェットは、アプリのスプラッシュ画面上の表示コンテンツを定義します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-splash.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ストリーム</td>
+<td>ストリーム ウィジェットを使用すると、ストリーミング フィーチャ レイヤーからのリアルタイムのデータ   フィードを可視化および制御できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-stream.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>適合性モデラー</td>
+<td>適合性モデラー   ウィジェットを使用すると、活動に最適な場所の検索、危険性の予測、事象が発生する可能性が高い場所の識別が可能になります。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-suitability-modeler.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>サマリー</td>
+<td>サマリー ウィジェットを使用すると、現在のマップ内のフィーチャ   レイヤーから、表示されているマップ範囲内にある数値属性を集計できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-summary.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スワイプ</td>
+<td>スワイプ ウィジェットを使用して、マップ内のさまざまなレイヤーのコンテンツを簡単に比較できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-swipe.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>脅威分析</td>
+<td>公共安全の担当者と初動対応者は、イベントの計画時に安全な距離と区域を特定します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-threat-analysis.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>タイム スライダー</td>
+<td>タイム スライダー   ウィジェットを使用して時系列レイヤーをマップに表示し、アニメーションを再生して、データが時間とともにどのように変化するかを確認できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-time-slider.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>可視解析</td>
+<td>可視解析ウィジェットは、指定された距離、観測点の高さ、および視野に基づいて、観測点から見えるものを特定します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-visibility.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ズーム スライダー</td>
+<td>ズーム スライダー ウィジェットは、マップ表示に対話型のズーム コントロールを提供します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-zoom-slider.htm">〇</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="3d-ウィジェット">3D ウィジェット</h2>
+
+<table>
+<thead>
+<tr>
+<th>ウィジェット</th>
+<th>機能概要</th>
+<th>ArcGIS Online (2019 年 6 月アップデート)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>3DFx</td>
+<td>3DFx ウィジェットが提供する一連の 3D アニメーション アプローチを使用して、地理情報を直感的で対話的な 3D   環境で視覚化および解析することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-3dfx-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>情報</td>
+<td>情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-about-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ベースマップ ギャラリー</td>
+<td>ベースマップ ギャラリー   ウィジェットには、組織から提供されるベースマップを表す画像のコレクション、またはユーザー定義の一連のマップ/イメージ サービスが表示されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-basemap-gallery-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>コンパス</td>
+<td>コンパス ウィジェットをクリックすると、シーンが北向きで再描画されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-compass-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>座標</td>
+<td>座標ウィジェットは、X,Y 座標、標高、およびカメラの高度の値を 3D アプリに表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-coordinate-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>日光</td>
+<td>日光ウィジェットでは、時刻と月を変化させて日差しと影がシーンに与える影響を変更できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-daylight-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>全画面</td>
+<td>全画面ウィジェットを使用して、全画面モードを開始できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-full-screen-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ホーム ボタン</td>
+<td>ホーム ボタン ウィジェットをクリックすると、最初のカメラ位置に戻ります。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-home-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>レイヤー リスト</td>
+<td>レイヤー リスト ウィジェットは、シーン内の 2D レイヤーまたは 3D レイヤーをリスト表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-layer-list-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>凡例</td>
+<td>凡例ウィジェットには、シーン内のレイヤーのラベルとシンボルが表示されます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-legend-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>計測</td>
+<td>3D アプリの計測ウィジェットでは、2   つのポイント間の水平、垂直、および直線距離、ポリゴンの面積および周囲長を計測できます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-measurement-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>現在地</td>
+<td>現在地ウィジェットでは、ネットワークを使用してユーザーの物理的な位置を特定し、マップ上でその位置にズームできます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-my-location-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ナビゲート</td>
+<td>ナビゲート ウィジェットを使用して、シーンを回転したり画面移動したりします。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-navigate-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>検索</td>
+<td>検索ウィジェットを使用して、シーン内で場所を見つけることができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-search-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>共有</td>
+<td>共有ウィジェットでは、3D アプリをソーシャル メディア アカウントにポストしたり、リンクを電子メールで送信したり、Web   サイトやブログに埋め込んだりして共有することができます。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-share-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スライド</td>
+<td>スライド ウィジェットは、シーンのさまざまなビューを表示します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-slides-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>スプラッシュ</td>
+<td>スプラッシュ ウィジェットは、アプリのスプラッシュ画面上の表示コンテンツを定義します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-splash-3d.htm">〇</a></td>
+</tr>
+
+<tr>
+<td>ズーム スライダー</td>
+<td>ズーム スライダー ウィジェットは、マップ表示に対話型のズーム コントロールを提供します。</td>
+<td><a href="https://doc.arcgis.com/ja/web-appbuilder/create-apps/widget-zoom-slider-3d.htm">〇</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="補足事項">補足事項</h2>
+
+<ul>
+<li>※1: 日本国内サポート対象外のウィジェットです。</li>
+</ul>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/webappbuilder/latest/" title="最新版"> <i class="fa fa-chevron-left"></i><label>最新版</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/webappbuilder/arcgis-online/2019-10/" title="ArcGIS Online 2019/10" style="margin-right: 0px;"><label>ArcGIS Online 2019/10</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+  </div>
+
+
+	<div>
+
+
+  
+     
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
+
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+
+
+
+<script src="/arcgis-dev-resources/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

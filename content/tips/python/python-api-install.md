@@ -63,8 +63,12 @@ conda install -c esri arcgis
 
 インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br>
 ```
-conda install -c esri arcgis=1.7.1
+conda install -c esri arcgis=1.8.0
 ```
+
+{{% notice note %}}
+Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
+{{% /notice %}}
 
 インストールが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
 
@@ -128,7 +132,7 @@ conda upgrade -c esri arcgis
 conda upgrade -c esri arcgis --no-pin
 ```
 
-{{% notice tip %}}
+{{% notice note %}}
 
 ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
 `conda upgrade -c esri --no-pin arcgis` のうち、`--no-pin` がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
