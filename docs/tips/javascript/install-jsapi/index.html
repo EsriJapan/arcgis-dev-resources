@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-25T17:02:06 JST">
+<meta name="revised" content="2020-05-27T13:47:49 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -78,9 +78,9 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/api-sdk-app/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/core-concepts/api-sdk-app/">
+          <a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/">
             API、SDK、アプリ
           </a>
         </div>
@@ -556,7 +556,7 @@ if (!doNotTrack) {
     <option value="/arcgis-dev-resources/core-concepts/" >
    コアコンセプト</option> 
       <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
-      <option value="/arcgis-dev-resources/core-concepts/api-sdk-app/" >- API、SDK、アプリ</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- API、SDK、アプリ</option>
       <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
       <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
       <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
@@ -665,17 +665,17 @@ if (!doNotTrack) {
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
 
 <ol>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.14\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.14/</code> に置き換えます。</li>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.14\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>fqdn.tld/arcgis_js_api/library/4.14/</code> に置き換えます。</li>
+<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.15\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.15/</code> に置き換えます。</li>
+<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.15\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.15/</code> に置き換えます。</li>
 </ol>
 
 <h2 id="インストールのテスト">インストールのテスト</h2>
 
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
 
-<pre><code class="language-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.14/init.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.15/dojo/dojo.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 <p>インストールのテストには以下のコードを利用してください。</p>
@@ -686,8 +686,8 @@ if (!doNotTrack) {
     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
     &lt;title&gt;Test Map&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.14/dijit/themes/claro/claro.css&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.14/esri/css/main.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.15/dijit/themes/claro/claro.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.15/esri/themes/light/main.css&quot; /&gt;
     &lt;style&gt;
       html, body, #ui-map-view {
         margin: 0;
@@ -696,7 +696,7 @@ if (!doNotTrack) {
         height: 100%;
       }
     &lt;/style&gt;
-    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.14/init.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.15/dojo/dojo.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
       var myMap, view;
       require([
@@ -722,7 +722,7 @@ if (!doNotTrack) {
         });
         view = new MapView({
           center: [139, 35],
-          container: &quot;ui-map-view&quot;,
+          container: &quot;viewDiv&quot;,
           map: myMap,
           zoom: 5
         });
@@ -730,7 +730,7 @@ if (!doNotTrack) {
     &lt;/script&gt;
   &lt;/head&gt;
   &lt;body class=&quot;claro&quot;&gt;
-    &lt;div id=&quot;ui-map-view&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;viewDiv&quot;&gt;&lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>

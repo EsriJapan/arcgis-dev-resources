@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-25T17:02:06 JST">
+<meta name="revised" content="2020-05-27T13:47:49 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -78,9 +78,9 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/api-sdk-app/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/core-concepts/api-sdk-app/">
+          <a href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/">
             API、SDK、アプリ
           </a>
         </div>
@@ -556,7 +556,7 @@ if (!doNotTrack) {
     <option value="/arcgis-dev-resources/core-concepts/" >
    コアコンセプト</option> 
       <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
-      <option value="/arcgis-dev-resources/core-concepts/api-sdk-app/" >- API、SDK、アプリ</option>
+      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- API、SDK、アプリ</option>
       <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
       <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
       <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
@@ -690,10 +690,18 @@ var title = map.basemap.title;
 
 <p>3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.x ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、<code>.watch(property, callback)</code> メソッドを通してハンドリングされます。<code>property</code> に変更があると <code>callback</code> が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。</p>
 
-<pre><code class="language-javascript">var propertyChangeHandler = function(newValue, oldValue, property, object){
-  console.log(&quot;新しい値: &quot;,newValue, &quot;古い値: &quot;,oldValue,
-  &quot;変更されたプロパティ: &quot;, property, &quot;監視しているオブジェクト: &quot;, object);
-};
+<pre><code class="language-javascript">// ベースマップ 'street' を定義し、新しい map オブジェクトを作成
+var map = new Map({
+  basemap: 'streets'
+});
+
+// map オブジェクトで定義したベースマップのタイトルが変更されるとコールバックが発生します。
+var handle = map.watch('basemap.title', function(newValue, oldValue, property, object) {
+  console.log(&quot;新しい値: &quot;, newValue,      // プロパティの新しい値
+              &quot;&lt;br&gt;古い値: &quot;, oldValue,    // プロパティの前の値（変更される前の値）
+              &quot;&lt;br&gt;監視しているプロパティ: &quot;, property,  // この例では、この値は常に &quot;basemap.title&quot; になります。
+              &quot;&lt;br&gt;監視しているオブジェクト: &quot;, object);  // この例では、この値は常に map オブジェクトになります。
+});
 </code></pre>
 
 <h2 id="view-の利用">View の利用</h2>
