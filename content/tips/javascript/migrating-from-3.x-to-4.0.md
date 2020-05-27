@@ -55,10 +55,18 @@ var basemapTitle = map.get("basemap.title");
 
 3.x ではプロパティの変更はイベントでハンドリングされていましたが、4.x ではプロパティの変更の監視を簡単に行うことができます。プロパティの変更は、`.watch(property, callback)` メソッドを通してハンドリングされます。`property` に変更があると `callback` が呼び出されます。そして、監視しているオブジェクトのプロパティの新しい値、古い値、名前を取得することができます。
 ```javascript
-var propertyChangeHandler = function(newValue, oldValue, property, object){
-  console.log("新しい値: ",newValue, "古い値: ",oldValue,
-  "変更されたプロパティ: ", property, "監視しているオブジェクト: ", object);
-};
+// ベースマップ 'street' を定義し、新しい map オブジェクトを作成
+var map = new Map({
+  basemap: 'streets'
+});
+
+// map オブジェクトで定義したベースマップのタイトルが変更されるとコールバックが発生します。
+var handle = map.watch('basemap.title', function(newValue, oldValue, property, object) {
+  console.log("新しい値: ", newValue,      // プロパティの新しい値
+              "<br>古い値: ", oldValue,    // プロパティの前の値（変更される前の値）
+              "<br>監視しているプロパティ: ", property,  // この例では、この値は常に "basemap.title" になります。
+              "<br>監視しているオブジェクト: ", object);  // この例では、この値は常に map オブジェクトになります。
+});
 ```
 
 ## View の利用
