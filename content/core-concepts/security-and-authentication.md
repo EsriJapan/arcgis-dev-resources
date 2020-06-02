@@ -14,10 +14,10 @@ aliases = ["/security-and-authentication/"]
 - コンテンツの作成、編集、公開
 - プレミアム コンテンツおよびサービスへのアクセス
 
-[プレミアム コンテンツ](http://www.esri.com/software/arcgis/arcgisonline/credits)とサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、[クレジットの概要](https://www.esrij.com/products/arcgis-online/credits/)を参照してください。クレジットには実費もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
+[プレミアム コンテンツ](http://www.esri.com/software/arcgis/arcgisonline/credits)とサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、[クレジットの概要](https://www.esrij.com/products/arcgis-online/credits/)を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
 
-{{% panel theme="primary" header="実装:" %}}
-セキュリティ手法や ArcGIS 認証パターンに精通している場合は、製品固有の詳細を参照してください。 
+{{% panel theme="primary" header="製品毎の実装方法" %}}
+セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。 
 
 - [Android](https://developers.arcgis.com/android/latest/guide/access-the-arcgis-platform.htm)　　　　
 - [iOS](https://developers.arcgis.com/ios/latest/swift/guide/access-the-arcgis-platform.htm)
@@ -38,19 +38,19 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 
 - トークン ベース：アプリは、ユーザーに有効なユーザー名とパスワードを要求します。応答では、認証済みリソースのポータルで保護されたコンテンツのリクエストに含まれるトークンを受け取ります。[ArcGIS Online](https://developers.arcgis.com/rest/users-groups-and-items/generate-token.htm) および [ArcGIS Enterprise](http://www.esri.com/software/arcgis/arcgisserver) で使用できます。
 
-- 公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントのI Dはデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。
+- 公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントの ID はデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。
 
     ArcGIS Enterprise は、[ArcGIS Web Adaptors](http://server.arcgis.com/en/portal/latest/administer/windows/using-windows-active-directory-and-pki-to-secure-access-to-your-portal.htm) を使用して PKI ソリューションを活用します。ArcGIS Enterprise 上のリソースに対してリクエストが行われると、Web サーバーは、提供されたクライアント証明書を検証してユーザーを認証します。リクエスト（ユーザー名とともに）は、Web Adaptor を介して ArcGIS Enterprise  に転送されます。
 
     ArcGIS Enterprise は、指定ユーザーから要求されたリソースへのアクセス権を持っていることを確認してから、適切な応答を送信します。
 
-- HTTP/Windows 認証 (HTTPベーシック, HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、[ポータルと Windows 認証の統合](http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm)を参照してください。
+- HTTP/Windows 認証 (HTTP ベーシック、HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、[ポータルと Windows 認証の統合](http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm)を参照してください。
 
 通常、サーバー管理者にも相談して、ポータルで使用する認証の種類と、ポータルにアクセスするために必要な方法を決定します。
 
-{{% panel theme="info" header="Note:" %}}
+{{% notice note %}}
 別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。
-{{% /panel %}}
+{{% /notice %}}
 
 ## 認証パターン
 サポートされている認証方法には、アプリ開発者であるユーザーとアプリ個々のユーザーの2つの分類があります。アプリを使用して提供したいユーザー体験とアプリに割り当てるリソースのアクセス権に応して、ArcGIS Runtime では2つの認証パターンが用意されています。
@@ -72,9 +72,9 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 - 組織内の他のユーザーとコンテンツを共有できます。
 - ユーザーが共有しているコンテンツにアクセスできます。
 
-{{% panel theme="info" header="Tip:" %}}
+{{% notice tip %}}
 ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、[ArcGIS Runtime アプリのライセンス取得](https://developers.arcgis.com/pricing/licensing/)を参照してください。
-{{% /panel %}}
+{{% /notice %}}
 
 ### アプリ ログイン
 アプリ ログインを使用して、組織が所有するコンテンツや[プレミアム コンテンツ、サービス](http://www.esri.com/software/arcgis/arcgisonline/credits)へのアクセスをユーザーに提供します。このシナリオでは、アプリはソースコードにハードコードされた認証情報を使用してコンテンツにアクセスします（この潜在的なセキュリティリスクに対処するには、[プロキシ サービスの使用](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#usingaproxyservice)を検討してください）。これにより、ユーザーが許可されていないコンテンツへのアクセスが可能になります。ユーザーはアプリの認証情報でログインしているため、ログインを求められることはありません。このモデルを使用すると、ユーザーはアクセス権のあるすべてのリソースにアクセスでき、プレミアム コンテンツを利用するとクレジットを消費します。
@@ -103,9 +103,9 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 
 上記の質問のいずれかに「はい」と答えた場合は、指定ユーザー ログインを実装することをお勧めします。
 
-{{% panel theme="info" header="Note:" %}}
+{{% notice note %}}
 [ArcGIS Marketplace](https://marketplace.arcgis.com/) 用のアプリをオーサリングする場合は、アプリに[指定ユーザー ログイン](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin)を使用する必要があります。
-{{% /panel %}}
+{{% /notice %}}
 
 ユーザーが ArcGIS Online のユーザーではない場合、ユーザーにログインを要求させたくない場合、またはルーティング、ジオコーディング、人口統計データなどのプレミアム サービスの費用を負担したい場合は、アプリ ログインを選択してください。
 
