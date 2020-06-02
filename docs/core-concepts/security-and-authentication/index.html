@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-01T18:09:48 JST">
+<meta name="revised" content="2020-06-02T16:41:58 JST">
 <title>セキュリティと認証 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -617,11 +617,11 @@ if (!doNotTrack) {
 <li>プレミアム コンテンツおよびサービスへのアクセス</li>
 </ul>
 
-<p><a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ</a>とサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、<a href="https://www.esrij.com/products/arcgis-online/credits/">クレジットの概要</a>を参照してください。クレジットには実費もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。</p>
+<p><a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ</a>とサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、<a href="https://www.esrij.com/products/arcgis-online/credits/">クレジットの概要</a>を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。</p>
 
 <div class="panel panel-primary">
-	<div class="panel-heading">実装:</div>
-	<div class="panel-body"><p>セキュリティ手法や ArcGIS 認証パターンに精通している場合は、製品固有の詳細を参照してください。</p>
+	<div class="panel-heading">製品毎の実装方法</div>
+	<div class="panel-body"><p>セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。</p>
 
 <ul>
 <li><a href="https://developers.arcgis.com/android/latest/guide/access-the-arcgis-platform.htm">Android</a>　　　　</li>
@@ -649,22 +649,18 @@ if (!doNotTrack) {
 
 <li><p>トークン ベース：アプリは、ユーザーに有効なユーザー名とパスワードを要求します。応答では、認証済みリソースのポータルで保護されたコンテンツのリクエストに含まれるトークンを受け取ります。<a href="https://developers.arcgis.com/rest/users-groups-and-items/generate-token.htm">ArcGIS Online</a> および <a href="http://www.esri.com/software/arcgis/arcgisserver">ArcGIS Enterprise</a> で使用できます。</p></li>
 
-<li><p>公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントのI Dはデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。</p>
+<li><p>公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントの ID はデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。</p>
 
 <p>ArcGIS Enterprise は、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/using-windows-active-directory-and-pki-to-secure-access-to-your-portal.htm">ArcGIS Web Adaptors</a> を使用して PKI ソリューションを活用します。ArcGIS Enterprise 上のリソースに対してリクエストが行われると、Web サーバーは、提供されたクライアント証明書を検証してユーザーを認証します。リクエスト（ユーザー名とともに）は、Web Adaptor を介して ArcGIS Enterprise  に転送されます。</p>
 
 <p>ArcGIS Enterprise は、指定ユーザーから要求されたリソースへのアクセス権を持っていることを確認してから、適切な応答を送信します。</p></li>
 
-<li><p>HTTP/Windows 認証 (HTTPベーシック, HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm">ポータルと Windows 認証の統合</a>を参照してください。</p></li>
+<li><p>HTTP/Windows 認証 (HTTP ベーシック、HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm">ポータルと Windows 認証の統合</a>を参照してください。</p></li>
 </ul>
 
 <p>通常、サーバー管理者にも相談して、ポータルで使用する認証の種類と、ポータルにアクセスするために必要な方法を決定します。</p>
 
-<div class="panel panel-info">
-	<div class="panel-heading">Note:</div>
-	<div class="panel-body"><p>別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。</p>
-</div>
-	
+<div class="notices note" ><p>別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。</p>
 </div>
 
 
@@ -694,11 +690,7 @@ if (!doNotTrack) {
 <li>ユーザーが共有しているコンテンツにアクセスできます。</li>
 </ul>
 
-<div class="panel panel-info">
-	<div class="panel-heading">Tip:</div>
-	<div class="panel-body"><p>ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、<a href="https://developers.arcgis.com/pricing/licensing/">ArcGIS Runtime アプリのライセンス取得</a>を参照してください。</p>
-</div>
-	
+<div class="notices tip" ><p>ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、<a href="https://developers.arcgis.com/pricing/licensing/">ArcGIS Runtime アプリのライセンス取得</a>を参照してください。</p>
 </div>
 
 
@@ -735,11 +727,7 @@ if (!doNotTrack) {
 
 <p>上記の質問のいずれかに「はい」と答えた場合は、指定ユーザー ログインを実装することをお勧めします。</p>
 
-<div class="panel panel-info">
-	<div class="panel-heading">Note:</div>
-	<div class="panel-body"><p><a href="https://marketplace.arcgis.com/">ArcGIS Marketplace</a> 用のアプリをオーサリングする場合は、アプリに<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザー ログイン</a>を使用する必要があります。</p>
-</div>
-	
+<div class="notices note" ><p><a href="https://marketplace.arcgis.com/">ArcGIS Marketplace</a> 用のアプリをオーサリングする場合は、アプリに<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザー ログイン</a>を使用する必要があります。</p>
 </div>
 
 
