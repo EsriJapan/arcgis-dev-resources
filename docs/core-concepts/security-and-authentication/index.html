@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-02T16:41:58 JST">
+<meta name="revised" content="2020-06-10T13:29:45 JST">
 <title>セキュリティと認証 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -640,6 +640,8 @@ if (!doNotTrack) {
 </div>
 
 
+<p><br/></p>
+
 <h2 id="セキュリティの方法">セキュリティの方法</h2>
 
 <p>ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。</p>
@@ -664,6 +666,8 @@ if (!doNotTrack) {
 </div>
 
 
+<p><br/></p>
+
 <h2 id="認証パターン">認証パターン</h2>
 
 <p>サポートされている認証方法には、アプリ開発者であるユーザーとアプリ個々のユーザーの2つの分類があります。アプリを使用して提供したいユーザー体験とアプリに割り当てるリソースのアクセス権に応して、ArcGIS Runtime では2つの認証パターンが用意されています。</p>
@@ -673,7 +677,9 @@ if (!doNotTrack) {
 <li>アプリ ログイン</li>
 </ul>
 
-<h3 id="指定ユーザー-ログイン">指定ユーザー ログイン</h3>
+<p><br/></p>
+
+<h3 id="指定ユーザー-ログイン"><em>指定ユーザー ログイン</em></h3>
 
 <p>指定ユーザーのログインパターンでは、ArcGIS Online のユーザーが、アプリに対してコンテンツやサービスへのアクセスを許可します。このシナリオでは、アプリがユーザーに ArcGIS Online のユーザー名とパスワードの入力を要求し、その認証情報を使用してコンテンツにアクセスします。このモデルを使用すると、ユーザーは<a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ</a>を使用するために自身の保有するクレジットを消費し、自身がアクセス権を持つリソースにアクセスすることができます。</p>
 
@@ -694,7 +700,9 @@ if (!doNotTrack) {
 </div>
 
 
-<h3 id="アプリ-ログイン">アプリ ログイン</h3>
+<p><br/></p>
+
+<h3 id="アプリ-ログイン"><em>アプリ ログイン</em></h3>
 
 <p>アプリ ログインを使用して、組織が所有するコンテンツや<a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ、サービス</a>へのアクセスをユーザーに提供します。このシナリオでは、アプリはソースコードにハードコードされた認証情報を使用してコンテンツにアクセスします（この潜在的なセキュリティリスクに対処するには、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#usingaproxyservice">プロキシ サービスの使用</a>を検討してください）。これにより、ユーザーが許可されていないコンテンツへのアクセスが可能になります。ユーザーはアプリの認証情報でログインしているため、ログインを求められることはありません。このモデルを使用すると、ユーザーはアクセス権のあるすべてのリソースにアクセスでき、プレミアム コンテンツを利用するとクレジットを消費します。</p>
 
@@ -714,7 +722,9 @@ if (!doNotTrack) {
 
 <p>アプリ ログインの使用には<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">一定の制限</a>があります。</p>
 
-<h3 id="指定ユーザー-ログイン-vs-アプリ-ログイン">指定ユーザー ログイン vs アプリ ログイン</h3>
+<p><br/></p>
+
+<h3 id="指定ユーザー-ログイン-vs-アプリ-ログイン"><em>指定ユーザー ログイン vs アプリ ログイン</em></h3>
 
 <p>ここでは、トークンのやり取りに基づいて両方の認証パターンを比較します。アプリの利用ニーズに適した認証パターンを選択するために、次の質問を確認してください。そして、このセクションの機能表を使用して、アプリに含める機能を決定してください。</p>
 
@@ -733,7 +743,9 @@ if (!doNotTrack) {
 
 <p>ユーザーが ArcGIS Online のユーザーではない場合、ユーザーにログインを要求させたくない場合、またはルーティング、ジオコーディング、人口統計データなどのプレミアム サービスの費用を負担したい場合は、アプリ ログインを選択してください。</p>
 
-<h3 id="機能一覧表">機能一覧表</h3>
+<p><br/></p>
+
+<h3 id="機能一覧表"><em>機能一覧表</em></h3>
 
 <table>
 <thead>
@@ -823,7 +835,9 @@ if (!doNotTrack) {
 <span style="font-size: 75%">[2] ユーザーの役割と権限で許可されている場合</span></br>
 <span style="font-size: 75%">[3] アプリ ログインを利用する際の<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">制限事項</a>を確認</span></p>
 
-<h3 id="プロキシ-サービスの利用">プロキシ サービスの利用</h3>
+<p><br/></p>
+
+<h2 id="プロキシ-サービスの利用">プロキシ サービスの利用</h2>
 
 <p>アプリは、ブラウザベース、ネイティブアプリ、またはハイブリッドアプリのいずれであってもクライアント側のアプリでは、クライアントシークレットは、決して公開されるべきではありません。秘密情報がハッカーに乗っ取られ、知らない間に使用されてしまう可能性があります。クライアント側で シークレットの漏洩を阻止する１つのソリューションは、プロキシ サービスを使用してアプリに代わって シークレットを仲介することです。クライアント側のアプリは、セキュリティ上、重要なリクエストをプロキシ サービスに送信し、プロキシが必要なシークレットを追加してから、その要求をサービスに転送します。サービスは返信をプロキシに送信し、プロキシはリクエストをアプリに転送します。</p>
 
@@ -837,7 +851,9 @@ if (!doNotTrack) {
 
 <p>アプリケーションでのプロキシ サービスの使用方法の詳細については、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/working-with-proxies">プロキシの使用方法</a>を参照してください。</p>
 
-<h3 id="arcgis-marketplace-のアプリ">ArcGIS Marketplace のアプリ</h3>
+<p><br/></p>
+
+<h2 id="arcgis-marketplace-のアプリ">ArcGIS Marketplace のアプリ</h2>
 
 <p><a href="https://marketplace.arcgis.com/">ArcGIS Marketplace</a> は、ArcGIS ユーザーが認定プロバイダからアプリやコンテンツを検索して入手できるようにするための場所です。マーケットプレイスに掲載されているアプリやコンテンツは、世界中の ArcGIS Online 組織で使用することができます。マーケットプレイスにアプリを掲載することで、販売したアプリの収益を 100% 確保したり、アプリの無料トライアルを提供したりできます。また、新たな見込み顧客を発見したりと ArcGIS ユーザーのコミュニティにマーケティングしたりすることもできます。</p>
 
@@ -853,11 +869,15 @@ if (!doNotTrack) {
 
 <p>ArcGIS Marketplace の詳細については、<a href="http://doc.arcgis.com/en/marketplace/provider/build-apps.htm">ArcGIS Marketplace アプリ構築</a>を参照してください。</p>
 
+<p><br/></p>
+
 <h2 id="認証を始める">認証を始める</h2>
 
 <p>アプリに認証を組み込むことを決めたら、サーバーにアプリを登録する必要があります。このプロセスでは、クライアントアプリとサーバーとのサービス間の接続と関連付けを設定します。ArcGIS Online にアプリケーションを登録すると、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザ ログイン</a>、または<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#appauthentication">アプリ ログイン</a>を開始するための認証情報が提供されます。</p>
 
-<h4 id="指定ユーザー-ログイン-1">指定ユーザー ログイン</h4>
+<p><br/></p>
+
+<h3 id="指定ユーザー-ログイン-1"><em>指定ユーザー ログイン</em></h3>
 
 <p>アプリでユーザーにログインを要求する場合や、ArcGIS Marketplace で配布するアプリを作成する場合は、指定ユーザー ログインのパターンでアプリを登録します。</p>
 
@@ -865,7 +885,7 @@ if (!doNotTrack) {
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/signing-in-arcgis-online-users/">指定ユーザー ログインの設定</a></li>
 </ul>
 
-<h4 id="アプリ-ログイン-1">アプリ ログイン</h4>
+<h3 id="アプリ-ログイン-1"><em>アプリ ログイン</em></h3>
 
 <p>ユーザーが ArcGIS Online のユーザーではない場合や、ユーザーにログインを要求させたくない場合、また、プレミアム サービスの費用を負担したい場合は、アプリ ログインのパターンでアプリを登録します。アプリ ログインを利用するには、一定の<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">制限</a>があります。</p>
 
@@ -873,7 +893,9 @@ if (!doNotTrack) {
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/">アプリ ログインの設定</a></li>
 </ul>
 
-<h3 id="アプリの認証を実装">アプリの認証を実装</h3>
+<p><br/></p>
+
+<h2 id="アプリの認証を実装">アプリの認証を実装</h2>
 
 <p>ここから先は、選択したプラットフォーム/プログラミング言語によって異なります。アプリの認証については、以下の各製品のドキュメントやサンプルコードを参照してください。</p>
 
