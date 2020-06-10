@@ -31,6 +31,7 @@ aliases = ["/security-and-authentication/"]
 ※ 現在、国内未サポートです。
 {{% /panel %}}
 
+<br/>
 ## セキュリティの方法
 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
 
@@ -52,13 +53,15 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。
 {{% /notice %}}
 
+<br/>
 ## 認証パターン
 サポートされている認証方法には、アプリ開発者であるユーザーとアプリ個々のユーザーの2つの分類があります。アプリを使用して提供したいユーザー体験とアプリに割り当てるリソースのアクセス権に応して、ArcGIS Runtime では2つの認証パターンが用意されています。
 
 - 指定ユーザ ログイン
 - アプリ ログイン
 
-### 指定ユーザー ログイン
+<br/>
+### *指定ユーザー ログイン*
 指定ユーザーのログインパターンでは、ArcGIS Online のユーザーが、アプリに対してコンテンツやサービスへのアクセスを許可します。このシナリオでは、アプリがユーザーに ArcGIS Online のユーザー名とパスワードの入力を要求し、その認証情報を使用してコンテンツにアクセスします。このモデルを使用すると、ユーザーは[プレミアム コンテンツ](http://www.esri.com/software/arcgis/arcgisonline/credits)を使用するために自身の保有するクレジットを消費し、自身がアクセス権を持つリソースにアクセスすることができます。
 
 アプリは、ログインしたユーザーが所有、またはそのユーザーの組織が所属するプライベートコンテンツにアクセスすることができます。また、ジオコーディング、ルーティング、人口統計データなどのプレミアム コンテンツにもアクセスできます。
@@ -76,7 +79,8 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、[ArcGIS Runtime アプリのライセンス取得](https://developers.arcgis.com/pricing/licensing/)を参照してください。
 {{% /notice %}}
 
-### アプリ ログイン
+<br/>
+### *アプリ ログイン*
 アプリ ログインを使用して、組織が所有するコンテンツや[プレミアム コンテンツ、サービス](http://www.esri.com/software/arcgis/arcgisonline/credits)へのアクセスをユーザーに提供します。このシナリオでは、アプリはソースコードにハードコードされた認証情報を使用してコンテンツにアクセスします（この潜在的なセキュリティリスクに対処するには、[プロキシ サービスの使用](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#usingaproxyservice)を検討してください）。これにより、ユーザーが許可されていないコンテンツへのアクセスが可能になります。ユーザーはアプリの認証情報でログインしているため、ログインを求められることはありません。このモデルを使用すると、ユーザーはアクセス権のあるすべてのリソースにアクセスでき、プレミアム コンテンツを利用するとクレジットを消費します。
 
 アプリ ログインは、ユーザーが ArcGIS Online のユーザーではないアプリやユーザー ログインを必要としないアプリ向けに設計されています。アプリストア、Ad Hoc 配布、または Web を介してアプリを配信するのに適しています。ただし、アプリ使用時に費用が発生するサービスを使用した場合は、その費用を支払う必要があります。アプリ ログインで取得したトークンの使用で発生した使用量は、登録しているアカウントに対して課金されます。
@@ -93,7 +97,8 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 
 アプリ ログインの使用には[一定の制限](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication)があります。
 
-### 指定ユーザー ログイン vs アプリ ログイン
+<br/>
+### *指定ユーザー ログイン vs アプリ ログイン*
 ここでは、トークンのやり取りに基づいて両方の認証パターンを比較します。アプリの利用ニーズに適した認証パターンを選択するために、次の質問を確認してください。そして、このセクションの機能表を使用して、アプリに含める機能を決定してください。
 
 - ユーザーは ArcGIS Online ユーザーでもありますか？
@@ -109,7 +114,8 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 
 ユーザーが ArcGIS Online のユーザーではない場合、ユーザーにログインを要求させたくない場合、またはルーティング、ジオコーディング、人口統計データなどのプレミアム サービスの費用を負担したい場合は、アプリ ログインを選択してください。
 
-### 機能一覧表
+<br/>
+### *機能一覧表*
 |機能|アプリ ログイン <sup>[3]</sup>|指定ユーザー ログイン <sup>[1]</sup>|
 |:---|:---|:---|
 |[ジオコーディング](https://developers.arcgis.com/features/geocoding)|✓|✓ <sup>[2]</sup>|
@@ -129,7 +135,8 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 <span style="font-size: 75%">[2] ユーザーの役割と権限で許可されている場合</span></br>
 <span style="font-size: 75%">[3] アプリ ログインを利用する際の[制限事項](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication)を確認</span>
 
-### プロキシ サービスの利用
+<br/>
+## プロキシ サービスの利用
 アプリは、ブラウザベース、ネイティブアプリ、またはハイブリッドアプリのいずれであってもクライアント側のアプリでは、クライアントシークレットは、決して公開されるべきではありません。秘密情報がハッカーに乗っ取られ、知らない間に使用されてしまう可能性があります。クライアント側で シークレットの漏洩を阻止する１つのソリューションは、プロキシ サービスを使用してアプリに代わって シークレットを仲介することです。クライアント側のアプリは、セキュリティ上、重要なリクエストをプロキシ サービスに送信し、プロキシが必要なシークレットを追加してから、その要求をサービスに転送します。サービスは返信をプロキシに送信し、プロキシはリクエストをアプリに転送します。
 
 Esri では、アプリのプロキシ サービスを利用するために 2 つの方法を選択できます。
@@ -140,7 +147,8 @@ Esri では、アプリのプロキシ サービスを利用するために 2 �
 
 アプリケーションでのプロキシ サービスの使用方法の詳細については、[プロキシの使用方法](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/working-with-proxies)を参照してください。
 
-### ArcGIS Marketplace のアプリ
+<br/>
+## ArcGIS Marketplace のアプリ
 [ArcGIS Marketplace](https://marketplace.arcgis.com/) は、ArcGIS ユーザーが認定プロバイダからアプリやコンテンツを検索して入手できるようにするための場所です。マーケットプレイスに掲載されているアプリやコンテンツは、世界中の ArcGIS Online 組織で使用することができます。マーケットプレイスにアプリを掲載することで、販売したアプリの収益を 100% 確保したり、アプリの無料トライアルを提供したりできます。また、新たな見込み顧客を発見したりと ArcGIS ユーザーのコミュニティにマーケティングしたりすることもできます。
 
 ArcGIS Marketplace 用のアプリケーションを構築するためには、特定の実装要件に従う必要があります。
@@ -153,20 +161,23 @@ ArcGIS Marketplace 用のアプリケーションを構築するためには、�
 
 ArcGIS Marketplace の詳細については、[ArcGIS Marketplace アプリ構築](http://doc.arcgis.com/en/marketplace/provider/build-apps.htm)を参照してください。
 
+<br/>
 ## 認証を始める
 アプリに認証を組み込むことを決めたら、サーバーにアプリを登録する必要があります。このプロセスでは、クライアントアプリとサーバーとのサービス間の接続と関連付けを設定します。ArcGIS Online にアプリケーションを登録すると、[指定ユーザ ログイン](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin)、または[アプリ ログイン](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#appauthentication)を開始するための認証情報が提供されます。
 
-#### 指定ユーザー ログイン
+<br/>
+### *指定ユーザー ログイン*
 アプリでユーザーにログインを要求する場合や、ArcGIS Marketplace で配布するアプリを作成する場合は、指定ユーザー ログインのパターンでアプリを登録します。
 
 - [指定ユーザー ログインの設定](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/signing-in-arcgis-online-users/)
 
-#### アプリ ログイン
+### *アプリ ログイン*
 ユーザーが ArcGIS Online のユーザーではない場合や、ユーザーにログインを要求させたくない場合、また、プレミアム サービスの費用を負担したい場合は、アプリ ログインのパターンでアプリを登録します。アプリ ログインを利用するには、一定の[制限](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication)があります。
 
 - [アプリ ログインの設定](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/)
 
-### アプリの認証を実装
+<br/>
+## アプリの認証を実装
 ここから先は、選択したプラットフォーム/プログラミング言語によって異なります。アプリの認証については、以下の各製品のドキュメントやサンプルコードを参照してください。
 
 - [Android](https://developers.arcgis.com/android/latest/guide/access-the-arcgis-platform.htm)
