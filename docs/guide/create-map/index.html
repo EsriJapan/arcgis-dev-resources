@@ -17,53 +17,65 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-02T16:41:57 JST">
+<meta name="revised" content="2020-06-15T18:26:52 JST">
 <title>マップの作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
-<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/theme-flex/style.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
 
 <link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
 <script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
-<script type="text/javascript">
-      var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
-</script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
 <meta name="description" content="ArcGIS をはじめて使う方向けに開発者アカウントやマップの作成方法を紹介します。">
-
 
 
     
   </head>
   <body data-url="/arcgis-dev-resources/guide/create-map/">
     
-      <header>
-  <div class="logo">
-    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
 	
   
     <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS for Developer 開発リソース集</a>
   
 
 
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="検索...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+        
+		</script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
   </div>
-  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
-    <nav class="shortcuts">
-            <li class="" role="">
-                <a href="https://github.com/EsriJapan/arcgis-dev-resources"  rel="noopener">
-                  <i class='fa fa-github'></i> <label>Github</label>
-                </a>
+
+      <ul class="topics">
+            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    </nav>
-</header>
-<article>
-  <aside>
-    <ul class="menu">
-          <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
-          <a href="/arcgis-dev-resources/">
-            <i class="fa fa-fw fa-home"></i>
-          </a>
-          </li>
     <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
         ">
       <div>
@@ -538,73 +550,74 @@ if (!doNotTrack) {
 
 
 
+        <section id="shortcuts">
+                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
+        </section>
 
+    <hr />
+    <li></li>
+    
     </ul>
-    <section><center>
+
+ <section id="footer"><center>
 <br>© Esri Japan. All rights reserved.<br>
 </center>
 
     </section>
-  </aside>
-  <section class="page">
-    
-    <div class="nav-select">
-      <center>メニュー: 
-        <select onchange="javascript:location.href = this.value;">
-          
-    <option value="/arcgis-dev-resources/core-concepts/" >
-   コアコンセプト</option> 
-      <option value="/arcgis-dev-resources/core-concepts/what-is-arcgis/" >- ArcGIS とは</option>
-      <option value="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" >- API、SDK、アプリ</option>
-      <option value="/arcgis-dev-resources/core-concepts/security-and-authentication/" >- セキュリティと認証</option>
-      <option value="/arcgis-dev-resources/core-concepts/layers/" >- レイヤー</option>
-      <option value="/arcgis-dev-resources/core-concepts/web-maps/" >- Web マップ</option>
-      <option value="/arcgis-dev-resources/core-concepts/web-scenes/" >- Web シーン</option>
-      <option value="/arcgis-dev-resources/core-concepts/rest-api/" >- REST API</option>
-  
-    <option value="/arcgis-dev-resources/guide/" >
-   スタートアップ ガイド</option> 
-    <option value="/arcgis-dev-resources/guide/create-map/"  selected>
-  - 
-   マップの作成</option> 
-      <option value="/arcgis-dev-resources/guide/create-map/get-dev-account/" >-- 開発者アカウントの作成</option>
-      <option value="/arcgis-dev-resources/guide/create-map/create-feature-service/" >-- フィーチャサービスの作成</option>
-      <option value="/arcgis-dev-resources/guide/create-map/create-webmap/" >-- Web マップの作成</option>
-  
-    <option value="/arcgis-dev-resources/guide/create-app/" >
-  - 
-   アプリの作成</option>
-    <option value="/arcgis-dev-resources/guide/authentication/" >
-  - 
-   認証</option>
-  
-    <option value="/arcgis-dev-resources/tips/" >
-   技術 Tips 集</option>
-    <option value="/arcgis-dev-resources/samples/" >
-   サンプル集</option>
+  </div>
+</nav>
 
 
 
-        </select>
-      </center>
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > マップの作成
+
+ 
+
+ 
+
+   
+        </span>
     </div>
-      <div>
-        <div class="searchbox">
-          <input data-search-input id="search-by" type="text" placeholder="検索...">
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    
         </div>
-        <script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
-        <script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
-        <link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
-        <script type="text/javascript">
-          
-              var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
-          
-        </script>
-        <script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
-      </div>
+    </div>
     
 
+  </div>
+
+
+<div id="body-inner">
+  
     <h1>マップの作成</h1>
+  
+
+
+
     
     
     
@@ -640,48 +653,28 @@ if (!doNotTrack) {
 
     
     
-        <div class="chevrons">
-    <div id="navigation">
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/guide/" title="スタートアップ ガイド"> <i class="fa fa-chevron-left"></i><label>スタートアップ ガイド</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/guide/create-map/get-dev-account/" title="開発者アカウントの作成" style="margin-right: 0px;"><label>開発者アカウントの作成</label><i class="fa fa-chevron-right"></i></a></div>
-  </div>
 
-  </section>
-</article>
-
-<footer>
-
-<div class="footline">
-    
-
-    
-
-    
-
-    
-  </div>
-
-
-	<div>
-
-
-  
-     
-  
-
-
-
-	</div>
-</footer>
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
 
 <script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
-
-<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
 <script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
 
-
-
-<script src="/arcgis-dev-resources/theme-flex/script.js"></script>
+<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
+<script src="/arcgis-dev-resources/js/docdock.js"></script>
+<script src="/arcgis-dev-resources/theme-original/script.js"></script>
 
 
     

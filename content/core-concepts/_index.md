@@ -6,5 +6,4 @@ alwaysopen = true
 +++
 
 ArcGIS のコンセプトについて紹介します。
-
-{{% children description="true"   %}}
+{{% children style="h3" depth="2" description="true" %}}
