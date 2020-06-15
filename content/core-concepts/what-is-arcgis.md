@@ -30,7 +30,7 @@ ArcGIS Online および ArcGIS Enterprise と連携できるアプリケーシ�
 * [ArcGIS Dashboards](https://www.esrij.com/products/arcgis-dashboards/) - 地図上のリアルタイム データを監視、追跡、および評価することに特化したダッシュボード アプリケーション
 * [Explorer for ArcGIS](https://www.esrij.com/products/explorer-for-arcgis/) - iOS と Android 上で動作する、無料のマップ閲覧アプリケーション
 * [Workforce for ArcGIS](https://www.esrij.com/products/workforce/) - 現地調査作業の計画と調整を行うアプリケーション
-* [Survey123 For ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - シンプルで直感的な調査票で GIS データを収集できるアプリケーション
+* [Survey123 for ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - シンプルで直感的な調査票で GIS データを収集できるアプリケーション
 
 ※ 現在、国内未サポートです。
 
