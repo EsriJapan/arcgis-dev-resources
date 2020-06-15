@@ -34,4 +34,4 @@ description = ""
 * [GeoNet](https://community.esri.com/)
  * 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。
 * [GeoNet ArcGIS 開発者コミュニティ](https://community.esri.com/groups/devcom-jp)
- * ESRIジャパンのスタッフが GeoNet 上で開発者向けの技術ブログを発信しています。
+ * ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。

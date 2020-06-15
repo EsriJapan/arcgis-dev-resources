@@ -76,8 +76,7 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、[ArcGIS Runtime アプリのライセンス取得](https://developers.arcgis.com/pricing/licensing/)を参照してください。
 {{% /notice %}}
 
-<br/>
-### *アプリ ログイン*
+### アプリ ログイン
 アプリ ログインを使用して、組織が所有するコンテンツや[プレミアム コンテンツ、サービス](http://www.esri.com/software/arcgis/arcgisonline/credits)へのアクセスをユーザーに提供します。このシナリオでは、アプリはソースコードにハードコードされた認証情報を使用してコンテンツにアクセスします（この潜在的なセキュリティリスクに対処するには、[プロキシ サービスの使用](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#usingaproxyservice)を検討してください）。これにより、ユーザーが許可されていないコンテンツへのアクセスが可能になります。ユーザーはアプリの認証情報でログインしているため、ログインを求められることはありません。このモデルを使用すると、ユーザーはアクセス権のあるすべてのリソースにアクセスでき、プレミアム コンテンツを利用するとクレジットを消費します。
 
 アプリ ログインは、ユーザーが ArcGIS Online のユーザーではないアプリやユーザー ログインを必要としないアプリ向けに設計されています。アプリストア、Ad Hoc 配布、または Web を介してアプリを配信するのに適しています。ただし、アプリ使用時に費用が発生するサービスを使用した場合は、その費用を支払う必要があります。アプリ ログインで取得したトークンの使用で発生した使用量は、登録しているアカウントに対して課金されます。
@@ -113,18 +112,18 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 ### 機能一覧表
 |機能|アプリ ログイン <sup>[3]</sup>|指定ユーザー ログイン <sup>[1]</sup>|
 |:---|:---|:---|
-|[ジオコーディング](https://developers.arcgis.com/features/geocoding)|✓|✓ <sup>[2]</sup>|
-|[ルーティング](https://developers.arcgis.com/features/directions)|✓|✓ <sup>[2]</sup>|
-|[人口統計データ](https://developers.arcgis.com/features/geo-enrichment/)|✓|✓ <sup>[2]</sup>|
-|[プレミアム レイヤーと画像](https://www.arcgis.com/home/search.html?q=owner:esri)|✓|✓ <sup>[2]</sup>|
-|[標高解析](https://developers.arcgis.com/rest/elevation/)|✓|✓ <sup>[2]</sup>|
-|[空間解析](https://developers.arcgis.com/rest/analysis/)||✓ <sup>[2]</sup>|
-|公開コンテンツの参照|✓|✓|
-|ユーザーが所有するコンテンツの参照||✓|
-|ユーザーが共有したコンテンツの参照||✓ <sup>[2]</sup>|
-|ユーザーが所有するコンテンツの作成/更新/削除||✓|
-|共有コンテンツの作成/更新/削除||✓ <sup>[2]</sup>|
-|他のユーザーへコンテンツを共有||✓ <sup>[2]</sup>|
+|[Geocoding (ジオコーディング) ](https://developers.arcgis.com/features/geocoding)|✓|✓ <sup>[2]</sup>|
+|[Routing (ルーティング)](https://developers.arcgis.com/features/directions)|✓|✓ <sup>[2]</sup>|
+|[Demographic data (人口統計データ)](https://developers.arcgis.com/features/geo-enrichment/)|✓|✓ <sup>[2]</sup>|
+|[Premium layers and imagery (プレミアムデータと画像)](https://www.arcgis.com/home/search.html?q=owner:esri)|✓|✓ <sup>[2]</sup>|
+|[Elevation analysis (標高解析)](https://developers.arcgis.com/rest/elevation/)|✓|✓ <sup>[2]</sup>|
+|[Spatial analysis (空間解析)](https://developers.arcgis.com/rest/analysis/)||✓ <sup>[2]</sup>|
+|Read public content (公開コンテンツの参照)|✓|✓|
+|Read content owned by user (ユーザーが所有するコンテンツの参照)||✓|
+|Read content shared with user (ユーザーが共有したコンテンツの参照)||✓ <sup>[2]</sup>|
+|Create/update/delete user's content (ユーザーが所有するコンテンツの作成/更新/削除)||✓|
+|Create/update/delete shared content (共有コンテンツの作成/更新/削除)||✓ <sup>[2]</sup>|
+|Share content with other users (他のユーザーへコンテンツを共有)||✓ <sup>[2]</sup>|
 
 <span style="font-size: 75%">[1] ユーザーが所属する組織に課金される使用量</span></br>
 <span style="font-size: 75%">[2] ユーザーの役割と権限で許可されている場合</span></br>
