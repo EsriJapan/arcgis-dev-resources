@@ -112,18 +112,18 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 ### 機能一覧表
 |機能|アプリ ログイン <sup>[3]</sup>|指定ユーザー ログイン <sup>[1]</sup>|
 |:---|:---|:---|
-|[ジオコーディング](https://developers.arcgis.com/features/geocoding)|✓|✓ <sup>[2]</sup>|
-|[ルーティング](https://developers.arcgis.com/features/directions)|✓|✓ <sup>[2]</sup>|
-|[人口統計データ](https://developers.arcgis.com/features/geo-enrichment/)|✓|✓ <sup>[2]</sup>|
-|[プレミアム レイヤーと画像](https://www.arcgis.com/home/search.html?q=owner:esri)|✓|✓ <sup>[2]</sup>|
-|[標高解析](https://developers.arcgis.com/rest/elevation/)|✓|✓ <sup>[2]</sup>|
-|[空間解析](https://developers.arcgis.com/rest/analysis/)||✓ <sup>[2]</sup>|
-|公開コンテンツの参照|✓|✓|
-|ユーザーが所有するコンテンツの参照||✓|
-|ユーザーが共有したコンテンツの参照||✓ <sup>[2]</sup>|
-|ユーザーが所有するコンテンツの作成/更新/削除||✓|
-|共有コンテンツの作成/更新/削除||✓ <sup>[2]</sup>|
-|他のユーザーへコンテンツを共有||✓ <sup>[2]</sup>|
+|[Geocoding (ジオコーディング) ](https://developers.arcgis.com/features/geocoding)|✓|✓ <sup>[2]</sup>|
+|[Routing (ルーティング)](https://developers.arcgis.com/features/directions)|✓|✓ <sup>[2]</sup>|
+|[Demographic data (人口統計データ)](https://developers.arcgis.com/features/geo-enrichment/)|✓|✓ <sup>[2]</sup>|
+|[Premium layers and imagery (プレミアムデータと画像)](https://www.arcgis.com/home/search.html?q=owner:esri)|✓|✓ <sup>[2]</sup>|
+|[Elevation analysis (標高解析)](https://developers.arcgis.com/rest/elevation/)|✓|✓ <sup>[2]</sup>|
+|[Spatial analysis (空間解析)](https://developers.arcgis.com/rest/analysis/)||✓ <sup>[2]</sup>|
+|Read public content (公開コンテンツの参照)|✓|✓|
+|Read content owned by user (ユーザーが所有するコンテンツの参照)||✓|
+|Read content shared with user (ユーザーが共有したコンテンツの参照)||✓ <sup>[2]</sup>|
+|Create/update/delete user's content (ユーザーが所有するコンテンツの作成/更新/削除)||✓|
+|Create/update/delete shared content (共有コンテンツの作成/更新/削除)||✓ <sup>[2]</sup>|
+|Share content with other users (他のユーザーへコンテンツを共有)||✓ <sup>[2]</sup>|
 
 <span style="font-size: 75%">[1] ユーザーが所属する組織に課金される使用量</span></br>
 <span style="font-size: 75%">[2] ユーザーの役割と権限で許可されている場合</span></br>

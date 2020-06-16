@@ -27,7 +27,7 @@ ArcGIS プラットフォームには、以下のような一般的なユース�
 - [ArcGIS Dashboards](https://www.esrij.com/products/arcgis-dashboards/) - カスタマイズ可能なリアルタイム ダッシュボード
 - [Explorer for ArcGIS](https://www.esrij.com/products/explorer-for-arcgis/) - 組織内の GIS データの検索と表示
 - [Workforce for ArcGIS](https://www.esrij.com/products/workforce/) - 現地調査を調整するためのモバイル／Web アプリ
-- [Survey123 For ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - データ収集・調査のための軽量アプリ
+- [Survey123 for ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - データ収集・調査のための軽量アプリ
 
 これらのアプリケーションの多くは、新しい機能を追加するために[スクリプトでの自動化や拡張](https://developers.arcgis.com/documentation/#extend)が可能です。
 

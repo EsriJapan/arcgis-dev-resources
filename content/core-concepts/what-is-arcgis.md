@@ -6,7 +6,7 @@ aliases = ["/what-is-arcgis/"]
 +++
 
 ## ArcGIS とは
-ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon、Azure）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（[Amazon Web Service (AWS)](https://aws.amazon.com/jp/ec2/)、[Microsoft Azure](https://azure.microsoft.com/ja-jp/)、[さくらのクラウド](https://cloud.sakura.ad.jp/)等）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
 
 ## ArcGIS プラットフォーム
 [ArcGIS プラットフォーム](https://www.esrij.com/question/85268/)は、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
