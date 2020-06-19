@@ -2,7 +2,7 @@
 
 ![](http://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources.png)
 
-ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、[ArcGIS for Developers](https://developers.arcgis.com/) を利用したアプリ開発の基本的な流れを紹介します。
+本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。
 
 - [ArcGIS for Developer 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
 
