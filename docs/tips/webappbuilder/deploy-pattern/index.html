@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-15T21:44:36 JST">
+<meta name="revised" content="2020-07-07T13:43:33 JST">
 <title>デプロイ パターン :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="Web AppBuilder for ArcGIS (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。">
+<meta name="description" content="ArcGIS Web AppBuilder (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。">
 
 
     
@@ -297,7 +297,7 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/">Web AppBuilder for ArcGIS (Developer Edition)</a>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
@@ -594,7 +594,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/webappbuilder/'>Web AppBuilder for ArcGIS (Developer Edition)</a> > デプロイ パターン
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/webappbuilder/'>ArcGIS Web AppBuilder (Developer Edition)</a> > デプロイ パターン
 
  
 
@@ -665,7 +665,7 @@ if (!doNotTrack) {
 
 <h2 id="概要">概要</h2>
 
-<p>Web AppBuilder for ArcGIS (Developer Edition) (以下 Developer Edition) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
+<p>ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcGIS Web AppBuilder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
 
 <hr />
 
@@ -732,7 +732,7 @@ if (!doNotTrack) {
 <h2 id="ウィジェットをデプロイ">ウィジェットをデプロイ</h2>
 
 <ul>
-<li>WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの Web AppBuilder for ArcGIS のウィジェットには無い機能を拡張したい場合に活用できます。
+<li>WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの ArcGIS Web AppBuilder のウィジェットには無い機能を拡張したい場合に活用できます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern2.png" alt="widget" />
 <br /></li>
 </ul>
@@ -771,7 +771,7 @@ if (!doNotTrack) {
 <ul>
 <li>ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。</li>
 <li>※ ウィジェットを配置するサーバーが自己署名証明書を使用している場合、Portal for ArcGIS に証明書をインポートする必要があります。詳しい方法は<a href="https://enterprise.arcgis.com/ja/portal/latest/administer/windows/import-a-certificate-into-the-portal.htm">ポータルへの証明書のインポート</a>をご覧ください。</li>
-<li>Web サーバーに配置後、ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS にカスタムウィジェットを追加します。
+<li>Web サーバーに配置後、ArcGIS Enterprise に組み込まれている ArcGIS Web AppBuilder にカスタムウィジェットを追加します。
 
 <ul>
 <li>詳しくは、<a href="https://enterprise.arcgis.com/ja/portal/latest/use/add-custom-widgets.htm">カスタム ウィジェットの追加</a>をご覧ください。</li>
@@ -781,7 +781,7 @@ if (!doNotTrack) {
 <li>ウィジェットを使った web アプリケーションの作成・利用
 
 <ul>
-<li>ユーザーが ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。</li>
+<li>ユーザーが ArcGIS Enterprise に組み込まれている ArcGIS Web AppBuilder を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。</li>
 <li>内部的には、アプリは Web サーバーでホストされているカスタムウィジェットを参照して動作します。</li>
 </ul></li>
 </ol>

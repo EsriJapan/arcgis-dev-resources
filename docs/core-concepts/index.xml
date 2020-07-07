@@ -29,9 +29,9 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
       <description>本ページに記載のある以下の製品については国内未サポートの製品です。
- Navigator for ArcGIS ArcGIS Experience Builder (Developer Edition) AppStudio Developer Edition ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt   アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+ ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt   アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
 ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
- ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション Collector for ArcGIS - モバイルのデータ収集アプリ Navigator for ArcGIS - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード Explorer for ArcGIS - 組織内の GIS データの検索と表示 Workforce for ArcGIS - 現地調査を調整するためのモバイル／Web アプリ Survey123 for ArcGIS - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
+ ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション ArcGIS Collector - モバイルのデータ収集アプリ ArcGIS Navigator - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード ArcGIS Explorer - 組織内の GIS データの検索と表示 ArcGIS Workforce - 現地調査を調整するためのモバイル／Web アプリ ArcGIS Survey123 - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
     </item>
     
     <item>
