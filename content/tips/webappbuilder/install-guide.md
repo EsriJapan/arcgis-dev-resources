@@ -1,16 +1,16 @@
 +++
 title = "インストール ガイド"
-description = "Web AppBuilder for ArcGIS (Developer Edition) をインストールする手順を紹介します。"
+description = "ArcGIS Web AppBuilder (Developer Edition) をインストールする手順を紹介します。"
 weight = 1
 aliases = ["/webappbuilder/install-guide/"]
 +++
 
-<a href="https://www.esrij.com/products/arcgis-online/details/apps/#webappbuilderforarcgis" target="_blank">Web AppBuilder for ArcGIS</a> は <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a> あるいは <a href="https://www.esrij.com/products/arcgis-for-server/extensions/#extension1" target="_blank">Portal for ArcGIS</a> に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。
-<a href="https://www.esrij.com/products/web-appbuilder-for-arcgis-dev/" target="_blank">Developer Edition（開発者向けエディション）</a>はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
+<a href="https://www.esrij.com/products/arcgis-online/details/apps/#webappbuilderforarcgis" target="_blank">ArcGIS Web AppBuilder</a> は <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a> あるいは <a href="https://www.esrij.com/products/arcgis-for-server/extensions/#extension1" target="_blank">Portal for ArcGIS</a> に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。
+<a href="https://www.esrij.com/products/web-appbuilder-dev/" target="_blank">Developer Edition（開発者向けエディション）</a>はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide1.gif" alt="概要" width="600px">
 
-ここでは、Web AppBuilder for ArcGIS (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
+ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
 
 * [インストール](#インストール)
 * [Web AppBuilder の起動](#web-wppbuilder-の起動)

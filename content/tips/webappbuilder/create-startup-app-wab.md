@@ -6,9 +6,9 @@ hidden = true
 aliases = ["/webappbuilder/create-startup-app-wab/"]
 +++
 
-## Web AppBuilder for ArcGIS とは？
+## ArcGIS Web AppBuilder とは？
 
-Web AppBuilder for ArcGIS（以下、Web AppBuilder）は、コーディング不要、インタラクティブな操作で Web アプリを作成可能なアプリケーション ビルダーです。  
+ArcGIS Web AppBuilder（以下、Web AppBuilder）は、コーディング不要、インタラクティブな操作で Web アプリを作成可能なアプリケーション ビルダーです。  
 Web AppBuilder は、[Web マップ](https://www.esrij.com/gis-guide/web-gis/web-map/)と呼ばれる、さまざまなデータを地図上に重ね合わせ、表示スタイルやポップアップを定義したマップをもとにアプリを作成します。  
 アプリの外観を決めるテーマと、機能を提供するウィジェットを選択していくことで、独自のアプリを作成していきます。  
 
@@ -30,7 +30,7 @@ Web AppBuilder は、[Web マップ](https://www.esrij.com/gis-guide/web-gis/web
 アプリを作成できたら保存して起動してみましょう。
 ![アプリの保存、起動](http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/create-startup-app-wab4.gif)
 
-## Web AppBuilder for ArcGIS (Developer Edition)
+## ArcGIS Web AppBuilder (Developer Edition)
 
 ポータルサイトに組み込まれた Web AppBuilder を利用してアプリを作成するほかに、開発者向けに [Developer Edition](https://developers.arcgis.com/web-appbuilder/) が提供されています。  
 Developer Edition は、テーマやウィジェットを開発可能で、Web AppBuilder に独自の機能を追加することができます。

@@ -10,7 +10,7 @@ aliases = ["/tips/"]
 各 API/SDK の開発をサポートするドキュメントです。
 
 * [ArcGIS API for JavaScript](../tips/javascript/)
-* [Web AppBuilder for ArcGIS (Developer Edition)](../tips/webappbuilder/)
+* [ArcGIS Web AppBuilder (Developer Edition)](../tips/webappbuilder/)
 * [ArcGIS Runtime SDK for .NET](../tips/dotnet/)
 * [ArcGIS Runtime SDK for Android](../tips/android/)
 * [ArcGIS Runtime SDK for iOS](../tips/ios/)
