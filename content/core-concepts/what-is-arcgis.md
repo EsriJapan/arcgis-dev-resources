@@ -25,12 +25,12 @@ ArcGIS は、空間データの作成、管理、共有、分析を行う組織�
 ## ArcGIS Apps
 ArcGIS Online および ArcGIS Enterprise と連携できるアプリケーションも提供しています。詳細に関しては以下をご参照ください。
 
-* [Collector for ArcGIS](https://www.esrij.com/products/collector-for-arcgis/) - モバイル端末から GIS データを現地で直接収集や更新できるアプリケーション
-* [Navigator for ArcGIS](https://www.esri.com/en-us/arcgis/products/navigator-for-arcgis/overview) - モバイル端末から最適経路を探索するためのアプリケーション ※
+* [ArcGIS Collector](https://www.esrij.com/products/arcgis-collector/) - モバイル端末から GIS データを現地で直接収集や更新できるアプリケーション
+* [ArcGIS Navigator](https://www.esri.com/products/navigator) - モバイル端末から最適経路を探索するためのアプリケーション ※
 * [ArcGIS Dashboards](https://www.esrij.com/products/arcgis-dashboards/) - 地図上のリアルタイム データを監視、追跡、および評価することに特化したダッシュボード アプリケーション
-* [Explorer for ArcGIS](https://www.esrij.com/products/explorer-for-arcgis/) - iOS と Android 上で動作する、無料のマップ閲覧アプリケーション
-* [Workforce for ArcGIS](https://www.esrij.com/products/workforce/) - 現地調査作業の計画と調整を行うアプリケーション
-* [Survey123 for ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - シンプルで直感的な調査票で GIS データを収集できるアプリケーション
+* [ArcGIS Explorer](https://www.esrij.com/products/arcgis-explorer/) - iOS と Android 上で動作する、無料のマップ閲覧アプリケーション
+* [ArcGIS Workforce](https://www.esrij.com/products/workforce/) - 現地調査作業の計画と調整を行うアプリケーション
+* [ArcGIS Survey123](https://www.esrij.com/products/survey123/) - シンプルで直感的な調査票で GIS データを収集できるアプリケーション
 
 ※ 現在、国内未サポートです。
 
@@ -38,7 +38,7 @@ ArcGIS Online および ArcGIS Enterprise と連携できるアプリケーシ�
 カスタマイズが必要な場合、ArcGIS プラットフォームには、既存の ArcGIS 製品を拡張したり、独自のアプリを構築するための開発キット（API と SDK）が用意されています。カスタマイズを行う際は、利用可能な[開発キット](https://www.esrij.com/products/developer/)を比較してください。
 
 * [ArcGIS API for JavaScript](https://www.esrij.com/products/arcgis-api-for-javascript/)
-* [Web AppBuilder for ArcGIS (Developer Edition)](https://www.esrij.com/products/web-appbuilder-for-arcgis-dev/)
+* [ArcGIS Web AppBuilder (Developer Edition)](https://www.esrij.com/products/web-appbuilder-dev/)
 * [ArcGIS Runtime SDK for iOS](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/)
 * [ArcGIS Runtime SDK for Android](https://www.esrij.com/products/arcgis-runtime-sdk-for-android/)
 * [ArcGIS Runtime SDK for .NET](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)

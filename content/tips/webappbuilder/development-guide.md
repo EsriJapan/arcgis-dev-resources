@@ -9,8 +9,8 @@ aliases = ["/webappbuilder/development-guide/"]
 
 ### このガイドについて
 
-このガイドは Web AppBuilder for ArcGIS (Developer Edition) （以下、Web AppBuilder）で使用するカスタム ウィジェットを作成する方法を説明します。  
-Web AppBuilder のインストール方法に関しては、[Web AppBuilder for ArcGIS (Developer Edition) インストールガイド](../install-guide/)をご参照ください。  
+このガイドは ArcGIS Web AppBuilder (Developer Edition) （以下、Web AppBuilder）で使用するカスタム ウィジェットを作成する方法を説明します。  
+Web AppBuilder のインストール方法に関しては、[ArcGIS Web AppBuilder (Developer Edition) インストールガイド](../install-guide/)をご参照ください。  
 また [Esri Japan GitHub](https://github.com/EsriJapan/arcgis-webappbuilder-widgets-themes) では、Web AppBuilder のカスタム ウィジェット/テーマが共有されています。このガイドで作成するウィジェットの完成版も公開されています。
 
 #### 既成ウィジェットのソースコードの確認

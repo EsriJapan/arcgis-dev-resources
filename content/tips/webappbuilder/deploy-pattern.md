@@ -1,6 +1,6 @@
 +++
 title = "デプロイ パターン"
-description = "Web AppBuilder for ArcGIS (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。"
+description = "ArcGIS Web AppBuilder (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。"
 weight = 3
 aliases = ["/webappbuilder/deploy-pattern/"]
 +++
@@ -12,7 +12,7 @@ aliases = ["/webappbuilder/deploy-pattern/"]
 * [テンプレートをデプロイ](#テンプレートをデプロイ)
 
 ## 概要
-Web AppBuilder for ArcGIS (Developer Edition) (以下 Developer Edition) では Web AppBuilder for ArcGIS を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
+ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcGIS Web AppBuilder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
 
 ---
 ### Web アプリケーションをデプロイ
@@ -48,7 +48,7 @@ Web AppBuilder for ArcGIS (Developer Edition) (以下 Developer Edition) では 
 
 ---
 ## ウィジェットをデプロイ
-* WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの Web AppBuilder for ArcGIS のウィジェットには無い機能を拡張したい場合に活用できます。
+* WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの ArcGIS Web AppBuilder のウィジェットには無い機能を拡張したい場合に活用できます。
 ![widget](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern2.png)
   
 
@@ -70,11 +70,11 @@ Web AppBuilder for ArcGIS (Developer Edition) (以下 Developer Edition) では 
 1. 作成したカスタムウィジェットを自身で用意した Web サーバーに配置
     * ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。
     * ※ ウィジェットを配置するサーバーが自己署名証明書を使用している場合、Portal for ArcGIS に証明書をインポートする必要があります。詳しい方法は[ポータルへの証明書のインポート](https://enterprise.arcgis.com/ja/portal/latest/administer/windows/import-a-certificate-into-the-portal.htm)をご覧ください。
-    * Web サーバーに配置後、ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS にカスタムウィジェットを追加します。
+    * Web サーバーに配置後、ArcGIS Enterprise に組み込まれている ArcGIS Web AppBuilder にカスタムウィジェットを追加します。
       * 詳しくは、[カスタム ウィジェットの追加](https://enterprise.arcgis.com/ja/portal/latest/use/add-custom-widgets.htm)をご覧ください。
       * ※ ArcGIS Online に追加することはできません。
 1. ウィジェットを使った web アプリケーションの作成・利用
-    * ユーザーが ArcGIS Enterprise に組み込まれている Web AppBuilder for ArcGIS を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。
+    * ユーザーが ArcGIS Enterprise に組み込まれている ArcGIS Web AppBuilder を利用してカスタムウィジェットを使用した web アプリケーションを作成・利用します。
     * 内部的には、アプリは Web サーバーでホストされているカスタムウィジェットを参照して動作します。
 
 ---

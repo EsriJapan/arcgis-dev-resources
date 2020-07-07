@@ -8,9 +8,9 @@ aliases = ["/apis-sdks-apps/"]
 {{% notice note %}}
 本ページに記載のある以下の製品については国内未サポートの製品です。
 
-- Navigator for ArcGIS
+- ArcGIS Navigator
 - ArcGIS Experience Builder (Developer Edition) 
-- AppStudio Developer Edition
+- ArcGIS AppStudio (Developer Edition)
 - ArcGIS Runtime SDK for Java
 - ArcGIS Runtime SDK for Qt
 {{% /notice %}}
@@ -22,12 +22,12 @@ ArcGIS プラットフォームを使用して実現できるワークフロー�
 ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
 
 - [ArcGIS Desktop](https://www.esrij.com/products/arcgis-desktop/) - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション
-- [Collector for ArcGIS](https://www.esrij.com/products/collector-for-arcgis/) - モバイルのデータ収集アプリ
-- [Navigator for ArcGIS](http://www.esri.com/products/navigator) - 高度にカスタマイズ可能なモバイル ルーティング ソリューション
+- [ArcGIS Collector](https://www.esrij.com/products/arcgis-collector/) - モバイルのデータ収集アプリ
+- [ArcGIS Navigator](http://www.esri.com/products/navigator) - 高度にカスタマイズ可能なモバイル ルーティング ソリューション
 - [ArcGIS Dashboards](https://www.esrij.com/products/arcgis-dashboards/) - カスタマイズ可能なリアルタイム ダッシュボード
-- [Explorer for ArcGIS](https://www.esrij.com/products/explorer-for-arcgis/) - 組織内の GIS データの検索と表示
-- [Workforce for ArcGIS](https://www.esrij.com/products/workforce/) - 現地調査を調整するためのモバイル／Web アプリ
-- [Survey123 for ArcGIS](https://www.esrij.com/products/survey123-for-arcgis/) - データ収集・調査のための軽量アプリ
+- [ArcGIS Explorer](https://www.esrij.com/products/arcgis-explorer/) - 組織内の GIS データの検索と表示
+- [ArcGIS Workforce](https://www.esrij.com/products/workforce/) - 現地調査を調整するためのモバイル／Web アプリ
+- [ArcGIS Survey123](https://www.esrij.com/products/survey123/) - データ収集・調査のための軽量アプリ
 
 これらのアプリケーションの多くは、新しい機能を追加するために[スクリプトでの自動化や拡張](https://developers.arcgis.com/documentation/#extend)が可能です。
 
@@ -38,14 +38,14 @@ ArcGIS Online および ArcGIS Enterprise には、カスタマイズや拡張�
 ArcGIS には、構成可能なアプリケーションに加えて、次の 3 つのアプリ ビルダー ソリューションがあります。
 
 - [ArcGIS Experience Builder (Developer Edition)](https://developers.arcgis.com/experience-builder/) - WYSIWYG なウィジェットベースのインターフェイスを使用して、フレキシブルなレイアウト、2D/3D、複数ページ構成に対応したアプリを構築します。
-- [Web AppBuilder for ArcGIS (Developer Edition)](https://www.esrij.com/products/web-appbuilder-for-arcgis-dev/) - WYSIWYG なウィジェットベースのインターフェイスを使用して、Web アプリを構築します。
-- [AppStudio for ArcGIS Developer Edition](https://doc.arcgis.com/en/appstudio/create-apps/licenseappstudio.htm) - テンプレートに基づいてモバイル アプリケーションを公開します。
+- [ArcGIS Web AppBuilder (Developer Edition)](https://www.esrij.com/products/web-appbuilder-dev/) - WYSIWYG なウィジェットベースのインターフェイスを使用して、Web アプリを構築します。
+- [ArcGIS AppStudio (Developer Edition)](https://doc.arcgis.com/en/appstudio/create-apps/licenseappstudio.htm) - テンプレートに基づいてモバイル アプリケーションを公開します。
 
 ### カスタム アプリ
 ArcGIS の API や SDK を使用すると、開発者は特定のニーズに対応したカスタム アプリケーションを構築することができます。様々なユースケースやプラットフォームを対象とした API / SDK があるため、プロジェクトに適した API / SDK を選択するためには慎重に比較検討する必要があります。
 
 ## API または SDK の選択
-Esri の API / SDK、及び開発ツールを使用すると、あらゆる最新のプラットフォームに対応した強力なロケーション ベースのアプリケーションを開発することができます。Esri のソリューションは、モバイル ([Android](https://www.esrij.com/products/arcgis-runtime-sdk-for-android/)、[iOS](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/)、[Windows](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)) 、デスクトップ ([Java](https://developers.arcgis.com/java)、[Windows](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)、[Linux](https://developers.arcgis.com/qt)) を対象としたネイティブ開発、及びWeb 開発に対応しています。[ArcGIS API for JavaScript](https://www.esrij.com/products/arcgis-api-for-javascript/) を使用して、最新の Web ブラウザー上にアプリをデプロイすることができます。これらのソリューションは、非開発者向けではコーディング不要で構築することができます。また、開発者向けでは最小限のコーディング ([Web AppBuilder for ArcGIS (Developer Edition)](https://www.esrij.com/products/web-appbuilder-for-arcgis-dev/)、[AppStudio for ArcGIS](https://appstudio.arcgis.com/)) で、もしくは API/SDK を使用して 1 つの コードベース を元に複数のプラットフォーム ([Qt](https://developers.arcgis.com/qt)、[.NET](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)、[Java](https://developers.arcgis.com/java)、[JavaScript](https://www.esrij.com/products/arcgis-api-for-javascript/)) でデプロイすることができます。
+Esri の API / SDK、及び開発ツールを使用すると、あらゆる最新のプラットフォームに対応した強力なロケーション ベースのアプリケーションを開発することができます。Esri のソリューションは、モバイル ([Android](https://www.esrij.com/products/arcgis-runtime-sdk-for-android/)、[iOS](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/)、[Windows](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)) 、デスクトップ ([Java](https://developers.arcgis.com/java)、[Windows](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)、[Linux](https://developers.arcgis.com/qt)) を対象としたネイティブ開発、及びWeb 開発に対応しています。[ArcGIS API for JavaScript](https://www.esrij.com/products/arcgis-api-for-javascript/) を使用して、最新の Web ブラウザー上にアプリをデプロイすることができます。これらのソリューションは、非開発者向けではコーディング不要で構築することができます。また、開発者向けでは最小限のコーディング ([ArcGIS Web AppBuilder (Developer Edition)](https://www.esrij.com/products/web-appbuilder-dev/)、[ArcGIS AppStudio](https://appstudio.arcgis.com/)) で、もしくは API/SDK を使用して 1 つの コードベース を元に複数のプラットフォーム ([Qt](https://developers.arcgis.com/qt)、[.NET](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/)、[Java](https://developers.arcgis.com/java)、[JavaScript](https://www.esrij.com/products/arcgis-api-for-javascript/)) でデプロイすることができます。
 
 基本的な部分においては [ArcGIS Runtime SDKs](https://developers.arcgis.com/arcgis-runtime) と [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/latest/) の開発パターンは似ています。独自の ArcGIS ベースのアプリケーションを作成するためのアプローチを選択する際には、ネイティブ アプリと Web アプリの一般的な違いや ArcGIS の機能との違いを理解しておくと便利です。
 
@@ -107,15 +107,15 @@ Esri の API / SDK、及び開発ツールを使用すると、あらゆる最�
 |ArcGIS Runtime SDK for .NET<sup>[2]</sup>|✓|✓|✓|||		
 |ArcGIS Runtime SDK for Qt<sup>[3]</sup>|✓|✓|✓|✓|✓|
 |ArcGIS API for JavaScript<sup>[4]</sup>|✓|✓|✓|✓|✓|
-|Web AppBuilder for ArcGIS<sup>[4]</sup>|✓|✓|✓|✓|✓|
-|AppStudio for ArcGIS<sup>[5]</sup>|✓|✓|✓|✓|✓|
+|ArcGIS Web AppBuilder<sup>[4]</sup>|✓|✓|✓|✓|✓|
+|ArcGIS AppStudio<sup>[5]</sup>|✓|✓|✓|✓|✓|
 |ArcGIS REST API<sup>[6]</sup>|✓|✓|✓|✓|✓|
 
 <span style="font-size: 75%">[1] [ArcGIS Runtime SDK for Java](https://developers.arcgis.com/java) は、Windows、Linux、および macOS デスクトップ システムのクロス プラットフォーム開発をサポートします。</span></br>
 <span style="font-size: 75%">[2] [ArcGIS Runtime SDK for .NET](https://developers.arcgis.com/net) は、単一のコードベースから Windows デスクトップ、タブレット、およびモバイル アプリケーションの構築をサポートします。</span></br>
 <span style="font-size: 75%">[3] [ArcGIS Runtime SDK for Qt](https://developers.arcgis.com/qt) を使用すると、一度書いたコードを Android、iOS、Linux、macOS、Windows などにデプロイすることができます。QML API を使用して記述されたコードは、対象のプラットフォームごとにネイティブ コンパイルする必要がありますが、各プラットフォームでは同じコードです。Qt QML API や Esri Runtime for Qt にはプラットフォーム間の違いがないため、単一のコードベースでクロスプラットフォームのアプリケーション開発が可能になります。これを実現するためには、いくつかの妥協点が必要です。例えば、利用可能な UI コントロールはすべてのプラットフォームに存在しなければならず、クロスプラットフォームのコードを構築する際には、1 つのプラットフォームにのみ存在する特定の UI コンポーネントを使用することはできません。しかし、大部分のユースケースでは、QML API を使用するのが良い選択となるでしょう。</span></br>
 <span style="font-size: 75%">[4] [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript) を使用すると、[PhoneGap](http://phonegap.com/)、[Apache Cordova™](http://cordova.apache.org/)、[Intel® XDK](https://software.intel.com/en-us/intel-xdk)、[Trigger.io](https://trigger.io/)、または [Electron](http://electron.atom.io/) を使用して、ブラウザーでアプリを配布したり、複数のプラットフォームでハイブリッドアプリを配布することができます。</span></br>
-<span style="font-size: 75%">[5] [AppStudio for ArcGIS](https://appstudio.arcgis.com/) アプリは、[ArcGIS Runtime SDK for Qt](https://developers.arcgis.com/qt) を使用して拡張することができます。</span></br>
+<span style="font-size: 75%">[5] [ArcGIS AppStudio](https://appstudio.arcgis.com/) アプリは、[ArcGIS Runtime SDK for Qt](https://developers.arcgis.com/qt) を使用して拡張することができます。</span></br>
 <span style="font-size: 75%">[6] [ArcGIS REST API](https://developers.arcgis.com/rest/) を使用すると、HTTP 要求を発行できる任意のプラットフォームで Web サービスを使用できます。</span>
 
 ### ハイブリッド アプリ
