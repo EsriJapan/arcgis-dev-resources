@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>コアコンセプト on ArcGIS for Developer 開発リソース集</title>
+    <title>コア コンセプト on ArcGIS for Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/</link>
-    <description>Recent content in コアコンセプト on ArcGIS for Developer 開発リソース集</description>
+    <description>Recent content in コア コンセプト on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</guid>
-      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon Web Service (AWS)、Microsoft Azure、さくらのクラウド等）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
+      <description>ArcGIS とは ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（Amazon Web Services (AWS)、Microsoft Azure、さくらのクラウド等）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。
 ArcGIS プラットフォーム ArcGIS プラットフォームは、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。
 ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。ポータル を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、REST API を使って直接データを操作することもできます。
  ArcGIS Online - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有 MapViewer（マップ ビューアー） - 2D マップの作成, データの編集, データの分析 SceneViewer（シーン ビューアー） - 3D マップの作成, スライドの作成 ArcGIS REST API  ArcGIS Desktop ArcGIS Pro および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使ってデスクトップの拡張や処理の自動化をすることもできます。</description>
