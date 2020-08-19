@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-07-07T16:11:07 JST">
+<meta name="revised" content="2020-08-19T11:23:34 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -667,17 +667,17 @@ if (!doNotTrack) {
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
 
 <ol>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.15\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.15/</code> に置き換えます。</li>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.15\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.15/</code> に置き換えます。</li>
+<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.16\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.16/</code> に置き換えます。</li>
+<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.16\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.16/</code> に置き換えます。</li>
 </ol>
 
 <h2 id="インストールのテスト">インストールのテスト</h2>
 
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
 
-<pre><code class="language-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.15/dojo/dojo.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.16/dojo/dojo.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 <p>インストールのテストには以下のコードを利用してください。</p>
@@ -688,8 +688,8 @@ if (!doNotTrack) {
     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
     &lt;title&gt;Test Map&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.15/dijit/themes/claro/claro.css&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.15/esri/themes/light/main.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.16/dijit/themes/claro/claro.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.16/esri/themes/light/main.css&quot; /&gt;
     &lt;style&gt;
       html, body, #ui-map-view {
         margin: 0;
@@ -698,7 +698,7 @@ if (!doNotTrack) {
         height: 100%;
       }
     &lt;/style&gt;
-    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.15/dojo/dojo.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.16/dojo/dojo.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
       var myMap, view;
       require([
