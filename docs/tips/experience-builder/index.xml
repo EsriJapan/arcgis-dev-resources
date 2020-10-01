@@ -22,17 +22,5 @@ Server インストール ArcGIS for Developers サイト上での Client ID の
   Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
     </item>
     
-    <item>
-      <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide_bk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide_bk/</guid>
-      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
-ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
- インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
-サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
-    </item>
-    
   </channel>
 </rss>

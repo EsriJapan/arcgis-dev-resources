@@ -129,8 +129,5 @@ Experience Builder では、Client ID を作成するために ArcGIS Online ま
 4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に https://localhost:3001/ と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://developers.arcgis.com/experience-builder/static/7150fd8f693e6b20d4c5e41b886efaeb/ace37/Registeredinfo.png" />
 5.  次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
-{{% notice tip %}}
-Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。デフォルトの証明書を独自の証明書に変更するには、server/cert ディレクトリの server.key と server.cert の 2 つのファイルを置き換える必要があります。
-{{% /notice %}}
 6.  ArcGIS Online または ArcGIS Enterprise の組織サイトの URLを指定し、4. でコピーした アプリケーション ID を指定します。すべて指定したらサイン インをクリックします。
 
