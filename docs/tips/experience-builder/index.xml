@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArcGIS Experience Builder (Developer Edition) on ArcGIS for Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</link>
+    <description>Recent content in ArcGIS Experience Builder (Developer Edition) on ArcGIS for Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
+      <description>インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスがあります。Experience Builder での更新を自動的に反映するには、両方のサービスを実行しておく必要があります。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。
+Server インストール ArcGIS for Developers サイト上での Client ID の作成 ArcGIS for Developers を使用している場合は、以下の手順を行います。
+ Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。 Experience Builder のインストール環境に Node.js (v12+.x) をダウンロードしてインストールを行います。  Esri が公開しているインストール動画 (英語)でも確認することができます。
+  Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
+    </item>
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide_bk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide_bk/</guid>
+      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
+ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
+ インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
+サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
+    </item>
+    
+  </channel>
+</rss>
