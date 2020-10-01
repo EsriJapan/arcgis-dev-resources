@@ -77,18 +77,6 @@ ArcGIS Runtime SDK for .NET の開発環境 ArcGIS Runtime SDK for .NET を用�
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
-      <description>インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスがあります。Experience Builder での更新を自動的に反映するには、両方のサービスを実行しておく必要があります。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。
-Server インストール ArcGIS for Developers サイト上での Client ID の作成 ArcGIS for Developers を使用している場合は、以下の手順を行います。
- Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。 Experience Builder のインストール環境に Node.js (v12+.x) をダウンロードしてインストールを行います。  Esri が公開しているインストール動画 (英語)でも確認することができます。
-  Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
-    </item>
-    
-    <item>
-      <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -286,6 +274,18 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
 ・ルート検索/到達圏解析/最寄り施設検索
 ・住所検索/リバース ジオコーディング   Basic ・Lite ライセンスで利用できるすべての機能
 ・フィーチャのオンライン編集（セキュアなフィーチャ サービス）</description>
+    </item>
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
+      <description>インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスがあります。Experience Builder での更新を自動的に反映するには、両方のサービスを実行しておく必要があります。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。
+Server インストール ArcGIS for Developers サイト上での Client ID の作成 ArcGIS for Developers を使用している場合は、以下の手順を行います。
+ Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。 Experience Builder のインストール環境に Node.js (v12+.x) をダウンロードしてインストールを行います。  Esri が公開しているインストール動画 (英語)でも確認することができます。
+  Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
     </item>
     
     <item>
@@ -574,6 +574,20 @@ esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつで�
     </item>
     
     <item>
+      <title>ウィジェット開発のスタート</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</guid>
+      <description>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
+ TypeScript React JSX Jimu  TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript はウィジェットの開発に使用されている言語です。TypeScript とは何か、なぜ TypeScript が使われているのか、どのように使えるのかについて詳しく説明しているオンラインリソースが多くあります。
+React React はユーザーインターフェイスを作成するための JavaScript ライブラリです。React は DOM からの抽象化であり、アプリケーションと UI は、さまざまな状態で連携し、それらの状態をレンダリングすることで UI の一貫性を保つことを容易にします。例えば、Experience Builder では、ウィジェットの状態を更新してから、この新しい状態に基づいて UI をレンダリングするだけです。インターフェースの構築を容易にするために、Experience Builder では reactstrap を使用しています。これは Bootstrap 4 をベースにした React コンポーネントの UI ライブラリです。
+React を使った開発については、React のドキュメントを参照してください。
+JSX JSX は JavaScript の拡張構文で、React を通してウィジェットの UI がどのように表示されるかを記述することができます。
+Jimu Jimu は、ウィジェットの作成に使用する Experience Builder の JavaScript ライブラリです。</description>
+    </item>
+    
+    <item>
       <title>スタートアップ ガイド（3.x）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -644,6 +658,16 @@ ArcGIS Online の Web マップの例としては、サンタ モニカの公園
 なぜ Web マップを使うのか？ Web マップは、ArcGIS Online および ArcGIS Pro で作成し、Collector for ArcGIS、Survey123 for ArcGIS、ArcGIS StoryMaps や ArcGIS API および SDK を使用して構築されたアプリなど、多くのアプリケーションで表示することができます。アプリケーションが Web マップをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や ArcGIS プラットフォーム全体でのマップの共有が容易になります。
 例えば、ArcGIS Online でポップアップを使用するために作成され、スタイルの設定がされた Web マップを REST API を使って参照したり、ArcGIS API for JavaScript を使用して Web ページに表示したり、ArcGIS Pro にインポートしたりすることができます。
 Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づいており、ArcGIS プラットフォーム全体で Web マップを共有、作成、編集、可視化、参照などをすることができます。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット manifest</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
+      <description>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述する manifest.json ファイルがあります。ウィジェットのマニフェストには、名前、タイプ、バージョン、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットのマニフェストを作成する最も簡単な方法は、デモ・ウィジェットから manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
+{ &amp;quot;name&amp;quot;: &amp;quot;count-features&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;Count Features&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;widget&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.1.0&amp;quot;, &amp;quot;exbVersion&amp;quot;: &amp;quot;1.1.0&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;Esri R&amp;amp;D Center Beijing&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This is widget is designed to display the numeric attributes of features.&amp;quot;, &amp;quot;copyright&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;license&amp;quot;: &amp;quot;http://www.apache.org/licenses/LICENSE-2.0&amp;quot;, &amp;quot;publishMessages&amp;quot;: [ &amp;quot;EXTENT_CHANGE&amp;quot;, &amp;quot;DATA_RECORDS_SELECTION_CHANGE&amp;quot; ], &amp;quot;messageActions&amp;quot;: [], &amp;quot;defaultSize&amp;quot;: { &amp;quot;width&amp;quot;: 360, &amp;quot;height&amp;quot;: 80 }, &amp;quot;properties&amp;quot;: {}, &amp;quot;translatedLocales&amp;quot;: [ &amp;quot;en&amp;quot;, &amp;quot;es&amp;quot;, &amp;quot;zh-cn&amp;quot; ] }  ウィジェットのマニフェストで利用可能なプロパティの詳細については、こちらを参照してください。</description>
     </item>
     
     <item>

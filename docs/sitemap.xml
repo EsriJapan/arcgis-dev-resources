@@ -31,10 +31,6 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
-  </url>
-  
-  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</loc>
   </url>
   
@@ -95,6 +91,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
   </url>
   
@@ -140,6 +140,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
   </url>
   
   <url>
@@ -195,6 +199,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</loc>
   </url>
   
@@ -220,6 +228,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
   </url>
   
   <url>

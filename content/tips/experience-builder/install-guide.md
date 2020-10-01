@@ -1,7 +1,7 @@
 +++
 title = "インストール ガイド"
 description = "ArcGIS Experience Builder (Developer Edition) をインストールする手順を紹介します。"
-weight = 1
+weight = 2
 aliases = ["/experience/install-guide/"]
 +++
 
