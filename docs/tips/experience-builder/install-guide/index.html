@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-01T20:33:55 JST">
+<meta name="revised" content="2020-10-02T19:16:16 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -326,6 +326,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
             ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
           </a>
         </div>
     </li>
@@ -786,16 +793,16 @@ if (!doNotTrack) {
 <li><p>Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に <a href="https://nodejs.org/en/download/">Node.js (v12+.x)</a> をダウンロードしてインストールを行います。</p></li>
 </ul>
 
-<div class="notices tip" ><p>Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
+<div class="notices tip" ><p>Esri が公開している<a href="https://youtube.com/watch?v=1rO1cZNEr0E">オフライン インストール動画 (英語)</a>でも確認することができます。</p>
 </div>
 
 
 <ol>
 <li>Experience Builder (Developer Edition) の ZIP ファイルをローカルに<a href="/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロード</a>して、解凍します。</li>
-<li>Experience Builder Developer (Developer Edition) 用の <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">npm-cache zip</a> をローカルにダウンロードして、解凍します。</li>
-<li>コマンド プロンプト、またはターミナル<code>(例えば、macOS /Users/installExB)</code>で、ユーザーフォルダ<code>(例えば、Windows OS c:\Users\exbuser)</code>を開き、<code>npm config get cache</code> と入力します。</li>
-<li>npm-cache のフォルダのパスをコピーして、そのディレクトリを Windows のエクスプローラか Mac の場合は Finder で開きます。</li>
-<li>npm-cache ディレクトリ (手順3) をコピーして、このディレクトリに貼り付けます。</li>
+<li>Experience Builder (Developer Edition) 用の <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">npm-cache zip</a> をローカルにダウンロードして、解凍します。</li>
+<li>コマンド プロンプト<code>(例えば、Windows OS c:\Users\exbuser)</code>、またはターミナル<code>(例えば、macOS /Users/installExB)</code>で、ユーザーフォルダを開き、<code>npm config get cache</code> と入力します。</li>
+<li><code>npm config get cache</code> の実行で表示された npm-cache のフォルダのパスをコピーして、そのディレクトリを Windows のエクスプローラーか Mac の場合は Finder で開きます。</li>
+<li>ダウンロードした Experience Builder (Developer Edition) 用 の npm-cache ディレクトリをコピーして、4 で参照しているディレクトリに貼り付けます。</li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの client ディレクトリに cd コマンドで移動して、<code>npm install --offline</code> と入力して Enter キーを押します。</li>
 <li>別のコマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの server ディレクトリに cd コマンドで移動して、<code>npm install -- offline</code> と入力して Enter キーを押します。</li>
 <li>Experience Builder の client ディレクトリを以下のパス <code>&lt;install folder&gt;/client/dist</code> で開きます。</li>

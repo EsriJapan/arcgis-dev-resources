@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-01T20:33:55 JST">
+<meta name="revised" content="2020-10-02T19:16:17 JST">
 <title>ウィジェット manifest :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Experience Builder (Developer Edition) をインストールする手順を紹介します。">
+<meta name="description" content="ウィジェットの名前やバージョンなどのウィジェットの属性などを設定する manifest.json ファイルについて紹介します。">
 
 
     
@@ -326,6 +326,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
             ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
           </a>
         </div>
     </li>
@@ -670,7 +677,7 @@ if (!doNotTrack) {
     
     
     
-    <p>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述する manifest.json ファイルがあります。ウィジェットのマニフェストには、名前、タイプ、バージョン、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットのマニフェストを作成する最も簡単な方法は、デモ・ウィジェットから manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。</p>
+    <p>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した <code>manifest.json</code> ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/demo">demo widget</a> から <code>manifest.json</code> ファイルをコピーすることです。以下は <code>manifest.json</code> ファイルの例です。</p>
 
 <pre><code class="language-JavaScript">{
   &quot;name&quot;: &quot;count-features&quot;,
@@ -700,7 +707,7 @@ if (!doNotTrack) {
 }
 </code></pre>
 
-<p>ウィジェットのマニフェストで利用可能なプロパティの詳細については、こちらを参照してください。</p>
+<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/WidgetManifest">widget&rsquo;s manifest</a> で利用可能なプロパティの詳細を参照してください。</p>
 
 
     
@@ -713,7 +720,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" title="ウィジェット開発のスタート"> <i class="fa fa-chevron-left"></i><label>ウィジェット開発のスタート</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/webappbuilder/" title="ArcGIS Web AppBuilder (Developer Edition)" style="margin-right: 0px;"><label>ArcGIS Web AppBuilder (Developer Edition)</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成" style="margin-right: 0px;"><label>ウィジェット UI の作成</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
