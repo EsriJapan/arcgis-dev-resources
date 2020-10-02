@@ -93,14 +93,14 @@ client/your-extensions ディレクトリに新規に作成されたファイル
 * Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
 
 {{% notice tip %}}
-Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+Esri が公開している[オフライン インストール動画 (英語)](https://youtube.com/watch?v=1rO1cZNEr0E)でも確認することができます。 
 {{% /notice %}}
 
 1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
-2. Experience Builder Developer (Developer Edition) 用の [npm-cache zip](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder) をローカルにダウンロードして、解凍します。
-3. コマンド プロンプト、またはターミナル`(例えば、macOS /Users/installExB)`で、ユーザーフォルダ`(例えば、Windows OS c:\Users\exbuser)`を開き、`npm config get cache` と入力します。
-4. npm-cache のフォルダのパスをコピーして、そのディレクトリを Windows のエクスプローラか Mac の場合は Finder で開きます。
-5. npm-cache ディレクトリ (手順3) をコピーして、このディレクトリに貼り付けます。
+2. Experience Builder (Developer Edition) 用の [npm-cache zip](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder) をローカルにダウンロードして、解凍します。
+3. コマンド プロンプト`(例えば、Windows OS c:\Users\exbuser)`、またはターミナル`(例えば、macOS /Users/installExB)`で、ユーザーフォルダを開き、`npm config get cache` と入力します。
+4. `npm config get cache` の実行で表示された npm-cache のフォルダのパスをコピーして、そのディレクトリを Windows のエクスプローラーか Mac の場合は Finder で開きます。
+5. ダウンロードした Experience Builder (Developer Edition) 用 の npm-cache ディレクトリをコピーして、4 で参照しているディレクトリに貼り付けます。
 6. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの client ディレクトリに cd コマンドで移動して、`npm install --offline` と入力して Enter キーを押します。
 7. 別のコマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの server ディレクトリに cd コマンドで移動して、`npm install -- offline` と入力して Enter キーを押します。
 8. Experience Builder の client ディレクトリを以下のパス `<install folder>/client/dist` で開きます。

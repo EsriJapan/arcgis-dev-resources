@@ -1,6 +1,6 @@
 +++
 title = "ウィジェット開発のスタート"
-description = "ウィジェット開発に使用しているライブラリから開発に必要な概要まで等を紹介します。"
+description = "ウィジェット開発に使用しているライブラリから開発に必要な概要までを紹介します。"
 weight = 4
 aliases = ["/getting-started-widget/"]
 +++
@@ -45,7 +45,7 @@ Experience Builder は、インストール用の ZIP ファイルとして提�
 
 ウィジェット開発の詳細については、[ウィジェットの実装](https://developers.arcgis.com/experience-builder/guide/extend-base-widget)について学習してください。
 
-## 基本的なこと
+## 基本的な考え方
 Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。
 
 - [コア コンセプト](https://developers.arcgis.com/experience-builder/guide/core-concepts)

@@ -1,11 +1,11 @@
 +++
 title = "ウィジェット manifest"
-description = "ArcGIS Experience Builder (Developer Edition) をインストールする手順を紹介します。"
+description = "ウィジェットの名前やバージョンなどのウィジェットの属性などを設定する manifest.json ファイルについて紹介します。"
 weight = 5
 aliases = ["/widget-manifest/"]
 +++
 
-各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述する manifest.json ファイルがあります。ウィジェットのマニフェストには、名前、タイプ、バージョン、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットのマニフェストを作成する最も簡単な方法は、デモ・ウィジェットから manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
+各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した `manifest.json` ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、[demo widget](https://developers.arcgis.com/experience-builder/sample-code/widgets/demo) から `manifest.json` ファイルをコピーすることです。以下は `manifest.json` ファイルの例です。
 
 ```JavaScript
 {
@@ -36,4 +36,4 @@ aliases = ["/widget-manifest/"]
 }
 ```
 
-ウィジェットのマニフェストで利用可能なプロパティの詳細については、こちらを参照してください。
+[widget's manifest](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/WidgetManifest) で利用可能なプロパティの詳細を参照してください。
