@@ -15,13 +15,13 @@ ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネ�
 
 ## ArcGIS Runtime SDK for Android の開発環境
 
-以下はArcGIS Runtime SDK for Android の最新版（100.8）の開発に必要な環境です。
+以下はArcGIS Runtime SDK for Android の最新版（100.9）の開発に必要な環境です。
 
 * Android Studio / IntelliJ IDEA
 * Android 5.0（Lollipop: API レベル 21) 以降
 * OpenGL ES  
-  * 2D (MapView): OpenGL ES 2.0以上  
-  * 3D (SceneView): OpenGL ES 3.0以上
+  * 2D (MapView): OpenGL ES 2.0 以上（3.0を推奨） 
+  * 3D (SceneView): OpenGL ES 3.0 以上
 
 ArcGIS Runtime SDK for Android がサポートする動作環境につきましては[こちら](http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)にも記載してありますので、ご参照ください。
 

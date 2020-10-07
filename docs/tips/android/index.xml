@@ -18,7 +18,7 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</guid>
       <description>このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に基本的な開発手順を紹介いたします。
 ArcGIS Runtime SDK for Android とは ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。 この SDK には API やリファレンス、サンプルコードなどが含まれています。 詳細は ArcGIS Runtime SDK for Android をご参照ください。
-ArcGIS Runtime SDK for Android の開発環境 以下はArcGIS Runtime SDK for Android の最新版（100.8）の開発に必要な環境です。
+ArcGIS Runtime SDK for Android の開発環境 以下はArcGIS Runtime SDK for Android の最新版（100.9）の開発に必要な環境です。
  Android Studio / IntelliJ IDEA Android 5.0（Lollipop: API レベル 21) 以降 OpenGL ES
  2D (MapView): OpenGL ES 2.</description>
     </item>
