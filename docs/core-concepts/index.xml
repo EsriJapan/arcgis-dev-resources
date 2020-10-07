@@ -29,7 +29,7 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
       <description>本ページに記載のある以下の製品については国内未サポートの製品です。
- ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt   アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+ ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt  アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
 ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
  ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション ArcGIS Collector - モバイルのデータ収集アプリ ArcGIS Navigator - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード ArcGIS Explorer - 組織内の GIS データの検索と表示 ArcGIS Workforce - 現地調査を調整するためのモバイル／Web アプリ ArcGIS Survey123 - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
     </item>
@@ -43,9 +43,9 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <description>ArcGIS での認証 セキュリティを担保するために、ネットワーク上で利用可能なリソースに対して、公開範囲を設定してアクセスを制限することでリソースを保護します。リソースに対するアクセスはインターネットを使用して行われますが、VPN やイントラネットを使用したアクセスも可能です。公開範囲が制限されたリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションを利用するユーザーは、認定された機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
 アプリケーションが以下の操作を行う場合は、認証が必要となります。
  プライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツとサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
-製品毎の実装方法 セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。
+製品毎の実装方法セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。
  Android　 iOS Java ※ JavaScript　 .NET　 Qt ※ Esri Leaflet ※ REST  ※ 現在、国内未サポートです。
-  セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
  OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.</description>
     </item>
     

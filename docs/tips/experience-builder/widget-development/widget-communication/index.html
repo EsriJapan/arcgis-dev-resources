@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-07T20:15:27 JST">
-<title>技術 Tips 集 :: ArcGIS for Developer 開発リソース集</title>
+<meta name="revised" content="2020-10-07T20:15:28 JST">
+<title>ウィジェット間の通信 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="開発に役立つ技術 Tips 集です。">
+<meta name="description" content="ウィジェット同士がどのように相互に通信する方法について紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -237,7 +237,7 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent active haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
@@ -294,10 +294,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
@@ -307,7 +308,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
@@ -335,7 +336,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
             ウィジェット間の通信
@@ -646,7 +647,22 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > 技術 Tips 集
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェット間の通信
+
+ 
+
+ 
+
+ 
 
  
 
@@ -661,12 +677,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#開発ドキュメント">開発ドキュメント</a></li>
-<li><a href="#開発ブログ記事">開発ブログ記事</a></li>
-<li><a href="#テーマ別ページ">テーマ別ページ</a></li>
-</ul></li>
+<li><a href="#ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</a></li>
+<li><a href="#ウィジェット間で状態を共有するための独自の-redux-store-action-reducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -679,7 +691,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>技術 Tips 集</h1>
+    <h1>ウィジェット間の通信</h1>
   
 
 
@@ -687,51 +699,90 @@ if (!doNotTrack) {
     
     
     
+    
 
-
-
-<p>　　</p>
-
-<h3 id="開発ドキュメント">開発ドキュメント</h3>
-
-<p>各 API/SDK の開発をサポートするドキュメントです。</p>
+<p>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。
+以下の方法をサポートしています。</p>
 
 <ul>
-<li><a href="../tips/javascript/">ArcGIS API for JavaScript</a></li>
-<li><a href="../tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a></li>
-<li><a href="../tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a></li>
-<li><a href="../tips/dotnet/">ArcGIS Runtime SDK for .NET</a></li>
-<li><a href="../tips/android/">ArcGIS Runtime SDK for Android</a></li>
-<li><a href="../tips/ios/">ArcGIS Runtime SDK for iOS</a></li>
-<li><a href="../tips/python/">ArcGIS API for Python</a></li>
+<li><p>Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は <a href="https://developers.arcgis.com/experience-builder/guide/message-action">Message action</a> を参照してください。</p></li>
+
+<li><p>Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state  (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。</p></li>
 </ul>
 
-<p>　　</p>
+<h2 id="ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</h2>
 
-<h3 id="開発ブログ記事">開発ブログ記事</h3>
+<p>React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは <code>widgetsState</code> と呼ばれるもので、型の定義は <code>jimu-core/lib/types/state</code> にあります。<code>widgetState</code> に保存された情報は、他のすべてのウィジェットからアクセス可能です。<code>widgetsState</code> に情報を保存するには、以下のコードを参照してください。</p>
 
-<p>開発者のためのオンライン コミュニティ サイト（GeoNet）にて ArcGIS 開発製品を使った開発に役立つ Tips などをブログ記事としてお届けしています。</p>
+<pre><code class="language-tsx">import {appActions} from 'jimu-core';
+
+/*
+* Call this when you need to save state.
+*
+* widgetId: your widget id
+* propKey: can be a string with this format &quot;a.b.c&quot;
+* value: the info you want to store
+*/
+this.props.dispatch(appActions.widgetStatePropChange(widgetId, propKey, value))
+</code></pre>
+
+<p>例えば、<code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b1&quot;, &quot;value1&quot;))</code> と <code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b2&quot;, &quot;value2&quot;))</code> を呼び出すと、Redux store でこの store の state (状態) が取得されます。</p>
+
+<pre><code class="language-tsx">widgetsState: {
+    w1: {
+        a: {
+            b1: 'value1',
+            b2: 'value2'
+        }
+    }
+}
+</code></pre>
+
+<p>ウィジェット2 の <code>w1</code> が格納した情報にアクセスするには、<code>mapExtraStateProps</code> を使用するか、<code>useSelect</code> hooks を使用して store から値を選択することができます。</p>
+
+<p>ただし、<code>widgetState</code> にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、<code>this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))</code> を使用して値を格納し、<code>MutableStoreManager.getInstance().getStateValue()</code> を使用してアクセスすることができます。</p>
+
+<h2 id="ウィジェット間で状態を共有するための独自の-redux-store-action-reducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</h2>
+
+<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state (状態)を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
 
 <ul>
-<li><a href="http://arcg.is/1X5Q0Sl">JavaScript</a></li>
-<li><a href="http://arcg.is/1LPKAcf">.NET</a></li>
-<li><a href="http://arcg.is/1PiwBfG">Android</a></li>
-<li><a href="http://arcg.is/1LlUgpi">iOS</a></li>
-<li><a href="https://bit.ly/2IkdDbS">Python</a></li>
+<li>ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。</li>
 </ul>
 
-<p>　　</p>
+<pre><code class="language-tsx">import {extensionSpec} from 'jimu-core';
 
-<h3 id="テーマ別ページ">テーマ別ページ</h3>
+export default class MyReduxStoreExtension implements extensionSpec.ReduxStoreExtension{
+    getActions(){
+        // return your redux actions.
+    }
+
+    getInitLocalState(){
+        // return your redux init local state.
+    }
+
+    getReducer(){
+        // return your redux reducer.
+    }
+
+    getStoreKey(){
+        // return your redux local key.
+    }
+}
+</code></pre>
 
 <ul>
-<li><p><a href="../tips/visualization">データ ビジュアライゼーション</a><br />
-地図にデータを可視化する際の tips を紹介します。</p></li>
-
-<li><p><a href="../tips/hackathon/">ミートアップ</a><br />
-開発者向けのイベント用に提供したページのリンクです。</p></li>
+<li>ウィジェットの manifest.json で拡張機能を宣言します。</li>
 </ul>
 
+<pre><code class="language-tsx">&quot;extensions&quot;: [
+    {
+      &quot;name&quot;: &quot;My Store&quot;,
+      &quot;point&quot;: &quot;REDUX_STORE&quot;,
+      &quot;uri&quot;: &quot;my-store&quot;
+    }
+  ]
+</code></pre>
 
 
     
@@ -743,8 +794,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/guide/authentication/proxy-services/" title="プロキシ サービスの利用"> <i class="fa fa-chevron-left"></i><label>プロキシ サービスの利用</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/javascript/" title="ArcGIS API for JavaScript" style="margin-right: 0px;"><label>ArcGIS API for JavaScript</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成"> <i class="fa fa-chevron-left"></i><label>ウィジェット UI の作成</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" title="ウィジェット開発のデバック" style="margin-right: 0px;"><label>ウィジェット開発のデバック</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

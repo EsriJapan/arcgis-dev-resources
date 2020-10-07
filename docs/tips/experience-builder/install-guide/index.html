@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-02T19:16:16 JST">
+<meta name="revised" content="2020-10-07T20:15:27 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -333,6 +333,20 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
             ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
           </a>
         </div>
     </li>
@@ -721,7 +735,7 @@ if (!doNotTrack) {
 <li><code>Register New Application</code> をクリックします。</li>
 </ul></li>
 <li>登録したアプリケーションの <code>Authentication</code> タブをクリックします。<code>Current Redirect URIs</code> のセクションで、リダイレクト URI に <code>https://localhost:3001/</code> と入力して、<code>+ Add</code> をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/a76d166fe99df98d9049163eb0aa1676/79e48/installExB.png" /></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /></li>
 <li>Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。</li>
 <li>コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。</li>
 <li><code>npm start</code> と入力して server を起動します。</li>
@@ -756,11 +770,11 @@ if (!doNotTrack) {
 <li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などのようにあなたにとって意味があるものを入力します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>アイテムの追加</code> をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/335a7ac6a33a15e010711cf9ccc8411d/d0e73/AddApplication.png" /></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul></li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <a href="https://localhost:3001/">https://localhost:3001/</a> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://developers.arcgis.com/experience-builder/static/7150fd8f693e6b20d4c5e41b886efaeb/ace37/Registeredinfo.png" /></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。</li>
 <li><code>npm start</code> と入力して server を起動します。</li>
 <li>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。
@@ -833,11 +847,11 @@ if (!doNotTrack) {
 <li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などのようにあなたにとって意味があるものを入力します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>アイテムの追加</code> をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/335a7ac6a33a15e010711cf9ccc8411d/d0e73/AddApplication.png" /></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul></li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <a href="https://localhost:3001/">https://localhost:3001/</a> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://developers.arcgis.com/experience-builder/static/7150fd8f693e6b20d4c5e41b886efaeb/ace37/Registeredinfo.png" /></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 <li>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。</li>
 <li>ArcGIS Online または ArcGIS Enterprise の組織サイトの URLを指定し、4. でコピーした アプリケーション ID を指定します。すべて指定したらサイン インをクリックします。</li>
 </ol>

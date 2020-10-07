@@ -47,5 +47,30 @@ JSX の詳細を参照してください。
 // in widget.tsx: import { React, BaseWidget, AllWidgetProps } from &#39;jimu-core&#39;; export default class Widget extends BaseWidget&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;quot;myWidget&amp;quot;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;quot;button&amp;quot; style={{background: &#39;orange&#39;}}&amp;gt;I&#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } }  Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
     </item>
     
+    <item>
+      <title>ウィジェット間の通信</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</guid>
+      <description>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
+ Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
+ Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
+  ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。
+import {appActions} from &#39;jimu-core&#39;; /* * Call this when you need to save state.</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット開発のデバック</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</guid>
+      <description>ウィジェット開発環境の設定 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
+作成したカスタム ウィジェットは、Experience Builder ファイル構造の client フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして client フォルダを開きます。
+ ファイル メニューをクリックします。 フォルダを開く をクリックします。 Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の client フォルダを参照します。  これにより、client フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について client フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。
+Visual Studio コード テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる拡張機能のマーケットプレイスがあります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</description>
+    </item>
+    
   </channel>
 </rss>

@@ -191,7 +191,7 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
       <description>本ページに記載のある以下の製品については国内未サポートの製品です。
- ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt   アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+ ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt  アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
 ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
  ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション ArcGIS Collector - モバイルのデータ収集アプリ ArcGIS Navigator - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード ArcGIS Explorer - 組織内の GIS データの検索と表示 ArcGIS Workforce - 現地調査を調整するためのモバイル／Web アプリ ArcGIS Survey123 - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
     </item>
@@ -285,7 +285,7 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <description>インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスがあります。Experience Builder での更新を自動的に反映するには、両方のサービスを実行しておく必要があります。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。
 Server インストール ArcGIS for Developers サイト上での Client ID の作成 ArcGIS for Developers を使用している場合は、以下の手順を行います。
  Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。 Experience Builder のインストール環境に Node.js (v12+.x) をダウンロードしてインストールを行います。  Esri が公開しているインストール動画 (英語)でも確認することができます。
-  Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
+ Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
     </item>
     
     <item>
@@ -392,7 +392,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
     </item>
     
     <item>
@@ -404,9 +404,9 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
       <description>ArcGIS での認証 セキュリティを担保するために、ネットワーク上で利用可能なリソースに対して、公開範囲を設定してアクセスを制限することでリソースを保護します。リソースに対するアクセスはインターネットを使用して行われますが、VPN やイントラネットを使用したアクセスも可能です。公開範囲が制限されたリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションを利用するユーザーは、認定された機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
 アプリケーションが以下の操作を行う場合は、認証が必要となります。
  プライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツとサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
-製品毎の実装方法 セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。
+製品毎の実装方法セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。
  Android　 iOS Java ※ JavaScript　 .NET　 Qt ※ Esri Leaflet ※ REST  ※ 現在、国内未サポートです。
-  セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
  OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.</description>
     </item>
     
@@ -825,6 +825,31 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 対応環境 ここでは、次の環境を用いた場合の設定方法を説明します。
  ArcGIS Pro 2.5 ArcGIS API for Python 1.7.0 matplotlib 3.1.1  日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。
  ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。  ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。   matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット間の通信</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</guid>
+      <description>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
+ Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
+ Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
+  ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。
+import {appActions} from &#39;jimu-core&#39;; /* * Call this when you need to save state.</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット開発のデバック</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</guid>
+      <description>ウィジェット開発環境の設定 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
+作成したカスタム ウィジェットは、Experience Builder ファイル構造の client フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして client フォルダを開きます。
+ ファイル メニューをクリックします。 フォルダを開く をクリックします。 Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の client フォルダを参照します。  これにより、client フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について client フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。
+Visual Studio コード テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる拡張機能のマーケットプレイスがあります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</description>
     </item>
     
     <item>

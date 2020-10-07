@@ -29,7 +29,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<{}>, any>{
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/6310a76d0d3665e474ccbfc35f23e0f4/779ef/widgetUIJSX.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png)
 
 ## Jimu UI ライブラリの使用
 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。
@@ -79,7 +79,7 @@ export default class Widget extends BaseWidget<AllWidgetProps, any>{
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/d40acd7784b18a40770670a025e668dc/e6f05/widgetUIButton.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png)
 
 ## CSS ユーティリティクラス
 Jimu UI は、[Bootstrap](https://getbootstrap.com/docs/4.3/utilities) と同じ CSS ユーティリティクラスを提供しており、UI 要素に素早くスタイルを適用することができます。
@@ -101,7 +101,7 @@ return <div className="w-100 p-3 bg-primary text-white">
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/3fa9a831b352c2f6e4ba9c38f6f76d35/0b6f4/widgetUtilityClasses.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png)
 
 ## ウィジェット スタイル設定
 Experience Builder では、ウィジェットのスタイルを設定するには 3 つのオプションがあります。
@@ -127,7 +127,7 @@ return <div
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/9063ce6b6633013280b71d57599fc567/d4770/widgetCSSInline.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png)
 
 ### 外部 CSS スタイルシート
 別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。
@@ -163,7 +163,7 @@ return <div className="my-widget"> content </div>;
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/9063ce6b6633013280b71d57599fc567/d4770/widgetCSSInline.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png)
 
 
 ### CSS-in-JS (推奨)
@@ -218,7 +218,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<{}>, State>{
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/1bd4a1de34d6c8fc4995baaf8f1dad3b/811d1/EmotionCSSProp.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png)
 
 ### 2. Styled Components
 このパターンは [Styled-Components](https://www.styled-components.com/) ライブラリにインスパイアされたもので、使い方は非常に似ています。スタイリングされた」アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。
@@ -248,7 +248,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<{}>>{
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/4355f685972a86cb1fb4d8111cfbd6d8/4dcb9/widgetStyledComponent.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png)
 
 ### 3. テーマを使った作業
 これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。
@@ -278,6 +278,6 @@ export default class Widget extends BaseWidget<AllWidgetProps<{}>>{
 ```
 
 Output 例:
-![](https://developers.arcgis.com/experience-builder/static/272c967bbb89a8f6f0ef051d31d4e3c1/5f759/widgetWithTheme.png)
+![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png)
 
 default theme vs. dark theme

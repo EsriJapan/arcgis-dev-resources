@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-02T19:16:17 JST">
+<meta name="revised" content="2020-10-07T20:15:28 JST">
 <title>ウィジェット UI の作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -333,6 +333,20 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
             ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
           </a>
         </div>
     </li>
@@ -729,7 +743,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;, any&
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/6310a76d0d3665e474ccbfc35f23e0f4/779ef/widgetUIJSX.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png" alt="" /></p>
 
 <h2 id="jimu-ui-ライブラリの使用">Jimu UI ライブラリの使用</h2>
 
@@ -784,7 +798,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps, any&gt;{
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/d40acd7784b18a40770670a025e668dc/e6f05/widgetUIButton.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png" alt="" /></p>
 
 <h2 id="css-ユーティリティクラス">CSS ユーティリティクラス</h2>
 
@@ -809,7 +823,7 @@ return &lt;div className=&quot;w-100 p-3 bg-primary text-white&quot;&gt;
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/3fa9a831b352c2f6e4ba9c38f6f76d35/0b6f4/widgetUtilityClasses.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png" alt="" /></p>
 
 <h2 id="ウィジェット-スタイル設定">ウィジェット スタイル設定</h2>
 
@@ -836,7 +850,7 @@ return &lt;div
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/9063ce6b6633013280b71d57599fc567/d4770/widgetCSSInline.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt="" /></p>
 
 <h3 id="外部-css-スタイルシート">外部 CSS スタイルシート</h3>
 
@@ -870,7 +884,7 @@ return &lt;div className=&quot;my-widget&quot;&gt; content &lt;/div&gt;;
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/9063ce6b6633013280b71d57599fc567/d4770/widgetCSSInline.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt="" /></p>
 
 <h3 id="css-in-js-推奨">CSS-in-JS (推奨)</h3>
 
@@ -924,7 +938,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;, Stat
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/1bd4a1de34d6c8fc4995baaf8f1dad3b/811d1/EmotionCSSProp.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt="" /></p>
 
 <h3 id="2-styled-components">2. Styled Components</h3>
 
@@ -954,7 +968,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/4355f685972a86cb1fb4d8111cfbd6d8/4dcb9/widgetStyledComponent.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt="" /></p>
 
 <h3 id="3-テーマを使った作業">3. テーマを使った作業</h3>
 
@@ -984,7 +998,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
 </code></pre>
 
 <p>Output 例:
-<img src="https://developers.arcgis.com/experience-builder/static/272c967bbb89a8f6f0ef051d31d4e3c1/5f759/widgetWithTheme.png" alt="" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png" alt="" /></p>
 
 <p>default theme vs. dark theme</p>
 
@@ -999,7 +1013,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" title="ウィジェット manifest"> <i class="fa fa-chevron-left"></i><label>ウィジェット manifest</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/webappbuilder/" title="ArcGIS Web AppBuilder (Developer Edition)" style="margin-right: 0px;"><label>ArcGIS Web AppBuilder (Developer Edition)</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" title="ウィジェット間の通信" style="margin-right: 0px;"><label>ウィジェット間の通信</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

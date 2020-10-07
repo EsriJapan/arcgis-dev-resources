@@ -32,7 +32,7 @@ Esri が公開している[インストール動画 (英語)](https://www.youtub
     -   `Tags` - `Experience Builder` のような内容を入力します。
     -   `Register New Application` をクリックします。
 5.  登録したアプリケーションの `Authentication` タブをクリックします。`Current Redirect URIs` のセクションで、リダイレクト URI に `https://localhost:3001/` と入力して、`+ Add` をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/a76d166fe99df98d9049163eb0aa1676/79e48/installExB.png" />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /> 
 6.  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 7.  コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 8.  `npm start` と入力して server を起動します。
@@ -61,10 +61,10 @@ Esri が公開している[インストール動画 (英語)](https://www.youtub
     - `タイトル` -  例えば、`Experience Builder credentials` などのようにあなたにとって意味があるものを入力します。
     - `タグ` - `Experience Builder` のような内容を入力します。
     - `アイテムの追加` をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/335a7ac6a33a15e010711cf9ccc8411d/d0e73/AddApplication.png" />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
 4. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
 5. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に https://localhost:3001/ と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://developers.arcgis.com/experience-builder/static/7150fd8f693e6b20d4c5e41b886efaeb/ace37/Registeredinfo.png" />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 6.  コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 7.  `npm start` と入力して server を起動します。
 8.  次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
@@ -124,10 +124,10 @@ Experience Builder では、Client ID を作成するために ArcGIS Online ま
     - `タイトル` -  例えば、`Experience Builder credentials` などのようにあなたにとって意味があるものを入力します。
     - `タグ` - `Experience Builder` のような内容を入力します。
     - `アイテムの追加` をクリックします。
-<img src="https://developers.arcgis.com/experience-builder/static/335a7ac6a33a15e010711cf9ccc8411d/d0e73/AddApplication.png" />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
 3. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
 4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に https://localhost:3001/ と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://developers.arcgis.com/experience-builder/static/7150fd8f693e6b20d4c5e41b886efaeb/ace37/Registeredinfo.png" />
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 5.  次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
 6.  ArcGIS Online または ArcGIS Enterprise の組織サイトの URLを指定し、4. でコピーした アプリケーション ID を指定します。すべて指定したらサイン インをクリックします。
 
