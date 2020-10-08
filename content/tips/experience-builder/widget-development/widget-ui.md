@@ -168,7 +168,7 @@ Output 例:
 
 ### CSS-in-JS (推奨)
 
-CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript でCSS を書く方法のことを指します。
+CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript で CSS を書く方法のことを指します。
 
 Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして [Emotion](https://emotion.sh/docs/introduction) を使用しています。
 
@@ -221,7 +221,7 @@ Output 例:
 ![](http://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png)
 
 ### 2. Styled Components
-このパターンは [Styled-Components](https://www.styled-components.com/) ライブラリにインスパイアされたもので、使い方は非常に似ています。スタイリングされた」アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。
+このパターンは [Styled-Components](https://www.styled-components.com/) ライブラリにインスピレーションされたもので、使い方は非常に似ています。"styled" アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。
 
 ```tsx
 /** @jsx jsx */ // <-- make sure to include the jsx pragma
@@ -253,7 +253,7 @@ Output 例:
 ### 3. テーマを使った作業
 これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。
 
-Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに注入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。
+Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。
 
 ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。
 

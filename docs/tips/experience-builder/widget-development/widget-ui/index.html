@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-08T20:19:31 JST">
+<meta name="revised" content="2020-10-08T21:01:01 JST">
 <title>ウィジェット UI の作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -401,35 +401,6 @@ if (!doNotTrack) {
             Web アプリケーションのデプロイ
           </a>
         </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -902,7 +873,7 @@ return &lt;div className=&quot;my-widget&quot;&gt; content &lt;/div&gt;;
 
 <h3 id="css-in-js-推奨">CSS-in-JS (推奨)</h3>
 
-<p>CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript でCSS を書く方法のことを指します。</p>
+<p>CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript で CSS を書く方法のことを指します。</p>
 
 <p>Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして <a href="https://emotion.sh/docs/introduction">Emotion</a> を使用しています。</p>
 
@@ -956,7 +927,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;, Stat
 
 <h3 id="2-styled-components">2. Styled Components</h3>
 
-<p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスパイアされたもので、使い方は非常に似ています。スタイリングされた」アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
+<p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&rdquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
 
 <pre><code class="language-tsx">/** @jsx jsx */ // &lt;-- make sure to include the jsx pragma
 import { BaseWidget, AllWidgetProps } from 'jimu-core';
@@ -988,7 +959,7 @@ export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
 
 <p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。</p>
 
-<p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに注入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
+<p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
 
 <p>ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。</p>
 
