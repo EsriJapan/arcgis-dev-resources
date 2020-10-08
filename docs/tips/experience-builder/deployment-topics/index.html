@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-10-08T20:19:31 JST">
-<title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
+<title>デプロイ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="初めて ArcGIS Runtime SDK for iOS を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。">
+<meta name="description" content="ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -294,10 +294,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
@@ -358,7 +359,7 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
             デプロイ
@@ -490,14 +491,13 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
             インストール ガイド
@@ -667,7 +667,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/ios/'>ArcGIS Runtime SDK for iOS</a> > インストール ガイド
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > デプロイ
 
  
 
@@ -686,25 +686,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#arcgis-runtime-sdk-for-ios-とは">ArcGIS Runtime SDK for iOS とは</a></li>
-<li><a href="#arcgis-runtime-sdk-for-ios-の開発環境">ArcGIS Runtime SDK for iOS の開発環境</a></li>
-<li><a href="#モバイル-マッピング-アプリケーションの開発">モバイル マッピング アプリケーションの開発</a></li>
-<li><a href="#プロジェクトの作成">プロジェクトの作成</a></li>
-<li><a href="#arcgis-runtime-sdk-の設定">ArcGIS Runtime SDK の設定</a>
-<ul>
-<li><a href="#cocoapods-を使用して-sdk-をインストールする">CocoaPods を使用して SDK をインストールする</a></li>
-<li><a href="#sdk-を手動でインストールする">SDK を手動でインストールする</a>
-<ul>
-<li><a href="#sdk-のインストール">SDK のインストール</a></li>
-<li><a href="#xcode-プロジェクトの設定">Xcode プロジェクトの設定</a>
-<ul>
-<li><a href="#arcgis-フレームワークの追加">ArcGIS フレームワークの追加</a></li>
-<li><a href="#run-script-フェーズの追加">Run Script フェーズの追加</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#地図表示の実装">地図表示の実装</a></li>
-<li><a href="#モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</a></li>
+<li><a href="#experience-のダウンロード">Experience のダウンロード</a></li>
+<li><a href="#experience-のデプロイ">Experience のデプロイ</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -717,7 +700,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>インストール ガイド</h1>
+    <h1>デプロイ</h1>
   
 
 
@@ -727,205 +710,32 @@ if (!doNotTrack) {
     
     
 
-<p>このインストール ガイドでは、初めて ArcGIS Runtime SDK for iOS を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。</p>
+<p>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前に<a href="https://developers.arcgis.com/experience-builder/guide/requirements">システム要件</a>を参照してください。</p>
 
-<p>このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for iOS を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。</p>
+<h2 id="experience-のダウンロード">Experience のダウンロード</h2>
 
-<h2 id="arcgis-runtime-sdk-for-ios-とは">ArcGIS Runtime SDK for iOS とは</h2>
+<p>Experience ギャラリーのホームページで Experience をダウンロードするには、<code>楕円 (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。</p>
 
-<p>ArcGIS Runtime SDK for iOS を使うと ArcGIS の機能を iOS のネイティブ アプリケーションとして実装することができます。</p>
+<h2 id="experience-のデプロイ">Experience のデプロイ</h2>
 
-<p>この SDK には API やリファレンス、サンプルコードなどが含まれています。
-詳細は <a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/">ArcGIS Runtime SDK for iOS</a> をご参照ください。</p>
-
-<h2 id="arcgis-runtime-sdk-for-ios-の開発環境">ArcGIS Runtime SDK for iOS の開発環境</h2>
-
-<p>ここでは次の開発環境にて ArcGIS Runtime SDK for iOS を用いたモバイル マッピング アプリケーションの開発手順を説明します。</p>
-
-<p>開発手順を進める前に以下のご使用のマシン（macOS）に Xcode をインストールしてください。</p>
-
-<p>ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/">動作環境</a>をご参照ください。</p>
-
-<h2 id="モバイル-マッピング-アプリケーションの開発">モバイル マッピング アプリケーションの開発</h2>
-
-<p>ここでは、ArcGIS Runtime SDK for iOS を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。</p>
-
-<ul>
-<li><strong><a href="#プロジェクトの作成">プロジェクトの作成</a></strong></li>
-<li><strong><a href="#arcgis-runtime-sdk-の設定">ArcGIS Runtime SDK の設定</a></strong></li>
-<li><strong><a href="#地図表示の実装">地図表示の実装</a></strong></li>
-<li><strong><a href="#モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</a></strong></li>
-</ul>
-
-<h2 id="プロジェクトの作成">プロジェクトの作成</h2>
-
-<p>まず Xcode 上に新しいプロジェクトを作成します。</p>
+<p>Experience を Web サーバーにデプロイするには、次の手順を実行します。</p>
 
 <ol>
-<li>Xcode を起動して、表示されたダイアログで [Create a new Xcode project] をクリックします。</li>
-<li>[Single View App] テンプレートを選択して、[Next] をクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/project01.png" width="450px"></li>
-<li>[Product Name] に <code>sample</code> と入力し、[Next] をクリックします（[Language] に <code>Swift</code> が選択されていることを確認してください）。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/project02.png" width="450px"></li>
-<li>プロジェクトの作成場所を指定して、[Create] をクリックするとプロジェクトが作成されます。</li>
+<li>ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。</li>
+<li>アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。</li>
+<li>アプリを追加して登録します。詳細については、<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B">アプリの追加</a>と<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#REG_APP">アプリの登録</a>を参照してください。</li>
+<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：app\config.json) にある <code>config.json</code> ファイルを開きます。</li>
+<li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
+<li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度にファイルを保存します。</li>
 </ol>
 
-<h2 id="arcgis-runtime-sdk-の設定">ArcGIS Runtime SDK の設定</h2>
-
-<p>次に ArcGIS Runtime SDK for iOS の API を使えるようにするための設定を行います。設定を行うには2つの方法があります。</p>
-
-<ul>
-<li><strong><a href="#cocoapods-を使用して-sdk-をインストールする">CocoaPods を使用して Xcode ワークスペースに SDK をインストールする</a></strong></li>
-<li><strong><a href="#sdk-を手動でインストールする">macOS の共通ディレクトリに SDK をインストールし、Xcode プロジェクトに SDK へのリンクを手動で設定する</a></strong></li>
-</ul>
-
-<h3 id="cocoapods-を使用して-sdk-をインストールする">CocoaPods を使用して SDK をインストールする</h3>
-
-<p>ArcGIS Runtime SDK for iOS は、<a href="https://cocoapods.org/">CocoaPods</a> を利用してインストールできます（CocoaPods のインストール等で問題が発生した場合は、<a href="https://guides.cocoapods.org/using/troubleshooting#installing-cocoapods">Troubleshooting</a> のページをご参照ください）。</p>
-
-<ol>
-<li><p>CocoaPods を開発に使用するマシンにインストールします。ターミナル アプリケーションを開き、以下のコマンドを実行します。</p>
-
-<pre><code>$ sudo gem install cocoapods
-</code></pre></li>
-
-<li><p><strong><a href="#プロジェクトの作成">プロジェクトの作成</a></strong> で作成したプロジェクトに [Empty] テンプレート ファイルを追加し、ファイル名を <code>Podfile</code> とします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/cocoapods01.png" width="450px">
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/cocoapods02.png" width="450px"></p></li>
-
-<li><p>追加した <code>Podfile</code> に以下のコードを書いて保存します。</p>
-
-<pre><code class="language-none">target '&lt;プロジェクト名&gt;' do
-use_frameworks!
-pod 'ArcGIS-Runtime-SDK-iOS', '100.8'
-end
-</code></pre></li>
-
-<li><p>ターミナル アプリケーションで、cd コマンドを使用して作成したプロジェクト ファイルのルートフォルダーに移動します。</p>
-
-<pre><code class="language-none">$ cd /&lt;プロジェクト フォルダーのパス&gt;/
-</code></pre></li>
-
-<li><p>以下のコマンドを実行して、CocoaPods をセットアップします。</p>
-
-<pre><code class="language-none">$ pod setup
-</code></pre></li>
-
-<li><p>CocoaPods のセットアップに成功したら、以下のコマンドを実行して、ArcGIS Runtime SDK for iOS をインストールします。これにより ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pods ディレクトリに配置されます。また、ArcGIS フレームワークを正しく参照するために、必要な変更が自動で設定されます。</p>
-
-<pre><code class="language-none">$ pod install
-</code></pre></li>
-
-<li><p>Xcode プロジェクトを一度閉じて、プロジェクト フォルダを参照し、新しく作成されたワークスペース ファイル（.xcworkspace）を開きます。</p></li>
-</ol>
-
-<h3 id="sdk-を手動でインストールする">SDK を手動でインストールする</h3>
-
-<p>マシンに手動で SDK をインストールして、すべてのプロジェクトで使用できる場所に配置することができます。</p>
-
-<h4 id="sdk-のインストール">SDK のインストール</h4>
-
-<ol>
-<li><p>ArcGIS for Developers サイトの<a href="https://developers.arcgis.com/en/downloads">ダウンロード ページ</a>から SDK をダウンロードします。</p></li>
-
-<li><p>ArcGIS for Developers の認証ページに遷移します。ArcGIS for Developers の開発者アカウント情報を入力してサインインして下さい。ArcGIS for Developers 開発者アカウントを お持ちでない方は、ArcGIS for Developers 開発リソース集の<a href="../../../guide/create-map/get-dev-account/">開発者アカウントの作成</a>を参考にしてアカウントを作成してください。</p></li>
-
-<li><p>表示された画面で ArcGIS Runtime SDK for iOS の [Download] ボタンをクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual01.png" width="450px"></p></li>
-
-<li><p>ダウンロードした .pkg ファイルをダブルクリックし、表示された画面に従って SDK をインストールします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual02.png" width="350px"></p>
-
-<ul>
-<li><code>${HOME}/Library</code> フォルダへの書き込み権限があることを確認してください。</li>
-<li>マシンに以前のバージョンの ArcGIS Runtime SDK for iOS をインストールしている場合は、アンインストールしてください。アンインストールするには、ターミナル アプリケーションで、<code>${HOME}/Library/Application Support/AGSiOSRuntimeSDK</code> にある <code>uninstallAGSiOSSDK</code> スクリプトを実行してください。</li>
-</ul></li>
-</ol>
-
-<h4 id="xcode-プロジェクトの設定">Xcode プロジェクトの設定</h4>
-
-<p>SDK を手動でインストールした場合、各 Xcode プロジェクトで API を使用できるように設定を行う必要があります。設定項目は以下です。</p>
-
-<ul>
-<li><strong><a href="#arcgis-フレームワークの追加">ArcGIS フレームワークの追加</a></strong></li>
-<li><strong><a href="#run-script-フェーズの追加">Run Script フェーズの追加</a></strong></li>
-</ul>
-
-<h5 id="arcgis-フレームワークの追加">ArcGIS フレームワークの追加</h5>
-
-<ol>
-<li><p><strong><a href="#プロジェクトの作成">プロジェクトの作成</a></strong> で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。</p></li>
-
-<li><p>[General] タブを開き、<strong>[Frameworks, Libraries, and Embedded Content]</strong> セクションで、(+) アイコンをクリックします。次に示すように <code>$(HOME)/Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic</code> フォルダに移動して、 ArcGIS.framework ファイルを選択して追加します。</p></li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.png" width="650px"></p>
-
-<ul>
-<li><p><code>${HOME}/Library</code> フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。または、Finder メニューの [移動] &gt; [フォルダへ移動] を使用して移動することもできます。</p>
-
-<pre><code class="language-none">$ chflags nohidden ~/Library/
-</code></pre></li>
-</ul>
-
-<h5 id="run-script-フェーズの追加">Run Script フェーズの追加</h5>
-
-<ol>
-<li>[Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、<code>bash &quot;${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh&quot;</code> を入力します。</li>
-</ol>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif" width="650px"></p>
-
-<ul>
-<li>ArcGIS フレームワークの追加と Run Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。</li>
-</ul>
-
-<p>これでモバイル マッピング アプリケーションを開発するための準備が整いました。</p>
-
-<h2 id="地図表示の実装">地図表示の実装</h2>
-
-<p>ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。</p>
-
-<ol>
-<li><p>最初に ArcGIS Runtime SDK for iOS の API を使用できるようにするために、import 文を追加します。Project Navigator で「ViewController.swift」ファイルを選択して、<code>import ArcGIS</code> と記述します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop01.png" width="450px"></p></li>
-
-<li><p>Project Navigator で <code>Main.storyboard</code> ファイルを選択します。</p></li>
-
-<li><p>View Controller にデフォルトで追加されている <code>View</code> オブジェクトを選択します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop02.png" width="650px"></p></li>
-
-<li><p>Identity Inspector を開き [Custom Class] セクションの [Class] で <code>AGSMapView</code> と入力し、[return] キーを押して <code>View</code> オブジェクトの名前が <code>Map View</code> に変わったことを確認します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop03.png" width="650px"></p></li>
-
-<li><p>ツールバーで Assistant Editor を選択し、<code>Main.storyboard</code> ファイルと <code>ViewController.h</code> ファイルを表示します。</p></li>
-
-<li><p><code>View (Map View)</code> オブジェクトを [control] キーを押しながら <code>ViewController.swift</code> ファイル上にドラッグ&amp;ドロップします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop04.png" width="650px"></p></li>
-
-<li><p>表示されたダイアログで [Name] に <code>mapView</code>（任意の値で構いません）と入力し、[Connect] ボタンをクリックします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop05.png" width="350px"></p></li>
-
-<li><p>ViewController.swift に IBOutlet 宣言が追加されます。</p></li>
-
-<li><p>Project Navigator で <code>ViewController.swift</code> ファイルを選択し、<code>viewDidLoad</code> メソッド内で下記のようにコードを記述します。下記のコードでは、地図の種類（道路地図）、初期表示の中心位置（緯度・経度）、ズームレベルを指定して地図を表示します。</p></li>
-</ol>
-
-<pre><code class="language-javascript">self.mapView.map = AGSMap(basemapType: .streets, latitude: 35.658581,  longitude: 139.745433, levelOfDetail: 18)
+<pre><code class="language-json">&quot;attributes&quot;: {
+    &quot;portalUrl&quot;: &quot;https://exb.maps.arcgis.com&quot;,
+    &quot;clientId&quot;: &quot;EXBAPPsag0XSRtpj&quot;
+  },
 </code></pre>
 
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop06.png" width="650px"></p>
-
-<h2 id="モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</h2>
-
-<p>ベースマップを表示するアプリケーションが作成できたので iOS シミュレータにインストールして実行します。</p>
-
-<ol>
-<li>Xcode のツールバーで、適当な端末を選択し [Run] をクリックして、iOS シミュレータでプロジェクトをデバッグします。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/application01.png" width="350px"></li>
-<li>iOS シミュレータ上でアプリケーションが起動し、地図が表示されます。スワイプやピンチイン/ピンチアウトで地図を移動したり拡大/縮小したりすることができます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/application02.png" width="200px"></li>
-</ol>
+<p>server/app name/index.html にアクセスすることでアプリを利用することができます。</p>
 
 
     
@@ -937,8 +747,8 @@ end
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/ios/" title="ArcGIS Runtime SDK for iOS"> <i class="fa fa-chevron-left"></i><label>ArcGIS Runtime SDK for iOS</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" title="アプリケーション配布ガイド" style="margin-right: 0px;"><label>アプリケーション配布ガイド</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" title="サードパーティ製のライブラリ使用"> <i class="fa fa-chevron-left"></i><label>サードパーティ製のライブラリ使用</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/webappbuilder/" title="ArcGIS Web AppBuilder (Developer Edition)" style="margin-right: 0px;"><label>ArcGIS Web AppBuilder (Developer Edition)</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

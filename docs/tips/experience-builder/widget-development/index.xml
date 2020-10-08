@@ -72,5 +72,23 @@ import {appActions} from &#39;jimu-core&#39;; /* * Call this when you need to sa
 Visual Studio コード テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる拡張機能のマーケットプレイスがあります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</description>
     </item>
     
+    <item>
+      <title>サードパーティ製のライブラリ使用</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</guid>
+      <description>Experience Builder に付属の jimu ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
+サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。
+NPM インストール このライブラリを 1 つのウィジェットのみで使用する場合は、npm を使用してライブラリを含めるのも良い選択肢です。
+利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
+次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは npmjs.com にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。
+npm install &amp;lt;package-name&amp;gt;  このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
+パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
+package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
+このパターンの動作の説明は react-data-grid のサンプルを参照してください。
+manifest.json を使用して CDN 経由で使用 ライブラリを複数のウィジェットで使用する場合は、ライブラリの CDN url を manifest.json ファイルの dependency プロパティに 配置することで、ライブラリを含めることができます。</description>
+    </item>
+    
   </channel>
 </rss>

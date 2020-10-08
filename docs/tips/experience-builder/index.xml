@@ -22,5 +22,17 @@ Server インストール ArcGIS for Developers サイト上での Client ID の
  Experience Builder (Developer Edition) の ZIP ファイルをローカルにダウンロードして、解凍します。 サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 ArcGIS for Developers のサイトでサインインします。 New Application をクリックします。 New Applications Details で以下の内容を入力します。  Title - 例えば、Experience Builder credentials などのようにあなたにとって意味があるものを入力します。 Tags - Experience Builder のような内容を入力します。 Register New Application をクリックします。  登録したアプリケーションの Authentication タブをクリックします。Current Redirect URIs のセクションで、リダイレクト URI に https://localhost:3001/ と入力して、+ Add をクリックします。  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。 コマンド プロンプト、またはターミナルウィンドウを開き、Experience Builder の server ディレクトリに cd コマンドで移動して npm ci と入力し、Enter キーを押して、必要なモジュールをインストールします。 npm start と入力して server を起動します。 次の URL https://localhost:3001/ を指定して Experience Builder をブラウザで開きます。 Experience Builder は、Node.</description>
     </item>
     
+    <item>
+      <title>デプロイ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</guid>
+      <description>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前にシステム要件を参照してください。
+Experience のダウンロード Experience ギャラリーのホームページで Experience をダウンロードするには、楕円 (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。
+Experience のデプロイ Experience を Web サーバーにデプロイするには、次の手順を実行します。
+ ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。 アプリを追加して登録します。詳細については、アプリの追加とアプリの登録を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：app\config.json) にある config.json ファイルを開きます。 attributes オブジェクトの下に clientId プロパティを作成します。 config.json ファイルの clientId プロパティに AppID を貼り付けます。再度にファイルを保存します。  &amp;quot;attributes&amp;quot;: { &amp;quot;portalUrl&amp;quot;: &amp;quot;https://exb.</description>
+    </item>
+    
   </channel>
 </rss>

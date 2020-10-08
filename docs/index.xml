@@ -866,6 +866,36 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
     </item>
     
     <item>
+      <title>サードパーティ製のライブラリ使用</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</guid>
+      <description>Experience Builder に付属の jimu ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
+サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。
+NPM インストール このライブラリを 1 つのウィジェットのみで使用する場合は、npm を使用してライブラリを含めるのも良い選択肢です。
+利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
+次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは npmjs.com にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。
+npm install &amp;lt;package-name&amp;gt;  このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
+パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
+package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
+このパターンの動作の説明は react-data-grid のサンプルを参照してください。
+manifest.json を使用して CDN 経由で使用 ライブラリを複数のウィジェットで使用する場合は、ライブラリの CDN url を manifest.json ファイルの dependency プロパティに 配置することで、ライブラリを含めることができます。</description>
+    </item>
+    
+    <item>
+      <title>デプロイ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</guid>
+      <description>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前にシステム要件を参照してください。
+Experience のダウンロード Experience ギャラリーのホームページで Experience をダウンロードするには、楕円 (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。
+Experience のデプロイ Experience を Web サーバーにデプロイするには、次の手順を実行します。
+ ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。 アプリを追加して登録します。詳細については、アプリの追加とアプリの登録を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：app\config.json) にある config.json ファイルを開きます。 attributes オブジェクトの下に clientId プロパティを作成します。 config.json ファイルの clientId プロパティに AppID を貼り付けます。再度にファイルを保存します。  &amp;quot;attributes&amp;quot;: { &amp;quot;portalUrl&amp;quot;: &amp;quot;https://exb.</description>
+    </item>
+    
+    <item>
       <title>ウィジェット一覧表 (ArcGIS Online)</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
