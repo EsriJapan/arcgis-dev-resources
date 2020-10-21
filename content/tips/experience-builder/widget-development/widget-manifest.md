@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット manifest"
 description = "ウィジェットの名前やバージョンなどのウィジェットの属性などを設定する manifest.json ファイルについて紹介します。"
-weight = 5
+weight = 6
 aliases = ["/widget-manifest/"]
 +++
 

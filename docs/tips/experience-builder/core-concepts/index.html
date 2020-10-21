@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.52" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -19,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-10-21T21:22:07 JST">
-<title>ArcGIS for Developer 開発リソース集 :: ArcGIS for Developer 開発リソース集</title>
+<title>コア コンセプト :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -35,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+<meta name="description" content="ArcGIS Experience Builder (Developer Edition) のコア コンセプトについて紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/core-concepts/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -238,10 +237,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
@@ -294,13 +294,14 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">
             コア コンセプト
@@ -660,8 +661,71 @@ if (!doNotTrack) {
 <div id="overlay"></div>
 <div class="padding highlightable">
 
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > コア コンセプト
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#jimu">Jimu</a></li>
+<li><a href="#データ-ソース-data-source">データ ソース（Data source）</a></li>
+<li><a href="#リピート-データ-ソース-repeated-data-source">リピート データ ソース（Repeated Data source）</a></li>
+<li><a href="#マップ-シーン-ビュー-map-scene-view">マップ/シーン ビュー（Map/Scene View）</a></li>
+<li><a href="#ページ-page">ページ（Page）</a></li>
+<li><a href="#ウィンドウ-window">ウィンドウ（Window）</a></li>
+<li><a href="#テーマ-theme">テーマ（Theme）</a></li>
+<li><a href="#ウィジェット-widget">ウィジェット（Widget）</a></li>
+<li><a href="#メッセージ-と-アクション-message-and-action">メッセージ と アクション（Message and action）</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
 
 <div id="body-inner">
+  
+    <h1>コア コンセプト</h1>
   
 
 
@@ -669,77 +733,117 @@ if (!doNotTrack) {
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
+    
 
+<p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/">Core concepts</a></p>
 
-<p><span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
-</span></p>
+<h3 id="はじめに">はじめに</h3>
 
-<h1 id="arcgis-for-developer-開発リソース集">ArcGIS for Developer 開発リソース集</h1>
-
-<p>本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。</p>
-
-<p><strong><a href="https://developers.arcgis.com/">ArcGIS for Developers</a></strong> が提供するサービスの詳細は <a href="https://www.esrij.com/products/arcgis-for-developers/">ESRIジャパン製品ページ</a>をご覧ください。</p>
-
-<div class="panel panel-success">
-	<div class="panel-heading">目次</div>
-	<div class="panel-body"><ul>
-<li><p><a href="core-concepts">コア コンセプト</a></p>
+<p>Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されている<code>jimu</code> と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。</p>
 
 <ul>
-<li>ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
-<br /></li>
-</ul></li>
-
-<li><p><a href="guide">スタートアップガイド</a></p>
-
-<ul>
-<li>開発を始める方のために必要なアカウントの作成から、マップの作成、各 API / SDKを使った開発の基本的な流れを手順にそって学べる情報をまとめています。</li>
-</ul></li>
-
-<li><p><a href="tips">技術 Tips 集</a></p>
-
-<ul>
-<li>各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術Tipsをまとめています。</li>
-</ul></li>
-</ul>
-</div>
-	
-</div>
-
-
-<p>　　　</p>
-
-<h4 id="開発者オープン-コミュニティ">開発者オープン コミュニティ</h4>
-
-<ul>
-<li><a href="https://esri.github.io/">Esri GitHub</a>
-
-<ul>
-<li>米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。</li>
-</ul></li>
-<li><a href="https://esrijapan.github.io/">Esri Japan GitHub</a>
-
-<ul>
-<li>ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。</li>
-</ul></li>
-<li><a href="https://community.esri.com/">GeoNet</a>
-
-<ul>
-<li>米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。</li>
-</ul></li>
-<li><a href="https://community.esri.com/groups/devcom-jp">GeoNet ArcGIS 開発者コミュニティ</a>
-
-<ul>
-<li>ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。</li>
-</ul></li>
+<li>ArcGIS API for JavaScript 4.x</li>
+<li>React + Redux フレームワーク</li>
+<li>Bootstrap 4 （UI用）</li>
+<li>HTML5</li>
 </ul>
 
+<p>Experience Builderでウィジェットやテーマなどを開発するには、TypeScript が必要になります。TypeScript を利用するのは、次のようなメリットがあります。</p>
 
+<ul>
+<li>型宣言によるエラー検出</li>
+<li>よりよいIDE体験</li>
+<li>セルフ-ドキュメント コード</li>
+<li>より読みやすく、わかりやすい</li>
+</ul>
+
+<h3 id="jimu">Jimu</h3>
+
+<p>Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。</p>
+
+<ul>
+<li><code>jimu-core</code> パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。</li>
+<li><code>jimu-layouts</code> パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。</li>
+<li><code>jimu-ui</code> パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。</li>
+<li><code>jimu-arcgis</code> パッケージは、ArcGIS API for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。</li>
+<li><code>jimu-for-builder</code> パッケージは、ウィジェットの設定ページの開発をサポートしています。</li>
+</ul>
+
+<h3 id="データ-ソース-data-source">データ ソース（Data source）</h3>
+
+<p>データソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータソース クラスに入れることで、別のウィジェットで使用することができます。</p>
+
+<p>高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータソースは、それを識別するのに役立つ型、ID、ステータスがあります。
+<code>DataSource</code> インターフェースは <code>jimu-core</code> パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。</p>
+
+<ul>
+<li><code>id</code>: データソースID。</li>
+<li><code>type</code>: どのタイプのデータソースを使っているかチェックするため、ウィジェットで使っているプロパティ。</li>
+<li><code>fetchSchema</code>: すべてのデータソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために <code>fetchSchema</code> メソッドが呼び出されます。</li>
+<li><code>getSchema</code>: ウィジェットがデータソースのスキーマとフィールドにアクセスするために使用するメソッドです。</li>
+<li><code>getRecords</code>: ウィジェットがデータソースのデータレコードにアクセスするために使用するメソッドです。</li>
+<li><code>getStatus</code>: ウィジェットはこのプロパティを使用してデータソースのステータスを取得します。これらのステータスの中には、Loading、Loaded、Errorなどがあります。</li>
+</ul>
+
+<p>1つのデータソースには、サブデータソースを含めることができます。その結果、使いやすくするために複数のデータソースを含めることができます。このようなデータソースを <code>DataSourceSet</code> と呼びます。<code>WebMapDataSource</code> は<code>DataSourceSet</code>です。 <code>DataSourceSet</code> も、isDataSourceSet プロパティをtrue に設定していれば、データソースの一種です。データソースは <code>DataSourceManager</code> で管理し、データソースの作成や取得を行います。</p>
+
+<p>複数のウィジェットが 1 つのデータ ソースに接続する場合、ウィジェットはデータ ソースのローカル ビューを表示したい場合があります。このシナリオでは、データ ビューを使用します。データ ビューとデータ ソースの関係は、リレーショナル データベースのビューとテーブルの関係に非常に似ています。Experience Builder のデータ ソースは、クライアント側の実際のリモート データ ソースのビューですが、データ ソースはテーブル、データ ビューはビューと考えることができます。アプリ作成者は、データソースからデータ ビューを作成し、ビルダーでデータ ビューにウィジェットを接続することができます。API レベルでは、データ ビューは  <code>DataSource</code> クラスを使用して管理されるため、データ ビューは、属性の違いだけでデータ ソースと同じインターフェースとふるまいを持ちます。</p>
+
+<p>データ ソースの使用を簡単にするために、<code>DataSourceComponent</code> コンポーネントが定義されています。これは<code>useDataSource</code> プロパティを受け取り、コールバックを通じてデータ ソース オブジェクトとそのステータス情報を返します。また、子として関数を受け入れ、データ ソース オブジェクトとデータ ソース内のデータをレンダリングするための情報を取得するために使用することができます。<code>DataSourceComponent</code>コンポーネントは、オプションの<code>query</code> プロパティを受け入れることもでき、クエリが変更されたときにデータをリロードします。</p>
+
+<p>フィーチャーサービスのような最も一般的に使用されるデータ形式をサポートするために、APIにはQueriableDataSourceインターフェイスと抽象クラスAbstractQueriableDataSourceがあります。このインターフェイスには、url、load、queryなどのプロパティがあります。ロードとクエリの違いは、ロードはレコードのプロパティとデータソースのステータスを更新し、クエリはレコードのみをクエリして返すことです。</p>
+
+<p>具体的には、Experience Builderで<code>FeatureLayerDataSource</code>データソースを定義して、フィーチャレイヤーにアクセスします。データ ソースがスタンドアロンのフィーチャ レイヤから作成された場合、オブジェクトには <code>layer</code> プロパティはありません。ウェブマップ/ウェブシーンに含まれるフィーチャ レイヤから作成された場合、オブジェクトには <code>layer</code> プロパティがあり、これは ArcGIS API for JavaScript の FeatureLayer オブジェクトです。</p>
+
+<p>一般的にデータソースは2つの場所に保存され、データソースオブジェクトは <code>DataSourceManager</code> に保存・管理され、データソース情報はredux アプリ ストアに保存されます。<code>ataSourceComponent</code> を使う場合、コンポーネントは<code>DataSourceManager</code> を呼び出してオンデマンドでデータソースを作成し、コールバック プロップを使ってデータ ソース オブジェクトと<code>dataSourceInfo</code> を返します。<code>dataSourceInfo</code> では、データソースの <code>instanceStatus</code>, <code>status</code>, <code>selectedIds</code> などを返すことができます。</p>
+
+<p>ArcGIS Serverサービスの多くは、<code>MapServiceDataSource</code>、<code>FeatureServiceDataSource</code> など、アクセスしやすいようにデータソースにマッピングされています。 ArcGIS API for JavaScript の <code>WebMap</code> と <code>WebScene</code> は、jimu-arcgis パッケージ内で<code>WebMapDataSource</code> と <code>WebSceneDataSource</code> としてラップされています。</p>
+
+<h3 id="リピート-データ-ソース-repeated-data-source">リピート データ ソース（Repeated Data source）</h3>
+
+<p>RepeatedDataSourceProvider が提供するデータソースをリピートデータソースと呼びます。データソースを提供するウィジェットのすべての子ウィジェットは、リピートデータソースを受け取ります。これはReact のContext と似ています。ウィジェットはthis.props.repetedDataSource でリピートデータソースにアクセスできます。リピートデータソースは、データソースの ID、レコード、レコードインデックスを取得します。
+どのウィジェットでも、RepeatedDataSourceProviderを使用してリピートデータソースを提供することができます。Experience BuilderのListウィジェットは、リピートデータソースを提供する良い例です。リピートデータソースを使用するには、ウィジェットのマニフェストファイルに supportRepeat プロパティを追加します。</p>
+
+<h3 id="マップ-シーン-ビュー-map-scene-view">マップ/シーン ビュー（Map/Scene View）</h3>
+
+<p>ビューの概念はArcGIS API for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは <code>JimuMapView</code> としてラップされます。<code>JimuMapView</code> オブジェクトを作成するには、ウィジェットは <code>JimuMapViewManager.createJimuMapView()</code> メソッドを使用します。<code>JimuMapView</code> オブジェクトは、主に以下のプロパティを持っています。</p>
+
+<ul>
+<li><code>view</code>: マップ/シーン ビュー オブジェクト</li>
+<li><code>datasourceId</code>: ビューを作成するデータソース (webmap/webscene)</li>
+<li><code>mapWidgetId</code>: オブジェクトを作成するビュー</li>
+<li><code>jimuLayerViews</code>: レイヤー ビュー オブジェクトのラッパー</li>
+</ul>
+
+<p>マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの<code>JimuMapViewSelector</code> コンポーネントを使用してマップ/シーンビューを選択することができます。これも<code>JimuMapViewComponent</code> を使用してJimuMapViewオブジェクトにアクセスします。</p>
+
+<h3 id="ページ-page">ページ（Page）</h3>
+
+<p>エクスペリエンスの中のページは、物理的なHTML Web ページでなく、概念的なページですが、実際のHTML Web ページのように振る舞います。これは <code>div</code> HTMLタグを使って実装されます。エクスペリエンスは少なくとも1つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページレイアウトにはフルスクリーンのアプリページと直線的なスクロールページの2種類があり、前者はアプリのように見え、後者はウェブページのように見えます。</p>
+
+<p>ページの内容（ウィジェット/セクション）は、固定レイアウトやフローレイアウトなどのレイアウトルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builderはサイズモードによるレイアウトの設定をサポートしています。これらは <code>Large</code>, <code>Medium</code>, <code>Small</code> で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、<a href="https://experience.arcgis.com/template/29ffe9b151654bd4992bff0baae4a6bd/">City Explorerのテンプレート</a>があります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイルデバイスで見た場合、地図ウィジェットは最初のページから削除され、ユーザーがリストウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。</p>
+
+<h3 id="ウィンドウ-window">ウィンドウ（Window）</h3>
+
+<p>ウィンドウはページに似ていて、任意のウィジェットを追加することができ、コンテンツを表示するための2つの設定（固定とアンカー設定）があります。
+固定ウィンドウはモーダルを作成し、メインウィンドウを無効にしますが、ユーザーがエクスペリエンスに戻る前にウィンドウと対話できるように表示を維持します。固定ウィンドウはスプラッシュスクリーンとして使用したり、ページで開いたり、ウィジェットから開いたりすることができます。アンカー ウィンドウは、ボタンやテキストウィジェットなどのウィジェットからトリガーされます。</p>
+
+<h3 id="テーマ-theme">テーマ（Theme）</h3>
+
+<p>テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える(OOB)テーマがあり、カスタムテーマの作成も可能です。テーマ開発については、<a href="https://developers.arcgis.com/experience-builder/guide/theme-development/">theme development</a> をご覧ください。</p>
+
+<h3 id="ウィジェット-widget">ウィジェット（Widget）</h3>
+
+<p>ウィジェットは設定可能な機能単位で、エクスペリエンスなページを作成するために使用されるビルディングブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタムウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定UIを提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。</p>
+
+<p>ウィジェットの実装については、<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/">widget implementation</a> をご覧ください。</p>
+
+<h3 id="メッセージ-と-アクション-message-and-action">メッセージ と アクション（Message and action）</h3>
+
+<p>メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。
+ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される <code>MessageType</code> によって識別されます。jimu には <code>ExtentChange</code> や <code>DataRecordsSelectionChange</code> のようないくつかのメッセージタイプが定義されています。今後のリリースでは、より多くのメッセージタイプが追加される予定です。</p>
+
+<p>メッセージ/アクションの作成方法は、<a href="https://developers.arcgis.com/experience-builder/guide/message-action/">message and action</a> をご覧ください。</p>
 
 
     
@@ -751,7 +855,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-next" href="/arcgis-dev-resources/core-concepts/" title="コア コンセプト" style="margin-right: 0px;"><label>コア コンセプト</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/" title="ArcGIS Experience Builder (Developer Edition)"> <i class="fa fa-chevron-left"></i><label>ArcGIS Experience Builder (Developer Edition)</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/install-guide/" title="インストール ガイド" style="margin-right: 0px;"><label>インストール ガイド</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット開発のデバック"
 description = "ウィジェット開発におけるデバック方法について紹介します。"
-weight = 8
+weight = 10
 aliases = ["/debugging-widget-development/"]
 +++
 

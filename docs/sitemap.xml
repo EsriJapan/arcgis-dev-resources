@@ -91,11 +91,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</loc>
   </url>
   
   <url>
@@ -139,11 +139,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
   </url>
   
   <url>
@@ -199,7 +199,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
   </url>
   
   <url>
@@ -231,7 +231,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
   </url>
   
   <url>
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
   </url>
   
   <url>
@@ -283,7 +283,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</loc>
   </url>
   
   <url>
@@ -291,7 +291,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
   </url>
   
   <url>
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</loc>
   </url>
   
   <url>
@@ -307,7 +307,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</loc>
   </url>
   
   <url>
@@ -315,7 +315,15 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</loc>
   </url>
   
   <url>

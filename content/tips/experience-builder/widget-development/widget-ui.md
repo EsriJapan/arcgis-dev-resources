@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット UI の作成"
 description = "ウィジェット UI の作成方法について紹介します。"
-weight = 6
+weight = 8
 aliases = ["/widget-ui/"]
 +++
 

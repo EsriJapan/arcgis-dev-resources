@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.52" />
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -19,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-10-21T21:22:07 JST">
-<title>ArcGIS for Developer 開発リソース集 :: ArcGIS for Developer 開発リソース集</title>
+<title>ウィジェットの実装 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -35,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+<meta name="description" content="ウィジェットの実装方法について紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -238,10 +237,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
@@ -294,10 +294,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item">
@@ -314,7 +315,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
@@ -335,7 +336,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
             ウィジェットの実装
@@ -660,8 +661,57 @@ if (!doNotTrack) {
 <div id="overlay"></div>
 <div class="padding highlightable">
 
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェットの実装
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    
+        </div>
+    </div>
+    
+
+  </div>
+
 
 <div id="body-inner">
+  
+    <h1>ウィジェットの実装</h1>
   
 
 
@@ -669,78 +719,7 @@ if (!doNotTrack) {
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-
-
-<p><span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
-</span></p>
-
-<h1 id="arcgis-for-developer-開発リソース集">ArcGIS for Developer 開発リソース集</h1>
-
-<p>本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。</p>
-
-<p><strong><a href="https://developers.arcgis.com/">ArcGIS for Developers</a></strong> が提供するサービスの詳細は <a href="https://www.esrij.com/products/arcgis-for-developers/">ESRIジャパン製品ページ</a>をご覧ください。</p>
-
-<div class="panel panel-success">
-	<div class="panel-heading">目次</div>
-	<div class="panel-body"><ul>
-<li><p><a href="core-concepts">コア コンセプト</a></p>
-
-<ul>
-<li>ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
-<br /></li>
-</ul></li>
-
-<li><p><a href="guide">スタートアップガイド</a></p>
-
-<ul>
-<li>開発を始める方のために必要なアカウントの作成から、マップの作成、各 API / SDKを使った開発の基本的な流れを手順にそって学べる情報をまとめています。</li>
-</ul></li>
-
-<li><p><a href="tips">技術 Tips 集</a></p>
-
-<ul>
-<li>各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術Tipsをまとめています。</li>
-</ul></li>
-</ul>
-</div>
-	
-</div>
-
-
-<p>　　　</p>
-
-<h4 id="開発者オープン-コミュニティ">開発者オープン コミュニティ</h4>
-
-<ul>
-<li><a href="https://esri.github.io/">Esri GitHub</a>
-
-<ul>
-<li>米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。</li>
-</ul></li>
-<li><a href="https://esrijapan.github.io/">Esri Japan GitHub</a>
-
-<ul>
-<li>ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。</li>
-</ul></li>
-<li><a href="https://community.esri.com/">GeoNet</a>
-
-<ul>
-<li>米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。</li>
-</ul></li>
-<li><a href="https://community.esri.com/groups/devcom-jp">GeoNet ArcGIS 開発者コミュニティ</a>
-
-<ul>
-<li>ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。</li>
-</ul></li>
-</ul>
-
-
-
+    
 
     
     
@@ -751,7 +730,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-next" href="/arcgis-dev-resources/core-concepts/" title="コア コンセプト" style="margin-right: 0px;"><label>コア コンセプト</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" title="ウィジェット manifest"> <i class="fa fa-chevron-left"></i><label>ウィジェット manifest</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成" style="margin-right: 0px;"><label>ウィジェット UI の作成</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

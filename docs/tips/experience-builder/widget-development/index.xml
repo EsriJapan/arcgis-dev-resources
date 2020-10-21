@@ -35,6 +35,15 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
     </item>
     
     <item>
+      <title>ウィジェットの実装</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ウィジェット UI の作成</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

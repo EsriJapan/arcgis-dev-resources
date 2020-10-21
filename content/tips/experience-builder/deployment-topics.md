@@ -1,14 +1,14 @@
 +++
 title = "デプロイ"
 description = "ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。"
-weight = 10
+weight = 12
 aliases = ["/experience/deployment-topics/"]
 +++
 
 ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前に[システム要件](https://developers.arcgis.com/experience-builder/guide/requirements)を参照してください。
 
 ## Experience のダウンロード
-Experience ギャラリーのホームページで Experience をダウンロードするには、`楕円 (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。
+Experience ギャラリーのホームページで Experience をダウンロードするには、`● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。
 
 ## Experience のデプロイ
 Experience を Web サーバーにデプロイするには、次の手順を実行します。

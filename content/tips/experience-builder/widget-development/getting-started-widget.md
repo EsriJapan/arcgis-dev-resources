@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット開発のスタート"
 description = "ウィジェット開発に使用しているライブラリから開発に必要な概要までを紹介します。"
-weight = 4
+weight = 5
 aliases = ["/getting-started-widget/"]
 +++
 
