@@ -17,7 +17,7 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 * server サービス
     * Experience Builder (Developer Edition) の本体を起動します。
 * client サービス
-    * 独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server  のサービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。
+    * 独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server サービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。
 
 両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。
 <br/>ここでは、Experience Builder (Developer Edition) の [server](#server-インストール) と [client](#client-インストール) のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、[offline](#offline-インストール)でのインストール手順を参照してください。
@@ -25,7 +25,7 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 ## Server インストール
 
 ### 1. Client ID の作成
-はじめに Client ID を作成する必要があります。Client ID は、このあとの server のサービスを起動して立ち上がるアプリケーションで指定します。
+はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
 Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
 <br/>ここでは、ArcGIS for Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。
 
@@ -40,12 +40,13 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
 {{% /notice %}}
 
-1. [ArcGIS for Developers](/sign-in/) のサイトでサイン インします。
+1. [ArcGIS for Developers](https://developers.arcgis.com/sign-in/) のサイトでサイン インします。
 2. `New Application` をクリックします。
 3. `New Applications Details` で以下の内容を入力します。
     -   `Title` - 例えば、`Experience Builder credentials` などのように任意のタイトルを入力します。
     -   `Tags` - `Experience Builder` のような内容を入力します。
     -   `Register New Application` をクリックします。
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /> 
 4.  登録したアプリケーションの `Authentication` タブをクリックします。`Current Redirect URIs` のセクションで、リダイレクト URI に `https://localhost:3001/` と入力して、`+ Add` をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /> 
 5.  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
@@ -55,7 +56,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。
 
 {{% notice tip %}}
-※	インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+※ インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
 {{% /notice %}}
 
 1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`アイテムの追加` をクリックし、`アプリケーション` を選択します。
