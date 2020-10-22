@@ -391,9 +391,9 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
       <description>ArcGIS Experience Builder は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。Developer Edition (開発者向けエディション)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。
-ArcGIS Experience Builder (Developer Edition) で使用されているテクノロジーは、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) ページを参照してください。
-インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスがあります。
- server サービス  Experience Builder (Developer Edition) の本体を起動します。  client サービス  独自のウィジェットやテーマを開発するためには client サービスを利用する必要があります。通常、server のサービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。   両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。</description>
+ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) を参照してください。
+インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。
+ server サービス  Experience Builder (Developer Edition) の本体を起動します。  client サービス  独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server のサービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。   両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。</description>
     </item>
     
     <item>
