@@ -90,3 +90,52 @@ export default function Widget (props:AllWidgetProps) {
   }
 ```
 
+### ウィジェットの UI 設定
+
+ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、1 つの例外を除いて、setting フォルダに setting.tsx があります。ウィジェットの設定を作成するには、クラスと関数の2つの方法があります。クラスコンポーネントを使うと、jimu-for-builder パッケージの一部である BaseWidgetSetting クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルと対話する方法を示しています。この例では、以下を含むいくつかのインポートに注意を払う必要があります。
+
+- import React.Component はクラスを拡張するために使用します。
+- import DataSourceTypes はデータソースの種類に使用します。
+- import SettingSection と SettingRow は設定に便利なUIコンポーネントです。
+- import DataSourceSelector もデータソースの選択に使われるコンポーネントです。
+- import IMConfigはconfig.json ファイルに使用されます。
+
+```tsx
+import {React, Immutable, FormattedMessage} from 'jimu-core';
+import {AllWidgetSettingProps} from 'jimu-for-builder';
+import {DataSourceTypes} from 'jimu-arcgis';
+import {SettingSection, SettingRow} from 'jimu-ui/advanced/setting-components';
+import {DataSourceSelector} from 'jimu-ui/advanced/data-source-selector';
+import {IMConfig} from '../config';
+import defaultI18nMessages from './translations/default'
+```
+
+BaseWidgetSetting クラスは AllWidgetSettingProps と IMConfig という型で宣言されています。supportedTypes プロパティは、クラス全体でデータソースタイプのウェブマップに使用されます。 onDataSourceSelected は、データソースの選択を処理する関数を持つクラスプロパティです。設定UIの変更を通知する関数 this.props.OnSettingChange() を使用しています。クラスプロパティの onP1ChangeとonP2Change は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。
+
+```tsx
+export default class Setting extends React.Component{
+  supportedTypes = Immutable([DataSourceTypes.WebMap]);
+
+  onDataSourceSelected = (useDataSources: UseDataSource[]) => {
+    this.props.onSettingChange({
+      id: this.props.id,
+      useDataSources: useDataSources
+    });
+  }
+```
+
+```tsx
+onP1Change = (evt: React.FormEvent<HTMLInputElement>) => {
+  this.props.onSettingChange({
+    id: this.props.id,
+    config: this.props.config.set('p1', evt.currentTarget.value)
+  });
+}
+
+onP2Change = (evt: React.FormEvent<HTMLInputElement>) => {
+  this.props.onSettingChange({
+    id: this.props.id,
+    config: this.props.config.set('p2', evt.currentTarget.value)
+  });
+}
+```
