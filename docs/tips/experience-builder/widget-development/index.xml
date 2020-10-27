@@ -40,7 +40,9 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
-      <description></description>
+      <description>Experience Builder ウィジェットは、次のファイルで構成されています。
+ src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ  setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ   dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
+ 新しいモジュールのインストール ウィジェットの追加、削除、名前の変更 ウィジェットの manifest.json の編集 ファイルやフォルダの追加、削除、名前の変更  ctrl + c で webpack サーバーを停止させることができます。</description>
     </item>
     
     <item>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-22T11:31:23 JST">
+<meta name="revised" content="2020-10-27T17:31:17 JST">
 <title>ウィジェットの実装 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -701,7 +701,26 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#client-サーバー">Client サーバー</a></li>
+<li><a href="#ウィジェットの作成">ウィジェットの作成</a>
+<ul>
+<li><a href="#クラスコンポーネントを使ったウィジェットの作成">クラスコンポーネントを使ったウィジェットの作成</a></li>
+<li><a href="#関数コンポーネントを使ったウィジェットの作成">関数コンポーネントを使ったウィジェットの作成</a></li>
+</ul></li>
+<li><a href="#ウィジェットの-ui-設定">ウィジェットの UI 設定</a></li>
+<li><a href="#props">Props</a></li>
+<li><a href="#i18n-サポート">i18n サポート</a></li>
+<li><a href="#マップ-ビュー-シーン-ビュー">マップ ビュー/シーン ビュー</a></li>
+<li><a href="#arcgis-api-for-javascript-のモジュール">ArcGIS API for JavaScript のモジュール</a></li>
+<li><a href="#インライン編集をサポート">インライン編集をサポート</a></li>
+<li><a href="#ベストプラクティス">ベストプラクティス</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -720,6 +739,290 @@ if (!doNotTrack) {
     
     
     
+
+<p>Experience Builder ウィジェットは、次のファイルで構成されています。</p>
+
+<ul>
+<li>src: ウィジェットのソースコード
+
+<ul>
+<li>runtime: フォルダ
+
+<ul>
+<li>widget.tsx: メインのファイル</li>
+<li>assets: widget.tsx で使用される assets フォルダ</li>
+<li>translations: ウィジェットで使われる strings フォルダ</li>
+</ul></li>
+<li>setting: フォルダ
+
+<ul>
+<li>setting.tsx: ウィジェットで使用する設定ファイル</li>
+<li>assets: 設定で使用する assets フォルダ</li>
+<li>translations: 設定で使用する strings フォルダ</li>
+</ul></li>
+</ul></li>
+<li>dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成</li>
+<li>icon.svg: ウィジェットパネルのウィジェットのアイコン</li>
+<li>config.json: ウィジェットのデフォルト設定</li>
+<li>manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示</li>
+</ul>
+
+<h2 id="client-サーバー">Client サーバー</h2>
+
+<p>Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで <code>npm start</code> を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</p>
+
+<ul>
+<li>新しいモジュールのインストール</li>
+<li>ウィジェットの追加、削除、名前の変更</li>
+<li>ウィジェットの <code>manifest.json</code> の編集</li>
+<li>ファイルやフォルダの追加、削除、名前の変更</li>
+</ul>
+
+<div class="notices tip" ><p><code>ctrl + c</code> で webpack サーバーを停止させることができます。</p>
+</div>
+
+
+<h2 id="ウィジェットの作成">ウィジェットの作成</h2>
+
+<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、client/your-extensions/widget ディレクトリに配置します。demo widget フォルダの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
+
+<ul>
+<li><p>クラスコンポーネント</p>
+
+<ul>
+<li>ES6 クラスを利用し、React のコンポーネントクラスを拡張します。</li>
+<li>独自のデータを state で維持します。</li>
+<li>props(properties) をクラスコンポーネントに渡し、this.props でアクセスします。</li>
+<li>render() メソッドを使います。</li>
+</ul></li>
+
+<li><p>関数コンポーネント</p>
+
+<ul>
+<li>アロー関数を使った JavaScript の基本的な関数ですが、通常の関数キーワードを使用することができます。</li>
+<li>props を受け入れて使用します。</li>
+<li>React Hooks を使用して state やその他の機能を使用します。</li>
+<li>render() メソッドはありません。</li>
+</ul></li>
+</ul>
+
+<p>開発者向けドキュメントで使用されているサンプルは、1 つを除いてすべてクラスコンポーネントに基づいています。今後のリリースでは、関数コンポーネントのサンプルを追加する予定です。</p>
+
+<h3 id="クラスコンポーネントを使ったウィジェットの作成">クラスコンポーネントを使ったウィジェットの作成</h3>
+
+<p>以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、<code>export default class Widget extends React.Component&lt;AllWidgetProps&gt;, any&gt; {</code> で <code>AllWidgetProps</code> 型で宣言されており、ウィジェットの props を使用しています。 <code>render()</code> メソッドは、translations ファイル内の <code>_widgetLabel</code> のプロパティで設定した テキスト名：<code>hello world</code> とウィジェット名を返すために呼び出されます。</p>
+
+<pre><code class="language-tsx">//a custom pragma to transform your jsx into plain JavaScript
+/** @jsx jsx */
+import { React, AllWidgetProps, jsx } from &quot;jimu-core&quot;;
+export default class Widget extends React.Component&lt;AllWidgetProps, any&gt; {
+
+    render() {
+      return (
+        &lt;div className=&quot;widget-starter jimu-widget&quot; style={{ overflow: &quot;auto&quot; }}&gt;
+          &lt;p&gt;Hello world!&lt;/p&gt;
+          &lt;p&gt;Widget Name: {this.props.label}&lt;/p&gt;
+        &lt;/div&gt;
+      );
+    }
+
+}
+</code></pre>
+
+<h3 id="関数コンポーネントを使ったウィジェットの作成">関数コンポーネントを使ったウィジェットの作成</h3>
+
+<p>以下の例では、シンプルな hello world 関数の widget/component を作成するために必要なモジュールをロードしています。ウィジェットは、<code>export default function Widget (props: AllWidgetProps) {</code> で <code>AllWidgetProps</code> 型の関数として宣言されており、ウィジェットの props を使用しています。translations ファイルの <code>_widgetLabel</code> のプロパティで設定した テキスト名: <code>hello world</code> とウィジェット名を返します。</p>
+
+<pre><code class="language-tsx">/** @jsx jsx */
+import { AllWidgetProps, jsx} from &quot;jimu-core&quot;;
+
+export default function Widget (props:AllWidgetProps) {
+    return &lt;div className=&quot;widget-starter jimu-widget&quot; style={{ overflow: &quot;auto&quot; }}&gt;
+        &lt;p&gt;Hello world!&lt;/p&gt;
+        &lt;p&gt;Widget Name: {props.label}&lt;/p&gt;
+      &lt;/div&gt;
+  }
+</code></pre>
+
+<h2 id="ウィジェットの-ui-設定">ウィジェットの UI 設定</h2>
+
+<p>ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダに setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、<code>jimu-for-builder</code> パッケージの一部である <code>BaseWidgetSetting</code> クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。</p>
+
+<ul>
+<li>import <code>React.Component</code> はクラスを拡張するために使用します。</li>
+<li>import <code>DataSourceTypes</code> はデータソースの種類に使用します。</li>
+<li>import <code>SettingSection</code> と <code>SettingRow</code> は設定に便利な UI コンポーネントです。</li>
+<li>import <code>DataSourceSelector</code> もデータソースの選択に使われるコンポーネントです。</li>
+<li>import <code>IMConfig</code> は config.json ファイルに使用されます。</li>
+</ul>
+
+<pre><code class="language-tsx">import {React, Immutable, FormattedMessage} from 'jimu-core';
+import {AllWidgetSettingProps} from 'jimu-for-builder';
+import {DataSourceTypes} from 'jimu-arcgis';
+import {SettingSection, SettingRow} from 'jimu-ui/advanced/setting-components';
+import {DataSourceSelector} from 'jimu-ui/advanced/data-source-selector';
+import {IMConfig} from '../config';
+import defaultI18nMessages from './translations/default'
+</code></pre>
+
+<p><code>BaseWidgetSetting</code> クラスは <code>AllWidgetSettingProps</code> と <code>IMConfig</code> という型で宣言されています。<code>supportedTypes</code> プロパティは、クラス全体でデータソースタイプの Web マップに使用されます。<code>onDataSourceSelected</code> は、データソースの選択を処理する関数を持つクラス プロパティです。設定 UI の変更を通知する関数 <code>this.props.OnSettingChange()</code> を使用しています。クラスプロパティの <code>onP1Change</code> と<code>onP2Change</code> は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。</p>
+
+<pre><code class="language-tsx">export default class Setting extends React.Component{
+  supportedTypes = Immutable([DataSourceTypes.WebMap]);
+
+  onDataSourceSelected = (useDataSources: UseDataSource[]) =&gt; {
+    this.props.onSettingChange({
+      id: this.props.id,
+      useDataSources: useDataSources
+    });
+  }
+</code></pre>
+
+<pre><code class="language-tsx">onP1Change = (evt: React.FormEvent&lt;HTMLInputElement&gt;) =&gt; {
+  this.props.onSettingChange({
+    id: this.props.id,
+    config: this.props.config.set('p1', evt.currentTarget.value)
+  });
+}
+
+onP2Change = (evt: React.FormEvent&lt;HTMLInputElement&gt;) =&gt; {
+  this.props.onSettingChange({
+    id: this.props.id,
+    config: this.props.config.set('p2', evt.currentTarget.value)
+  });
+}
+</code></pre>
+
+<p>jimu ライブラリには、ウィジェットで使用できるコンポーネントがあります。例えば、Web マップを選択のための UI を支援するために、<code>DataSourceSelector</code> コンポーネントが、選択されたデータソースのタイプ、ID、およびコールバックを処理するために使用されます。さらに、<code>SettingSection</code> コンポーネントと <code>SettingRow</code> コンポーネントは、翻訳や config ファイルからの文字列のコンテナの整形を処理するために使用されます。</p>
+
+<pre><code class="language-tsx">render(){
+    return &lt;div className=&quot;sample-map-view-setting p-2&quot;&gt;
+      &lt;DataSourceSelector
+        types={this.supportedTypes}
+        mustUseDataSource
+        useDataSources={this.props.useDataSources}
+        onChange={this.onDataSourceSelected}
+        widgetId={this.props.id}
+      /&gt;
+      &lt;SettingSection&gt;
+        &lt;SettingRow label={&lt;FormattedMessage id=&quot;p1&quot; defaultMessage={defaultI18nMessages.p1}/&gt;}&gt; &lt;input defaultValue={this.props.config.p1} onChange={this.onP1Change}/&gt;&lt;/SettingRow&gt;
+        &lt;SettingRow label={&lt;FormattedMessage id=&quot;p2&quot; defaultMessage={defaultI18nMessages.p2}/&gt;}&gt; &lt;input defaultValue={this.props.config.p2} onChange={this.onP2Change}/&gt;&lt;/SettingRow&gt;
+      &lt;/SettingSection&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+
+<h2 id="props">Props</h2>
+
+<p>ウィジェットには様々な props があります。クラスコンポーネントの <code>this.props</code>や関数コンポーネントの props パラメータ <code>{props}</code> を通してアクセスすることができます。例えば、クラスコンポーネントを使用してウィジェットの config.json にある props にアクセスするには、<code>this.props.config</code> を使用します。関数コンポーネントでアクセスするには、<code>props.config</code> を使用します。利用可能なプロパティの詳細については、Experience Builder の <code>client/jimu-core/lib/types/props.ts</code> を参照してください。</p>
+
+<pre><code class="language-tsx">static mapExtraStateProps = (state: IMState) =&gt; {
+    return {
+      appMode: state &amp;&amp; state.appRuntimeInfo &amp;&amp; state.appRuntimeInfo.appMode
+    };
+  };
+</code></pre>
+
+<h2 id="i18n-サポート">i18n サポート</h2>
+
+<p>Experience Builder は <code>react-intl</code> ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で <code>translatedLocales</code> プロパティのロケールを宣言します。規約では、デフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、<code>translatedLocales</code> プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語)の順になっています。</p>
+
+<pre><code class="language-tsx"> &quot;translatedLocales&quot;: [
+    &quot;en&quot;,
+    &quot;es&quot;,
+    &quot;zh-cn&quot;
+  ]
+</code></pre>
+
+<p>翻訳文字列は <code>default.ts</code> というファイルが必要で、<code>runtime/translations</code> と <code>settings/translations</code> フォルダにあります。<code>default.ts</code> はデフォルトの文字列を定義し、ウィジェットにインポートしてデフォルトのメッセージに使うことができます。例えば、<code>widget.tsx</code> では、以下のような翻訳された文字列にアクセスする方法があります。</p>
+
+<pre><code class="language-tsx">Class component
+this.props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessages._widgetLabel})
+
+Function component
+props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._widgetLabel})
+
+JSX
+&lt;FormattedMessage id=&quot;widgetProperties&quot; defaultMessage={defaultMessages.widgetProperties}/&gt;
+</code></pre>
+
+<h2 id="マップ-ビュー-シーン-ビュー">マップ ビュー/シーン ビュー</h2>
+
+<p>ほとんどのエクスペリエンスでは、ウィジェットはマップ ビュー/シーン ビューで動作し、同様にビュー内のレイヤーにアクセスする必要があります。一貫した拡張性モデルを持つことを保証するために、Experience Builder フレームワーク内での使用をより簡単にするために、他のクラスやメソッドに加えて、<code>MapViewManager</code> クラスが <code>jimu-arcgis</code> で利用可能です。基本的に全てのウィジェットは <code>createJimuMapView</code> メソッドを呼び出して <code>MapViewManager</code> にマップ/シーンビューを追加し、他のウィジェットで使用できるようにすることができます。</p>
+
+<pre><code class="language-tsx">      MapViewManager.getInstance().createJimuMapView({
+        mapWidgetId: this.props.id,
+        view: new MapView(options),
+        datasourceId: webmapDs.id,
+        isActive: true
+      })
+</code></pre>
+
+<p>マップ ビュー/シーン ビューを使用する必要がある他のウィジェットは、設定 UI で <code>JimuMapViewSelector</code> を使用して選択することができます。選択したマップ/シーンは <code>WidgetJson.useMapWidgetsIds</code> に保存されます。</p>
+
+<pre><code class="language-tsx">&lt;JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds} /&gt;
+</code></pre>
+
+<h2 id="arcgis-api-for-javascript-のモジュール">ArcGIS API for JavaScript のモジュール</h2>
+
+<p>既定では、Experience Builder はアプリのロード時に ArcGIS API for JavaScript (JSAPI) をロードしません。JSAPI モジュールを利用するには、2 つのオプションがあります。</p>
+
+<ul>
+<li>JSAPI に依存するウィジェット（例：JSAPI がないとほとんど何もできない
+
+<ul>
+<li>ウィジェットの <code>manifest.json</code> で <code>jimu-arcgis</code> 依存関係を宣言します。</li>
+<li>必要なモジュールをインポートする <code>import Query = require('esri/tasks/support/Query')</code> in the <code>widget.tsx</code>.</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-tsx">  const query = new Query({
+    where: `${typeIdField} = ${graphic.attributes[objectIdField]}`,
+    outFields: ['FirstName'],
+    returnGeometry: true
+  })
+</code></pre>
+
+<ul>
+<li>条件付きで JSAPI に依存するウィジェット（例：JSAPIがなくても何かができる
+
+<ul>
+<li><code>import {loadArcGISJSAPIModules}とloadArcGISJSAPIModules([])</code> を使用してモジュールを動的にロードします。</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-tsx">  loadArcGISJSAPIModules(['esri/widgets/Directions']).then(modules =&gt; {
+          [this.Directions] = modules;
+          this.setState({
+            apiLoaded: true
+         });
+        })
+</code></pre>
+
+<h2 id="インライン編集をサポート">インライン編集をサポート</h2>
+
+<p>すべての設定可能なウィジェットは、ウィジェットの設定を可能にする設定ページを提供しなければなりません。しかし、いくつかの構成では、設定パネルよりもウィジェット上で設定を変更する方が簡単です。このワークフローでは、ウィジェットがインライン編集機能を提供することで、この機能をサポートすることができます。</p>
+
+<p>インライン編集を実装する方法はいくつかあります。</p>
+
+<ul>
+<li>ウィジェットの <code>manifest.json</code> でプロパティオブジェクトの下に <code>supportInlineEditing</code> を宣言します。このインスタンスでは、ウィジェットがビルダーで起動されたときにウィジェットに編集ツールバーが表示されます。<code>Text</code> ウィジェットはこのように実装されています。</li>
+<li>ウィジェットの manifest.json でプロパティオブジェクトの下に <code>hasEmbeddedLayout</code> を宣言します。この場合、ユーザーが他のウィジェットをウィジェットの中にドラッグ＆ドロップできるようにするために、レイアウトコンポーネントを使用することをお勧めします。jimu-layouts/layout-builder と jimu-layouts/layout-runtime からエクスポートされた 2 つのレイアウトコンポーネントがあります。ウィジェットでは、jimu-layouts/layout-runtime からエクスポートされたレイアウトコンポーネントを使用する必要があります。jimu-layouts/layout-builder からエクスポートされたコンポーネントにアクセスするには、this.props.builderSupportModules.LayoutClass を使用します。リストウィジェットはこのテクニックを使っています。</li>
+<li>ウィジェットの <code>manifest.json</code> で <code>CONTEXT_TOOL</code> 拡張機能を宣言します。宣言した拡張機能は選択ツールバーで利用できるようになります。<code>Image</code> ウィジェットは、このように選択ツールバーにシェイプツールやクロップツールを追加して使用します。</li>
+</ul>
+
+<p>インライン編集をサポートするために、ウィジェットはビルダーでウィジェットを起動した時にのみ必要なモジュールを持っているかもしれません。このシナリオでは、これらのモジュールを <code>builder-support.tsx</code> に配置します。このファイルは <code>widget.tsx</code> と同じフォルダにあるはずです。このファイル内のモジュールは、ウィジェットがビルダで起動されると、<code>this.props.builderSupportModules.widgetModules</code> 内で利用できるようになります。</p>
+
+<h2 id="ベストプラクティス">ベストプラクティス</h2>
+
+<ul>
+<li>ウィジェットのクラス名として <code>widget-&lt;widget name&gt;</code> を、ウィジェット設定のクラス名として <code>widget-setting-&lt;widget name&gt;</code> を使用して、ウィジェットのルート CSS クラス名を指定します。</li>
+<li>サードパーティの内蔵ライブラリをロードするには <code>import {} from 'jimu-core'</code> を使います。例えば、<code>import {React} from 'jimu-core</code> から {React} をインポートします; <code>import {} from '3rd_lib'</code> を使うと、lib がウィジェットに組み込まれるので、ウィジェットのサイズは大きくなります。</li>
+<li>widget の <code>src</code> フォルダに Typesafe 設定ファイルを作成し、<code>widget.tsx</code> と <code>setting.tsx</code> の両方で使用します。</li>
+<li>可能な限りアウトオブボックスの UI コンポーネントを活用して、ウィジェットの UI を作成する方法の詳細をご覧ください。</li>
+</ul>
+
 
     
     
