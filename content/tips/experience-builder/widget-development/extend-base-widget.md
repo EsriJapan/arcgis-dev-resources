@@ -92,7 +92,7 @@ export default function Widget (props:AllWidgetProps) {
 
 ## ウィジェットの UI 設定
 
-ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダに setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、`jimu-for-builder` パッケージの一部である `BaseWidgetSetting` クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。
+ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、`jimu-for-builder` パッケージの一部である `BaseWidgetSetting` クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。
 
 - import `React.Component` はクラスを拡張するために使用します。
 - import `DataSourceTypes` はデータソースの種類に使用します。
@@ -162,7 +162,7 @@ render(){
 ```
 ## Props
 
-ウィジェットには様々な props があります。クラスコンポーネントの `this.props `や関数コンポーネントの props パラメータ `{props}` を通してアクセスすることができます。例えば、クラスコンポーネントを使用してウィジェットの config.json にある props にアクセスするには、`this.props.config` を使用します。関数コンポーネントでアクセスするには、`props.config` を使用します。利用可能なプロパティの詳細については、Experience Builder の `client/jimu-core/lib/types/props.ts` を参照してください。
+ウィジェットでは props があります。クラス コンポーネントの `this.props` や関数コンポーネントの props パラメータ `{props}` を通してアクセスすることができます。例えば、クラス コンポーネントを使用してウィジェットの config.json にある props にアクセスするには、`this.props.config` を使用します。関数コンポーネントでアクセスするには、`props.config` を使用します。利用可能なプロパティの詳細については、Experience Builder の `client/jimu-core/lib/types/props.ts` を参照してください。
 
 ```tsx
 static mapExtraStateProps = (state: IMState) => {
@@ -174,7 +174,7 @@ static mapExtraStateProps = (state: IMState) => {
 
 ## i18n サポート
 
-Experience Builder は `react-intl` ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で `translatedLocales` プロパティのロケールを宣言します。規約では、デフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、`translatedLocales` プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語)の順になっています。
+Experience Builder は `react-intl` ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で `translatedLocales` プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、`translatedLocales` プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。
 
 ```tsx
  "translatedLocales": [
@@ -199,7 +199,7 @@ JSX
 
 ## マップ ビュー/シーン ビュー
 
-ほとんどのエクスペリエンスでは、ウィジェットはマップ ビュー/シーン ビューで動作し、同様にビュー内のレイヤーにアクセスする必要があります。一貫した拡張性モデルを持つことを保証するために、Experience Builder フレームワーク内での使用をより簡単にするために、他のクラスやメソッドに加えて、`MapViewManager` クラスが `jimu-arcgis` で利用可能です。基本的に全てのウィジェットは `createJimuMapView` メソッドを呼び出して `MapViewManager` にマップ/シーンビューを追加し、他のウィジェットで使用できるようにすることができます。
+ほとんどの Experience Builder では、ウィジェットはマップ ビュー/シーン ビューで動作し、同様にビュー内のレイヤーにアクセスする必要があります。一貫した拡張性モデルを持つことを保証するために、Experience Builder フレームワーク内での使用をより簡単にするために、他のクラスやメソッドに加えて、`MapViewManager` クラスが `jimu-arcgis` で利用可能です。基本的に全てのウィジェットは `createJimuMapView` メソッドを呼び出して `MapViewManager` にマップ ビュー/シーン ビューを追加し、他のウィジェットで使用できるようにすることができます。
 
 ```tsx
       MapViewManager.getInstance().createJimuMapView({
@@ -210,18 +210,18 @@ JSX
       })
 ```
 
-マップ ビュー/シーン ビューを使用する必要がある他のウィジェットは、設定 UI で `JimuMapViewSelector` を使用して選択することができます。選択したマップ/シーンは `WidgetJson.useMapWidgetsIds` に保存されます。
+マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で `JimuMapViewSelector` を使用して選択することができます。選択したマップ/シーンは `WidgetJson.useMapWidgetsIds` に保存されます。
 
 ```tsx
 <JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds} />
 ```
 
 ## ArcGIS API for JavaScript のモジュール
-既定では、Experience Builder はアプリのロード時に ArcGIS API for JavaScript (JSAPI) をロードしません。JSAPI モジュールを利用するには、2 つのオプションがあります。
+既定では、Experience Builder はアプリのロード時に ArcGIS API for JavaScript (JS API) をロードしません。JS API モジュールを利用するには、2 つのオプションがあります。
 
-- JSAPI に依存するウィジェット（例：JSAPI がないとほとんど何もできない
+- JS API に依存するウィジェット (例：JS API がないと何もできません。)
   - ウィジェットの `manifest.json` で `jimu-arcgis` 依存関係を宣言します。
-  - 必要なモジュールをインポートする `import Query = require('esri/tasks/support/Query')` in the `widget.tsx`.
+  - 必要なモジュールを `widget.tsx` インポート `import Query = require('esri/tasks/support/Query')` します。
 
 ```tsx
   const query = new Query({
@@ -231,7 +231,7 @@ JSX
   })
 ```
 
-- 条件付きで JSAPI に依存するウィジェット（例：JSAPIがなくても何かができる
+- 条件付きで JS API に依存するウィジェット (例：JS API が無くても何かを実行することはできます。)
   - `import {loadArcGISJSAPIModules}とloadArcGISJSAPIModules([])` を使用してモジュールを動的にロードします。
 
 ```tsx
@@ -248,11 +248,11 @@ JSX
 
 インライン編集を実装する方法はいくつかあります。
 
-- ウィジェットの `manifest.json` でプロパティオブジェクトの下に `supportInlineEditing` を宣言します。このインスタンスでは、ウィジェットがビルダーで起動されたときにウィジェットに編集ツールバーが表示されます。`Text` ウィジェットはこのように実装されています。
-- ウィジェットの manifest.json でプロパティオブジェクトの下に `hasEmbeddedLayout` を宣言します。この場合、ユーザーが他のウィジェットをウィジェットの中にドラッグ＆ドロップできるようにするために、レイアウトコンポーネントを使用することをお勧めします。jimu-layouts/layout-builder と jimu-layouts/layout-runtime からエクスポートされた 2 つのレイアウトコンポーネントがあります。ウィジェットでは、jimu-layouts/layout-runtime からエクスポートされたレイアウトコンポーネントを使用する必要があります。jimu-layouts/layout-builder からエクスポートされたコンポーネントにアクセスするには、this.props.builderSupportModules.LayoutClass を使用します。リストウィジェットはこのテクニックを使っています。
-- ウィジェットの `manifest.json` で `CONTEXT_TOOL` 拡張機能を宣言します。宣言した拡張機能は選択ツールバーで利用できるようになります。`Image` ウィジェットは、このように選択ツールバーにシェイプツールやクロップツールを追加して使用します。
+- ウィジェットの `manifest.json` の `properties` オブジェクトに `supportInlineEditing` を宣言します。このインスタンスでは、ウィジェットが Builder で起動されたときにウィジェットに編集ツールバーが表示されます。`Text` ウィジェットはこのように実装されています。
+- ウィジェットの `manifest.json` の `properties` オブジェクトに `hasEmbeddedLayout` を宣言します。この場合、ユーザーが他のウィジェットをウィジェットの中でドラッグ＆ドロップできるようにするために、レイアウト コンポーネントを使用することをお勧めします。`jimu-layouts/layout-builder` と `jimu-layouts/layout-runtime` からエクスポートされた 2 つのレイアウト コンポーネントがあります。ウィジェットでは、jimu-layouts/layout-runtime からエクスポートされたレイアウトコンポーネントを使用する必要があります。`jimu-layouts/layout-builder` からエクスポートされたコンポーネントにアクセスするには、`this.props.builderSupportModules.LayoutClass` を使用します。`List` ウィジェットはこの手法を使っています。
+- ウィジェットの `manifest.json` で `CONTEXT_TOOL` 拡張機能を宣言します。宣言した拡張機能は選択ツールバーで利用できるようになります。`Image` ウィジェットは、このように選択ツールバーに shape ツールや crop ツールを追加して使用します。
 
-インライン編集をサポートするために、ウィジェットはビルダーでウィジェットを起動した時にのみ必要なモジュールを持っているかもしれません。このシナリオでは、これらのモジュールを `builder-support.tsx` に配置します。このファイルは `widget.tsx` と同じフォルダにあるはずです。このファイル内のモジュールは、ウィジェットがビルダで起動されると、`this.props.builderSupportModules.widgetModules` 内で利用できるようになります。
+インライン編集をサポートするために、ウィジェットは Builder でウィジェットを起動した時にのみ必要なモジュールが含まれている場合があります。このシナリオでは、これらのモジュールを `builder-support.tsx` に配置します。このファイルは `widget.tsx` と同じフォルダにあるはずです。このファイル内のモジュールは、ウィジェットが Builder で起動されると、`this.props.builderSupportModules.widgetModules` 内で利用できるようになります。
 
 ## ベストプラクティス
 
