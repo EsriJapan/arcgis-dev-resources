@@ -47,7 +47,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
     -   `Tags` - `Experience Builder` のような内容を入力します。
     -   `Register New Application` をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /> 
-4.  登録したアプリケーションの `Authentication` タブをクリックします。`Current Redirect URIs` のセクションで、リダイレクト URI に `https://localhost:3001/` と入力して、`+ Add` をクリックします。
+4.  登録したアプリケーションの `Authentication` タブをクリックします。`Current Redirect URIs` のセクションで、`リダイレクト URI` に `https://localhost:3001/` と入力して、`+ Add` をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /> 
 5.  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 
@@ -67,7 +67,7 @@ ArcGIS Online または ArcGIS Enterprise を使用している場合は、以�
     - `アイテムの追加` をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
 3. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
-4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に https://localhost:3001/ と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 
 ## 2. server サービスのインストール
@@ -108,7 +108,7 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 1. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /client ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span>
 2. `npm start` と入力して client を起動します。
-<br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは https://localhost:3001 で表示した Experience Builder 上で使用することが可能となります。</span>
+<br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは `https://localhost:3001` で表示した Experience Builder 上で使用することが可能となります。</span>
 
 {{% notice tip %}}
 /client/your-extensions ディレクトリに新規にファイルやフォルダを作成した場合は、client サービスの再起動が必要になります。
@@ -156,7 +156,7 @@ Experience Builder (Developer Edition) を使用するために Client ID が必
     - `アイテムの追加` をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
 3. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
-4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に https://localhost:3001/ と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 5. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
 6. ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。

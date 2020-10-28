@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-28T15:26:15 JST">
+<meta name="revised" content="2020-10-28T15:52:03 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -789,7 +789,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <li><code>Register New Application</code> をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /></li>
 </ul></li>
-<li>登録したアプリケーションの <code>Authentication</code> タブをクリックします。<code>Current Redirect URIs</code> のセクションで、リダイレクト URI に <code>https://localhost:3001/</code> と入力して、<code>+ Add</code> をクリックします。
+<li>登録したアプリケーションの <code>Authentication</code> タブをクリックします。<code>Current Redirect URIs</code> のセクションで、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力して、<code>+ Add</code> をクリックします。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /></li>
 <li>Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。</li>
 </ol>
@@ -814,7 +814,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul></li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
-<li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <a href="https://localhost:3001/">https://localhost:3001/</a> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+<li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 </ol>
 
@@ -861,7 +861,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /client ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span></li>
 <li><code>npm start</code> と入力して client を起動します。
-<br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは <a href="https://localhost:3001">https://localhost:3001</a> で表示した Experience Builder 上で使用することが可能となります。</span></li>
+<br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは <code>https://localhost:3001</code> で表示した Experience Builder 上で使用することが可能となります。</span></li>
 </ol>
 
 <div class="notices tip" ><p>/client/your-extensions ディレクトリに新規にファイルやフォルダを作成した場合は、client サービスの再起動が必要になります。</p>
@@ -921,7 +921,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul></li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
-<li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <a href="https://localhost:3001/">https://localhost:3001/</a> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+<li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 <li>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。</li>
 <li>ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。</li>
