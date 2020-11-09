@@ -43,7 +43,7 @@ Experience Builder は、インストール用の ZIP ファイルとして提�
 
 必要最小限のファイルですぐに始めるには、`your-extensions\widgets` フォルダ内の `simple widget` を参照してください。
 
-ウィジェット開発の詳細については、[ウィジェットの実装](https://developers.arcgis.com/experience-builder/guide/extend-base-widget)について学習してください。
+ウィジェット開発の詳細については、[ウィジェットの実装](../extend-base-widget)について学習してください。
 
 ## 基本的な考え方
 Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。

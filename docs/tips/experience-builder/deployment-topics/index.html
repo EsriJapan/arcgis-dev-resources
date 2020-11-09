@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-28T15:52:04 JST">
+<meta name="revised" content="2020-11-09T21:15:38 JST">
 <title>デプロイ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -728,7 +728,9 @@ if (!doNotTrack) {
 
 <h2 id="experience-のダウンロード">Experience のダウンロード</h2>
 
-<p>Experience ギャラリーのホームページで Experience をダウンロードするには、<code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。お使いのブラウザ用に定義されたダウンロードディレクトリにあります。</p>
+<p>Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように <code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。</p>
+
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" /></p>
 
 <h2 id="experience-のデプロイ">Experience のデプロイ</h2>
 
@@ -738,7 +740,7 @@ if (!doNotTrack) {
 <li>ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。</li>
 <li>アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。</li>
 <li>アプリを追加して登録します。詳細については、<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B">アプリの追加</a>と<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#REG_APP">アプリの登録</a>を参照してください。</li>
-<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：app\config.json) にある <code>config.json</code> ファイルを開きます。</li>
+<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある <code>config.json</code> ファイルを開きます。</li>
 <li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
 <li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度にファイルを保存します。</li>
 </ol>
