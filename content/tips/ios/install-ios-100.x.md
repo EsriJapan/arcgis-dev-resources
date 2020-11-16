@@ -67,7 +67,7 @@ ArcGIS Runtime SDK for iOS は、[CocoaPods](https://cocoapods.org/) を利用�
     ```none
     target '<プロジェクト名>' do
     use_frameworks!
-    pod 'ArcGIS-Runtime-SDK-iOS', '100.8'
+    pod 'ArcGIS-Runtime-SDK-iOS', '100.9'
     end
     ```
 
