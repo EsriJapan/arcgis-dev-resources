@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>アプリの作成 on ArcGIS for Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</link>
     <description>Recent content in アプリの作成 on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    
-	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
@@ -17,14 +13,10 @@
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
       <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 地図の表示 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/4.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。
- Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-dev-resources/startup/javascript/4.x/map/index.html のように localhost を指定してアクセスできます。  この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
- 26 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。このコードで Web マップを参照します。
-// Web マップの参照 var map = new WebMap({ portalItem: { id: &amp;quot;&amp;lt;Web マップ ID&amp;gt;&amp;quot; } });  まだ Web マップを作成しておらず、すぐに試してみたい方はサンプル Web マップをご利用ください。</description>
+ ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/4.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。   Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-dev-resources/startup/javascript/4.x/map/index.html のように localhost を指定してアクセスできます。    この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
+  26 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。このコードで Web マップを参照します。</description>
     </item>
     
     <item>
@@ -36,13 +28,11 @@
       <description>開発環境 ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必要です。
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
 サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。 ここでは Windows デスクトップアプリケーション（WPF） の例で説明していますが、UWP、Xamarin でも同じアプリを実行することができます。
- UWP サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
- Xamarin サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
-   ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。</description>
+  UWP サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
+  Xamarin サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
+    ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.</description>
     </item>
     
     <item>
@@ -55,11 +45,10 @@
 またこの後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Android Library プロジェクトとして参照する方法を用いています。 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方はこちらの SDK download（英語）手順をご覧ください。
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
 サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
+  リポジトリをご自身のアカウントに Fork（複製）
+ GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。    zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
   arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
-地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
- ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/android/100.</description>
+地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</description>
     </item>
     
     <item>
@@ -70,13 +59,12 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
       <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
  SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。　 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
- Fork 後はご自身のローカル マシンにクローンを作成します。
-  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
+  リポジトリをご自身のアカウントに Fork（複製）
+  GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
+  Fork 後はご自身のローカル マシンにクローンを作成します。
+    zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
   arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
- ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/100.x/map/sample.xcodeproj）を Xcode で開きます。
- ViewController.</description>
+  ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/100.</description>
     </item>
     
   </channel>
