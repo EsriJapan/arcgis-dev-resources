@@ -47,5 +47,15 @@ Experience のデプロイ Experience を Web サーバーにデプロイする�
  ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。 アプリを追加して登録します。詳細については、アプリの追加とアプリの登録を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある config.json ファイルを開きます。 attributes オブジェクトの下に clientId プロパティを作成します。 config.json ファイルの clientId プロパティに AppID を貼り付けます。再度にファイルを保存します。  &amp;quot;attributes&amp;quot;: { &amp;quot;portalUrl&amp;quot;: &amp;quot;https://exb.</description>
     </item>
     
+    <item>
+      <title>チュートリアル</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</guid>
+      <description>ArcGIS Experience Builder のチュートリアルでは、カスタム ウィジェットの作成方法について説明しています。各チュートリアルの完了には、約 15 分かかります。カスタム ウィジェットの作成方法と API の使用方法について理解することができます。
+ Create a starter widget Get map coordinates Add layers to a map  </description>
+    </item>
+    
   </channel>
 </rss>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-16T15:58:22 JST">
+<meta name="revised" content="2020-11-17T11:22:49 JST">
 <title>ウィジェットの実装 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -377,6 +377,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
             デプロイ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
+            チュートリアル
           </a>
         </div>
     </li>
@@ -973,7 +980,7 @@ JSX
 
 <ul>
 <li>ウィジェットの <code>manifest.json</code> で <code>jimu-arcgis</code> 依存関係を宣言します。</li>
-<li>必要なモジュールを <code>widget.tsx</code> インポート <code>import Query = require('esri/tasks/support/Query')</code> します。</li>
+<li><code>widget.tsx</code> で必要なモジュールをインポート <code>import Query = require('esri/tasks/support/Query')</code> します。</li>
 </ul></li>
 </ul>
 
@@ -1002,7 +1009,7 @@ JSX
 
 <h2 id="インライン編集をサポート">インライン編集をサポート</h2>
 
-<p>すべての設定可能なウィジェットは、ウィジェットの設定を可能にする設定ページを提供しなければなりません。しかし、いくつかの構成では、設定パネルよりもウィジェット上で設定を変更する方が簡単です。このワークフローでは、ウィジェットがインライン編集機能を提供することで、この機能をサポートすることができます。</p>
+<p>構成可能なすべてのウィジェットは、ウィジェットの構成を可能にする設定ページを提供する必要があります。ただし、構成によっては、設定パネルよりもウィジェットの設定を変更する方が簡単な場合があります。このワークフローでは、ウィジェットはインライン編集機能を提供することで、この機能をサポートすることができます。</p>
 
 <p>インライン編集を実装する方法はいくつかあります。</p>
 
@@ -1020,7 +1027,7 @@ JSX
 <li>ウィジェットのクラス名として <code>widget-&lt;widget name&gt;</code> を、ウィジェット設定のクラス名として <code>widget-setting-&lt;widget name&gt;</code> を使用して、ウィジェットのルート CSS クラス名を指定します。</li>
 <li>サードパーティの内蔵ライブラリをロードするには <code>import {} from 'jimu-core'</code> を使います。例えば、<code>import {React} from 'jimu-core</code> から {React} をインポートします; <code>import {} from '3rd_lib'</code> を使うと、lib がウィジェットに組み込まれるので、ウィジェットのサイズは大きくなります。</li>
 <li>widget の <code>src</code> フォルダに Typesafe 設定ファイルを作成し、<code>widget.tsx</code> と <code>setting.tsx</code> の両方で使用します。</li>
-<li>可能な限りアウトオブボックスの UI コンポーネントを活用して、ウィジェットの UI を作成する方法の詳細をご覧ください。</li>
+<li>可能な限りアウトオブボックスの UI コンポーネントを活用して、<a href="../widget-ui">ウィジェット UI</a> を作成する方法の詳細をご覧ください。</li>
 </ul>
 
 

@@ -48,6 +48,6 @@ Experience Builder は、インストール用の ZIP ファイルとして提�
 ## 基本的な考え方
 Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。
 
-- [コア コンセプト](https://developers.arcgis.com/experience-builder/guide/core-concepts)
+- [コア コンセプト](../../core-concepts)
 - コードを見て学ぶのが一番良い場合は、[リポジトリ](https://github.com/esri/arcgis-experience-builder-sdk-resources)からクローンして、[サンプル](https://developers.arcgis.com/experience-builder/sample-code/)を参照してください。
 

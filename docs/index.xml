@@ -953,6 +953,16 @@ Experience のデプロイ Experience を Web サーバーにデプロイする�
     </item>
     
     <item>
+      <title>チュートリアル</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</guid>
+      <description>ArcGIS Experience Builder のチュートリアルでは、カスタム ウィジェットの作成方法について説明しています。各チュートリアルの完了には、約 15 分かかります。カスタム ウィジェットの作成方法と API の使用方法について理解することができます。
+ Create a starter widget Get map coordinates Add layers to a map  </description>
+    </item>
+    
+    <item>
       <title>スタートアップ ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/create-startup-app-wab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
