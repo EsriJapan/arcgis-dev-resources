@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</link>
+    <description>Recent content in ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
+      <description>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
+Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS for Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
+ ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_api\library とすべてのコンテンツをコピーして Web サーバー上に移動します（C:\inetpub\wwwroot\arcgis_js_api\library）。  ビルドのインストール ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</description>
+    </item>
+    
+    <item>
+      <title>バージョン 4.x と 3.x の選択</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</guid>
+      <description>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。
+また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、3.x のロードマップと技術サポートに関する FAQ も併せて参照してください。
+ アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください アプリケーションで、WFS レイヤーのようなバージョン 4.x でまだ利用できない機能が必要な場合は、バージョン 3.x を使用してください     機能 3.34 4.17     3D 表示 × ○   2D 表示 ○ ○   ベクター タイル レイヤー ○ ○   ラスター タイル レイヤー ○ ○   イメージ レイヤー ○ ○   マップ イメージ レイヤー（ダイナミック レイヤー） ○ ○   フィーチャ レイヤー ○ ○   ジオメトリ エンジン ○ ○   印刷 ○ ○   ルート &amp;amp; ルート案内 ○ ○   Web マップ ○ ○（部分的なサポート）   Web シーン × ○   ポータル アイテムのレイヤーの直接参照 × ○   編集と図形描画 ○ ○（部分的なサポート）   OGC レイヤー（WMS、WMTS、KML） ○ ○   OGC レイヤー（WFS） ○ ×（今後のバージョンで対応予定）   OGC API の機能（OGCFeatureLayer） × ○   時系列データ ○ ○   その他の GIS 解析ウィジェット ○ ×（今後のバージョンで対応予定）    全機能の比較は 3.</description>
+    </item>
+    
+    <item>
+      <title>バージョン 3.x から 4.x への移行</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
+      <description>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
+本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
+ プロパティのハンドリング
+ View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
+ オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;   オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title;  例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
+myFeatureLayer.setDefinitionExpression(expression);  4.x では、以下の様に記述します。
+myFeatureLayer.definitionExpression = expression;  4.</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット開発</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
+      <description>ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS API for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
+このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
+このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
+トピック
+ 開発要件 ウィジェット ライフサイクル ウィジェットの実装 TypeScript デコレーター サンプルコード 関連リンク  このガイドはウィジェットのフレームワークの大まかな概要を説明しています。どのようにカスタム ウィジェットを作成するかは、Hello World や Recenter widget のサンプルをご参照ください。
+開発要件 カスタム ウィジェットを作成する前に、開発に必要となる要件を確認してください。要件は、作成するウィジェットにより異なります。以下はウィジェット開発に最低限必要な要件です。
+TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript で書かれたコードは、JavaScript にコンパイルされます。ウィジェット開発には TypeScript を使用することが推奨されています。インターネット上には、TypeScript とは何か、なぜ使われるのか、そしてどのように使うのかを詳細に知ることのできる多数のリソースがあります。これらの基本を理解することで、ウィジェット開発の過程をより簡単に進めることができます。
+JSX JSX は HTML と同じようにウィジェットの UI を表現することができる JavaScript の拡張シンタックスです。JSX は HTML に似ており、JavaScript に埋め込んで使用することができます。
+esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつであり、ウィジェットを含むすべてのクラスの基盤です。どのように動作するのか、使用パターンなどの詳細は Implementing Accessor をご参照ください。</description>
+    </item>
+    
+    <item>
+      <title>スタートアップ ガイド（3.x）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</guid>
+      <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+ リポジトリをご自身のアカウントに Fork（複製）
+ GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
+  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+地図の表示 まずはダウンロードしたサンプル コードを実行してみましょう。
+ ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/3.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。 Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-samples-js/simple/map.html のように localhost を指定してアクセスできます。
+ この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
+ map.html 29 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。
+var mapDeferred = arcgisUtils.createMap(&amp;quot;&amp;lt;Web マップ ID&amp;gt;&amp;quot;, &amp;quot;mapDiv&amp;quot;);  まだ Web マップを作成しておらず、すぐに試してみたい方はサンプル Web マップをご利用ください。</description>
+    </item>
+    
+    <item>
+      <title>Arcade</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
+      <description>Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS API for JavaScript で編集・共有・実行することができます。
+Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
+Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。
+Arcade には外部データにアクセスするためのグローバル変数が用意されています。 $feature というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。 以下のシンタックスを使用することでフィールド値を参照できます。
+$feature.fieldName  このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。</description>
+    </item>
+    
+    <item>
+      <title>カスタム フォント</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
+      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;rdquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
+デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
+※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
+フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
+pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
+https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
+pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
+ node-fontnik をクローンします。  git clone https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

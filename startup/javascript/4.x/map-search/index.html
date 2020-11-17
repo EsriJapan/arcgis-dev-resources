@@ -15,8 +15,8 @@
     }
   </style>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.10/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.17/"></script>
 
   <script>
   	require([
@@ -29,7 +29,8 @@
     	// Web マップの参照
     	var map = new WebMap({
         portalItem: {
-          id: "d3ffea931f4a455f9c3b6c2102e66eda"
+          id: "<Web マップ ID>"
+          //id: "d3ffea931f4a455f9c3b6c2102e66eda"
         }
       });
 
@@ -44,7 +45,7 @@
         view: view,
         allPlaceholder: "検索キーワードの入力",
         sources: [{
-          featureLayer: new FeatureLayer({
+          layer: new FeatureLayer({
             url: "https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0",
             popupTemplate: {
               title: "東京都 {Name}",

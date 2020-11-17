@@ -22,7 +22,7 @@ class ViewController: UIViewController{
         
         // Web マップの ID を設定して、Web マップを作成
         let portalItem = AGSPortalItem(portal: portal, itemID: "<Web マップ ID>")
-        
+
         // マップを表示するビュー（AGSMapView）のマップを Web マップに設定
         self.mapView.map = AGSMap(item: portalItem)
         

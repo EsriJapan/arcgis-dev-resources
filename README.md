@@ -1,13 +1,13 @@
-# ArcGIS for Developers 開発リソース集
+# ArcGIS for Developer 開発リソース集
 
-![](http://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources.png)
+![ArcGIS for Developer 開発リソース集](http://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources_20200619.png ("ArcGIS for Developer 開発リソース集"))
 
-弊社の開発者向けクラウド サービス [ArcGIS for Developers](https://developers.arcgis.com/en/) を使ってこれから開発を始められる方からすでに開発を進めている方まで、開発の参考になるドキュメントやサンプル等のリンクを公開しています。
+本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。
 
-- [ArcGIS for Developers 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
+- [ArcGIS for Developer 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
 
 ## ライセンス
-Copyright 2015 Esri Japan Corporation.
+Copyright 2019 Esri Japan Corporation.
 
 Apache License Version 2.0（「本ライセンス」）に基づいてライセンスされます。あなたがこのファイルを使用するためには、本ライセンスに従わなければなりません。本ライセンスのコピーは下記の場所から入手できます。
 

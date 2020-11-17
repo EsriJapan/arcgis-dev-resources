@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shortcodes on My New Hugo Site</title>
+    <link>https://yozaw.github.io/sitename/shortcodes/</link>
+    <description>Recent content in Shortcodes on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://yozaw.github.io/sitename/shortcodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>alert</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/alert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/alert/</guid>
+      <description>The alert shortcode allow you to highlight information in your page. They create a colored box surrounding your text, like this:
+This is an alert !Usage    Parameter Default Description     theme info success, info,warning,danger    Tips : setting only the theme as argument works too : {{%alert warning%}} instead of {{%alert theme=&amp;quot;warning&amp;quot;%}}
+Basic examples {{% alert theme=&amp;quot;info&amp;quot; %}}**this** is a text{{% /alert %}} {{% alert theme=&amp;quot;success&amp;quot; %}}**Yeahhh !</description>
+    </item>
+    
+    <item>
+      <title>attachments</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/attachments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/attachments/</guid>
+      <description>The Attachments shortcode displays a list of files attached to a page. Example :   Attachments   BachGavotteShort.mp3  (357 kB)   Carroll_AliceAuPaysDesMerveilles.pdf  (175 kB)   adivorciarsetoca00cape.pdf  (361 kB)   hugo.png  (17 kB)   movieselectricsheep-flock-244-32500-2.mp4  (340 kB)   Usage The shortcurt lists files found in a specific folder. Currently, it support two implementations for pages
+ If your page is a markdown file, attachements must be place in a folder named like your page and ending with .</description>
+    </item>
+    
+    <item>
+      <title>button</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/button/</guid>
+      <description>Display an actionable button in your page.
+This is a warning button Usage    Parameter Default Description     href &amp;rdquo;&amp;rdquo; The location href to link to   align &amp;ldquo;center&amp;rdquo; horizontal align button on page   theme primary default, primary , success,info,warning,danger    The inner text you place in short code will be displayed as the button text</description>
+    </item>
+    
+    <item>
+      <title>excerpt</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/excerpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/excerpt/</guid>
+      <description>The Excerpt shortcode is used to mark a part of a page&amp;rsquo;s content for re-use. Defining an excerpt enables other shortcodes, such as the excerpt-include shortcode, to display the marked content elsewhere.
+You can only define one excerpt per page. In other words, you can only add the Excerpt shortcode once to a page.Usage    Parameter Default Description     hidden &amp;ldquo;false&amp;rdquo; Controls whether the page content contained in the Excerpt shortcode placeholder is displayed on the page.</description>
+    </item>
+    
+    <item>
+      <title>excerpt-include</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/excerpt-include/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/excerpt-include/</guid>
+      <description>The Excerpt Include shortcode is used to display &amp;lsquo;excerpted&amp;rsquo; (that is, a segment of) content from one page in another. Before you can use this shortcode, the excerpt must have been defined using the Excerpt shortcode. Note that you can have more than one Excerpt Include shortcode on a page (although you can have only one Excerpt shortcode on a page).Usage    Parameter Default Description     filename required Type the filename of the page that contains the excerpt to be displayed.</description>
+    </item>
+    
+    <item>
+      <title>expand</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/expand/</guid>
+      <description>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example
+Expand me...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</description>
+    </item>
+    
+    <item>
+      <title>icon</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/icon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/icon/</guid>
+      <description>Display an icon like 
+It uses :
+ glyphicons library (bootstrap).more info here fontawesome library more info here  This icon shortcode will display an icon in your page.
+Usage    Parameter Default Description     name required name of icon (see bellow)   size none size of icon, medium, xx-small, x-small, small, large, x-large, xx-large, 11px, 2em, 20%&amp;hellip;.    Tips : setting only the name as argument works too : {{&amp;lt;icon film&amp;gt;}} instead of {{&amp;lt;icon name=&amp;quot;film&amp;quot;&amp;gt;}}</description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/mermaid/</guid>
+      <description>Flowchart example Show code ...{{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; A[Hard edge] --&amp;gt;|Link text| B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] {{&amp;lt; /mermaid &amp;gt;}}   mermaid.initialize({startOnLoad:true});graph LR;A[Hard edge] --|Link text| B(Round edge)B -- C{Decision}C --|One| D[Result one]C --|Two| E[Result two] With sub-graphs and some style Show code...{{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; X --&amp;gt; Y linkStyle 0 stroke:#f00,stroke-width:4px; Y --&amp;gt; Z Z --&amp;gt; X linkStyle 1,2 interpolate basis stroke:#0f0,stroke-width:2px; X --&amp;gt; A1 subgraph right A2 --&amp;gt; B2 B2 --&amp;gt; C2 end subgraph left A1 --&amp;gt; B1 B1 --&amp;gt; C1 end C1 --&amp;gt; X Z --&amp;gt; A2 C2 --&amp;gt; Z style Y fill:#f9f,stroke:#333,stroke-width:4px classDef left fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5 class A1,B1,C1 left {{&amp;lt; /mermaid &amp;gt;}}   mermaid.</description>
+    </item>
+    
+    <item>
+      <title>notice</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/notice/</guid>
+      <description>The notice shortcode shows 4 types of disclaimers to help you structure your page.
+Note {{% notice note %}} A notice disclaimer {{% /notice %}}  renders as
+A notice disclaimer
+Info {{% notice info %}} An information disclaimer {{% /notice %}}  renders as
+An information disclaimer
+Tip {{% notice tip %}} A tip disclaimer {{% /notice %}}  renders as
+A tip disclaimer
+Warning {{% notice warning %}} An warning disclaimer {{% /notice %}}  renders as</description>
+    </item>
+    
+    <item>
+      <title>panel</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/panel/</guid>
+      <description>The panel shortcodeAllow you to highlight information or put it in a box. They create a colored box surrounding your textUsage    Parameter Default Description     header none The title of the panel. If specified, this title will be displayed in its own header row.   footer none the footer of the panel. If specified, this text will be displayed in its own row   theme primary default,primary,info,success,warning,danger    Basic example By default :</description>
+    </item>
+    
+    <item>
+      <title>revealjs</title>
+      <link>https://yozaw.github.io/sitename/shortcodes/revealjs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yozaw.github.io/sitename/shortcodes/revealjs/</guid>
+      <description>This shortcode will format the enclosed markdow to render it with reveal.js at runtime (client-side)
+Read more on revealjs github repo.
+Usage revealjs can use the following named parameters :
+ theme transition controls progress history center  ImportantEven if the enclosed content is a mardown, use &amp;lt; shortcode notation instead of the % notationContent formating and slide delimiters read more on this here
+Demo # In the morning___## Getting up- Turn off alarm- Get out of bed___## Breakfast- Eat eggs- Drink coffee---# In the evening___## Dinner- Eat spaghetti- Drink wine___## Going to sleep- Get in bed- Count sheepfunction initSlides() {Reveal.</description>
+    </item>
+    
+  </channel>
+</rss>

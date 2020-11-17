@@ -1,0 +1,24 @@
+baseURL = "https://esrijapan.github.io/arcgis-dev-resources"
+languageCode = "ja-jp"
+defaultContentLanguage = "ja-jp"
+title = "ArcGIS for Developer 開発リソース集"
+theme = "hugo-theme-docdock"
+publishDir = "docs"
+googleAnalytics = "UA-159239795-1"
+
+[params]
+#themeStyle = "flex"
+themeStyle = "original"
+#themeVariant = "green"
+#themeVariant = "gray"
+#themeVariant = "gold"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+[[menu.shortcuts]]
+#pre = "<h3>More</h3>"
+name = "<i class='fa fa-github'></i> <label>Github</label>"
+#identifier = "ds"
+url = "https://github.com/EsriJapan/arcgis-dev-resources"
+weight = 10
