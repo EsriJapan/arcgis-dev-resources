@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コア コンセプト on ArcGIS for Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/</link>
     <description>Recent content in コア コンセプト on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    
-	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/core-concepts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/core-concepts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ArcGIS とは</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</link>
@@ -28,8 +24,7 @@ ArcGIS Online と ArcGIS Enterprise ArcGIS Online と ArcGIS Enterprise が ArcG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
-      <description>本ページに記載のある以下の製品については国内未サポートの製品です。
- ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt  アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+      <description>ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt  アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
 ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
  ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション ArcGIS Collector - モバイルのデータ収集アプリ ArcGIS Navigator - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード ArcGIS Explorer - 組織内の GIS データの検索と表示 ArcGIS Workforce - 現地調査を調整するためのモバイル／Web アプリ ArcGIS Survey123 - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
     </item>
@@ -43,10 +38,24 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <description>ArcGIS での認証 セキュリティを担保するために、ネットワーク上で利用可能なリソースに対して、公開範囲を設定してアクセスを制限することでリソースを保護します。リソースに対するアクセスはインターネットを使用して行われますが、VPN やイントラネットを使用したアクセスも可能です。公開範囲が制限されたリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションを利用するユーザーは、認定された機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
 アプリケーションが以下の操作を行う場合は、認証が必要となります。
  プライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツとサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
-製品毎の実装方法セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。
  Android　 iOS Java ※ JavaScript　 .NET　 Qt ※ Esri Leaflet ※ REST  ※ 現在、国内未サポートです。
-セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
- OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.</description>
+セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+  OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.3 以降で利用可能です。
+  トークン ベース：アプリは、ユーザーに有効なユーザー名とパスワードを要求します。応答では、認証済みリソースのポータルで保護されたコンテンツのリクエストに含まれるトークンを受け取ります。ArcGIS Online および ArcGIS Enterprise で使用できます。</description>
+    </item>
+    
+    <item>
+      <title>アプリ ログインの制限</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/limitation-of-app-login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/limitation-of-app-login/</guid>
+      <description>アプリ ログインの制限 アプリケーションにアプリ ログインを組み込む際には、いくつかの制限があります。
+  アプリケーション内で取得されたトークンは、パブリックなコンテンツやサービスのみを読み取ることができます。プライベート コンテンツにアクセスする場合、アプリ ログインを使用することはできませんが、ArcGIS Online を利用していない（指定ユーザーを保持していない）組織 へのアプリの配布や販売を目的としている場合、アプリへ独自ログインの仕組み (Identity/アイデンティティ など) を使用してコンテンツへのアクセスを制御することができます。
+  アプリケーション内で取得されたトークンは、Esri がホストするプレミアム コンテンツやサービスを読み取り、アプリケーションの利用組織に代わってクレジットを消費することができます。
+  アプリケーションは、ArcGIS Online または ArcGIS Enterprise 上のアイテム (レイヤー、ファイル、サービス、マップ) の作成、更新、共有、変更、または削除を行うことはできません。アプリ ログインを使用して作成されたアプリケーションは、ArcGIS Marketplace に載せることはできません。
+  組織内のプライベート コンテンツや、ユーザーと共有されているコンテンツにアクセスする場合、認証には指定ユーザ ログインを使用する必要があります。
+プライベート コンテンツで AppID を使用することはできませんが、ArcGIS Online を利用していない（指定ユーザーを保持していない）組織 へのアプリの配布や販売を目的としている場合、公開で共有されているコンテンツであることを考慮して、アプリへ独自ログインを使用することはライセンス契約に反しません。</description>
     </item>
     
     <item>
@@ -57,10 +66,9 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</guid>
       <description>レイヤーは、ArcGIS を使用して構築するアプリケーションの主要なコンテンツです。ArcGIS REST API、GeoJSON、CSVファイルや、ローカルまたはネットワーク経由で利用可能なその他のファイルを介して公開されるサービスに基づいて作成することができます。また、ArcGIS API および SDK を使用して、ディスク上やネットワーク経由で利用可能なデータを使用して、アプリケーションの中でレイヤーを作成することもできます。 他にも、一時的にデータをグラフィックとしてマップに表示するためのグラフィックス レイヤーも用意されています。
 レイヤーは、マップやアプリケーションを作成するために使用できる地理データの論理的なコレクションであり、フィーチャ レイヤーまたはタイル レイヤーのいずれかに分類されます。
-   レイヤー タイプ 概要     フィーチャ レイヤー ポイントやポリゴンのような フィーチャ を格納
-ジオメトリおよび属性情報の編集または更新、オフラインデータベースと同期が可能   タイル レイヤー タイル レイヤーは事前に作成され、サーバー上にキャッシュされます ※例えば、ベクター タイル ベース マップもタイル レイヤーに分類されます。シーン レイヤーも ３D を表示するアプリケーションで迅速な表示を行うために、建物などの ３D オブジェクトを含むフィーチャをキャッシュするのでタイル レイヤーと考えることができます。    ArcGIS の主なレイヤー ArcGIS Online と ArcGIS Enterprise は、編集、オフライン同期、ベースマップの使用など、地図アプリを開発・利用する上で一般的なユースケースを実現するためのさまざまなタイプのレイヤーをサポートしています。ArcGIS を使用してアプリケーションを作成するには、これらの種類のレイヤーを使用する方法を考慮することが重要です。
+   レイヤー タイプ 概要     フィーチャ レイヤー ポイントやポリゴンのような フィーチャ を格納ジオメトリおよび属性情報の編集または更新、オフラインデータベースと同期が可能   タイル レイヤー タイル レイヤーは事前に作成され、サーバー上にキャッシュされます ※例えば、ベクター タイル ベース マップもタイル レイヤーに分類されます。シーン レイヤーも ３D を表示するアプリケーションで迅速な表示を行うために、建物などの ３D オブジェクトを含むフィーチャをキャッシュするのでタイル レイヤーと考えることができます。    ArcGIS の主なレイヤー ArcGIS Online と ArcGIS Enterprise は、編集、オフライン同期、ベースマップの使用など、地図アプリを開発・利用する上で一般的なユースケースを実現するためのさまざまなタイプのレイヤーをサポートしています。ArcGIS を使用してアプリケーションを作成するには、これらの種類のレイヤーを使用する方法を考慮することが重要です。
 この表は、アプリケーション構築時に使用する主なレイヤータイプの一般的な使用例をまとめたものです。
-   レイヤーの種類 REST API Service ArcGIS Online※1 ArcGIS Enterprise キャッシュ作成の可否※2 ユースケース     Feature Layer</description>
+   レイヤーの種類 REST API Service ArcGIS Online※1 ArcGIS Enterprise キャッシュ作成の可否※2 ユースケース     Feature Layer(フィーチャ レイヤー) Feature Service 〇 〇 - ベクター形式のデータのクエリ、レンダリング、編集などに利用   Tile Layer(タイル レイヤー) Map Service 〇 〇 〇 変更頻度が低いベースマップやその他の複雑なデータ セットに利用   Vector Tile Layer(ベクター タイル レイヤー) Vector Tile Service 〇 〇 〇 変更頻度が低いベースマップやその他の複雑なデータ セットに利用   Dynamic Map Layer(ダイナミック マップ レイヤー) Map Service - 〇 - 頻繁に変更される、または複雑なレンダリング要件が必要なデータ セットを表示するために利用   Image Layer(イメージ レイヤー) Image Service - 〇 - 衛星画像や他の画像データのレンダリングと解析に利用   Scene Layer(シーン レイヤー) Scene Service 〇 〇 〇 3D データ セットの表示とレンダリングに利用    ※1：ArcGIS Onlineではホストできないレイヤーもありますが、ArcGIS EnterpriseでホストされているレイヤーはArcGIS Onlineと共有できます。 ArcGIS Server Webサービス を参照してください。</description>
     </item>
     
     <item>

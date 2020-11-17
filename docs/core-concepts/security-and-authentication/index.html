@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-11T10:59:49 JST">
+<meta name="revised" content="2020-11-17T15:15:17 JST">
 <title>セキュリティと認証 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -603,28 +610,27 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#arcgis-での認証">ArcGIS での認証</a></li>
-<li><a href="#セキュリティの方法">セキュリティの方法</a></li>
-<li><a href="#認証パターン">認証パターン</a>
-<ul>
-<li><a href="#指定ユーザー-ログイン">指定ユーザー ログイン</a></li>
-<li><a href="#アプリ-ログイン">アプリ ログイン</a></li>
-<li><a href="#指定ユーザー-ログイン-vs-アプリ-ログイン">指定ユーザー ログイン vs アプリ ログイン</a></li>
-<li><a href="#機能一覧表">機能一覧表</a></li>
-</ul></li>
-<li><a href="#プロキシ-サービスの利用">プロキシ サービスの利用</a></li>
-<li><a href="#arcgis-marketplace-のアプリ">ArcGIS Marketplace のアプリ</a></li>
-<li><a href="#認証を始める">認証を始める</a>
-<ul>
-<li><a href="#指定ユーザー-ログイン-1">指定ユーザー ログイン</a></li>
-<li><a href="#アプリ-ログイン-1">アプリ ログイン</a></li>
-</ul></li>
-<li><a href="#アプリの認証を実装">アプリの認証を実装</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#arcgis-での認証">ArcGIS での認証</a></li>
+    <li><a href="#セキュリティの方法">セキュリティの方法</a></li>
+    <li><a href="#認証パターン">認証パターン</a>
+      <ul>
+        <li><a href="#指定ユーザー-ログイン">指定ユーザー ログイン</a></li>
+        <li><a href="#アプリ-ログイン">アプリ ログイン</a></li>
+        <li><a href="#指定ユーザー-ログイン-vs-アプリ-ログイン">指定ユーザー ログイン vs アプリ ログイン</a></li>
+        <li><a href="#機能一覧表">機能一覧表</a></li>
+      </ul>
+    </li>
+    <li><a href="#プロキシ-サービスの利用">プロキシ サービスの利用</a></li>
+    <li><a href="#arcgis-marketplace-のアプリ">ArcGIS Marketplace のアプリ</a></li>
+    <li><a href="#認証を始める">認証を始める</a>
+      <ul>
+        <li><a href="#指定ユーザー-ログイン-1">指定ユーザー ログイン</a></li>
+        <li><a href="#アプリ-ログイン-1">アプリ ログイン</a></li>
+      </ul>
+    </li>
+    <li><a href="#アプリの認証を実装">アプリの認証を実装</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -643,107 +649,72 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="arcgis-での認証">ArcGIS での認証</h2>
-
+    <h2 id="arcgis-での認証">ArcGIS での認証</h2>
 <p>セキュリティを担保するために、ネットワーク上で利用可能なリソースに対して、公開範囲を設定してアクセスを制限することでリソースを保護します。リソースに対するアクセスはインターネットを使用して行われますが、VPN やイントラネットを使用したアクセスも可能です。公開範囲が制限されたリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションを利用するユーザーは、認定された機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。</p>
-
 <p>アプリケーションが以下の操作を行う場合は、認証が必要となります。</p>
-
 <ul>
 <li>プライベート コンテンツへのアクセス</li>
 <li>コンテンツの作成、編集、公開</li>
 <li>プレミアム コンテンツおよびサービスへのアクセス</li>
 </ul>
-
 <p><a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ</a>とサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、<a href="https://www.esrij.com/products/arcgis-online/credits/">クレジットの概要</a>を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。</p>
-
-<div class="panel panel-primary">
-	<div class="panel-heading">製品毎の実装方法</div>
-	<div class="panel-body"><p>セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。</p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li><a href="https://developers.arcgis.com/android/latest/guide/access-the-arcgis-platform.htm">Android</a>　　　　</li>
 <li><a href="https://developers.arcgis.com/ios/latest/swift/guide/access-the-arcgis-platform.htm">iOS</a></li>
-<li><a href="https://developers.arcgis.com/java/latest/guide/access-the-arcgis-platform.htm">Java</a> <sup>※</sup></li>
+<li><a href="https://developers.arcgis.com/java/latest/guide/access-the-arcgis-platform.htm">Java</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
 <li><a href="https://developers.arcgis.com/javascript/3/jshelp/ags_secureservices.html">JavaScript</a>　</li>
 <li><a href="https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm">.NET</a>　　　</li>
-<li><a href="https://developers.arcgis.com/qt/latest/qml/guide/access-the-arcgis-platform.htm">Qt</a> <sup>※</sup></li>
-<li><a href="http://esri.github.io/esri-leaflet/api-reference/services/service.html">Esri Leaflet</a> <sup>※</sup></li>
+<li><a href="https://developers.arcgis.com/qt/latest/qml/guide/access-the-arcgis-platform.htm">Qt</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
+<li><a href="http://esri.github.io/esri-leaflet/api-reference/services/service.html">Esri Leaflet</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/">REST</a></li>
 </ul>
-
 <p>※ 現在、国内未サポートです。</p>
-</div>
-	
-</div>
-
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="セキュリティの方法">セキュリティの方法</h2>
-
 <p>ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。</p>
-
 <ul>
-<li><p>OAuth 2.0 (<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/what-is-oauth-2">OAuth</a>)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。<a href="https://developers.arcgis.com/rest/users-groups-and-items/authorize.htm">ArcGIS Online</a> および <a href="https://developers.arcgis.com/rest/users-groups-and-items/authorize.htm">ArcGIS Enterprise</a> バージョン 10.3 以降で利用可能です。</p></li>
-
-<li><p>トークン ベース：アプリは、ユーザーに有効なユーザー名とパスワードを要求します。応答では、認証済みリソースのポータルで保護されたコンテンツのリクエストに含まれるトークンを受け取ります。<a href="https://developers.arcgis.com/rest/users-groups-and-items/generate-token.htm">ArcGIS Online</a> および <a href="http://www.esri.com/software/arcgis/arcgisserver">ArcGIS Enterprise</a> で使用できます。</p></li>
-
-<li><p>公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントの ID はデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。</p>
-
+<li>
+<p>OAuth 2.0 (<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/what-is-oauth-2">OAuth</a>)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。<a href="https://developers.arcgis.com/rest/users-groups-and-items/authorize.htm">ArcGIS Online</a> および <a href="https://developers.arcgis.com/rest/users-groups-and-items/authorize.htm">ArcGIS Enterprise</a> バージョン 10.3 以降で利用可能です。</p>
+</li>
+<li>
+<p>トークン ベース：アプリは、ユーザーに有効なユーザー名とパスワードを要求します。応答では、認証済みリソースのポータルで保護されたコンテンツのリクエストに含まれるトークンを受け取ります。<a href="https://developers.arcgis.com/rest/users-groups-and-items/generate-token.htm">ArcGIS Online</a> および <a href="http://www.esri.com/software/arcgis/arcgisserver">ArcGIS Enterprise</a> で使用できます。</p>
+</li>
+<li>
+<p>公開鍵基盤 (PKI)：公開および秘密のデジタル キーは、安全ではないネットワーク上での認証および安全な通信をサポートします。PKI では、ユーザー、組織、またはソフトウェア エージェントの ID はデジタル キーのペアで表されます。PKI のユーザーは、デジタル キーを提示することで認証する必要があり、ユーザー名とパスワードが発行されることはありません。PKI では、公開鍵暗号と呼ばれる数学的手法を使用して、ユーザーまたは組織を表すデジタル キーを生成します。</p>
 <p>ArcGIS Enterprise は、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/using-windows-active-directory-and-pki-to-secure-access-to-your-portal.htm">ArcGIS Web Adaptors</a> を使用して PKI ソリューションを活用します。ArcGIS Enterprise 上のリソースに対してリクエストが行われると、Web サーバーは、提供されたクライアント証明書を検証してユーザーを認証します。リクエスト（ユーザー名とともに）は、Web Adaptor を介して ArcGIS Enterprise  に転送されます。</p>
-
-<p>ArcGIS Enterprise は、指定ユーザーから要求されたリソースへのアクセス権を持っていることを確認してから、適切な応答を送信します。</p></li>
-
-<li><p>HTTP/Windows 認証 (HTTP ベーシック、HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm">ポータルと Windows 認証の統合</a>を参照してください。</p></li>
+<p>ArcGIS Enterprise は、指定ユーザーから要求されたリソースへのアクセス権を持っていることを確認してから、適切な応答を送信します。</p>
+</li>
+<li>
+<p>HTTP/Windows 認証 (HTTP ベーシック、HTTP ダイジェスト、または統合 Windows 認証 (IWA))：リソースは、サービスに設定されたユーザー名とパスワードによって保護され、ブラウザーのポップアップまたはセッション クッキーによって要求されます。IWA を使用する場合、ログインは Microsoft Windows Active Directory を通じて管理されます。ユーザーはポータルにサイン インしたり、ポータルからサイン アウトするのではなく、Web サイトを開くと、Windows にログインするために使用したのと同じアカウントを使用してサイン インします。詳細については、<a href="http://server.arcgis.com/en/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm">ポータルと Windows 認証の統合</a>を参照してください。</p>
+</li>
 </ul>
-
 <p>通常、サーバー管理者にも相談して、ポータルで使用する認証の種類と、ポータルにアクセスするために必要な方法を決定します。</p>
-
-<div class="notices note" ><p>別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。</p>
-</div>
-
-
+<!-- raw HTML omitted -->
 <h2 id="認証パターン">認証パターン</h2>
-
 <p>サポートされている認証方法には、アプリ開発者であるユーザーとアプリ個々のユーザーの2つの分類があります。アプリを使用して提供したいユーザー体験とアプリに割り当てるリソースのアクセス権に応して、ArcGIS Runtime では2つの認証パターンが用意されています。</p>
-
 <ul>
 <li>指定ユーザ ログイン</li>
 <li>アプリ ログイン</li>
 </ul>
-
 <h3 id="指定ユーザー-ログイン">指定ユーザー ログイン</h3>
-
 <p>指定ユーザーのログインパターンでは、ArcGIS Online のユーザーが、アプリに対してコンテンツやサービスへのアクセスを許可します。このシナリオでは、アプリがユーザーに ArcGIS Online のユーザー名とパスワードの入力を要求し、その認証情報を使用してコンテンツにアクセスします。このモデルを使用すると、ユーザーは<a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ</a>を使用するために自身の保有するクレジットを消費し、自身がアクセス権を持つリソースにアクセスすることができます。</p>
-
 <p>アプリは、ログインしたユーザーが所有、またはそのユーザーの組織が所属するプライベートコンテンツにアクセスすることができます。また、ジオコーディング、ルーティング、人口統計データなどのプレミアム コンテンツにもアクセスできます。</p>
-
 <p>ログイン認証で取得したトークンの使用で発生した使用量は、そのユーザーの組織に請求されます。アプリは、ログインしたユーザーがアクセスできるすべてのサービスにアクセスできます。</p>
-
 <p>ユーザーがアプリを承認してアクセストークンを取得すると、アプリは、ユーザーに許可されている以下の操作を行うことができます。</p>
-
 <ul>
 <li>ユーザーに代わって、プレミアムな ArcGIS Online コンテンツや<a href="https://developers.arcgis.com/features/geocoding">ジオコーディング</a>、<a href="https://developers.arcgis.com/features/directions">ルーティング</a>などのサービスにアクセスできます。</li>
 <li>ユーザーのコンテンツを作成、更新、削除ができます。</li>
 <li>組織内の他のユーザーとコンテンツを共有できます。</li>
 <li>ユーザーが共有しているコンテンツにアクセスできます。</li>
 </ul>
-
-<div class="notices tip" ><p>ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、<a href="https://developers.arcgis.com/pricing/licensing/">ArcGIS Runtime アプリのライセンス取得</a>を参照してください。</p>
-</div>
-
-
+<!-- raw HTML omitted -->
 <h3 id="アプリ-ログイン">アプリ ログイン</h3>
-
 <p>アプリ ログインを使用して、組織が所有するコンテンツや<a href="http://www.esri.com/software/arcgis/arcgisonline/credits">プレミアム コンテンツ、サービス</a>へのアクセスをユーザーに提供します。このシナリオでは、アプリはソースコードにハードコードされた認証情報を使用してコンテンツにアクセスします（この潜在的なセキュリティリスクに対処するには、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#usingaproxyservice">プロキシ サービスの使用</a>を検討してください）。これにより、ユーザーが許可されていないコンテンツへのアクセスが可能になります。ユーザーはアプリの認証情報でログインしているため、ログインを求められることはありません。このモデルを使用すると、ユーザーはアクセス権のあるすべてのリソースにアクセスでき、プレミアム コンテンツを利用するとクレジットを消費します。</p>
-
 <p>アプリ ログインは、ユーザーが ArcGIS Online のユーザーではないアプリやユーザー ログインを必要としないアプリ向けに設計されています。アプリストア、Ad Hoc 配布、または Web を介してアプリを配信するのに適しています。ただし、アプリ使用時に費用が発生するサービスを使用した場合は、その費用を支払う必要があります。アプリ ログインで取得したトークンの使用で発生した使用量は、登録しているアカウントに対して課金されます。</p>
-
 <p>アプリ ログインのパターンでは、ユーザーは、ArcGIS Online のプレミアム コンテンツやルーティング、ジオコーディング、人口統計データなどのサービスにアクセスすることができます。ArcGIS for Developers または ArcGIS Online を使用して<a href="https://developers.arcgis.com/applications/new/">アプリケーションを登録</a>をします。その後、アプリケーションの認証情報から API を使用してプレミアム サービスにアクセスします。</p>
-
 <p>アプリ ログインでは、以下のサービスにアクセスすることができます。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/features/geocoding">ジオコーディング</a></li>
 <li><a href="https://developers.arcgis.com/features/directions">ルート解析機能</a></li>
@@ -751,138 +722,105 @@ if (!doNotTrack) {
 <li>サブスクリプションが必要となる <a href="http://www.arcgis.com/home/search.html?q=owner:esri">Esri のプレミアム マップとレイヤー</a></li>
 <li><a href="https://developers.arcgis.com/rest/elevation">標高解析</a></li>
 </ul>
-
 <p>アプリ ログインの使用には<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">一定の制限</a>があります。</p>
-
 <h3 id="指定ユーザー-ログイン-vs-アプリ-ログイン">指定ユーザー ログイン vs アプリ ログイン</h3>
-
 <p>ここでは、トークンのやり取りに基づいて両方の認証パターンを比較します。アプリの利用ニーズに適した認証パターンを選択するために、次の質問を確認してください。そして、このセクションの機能表を使用して、アプリに含める機能を決定してください。</p>
-
 <ul>
 <li>ユーザーは ArcGIS Online ユーザーでもありますか？</li>
 <li>ユーザーにプレミアム コンテンツを有料で利用してもらいたいですか？</li>
 <li>ユーザーに非公開のコンテンツをアクセスさせますか？</li>
 <li>ログイン画面を表示しますか？</li>
 </ul>
-
 <p>上記の質問のいずれかに「はい」と答えた場合は、指定ユーザー ログインを実装することをお勧めします。</p>
-
-<div class="notices note" ><p><a href="https://marketplace.arcgis.com/">ArcGIS Marketplace</a> 用のアプリをオーサリングする場合は、アプリに<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザー ログイン</a>を使用する必要があります。</p>
-</div>
-
-
+<!-- raw HTML omitted -->
 <p>ユーザーが ArcGIS Online のユーザーではない場合、ユーザーにログインを要求させたくない場合、またはルーティング、ジオコーディング、人口統計データなどのプレミアム サービスの費用を負担したい場合は、アプリ ログインを選択してください。</p>
-
 <h3 id="機能一覧表">機能一覧表</h3>
-
 <table>
 <thead>
 <tr>
-<th align="left">機能</th>
-<th align="left">アプリ ログイン <sup>[3]</sup></th>
-<th align="left">指定ユーザー ログイン <sup>[1]</sup></th>
+<th style="text-align:left">機能</th>
+<th style="text-align:left">アプリ ログイン <!-- raw HTML omitted -->[3]<!-- raw HTML omitted --></th>
+<th style="text-align:left">指定ユーザー ログイン <!-- raw HTML omitted -->[1]<!-- raw HTML omitted --></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left"><a href="https://developers.arcgis.com/features/geocoding">Geocoding (ジオコーディング) </a></td>
-<td align="left">✓</td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://developers.arcgis.com/features/geocoding">Geocoding (ジオコーディング) </a></td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left"><a href="https://developers.arcgis.com/features/directions">Routing (ルーティング)</a></td>
-<td align="left">✓</td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://developers.arcgis.com/features/directions">Routing (ルーティング)</a></td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left"><a href="https://developers.arcgis.com/features/geo-enrichment/">Demographic data (人口統計データ)</a></td>
-<td align="left">✓</td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://developers.arcgis.com/features/geo-enrichment/">Demographic data (人口統計データ)</a></td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left"><a href="https://www.arcgis.com/home/search.html?q=owner:esri">Premium layers and imagery (プレミアムデータと画像)</a></td>
-<td align="left">✓</td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://www.arcgis.com/home/search.html?q=owner:esri">Premium layers and imagery (プレミアムデータと画像)</a></td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left"><a href="https://developers.arcgis.com/rest/elevation/">Elevation analysis (標高解析)</a></td>
-<td align="left">✓</td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://developers.arcgis.com/rest/elevation/">Elevation analysis (標高解析)</a></td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left"><a href="https://developers.arcgis.com/rest/analysis/">Spatial analysis (空間解析)</a></td>
-<td align="left"></td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left"><a href="https://developers.arcgis.com/rest/analysis/">Spatial analysis (空間解析)</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left">Read public content (公開コンテンツの参照)</td>
-<td align="left">✓</td>
-<td align="left">✓</td>
+<td style="text-align:left">Read public content (公開コンテンツの参照)</td>
+<td style="text-align:left">✓</td>
+<td style="text-align:left">✓</td>
 </tr>
-
 <tr>
-<td align="left">Read content owned by user (ユーザーが所有するコンテンツの参照)</td>
-<td align="left"></td>
-<td align="left">✓</td>
+<td style="text-align:left">Read content owned by user (ユーザーが所有するコンテンツの参照)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓</td>
 </tr>
-
 <tr>
-<td align="left">Read content shared with user (ユーザーが共有したコンテンツの参照)</td>
-<td align="left"></td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left">Read content shared with user (ユーザーが共有したコンテンツの参照)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left">Create/update/delete user&rsquo;s content (ユーザーが所有するコンテンツの作成/更新/削除)</td>
-<td align="left"></td>
-<td align="left">✓</td>
+<td style="text-align:left">Create/update/delete user&rsquo;s content (ユーザーが所有するコンテンツの作成/更新/削除)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓</td>
 </tr>
-
 <tr>
-<td align="left">Create/update/delete shared content (共有コンテンツの作成/更新/削除)</td>
-<td align="left"></td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left">Create/update/delete shared content (共有コンテンツの作成/更新/削除)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td align="left">Share content with other users (他のユーザーへコンテンツを共有)</td>
-<td align="left"></td>
-<td align="left">✓ <sup>[2]</sup></td>
+<td style="text-align:left">Share content with other users (他のユーザーへコンテンツを共有)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">✓ <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
 </tr>
 </tbody>
 </table>
-
-<p><span style="font-size: 75%">[1] ユーザーが所属する組織に課金される使用量</span></br>
-<span style="font-size: 75%">[2] ユーザーの役割と権限で許可されている場合</span></br>
-<span style="font-size: 75%">[3] アプリ ログインを利用する際の<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">制限事項</a>を確認</span></p>
-
+<p><!-- raw HTML omitted -->[1] ユーザーが所属する組織に課金される使用量<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->[2] ユーザーの役割と権限で許可されている場合<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->[3] アプリ ログインを利用する際の<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">制限事項</a>を確認<!-- raw HTML omitted --></p>
 <h2 id="プロキシ-サービスの利用">プロキシ サービスの利用</h2>
-
 <p>アプリは、ブラウザベース、ネイティブアプリ、またはハイブリッドアプリのいずれであってもクライアント側のアプリでは、クライアントシークレットは、決して公開されるべきではありません。秘密情報がハッカーに乗っ取られ、知らない間に使用されてしまう可能性があります。クライアント側で シークレットの漏洩を阻止する１つのソリューションは、プロキシ サービスを使用してアプリに代わって シークレットを仲介することです。クライアント側のアプリは、セキュリティ上、重要なリクエストをプロキシ サービスに送信し、プロキシが必要なシークレットを追加してから、その要求をサービスに転送します。サービスは返信をプロキシに送信し、プロキシはリクエストをアプリに転送します。</p>
-
 <p>Esri では、アプリのプロキシ サービスを利用するために 2 つの方法を選択できます。</p>
-
 <ol>
 <li>ArcGIS for Developers の Web サイトで構成された <a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/working-with-proxies">ArcGIS Online がホストしているプロキシ サービス</a>では、多くのプレミアム サービスの公開エンドポイントを提供しています。</li>
 <li><a href="https://github.com/Esri/resource-proxy/tree/master/PHP">PHP</a>、<a href="https://github.com/Esri/resource-proxy/tree/master/DotNet">.NET</a>、または <a href="https://github.com/Esri/resource-proxy/tree/master/Java">Java</a> で構築された<a href="https://github.com/Esri/resource-proxy">リソース プロキシ</a>で、任意の ArcGIS サービスをプロキシすることができます。Esri は github でソース コードを提供しています。
 これらのプロキシは、クライアント ID とライアントシークレットを使用して構成し、ArcGIS Runtime、ArcGIS API for JavaScript、Esri Leaflet、または REST のいずれかと組み合わせて使用することができます。</li>
 </ol>
-
 <p>アプリケーションでのプロキシ サービスの使用方法の詳細については、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/working-with-proxies">プロキシの使用方法</a>を参照してください。</p>
-
 <h2 id="arcgis-marketplace-のアプリ">ArcGIS Marketplace のアプリ</h2>
-
 <p><a href="https://marketplace.arcgis.com/">ArcGIS Marketplace</a> は、ArcGIS ユーザーが認定プロバイダからアプリやコンテンツを検索して入手できるようにするための場所です。マーケットプレイスに掲載されているアプリやコンテンツは、世界中の ArcGIS Online 組織で使用することができます。マーケットプレイスにアプリを掲載することで、販売したアプリの収益を 100% 確保したり、アプリの無料トライアルを提供したりできます。また、新たな見込み顧客を発見したりと ArcGIS ユーザーのコミュニティにマーケティングしたりすることもできます。</p>
-
 <p>ArcGIS Marketplace 用のアプリケーションを構築するためには、特定の実装要件に従う必要があります。</p>
-
 <ul>
 <li>ArcGIS Runtime SDK または、ArcGIS API for JavaScript のいずれかを使用してアプリを構築する。</li>
 <li>OAuth 2.0 を使用して<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザ ログイン</a> パターンを実装する。</li>
@@ -890,44 +828,31 @@ if (!doNotTrack) {
 <li>ArcGIS コミュニティに価値を提供する</li>
 <li><a href="http://doc.arcgis.com/en/marketplace/provider/become-a-provider.htm">Esri の承認</a>を受ける。</li>
 </ul>
-
 <p>ArcGIS Marketplace の詳細については、<a href="http://doc.arcgis.com/en/marketplace/provider/build-apps.htm">ArcGIS Marketplace アプリ構築</a>を参照してください。</p>
-
 <h2 id="認証を始める">認証を始める</h2>
-
 <p>アプリに認証を組み込むことを決めたら、サーバーにアプリを登録する必要があります。このプロセスでは、クライアントアプリとサーバーとのサービス間の接続と関連付けを設定します。ArcGIS Online にアプリケーションを登録すると、<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin">指定ユーザ ログイン</a>、または<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#appauthentication">アプリ ログイン</a>を開始するための認証情報が提供されます。</p>
-
 <h3 id="指定ユーザー-ログイン-1">指定ユーザー ログイン</h3>
-
 <p>アプリでユーザーにログインを要求する場合や、ArcGIS Marketplace で配布するアプリを作成する場合は、指定ユーザー ログインのパターンでアプリを登録します。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/signing-in-arcgis-online-users/">指定ユーザー ログインの設定</a></li>
 </ul>
-
 <h3 id="アプリ-ログイン-1">アプリ ログイン</h3>
-
 <p>ユーザーが ArcGIS Online のユーザーではない場合や、ユーザーにログインを要求させたくない場合、また、プレミアム サービスの費用を負担したい場合は、アプリ ログインのパターンでアプリを登録します。アプリ ログインを利用するには、一定の<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/limitations-of-application-authentication">制限</a>があります。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/">アプリ ログインの設定</a></li>
 </ul>
-
 <h2 id="アプリの認証を実装">アプリの認証を実装</h2>
-
 <p>ここから先は、選択したプラットフォーム/プログラミング言語によって異なります。アプリの認証については、以下の各製品のドキュメントやサンプルコードを参照してください。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/android/latest/guide/access-the-arcgis-platform.htm">Android</a></li>
 <li><a href="https://developers.arcgis.com/ios/latest/swift/guide/access-the-arcgis-platform.htm">iOS</a></li>
-<li><a href="https://developers.arcgis.com/java/latest/guide/access-the-arcgis-platform.htm">Java</a> <sup>※</sup></li>
+<li><a href="https://developers.arcgis.com/java/latest/guide/access-the-arcgis-platform.htm">Java</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
 <li><a href="https://developers.arcgis.com/javascript/3/jshelp/ags_secureservices.html">JavaScript</a></li>
 <li><a href="https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm">.NET</a></li>
-<li><a href="https://developers.arcgis.com/qt/latest/qml/guide/access-the-arcgis-platform.htm">Qt</a> <sup>※</sup></li>
-<li><a href="http://esri.github.io/esri-leaflet/api-reference/services/service.html">Esri Leaflet</a> <sup>※</sup></li>
-<li><a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/ accessing-arcgis-online-services/">REST</a></li>
+<li><a href="https://developers.arcgis.com/qt/latest/qml/guide/access-the-arcgis-platform.htm">Qt</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
+<li><a href="http://esri.github.io/esri-leaflet/api-reference/services/service.html">Esri Leaflet</a> <!-- raw HTML omitted -->※<!-- raw HTML omitted --></li>
+<li>[REST](<a href="https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/">https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/</a> accessing-arcgis-online-services/)</li>
 </ul>
-
 <p>※ 現在、国内未サポートです。</p>
 
 
@@ -941,7 +866,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/core-concepts/apis-sdks-apps/" title="API、SDK、アプリ"> <i class="fa fa-chevron-left"></i><label>API、SDK、アプリ</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/core-concepts/layers/" title="レイヤー" style="margin-right: 0px;"><label>レイヤー</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" title="アプリ ログインの制限" style="margin-right: 0px;"><label>アプリ ログインの制限</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-11T10:59:49 JST">
+<meta name="revised" content="2020-11-17T15:15:17 JST">
 <title>ArcGIS とは :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -603,18 +610,15 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#arcgis-とは">ArcGIS とは</a></li>
-<li><a href="#arcgis-プラットフォーム">ArcGIS プラットフォーム</a></li>
-<li><a href="#arcgis-online-と-arcgis-enterprise">ArcGIS Online と ArcGIS Enterprise</a></li>
-<li><a href="#arcgis-desktop">ArcGIS Desktop</a></li>
-<li><a href="#arcgis-apps">ArcGIS Apps</a></li>
-<li><a href="#arcgis-api-と-sdk">ArcGIS API と SDK</a></li>
-<li><a href="#arcgis-for-developers-tools">ArcGIS for Developers Tools</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#arcgis-とは">ArcGIS とは</a></li>
+    <li><a href="#arcgis-プラットフォーム">ArcGIS プラットフォーム</a></li>
+    <li><a href="#arcgis-online-と-arcgis-enterprise">ArcGIS Online と ArcGIS Enterprise</a></li>
+    <li><a href="#arcgis-desktop">ArcGIS Desktop</a></li>
+    <li><a href="#arcgis-apps">ArcGIS Apps</a></li>
+    <li><a href="#arcgis-api-と-sdk">ArcGIS API と SDK</a></li>
+    <li><a href="#arcgis-for-developers-tools">ArcGIS for Developers Tools</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -633,35 +637,22 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="arcgis-とは">ArcGIS とは</h2>
-
+    <h2 id="arcgis-とは">ArcGIS とは</h2>
 <p>ArcGIS は、空間データの作成、管理、共有、分析を行う組織向けのプラットフォームで、サーバー コンポーネント、モバイルおよびデスクトップ アプリケーション、そして開発者ツールで構成されています。プラットフォームとしての ArcGIS は、ArcGIS Enterprise を使用してオンプレミスまたはクラウド（<a href="https://aws.amazon.com/jp/ec2/">Amazon Web Services (AWS)</a>、<a href="https://azure.microsoft.com/ja-jp/">Microsoft Azure</a>、<a href="https://cloud.sakura.ad.jp/">さくらのクラウド</a>等）にデプロイするか、Esri がホストし管理する ArcGIS Online を介して使用することができます。</p>
-
 <h2 id="arcgis-プラットフォーム">ArcGIS プラットフォーム</h2>
-
 <p><a href="https://www.esrij.com/question/85268/">ArcGIS プラットフォーム</a>は、ArcGIS REST API と共通のファイル形式を介して相互に通信する多くのコンポーネントで構成されています。ArcGIS を使用して効率的にアプリケーションを構築するためには、プラットフォームのコンセプトを理解することが重要になります。</p>
-
 <h2 id="arcgis-online-と-arcgis-enterprise">ArcGIS Online と ArcGIS Enterprise</h2>
-
 <p><a href="https://www.esrij.com/products/arcgis-online/">ArcGIS Online</a> と <a href="https://www.esrij.com/products/arcgis-enterprise/">ArcGIS Enterprise</a> が ArcGIS プラットフォームの中核です。このプラットフォームには、ホスト型 GIS サービスと、コンテンツ、マップ、アプリケーション、およびユーザを公開、共有、管理するための Web UI と API を備えたポータルの両方が用意されています。<a href="https://www.esrij.com/products/arcgis-enterprise/details/portal-for-arcgis/">ポータル</a> を使って UI 上からインタラクティブにデータを操作することも、UI 上からではなく、<a href="https://developers.arcgis.com/documentation/core-concepts/rest-api/">REST API</a> を使って直接データを操作することもできます。</p>
-
 <ul>
 <li><a href="https://www.esrij.com/products/arcgis-online/">ArcGIS Online</a> - データのインポート, コンテンツの作成と管理, ユーザーの管理, グループの作成, コンテンツの共有</li>
 <li><a href="https://www.arcgis.com/home/webmap/viewer.html">MapViewer（マップ ビューアー）</a> - 2D マップの作成, データの編集, データの分析</li>
 <li><a href="https://www.arcgis.com/home/webscene/viewer.html">SceneViewer（シーン ビューアー）</a> - 3D マップの作成, スライドの作成</li>
 <li><a href="https://developers.arcgis.com/documentation/core-concepts/rest-api/">ArcGIS REST API</a></li>
 </ul>
-
 <h2 id="arcgis-desktop">ArcGIS Desktop</h2>
-
 <p><a href="https://www.esrij.com/products/arcgis-desktop/">ArcGIS Pro</a> および ArcMap は ArcGIS Desktop 製品の一部であり、ArcGIS Online および ArcGIS Enterprise と連携してデータやマップを公開および管理することができます。これらのデスクトップ製品は、詳細かつ高度な分析に優れています。また、様々なツールを使って<a href="https://community.esri.com/docs/DOC-11507">デスクトップの拡張</a>や<a href="https://www.esrij.com/products/arcgis-desktop/details/framework/">処理の自動化</a>をすることもできます。</p>
-
 <h2 id="arcgis-apps">ArcGIS Apps</h2>
-
 <p>ArcGIS Online および ArcGIS Enterprise と連携できるアプリケーションも提供しています。詳細に関しては以下をご参照ください。</p>
-
 <ul>
 <li><a href="https://www.esrij.com/products/arcgis-collector/">ArcGIS Collector</a> - モバイル端末から GIS データを現地で直接収集や更新できるアプリケーション</li>
 <li><a href="https://www.esri.com/products/navigator">ArcGIS Navigator</a> - モバイル端末から最適経路を探索するためのアプリケーション ※</li>
@@ -670,13 +661,9 @@ if (!doNotTrack) {
 <li><a href="https://www.esrij.com/products/workforce/">ArcGIS Workforce</a> - 現地調査作業の計画と調整を行うアプリケーション</li>
 <li><a href="https://www.esrij.com/products/survey123/">ArcGIS Survey123</a> - シンプルで直感的な調査票で GIS データを収集できるアプリケーション</li>
 </ul>
-
 <p>※ 現在、国内未サポートです。</p>
-
 <h2 id="arcgis-api-と-sdk">ArcGIS API と SDK</h2>
-
 <p>カスタマイズが必要な場合、ArcGIS プラットフォームには、既存の ArcGIS 製品を拡張したり、独自のアプリを構築するための開発キット（API と SDK）が用意されています。カスタマイズを行う際は、利用可能な<a href="https://www.esrij.com/products/developer/">開発キット</a>を比較してください。</p>
-
 <ul>
 <li><a href="https://www.esrij.com/products/arcgis-api-for-javascript/">ArcGIS API for JavaScript</a></li>
 <li><a href="https://www.esrij.com/products/web-appbuilder-dev/">ArcGIS Web AppBuilder (Developer Edition)</a></li>
@@ -688,13 +675,9 @@ if (!doNotTrack) {
 <li><a href="https://www.esrij.com/products/arcgis-api-for-python/">ArcGIS API for Python</a></li>
 <li><a href="https://www.esrij.com/products/arcgis-engine/">ArcGIS Engine</a></li>
 </ul>
-
 <p>※ 現在、国内未サポートです。</p>
-
 <h2 id="arcgis-for-developers-tools">ArcGIS for Developers Tools</h2>
-
 <p><a href="https://www.esrij.com/products/arcgis-for-developers/">ArcGIS for Developers</a> に<a href="https://developers.arcgis.com/dashboard">サインイン</a>すると、ダッシュボードやツールにアクセスして、アプリケーションの管理、クレジットの使用状況の確認、およびデータの管理を行うことができます。ダッシュボードからは、プラットフォーム上の他の ArcGIS アプリケーションにもアクセスすることができます。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/dashboard">ArcGIS Developer Dashboard</a> - アプリケーションの管理, 認証, クレジットの使用状況の確認, データのインポート</li>
 <li><a href="https://developers.arcgis.com/vector-tile-style-editor/">ArcGIS Vector Tile Style Editor</a> - ベースマップのカスタマイズ</li>
