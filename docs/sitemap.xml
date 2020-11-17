@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -171,6 +171,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
   </url>
   
@@ -179,7 +183,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/limitation-of-app-login/</loc>
   </url>
   
   <url>
@@ -191,15 +195,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</loc>
-  </url>
-  
-  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/authentication/</loc>
-  </url>
-  
-  <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
   </url>
   
   <url>
@@ -207,11 +203,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
   </url>
   
   <url>
@@ -235,11 +231,15 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/layers/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/</loc>
   </url>
   
   <url>
@@ -251,15 +251,19 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</loc>
-  </url>
-  
-  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</loc>
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-scenes/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/rest-api/</loc>
   </url>
   
   <url>
@@ -292,12 +296,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

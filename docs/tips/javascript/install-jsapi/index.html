@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-11T10:59:49 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -610,15 +617,12 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ライブラリのダウンロード">ライブラリのダウンロード</a></li>
-<li><a href="#web-サーバー-iis-に配置">Web サーバー（IIS）に配置</a></li>
-<li><a href="#ビルドのインストール">ビルドのインストール</a></li>
-<li><a href="#インストールのテスト">インストールのテスト</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ライブラリのダウンロード">ライブラリのダウンロード</a></li>
+    <li><a href="#web-サーバーiisに配置">Web サーバー（IIS）に配置</a></li>
+    <li><a href="#ビルドのインストール">ビルドのインストール</a></li>
+    <li><a href="#インストールのテスト">インストールのテスト</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -637,106 +641,86 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
-
+    <p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
 <p>Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。</p>
-
 <h2 id="ライブラリのダウンロード">ライブラリのダウンロード</h2>
-
 <p>ライブラリとヘルプ ドキュメントは ArcGIS for Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。</p>
-
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.PNG" width="600px"></p>
-
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.PNG" width="600px">
 <blockquote>
 <p>[Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
 </blockquote>
-
-<h2 id="web-サーバー-iis-に配置">Web サーバー（IIS）に配置</h2>
-
+<h2 id="web-サーバーiisに配置">Web サーバー（IIS）に配置</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
-
 <ol>
 <li>ダウンロードしたライブラリの zip ファイルを解凍します。</li>
 <li><code>\arcgis_js_api\library</code> とすべてのコンテンツをコピーして Web サーバー上に移動します（<code>C:\inetpub\wwwroot\arcgis_js_api\library</code>）。</li>
 </ol>
-
 <h2 id="ビルドのインストール">ビルドのインストール</h2>
-
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
-
 <ol>
 <li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.17\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
 <li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.17/</code> に置き換えます。</li>
 <li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.17\init.js</code> をテキスト エディターで開きます。</li>
 <li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/4.17/</code> に置き換えます。</li>
 </ol>
-
 <h2 id="インストールのテスト">インストールのテスト</h2>
-
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-
-<pre><code class="language-html">&lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.17/dojo/dojo.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>インストールのテストには以下のコードを利用してください。</p>
-
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot; /&gt;
-    &lt;title&gt;Test Map&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.17/dijit/themes/claro/claro.css&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.example.com/arcgis_js_api/library/4.17/esri/themes/light/main.css&quot; /&gt;
-    &lt;style&gt;
-      html, body, #ui-map-view {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.17/dojo/dojo.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>インストールのテストには以下のコードを利用してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1,user-scalable=no&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Test Map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.17/dijit/themes/claro/claro.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.17/esri/themes/light/main.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+      <span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span><span style="color:#f92672">,</span> #ui-map-view {
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
       }
-    &lt;/style&gt;
-    &lt;script src=&quot;https://www.example.com/arcgis_js_api/library/4.17/dojo/dojo.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      var myMap, view;
-      require([
-        &quot;esri/Basemap&quot;,
-        &quot;esri/layers/TileLayer&quot;,
-        &quot;esri/Map&quot;,
-        &quot;esri/views/MapView&quot;
-      ], function (Basemap, TileLayer, Map, MapView){
-        // --------------------------------------------------------------------
-        // パブリックなインターネット アクセスができない環境の場合、
-        // Basemap クラスとローカルにアクセス可能なキャッシュ サービスを利用します。
-        // --------------------------------------------------------------------
-        var layer = new TileLayer({
-          url: &quot;https://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer&quot;
+    &lt;/<span style="color:#f92672">style</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.17/dojo/dojo.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myMap</span>, <span style="color:#a6e22e">view</span>;
+      <span style="color:#a6e22e">require</span>([
+        <span style="color:#e6db74">&#34;esri/Basemap&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/layers/TileLayer&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/Map&#34;</span>,
+        <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>
+      ], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Basemap</span>, <span style="color:#a6e22e">TileLayer</span>, <span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>){
+        <span style="color:#75715e">// --------------------------------------------------------------------
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// パブリックなインターネット アクセスができない環境の場合、
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Basemap クラスとローカルにアクセス可能なキャッシュ サービスを利用します。
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// --------------------------------------------------------------------
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">layer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TileLayer</span>({
+          <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer&#34;</span>
         });
-        var customBasemap = new Basemap({
-          baseLayers: [layer],
-          title: &quot;Custom Basemap&quot;,
-          id: &quot;myBasemap&quot;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">customBasemap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Basemap</span>({
+          <span style="color:#a6e22e">baseLayers</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">layer</span>],
+          <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Custom Basemap&#34;</span>,
+          <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;myBasemap&#34;</span>
         });
-        myMap = new Map({
-          basemap: customBasemap
+        <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
+          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">customBasemap</span>
         });
-        view = new MapView({
-          center: [139, 35],
-          container: &quot;viewDiv&quot;,
-          map: myMap,
-          zoom: 5
+        <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
+          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">139</span>, <span style="color:#ae81ff">35</span>],
+          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
+          <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">myMap</span>,
+          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>
         });
       });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body class=&quot;claro&quot;&gt;
-    &lt;div id=&quot;viewDiv&quot;&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+    &lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claro&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div>
 
     
     

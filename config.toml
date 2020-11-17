@@ -22,3 +22,8 @@ name = "<i class='fa fa-github'></i> <label>Github</label>"
 #identifier = "ds"
 url = "https://github.com/EsriJapan/arcgis-dev-resources"
 weight = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

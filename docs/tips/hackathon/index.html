@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-11T10:59:50 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>ミートアップ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -604,28 +611,16 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#オープンデータを入手する">オープンデータを入手する</a></li>
-<li><a href="#地図にデータを可視化する">地図にデータを可視化する</a></li>
-<li><a href="#アプリに地図を組み込む">アプリに地図を組み込む</a>
-<ul>
-<li><a href="#コードを書く">コードを書く</a>
-<ul>
-<li><a href="#javascript">JavaScript</a></li>
-<li><a href="#android">Android</a></li>
-<li><a href="#ios">iOS</a></li>
-<li><a href="#net">.NET</a></li>
-</ul></li>
-<li><a href="#コードを書かない">コードを書かない</a>
-<ul>
-<li><a href="#アプリケーション-ビルダー">アプリケーション ビルダー</a></li>
-<li><a href="#ストーリーマップ">ストーリーマップ</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#オープンデータを入手する">オープンデータを入手する</a></li>
+    <li><a href="#地図にデータを可視化する">地図にデータを可視化する</a></li>
+    <li><a href="#アプリに地図を組み込む">アプリに地図を組み込む</a>
+      <ul>
+        <li><a href="#コードを書く">コードを書く</a></li>
+        <li><a href="#コードを書かない">コードを書かない</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -644,72 +639,48 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ミートアップ参加者を支援するリソースをまとめています。</p>
-
+    <p>ミートアップ参加者を支援するリソースをまとめています。</p>
 <h2 id="オープンデータを入手する">オープンデータを入手する</h2>
-
 <p><a href="https://opendata.arcgis.com/" target="_blank">ArcGIS Open Data</a> では ArcGIS のクラウドで公開されている全世界のオープンデータを検索・参照・ダウンロードが可能です。
 自由に使える地理データを取得する方法を紹介します。</p>
-
 <ul>
 <li><a href="https://github.com/wakanasato/Hackathon-support/blob/master/GetOpenData/README.md">オープンデータの入手 (ArcGIS Open Data コミュニティサイト)</a></li>
 </ul>
-
 <h2 id="地図にデータを可視化する">地図にデータを可視化する</h2>
-
 <p>座標情報を持った地理データや住所情報を持ったテキストデータなどを可視化して、アプリに組み込むための地図を作成する方法や Tips を紹介します。
 なお、データ可視化の作業はコーディングが不要なので、プランナーやデザイナーの方でも取り組んでいただくことができます。</p>
-
 <ul>
 <li><a href="../visualization/workflow-with-arcgis">データ可視化のワークフロー</a></li>
 <li><a href="../visualization/data-visualization-procedure">データ可視化の手順</a></li>
 <li><a href="../visualization/data-visualization-procedure-3d">データ可視化の手順（3D）</a></li>
 <li><a href="../visualization/6ways-to-improve-your-maps">地図上に賢くデータを可視化するための 6 つの方法</a></li>
 </ul>
-
 <h2 id="アプリに地図を組み込む">アプリに地図を組み込む</h2>
-
 <p>アプリに ArcGIS の地図を組み込む際に便利な開発キットやライブラリです。アプリ作成ツールを活用することで、ノンコーディングでアプリを作成することも可能です。</p>
-
 <h3 id="コードを書く">コードを書く</h3>
-
 <h4 id="javascript">JavaScript</h4>
-
 <ul>
 <li><strong>ArcGIS Web API</strong>: <a href="https://developers.arcgis.com/javascript/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-js/">日本語ガイド</a></li>
 <li><strong>Leaflet.js (Esri Leaflet)</strong>: <a href="https://esri.github.io/esri-leaflet/" target="_blank">リファレンス (英語)</a> | <a href="https://geonet.esri.com/groups/devcom-jp/content?query=Esri+Leaflet+Tips">日本語ガイド(ブログ記事)</a></li>
 </ul>
-
 <h4 id="android">Android</h4>
-
 <ul>
 <li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/android/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-android/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="ios">iOS</h4>
-
 <ul>
 <li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/ios/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-ios/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="net">.NET</h4>
-
 <ul>
 <li><strong>ArcGIS Runtime SDK</strong>: <a href="https://developers.arcgis.com/net/latest/" target="_blank">リファレンス (英語)</a> | <a href="../../guide/create-app/create-startup-app-dotnet/">日本語ガイド</a></li>
 </ul>
-
 <h3 id="コードを書かない">コードを書かない</h3>
-
 <h4 id="アプリケーション-ビルダー">アプリケーション ビルダー</h4>
-
 <ul>
 <li><strong>Web AppBuilder for ArcGIS</strong>: <a href="https://doc.arcgis.com/ja/web-appbuilder/" target="_blank">リファレンス</a> | <a href="../webappbuilder/create-startup-app-wab/">日本語ガイド</a></li>
 </ul>
-
 <h4 id="ストーリーマップ">ストーリーマップ</h4>
-
 <ul>
 <li><strong>ストーリーマップ</strong>: <a href="https://storymaps.arcgis.com/" target="_blank">リファレンス</a></li>
 </ul>

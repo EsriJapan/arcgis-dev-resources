@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-17T16:01:58 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>.NET :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -656,7 +656,7 @@ if (!doNotTrack) {
 <li><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></li>
 </ul>
 <p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
-<!-- raw HTML omitted -->
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/sample-download.png" width="600px">
 <h2 id="地図の表示">地図の表示</h2>
 <p>まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
 ここでは Windows デスクトップアプリケーション（WPF） の例で説明していますが、UWP、Xamarin でも同じアプリを実行することができます。</p>
@@ -683,11 +683,11 @@ if (!doNotTrack) {
 <ol>
 <li>サンプル プロジェクトを実行すると、以下のように地図が表示されます。</li>
 </ol>
-<!-- raw HTML omitted -->
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/map-app.png" width="600px">
 <p>Web マップを表示するには、ポータル サイトから指定した ID を持つ Web マップを取得し、MapView のマップとして表示します。</p>
 <h2 id="住所検索機能の追加">住所検索機能の追加</h2>
 <p>ArcGIS Online のジオコーディング サービスを利用した住所検索機能を追加します。[検索] ボタンをクリックすることで、テキスト ボックス内の文字列を使用して、住所検索を行います。</p>
-<!-- raw HTML omitted -->
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/Geocoording.png" width="300px">
 <ol>
 <li>
 <p>MainWindow.xaml.cs に住所検索機能で使用する以下のメンバー変数を定義します。</p>
@@ -744,7 +744,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
 
  <span style="color:#75715e">//追加したグラフィックの周辺に地図を拡大
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">await</span> MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, <span style="color:#ae81ff">30000</span>);   
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div><img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px">
 <hr>
 <p>アプリの動作が確認できたら <a href="../../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
 

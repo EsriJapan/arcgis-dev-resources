@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-11T10:59:49 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -610,32 +617,25 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#マップとシーン">マップとシーン</a></li>
-<li><a href="#ビュー">ビュー</a></li>
-<li><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></li>
-<li><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></li>
-<li><a href="#フィーチャの操作">フィーチャの操作</a>
-<ul>
-<li>
-<ul>
-<li><a href="#フィーチャのリクエスト-モード">フィーチャのリクエスト モード</a></li>
-<li><a href="#フィーチャの編集">フィーチャの編集</a></li>
-<li><a href="#フィーチャの検索">フィーチャの検索</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#個別属性表示">個別属性表示</a></li>
-<li><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></li>
-<li><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></li>
-<li><a href="#スケッチ-エディター">スケッチ エディター</a></li>
-<li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
-<li><a href="#ローカルサーバー">ローカルサーバー</a></li>
-<li><a href="#既知の制限事項">既知の制限事項</a></li>
-<li><a href="#関連リンク">関連リンク</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#マップとシーン">マップとシーン</a></li>
+    <li><a href="#ビュー">ビュー</a></li>
+    <li><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></li>
+    <li><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></li>
+    <li><a href="#フィーチャの操作">フィーチャの操作</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#個別属性表示">個別属性表示</a></li>
+    <li><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></li>
+    <li><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></li>
+    <li><a href="#スケッチ-エディター">スケッチ エディター</a></li>
+    <li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
+    <li><a href="#ローカルサーバー">ローカルサーバー</a></li>
+    <li><a href="#既知の制限事項">既知の制限事項</a></li>
+    <li><a href="#関連リンク">関連リンク</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -654,283 +654,214 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
-
+    <p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
 <p>ArcGIS Runtime SDK for .NET に関しては、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/">ESRIジャパン 製品ページ</a>をご参照ください。</p>
-
 <p>以下は、バージョン 100.x の主な変更点です。</p>
-
 <ul>
-<li><strong><a href="#マップとシーン">マップとシーン</a></strong></li>
-<li><strong><a href="#ビュー">ビュー</a></strong></li>
-<li><strong><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></strong></li>
-<li><strong><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></strong></li>
-<li><strong><a href="#フィーチャの操作">フィーチャの操作</a></strong></li>
-<li><strong><a href="#個別属性表示">個別属性表示</a></strong></li>
-<li><strong><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></strong></li>
-<li><strong><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></strong></li>
-<li><strong><a href="#スケッチ-エディター">スケッチ エディター</a></strong></li>
-<li><strong><a href="#ローダブル-パターン">ローダブル パターン</a></strong></li>
-<li><strong><a href="#ローカルサーバー">ローカルサーバー</a></strong></li>
-<li><strong><a href="#既知の制限事項">既知の制限事項</a></strong></li>
+<li><strong><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%81%A8%E3%82%B7%E3%83%BC%E3%83%B3">マップとシーン</a></strong></li>
+<li><strong><a href="#%E3%83%93%E3%83%A5%E3%83%BC">ビュー</a></strong></li>
+<li><strong><a href="#%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-%E3%82%AF%E3%83%A9%E3%82%B9%E5%90%8D%E3%81%AE%E5%A4%89%E6%9B%B4">レイヤー クラス名の変更</a></strong></li>
+<li><strong><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%81%E3%83%A3-%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E8%A1%A8%E7%A4%BA">フィーチャ レイヤーの表示</a></strong></li>
+<li><strong><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%81%E3%83%A3%E3%81%AE%E6%93%8D%E4%BD%9C">フィーチャの操作</a></strong></li>
+<li><strong><a href="#%E5%80%8B%E5%88%A5%E5%B1%9E%E6%80%A7%E8%A1%A8%E7%A4%BA">個別属性表示</a></strong></li>
+<li><strong><a href="#%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9-%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4">グラフィックス オーバーレイ</a></strong></li>
+<li><strong><a href="#%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA%E3%81%A8%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA-%E3%83%93%E3%83%AB%E3%83%80%E3%83%BC">ジオメトリとジオメトリ ビルダー</a></strong></li>
+<li><strong><a href="#%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81-%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E3%83%BC">スケッチ エディター</a></strong></li>
+<li><strong><a href="#%E3%83%AD%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">ローダブル パターン</a></strong></li>
+<li><strong><a href="#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC">ローカルサーバー</a></strong></li>
+<li><strong><a href="#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%88%B6%E9%99%90%E4%BA%8B%E9%A0%85">既知の制限事項</a></strong></li>
 </ul>
-
 <h2 id="マップとシーン">マップとシーン</h2>
-
 <p>100.x では、<code>Map</code> オブジェクト（2D表示用）と <code>Scene</code> オブジェクト（3D表示用） を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
-
 <p><code>Map</code> オブジェクトと <code>Scene</code> オブジェクトは 、それらを表示する View と分離されています。<code>Map</code> オブジェクトと <code>Scene</code> オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。</p>
-
 <h2 id="ビュー">ビュー</h2>
-
 <p><code>MapView</code>（2D表示用）と <code>SceneView</code>（3D表示用）は、UI コンポーネントです。<code>MapView</code> クラスの <code>map</code> プロパティに、<code>Map</code> オブジェクトを、<code>MapSceneView</code> クラスの <code>scene</code> プロパティには <code>Scene</code> オブジェクトを設定します。</p>
-
 <p>100.x では、以下のようにマップを表示します。</p>
-
-<pre><code class="language-javascript">// ベースマップを指定してマップを初期化
-Map myMap = Map(Basemap.CreateImagery());
-// マップビューにマップを設定
-MyMapView.Map = myMap;
-</code></pre>
-
-<h2 id="レイヤー-クラス名の変更">レイヤー クラス名の変更</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップを指定してマップを初期化
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Map</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Map</span>(<span style="color:#a6e22e">Basemap</span>.<span style="color:#a6e22e">CreateImagery</span>());
+<span style="color:#75715e">// マップビューにマップを設定
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">Map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myMap</span>;
+</code></pre></div><h2 id="レイヤー-クラス名の変更">レイヤー クラス名の変更</h2>
 <p>各レイヤーのクラス名が以下のように変更されています。</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">レイヤー</th>
-<th align="center">10.2.x のクラス名</th>
-<th align="center">100.x のクラス名</th>
+<th style="text-align:center">レイヤー</th>
+<th style="text-align:center">10.2.x のクラス名</th>
+<th style="text-align:center">100.x のクラス名</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">ArcGIS Server ダイナミック マップ サービス レイヤー</td>
-<td align="center">ArcGISDynamicMapServiceLayer</td>
-<td align="center">ArcGISMapImageLayer</td>
+<td style="text-align:center">ArcGIS Server ダイナミック マップ サービス レイヤー</td>
+<td style="text-align:center">ArcGISDynamicMapServiceLayer</td>
+<td style="text-align:center">ArcGISMapImageLayer</td>
 </tr>
-
 <tr>
-<td align="center">タイル マップ サービス レイヤー</td>
-<td align="center">ArcGISTiledMapServiceLayer</td>
-<td align="center">ArcGISTiledLayer</td>
+<td style="text-align:center">タイル マップ サービス レイヤー</td>
+<td style="text-align:center">ArcGISTiledMapServiceLayer</td>
+<td style="text-align:center">ArcGISTiledLayer</td>
 </tr>
-
 <tr>
-<td align="center">タイル パッケージ レイヤー</td>
-<td align="center">ArcGISLocalTiledLayer</td>
-<td align="center">ArcGISTiledLayer</td>
+<td style="text-align:center">タイル パッケージ レイヤー</td>
+<td style="text-align:center">ArcGISLocalTiledLayer</td>
+<td style="text-align:center">ArcGISTiledLayer</td>
 </tr>
 </tbody>
 </table>
-
 <p>100.x でサポートされているレイヤーのタイプについては、<a href="https://developers.arcgis.com/net/latest/wpf/guide/layers.htm">ArcGIS for Developers: レイヤー（英語）</a>をご参照ください。</p>
-
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
-
-<pre><code class="language-javascript">// 操作レイヤーとしてマップに追加する
-myMap.OperationalLayers.Add(arcgis_map_image_layer)
-// ベースマップとしてマップに追加する
-myMap.Basemap.BaseLayers.Add(arcgis_tiled_layer);
-</code></pre>
-
-<h2 id="フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">OperationalLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">arcgis_map_image_layer</span>)
+<span style="color:#75715e">// ベースマップとしてマップに追加する
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">Basemap</span>.<span style="color:#a6e22e">BaseLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">arcgis_tiled_layer</span>);
+</code></pre></div><h2 id="フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</h2>
 <p>フィーチャ サービスや端末のローカルに格納されたジオデータベースのデータをマップに表示するにはフィーチャ レイヤーを使用します。
 フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーとして表示するに場合は <code>ServiceFeatureTable</code> オブジェクト、ジオデータベースのデータ表示する場合は <code>GeodatabaseFeatureTable</code> オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として <code>FeatureLayer</code> オブジェクトを作成し、<code>Map</code> オブジェクトの <code>OperationalLayers</code> に追加します。</p>
-
 <p>次のコードは、フィーチャ サービスのデータを <code>FeatureLayer</code> として追加する方法を示しています。</p>
-
-<pre><code class="language-javascript">// フィーチャ サービスの URL からフィーチャ テーブルを作成
-ServiceFeatureTable featureTable = new ServiceFeatureTable(new Uri(&quot;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&quot;));
-// フィーチャ テーブルからフィーチャ レイヤーを作成
-FeatureLayer featureLayer = new FeatureLayer(featureTable);
-// フィーチャ レイヤーをマップの操作レイヤーに追加
-myMap.OperationalLayers.Add(featureLayer);
-</code></pre>
-
-<h2 id="フィーチャの操作">フィーチャの操作</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ServiceFeatureTable</span> <span style="color:#a6e22e">featureTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ServiceFeatureTable</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uri</span>(<span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&#34;</span>));
+<span style="color:#75715e">// フィーチャ テーブルからフィーチャ レイヤーを作成
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">FeatureLayer</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>(<span style="color:#a6e22e">featureTable</span>);
+<span style="color:#75715e">// フィーチャ レイヤーをマップの操作レイヤーに追加
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">OperationalLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">featureLayer</span>);
+</code></pre></div><h2 id="フィーチャの操作">フィーチャの操作</h2>
 <p>フィーチャの検索や編集はフィーチャ テーブル （<code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code>）に対して行います。</p>
-
-<p>フィーチャ サービスから作成したフィーチャ テーブル（<code>ServiceFeatureTable</code>）の場合、フィーチャ テーブルのフィーチャは、マップ上にレンダリングするために必要最小限の情報だけを含むように最適化されています。これにより、フィーチャを表示するための待機時間と帯域幅の消費が削減されます。フィーチャの編集やすべての属性情報を表示するような場合は完全な情報を取得するために、<a href="#ローダブル-パターン">ローダブル パターン</a>等を使用して、フィーチャを明示的にロードしておく必要があります。</p>
-
+<p>フィーチャ サービスから作成したフィーチャ テーブル（<code>ServiceFeatureTable</code>）の場合、フィーチャ テーブルのフィーチャは、マップ上にレンダリングするために必要最小限の情報だけを含むように最適化されています。これにより、フィーチャを表示するための待機時間と帯域幅の消費が削減されます。フィーチャの編集やすべての属性情報を表示するような場合は完全な情報を取得するために、<a href="#%E3%83%AD%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">ローダブル パターン</a>等を使用して、フィーチャを明示的にロードしておく必要があります。</p>
 <h4 id="フィーチャのリクエスト-モード">フィーチャのリクエスト モード</h4>
-
 <p>フィーチャ サービスからフィーチャを取得する場合は、
 リクエスト モードの設定によってフィーチャの取得頻度とや端末上でのデータのキャッシュ方法を制御します。リクエスト モードには、<code>OnInteractionCache</code>、 <code>OnInteractionNoCache</code>、<code>ManualCache</code> があります。リクエスト モードはフィーチャ テーブルが初期化される前に、<code>ServiceFeatureTable</code> の <code>FeatureRequestMode</code> プロパティを使用して設定できます。</p>
-
 <ul>
-<li><code>OnInteractionCache</code>: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされます。リクエストされたすべてのデータはローカルにキャッシュされます。キャッシュされたデータは、既に表示された領域にマップが移動しても、再度リクエストされません。サーバー上のデータが変更される可能性が少ない静的なデータに適したモードです。</li>
-<li><code>OnInteractionNoCache</code>: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされますが、キャッシュはされません。既に表示された領域にマップが移動すると、再度リクエストされます。サーバー上のデータが継続的に更新される可能性がある場合に適したモードです。</li>
-<li><code>ManualCache</code>: ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、<code>ServiceFeatureTable</code> の <code>PopulateFromServiceAsync</code> メソッドを使用して明示的にデータをリクエストする必要があります。</li>
-</ul>
-
+<li>
+<p><code>OnInteractionCache</code>: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされます。リクエストされたすべてのデータはローカルにキャッシュされます。キャッシュされたデータは、既に表示された領域にマップが移動しても、再度リクエストされません。サーバー上のデータが変更される可能性が少ない静的なデータに適したモードです。</p>
+</li>
+<li>
+<p><code>OnInteractionNoCache</code>: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされますが、キャッシュはされません。既に表示された領域にマップが移動すると、再度リクエストされます。サーバー上のデータが継続的に更新される可能性がある場合に適したモードです。</p>
+</li>
+<li>
+<p><code>ManualCache</code>: ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、<code>ServiceFeatureTable</code> の <code>PopulateFromServiceAsync</code> メソッドを使用して明示的にデータをリクエストする必要があります。</p>
 <p>以下のコードは <code>PopulateFromServiceAsync</code> メソッドを使用して、サーバー上のすべてのフィーチャを取得する方法の例です。</p>
-
-<pre><code class="language-javascript">// フィーチャの取得（検索）時のパラメーターを設定
-QueryParameters queryParameters = new QueryParameters();
-// すべてのフィーチャを取得するように条件を設定
-queryParameters.WhereClause = &quot;1 = 1&quot;;
-// 検索結果にフィーチャのすべての属性情報（outFields の配列に &quot;*&quot; を指定）を含める
-var outputFields = new string[] { &quot;*&quot; };
-// クエリの条件に基づいてフィーチャ テーブルにデータを設定する
-await featureTable.PopulateFromServiceAsync(queryParameters, true, outputFields);
-</code></pre>
-
-<p>リクエスト モードの詳細は、
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャの取得（検索）時のパラメーターを設定
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">QueryParameters</span> <span style="color:#a6e22e">queryParameters</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QueryParameters</span>();
+<span style="color:#75715e">// すべてのフィーチャを取得するように条件を設定
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">queryParameters</span>.<span style="color:#a6e22e">WhereClause</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1 = 1&#34;</span>;
+<span style="color:#75715e">// 検索結果にフィーチャのすべての属性情報（outFields の配列に &#34;*&#34; を指定）を含める
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">outputFields</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">string</span>[] { <span style="color:#e6db74">&#34;*&#34;</span> };
+<span style="color:#75715e">// クエリの条件に基づいてフィーチャ テーブルにデータを設定する
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">featureTable</span>.<span style="color:#a6e22e">PopulateFromServiceAsync</span>(<span style="color:#a6e22e">queryParameters</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">outputFields</span>);
+</code></pre></div><p>リクエスト モードの詳細は、
 <a href="https://developers.arcgis.com/net/latest/wpf/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D">ArcGIS for Developers: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
-
 <h4 id="フィーチャの編集">フィーチャの編集</h4>
-
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
-
 <p>フィーチャの編集方法は、
 <a href="https://developers.arcgis.com/net/latest/wpf/guide/edit-features.htm">ArcGIS for Developers: フィーチャの編集（英語）</a>をご参照ください。</p>
-
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
-
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code> クラスの <code>QueryFeaturesAsync</code> メソッドを使用します。</p>
-
 <p>次のコードは、フィーチャ テーブルからフィーチャを検索する方法を示しています。</p>
-
-<pre><code class="language-javascript">try
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">try</span>
 {
-    // フィーチャの取得（検索）時のパラメーターを設定
-    QueryParameters queryParams = new QueryParameters();
-    // 検索条件を設定
-    queryParams.WhereClause = &quot;upper(KEN) LIKE '%東京%'&quot;;
-    // フィーチャ テーブルから検索条件を取得
-    FeatureQueryResult queryResult = await _featureTable.QueryFeaturesAsync(queryParams);
-    // 結果に問い合わせるためにリストを取得
-    var features = queryResult.ToList();
-    if (features.Any())
+    <span style="color:#75715e">// フィーチャの取得（検索）時のパラメーターを設定
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">QueryParameters</span> <span style="color:#a6e22e">queryParams</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QueryParameters</span>();
+    <span style="color:#75715e">// 検索条件を設定
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">queryParams</span>.<span style="color:#a6e22e">WhereClause</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;upper(KEN) LIKE &#39;%東京%&#39;&#34;</span>;
+    <span style="color:#75715e">// フィーチャ テーブルから検索条件を取得
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">FeatureQueryResult</span> <span style="color:#a6e22e">queryResult</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">_featureTable</span>.<span style="color:#a6e22e">QueryFeaturesAsync</span>(<span style="color:#a6e22e">queryParams</span>);
+    <span style="color:#75715e">// 結果に問い合わせるためにリストを取得
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">features</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queryResult</span>.<span style="color:#a6e22e">ToList</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">Any</span>())
     {
-        // 結果から1件のフィーチャを取得
-        Feature feature = features[0];
+        <span style="color:#75715e">// 結果から1件のフィーチャを取得
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Feature</span> <span style="color:#a6e22e">feature</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">features</span>[<span style="color:#ae81ff">0</span>];
     }
-    else
+    <span style="color:#66d9ef">else</span>
     {
-        MessageBox.Show(&quot;検索結果が見つかりませんでした。&quot;);
+        <span style="color:#a6e22e">MessageBox</span>.<span style="color:#a6e22e">Show</span>(<span style="color:#e6db74">&#34;検索結果が見つかりませんでした。&#34;</span>);
     }
 }
-catch (Exception ex)
+<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">ex</span>)
 {
-    MessageBox.Show(&quot;処理エラー&quot;, &quot;検索処理でエラーが発生しました：&quot; + ex.ToString());
+    <span style="color:#a6e22e">MessageBox</span>.<span style="color:#a6e22e">Show</span>(<span style="color:#e6db74">&#34;処理エラー&#34;</span>, <span style="color:#e6db74">&#34;検索処理でエラーが発生しました：&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ex</span>.<span style="color:#a6e22e">ToString</span>());
 }
-</code></pre>
-
-<h2 id="個別属性表示">個別属性表示</h2>
-
+</code></pre></div><h2 id="個別属性表示">個別属性表示</h2>
 <p>マップ上で特定の場所をタップして、その位置にあるフィーチャをすべてのレイヤーから検索して取得することができます。その操作はビューに対して行います。次のコードは、<code>MapView</code> クラスの <code>IdentifyLayerResult</code> メソッドを使用してフィーチャを取得する方法を示しています。</p>
-
-<pre><code class="language-javascript">// MapView のすべてのレイヤーを識別し、タップしたポイント、許容値、戻り値のタイプ、最大結果数を渡します
-IReadOnlyList&lt;IdentifyLayerResult&gt; idLayerResults = await MyMapView.IdentifyLayersAsync(tapScreenPoint, pixelTolerance, returnPopupsOnly, maxLayerResults);
-foreach (IdentifyLayerResult idResults in idLayerResults)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// MapView のすべてのレイヤーを識別し、タップしたポイント、許容値、戻り値のタイプ、最大結果数を渡します
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">IReadOnlyList</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">IdentifyLayerResult</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">idLayerResults</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">IdentifyLayersAsync</span>(<span style="color:#a6e22e">tapScreenPoint</span>, <span style="color:#a6e22e">pixelTolerance</span>, <span style="color:#a6e22e">returnPopupsOnly</span>, <span style="color:#a6e22e">maxLayerResults</span>);
+<span style="color:#a6e22e">foreach</span> (<span style="color:#a6e22e">IdentifyLayerResult</span> <span style="color:#a6e22e">idResults</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">idLayerResults</span>)
 {
-    // 検索されたレイヤーを取得して FeatureLayer にキャストする
-    FeatureLayer idLayer = idResults.LayerContent as FeatureLayer;
-    // 反復処理を行い、検索されたレイヤー内の GeoElement を取得する
-    foreach (GeoElement idElement in idResults.GeoElements)
+    <span style="color:#75715e">// 検索されたレイヤーを取得して FeatureLayer にキャストする
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">FeatureLayer</span> <span style="color:#a6e22e">idLayer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">idResults</span>.<span style="color:#a6e22e">LayerContent</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">FeatureLayer</span>;
+    <span style="color:#75715e">// 反復処理を行い、検索されたレイヤー内の GeoElement を取得する
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">foreach</span> (<span style="color:#a6e22e">GeoElement</span> <span style="color:#a6e22e">idElement</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">idResults</span>.<span style="color:#a6e22e">GeoElements</span>)
     {
-        // GeoElement を Feature にキャストする
-        Feature idFeature = idElement as Feature;
-        // フィーチャ レイヤーでフィーチャを選択状態にする
-        idLayer.SelectFeature(idFeature);
+        <span style="color:#75715e">// GeoElement を Feature にキャストする
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Feature</span> <span style="color:#a6e22e">idFeature</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">idElement</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Feature</span>;
+        <span style="color:#75715e">// フィーチャ レイヤーでフィーチャを選択状態にする
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">idLayer</span>.<span style="color:#a6e22e">SelectFeature</span>(<span style="color:#a6e22e">idFeature</span>);
     }
 }
-</code></pre>
-
-<h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
-
+</code></pre></div><h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>MapView</code> と <code>SceneView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>GraphicsOverlay</code>）が含まれています。
 グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/add-graphics-overlays-to-your-app.htm">ArcGIS for Developers: グラフィックス オーバーレイの追加（英語）</a>を参照してください。</p>
-
 <p>次のコードは、<code>MapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
-
-<pre><code class="language-javascript">// ジオメトリとシンボルを使用してグラフィックを作成
-var pointGraphic = new Graphic(pointGeometry, poitnSymbol);
-// グラフィックス オーバーレイに作成したグラフィックを追加
-var graphicsOverlay = new GraphicsOverlay();
-graphicsOverlay.Graphics.add(pointGraphic);
-// MapView の GraphicsOverlays に作成したグラフィックス オーバーレイを追加
-MyMapView.GraphicsOverlays.Add(graphicsOverlay);
-</code></pre>
-
-<h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを使用してグラフィックを作成
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>(<span style="color:#a6e22e">pointGeometry</span>, <span style="color:#a6e22e">poitnSymbol</span>);
+<span style="color:#75715e">// グラフィックス オーバーレイに作成したグラフィックを追加
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphicsOverlay</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GraphicsOverlay</span>();
+<span style="color:#a6e22e">graphicsOverlay</span>.<span style="color:#a6e22e">Graphics</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">pointGraphic</span>);
+<span style="color:#75715e">// MapView の GraphicsOverlays に作成したグラフィックス オーバーレイを追加
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">GraphicsOverlays</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">graphicsOverlay</span>);
+</code></pre></div><h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>Geometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
-
 <p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/edit-geometries.htm">ArcGIS for Developers: ジオメトリの編集（英語）</a>を参照してください 。</p>
-
 <h2 id="スケッチ-エディター">スケッチ エディター</h2>
-
 <p>スケッチ エディター（<code>SketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
-
 <p>次のコードは、<code>SketchEditor</code> の使用方法の例を示しています。</p>
-
-<pre><code class="language-javascript">// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
-var config = MyMapView.SketchEditor.EditConfiguration;
-config.AllowVertexEditing = true;
-config.ResizeMode = SketchResizeMode.Uniform;
-config.AllowMove = true;
-// スケッチエディタをページのデータコンテキストとして設定する
-DataContext = MyMapView.SketchEditor;
-   ・・・・・・
-try
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">SketchEditor</span>.<span style="color:#a6e22e">EditConfiguration</span>;
+<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">AllowVertexEditing</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">ResizeMode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SketchResizeMode</span>.<span style="color:#a6e22e">Uniform</span>;
+<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">AllowMove</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+<span style="color:#75715e">// スケッチエディタをページのデータコンテキストとして設定する
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DataContext</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">SketchEditor</span>;
+   <span style="color:#960050;background-color:#1e0010">・・・・・・</span>
+<span style="color:#66d9ef">try</span>
 {
-   // ジオメトリの種類を設定してスケッチを開始
-   geometry = await MyMapView.SketchEditor.StartAsync(creationMode, true);
-   ・・・・・・
-   // ジオメトリが更新された際の処理
-}
-catch (TaskCanceledException)
+   <span style="color:#75715e">// ジオメトリの種類を設定してスケッチを開始
+</span><span style="color:#75715e"></span>   <span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">SketchEditor</span>.<span style="color:#a6e22e">StartAsync</span>(<span style="color:#a6e22e">creationMode</span>, <span style="color:#66d9ef">true</span>);
+   <span style="color:#960050;background-color:#1e0010">・・・・・・</span>
+   <span style="color:#75715e">// ジオメトリが更新された際の処理
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">TaskCanceledException</span>)
 {
-   // スケッチのキャンセル
-}
-catch (Exception ex)
+   <span style="color:#75715e">// スケッチのキャンセル
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">ex</span>)
 {
-    // スケッチのエラー
-}
-</code></pre>
-
-<h2 id="ローダブル-パターン">ローダブル パターン</h2>
-
+    <span style="color:#75715e">// スケッチのエラー
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h2 id="ローダブル-パターン">ローダブル パターン</h2>
 <p>データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。</p>
-
 <p>詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm">ArcGIS for Developers: ローダブル パターン（英語）</a>を参照してください。</p>
-
 <p>次のコードは、ローダブル パターンの使用方法の例を示しています。</p>
-
-<pre><code class="language-javascript">// ローダブル時のイベント
-featureLayer.Loaded += (s, e) =&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ローダブル時のイベント
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">Loaded</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">e</span>) =&gt;
 {
-    // フィーチャ レイヤーのプロパティにアクセス
-    Debug.Assert(featureLayer.MinScale == 5000);
-    Debug.Assert(featureLayer.MaxScale == 1000000);
+    <span style="color:#75715e">// フィーチャ レイヤーのプロパティにアクセス
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Debug</span>.<span style="color:#a6e22e">Assert</span>(<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">MinScale</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5000</span>);
+    <span style="color:#a6e22e">Debug</span>.<span style="color:#a6e22e">Assert</span>(<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">MaxScale</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1000000</span>);
 };
 
-// フィーチャ レイヤーのロード
-await featureLayer.LoadAsync();
-</code></pre>
-
-<h2 id="ローカルサーバー">ローカルサーバー</h2>
-
+<span style="color:#75715e">// フィーチャ レイヤーのロード
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">LoadAsync</span>();
+</code></pre></div><h2 id="ローカルサーバー">ローカルサーバー</h2>
 <p>ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/local-server.htm#ESRI_SECTION1_F84DC74EFFBA455AAFDB353E02471CB7">ArcGIS for Developers: ローカル サーバー（英語）</a>を参照してください。</p>
-
 <h2 id="既知の制限事項">既知の制限事項</h2>
-
 <p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4">ArcGIS Runtime SDK for .NET: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
-
 <h2 id="関連リンク">関連リンク</h2>
-
 <ul>
 <li><a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm">ArcGIS for Developers: リリース ノート（英語）</a></li>
 </ul>

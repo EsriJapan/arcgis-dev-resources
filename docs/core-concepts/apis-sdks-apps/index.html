@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-17T15:15:17 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>API、SDK、アプリ :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -646,7 +646,8 @@ if (!doNotTrack) {
     
     
     
-    <!-- raw HTML omitted -->
+    <div class="notices note" >
+本ページに記載のある以下の製品については国内未サポートの製品です。
 <ul>
 <li>ArcGIS Navigator</li>
 <li>ArcGIS Experience Builder (Developer Edition)</li>
@@ -654,7 +655,7 @@ if (!doNotTrack) {
 <li>ArcGIS Runtime SDK for Java</li>
 <li>ArcGIS Runtime SDK for Qt</li>
 </ul>
-<!-- raw HTML omitted -->
+</div>
 <h2 id="アプリの種類">アプリの種類</h2>
 <p>ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。</p>
 <h3 id="arcgis-apps">ArcGIS Apps</h3>
@@ -719,7 +720,7 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:left">ストア (App Store、Google Play、Windows Store、Amazon) を経由してアプリを配布しますか？</td>
 <td style="text-align:left">ストアでの配布に対応しています。</td>
-<td style="text-align:left">ストアでの配布は、追加フレームワーク<!-- raw HTML omitted -->[1]<!-- raw HTML omitted -->を利用することで対応しています。</td>
+<td style="text-align:left">ストアでの配布は、追加フレームワーク<sup>[1]</sup>を利用することで対応しています。</td>
 </tr>
 <tr>
 <td style="text-align:left">デバイス機能へのアクセス</td>
@@ -734,12 +735,12 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:left">複数のデバイスやデスクトップにまたがるメンテナンス</td>
 <td style="text-align:left">アプリの更新には AdHoc 配信、エンタープライズ配信、ストアでの配布が必要です。</td>
-<td style="text-align:left">アプリの更新は、すべてのデバイスのユーザーがすぐに利用できるようになります<!-- raw HTML omitted -->[2]<!-- raw HTML omitted -->。</td>
+<td style="text-align:left">アプリの更新は、すべてのデバイスのユーザーがすぐに利用できるようになります<sup>[2]</sup>。</td>
 </tr>
 </tbody>
 </table>
-<p><!-- raw HTML omitted -->[1] ArcGIS API for JavaScript を使用すると、<a href="http://phonegap.com/">PhoneGap</a>、<a href="http://cordova.apache.org/">Apache Cordova™</a>、<a href="https://software.intel.com/en-us/intel-xdk">Intel® XDK</a>、<a href="https://trigger.io/">Trigger.io</a>、または <a href="http://electron.atom.io/">Electron</a> を使用して、ブラウザーでアプリを配布したり、複数のプラットフォームでハイブリッド アプリを配布したりすることができます。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[2] ハイブリッド アプリを使用する場合は、アプリのビルドとデプロイが必要です。<!-- raw HTML omitted --></p>
+<p><span style="font-size: 75%">[1] ArcGIS API for JavaScript を使用すると、<a href="http://phonegap.com/">PhoneGap</a>、<a href="http://cordova.apache.org/">Apache Cordova™</a>、<a href="https://software.intel.com/en-us/intel-xdk">Intel® XDK</a>、<a href="https://trigger.io/">Trigger.io</a>、または <a href="http://electron.atom.io/">Electron</a> を使用して、ブラウザーでアプリを配布したり、複数のプラットフォームでハイブリッド アプリを配布したりすることができます。</span></br>
+<span style="font-size: 75%">[2] ハイブリッド アプリを使用する場合は、アプリのビルドとデプロイが必要です。</span></p>
 <h3 id="プラットフォーム全体での-arcgis-の機能">プラットフォーム全体での ArcGIS の機能</h3>
 <table>
 <thead>
@@ -771,13 +772,13 @@ if (!doNotTrack) {
 <td style="text-align:left">ネットワーク接続が必要です。</td>
 </tr>
 <tr>
-<td style="text-align:left">モデル ベースの解析 (ジオプロセシング ) <!-- raw HTML omitted -->[1]<!-- raw HTML omitted --></td>
-<td style="text-align:left">オンライン、オフライン、ローカル サーバー <!-- raw HTML omitted -->[2]<!-- raw HTML omitted --> の使用に対応しています。</td>
+<td style="text-align:left">モデル ベースの解析 (ジオプロセシング ) <sup>[1]</sup></td>
+<td style="text-align:left">オンライン、オフライン、ローカル サーバー <sup>[2]</sup> の使用に対応しています。</td>
 <td style="text-align:left">ネットワーク接続が必要です。</td>
 </tr>
 <tr>
-<td style="text-align:left">ジオメトリック ネットワークのトレース<!-- raw HTML omitted -->[3]<!-- raw HTML omitted --></td>
-<td style="text-align:left">オンライン、オフライン、ローカルサーバー<!-- raw HTML omitted -->[2]<!-- raw HTML omitted --> の使用に対応しています。</td>
+<td style="text-align:left">ジオメトリック ネットワークのトレース<sup>[3]</sup></td>
+<td style="text-align:left">オンライン、オフライン、ローカルサーバー<sup>[2]</sup> の使用に対応しています。</td>
 <td style="text-align:left">ネットワーク接続が必要です。</td>
 </tr>
 <tr>
@@ -812,9 +813,9 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p><!-- raw HTML omitted -->[1] <a href="http://desktop.arcgis.com/">ArcGIS Desktop</a> でモデルを構築し、ジオプロセシング サービスを介してクライアントに解析を提供します。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[2] ローカルサーバーは、<a href="https://developers.arcgis.com/net">ArcGIS Runtime SDK for .NET</a>、<a href="https://developers.arcgis.com/java">Java</a>、<a href="https://developers.arcgis.com/qt">Qt</a> で Windows および Linux で利用できます。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[3] 分離トレースなどのモデルベースの解析 (ジオプロセシング サービス ) で対応できます。<!-- raw HTML omitted --></p>
+<p><span style="font-size: 75%">[1] <a href="http://desktop.arcgis.com/">ArcGIS Desktop</a> でモデルを構築し、ジオプロセシング サービスを介してクライアントに解析を提供します。</span></br>
+<span style="font-size: 75%">[2] ローカルサーバーは、<a href="https://developers.arcgis.com/net">ArcGIS Runtime SDK for .NET</a>、<a href="https://developers.arcgis.com/java">Java</a>、<a href="https://developers.arcgis.com/qt">Qt</a> で Windows および Linux で利用できます。</span></br>
+<span style="font-size: 75%">[3] 分離トレースなどのモデルベースの解析 (ジオプロセシング サービス ) で対応できます。</span></p>
 <h3 id="arcgis-を使用したクロスプラットフォーム開発">ArcGIS を使用したクロスプラットフォーム開発</h3>
 <p>いくつかのAPI / SDK を使用すると、以下のような方法でアプリケーションを一度に記述し、複数のプラットフォームにデプロイすることができます。</p>
 <table>
@@ -846,7 +847,7 @@ if (!doNotTrack) {
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS Runtime SDK for Java<!-- raw HTML omitted -->[1]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS Runtime SDK for Java<sup>[1]</sup></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center">✓</td>
@@ -854,7 +855,7 @@ if (!doNotTrack) {
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS Runtime SDK for .NET<!-- raw HTML omitted -->[2]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS Runtime SDK for .NET<sup>[2]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -862,7 +863,7 @@ if (!doNotTrack) {
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS Runtime SDK for Qt<!-- raw HTML omitted -->[3]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS Runtime SDK for Qt<sup>[3]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -870,7 +871,7 @@ if (!doNotTrack) {
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS API for JavaScript<!-- raw HTML omitted -->[4]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS API for JavaScript<sup>[4]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -878,7 +879,7 @@ if (!doNotTrack) {
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS Web AppBuilder<!-- raw HTML omitted -->[4]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS Web AppBuilder<sup>[4]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -886,7 +887,7 @@ if (!doNotTrack) {
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS AppStudio<!-- raw HTML omitted -->[5]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS AppStudio<sup>[5]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -894,7 +895,7 @@ if (!doNotTrack) {
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">ArcGIS REST API<!-- raw HTML omitted -->[6]<!-- raw HTML omitted --></td>
+<td style="text-align:left">ArcGIS REST API<sup>[6]</sup></td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
@@ -903,12 +904,12 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p><!-- raw HTML omitted -->[1] <a href="https://developers.arcgis.com/java">ArcGIS Runtime SDK for Java</a> は、Windows、Linux、および macOS デスクトップ システムのクロス プラットフォーム開発をサポートします。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[2] <a href="https://developers.arcgis.com/net">ArcGIS Runtime SDK for .NET</a> は、単一のコードベースから Windows デスクトップ、タブレット、およびモバイル アプリケーションの構築をサポートします。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[3] <a href="https://developers.arcgis.com/qt">ArcGIS Runtime SDK for Qt</a> を使用すると、一度書いたコードを Android、iOS、Linux、macOS、Windows などにデプロイすることができます。QML API を使用して記述されたコードは、対象のプラットフォームごとにネイティブ コンパイルする必要がありますが、各プラットフォームでは同じコードです。Qt QML API や Esri Runtime for Qt にはプラットフォーム間の違いがないため、単一のコードベースでクロスプラットフォームのアプリケーション開発が可能になります。これを実現するためには、いくつかの妥協点が必要です。例えば、利用可能な UI コントロールはすべてのプラットフォームに存在しなければならず、クロスプラットフォームのコードを構築する際には、1 つのプラットフォームにのみ存在する特定の UI コンポーネントを使用することはできません。しかし、大部分のユースケースでは、QML API を使用するのが良い選択となるでしょう。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[4] <a href="https://developers.arcgis.com/javascript">ArcGIS API for JavaScript</a> を使用すると、<a href="http://phonegap.com/">PhoneGap</a>、<a href="http://cordova.apache.org/">Apache Cordova™</a>、<a href="https://software.intel.com/en-us/intel-xdk">Intel® XDK</a>、<a href="https://trigger.io/">Trigger.io</a>、または <a href="http://electron.atom.io/">Electron</a> を使用して、ブラウザーでアプリを配布したり、複数のプラットフォームでハイブリッドアプリを配布することができます。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[5] <a href="https://appstudio.arcgis.com/">ArcGIS AppStudio</a> アプリは、<a href="https://developers.arcgis.com/qt">ArcGIS Runtime SDK for Qt</a> を使用して拡張することができます。<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[6] <a href="https://developers.arcgis.com/rest/">ArcGIS REST API</a> を使用すると、HTTP 要求を発行できる任意のプラットフォームで Web サービスを使用できます。<!-- raw HTML omitted --></p>
+<p><span style="font-size: 75%">[1] <a href="https://developers.arcgis.com/java">ArcGIS Runtime SDK for Java</a> は、Windows、Linux、および macOS デスクトップ システムのクロス プラットフォーム開発をサポートします。</span></br>
+<span style="font-size: 75%">[2] <a href="https://developers.arcgis.com/net">ArcGIS Runtime SDK for .NET</a> は、単一のコードベースから Windows デスクトップ、タブレット、およびモバイル アプリケーションの構築をサポートします。</span></br>
+<span style="font-size: 75%">[3] <a href="https://developers.arcgis.com/qt">ArcGIS Runtime SDK for Qt</a> を使用すると、一度書いたコードを Android、iOS、Linux、macOS、Windows などにデプロイすることができます。QML API を使用して記述されたコードは、対象のプラットフォームごとにネイティブ コンパイルする必要がありますが、各プラットフォームでは同じコードです。Qt QML API や Esri Runtime for Qt にはプラットフォーム間の違いがないため、単一のコードベースでクロスプラットフォームのアプリケーション開発が可能になります。これを実現するためには、いくつかの妥協点が必要です。例えば、利用可能な UI コントロールはすべてのプラットフォームに存在しなければならず、クロスプラットフォームのコードを構築する際には、1 つのプラットフォームにのみ存在する特定の UI コンポーネントを使用することはできません。しかし、大部分のユースケースでは、QML API を使用するのが良い選択となるでしょう。</span></br>
+<span style="font-size: 75%">[4] <a href="https://developers.arcgis.com/javascript">ArcGIS API for JavaScript</a> を使用すると、<a href="http://phonegap.com/">PhoneGap</a>、<a href="http://cordova.apache.org/">Apache Cordova™</a>、<a href="https://software.intel.com/en-us/intel-xdk">Intel® XDK</a>、<a href="https://trigger.io/">Trigger.io</a>、または <a href="http://electron.atom.io/">Electron</a> を使用して、ブラウザーでアプリを配布したり、複数のプラットフォームでハイブリッドアプリを配布することができます。</span></br>
+<span style="font-size: 75%">[5] <a href="https://appstudio.arcgis.com/">ArcGIS AppStudio</a> アプリは、<a href="https://developers.arcgis.com/qt">ArcGIS Runtime SDK for Qt</a> を使用して拡張することができます。</span></br>
+<span style="font-size: 75%">[6] <a href="https://developers.arcgis.com/rest/">ArcGIS REST API</a> を使用すると、HTTP 要求を発行できる任意のプラットフォームで Web サービスを使用できます。</span></p>
 <h3 id="ハイブリッド-アプリ">ハイブリッド アプリ</h3>
 <p>ハイブリッド アプリでは、Web アプリのコンテンツ (HTML、JavaScript、CSS) とネイティブ コンポーネントを組み合わせてネイティブ アプリケーションを構築します。これには、<a href="https://cordova.apache.org/">Apache Cordova</a> や <a href="https://electron.atom.io/">Electron</a> などのフレームワークが含まれます。ハイブリッド アプリは、以下のような場合によく使用されます。</p>
 <ul>

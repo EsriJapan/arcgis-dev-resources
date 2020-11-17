@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-17T16:01:58 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>アプリの登録と認証 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -652,7 +652,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。
-<!-- raw HTML omitted --></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/get_client_id_secret.gif" width="600px"></p>
 </li>
 <li>
 <p>[Authentication] タブをクリックします。</p>
@@ -694,7 +694,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>アクセス トークンが付与されたら、トークン（<code>token</code>）を要求する ArcGIS for Developers へのリクエストにトークンを含めます。
-<!-- raw HTML omitted --></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin2.png" width="300px"></p>
 </li>
 </ol>
 <h2 id="アプリ認証">アプリ認証</h2>
@@ -705,18 +705,36 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>アプリ ID と秘密鍵を使って <a href="https://www.arcgis.com/sharing/rest/oauth2/token/">https://www.arcgis.com/sharing/rest/oauth2/token/</a> への POST リクエストを作成します。
-<!-- raw HTML omitted --></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin1.png" width="300px"></p>
 </li>
 <li>
 <p>JSON レスポンス内のアクセス トークン（<code>access_token</code>）を取得します。</p>
 </li>
 <li>
 <p>token パラメーターが要求されるリクエストにはすべてアクセス トークンを追加します。
-<!-- raw HTML omitted --></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin2.png" width="300px"></p>
 </li>
 </ol>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--以下は、トークン取得のための POST リクエスト作成のもっとも簡易な Node.js でのコード例です。
+
+```javascript
+var request = require('request'); // npm install request
+
+// generate a token with your client id and client secret
+request.post({
+    url: 'https://www.arcgis.com/sharing/rest/oauth2/token/',
+    json: true,
+    form: {
+      'f': 'json',
+      'client_id': 'YOUR_APPLICATIONS_CLIENT_ID',
+      'client_secret': 'YOUR_APPLICATIONS_CLIENT_SECRET',
+      'grant_type': 'client_credentials',
+      'expiration': '1440'
+    }
+}, function(error, response, body){
+    console.log(body.access_token);
+});
+```-->
 
 
     

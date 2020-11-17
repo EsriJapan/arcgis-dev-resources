@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-17T16:01:58 JST">
+<meta name="revised" content="2020-11-17T16:32:37 JST">
 <title>JavaScript :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -652,7 +652,7 @@ if (!doNotTrack) {
 <li><strong>zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）</strong></li>
 </ul>
 <p><a href="https://github.com/EsriJapan/arcgis-dev-resources">arcgis-dev-resources</a> ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。</p>
-<!-- raw HTML omitted -->
+ <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
 <h2 id="地図の表示">地図の表示</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
 <ol>
@@ -677,7 +677,7 @@ if (!doNotTrack) {
 });
 </code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
 <ol>
-<li>31～34 行目のコードは地図のビューを作成しています。先のコードで参照した Web マップを地図データのソースとして、実際に地図の表示を行います。2D 地図は <code>MapView</code>、3D 地図は <code>SceneView</code> を使用します。<!-- raw HTML omitted -->
+<li>31～34 行目のコードは地図のビューを作成しています。先のコードで参照した Web マップを地図データのソースとして、実際に地図の表示を行います。2D 地図は <code>MapView</code>、3D 地図は <code>SceneView</code> を使用します。<br>
 <strong>2D の場合</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 地図ビュー
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
@@ -698,9 +698,9 @@ if (!doNotTrack) {
 <ol>
 <li>Web アプリを実行すると、以下のように地図が表示されます。<br>
 <strong>2D</strong>
-<!-- raw HTML omitted -->
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-2d.png" width="450px">
 <strong>3D</strong>
-<!-- raw HTML omitted --></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-3d.png" width="450px"></li>
 </ol>
 <h2 id="検索機能の追加">検索機能の追加</h2>
 <p>検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には <code>esri/widgets/Search</code> モジュール（検索ウィジェット）を使用します。検索ソースには<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>に含まれる東京都 23 区のデータを使用します。
@@ -754,7 +754,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>検索対象とするレイヤーの詳細ページにて、[レイヤー] の項目から対象とするレイヤーをクリックして [サービスの URL] を選択します。
-<!-- raw HTML omitted --></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/view-fields.gif" width="450px"></p>
 </li>
 <li>
 <p>[Fields] という項目にレイヤーのフィールド情報のリストが表示されているので、検索対象とするフィールド名をコピーして <code>searchFields</code> の配列に追加します。</p>
@@ -773,7 +773,7 @@ if (!doNotTrack) {
 </code></pre></div><p><code>positon</code> プロパティで地図ビュー上の四隅への配置位置が指定できます。</p>
 <ol>
 <li>Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
-<!-- raw HTML omitted --></li>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-3d.gif" width="450px"></li>
 </ol>
 <hr>
 <p>アプリの動作が確認できたら <a href="../../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
