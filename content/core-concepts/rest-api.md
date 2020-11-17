@@ -1,7 +1,7 @@
 +++
 title = "REST API" 
 description = "ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。ArcGIS REST API の概要について紹介します。"
-Weight=7
+Weight=8
 aliases = ["/rest-api/"]
 +++
 
