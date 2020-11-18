@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:21 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -704,32 +711,25 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#gradle-参照プロジェクトの変更">Gradle 参照プロジェクトの変更</a></li>
-<li><a href="#マップ">マップ</a></li>
-<li><a href="#ビュー">ビュー</a></li>
-<li><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></li>
-<li><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></li>
-<li><a href="#フィーチャの操作">フィーチャの操作</a>
-<ul>
-<li>
-<ul>
-<li><a href="#フィーチャのリクエスト-モード">フィーチャのリクエスト モード</a></li>
-<li><a href="#フィーチャの編集">フィーチャの編集</a></li>
-<li><a href="#フィーチャの検索">フィーチャの検索</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#個別属性表示">個別属性表示</a></li>
-<li><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></li>
-<li><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></li>
-<li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
-<li><a href="#新しい同期パターン">新しい同期パターン</a></li>
-<li><a href="#既知の制限事項">既知の制限事項</a></li>
-<li><a href="#関連リンク">関連リンク</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#gradle-参照プロジェクトの変更">Gradle 参照プロジェクトの変更</a></li>
+    <li><a href="#マップ">マップ</a></li>
+    <li><a href="#ビュー">ビュー</a></li>
+    <li><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></li>
+    <li><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></li>
+    <li><a href="#フィーチャの操作">フィーチャの操作</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#個別属性表示">個別属性表示</a></li>
+    <li><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></li>
+    <li><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></li>
+    <li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
+    <li><a href="#新しい同期パターン">新しい同期パターン</a></li>
+    <li><a href="#既知の制限事項">既知の制限事項</a></li>
+    <li><a href="#関連リンク">関連リンク</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -748,33 +748,25 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
-
+    <p>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。</p>
 <p>ArcGIS Runtime SDK for Android に関しては、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-Android">ESRIジャパン 製品ページ</a>をご参照ください。</p>
-
 <p>以下は、バージョン 100.x の主な変更点です。</p>
-
 <ul>
-<li><strong><a href="#gradle-参照プロジェクトの変更">Gradle 参照プロジェクトの変更</a></strong></li>
-<li><strong><a href="#マップ">マップ</a></strong></li>
-<li><strong><a href="#ビュー">ビュー</a></strong></li>
-<li><strong><a href="#レイヤー-クラス名の変更">レイヤー クラス名の変更</a></strong></li>
-<li><strong><a href="#フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</a></strong></li>
-<li><strong><a href="#フィーチャの操作">フィーチャの操作</a></strong></li>
-<li><strong><a href="#個別属性表示">個別属性表示</a></strong></li>
-<li><strong><a href="#グラフィックス-オーバーレイ">グラフィックス オーバーレイ</a></strong></li>
-<li><strong><a href="#ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</a></strong></li>
-<li><strong><a href="#ローダブル-パターン">ローダブル パターン</a></strong></li>
-<li><strong><a href="#新しい同期パターン">新しい同期パターン</a></strong></li>
-<li><strong><a href="#既知の制限事項">既知の制限事項</a></strong></li>
+<li><strong><a href="#gradle-%E5%8F%82%E7%85%A7%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%A4%89%E6%9B%B4">Gradle 参照プロジェクトの変更</a></strong></li>
+<li><strong><a href="#%E3%83%9E%E3%83%83%E3%83%97">マップ</a></strong></li>
+<li><strong><a href="#%E3%83%93%E3%83%A5%E3%83%BC">ビュー</a></strong></li>
+<li><strong><a href="#%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-%E3%82%AF%E3%83%A9%E3%82%B9%E5%90%8D%E3%81%AE%E5%A4%89%E6%9B%B4">レイヤー クラス名の変更</a></strong></li>
+<li><strong><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%81%E3%83%A3-%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E8%A1%A8%E7%A4%BA">フィーチャ レイヤーの表示</a></strong></li>
+<li><strong><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%81%E3%83%A3%E3%81%AE%E6%93%8D%E4%BD%9C">フィーチャの操作</a></strong></li>
+<li><strong><a href="#%E5%80%8B%E5%88%A5%E5%B1%9E%E6%80%A7%E8%A1%A8%E7%A4%BA">個別属性表示</a></strong></li>
+<li><strong><a href="#%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9-%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4">グラフィックス オーバーレイ</a></strong></li>
+<li><strong><a href="#%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA%E3%81%A8%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA-%E3%83%93%E3%83%AB%E3%83%80%E3%83%BC">ジオメトリとジオメトリ ビルダー</a></strong></li>
+<li><strong><a href="#%E3%83%AD%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">ローダブル パターン</a></strong></li>
+<li><strong><a href="#%E6%96%B0%E3%81%97%E3%81%84%E5%90%8C%E6%9C%9F%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">新しい同期パターン</a></strong></li>
+<li><strong><a href="#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%88%B6%E9%99%90%E4%BA%8B%E9%A0%85">既知の制限事項</a></strong></li>
 </ul>
-
 <h2 id="gradle-参照プロジェクトの変更">Gradle 参照プロジェクトの変更</h2>
-
 <p>Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。</p>
-
 <pre><code>repositories {
     jcenter()
     maven {
@@ -784,225 +776,158 @@ if (!doNotTrack) {
 dependencies {
     implementation 'com.esri.arcgisruntime:arcgis-android:100.6.0'
 }
-</code></pre>
-
-<p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-Android/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
-
+</code></pre><p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-Android/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップ">マップ</h2>
-
 <p>100.x では、<code>ArcGISMap</code> オブジェクトを API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。</p>
-
 <p><code>ArcGISMap</code> オブジェクトは 、それを表示する View と分離されています。<code>ArcGISMap</code> オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。</p>
-
 <h2 id="ビュー">ビュー</h2>
-
 <p><code>MapView</code>（2D表示用）と <code>SceneView</code>（3D表示用）は、UI コンポーネントです。<code>MapView</code> クラスの <code>map</code> プロパティに、<code>ArcGISMap</code> オブジェクトを設定します。</p>
-
 <p>100.x では、以下のようにマップを表示します。</p>
-
-<pre><code class="language-java">// ベースマップを指定してマップを初期化
-ArcGISMap mArcGISMap = new ArcGISMap();
-mArcGISMap.setBasemap(Basemap.createTopographic());
-// マップビューにマップを設定
-MapView mMapView =  findViewById(R.id.MapView);
-mMapView.setMap(mArcGISMap);
-</code></pre>
-
-<h2 id="レイヤー-クラス名の変更">レイヤー クラス名の変更</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ベースマップを指定してマップを初期化
+</span><span style="color:#75715e"></span>ArcGISMap mArcGISMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArcGISMap<span style="color:#f92672">();</span>
+mArcGISMap<span style="color:#f92672">.</span><span style="color:#a6e22e">setBasemap</span><span style="color:#f92672">(</span>Basemap<span style="color:#f92672">.</span><span style="color:#a6e22e">createTopographic</span><span style="color:#f92672">());</span>
+<span style="color:#75715e">// マップビューにマップを設定
+</span><span style="color:#75715e"></span>MapView mMapView <span style="color:#f92672">=</span>  findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MapView</span><span style="color:#f92672">);</span>
+mMapView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMap</span><span style="color:#f92672">(</span>mArcGISMap<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="レイヤー-クラス名の変更">レイヤー クラス名の変更</h2>
 <p>各レイヤーのクラス名が以下のように変更されています。</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">レイヤー</th>
-<th align="center">10.2.x のクラス名</th>
-<th align="center">100.x のクラス名</th>
+<th style="text-align:center">レイヤー</th>
+<th style="text-align:center">10.2.x のクラス名</th>
+<th style="text-align:center">100.x のクラス名</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">ArcGIS Server ダイナミック マップ サービス レイヤー</td>
-<td align="center">ArcGISDynamicMapServiceLayer</td>
-<td align="center">ArcGISMapImageLayer</td>
+<td style="text-align:center">ArcGIS Server ダイナミック マップ サービス レイヤー</td>
+<td style="text-align:center">ArcGISDynamicMapServiceLayer</td>
+<td style="text-align:center">ArcGISMapImageLayer</td>
 </tr>
-
 <tr>
-<td align="center">タイル マップ サービス レイヤー</td>
-<td align="center">ArcGISTiledMapServiceLayer</td>
-<td align="center">ArcGISTiledLayer</td>
+<td style="text-align:center">タイル マップ サービス レイヤー</td>
+<td style="text-align:center">ArcGISTiledMapServiceLayer</td>
+<td style="text-align:center">ArcGISTiledLayer</td>
 </tr>
-
 <tr>
-<td align="center">タイル パッケージ レイヤー</td>
-<td align="center">ArcGISLocalTiledLayer</td>
-<td align="center">ArcGISTiledLayer</td>
+<td style="text-align:center">タイル パッケージ レイヤー</td>
+<td style="text-align:center">ArcGISLocalTiledLayer</td>
+<td style="text-align:center">ArcGISTiledLayer</td>
 </tr>
 </tbody>
 </table>
-
 <p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/android/latest/guide/layers.htm">ArcGIS Runtime SDK for Android: レイヤー（英語）</a>をご参照ください。</p>
-
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
+</span><span style="color:#75715e"></span>mArcGISMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOperationalLayers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>arcgis_map_image_layer<span style="color:#f92672">)</span>
 
-<pre><code class="language-java">// 操作レイヤーとしてマップに追加する
-mArcGISMap.getOperationalLayers().add(arcgis_map_image_layer)
-
-// ベースマップとしてマップに追加する
-Basemap mBasemap = new Basemap();
-mBasemap.getBaseLayers().add(arcgis_tiled_layer);
-</code></pre>
-
-<h2 id="フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</h2>
-
+<span style="color:#75715e">// ベースマップとしてマップに追加する
+</span><span style="color:#75715e"></span>Basemap mBasemap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Basemap<span style="color:#f92672">();</span>
+mBasemap<span style="color:#f92672">.</span><span style="color:#a6e22e">getBaseLayers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>arcgis_tiled_layer<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="フィーチャ-レイヤーの表示">フィーチャ レイヤーの表示</h2>
 <p>フィーチャ サービスや端末のローカルに格納されたジオデータベースのデータをマップに表示するにはフィーチャ レイヤーを使用します。
 フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーで表示する場合は <code>ArcGISFeatureTable</code> オブジェクト、ジオデータベースのデータを表示する場合は <code>GeodatabaseFeatureTable</code> オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として <code>FeatureLayer</code> オブジェクトを作成し、<code>ArcGISMap</code> オブジェクトの <code>OperationalLayers</code> に追加します。</p>
-
 <p>次のコードは、フィーチャ サービスのデータを <code>FeatureLayer</code> としてマップに追加する方法を示しています。</p>
-
-<pre><code class="language-java">// フィーチャ サービスの URL からフィーチャ テーブルを作成
-ServiceFeatureTable serviceFeatureTable = new ServiceFeatureTable(&quot;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&quot;);
-// フィーチャ テーブルからフィーチャ レイヤーを作成
-FeatureLayer featureLayer = new FeatureLayer(serviceFeatureTable);
-// フィーチャ レイヤーをマップの操作レイヤーに追加
-mArcGISMap.getOperationalLayers().add(featureLayer);
-</code></pre>
-
-<h2 id="フィーチャの操作">フィーチャの操作</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
+</span><span style="color:#75715e"></span>ServiceFeatureTable serviceFeatureTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServiceFeatureTable<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#75715e">// フィーチャ テーブルからフィーチャ レイヤーを作成
+</span><span style="color:#75715e"></span>FeatureLayer featureLayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FeatureLayer<span style="color:#f92672">(</span>serviceFeatureTable<span style="color:#f92672">);</span>
+<span style="color:#75715e">// フィーチャ レイヤーをマップの操作レイヤーに追加
+</span><span style="color:#75715e"></span>mArcGISMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOperationalLayers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>featureLayer<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="フィーチャの操作">フィーチャの操作</h2>
 <p>フィーチャの検索や編集はフィーチャ テーブル （<code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code>）に対して行います。</p>
-
-<p>フィーチャ サービスから作成したフィーチャ テーブル（<code>ServiceFeatureTable</code>）の場合、フィーチャ テーブルのフィーチャは、マップ上にレンダリングするために必要最小限の情報だけを含むように最適化されています。これにより、フィーチャを表示するための待機時間と帯域幅の消費が削減されます。フィーチャの編集やすべての属性情報を表示するような場合は完全な情報を取得するために、<a href="#ローダブル-パターン">ローダブル パターン</a>等を使用して、フィーチャを明示的にロードしておく必要があります。</p>
-
+<p>フィーチャ サービスから作成したフィーチャ テーブル（<code>ServiceFeatureTable</code>）の場合、フィーチャ テーブルのフィーチャは、マップ上にレンダリングするために必要最小限の情報だけを含むように最適化されています。これにより、フィーチャを表示するための待機時間と帯域幅の消費が削減されます。フィーチャの編集やすべての属性情報を表示するような場合は完全な情報を取得するために、<a href="#%E3%83%AD%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">ローダブル パターン</a>等を使用して、フィーチャを明示的にロードしておく必要があります。</p>
 <h4 id="フィーチャのリクエスト-モード">フィーチャのリクエスト モード</h4>
-
 <p>フィーチャ サービスからフィーチャを取得する場合は、
-リクエスト モードの設定によってフィーチャの取得頻度とや端末上でのデータのキャッシュ方法を制御します。リクエスト モードには、<code>ON_INTERACTION_CACHE</code>、 <code>ON_INTERACTION_NO_CACHE</code>、<code>MANUAL_CACHE</code> があります。リクエスト モードはフィーチャ テーブルが初期化される前に、<code>ServiceFeatureTable</code> の <code>setFeatureRequestMode</code> メソッドを使用して設定できます。</p>
-
+リクエスト モードの設定によってフィーチャの取得頻度とや端末上でのデータのキャッシュ方法を制御します。リクエスト モードには、<code>ON_INTERACTION_CACHE</code>、 <code>ON_INTERACTION_NO_CACHE</code>、<code>MANUAL_CACHE </code> があります。リクエスト モードはフィーチャ テーブルが初期化される前に、<code>ServiceFeatureTable</code> の <code>setFeatureRequestMode</code> メソッドを使用して設定できます。</p>
 <ul>
 <li><strong>ON_INTERACTION_CACHE</strong> : ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされます。リクエストされたすべてのデータはローカルにキャッシュされます。データがキャッシュされルため、既に表示された領域にマップが移動しても、再度フィーチャはリクエストされません。サーバー上のデータが変更される可能性が少ない静的なデータに適したモードです。</li>
 <li><strong>ON_INTERACTION_NO_CACHE</strong> : ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされますが、キャッシュはされません。既に表示された領域にマップが移動すると、再度フィーチャがリクエストされます。サーバー上のデータが継続的に更新される可能性がある場合に適したモードです。</li>
 <li><strong>MANUAL_CACHE</strong> : ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、<code>ServiceFeatureTable</code> の <code>populateFromServiceAsync</code> メソッドを使用して明示的にデータをリクエストする必要があります。</li>
 </ul>
-
 <p>以下のコードは <code>populateFromServiceAsync</code> メソッドを使用して、サーバー上のすべてのフィーチャを取得する方法の例です。</p>
-
-<pre><code class="language-java">// フィーチャの検索パラメーターを設定
-QueryParameters queryParameters = new QueryParameters();
-// すべてのフィーチャを取得するように条件を設定
-queryParameters.setWhereClause(&quot;1=1&quot;);
-// 検索結果にフィーチャのすべての属性情報（outFields の配列に &quot;*&quot; を指定）を含める
-ArrayList&lt;String&gt; outFields = new ArrayList&lt;&gt;();
-outFields.add(&quot;*&quot;);
-serviceFeatureTable.populateFromServiceAsync(queryParameters,true,outFields);
-</code></pre>
-
-<p>リクエスト モードの詳細は、
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// フィーチャの検索パラメーターを設定
+</span><span style="color:#75715e"></span>QueryParameters queryParameters <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> QueryParameters<span style="color:#f92672">();</span>
+<span style="color:#75715e">// すべてのフィーチャを取得するように条件を設定
+</span><span style="color:#75715e"></span>queryParameters<span style="color:#f92672">.</span><span style="color:#a6e22e">setWhereClause</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;1=1&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#75715e">// 検索結果にフィーチャのすべての属性情報（outFields の配列に &#34;*&#34; を指定）を含める
+</span><span style="color:#75715e"></span>ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> outFields <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+outFields<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">);</span>
+serviceFeatureTable<span style="color:#f92672">.</span><span style="color:#a6e22e">populateFromServiceAsync</span><span style="color:#f92672">(</span>queryParameters<span style="color:#f92672">,</span><span style="color:#66d9ef">true</span><span style="color:#f92672">,</span>outFields<span style="color:#f92672">);</span>
+</code></pre></div><p>リクエスト モードの詳細は、
 <a href="https://developers.arcgis.com/android/latest/guide/layers.htm#ESRI_SECTION1_272346C9CB0049938539D5F8970624F2">ArcGIS Runtime SDK for Android: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
-
 <h4 id="フィーチャの編集">フィーチャの編集</h4>
-
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
-
 <p>フィーチャの編集方法は、
 <a href="https://developers.arcgis.com/android/latest/guide/edit-features.htm">ArcGIS Runtime SDK for Android: フィーチャの編集（英語）</a>をご参照ください。</p>
-
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
-
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code> クラスの <code>queryFeaturesAsync</code> メソッドを使用します。</p>
-
 <p>次のコードは、フィーチャ サービスから作成したフィーチャ テーブルからフィーチャを検索する方法を示しています。</p>
-
-<pre><code class="language-java">final ListenableFuture&lt;FeatureQueryResult&gt; queryResult  = serviceFeatureTable.queryFeaturesAsync(queryParameters);
-queryResult.addDoneListener(()-&gt;{
-    // call get on the future to get the result
-    try {
-        FeatureQueryResult result = queryResult.get();
-        for (Iterator&lt;Feature&gt; features = result.iterator(); features.hasNext();) {
-            // 検索結果のフィーチャを取得
-            Feature feature = features.next();
-        ・・・
-        }
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    } catch (ExecutionException e) {
-        e.printStackTrace();
-    }
-});
-</code></pre>
-
-<h2 id="個別属性表示">個別属性表示</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> ListenableFuture<span style="color:#f92672">&lt;</span>FeatureQueryResult<span style="color:#f92672">&gt;</span> queryResult  <span style="color:#f92672">=</span> serviceFeatureTable<span style="color:#f92672">.</span><span style="color:#a6e22e">queryFeaturesAsync</span><span style="color:#f92672">(</span>queryParameters<span style="color:#f92672">);</span>
+queryResult<span style="color:#f92672">.</span><span style="color:#a6e22e">addDoneListener</span><span style="color:#f92672">(()-&gt;{</span>
+    <span style="color:#75715e">// call get on the future to get the result
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        FeatureQueryResult result <span style="color:#f92672">=</span> queryResult<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Iterator<span style="color:#f92672">&lt;</span>Feature<span style="color:#f92672">&gt;</span> features <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> features<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">();)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 検索結果のフィーチャを取得
+</span><span style="color:#75715e"></span>            Feature feature <span style="color:#f92672">=</span> features<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+        <span style="color:#960050;background-color:#1e0010">・・・</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ExecutionException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div><h2 id="個別属性表示">個別属性表示</h2>
 <p>マップ上で特定の場所をタップして、その位置にあるフィーチャをすべてのレイヤーから検索して取得することができます。この操作はビューに対して行います。次のコードは、<code>MapView</code> クラスの <code>identifyLayersAsync</code> メソッドを使用してフィーチャを取得する方法を示しています。</p>
-
-<pre><code class="language-java">final ListenableFuture&lt;List&lt;IdentifyLayerResult&gt;&gt; identifyLayersResult = mapView.identifyLayersAsync(screenPoint,10,true);
-    identifyLayersResult.addDoneListener(()-&gt;{
-    try {
-        List&lt;IdentifyLayerResult&gt; identifyResult = identifyLayersResult.get();
-        for(IdentifyLayerResult identifyLayerResult : identifyResult){
-            // GeoElement オブジェクトの取得
-            List&lt;GeoElement&gt; geoElement = identifyLayerResult.getElements();
-                    ・・・
-        }
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    } catch (ExecutionException e) {
-        e.printStackTrace();
-    }
-});
-</code></pre>
-
-<h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> ListenableFuture<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>IdentifyLayerResult<span style="color:#f92672">&gt;&gt;</span> identifyLayersResult <span style="color:#f92672">=</span> mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">identifyLayersAsync</span><span style="color:#f92672">(</span>screenPoint<span style="color:#f92672">,</span>10<span style="color:#f92672">,</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+    identifyLayersResult<span style="color:#f92672">.</span><span style="color:#a6e22e">addDoneListener</span><span style="color:#f92672">(()-&gt;{</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        List<span style="color:#f92672">&lt;</span>IdentifyLayerResult<span style="color:#f92672">&gt;</span> identifyResult <span style="color:#f92672">=</span> identifyLayersResult<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>IdentifyLayerResult identifyLayerResult <span style="color:#f92672">:</span> identifyResult<span style="color:#f92672">){</span>
+            <span style="color:#75715e">// GeoElement オブジェクトの取得
+</span><span style="color:#75715e"></span>            List<span style="color:#f92672">&lt;</span>GeoElement<span style="color:#f92672">&gt;</span> geoElement <span style="color:#f92672">=</span> identifyLayerResult<span style="color:#f92672">.</span><span style="color:#a6e22e">getElements</span><span style="color:#f92672">();</span>
+                    <span style="color:#960050;background-color:#1e0010">・・・</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ExecutionException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div><h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>MapView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>GraphicsOverlay</code>）が含まれています。
 グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、<a href="https://developers.arcgis.com/android/latest/guide/add-graphics-overlays-to-your-app.htm">ArcGIS Runtime SDK for Android: グラフィックス オーバーレイの追加（英語）</a>をご参照ください。</p>
-
 <p>次のコードは、<code>MapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
-
-<pre><code class="language-java">// ジオメトリとシンボルを設定してグラフィックを作成
-Graphic graphic = new Graphic(geometry,symbol);
-// グラフィックス オーバーレイに作成したグラフィックを追加
-GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
-graphicsOverlay.getGraphics().add(graphic);
-// MapView の GraphicsOverlays に作成したグラフィックス オーバーレイを追加
-mapView.getGraphicsOverlays().add(graphicsOverlay);
-</code></pre>
-
-<h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ジオメトリとシンボルを設定してグラフィックを作成
+</span><span style="color:#75715e"></span>Graphic graphic <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Graphic<span style="color:#f92672">(</span>geometry<span style="color:#f92672">,</span>symbol<span style="color:#f92672">);</span>
+<span style="color:#75715e">// グラフィックス オーバーレイに作成したグラフィックを追加
+</span><span style="color:#75715e"></span>GraphicsOverlay graphicsOverlay <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> GraphicsOverlay<span style="color:#f92672">();</span>
+graphicsOverlay<span style="color:#f92672">.</span><span style="color:#a6e22e">getGraphics</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>graphic<span style="color:#f92672">);</span>
+<span style="color:#75715e">// MapView の GraphicsOverlays に作成したグラフィックス オーバーレイを追加
+</span><span style="color:#75715e"></span>mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">getGraphicsOverlays</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>graphicsOverlay<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>Geometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
-
 <p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/android/latest/guide/geometries.htm">ArcGIS Runtime SDK for Android: ジオメトリの編集（英語）</a>をご参照ください 。</p>
-
 <h2 id="ローダブル-パターン">ローダブル パターン</h2>
-
 <p>データを非同期でロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンが採用されています。各リソースのプロパティにアクセスするには、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 各リソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することもできます。</p>
-
 <p>詳細は、<a href="https://developers.arcgis.com/android/latest/guide/loadable-pattern.htm">ArcGIS Runtime SDK for Android: ローダブル パターン（英語）</a>をご参照ください。</p>
-
 <p>次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。</p>
-
-<pre><code class="language-java">FeatureLayer featureLayer = new FeatureLayer(serviceFeatureTable);
-if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
-    Log.e(&quot;eTag&quot;,&quot;error&quot;);
-}else{
-    // フィーチャ レイヤーのロードに成功
-}
-</code></pre>
-
-<h2 id="新しい同期パターン">新しい同期パターン</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FeatureLayer featureLayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FeatureLayer<span style="color:#f92672">(</span>serviceFeatureTable<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>featureLayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getLoadStatus</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>LoadStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">FAILED_TO_LOAD</span><span style="color:#f92672">)){</span>
+    Log<span style="color:#f92672">.</span><span style="color:#a6e22e">e</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;eTag&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+    <span style="color:#75715e">// フィーチャ レイヤーのロードに成功
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><h2 id="新しい同期パターン">新しい同期パターン</h2>
 <p>Java 言語で <code>ListenableFuture</code> というインターフェースで馴染みのある Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。</p>
-
 <h2 id="既知の制限事項">既知の制限事項</h2>
-
 <p>現バージョン 100.6.0 での既知の制限事項が、<a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
-
 <h2 id="関連リンク">関連リンク</h2>
-
 <ul>
 <li><a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a></li>
 </ul>

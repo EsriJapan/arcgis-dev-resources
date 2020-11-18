@@ -28,8 +28,10 @@ Python API を JupyterLab で使用するためには、いくつかインスト
     * `jupyter labextension install arcgis-map-ipywidget@バージョン番号`
 
 {{% notice info %}}
+
 2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.6.1)。<br>
 エラー等で正常に完了できない場合は、お使いの端末または現在の環境に `npm` および `nodejs` をインストールする必要があります。インストールの詳細は [npm のウェブサイト](https://www.npmjs.com/get-npm)、または [node.js のウェブサイト](https://nodejs.org/en/)を参照してください。
+
 {{% /notice %}}
 
 <!-- 1. 以上の設定が完了したら、コマンドを実行したままの Python コマンドプロンプトや Anaconda プロンプトから、次のコマンドで JupyterLab をビルドします。

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</link>
     <description>Recent content in ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    
-	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
@@ -43,11 +39,10 @@ Esri がホストしている CDN にインターネット経由で参照する�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
       <description>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
- プロパティのハンドリング
- View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
- オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &#39;oceans&#39;;   オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title;  例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
-myFeatureLayer.setDefinitionExpression(expression);  4.x では、以下の様に記述します。
-myFeatureLayer.definitionExpression = expression;  4.</description>
+ プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
+ オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &amp;#39;oceans&amp;#39;;  オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title; 例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
+myFeatureLayer.setDefinitionExpression(expression); 4.x では、以下の様に記述します。
+myFeatureLayer.definitionExpression = expression; 4.x では、以下に記述したように .get() または .set() を使用して、深い階層のプロパティにアクセスすることも可能です。</description>
     </item>
     
     <item>
@@ -74,14 +69,12 @@ esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつで�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</guid>
       <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。  zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 地図の表示 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/3.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。 Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-samples-js/simple/map.html のように localhost を指定してアクセスできます。
- この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
- map.html 29 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。
-var mapDeferred = arcgisUtils.createMap(&amp;quot;&amp;lt;Web マップ ID&amp;gt;&amp;quot;, &amp;quot;mapDiv&amp;quot;);  まだ Web マップを作成しておらず、すぐに試してみたい方はサンプル Web マップをご利用ください。</description>
+  ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/3.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。 Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-samples-js/simple/map.html のように localhost を指定してアクセスできます。
+  この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
+  map.html 29 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。
+  var mapDeferred = arcgisUtils.</description>
     </item>
     
     <item>
@@ -95,7 +88,8 @@ Arcade が他のスクリプト言語に比べてユニークなのは、ジオ�
 Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
 シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。
 Arcade には外部データにアクセスするためのグローバル変数が用意されています。 $feature というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。 以下のシンタックスを使用することでフィールド値を参照できます。
-$feature.fieldName  このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。</description>
+$feature.fieldName このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。
+// 民主党候補者に投票した人の割合（%）を計算 ($feature.</description>
     </item>
     
     <item>
@@ -104,7 +98,7 @@ $feature.fieldName  このように、ランタイムでフィールド値を使
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
-      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;rdquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
+      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
 デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
 ※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
 フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。

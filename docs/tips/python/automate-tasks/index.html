@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:22 JST">
 <title>スクリプト実行の自動化 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -704,20 +711,14 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#windows-のタスク-スケジューラを使用する場合">Windows のタスク スケジューラを使用する場合</a></li>
-<li><a href="#linux-の-cron-を使用する場合">Linux の cron を使用する場合</a>
-<ul>
-<li><a href="#crontab-を開く">crontab を開く</a></li>
-<li><a href="#crontab-を編集する">crontab を編集する</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#windows-のタスク-スケジューラを使用する場合">Windows のタスク スケジューラを使用する場合</a></li>
+        <li><a href="#linux-の-cron-を使用する場合">Linux の cron を使用する場合</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -736,178 +737,157 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS API for Python や ArcPy は、タスク スケジューラなどと組み合わせることで、様々な GIS タスクの実行を自動化することが可能です。<br>
+    <p>ArcGIS API for Python や ArcPy は、タスク スケジューラなどと組み合わせることで、様々な GIS タスクの実行を自動化することが可能です。<br>
 ここでは、例として以下のようなディレクトリ構成で実行する Python スクリプトを作成したと想定し、そのスクリプトを Windows 及び Linux で 30 分ごとに無期限で定期実行する方法を紹介します。</p>
-
 <p>py-script/<br>
 　├ config.ini<br>
 　└ task.py</p>
-
 <p>task.py は実行する Python スクリプト、config.ini は task.py の実行に必要なパラメータを記載した設定ファイルとします。</p>
-
 <h3 id="windows-のタスク-スケジューラを使用する場合">Windows のタスク スケジューラを使用する場合</h3>
-
 <p>Windows では<a href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%B9%E3%82%AF%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%A9">タスク スケジューラ</a>を使用することでプログラムやスクリプトを決められた時間や一定の間隔で実行することができます。</p>
-
 <p>タスク スケジューラは以下の手順で設定します。</p>
-
 <ul>
-<li><p>タスク スケジューラを開く</p>
-
+<li>タスク スケジューラを開く
 <ul>
-<li>スタート メニューからタスク スケジューラを検索して開く
+<li>スタート メニューからタスク スケジューラを検索して開く</li>
+</ul>
+</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/task-scheduler.png" width="600px">
-</div></li>
-</ul></li>
-
-<li><p>右側の [操作] ペインから [タスクの作成] をクリック</p>
-
+</div>
 <ul>
-<li>新規タスクを作成するウィザードが開きます
+<li>右側の [操作] ペインから [タスクの作成] をクリック
+<ul>
+<li>新規タスクを作成するウィザードが開きます</li>
+</ul>
+</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/create-task.png" width="300px">
-</div></li>
-</ul></li>
-
-<li><p>[全般] タブ内のパラメーターを設定する</p>
-
+</div>
+<ul>
+<li>[全般] タブ内のパラメーターを設定する
 <ul>
 <li>名前：タスクの名前</li>
 <li>説明：タスクの説明を記載</li>
 <li>セキュリティ オプション：
-
 <ul>
 <li>タスク実行時に使う Windows のユーザーアカウントを指定</li>
 <li>[ユーザーがログオンしているかどうかにかかわらず実行する] をクリック</li>
 <li>[最上位の特権で実行する] にチェックを入れる</li>
-</ul></li>
-<li>[構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)
+</ul>
+</li>
+<li>[構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)</li>
+</ul>
+</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
-</div></li>
-</ul></li>
-
-<li><p>[トリガー] タブ内のパラメーターを設定する</p>
-
+</div>
+<ul>
+<li>[トリガー] タブ内のパラメーターを設定する
 <ul>
 <li>[新規] をクリックし、新しいトリガーを作成</li>
 <li>[タスクの開始] は [スケジュールに従う] をドロップダウンから選択</li>
 <li>任意の開始時間を指定</li>
 <li>[繰り返し間隔] にチェックを入れ、30分間を指定</li>
-<li>[継続時間] は [無期限] を指定
+<li>[継続時間] は [無期限] を指定</li>
+</ul>
+</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/trigger.png" width="450px">
-</div></li>
-</ul></li>
-
-<li><p>[操作] タブのパラメーターを設定する</p>
-
+</div>
+<ul>
+<li>[操作] タブのパラメーターを設定する
 <ul>
 <li>[操作] のドロップダウンから [プログラムの開始] を選択</li>
 <li>[プログラム/スクリプト] で実行する Python の エグゼキュータブル ファイルのパスを指定
-
 <ul>
 <li>上の画像では ArcGIS Pro の Python パッケージ マネージャー で作成した環境の Python を指定しています。</li>
 <li>パスが不明な場合、実行したい環境で ArcGIS Pro を起動し、Python ウィンドウを表示させて以下のコードを実行することで確認することができます。
-
 <ul>
 <li>import sys</li>
 <li>sys.executable</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>[引数の追加 (オプション)] で実行する Python スクリプトのファイル名を指定</li>
-<li>[開始 (オプション)] で Python スクリプトが格納されているディレクトリを指定
+<li>[開始 (オプション)] で Python スクリプトが格納されているディレクトリを指定</li>
+</ul>
+</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/operation.png" width="350px">
-</div></li>
-</ul></li>
-</ul>
-
-<div class="notices warning" ><p>指定するパス等にスペースが含まれている場合はダブル クォーテーションで囲んでください。<br>
+</div>
+<div class="notices warning" >
+<p>指定するパス等にスペースが含まれている場合はダブル クォーテーションで囲んでください。<br>
 また半角括弧 <code>()</code> が含まれるパスを指定すると正常に動作しないため、ディレクトリ名などを変更してください</p>
 </div>
-
-
 <ul>
 <li>OK ボタンをクリックし、要求された場合はユーザーアカウント情報を入力</li>
 </ul>
-
 <h3 id="linux-の-cron-を使用する場合">Linux の cron を使用する場合</h3>
-
 <p>Linux で特定のタスクを定期実行する場合は <a href="https://help.ubuntu.com/community/CronHowto?_ga=2.178480100.1147189719.1582793769-2017084658.1580817129">cron</a> が用いられます。<br>
 cron は任意のタスクを任意の時間にバックグラウンドで実行するデーモンです。実行する内容は crontab と呼ばれるテキスト ファイルに記述します。<br>
 設定方法は以下のとおりです。</p>
-
 <h4 id="crontab-を開く">crontab を開く</h4>
-
 <ul>
 <li>以下のコマンドを Bash ターミナルから実行</li>
 </ul>
-
 <pre><code>    crontab -e
-</code></pre>
-
-<ul>
-<li>次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。
+</code></pre><ul>
+<li>次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。</li>
+</ul>
 <div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/select-editor.png" width="350px">
-</div></li>
-</ul>
-
+</div>
 <h4 id="crontab-を編集する">crontab を編集する</h4>
-
 <ul>
 <li>crontab の編集画面が開くので次のとおり実行する内容を記述</li>
 </ul>
-
 <pre><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
-</code></pre>
-
-<div align="center">
+</code></pre><div align="center">
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
 </div>
-
 <ul>
 <li>記述した内容の概要は以下のとおりです
-
 <ul>
 <li><code>*/30 * * * *</code>
-
 <ul>
 <li>30分に一回の実行間隔を指定</li>
-</ul></li>
+</ul>
+</li>
 <li><code>cd /home/&lt;ユーザー名&gt;/py-script</code>
-
 <ul>
 <li>cd コマンドでカレントのディレクトリを実行するスクリプトと設定ファイルが格納されているディレクトリに移動</li>
 <li>※ ここではログインしているユーザーのホーム ディレクトリ直下に配置していると想定</li>
-</ul></li>
+</ul>
+</li>
 <li><code>&amp;&amp;</code>
-
 <ul>
 <li>連続してコマンドを実行する場合に用いるオペレーター</li>
-</ul></li>
+</ul>
+</li>
 <li><code>/home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python</code>
-
 <ul>
 <li>実行する Python のパスを指定</li>
-</ul></li>
-<li><code>task.py</code>
-
-<ul>
-<li>実行する Python スクリプトを指定
-<br /></li>
-</ul></li>
-</ul></li>
 </ul>
-
-<div class="notices note" ><p>上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は<a href="../python-api-install#2-linux-へのインストール">インストールガイド</a>を参照ください。<br>
+</li>
+<li><code>task.py</code>
+<ul>
+<li>実行する Python スクリプトを指定</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="notices note" >
+<p>上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は<a href="../python-api-install#2-linux-%E3%81%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">インストールガイド</a>を参照ください。<br>
 より詳細な cron の使い方はubuntu の Community Help Wiki の <a href="https://help.ubuntu.com/community/CronHowto">Cron How to</a> をご覧下さい。</p>
 </div>
-
 
 
     

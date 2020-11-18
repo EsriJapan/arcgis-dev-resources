@@ -67,8 +67,10 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
 </div>
 
 {{% notice warning %}}
+
 指定するパス等にスペースが含まれている場合はダブル クォーテーションで囲んでください。<br>
 また半角括弧 `()` が含まれるパスを指定すると正常に動作しないため、ディレクトリ名などを変更してください
+
 {{% /notice %}}
 
 * OK ボタンをクリックし、要求された場合はユーザーアカウント情報を入力
@@ -115,6 +117,8 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
     
 
 {{% notice note %}}
+
 上記の内容は Anaconda3 をインストールして構築した ArcGIS API for Python の実行環境を想定しています。詳細は[インストールガイド](../python-api-install#2-linux-へのインストール)を参照ください。<br>
 より詳細な cron の使い方はubuntu の Community Help Wiki の [Cron How to](https://help.ubuntu.com/community/CronHowto) をご覧下さい。
+
 {{% /notice %}}

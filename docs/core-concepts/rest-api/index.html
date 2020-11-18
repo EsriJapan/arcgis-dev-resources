@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:21 JST">
 <title>REST API :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -697,14 +704,11 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ロケーション-ベースのサービス">ロケーション ベースのサービス</a></li>
-<li><a href="#arcgis-enterprise-api">ArcGIS Enterprise API</a></li>
-<li><a href="#ホスト-サービス">ホスト サービス</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ロケーション-ベースのサービス">ロケーション ベースのサービス</a></li>
+    <li><a href="#arcgis-enterprise-api">ArcGIS Enterprise API</a></li>
+    <li><a href="#ホスト-サービス">ホスト サービス</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -723,16 +727,10 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。</p>
-
+    <p>ArcGIS では、地理情報サービスやマッピングサービス、ユーザーやコンテンツを管理するサービスとして、ArcGIS REST APIを提供しています。</p>
 <p>以下では、API で一般的に使用されるコンポーネントの概要を紹介します。</p>
-
 <h2 id="ロケーション-ベースのサービス">ロケーション ベースのサービス</h2>
-
 <p><a href="https://www.esrij.com/products/arcgis-online">ArcGIS Online</a> は、ジオコーディング、ネットワーク解析、空間解析などのロケーションベースの RESTful なサービスを提供しています。これらのサービスを使用すると<a href="https://www.esrij.com/products/arcgis-online/credits/">クレジット</a>を消費します。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">Geocoding and search API</a></li>
 <li><a href="https://developers.arcgis.com/rest/network/api-reference/overview-of-network-analysis-services.htm">Routing API</a></li>
@@ -740,16 +738,11 @@ if (!doNotTrack) {
 <li><a href="https://developers.arcgis.com/rest/analysis/api-reference/getting-started.htm">Spatial API</a></li>
 <li><a href="https://developers.arcgis.com/rest/elevation/api-reference/get-started-with-elevation-services.htm">Elevation API</a></li>
 </ul>
-
 <h2 id="arcgis-enterprise-api">ArcGIS Enterprise API</h2>
-
 <p>ArcGIS Enterprise REST API は、<a href="https://www.esrij.com/products/arcgis-online">ArcGIS Online</a>や独自のインフラストラクチャー上に構築可能な <a href="https://www.esrij.com/products/arcgis-enterprise/">ArcGIS Enterprise</a>によって提供されています。ArcGIS Enterprise API は、マップ、レイヤー、コンテンツなどのアイテムの管理や、組織内のユーザーの権限設定や認証の処理に使用されます。
 ArcGIS Portal API の一般的な使用例は、<a href="https://developers.arcgis.com/rest/users-groups-and-items/working-with-users-groups-and-items.htm">ユーザー、グループ、アイテムの操作</a>やポータル上の<a href="https://developers.arcgis.com/rest/users-groups-and-items/search.htm">アイテムの検索</a>などがあります。</p>
-
 <h2 id="ホスト-サービス">ホスト サービス</h2>
-
 <p>ArcGIS Server REST API を使用すると、ArcGIS Enterprise、ArcGIS Online のいずれかに公開した <a href="https://developers.arcgis.com/rest/services-reference/working-with-services-you-ve-published.htm">ホスト サービス</a>を操作することができます。たとえば、ArcGIS Online にデータを登録すると、ArcGIS Server のインスタンス上でホストされているフィーチャレイヤーが作成されます。そして、ArcGIS Server が提供する ArcGIS REST API を使用してレイヤーにアクセスすることができます。ArcGIS Server のサービスには、次のようなさまざまな ArcGIS で作成して公開できるものがあります。</p>
-
 <ul>
 <li><a href="https://developers.arcgis.com/rest/services-reference/feature-service.htm">フィーチャー サービス</a></li>
 <li><a href="https://developers.arcgis.com/rest/services-reference/map-service.htm">マップ サービス</a></li>

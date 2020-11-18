@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T18:01:22 JST">
-<title>ウィジェット開発のデバック :: ArcGIS for Developer 開発リソース集</title>
+<meta name="revised" content="2020-11-18T18:01:21 JST">
+<title>アプリ ログインの制限 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ウィジェット開発におけるデバック方法について紹介します。">
+<meta name="description" content="アプリケーションにアプリ ログインを組み込む際には、いくつかの制限があります。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+  <body data-url="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -76,7 +76,7 @@ if (!doNotTrack) {
             <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
             <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/core-concepts/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/core-concepts/">コア コンセプト</a>
@@ -104,7 +104,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
             アプリ ログインの制限
@@ -244,11 +244,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
@@ -301,11 +300,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item">
@@ -322,7 +320,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
@@ -364,7 +362,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
             ウィジェット開発のデバック
@@ -692,17 +690,7 @@ if (!doNotTrack) {
 
 
 
-
-
-
-
-
-
- <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェット開発のデバック
-
- 
-
- 
+ <a href='/arcgis-dev-resources/'>ArcGIS for Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/core-concepts/'>コア コンセプト</a> > アプリ ログインの制限
 
  
 
@@ -717,20 +705,7 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#ウィジェット開発環境の設定">ウィジェット開発環境の設定</a></li>
-    <li><a href="#visual-studio-コード">Visual Studio コード</a></li>
-    <li><a href="#デバッグツール">デバッグツール</a>
-      <ul>
-        <li><a href="#ブラウザ開発ツール">ブラウザ開発ツール</a></li>
-        <li><a href="#dom-要素">DOM 要素</a></li>
-        <li><a href="#javascript-のソースとブレークポイント">JavaScript のソースとブレークポイント</a></li>
-        <li><a href="#global-experience-builder-の変数">Global Experience Builder の変数</a></li>
-        <li><a href="#ビルダーページでのデバッグ">ビルダーページでのデバッグ</a></li>
-        <li><a href="#ネットワーク">ネットワーク</a></li>
-        <li><a href="#キャッシュのクリア">キャッシュのクリア</a></li>
-        <li><a href="#react-開発ツール">React 開発ツール</a></li>
-      </ul>
-    </li>
+    <li><a href="#アプリ-ログインの制限">アプリ ログインの制限</a></li>
   </ul>
 </nav>
         </div>
@@ -742,7 +717,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>ウィジェット開発のデバック</h1>
+    <h1>アプリ ログインの制限</h1>
   
 
 
@@ -750,57 +725,21 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="ウィジェット開発環境の設定">ウィジェット開発環境の設定</h2>
-<p>カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。<a href="https://code.visualstudio.com/">Visual Studio Code</a> は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。</p>
-<p>作成したカスタム ウィジェットは、Experience Builder ファイル構造の <code>client</code> フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして <code>client</code> フォルダを開きます。</p>
-<ol>
-<li><code>ファイル</code> メニューをクリックします。</li>
-<li><code>フォルダを開く</code> をクリックします。</li>
-<li>Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の <code>client</code> フォルダを参照します。</li>
-</ol>
-<p>これにより、<code>client</code> フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について <code>client</code> フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。</p>
-<h2 id="visual-studio-コード">Visual Studio コード</h2>
-<p>テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる<a href="https://code.visualstudio.com/docs/editor/extension-gallery">拡張機能のマーケットプレイス</a>があります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</p>
+    <h2 id="アプリ-ログインの制限">アプリ ログインの制限</h2>
+<p>アプリケーションにアプリ ログインを組み込む際には、いくつかの制限があります。</p>
 <ul>
 <li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion">IntelliSense for CSS class names in HTML</a> - ワークスペースで見つけた定義に基づいてHTML クラス属性 の CSS クラス名を補完します (ワークスペースの中の CSS を読み込んで HTML 上でクラス指定するときに入力候補を表示します)。</p>
+<p>アプリケーション内で取得されたトークンは、パブリックなコンテンツやサービスのみを読み取ることができます。プライベート コンテンツにアクセスする場合、アプリ ログインを使用することはできませんが、ArcGIS Online を利用していない（指定ユーザーを保持していない）組織 へのアプリの配布や販売を目的としている場合、アプリへ独自ログインの仕組み (Identity/アイデンティティ など) を使用してコンテンツへのアクセスを制御することができます。</p>
 </li>
 <li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components">vcode-styled-components</a> -  styled-components のシンタックスハイライトを付けます。</p>
+<p>アプリケーション内で取得されたトークンは、Esri がホストするプレミアム コンテンツやサービスを読み取り、アプリケーションの利用組織に代わってクレジットを消費することができます。</p>
+</li>
+<li>
+<p>アプリケーションは、ArcGIS Online または ArcGIS Enterprise 上のアイテム (レイヤー、ファイル、サービス、マップ) の作成、更新、共有、変更、または削除を行うことはできません。アプリ ログインを使用して作成されたアプリケーションは、ArcGIS Marketplace に載せることはできません。</p>
 </li>
 </ul>
-<h2 id="デバッグツール">デバッグツール</h2>
-<p>Web ブラウザ内には、カスタム ウィジェットを効率的に構築するために使用できるさまざまなデバッグツールがあります。</p>
-<h3 id="ブラウザ開発ツール">ブラウザ開発ツール</h3>
-<p>Experience Builder のオーサリング インターフェイスまたはプレビュー モードでは、ブラウザの開発者ツールを開いてデバッグ ツールにアクセスすることができます。開発者ツールを開くには</p>
-<ul>
-<li>Chrome で、メイン メニューをクリックし、「その他のツール」→「開発者ツール」を選択します。(<a href="https://developers.google.com/web/tools/chrome-devtools/open">詳細</a>)</li>
-<li>Firefoxで、[メインメニュー] &gt; [Web開発者] &gt; [ツールの切り替え] ((<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">詳細</a>)をクリックします。</li>
-</ul>
-<h3 id="dom-要素">DOM 要素</h3>
-<p>ブラウザの開発者ツールで、<strong>Sources</strong> (Chrome) または <strong>Debugger</strong> (Firefox) タブをクリックします。ここでは、カスタムウィジェットの DOM を調べて現在の状態を確認できます。</p>
-<h3 id="javascript-のソースとブレークポイント">JavaScript のソースとブレークポイント</h3>
-<p>ブラウザの開発者ツールで、<strong>Elements</strong> (Chrome) または <strong>Inspector</strong> (Firefox) タブをクリックします。ここでは、ページの JavaScript コードを閲覧することができます。ウィジェットが開かれていることを確認して(該当する場合)、左側のファイルブラウザで <strong>webpack</strong> を選択してウィジェットの <strong>widget.tsx</strong> ファイルを見つけてダブルクリックしてください。別の方法としては、<code>ctrl + p</code> と入力してファイル コマンドパレットを開き、<strong>widget.tsx</strong> と入力してください。目的の <strong>widget.tsx</strong> ファイルはファイル名の最後に <code>?zzzz</code> (<code>zzzz</code> は数字と文字の組み合わせ) が付いているものになります。</p>
-<p>ウィジェット ファイルを開くと、その TypeScript コードを見ることができます。行番号をクリックしてブレークポイントを設定することができます (詳細: <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints/">Chrome</a>、<a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Set_a_breakpoint">Firefox</a>)</p>
-<h3 id="global-experience-builder-の変数">Global Experience Builder の変数</h3>
-<p>コードがブレークポイントで停止している場合、右側のパネルで <strong>Scope</strong> ペインを開き、現在スコープ内にある変数を見ることができます。<strong>Global</strong> まで下にスクロールしてください。ここには、Experience Builder がいくつかの便利な変数を配置しています。これらの変数を調べて、Experience Builder 内のさまざまな現在のステータスを確認できます。</p>
-<p>これらの変数には、以下のものがあります。</p>
-<ul>
-<li><code>_appState</code> - Experience Builder の現在の状態に関するさまざまなプロパティ。</li>
-<li><code>_dataSourceManager</code> - ウィジェット内の現在のデータソース。</li>
-<li><code>_widgetManager</code> - ウィジェットがロードされているかどうかなど、ウィジェットに関する様々なプロパティ。</li>
-<li><code>_sessionManager</code> - ログイン情報の確認と管理に使用できます。
-他にも、あまり使われていないグローバル変数もあります。すべてのリストを見るには、ファイル <strong>clientjimu-core\jimu-coreliblib\typeswindow.d.ts</strong> を参照してください。</li>
-</ul>
-<h3 id="ビルダーページでのデバッグ">ビルダーページでのデバッグ</h3>
-<p>ビルダーページでデバッグすると、Experience は iframe で読み込まれます。このため、Javascript の実行コンテキストには <code>top</code> と <code>_appWindow</code> の 2 つに分かれています。<code>top</code> コンテキストがビルダーコンテキストで、<code>_appWindow</code> コンテキストが Experience コンテキストです。コンソールでグローバル変数を検査する場合は、ブラウザの開発者ツールのドロップダウン リストで正しいコンテキストが選択されていることを確認してください。ブレークポイントを使用してデバッグしているときは、<code>window.jimuConfig.isBuilder</code> を見て実行コンテキストを判断してください。true はコードが ビルダーコンテキスト内にあることを意味します。</p>
-<h3 id="ネットワーク">ネットワーク</h3>
-<p>ブラウザの開発者ツールで、<strong>Network</strong> タブをクリックします。ここでは、Experience によって送受信されるネットワークのリクエストを確認できます。</p>
-<h3 id="キャッシュのクリア">キャッシュのクリア</h3>
-<p>コードをデバッグしている間は、コードを変更したり、ページを頻繁にリロードしたりすることがあります。ブラウザが予期せずにキャッシュし、開発中に混乱を招くこともあります。このため、ブラウザを更新するたびにキャッシュをクリアするか、開発中にネットワーク開発者ツールの <strong>Disable cache</strong> にするチェックボックスを有効にすることが重要です。</p>
-<h3 id="react-開発ツール">React 開発ツール</h3>
-<p>Experience Builder の Experiences は、<a href="https://reactjs.org/">React JavaScript ライブラリ</a>を使用しています。上記の DOM Elements ブラウザに加えて、React がどのように動作するかを知り、React コンポーネントについてさらに詳しい情報を表示してくれるブラウザ拡張機能をインストールすることができます。ブラウザの拡張機能ストア (<a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">Chrome</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/react-devtools/">Firefox</a>) から拡張機能をインストールし、ツールを有効にします。これで、ブラウザの開発者ツールに 2 つのタブが追加されました。<strong>Components</strong> と <strong>Profiler</strong> です。</p>
-<p><strong>Components</strong> タブをクリックします。Search または &ldquo;Select Element&rdquo; ボタンを使用して、コンポーネントツリーでカスタム ウィジェットを選択します。選択されると、右側の情報パネルにコンポーネントの props と state が表示されます。</p>
+<p>組織内のプライベート コンテンツや、ユーザーと共有されているコンテンツにアクセスする場合、認証には指定ユーザ ログインを使用する必要があります。</p>
+<p>プライベート コンテンツで AppID を使用することはできませんが、ArcGIS Online を利用していない（指定ユーザーを保持していない）組織 へのアプリの配布や販売を目的としている場合、公開で共有されているコンテンツであることを考慮して、アプリへ独自ログインを使用することはライセンス契約に反しません。</p>
 
 
     
@@ -812,8 +751,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" title="ウィジェット間の通信"> <i class="fa fa-chevron-left"></i><label>ウィジェット間の通信</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" title="サードパーティ製のライブラリ使用" style="margin-right: 0px;"><label>サードパーティ製のライブラリ使用</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/core-concepts/security-and-authentication/" title="セキュリティと認証"> <i class="fa fa-chevron-left"></i><label>セキュリティと認証</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/core-concepts/layers/" title="レイヤー" style="margin-right: 0px;"><label>レイヤー</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

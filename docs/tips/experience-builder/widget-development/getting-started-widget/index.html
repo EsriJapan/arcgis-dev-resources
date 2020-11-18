@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:22 JST">
 <title>ウィジェット開発のスタート :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -709,18 +716,15 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#typescript">TypeScript</a></li>
-<li><a href="#react">React</a></li>
-<li><a href="#jsx">JSX</a></li>
-<li><a href="#jimu">Jimu</a></li>
-<li><a href="#インストール">インストール</a></li>
-<li><a href="#ウィジェット">ウィジェット</a></li>
-<li><a href="#基本的な考え方">基本的な考え方</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#typescript">TypeScript</a></li>
+    <li><a href="#react">React</a></li>
+    <li><a href="#jsx">JSX</a></li>
+    <li><a href="#jimu">Jimu</a></li>
+    <li><a href="#インストール">インストール</a></li>
+    <li><a href="#ウィジェット">ウィジェット</a></li>
+    <li><a href="#基本的な考え方">基本的な考え方</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -739,43 +743,26 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。</p>
-
+    <p>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。</p>
 <ul>
 <li>TypeScript</li>
 <li>React</li>
 <li>JSX</li>
 <li>Jimu</li>
 </ul>
-
 <h2 id="typescript">TypeScript</h2>
-
 <p><a href="https://www.typescriptlang.org/">TypeScript</a> は JavaScript のスーパーセットです。TypeScript はウィジェットの開発に使用されている言語です。TypeScript とは何か、なぜ TypeScript が使われているのか、どのように使えるのかについて詳しく説明している<a href="https://www.sitepen.com/blog/update-the-definitive-typescript-guide/">オンラインリソース</a>が多くあります。</p>
-
 <h2 id="react">React</h2>
-
 <p>React はユーザーインターフェイスを作成するための JavaScript ライブラリです。React は DOM からの抽象化であり、アプリケーションと UI は、さまざまな状態で連携し、それらの状態をレンダリングすることで UI の一貫性を保つことを容易にします。例えば、Experience Builder では、ウィジェットの状態を更新してから、この新しい状態に基づいて UI をレンダリングするだけです。インターフェースの構築を容易にするために、Experience Builder では <a href="https://reactstrap.github.io/">reactstrap</a> を使用しています。これは Bootstrap 4 をベースにした React コンポーネントの UI ライブラリです。</p>
-
 <p>React を使った開発については、<a href="https://reactjs.org/">React</a> のドキュメントを参照してください。</p>
-
 <h2 id="jsx">JSX</h2>
-
 <p><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> は JavaScript の拡張構文で、React を通してウィジェットの UI がどのように表示されるかを記述することができます。</p>
-
 <h2 id="jimu">Jimu</h2>
-
 <p>Jimu は、ウィジェットの作成に使用する Experience Builder の JavaScript ライブラリです。</p>
-
 <h2 id="インストール">インストール</h2>
-
 <p>Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、<a href="../../install-guide">インストールガイド</a>を参照してください。</p>
-
 <h2 id="ウィジェット">ウィジェット</h2>
-
 <p>ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。</p>
-
 <ul>
 <li>ウィジェットの設定 (id、label、configなど)</li>
 <li>state や isClassLoaded などを含むウィジェットのランタイム情報</li>
@@ -783,15 +770,10 @@ if (!doNotTrack) {
 <li>データソースのインスタンスとステータス情報</li>
 <li>URL パラメータ情報</li>
 </ul>
-
 <p>必要最小限のファイルですぐに始めるには、<code>your-extensions\widgets</code> フォルダ内の <code>simple widget</code> を参照してください。</p>
-
 <p>ウィジェット開発の詳細については、<a href="../extend-base-widget">ウィジェットの実装</a>について学習してください。</p>
-
 <h2 id="基本的な考え方">基本的な考え方</h2>
-
 <p>Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。</p>
-
 <ul>
 <li><a href="../../core-concepts">コア コンセプト</a></li>
 <li>コードを見て学ぶのが一番良い場合は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">リポジトリ</a>からクローンして、<a href="https://developers.arcgis.com/experience-builder/sample-code/">サンプル</a>を参照してください。</li>

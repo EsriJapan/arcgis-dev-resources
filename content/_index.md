@@ -14,24 +14,28 @@ description = ""
 
 
 {{% panel theme="success" header="目次" %}}
-* [コア コンセプト](core-concepts)
- * ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
-  
-* [スタートアップガイド](guide)
- * 開発を始める方のために必要なアカウントの作成から、マップの作成、各 API / SDKを使った開発の基本的な流れを手順にそって学べる情報をまとめています。
 
-* [技術 Tips 集](tips)
- * 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術Tipsをまとめています。
+- [コア コンセプト](core-concepts)
+
+    - ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
+  
+- [スタートアップガイド](guide)
+    
+    - 開発を始める方のために必要なアカウントの作成から、マップの作成、各 API / SDKを使った開発の基本的な流れを手順にそって学べる情報をまとめています。
+
+- [技術 Tips 集](tips)
+ 
+    - 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術Tipsをまとめています。
 {{% /panel %}}
 
 
 　　　
 #### 開発者オープン コミュニティ
-* [Esri GitHub](https://esri.github.io/)
- * 米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。
-* [Esri Japan GitHub](https://esrijapan.github.io/)
- * ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。
-* [GeoNet](https://community.esri.com/)
- * 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。
-* [GeoNet ArcGIS 開発者コミュニティ](https://community.esri.com/groups/devcom-jp)
- * ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。
+- [Esri GitHub](https://esri.github.io/)
+    - 米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。
+- [Esri Japan GitHub](https://esrijapan.github.io/)
+    - ESRIジャパンのスタッフが作成したサンプル プログラムを GitHub で共有しています。
+- [GeoNet](https://community.esri.com/)
+    - 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。
+- [GeoNet ArcGIS 開発者コミュニティ](https://community.esri.com/groups/devcom-jp)
+    - ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。

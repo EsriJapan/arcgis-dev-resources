@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:21 JST">
 <title>Web シーン :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -697,21 +704,18 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#web-シーンとは">Web シーンとは？</a></li>
-<li><a href="#なぜ-web-シーンを使うのか">なぜ Web シーンを使うのか？</a></li>
-<li><a href="#web-シーンの仕様">Web シーンの仕様</a></li>
-<li><a href="#web-シーンの作成">Web シーンの作成</a></li>
-<li><a href="#arcgis-online">ArcGIS Online</a></li>
-<li><a href="#arcgis-pro">ArcGIS Pro</a></li>
-<li><a href="#arcgis-api-for-javascript">ArcGIS API for JavaScript</a></li>
-<li><a href="#web-シーンの表示">Web シーンの表示</a></li>
-<li><a href="#arcgis-api-for-javascript-1">ArcGIS API for JavaScript</a></li>
-<li><a href="#arcgis-configurable-apps">ArcGIS Configurable Apps</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#web-シーンとは">Web シーンとは？</a></li>
+    <li><a href="#なぜ-web-シーンを使うのか">なぜ Web シーンを使うのか？</a></li>
+    <li><a href="#web-シーンの仕様">Web シーンの仕様</a></li>
+    <li><a href="#web-シーンの作成">Web シーンの作成</a></li>
+    <li><a href="#arcgis-online">ArcGIS Online</a></li>
+    <li><a href="#arcgis-pro">ArcGIS Pro</a></li>
+    <li><a href="#arcgis-api-for-javascript">ArcGIS API for JavaScript</a></li>
+    <li><a href="#web-シーンの表示">Web シーンの表示</a></li>
+    <li><a href="#arcgis-api-for-javascript-1">ArcGIS API for JavaScript</a></li>
+    <li><a href="#arcgis-configurable-apps">ArcGIS Configurable Apps</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -730,88 +734,71 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="web-シーンとは">Web シーンとは？</h2>
-
+    <h2 id="web-シーンとは">Web シーンとは？</h2>
 <p>Web シーンは、異なるアプリケーション間で作成、スタイル設定、共有できる 3D マップです。Web シーンは、2 次元の <a href="http://esrijapan.github.io/arcgis-dev-resources/core-concepts/web-maps/">Web マップ</a>とは異なり、一般的に都市や自然環境、建物、交通システムを表す 3D 地理空間データを含むシーンです。Web シーンは、Web シーン仕様に基づいた JSON で構成されており、マップの範囲、カメラの高さと角度、ベースマップ、レイヤー、レイヤースタイルなどの設定が含まれています。</p>
-
 <p>ArcGIS Online の Web シーンの例としては、<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=2b721b9e7bef45e2b7ff78a398a33acc">オレゴン州ポートランド市の 3D 風景</a>があります。</p>
-
 <h2 id="なぜ-web-シーンを使うのか">なぜ Web シーンを使うのか？</h2>
-
 <p>Web シーンは、<a href="https://www.esrij.com/products/arcgis-online/">ArcGIS Online</a> や <a href="https://www.esrij.com/products/arcgis-desktop/">ArcGIS Pro</a> で作成し、<a href="https://www.esrij.com/products/arcgis-storymaps/">ArcGIS StoryMaps</a>や <a href="https://www.esrij.com/products/developer/">ArcGIS の API および SDK</a> を使用して構築されたアプリケーションなどの他の製品で表示することができます。アプリケーションが Web シーンをロードすると、以前に保存した設定が自動的にロードされるため、アプリケーションの開発や <a href="https://www.esrij.com/question/85268/">ArcGIS プラットフォーム</a>全体での 3D シーンの共有が容易になります。</p>
-
 <p>例えば、ポートランド市の Web シーンのコピーを作成し、ArcGIS Online で人口統計データを含む別のフィーチャ レイヤーを追加し、ArcGIS API for JavaScript を使用してアプリ上で新しい Web シーンを表示することができます。</p>
-
 <h2 id="web-シーンの仕様">Web シーンの仕様</h2>
-
 <p><a href="https://developers.arcgis.com/web-scene-specification/">Web シーンの仕様</a>は、<a href="https://www.json.org/json-en.html">JSON</a> の仕様に基づいており、ArcGIS プラットフォーム全体で Web シーンを共有、作成、編集、可視化、参照などをすることができます。</p>
-
 <p>Web シーンは JSON として、ArcGIS Online または ArcGIS Enterprise でホストされ、REST API を介して使用することができます。技術的な側面で言うと、Web シーンは、ArcGIS Online または ArcGIS Enterprise に保存された<a href="https://developers.arcgis.com/rest/users-groups-and-items/item.htm">コンテンツ アイテム</a>のことを指します。</p>
-
 <p>すべてのウェブシーンには一意の ID があり、パブリックに公開したり、特定のグループやユーザーに制限して公開することもできます。</p>
-
 <p>例えば、<a href="https://www.arcgis.com/home/webscene/viewer.html?webscene=2b721b9e7bef45e2b7ff78a398a33acc">ポートランド市の Web シーン</a> はパブリックに公開されており、一意の ID：2b721b9e7bef45e2b7ff78a398a33acc が割り当てられています。</p>
-
 <p>この Web シーンは、以下の URL で REST API の<a href="https://developers.arcgis.com/rest/users-groups-and-items/user-item-link-.htm">コンテンツ アイテム操作</a>のリクエストを行うことで、JSON形式で表示することができます。</p>
-
 <pre><code>https://www.arcgis.com/sharing/rest/content/items/2b721b9e7bef45e2b7ff78a398a33acc/data
-</code></pre>
-
-<p>この REST で取得できる JSON は以下の通りです(一部抜粋)。</p>
-
-<pre><code class="language-json">{
-    &quot;operationalLayers&quot;: [
+</code></pre><p>この REST で取得できる JSON は以下の通りです(一部抜粋)。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;operationalLayers&#34;</span>: [
         {
-            &quot;id&quot;: &quot;14a3b7e8769-layer5&quot;,
-            &quot;opacity&quot;: 1,
-            &quot;title&quot;: &quot;Topographic Map 3D&quot;,
-            &quot;url&quot;: &quot;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Portland_v1/MapServer&quot;,
-            &quot;visibility&quot;: true,
-            &quot;layerType&quot;: &quot;ArcGISTiledMapServiceLayer&quot;,
-            &quot;itemId&quot;: &quot;77618c5b716a4417a2e72d75ccc62f30&quot;
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;14a3b7e8769-layer5&#34;</span>,
+            <span style="color:#f92672">&#34;opacity&#34;</span>: <span style="color:#ae81ff">1</span>,
+            <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Topographic Map 3D&#34;</span>,
+            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Portland_v1/MapServer&#34;</span>,
+            <span style="color:#f92672">&#34;visibility&#34;</span>: <span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;layerType&#34;</span>: <span style="color:#e6db74">&#34;ArcGISTiledMapServiceLayer&#34;</span>,
+            <span style="color:#f92672">&#34;itemId&#34;</span>: <span style="color:#e6db74">&#34;77618c5b716a4417a2e72d75ccc62f30&#34;</span>
         },
         {
-            &quot;id&quot;: &quot;159085c4486-layer-4&quot;,
-            &quot;showLegend&quot;: true,
-            &quot;opacity&quot;: 1,
-            &quot;disablePopup&quot;: false,
-            &quot;title&quot;: &quot;Buildings&quot;,
-            &quot;url&quot;: &quot;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Buildings_Portland/SceneServer/layers/0&quot;,
-            &quot;visibility&quot;: true,
-            &quot;layerType&quot;: &quot;ArcGISSceneServiceLayer&quot;,
-            &quot;itemId&quot;: &quot;d96440302be847f6aa6e6ac0012c53b0&quot;,
-            &quot;layerDefinition&quot;: {
-                &quot;elevationInfo&quot;: {
-                    &quot;mode&quot;: &quot;absoluteHeight&quot;
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;159085c4486-layer-4&#34;</span>,
+            <span style="color:#f92672">&#34;showLegend&#34;</span>: <span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;opacity&#34;</span>: <span style="color:#ae81ff">1</span>,
+            <span style="color:#f92672">&#34;disablePopup&#34;</span>: <span style="color:#66d9ef">false</span>,
+            <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Buildings&#34;</span>,
+            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Buildings_Portland/SceneServer/layers/0&#34;</span>,
+            <span style="color:#f92672">&#34;visibility&#34;</span>: <span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;layerType&#34;</span>: <span style="color:#e6db74">&#34;ArcGISSceneServiceLayer&#34;</span>,
+            <span style="color:#f92672">&#34;itemId&#34;</span>: <span style="color:#e6db74">&#34;d96440302be847f6aa6e6ac0012c53b0&#34;</span>,
+            <span style="color:#f92672">&#34;layerDefinition&#34;</span>: {
+                <span style="color:#f92672">&#34;elevationInfo&#34;</span>: {
+                    <span style="color:#f92672">&#34;mode&#34;</span>: <span style="color:#e6db74">&#34;absoluteHeight&#34;</span>
                 },
-                &quot;drawingInfo&quot;: {
-                    &quot;renderer&quot;: {
-                        &quot;authoringInfo&quot;: {},
-                        &quot;type&quot;: &quot;simple&quot;,
-                        &quot;label&quot;: &quot;&quot;,
-                        &quot;symbol&quot;: {
-                            &quot;type&quot;: &quot;MeshSymbol3D&quot;,
-                            &quot;symbolLayers&quot;: [
+                <span style="color:#f92672">&#34;drawingInfo&#34;</span>: {
+                    <span style="color:#f92672">&#34;renderer&#34;</span>: {
+                        <span style="color:#f92672">&#34;authoringInfo&#34;</span>: {},
+                        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;simple&#34;</span>,
+                        <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+                        <span style="color:#f92672">&#34;symbol&#34;</span>: {
+                            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;MeshSymbol3D&#34;</span>,
+                            <span style="color:#f92672">&#34;symbolLayers&#34;</span>: [
                                 {
-                                    &quot;material&quot;: {
-                                        &quot;color&quot;: [
-                                            255,
-                                            255,
-                                            255
+                                    <span style="color:#f92672">&#34;material&#34;</span>: {
+                                        <span style="color:#f92672">&#34;color&#34;</span>: [
+                                            <span style="color:#ae81ff">255</span>,
+                                            <span style="color:#ae81ff">255</span>,
+                                            <span style="color:#ae81ff">255</span>
                                         ]
                                     },
-                                    &quot;type&quot;: &quot;Fill&quot;,
-                                    &quot;edges&quot;: {
-                                        &quot;type&quot;: &quot;solid&quot;,
-                                        &quot;color&quot;: [
-                                            0,
-                                            0,
-                                            0
+                                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;Fill&#34;</span>,
+                                    <span style="color:#f92672">&#34;edges&#34;</span>: {
+                                        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;solid&#34;</span>,
+                                        <span style="color:#f92672">&#34;color&#34;</span>: [
+                                            <span style="color:#ae81ff">0</span>,
+                                            <span style="color:#ae81ff">0</span>,
+                                            <span style="color:#ae81ff">0</span>
                                         ],
-                                        &quot;transparency&quot;: 60,
-                                        &quot;size&quot;: 1
+                                        <span style="color:#f92672">&#34;transparency&#34;</span>: <span style="color:#ae81ff">60</span>,
+                                        <span style="color:#f92672">&#34;size&#34;</span>: <span style="color:#ae81ff">1</span>
                                     }
                                 }
                             ]
@@ -819,122 +806,108 @@ if (!doNotTrack) {
                     }
                 }
             },
-            &quot;showLabels&quot;: false
+            <span style="color:#f92672">&#34;showLabels&#34;</span>: <span style="color:#66d9ef">false</span>
         }
     ],
-    &quot;baseMap&quot;: {
-        &quot;baseMapLayers&quot;: [
+    <span style="color:#f92672">&#34;baseMap&#34;</span>: {
+        <span style="color:#f92672">&#34;baseMapLayers&#34;</span>: [
             {
-                &quot;id&quot;: &quot;159085c1a03-layer-0&quot;,
-                &quot;opacity&quot;: 1,
-                &quot;title&quot;: &quot;World Topo Map&quot;,
-                &quot;url&quot;: &quot;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;,
-                &quot;visibility&quot;: true,
-                &quot;layerType&quot;: &quot;ArcGISTiledMapServiceLayer&quot;
+                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;159085c1a03-layer-0&#34;</span>,
+                <span style="color:#f92672">&#34;opacity&#34;</span>: <span style="color:#ae81ff">1</span>,
+                <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;World Topo Map&#34;</span>,
+                <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&#34;</span>,
+                <span style="color:#f92672">&#34;visibility&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;layerType&#34;</span>: <span style="color:#e6db74">&#34;ArcGISTiledMapServiceLayer&#34;</span>
             }
         ],
-        &quot;id&quot;: &quot;basemap&quot;,
-        &quot;title&quot;: &quot;Topographic&quot;,
-        &quot;elevationLayers&quot;: [
+        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;basemap&#34;</span>,
+        <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Topographic&#34;</span>,
+        <span style="color:#f92672">&#34;elevationLayers&#34;</span>: [
             {
-                &quot;id&quot;: &quot;globalElevation&quot;,
-                &quot;listMode&quot;: &quot;hide&quot;,
-                &quot;title&quot;: &quot;Terrain3D&quot;,
-                &quot;url&quot;: &quot;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&quot;,
-                &quot;visibility&quot;: true,
-                &quot;layerType&quot;: &quot;ArcGISTiledElevationServiceLayer&quot;
+                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;globalElevation&#34;</span>,
+                <span style="color:#f92672">&#34;listMode&#34;</span>: <span style="color:#e6db74">&#34;hide&#34;</span>,
+                <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Terrain3D&#34;</span>,
+                <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&#34;</span>,
+                <span style="color:#f92672">&#34;visibility&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;layerType&#34;</span>: <span style="color:#e6db74">&#34;ArcGISTiledElevationServiceLayer&#34;</span>
             }
         ]
     },
-    &quot;ground&quot;: {
-        &quot;layers&quot;: [
+    <span style="color:#f92672">&#34;ground&#34;</span>: {
+        <span style="color:#f92672">&#34;layers&#34;</span>: [
             {
-                &quot;id&quot;: &quot;globalElevation&quot;,
-                &quot;listMode&quot;: &quot;hide&quot;,
-                &quot;title&quot;: &quot;Terrain3D&quot;,
-                &quot;url&quot;: &quot;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&quot;,
-                &quot;visibility&quot;: true,
-                &quot;layerType&quot;: &quot;ArcGISTiledElevationServiceLayer&quot;
+                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;globalElevation&#34;</span>,
+                <span style="color:#f92672">&#34;listMode&#34;</span>: <span style="color:#e6db74">&#34;hide&#34;</span>,
+                <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Terrain3D&#34;</span>,
+                <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer&#34;</span>,
+                <span style="color:#f92672">&#34;visibility&#34;</span>: <span style="color:#66d9ef">true</span>,
+                <span style="color:#f92672">&#34;layerType&#34;</span>: <span style="color:#e6db74">&#34;ArcGISTiledElevationServiceLayer&#34;</span>
             }
         ]
     },
-    &quot;heightModelInfo&quot;: {
-        &quot;heightModel&quot;: &quot;gravity_related_height&quot;,
-        &quot;heightUnit&quot;: &quot;meter&quot;
+    <span style="color:#f92672">&#34;heightModelInfo&#34;</span>: {
+        <span style="color:#f92672">&#34;heightModel&#34;</span>: <span style="color:#e6db74">&#34;gravity_related_height&#34;</span>,
+        <span style="color:#f92672">&#34;heightUnit&#34;</span>: <span style="color:#e6db74">&#34;meter&#34;</span>
     },
-    &quot;version&quot;: &quot;1.10&quot;,
-    &quot;authoringApp&quot;: &quot;WebSceneViewer&quot;,
-    &quot;authoringAppVersion&quot;: &quot;6.1.0.0&quot;,
-    &quot;presentation&quot;: {
-        /* omitted */
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.10&#34;</span>,
+    <span style="color:#f92672">&#34;authoringApp&#34;</span>: <span style="color:#e6db74">&#34;WebSceneViewer&#34;</span>,
+    <span style="color:#f92672">&#34;authoringAppVersion&#34;</span>: <span style="color:#e6db74">&#34;6.1.0.0&#34;</span>,
+    <span style="color:#f92672">&#34;presentation&#34;</span>: {
+        <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">omitted</span> <span style="color:#960050;background-color:#1e0010">*/</span>
     },
-    &quot;initialState&quot;: {
-        &quot;environment&quot;: {
-            &quot;lighting&quot;: {
-                &quot;datetime&quot;: 1458072640000,
-                &quot;displayUTCOffset&quot;: -8
+    <span style="color:#f92672">&#34;initialState&#34;</span>: {
+        <span style="color:#f92672">&#34;environment&#34;</span>: {
+            <span style="color:#f92672">&#34;lighting&#34;</span>: {
+                <span style="color:#f92672">&#34;datetime&#34;</span>: <span style="color:#ae81ff">1458072640000</span>,
+                <span style="color:#f92672">&#34;displayUTCOffset&#34;</span>: <span style="color:#ae81ff">-8</span>
             }
         },
-        &quot;viewpoint&quot;: {
-            &quot;rotation&quot;: 12.457625182769334,
-            &quot;scale&quot;: 6263.2876185532195,
-            &quot;targetGeometry&quot;: {
-                &quot;spatialReference&quot;: {
-                    &quot;latestWkid&quot;: 3857,
-                    &quot;wkid&quot;: 102100
+        <span style="color:#f92672">&#34;viewpoint&#34;</span>: {
+            <span style="color:#f92672">&#34;rotation&#34;</span>: <span style="color:#ae81ff">12.457625182769334</span>,
+            <span style="color:#f92672">&#34;scale&#34;</span>: <span style="color:#ae81ff">6263.2876185532195</span>,
+            <span style="color:#f92672">&#34;targetGeometry&#34;</span>: {
+                <span style="color:#f92672">&#34;spatialReference&#34;</span>: {
+                    <span style="color:#f92672">&#34;latestWkid&#34;</span>: <span style="color:#ae81ff">3857</span>,
+                    <span style="color:#f92672">&#34;wkid&#34;</span>: <span style="color:#ae81ff">102100</span>
                 },
-                &quot;x&quot;: -1.365579170165746E7,
-                &quot;y&quot;: 5704194.302859826,
-                &quot;z&quot;: 27.754899251274765
+                <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">-1.365579170165746E7</span>,
+                <span style="color:#f92672">&#34;y&#34;</span>: <span style="color:#ae81ff">5704194.302859826</span>,
+                <span style="color:#f92672">&#34;z&#34;</span>: <span style="color:#ae81ff">27.754899251274765</span>
             },
-            &quot;camera&quot;: {
-                &quot;position&quot;: {
-                    &quot;spatialReference&quot;: {
-                        &quot;latestWkid&quot;: 3857,
-                        &quot;wkid&quot;: 102100
+            <span style="color:#f92672">&#34;camera&#34;</span>: {
+                <span style="color:#f92672">&#34;position&#34;</span>: {
+                    <span style="color:#f92672">&#34;spatialReference&#34;</span>: {
+                        <span style="color:#f92672">&#34;latestWkid&#34;</span>: <span style="color:#ae81ff">3857</span>,
+                        <span style="color:#f92672">&#34;wkid&#34;</span>: <span style="color:#ae81ff">102100</span>
                     },
-                    &quot;x&quot;: -1.3655391201614857E7,
-                    &quot;y&quot;: 5702381.612632008,
-                    &quot;z&quot;: 754.9944650307298
+                    <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">-1.3655391201614857E7</span>,
+                    <span style="color:#f92672">&#34;y&#34;</span>: <span style="color:#ae81ff">5702381.612632008</span>,
+                    <span style="color:#f92672">&#34;z&#34;</span>: <span style="color:#ae81ff">754.9944650307298</span>
                 },
-                &quot;heading&quot;: 347.54237481723067,
-                &quot;tilt&quot;: 60.786972566225145
+                <span style="color:#f92672">&#34;heading&#34;</span>: <span style="color:#ae81ff">347.54237481723067</span>,
+                <span style="color:#f92672">&#34;tilt&#34;</span>: <span style="color:#ae81ff">60.786972566225145</span>
             }
         }
     },
-    &quot;spatialReference&quot;: {
-        &quot;latestWkid&quot;: 3857,
-        &quot;wkid&quot;: 102100
+    <span style="color:#f92672">&#34;spatialReference&#34;</span>: {
+        <span style="color:#f92672">&#34;latestWkid&#34;</span>: <span style="color:#ae81ff">3857</span>,
+        <span style="color:#f92672">&#34;wkid&#34;</span>: <span style="color:#ae81ff">102100</span>
     },
-    &quot;viewingMode&quot;: &quot;global&quot;
+    <span style="color:#f92672">&#34;viewingMode&#34;</span>: <span style="color:#e6db74">&#34;global&#34;</span>
 }
-</code></pre>
-
-<h2 id="web-シーンの作成">Web シーンの作成</h2>
-
+</code></pre></div><h2 id="web-シーンの作成">Web シーンの作成</h2>
 <p>テキスト エディタを使用して Web シーンを作成することもできますが、Esri は Web シーンを簡単に作成するための多くのツールを提供しています。</p>
-
 <h2 id="arcgis-online">ArcGIS Online</h2>
-
 <p>ArcGIS Online を使用することが Web シーンを作成する最も簡単な方法です。
 <a href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-scenes.htm">シーンの基本操作</a>や ArcGIS Tutorials の <a href="https://developers.arcgis.com/labs/arcgisonline/create-a-web-scene/index.html">Web シーンの作成</a> を参照して Web シーンを作成することができます。</p>
-
 <h2 id="arcgis-pro">ArcGIS Pro</h2>
-
 <p>ArcGIS Pro では、Web シーンの作成と共有がサポートされています。ArcGIS Pro ヘルプの <a href="https://pro.arcgis.com/en/pro-app/help/mapping/map-authoring/author-a-web-scene.htm">Web シーンの作成</a> を参照してください。</p>
-
 <h2 id="arcgis-api-for-javascript">ArcGIS API for JavaScript</h2>
-
 <p>ArcGIS API for JavaScript では、Web シーンを ArcGIS Online に保存することができます。詳細は <a href="https://developers.arcgis.com/javascript/latest/sample-code/webscene-save/index.html">Web シーンの保存</a> のサンプルを参照してください。</p>
-
 <h2 id="web-シーンの表示">Web シーンの表示</h2>
-
 <h2 id="arcgis-api-for-javascript-1">ArcGIS API for JavaScript</h2>
-
 <p>ArcGIS API for JavaScript を使用して Web シーンを表示する方法については、<a href="https://developers.arcgis.com/javascript/latest/sample-code/webscene-basic/index.html">Web シーンの読み込み</a> のサンプルを参照してください。</p>
-
 <h2 id="arcgis-configurable-apps">ArcGIS Configurable Apps</h2>
-
 <p>ArcGIS Configurable apps を使用した Web シーンを ArcGIS Online 上で表示することもできます。アプリケーションを作成するには <a href="https://learn.arcgis.com/en/projects/create-a-scene/">シーンの作成</a> または、<a href="https://doc.arcgis.com/en/arcgis-online/create-maps/choose-configurable-app.htm">ArcGIS Configurable Apps テンプレートの選択</a> を参照してください。</p>
 
 

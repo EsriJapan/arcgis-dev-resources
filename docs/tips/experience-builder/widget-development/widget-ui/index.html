@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:22 JST">
 <title>ウィジェット UI の作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -709,31 +716,31 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#jsx-の記述">JSX の記述</a></li>
-<li><a href="#jimu-ui-ライブラリの使用">Jimu UI ライブラリの使用</a></li>
-<li><a href="#ui-コンポーネント">UI コンポーネント</a>
-<ul>
-<li><a href="#コンポーネントのインポート">コンポーネントのインポート</a></li>
-<li><a href="#クイック-サンプル">クイック サンプル</a></li>
-</ul></li>
-<li><a href="#css-ユーティリティクラス">CSS ユーティリティクラス</a>
-<ul>
-<li><a href="#クイック-サンプル-1">クイック サンプル</a></li>
-</ul></li>
-<li><a href="#ウィジェット-スタイル設定">ウィジェット スタイル設定</a>
-<ul>
-<li><a href="#インライン-css">インライン CSS</a></li>
-<li><a href="#外部-css-スタイルシート">外部 CSS スタイルシート</a></li>
-<li><a href="#css-in-js-推奨">CSS-in-JS (推奨)</a></li>
-<li><a href="#1-css-prop">1. css prop</a></li>
-<li><a href="#2-styled-components">2. Styled Components</a></li>
-<li><a href="#3-テーマを使った作業">3. テーマを使った作業</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#jsx-の記述">JSX の記述</a></li>
+    <li><a href="#jimu-ui-ライブラリの使用">Jimu UI ライブラリの使用</a></li>
+    <li><a href="#ui-コンポーネント">UI コンポーネント</a>
+      <ul>
+        <li><a href="#コンポーネントのインポート">コンポーネントのインポート</a></li>
+        <li><a href="#クイック-サンプル">クイック サンプル</a></li>
+      </ul>
+    </li>
+    <li><a href="#css-ユーティリティクラス">CSS ユーティリティクラス</a>
+      <ul>
+        <li><a href="#クイック-サンプル-1">クイック サンプル</a></li>
+      </ul>
+    </li>
+    <li><a href="#ウィジェット-スタイル設定">ウィジェット スタイル設定</a>
+      <ul>
+        <li><a href="#インライン-css">インライン CSS</a></li>
+        <li><a href="#外部-css-スタイルシート">外部 CSS スタイルシート</a></li>
+        <li><a href="#css-in-js-推奨">CSS-in-JS (推奨)</a></li>
+        <li><a href="#1-css-prop">1. css prop</a></li>
+        <li><a href="#2-styled-components">2. Styled Components</a></li>
+        <li><a href="#3-テーマを使った作業">3. テーマを使った作業</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -752,289 +759,212 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>Experience Builder のベースとなる <code>Widget</code> クラスは、React のコンポーネントサブクラスから拡張されています。<a href="https://reactjs.org/docs/react-api.html#reactpurecomponent">PureComponent</a> から拡張されており、<code>render()</code> と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。</p>
-
+    <p>Experience Builder のベースとなる <code>Widget</code> クラスは、React のコンポーネントサブクラスから拡張されています。<a href="https://reactjs.org/docs/react-api.html#reactpurecomponent">PureComponent</a> から拡張されており、<code>render()</code> と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。</p>
 <h2 id="jsx-の記述">JSX の記述</h2>
-
 <p>UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。</p>
-
 <p><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> の詳細を参照してください。</p>
-
 <p>ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-<pre><code class="language-tsx">// in widget.tsx:
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
-
-export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;, any&gt;{
-  render() {
-    return &lt;div className=&quot;myWidget&quot;&gt;
-      &lt;p&gt;This is a sample widget&lt;/p&gt;
-      &lt;button type=&quot;button&quot; style={{background: 'orange'}}&gt;I'm a button&lt;/button&gt;
-    &lt;/div&gt;;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span>{
+  <span style="color:#a6e22e">render() {</span>
+    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myWidget&#34;</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;orange&#39;</span>}}&gt;<span style="color:#a6e22e">I</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">m</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">button</span>&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;;
   }
 }
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png" alt="" /></p>
-
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png" alt=""></p>
 <h2 id="jimu-ui-ライブラリの使用">Jimu UI ライブラリの使用</h2>
-
 <p>Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</p>
-
 <ul>
 <li><strong>基本的な UI コンポーネント</strong>: button, dropdown, form controls, icon, navigation, modal, grid layout container など</li>
 <li><strong>高度な UI コンポーネント</strong>: date picker, resource selector, expression builder など</li>
 </ul>
-
 <p>内部的には、Jimu の UI コンポーネントは <a href="http://reactstrap.github.io/">Reactstrap</a> と呼ばれる React Bootstrap フレームワークから拡張・カスタマイズされています。このライブラリは、他の類似した React UI ライブラリと同様に、コンポーネントの使用方法についても同様のパターンを踏襲しています。</p>
-
 <p>一般的に使用されているコンポーネントやアイコンのほとんどは、Storybookのサイト <code>(https://localhost:3001/storybook/index.html)</code> にアクセスしてプレビューすることができます。</p>
-
 <p>Experience Builder の <a href="https://developers.arcgis.com/experience-builder/guide/storybook">Storybook</a> の詳細を参照してください。</p>
-
 <p>Jimu UI は Experience Builder の公式 UI ライブラリであり、このライブラリのコンポーネントを考慮して UI 開発を利用することを強くお勧めします。その理由は以下の通りです。</p>
-
 <ul>
 <li>UI/UX の一貫性: ウィジェットの全体的な外観と操作感、それを使って作成されたアプリは、一貫したパターンに従います。</li>
 <li>テーマ性：コンポーネントのスタイルは設定可能でテーマ性があるため、さまざまなテーマに対応したウィジェットを簡単に作ることができます。</li>
 <li>Experience Builder および ArcGIS とのより良い統合が実現できます。</li>
 </ul>
-
 <h2 id="ui-コンポーネント">UI コンポーネント</h2>
-
 <h3 id="コンポーネントのインポート">コンポーネントのインポート</h3>
-
 <p>基本的な UI コンポーネントは「jimu-ui」から直接インポートでき、高度な UI コンポーネントはパスを使用して個別にインポートする必要があります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span>, <span style="color:#a6e22e">TextInput</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// basic
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DatePicker</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/date-picker&#39;</span>; <span style="color:#75715e">// advanced
+</span></code></pre></div><h3 id="クイック-サンプル">クイック サンプル</h3>
+<p>ここでは、&ldquo;primary&rdquo; スタイルの Button コンポーネントとスターアイコンをウィジェットに追加しています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// import components
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Create an svg icon using Icon component:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iconNode</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">Icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;jimu-ui/lib/icons/star.svg&#39;</span>)} /&gt;;
 
-<pre><code class="language-tsx">import { Button, Icon, TextInput } from 'jimu-ui'; // basic
-import { DatePicker } from 'jimu-ui/date-picker'; // advanced
-</code></pre>
-
-<h3 id="クイック-サンプル">クイック サンプル</h3>
-
-<p>ここでは、&rdquo;primary&rdquo; スタイルの Button コンポーネントとスターアイコンをウィジェットに追加しています。</p>
-
-<pre><code class="language-tsx">// in widget.tsx:
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
-import { Button, Icon } from 'jimu-ui'; // import components
-
-// Create an svg icon using Icon component:
-const iconNode = &lt;Icon icon={require('jimu-ui/lib/icons/star.svg')} /&gt;;
-
-export default class Widget extends BaseWidget&lt;AllWidgetProps, any&gt;{
-  render(){
-    // Add Button component containing an icon to the widget:
-    return &lt;Button type=&quot;primary&quot;&gt;{iconNode} primary button&lt;/Button&gt;;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;{
+  <span style="color:#a6e22e">render</span>(){
+    <span style="color:#75715e">// Add Button component containing an icon to the widget:
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span>&gt;{<span style="color:#a6e22e">iconNode</span>} <span style="color:#a6e22e">primary</span> <span style="color:#a6e22e">button</span>&lt;/<span style="color:#f92672">Button</span>&gt;;
   }
 }
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png" alt="" /></p>
-
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png" alt=""></p>
 <h2 id="css-ユーティリティクラス">CSS ユーティリティクラス</h2>
-
 <p>Jimu UI は、<a href="https://getbootstrap.com/docs/4.3/utilities">Bootstrap</a> と同じ CSS ユーティリティクラスを提供しており、UI 要素に素早くスタイルを適用することができます。</p>
-
 <h3 id="クイック-サンプル-1">クイック サンプル</h3>
-
 <p>ここでは w-100、p-3、bg-primary、text-white を追加して要素を作成しています。</p>
-
 <ul>
 <li>親要素の幅を 100% に設定</li>
 <li>1 rem の padding（パディング）を設定</li>
 <li>背景色を テーマの primary color として設定</li>
 <li>テキストカラーを テーマの white color として設定</li>
 </ul>
-
-<pre><code class="language-tsx">// in the render() function:
-
-return &lt;div className=&quot;w-100 p-3 bg-primary text-white&quot;&gt;
-  &lt;p&gt;This is a sample widget&lt;/p&gt;
-&lt;/div&gt;;
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png" alt="" /></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in the render() function:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-100 p-3 bg-primary text-white&#34;</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;;
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png" alt=""></p>
 <h2 id="ウィジェット-スタイル設定">ウィジェット スタイル設定</h2>
-
 <p>Experience Builder では、ウィジェットのスタイルを設定するには 3 つのオプションがあります。</p>
-
 <h3 id="インライン-css">インライン CSS</h3>
-
 <p>React のコンテキストでは、インラインの CSS スタイルは JavaScript オブジェクトとして記述され、DOM 要素の <code>style</code> 属性に適用されます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
 
-<pre><code class="language-css">// in the render() function:
+<span style="color:#f92672">const</span> <span style="color:#f92672">containerStyle</span> <span style="color:#f92672">=</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#e6db74">&#39;darkblue&#39;</span>,
+  <span style="color:#66d9ef">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
+  <span style="color:#66d9ef">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
+  <span style="color:#66d9ef">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">150</span>,
+  <span style="color:#66d9ef">padding</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1rem&#39;</span>,
+  borderRadius<span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>
+}<span style="color:#f92672">;</span>
 
-const containerStyle = {
-  background: 'darkblue',
-  color: 'white',
-  width: 200,
-  height: 150,
-  padding: '1rem',
-  borderRadius: 5
-};
-
-return &lt;div
-  style={containerStyle} // CSS styles applied
-&gt; content &lt;/div&gt;;
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt="" /></p>
-
+<span style="color:#f92672">return</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span>
+  <span style="color:#f92672">style</span><span style="color:#f92672">=</span>{<span style="color:#960050;background-color:#1e0010">containerStyle</span>} <span style="color:#f92672">//</span> <span style="color:#f92672">CSS</span> <span style="color:#f92672">styles</span> <span style="color:#f92672">applied</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="外部-css-スタイルシート">外部 CSS スタイルシート</h3>
-
 <p>別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。</p>
-
 <p>先ほどのコードサンプルを例に、CSS スタイルを別のスタイルシート (例: style.css) に移動します。</p>
-
-<pre><code class="language-css">/* style.css */
-.my-widget {
-  background: 'darkblue';
-  color: 'white';
-  width: 200px;
-  height: 150px;
-  padding: '1rem';
-  border-radius: 5px;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* style.css */</span>
+.<span style="color:#a6e22e">my-widget</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#e6db74">&#39;darkblue&#39;</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#e6db74">&#39;white&#39;</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#e6db74">&#39;1rem&#39;</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre>
+</code></pre></div><p>としてウィジェットにファイルをインポートします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;path/to/style.css&#39;</span><span style="color:#f92672">;</span>
+</code></pre></div><p>そして、style.css で定義されている DOM 要素にクラス名を追加することを忘れないでください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
+<span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
 
-<p>としてウィジェットにファイルをインポートします。</p>
-
-<pre><code class="language-css">// widget.tsx:
-import 'path/to/style.css';
-</code></pre>
-
-<p>そして、style.css で定義されている DOM 要素にクラス名を追加することを忘れないでください。</p>
-
-<pre><code class="language-css">// widget.tsx:
-// in the render() function:
-
-return &lt;div className=&quot;my-widget&quot;&gt; content &lt;/div&gt;;
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt="" /></p>
-
+<span style="color:#f92672">return</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget&#34;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="css-in-js-推奨">CSS-in-JS (推奨)</h3>
-
 <p>CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript で CSS を書く方法のことを指します。</p>
-
 <p>Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして <a href="https://emotion.sh/docs/introduction">Emotion</a> を使用しています。</p>
-
 <p>Emotion には 2 つのスタイリング パターンがあります。</p>
-
 <h3 id="1-css-prop">1. css prop</h3>
-
 <p>Emotion の <code>css</code> prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは <code>template literals</code> で書くことができるので、CSS の中に JS ロジックを書くことができます。</p>
-
 <p>例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// widget.tsx:
+</span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">ButtonGroup</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>;
 
-<pre><code class="language-tsx">// widget.tsx:
-/** @jsx jsx */ // &lt;-- make sure to include the jsx pragma
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
-import { css, jsx } from 'jimu-core';
-import { Button, ButtonGroup } from 'jimu-ui';
-
-interface State {
-  count: number;
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">State</span> {
+  <span style="color:#a6e22e">count</span>: <span style="color:#66d9ef">number</span>;
 }
 
-export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;, State&gt;{
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#a6e22e">State</span><span style="color:#f92672">&gt;</span>{
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">count</span>: <span style="color:#66d9ef">0</span>,
     };
   }
-  render() {
-    const numberStyle = css`
-      font-size: 2.5rem;
-      color: ${this.state.count &gt; 2 ? 'green' : 'red'};
-    `;
-    return &lt;div className=&quot;text-center&quot;&gt;
-      &lt;p css={numberStyle}&gt;{this.state.count}&lt;/p&gt;
-      &lt;ButtonGroup&gt;
-        &lt;Button type=&quot;secondary&quot; onClick={e =&gt; {this.setState({
-          count: this.state.count - 1
-          })}}&gt; - &lt;/Button&gt;
-        &lt;Button type=&quot;secondary&quot; onClick={e =&gt; {this.setState({
-          count: this.state.count + 1
-          })}}&gt; + &lt;/Button&gt;
-      &lt;/ButtonGroup&gt;
-    &lt;/div&gt;;
+  <span style="color:#a6e22e">render() {</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numberStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">css</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">      font-size: 2.5rem;
+</span><span style="color:#e6db74">      color: </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;green&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">    `</span>;
+    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center&#34;</span>&gt;
+      &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">css</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">numberStyle</span>}&gt;{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>}&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;<span style="color:#f92672">ButtonGroup</span>&gt;
+        &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">e</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+          <span style="color:#a6e22e">count</span>: <span style="color:#66d9ef">this.state.count</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+          })}}&gt; <span style="color:#f92672">-</span> &lt;/<span style="color:#f92672">Button</span>&gt;
+        &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">e</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+          <span style="color:#a6e22e">count</span>: <span style="color:#66d9ef">this.state.count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+          })}}&gt; <span style="color:#f92672">+</span> &lt;/<span style="color:#f92672">Button</span>&gt;
+      &lt;/<span style="color:#f92672">ButtonGroup</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;;
   }
 }
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt="" /></p>
-
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt=""></p>
 <h3 id="2-styled-components">2. Styled Components</h3>
+<p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&ldquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">styled</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-<p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&rdquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
+<span style="color:#75715e">// A styled button component:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">StyledButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">styled</span>.<span style="color:#a6e22e">button</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">  color: white;
+</span><span style="color:#e6db74">  background-color: blue;
+</span><span style="color:#e6db74">  transition: 0.15s ease-in all;
+</span><span style="color:#e6db74">  &amp;:hover {
+</span><span style="color:#e6db74">    background-color: darkblue;
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">`</span>;
 
-<pre><code class="language-tsx">/** @jsx jsx */ // &lt;-- make sure to include the jsx pragma
-import { BaseWidget, AllWidgetProps } from 'jimu-core';
-import { styled, jsx } from 'jimu-core';
-
-// A styled button component:
-const StyledButton = styled.button`
-  color: white;
-  background-color: blue;
-  transition: 0.15s ease-in all;
-  &amp;:hover {
-    background-color: darkblue;
-  }
-`;
-
-export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
-  render() {
-    return &lt;StyledButton&gt;
-      A styled HTML Button
-    &lt;/StyledButton&gt;;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
+  <span style="color:#a6e22e">render() {</span>
+    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">StyledButton</span>&gt;
+      <span style="color:#a6e22e">A</span> <span style="color:#a6e22e">styled</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">Button</span>
+    &lt;/<span style="color:#f92672">StyledButton</span>&gt;;
   }
 }
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt="" /></p>
-
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt=""></p>
 <h3 id="3-テーマを使った作業">3. テーマを使った作業</h3>
-
 <p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。</p>
-
 <p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
-
 <p>ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-<pre><code class="language-tsx">/** @jsx jsx */ // &lt;-- make sure to include the jsx pragma
-import { BaseWidget, AllWidgetProps } from 'jimu-core';
-import { css, jsx } from 'jimu-core';
-
-export default class Widget extends BaseWidget&lt;AllWidgetProps&lt;{}&gt;&gt;{
-  render() {
-    const theme = this.props.theme;
-    const style = css`
-      background: ${theme.colors.palette.primary[100]};
-      color: ${theme.colors.black};
-      padding: ${theme.sizes[3]};
-    `;
-    return &lt;div css={style}&gt;
-      &lt;p&gt;This is a sample widget&lt;/p&gt;
-    &lt;/div&gt;;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
+  <span style="color:#a6e22e">render() {</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">theme</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">theme</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">css</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">      background: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">palette</span>.<span style="color:#a6e22e">primary</span>[<span style="color:#ae81ff">100</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">      color: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">black</span><span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">      padding: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">sizes</span>[<span style="color:#ae81ff">3</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">    `</span>;
+    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">css</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">style</span>}&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;;
   }
 }
-</code></pre>
-
-<p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png" alt="" /></p>
-
+</code></pre></div><p>Output 例:
+<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png" alt=""></p>
 <p>default theme vs. dark theme</p>
 
 

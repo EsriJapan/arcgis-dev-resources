@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:45 JST">
+<meta name="revised" content="2020-11-18T18:01:21 JST">
 <title>アプリの登録と認証 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -703,14 +710,11 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#アプリの登録">アプリの登録</a></li>
-<li><a href="#ユーザー-ログイン認証">ユーザー ログイン認証</a></li>
-<li><a href="#アプリ認証">アプリ認証</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#アプリの登録">アプリの登録</a></li>
+    <li><a href="#ユーザー-ログイン認証">ユーザー ログイン認証</a></li>
+    <li><a href="#アプリ認証">アプリ認証</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -729,86 +733,82 @@ if (!doNotTrack) {
     
     
     
-    
-
-<h2 id="アプリの登録">アプリの登録</h2>
-
+    <h2 id="アプリの登録">アプリの登録</h2>
 <ol>
-<li><p>ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。</p></li>
-
-<li><p>アプリ リストを開きます。</p></li>
-
-<li><p>[Create Your First App] または [Create a New App] をクリックします。</p></li>
-
-<li><p>アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/get_client_id_secret.gif" width="600px"></p></li>
-
-<li><p>[Authentication] タブをクリックします。</p></li>
-
-<li><p>認証を許可するアプリの URL を [Redirect URIs] に追加します。</p></li>
+<li>
+<p>ArcGIS for Developers 開発者アカウントで ArcGIS for Developers にサイン インします。</p>
+</li>
+<li>
+<p>アプリ リストを開きます。</p>
+</li>
+<li>
+<p>[Create Your First App] または [Create a New App] をクリックします。</p>
+</li>
+<li>
+<p>アプリが登録されたら、アプリの概要（アプリ ID と秘密鍵）を確認します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/get_client_id_secret.gif" width="600px"></p>
+</li>
+<li>
+<p>[Authentication] タブをクリックします。</p>
+</li>
+<li>
+<p>認証を許可するアプリの URL を [Redirect URIs] に追加します。</p>
+</li>
 </ol>
-
 <h2 id="ユーザー-ログイン認証">ユーザー ログイン認証</h2>
-
 <p>ユーザー名とパスワードを入力して認証を行うユーザー ログイン認証の概要を紹介します。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/userlogin.jpg" alt="ユーザー ログイン認証" /></p>
-
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/userlogin.jpg" alt="ユーザー ログイン認証"></p>
 <p>アプリの登録を行って取得したアプリ ID（<code>client_id</code>）を使ってユーザー ログイン認証を行います。異なる環境でアクセス トークンをセキュアに取得するために OAuth 2.0 は複数の異なる承認タイプ（<code>grant_types</code>）を定義します。各承認タイプとアプリの種類の対応関係は以下の通りです。</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">承認タイプ</th>
-<th align="center">クライアントの種類</th>
+<th style="text-align:center">承認タイプ</th>
+<th style="text-align:center">クライアントの種類</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">Implicit</td>
-<td align="center">ブラウザー ベース</td>
+<td style="text-align:center">Implicit</td>
+<td style="text-align:center">ブラウザー ベース</td>
 </tr>
-
 <tr>
-<td align="center">Authorization</td>
-<td align="center">モバイル、ネイティブ、サーバー サイド</td>
+<td style="text-align:center">Authorization</td>
+<td style="text-align:center">モバイル、ネイティブ、サーバー サイド</td>
 </tr>
 </tbody>
 </table>
-
 <p>アプリと ArcGIS for Developers 間で行われるユーザー ログイン認証のフローは基本的には変わりません。以下はブラウザー ベースのアプリにおける認証フローです。</p>
-
 <ol>
-<li><p>ユーザーのアプリ ID（<code>client_id</code>）、<code>response_type=token</code>、リダイレクト URI（<code>redirect_uri</code>）とオプションで有効期限（<code>expiration</code>）を使って、ブラウザー内で認証用エンドポイント（<a href="https://www.arcgis.com/sharing/rest/oauth2/authorize">https://www.arcgis.com/sharing/rest/oauth2/authorize</a> ）にユーザーをダイレクトします。
-&lt;img src=&ldquo;<a href="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin1.png&quot;">http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin1.png&quot;</a> width=&ldquo;300px&rdquo;</p></li>
-
-<li><p>ユーザー名とパスワードによる認証に成功したら、ステップ１のリダイレクト URI（<code>redirect_uri</code>）からアプリにリダイレクトされます。アクセス トークン（<code>access_token</code>）と追加情報がハッシュとして URL の末尾に追加されます（例：<a href="http://app.example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&amp;expires_in=3600">http://app.example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&amp;expires_in=3600</a> ）。アプリはユーザーのトークンによって URL をパースすることができます。</p></li>
-
-<li><p>アクセス トークンが付与されたら、トークン（<code>token</code>）を要求する ArcGIS for Developers へのリクエストにトークンを含めます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin2.png" width="300px"></p></li>
+<li>
+<p>ユーザーのアプリ ID（<code>client_id</code>）、<code>response_type=token</code>、リダイレクト URI（<code>redirect_uri</code>）とオプションで有効期限（<code>expiration</code>）を使って、ブラウザー内で認証用エンドポイント（https://www.arcgis.com/sharing/rest/oauth2/authorize ）にユーザーをダイレクトします。
+&lt;img src=&ldquo;<a href="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin1.png%22">http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin1.png&quot;</a> width=&ldquo;300px&rdquo;</p>
+</li>
+<li>
+<p>ユーザー名とパスワードによる認証に成功したら、ステップ１のリダイレクト URI（<code>redirect_uri</code>）からアプリにリダイレクトされます。アクセス トークン（<code>access_token</code>）と追加情報がハッシュとして URL の末尾に追加されます（例：http://app.example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&amp;expires_in=3600 ）。アプリはユーザーのトークンによって URL をパースすることができます。</p>
+</li>
+<li>
+<p>アクセス トークンが付与されたら、トークン（<code>token</code>）を要求する ArcGIS for Developers へのリクエストにトークンを含めます。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-userlogin2.png" width="300px"></p>
+</li>
 </ol>
-
 <h2 id="アプリ認証">アプリ認証</h2>
-
 <p>特定のアプリをログインなしで認証を行うアプリ認証の概要を紹介します。</p>
-
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/applogin.jpg" alt="アプリ認証" /></p>
-
+<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/applogin.jpg" alt="アプリ認証"></p>
 <p>アプリの登録を行って取得したアプリ ID（<code>client_id</code>）と秘密鍵（<code>client_secret</code>）を使ってアプリ認証を行います。なお、ブラウザー ベースの Web アプリに秘密鍵を埋め込むことはセキュリティのリスクが高まるため、プロキシ サービスの利用を推奨しています。詳細は<a href="../proxy-services">プロキシ サービスの利用</a>をご参照ください。</p>
-
 <p>以下は、アプリと ArcGIS for Developers 間で行われるアプリ認証のフローです。</p>
-
 <ol>
-<li><p>アプリ ID と秘密鍵を使って <a href="https://www.arcgis.com/sharing/rest/oauth2/token/">https://www.arcgis.com/sharing/rest/oauth2/token/</a> への POST リクエストを作成します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin1.png" width="300px"></p></li>
-
-<li><p>JSON レスポンス内のアクセス トークン（<code>access_token</code>）を取得します。</p></li>
-
-<li><p>token パラメーターが要求されるリクエストにはすべてアクセス トークンを追加します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin2.png" width="300px"></p></li>
+<li>
+<p>アプリ ID と秘密鍵を使って <a href="https://www.arcgis.com/sharing/rest/oauth2/token/">https://www.arcgis.com/sharing/rest/oauth2/token/</a> への POST リクエストを作成します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin1.png" width="300px"></p>
+</li>
+<li>
+<p>JSON レスポンス内のアクセス トークン（<code>access_token</code>）を取得します。</p>
+</li>
+<li>
+<p>token パラメーターが要求されるリクエストにはすべてアクセス トークンを追加します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/auth/oauth-applogin2.png" width="300px"></p>
+</li>
 </ol>
-
 <!--以下は、トークン取得のための POST リクエスト作成のもっとも簡易な Node.js でのコード例です。
 
 ```javascript

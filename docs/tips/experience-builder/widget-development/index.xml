@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>カスタム ウィジェット開発ガイド on ArcGIS for Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</link>
     <description>Recent content in カスタム ウィジェット開発ガイド on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    
-	<atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ウィジェット開発のスタート</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</link>
@@ -31,7 +27,7 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
-{ &amp;quot;name&amp;quot;: &amp;quot;count-features&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;Count Features&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;widget&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;1.1.0&amp;quot;, &amp;quot;exbVersion&amp;quot;: &amp;quot;1.1.0&amp;quot;, &amp;quot;author&amp;quot;: &amp;quot;Esri R&amp;amp;D Center Beijing&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;This is widget is designed to display the numeric attributes of features.&amp;quot;, &amp;quot;copyright&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;license&amp;quot;: &amp;quot;http://www.apache.org/licenses/LICENSE-2.0&amp;quot;, &amp;quot;publishMessages&amp;quot;: [ &amp;quot;EXTENT_CHANGE&amp;quot;, &amp;quot;DATA_RECORDS_SELECTION_CHANGE&amp;quot; ], &amp;quot;messageActions&amp;quot;: [], &amp;quot;defaultSize&amp;quot;: { &amp;quot;width&amp;quot;: 360, &amp;quot;height&amp;quot;: 80 }, &amp;quot;properties&amp;quot;: {}, &amp;quot;translatedLocales&amp;quot;: [ &amp;quot;en&amp;quot;, &amp;quot;es&amp;quot;, &amp;quot;zh-cn&amp;quot; ] }  widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
+{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
     </item>
     
     <item>
@@ -41,7 +37,7 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ  setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ   dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
+ src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
  新しいモジュールのインストール ウィジェットの追加、削除、名前の変更 ウィジェットの manifest.json の編集 ファイルやフォルダの追加、削除、名前の変更  ctrl + c で webpack サーバーを停止させることができます。</description>
     </item>
     
@@ -55,7 +51,7 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
 JSX の記述 UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。
 JSX の詳細を参照してください。
 ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。
-// in widget.tsx: import { React, BaseWidget, AllWidgetProps } from &#39;jimu-core&#39;; export default class Widget extends BaseWidget&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;quot;myWidget&amp;quot;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;quot;button&amp;quot; style={{background: &#39;orange&#39;}}&amp;gt;I&#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } }  Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
+// in widget.tsx: import { React, BaseWidget, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends BaseWidget&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
     </item>
     
     <item>
@@ -65,10 +61,10 @@ JSX の詳細を参照してください。
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</guid>
       <description>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
- Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
- Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
+  Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
+  Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
   ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。
-import {appActions} from &#39;jimu-core&#39;; /* * Call this when you need to save state.</description>
+import {appActions} from &amp;#39;jimu-core&amp;#39;; /* * Call this when you need to save state.</description>
     </item>
     
     <item>
@@ -94,7 +90,7 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
 NPM インストール このライブラリを 1 つのウィジェットのみで使用する場合は、npm を使用してライブラリを含めるのも良い選択肢です。
 利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
 次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは npmjs.com にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。
-npm install &amp;lt;package-name&amp;gt;  このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
+npm install &amp;lt;package-name&amp;gt;このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
 パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
 package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
 このパターンの動作の説明は react-data-grid のサンプルを参照してください。

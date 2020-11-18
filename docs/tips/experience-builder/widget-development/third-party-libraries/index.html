@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:22 JST">
 <title>サードパーティ製のライブラリ使用 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -709,23 +716,23 @@ if (!doNotTrack) {
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#npm-インストール">NPM インストール</a>
-<ul>
-<li><a href="#利用方法">利用方法</a></li>
-</ul></li>
-<li><a href="#manifest-json-を使用して-cdn-経由で使用">manifest.json を使用して CDN 経由で使用</a>
-<ul>
-<li><a href="#利用方法-1">利用方法</a></li>
-</ul></li>
-<li><a href="#ダウンロードして直接読み込む">ダウンロードして直接読み込む</a>
-<ul>
-<li><a href="#利用方法-2">利用方法</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#npm-インストール">NPM インストール</a>
+      <ul>
+        <li><a href="#利用方法">利用方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#manifestjson-を使用して-cdn-経由で使用">manifest.json を使用して CDN 経由で使用</a>
+      <ul>
+        <li><a href="#利用方法-1">利用方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#ダウンロードして直接読み込む">ダウンロードして直接読み込む</a>
+      <ul>
+        <li><a href="#利用方法-2">利用方法</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -744,69 +751,37 @@ if (!doNotTrack) {
     
     
     
-    
-
-<p>Experience Builder に付属の <code>jimu</code> ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。</p>
-
+    <p>Experience Builder に付属の <code>jimu</code> ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。</p>
 <p>サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。</p>
-
 <h2 id="npm-インストール">NPM インストール</h2>
-
 <p>このライブラリを 1 つのウィジェットのみで使用する場合は、<code>npm</code> を使用してライブラリを含めるのも良い選択肢です。</p>
-
 <h3 id="利用方法">利用方法</h3>
-
 <p>ターミナルでカスタム ウィジェットのルートディレクトリを参照し、<code>npm init</code> を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに <code>package.json</code> ファイルが作成されます。</p>
-
 <p>次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは <a href="https://www.npmjs.com/">npmjs.com</a> にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。</p>
-
 <pre><code>npm install &lt;package-name&gt;
-</code></pre>
-
-<p>このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、<code>node_modules</code> ディレクトリに配置します。第二に、上記の <code>npm init</code> コマンドで作成した <code>package.json</code> ファイルにライブラリへの参照を追加します。</p>
-
+</code></pre><p>このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、<code>node_modules</code> ディレクトリに配置します。第二に、上記の <code>npm init</code> コマンドで作成した <code>package.json</code> ファイルにライブラリへの参照を追加します。</p>
 <p>パッケージ名は、カスタムウィジェットの <code>import</code> コマンドで使用できるようになりました。例えば、<code>&quot;import * as ReactDataGrid from &quot;react-data-grid&quot;</code> としてインポートします。</p>
-
 <p><code>package.json</code> にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、<code>npm install</code> を実行して、ウィジェットのすべての依存関係をインストールします。</p>
-
 <p>このパターンの動作の説明は <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/react-data-grid/">react-data-grid</a> のサンプルを参照してください。</p>
-
-<h2 id="manifest-json-を使用して-cdn-経由で使用">manifest.json を使用して CDN 経由で使用</h2>
-
+<h2 id="manifestjson-を使用して-cdn-経由で使用">manifest.json を使用して CDN 経由で使用</h2>
 <p>ライブラリを複数のウィジェットで使用する場合は、ライブラリの CDN url を <code>manifest.json</code> ファイルの <code>dependency</code> プロパティに
 配置することで、ライブラリを含めることができます。</p>
-
 <h3 id="利用方法-1">利用方法</h3>
-
 <p>ライブラリの CDN url を見つける必要があります。通常、これはライブラリのドキュメントに記載されているか、<a href="https://www.jsdelivr.com/">jsDelivr</a> や <a href="https://unpkg.com/">unpkg</a> で見つけることができます。たとえば、jQuery サンプルでは、CDN URL は <code>https://unpkg.com/jquery@3.5.1/dist/jquery.js</code> です。</p>
-
 <p>ウィジェットの <code>manifest.json</code> ファイルに <code>dependency</code> と呼ばれる配列プロパティを追加し、その配列に url を追加します。例えば、以下のようになります。</p>
-
-<pre><code class="language-json">&quot;dependency&quot;: [
-  &quot;https://unpkg.com/jquery@3.5.1/dist/jquery.js&quot;
-],
-</code></pre>
-
-<p>Experience Builder は Experience がロードされると自動的にライブラリをロードし、ウィジェットはライブラリのドキュメントに従ってライブラリを使用することができます。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dependency&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+  <span style="color:#e6db74">&#34;https://unpkg.com/jquery@3.5.1/dist/jquery.js&#34;</span>
+]<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>Experience Builder は Experience がロードされると自動的にライブラリをロードし、ウィジェットはライブラリのドキュメントに従ってライブラリを使用することができます。</p>
 <p>このパターンの動作の説明は <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/jquery/">jquery</a> のサンプルを参照してください。</p>
-
 <h2 id="ダウンロードして直接読み込む">ダウンロードして直接読み込む</h2>
-
 <p>ライブラリが複数のウィジェットで使用されている場合、手動でファイルをダウンロードしてウィジェットのコード構造内に格納することでライブラリを含めることができます。</p>
-
 <h3 id="利用方法-2">利用方法</h3>
-
 <p>ライブラリのダウンロード可能なビルド済み assets を探します。通常、これはライブラリのドキュメントにリンクされているか、ライブラリの GitHub リポジトリの <code>Releases</code> エリアにあるダウンロード可能な assets の <code>dist</code> フォルダにあります。</p>
-
 <p>ダウンロード後、ファイルを展開し、ウィジェットのルートディレクトリにコピーしてください。相対パスで指定し、インポートを介してインクルードされるので、ウィジェット内の任意の場所にファイルを配置することができますが、慣習的には、<code>lib</code> というフォルダ内に配置することをお勧めします。</p>
-
 <p>ファイルを配置した後、相対パスを使用してライブラリをインポートすることができます。例えば、以下のようになります。</p>
-
-<pre><code class="language-tsx">import * as d3 from &quot;./lib/d3/d3.min.js&quot;;
-</code></pre>
-
-<p>このパターンの動作例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/d3/">D3</a> のサンプルを参照してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">d3</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./lib/d3/d3.min.js&#34;</span>;
+</code></pre></div><p>このパターンの動作例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/d3/">D3</a> のサンプルを参照してください。</p>
 
 
     

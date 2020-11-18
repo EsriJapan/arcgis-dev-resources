@@ -37,7 +37,9 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 [ArcGIS for Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
 
 {{% notice tip %}}
+
 インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+
 {{% /notice %}}
 
 1. [ArcGIS for Developers](https://developers.arcgis.com/sign-in/) のサイトでサイン インします。
@@ -56,7 +58,9 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。
 
 {{% notice tip %}}
+
 ※ インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+
 {{% /notice %}}
 
 1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`アイテムの追加` をクリックし、`アプリケーション` を選択します。
@@ -83,7 +87,9 @@ Client ID の作成が完了したら以下の手順で server サービスの�
 3.  `npm start` と入力して server を起動します。
 4.  次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
 {{% notice tip %}}
+
 Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。デフォルトの証明書を独自の証明書に変更するには、/server/cert ディレクトリの server.key と server.cert の 2 つのファイルを置き換える必要があります。
+
 {{% /notice %}}
 5.  ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、
 <br/>クライアント ID には、
@@ -111,7 +117,9 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 <br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは `https://localhost:3001` で表示した Experience Builder 上で使用することが可能となります。</span>
 
 {{% notice tip %}}
+
 /client/your-extensions ディレクトリに新規にファイルやフォルダを作成した場合は、client サービスの再起動が必要になります。
+
 {{% /notice %}}
 
 同じマシンで複数のバージョンの Developer edition を持つことができます。お使いのマシンが[システム要件](https://developers.arcgis.com/experience-builder/guide/requirements)を満たしていることを確認してください。
@@ -123,7 +131,9 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 * Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
 
 {{% notice tip %}}
+
 Esri が公開している[オフライン インストール動画 (英語)](https://youtube.com/watch?v=1rO1cZNEr0E)でも確認することができます。 
+
 {{% /notice %}}
 
 1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
@@ -143,7 +153,9 @@ Esri が公開している[オフライン インストール動画 (英語)](ht
 10. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の server ディレクトリに cd コマンドで移動して、npm start と入力して server サービスを起動します。
 
 {{% notice tip %}}
+
 Experience Builder (Developer Edition) を使用するために Client ID が必要になります。Client ID を作成するために ArcGIS Online または ArcGIS Enterprise に接続します。
+
 {{% /notice %}}
 
 ここでは、ArcGIS Online または ArcGIS Enterprise を使用した Client ID の作成手順について示します。

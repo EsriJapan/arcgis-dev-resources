@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T15:37:46 JST">
+<meta name="revised" content="2020-11-18T18:01:22 JST">
 <title>ウィジェット manifest :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -101,6 +101,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/core-concepts/security-and-authentication/">
             セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/core-concepts/limitation-of-app-login/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/core-concepts/limitation-of-app-login/">
+            アプリ ログインの制限
           </a>
         </div>
     </li>
@@ -708,7 +715,7 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -727,36 +734,33 @@ if (!doNotTrack) {
     
     
     <p>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した <code>manifest.json</code> ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/demo">demo widget</a> から <code>manifest.json</code> ファイルをコピーすることです。以下は <code>manifest.json</code> ファイルの例です。</p>
-
-<pre><code class="language-JavaScript">{
-  &quot;name&quot;: &quot;count-features&quot;,
-  &quot;label&quot;: &quot;Count Features&quot;,
-  &quot;type&quot;: &quot;widget&quot;,
-  &quot;version&quot;: &quot;1.1.0&quot;,
-  &quot;exbVersion&quot;: &quot;1.1.0&quot;,
-  &quot;author&quot;: &quot;Esri R&amp;D Center Beijing&quot;,
-  &quot;description&quot;: &quot;This is widget is designed to display the numeric attributes of features.&quot;,
-  &quot;copyright&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;,
-  &quot;publishMessages&quot;: [
-    &quot;EXTENT_CHANGE&quot;,
-    &quot;DATA_RECORDS_SELECTION_CHANGE&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
+  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;count-features&#34;</span>,
+  <span style="color:#e6db74">&#34;label&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Count Features&#34;</span>,
+  <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;widget&#34;</span>,
+  <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.1.0&#34;</span>,
+  <span style="color:#e6db74">&#34;exbVersion&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.1.0&#34;</span>,
+  <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Esri R&amp;D Center Beijing&#34;</span>,
+  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;This is widget is designed to display the numeric attributes of features.&#34;</span>,
+  <span style="color:#e6db74">&#34;copyright&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#e6db74">&#34;license&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://www.apache.org/licenses/LICENSE-2.0&#34;</span>,
+  <span style="color:#e6db74">&#34;publishMessages&#34;</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#34;EXTENT_CHANGE&#34;</span>,
+    <span style="color:#e6db74">&#34;DATA_RECORDS_SELECTION_CHANGE&#34;</span>
   ],
-  &quot;messageActions&quot;: [],
-  &quot;defaultSize&quot;: {
-    &quot;width&quot;: 360,
-    &quot;height&quot;: 80
+  <span style="color:#e6db74">&#34;messageActions&#34;</span><span style="color:#f92672">:</span> [],
+  <span style="color:#e6db74">&#34;defaultSize&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;width&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">360</span>,
+    <span style="color:#e6db74">&#34;height&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>
   },
- &quot;properties&quot;: {},
-  &quot;translatedLocales&quot;: [
-    &quot;en&quot;,
-    &quot;es&quot;,
-    &quot;zh-cn&quot;
+ <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {},
+  <span style="color:#e6db74">&#34;translatedLocales&#34;</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#34;en&#34;</span>,
+    <span style="color:#e6db74">&#34;es&#34;</span>,
+    <span style="color:#e6db74">&#34;zh-cn&#34;</span>
   ]
 }
-</code></pre>
-
-<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/WidgetManifest">widget&rsquo;s manifest</a> で利用可能なプロパティの詳細を参照してください。</p>
+</code></pre></div><p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/WidgetManifest">widget&rsquo;s manifest</a> で利用可能なプロパティの詳細を参照してください。</p>
 
 
     
