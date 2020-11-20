@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-18T18:58:39 JST">
+<meta name="revised" content="2020-11-20T13:39:37 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -716,7 +716,7 @@ if (!doNotTrack) {
     <li><a href="#使用するライセンスの選択">使用するライセンスの選択</a></li>
     <li><a href="#ライセンスの認証方法">ライセンスの認証方法</a>
       <ul>
-        <li></li>
+        <li><a href="#指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</a></li>
         <li><a href="#lite-ライセンスの認証方法">Lite ライセンスの認証方法</a></li>
         <li><a href="#basic-ライセンスの認証方法">Basic ライセンスの認証方法</a></li>
         <li><a href="#standard-ライセンスの認証方法">Standard ライセンスの認証方法</a></li>
@@ -754,22 +754,22 @@ if (!doNotTrack) {
 <p>開発したアプリケーションのライセンス認証のステップは以下の通りです。</p>
 <ol>
 <li><strong><a href="#%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E9%81%B8%E6%8A%9E">使用するライセンスの選択</a></strong></li>
-<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">ライセンスの認証方法</a></strong></li>
-</ol>
+<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">ライセンスの認証方法</a></strong>
 <ul>
 <li><strong><a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Lite ライセンスの認証方法</a></strong></li>
 <li><strong><a href="#basic-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Basic ライセンスの認証方法</a></strong></li>
 <li><strong><a href="#standard-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Standard ライセンスの認証方法</a></strong></li>
 <li><strong><a href="#analysis-extension-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Analysis Extension ライセンスの認証方法</a></strong></li>
 </ul>
-<ol>
-<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC">ライセンスの認証</a></strong></li>
-</ol>
+</li>
+<li><strong><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC">ライセンスの認証</a></strong>
 <ul>
 <li><strong><a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">Lite ライセンスキーを使用した認証</a></strong></li>
 <li><strong><a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a></strong></li>
 <li><strong><a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a></strong></li>
 </ul>
+</li>
+</ol>
 <h2 id="使用するライセンスの選択">使用するライセンスの選択</h2>
 <p>ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</p>
 <p>各ライセンスで利用可能な機能の概要は以下の表をご参照ください。</p>
@@ -803,17 +803,24 @@ if (!doNotTrack) {
 <h2 id="ライセンスの認証方法">ライセンスの認証方法</h2>
 <p>ライセンスの認証は次の2つの方法があります。</p>
 <ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
+<li><strong>ライセンスキーを使用した認証</strong>
 <ul>
 <li>ライセンスキーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。</li>
 </ul>
+</li>
+</ol>
 <p></p>
-1. __指定ユーザーによるアカウント認証__  
-  * 指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。<br>
-  * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。
-<h5 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h5>
-<p><strong>■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降をご利用の場合 <br></strong>※Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております</p>
+<ol start="2">
+<li><strong>指定ユーザーによるアカウント認証</strong>
+<ul>
+<li>指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。<br></li>
+<li>ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。</li>
+</ul>
+</li>
+</ol>
+<h3 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h3>
+<p><strong>■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降をご利用の場合</strong></p>
+<p>※ Standard/Advanced は ArcGIS Runtime 100.7 以降から対応しております</p>
 <table>
 <thead>
 <tr>
@@ -840,7 +847,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p>注-ArcGIS Runtime SDK for Android には Advanced ライセンスはありません。</p>
+<p>注意-ArcGIS Runtime SDK for Android には Advanced ライセンスはありません。</p>
 <p><strong>■ ArcGIS Enterprise 10.7 以前をご利用の場合</strong></p>
 <table>
 <thead>
@@ -862,58 +869,84 @@ if (!doNotTrack) {
 </table>
 <h3 id="lite-ライセンスの認証方法">Lite ライセンスの認証方法</h3>
 <ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
+<li><strong>ライセンスキーを使用した認証</strong>
 <ul>
 <li>ArcGIS Runtime Lite のライセンスキーを取得する必要があります</li>
 <li>認証の方法は、<a href="#lite-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">Lite ライセンスキーを使用した認証</a>をご参照ください</li>
 </ul>
+</li>
+</ol>
 <p></p>
-1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-  * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Liteライセンスレベルを保有する) が必要です
-  * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
-  * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
+<ol start="2">
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Liteライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
+</ol>
 <h3 id="basic-ライセンスの認証方法">Basic ライセンスの認証方法</h3>
 <ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
+<li><strong>ライセンスキーを使用した認証</strong>
 <ul>
 <li>ArcGIS Runtime Basic の配布パックを購入する必要があります</li>
 <li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
 </ul>
+</li>
+</ol>
 <p></p>
-1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-  * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Basicライセンスレベルを保有する) が必要です
-  * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
-  * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
+<ol start="2">
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Basicライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
+</ol>
 <h3 id="standard-ライセンスの認証方法">Standard ライセンスの認証方法</h3>
 <ol>
-<li><strong>ライセンスキーを使用した認証</strong></li>
-</ol>
+<li><strong>ライセンスキーを使用した認証</strong>
 <ul>
 <li>ArcGIS Runtime Standard の配布パックを購入する必要があります</li>
 <li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
 </ul>
+</li>
+</ol>
 <p></p>
-1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Standardライセンスレベルを保有する) が必要です
-    * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
-    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
+<ol start="2">
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注意-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Standardライセンスレベルを保有する) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
+</ol>
 <h3 id="analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</h3>
 <ol>
 <li><strong>ライセンスキーを使用した認証</strong>
-* ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
-* 基本ライセンス（Standard または Advanced）と併せて認証する必要があります
-* 認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+<ul>
+<li>ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります</li>
+<li>基本ライセンス（Standard または Advanced）と併せて認証する必要があります</li>
+<li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
 </ol>
 <p></p>
-1. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません<br>
-注-Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7以前のバージョンでは使用できません
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Analysisアドオンライセンス拡張機能を割り当てられた) が必要です
-    * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
-    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
+<ol start="2">
+<li><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注意-この認証は、ArcGIS Runtime 100.7より以前のバージョンでは使用できません<br>
+注意-Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7以前のバージョンでは使用できません
+<ul>
+<li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント(ArcGIS Runtime Analysisアドオンライセンス拡張機能を割り当てられた) が必要です</li>
+<li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
+<li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
+</ul>
+</li>
+</ol>
 <h2 id="ライセンスの認証">ライセンスの認証</h2>
 <p>以下の認証に応じた作業を行ってください。</p>
 <h3 id="lite-ライセンスキーを使用した認証">Lite ライセンスキーを使用した認証</h3>

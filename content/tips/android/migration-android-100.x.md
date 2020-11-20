@@ -226,7 +226,7 @@ if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
 Java 言語で `ListenableFuture` というインターフェースで馴染みのある Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。
 
 ## 既知の制限事項
-現バージョン 100.6.0 での既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
+本バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm)

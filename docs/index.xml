@@ -14,7 +14,7 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</guid>
       <description>ArcGIS API for Python のコンセプト ArcGIS API for Python (以下、Python API) は、Web GIS (ArcGIS Online / ArcGIS Enterprise) を活用してマップと地理空間データを扱うための Python ベースの API です。
 Python のベスト プラクティスに基づき、標準的なイディオムやデータ構造を用いた、シンプルで使いやすい設計になっており、GIS データの可視化や解析の実行だけでなく、ユーザー、グループ、アイテムなどを管理するためのシンプルで使いやすいツールを提供します。 さらに、自身が所有しているデータだけでなく、Esri 等が提供するすぐに使えるマップやデータにアクセスすることも可能です。 また、Pandas や Jupyter Notebook といった、他の Python 向けのライブラリやツールとの連携で、より豊富な機能を活用することが可能です。
-ArcGIS API for Python がどのようなモジュールから成り立っているのかを解説します。* [動作要件](#動作要件)OS などシステム要件と推奨する開発環境をご紹介します。* [ガイドページとサンプルコード](#ガイドページとサンプルコード)用途別に、初めの一歩として有用なサンプルをご紹介します。 -- Python API のアーキテクチャ Python API は、Web GIS プラットフォームを使用する目的で実装されています。 Python API には、ArcGIS プラットフォーム上で利用するデータやユーザの認証情報など、各オブジェクトを管理して作業するためのモジュール、クラス、関数、およびタイプがあります。
+ ArcGIS API for Python がどのようなモジュールから成り立っているのかを解説します。 * [動作要件](#動作要件) OS などシステム要件と推奨する開発環境をご紹介します。 * [ガイドページとサンプルコード](#ガイドページとサンプルコード) 用途別に、初めの一歩として有用なサンプルをご紹介します。 --  Python API のアーキテクチャ Python API は、Web GIS プラットフォームを使用する目的で実装されています。 Python API には、ArcGIS プラットフォーム上で利用するデータやユーザの認証情報など、各オブジェクトを管理して作業するためのモジュール、クラス、関数、およびタイプがあります。
 Python API は arcgis パッケージとして配布されています。 このパッケージの中には、最も基本になる gis モジュールを中心に、Web GIS で使用できる機能がさまざまなモジュールとして編成されています。</description>
     </item>
     
@@ -174,7 +174,7 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/apis-sdks-apps/</guid>
       <description>本ページに記載のある以下の製品については国内未サポートの製品です。
- ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt  アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
+ ArcGIS Navigator ArcGIS Experience Builder (Developer Edition) ArcGIS AppStudio (Developer Edition) ArcGIS Runtime SDK for Java ArcGIS Runtime SDK for Qt   アプリの種類 ArcGIS プラットフォームを使用して実現できるワークフローやタスクには、様々な種類があります。ArcGIS Pro のような既存の ArcGIS アプリケーションを拡張したり、特定のニーズに合わせて設定可能なアプリケーションをカスタマイズしたり、ゼロから完全なカスタム アプリケーションを作成したりすることができます。
 ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的なユースケースをカバーする様々なアプリケーションが含まれています。
  ArcGIS Desktop - ArcGIS Pro や ArcMap などのデスクトップ GIS アプリケーション ArcGIS Collector - モバイルのデータ収集アプリ ArcGIS Navigator - 高度にカスタマイズ可能なモバイル ルーティング ソリューション ArcGIS Dashboards - カスタマイズ可能なリアルタイム ダッシュボード ArcGIS Explorer - 組織内の GIS データの検索と表示 ArcGIS Workforce - 現地調査を調整するためのモバイル／Web アプリ ArcGIS Survey123 - データ収集・調査のための軽量アプリ  これらのアプリケーションの多くは、新しい機能を追加するためにスクリプトでの自動化や拡張が可能です。</description>
     </item>
@@ -186,7 +186,7 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</guid>
       <description>ArcGIS API for Python (以下、Python API) を使用する際、conda を利用すると Python の環境やパッケージを管理することが容易になります。 ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後のインストールガイドでの環境作成を行いやすくなります。
-conda の基本 conda の基本について説明します。conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。 conda を使用する場合、次の 2 つの選択肢があります。
+ conda の基本 conda の基本について説明します。conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。 conda を使用する場合、次の 2 つの選択肢があります。
  Anaconda Distribution : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。 Miniconda : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。  Anaconda と Miniconda の詳しい違いは Anaconda or Miniconda (英語) のページをご覧ください。 ※ pip でも Python API をインストールすることができますが、初心者には conda が推奨されています。参考: ArcGIS API for Python - Install and set up (英語)</description>
     </item>
     
@@ -214,7 +214,7 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</guid>
       <description>ArcGIS Runtime SDK for Android を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
- 使用するライセンスの選択 ライセンスの認証方法   Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証   Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証  使用するライセンスの選択 ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライセンス レベルがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
    ライセンス 利用できる機能     Lite ・地図表示（2D/3D）
 ・フィーチャの表示/検索
@@ -232,7 +232,7 @@ ArcGIS Apps ArcGIS プラットフォームには、以下のような一般的�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</guid>
       <description>ArcGIS Runtime SDK for .NET を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
- 使用するライセンスの選択 ライセンスの認証方法   Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Advanced ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証   Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証  使用するライセンスの選択 ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Advanced ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Runtime SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
    ライセンス 利用できる機能     Lite ・地図表示（2D/3D）
 ・フィーチャの表示/検索
@@ -388,7 +388,7 @@ ArcGIS Experience Builder (Developer Edition) で使用されている技術は�
       <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+ ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro   STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
     </item>
     
     <item>
@@ -400,8 +400,8 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
       <description>ArcGIS での認証 セキュリティを担保するために、ネットワーク上で利用可能なリソースに対して、公開範囲を設定してアクセスを制限することでリソースを保護します。リソースに対するアクセスはインターネットを使用して行われますが、VPN やイントラネットを使用したアクセスも可能です。公開範囲が制限されたリソースにアクセスする必要がある場合、アプリケーション、またはアプリケーションを利用するユーザーは、認定された機関 (ArcGIS Online、ArcGIS Enterprise、またはその他の互換性のあるセキュリティで保護されたサービスなどの ArcGIS プラットフォーム) との認証を行う必要があります。
 アプリケーションが以下の操作を行う場合は、認証が必要となります。
  プライベート コンテンツへのアクセス コンテンツの作成、編集、公開 プレミアム コンテンツおよびサービスへのアクセス  プレミアム コンテンツとサービスは、クレジットを使用するサービスモデルです。クレジットの購入には、ArcGIS Online 組織アカウントのためのクレジットを購入するか、その他の方法で取得します。アプリケーションで対象となるサービスを使用すると、クレジットが消費されます。消費されるクレジット数は、サービスによって異なります。クレジットが必要なサービスについては、クレジットの概要を参照してください。クレジットには費用もかかりますし、コンテンツの公開や編集はビジネスにとって重要であるため、Esri はこれらの貴重なリソースを保護するためのサービスやメカニズムを提供しています。
-製品毎の実装方法セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。  Android　 iOS Java ※ JavaScript　 .NET　 Qt ※ Esri Leaflet ※ REST  ※ 現在、国内未サポートです。
-セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
+製品毎の実装方法 セキュリティ手法や ArcGIS 認証パターンに詳しい場合は、以下の製品固有の詳細を参照してください。  Android　 iOS Java ※ JavaScript　 .NET　 Qt ※ Esri Leaflet ※ REST  ※ 現在、国内未サポートです。
+  セキュリティの方法 ArcGIS プラットフォームは、いくつかのセキュリティ方法をサポートしています。ArcGIS Runtime を使用する場合でも、他のテクノロジを使用する場合でも、アプリを構築する際には、ユーザに代わってセキュリティ保護されたリソースにアクセスするために、少なくとも 1 つの認証方法を実装する必要があります。セキュアなリソースへのアクセスを得るための方法には、以下のようなものがあります。
   OAuth 2.0 (OAuth)：ArcGIS プラットフォームがユーザーの信頼性を判断し、トークンがクライアント アプリに提供されます。このトークンは、保護されたリソースへのリクエストで使用されます。OAuth 2.0 は、ユーザーのサイン インに使用することを推奨する方法です。ArcGIS Online および ArcGIS Enterprise バージョン 10.</description>
     </item>
     
@@ -426,7 +426,7 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
 ArcGIS Runtime SDK for Android に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
  Gradle 参照プロジェクトの変更 マップ ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー ローダブル パターン 新しい同期パターン 既知の制限事項  Gradle 参照プロジェクトの変更 Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。
-repositories {jcenter()maven {url &#39;https://esri.bintray.com/arcgis&#39;}}dependencies {implementation &#39;com.esri.arcgisruntime:arcgis-android:100.6.0&#39;}ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
+repositories { jcenter() maven { url &#39;https://esri.bintray.com/arcgis&#39; } } dependencies { implementation &#39;com.esri.arcgisruntime:arcgis-android:100.6.0&#39; } ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
     </item>
     
     <item>
@@ -533,10 +533,10 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</guid>
       <description>ここでは、対話的に Python コードを実行し、出力を地図やグラフとして視覚化することができる Jupyter Notebook をご紹介します。Jupyter Notebook はオープンソ－スとして公開されている開発ツールのひとつで、ArcGIS API for Python (以下、Python API)はこのツール上でマップ等を表示することができます。 Jupyter Notebook の詳細については、Jupyter の公式マニュアルおよびクイックスタートガイドを参照してください。 また、サポートされているブラウザについてもご確認ください。Jupyter Notebook がサポートしていないブラウザ（Internet Explorer 等）ではマップ等が表示されないことがあります。
 Jupyter Notebook の起動 conda と Python API がインストールされたら、Python コマンドプロンプト (ArcGIS Pro 経由でインストールした場合) または、Anaconda Prompt (Anaconda でインストールした場合) 等のターミナル アプリケーションに次のコマンドを入力して Jupyter Notebook を起動します。
-jupyter notebookもし起動できなかった場合は次のコマンドをお試しください (参考: Jupyter fails to start)。
-jupyter-notebook他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。
+jupyter notebook もし起動できなかった場合は次のコマンドをお試しください (参考: Jupyter fails to start)。
+jupyter-notebook 他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。
 Windows のコマンドプロンプトからコマンドを実行した場合
-Python API を root 以外の仮想環境を作成しインストールした場合、Jupyter Notebook を起動する前にその仮想環境をアクティベートする必要があります。root 以外の仮想環境を使用するメリットと仮想環境の作成および管理する方法の詳細については、公式のマニュアルページを参照してください。</description>
+ Python API を root 以外の仮想環境を作成しインストールした場合、Jupyter Notebook を起動する前にその仮想環境をアクティベートする必要があります。root 以外の仮想環境を使用するメリットと仮想環境の作成および管理する方法の詳細については、公式のマニュアルページを参照してください。</description>
     </item>
     
     <item>
@@ -621,7 +621,7 @@ $feature.fieldName このように、ランタイムでフィールド値を使�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</guid>
       <description>JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。 ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。
 JupyterLab で GIS データとグラフの操作
-JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は JupyterLab のブログや GitHub をご参照ください。
+ JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は JupyterLab のブログや GitHub をご参照ください。
 JupyterLab をはじめる Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。
 インストール   バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
   次の 2 つのコマンドを実行します
@@ -773,7 +773,7 @@ py-script/
 task.py は実行する Python スクリプト、config.ini は task.py の実行に必要なパラメータを記載した設定ファイルとします。
 Windows のタスク スケジューラを使用する場合 Windows ではタスク スケジューラを使用することでプログラムやスクリプトを決められた時間や一定の間隔で実行することができます。
 タスク スケジューラは以下の手順で設定します。
- タスク スケジューラを開く  スタート メニューからタスク スケジューラを検索して開く     右側の [操作] ペインから [タスクの作成] をクリック  新規タスクを作成するウィザードが開きます     [全般] タブ内のパラメーターを設定する  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる   [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)     [トリガー] タブ内のパラメーターを設定する  [新規] をクリックし、新しいトリガーを作成 [タスクの開始] は [スケジュールに従う] をドロップダウンから選択 任意の開始時間を指定 [繰り返し間隔] にチェックを入れ、30分間を指定 [継続時間] は [無期限] を指定     [操作] タブのパラメーターを設定する  [操作] のドロップダウンから [プログラムの開始] を選択 [プログラム/スクリプト] で実行する Python の エグゼキュータブル ファイルのパスを指定  上の画像では ArcGIS Pro の Python パッケージ マネージャー で作成した環境の Python を指定しています。 パスが不明な場合、実行したい環境で ArcGIS Pro を起動し、Python ウィンドウを表示させて以下のコードを実行することで確認することができます。  import sys sys.</description>
+ タスク スケジューラを開く  スタート メニューからタスク スケジューラを検索して開く      右側の [操作] ペインから [タスクの作成] をクリック  新規タスクを作成するウィザードが開きます      [全般] タブ内のパラメーターを設定する  名前：タスクの名前 説明：タスクの説明を記載 セキュリティ オプション：  タスク実行時に使う Windows のユーザーアカウントを指定 [ユーザーがログオンしているかどうかにかかわらず実行する] をクリック [最上位の特権で実行する] にチェックを入れる   [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)      [トリガー] タブ内のパラメーターを設定する  [新規] をクリックし、新しいトリガーを作成 [タスクの開始] は [スケジュールに従う] をドロップダウンから選択 任意の開始時間を指定 [繰り返し間隔] にチェックを入れ、30分間を指定 [継続時間] は [無期限] を指定      [操作] タブのパラメーターを設定する  [操作] のドロップダウンから [プログラムの開始] を選択 [プログラム/スクリプト] で実行する Python の エグゼキュータブル ファイルのパスを指定  上の画像では ArcGIS Pro の Python パッケージ マネージャー で作成した環境の Python を指定しています。 パスが不明な場合、実行したい環境で ArcGIS Pro を起動し、Python ウィンドウを表示させて以下のコードを実行することで確認することができます。  import sys sys.</description>
     </item>
     
     <item>
@@ -897,10 +897,10 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</guid>
       <description>Experience Builder に付属の jimu ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
 サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。
-NPM インストール このライブラリを 1 つのウィジェットのみで使用する場合は、npm を使用してライブラリを含めるのも良い選択肢です。
+NPM インストール ライブラリを 1 つのウィジェットのみで使用する場合は、使用するライブラリを npm に含めることをお勧めします。
 利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
 次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは npmjs.com にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。
-npm install &amp;lt;package-name&amp;gt;このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
+npm install &amp;lt;package-name&amp;gt; このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
 パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
 package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
 このパターンの動作の説明は react-data-grid のサンプルを参照してください。
