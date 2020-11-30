@@ -29,10 +29,10 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
 
 ここでは、ArcGIS Runtime SDK for iOS を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。
 
-* __[プロジェクトの作成](#プロジェクトの作成)__
-* __[ArcGIS Runtime SDK の設定](#arcgis-runtime-sdk-の設定)__
-* __[地図表示の実装](#地図表示の実装)__
-* __[モバイル マッピング アプリケーションの実行](#モバイル-マッピング-アプリケーションの実行)__
+- __[プロジェクトの作成](#プロジェクトの作成)__
+- __[ArcGIS Runtime SDK の設定](#arcgis-runtime-sdk-の設定)__
+- __[地図表示の実装](#地図表示の実装)__
+- __[モバイル マッピング アプリケーションの実行](#モバイル-マッピング-アプリケーションの実行)__
 
 ## プロジェクトの作成
 まず Xcode 上に新しいプロジェクトを作成します。
@@ -115,7 +115,7 @@ SDK を手動でインストールした場合、各 Xcode プロジェクトで
  * __[ArcGIS フレームワークの追加](#arcgis-フレームワークの追加)__
  * __[Run Script フェーズの追加](#run-script-フェーズの追加)__
 
-##### ArcGIS フレームワークの追加
+#### ArcGIS フレームワークの追加
 
  1. __[プロジェクトの作成](#プロジェクトの作成)__ で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。
 
@@ -123,22 +123,19 @@ SDK を手動でインストールした場合、各 Xcode プロジェクトで
 
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual03.png" width="650px">
 
-  * `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。または、Finder メニューの [移動] > [フォルダへ移動] を使用して移動することもできます。
+  - `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。または、Finder メニューの [移動] > [フォルダへ移動] を使用して移動することもできます。
 
-     ```none
-  $ chflags nohidden ~/Library/
- ```
+    ```none
+    $ chflags nohidden ~/Library/
+    ```
 
-
-##### Run Script フェーズの追加
+#### Run Script フェーズの追加
 
   1. [Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh"` を入力します。
 
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif" width="650px">
 
-
-  * ArcGIS フレームワークの追加と Run Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。
-
+  - ArcGIS フレームワークの追加と Run Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。
 
 これでモバイル マッピング アプリケーションを開発するための準備が整いました。
 

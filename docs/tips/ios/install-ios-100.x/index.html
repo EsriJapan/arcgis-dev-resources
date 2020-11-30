@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-30T13:18:31 JST">
+<meta name="revised" content="2020-11-20T13:39:38 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -722,6 +722,7 @@ if (!doNotTrack) {
         <li><a href="#sdk-を手動でインストールする">SDK を手動でインストールする</a></li>
       </ul>
     </li>
+    <li><a href="#地図表示の実装">地図表示の実装</a></li>
     <li><a href="#モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</a></li>
   </ul>
 </nav>
@@ -840,7 +841,7 @@ end
 <li><strong><a href="#arcgis-%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E8%BF%BD%E5%8A%A0">ArcGIS フレームワークの追加</a></strong></li>
 <li><strong><a href="#run-script-%E3%83%95%E3%82%A7%E3%83%BC%E3%82%BA%E3%81%AE%E8%BF%BD%E5%8A%A0">Run Script フェーズの追加</a></strong></li>
 </ul>
-<h5 id="arcgis-フレームワークの追加">ArcGIS フレームワークの追加</h5>
+<h4 id="arcgis-フレームワークの追加">ArcGIS フレームワークの追加</h4>
 <ol>
 <li>
 <p><strong><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">プロジェクトの作成</a></strong> で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。</p>
@@ -853,51 +854,56 @@ end
 <ul>
 <li>
 <p><code>${HOME}/Library</code> フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。または、Finder メニューの [移動] &gt; [フォルダへ移動] を使用して移動することもできます。</p>
-<pre><code class="language-none" data-lang="none"></code></pre></li>
+<pre><code class="language-none" data-lang="none">$ chflags nohidden ~/Library/
+</code></pre></li>
 </ul>
-<p>$ chflags nohidden ~/Library/</p>
-<pre><code>
-
-##### Run Script フェーズの追加
-
- 1. [Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、`bash &quot;${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh&quot;` を入力します。
-
- &lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif&quot; width=&quot;650px&quot;&gt;
-
-
- * ArcGIS フレームワークの追加と Run Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。
-
-
-これでモバイル マッピング アプリケーションを開発するための準備が整いました。
-
-## 地図表示の実装
-ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。
-
-1. 最初に ArcGIS Runtime SDK for iOS の API を使用できるようにするために、import 文を追加します。Project Navigator で「ViewController.swift」ファイルを選択して、`import ArcGIS` と記述します。
-&lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop01.png&quot; width=&quot;450px&quot;&gt;
-
-1. Project Navigator で `Main.storyboard` ファイルを選択します。 
-
-1. View Controller にデフォルトで追加されている `View` オブジェクトを選択します。
-&lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop02.png&quot; width=&quot;650px&quot;&gt;
-
-1. Identity Inspector を開き [Custom Class] セクションの [Class] で `AGSMapView` と入力し、[return] キーを押して `View` オブジェクトの名前が `Map View` に変わったことを確認します。
-&lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop03.png&quot; width=&quot;650px&quot;&gt;
-
-1. ツールバーで Assistant Editor を選択し、`Main.storyboard` ファイルと `ViewController.h` ファイルを表示します。 
-1. `View (Map View)` オブジェクトを [control] キーを押しながら `ViewController.swift` ファイル上にドラッグ&amp;ドロップします。
-&lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop04.png&quot; width=&quot;650px&quot;&gt;
-
-1. 表示されたダイアログで [Name] に `mapView`（任意の値で構いません）と入力し、[Connect] ボタンをクリックします。
-&lt;img src=&quot;http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop05.png&quot; width=&quot;350px&quot;&gt;
-
-1. ViewController.swift に IBOutlet 宣言が追加されます。
-
-1. Project Navigator で `ViewController.swift` ファイルを選択し、`viewDidLoad` メソッド内で下記のようにコードを記述します。下記のコードでは、地図の種類（道路地図）、初期表示の中心位置（緯度・経度）、ズームレベルを指定して地図を表示します。
-
-```javascript
-self.mapView.map = AGSMap(basemapType: .streets, latitude: 35.658581,  longitude: 139.745433, levelOfDetail: 18)
-</code></pre><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop06.png" width="650px">
+<h4 id="run-script-フェーズの追加">Run Script フェーズの追加</h4>
+<ol>
+<li>[Build Phases] タブを開き、[+] ボタンをクリックして [New Run Script Phase] を選択し、<code>bash &quot;${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ArcGIS.framework/strip-frameworks.sh&quot;</code> を入力します。</li>
+</ol>
+  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual04.gif" width="650px">
+<ul>
+<li>ArcGIS フレームワークの追加と Run Script フェーズの追加の設定順序が正しいことを確認してください。順序が異なる場合、スクリプトが正しく実行されない可能性があります。</li>
+</ul>
+<p>これでモバイル マッピング アプリケーションを開発するための準備が整いました。</p>
+<h2 id="地図表示の実装">地図表示の実装</h2>
+<p>ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。</p>
+<ol>
+<li>
+<p>最初に ArcGIS Runtime SDK for iOS の API を使用できるようにするために、import 文を追加します。Project Navigator で「ViewController.swift」ファイルを選択して、<code>import ArcGIS</code> と記述します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop01.png" width="450px"></p>
+</li>
+<li>
+<p>Project Navigator で <code>Main.storyboard</code> ファイルを選択します。</p>
+</li>
+<li>
+<p>View Controller にデフォルトで追加されている <code>View</code> オブジェクトを選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop02.png" width="650px"></p>
+</li>
+<li>
+<p>Identity Inspector を開き [Custom Class] セクションの [Class] で <code>AGSMapView</code> と入力し、[return] キーを押して <code>View</code> オブジェクトの名前が <code>Map View</code> に変わったことを確認します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop03.png" width="650px"></p>
+</li>
+<li>
+<p>ツールバーで Assistant Editor を選択し、<code>Main.storyboard</code> ファイルと <code>ViewController.h</code> ファイルを表示します。</p>
+</li>
+<li>
+<p><code>View (Map View)</code> オブジェクトを [control] キーを押しながら <code>ViewController.swift</code> ファイル上にドラッグ&amp;ドロップします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop04.png" width="650px"></p>
+</li>
+<li>
+<p>表示されたダイアログで [Name] に <code>mapView</code>（任意の値で構いません）と入力し、[Connect] ボタンをクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop05.png" width="350px"></p>
+</li>
+<li>
+<p>ViewController.swift に IBOutlet 宣言が追加されます。</p>
+</li>
+<li>
+<p>Project Navigator で <code>ViewController.swift</code> ファイルを選択し、<code>viewDidLoad</code> メソッド内で下記のようにコードを記述します。下記のコードでは、地図の種類（道路地図）、初期表示の中心位置（緯度・経度）、ズームレベルを指定して地図を表示します。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSMap</span>(<span style="color:#a6e22e">basemapType</span><span style="color:#f92672">:</span> .<span style="color:#a6e22e">streets</span>, <span style="color:#a6e22e">latitude</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">35.658581</span>,  <span style="color:#a6e22e">longitude</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">139.745433</span>, <span style="color:#a6e22e">levelOfDetail</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>)
+</code></pre></div><img src="http://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop06.png" width="650px">
 <h2 id="モバイル-マッピング-アプリケーションの実行">モバイル マッピング アプリケーションの実行</h2>
 <p>ベースマップを表示するアプリケーションが作成できたので iOS シミュレータにインストールして実行します。</p>
 <ol>

@@ -91,28 +91,28 @@ self.map.operationalLayers.add(featureLayer)
 フィーチャ サービスからフィーチャを取得する場合は、
 リクエスト モードの設定によってフィーチャの取得頻度とや端末上でのデータのキャッシュ方法を制御します。リクエスト モードには、`OnInteractionCache`、 `OnInteractionNoCache`、`ManualCache` があります。リクエスト モードはフィーチャ テーブルが初期化される前に、`AGSServiceFeatureTable` の `featureRequestMode` プロパティを使用して設定できます。
 
-* `OnInteractionCache`: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされます。リクエストされたすべてのデータはローカルにキャッシュされます。データがキャッシュされルため、既に表示された領域にマップが移動しても、再度フィーチャはリクエストされません。サーバー上のデータが変更される可能性が少ない静的なデータに適したモードです。
-* `OnInteractionNoCache`: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされますが、キャッシュはされません。既に表示された領域にマップが移動すると、再度フィーチャがリクエストされます。サーバー上のデータが継続的に更新される可能性がある場合に適したモードです。
-* `ManualCache`: ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、`AGSServiceFeatureTable` の `populateFromService` メソッドを使用して明示的にデータをリクエストする必要があります。
+- `OnInteractionCache`: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされます。リクエストされたすべてのデータはローカルにキャッシュされます。データがキャッシュされルため、既に表示された領域にマップが移動しても、再度フィーチャはリクエストされません。サーバー上のデータが変更される可能性が少ない静的なデータに適したモードです。
+- `OnInteractionNoCache`: ユーザーの操作によりマップの表示領域が変更されると、フィーチャが自動的にリクエストされますが、キャッシュはされません。既に表示された領域にマップが移動すると、再度フィーチャがリクエストされます。サーバー上のデータが継続的に更新される可能性がある場合に適したモードです。
+- `ManualCache`: ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、`AGSServiceFeatureTable` の `populateFromService` メソッドを使用して明示的にデータをリクエストする必要があります。
 
   以下のコードは `populateFromService` メソッドを使用して、サーバー上のすべてのフィーチャを取得する方法の例です。
-
-  ```javascript
-// フィーチャの検索パラメーターを設定
-let params = AGSQueryParameters()
-// すべてのフィーチャを取得するように条件を設定
-params.whereClause = "1 = 1"
-// 検索結果にフィーチャのすべての属性情報（outFields の配列に "*" を指定）を含める
-self.featureTable.populateFromService(with: params, clearCache: true, outFields: ["*"]) {(result, error) -> Void in
-   if let error = error {
-       // フィーチャの取得に失敗
-       print("Error:\(error.localizedDescription)")
-   } else {
-     　// フィーチャの取得に成功（フィーチャ数を表示）
-       print(result?.featureEnumerator().allObjects.count ?? "0")
-   }
-}
-```
+  
+    ```javascript
+    // フィーチャの検索パラメーターを設定
+    let params = AGSQueryParameters()
+    // すべてのフィーチャを取得するように条件を設定
+    params.whereClause = "1 = 1"
+    // 検索結果にフィーチャのすべての属性情報（outFields の配列に "*" を指定）を含める
+    self.featureTable.populateFromService(with: params, clearCache: true, outFields: ["*"]) {(result, error) -> Void in
+        if let error = error {
+            // フィーチャの取得に失敗
+            print("Error:\(error.localizedDescription)")
+        } else {
+            　// フィーチャの取得に成功（フィーチャ数を表示）
+            print(result?.featureEnumerator().allObjects.count ?? "0")
+        }
+    }
+    ```
 
 リクエスト モードの詳細は、
 [ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D)をご参照ください。

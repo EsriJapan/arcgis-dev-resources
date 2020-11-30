@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-30T13:18:31 JST">
+<meta name="revised" content="2020-11-20T13:39:37 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -790,7 +790,7 @@ if (!doNotTrack) {
 <li>
 <p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">xmlns:esri=&#34;http://schemas.esri.com/arcgis/runtime/2013&#34;
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;Window</span> <span style="color:#a6e22e">x:Class=</span><span style="color:#e6db74">&#34;MyDesktopApp.MainWindow&#34;</span>
         <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
         <span style="color:#a6e22e">xmlns:x=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
@@ -804,12 +804,15 @@ if (!doNotTrack) {
 
     <span style="color:#f92672">&lt;/Grid&gt;</span>
 <span style="color:#f92672">&lt;/Window&gt;</span>
-</code></pre></div><p><code>上記のコードでは、</code>esri<code> と言う名称で API ライブラリへの参照が宣言されました。これにより、</code>esri` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+</code></pre></div><p>``</p>
 </li>
+</ol>
+<p>上記のコードでは、<code>esri</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esri</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+<ol>
 <li>
 <p>Grid XAML エレメント内に以下のコードを追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;esri:MapView</span> <span style="color:#a6e22e">x:Name=</span><span style="color:#e6db74">&#34;MyMapView&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;Window</span> <span style="color:#a6e22e">x:Class=</span><span style="color:#e6db74">&#34;MyDesktopApp.MainWindow&#34;</span>
         <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
         <span style="color:#a6e22e">xmlns:x=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
@@ -823,7 +826,7 @@ if (!doNotTrack) {
     <span style="color:#f92672">&lt;esri:MapView</span> <span style="color:#a6e22e">x:Name=</span><span style="color:#e6db74">&#34;MyMapView&#34;</span> <span style="color:#f92672">/&gt;</span>
     <span style="color:#f92672">&lt;/Grid&gt;</span>
 <span style="color:#f92672">&lt;/Window&gt;</span>
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 </li>
 <li>
 <p>[ソリューション エクスプローラー] から <code>MainWindow.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
@@ -890,7 +893,7 @@ if (!doNotTrack) {
 <li>
 <p>Window XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">xmlns:esriUI=&#34;using:Esri.ArcGISRuntime.UI.Controls&#34;
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;Page</span>
     <span style="color:#a6e22e">x:Class=</span><span style="color:#e6db74">&#34;MyUWPApp.MainPage&#34;</span>
     <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
@@ -906,12 +909,13 @@ if (!doNotTrack) {
 
     <span style="color:#f92672">&lt;/Grid&gt;</span>
 <span style="color:#f92672">&lt;/Page&gt;</span>
-</code></pre></div><p><code>上記のコードでは、</code>esriUI<code> と言う名称で API ライブラリへの参照が宣言されました。これにより、</code>esriUI` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+</code></pre></div><p>``
+上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
 </li>
 <li>
 <p>Grid XAML エレメント内に以下のコードを追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;esriUI:MapView</span> <span style="color:#a6e22e">x:Name=</span><span style="color:#e6db74">&#34;MyMapView&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <pre><code class="language-XML:MainPage.xaml" data-lang="XML:MainPage.xaml">&lt;Page
     x:Class=&quot;MyUWPApp.MainPage&quot;
     xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
@@ -927,7 +931,7 @@ if (!doNotTrack) {
         &lt;esriUI:MapView x:Name=&quot;MyMapView&quot; /&gt;
     &lt;/Grid&gt;
 &lt;/Page&gt;
-</code></pre><p>`</p>
+</code></pre><p>``</p>
 </li>
 <li>
 <p>[ソリューション エクスプローラー] から <code>MainPage.xaml.cs</code> を開きます。以下のように <code>Esri.ArcGISRuntime.Mapping</code> 名前空間と ArcGIS Online のベースマップ（道路地図）を表示するコードを追加します。</p>
@@ -950,7 +954,7 @@ if (!doNotTrack) {
         }
     }
 }
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 </li>
 <li>
 <p>[F5] キーをクリックして、プロジェクトをデバッグ実行します。UWP アプリが起動し、地図が表示されれば完了です。
@@ -1011,7 +1015,7 @@ if (!doNotTrack) {
 <li>
 <p>XAML エレメント内に以下の XML 名前空間参照を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">xmlns:esriUI=&#34;clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms&#34;
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;ContentPage</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://xamarin.com/schemas/2014/forms&#34;</span>
         <span style="color:#a6e22e">xmlns:x=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;</span>
@@ -1023,14 +1027,15 @@ if (!doNotTrack) {
     <span style="color:#f92672">&lt;Label</span> <span style="color:#a6e22e">Text=</span><span style="color:#e6db74">&#34;Welcome to Xamarin.Forms!&#34;</span> <span style="color:#a6e22e">HorizontalOptions=</span><span style="color:#e6db74">&#34;Center&#34;</span> <span style="color:#a6e22e">VerticalOptions=</span><span style="color:#e6db74">&#34;CenterAndExpand&#34;</span> <span style="color:#f92672">/&gt;</span>
     <span style="color:#f92672">&lt;/StackLayout&gt;</span>
 <span style="color:#f92672">&lt;/ContentPage&gt;</span>
-</code></pre></div><p><code>上記のコードでは、</code>esriUI<code> と言う名称で API ライブラリへの参照が宣言されました。これにより、</code>esriUI` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
+</code></pre></div><p>``
+上記のコードでは、<code>esriUI</code> と言う名称で API ライブラリへの参照が宣言されました。これにより、<code>esriUI</code> という名前空間で API ライブラリ内のコントロールを参照することができるようになります。</p>
 </li>
 <li>
 <p>StackLayout エレメントを以下のコードに置き換えます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;Grid&gt;</span>
    <span style="color:#f92672">&lt;esriUI:MapView</span> <span style="color:#a6e22e">x:Name=</span><span style="color:#e6db74">&#34;MyMapView&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/Grid&gt;</span>
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;ContentPage</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://xamarin.com/schemas/2014/forms&#34;</span>
            <span style="color:#a6e22e">xmlns:x=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;</span>
@@ -1063,7 +1068,7 @@ if (!doNotTrack) {
         }
     }
 }
-</code></pre></div><p>`</p>
+</code></pre></div><p>``</p>
 </li>
 <li>
 <p>iOS または Android プロジェクトを選択して、ビルドします。
@@ -1074,7 +1079,7 @@ if (!doNotTrack) {
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px"></p>
 </li>
 </ol>
-<h6 id="-android-プロジェクトのビルドでthe-esriarcgisruntimexamarinandroid-package-does-not-currently-support-building-for-the-x86_64-architecture-のエラーが発生してビルドに失敗する場合はソリューション-エクスプローラーの-android-プロジェクトの右クリックから-オプション-を選択してプロジェクト-オプション画面を開きビルド--android-のビルド--詳細設定--サポートされる-abi-で-x86_64-のチェックを外します">※ Android プロジェクトのビルドで「<code>The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.</code> 」のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーの Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で <code>x86_64</code> のチェックを外します。</h6>
+<h5 id="android-プロジェクトのビルドでthe-esriarcgisruntimexamarinandroid-package-does-not-currently-support-building-for-the-x86_64-architecture-のエラーが発生してビルドに失敗する場合はソリューション-エクスプローラーの-android-プロジェクトの右クリックから-オプション-を選択してプロジェクト-オプション画面を開きビルド--android-のビルド--詳細設定--サポートされる-abi-で-x86_64-のチェックを外します">Android プロジェクトのビルドで「<code>The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.</code> 」のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーの Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で <code>x86_64</code> のチェックを外します。</h5>
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_12.png" width="500px">
 
 
