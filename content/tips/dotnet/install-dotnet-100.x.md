@@ -56,19 +56,20 @@ ArcGIS Runtime SDK for .NET を用いて、Windows や iOS、Android プラッ�
 
 	```XML
 	<Window x:Class="MyDesktopApp.MainWindow"
-    	    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        	xmlns:local="clr-namespace:MyDesktopApp"
-	        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
-        	mc:Ignorable="d"
-        	Title="MainWindow" Height="450" Width="800">
-	    <Grid>
+			xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			xmlns:local="clr-namespace:MyDesktopApp"
+			xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+			mc:Ignorable="d"
+			Title="MainWindow" Height="450" Width="800">
+		<Grid>
 
 		</Grid>
 	</Window>
 	```
+
 上記のコードでは、`esri` と言う名称で API ライブラリへの参照が宣言されました。これにより、`esri` という名前空間で API ライブラリ内のコントロールを参照することができるようになります。
 
 1. Grid XAML エレメント内に以下のコードを追加します。
@@ -335,6 +336,6 @@ macOS を使用した開発の手順を紹介します。
 1. アプリが起動し地図が表示されれば完了です。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/Xamarin_Forms_App.png" width="300px">
 
-###### ※ Android プロジェクトのビルドで「`The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.` 」のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーの Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で `x86_64` のチェックを外します。
+##### Android プロジェクトのビルドで「`The Esri.ArcGISRuntime.Xamarin.Android package does not currently support building for the x86_64 architecture.` 」のエラーが発生してビルドに失敗する場合は、ソリューション エクスプローラーの Android プロジェクトの右クリックから [オプション] を選択して「プロジェクト オプション」画面を開き、[ビルド] → [Android のビルド] → [詳細設定] → [サポートされる ABI] で `x86_64` のチェックを外します。
 
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/new_Xamarin_Forms_Project_12.png" width="500px">

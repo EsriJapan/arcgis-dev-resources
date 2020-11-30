@@ -240,7 +240,7 @@ await featureLayer.LoadAsync();
 
 
 ## 既知の制限事項
-現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4)に記載されていますので、ご参照ください。
 
 ## 関連リンク
 * [ArcGIS for Developers: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm)

@@ -3,6 +3,7 @@ title = "技術 Tips 集"
 description = "開発に役立つ技術 Tips 集です。"
 weight = 2
 aliases = ["/tips/"]
+alwaysopen = true
 +++
 　　
 ### 開発ドキュメント
@@ -10,6 +11,7 @@ aliases = ["/tips/"]
 各 API/SDK の開発をサポートするドキュメントです。
 
 * [ArcGIS API for JavaScript](../tips/javascript/)
+* [ArcGIS Experience Builder (Developer Edition)](../tips/experience-builder/)
 * [ArcGIS Web AppBuilder (Developer Edition)](../tips/webappbuilder/)
 * [ArcGIS Runtime SDK for .NET](../tips/dotnet/)
 * [ArcGIS Runtime SDK for Android](../tips/android/)

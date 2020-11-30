@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/core-concepts/what-is-arcgis/</loc>
   </url>
   
@@ -91,6 +95,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/</loc>
   </url>
   
@@ -128,6 +136,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
   </url>
   
   <url>
@@ -191,6 +203,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</loc>
   </url>
   
@@ -208,6 +224,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
   </url>
   
   <url>
@@ -243,6 +263,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</loc>
   </url>
   
@@ -259,6 +283,10 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/visualization/</loc>
   </url>
   
@@ -267,7 +295,15 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/hackathon/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</loc>
   </url>
   
   <url>
@@ -275,7 +311,15 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</loc>
   </url>
   
   <url>
@@ -283,7 +327,15 @@
   </url>
   
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</loc>
+  </url>
+  
+  <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</loc>
   </url>
   
   <url>

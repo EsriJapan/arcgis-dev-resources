@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArcGIS Experience Builder (Developer Edition) on ArcGIS for Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</link>
+    <description>Recent content in ArcGIS Experience Builder (Developer Edition) on ArcGIS for Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>コア コンセプト</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Core concepts
+はじめに Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されているjimu と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。
+ ArcGIS API for JavaScript 4.x React + Redux フレームワーク Bootstrap 4 （UI用） HTML5  Experience Builderでウィジェットやテーマなどを開発するには、TypeScript が必要になります。TypeScript を利用するのは、次のようなメリットがあります。
+ 型宣言によるエラー検出 よりよいIDE体験 セルフ-ドキュメント コード より読みやすく、わかりやすい  Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
+ jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS API for JavaScript 4.</description>
+    </item>
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
+      <description>ArcGIS Experience Builder は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。Developer Edition (開発者向けエディション)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。
+ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) を参照してください。
+インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。
+ server サービス  Experience Builder (Developer Edition) の本体を起動します。   client サービス  独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server サービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。    両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。</description>
+    </item>
+    
+    <item>
+      <title>デプロイ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</guid>
+      <description>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前にシステム要件を参照してください。
+Experience のダウンロード Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように ● (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
+Experience のデプロイ Experience を Web サーバーにデプロイするには、次の手順を実行します。
+ ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。 アプリを追加して登録します。詳細については、アプリの追加とアプリの登録を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある config.json ファイルを開きます。 attributes オブジェクトの下に clientId プロパティを作成します。 config.json ファイルの clientId プロパティに AppID を貼り付けます。再度にファイルを保存します。  &amp;#34;attributes&amp;#34;: { &amp;#34;portalUrl&amp;#34;: &amp;#34;https://exb.</description>
+    </item>
+    
+    <item>
+      <title>チュートリアル</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</guid>
+      <description>ArcGIS Experience Builder のチュートリアルでは、カスタム ウィジェットの作成方法について説明しています。各チュートリアルの完了には、約 15 分かかります。カスタム ウィジェットの作成方法と API の使用方法について理解することができます。
+ スターター ウィジェットの作成 (GeoNet ブログ) Get map coordinates (英語) Add layers to a map (英語)  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -49,7 +49,9 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 通常、サーバー管理者にも相談して、ポータルで使用する認証の種類と、ポータルにアクセスするために必要な方法を決定します。
 
 {{% notice note %}}
+
 別の認証方法の要件がない限り、アプリケーションは OAuth 2.0 を使用することをお勧めします。
+
 {{% /notice %}}
 
 ## 認証パターン
@@ -73,7 +75,9 @@ ArcGIS プラットフォームは、いくつかのセキュリティ方法を�
 - ユーザーが共有しているコンテンツにアクセスできます。
 
 {{% notice tip %}}
+
 ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用して認証を行うと、オフライン編集などの機能を使用するために ArcGIS Runtime SDK アプリのライセンスを取得する方法が提供されます。詳細については、[ArcGIS Runtime アプリのライセンス取得](https://developers.arcgis.com/pricing/licensing/)を参照してください。
+
 {{% /notice %}}
 
 ### アプリ ログイン
@@ -104,7 +108,9 @@ ArcGIS Enterprise または ArcGIS Online の組織アカウントを使用し�
 上記の質問のいずれかに「はい」と答えた場合は、指定ユーザー ログインを実装することをお勧めします。
 
 {{% notice note %}}
+
 [ArcGIS Marketplace](https://marketplace.arcgis.com/) 用のアプリをオーサリングする場合は、アプリに[指定ユーザー ログイン](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/#userlogin)を使用する必要があります。
+
 {{% /notice %}}
 
 ユーザーが ArcGIS Online のユーザーではない場合、ユーザーにログインを要求させたくない場合、またはルーティング、ジオコーディング、人口統計データなどのプレミアム サービスの費用を負担したい場合は、アプリ ログインを選択してください。
@@ -176,6 +182,6 @@ ArcGIS Marketplace の詳細については、[ArcGIS Marketplace アプリ構�
 - [.NET](https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm)
 - [Qt](https://developers.arcgis.com/qt/latest/qml/guide/access-the-arcgis-platform.htm) <sup>※</sup>
 - [Esri Leaflet](http://esri.github.io/esri-leaflet/api-reference/services/service.html) <sup>※</sup>
-- [REST](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/ accessing-arcgis-online-services/) 
+- [REST](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/accessing-arcgis-online-services/) 
 
 ※ 現在、国内未サポートです。

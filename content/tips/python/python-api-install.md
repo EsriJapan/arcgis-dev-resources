@@ -9,11 +9,12 @@ ArcGIS API for Python (以下、Python API) を使用するための環境構築
 Python API は、`arcgis` という名前のパッケージで [Anaconda Cloud](https://anaconda.org/) 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については [ArcGIS API for Python のための基礎環境：conda入門](../python-api-conda) を参照してください。
 
 {{% notice warning %}}
+
 Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、**PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。**
 
 ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
+- [ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro](https://community.esri.com/docs/DOC-13655)
 
-* [ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro](https://community.esri.com/docs/DOC-13655)
 {{% /notice %}}
 
 ### STEP 1: [Python API をインストールする](#python-api-をインストールする)
@@ -67,7 +68,9 @@ conda install -c esri arcgis=1.8.0
 ```
 
 {{% notice note %}}
+
 Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
+
 {{% /notice %}}
 
 インストールが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
@@ -144,6 +147,7 @@ ArcGIS Pro のバージョンによってはデフォルトの設定で、アッ
 > > C:\Users\ (ユーザー名) \AppData\Local\ESRI\conda\envs\ (複製した環境名) \conda-meta\pinned</br>
 > 上記ファイルをテキストエディタで開くと、`arcgis 1.5.*` と記載されているので、数字部分を `2` など、アップグレードしたいバージョン以上の数字に書き換え保存します。</br>
 > 他の記載されているパッケージの設定を変更すると、予期しない不具合を招く恐れがありますので注意してください。</br> -->
+
 {{% /notice %}}
 
 <div align="center">
@@ -304,6 +308,7 @@ my_gis.map()
 </div>
 
 {{% notice tip %}}
+
 Jupyter Notebook から使用している Python API のバージョンを確認する場合、次のコードを実行することで、現在お使いのバージョンを確認することができます。
 ```python
 import arcgis
@@ -378,7 +383,9 @@ ArcGIS API for Python は Linux マシンにもインストールすることが
 ここでは、例として [Ubuntu Server](https://ubuntu.com/download/server) にインストールする手順をご紹介します。<br>
 
 {{% notice warning %}}
+
 現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。
+
 {{% /notice %}}
 
 ##### Anaconda をインストール
@@ -415,7 +422,9 @@ sh Anaconda3-2019.10-Linux-x86_64.sh
 
 
 {{% notice note %}}
+
 変更を反映させるためには一度 シェル を閉じて再度開く必要があります。
+
 {{% /notice %}}
 
 ##### `arcgis` パッケージをインストール

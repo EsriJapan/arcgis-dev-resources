@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-17T16:32:37 JST">
+<meta name="revised" content="2020-11-30T14:02:41 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -244,7 +244,7 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
@@ -296,6 +296,100 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
             カスタム フォント
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">
+            コア コンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
+            ウィジェット開発のスタート
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
+            ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
+            ウィジェットの実装
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
+            サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
+            チュートリアル
           </a>
         </div>
     </li>
@@ -652,7 +746,7 @@ if (!doNotTrack) {
     <p>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。</br>
 Python API は、<code>arcgis</code> という名前のパッケージで <a href="https://anaconda.org/">Anaconda Cloud</a> 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については <a href="../python-api-conda">ArcGIS API for Python のための基礎環境：conda入門</a> を参照してください。</p>
 <div class="notices warning" >
-Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、**PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。**
+<p>Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、<strong>PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。</strong></p>
 <p>ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。</p>
 <ul>
 <li><a href="https://community.esri.com/docs/DOC-13655">ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro</a></li>
@@ -700,7 +794,7 @@ Python API は Python 3.5 以降を必要とするため、<a href="https://www.
 <p>インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br></p>
 <pre><code>conda install -c esri arcgis=1.8.0
 </code></pre><div class="notices note" >
-Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
+<p>Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に <a href="https://pypi.org/project/pyshp/">pyshp</a> を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。</p>
 </div>
 <p>インストールが完了したら、<a href="#arcgis-api-for-python-%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
 <hr>
@@ -889,16 +983,12 @@ my_gis<span style="color:#f92672">.</span>map()
 <img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_installandsetup_02.png" width="800px">
 </div>
 <div class="notices tip" >
-Jupyter Notebook から使用している Python API のバージョンを確認する場合、次のコードを実行することで、現在お使いのバージョンを確認することができます。
-```python
-import arcgis
-arcgis.__version__
-```
-もしくは、先頭に `!` を付けて以下のようにコマンドを実行して確認することも可能です。
-```
-!conda list arcgis
-```
-</div>
+<p>Jupyter Notebook から使用している Python API のバージョンを確認する場合、次のコードを実行することで、現在お使いのバージョンを確認することができます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> arcgis
+arcgis<span style="color:#f92672">.</span>__version__
+</code></pre></div><p>もしくは、先頭に <code>!</code> を付けて以下のようにコマンドを実行して確認することも可能です。</p>
+<pre><code>!conda list arcgis
+</code></pre></div>
 <hr>
 <h3 id="参考">参考</h3>
 <h4 id="1-オフライン時のインストール方法">1. オフライン時のインストール方法</h4>
@@ -955,7 +1045,7 @@ arcgis.__version__
 <p>ArcGIS API for Python は Linux マシンにもインストールすることができます。<br>
 ここでは、例として <a href="https://ubuntu.com/download/server">Ubuntu Server</a> にインストールする手順をご紹介します。<br></p>
 <div class="notices warning" >
-現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。
+<p>現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。</p>
 </div>
 <h5 id="anaconda-をインストール">Anaconda をインストール</h5>
 <p>Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API for Python をインストールします。</p>
@@ -990,7 +1080,7 @@ arcgis.__version__
 <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="500px">
 </div>
 <div class="notices note" >
-変更を反映させるためには一度 シェル を閉じて再度開く必要があります。
+<p>変更を反映させるためには一度 シェル を閉じて再度開く必要があります。</p>
 </div>
 <h5 id="arcgis-パッケージをインストール"><code>arcgis</code> パッケージをインストール</h5>
 <p>ArcGIS API for Python (arcgis) をインストールします。</p>
