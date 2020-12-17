@@ -7,6 +7,12 @@ aliases = ["/android/install-android-100.x/"]
 
 このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に基本的な開発手順を紹介いたします。
 
+{{% notice warning %}}
+
+Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が `https://esri.jfrog.io/artifactory/arcgis` であることに注意して下さい。2020年12月14日現在、旧 URL の `https://esri.bintray.com/arcgis` はサポートされていません。詳細は [Announcement to developers using ArcGIS Runtime SDKs for Android and Java](https://www.esri.com/arcgis-blog/products/developers/announcements/announcement-to-developers-using-arcgis-runtime-sdks-for-android-and-java/) をご参照ください。
+
+{{% /notice %}}
+
 ## ArcGIS Runtime SDK for Android とは
 
 ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。
@@ -33,7 +39,7 @@ Java 8 を使用したコードをコンパイルするには、[ArcGIS Runtime 
 
 ## モバイル マッピング アプリケーションの開発
 
-ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。
+ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、[Develop your first map app with Kotlin](https://developers.arcgis.com/android/latest/guide/develop-your-first-map-app-with-kotlin.htm) を参照してください。
 
 * __[プロジェクトの作成](#プロジェクトの作成)__
 * __[ArcGIS Runtime SDKの設定](#arcgis-runtime-sdkの設定)__
@@ -79,7 +85,7 @@ allprojects {
 		jcenter()
 		// esri arcgis maven リポジトリの追加
 		maven {
-			url 'https://esri.bintray.com/arcgis'
+			url 'https://esri.jfrog.io/artifactory/arcgis'
 		}
 	}
 }
@@ -90,7 +96,7 @@ allprojects {
 
 ```java
 dependencies {
-	implementation 'com.esri.arcgisruntime:arcgis-android:100.4.0'
+	implementation 'com.esri.arcgisruntime:arcgis-android:100.9.0'
 	…
 }
 ```
