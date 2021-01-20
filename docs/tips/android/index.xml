@@ -14,7 +14,7 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</guid>
       <description>このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に基本的な開発手順を紹介いたします。
 Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が https://esri.jfrog.io/artifactory/arcgis であることに注意して下さい。2020年12月14日現在、旧 URL の https://esri.bintray.com/arcgis はサポートされていません。詳細は Announcement to developers using ArcGIS Runtime SDKs for Android and Java をご参照ください。
-ArcGIS Runtime SDK for Android とは ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。 この SDK には API やリファレンス、サンプルコードなどが含まれています。 詳細は ArcGIS Runtime SDK for Android をご参照ください。
+ ArcGIS Runtime SDK for Android とは ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。 この SDK には API やリファレンス、サンプルコードなどが含まれています。 詳細は ArcGIS Runtime SDK for Android をご参照ください。
 ArcGIS Runtime SDK for Android の開発環境 以下はArcGIS Runtime SDK for Android の最新版（100.</description>
     </item>
     
@@ -46,7 +46,7 @@ ArcGIS Runtime SDK for Android の開発環境 以下はArcGIS Runtime SDK for A
 ArcGIS Runtime SDK for Android に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
  Gradle 参照プロジェクトの変更 マップ ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー ローダブル パターン 新しい同期パターン 既知の制限事項  Gradle 参照プロジェクトの変更 Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。
-repositories {jcenter()maven {url &#39;https://esri.bintray.com/arcgis&#39;}}dependencies {implementation &#39;com.esri.arcgisruntime:arcgis-android:100.6.0&#39;}ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
+repositories { jcenter() maven { url &#39;https://esri.bintray.com/arcgis&#39; } } dependencies { implementation &#39;com.esri.arcgisruntime:arcgis-android:100.6.0&#39; } ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
     </item>
     
     <item>
