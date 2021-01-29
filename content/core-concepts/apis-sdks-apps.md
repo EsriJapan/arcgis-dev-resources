@@ -9,7 +9,6 @@ aliases = ["/apis-sdks-apps/"]
 
 本ページに記載のある以下の製品については国内未サポートの製品です。
 - ArcGIS Navigator
-- ArcGIS Experience Builder (Developer Edition) 
 - ArcGIS AppStudio (Developer Edition)
 - ArcGIS Runtime SDK for Java
 - ArcGIS Runtime SDK for Qt
