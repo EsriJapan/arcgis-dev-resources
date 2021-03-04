@@ -50,7 +50,7 @@ MyMapView.Map = myMap;
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
 
-100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm)をご参照ください。
+100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/layers/)をご参照ください。
 
 作成した各レイヤーは、以下の方法でマップに追加します。
 ```javascript
@@ -102,14 +102,11 @@ var outputFields = new string[] { "*" };
 await featureTable.PopulateFromServiceAsync(queryParameters, true, outputFields);
 ```
 
-リクエスト モードの詳細は、
-[ArcGIS for Developers: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/net/latest/wpf/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D)をご参照ください。
-
 #### フィーチャの編集
 フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。
 
 フィーチャの編集方法は、
-[ArcGIS for Developers: フィーチャの編集（英語）](https://developers.arcgis.com/net/latest/wpf/guide/edit-features.htm)をご参照ください。
+[ArcGIS for Developers: フィーチャの編集（英語）](https://developers.arcgis.com/net/query-and-edit/edit/)をご参照ください。
 
 #### フィーチャの検索
 フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
@@ -165,7 +162,7 @@ foreach (IdentifyLayerResult idResults in idLayerResults)
 
 ## グラフィックス オーバーレイ
 グラフィックは、マップ上に一時的なデータを表示するために使用されます。`MapView` と `SceneView` オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（`GraphicsOverlay`）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、[ArcGIS for Developers: グラフィックス オーバーレイの追加（英語）](https://developers.arcgis.com/net/latest/wpf/guide/add-graphics-overlays-to-your-app.htm)を参照してください。
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。
 
 次のコードは、`MapView` オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。
 
@@ -182,7 +179,7 @@ MyMapView.GraphicsOverlays.Add(graphicsOverlay);
 ## ジオメトリとジオメトリ ビルダー
 `Geometry` オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。
 
-ジオメトリ ビルダー（`GeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、[ArcGIS for Developers: ジオメトリの編集（英語）](https://developers.arcgis.com/net/latest/wpf/guide/edit-geometries.htm)を参照してください 。
+ジオメトリ ビルダー（`GeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。
 
 ## スケッチ エディター
 スケッチ エディター（`SketchEditor`）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。
@@ -219,7 +216,7 @@ catch (Exception ex)
 データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、`NotLoaded（ロードが開始していない`、`Loading（ロード中）`、`Loaded（ロードに成功）`、`FailedToLoad（ロードに失敗）` のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。
 
-詳細は、[ArcGIS for Developers: ローダブル パターン（英語）](https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm)を参照してください。
+詳細は、[ArcGIS for Developers: ローダブル パターン（英語）](https://developers.arcgis.com/net/programming-patterns/loadable/)を参照してください。
 
 次のコードは、ローダブル パターンの使用方法の例を示しています。
 ```javascript
@@ -236,11 +233,9 @@ await featureLayer.LoadAsync();
 ```
 
 ## ローカルサーバー
-ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、[ArcGIS for Developers: ローカル サーバー（英語）](https://developers.arcgis.com/net/latest/wpf/guide/local-server.htm#ESRI_SECTION1_F84DC74EFFBA455AAFDB353E02471CB7)を参照してください。
+ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、[ArcGIS for Developers: ローカル サーバー（英語）](https://developers.arcgis.com/net/local-server/)を参照してください。
 
 
 ## 既知の制限事項
-現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for .NET: リリース ノート（英語）](https://developers.arcgis.com/net/reference/release-notes/)に記載されていますので、ご参照ください。
 
-## 関連リンク
-* [ArcGIS for Developers: リリース ノート（英語）](https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm)

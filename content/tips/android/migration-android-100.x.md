@@ -32,11 +32,11 @@ Android Studio のビルド ツールは Gradle を使用し、maven リポジ�
 repositories {
     jcenter()
     maven {
-        url 'https://esri.bintray.com/arcgis'
+        url 'https://esri.jfrog.io/artifactory/arcgis'
     }
 }
 dependencies {
-    implementation 'com.esri.arcgisruntime:arcgis-android:100.6.0'
+    implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
 }
 ```
 
@@ -70,7 +70,7 @@ mMapView.setMap(mArcGISMap);
 |タイル マップ サービス レイヤー|ArcGISTiledMapServiceLayer|ArcGISTiledLayer|
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
-100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for Android: レイヤー（英語）](https://developers.arcgis.com/android/latest/guide/layers.htm)をご参照ください。
+100.x でサポートされているレイヤーの種類については、[ArcGIS Runtime SDK for Android: レイヤー（英語）](https://developers.arcgis.com/android/layers/)をご参照ください。
 
 作成した各レイヤーは、以下の方法でマップに追加します。
 ```java
@@ -125,15 +125,12 @@ outFields.add("*");
 serviceFeatureTable.populateFromServiceAsync(queryParameters,true,outFields);
 ```
 
-リクエスト モードの詳細は、
-[ArcGIS Runtime SDK for Android: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/android/latest/guide/layers.htm#ESRI_SECTION1_272346C9CB0049938539D5F8970624F2)をご参照ください。
-
 
 #### フィーチャの編集
 フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。
 
 フィーチャの編集方法は、
-[ArcGIS Runtime SDK for Android: フィーチャの編集（英語）](https://developers.arcgis.com/android/latest/guide/edit-features.htm)をご参照ください。
+[ArcGIS Runtime SDK for Android: フィーチャの編集（英語）](https://developers.arcgis.com/android/query-and-edit/edit/)をご参照ください。
 
 
 #### フィーチャの検索
@@ -184,7 +181,7 @@ final ListenableFuture<List<IdentifyLayerResult>> identifyLayersResult = mapView
 ## グラフィックス オーバーレイ
 
 グラフィックは、マップ上に一時的なデータを表示するために使用されます。`MapView` オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（`GraphicsOverlay`）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、[ArcGIS Runtime SDK for Android: グラフィックス オーバーレイの追加（英語）](https://developers.arcgis.com/android/latest/guide/add-graphics-overlays-to-your-app.htm)をご参照ください。
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。
 
 次のコードは、`MapView` オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。
 
@@ -202,7 +199,7 @@ mapView.getGraphicsOverlays().add(graphicsOverlay);
 
 `Geometry` オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。
 
-ジオメトリ ビルダー（`GeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、[ArcGIS Runtime SDK for Android: ジオメトリの編集（英語）](https://developers.arcgis.com/android/latest/guide/geometries.htm)をご参照ください 。
+ジオメトリ ビルダー（`GeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。
 
 
 ## ローダブル パターン
@@ -210,7 +207,7 @@ mapView.getGraphicsOverlays().add(graphicsOverlay);
 データを非同期でロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンが採用されています。各リソースのプロパティにアクセスするには、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 各リソースの状態は、`NotLoaded（ロードが開始していない`、`Loading（ロード中）`、`Loaded（ロードに成功）`、`FailedToLoad（ロードに失敗）` のいずれかで監視することもできます。
 
-詳細は、[ArcGIS Runtime SDK for Android: ローダブル パターン（英語）](https://developers.arcgis.com/android/latest/guide/loadable-pattern.htm)をご参照ください。
+詳細は、[ArcGIS Runtime SDK for Android: ローダブル パターン（英語）](https://developers.arcgis.com/android/programming-patterns/loadable/)をご参照ください。
 
 次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。
 ```java
@@ -226,7 +223,5 @@ if(featureLayer.getLoadStatus().equals(LoadStatus.FAILED_TO_LOAD)){
 Java 言語で `ListenableFuture` というインターフェースで馴染みのある Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。
 
 ## 既知の制限事項
-本バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F)に記載されていますので、ご参照ください。
+本バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/reference/release-notes/)に記載されていますので、ご参照ください。
 
-## 関連リンク
-* [ArcGIS Runtime SDK for Android: リリース ノート（英語）](https://developers.arcgis.com/android/latest/guide/release-notes.htm)

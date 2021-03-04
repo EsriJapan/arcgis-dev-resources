@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:33 JST">
+<meta name="revised" content="2021-03-04T14:50:17 JST">
 <title>アプリケーション配布ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -984,9 +984,9 @@ if (!doNotTrack) {
 <p>ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。</p>
 <ol>
-<li><a href="https://developers.arcgis.com/arcgis-runtime/licensing/">ArcGIS for Developers: Licensing Your ArcGIS Runtime App</a> ページにアクセスします</li>
-<li>Lite の枠に表示されている [Sign Up] をクリックします</li>
-<li>画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">開発者アカウントの作成</a></li>
+<li><a href="https://developers.arcgis.com/net/license-and-deployment/#arcgis-runtime-license">ArcGIS Developers: ArcGIS Runtime license</a> ページにアクセスします</li>
+<li>ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime license string] をクリックします</li>
+<li>ArcGIS Developers アカウントでサインインします。アカウントの作成方法は、<a href="../../../guide/create-map/get-dev-account/#%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">開発者アカウントの作成</a> を参照してください。</li>
 <li>表示されたライセンスキーをコピーします
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px"></li>
 <li>次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。</li>
@@ -1012,7 +1012,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>, <span style="color:#a6e22e">extensions</span>);
 </code></pre></div><h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する <a href="http://www.esrij.com/products/arcgis-online/plan/organization/">ArcGIS Online 組織向けプラン</a> もしくは <a href="http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/">Portal for ArcGIS</a> の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
-<p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下の認証方法は、指定ユーザーのユーザー名とパスワードをコードに埋め込んで認証する簡単な例です。認証方法の詳細については <a href="https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm">ArcGIS for Developers: 認証マネージャーの使用（英語）</a>をご参照ください。</p>
+<p>アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下の認証方法は、指定ユーザーのユーザー名とパスワードをコードに埋め込んで認証する簡単な例です。認証方法の詳細については <a href="https://developers.arcgis.com/net/license-and-deployment/license/#license-your-app-with-a-named-user-account">ArcGIS for Developers: 認証マネージャーの使用（英語）</a>をご参照ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">try</span>
 {
     <span style="color:#75715e">// 認証先のポータルの URL を設定

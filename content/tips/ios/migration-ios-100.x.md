@@ -114,15 +114,12 @@ self.map.operationalLayers.add(featureLayer)
     }
     ```
 
-リクエスト モードの詳細は、
-[ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）](https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D)をご参照ください。
-
 
 #### フィーチャの編集
 フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。
 
 フィーチャの編集方法は、
-[ArcGIS Runtime SDK for iOS: フィーチャの編集（英語）](https://developers.arcgis.com/ios/latest/swift/guide/edit-features.htm)をご参照ください。
+[ArcGIS Runtime SDK for iOS: フィーチャの編集（英語）](https://developers.arcgis.com/ios/query-and-edit/edit/)をご参照ください。
 
 #### フィーチャの検索
 フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
@@ -163,7 +160,7 @@ self.mapView.identifyLayers(atScreenPoint: screenPoint, tolerance: 10, returnPop
 ## グラフィックス オーバーレイ
 
 グラフィックは、マップ上に一時的なデータを表示するために使用されます。`AGSMapView` と `AGSSceneView` オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（`AGSGraphicsOverlay`）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、[ArcGIS Runtime SDK for iOS: グラフィックス オーバーレイの追加（英語）](https://developers.arcgis.com/ios/latest/swift/guide/add-graphics-overlays-to-your-app.htm)をご参照ください。
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。
 
 次のコードは、`AGSMapView` オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。
 
@@ -181,7 +178,7 @@ self.mapView.graphicsOverlays.add(graphicsOverlay)
 
 `AGSGeometry` オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。
 
-ジオメトリ ビルダー（`AGSGeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、[ArcGIS Runtime SDK for iOS: ジオメトリの編集（英語）](https://developers.arcgis.com/ios/latest/swift/guide/edit-geometries.htm)をご参照ください 。
+ジオメトリ ビルダー（`AGSGeometryBuilder`）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。
 
 ## スケッチ エディター
 スケッチ エディター（`AGSSketchEditor`）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。
@@ -209,7 +206,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(ViewController.
 データを非同期でロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンが採用されています。各リソースのプロパティにアクセスするには、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 各リソースの状態は、`NotLoaded（ロードが開始していない`、`Loading（ロード中）`、`Loaded（ロードに成功）`、`FailedToLoad（ロードに失敗）` のいずれかで監視することもできます。
 
-詳細は、[ArcGIS Runtime SDK for iOS: ローダブル パターン（英語）](https://developers.arcgis.com/ios/latest/swift/guide/loadable-pattern.htm)をご参照ください。
+詳細は、[ArcGIS Runtime SDK for iOS: ローダブル パターン（英語）](https://developers.arcgis.com/ios/programming-patterns/loadable/)をご参照ください。
 
 次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。
 ```javascript
@@ -239,8 +236,5 @@ self.mapView.locationDisplay.start(completion: { (error) -> Void in
 })
 ```
 ## 既知の制限事項
-現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/reference/release-notes/)に記載されていますので、ご参照ください。
 
-## 関連リンク
-* [ArcGIS Runtime SDK for iOS: バージョン 100.x への移行（英語）](https://developers.arcgis.com/ios/latest/swift/guide/migrate-to-100-0.htm)
-* [ArcGIS Runtime SDK for iOS: リリース ノート（英語）](https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm)

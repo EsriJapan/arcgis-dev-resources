@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:34 JST">
+<meta name="revised" content="2021-03-04T14:50:18 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -734,7 +734,6 @@ if (!doNotTrack) {
     <li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
     <li><a href="#ブロックを使用した非同期プログラミング">ブロックを使用した非同期プログラミング</a></li>
     <li><a href="#既知の制限事項">既知の制限事項</a></li>
-    <li><a href="#関連リンク">関連リンク</a></li>
   </ul>
 </nav>
         </div>
@@ -857,12 +856,10 @@ if (!doNotTrack) {
 }
 </code></pre></div></li>
 </ul>
-<p>リクエスト モードの詳細は、
-<a href="https://developers.arcgis.com/ios/latest/swift/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D">ArcGIS Runtime SDK for iOS: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの編集">フィーチャの編集</h4>
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
 <p>フィーチャの編集方法は、
-<a href="https://developers.arcgis.com/ios/latest/swift/guide/edit-features.htm">ArcGIS Runtime SDK for iOS: フィーチャの編集（英語）</a>をご参照ください。</p>
+<a href="https://developers.arcgis.com/ios/query-and-edit/edit/">ArcGIS Runtime SDK for iOS: フィーチャの編集（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>AGSServiceFeatureTable</code> または <code>AGSGeodatabaseFeatureTable</code> クラスの <code>queryFeaturesWithParameters</code> メソッドを使用します。</p>
@@ -893,7 +890,7 @@ if (!doNotTrack) {
 })
 </code></pre></div><h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>AGSMapView</code> と <code>AGSSceneView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>AGSGraphicsOverlay</code>）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、<a href="https://developers.arcgis.com/ios/latest/swift/guide/add-graphics-overlays-to-your-app.htm">ArcGIS Runtime SDK for iOS: グラフィックス オーバーレイの追加（英語）</a>をご参照ください。</p>
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。</p>
 <p>次のコードは、<code>AGSMapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを設定してグラフィックを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSGraphic</span>(<span style="color:#a6e22e">geometry</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pointGeometry</span>, <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">poitnSymbol</span>, <span style="color:#a6e22e">attributes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">nil</span>)
@@ -904,7 +901,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">graphicsOverlays</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">graphicsOverlay</span>)
 </code></pre></div><h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>AGSGeometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
-<p>ジオメトリ ビルダー（<code>AGSGeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/ios/latest/swift/guide/edit-geometries.htm">ArcGIS Runtime SDK for iOS: ジオメトリの編集（英語）</a>をご参照ください 。</p>
+<p>ジオメトリ ビルダー（<code>AGSGeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。</p>
 <h2 id="スケッチ-エディター">スケッチ エディター</h2>
 <p>スケッチ エディター（<code>AGSSketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
 <p>次のコードは、<code>AGSSketchEditor</code> の使用方法の例を示しています。</p>
@@ -924,7 +921,7 @@ if (!doNotTrack) {
 </code></pre></div><h2 id="ローダブル-パターン">ローダブル パターン</h2>
 <p>データを非同期でロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンが採用されています。各リソースのプロパティにアクセスするには、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 各リソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することもできます。</p>
-<p>詳細は、<a href="https://developers.arcgis.com/ios/latest/swift/guide/loadable-pattern.htm">ArcGIS Runtime SDK for iOS: ローダブル パターン（英語）</a>をご参照ください。</p>
+<p>詳細は、<a href="https://developers.arcgis.com/ios/programming-patterns/loadable/">ArcGIS Runtime SDK for iOS: ローダブル パターン（英語）</a>をご参照ください。</p>
 <p>次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> {(<span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span> {
@@ -946,12 +943,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  }
 })
 </code></pre></div><h2 id="既知の制限事項">既知の制限事項</h2>
-<p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm#ESRI_SECTION1_23003AC7E43242AB890BC5AC91D42A3F">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
-<h2 id="関連リンク">関連リンク</h2>
-<ul>
-<li><a href="https://developers.arcgis.com/ios/latest/swift/guide/migrate-to-100-0.htm">ArcGIS Runtime SDK for iOS: バージョン 100.x への移行（英語）</a></li>
-<li><a href="https://developers.arcgis.com/ios/latest/swift/guide/release-notes.htm">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a></li>
-</ul>
+<p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/ios/reference/release-notes/">ArcGIS Runtime SDK for iOS: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 
 
     

@@ -145,9 +145,9 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 ArcGIS Runtime Lite のライセンスキーを ArcGIS for Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
- 1. [ArcGIS for Developers: Licensing Your ArcGIS Runtime App](https://developers.arcgis.com/arcgis-runtime/licensing/) ページにアクセスします
- 1. Lite の枠に表示されている [Sign Up] をクリックします
- 1. 画面右上に表示される [Sign In] をクリックして ArcGIS for Developers アカウントでサインインします。アカウントの作成方法は、[開発者アカウントの作成](../../../guide/create-map/get-dev-account/#アカウントの作成)
+ 1. [ArcGIS Developers: ArcGIS Runtime license](https://developers.arcgis.com/net/license-and-deployment/#arcgis-runtime-license) ページにアクセスします
+ 1. ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime license string] をクリックします
+ 1. ArcGIS Developers アカウントでサインインします。アカウントの作成方法は、[開発者アカウントの作成](../../../guide/create-map/get-dev-account/#アカウントの作成) を参照してください。
  1. 表示されたライセンスキーをコピーします
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px">
  1. 次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
@@ -189,7 +189,7 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 
  アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する [ArcGIS Online 組織向けプラン](http://www.esrij.com/products/arcgis-online/plan/organization/) もしくは [Portal for ArcGIS](http://www.esrij.com/products/arcgis-for-server/details/portal-for-arcgis/) の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。
 
- アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下の認証方法は、指定ユーザーのユーザー名とパスワードをコードに埋め込んで認証する簡単な例です。認証方法の詳細については [ArcGIS for Developers: 認証マネージャーの使用（英語）](https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm)をご参照ください。
+ アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下の認証方法は、指定ユーザーのユーザー名とパスワードをコードに埋め込んで認証する簡単な例です。認証方法の詳細については [ArcGIS for Developers: 認証マネージャーの使用（英語）](https://developers.arcgis.com/net/license-and-deployment/license/#license-your-app-with-a-named-user-account)をご参照ください。
 
 ```javascript
 try

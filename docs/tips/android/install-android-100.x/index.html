@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:33 JST">
+<meta name="revised" content="2021-03-04T14:50:17 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -757,10 +757,10 @@ if (!doNotTrack) {
 この SDK には API やリファレンス、サンプルコードなどが含まれています。
 詳細は <a href="http://www.esrij.com/products/arcgis-runtime-sdk-for-android/">ArcGIS Runtime SDK for Android</a> をご参照ください。</p>
 <h2 id="arcgis-runtime-sdk-for-android-の開発環境">ArcGIS Runtime SDK for Android の開発環境</h2>
-<p>以下はArcGIS Runtime SDK for Android の最新版（100.9）の開発に必要な環境です。</p>
+<p>以下はArcGIS Runtime SDK for Android の最新版（100.10）の開発に必要な環境です。</p>
 <ul>
 <li>Android Studio / IntelliJ IDEA</li>
-<li>Android 5.0（Lollipop: API レベル 21) 以降</li>
+<li>Android 6.0（Marshmallow: API レベル 23) 以降</li>
 <li>OpenGL ES
 <ul>
 <li>2D (MapView): OpenGL ES 2.0 以上（3.0を推奨）</li>
@@ -774,7 +774,7 @@ if (!doNotTrack) {
 これらの言語機能は、ArcGIS Runtime SDK の Android ドキュメントおよび<a href="https://github.com/Esri/arcgis-runtime-samples-android/tree/master/java">サンプル</a>でも使用されています。</br>
 Java 8 を使用したコードをコンパイルするには、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/#arcgis-runtime-sdk%E3%81%AE%E8%A8%AD%E5%AE%9A">ArcGIS Runtime SDK の設定</a>の「4」を参照してください。</br></p>
 <h2 id="モバイル-マッピング-アプリケーションの開発">モバイル マッピング アプリケーションの開発</h2>
-<p>ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、<a href="https://developers.arcgis.com/android/latest/guide/develop-your-first-map-app-with-kotlin.htm">Develop your first map app with Kotlin</a> を参照してください。</p>
+<p>ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、<a href="https://developers.arcgis.com/android/maps-2d/tutorials/display-a-map/">Display a map</a> を参照してください。</p>
 <ul>
 <li><strong><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">プロジェクトの作成</a></strong></li>
 <li><strong><a href="#arcgis-runtime-sdk%E3%81%AE%E8%A8%AD%E5%AE%9A">ArcGIS Runtime SDKの設定</a></strong></li>
@@ -789,7 +789,7 @@ Java 8 を使用したコードをコンパイルするには、<a href="https:/
 <li>[Application name] にアプリケーションの名称を入力します。ここでは「HelloMap」としています。[Company Domain] にドメインを、[Project Location] に作成するディレクトリを入力して [Next] をクリックします。
 ここではドメインを「tutorials.esri.com」としています。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_2.makeProject.png" width="600px"></li>
-<li>[Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから 「API 24: Android 7.0 (Nougat)」を選択して [Next] をクリックします。
+<li>[Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから適切な API レベルを選択して [Next] をクリックします。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_3.choseAndroidVersion.png" width="600px"></li>
 <li>Activity を選択します。ここでは「Empty Activity」を選択して [Next] をクリックします。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_4.choseActivity.png" width="600px"></li>
@@ -821,7 +821,7 @@ Project ツールウィンドウ で「Android」を選択して「Manifests」�
 </code></pre></div> <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px">
  3. build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation 'com.esri.arcgisruntime:arcgis-android:100.×.×'」を追加します。
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
-	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">9</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">10</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 	<span style="color:#960050;background-color:#1e0010">…</span>
 <span style="color:#f92672">}</span>
 </code></pre></div> <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_3.addRuntimeVersion.png" width="700px">

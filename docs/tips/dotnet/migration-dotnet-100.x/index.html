@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:33 JST">
+<meta name="revised" content="2021-03-04T14:50:17 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -734,7 +734,6 @@ if (!doNotTrack) {
     <li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
     <li><a href="#ローカルサーバー">ローカルサーバー</a></li>
     <li><a href="#既知の制限事項">既知の制限事項</a></li>
-    <li><a href="#関連リンク">関連リンク</a></li>
   </ul>
 </nav>
         </div>
@@ -809,7 +808,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p>100.x でサポートされているレイヤーのタイプについては、<a href="https://developers.arcgis.com/net/latest/wpf/guide/layers.htm">ArcGIS for Developers: レイヤー（英語）</a>をご参照ください。</p>
+<p>100.x でサポートされているレイヤーのタイプについては、<a href="https://developers.arcgis.com/net/layers/">ArcGIS for Developers: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">OperationalLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">arcgis_map_image_layer</span>)
@@ -851,12 +850,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">outputFields</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">string</span>[] { <span style="color:#e6db74">&#34;*&#34;</span> };
 <span style="color:#75715e">// クエリの条件に基づいてフィーチャ テーブルにデータを設定する
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">featureTable</span>.<span style="color:#a6e22e">PopulateFromServiceAsync</span>(<span style="color:#a6e22e">queryParameters</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">outputFields</span>);
-</code></pre></div><p>リクエスト モードの詳細は、
-<a href="https://developers.arcgis.com/net/latest/wpf/guide/layers.htm#ESRI_SECTION1_40F10593308A4718971C9A8F5FB9EC7D">ArcGIS for Developers: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
-<h4 id="フィーチャの編集">フィーチャの編集</h4>
+</code></pre></div><h4 id="フィーチャの編集">フィーチャの編集</h4>
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
 <p>フィーチャの編集方法は、
-<a href="https://developers.arcgis.com/net/latest/wpf/guide/edit-features.htm">ArcGIS for Developers: フィーチャの編集（英語）</a>をご参照ください。</p>
+<a href="https://developers.arcgis.com/net/query-and-edit/edit/">ArcGIS for Developers: フィーチャの編集（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code> クラスの <code>QueryFeaturesAsync</code> メソッドを使用します。</p>
@@ -904,7 +901,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>MapView</code> と <code>SceneView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>GraphicsOverlay</code>）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/add-graphics-overlays-to-your-app.htm">ArcGIS for Developers: グラフィックス オーバーレイの追加（英語）</a>を参照してください。</p>
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。</p>
 <p>次のコードは、<code>MapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを使用してグラフィックを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>(<span style="color:#a6e22e">pointGeometry</span>, <span style="color:#a6e22e">poitnSymbol</span>);
@@ -915,7 +912,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">GraphicsOverlays</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">graphicsOverlay</span>);
 </code></pre></div><h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>Geometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
-<p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/edit-geometries.htm">ArcGIS for Developers: ジオメトリの編集（英語）</a>を参照してください 。</p>
+<p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。</p>
 <h2 id="スケッチ-エディター">スケッチ エディター</h2>
 <p>スケッチ エディター（<code>SketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
 <p>次のコードは、<code>SketchEditor</code> の使用方法の例を示しています。</p>
@@ -945,7 +942,7 @@ if (!doNotTrack) {
 </code></pre></div><h2 id="ローダブル-パターン">ローダブル パターン</h2>
 <p>データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。</p>
-<p>詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm">ArcGIS for Developers: ローダブル パターン（英語）</a>を参照してください。</p>
+<p>詳細は、<a href="https://developers.arcgis.com/net/programming-patterns/loadable/">ArcGIS for Developers: ローダブル パターン（英語）</a>を参照してください。</p>
 <p>次のコードは、ローダブル パターンの使用方法の例を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ローダブル時のイベント
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">Loaded</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">e</span>) =&gt;
@@ -958,13 +955,9 @@ if (!doNotTrack) {
 <span style="color:#75715e">// フィーチャ レイヤーのロード
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">LoadAsync</span>();
 </code></pre></div><h2 id="ローカルサーバー">ローカルサーバー</h2>
-<p>ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、<a href="https://developers.arcgis.com/net/latest/wpf/guide/local-server.htm#ESRI_SECTION1_F84DC74EFFBA455AAFDB353E02471CB7">ArcGIS for Developers: ローカル サーバー（英語）</a>を参照してください。</p>
+<p>ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、<a href="https://developers.arcgis.com/net/local-server/">ArcGIS for Developers: ローカル サーバー（英語）</a>を参照してください。</p>
 <h2 id="既知の制限事項">既知の制限事項</h2>
-<p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm#ESRI_SECTION1_9969687B9680403585F718C399EC43D4">ArcGIS Runtime SDK for .NET: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
-<h2 id="関連リンク">関連リンク</h2>
-<ul>
-<li><a href="https://developers.arcgis.com/net/latest/wpf/guide/release-notes.htm">ArcGIS for Developers: リリース ノート（英語）</a></li>
-</ul>
+<p>現バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/net/reference/release-notes/">ArcGIS Runtime SDK for .NET: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 
 
     

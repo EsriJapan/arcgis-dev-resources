@@ -10,7 +10,7 @@ aliases = ["/create-startup-app-android/"]
 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
 
 またこの後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Android Library プロジェクトとして参照する方法を用いています。
-ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方はこちらの [SDK download](https://developers.arcgis.com/android/latest/guide/install-and-set-up.htm#ESRI_SECTION1_4108D3B809C54DD4A0BD37E6397EBFA8)（英語）手順をご覧ください。
+ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方は [Get the API manually](https://developers.arcgis.com/android/install-and-set-up/#get-the-api-manually)（英語）をご覧ください。
 
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](../get-dev-account)」をご参照ください。
 

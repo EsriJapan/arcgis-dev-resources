@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:33 JST">
+<meta name="revised" content="2021-03-04T14:50:17 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -734,7 +734,6 @@ if (!doNotTrack) {
     <li><a href="#ローダブル-パターン">ローダブル パターン</a></li>
     <li><a href="#新しい同期パターン">新しい同期パターン</a></li>
     <li><a href="#既知の制限事項">既知の制限事項</a></li>
-    <li><a href="#関連リンク">関連リンク</a></li>
   </ul>
 </nav>
         </div>
@@ -776,11 +775,11 @@ if (!doNotTrack) {
 <pre><code>repositories {
     jcenter()
     maven {
-        url 'https://esri.bintray.com/arcgis'
+        url 'https://esri.jfrog.io/artifactory/arcgis'
     }
 }
 dependencies {
-    implementation 'com.esri.arcgisruntime:arcgis-android:100.6.0'
+    implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
 }
 </code></pre><p>ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-Android/environments/">ESRIジャパン 製品ページ（動作環境）</a>をご参照ください。</p>
 <h2 id="マップ">マップ</h2>
@@ -823,7 +822,7 @@ mMapView<span style="color:#f92672">.</span><span style="color:#a6e22e">setMap</
 </tr>
 </tbody>
 </table>
-<p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/android/latest/guide/layers.htm">ArcGIS Runtime SDK for Android: レイヤー（英語）</a>をご参照ください。</p>
+<p>100.x でサポートされているレイヤーの種類については、<a href="https://developers.arcgis.com/android/layers/">ArcGIS Runtime SDK for Android: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
 </span><span style="color:#75715e"></span>mArcGISMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOperationalLayers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>arcgis_map_image_layer<span style="color:#f92672">)</span>
@@ -861,12 +860,10 @@ mBasemap<span style="color:#f92672">.</span><span style="color:#a6e22e">getBaseL
 </span><span style="color:#75715e"></span>ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> outFields <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
 outFields<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">);</span>
 serviceFeatureTable<span style="color:#f92672">.</span><span style="color:#a6e22e">populateFromServiceAsync</span><span style="color:#f92672">(</span>queryParameters<span style="color:#f92672">,</span><span style="color:#66d9ef">true</span><span style="color:#f92672">,</span>outFields<span style="color:#f92672">);</span>
-</code></pre></div><p>リクエスト モードの詳細は、
-<a href="https://developers.arcgis.com/android/latest/guide/layers.htm#ESRI_SECTION1_272346C9CB0049938539D5F8970624F2">ArcGIS Runtime SDK for Android: フィーチャ リクエスト モード（英語）</a>をご参照ください。</p>
-<h4 id="フィーチャの編集">フィーチャの編集</h4>
+</code></pre></div><h4 id="フィーチャの編集">フィーチャの編集</h4>
 <p>フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。</p>
 <p>フィーチャの編集方法は、
-<a href="https://developers.arcgis.com/android/latest/guide/edit-features.htm">ArcGIS Runtime SDK for Android: フィーチャの編集（英語）</a>をご参照ください。</p>
+<a href="https://developers.arcgis.com/android/query-and-edit/edit/">ArcGIS Runtime SDK for Android: フィーチャの編集（英語）</a>をご参照ください。</p>
 <h4 id="フィーチャの検索">フィーチャの検索</h4>
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code> クラスの <code>queryFeaturesAsync</code> メソッドを使用します。</p>
@@ -906,7 +903,7 @@ queryResult<span style="color:#f92672">.</span><span style="color:#a6e22e">addDo
 <span style="color:#f92672">});</span>
 </code></pre></div><h2 id="グラフィックス-オーバーレイ">グラフィックス オーバーレイ</h2>
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>MapView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>GraphicsOverlay</code>）が含まれています。
-グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。詳細は、<a href="https://developers.arcgis.com/android/latest/guide/add-graphics-overlays-to-your-app.htm">ArcGIS Runtime SDK for Android: グラフィックス オーバーレイの追加（英語）</a>をご参照ください。</p>
+グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。</p>
 <p>次のコードは、<code>MapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ジオメトリとシンボルを設定してグラフィックを作成
 </span><span style="color:#75715e"></span>Graphic graphic <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Graphic<span style="color:#f92672">(</span>geometry<span style="color:#f92672">,</span>symbol<span style="color:#f92672">);</span>
@@ -917,11 +914,11 @@ graphicsOverlay<span style="color:#f92672">.</span><span style="color:#a6e22e">g
 </span><span style="color:#75715e"></span>mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">getGraphicsOverlays</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>graphicsOverlay<span style="color:#f92672">);</span>
 </code></pre></div><h2 id="ジオメトリとジオメトリ-ビルダー">ジオメトリとジオメトリ ビルダー</h2>
 <p><code>Geometry</code> オブジェクトのコンストラクタを使用すると、既知の座標を使用してジオメトリを作成できますが、作成後にそのジオメトリを変更することはできません。</p>
-<p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。詳細は、<a href="https://developers.arcgis.com/android/latest/guide/geometries.htm">ArcGIS Runtime SDK for Android: ジオメトリの編集（英語）</a>をご参照ください 。</p>
+<p>ジオメトリ ビルダー（<code>GeometryBuilder</code>）を使用すると、ゼロから新しいジオメトリを作成したり、既存のジオメトリを基に、ジオメトリを変更することができます。</p>
 <h2 id="ローダブル-パターン">ローダブル パターン</h2>
 <p>データを非同期でロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンが採用されています。各リソースのプロパティにアクセスするには、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 各リソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することもできます。</p>
-<p>詳細は、<a href="https://developers.arcgis.com/android/latest/guide/loadable-pattern.htm">ArcGIS Runtime SDK for Android: ローダブル パターン（英語）</a>をご参照ください。</p>
+<p>詳細は、<a href="https://developers.arcgis.com/android/programming-patterns/loadable/">ArcGIS Runtime SDK for Android: ローダブル パターン（英語）</a>をご参照ください。</p>
 <p>次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FeatureLayer featureLayer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FeatureLayer<span style="color:#f92672">(</span>serviceFeatureTable<span style="color:#f92672">);</span>
 <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>featureLayer<span style="color:#f92672">.</span><span style="color:#a6e22e">getLoadStatus</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>LoadStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">FAILED_TO_LOAD</span><span style="color:#f92672">)){</span>
@@ -932,11 +929,7 @@ graphicsOverlay<span style="color:#f92672">.</span><span style="color:#a6e22e">g
 </code></pre></div><h2 id="新しい同期パターン">新しい同期パターン</h2>
 <p>Java 言語で <code>ListenableFuture</code> というインターフェースで馴染みのある Future パターンが拡張されました。この新しい API は、メソッドの完了時に必要な数のリスナーを追加できます。</p>
 <h2 id="既知の制限事項">既知の制限事項</h2>
-<p>本バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm#GUID-861F8CA6-2FAC-44EB-A7B8-F99225A4EA0F">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
-<h2 id="関連リンク">関連リンク</h2>
-<ul>
-<li><a href="https://developers.arcgis.com/android/latest/guide/release-notes.htm">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a></li>
-</ul>
+<p>本バージョンでの既知の制限事項が、<a href="https://developers.arcgis.com/android/reference/release-notes/">ArcGIS Runtime SDK for Android: リリース ノート（英語）</a>に記載されていますので、ご参照ください。</p>
 
 
     

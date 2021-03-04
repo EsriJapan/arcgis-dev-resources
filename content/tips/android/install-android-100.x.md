@@ -21,10 +21,10 @@ ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネ�
 
 ## ArcGIS Runtime SDK for Android の開発環境
 
-以下はArcGIS Runtime SDK for Android の最新版（100.9）の開発に必要な環境です。
+以下はArcGIS Runtime SDK for Android の最新版（100.10）の開発に必要な環境です。
 
 * Android Studio / IntelliJ IDEA
-* Android 5.0（Lollipop: API レベル 21) 以降
+* Android 6.0（Marshmallow: API レベル 23) 以降
 * OpenGL ES  
   * 2D (MapView): OpenGL ES 2.0 以上（3.0を推奨） 
   * 3D (SceneView): OpenGL ES 3.0 以上
@@ -39,7 +39,7 @@ Java 8 を使用したコードをコンパイルするには、[ArcGIS Runtime 
 
 ## モバイル マッピング アプリケーションの開発
 
-ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、[Develop your first map app with Kotlin](https://developers.arcgis.com/android/latest/guide/develop-your-first-map-app-with-kotlin.htm) を参照してください。
+ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、[Display a map](https://developers.arcgis.com/android/maps-2d/tutorials/display-a-map/) を参照してください。
 
 * __[プロジェクトの作成](#プロジェクトの作成)__
 * __[ArcGIS Runtime SDKの設定](#arcgis-runtime-sdkの設定)__
@@ -55,7 +55,7 @@ Java 8 を使用したコードをコンパイルするには、[ArcGIS Runtime 
  1. [Application name] にアプリケーションの名称を入力します。ここでは「HelloMap」としています。[Company Domain] にドメインを、[Project Location] に作成するディレクトリを入力して [Next] をクリックします。
 ここではドメインを「tutorials.esri.com」としています。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_2.makeProject.png" width="600px">
- 1. [Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから 「API 24: Android 7.0 (Nougat)」を選択して [Next] をクリックします。
+ 1. [Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから適切な API レベルを選択して [Next] をクリックします。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_3.choseAndroidVersion.png" width="600px">
  1. Activity を選択します。ここでは「Empty Activity」を選択して [Next] をクリックします。
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_4.choseActivity.png" width="600px">
@@ -96,7 +96,7 @@ allprojects {
 
 ```java
 dependencies {
-	implementation 'com.esri.arcgisruntime:arcgis-android:100.9.0'
+	implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
 	…
 }
 ```

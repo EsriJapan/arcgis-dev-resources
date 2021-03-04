@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-17T14:21:33 JST">
+<meta name="revised" content="2021-03-04T14:50:17 JST">
 <title>iOS :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -722,7 +722,6 @@ if (!doNotTrack) {
     <li><a href="#サンプル-プロジェクトのダウンロード">サンプル プロジェクトのダウンロード</a></li>
     <li><a href="#地図の表示">地図の表示</a></li>
     <li><a href="#現在位置の表示">現在位置の表示</a></li>
-    <li><a href="#位置情報の表示モードにはoffズームしないで現在位置のシンボルをマップ上に表示するrecenter現在位置を中心にマップをズームするnavigation現在位置を常にマップの下部に表示して端末の進行方向によってマップを回転するcompassnavigation現在位置を常にマップの中心に表示して端末の向いている方向によってマップを回転するの-4-つのモードが用意されています">位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</a></li>
   </ul>
 </nav>
         </div>
@@ -815,7 +814,8 @@ self.mapView.locationDisplay.start(completion: { (error) -&gt; Void in
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px">
  シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。
 <p>アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの <code>Info.plist</code> ファイルの <code>NSLocationWhenInUseUsageDescription</code> プロパティで設定できます。</p>
-<h2 id="位置情報の表示モードにはoffズームしないで現在位置のシンボルをマップ上に表示するrecenter現在位置を中心にマップをズームするnavigation現在位置を常にマップの下部に表示して端末の進行方向によってマップを回転するcompassnavigation現在位置を常にマップの中心に表示して端末の向いている方向によってマップを回転するの-4-つのモードが用意されています">位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</h2>
+<p>位置情報の表示モードには、off（ズームしないで現在位置のシンボルをマップ上に表示する）、recenter（現在位置を中心にマップをズームする）、navigation（現在位置を常にマップの下部に表示して、端末の進行方向によってマップを回転する）、compassNavigation（現在位置を常にマップの中心に表示して、端末の向いている方向によってマップを回転する）の 4 つのモードが用意されています。</p>
+<hr>
 <p>アプリの動作が確認できたら <a href="../../authentication">ArcGIS の OAuth 認証について学びましょう！</a></p>
 
 
