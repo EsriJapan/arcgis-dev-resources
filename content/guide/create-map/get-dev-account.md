@@ -24,7 +24,7 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
 
 以下の手順で ArcGIS for Developers に新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまで[お問い合わせ](http://www.esrij.com/contact/)ください。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/account/signup.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/account/signup.gif" width="600px">
 
 1. [ArcGIS for Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、[Sign Up For Free] をクリックします。
 

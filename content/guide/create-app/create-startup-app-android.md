@@ -27,7 +27,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
  [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
 
 ## 地図の表示
 
@@ -48,7 +48,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 
 Android の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
 
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/startup-android/GPS.png" width="200px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-android/GPS.png" width="200px">
 
 以下に倣ってソース コードを修正・追加してみてください。
 

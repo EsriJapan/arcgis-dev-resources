@@ -46,14 +46,14 @@ ArcGIS for Developers の開発者向けクラウド サービスではお手持
 
 ### 1. フィーチャ サービスの作成を開始する
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature1.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature1.gif" width="600px">
 
 1. [Dashboard］の横の［＋］をクリックし、［New Layer］を選択します。
 1. [Create an Empty Layer］をクリックし、Create New Layer ページを開きます。
 
 ### 2. 基本情報の入力
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature2.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature2.gif" width="600px">
 
 公開するフィーチャ サービスに対して、以下の基本情報を入力します。
 
@@ -68,7 +68,7 @@ ArcGIS for Developers の開発者向けクラウド サービスではお手持
 
 入力が完了したら、[Geometry] をクリックして次へ進みます。
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature3.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature3.gif" width="600px">
 
 * Geometry Type（ジオメトリ タイプ）
   * ジオメトリ タイプはフィーチャの図形の種類で、ポイント、ライン、ポリゴンの三種類から構成されています。ポイントは地物を点のデータで表し、観測地点などを表示するために使われます。ラインは地物を線のデータで表し、河川や道路などのフィーチャを表示するために使用されます。ポリゴンは地物を面のデータで表し、建物などを表示するために使用されます。 1 つのフィーチャ サービスに対して選択できるジオメトリ タイプはいずれか 1 つです。
@@ -80,7 +80,7 @@ ArcGIS for Developers の開発者向けクラウド サービスではお手持
 
 ### 3.属性情報の入力
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature4.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature4.gif" width="600px">
 
 属性とはフィーチャに関する様々な情報のことで、属性テーブルと呼ばれるデータベースに保存することができます。属性テーブルの列のことを属性フィールドと呼びます。例えば公共施設の属性には名称や所在地、分類、電話番号などを含めることができます。この属性情報をもとにシンボルやラベルを表示したり、フィーチャを検索したりすることが可能です。
 
@@ -104,7 +104,7 @@ Field Name と Field Type を入力し、[+ Add Field] をクリックするこ�
 
 ### 4.詳細設定
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature5.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature5.gif" width="600px">
 
 ファイルの添付機能やサービスの共有、編集権限などを設定できます。設定がすべて終了したら[Create Layer] をクリックし、フィーチャ サービスを公開します。
 
@@ -113,13 +113,13 @@ Field Name と Field Type を入力し、[+ Add Field] をクリックするこ�
 フィーチャ サービス公開後、マップ ビューアー上でフィーチャ サービスを表示して、データを追加することができます。
 
 ### 1. フィーチャ サービスの表示
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature6.gif" width="600px">  
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature6.gif" width="600px">  
 公開したフィーチャ サービスを選択して、[Open in Map Viewer] をクリックして、マップ ビューアーを起動します。
 マップ ビューアーが起動すると、地図が表示されます。画面左側にあるコンテンツ パネルには公開したフィーチャ サービスを参照したレイヤーが表示されています。
 
 
 ### 2. フィーチャ サービスの編集
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature7.gif" width="600px">  
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature7.gif" width="600px">  
 
   1. [編集] をクリックして、[フィーチャの追加] ウィンドウから追加するデータのシンボルを選択します。
   1. 選択後に、地図上の任意の場所をクリックすることで新しいデータが追加されます。

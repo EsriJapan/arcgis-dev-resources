@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-04T14:50:18 JST">
+<meta name="revised" content="2021-04-14T20:51:08 JST">
 <title>Arcade :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -880,7 +880,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 };　　
 </code></pre></div><p>式が <code>expressionInfos</code> プロパティに存在すると、 PopupTemplate のコンテンツ内の<code>{expession/expression-name}</code> プレースホルダー テンプレートを使用して式から返された値を参照できます。
 ポップアップのコンテンツは、ユーザーが Greenlee , AZ を表現しているフィーチャーをクリックした後に次のように表示されます。</p>
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" ></p>
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" ></p>
 <p>また、PopupTmplate　のコンテンツ の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a>　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの <code>fieldName</code> プロパティで式の名前を参照するだけです。なお、 <code>expression/expression-name</code> シンタックスを使用してください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">expressionInfos</span><span style="color:#f92672">:</span> [{
@@ -896,7 +896,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
   }]
 };
 </code></pre></div><p>ポップアップには以下のように表示されます。</p>
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" ></p>
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" ></p>
 <p>PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
 このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank"><code>PopupTemplate Reference Arcade</code></a>）でご覧ください。</p>
 <h3 id="ラベリング">ラベリング</h3>

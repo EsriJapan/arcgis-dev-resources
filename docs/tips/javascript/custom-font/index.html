@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-04T14:50:18 JST">
+<meta name="revised" content="2021-04-14T20:51:08 JST">
 <title>カスタム フォント :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -748,7 +748,7 @@ if (!doNotTrack) {
 <p>※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。</p>
 <h2 id="フォントの入手">フォントの入手</h2>
 <p>今回は、<a href="https://fonts.google.com/?subset=japanese">Google フォント</a> からダウンロードして PBF に変換します。</p>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_download.gif" width=80%>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_download.gif" width=80%>
 <h2 id="pbf-フォントの作成">pbf フォントの作成</h2>
 <p>pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。</p>
 <p><code>https://fonts/&lt;フォントスタック&gt;/&lt;ユニコード文字範囲&gt;.pbf</code></p>
@@ -776,7 +776,7 @@ IIS を使用する場合は、MIME に .pbf (binary/octet-stream) を登録し�
 <p>「fonts」 フォルダ<br>
 　　|&ndash;「&lt;フォントファミリー&gt;-&lt;ウェイト&gt;-&lt;スタイル&gt;」フォルダ（例：arial-bold-italic） ※<br>
 　　　|&ndash; pbf ファイル群</p>
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png" alt="フォントの配置"></p>
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png" alt="フォントの配置"></p>
 <p>※ &lt;スタイル&gt; は省略可能です。今回は「KosugiMaru-Regular」フォルダを作成します。
 詳細は「API の設定」の項目を参照してください。</p>
 <h2 id="api-の設定">API の設定</h2>
@@ -795,7 +795,7 @@ family、weight、style の各プロパティに設定した値をもとに設�
 </li>
 </ol>
 <p>以下は作成した pbf フォントをテキスト シンボルで表示した画面とサンプルコードです。</p>
-<p><img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png" alt="フォントの表示"></p>
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png" alt="フォントの表示"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>

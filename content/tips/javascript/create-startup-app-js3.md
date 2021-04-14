@@ -20,7 +20,7 @@ aliases = ["/javascript/create-startup-app-js3/"]
 
  [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
 
 ## 地図の表示
 
@@ -38,13 +38,13 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
  まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
 
 1. Web アプリを実行すると、以下のように地図が表示されます。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/map-app.png" width="450px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup/map-app.png" width="450px">
 
 ## 検索機能の追加
 
 検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には `esri/dijit/Search` モジュール（検索ウィジェット）を使用します。検索ソースには[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)に含まれる東京都 23 区のデータを使用します。
 
- ![検索ウィジェット](http://apps.esrij.com/arcgis-dev/guide/img/startup/search-widget.png)
+ ![検索ウィジェット](https://apps.esrij.com/arcgis-dev/guide/img/startup/search-widget.png)
 
  検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。
 
@@ -124,10 +124,10 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
     フィールド名の確認は次の手順で紹介します。
 
 1. 検索対象とするレイヤーの詳細ページにて、[レイヤー] の項目から対象とするレイヤーをクリックして [サービスの URL] を選択します。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/view-fields.gif" width="450px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup/view-fields.gif" width="450px">
 
 1. [Fields] という項目にレイヤーのフィールド情報のリストが表示されているので、検索対象とするフィールド名をコピーして `searchFields` の配列に追加します。
 検索結果のポップアップに表示する属性情報として利用したい場合は `displayField` にも入力してください。
 
 1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup/search-app.gif" width="450px">

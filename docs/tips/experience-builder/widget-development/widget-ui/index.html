@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-04T14:50:17 JST">
+<meta name="revised" content="2021-04-14T20:51:07 JST">
 <title>ウィジェット UI の作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -782,7 +782,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIJSX.png" alt=""></p>
 <h2 id="jimu-ui-ライブラリの使用">Jimu UI ライブラリの使用</h2>
 <p>Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</p>
 <ul>
@@ -819,7 +819,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png" alt=""></p>
 <h2 id="css-ユーティリティクラス">CSS ユーティリティクラス</h2>
 <p>Jimu UI は、<a href="https://getbootstrap.com/docs/4.3/utilities">Bootstrap</a> と同じ CSS ユーティリティクラスを提供しており、UI 要素に素早くスタイルを適用することができます。</p>
 <h3 id="クイック-サンプル-1">クイック サンプル</h3>
@@ -836,7 +836,7 @@ if (!doNotTrack) {
   &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;;
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUtilityClasses.png" alt=""></p>
 <h2 id="ウィジェット-スタイル設定">ウィジェット スタイル設定</h2>
 <p>Experience Builder では、ウィジェットのスタイルを設定するには 3 つのオプションがあります。</p>
 <h3 id="インライン-css">インライン CSS</h3>
@@ -856,7 +856,7 @@ if (!doNotTrack) {
   <span style="color:#f92672">style</span><span style="color:#f92672">=</span>{<span style="color:#960050;background-color:#1e0010">containerStyle</span>} <span style="color:#f92672">//</span> <span style="color:#f92672">CSS</span> <span style="color:#f92672">styles</span> <span style="color:#f92672">applied</span>
 <span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="外部-css-スタイルシート">外部 CSS スタイルシート</h3>
 <p>別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。</p>
 <p>先ほどのコードサンプルを例に、CSS スタイルを別のスタイルシート (例: style.css) に移動します。</p>
@@ -878,7 +878,7 @@ if (!doNotTrack) {
 
 <span style="color:#f92672">return</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget&#34;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="css-in-js-推奨">CSS-in-JS (推奨)</h3>
 <p>CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript で CSS を書く方法のことを指します。</p>
 <p>Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして <a href="https://emotion.sh/docs/introduction">Emotion</a> を使用しています。</p>
@@ -922,7 +922,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt=""></p>
 <h3 id="2-styled-components">2. Styled Components</h3>
 <p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&ldquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
@@ -947,7 +947,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt=""></p>
 <h3 id="3-テーマを使った作業">3. テーマを使った作業</h3>
 <p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。</p>
 <p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
@@ -970,7 +970,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png" alt=""></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetWithTheme.png" alt=""></p>
 <p>default theme vs. dark theme</p>
 
 

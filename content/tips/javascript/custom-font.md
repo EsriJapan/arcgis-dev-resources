@@ -16,7 +16,7 @@ ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィ�
 ## フォントの入手
 今回は、[Google フォント](https://fonts.google.com/?subset=japanese) からダウンロードして PBF に変換します。
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_download.gif" width=80%>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_download.gif" width=80%>
 
 
 
@@ -52,7 +52,7 @@ IIS を使用する場合は、MIME に .pbf (binary/octet-stream) を登録し�
 　　|--「<フォントファミリー>-<ウェイト>-<スタイル>」フォルダ（例：arial-bold-italic） ※  
 　　　|-- pbf ファイル群
 
-![フォントの配置](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png)
+![フォントの配置](https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_deploy.png)
 
 ※ <スタイル> は省略可能です。今回は「KosugiMaru-Regular」フォルダを作成します。
 詳細は「API の設定」の項目を参照してください。
@@ -73,7 +73,7 @@ family、weight、style の各プロパティに設定した値をもとに設�
 
 以下は作成した pbf フォントをテキスト シンボルで表示した画面とサンプルコードです。
 
-![フォントの表示](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png)
+![フォントの表示](https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png)
 
 ```javascript
 <!DOCTYPE html>

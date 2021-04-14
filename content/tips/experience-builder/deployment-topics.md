@@ -10,7 +10,7 @@ ArcGIS Experience Builder で作成した Experience は、ダウンロードし
 ## Experience のダウンロード
 Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように `● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
 
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" />
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" />
 
 ## Experience のデプロイ
 Experience を Web サーバーにデプロイするには、次の手順を実行します。

@@ -187,7 +187,7 @@ layer.popupTemplate = {　　
 式が `expressionInfos` プロパティに存在すると、 PopupTemplate のコンテンツ内の`{expession/expression-name}` プレースホルダー テンプレートを使用して式から返された値を参照できます。
 ポップアップのコンテンツは、ユーザーが Greenlee , AZ を表現しているフィーチャーをクリックした後に次のように表示されます。
 
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" >
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" >
 
 
 また、PopupTmplate　のコンテンツ の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank">`fieldinfos`</a>　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの ` fieldName ` プロパティで式の名前を参照するだけです。なお、 `expression/expression-name` シンタックスを使用してください。
@@ -210,7 +210,7 @@ layer.popupTemplate = {
 
 ポップアップには以下のように表示されます。
 
- <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" >
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" >
 
 PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank">`fieldinfos`</a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
 このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank">`PopupTemplate Reference Arcade`</a>）でご覧ください。

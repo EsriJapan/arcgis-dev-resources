@@ -19,7 +19,7 @@ ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcG
 
 ### 全体像
 * Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。
-![webapp](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern1.png)
+![webapp](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern1.png)
 
 ### 必要なコンポーネント
 * 開発時
@@ -49,7 +49,7 @@ ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcG
 ---
 ## ウィジェットをデプロイ
 * WebApp Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に web アプリケーションを作成することを想定しているものの、デフォルトの ArcGIS Web AppBuilder のウィジェットには無い機能を拡張したい場合に活用できます。
-![widget](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern2.png)
+![widget](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern2.png)
   
 
 ### 必要なコンポーネント
@@ -81,7 +81,7 @@ ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcG
 ## テンプレートをデプロイ
 * Esri が用意している [web アプリケーションのテンプレート](https://enterprise.arcgis.com/ja/portal/latest/use/application-templates.htm)とは別に、Developer Edition で作成した web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。
 * ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
-  ![template](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern3.png)
+  ![template](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern3.png)
 
 ### 必要なコンポーネント
 * 開発時
@@ -102,15 +102,15 @@ ArcGIS Web AppBuilder (Developer Edition) (以下 Developer Edition) では ArcG
 1. web アプリケーションをテンプレートとして保存 (登録)
     * Developer Edition で作成した web アプリケーションを組織にエクスポートします。
       * Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートとしてエクスポート] をクリックします。
-        ![export_as_template](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern4.png)
+        ![export_as_template](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern4.png)
       * 構成可能にするパラメーターを設定した後、組織にエクスポートをクリックします。
-        ![config_params](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern5.png)
+        ![config_params](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern5.png)
       * ※ テンプレートは、組織が設定するテンプレート グループに共有される必要があります。管理権限を持っていない場合、権限が無いことと別途マニュアルで追加する必要がある旨がダイアログで表示されます。
       * 組織の管理者権限がある場合、以下の手順でテンプレート グループを設定できます。
         * [組織] → [設定] → [マップ] の順にクリック
-          ![org_setting](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern6.png)
+          ![org_setting](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern6.png)
         * [テンプレート] の中でテンプレートを共有するグループを指定
-          ![set_template_gr](https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern7.png)
+          ![set_template_gr](https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-pattern7.png)
           * [Esri のデフォルトの構成可能なアプリをグループで共有します] をクリックすると、Esri がデフォルトで用意しているテンプレートも通常どおり使用できます。
 1. テンプレートを使った web アプリケーションの作成・利用
     * ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから web アプリケーションを作成・利用します。

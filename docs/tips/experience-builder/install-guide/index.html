@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-04T14:50:17 JST">
+<meta name="revised" content="2021-04-14T20:51:07 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -789,11 +789,11 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <li><code>Title</code> - 例えば、<code>Experience Builder credentials</code> などのように任意のタイトルを入力します。</li>
 <li><code>Tags</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>Register New Application</code> をクリックします。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /></li>
 </ul>
 </li>
 <li>登録したアプリケーションの <code>Authentication</code> タブをクリックします。<code>Current Redirect URIs</code> のセクションで、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力して、<code>+ Add</code> をクリックします。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /></li>
 <li>Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。</li>
 </ol>
 <h3 id="1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</h3>
@@ -809,12 +809,12 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などの任意のタイトルをを入力します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>アイテムの追加</code> をクリックします。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul>
 </li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 </ol>
 <h2 id="2-server-サービスのインストール">2. server サービスのインストール</h2>
 <p>Client ID の作成が完了したら以下の手順で server サービスのインストールを行います。</p>
@@ -838,13 +838,13 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 「<a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS for Developers を使用した Client ID の作成</a>」で作成した client ID、 
 <br/>または、「<a href="#1-2-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
 サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br/>
 <br/>● 権限のリクエスト画面
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_2.png" width="60%" /> 
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_2.png" width="60%" /> 
 権限のリクエスト画面は、使用しているブラウザですでに ArcGIS Online などにログインしているため、ログインした組織のアカウントが表示されます。許可をクリックすることで、Experience Builder の初期画面が表示されます。もし、他のアカウントでサイン インする場合は、別のアカウントでサイン インをクリックしてください。以下の ArcGIS ログイン画面が起動しますので、目的のユーザー名、パスワードを入力してサイン インします。<br/>
 <br/>● ArcGIS ログイン画面
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_3.png" width="60%" /> 
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_3.png" width="60%" /> 
 使用しているブラウザで ArcGIS Online などにログインしていない場合は、ArcGIS ログイン画面が表示されます。目的のユーザー名、パスワードを入力してサイン インをクリックしてください。認証に成功すると、Experience Builder の初期画面が表示されます。
 <br/><br/></li>
 <li>次のステップで <a href="#client-install">client</a> インストールを行います。</li>
@@ -905,12 +905,12 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などのように任意のタイトルを入力します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>アイテムの追加</code> をクリックします。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" /></li>
 </ul>
 </li>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
 <li>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。</li>
 <li>ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。</li>
 <li>サイン イン後の流れについては、<a href="#2-server-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">2. server サービスのインストール</a>のステップ5 以降を参照してください。</li>

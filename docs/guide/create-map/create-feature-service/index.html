@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-04T14:50:17 JST">
+<meta name="revised" content="2021-04-14T20:51:07 JST">
 <title>フィーチャサービスの作成 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -802,13 +802,13 @@ if (!doNotTrack) {
 <p>以下は空のフィーチャ サービスを公開するまでのステップを紹介します。</p>
 <!--地図データや住所データを使ってフィーチャ サービスを公開する方法は「[データのインポート]()」をお読みください。-->
 <h3 id="1-フィーチャ-サービスの作成を開始する">1. フィーチャ サービスの作成を開始する</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature1.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature1.gif" width="600px">
 <ol>
 <li>[Dashboard］の横の［＋］をクリックし、［New Layer］を選択します。</li>
 <li>[Create an Empty Layer］をクリックし、Create New Layer ページを開きます。</li>
 </ol>
 <h3 id="2-基本情報の入力">2. 基本情報の入力</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature2.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature2.gif" width="600px">
 <p>公開するフィーチャ サービスに対して、以下の基本情報を入力します。</p>
 <ul>
 <li>
@@ -831,7 +831,7 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>入力が完了したら、[Geometry] をクリックして次へ進みます。</p>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature3.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature3.gif" width="600px">
 <ul>
 <li>
 <p>Geometry Type（ジオメトリ タイプ）</p>
@@ -848,7 +848,7 @@ if (!doNotTrack) {
 </ul>
 <p>入力が完了したら、[Fields] をクリックして次へ進みます。</p>
 <h3 id="3属性情報の入力">3.属性情報の入力</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature4.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature4.gif" width="600px">
 <p>属性とはフィーチャに関する様々な情報のことで、属性テーブルと呼ばれるデータベースに保存することができます。属性テーブルの列のことを属性フィールドと呼びます。例えば公共施設の属性には名称や所在地、分類、電話番号などを含めることができます。この属性情報をもとにシンボルやラベルを表示したり、フィーチャを検索したりすることが可能です。</p>
 <p>属性フィールドには以下の項目を設定します。</p>
 <ul>
@@ -881,16 +881,16 @@ if (!doNotTrack) {
 </ul>
 <p>Field Name と Field Type を入力し、[+ Add Field] をクリックすることで属性フィールドを追加できます。フィールドを追加した後に、Field Alias を設定できます。作成した属性フィールドを削除するには 赤いゴミ箱のアイコンをクリックします。入力が完了したら、[Settings] をクリックして次へ進みます。</p>
 <h3 id="4詳細設定">4.詳細設定</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature5.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature5.gif" width="600px">
 <p>ファイルの添付機能やサービスの共有、編集権限などを設定できます。設定がすべて終了したら[Create Layer] をクリックし、フィーチャ サービスを公開します。</p>
 <h2 id="フィーチャ-サービスの表示編集">フィーチャ サービスの表示・編集</h2>
 <p>フィーチャ サービス公開後、マップ ビューアー上でフィーチャ サービスを表示して、データを追加することができます。</p>
 <h3 id="1-フィーチャ-サービスの表示">1. フィーチャ サービスの表示</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature6.gif" width="600px">  
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature6.gif" width="600px">  
 公開したフィーチャ サービスを選択して、[Open in Map Viewer] をクリックして、マップ ビューアーを起動します。
 マップ ビューアーが起動すると、地図が表示されます。画面左側にあるコンテンツ パネルには公開したフィーチャ サービスを参照したレイヤーが表示されています。
 <h3 id="2-フィーチャ-サービスの編集">2. フィーチャ サービスの編集</h3>
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature7.gif" width="600px">  
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/featureservice/update_ver/Feature7.gif" width="600px">  
 <ol>
 <li>[編集] をクリックして、[フィーチャの追加] ウィンドウから追加するデータのシンボルを選択します。</li>
 <li>選択後に、地図上の任意の場所をクリックすることで新しいデータが追加されます。</li>

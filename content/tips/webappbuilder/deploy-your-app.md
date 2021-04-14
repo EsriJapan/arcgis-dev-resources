@@ -22,7 +22,7 @@ ArcGIS Web AppBuilder (Developer Edition)（以下 Web AppBuilder）で作成し
 1. Web AppBuilder を起動し、トップページを開いたら、アプリのダウンロードボタンをクリックします。
 2. アプリケーションは ZIP ファイルでダウンロードされます。保存ダイアログが表示されたら、任意のフォルダーを指定し、[保存] をクリックします。これで、アプリケーションはローカル ドライブに保存されます。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-your-app.gif" alt="ダウンロード" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/deploy-your-app.gif" alt="ダウンロード" width="600px">
 
 ## アプリのデプロイ
 

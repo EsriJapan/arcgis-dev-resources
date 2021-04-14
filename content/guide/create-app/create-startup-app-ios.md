@@ -10,7 +10,7 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 
   1. [SDK のダウンロードページ](https://developers.arcgis.com/downloads) にアクセスします（[開発者アカウント](../get-dev-account) でサインインします）。　　
   1. ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sdk-download.png" width="450px">　　
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sdk-download.png" width="450px">　　
  1. ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。
 
 ## サンプル プロジェクトのダウンロード
@@ -25,7 +25,7 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
 * __zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）__
 
  [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sample-download.png" width="600px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/sample-download.png" width="600px">
 
 ## 地図の表示
 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
@@ -39,12 +39,12 @@ ArcGIS Runtime SDK for iOS のライブラリをインストールします。
   まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。　　
 
   1. サンプル プロジェクトを実行すると、以下のように地図が表示されます。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/map-app.png" width="200px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/map-app.png" width="200px">
  Web マップを表示するには、最初に地図を表示するビュー（AGSMapView クラス）を作成し、作成したビュー上で Web マップを開きます。
 
 ## 現在位置の表示
 iOS の位置情報サービスと連携し、端末の現在位置を地図上に表示します。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.png" width="200px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.png" width="200px">
 
   1. `ViewController.swift` の `viewDidLoad` 関数に現在位置を表示する処理を記述します。
     ```javascript
@@ -66,7 +66,7 @@ iOS の位置情報サービスと連携し、端末の現在位置を地図上�
 
   1. プロジェクトを実行すると、以下のように現在位置を表す青い丸のシンボルが地図上に表示されます。
 
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/location-app.gif" width="200px">
  シミュレータで実行する場合は、iOS シミュレータの [Debug] → [Location] メニューで設定することで、端末の位置情報を擬似表現できます。
 
  アプリが起動すると「マップ上での現在位置確認に位置情報サービスを使用します。」と位置情報サービスの使用を確認するメッセージが表示されます。このメッセージはサンプル プロジェクトの `Info.plist` ファイルの `NSLocationWhenInUseUsageDescription` プロパティで設定できます。
