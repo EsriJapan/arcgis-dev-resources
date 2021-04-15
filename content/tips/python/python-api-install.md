@@ -89,7 +89,7 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 * [環境の管理]ボタンをクリックし、「環境の管理」ウィンドウを開いて、[デフォルトのクローン]ボタンを選択します。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng.png" width="800px">
 <p>[環境の管理]ボタンと環境の[デフォルトのクローン]ボタン</p>
 </div>
 
@@ -104,14 +104,14 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 * クローンの作成中は下部にインストール中のパッケージ名が表示されます。</br>すべてのパッケージのインストールが完了すると、クローンされた環境が格納されているディレクトリ名が表示されます。</br>※完了前に操作をすると、作成した環境が正常に動作しない可能性があります。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_installing2.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_installing2.png" width="800px">
 <p>クローンの作成中の様子</p>
 </div>
 
 * 作成した環境のラジオボタンをクリックして、環境をアクティブにします。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_activate2.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_activate2.png" width="800px">
 <p>環境をアクティベート</p>
 </div>
 
@@ -124,7 +124,7 @@ conda upgrade -c esri arcgis
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_upgrade2.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_upgrade2.png" width="700px">
 <p>コマンドの入力</p>
 </div>
 
@@ -151,7 +151,7 @@ ArcGIS Pro のバージョンによってはデフォルトの設定で、アッ
 {{% /notice %}}
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_plan.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_plan.png" width="700px">
 <p align="center">インストールされるパッケージの確認</p>
 </div>
 
@@ -163,7 +163,7 @@ conda list arcgis
 * Python API を含む ArcGIS 関連のパッケージとそのバージョン番号が表示されます。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_list.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_list.png" width="700px">
 <p></p>
 </div>
 
@@ -180,28 +180,28 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 * [環境の管理]ボタンをクリックしウィンドウを開いて、[新規作成]ボタンを選択します。                                                                      
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env.png" width="800px">
 <p>[環境の管理]ボタンと環境の[新規作成ボタン]</p>
 </div>
 
 * 新しい環境の名前を入力して[保存]を選択します。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env_new.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env_new.png" width="800px">
 <p>[名前]の入力ボックスへ入力する </br>※日本語は推奨しません。半角英数で入力します。</p>
 </div>
 
 * ダイアログの下部にある青色の進行状況バーが消えたら完了です。</br>この表示が完了してから、次の操作に進んでください。</br>※完了前の操作は正しい環境が作成・動作しない可能性があります。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_env_create_progress.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_env_create_progress.png" width="800px">
 <p>青色の進行状況バー</p>
 </div>
 
 * 作成した環境のラジオボタンを選択して、環境をアクティブにします。</br>ここでの操作は、Anacondaで仮想環境をアクティベートする操作に値します。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_active_env.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_active_env.png" width="800px">
 <p>仮想環境を指定する</p>
 </div>
 
@@ -214,14 +214,14 @@ conda upgrade -c esri arcgis
 ```
 
 <div align="left">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_pyapi.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_pyapi.png" width="700px">
 <p>コマンドの入力</p>
 </div>
 
 * 「Proceed([y]/n)?」 の表示は `y` を入力して実行します。
 
 <div align="left">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_y.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_y.png" width="700px">
 <p align="center">インストールするパッケージ計画が表示され、この計画でよい場合は"y"を選択します</p>
 </div>
 
@@ -232,7 +232,7 @@ conda list arcgis
 ```
 
 <div align="left">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_verify.png" width="700px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_verify.png" width="700px">
 <p>Python API を含む ArcGIS 関連のパッケージとそのバージョン番号が表示できます</p>
 </div>
 
@@ -292,7 +292,7 @@ Python API バージョン 1.5.0 以降からは、Jupyter Lab からも操作�
 <!-- * macOS and Linux:  Click New > Python[default] -->
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/newNoteboook.jpg" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/newNoteboook.jpg" width="800px">
 </div>
 
 次のコードを入力します。
@@ -344,7 +344,7 @@ arcgis.__version__
            * yyyyyyy-y: チャネルにアップロードされた conda のパッケージに付与されるハッシュ ナンバー
     * 例えば、<font color="#d04255">Windows 64 bit</font> のマシンで、Python API <font color="#208dc3">1.6.0</font> の Python <font color="#1ba466">3.7</font> 版をダウンロードする場合は、"<font color="#d04255">win-64</font>/arcgis-<font color="#208dc3">1.6.0</font>-py<font color="#1ba466">37</font>h62639d4_1.tar.bz2" をクリックしてダウンロードします。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/anacondacloudesric.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/anacondacloudesric.png" width="800px">
 </div>
 
 ##### オフライン環境で Anaconda を設定
@@ -398,7 +398,7 @@ Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API
 wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/dl-anaconda.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/dl-anaconda.png" width="800px">
 </div>
 
 * ダウンロードしたインストーラーを以下のコマンドで実行します。
@@ -407,17 +407,17 @@ wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 sh Anaconda3-2019.10-Linux-x86_64.sh
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="500px">
 </div>
 
 * インストールするディレクトリは任意のディレクトリを選ぶことができます。ここではデフォルトの設定である、ログイン ユーザーのホーム ディレクトリにインストールすることにします。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="500px">
 </div>
 
 * 最後に PATH を通すか確認されます。ここでは [Anaconda のドキュメント](https://docs.anaconda.com/anaconda/user-guide/faq/#id2)に従い、yes として進めます。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="500px">
 </div>
 
 
@@ -463,7 +463,7 @@ conda install -c esri arcgis=1.7.1
 conda list arcgis
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="500px">
 </div>
 
 ESRIジャパンが運営する [GIS アプリ開発者のためのコミュニティ グループ](https://community.esri.com/groups/devcom-jp) では、Python API の機能や実際のコードを[ブログ](https://community.esri.com/groups/devcom-jp/content?filterID=contentstatus[published]~category[web-%E9%96%8B%E7%99%BA]&query=python)でご紹介しています。</br>

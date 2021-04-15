@@ -9,7 +9,7 @@ ArcGIS API for Python (以下、Python API) を使用する際、conda を利用
 ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後の[インストールガイド](../python-api-install)での環境作成を行いやすくなります。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/conda.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/conda.png" width="500px">
 </div>
 
 ## conda の基本
@@ -50,7 +50,7 @@ ArcGIS Pro をインストールした後で環境を確認すると、以下の
 この環境には、必要最小限の conda、Python、依存するパッケージなどが含まれる Minaconda がインストールされています。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/condalist_Pro.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/condalist_Pro.png" width="800px">
 <p>ArcGIS Pro の conda 上の初期環境</p>
 </div>
 
@@ -67,7 +67,7 @@ ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。
 標準の MS-DOS Windows コマンドライン アプリケーション。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool.jpg" width="900px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool.jpg" width="900px">
 <p>(左) Python パッケージ マネージャー、(中) Python コマンド プロンプト、(右) コマンド プロンプト (windows)<p>
 </div>
 
@@ -75,7 +75,7 @@ ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。
 Anaconda をインストールすると Python、conda、その他多数のパッケージが `base` という 1 つの環境にインストールされます。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/AnacondaPrmptRoot00.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/AnacondaPrmptRoot00.png" width="600px">
 <p>Anaconda Prompt 初期の環境<p>
 </div>
 
@@ -91,7 +91,7 @@ Anaconda をインストールすると Python、conda、その他多数のパ�
 conda の環境を包括的に管理するための GUI アプリケーション。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool2.jpg" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/managementTool2.jpg" width="600px">
 <p>Anaconda Navigator (左) と Anaconda Prompt (右)<p>
 </div>
 
@@ -134,7 +134,7 @@ conda コマンドや 他オプションの使用方法の詳細については[
 >arcgis パッケージを格納するために esri という名前のチャネルに conda リポジトリが作成されています。 `conda install` コマンドは、チャネルにアクセスし、特定の conda 環境にパッケージをインストールしています。
 >
 ><div align="center">
-> <img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/esrianaconda150.jpg" width="600px">
+> <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/esrianaconda150.jpg" width="600px">
 > <p>Anaconda クラウド上の esri チャネル<p>
 ></div>
 

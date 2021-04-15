@@ -76,7 +76,7 @@ conda を使用して複数の環境を作成・利用している場合、そ�
 matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
 </div>
 
 198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
@@ -85,7 +85,7 @@ matplotlibrc は非常に長いファイルですが、160 行目あたりから
 ここでは `Meiryo` に設定します。設定後の画面は以下のようになります。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
 </div>
 
 ##### キャッシュの再構築
@@ -125,7 +125,7 @@ plt.show()
 次のようなグラフが描ければ成功です。
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
 </div>
 
 ### 参考

@@ -116,7 +116,7 @@ map = gis.map()
 map
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay.png" width="600px">
 </div>
 
 ### Web マップ と Web シーン
@@ -138,7 +138,7 @@ webscene
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay2d3d.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay2d3d.png" width="600px">
 </div>
 
 #### プログラムによるウィンドウの制御
@@ -160,7 +160,7 @@ map
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout.gif" width="600px">
 </div>
 
 UI ボタンによる新しいウィンドウでの地図表示は、`toggle_window_view（）` メソッドを使用することでも制御できます。次のコードでは、マップが表示されたらメソッドを使用して新しいウィンドウで表示させます。新しいウィンドウに戻すときも、このメソッドを使用可能です。</br>
@@ -177,7 +177,7 @@ map.toggle_window_view()
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_toggle.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_toggle.gif" width="600px">
 </div>
 
 
@@ -210,7 +210,7 @@ for tab_mode in tab_modes:
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_interval.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_interval.gif" width="600px">
 </div>
 
 
@@ -228,7 +228,7 @@ for webscene_id in ['31874da8a16d45bfbc1273422f772270', '91b46c2b162c48dba264b21
 ```
 
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_3scenes.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_3scenes.gif" width="600px">
 </div>
 
 より詳細な情報は、マップ ウィジェットの [API リファレンス](https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.widgets.html#arcgis.widgets.MapView.toggle_window_view)を参照してください。

@@ -22,13 +22,13 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
 * タスク スケジューラを開く
     * スタート メニューからタスク スケジューラを検索して開く
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/task-scheduler.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/task-scheduler.png" width="600px">
 </div>
 
 * 右側の [操作] ペインから [タスクの作成] をクリック
     * 新規タスクを作成するウィザードが開きます
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/create-task.png" width="300px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/create-task.png" width="300px">
 </div>
 
 * [全般] タブ内のパラメーターを設定する
@@ -40,7 +40,7 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
         * [最上位の特権で実行する] にチェックを入れる
     * [構成] は使用している Windows のバージョンに合わせる (今回は Windows 10)
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/general.png" width="450px">
 </div>
 
 * [トリガー] タブ内のパラメーターを設定する
@@ -50,7 +50,7 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
     * [繰り返し間隔] にチェックを入れ、30分間を指定
     * [継続時間] は [無期限] を指定
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/trigger.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/trigger.png" width="450px">
 </div>
 
 * [操作] タブのパラメーターを設定する
@@ -63,7 +63,7 @@ Windows では[タスク スケジューラ](https://ja.wikipedia.org/wiki/%E3%8
     * [引数の追加 (オプション)] で実行する Python スクリプトのファイル名を指定
     * [開始 (オプション)] で Python スクリプトが格納されているディレクトリを指定
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/operation.png" width="350px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/operation.png" width="350px">
 </div>
 
 {{% notice warning %}}
@@ -89,7 +89,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 
 * 次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/select-editor.png" width="350px">
+<img src="https:///apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/select-editor.png" width="350px">
 </div>
 
 #### crontab を編集する
@@ -99,7 +99,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 */30 * * * * cd /home/<ユーザー名>/py-script && /home/<ユーザー名>/anaconda3/envs/arcgis171/bin/python task.py
 ```
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
 </div>
 
 * 記述した内容の概要は以下のとおりです
