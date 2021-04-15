@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-14T20:51:08 JST">
+<meta name="revised" content="2021-04-15T13:40:35 JST">
 <title>matplotlib での日本語利用について :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -802,14 +802,14 @@ mpl<span style="color:#f92672">.</span>matplotlib_fname()
 <p>ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
 matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</p>
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
 </div>
 <p>198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
 フォント ファミリーはデフォルトが sans-serif なので、ここではデフォルト設定のままにしておきます。<br>
 210 行目のフォント設定の行で、<code>#</code> を削除し、<code>:</code> の後に日本語のフォントを追加しましょう。<br>
 ここでは <code>Meiryo</code> に設定します。設定後の画面は以下のようになります。</p>
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
 </div>
 <h5 id="キャッシュの再構築">キャッシュの再構築</h5>
 <p>以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</p>
@@ -837,7 +837,7 @@ plt<span style="color:#f92672">.</span>grid(True)
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p>次のようなグラフが描ければ成功です。</p>
 <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
 </div>
 <h3 id="参考">参考</h3>
 <ul>
