@@ -34,6 +34,10 @@ alwaysopen = true
 
 ### テーマ別ページ
 
+
+* [コア コンセプト](../tips/core-concepts)  
+ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
+
 * [データ ビジュアライゼーション](../tips/visualization)  
 地図にデータを可視化する際の tips を紹介します。
 

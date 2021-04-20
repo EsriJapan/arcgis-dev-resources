@@ -6,5 +6,32 @@
     <description>Recent content in スタートアップ ガイド on ArcGIS for Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>開発者アカウントの作成</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</guid>
+      <description>開発者アカウントの作成 Todo</description>
+    </item>
+    
+    <item>
+      <title>API キーの取得</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</guid>
+      <description>API キー とは Todo</description>
+    </item>
+    
+    <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</guid>
+      <description>セキュリティと認証 Todo</description>
+    </item>
+    
   </channel>
 </rss>

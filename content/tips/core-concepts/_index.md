@@ -1,7 +1,7 @@
 +++
 title = "コア コンセプト"
 description = "ArcGIS のコンセプトについて紹介します。"
-Weight=1
+Weight=7
 alwaysopen = true
 +++
 

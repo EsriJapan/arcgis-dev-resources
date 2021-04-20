@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>運用（ライセンス） on ArcGIS for Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/</link>
+    <description>Recent content in 運用（ライセンス） on ArcGIS for Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ロケーションサービスのライセンス</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-location-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-location-services/</guid>
+      <description>ロケーションサービスのライセンス </description>
+    </item>
+    
+    <item>
+      <title>アプリのライセンス</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-your-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-your-app/</guid>
+      <description>アプリのライセンス </description>
+    </item>
+    
+    <item>
+      <title>帰属</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/attribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/attribution/</guid>
+      <description>出典：ArcGIS Developers - licensing - Attribution
+Esri では、アプリで ArcGIS ベースマップ、ArcGIS データ サービス、または ArcGIS API テクノロジを使用する場合、Esri の帰属表示を含める必要があります。アプリの構築方法や使用するデータによっては、アプリで対応が求められる帰属表示に関する特定の要件があります。
+  データの帰属 (ベースマップ、データ レイヤ)：帰属を必要とする ArcGIS ロケーション サービスがホストする特定のデータを使用する場合
+  Esri の表示 (Powered by Esri を使用)：アプリケーションが Esri API テクノロジで構築されているか、ArcGIS ロケーション サービスを使用している場合
+  帰属をマップに表示する ArcGIS Location Services を通じて Esri が提供するデータをアプリケーションで使用する場合は、マップ上に帰属表示を行う必要があります。たとえば、このイメージでは、マップの下部に属性を表示しています。その他の例については、ArcGIS Online のマップの 1 つを参照してください。
+Light basemap Dark basemap 以下の場合に表示されたロゴ、商標、著作権表示、またはその他の類似した帰属表示を削除することはできません。
+  Esri のサービスを使用する。これには、マップ サービス (例: ベースマップ)、クレジット ベースのサービス (例: ルーティング)、または Esri が作成およびホストするその他のサービスなどのサービスが含まれる。
+  ArcGIS Online でホストされているサービスを使用する。</description>
+    </item>
+    
+  </channel>
+</rss>
