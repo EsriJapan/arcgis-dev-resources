@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-20T12:58:59 JST">
+<meta name="revised" content="2021-04-20T15:44:11 JST">
 <title>帰属 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -744,8 +744,16 @@ if (!doNotTrack) {
         <li><a href="#light-basemap">Light basemap</a></li>
         <li><a href="#dark-basemap">Dark basemap</a></li>
         <li><a href="#帰属要件">帰属要件</a></li>
+        <li><a href="#カスタムの帰属表示の要件">カスタムの帰属表示の要件</a></li>
+        <li><a href="#サンプル">サンプル</a></li>
       </ul>
     </li>
+    <li><a href="#実装">実装</a>
+      <ul>
+        <li><a href="#カスタム実装">カスタム実装</a></li>
+      </ul>
+    </li>
+    <li><a href="#利用規約">利用規約</a></li>
   </ul>
 </nav>
         </div>
@@ -778,7 +786,13 @@ if (!doNotTrack) {
 <h2 id="帰属をマップに表示する">帰属をマップに表示する</h2>
 <p>ArcGIS Location Services を通じて Esri が提供するデータをアプリケーションで使用する場合は、マップ上に帰属表示を行う必要があります。たとえば、このイメージでは、マップの下部に属性を表示しています。その他の例については、<a href="http://www.arcgis.com/home/search.html?q=basemaps%20owner:esri&amp;t=content&amp;start=11">ArcGIS Online</a> のマップの 1 つを参照してください。</p>
 <h3 id="light-basemap">Light basemap</h3>
+<div align="left">
+    <img src="https:///apps.esrij.com/arcgis-dev/guide/img/licensing/attribution/logo-requirements-light.png" style="margin:1px;">
+</div>
 <h3 id="dark-basemap">Dark basemap</h3>
+<div align="left">
+    <img src="https:///apps.esrij.com/arcgis-dev/guide/img/licensing/attribution/logo-requirements-dark.png" style="margin:1px;">
+</div>
 <div class="notices note" >
 <p>以下の場合に表示されたロゴ、商標、著作権表示、またはその他の類似した帰属表示を削除することはできません。</p>
 <ul>
@@ -800,10 +814,10 @@ if (!doNotTrack) {
 <h3 id="帰属要件">帰属要件</h3>
 <ul>
 <li>
-<p>ArcGIS API for JavaScript を使用する場合、マップの下部に帰属表示を行うデフォルトの実装を提供しています。これは推奨される配置なので、アプリのデザインに合っている場合はそこに適用してください。他の方法については、attribution ウィジェットを参照してください。</p>
+<p><a href="https://developers.arcgis.com/javascript/latest/">ArcGIS API for JavaScript</a> を使用する場合、マップの下部に<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attribution.html">帰属表示を行うデフォルトの実装</a>を提供しています。これは推奨される配置なので、アプリのデザインに合っている場合はそこに適用してください。他の方法については、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attribution.html">attribution ウィジェット</a>を参照してください。</p>
 </li>
 <li>
-<p>ArcGIS Runtime API のいずれかを使用する場合、デフォルトの実装では帰属表示がマップの下部に配置されます。これがアプリのデザインと合わない場合は、帰属表示を MapView の他の場所に配置する API があります。詳細については、以下の実装を参照してください。</p>
+<p><a href="https://developers.arcgis.com/documentation/#arcgis-runtime">ArcGIS Runtime API</a> のいずれかを使用する場合、デフォルトの実装では帰属表示がマップの下部に配置されます。これがアプリのデザインと合わない場合は、帰属表示を MapView の他の場所に配置する API があります。詳細については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/attribution/#implementation">以下の実装</a>を参照してください。</p>
 </li>
 <li>
 <p>Esri の帰属表示は、ArcGIS Online ベースマップが存在する場合、マップ上またはマップの近くに表示する必要があります。推奨される場所はマップの下部ですが、必要に応じて移動することができます。</p>
@@ -818,12 +832,89 @@ if (!doNotTrack) {
 <p>ベースマップごとに帰属が異なります。</p>
 </li>
 <li>
-<p>ベースマップの帰属は、サービスメタデータで利用できます。たとえば、WorldImageryメタデータのリクエストは <a href="http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=pjson">http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=pjson</a>です。必要な情報は <code>copyrightText</code> 文字列にあります。この例では、帰属は次のとおりです。<code>Source: Esri, DigitalGlobe, GeoEye, i-cubed, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AEX, Getmapping, Aerogrid, IGN, IGP, swisstopo, and the GIS User Community.</code></p>
+<p>ベースマップの帰属は、サービスメタデータで利用できます。たとえば、WorldImageryメタデータのリクエストは <a href="http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=pjson">http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=pjson</a> です。必要な情報は <code>copyrightText</code> 文字列にあります。この例では、帰属は次のとおりです。<code>Source: Esri, DigitalGlobe, GeoEye, i-cubed, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AEX, Getmapping, Aerogrid, IGN, IGP, swisstopo, and the GIS User Community.</code></p>
 </li>
 <li>
 <p>情報をアプリにコピーする静的なオプションを選択した場合は、帰属表示が定期的に変わることに注意してください。アプリをアップデートしたときなど、定期的に帰属表示を確認する必要があります。</p>
 </li>
 </ul>
+<h3 id="カスタムの帰属表示の要件">カスタムの帰属表示の要件</h3>
+<p>独自の帰属の表示方法を実装する場合は、次のガイドラインに従ってください。</p>
+<ul>
+<li>マップが表示されているときに常に表示されるように、帰属表示をマップ上に直接配置する。</li>
+<li>帰属表示のテキストに透明度を適用しないでください。</li>
+<li>他のロゴやビジュアルコンポーネント（マップの要素を除く）と重ならないようにしてください。</li>
+<li>上記の要件に従っている場合は、アプリのデザインに合わせてフォントや配色を選択できます。実装は、読みやすく、アクセシビリティのガイドラインを満たしている必要があります。</li>
+<li>デフォルトのデザインを模倣するには、以下の属性を使用します。
+<ul>
+<li>フォントファミリー：<code>Avenir Next W00&quot;, &quot;Helvetica Neue&quot;, Helvetica,Arial,sans-serif;</code></li>
+<li>帰属表示内の文字は、<code>#323232</code> で不透明度 100% の色を使用しています。</li>
+<li>背景色は <code>#ffffff</code> で不透明度 65% の色を使用しています。</li>
+</ul>
+</li>
+</ul>
+<h3 id="サンプル">サンプル</h3>
+<h4 id="bottom-of-map">Bottom of map</h4>
+<div align="left">
+    <img src="http://apps.esrij.com/arcgis-dev/guide/img/licensing/attribution/logo-requirements-bottom.png" style="margin:1px;">
+</div>
+<h4 id="top-of-map">Top of map</h4>
+<div align="left">
+    <img src="http://apps.esrij.com/arcgis-dev/guide/img/licensing/attribution/logo-requirements-top.png" style="margin:1px;">
+</div>
+<h2 id="実装">実装</h2>
+<p>ヘルパーメソッドは、アプリの構築に使用される特定の API で提供される場合があります。下記の API リファレンスを参照してください。</p>
+<ul>
+<li>
+<p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attribution.html">JavaScript</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS API for JavaScript</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/android/latest/api-reference/reference/com/esri/arcgisruntime/mapping/view/GeoView.html#getAttributionText()">Android</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS Runtime API for Android</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/ios/latest/api-reference/interface_a_g_s_geo_view.html#ac8747b199edf34a1f1d661db3fa1c20c">iOS</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS Runtime API for iOS</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/java/latest/api-reference/reference/com/esri/arcgisruntime/mapping/view/GeoView.html#attributionTopProperty()">Java</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS Runtime API for Java</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/net/latest/wpf/api-reference/html/P_Esri_ArcGISRuntime_UI_Controls_GeoView_AttributionText.htm">.NET</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS Runtime API for .NET</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/qt/latest/cpp/api-reference/esri-arcgisruntime-geoview.html#attributionRect">Qt</a></p>
+<ul>
+<li>Mapping API reference provided by ArcGIS Runtime API for Qt</li>
+</ul>
+</li>
+</ul>
+<h3 id="カスタム実装">カスタム実装</h3>
+<p>静的な帰属の使用を選択する場合は、REST エンドポイントの JSON レスポンスから、<code>copyrightText</code> 属性で帰属テキストをピックアップします。例えば、World Imagery のメタデータのリクエストは <a href="http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=json">http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer?f=json</a>。この URL は、アプリで使用するベースマップに固有のものです。サービスのリストについては、<a href="http://services.arcgisonline.com/arcgis/rest/services">ArcGIS REST Services Directory</a> を参照してください。</p>
+<p>動的な帰属の生成例については、<a href="https://github.com/Esri/esri-leaflet/blob/master/src/Util.js">Esri Leaflet のソース コード</a>の関連メソッドを参照してください。</p>
+<ul>
+<li>
+<p><code>_getAttributionData</code> アトリビュートを、帰属、範囲、最小/最大ズーム、スコアを持つオブジェクトの配列に変換します。そして、その結果の配列をスコアでソートします。</p>
+</li>
+<li>
+<p><code>_updateMapAttribution</code> マップの属性の更新は、その配列をループして、マップがその境界を含むか交差するかを確認することで処理されます。もしそうなら、結果の文字列をズームして作成します。</p>
+</li>
+</ul>
+<h2 id="利用規約">利用規約</h2>
+<p>その他の法的情報については、<a href="https://developers.arcgis.com/terms/faq/">利用規約</a>をご参照ください。</p>
 
 
     
