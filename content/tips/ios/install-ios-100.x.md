@@ -1,170 +1,75 @@
 +++
 title = "インストール ガイド"
-description = "初めて ArcGIS Runtime SDK for iOS を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。"
+description = "ArcGIS Runtime SDK for iOS のインストールとセットアップ手順を紹介します。"
 weight = 1
 aliases = ["/ios/install-ios-100.x/"]
 +++
 
-このインストール ガイドでは、初めて ArcGIS Runtime SDK for iOS を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。
+このインストール ガイドでは、ArcGIS Runtime SDK for iOS のインストールとセットアップ手順を紹介します。インストールを進める前に、ご使用のマシン（macOS）に Xcode をインストールしてください。
 
-このインストール ガイドをお読み頂くことで、ArcGIS Runtime SDK for iOS を使用したモバイル マッピング アプリケーション開発の基礎を理解することができます。
+ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご覧ください。
 
+マップを表示する方法については「[アプリの作成](../create-app/create-startup-app-ios/)」のチュートリアルをご覧ください。
 
-## ArcGIS Runtime SDK for iOS とは
+# インストールとセットアップ
+Xcode プロジェクトに API をインストールして使用する方法は2つあります。手動でダウンロードしてインストールするか、CocoaPods を使用できます。
 
-ArcGIS Runtime SDK for iOS を使うと ArcGIS の機能を iOS のネイティブ アプリケーションとして実装することができます。
+* [手動でダウンロードする](#手動でダウンロードする)
+* [CocoaPods を使用する](#cocoapods-を使用する)
 
-この SDK には API やリファレンス、サンプルコードなどが含まれています。
-詳細は [ArcGIS Runtime SDK for iOS](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/) をご参照ください。
+## 手動でダウンロードする
+手動ダウンロードは、すべての iOS プロジェクト用に一度だけ API をインストールします。
 
-## ArcGIS Runtime SDK for iOS の開発環境
+1. SDK パッケージ インストーラーを[ダウンロード](https://developers.arcgis.com/downloads/#ios)します。
 
-ここでは次の開発環境にて ArcGIS Runtime SDK for iOS を用いたモバイル マッピング アプリケーションの開発手順を説明します。
+    ダウンロードには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
 
-開発手順を進める前に以下のご使用のマシン（macOS）に Xcode をインストールしてください。
+2. ${HOME}/Library フォルダへの書き込み権限があることを確認してください。
+3. マシンに以前のバージョンの ArcGIS Runtime SK for iOS がインストールされている場合は、それをアンインストールします。アンインストールしないと、以前のインストールが上書きされます。アンインストールするには、ターミナル アプリケーションで ${HOME}/Library/Application Support/AGSiOSRuntimeSDK/uninstallAGSiOSSDK スクリプトを実行します。
+4. SDK をダウンロードしたら、ダウンロードした .pkg ファイルをダブルクリックします。インストール ウィザードの指示に従って、インストール手順を完了します。
+5. [プロジェクトを構成する](#プロジェクトを構成する)ための追加の手順を実施します。
+6. デフォルトでは、SDK は ${HOME}/Library/SDKs/ArcGIS にインストールされます。このフォルダーには、Frameworks、Legal、Samples のサブフォルダーが含まれています。
 
-ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご参照ください。
+Samples フォルダーに移動し、Objective-C または Swift サンプルのいずれかを実行して、すべてがマシンに正しくインストールされていることを確認できます。
 
-## モバイル マッピング アプリケーションの開発
+注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行することで表示できます。
 
-ここでは、ArcGIS Runtime SDK for iOS を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します。
+インストールエラーが発生した場合は、/var/log/install.log の install.log ファイルで詳細を確認してください。失敗の一般的な理由は、ダウンロード中にインストール パッケージが破損することです。パッケージをもう一度ダウンロードしてみてください。まれに、インストーラーがインストール中にユーザー名/パスワードを要求する場合があります。これが発生すると、インストーラーは正常に終了しますが、SDK はホームディレクトリではなくルートディレクトリにインストールされます。この問題を解決するには、SDKs フォルダをルート /Library ディレクトリからユーザープロファイルの $HOME/Library ディレクトリに手動でコピーします。
 
-- __[プロジェクトの作成](#プロジェクトの作成)__
-- __[ArcGIS Runtime SDK の設定](#arcgis-runtime-sdk-の設定)__
-- __[地図表示の実装](#地図表示の実装)__
-- __[モバイル マッピング アプリケーションの実行](#モバイル-マッピング-アプリケーションの実行)__
+## CocoaPods を使用する
+[公開済みの CocoaPod](https://cocoapods.org/pods/ArcGIS-Runtime-SDK-iOS) を利用できます。CocoaPods を初めて使用する場合は、[CocoaPods の使用方法](https://cocoapods.org/)を確認してから、次の手順に従って iOS プロジェクト内でこの Pod を使用してください。
 
-## プロジェクトの作成
-まず Xcode 上に新しいプロジェクトを作成します。
-
- 1. Xcode を起動して、表示されたダイアログで [Create a new Xcode project] をクリックします。
- 1.	[Single View App] テンプレートを選択して、[Next] をクリックします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/project01.png" width="450px">
- 1.	[Product Name] に `sample` と入力し、[Next] をクリックします（[Language] に `Swift` が選択されていることを確認してください）。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/project02.png" width="450px">
- 1.	プロジェクトの作成場所を指定して、[Create] をクリックするとプロジェクトが作成されます。
-
-## ArcGIS Runtime SDK の設定
-次に ArcGIS Runtime SDK for iOS の API を使えるようにするための設定を行います。設定を行うには2つの方法があります。
-
-* __[CocoaPods を使用して Xcode ワークスペースに SDK をインストールする](#cocoapods-を使用して-sdk-をインストールする)__
-* __[macOS の共通ディレクトリに SDK をインストールし、Xcode プロジェクトに SDK へのリンクを手動で設定する](#sdk-を手動でインストールする)__
-
-### CocoaPods を使用して SDK をインストールする
-ArcGIS Runtime SDK for iOS は、[CocoaPods](https://cocoapods.org/) を利用してインストールできます（CocoaPods のインストール等で問題が発生した場合は、[Troubleshooting](https://guides.cocoapods.org/using/troubleshooting#installing-cocoapods) のページをご参照ください）。
-
- 1.	CocoaPods を開発に使用するマシンにインストールします。ターミナル アプリケーションを開き、以下のコマンドを実行します。  
-
-    ```
-    $ sudo gem install cocoapods
-    ```
- 1.	__[プロジェクトの作成](#プロジェクトの作成)__ で作成したプロジェクトに [Empty] テンプレート ファイルを追加し、ファイル名を `Podfile` とします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/cocoapods01.png" width="450px">
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/cocoapods02.png" width="450px">
-
- 1.	追加した `Podfile` に以下のコードを書いて保存します。
-
-    ```none
-    target '<プロジェクト名>' do
-    use_frameworks!
+1. プロジェクトの Podfile に下記を追加します。
+    ```swift  
     pod 'ArcGIS-Runtime-SDK-iOS', '100.10'
-    end
     ```
 
-1.	ターミナル アプリケーションで、cd コマンドを使用して作成したプロジェクト ファイルのルートフォルダーに移動します。
+2. ターミナル アプリケーションを使用して、Podfile 上で pod install コマンドを実行します。これにより、ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pod ディレクトリ内に配置されます。また、ArcGIS フレームワークを正しく参照するために、プロジェクトのビルド設定に必要な変更が加えられて、新しい Xcode ワークスペース（.xcworkspace ファイル）を作成されます。
 
-    ```none
-    $ cd /<プロジェクト フォルダーのパス>/
-    ```
+ArcGIS の API を使用するには、新しく作成した Xcode ワークスペースを開き、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
 
-1.	以下のコマンドを実行して、CocoaPods をセットアップします。
-
-    ```none
-    $ pod setup
-    ```
-
-1.	CocoaPods のセットアップに成功したら、以下のコマンドを実行して、ArcGIS Runtime SDK for iOS をインストールします。これにより ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pods ディレクトリに配置されます。また、ArcGIS フレームワークを正しく参照するために、必要な変更が自動で設定されます。
-
-    ```none
-    $ pod install
-    ```
-
-1.	Xcode プロジェクトを一度閉じて、プロジェクト フォルダを参照し、新しく作成されたワークスペース ファイル（.xcworkspace）を開きます。
-
-### SDK を手動でインストールする
-マシンに手動で SDK をインストールして、すべてのプロジェクトで使用できる場所に配置することができます。
-
-#### SDK のインストール
-
-1.	ArcGIS Developers サイトの[ダウンロード ページ](https://developers.arcgis.com/en/downloads)から SDK をダウンロードします。
-
-1.	ArcGIS Developers の認証ページに遷移します。ArcGIS Developers の開発者アカウント情報を入力してサインインして下さい。ArcGIS Developers 開発者アカウントを お持ちでない方は、ArcGIS for Developers 開発リソース集の[開発者アカウントの作成](../../../guide/create-map/get-dev-account/)を参考にしてアカウントを作成してください。
-
-1. ArcGIS Runtime SDK for iOS の .pkg ファイルをダウンロードします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual01.png" width="450px">
-
-1. ダウンロードした .pkg ファイルをダブルクリックし、表示された画面に従って SDK をインストールします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/manual02.png" width="350px">
-
-  * `${HOME}/Library` フォルダへの書き込み権限があることを確認してください。
-  *	マシンに以前のバージョンの ArcGIS Runtime SDK for iOS をインストールしている場合は、アンインストールしてください。アンインストールするには、ターミナル アプリケーションで、`${HOME}/Library/Application Support/AGSiOSRuntimeSDK` にある `uninstallAGSiOSSDK` スクリプトを実行してください。
-
-#### Xcode プロジェクトの設定
-SDK を手動でインストールした場合、各 Xcode プロジェクトで API を使用できるように設定を行う必要があります。設定項目は以下です。
-
- * __[ArcGIS フレームワークの追加](#arcgis-フレームワークの追加)__
-
-#### ArcGIS フレームワークの追加
-
- 1. __[プロジェクトの作成](#プロジェクトの作成)__ で作成した Xcode プロジェクトの Project Navigator でプロジェクト名を選択して、[TARGETS (プロジェクト名)] を選択します。
-
- 1. [General] タブを開き、**[Frameworks, Libraries, and Embedded Content]** セクションに `$(HOME)/Library/SDKs/ArcGIS/Frameworks` フォルダにある ArcGIS.xcframework ファイルをドラッグ&ドロップします。
-
-  <img src="https://developers.arcgis.com/ios/61ceaf5d25107c3daad81c9afde9d4ed/get-started-xcode-framework.gif" width="650px">
-
-  - `${HOME}/Library` フォルダはデフォルトで非表示になっています。ターミナル アプリケーションで以下のコマンドを入力して、フォルダを表示することができます。または、Finder メニューの [移動] > [フォルダへ移動] を使用して移動することもできます。
-
-    ```none
-    $ chflags nohidden ~/Library/
-    ```
-
-これでモバイル マッピング アプリケーションを開発するための準備が整いました。
-
-## 地図表示の実装
-ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。
-
-1. 最初に ArcGIS Runtime SDK for iOS の API を使用できるようにするために、import 文を追加します。Project Navigator で「ViewController.swift」ファイルを選択して、`import ArcGIS` と記述します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop01.png" width="450px">
-
-1. Project Navigator で `Main.storyboard` ファイルを選択します。 
-
-1. View Controller にデフォルトで追加されている `View` オブジェクトを選択します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop02.png" width="650px">
- 
-1. Identity Inspector を開き [Custom Class] セクションの [Class] で `AGSMapView` と入力し、[return] キーを押して `View` オブジェクトの名前が `Map View` に変わったことを確認します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop03.png" width="650px">
-
-1. ツールバーで Assistant Editor を選択し、`Main.storyboard` ファイルと `ViewController.h` ファイルを表示します。 
-1. `View (Map View)` オブジェクトを [control] キーを押しながら `ViewController.swift` ファイル上にドラッグ&ドロップします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop04.png" width="650px">
- 
-1. 表示されたダイアログで [Name] に `mapView`（任意の値で構いません）と入力し、[Connect] ボタンをクリックします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop05.png" width="350px">
- 
-1. ViewController.swift に IBOutlet 宣言が追加されます。
- 
-1. Project Navigator で `ViewController.swift` ファイルを選択し、`viewDidLoad` メソッド内で下記のようにコードを記述します。下記のコードでは、地図の種類（道路地図）、初期表示の中心位置（緯度・経度）、ズームレベルを指定して地図を表示します。
-
- ```javascript
-self.mapView.map = AGSMap(basemapType: .streets, latitude: 35.658581,  longitude: 139.745433, levelOfDetail: 18)
+```swift  
+import ArcGIS
 ```
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/develop06.png" width="650px">
+## プロジェクトを構成する
+この手順は、SDK を手動でインストールした場合のみ必要です。CocoaPods を使用してインストールしている場合は、この手順は不要です。
+SDK を手動でインストールした後に、API を使用するために各 Xcode プロジェクトを構成します。
 
-## モバイル マッピング アプリケーションの実行
-ベースマップを表示するアプリケーションが作成できたので iOS シミュレータにインストールして実行します。
+### プロジェクトに ArcGIS フレームワークを追加する
 
- 1.	Xcode のツールバーで、適当な端末を選択し [Run] をクリックして、iOS シミュレータでプロジェクトをデバッグします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/application01.png" width="350px">
- 1.	iOS シミュレータ上でアプリケーションが起動し、地図が表示されます。スワイプやピンチイン/ピンチアウトで地図を移動したり拡大/縮小したりすることができます。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/application02.png" width="200px">
+1. Xcode プロジェクトを開くか、新しいプロジェクトを作成します。
+
+2. 左側の Navigator ペインでプロジェクト名を選択して、[TARGETS (プロジェクト名)] > [General] タブを選択します。
+
+ 1. [Frameworks, Libraries, and Embedded Content] セクションに $(HOME)/Library/SDKs/ArcGIS/Frameworks ディレクトリにある ArcGIS.xcframework ファイルをドラッグアンドドロップします。
+
+    <img src="https://developers.arcgis.com/ios/61ceaf5d25107c3daad81c9afde9d4ed/get-started-xcode-framework.gif" width="650px">
+
+注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行して表示するか、Finder メニューの [移動] > [フォルダへ移動] を使用して移動することもできます。
+
+以上でプロジェクトの構成は完了です。ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
+
+```swift  
+import ArcGIS
+```
