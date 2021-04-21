@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-20T15:44:11 JST">
+<meta name="revised" content="2021-04-21T21:17:42 JST">
 <title>ロケーションサービスの利用 :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Platform をはじめて使う方向けにロケーションサービスついて紹介します。">
+<meta name="description" content="ArcGIS Platform をはじめて使う方向けにロケーションサービスの紹介やフィーチャ サービス、Web マップを作成する方法について紹介します。">
 
 
     
@@ -104,13 +104,6 @@ if (!doNotTrack) {
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/services/location-service/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/services/location-service/">
-            ロケーションサービスの利用
-          </a>
-        </div>
-    </li>
       <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
@@ -732,7 +725,16 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ロケーションサービス">ロケーションサービス</a>
+      <ul>
+        <li><a href="#チュートリアル">チュートリアル</a></li>
+      </ul>
+    </li>
+    <li><a href="#フィーチャ-サービスweb-マップの作成">フィーチャ サービス、Web マップの作成</a></li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -751,20 +753,26 @@ if (!doNotTrack) {
     
     
 
-<p>ArcGIS Platform をはじめて使う方向けにロケーションサービスの使用方法、また、フィーチャ サービスや Web マップを作成する方法についても紹介します。</p>
-<ul class="children children-li">
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/services/location-service/" >ロケーションサービスの利用</a></li></p>
-<p>さまざまなフォーマットのデータを 1 つのマップとして集約し、それを可視化する方法を紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/services/create-feature-service/" >フィーチャサービスの作成</a></li></p>
-<p>データの検索や編集が可能な地図サービス (REST API) の配信方法を紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/services/create-webmap/" >Web マップの作成</a></li></p>
-<p>さまざまなフォーマットのデータを 1 つのマップとして集約し、それを可視化する方法を紹介します。</p>
-</span>
+<p>ArcGIS Platform をはじめて使う方向けにロケーションサービスの紹介やフィーチャ サービス、Web マップを作成する方法について紹介します。</p>
+<h2 id="ロケーションサービス">ロケーションサービス</h2>
+<p>ArcGIS Platform で提供されている<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ロケーションサービス</a>は、背景地図サービス（ベースマップレイヤー）、ジオコーディングサービス、ルーティングサービス、空間分析サービス、人口統計などのサービスがあります。ロケーションサービスを利用したアプリケーションは、Web アプリやネイティブアプリなどのクライアント <a href="https://developers.arcgis.com/documentation/mapping-apis-and-location-services/apis-and-sdks/">APIs</a> を使用して開発することができます。また、ロケーションサービスへ直接アクセスするには <a href="https://developers.arcgis.com/documentation/mapping-apis-and-location-services/apis-and-sdks/#rest-api">REST API</a> を使用できます。そのため、地図アプリケーションの開発や自社のソリューション、サービス、製品などにこれらのサービスを組み込んで利用することもできます。</p>
+<h3 id="チュートリアル">チュートリアル</h3>
+<p>ArcGIS Platform の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/tutorials/">チュートリアル</a>では、ロケーションサービスを利用したアプリケーションの構築方法を学ぶことができます。</p>
+<p>チュートリアルは、以下の ArcGIS、オープンソース、およびサードパーティの API を利用できます。</p>
+<ul>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#web-apis">Web</a>: ArcGIS API for JavaScript、ArcGIS REST JS、Esri Leaflet、MapBox GL JS、OpenLayers.</li>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#native-apis">ネイティブ</a>: ArcGIS Runtime APIs for Android、iOS、Java、.NET、Qt.</li>
+</ul>
+<h2 id="フィーチャ-サービスweb-マップの作成">フィーチャ サービス、Web マップの作成</h2>
+<ul>
+<li>
+<p><a href="create-feature-service">フィーチャ サービスの作成</a><br>
+データの検索や編集が可能な地図サービス (REST API) の配信方法を紹介します。</p>
+</li>
+<li>
+<p><a href="create-webmap">Web マップの作成</a><br>
+　さまざまなフォーマットのデータを 1 つのマップとして集約し、それを可視化する方法を紹介します。</p>
+</li>
 </ul>
 
 
@@ -779,7 +787,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/guide/get-api-key/" title="API キーの取得"> <i class="fa fa-chevron-left"></i><label>API キーの取得</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/guide/services/location-service/" title="ロケーションサービスの利用" style="margin-right: 0px;"><label>ロケーションサービスの利用</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/guide/services/create-feature-service/" title="フィーチャサービスの作成" style="margin-right: 0px;"><label>フィーチャサービスの作成</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
