@@ -372,4 +372,4 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
 
 ---
 
-アプリの動作が確認できたら [ArcGIS の OAuth 認証について学びましょう！](../../authentication)
+アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)

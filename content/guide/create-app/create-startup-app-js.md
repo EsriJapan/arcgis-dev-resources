@@ -5,143 +5,266 @@ Weight=1
 aliases = ["/create-startup-app-js/"]
 +++
 
-## サンプル プロジェクトのダウンロード
+## マップを表示する
 
-このリポジトリ（[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources)）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-* __リポジトリをご自身のアカウントに Fork（複製）__
+画像は変更する
 
- 1. GitHub にログインして、[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
- 1. Fork 後はご自身のローカル マシンにクローンを作成します。
+<img src="https://developers.arcgis.com/android/static/666fc93052d838df5cebbfe0fc426a97/4cdf7/display-a-map.png" width="400px">
 
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
-* __zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）__
+このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
 
- [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+## 前提条件
 
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios/sample-download.png" width="600px">
+このチュートリアルを実施するには、以下が必要です。
 
-## 地図の表示
+- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
 
-まずはダウンロードしたサンプル コードを実行してみましょう。
+## ステップ
 
-1. ダウンロードしたサンプル コード（[arcgis-dev-resources/startup/javascript/4.x/map/index.html](https://github.com/EsriJapan/arcgis-dev-resources/blob/master/startup/javascript/4.x/map/index.html)）を Web ブラウザーにドラッグ＆ドロップします。
-  * Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。`http://localhost/arcgis-dev-resources/startup/javascript/4.x/map/index.html` のように localhost を指定してアクセスできます。
+### 新しい Pen の作成
+[CodePen](https://codepen.io/pen/?editors=1000) にアクセスして、マッピングアプリケーション用の新しい Pen を作成します。
 
-1. この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
+### HTML の作成
 
-1. 26 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../../create-map/create-webmap)で作成した Web マップ ID を上書きします。このコードで Web マップを参照します。
- ```javascript
- // Web マップの参照
- var map = new WebMap({
- 　portalItem: {
- 　　id: "<Web マップ ID>"
- 　}
- });
- ```
- まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
+HTML ページを定義して、Web ブラウザのウィンドウの幅と高さをフル利用してマップを作成します。
 
-1. 31～34 行目のコードは地図のビューを作成しています。先のコードで参照した Web マップを地図データのソースとして、実際に地図の表示を行います。2D 地図は `MapView`、3D 地図は `SceneView` を使用します。<br>
-   __2D の場合__
-   ```javascript
-   // 地図ビュー
-   var view = new MapView({
-     map: map,
-     container: "viewDiv"
-   });
-   ```
-   __3D の場合__
-   ```javascript
-   // 地図ビュー
-   var view = new SceneView({
-     map: map,
-     container: "viewDiv"
-   });
-   ```
-> このように地図のビューを切り替えるだけで簡単に 2D と 3D を使い分けることができます。
+1. CodePen ＞ HTML で、HTML と CSS を追加し、viewDiv 要素を持つページを作成します。viewDiv は地図を表示する要素で、その CSS はブラウザの設定をリセットして、ブラウザの幅と高さをフルに利用できるようにしています。
 
-1. Web アプリを実行すると、以下のように地図が表示されます。  
- __2D__
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-2d.png" width="450px">
- __3D__
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/map-app-3d.png" width="450px">
+    CodePenでは、`<!DOCTYPE html>` タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。
 
-## 検索機能の追加
+    ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
 
-検索機能の実装方法はいくつかありますが、ここではもっとも簡単な方法をご紹介します。検索機能の実装には `esri/widgets/Search` モジュール（検索ウィジェット）を使用します。検索ソースには[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)に含まれる東京都 23 区のデータを使用します。
-![検索ウィジェット](https://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-widget.png)
-検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
 
-1. ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは `require` 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。
-
-    ```javascript
-     require(["esri/views/MapView", "esri/WebMap", "esri/widgets/Search", "esri/layers/FeatureLayer"],
-     function(MapView, WebMap, Search, FeatureLayer) {
-       ...
-     });
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
     ```
 
-    以下は検索機能に必要なモジュール一覧です。
-      * `"esri/widgets/Search"`: 検索ウィジェット
-      * `"esri/layers/FeatureLayer"`: フィーチャ レイヤー（オプション）
+### API の参照
 
-    フィーチャ レイヤーは検索ソース、情報テンプレートは検索結果の属性表示を設定するために利用します。
-    ここで以下の点に注意してください。
+1. `<head>` タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。
+ 
+    ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
 
-      * `require` 関数の第ニ引数の無名関数の引数にはモジュールに対応したクラス名（任意）を定義しますが、これは配列内のモジュールの順序と対応している必要があります
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
 
-1. 検索ウィジェット作成のスクリプトを記述します。
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
 
-     ```javascript
-     // 検索ウィジェット
-     var search = new Search({
-         view: view,
-         allPlaceholder: "検索キーワードの入力",
-         sources: [{
-           layer: new FeatureLayer({
-             url: "//services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0",
-             popupTemplate: {
-               title: "東京都 {Name}",
-               overwriteActions: true
-             }
-           }), // 検索ソースとなるフィーチャ レイヤー
-           placeholder: "検索キーワードの入力", // プレースホルダー
-           searchFields: ["Name"], // 検索対象となる属性フィールド
-           displayField: "Name", // 検索結果のポップアップに表示する属性フィールド
-           outFields: ["*"], // 結果として返す属性フィールド
-           name: "東京都", // 検索ソースの名前
-           exactMatch: false
-         }]
-     });
-     search.startup();
-     ```
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
+    ```
 
-     `"esri/widgets/Search"` モジュールが定義する `Search` クラスは `require` 関数内でのみ動作します。
+###  モジュールの追加
 
-     対応するマップを指定するための `map` プロパティにはマップのオブジェクトを、検索ソースを指定するための `sources` プロパティには検索ソースの情報を定義します。検索ソースがない状態でも ArcGIS のクラウド サービスが提供する住所検索サービスが標準で含まれています。
+ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/modules/index.html) モジュールが含まれています。require ステートメントで [Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) モジュールと [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) モジュールを参照します。
 
-     `sources.layer` には検索ソースとなるレイヤーを定義しますが、必ずしも地図上に表示されているレイヤーを使う必要はありません。サンプルはマップ オブジェクトに存在しない別のレイヤーを検索ソースとして利用します。
+1. `<head>` タグ内に、`<script>` タグと [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/modules/index.html) の require ステートメントを追加して、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) モジュールと [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) モジュールを読み込みます。
 
-     フィールド名の確認は次の手順で紹介します。
+    JavaScript のコードを HTML パネルではなく、CodePen ＞ JS パネルに追加することもできます。その場合は、`<script>` タグを削除してください。
 
-1. 検索対象とするレイヤーの詳細ページにて、[レイヤー] の項目から対象とするレイヤーをクリックして [サービスの URL] を選択します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup/view-fields.gif" width="450px">
+    ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
 
-1. [Fields] という項目にレイヤーのフィールド情報のリストが表示されているので、検索対象とするフィールド名をコピーして `searchFields` の配列に追加します。
-  * 検索結果のポップアップに表示する属性情報として利用したい場合は `displayField` にも入力してください。
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
 
-1. 最後に検索ウィジェットを地図ビュー上に配置します。
- ```javascript
- // 地図ビューに検索ウィジェットを配置
- view.ui.add(search, {
-   position: "top-right"
- });
- ```
- `positon` プロパティで地図ビュー上の四隅への配置位置が指定できます。
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
 
-1. Web アプリを実行すると、以下のように地図上に検索ウィジェットが表示され、設定した検索ソースでの検索が可能になります。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-js4.0/search-3d.gif" width="450px">
+        <script>
+          require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+
+          });
+        </script>
+
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
+    ```
+
+### API キーの取得
+
+[ArcGIS サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)にアクセスするには、API キーが必要です。
+
+1. [developer dashboard](https://developers.arcgis.com/dashboard/)にアクセスして、API キーを取得します。
+2. 次のステップで使用しますので、キーをコピーしてください。
+
+### マップの作成
+
+[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) を使ってベースマップレイヤーを設定し、API キーを適用します。
+
+1. __CodePen__ に戻ります。
+
+2. require 文の中で、新しい [Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) を作成し、[basemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap) プロパティに arcgis-topographic を設定します。[ベースマップ レイヤーサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)へのアクセスを可能にするために、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の apiKey() プロパティを設定します。
+
+    - マップには、データ レイヤとベースマップ レイヤがあります。[ベースマップ レイヤーサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の作成時に前のステップから設定できます。
+
+    - マップおよびマップ ビューが  [Map（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でどのように機能するかについては、[マッピングとロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/) を参照してください。
+
+    ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
+
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
+
+        <script>
+          require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+
+            esriConfig.apiKey = "YOUR-API-KEY";
+
+            const map = new Map({
+              basemap: "arcgis-topographic" // Basemap layer service
+            });
+
+          });
+        </script>
+
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
+    ```
+
+### マップ ビューの作成
+
+[MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) クラスを使って、表示する地図の位置を設定します。
+
+1. [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) を作成し、[map](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#map) プロパティを設定します。マップビューを中央に表示するために、[center](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#center) プロパティを 138.727363, 35.360626 に、[zoom](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#zoom) プロパティを 13 に設定します。マップの内容を表示するために、[container](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#container) のプロパティを viewDiv に設定します。
+
+    - [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) は、地図の内容を表示します。[center](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#center) と [zoom](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#zoom) のプロパティは、ロード時にマップの位置と表示されるズームレベルを決定する。
+
+    - [zoom](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#zoom) プロパティは、マップのズームレベルを設定します。値の範囲は通常 0〜20 で、0 が地表から最も遠く、20 が最も近くなります。ベースマップ レイヤーの中には、さらに 23 までのズーム・レベルをサポートするものもあります。
+
+    - [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) は、クリックやダブルクリックなどのいくつかのタッチイベントもサポートしています。これらのイベントを利用して、マップの位置を変更したり、レイヤー内のフィーチャーを探したりすることができます。
+
+    - [Maps（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でのマップとマップビューの仕組みについては、[マッピング API とロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/) のガイドを参照してください。
+
+
+    ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
+
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
+
+        <script>
+          require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+
+            esriConfig.apiKey = "YOUR-API-KEY";
+
+            const map = new Map({
+              basemap: "arcgis-topographic" // Basemap layer service
+            });
+
+            const view = new MapView({
+              map: map,
+              center: [-138.727363, 35.360626], // Longitude, latitude
+              zoom: 13, // Zoom level
+              container: "viewDiv" // Div element
+            });
+
+          });
+        </script>
+
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
+    ```
+
+### アプリを実行する
+
+__CodePen__ で、作成したコードを実行して地図を表示します。
+
+マップには、富士山を中心とした地形ベースマップレイヤーが表示されます。
+
+## Web マップを表示する
+「[Web マップの作成](../create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
 
 ---
 
-アプリの動作が確認できたら [ArcGIS の OAuth 認証について学びましょう！](../../authentication)
+アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)
