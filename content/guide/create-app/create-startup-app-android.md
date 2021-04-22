@@ -108,7 +108,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     AndroidManifest.xml
 
-    ```java
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app">
@@ -156,7 +156,7 @@ import com.example.app.databinding.ActivityMainBinding
 
     activity_main.xml
 
-    ```java
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -249,7 +249,7 @@ import com.example.app.databinding.ActivityMainBinding
     // 追加終了
     ```
 
-    地形図（ARCGIS_TOPOGRAPHIC）以外にも、[道路地図（ARCGIS_STREETS）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_STREETS)、[衛星画像（ARCGIS_IMAGERY）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_IMAGERY)、[オープンストリートマップ（OSM_STANDARD）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#OSM_STANDARD)など、様々なスタイルが用意されています、
+    地形図（ARCGIS_TOPOGRAPHIC）以外にも、[道路地図（ARCGIS_STREETS）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_STREETS)、[衛星画像（ARCGIS_IMAGERY）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_IMAGERY)、[オープンストリートマップ（OSM_STANDARD）](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#OSM_STANDARD)など、様々なスタイルが用意されています。
 
 2. mapView の map プロパティを新しい ArcGISMap に設定します。次に、[ViewPoint](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/Viewpoint.html) を作成し、それを mapView に追加します。
 
@@ -339,7 +339,7 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
 
 2. [Run] > [Run] > [app] をクリックして、アプリを実行します。アプリを実行するエミュレーターが表示されます。アプリがビルドされてもエミュレーターが表示されない場合は、エミュレーターを追加する必要があります。[Tools] > [AVD Manager] > [Create Virtual Device...] をクリックします。
 
-    富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
+富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/android/zips/display-a-map.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
 

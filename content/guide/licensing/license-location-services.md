@@ -6,5 +6,5 @@ aliases = ["/license-location-services/"]
 +++
 
 ## ロケーションサービスのライセンス
-
+Todo
 

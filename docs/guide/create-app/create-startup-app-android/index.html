@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-21T21:30:13 JST">
+<meta name="revised" content="2021-04-22T10:16:34 JST">
 <title>Android :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -560,11 +560,10 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/core-concepts/">コア コンセプト</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/" class="dd-item">
@@ -858,17 +857,17 @@ if (!doNotTrack) {
 <li>
 <p>プロジェクトツールウィンドウから、[app] &gt; [manifests] &gt; [AndroidManifest.xml] を開きます。Android マニフェストを更新して、ネットワークアクセスを許可し、アプリが OpenGL2.0 以降を使用することを示します。</p>
 <p>AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;?</span>xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;</span>manifest xmlns<span style="color:#f92672">:</span>android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-package<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.example.app&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+<span style="color:#a6e22e">package=</span><span style="color:#e6db74">&#34;com.example.app&#34;</span><span style="color:#f92672">&gt;</span>
 
-<span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span>uses<span style="color:#f92672">-</span>permission android<span style="color:#f92672">:</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;</span>uses<span style="color:#f92672">-</span>feature
-    android<span style="color:#f92672">:</span>glEsVersion<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0x00020000&#34;</span>
-    android<span style="color:#f92672">:</span>required<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#75715e">// 追加終了
-</span></code></pre></div></li>
+// 追加開始
+<span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;uses-feature</span>
+    <span style="color:#a6e22e">android:glEsVersion=</span><span style="color:#e6db74">&#34;0x00020000&#34;</span>
+    <span style="color:#a6e22e">android:required=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+// 追加終了
+</code></pre></div></li>
 </ol>
 <h3 id="インポートステートメントを追加する">インポートステートメントを追加する</h3>
 <p>[app] &gt; [java] &gt; [com.example.app] &gt; [MainActivity.kt] を開き、ArcGIS Runtime SDK を参照するようにインポートステートメントを追加します。</p>
@@ -896,21 +895,21 @@ package<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.
 MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスのインスタンスを作成します。</p>
 <p>メインアクティビティ ソースコードでは、android:id 属性の値で宣言されている暗黙的なプロパティを使用してその MapView インスタンスにアクセスできます。この場合、プロパティの名前は mapView になります。</p>
 <p>activity_main.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;?</span>xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">?&gt;</span>
-<span style="color:#f92672">&lt;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">constraintlayout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">widget</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConstraintLayout</span> xmlns<span style="color:#f92672">:</span>android<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    xmlns<span style="color:#f92672">:</span>tools<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
-    android<span style="color:#f92672">:</span>layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-    android<span style="color:#f92672">:</span>layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-    tools<span style="color:#f92672">:</span>context<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
 
-    <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">&lt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mapping</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span><span style="color:#f92672">.</span><span style="color:#a6e22e">MapView</span>
-        android<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/mapView&#34;</span>
-        android<span style="color:#f92672">:</span>layout_width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-        android<span style="color:#f92672">:</span>layout_height<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;match_parent&#34;</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#75715e">// 追加終了
-</span><span style="color:#75715e"></span>
-<span style="color:#f92672">&lt;/</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">constraintlayout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">widget</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConstraintLayout</span><span style="color:#f92672">&gt;</span>
+    // 追加開始
+    <span style="color:#f92672">&lt;com.esri.arcgisruntime.mapping.view.MapView</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/mapView&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span> <span style="color:#f92672">/&gt;</span>
+    // 追加終了
+
+<span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
 </code></pre></div></li>
 <li>
 <p>MainActivity.kt で、生成された Android クラス <a href="https://developer.android.com/topic/libraries/data-binding/expressions#binding_data">ActivityMainBinding</a> を参照する activityMainBinding という名前の読み取り専用ローカル変数を作成します。</p>
@@ -975,7 +974,7 @@ override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f926
 
 <span style="color:#f92672">}</span>
 <span style="color:#75715e">// 追加終了
-</span></code></pre></div><p>地形図（ARCGIS_TOPOGRAPHIC）以外にも、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_STREETS">道路地図（ARCGIS_STREETS）</a>、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_IMAGERY">衛星画像（ARCGIS_IMAGERY）</a>、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#OSM_STANDARD">オープンストリートマップ（OSM_STANDARD）</a>など、様々なスタイルが用意されています、</p>
+</span></code></pre></div><p>地形図（ARCGIS_TOPOGRAPHIC）以外にも、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_STREETS">道路地図（ARCGIS_STREETS）</a>、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_IMAGERY">衛星画像（ARCGIS_IMAGERY）</a>、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#OSM_STANDARD">オープンストリートマップ（OSM_STANDARD）</a>など、様々なスタイルが用意されています。</p>
 </li>
 <li>
 <p>mapView の map プロパティを新しい ArcGISMap に設定します。次に、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/Viewpoint.html">ViewPoint</a> を作成し、それを mapView に追加します。</p>
@@ -1055,9 +1054,9 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 </code></pre></div></li>
 <li>
 <p>[Run] &gt; [Run] &gt; [app] をクリックして、アプリを実行します。アプリを実行するエミュレーターが表示されます。アプリがビルドされてもエミュレーターが表示されない場合は、エミュレーターを追加する必要があります。[Tools] &gt; [AVD Manager] &gt; [Create Virtual Device&hellip;] をクリックします。</p>
-<p>富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。</p>
 </li>
 </ol>
+<p>富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。</p>
 <p>完成版のプロジェクトは<a href="https://developers.arcgis.com/android/zips/display-a-map.zip">こちら</a>からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。</p>
 <h1 id="web-マップを表示する">Web マップを表示する</h1>
 <p>「<a href="../create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>

@@ -6,3 +6,4 @@ aliases = ["/license-your-app/"]
 +++
 
 ## アプリのライセンス
+Todo

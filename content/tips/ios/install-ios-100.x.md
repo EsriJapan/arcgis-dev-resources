@@ -9,7 +9,7 @@ aliases = ["/ios/install-ios-100.x/"]
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご覧ください。
 
-マップを表示する方法については「[アプリの作成](../create-app/create-startup-app-ios/)」のチュートリアルをご覧ください。
+マップを表示する方法については「[アプリの作成](../guide/create-app/create-startup-app-ios/)」のチュートリアルをご覧ください。
 
 # インストールとセットアップ
 Xcode プロジェクトに API をインストールして使用する方法は2つあります。手動でダウンロードしてインストールするか、CocoaPods を使用できます。

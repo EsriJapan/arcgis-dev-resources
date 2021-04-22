@@ -1,11 +1,11 @@
 +++
 title = "インストール ガイド"
-description = "初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に最も基本的な開発手順を紹介します。"
+description = "ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。"
 weight = 1
 aliases = ["/android/install-android-100.x/"]
 +++
 
-このインストール ガイドでは、初めて ArcGIS Runtime SDK for Android を使用してモバイル マッピング アプリケーションを構築する開発者の方に基本的な開発手順を紹介いたします。
+このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。
 
 {{% notice warning %}}
 
@@ -13,184 +13,112 @@ Gradle を使用して ArcGIS Runtime アプリケーションをビルドする
 
 {{% /notice %}}
 
-## ArcGIS Runtime SDK for Android とは
+# インストールとセットアップ
 
-ArcGIS Runtime SDK for Android を使うと ArcGIS の機能を Android のネイティブ アプリケーションとして実装することができます。
-この SDK には API やリファレンス、サンプルコードなどが含まれています。
-詳細は [ArcGIS Runtime SDK for Android](http://www.esrij.com/products/arcgis-runtime-sdk-for-android/) をご参照ください。
+ArcGIS Runtime for Android をインストールする前に、開発マシンが[システム要件](https://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 
-## ArcGIS Runtime SDK for Android の開発環境
+[Gradle](https://gradle.org/) を使用してインストールすることをお勧めします。これにより、[Esri の Maven リポジトリ](https://esri.jfrog.io/artifactory/arcgis)から必要な依存関係と SDK バイナリがインストールされます。Gradle を利用できない場合は、代わりに SDK をダウンロードしてから、AAR ライブラリと依存関係アーティファクトを含めることでプロジェクトに依存関係を手動で追加できます。
 
-以下はArcGIS Runtime SDK for Android の最新版（100.10）の開発に必要な環境です。
+注：制限された開発環境で作業していて、ユーザーディレクトリにファイルを書き込むためのオンラインアクセスまたは権限がない場合は、ダウンロードオプションを選択してください。
 
-* Android Studio / IntelliJ IDEA
-* Android 6.0（Marshmallow: API レベル 23) 以降
-* OpenGL ES  
-  * 2D (MapView): OpenGL ES 2.0 以上（3.0を推奨） 
-  * 3D (SceneView): OpenGL ES 3.0 以上
+* [Gradle で API を取得する](#gradle-で-api-を取得する)
+* [API を手動で取得する](#api-を手動で取得する)
 
-ArcGIS Runtime SDK for Android がサポートする動作環境につきましては[こちら](http://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)にも記載してありますので、ご参照ください。
+## Gradle で API を取得する
+既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。
 
-### Java 8 の使用
+1. project レベルの build.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL をプロジェクトに追加します。Esri のリポジトリはオープンソースではないため、スクリプトのデフォルトリポジトリでは使用できないため、この URL を指定する必要があります。
 
-Android Studio 3.0 以降では、プラットフォームのバージョンごとに異なる Java 7 のすべての言語機能と Java 8 の言語機能のサブセットをサポートしています。</br>
-これらの言語機能は、ArcGIS Runtime SDK の Android ドキュメントおよび[サンプル](https://github.com/Esri/arcgis-runtime-samples-android/tree/master/java)でも使用されています。</br>
-Java 8 を使用したコードをコンパイルするには、[ArcGIS Runtime SDK の設定](https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/#arcgis-runtime-sdkの設定)の「4」を参照してください。</br>
+	```java  
+	allprojects {
+		repositories {
+			google()
+			jcenter()
 
-## モバイル マッピング アプリケーションの開発
-
-ここでは、次の構成で ArcGIS Runtime SDK for Android を使ってモバイル マッピング アプリケーションを作成するための基本的な手順を説明します（開発言語はJava）。Kotlinを使った手順は、[Display a map](https://developers.arcgis.com/android/maps-2d/tutorials/display-a-map/) を参照してください。
-
-* __[プロジェクトの作成](#プロジェクトの作成)__
-* __[ArcGIS Runtime SDKの設定](#arcgis-runtime-sdkの設定)__
-* __[地図表示の実装](#地図表示の実装)__
-* __[モバイル マッピング アプリケーションの実行](#モバイル-マッピング-アプリケーションの実行)__
-
-## プロジェクトの作成
-
-まず Android Studio 上に新しいプロジェクトを作成します。
-
- 1. Android Studio を起動し [Start a new Android Studio project] をクリックします。すでに Android Studio のプロジェクトが開いている場合は Android Studio のメニューから [File] → [New Project] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_1.StartupAndroid.png" width="600px">
- 1. [Application name] にアプリケーションの名称を入力します。ここでは「HelloMap」としています。[Company Domain] にドメインを、[Project Location] に作成するディレクトリを入力して [Next] をクリックします。
-ここではドメインを「tutorials.esri.com」としています。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_2.makeProject.png" width="600px">
- 1. [Phone and Tablet] のみにチェックを入れ、ドロップダウン リストから適切な API レベルを選択して [Next] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_3.choseAndroidVersion.png" width="600px">
- 1. Activity を選択します。ここでは「Empty Activity」を選択して [Next] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_4.choseActivity.png" width="600px">
- 1. [Finish] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_5.makeActivity.png" width="600px">
- 1. 以上で新しいプロジェクトが作成されます。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_1_6.finish_startProject.png"  width="600px">
-
-## ArcGIS Runtime SDKの設定
-
-次に ArcGIS Runtime SDK for Android の API を使えるようにするための設定を行います。
-
- 1. まずはこのアプリケーションが使用する機能に対して権限を付与します。
-Project ツールウィンドウ で「Android」を選択して「Manifests」フォルダの AndroidManifest.xml をダブルクリックして開きます。
-インターネットへのアクセス許可するための Permission を追加します。使用する機能に応じて、必要な Permission を追加してください。
-
-```java
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-feature android:glEsVersion="0x00020000" android:required="true" />
-```
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_1.addPermission.png" width="700px">
- 2. build.gradle (Project:HelloMap) をダブルクリックして開きます。ArcGIS の Maven リポジトリの URL を追加します。
-
-```java
-allprojects {
-	repositories {
-		jcenter()
-		// esri arcgis maven リポジトリの追加
-		maven {
-			url 'https://esri.jfrog.io/artifactory/arcgis'
+			// Esri のパブリック Maven リポジトリを追加します
+			maven {
+				url 'https://esri.jfrog.io/artifactory/arcgis'
+			}
 		}
 	}
-}
-```
+    ```
 
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_2.addMaven.png" width="700px">
- 3. build.gradle (Module: app) をダブルクリックして開きます。dependencies セクション内に「implementation 'com.esri.arcgisruntime:arcgis-android:100.×.×'」を追加します。
+2. module レベルの build.gradle ファイルの dependencies ブロック内で、ArcGIS Runtime SDK for Android の依存関係をアプリに追加します。
 
-```java
-dependencies {
-	implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
-	…
-}
-```
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_3.addRuntimeVersion.png" width="700px">
- 4. 続いて、Java 8 での機能を使用する設定を`android`中に追加します。
-Java 8 で使用可能なラムダ式や特殊なアノーテーションを使用する場合ために、次のようにアプリケーションモジュールの互換性を設定します。
+	注：この依存関係を、ArcGIS Runtime SDK for Android を使用する各モジュールに追加する必要があります。
 
-```java
-android {
-	…
-	compileOptions {
-		targetCompatibility 1.8
-		sourceCompatibility 1.8
+	```java
+	dependencies {
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
+		...
 	}
-}
+	```
+
+3. Android Studio は、Java 8 言語機能のサブセットをサポートしています。これらの機能は、ArcGIS Runtime SDK for Android のドキュメントとサンプル全体で使用されています。アプリで使用する場合にコードサンプルを確実にコンパイルするには、Java 8 を使用するようにアプリ モジュールの互換性を設定します。app モジュールの build.gradle ファイルの android ブロック内に、compileOptions ディレクティブを追加して、Java 互換バージョンを設定します。
+
+    ```java  
+	android {
+		...
+		compileOptions {
+			sourceCompatibility 1.8
+			targetCompatibility 1.8
+		}
+	}
+    ```
+
+## API を手動で取得する
+パブリック Gradle リポジトリを利用できない場合は、代わりに SDK をダウンロードし、ローカル AAR とすべての依存関係アーティファクトを含めることで、依存関係をプロジェクトに手動で追加できます。
+
+1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) にサインインします。
+    
+	サインインには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+
+2. ダッシュボード上で、[Download](https://developers.arcgis.com/downloads/#android) をクリックし、最新バージョンの ArcGIS Runtime SDK for Android を選択します。
+
+3. ダウンロードしたファイルを開発マシン上に解凍します。
+
+依存関係を ArcGIS Runtime SDK for Android に手動で追加します。libs フォルダにある Android ライブラリ モジュール（.aar）には、API の jar ライブラリ arcgis-android-api とそのサードパーティの依存関係およびコア ネイティブ ライブラリが含まれています。
+
+
+## 必要な権限と機能
+Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。
+
+アプリが Android API バージョン 22 以前で実行されている場合、インストール時にすべての権限が要求されます（許可または拒否）。アプリが Android API バージョン 23 以降で実行されている場合、アクセス許可が要求され、インストール時に自動的に付与されます。ただし、潜在的に危険な権限は実行時にリクエストする必要があり、そのためにはアプリにコードを追加する必要があります。まだ許可されていない場合は、Android フレームワークまたは Android サポート ライブラリが、権限を確認して要求するために使用されます。詳細については、[アプリの権限を宣言する](https://developer.android.com/training/permissions/declaring.html)と[アプリの権限をリクエストする](https://developer.android.com/training/permissions/requesting.html)をご覧ください。
+
+アクセス許可が必要な ArcGIS Runtime SDK for Android の機能：
+
+* インターネットへのアクセス（ほとんどのアプリはこれを必要とします）：Android API 23 以降の標準の権限
+* ローカルストレージ上のファイルへのアクセス（一部のアプリではこれが必要になります）：Android API 23以降での危険な権限。
+* デバイスの GPS にアクセスするには、FINE_LOCATION の権限が必要です：Android API 23 以降での危険な権限
+
+次のコード例（AndroidManifest.xml ファイルの場合）には、すべての権限が含まれています。
+
+```xml  
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_4.addjava8conf.png" width="700px">
- 5. ツールバーの [Sync Project with Gradle Files] または build.gradle を変更した後に表示されるメッセージの右にある [Sync Now] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_2_5.syncproject.png" width="600px">
-これで準備が整いました。
 
-## 地図表示の実装
+さらに、Android マニフェストに [uses-feature 要素](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)を追加すると、Play ストアでアプリを正しいタイプのデバイスで利用できるようになります。
 
-ArcGIS の機能を実装する準備ができたので、アプリケーションに ArcGIS Online のベースマップを表示するための実装を加えます。
+MapView（2D）を使用するアプリには、最小でも OpenGL ES 2.x が必要です。
 
-1.	Project ツールウィンドウで [app] → [res] → [layout] と展開し activity_main.xml をダブルクリックして開きます。
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_1.openLayoutXml.png"  width="700px">
-2.	左下の [Text] タブをクリックして XML 形式で開きます。TextView 部分を全て削除して以下の MapView エレメントを追加します。
-
-```java
-<com.esri.arcgisruntime.mapping.view.MapView
-	android:id="@+id/mapView"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" >
-</com.esri.arcgisruntime.mapping.view.MapView>
-```
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_2.addMapviewElement.png" width="700px">
-3. Project ツールウィンドウで [app] → [res] → [java] と展開し MainActivity クラスを ダブルクリックして開き、地図表示のためのコードを設定します。  
-
-* MainActivity クラスへ次のクラスをインポートします。
- 
-```java
-import com.esri.arcgisruntime.mapping.view.MapView;
-import com.esri.arcgisruntime.mapping.ArcGISMap;
-import com.esri.arcgisruntime.mapping.Basemap;
-```
-* MainActivity クラスの先頭に次のクラス変数宣言を追加します。
- 
-```java
-private MapView mMapView;
-```
-* onCreate() メソッド内の `setContentView()` の後に以下のコードを追加します。
-
-```java
-mMapView = (MapView) findViewById(R.id.mapView);
-ArcGISMap map = new ArcGISMap(Basemap.Type.TOPOGRAPHIC, 35.665731,139.731088, 16);
-mMapView.setMap(map);
+```xml  
+<uses-feature android:glEsVersion="0x00020000" android:required="true" />
 ```
 
-このコードは、レイアウトに定義している MapView の参照を取得し、ベースマップのタイプや初期表示の範囲、縮尺レベルを設定した地図を `MapView` に設定します。  
-ここではベースマップに地形図を設定し、初期表示範囲は東京ミッドタウン付近を表示するようにしています。
+SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です。
 
-* MainActivity クラスへ `onPause()` メソッド(一時停止)と `onResume()` メソッド(再開)を追加します。2つのメソッドへはそれぞれ次のコードを追加します。
- 
-```java
-@Override
-protected void onPause(){
-    mMapView.pause();
-    super.onPause();
-}
-
-@Override
-protected void onResume(){
-    super.onResume();
-    mMapView.resume();
-}
+```xml  
+<uses-feature android:glEsVersion="0x00030000" android:required="true" />
 ```
-	
-* MainActivity は以下のようになります。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_3.finishMapViewElement.png" width="700px">
- 
- 4. ツールバーの [Make Project] または [Build] メニューから [Make Project] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_3_4.makeProject.png" width="600px">
 
-## モバイル マッピング アプリケーションの実行
+## androidx の依存関係
 
-ベースマップを表示するアプリケーションが作成できたので Android 端末にインストールして実行します。
+DefaultAuthenticationChallengeHandler は、OAuth 認証の認証情報の入力をユーザーに求めるために、デフォルトで [Chrome カスタムタブ](https://developer.chrome.com/docs/android/custom-tabs/overview/) を使用するようになりました。これにより、外部ブラウザ ウィンドウで資格情報の入力を求めるよりも優れたユーザーエクスペリエンスが提供されます。Chrome カスタムタブのサポートにより、[androidx.browser:browser:1.0.0](https://developer.android.com/jetpack/androidx/releases/browser) の新しい推移的依存関係が導入されました。 この依存関係は、gradle ビルドスクリプトから arcgis-android ライブラリを参照すると自動的に構成されます。API を手動でダウンロードする場合は、androidx の依存関係をサポートするように自分でプロジェクトを構成する必要があります。
 
- 1. ツールバーの [Run ‘app’] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_1.runAppBottun.png" width="600px">
+プロジェクトが Google でサポートされていない Android サポート ライブラリに依存している場合は、androidx ライブラリでコンパイルまたはランタイムの問題が発生するため、プロジェクトを [androidx](https://developer.android.com/jetpack/androidx/migrate) に移行する必要があります。
 
- 1. 接続しているデバイスを選択し [OK] をクリックします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_2.choseDevice.png" >
 
- 1. アプリケーションが起動し東京ミッドタウン付近の地図が表示されます。
-スワイプやピンチイン/ピンチアウトで地図を移動したり拡大/縮小したりすることができます。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/install-android/_4_3.displayMap.png"  width="300px">
+
+
