@@ -38,7 +38,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
 ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。
 
 ```html
-<script src="https://www.example.com/arcgis_js_api/library/4.18/dojo/dojo.js"></script>
+<script src="https://www.example.com/arcgis_js_api/library/4.18/init.js"></script>
 ```
 
 インストールのテストには以下のコードを利用してください。
@@ -53,14 +53,14 @@ Esri がホストしている CDN にインターネット経由で参照する�
     <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.18/dijit/themes/claro/claro.css" />
     <link rel="stylesheet" href="https://www.example.com/arcgis_js_api/library/4.18/esri/themes/light/main.css" />
     <style>
-      html, body, #ui-map-view {
+      html, body, #viewDiv {
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
       }
     </style>
-    <script src="https://www.example.com/arcgis_js_api/library/4.18/dojo/dojo.js"></script>
+    <script src="https://www.example.com/arcgis_js_api/library/4.18/init.js"></script>
     <script>
       var myMap, view;
       require([

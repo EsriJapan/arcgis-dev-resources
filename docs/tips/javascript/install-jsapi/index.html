@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-21T09:41:09 JST">
+<meta name="revised" content="2021-04-22T13:27:44 JST">
 <title>インストール ガイド :: ArcGIS for Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -765,7 +765,7 @@ if (!doNotTrack) {
 </ol>
 <h2 id="インストールのテスト">インストールのテスト</h2>
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/dojo/dojo.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>インストールのテストには以下のコードを利用してください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
@@ -776,14 +776,14 @@ if (!doNotTrack) {
     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/dijit/themes/claro/claro.css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/esri/themes/light/main.css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
-      <span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span><span style="color:#f92672">,</span> #ui-map-view {
+      <span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span><span style="color:#f92672">,</span> #viewDiv {
         <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
         <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
         <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
         <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/dojo/dojo.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/arcgis_js_api/library/4.18/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     &lt;<span style="color:#f92672">script</span>&gt;
       <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myMap</span>, <span style="color:#a6e22e">view</span>;
       <span style="color:#a6e22e">require</span>([
