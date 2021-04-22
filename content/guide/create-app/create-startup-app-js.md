@@ -5,7 +5,7 @@ Weight=1
 aliases = ["/create-startup-app-js/"]
 +++
 
-## マップを表示する
+# マップを表示する
 
 このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
@@ -83,8 +83,10 @@ HTML ページを定義して、Web ブラウザのウィンドウの幅と高�
           }
         </style>
 
+        <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.18/"></script>
+        <!-- 追加終了 -->
 
       </head>
       <body>
@@ -119,14 +121,18 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
           }
         </style>
 
+        <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.18/"></script>
-
+        <!-- 追加終了 -->
+        
+        <!-- モジュールの追加 -->
         <script>
           require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
 
           });
         </script>
+        <!-- 追加終了 -->
 
       </head>
       <body>
@@ -172,20 +178,26 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
           }
         </style>
 
+        <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.18/"></script>
-
+        <!-- 追加終了 -->
+        　
+        <!-- モジュールの追加 -->
         <script>
           require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
-
+            
+            // API キーの追加
             esriConfig.apiKey = "YOUR-API-KEY";
 
+            // マップの作成
             const map = new Map({
               basemap: "arcgis-topographic" // Basemap layer service
             });
 
           });
         </script>
+        <!-- 追加終了 -->
 
       </head>
       <body>
@@ -227,27 +239,34 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
           }
         </style>
 
+        <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.18/"></script>
-
+        <!-- 追加終了 -->
+        　
+        <!-- モジュールの追加 -->
         <script>
-          require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+          require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig, Map, MapView) {
 
+            // API キーの追加
             esriConfig.apiKey = "YOUR-API-KEY";
 
+            // マップの作成
             const map = new Map({
               basemap: "arcgis-topographic" // Basemap layer service
             });
 
+            // マップ ビューの作成
             const view = new MapView({
               map: map,
-              center: [-138.727363, 35.360626], // Longitude, latitude
+              center: [138.727363, 35.360626], // Longitude, latitude
               zoom: 13, // Zoom level
               container: "viewDiv" // Div element
             });
 
           });
         </script>
+        <!-- 追加終了 -->
 
       </head>
       <body>
@@ -262,8 +281,100 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
 
 マップには、富士山を中心とした地形ベースマップレイヤーが表示されます。
 
-## Web マップを表示する
-「[Web マップの作成](../create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
+# Web マップを表示する
+「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
+
+1. require ステートメントにて、[WebMap](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) モジュールを追加で読み込みます。
+
+    ```HTML        
+    <!-- モジュールの追加 -->
+    <script>
+      require(["esri/config","esri/Map", "esri/WebMap", "esri/views/MapView"], function (esriConfig, Map, WebMap, MapView) {
+
+        // .....
+
+      });
+    </script>
+    <!-- 追加終了 -->
+    ```
+
+2. [Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) オブジェクトを下記のように書き換えます。
+
+   ```JavaScript
+    // Web マップの参照
+    const map = new WebMap({
+      portalItem: {
+        id: "<Web マップ ID>"
+        //id: "d3ffea931f4a455f9c3b6c2102e66eda"
+      }
+    });
+   ```
+
+3. Web マップに置き換えた全体のコードは下記の通りです。
+
+   ```HTML
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+
+        <style>
+          html,
+          body,
+          #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
+        
+        <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
+        <!--追加終了  -->
+        
+        <!-- モジュールの追加 -->
+        <script>
+          require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView"], function (esriConfig, Map, WebMap, MapView) {
+
+            // API キーの追加
+            esriConfig.apiKey = "YOUR-API-KEY";
+
+            // マップの作成
+            /*
+            const map = new Map({
+              basemap: "arcgis-topographic" // Basemap layer service
+            });
+            */
+
+            // Web マップの参照
+            const map = new WebMap({
+                portalItem: {
+                  id: "<Web マップ ID>"
+                  //id: "d3ffea931f4a455f9c3b6c2102e66eda"
+                }
+            });
+    
+            // マップ ビューの作成
+            const view = new MapView({
+              map: map,
+              center: [138.727363, 35.360626], // Longitude, latitude
+              zoom: 13, // Zoom level
+              container: "viewDiv" // Div element
+            });
+
+          });
+        </script>
+        <!-- 追加終了 -->
+
+      </head>
+      <body>
+        <div id="viewDiv"></div>
+      </body>
+    </html>
+    ```
 
 ---
 

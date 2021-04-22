@@ -206,7 +206,7 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/ios/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
 
 # Web マップを表示する
-「[Web マップの作成](../create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
+「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
 
 1. [マップを表示する](#マップを表示する)のステップで作成したプロジェクトの ViewController.swift を開き、setupMap() メソッドを下記のように書き換えます。
     
