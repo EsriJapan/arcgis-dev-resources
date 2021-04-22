@@ -9,9 +9,7 @@ aliases = ["/create-startup-app-js/"]
 
 このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-画像は変更する
-
-<img src="https://developers.arcgis.com/android/static/666fc93052d838df5cebbfe0fc426a97/4cdf7/display-a-map.png" width="400px">
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
