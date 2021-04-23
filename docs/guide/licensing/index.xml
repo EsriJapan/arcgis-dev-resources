@@ -7,12 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ロケーションサービスのライセンス</title>
+      <title>ロケーション サービスのライセンス</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-location-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-location-services/</guid>
-      <description>ロケーションサービスのライセンス Todo</description>
+      <description>出典：ArcGIS Developers - licensing - License location services
+ロケーション サービスのライセンス アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。アプリケーションには、使用するコンテンツやサービス、開発された API または SDK に応じたライセンス要件があります。詳細については、使用条件および FAQ を確認してください。
+ArcGIS ロケーション サービスの使用に関するライセンス アプリが ArcGIS Platform のロケーション サービスを使用する場合、アプリを構築する際に選択したクライアント API にかかわらず、以下のように本番アプリのライセンスを取得することができます。
+  API キー：API キーは、ArcGIS ロケーション サービスの使用を認可するものです。ArcGIS またはオープン ソースの任意のクライアント API を使用して、API キーにてアプリを開発およびデプロイをすることができます。ダッシュボードにて API キーの使用状況の管理および追跡をします。API キーの詳細については、開発者ガイドの「セキュリティと認証」のセクションを参照してください。
+  ArcGIS ID：お客様またはお客様の組織が ArcGIS Online サブスクリプションを購入した場合、アプリケーションの実運用ライセンスを取得するために追加の手順を踏む必要はありません。ただし、アプリケーションが使用可能なプリペイド クレジットをすべて使用する場合は、ArcGIS Online サブスクリプションの追加クレジットを購入するか、API キーを使用してアプリケーションでロケーション サービスにアクセスします。
+  Esri データのライセンス 本番アプリケーションで Esri が提供するデータを使用する場合は、特定のデータセットのすべてのライセンス要件に準拠する必要があります。ライセンスは、アイテムの ArcGIS Online ページの「Access and Use Constraints」セクションで確認できます。アイテムのページは、アプリケーションで使用しているアイテム ID または URL を検索して見つけることができます。ほとんどのデータは、Esri マスター ライセンス契約によってライセンスされている。マスター契約の概要もご覧いただけます。</description>
     </item>
     
     <item>

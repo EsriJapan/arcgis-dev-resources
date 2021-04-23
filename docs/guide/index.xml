@@ -12,7 +12,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</guid>
-      <description>開発者アカウントの作成 Todo</description>
+      <description>ArcGIS Developers とは ArcGIS Developers は、Esri 製品を利用して様々なアプリを開発する開発者のための総合ポータルサイトであり、地図/GIS アプリ開発者のための開発者向けサービスを提供しています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして地図/GIS アプリの開発を開始することができます。
+ArcGIS Developers では、システム開発に必要なリソース（開発キット、サービス/コンテンツ、ソフトウェア）を揃えるためのサブスクリプション プログラム（ArcGIS Developer Subscription）を提供します。
+ArcGIS Developers に開発者アカウントを作成すると ArcGIS Online (開発者向け) Subscription が有効になり、開発キットのダウンロードとアプリの開発を無償で開始することができます。また 米国 Esri 社がホストする GIS クラウド サービスであるジオコーディング サービス（住所⇄緯度経度）やネットワーク サービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、50 クレジット/月の範囲で可能です。
+アプリを商用利用で運用される場合は、別途 ArcGIS Developer Subscription の有償プランを契約いただく必要があります。
+ArcGIS Developer Subscription の各プランの詳細や提供しているサービスについては ESRIジャパン製品ページをご参照ください。
+アカウントの作成 ArcGIS Developers 開発者アカウントの作成 以下の手順で ArcGIS Developers に新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまでお問い合わせください。
+  ArcGIS Developers のサイト（英語）にアクセスし、[Sign Up For Free] をクリックします。
+  名前（※名前には半角英字のみを使用してください）、E メールアドレス、組織名（任意）、ユーザー名、パスワード、秘密の質問を入力します。
+  利用規約とプライバシー ポリシーに同意する場合は、同意欄にチェックを入れ、[Create developer account] をクリックします。</description>
     </item>
     
     <item>
@@ -21,7 +29,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</guid>
-      <description>API キー とは Todo</description>
+      <description>API キーとは すぐに使える特定のサービスやプライベート コンテンツへのアクセスを公開アプリケーションに許可範囲と許可を定義する永続的なアクセストークンです。
+既に ArcGIS アカウントを持っている場合は、サインインしてデフォルトの API キーを表示したり、新しい API キーを作成したりすることができます。API キーは、ArcGIS 開発者アカウントにサインアップしたときに作成されます。
+詳細は API keys のサイト（英語）をご覧ください。
+API キーの取得方法 以下の手順で新規の API キーを取得します。API キーの取得中に問題が発生した場合は、ESRI ジャパンまでお問い合わせください。
+  ArcGIS Developers のサイト（英語）にアクセスし、ご自身のアカウントでサインインをします。
+  サインインしたアカウントの専用ページに遷移したら、ヘッダー部にある [API keys] タブまたは、メイン コンテンツ内の API keys にある [Manage] をクリックします。
+  API keys ページに遷移したらページ上部にある [+ New API key] をクリックします。
+  入力フォームが出力されたらタイトルと説明を入力して [Create API key] をクリックします。
+  以上で API キーの取得は完了です。
+取得した API キーは、専用ページの Overview タブページの上方に表示されているため、コピーをしてご利用ください。
+また、API キーを各種開発キットで利用するためのコードも用意されていますので併せてご利用ください。</description>
     </item>
     
     <item>

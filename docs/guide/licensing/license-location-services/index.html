@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-22T17:59:47 JST">
-<title>ロケーションサービスのライセンス :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2021-04-23T19:30:20 JST">
+<title>ロケーション サービスのライセンス :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="アプリケーションを本番環境で運用するために必要となる ArcGIS テクノロジを使用する際のライセンスについて紹介します。">
+<meta name="description" content="アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。ロケーション サービスを使用する際のライセンスについて紹介します。">
 
 
     
@@ -172,7 +172,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーションサービスのライセンス
+            ロケーション サービスのライセンス
           </a>
         </div>
     </li>
@@ -714,7 +714,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > <a href='/arcgis-dev-resources/guide/licensing/'>運用（ライセンス）</a> > ロケーションサービスのライセンス
+ <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > <a href='/arcgis-dev-resources/guide/licensing/'>運用（ライセンス）</a> > ロケーション サービスのライセンス
 
  
 
@@ -731,7 +731,14 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#ロケーションサービスのライセンス">ロケーションサービスのライセンス</a></li>
+    <li><a href="#ロケーション-サービスのライセンス">ロケーション サービスのライセンス</a></li>
+    <li><a href="#arcgis-ロケーション-サービスの使用に関するライセンス">ArcGIS ロケーション サービスの使用に関するライセンス</a>
+      <ul>
+        <li><a href="#esri-データのライセンス">Esri データのライセンス</a></li>
+        <li><a href="#サード-パーティ-データのライセンス">サード パーティ データのライセンス</a></li>
+        <li><a href="#帰属">帰属</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -743,7 +750,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>ロケーションサービスのライセンス</h1>
+    <h1>ロケーション サービスのライセンス</h1>
   
 
 
@@ -751,8 +758,27 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="ロケーションサービスのライセンス">ロケーションサービスのライセンス</h2>
-<p>Todo</p>
+    <p>出典：ArcGIS Developers - licensing - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-location-services/">License location services</a></p>
+<h2 id="ロケーション-サービスのライセンス">ロケーション サービスのライセンス</h2>
+<p>アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。アプリケーションには、使用する<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">コンテンツやサービス</a>、開発された <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/">API または SDK</a> に応じたライセンス要件があります。詳細については、<a href="https://www.esri.com/en-us/legal/terms/full-master-agreement/mla-e204-e300-english">使用条件</a>および <a href="https://developers.arcgis.com/faq/">FAQ</a> を確認してください。</p>
+<h2 id="arcgis-ロケーション-サービスの使用に関するライセンス">ArcGIS ロケーション サービスの使用に関するライセンス</h2>
+<p>アプリが ArcGIS Platform のロケーション サービスを使用する場合、アプリを構築する際に選択したクライアント API にかかわらず、以下のように本番アプリのライセンスを取得することができます。</p>
+<ul>
+<li>
+<p>API キー：API キーは、ArcGIS ロケーション サービスの使用を認可するものです。<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/">ArcGIS またはオープン ソースの任意のクライアント API</a> を使用して、API キーにてアプリを開発およびデプロイをすることができます。<a href="https://developers.arcgis.com/api-keys/">ダッシュボード</a>にて API キーの使用状況の管理および追跡をします。API キーの詳細については、開発者ガイドの「<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/">セキュリティと認証</a>」のセクションを参照してください。</p>
+</li>
+<li>
+<p>ArcGIS ID：お客様またはお客様の組織が ArcGIS Online サブスクリプションを購入した場合、アプリケーションの実運用ライセンスを取得するために追加の手順を踏む必要はありません。ただし、アプリケーションが使用可能なプリペイド クレジットをすべて使用する場合は、ArcGIS Online サブスクリプションの<a href="https://www.esri.com/en-us/arcgis/products/credits/overview?rmedium=www_esri_com_EtoF&amp;rsource=/en-us/arcgis/products/arcgis-online/pricing/credits">追加クレジットを購入</a>するか、API キーを使用してアプリケーションでロケーション サービスにアクセスします。</p>
+</li>
+</ul>
+<h3 id="esri-データのライセンス">Esri データのライセンス</h3>
+<p>本番アプリケーションで Esri が提供するデータを使用する場合は、特定のデータセットのすべてのライセンス要件に準拠する必要があります。ライセンスは、アイテムの ArcGIS Online ページの「Access and Use Constraints」セクションで確認できます。アイテムのページは、アプリケーションで使用しているアイテム ID または URL を検索して見つけることができます。ほとんどのデータは、<a href="https://www.esri.com/en-us/legal/terms/full-master-agreement">Esri マスター ライセンス契約</a>によってライセンスされている。<a href="https://downloads2.esri.com/arcgisonline/docs/tou_summary.pdf">マスター契約の概要</a>もご覧いただけます。</p>
+<p>アプリケーションで Esri ベースマップを使用する場合は、Esri への帰属表示も追加する必要があります。ほとんどの ArcGIS API および SDK はこれを自動的に行います。詳細については、「<a href="https://developers.arcgis.com/terms/attribution/">アプリケーションでの帰属</a>」を参照してください。</p>
+<h3 id="サード-パーティ-データのライセンス">サード パーティ データのライセンス</h3>
+<p>多くの組織は、ArcGIS Online で独自のデータをホストし、ArcGIS Hub または Living Atlas を通じてデータを利用できるようにしています。このデータをプロダクションで使用する前に、使用するデータに関連するライセンス要件に準拠していることを確認する必要があります。ライセンスは組織ごとに異なる場合があります。アイテムまたはサービスのライセンスを確認するには、ArcGIS Online で ID または URL を検索します。ライセンスには、「アクセスと使用の制約」のセクションがあります。</p>
+<p>ArcGIS Hub および ArcGIS Open Data でも、データセットのページでデータセットのタイトルの下にライセンス要件が表示されます。</p>
+<h3 id="帰属">帰属</h3>
+<p>Esri では、アプリケーションで ArcGIS ベースマップ、ArcGIS データ サービス、または ArcGIS API テクノロジを使用する場合は、Esri の帰属表示を含める必要があります。アプリの構築方法や使用するデータに応じて、アプリで対応が求められる<a href="../attribution">帰属表示に関する特定の要件</a>があります。</p>
 
 
     
