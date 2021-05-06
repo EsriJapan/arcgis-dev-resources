@@ -1,7 +1,7 @@
 +++
 title = "API キーの取得"
 description = "アプリケーションを公開するために必要な API キーを取得する手順について紹介します。"
-Weight=2
+Weight=1
 aliases = ["/get-api-key/"]
 +++
 
@@ -19,10 +19,13 @@ aliases = ["/get-api-key/"]
 1. [ArcGIS Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、ご自身のアカウントでサインインをします。
 
 2. サインインしたアカウントの専用ページに遷移したら、ヘッダー部にある [API keys] タブまたは、メイン コンテンツ内の API keys にある [Manage] をクリックします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/top_page.png" width="1200px">
 
 3. API keys ページに遷移したらページ上部にある [+ New API key] をクリックします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/api_key_page.png" width="1200px">
 
 4. 入力フォームが出力されたらタイトルと説明を入力して [Create API key] をクリックします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_api_key.png" width="1200px">
 
 以上で API キーの取得は完了です。<br>
 取得した API キーは、専用ページの Overview タブページの上方に表示されているため、コピーをしてご利用ください。<br>

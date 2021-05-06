@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</loc>
@@ -29,8 +31,6 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/</loc>
   </url><url>
