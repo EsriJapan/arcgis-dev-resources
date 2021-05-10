@@ -146,10 +146,10 @@ ArcGIS Identity の詳細については[こちら](https://developers.arcgis.co
 | [ArcGIS Runtime API for .NET](https://developers.arcgis.com/net/) | 〇 | 〇 | 〇 |
 | [ArcGIS Runtime API for Qt](https://developers.arcgis.com/qt/)* | 〇 | 〇 | 〇 |
 | [ArcGIS API for Python](https://developers.arcgis.com/python/) | 〇 | 〇 | 〇 |
-| [Esri Leaflet](https://developers.arcgis.com/esri-leaflet/) | 〇 | 〇 | △ |
-| [MapBox GL JS](https://developers.arcgis.com/mapbox-gl-js/) | 〇 | 〇 | △ |
-| [OpenLayers](https://developers.arcgis.com/openlayers/) | 〇 | 〇 | △ |
-| [ArcGIS REST JS](https://developers.arcgis.com/arcgis-rest-js/) | 〇 | 〇 | 〇 |
+| [Esri Leaflet](https://developers.arcgis.com/esri-leaflet/)* | 〇 | 〇 | △ |
+| [MapBox GL JS](https://developers.arcgis.com/mapbox-gl-js/)* | 〇 | 〇 | △ |
+| [OpenLayers](https://developers.arcgis.com/openlayers/)* | 〇 | 〇 | △ |
+| [ArcGIS REST JS](https://developers.arcgis.com/arcgis-rest-js/)* | 〇 | 〇 | 〇 |
 
 〇：対応　△：一部対応 (詳細は各 API のページを参照)　*国内未サポート
 

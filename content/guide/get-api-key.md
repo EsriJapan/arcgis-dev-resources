@@ -1,7 +1,7 @@
 +++
 title = "API キーの取得"
 description = "アプリケーションを公開するために必要な API キーを取得する手順について紹介します。"
-Weight=1
+Weight=2
 aliases = ["/get-api-key/"]
 +++
 
