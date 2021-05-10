@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-06T10:17:40 JST">
+<meta name="revised" content="2021-05-10T10:51:44 JST">
 <title>セキュリティと認証 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -726,6 +726,15 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#セキュリティと認証">セキュリティと認証</a></li>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#認証方法">認証方法</a></li>
+    <li><a href="#api-キー">API キー</a></li>
+    <li><a href="#arcgis-identity-指定ユーザー-ログイン">ArcGIS Identity (指定ユーザー ログイン)</a></li>
+    <li><a href="#アプリケーション認証">アプリケーション認証</a></li>
+    <li><a href="#認証方法の選択">認証方法の選択</a></li>
+    <li><a href="#機能の比較">機能の比較</a></li>
+    <li><a href="#api-のサポート">API のサポート</a></li>
+    <li><a href="#チュートリアル">チュートリアル</a></li>
   </ul>
 </nav>
         </div>
@@ -745,8 +754,288 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="セキュリティと認証">セキュリティと認証</h2>
-<p>Todo</p>
+    <p>出典：ArcGIS Developers - Security and authentication - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/">Introduction</a></p>
+<h2 id="セキュリティと認証">セキュリティと認証</h2>
+<p>ArcGIS Platform は、ロケーション サービスやプライベート データへの安全なアクセスをサポートしています。これにより、有効かつ認証されたユーザーやサービスのみが保護された情報にアクセスできるようになります。安全なリソースにアクセスするためには、アプリケーションがサービスに対して認証されたリクエストを行えるように、<a href="#%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">認証方法</a>を実装する必要があります。</p>
+<h2 id="はじめに">はじめに</h2>
+<p>以下の手順で認証を開始できます。</p>
+<ol>
+<li>
+<p>ArcGIS 開発者アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">新規作成</a>してください。</p>
+</li>
+<li>
+<p><a href="#%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">利用可能な認証方法</a>と<a href="#%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95%E3%81%AE%E9%81%B8%E6%8A%9E">認証方法の選択</a>を確認します。</p>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/dashboard/">開発者用ダッシュボード</a>にサインインし、認証情報を作成します。</p>
+</li>
+<li>
+<p><a href="#%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB">認証チュートリアル</a>にアクセスして、アプリの構築を始めましょう。</p>
+</li>
+</ol>
+<h2 id="認証方法">認証方法</h2>
+<p>認証方法とは、アクセストークンを取得するためのプロセスです。アプリケーションがロケーション サービスに認証済みのリクエストを行う際には、アクセストークンを提示する必要があります。アクセストークンは、アプリケーションが利用できる範囲と権限を定義します。アクセストークンの取得に使用する認証方法はいくつかあります。</p>
+<p>アクセストークンには以下の 3 種類あります。</p>
+<ul>
+<li><a href="#API-%E3%82%AD%E3%83%BC">API キー</a>：すぐに使えるサービスや、ArcGIS Developer アカウントがあればプライベートなコンテンツへのアクセスをアプリケーションに与える永続的なトークンです。</li>
+<li><a href="#ArcGIS-Identity-%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">ArcGIS Identity (指定ユーザー ログイン)</a>：既存の ArcGIS ユーザのアカウントに認可されたプライベート コンテンツおよびサービスへのアクセスをアプリケーションに与える一時的なトークンです。</li>
+<li><a href="#%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E8%AA%8D%E8%A8%BC">アプリケーション認証</a>：
+OAuth 2.0 で生成された一時的なトークンで、すぐに使えるサービスへのアクセスを認証することができます。</li>
+</ul>
+<p>サービスに対して認証のリクエストを行うには、token パラメーターにアクセストークンを設定する必要があります。</p>
+<p><code>https://&lt;LOCATION-SERVICE-URL&gt;?token=&lt;ACCESS-TOKEN&gt;</code></p>
+<div class="notices note" >
+<p>各サービスへのURLリクエストのフォーマットについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">位置情報サービス</a>を参照してください。</p>
+</div>
+<h2 id="api-キー">API キー</h2>
+<p>API キーは永続的なアクセストークンであり、公開アプリケーションにすぐに使用できるサービスへのアクセスを付与します。また、ArcGIS Developer アカウントを使用すると、プライベートなコンテンツ、アイテム、および限定されたクライアント リファラーへのアクセスが可能になります。</p>
+<p>次のような場合に API キーを使用します。</p>
+<ul>
+<li>すぐに使えるサービスを利用するアプリケーションを素早く作成する場合。</li>
+<li>ユーザーが ArcGIS アカウントでサインインしなくてもサービスへのアクセスを提供する場合。</li>
+<li>アクセストークンは有効期限のないものを使用する場合。</li>
+</ul>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/security/api-keys.png" alt="API キー">
+<ol>
+<li>
+<p><a href="https://developers.arcgis.com/api-keys/">開発者ダッシュボード</a>で <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/create-and-manage-an-api-key/">API キーを構成</a>します。
+API キーは、<a href="https://developers.arcgis.com/sign-up/">ArcGIS 開発者アカウントにサインアップ</a>したときに作成されます。</p>
+</li>
+<li>
+<p>選択したクライアント API に従って <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/#using-your-api-key">API キーを設定</a>し、ArcGIS Platform との認証を行います。</p>
+</li>
+</ol>
+<p>API キーの詳細については<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/">こちら</a>をご参照ください。</p>
+<h2 id="arcgis-identity-指定ユーザー-ログイン">ArcGIS Identity (指定ユーザー ログイン)</h2>
+<p>ArcGIS Identity (指定ユーザー ログインとも呼ばれる) は、一時的なアクセストークンであり、アプリケーション ユーザーの既存の ArcGIS Online または ArcGIS Enterprise アカウントで許可されたコンテンツおよびサービスへのアクセスをアプリケーションに与えるものです。この一時的なトークンは <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/">OAuth 2.0</a> プロトコルを使用して作成され、ユーザーのセキュアなパスワードをアプリケーションに公開することなく、ユーザーの代わりにアプリケーションを動作することを許可します。消費されたサービス クレジットは、認証されたユーザーの ArcGIS サブスクリプションに請求され、認証された期間中は、ユーザーに代わってアプリケーションがユーザーのプライベート コンテンツにアクセスすることが許可されます。</p>
+<p>次のような場合に ArcGIS Identity (指定ユーザーログイン) を使用します。</p>
+<ul>
+<li>ユーザーが自分の ArcGIS アカウントでサインインし、認証されていることを確認する場合。</li>
+<li>アプリユーザーのクレジットを使用して、プライベートなデータ、コンテンツ、サービスの取引の支払いを行う場合。</li>
+<li>ユーザーが一時的なトークンを使ってアプリにサインインできる時間を制限する場合。</li>
+</ul>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/security/arcgis-identity.png" alt="arcgis-identity">
+<ol>
+<li>
+<p><a href="https://developers.arcgis.com/dashboard/">開発者用ダッシュボード</a>で<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/">アプリケーションを登録</a>し、クライアント認証情報を取得します。</p>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/#authentication-workflows">OAuth 2.0 認証のワークフロー</a>を実装します。</p>
+</li>
+<li>
+<p>ユーザーがアプリケーションを承認します。</p>
+</li>
+<li>
+<p>ArcGIS Platform は、ユーザー認証からの認証コードを一時的な ArcGIS Identity と交換します。</p>
+</li>
+<li>
+<p>ArcGIS Identity を使用して、特定のクライアント API に従って ArcGIS Platform で認証します。</p>
+</li>
+</ol>
+<p>ArcGIS Identity の詳細については<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/">こちら</a>をご参照ください。</p>
+<h2 id="アプリケーション認証">アプリケーション認証</h2>
+<p>アプリケーション認証は、OAuth 2.0 によって取得される一時的なアクセストークンで、ベースマップレイヤー、検索、ルート解析など、すぐに使えるサービスへのアクセスを可能にします。</p>
+<p>次のような場合にアプリケーション認証を使用します。</p>
+<ul>
+<li>
+<p>すぐに使えるサービスにアクセスしたいが、一時的なトークンを使ってより安全なプロセスを実現したい場合。</p>
+</li>
+<li>
+<p>ユーザーが ArcGIS アカウントを持っていなくても、サービスにアクセスできるようにする場合。</p>
+</li>
+</ul>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/security/application-credenitals.png" alt="application-credenitals">
+<ol>
+<li>
+<p><a href="https://developers.arcgis.com/dashboard/">開発者用ダッシュボード</a>で <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/">OAuth 2.0 アプリケーションを登録</a>し、認証情報を受け取ります。</p>
+</li>
+<li>
+<p>ユーザーが Web サーバー上のリソースをリクエストします。</p>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/application-credentials/">OAuth 2.0 クライアント認証情報</a>のワークフローを実装し、アプリケーション認証情報を生成します。</p>
+</li>
+<li>
+<p>アプリケーション認証を用いてユーザーのリクエストに応答します。</p>
+</li>
+<li>
+<p>アプリケーション認証を使用して、特定のクライアント API に従って ArcGIS Platform で認証します。</p>
+</li>
+</ol>
+<p>アプリケーション認証の詳細については<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/application-credentials/">こちら</a>をご参照ください。</p>
+<h2 id="認証方法の選択">認証方法の選択</h2>
+<table>
+<thead>
+<tr>
+<th>シナリオ</th>
+<th>認証方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ベースマップレイヤー、ジオコーディング、ルート解析など、すぐに使えるサービスへのアクセスのみを必要とするアプリを構築する場合</td>
+<td>API キー</td>
+</tr>
+<tr>
+<td>ユーザーが ArcGIS Platform でプライベート データを表示および編集できるようにするアプリを構築する場合</td>
+<td>ArcGIS Identity (指定ユーザー ログイン)</td>
+</tr>
+<tr>
+<td>ベースマップとジオコーディングへのアクセスのみを必要とするアプリケーションを、Webサーバーや API バックエンド上で構築している場合</td>
+<td>アプリケーション認証</td>
+</tr>
+<tr>
+<td>Esri Leaflet、Mapbox GL JS、またはOpenLayers を使用してアプリケーションを構築する場合</td>
+<td>API キー</td>
+</tr>
+<tr>
+<td>ArcGIS API を使用してアプリケーションを構築する場合</td>
+<td>API キーまたは ArcGIS Identity (指定ユーザー ログイン)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="機能の比較">機能の比較</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>　API キー　</th>
+<th>　ArcGIS Identity (指定ユーザー ログイン)　</th>
+<th>　アプリケーション認証　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>永続的なトークン</td>
+<td>〇</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>一時的なトークン</td>
+<td>×</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td>特定のサービスへの制限</td>
+<td>〇</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>サーバーレス認証</td>
+<td>〇</td>
+<td>〇</td>
+<td>×</td>
+</tr>
+<tr>
+<td>すぐに使えるサービス</td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td>プライベート データのホスティング サービス</td>
+<td>△</td>
+<td>〇</td>
+<td>×</td>
+</tr>
+<tr>
+<td>コンテンツ管理</td>
+<td>△</td>
+<td>〇</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p>〇：対応　△：一部対応 (詳細は<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">こちら</a>を参照)　×：未対応</p>
+<h2 id="api-のサポート">API のサポート</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>API キー</th>
+<th>アプリケーション認証</th>
+<th>ArcGIS Identity (指定ユーザー ログイン)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://developers.arcgis.com/javascript/latest/">ArcGIS API for JavaScript</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/android/">ArcGIS Runtime API for Android</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/ios/">ArcGIS Runtime API for iOS</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/java/">ArcGIS Runtime API for Java</a>*</td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/net/">ArcGIS Runtime API for .NET</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/qt/">ArcGIS Runtime API for Qt</a>*</td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/python/">ArcGIS API for Python</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/esri-leaflet/">Esri Leaflet</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>△</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/mapbox-gl-js/">MapBox GL JS</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>△</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/openlayers/">OpenLayers</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>△</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/arcgis-rest-js/">ArcGIS REST JS</a></td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+</tbody>
+</table>
+<p>〇：対応　△：一部対応 (詳細は各 API のページを参照)　*国内未サポート</p>
+<p>注：<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/#authentication-with-non-arcgis-apis">ArcGIS 以外の API で ArcGIS Identity (指定ユーザー ログイン) を使用する</a>ことは可能ですが、アプリケーションの一部としてユーザーび資格情報を取得、管理、および保護する責任が生じます。このオプションを選択する場合は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/security-best-practices/">セキュリティのベスト プラクティス</a>でガイドラインを確認してください。</p>
+<h2 id="チュートリアル">チュートリアル</h2>
+<ul>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/create-and-manage-an-api-key/">Create and manage an API key</a></li>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/authenticate-with-an-arcgis-identity/">Authenticate with an ArcGIS identity</a></li>
+</ul>
 
 
     

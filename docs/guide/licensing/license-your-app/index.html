@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-06T10:17:40 JST">
+<meta name="revised" content="2021-05-10T10:51:44 JST">
 <title>アプリのライセンス :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="作成したアプリケーションを本番環境で運用するために必要となる ArcGIS テクノロジを使用する際のライセンスについて紹介します。">
+<meta name="description" content="作成したアプリケーションを本番環境で運用するために必要となる ArcGIS テクノロジーを使用する際のライセンスについて紹介します。">
 
 
     
@@ -732,6 +732,12 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#アプリのライセンス">アプリのライセンス</a></li>
+    <li><a href="#arcgis-api-for-javascript">ArcGIS API for JavaScript</a></li>
+    <li><a href="#arcgis-runtime">ArcGIS Runtime</a></li>
+    <li><a href="#アプリテンプレートとビルダー">アプリテンプレートとビルダー</a></li>
+    <li><a href="#拡張機能とプラグイン">拡張機能とプラグイン</a></li>
+    <li><a href="#arcgis-marketplace">ArcGIS Marketplace</a></li>
+    <li><a href="#特別な注意事項">特別な注意事項</a></li>
   </ul>
 </nav>
         </div>
@@ -751,8 +757,53 @@ if (!doNotTrack) {
     
     
     
-    <h2 id="アプリのライセンス">アプリのライセンス</h2>
-<p>Todo</p>
+    <p>出典：ArcGIS Developers - Licensing - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-your-app/">License your app</a></p>
+<h2 id="アプリのライセンス">アプリのライセンス</h2>
+<p>作成したアプリケーションを本番環境にデプロイする際には、ArcGIS テクノロジーを使用するライセンスを検討する必要があります。アプリケーションには、使用する<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">コンテンツとサービス</a>、およびアプリケーションが開発された <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/">API や SDK</a> に応じたライセンス要件があります。詳細については、<a href="https://www.esri.com/en-us/legal/terms/full-master-agreement/mla-e204-e300-english">利用規約</a>や <a href="https://developers.arcgis.com/faq/">FAQ</a> をご参照ください。</p>
+<h2 id="arcgis-api-for-javascript">ArcGIS API for JavaScript</h2>
+<p>ArcGIS API for JavaScript を使用して作成されたアプリは、以下のいずれかを使用している場合、ライセンスが取得されます。</p>
+<ul>
+<li>API キー：API キーは、ArcGIS ロケーション サービスの使用を許可するものです。API キーを使用したアプリは、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/">ArcGIS またはオープン ソースのクライアント API</a> を使用して開発およびデプロイすることができます。<a href="https://developers.arcgis.com/api-keys/">ダッシュボード</a>で API キーの使用状況を管理および追跡します。API キーの詳細については、開発者ガイドの<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/">セキュリティと認証</a>をご参照ください。</li>
+<li>ArcGIS Identity (指定ユーザー ログイン)：ユーザーまたはユーザーの組織が ArcGIS Online サブスクリプションを購入した場合は、アプリを本番環境で使用するライセンスを取得するために追加の手順を踏む必要はありません。ただし、アプリケーションが使用可能なプリペイド クレジットをすべて使用する場合は、ArcGIS Online サブスクリプションの<a href="https://www.esri.com/ja-jp/arcgis/products/credits/overview?rmedium=www_esri_com_EtoF&amp;rsource=/en-us/arcgis/products/arcgis-online/pricing/credits">追加クレジット</a>を購入するか、API キーを使用してアプリケーションでロケーション サービスにアクセスします。</li>
+</ul>
+<h2 id="arcgis-runtime">ArcGIS Runtime</h2>
+<p>ArcGIS Runtime を使用して構築されたアプリケーションは、ライセンスキーによる追加の配布ライセンスが必要です。必要なライセンスの種類は、アプリケーションで使用される機能によって異なります。</p>
+<ul>
+<li>Lite：検索機能やルート機能を備えたマップやデータを表示。ArcGIS Runtime Lite のライセンスキーは、ArcGIS Developer Subscription に含まれています。</li>
+<li>Basic：ArcGIS でデータを作成・編集機能。</li>
+<li>Standard：ローカル データ ファイルまたはファイル ジオデータベースフォーマットの使用。</li>
+<li>Advanced：ArcGIS Enterprise ジオデータベースを直接使用する高度なアプリケーション。</li>
+</ul>
+<p>ArcGIS Runtime のドキュメントには、ライセンス レベルの詳細や、無料の Lite ライセンスなど、アプリに必要なライセンスを取得する方法に関する情報が記載されています。</p>
+<ul>
+<li><a href="https://developers.arcgis.com/android/license-and-deployment/">ArcGIS Runtime SDK for Android</a></li>
+<li><a href="https://developers.arcgis.com/ios/license-and-deployment/">ArcGIS Runtime SDK for iOS</a></li>
+<li><a href="https://developers.arcgis.com/net/license-and-deployment/">ArcGIS Runtime SDK for .NET</a></li>
+<li><a href="https://developers.arcgis.com/java/license-and-deployment/">ArcGIS Runtime SDK for Java</a>*</li>
+<li><a href="https://developers.arcgis.com/qt/license-and-deployment/">ArcGIS Runtime SDK for Qt</a>*</li>
+</ul>
+<p>*国内未サポート</p>
+<p>また、ArcGIS Runtime のライセンスについては <a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/details/license/">ESRIジャパンの製品ページ</a>もご参照ください。</p>
+<h2 id="アプリテンプレートとビルダー">アプリテンプレートとビルダー</h2>
+<p>すべての <a href="https://developers.arcgis.com/documentation/app-templates-and-builders/">ArcGIS アプリテンプレートおよびビルダー</a>には、テクノロジーへのアクセスによるライセンスが組み込まれています。Builder プラン以上で ArcGIS Online 組織 サブスクリプションまたは ArcGIS Developer Subscription を維持する必要があります。</p>
+<h2 id="拡張機能とプラグイン">拡張機能とプラグイン</h2>
+<p>ArcGIS Pro や ArcGIS Enterprise などの ArcGIS 製品のエクステンションまたはプラグインを開発する場合、エクステンションのライセンスを取得するために追加の手順を踏む必要はありません。ただし、プラグインやエクステンションのユーザーは、プラグインやエクステンションを使用するために商用ライセンスが必要になる場合があります。
+詳細については、<a href="https://developers.arcgis.com/documentation/arcgis-add-ins-and-automation/">ArcGIS アドインと自動化</a>をご参照ください。</p>
+<h2 id="arcgis-marketplace">ArcGIS Marketplace</h2>
+<p>ArcGIS Marketplace に掲載されている製品は、組織での ArcGIS Online および ArcGIS Platform の使用を強化するために作られています。ArcGIS Online 組織の指定ユーザーは、ArcGIS Marketplace の製品を使用できます。ライセンスの詳細については、<a href="https://www.esri.com/ja-jp/arcgis-marketplace/help/use-share-purchases">購入したアイテムの使用および共有</a> をご覧ください。</p>
+<h2 id="特別な注意事項">特別な注意事項</h2>
+<p><a href="https://www.esri.com/en-us/legal/terms/full-master-agreement/mla-e204-e300-english">利用規約</a>に記載されている特別な使用例には、特別な対応が必要な場合があります。このような場合には、具体的なライセンス契約についてご相談いただく必要があります。</p>
+<ul>
+<li>リアルタイムのナビゲーション ガイダンス</li>
+<li>複数の車両を同期させたルート解析</li>
+<li>同期したルートの最適化</li>
+<li>資産・車両管理</li>
+<li>自動運転車両の制御</li>
+</ul>
+<div class="notices note" >
+<p>ArcGIS クライアント API を使用していて、ArcGIS Online または ArcGIS Enterprise を使用していない場合でも、有効な ArcGIS Developer Subscription を維持していれば、追加費用なしで API テクノロジーを使用することができます。
+ArcGIS 組織の開発者が商用アプリをデプロイする場合、アプリは従量課金制サービスのエンドポイントを使用し、API キーを使用して pay as you go をオンにする必要があります。</p>
+</div>
 
 
     

@@ -26,7 +26,11 @@ ArcGIS ロケーション サービスの使用に関するライセンス ア�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-your-app/</guid>
-      <description>アプリのライセンス Todo</description>
+      <description>出典：ArcGIS Developers - Licensing - License your app
+アプリのライセンス 作成したアプリケーションを本番環境にデプロイする際には、ArcGIS テクノロジーを使用するライセンスを検討する必要があります。アプリケーションには、使用するコンテンツとサービス、およびアプリケーションが開発された API や SDK に応じたライセンス要件があります。詳細については、利用規約や FAQ をご参照ください。
+ArcGIS API for JavaScript ArcGIS API for JavaScript を使用して作成されたアプリは、以下のいずれかを使用している場合、ライセンスが取得されます。
+ API キー：API キーは、ArcGIS ロケーション サービスの使用を許可するものです。API キーを使用したアプリは、ArcGIS またはオープン ソースのクライアント API を使用して開発およびデプロイすることができます。ダッシュボードで API キーの使用状況を管理および追跡します。API キーの詳細については、開発者ガイドのセキュリティと認証をご参照ください。 ArcGIS Identity (指定ユーザー ログイン)：ユーザーまたはユーザーの組織が ArcGIS Online サブスクリプションを購入した場合は、アプリを本番環境で使用するライセンスを取得するために追加の手順を踏む必要はありません。ただし、アプリケーションが使用可能なプリペイド クレジットをすべて使用する場合は、ArcGIS Online サブスクリプションの追加クレジットを購入するか、API キーを使用してアプリケーションでロケーション サービスにアクセスします。  ArcGIS Runtime ArcGIS Runtime を使用して構築されたアプリケーションは、ライセンスキーによる追加の配布ライセンスが必要です。必要なライセンスの種類は、アプリケーションで使用される機能によって異なります。
+ Lite：検索機能やルート機能を備えたマップやデータを表示。ArcGIS Runtime Lite のライセンスキーは、ArcGIS Developer Subscription に含まれています。 Basic：ArcGIS でデータを作成・編集機能。 Standard：ローカル データ ファイルまたはファイル ジオデータベースフォーマットの使用。 Advanced：ArcGIS Enterprise ジオデータベースを直接使用する高度なアプリケーション。  ArcGIS Runtime のドキュメントには、ライセンス レベルの詳細や、無料の Lite ライセンスなど、アプリに必要なライセンスを取得する方法に関する情報が記載されています。</description>
     </item>
     
     <item>
