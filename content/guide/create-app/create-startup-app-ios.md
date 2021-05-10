@@ -9,8 +9,6 @@ aliases = ["/create-startup-app-ios/"]
 
 このチュートリアルでは ArcGIS Runtime SDK for iOS を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-画像は変更する
-
 <img src="https://developers.arcgis.com/ios/static/831dfe84a5694dd5041c84c9b17e1ad2/4cdf7/display-a-map.png" width="400px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。

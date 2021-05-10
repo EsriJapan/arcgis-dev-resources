@@ -29,14 +29,12 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
-      <description>開発環境 ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必要です。
-なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
-サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
-地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。 ここでは Windows デスクトップアプリケーション（WPF） の例で説明していますが、UWP、Xamarin でも同じアプリを実行することができます。
-  UWP サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
-  Xamarin サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
-    ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.</description>
+      <description>マップを表示する このチュートリアルでは ArcGIS Runtime SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 向けのアプリをサポートしています。 このチュートリアルの説明は、Visual Studio for Windows を使用して .</description>
     </item>
     
     <item>
@@ -63,7 +61,6 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
       <description>マップを表示する このチュートリアルでは ArcGIS Runtime SDK for iOS を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-画像は変更する
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。

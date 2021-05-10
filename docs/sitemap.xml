@@ -28,8 +28,6 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/</loc>
@@ -59,6 +57,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
   </url><url>
