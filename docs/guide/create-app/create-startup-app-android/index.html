@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-10T21:13:18 JST">
+<meta name="revised" content="2021-05-17T00:05:34 JST">
 <title>Android :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -762,14 +762,13 @@ if (!doNotTrack) {
     
     <h1 id="マップを表示する">マップを表示する</h1>
 <p>このチュートリアルでは ArcGIS Runtime SDK for Android を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
-<p>画像は変更する</p>
-<img src="https://developers.arcgis.com/android/static/666fc93052d838df5cebbfe0fc426a97/4cdf7/display-a-map.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-android100.0/display_map.png" width="300px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。</p>
 <p>このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。</p>
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
-<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/">システム要件</a>を満たしていることを確認します。</li>
 <li>Kotlin で Android 開発を行うための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。</li>
 </ol>
@@ -786,7 +785,7 @@ if (!doNotTrack) {
 <li>
 <p>[Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択します。[Next] をクリックします。</p>
 <ul>
-<li>Gradle は、Android Studio のデフォルトのビルドツールです。Gradle を使用できない場合は、<a href="">API を手動で取得する_リンク修正</a> を参照してください。</li>
+<li>Gradle は、Android Studio のデフォルトのビルドツールです。Gradle を使用できない場合は、<a href="../../../tips/android/install-android-100.x/#api-%E3%82%92%E6%89%8B%E5%8B%95%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B">API を手動で取得する</a> を参照してください。</li>
 </ul>
 </li>
 <li>
@@ -1036,7 +1035,7 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 </ol>
 <h3 id="api-キーを設定する">API キーを設定する</h3>
 <p>ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
-まだ作成していない場合は、<a href="https://developers.arcgis.com/dashboard/">ArcGIS Developers ダッシュボード</a> に移動して、API キーを取得します。作成方法は「<a href="">API キーの作成</a>」をご覧ください。</p>
+まだ作成していない場合は、<a href="https://developers.arcgis.com/dashboard/">ArcGIS Developers ダッシュボード</a> に移動して、API キーを取得します。作成方法は「<a href="../../get-api-key/">API キーの取得</a>」をご覧ください。</p>
 <ol>
 <li>
 <p>アプリを実行する前に、API キーを使用して <a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html">ArcGISRuntimeEnvironment</a> の <a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html#setApiKey(java.lang.String)">apiKey</a> プロパティを設定します。</p>
@@ -1080,7 +1079,6 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 </code></pre></div></li>
 </ol>
 <hr>
-<p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティと認証について学びましょう！</a></p>
 
 
     

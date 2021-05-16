@@ -6,7 +6,7 @@ aliases = ["/dotnet/distribution-dotnet-100.x/"]
 +++
 
 ## API キーの設定
-[ArcGIS Platform のロケーションサービス]()を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの設定]()を、APIキーの設定方法は[アプリの作成](../guide/create-app/create-startup-app-dotnet/)の「API キーを設定する」をご覧ください。
+[ArcGIS Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-dotnet/#api-キーを設定する)をご覧ください。
 
 ## ライセンス認証のステップ
 
@@ -140,7 +140,7 @@ ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイト�
 
  1. [ArcGIS Developers: ArcGIS Runtime license](https://developers.arcgis.com/net/license-and-deployment/#arcgis-runtime-license) ページにアクセスします
     * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime license string] をクリックします。
-    * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+    * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンスキーをコピーします
  <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px">
  3. 次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。

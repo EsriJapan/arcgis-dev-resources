@@ -9,9 +9,7 @@ aliases = ["/create-startup-app-android/"]
 
 このチュートリアルでは ArcGIS Runtime SDK for Android を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-画像は変更する
-
-<img src="https://developers.arcgis.com/android/static/666fc93052d838df5cebbfe0fc426a97/4cdf7/display-a-map.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-android100.0/display_map.png" width="300px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
@@ -22,7 +20,7 @@ aliases = ["/create-startup-app-android/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/)を満たしていることを確認します。
 3. Kotlin で Android 開発を行うための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。
 
@@ -35,7 +33,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
    * メニューバーで、[File] > [New] > [New Project....] をクリックします。
    * [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択します。[Next] をクリックします。
    
-     * Gradle は、Android Studio のデフォルトのビルドツールです。Gradle を使用できない場合は、[API を手動で取得する_リンク修正]() を参照してください。
+     * Gradle は、Android Studio のデフォルトのビルドツールです。Gradle を使用できない場合は、[API を手動で取得する](../../../tips/android/install-android-100.x/#api-を手動で取得する) を参照してください。
 
    * [Configure your project] ウィンドウで、次の構成オプションを設定します。
      * Name: Display a map
@@ -318,7 +316,7 @@ import com.example.app.databinding.ActivityMainBinding
 
 ### API キーを設定する
 ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
-まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの作成]()」をご覧ください。
+まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
 
 1. アプリを実行する前に、API キーを使用して [ArcGISRuntimeEnvironment](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html) の [apiKey](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html#setApiKey(java.lang.String)) プロパティを設定します。
 
@@ -371,5 +369,3 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
     ```
 
 ---
-
-アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)

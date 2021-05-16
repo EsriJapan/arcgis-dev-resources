@@ -9,7 +9,7 @@ aliases = ["/create-startup-app-ios/"]
 
 このチュートリアルでは ArcGIS Runtime SDK for iOS を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-<img src="https://developers.arcgis.com/ios/static/831dfe84a5694dd5041c84c9b17e1ad2/4cdf7/display-a-map.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map.png" width="300px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
@@ -19,7 +19,7 @@ aliases = ["/create-startup-app-ios/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)を満たしていることを確認します。
 3. ArcGIS Runtime SDK for iOS が[インストール](../tips/ios/install-ios-100.x/)されていること
 
@@ -37,7 +37,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
    * 他のすべてのオプションのチェックを外します。
    * [Next] > [Create] をクリックします。
 
-2. 「[インストールガイドのプロジェクトの構成](../tips/ios/install-ios-100.x/)」の手順に従って、API への参照を追加します。
+2. 「[インストールガイドのプロジェクトの構成](../../../tips/ios/install-ios-100.x/#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B)」の手順に従って、API への参照を追加します。
 
 
 ### UI にマップビューを追加する
@@ -164,7 +164,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 
 ### API キーを設定する
 ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
-まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの作成]()」をご覧ください。
+まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
 
 1. Project Navigator で AppDelegate.swift をクリックします。
 2. エディターで、API を参照するインポートステートメントを追加し、AppDelegate の application(_:didFinishLaunchingWithOptions:) メソッドで、API キーを使用して [AGSArcGISRuntimeEnvironment](https://developers.arcgis.com/ios/api-reference/interface_a_g_s_arc_g_i_s_runtime_environment.html) の [apiKey](https://developers.arcgis.com/ios/api-reference/interface_a_g_s_arc_g_i_s_runtime_environment.html#a7a4ca7305796e26c3ded7c84e35a6edd) プロパティを設定します。
@@ -224,5 +224,3 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
     ```
 
  ---
-
-アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)

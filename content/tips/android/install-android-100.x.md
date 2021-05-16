@@ -5,7 +5,8 @@ weight = 1
 aliases = ["/android/install-android-100.x/"]
 +++
 
-このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。
+このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-android/)」のチュートリアルをご覧ください。
+
 
 {{% notice warning %}}
 
@@ -71,7 +72,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) にサインインします。
     
-	サインインには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+	サインインには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
 
 2. ダッシュボード上で、[Download](https://developers.arcgis.com/downloads/#android) をクリックし、最新バージョンの ArcGIS Runtime SDK for Android を選択します。
 

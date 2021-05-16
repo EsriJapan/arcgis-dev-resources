@@ -9,7 +9,7 @@ aliases = ["/ios/install-ios-100.x/"]
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご覧ください。
 
-マップを表示する方法については「[アプリの作成](../guide/create-app/create-startup-app-ios/)」のチュートリアルをご覧ください。
+マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-ios/)」のチュートリアルをご覧ください。
 
 # インストールとセットアップ
 Xcode プロジェクトに API をインストールして使用する方法は2つあります。手動でダウンロードしてインストールするか、CocoaPods を使用できます。
@@ -22,7 +22,7 @@ Xcode プロジェクトに API をインストールして使用する方法は
 
 1. SDK パッケージ インストーラーを[ダウンロード](https://developers.arcgis.com/downloads/#ios)します。
 
-    ダウンロードには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+    ダウンロードには ArcGIS 開発者アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
 
 2. ${HOME}/Library フォルダへの書き込み権限があることを確認してください。
 3. マシンに以前のバージョンの ArcGIS Runtime SK for iOS がインストールされている場合は、それをアンインストールします。アンインストールしないと、以前のインストールが上書きされます。アンインストールするには、ターミナル アプリケーションで ${HOME}/Library/Application Support/AGSiOSRuntimeSDK/uninstallAGSiOSSDK スクリプトを実行します。
