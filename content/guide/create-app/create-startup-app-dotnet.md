@@ -20,7 +20,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
 必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。

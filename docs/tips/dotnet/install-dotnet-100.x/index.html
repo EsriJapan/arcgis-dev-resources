@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-19T15:31:36 JST">
+<meta name="revised" content="2021-05-19T16:10:58 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -736,7 +736,6 @@ if (!doNotTrack) {
     <li><a href="#visual-studio-プロジェクト-テンプレートのみインストールする方法">Visual Studio プロジェクト テンプレートのみインストールする方法</a></li>
     <li><a href="#サンプル-コード">サンプル コード</a></li>
     <li><a href="#arcgis-runtime-sdk-for-net-toolkit">ArcGIS Runtime SDK for .NET Toolkit</a></li>
-    <li><a href="#streetmap-premium">StreetMap Premium</a></li>
     <li><a href="#supplemental-data">Supplemental data</a></li>
     <li><a href="#local-server">Local Server</a></li>
   </ul>
@@ -760,7 +759,7 @@ if (!doNotTrack) {
     
     <p>このインストール ガイドでは、ArcGIS Runtime SDK for .NET のインストールとセットアップ手順を紹介します。</p>
 <p>ArcGIS Runtime SDK for .NET がサポートする最新の動作環境については<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/environments/">動作環境ページ</a>をご覧ください。</p>
-<p>マップを表示する方法については「<a href="../create-app/create-startup-app-dotnet/">アプリの作成</a>」チュートリアルをご覧ください。</p>
+<p>マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-dotnet/">アプリの作成</a>」チュートリアルをご覧ください。</p>
 <h1 id="インストールとセットアップ">インストールとセットアップ</h1>
 <p>ArcGIS Runtime SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 用のアプリを開発するための API が用意されています。</p>
 <p>ArcGIS Runtime の機能を Visual Studio プロジェクトに組み込むには、適切な NuGet パッケージを参照してください。これらのパッケージは、オンライン ソース (nuget.orgなど) またはローカルにインストールしたパッケージから参照できます。 Visual Studio 拡張機能 (Windowsのみ) で使用できる ArcGIS Runtime の プロジェクト テンプレートのセットには、サポートされている各プラットフォームに必要な NuGet パッケージの参照が含まれています。</p>
@@ -798,7 +797,7 @@ if (!doNotTrack) {
 <p>信頼性の高い接続がない環境や、オンラインへのアクセスが制限されている環境で開発している場合は、ArcGIS Runtime NuGet パッケージをローカルで利用できるようにすることをお勧めします。そうでない場合、Visual Studio プロジェクト テンプレートのみをインストールすることをお勧めします。</p>
 <ol>
 <li>
-<p>下記リンクから該当バージョンの Visual Studio 拡張機能 (.vsix) をインストールします。ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。
+<p>下記リンクから該当バージョンの Visual Studio 拡張機能 (.vsix) をインストールします。ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="../../../guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。<br/>
 <a href="https://developers.arcgis.com/downloads/#net">Visual Studio 拡張機能のダウンロード</a></p>
 </li>
 <li>
@@ -868,8 +867,6 @@ if (!doNotTrack) {
 <li>タイムスライダー: 時間的な範囲 (タイム エクステント) をインタラクティブに定義し、時間を前進または後退させるアニメーションの実行</li>
 </ul>
 <p>ツールキットは、ArcGIS Runtime SDK for .NET チームによって管理されているオープンソース プロジェクトです。 ツールキットを NuGet パッケージとしてプロジェクトに含めるか、GitHub リポジトリからソース コードをダウンロードしてローカルでビルドできます。</p>
-<h2 id="streetmap-premium">StreetMap Premium</h2>
-<p><a href="https://developers.arcgis.com/net/route-and-directions/add-streetmap-premium-data/">StreetMap Premium</a> のデータ (StreetMap Premium エクステンション) を使用する場合は、開発とテストのために<a href="https://developers.arcgis.com/downloads/#streetmap-premium-for-runtime">ダウンロード ページ</a>からデモ データをダウンロードしてください。開発とテストを希望する地域、または展開用の StreetMap Premium データのライセンスについては、<a href="https://developers.arcgis.com/support/">Esri カスタマー サービス</a>にお問い合わせください。</p>
 <h2 id="supplemental-data">Supplemental data</h2>
 <p><a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの地理座標変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/downloads/#pedata">Projection Engine ファイル</a>をダウンロードしてください。</p>
 <p>航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/downloads/#hydrodata">hydrography directory</a> をダウンロードします。</p>
