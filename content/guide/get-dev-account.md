@@ -9,7 +9,7 @@ aliases = ["/get-dev-account/"]
 
 ArcGIS Developers は、開発者が ArcGIS アプリケーションを構築してデプロイするために必要なリソースを集めた Web サイトです。API および SDK のドキュメントやチュートリアル、ロケーションサービスの概要、価格、ヘルプなどが用意されています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして ArcGIS アプリケーションの開発を開始することができます。
 
-ArcGIS Developers に開発者アカウントを作成すると ArcGIS Developer Subscription が有効になり、開発キットのダウンロードとアプリの開発を無償で開始することができます。また、[ArcGIS Platform](https://tyndall.esrij.local/products/arcgis-platform/) が提供するロケーションサービスであるベースマップの利用やジオコーディング サービス（住所⇄緯度経度）、ネットワーク サービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、[無料枠](https://tyndall.esrij.local/products/arcgis-platform/price)/月の範囲で利用可能です。
+ArcGIS Developers に開発者アカウントを作成すると ArcGIS Developer Subscription が有効になり、開発キットのダウンロードとアプリの開発を無償で開始することができます。また、[ArcGIS Platform](https://www.esrij.com/products/arcgis-platform/) が提供するロケーションサービスであるベースマップの利用やジオコーディング サービス（住所⇄緯度経度）、ネットワーク サービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、[無料枠](https://www.esrij.com/products/arcgis-platform/price)/月の範囲で利用可能です。
 
 ArcGIS Developer Subscription の各プランの詳細や提供しているサービスについては [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/details/)をご参照ください。
 
