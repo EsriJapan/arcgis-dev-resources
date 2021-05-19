@@ -21,7 +21,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
 
 マップ ビューアーで Web マップを作成していきましょう。
 
-<img src="https//apps.esrij.com/arcgis-dev/guide/img/webmap/addlayer.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/webmap/addlayer.gif" width="600px">
 
 1. [マップ ビューアー](http://www.arcgis.com/home/webmap/viewer.html?useExisting=1)を開きます。
 
