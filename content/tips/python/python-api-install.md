@@ -22,8 +22,8 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
 * [Anaconda 経由でインストールする](#anaconda-経由でインストールする)
 
 ### STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
-* [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-2-3-以上の環境の場合)
-* [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-2-2-環境の場合)
+* [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-2.3-以上の環境の場合)
+* [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-2.2-環境の場合)
 * [Anaconda 環境の場合](#anaconda-環境の場合)
 
 ### STEP 3: [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
@@ -466,5 +466,5 @@ conda list arcgis
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="500px">
 </div>
 
-ESRIジャパンが運営する [GIS アプリ開発者のためのコミュニティ グループ](https://community.esri.com/groups/devcom-jp) では、Python API の機能や実際のコードを[ブログ](https://community.esri.com/groups/devcom-jp/content?filterID=contentstatus[published]~category[web-%E9%96%8B%E7%99%BA]&query=python)でご紹介しています。</br>
+ESRIジャパンが運営する [GIS アプリ開発者のためのコミュニティ グループ](https://community.esri.com/t5/arcgis-%E9%96%8B%E7%99%BA%E8%80%85%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3/ct-p/arcgis-japanese-developer-community) では、Python API の機能や実際のコードを[ブログ](https://community.esri.com/t5/forums/searchpage/tab/message?advanced=false&allow_punctuation=false&filter=includeTkbs,location&include_tkbs=true&location=tkb-board:arcgis-japanese-developer-community-docs&q=python)でご紹介しています。</br>
 また、[GitHub](https://github.com/EsriJapan/arcgis-samples-python-api) にも日本語による解説付きのコードを公開していますので、是非ご参照ください。

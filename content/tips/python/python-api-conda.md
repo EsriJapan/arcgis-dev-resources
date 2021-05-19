@@ -123,7 +123,7 @@ ArcGIS Pro と共にインストールした場合は、Python コマンド　�
 
 `conda install --name <environment_name> --channel <channel_name> <package_name>`
 
-conda コマンドや 他オプションの使用方法の詳細については[パッケージの管理 (英語)](https://conda.io/docs/user-guide/tasks/manage-pkgs.html)を参照してください。
+conda コマンドや 他オプションの使用方法の詳細については[パッケージの管理 (英語)](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-packages)を参照してください。
 
 > **参考：conda からパッケージをインストールできる仕組み**
 >
