@@ -9,7 +9,7 @@ aliases = ["/dotnet/install-dotnet-100.x/"]
 
 ArcGIS Runtime SDK for .NET がサポートする最新の動作環境については[動作環境ページ](https://www.esrij.com/products/arcgis-runtime-sdk-for-dotnet/environments/)をご覧ください。
 
-マップを表示する方法については「[アプリの作成](../create-app/create-startup-app-dotnet/)」チュートリアルをご覧ください。
+マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-dotnet/)」チュートリアルをご覧ください。
 
 # インストールとセットアップ
 ArcGIS Runtime SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 用のアプリを開発するための API が用意されています。
@@ -47,7 +47,7 @@ Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発す�
 
 信頼性の高い接続がない環境や、オンラインへのアクセスが制限されている環境で開発している場合は、ArcGIS Runtime NuGet パッケージをローカルで利用できるようにすることをお勧めします。そうでない場合、Visual Studio プロジェクト テンプレートのみをインストールすることをお勧めします。
 
-1. 下記リンクから該当バージョンの Visual Studio 拡張機能 (.vsix) をインストールします。ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+1. 下記リンクから該当バージョンの Visual Studio 拡張機能 (.vsix) をインストールします。ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。<br/>
    [Visual Studio 拡張機能のダウンロード](https://developers.arcgis.com/downloads/#net)
 2. 開発マシンからアクセス可能な場所にファイルを保存します。
 3. ダウンロードしたファイルをダブル クリックしてセットアップ ファイルを抽出し、インストールを開始します。
@@ -101,10 +101,6 @@ ArcGIS Runtime アプリで実行できる、その他の内容については[�
 * タイムスライダー: 時間的な範囲 (タイム エクステント) をインタラクティブに定義し、時間を前進または後退させるアニメーションの実行
 
 ツールキットは、ArcGIS Runtime SDK for .NET チームによって管理されているオープンソース プロジェクトです。 ツールキットを NuGet パッケージとしてプロジェクトに含めるか、GitHub リポジトリからソース コードをダウンロードしてローカルでビルドできます。
-
-## StreetMap Premium
-
-[StreetMap Premium](https://developers.arcgis.com/net/route-and-directions/add-streetmap-premium-data/) のデータ (StreetMap Premium エクステンション) を使用する場合は、開発とテストのために[ダウンロード ページ](https://developers.arcgis.com/downloads/#streetmap-premium-for-runtime)からデモ データをダウンロードしてください。開発とテストを希望する地域、または展開用の StreetMap Premium データのライセンスについては、[Esri カスタマー サービス](https://developers.arcgis.com/support/)にお問い合わせください。
 
 ## Supplemental data
 
