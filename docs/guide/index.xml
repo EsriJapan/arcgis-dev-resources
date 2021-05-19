@@ -1,10 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>スタートアップ ガイド on ArcGIS for Developer 開発リソース集</title>
+    <title>スタートアップ ガイド on ArcGIS Developers 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/guide/</link>
-    <description>Recent content in スタートアップ ガイド on ArcGIS for Developer 開発リソース集</description>
+    <description>Recent content in スタートアップ ガイド on ArcGIS Developers 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>開発者アカウントの作成</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</guid>
+      <description>ArcGIS Developers とは ArcGIS Developers は、開発者が ArcGIS アプリケーションを構築してデプロイするために必要なリソースを集めた Web サイトです。API および SDK のドキュメントやチュートリアル、ロケーションサービスの概要、価格、ヘルプなどが用意されています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして ArcGIS アプリケーションの開発を開始することができます。
+ArcGIS Developers に開発者アカウントを作成すると ArcGIS Developer Subscription が有効になり、開発キットのダウンロードとアプリの開発を無償で開始することができます。また、ArcGIS Platform が提供するロケーションサービスであるベースマップの利用やジオコーディング サービス（住所⇄緯度経度）、ネットワーク サービス（ルート検索、到達圏解析）などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、無料枠/月の範囲で利用可能です。
+ArcGIS Developer Subscription の各プランの詳細や提供しているサービスについては ESRIジャパン製品ページをご参照ください。
+アカウントの作成 ArcGIS Developers 開発者アカウントの作成 以下の手順で ArcGIS Developers に新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまでお問い合わせください。
+  ArcGIS Developers のサイト（英語）にアクセスし、[Sign Up For Free] をクリックします。
+  名前（※名前には半角英字のみを使用してください）、E メールアドレス、組織名（任意）、ユーザー名、パスワード、秘密の質問を入力します。
+  利用規約とプライバシー ポリシーに同意する場合は、同意欄にチェックを入れ、[Create developer account] をクリックします。
+  手順 2 で入力したユーザ名にて ArcGIS Developers にログインされ、登録確認の E メール（Confirmation email）を確認する旨のメッセージが表示されます。また、受信ボックスに Esri から登録の確認メールが届きます（メールが届くまで時間がかかる場合があります）。</description>
+    </item>
+    
+    <item>
+      <title>API キーの取得</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</guid>
+      <description>API キーとは すぐに使える特定のサービスやプライベート コンテンツへのアクセスを公開アプリケーションに許可範囲と許可を定義する永続的なアクセストークンです。
+既に ArcGIS アカウントを持っている場合は、サインインしてデフォルトの API キーを表示したり、新しい API キーを作成したりすることができます。API キーは、ArcGIS 開発者アカウントにサインアップしたときに作成されます。
+詳細は API keys のサイト（英語）をご覧ください。
+API キーの取得方法 以下の手順で新規の API キーを取得します。API キーの取得中に問題が発生した場合は、ESRI ジャパンまでお問い合わせください。
+  ArcGIS Developers のサイト（英語）にアクセスし、ご自身のアカウントでサインインをします。
+  サインインしたアカウントの専用ページに遷移したら、ヘッダー部にある [API keys] タブまたは、メイン コンテンツ内の API keys にある [Manage] をクリックします。   API keys ページに遷移したらページ上部にある [+ New API key] をクリックします。   入力フォームが出力されたらタイトルと説明を入力して [Create API key] をクリックします。   以上で API キーの取得は完了です。
+取得した API キーは、専用ページの Overview タブページの上方に表示されているため、コピーをしてご利用ください。
+また、API キーを各種開発キットで利用するためのコードも用意されていますので併せてご利用ください。</description>
+    </item>
+    
+    <item>
+      <title>セキュリティと認証</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</guid>
+      <description>出典：ArcGIS Developers - Security and authentication - Introduction
+セキュリティと認証 ArcGIS Platform は、ロケーション サービスやプライベート データへの安全なアクセスをサポートしています。これにより、有効かつ認証されたユーザーやサービスのみが保護された情報にアクセスできるようになります。安全なリソースにアクセスするためには、アプリケーションがサービスに対して認証されたリクエストを行えるように、認証方法を実装する必要があります。
+はじめに 以下の手順で認証を開始できます。
+  ArcGIS 開発者アカウントをお持ちでない場合は、新規作成してください。
+  利用可能な認証方法と認証方法の選択を確認します。
+  開発者用ダッシュボードにサインインし、認証情報を作成します。
+  認証チュートリアルにアクセスして、アプリの構築を始めましょう。
+  認証方法 認証方法とは、アクセストークンを取得するためのプロセスです。アプリケーションがロケーション サービスに認証済みのリクエストを行う際には、アクセストークンを提示する必要があります。アクセストークンは、アプリケーションが利用できる範囲と権限を定義します。アクセストークンの取得に使用する認証方法はいくつかあります。
+アクセストークンには以下の 3 種類あります。
+ API キー：すぐに使えるサービスや、ArcGIS Developer アカウントがあればプライベートなコンテンツへのアクセスをアプリケーションに与える永続的なトークンです。 ArcGIS Identity (指定ユーザー ログイン)：既存の ArcGIS ユーザのアカウントに認可されたプライベート コンテンツおよびサービスへのアクセスをアプリケーションに与える一時的なトークンです。 アプリケーション認証： OAuth 2.0 で生成された一時的なトークンで、すぐに使えるサービスへのアクセスを認証することができます。  サービスに対して認証のリクエストを行うには、token パラメーターにアクセストークンを設定する必要があります。
+https://&amp;lt;LOCATION-SERVICE-URL&amp;gt;?token=&amp;lt;ACCESS-TOKEN&amp;gt;
+各サービスへのURLリクエストのフォーマットについては、位置情報サービスを参照してください。
+API キー API キーは永続的なアクセストークンであり、公開アプリケーションにすぐに使用できるサービスへのアクセスを付与します。また、ArcGIS Developer アカウントを使用すると、プライベートなコンテンツ、アイテム、および限定されたクライアント リファラーへのアクセスが可能になります。
+次のような場合に API キーを使用します。
+ すぐに使えるサービスを利用するアプリケーションを素早く作成する場合。 ユーザーが ArcGIS アカウントでサインインしなくてもサービスへのアクセスを提供する場合。 アクセストークンは有効期限のないものを使用する場合。    開発者ダッシュボードで API キーを構成します。 API キーは、ArcGIS 開発者アカウントにサインアップしたときに作成されます。</description>
+    </item>
+    
   </channel>
 </rss>

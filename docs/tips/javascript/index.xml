@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</title>
+    <title>ArcGIS API for JavaScript on ArcGIS Developers 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</link>
-    <description>Recent content in ArcGIS API for JavaScript on ArcGIS for Developer 開発リソース集</description>
+    <description>Recent content in ArcGIS API for JavaScript on ArcGIS Developers 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
       <description>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS for Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
  [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
  Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_api\library とすべてのコンテンツをコピーして Web サーバー上に移動します（C:\inetpub\wwwroot\arcgis_js_api\library）。  ビルドのインストール ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</description>

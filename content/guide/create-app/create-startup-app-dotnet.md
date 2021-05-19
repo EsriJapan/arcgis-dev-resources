@@ -1,129 +1,336 @@
 +++
 title = ".NET"
 description = "ArcGIS Runtime SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。"
-Weight=2
+Weight=3
 aliases = ["/create-startup-app-dotnet/"]
 +++
 
-## 開発環境
+# マップを表示する
 
-ArcGIS Runtime SDK for .NET を使用した開発には、Visual Studio が必要です。
+このチュートリアルでは ArcGIS Runtime SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「[開発者アカウントの作成](../../create-map/get-dev-account/#アカウントの作成)」をご参照ください。
+<img src="https://developers.arcgis.com/net/static/b35c1b9b0a23047d18821832dfb38a63/4cdf7/display-a-map.png" width="650px">
 
-## サンプル プロジェクトのダウンロード
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
-このリポジトリ（[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources)）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
-
-* __リポジトリをご自身のアカウントに Fork（複製）__
-
- 1. GitHub にログインして、[arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。
- 1. Fork 後はご自身のローカル マシンにクローンを作成します。
+このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
 
-* __zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）__
+## 前提条件
 
- [arcgis-dev-resources](https://github.com/EsriJapan/arcgis-dev-resources) ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+このチュートリアルを実施するには、以下が必要です。
 
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/sample-download.png" width="600px">
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../get-dev-account/)」をご覧ください。
+2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
+
+必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。
+
+## ステップ
+
+### 新しい Visual Studio プロジェクトを作成する
+ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 向けのアプリをサポートしています。
+このチュートリアルの説明は、Visual Studio for Windows を使用して .NET Core WPF プロジェクトを作成することを目的としています。
+
+1. Visual Studio を起動し、新しいプロジェクトを作成します。
+   * Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします
+   * C# 用の「WPF App (.NET)」テンプレートを選択し、[次へ] をクリックします。
+   * [新しいプロジェクトを構成します] 画面で必要な値を入力します。
+     * プロジェクト名: DisplayAMap
+     * 場所: 任意のフォルダーを選択
+   * [作成] をクリックしてプロジェクトを作成します。
+
+### プロジェクトに ArcGIS Runtime を追加する
+
+1. [NuGet パッケージをインストール](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、ArcGIS Runtime への参照を追加します。
+   * ソリューション エクスプローラーで、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。
+   * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に「nuget.org」が選択されていることを確認します。
+   * [参照] タブを選択して、[検索] テキスト ボックスに「ArcGIS Runtime」と入力します。
+   * 検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは「Esri.ArcGISRuntime.WPF」NuGet パッケージを選択します。
+   * [バージョン] にパッケージの「最新の安定版...」が選択されていることを確認します。
+   * [インストール] をクリックします。
+   * NuGet は、パッケージの依存関係または競合を自動的に解決します。デフォルトでは、[変更のプレビュー] ダイアログが表示されます。 変更を確認し [OK] をクリックしてパッケージのインストールを続行します。
+   * [ライセンスへの同意] ダイアログでライセンス条項を確認し、[同意する] をクリックしてパッケージをプロジェクトに追加します。
+   * Visual Studio の [出力] ウィンドウで、パッケージが正常にインストールされたことを確認します。
+   * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
+
+「ArcGIS Runtime SDK for .NET」プロジェクト テンプレートからプロジェクトを作成した場合は、必要な NuGet パッケージがプロジェクトに追加された状態で起動します。
+
+### API キーを取得する
+
+ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスするには API キーが必要です。
+まだ取得していない場合は、[ArcGIS Developers のダッシュボード](https://developers.arcgis.com/dashboard/)に移動してAPIキーを取得します。
 
 
-## 地図の表示
+### API キーを使用して ArcGIS Runtime を構成する
 
-まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
-ここでは Windows デスクトップアプリケーション（WPF） の例で説明していますが、UWP、Xamarin でも同じアプリを実行することができます。
+1. App.xaml.cs の OnStartup メソッドをオーバーライドして、アプリケーションの起動時に API キーを設定します。
 
-* __UWP__
-　サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/uwp/sample.sln)
+    App.xaml.cs
 
-* __Xamarin__
-　サンプル プロジェクト(arcgis-dev-resources/startup/dotnet/100.x/xamarin/sample.sln)
+    ```csharp
+    public partial class App : Application
+    {
+        // 追加開始
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            // 注: API キーをソース コードに保存することはベスト プラクティスではありません。
+            // API キーは、チュートリアルの便宜上、ここで参照されています。
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "API キー";
+        }
+        // 追加終了
+    }
+    ```
 
+### アプリ ロジックを保存するビュー モデルを作成する
 
-1. ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/dotnet/100.x/desktop/sample.sln）を Visual Studio で開きます。
+このアプリは、以降のすべてのチュートリアルで使用する基盤を構築するためのものです。堅固な設計で構築することをお勧めします。
 
-1. `MainWindow.xaml.cs` の 49 行目にある以下のコードの `<Web マップ ID>` と記載されている箇所に [Web マップの作成](../../create-map/create-webmap/)で作成した Web マップ ID を上書きします。
+Model-View-ViewModel (MVVM) デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、「モデル」はアプリで消費されるデータを表し、「ビュー」はユーザー インターフェースであり、「ビューモデル」にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
 
- ```C#
- var item = await PortalItem.CreateAsync(portal, "Web マップ ID");
- ```
+MVVM で設計された ArcGIS Runtime アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。ArcGIS Runtime クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。
 
- まだ Web マップを作成しておらず、すぐに試してみたい方は[サンプル Web マップ](https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda)をご利用ください。
+すべての 「ArcGISRuntime for .NET」プロジェクト テンプレートは、MVVM デザインパターンを使用しています。
 
-1. サンプル プロジェクトを実行すると、以下のように地図が表示されます。
+1. プロジェクトのビュー モデルを定義する新しいクラスを追加します。
+   * [プロジェクト] メニュー > [クラスの追加...] をクリックします。
+   * 新しいクラスに名前を付けます。
+     * 名前: MapViewModel.cs
+   * [追加]をクリックして新しいクラスを作成し、プロジェクトに追加します。
+   * 新しいクラスが VisualStudio で開きます。
+2. 必要な using ステートメントをビュー モデルに追加します。
 
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/map-app.png" width="600px">
+    MapViewModel.cs
 
- Web マップを表示するには、ポータル サイトから指定した ID を持つ Web マップを取得し、MapView のマップとして表示します。
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
-## 住所検索機能の追加
+    // 追加開始
+    using Esri.ArcGISRuntime.Geometry;
+    using Esri.ArcGISRuntime.Mapping;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+    // 追加終了
+    ```
 
-ArcGIS Online のジオコーディング サービスを利用した住所検索機能を追加します。[検索] ボタンをクリックすることで、テキスト ボックス内の文字列を使用して、住所検索を行います。
+3. MapViewModel クラスに INotifyPropertyChanged インターフェイスを実装します。
 
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/Geocoording.png" width="300px">
+   このインターフェイスは、ビュー モデルのプロパティが変更されたことをクライアント (ビュー) に通知するために使用される PropertyChanged イベントを定義します。
 
+    MapViewModel.cs
 
-1. MainWindow.xaml.cs に住所検索機能で使用する以下のメンバー変数を定義します。  
+    ```csharp
+    namespace DisplayAMap
+    {
+        // 変更前
+        // class MapViewModel
+        // 変更後
+        class MapViewModel : INotifyPropertyChanged
+        {
+        }
+    }
+    ```
 
-    - WORLD_GEOCODE_SERVICE_URL  
-ArcGIS Online のジオコーディング サービスの URL です。ArcGIS for Developers の開発者はこのクラウド サービスを利用して住所検索を実行することができます。
+4. MapViewModel クラス内に、PropertyChanged イベントを実装するコードを追加します。
+   ビュー モデルのプロパティが変更されると、OnPropertyChanged の呼び出しにより、このイベントが発生します。
 
-    - onlineLocatorTask  
-住所検索を実行するための OnlineLocatorTask クラスです。
+    MapViewModel.cs
 
- ```C#
-  //ArcGIS Online ジオコーディングサービスの URL  
-  private const string WORLD_GEOCODE_SERVICE_URL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
-  //住所検索用のジオコーディング タスク  
-  private LocatorTask onlineLocatorTask;
- ```
+    ```csharp
+    class MapViewModel : INotifyPropertyChanged
+    {
+        // 追加開始
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        // 追加終了
+    }
+    ```
 
-1. メンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。
+5. ビュー モデルに [Esri.ArcGISRuntime.Mapping.Map](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_Mapping_Map.htm) オブジェクトを公開する Map という新しいプロパティを定義します。
+   プロパティが設定されると、OnPropertyChanged を呼び出します。
 
- ```C#
- //住所検索用のジオコーディング タスクを初期化
- onlineLocatorTask = await LocatorTask.CreateAsync(new Uri(WORLD_GEOCODE_SERVICE_URL));
- ```
+    MapViewModel.cs
 
-1. 住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には GeocodeParameters クラスを使用します。
+    ```csharp
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
- ```C#
-  //住所検索用のパラメータを作成  
-  var geocodeParams = new GeocodeParameters
-  {
-      MaxResults = 5,
-      CountryCode = "Japan",
-      OutputLanguage = new System.Globalization.CultureInfo("ja-JP"),
-  };
- ```
+        // 追加開始
+        private Map _map;
+        public Map Map
+        {
+            get { return _map; }
+            set
+            {
+                _map = value;
+                OnPropertyChanged();
+            }
+        }
+        // 追加終了
+    }
+    ```
 
-1. OnlineLocatorTask クラスの GeocodeAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。
+6. MapViewModel クラスに SetupMap という関数を追加します。この関数は、新しいマップを作成して Map プロパティを設定します。
+   マップは、「地形 (ベクトル)」ベースマップを使用します。
 
- ```C#
-  //住所の検索  
-  var resultCandidates = await onlineLocatorTask.GeocodeAsync(addressTextBox.Text, geocodeParams);
- ```
+    MapViewModel.cs
 
-1. 住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致している検索結果）を地図上に拡大表示します。
+    ```csharp
+        private Map _map;
+        public Map Map
+        {
+            get { return _map; }
+            set
+            {
+                _map = value;
+                OnPropertyChanged();
+            }
+        }
 
- ```C#
-  //常に最初の候補を採用
-  var candidate = resultCandidates.FirstOrDefault();                 
+        // 追加開始
+        private void SetupMap()
+        {
+            //「地形 (ベクトル)」ベースマップを使用して新しいマップを作成します。
+            Map = new Map(BasemapStyle.ArcGISTopographic);
+        }
+        // 追加終了
+    }
+    ```
 
-  //最初の候補からグラフィックを作成
-  Graphic locatedPoint = new Graphic()
-  {
-      Geometry = candidate.DisplayLocation
-  };
+7. MapViewModel が新規にインスタンス化された際に、SetupMap 関数を呼び出すコンストラクターを追加します。
+   MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。
 
-  //住所検索結果表示用のグラフィックス オーバーレイにグラフィックを追加
-  geocodeResultGraphicsOverlay.Graphics.Add(locatedPoint);
+    MapViewModel.cs
 
-  //追加したグラフィックの周辺に地図を拡大
-  await MyMapView.SetViewpointCenterAsync((MapPoint)locatedPoint.Geometry, 30000);   
- ```
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet/SampleApp.gif" width="600px">
+    ```csharp
+    class MapViewModel : INotifyPropertyChanged
+    {
+        // 追加開始
+        public MapViewModel()
+        {
+            SetupMap();
+        }
+        // 追加終了
 
----
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    ```
 
-アプリの動作が確認できたら [ArcGIS の OAuth 認証について学びましょう！](../../authentication)
+これで MapViewModel が完成しました。
+
+MVVM デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。ArcGIS Runtime for .NET はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、ArcGIS Runtime for .NET アプリ用に作成したビュー モデルのコードは、通常、サポートされているすべての .NET プラットフォームで動作します。
+
+次に、プロジェクトにビューを設定して、ビュー モデルを使用します。
+
+### マップ ビューを追加する
+
+[MapView](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm) コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。
+
+1. 必要な XML 名前空間とリソースを追加します。
+   * MainWindow.xaml を開き、XAML ビューに切り替えます。
+   * 既存の名前空間の宣言内に、ArcGIS Runtime コントロールの esri XML 名前空間を追加します。
+   * MapViewModel インスタンスを静的リソースとして定義する XAML を追加します。
+
+    MainWindow.xaml
+
+    ```xml
+    <Window x:Class="DisplayAMap.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:DisplayAMap"
+
+            ><!--追加開始-->
+            xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+            <!--追加終了-->
+
+            mc:Ignorable="d"
+            Title="MainWindow" Height="450" Width="800">
+
+        <!--追加開始-->
+        <Window.Resources>
+            <local:MapViewModel x:Key="MapViewModel" />
+        </Window.Resources>
+        <!--追加終了-->
+
+        <Grid>
+        </Grid>
+    ```
+
+2. [MapView](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm) コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。
+   * 「MainMapView」という名前の MapView コントロールを定義する XAML を追加します。
+   * データ バインディングを使用して、MapViewModel リソースを使用し MapView コントロールの Map プロパティを設定します。
+
+    MainWindow.xaml
+
+    ```xml
+    <Window.Resources>
+        <local:MapViewModel x:Key="MapViewModel" />
+    </Window.Resources>
+
+    <Grid>
+    <!--追加開始-->
+        <esri:MapView x:Name="MainMapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" />
+    <!--追加終了-->
+    </Grid>
+    ```
+
+### マップ ビューの視点を設定する
+
+ウィンドウの読み込み時にマップ ビューの視点 (ビュー ポイント) を設定します。富士山を中心にマップを表示するための、位置と縮尺を定義します。
+
+1. MainWindow.xaml.cs を開きます。
+2. 必要な using ステートメントを追加します。
+
+    MainWindow.xaml.cs
+
+    ```csharp
+    using System.Windows.Navigation;
+    using System.Windows.Shapes;
+
+    // 追加開始
+    using Esri.ArcGISRuntime.Geometry;
+    using Esri.ArcGISRuntime.Mapping;
+    // 追加終了
+
+    namespace DisplayAMap
+    {
+    ```
+
+3. MainWindow のコンストラクターで、新しい [Viewpoint](https://developers.arcgis.com/net/wpf/api-reference/html/T_Esri_ArcGISRuntime_Mapping_Viewpoint.htm) を定義するコードを追加し、マップ ビューに適用します。
+
+    MainWindow.xaml.cs
+
+    ```csharp
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        // 追加開始
+        // マップの中心位置として設定する MapPoint を作成
+        MapPoint mapCenterPoint = new MapPoint(138.727363, 35.360626, SpatialReferences.Wgs84);
+        // マップの視点を決める Viewpoint を設定
+        MainMapView.SetViewpoint(new Viewpoint(mapCenterPoint, 200000.0));
+        // 追加終了
+    }
+    ```
+
+### アプリを実行する
+
+[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。
+
+富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
+
+アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)

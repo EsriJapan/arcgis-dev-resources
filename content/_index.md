@@ -1,5 +1,5 @@
 +++
-title = "ArcGIS for Developer 開発リソース集"
+title = "ArcGIS Developer 開発リソース集"
 description = ""
 +++
 
@@ -7,28 +7,24 @@ description = ""
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
-# ArcGIS for Developer 開発リソース集
-本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。
+# ArcGIS Developers 開発リソース集
+本サイトは、ArcGIS の API / SDK を利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS Platform を利用した開発、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術 Tips 集を紹介しています。
 
-**[ArcGIS for Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
+**[ArcGIS Platform](https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview)** は、ロケーションサービスを提供する PaaS（Platform as a Service）です。サービスの詳細は [ESRIジャパン製品ページ](https://tyndall.esrij.local/products/arcgis-platform/)をご覧ください。
+
+**[ArcGIS Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
 
 
 {{% panel theme="success" header="目次" %}}
 
-- [コア コンセプト](core-concepts)
-
-    - ArcGIS とは何か？ ArcGIS プラットフォームの理解や、それぞれの API / SDK でできること、データの扱いなど、開発を始める前に知っておきたい情報をまとめています。
-  
 - [スタートアップガイド](guide)
     
-    - 開発を始める方のために必要なアカウントの作成から、マップの作成、各 API / SDKを使った開発の基本的な流れを手順にそって学べる情報をまとめています。
+    - 開発を始める方のために必要なアカウントの作成、API キーの取得、ロケーションサービスの利用、各 API / SDK を使った開発の基本的な流れからセキュリティ、運用（ライセンス認証）までと ArcGIS Platform を利用した開発手順にそって学べる情報をまとめています。
 
 - [技術 Tips 集](tips)
  
-    - 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術Tipsをまとめています。
+    - 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術 Tips をまとめています。
 {{% /panel %}}
-
-
 　　　
 #### 開発者オープン コミュニティ
 - [Esri GitHub](https://esri.github.io/)

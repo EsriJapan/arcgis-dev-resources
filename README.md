@@ -1,10 +1,10 @@
-# ArcGIS for Developer 開発リソース集
+# ArcGIS Developers 開発リソース集
 
-![ArcGIS for Developer 開発リソース集](http://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources_20200619.png ("ArcGIS for Developer 開発リソース集"))
+![ArcGIS Developers 開発リソース集](https://apps.esrij.com/arcgis-dev/guide/img/arcgis-dev-resources.png ("ArcGIS Developers 開発リソース集"))
 
 本サイトは、ArcGIS のAPI / SDKを利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS がもつコンセプトの説明、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術Tips 集を紹介しています。
 
-- [ArcGIS for Developer 開発リソース集](http://esrijapan.github.io/arcgis-dev-resources/)
+- [ArcGIS Developers 開発リソース集](https://esrijapan.github.io/arcgis-dev-resources/)
 
 ## ライセンス
 Copyright 2019 Esri Japan Corporation.

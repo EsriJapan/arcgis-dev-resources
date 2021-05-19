@@ -1,7 +1,7 @@
 +++
 title = "ミートアップ"
 description = "ミートアップ参加者を支援するリソースをまとめています。"
-weight = 8
+weight = 9
 aliases = ["/hackathon/"]
 +++
 

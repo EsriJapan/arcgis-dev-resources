@@ -1,10 +1,10 @@
 +++
 title = "スタートアップ ガイド"
-description = "ArcGIS をはじめて使う開発者の方向けに、開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、ArcGIS for Developers を利用したアプリ開発の基本的な流れを紹介します。"
+description = "開発を始める方のために必要なアカウントの作成、API キーの取得、ロケーションサービスの利用、各 API / SDK を使った開発の基本的な流れからセキュリティ、運用（ライセンス認証）まで手順にそって学べる情報をまとめています。"
 weight = 2
 alwaysopen = true
 +++
 
-開発者アカウントの作成から、マップの作成、API/SDK を利用したアプリの開発まで、ArcGIS for Developers を利用したアプリ開発の基本的な流れが理解できます。
+開発を始める方のために「開発者アカウントの作成、API キーの取得、ロケーションサービスの利用、API / SDK を利用したアプリ開発、セキュリティ、運用（ライセンス認証）」と ArcGIS Platform を利用した開発の基本的な流れを紹介しています。
 
-{{% children style="li" depth="2" description="true"   %}}
+{{% children style="li" depth="2" description="true" %}}

@@ -1,0 +1,23 @@
++++
+title = "ロケーションサービスの利用"
+description = "さまざまなフォーマットのデータを 1 つのマップとして集約し、それを可視化する方法を紹介します。"
+Weight=1
+aliases = ["/location-service/"]
++++
+
+## ロケーションサービスとは
+ArcGIS Platform が提供するロケーションサービスでは、
+
+ArcGIS Platform で提供されているロケーションサービスは、背景地図サービス（ベースマップレイヤー）、ジオコーディングサービス、ルーティングサービス、空間分析サービス、人口統計などのサービスを使用することができます。ロケーションサービスは、Web アプリやネイティブアプリなどのクライアント [APIs](https://developers.arcgis.com/documentation/mapping-apis-and-location-services/apis-and-sdks/) からサービスにアクセスするために [REST API](https://developers.arcgis.com/documentation/mapping-apis-and-location-services/apis-and-sdks/#rest-api) を提供しています。そのため、マップアプリでの利用や自社のソリューション、サービス、製品などにこれらのサービスを組み込むことができます。
+
+
+### チュートリアル
+
+https://developers.arcgis.com/documentation/mapping-apis-and-services/tutorials/
+
+
+### 
+
+フィーチャ サービスの利用
+
+Web マップの利用
