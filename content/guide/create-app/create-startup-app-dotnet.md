@@ -15,7 +15,6 @@ aliases = ["/create-startup-app-dotnet/"]
 
 このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
-
 ## 前提条件
 
 このチュートリアルを実施するには、以下が必要です。
@@ -333,4 +332,41 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
 
 富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
+完成版のプロジェクトは[こちら](https://developers.arcgis.com/net/zips/display-a-map.zip)からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。
+
+# Web マップを表示する
+「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
+
+1. Visual Studio で、[マップを表示する](#マップを表示する)のステップで作成したプロジェクトの MapViewModel.cs を開きます。
+2. 必要な using ステートメントを追加します。
+
+    MapViewModel.cs
+
+    ```csharp
+    using Esri.ArcGISRuntime.Portal;
+    using System.Threading.Tasks;
+    ```
+
+3. MapViewModel.cs 内の SetupMap 関数を下記のように書き換えます。
+
+    MapViewModel.cs
+
+    ```csharp
+    private async Task SetupMap()
+    {
+        // ArcGIS ポータルを作成します。URI を指定しない場合は "www.arcgis.com" を使用します。
+        ArcGISPortal portal = await ArcGISPortal.CreateAsync();
+
+        // アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
+        PortalItem mapItem = await PortalItem.CreateAsync(portal, "41281c51f9de45edaf1c8ed44bb10e30");
+
+        // ポータル アイテムからマップを作成します。
+        Map map = new Map(mapItem);
+
+        // マップを表示するには、マップ ビューにバインドされている MapViewModel.Map プロパティを設定します。
+        this.Map = map;
+    }
+    ```
+
+---
 アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)
