@@ -33,3 +33,58 @@ ArcGIS Developer Subscription の各プランの詳細や提供しているサ�
 
 以上で ArcGIS Developers の開発者アカウントの作成は完了です。
 また、GitHub、Facebook、Google および Apple アカウントと連携することで、ArcGIS Developers を利用することができます。各種アカウントとの連携方法に関しましては、それぞれの連携先の手順に従い行ってください。
+
+## 従量制プラン
+
+ArcGIS Platform では、お手持ちのデータを GIS サービスとして配信したりすることが、[無料枠](https://www.esrij.com/products/arcgis-platform/price)/月の範囲で利用可能です。それを超えてサービスを利用する場合に、従量制プラン（Pay as you go） の有効化が必要となります。  
+※ 従量制プラン（Pay as you go）を有効化する際には、クレジットカードの情報が必要になります。
+
+### 従量制プランの有効化
+
+以下の手順で従量制プランを有効化します。
+
+1. ArcGIS Developers（https://developers.arcgis.com/） のサイトで、開発者アカウントでログインします。アカウントのメニューから [Billing] をクリックします。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/pay_as_you_go_credit_plan_enable_step1.png" >
+
+2. Pay as you go の欄で、[Enable pay as you go] をクリックします。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/pay_as_you_go_credit_plan_enable_step2.png">
+
+3. ポップアップで表示される画面で、クレジットカード情報等の必要な情報を入力し、[Continue] ボタンをクリックします。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/pay_as_you_go_credit_plan_enable_step3.png">
+
+<style type="text/css">
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+| <div style="text-align:center">項目</div> | <div style="text-align:center">入力内容 </div> |
+| ---- | ------- |
+| Name on Card（カード名義） | カード記載の名義人 |
+| Credit Card Number（クレジットカード番号） | ---- ---- ---- ---- 形式 |
+| Expiration Date（有効期限） | mm/yy（月/年）形式 |
+| CVV（セキュリティコード：カード裏面の右端３ケタ） | --- 形式 |
+| Street Address（住所） | 例：2-7-1 Hirakawa-Cho |
+| City（市区町村） | 例：Chiyoda-Ku |
+| Country（国） | 選択形式 |
+| Region（都道府県） | 選択形式 |
+| Postal Code（郵便番号） | 例：1020093 |
+
+4. 表示されている内容を確認し、「I have read agree to the terms and conditions of this license」のチェックボックスにチェックを入れ、[Enable pay as you go] をクリックします。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/pay_as_you_go_credit_plan_enable_step4.png">
+
+5. Pay as you go が有効化されていることを確認します。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/pay_as_you_go_credit_plan_enable_step5.png">
+
+以上で従量制プランの有効化は完了です。

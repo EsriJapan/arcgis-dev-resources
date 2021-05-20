@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-19T16:10:58 JST">
+<meta name="revised" content="2021-05-20T15:33:11 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1058,6 +1058,39 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <h3 id="アプリを実行する">アプリを実行する</h3>
 <p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。</p>
 <p>富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
+<p>完成版のプロジェクトは<a href="https://developers.arcgis.com/net/zips/display-a-map.zip">こちら</a>からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。</p>
+<h1 id="web-マップを表示する">Web マップを表示する</h1>
+<p>「<a href="../../services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>
+<ol>
+<li>
+<p>Visual Studio で、<a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B">マップを表示する</a>のステップで作成したプロジェクトの MapViewModel.cs を開きます。</p>
+</li>
+<li>
+<p>必要な using ステートメントを追加します。</p>
+<p>MapViewModel.cs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> Esri.ArcGISRuntime.Portal;
+<span style="color:#66d9ef">using</span> System.Threading.Tasks;
+</code></pre></div></li>
+<li>
+<p>MapViewModel.cs 内の SetupMap 関数を下記のように書き換えます。</p>
+<p>MapViewModel.cs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">async</span> Task SetupMap()
+{
+    <span style="color:#75715e">// ArcGIS ポータルを作成します。URI を指定しない場合は &#34;www.arcgis.com&#34; を使用します。
+</span><span style="color:#75715e"></span>    ArcGISPortal portal = <span style="color:#66d9ef">await</span> ArcGISPortal.CreateAsync();
+
+    <span style="color:#75715e">// アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
+</span><span style="color:#75715e"></span>    PortalItem mapItem = <span style="color:#66d9ef">await</span> PortalItem.CreateAsync(portal, <span style="color:#e6db74">&#34;41281c51f9de45edaf1c8ed44bb10e30&#34;</span>);
+
+    <span style="color:#75715e">// ポータル アイテムからマップを作成します。
+</span><span style="color:#75715e"></span>    Map map = <span style="color:#66d9ef">new</span> Map(mapItem);
+
+    <span style="color:#75715e">// マップを表示するには、マップ ビューにバインドされている MapViewModel.Map プロパティを設定します。
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.Map = map;
+}
+</code></pre></div></li>
+</ol>
+<hr>
 <p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティと認証について学びましょう！</a></p>
 
 
