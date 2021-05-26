@@ -50,7 +50,7 @@ MyMapView.Map = myMap;
 |タイル パッケージ レイヤー|ArcGISLocalTiledLayer|ArcGISTiledLayer|
 
 
-100.x でサポートされているレイヤーのタイプについては、[ArcGIS for Developers: レイヤー（英語）](https://developers.arcgis.com/net/layers/)をご参照ください。
+100.x でサポートされているレイヤーのタイプについては、[ArcGIS Runtime SDK for .NET: レイヤー（英語）](https://developers.arcgis.com/net/layers/)をご参照ください。
 
 作成した各レイヤーは、以下の方法でマップに追加します。
 ```javascript
@@ -106,7 +106,7 @@ await featureTable.PopulateFromServiceAsync(queryParameters, true, outputFields)
 フィーチャの編集はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。
 
 フィーチャの編集方法は、
-[ArcGIS for Developers: フィーチャの編集（英語）](https://developers.arcgis.com/net/query-and-edit/edit/)をご参照ください。
+[ArcGIS Runtime SDK for .NET: フィーチャの編集（英語）](https://developers.arcgis.com/net/query-and-edit/edit/)をご参照ください。
 
 #### フィーチャの検索
 フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
@@ -216,7 +216,7 @@ catch (Exception ex)
 データを非同期的にロードして状態を初期化するマップやレイヤー等のリソースは、ローダブル パターンを採用しています。各リソースのプロパティにアクセスするときは、ローダブル パターンを使用して、リソースがロードされた後にアクセスすることが推奨されます。ローダブル パターンは、ロード状態の振る舞いをより均一にして且つ一貫性を持たせることで、非同期性をより明示的にします。ローダブル パターンでは、各リソースは自動的にリソースの状態をロードしません。それらは、開発者が明示的に実行したときに、遅延ロードします。
 ローダブル パターンを採用しているリソースの状態は、`NotLoaded（ロードが開始していない`、`Loading（ロード中）`、`Loaded（ロードに成功）`、`FailedToLoad（ロードに失敗）` のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。
 
-詳細は、[ArcGIS for Developers: ローダブル パターン（英語）](https://developers.arcgis.com/net/programming-patterns/loadable/)を参照してください。
+詳細は、[ArcGIS Runtime SDK for .NET: ローダブル パターン（英語）](https://developers.arcgis.com/net/programming-patterns/loadable/)を参照してください。
 
 次のコードは、ローダブル パターンの使用方法の例を示しています。
 ```javascript
@@ -233,7 +233,7 @@ await featureLayer.LoadAsync();
 ```
 
 ## ローカルサーバー
-ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、[ArcGIS for Developers: ローカル サーバー（英語）](https://developers.arcgis.com/net/local-server/)を参照してください。
+ローカル サーバーの機能を使用する場合は、ArcGIS Runtime SDK for .NET とは別に ArcGIS Runtime Local Server SDK のインストールが必要となります。インストールの詳細は、[ArcGIS Runtime SDK for .NET: ローカル サーバー（英語）](https://developers.arcgis.com/net/local-server/)を参照してください。
 
 
 ## 既知の制限事項
