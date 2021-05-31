@@ -1,9 +1,11 @@
 +++
 title = "バージョン 3.x から 4.x への移行"
 description = "バージョン 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を紹介します。"
-weight = 3
+weight = 4
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
+
+出典：ArcGIS API for JavaScript - [Migrating from 3.x to 4.19](https://developers.arcgis.com/javascript/latest/migrating/)
 
 バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 
@@ -14,6 +16,7 @@ aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
   * __[Map と Layer の仕様](#map-と-layer-の仕様)__
   * __[モジュールとパッケージの更新](#モジュールとパッケージの更新)__
   * __[Web マップのサポート](#web-マップのサポート)__
+  * __[ローカライズ](#ローカライズ)__
   * __[AMD の利用](#amd-の利用)__
   * __[廃止項目](#廃止項目)__
 
@@ -157,6 +160,12 @@ esriConfig.request.alwaysUseProxy = true;
 
 ## Web マップのサポート
 4.x 以降でも、アプリケーションで [Web マップ](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を表示することができます。Web マップ との連携は部分的にサポートされています。これは、Web マップとの連携が API の現在のバージョンで利用可能な機能に依存するためです。例えば、まだ API で実装されていないタイプのレイヤー（WFS レイヤーなど）が含まれている場合でも、Web マップを表示することができます。API でサポートされているタイプのレイヤーのみを表示することができます。また、Web マップの保存はバージョン 4.14 からサポートされています。
+
+## ローカライズ
+4.x では、ロケールを "ar "や "he "に設定しても、right-to-left (RTL) は行われなくなりました。
+
+- どのロケールでも RTL をオプトインできるようになりました。[RTL サポート](https://developers.arcgis.com/javascript/latest/localization/index.html#rtl)を参照してください。
+- `<html>` または `<body>` タグで方向を指定します。[RTL サポート](https://developers.arcgis.com/javascript/latest/localization/index.html#rtl)を参照してください。
 
 ## AMD の利用
 3.x では AMD とレガシー モジュールの両方を利用できましたが、4.x からは、レガシー モジュールが廃止され、 AMD モジュールのみを利用できます。

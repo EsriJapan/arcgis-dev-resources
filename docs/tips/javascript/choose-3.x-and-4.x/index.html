@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-26T10:51:40 JST">
+<meta name="revised" content="2021-05-31T18:41:05 JST">
 <title>バージョン 4.x と 3.x の選択 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -207,6 +207,13 @@ if (!doNotTrack) {
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
+            インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
@@ -747,18 +754,20 @@ if (!doNotTrack) {
     
     
     
-    <p>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。</p>
+    <p>出典：ArcGIS API for JavaScript - <a href="https://developers.arcgis.com/javascript/latest/choose-version/">Choose between version 3.x and 4.x</a></p>
+<p>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。</p>
 <p>また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、<a href="https://www.esrij.com/question/120581/">3.x のロードマップと技術サポートに関する FAQ</a> も併せて参照してください。</p>
 <ul>
 <li>アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください</li>
 <li>アプリケーションで、WFS レイヤーのようなバージョン 4.x でまだ利用できない機能が必要な場合は、バージョン 3.x を使用してください</li>
+<li>非常に大きなフィーチャ レイヤーを扱う場合は、バージョン 4.x を使用してください。</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">機能</th>
-<th style="text-align:left">3.35</th>
-<th style="text-align:left">4.18</th>
+<th style="text-align:left">3.36</th>
+<th style="text-align:left">4.19</th>
 </tr>
 </thead>
 <tbody>

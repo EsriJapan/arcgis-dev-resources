@@ -26,15 +26,15 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 
 ### 1. Client ID の作成
 はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
-Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
-<br/>ここでは、ArcGIS for Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。
+Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
+<br/>ここでは、ArcGIS Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。
 
-- [1-1. ArcGIS for Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)
+- [1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)
 - [1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](#1-2-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)
 
-### 1-1. ArcGIS for Developers を使用した Client ID の作成
+### 1-1. ArcGIS Developers を使用した Client ID の作成
 
-[ArcGIS for Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
+[ArcGIS Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
 
 {{% notice tip %}}
 
@@ -42,7 +42,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 
 {{% /notice %}}
 
-1. [ArcGIS for Developers](https://developers.arcgis.com/sign-in/) のサイトでサイン インします。
+1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) のサイトでサイン インします。
 2. `New Application` をクリックします。
 3. `New Applications Details` で以下の内容を入力します。
     -   `Title` - 例えば、`Experience Builder credentials` などのように任意のタイトルを入力します。
@@ -81,7 +81,7 @@ Client ID の作成が完了したら以下の手順で server サービスの�
 * Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
 
 1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
-<br/><span style="font-size: 75%">※ [ダウンロードページ](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)でサイン イン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span>
+<br/><span style="font-size: 75%">※ [ダウンロードページ](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span>
 2.  コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start  で実行します。</span>
 3.  `npm start` と入力して server を起動します。
@@ -93,7 +93,7 @@ Experience Builder は、Node.js の自己署名証明書を使用して HTTPS �
 {{% /notice %}}
 5.  ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、
 <br/>クライアント ID には、
-「[1-1. ArcGIS for Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)」で作成した client ID、 
+「[1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)」で作成した client ID、 
 <br/>または、「[1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成](#1-2-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)」で作成したアプリケーション ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 

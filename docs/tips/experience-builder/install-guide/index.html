@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-26T10:51:40 JST">
+<meta name="revised" content="2021-05-31T18:41:04 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -206,6 +206,13 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
+            インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
@@ -735,7 +742,7 @@ if (!doNotTrack) {
     <li><a href="#server-インストール">Server インストール</a>
       <ul>
         <li><a href="#1-client-id-の作成">1. Client ID の作成</a></li>
-        <li><a href="#1-1-arcgis-for-developers-を使用した-client-id-の作成">1-1. ArcGIS for Developers を使用した Client ID の作成</a></li>
+        <li><a href="#1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
         <li><a href="#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
       </ul>
     </li>
@@ -783,19 +790,19 @@ if (!doNotTrack) {
 <h2 id="server-インストール">Server インストール</h2>
 <h3 id="1-client-id-の作成">1. Client ID の作成</h3>
 <p>はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
-Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
-<br/>ここでは、ArcGIS for Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。</p>
+Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
+<br/>ここでは、ArcGIS Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。</p>
 <ul>
-<li><a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS for Developers を使用した Client ID の作成</a></li>
+<li><a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
 <li><a href="#1-2-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
 </ul>
-<h3 id="1-1-arcgis-for-developers-を使用した-client-id-の作成">1-1. ArcGIS for Developers を使用した Client ID の作成</h3>
-<p><a href="https://developers.arcgis.com">ArcGIS for Developers</a> を使用している場合は、以下の手順を行います。</p>
+<h3 id="1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</h3>
+<p><a href="https://developers.arcgis.com">ArcGIS Developers</a> を使用している場合は、以下の手順を行います。</p>
 <div class="notices tip" >
 <p>インストール手順については Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
 </div>
 <ol>
-<li><a href="https://developers.arcgis.com/sign-in/">ArcGIS for Developers</a> のサイトでサイン インします。</li>
+<li><a href="https://developers.arcgis.com/sign-in/">ArcGIS Developers</a> のサイトでサイン インします。</li>
 <li><code>New Application</code> をクリックします。</li>
 <li><code>New Applications Details</code> で以下の内容を入力します。
 <ul>
@@ -836,7 +843,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 </ul>
 <ol>
 <li>Experience Builder (Developer Edition) の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロード</a>して、解凍します。
-<br/><span style="font-size: 75%">※ <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロードページ</a>でサイン イン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span></li>
+<br/><span style="font-size: 75%">※ <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロードページ</a>でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span></li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start  で実行します。</span></li>
 <li><code>npm start</code> と入力して server を起動します。</li>
@@ -848,7 +855,7 @@ Client ID の作成は、ArcGIS for Developers 、もしくは、ArcGIS Online/A
 <ol start="5">
 <li>ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、
 <br/>クライアント ID には、
-「<a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS for Developers を使用した Client ID の作成</a>」で作成した client ID、 
+「<a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a>」で作成した client ID、 
 <br/>または、「<a href="#1-2-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 

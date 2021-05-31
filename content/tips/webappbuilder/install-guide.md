@@ -21,10 +21,10 @@ aliases = ["/webappbuilder/install-guide/"]
 ## インストール
 
 1. Web AppBuilder の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/web-appbuilder/" target="_blank">ダウンロード</a>し、解凍します。  
-サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。
+サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。
 2. Web AppBuilder は <a href="https://nodejs.org/" target="_blank">Node.js</a> 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.jsをインストールする必要があります。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide2.gif" alt="インストール" width="600px">
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide2.png" alt="インストール" width="800px">
 
 ### ArcGIS API for JavaScript の参照先を変更する（オプション）
 

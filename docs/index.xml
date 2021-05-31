@@ -92,20 +92,6 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
-      <description>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
-Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
- [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_api\library とすべてのコンテンツをコピーして Web サーバー上に移動します（C:\inetpub\wwwroot\arcgis_js_api\library）。  ビルドのインストール ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</description>
-    </item>
-    
-    <item>
-      <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -113,7 +99,22 @@ Esri がホストしている CDN にインターネット経由で参照する�
       <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
 ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
  インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
-サインイン ページが表示される場合は、ArcGIS for Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
+サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
+    </item>
+    
+    <item>
+      <title>インストールおよびセットアップ方法</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</guid>
+      <description>出典：ArcGIS API for JavaScript - Install and set up
+インストールおよびセットアップ API へのアクセス ArcGIS API for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
+ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.19/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.19/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドルラーで利用することができます。
+インストール方法：
+npm install @arcgis/core モジュールのインポート：
+import Map from &amp;#34;@arcgis/core/Map&amp;#34;; 詳細については、以下のガイドを参照してください。</description>
     </item>
     
     <item>
@@ -259,6 +260,20 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
     </item>
     
     <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
+      <description>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
+Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
+ ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v419_api\arcgis_js_api\javascript\4.19\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.19\)  ビルドのインストール ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</description>
+    </item>
+    
+    <item>
       <title>カスタム ウィジェット開発ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -304,17 +319,6 @@ Web AppBuilder のインストール方法に関しては、ArcGIS Web AppBuilde
   [レイヤーの追加を完了] をクリックし、レイヤーの追加を終了します。
   Living Atlas レイヤーの参照 米国 Esri 社やほかのユーザーが提供する高品質マップ レイヤーをマップに追加します。レイヤーの詳細は、アイテム説明で確認できます。レイヤーによっては、組織向けアカウントでのサイン インが必要であったり、クレジットを消費するものがあります。
 Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サービス、OGC WMS Web サービス、OGC WMTS Web サービス、Web サーバー上にあるタイル レイヤー、KML ファイル、GeoRSS ファイル、および CSV ファイルのレイヤーを追加することができます。</description>
-    </item>
-    
-    <item>
-      <title>バージョン 4.x と 3.x の選択</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</guid>
-      <description>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。
-また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、3.x のロードマップと技術サポートに関する FAQ も併せて参照してください。
- アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください アプリケーションで、WFS レイヤーのようなバージョン 4.x でまだ利用できない機能が必要な場合は、バージョン 3.x を使用してください     機能 3.35 4.18     3D 表示 × ○   2D 表示 ○ ○   ベクター タイル レイヤー ○ ○   ラスター タイル レイヤー ○ ○   イメージ レイヤー ○ ○   マップ イメージ レイヤー（ダイナミック レイヤー） ○ ○   フィーチャ レイヤー ○ ○   ジオメトリ エンジン ○ ○   印刷 ○ ○   ルート &amp;amp; ルート案内 ○ ○   Web マップ ○ ○（部分的なサポート）   Web シーン × ○   ポータル アイテムのレイヤーの直接参照 × ○   編集と図形描画 ○ ○（部分的なサポート）   OGC レイヤー（WMS、WMTS、KML） ○ ○   OGC レイヤー（WFS） ○ ×（今後のバージョンで対応予定）   OGC API の機能（OGCFeatureLayer） × ○   時系列データ ○ ○   その他の GIS 解析ウィジェット ○ ×（今後のバージョンで対応予定）    全機能の比較は 3.</description>
     </item>
     
     <item>
@@ -468,17 +472,15 @@ AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表�
     </item>
     
     <item>
-      <title>バージョン 3.x から 4.x への移行</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</link>
+      <title>バージョン 4.x と 3.x の選択</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
-      <description>バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
-本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
- プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
- オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &amp;#39;oceans&amp;#39;;  オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title; 例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。
-myFeatureLayer.setDefinitionExpression(expression); 4.x では、以下の様に記述します。
-myFeatureLayer.definitionExpression = expression; 4.x では、以下に記述したように .get() または .set() を使用して、深い階層のプロパティにアクセスすることも可能です。</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</guid>
+      <description>出典：ArcGIS API for JavaScript - Choose between version 3.x and 4.x
+バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。
+また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、3.x のロードマップと技術サポートに関する FAQ も併せて参照してください。
+ アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください アプリケーションで、WFS レイヤーのようなバージョン 4.x でまだ利用できない機能が必要な場合は、バージョン 3.x を使用してください 非常に大きなフィーチャ レイヤーを扱う場合は、バージョン 4.x を使用してください。     機能 3.36 4.19     3D 表示 × ○   2D 表示 ○ ○   ベクター タイル レイヤー ○ ○   ラスター タイル レイヤー ○ ○   イメージ レイヤー ○ ○   マップ イメージ レイヤー（ダイナミック レイヤー） ○ ○   フィーチャ レイヤー ○ ○   ジオメトリ エンジン ○ ○   印刷 ○ ○   ルート &amp;amp; ルート案内 ○ ○   Web マップ ○ ○（部分的なサポート）   Web シーン × ○   ポータル アイテムのレイヤーの直接参照 × ○   編集と図形描画 ○ ○（部分的なサポート）   OGC レイヤー（WMS、WMTS、KML） ○ ○   OGC レイヤー（WFS） ○ ×（今後のバージョンで対応予定）   OGC API の機能（OGCFeatureLayer） × ○   時系列データ ○ ○   その他の GIS 解析ウィジェット ○ ×（今後のバージョンで対応予定）    全機能の比較は 3.</description>
     </item>
     
     <item>
@@ -579,23 +581,6 @@ Windows のコマンドプロンプトからコマンドを実行した場合
     </item>
     
     <item>
-      <title>ウィジェット開発</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
-      <description>ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS API for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
-このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
-このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
-トピック
- 開発要件 ウィジェット ライフサイクル ウィジェットの実装 TypeScript デコレーター サンプルコード 関連リンク  このガイドはウィジェットのフレームワークの大まかな概要を説明しています。どのようにカスタム ウィジェットを作成するかは、Hello World や Recenter widget のサンプルをご参照ください。
-開発要件 カスタム ウィジェットを作成する前に、開発に必要となる要件を確認してください。要件は、作成するウィジェットにより異なります。以下はウィジェット開発に最低限必要な要件です。
-TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript で書かれたコードは、JavaScript にコンパイルされます。ウィジェット開発には TypeScript を使用することが推奨されています。インターネット上には、TypeScript とは何か、なぜ使われるのか、そしてどのように使うのかを詳細に知ることのできる多数のリソースがあります。これらの基本を理解することで、ウィジェット開発の過程をより簡単に進めることができます。
-JSX JSX は HTML と同じようにウィジェットの UI を表現することができる JavaScript の拡張シンタックスです。JSX は HTML に似ており、JavaScript に埋め込んで使用することができます。
-esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつであり、ウィジェットを含むすべてのクラスの基盤です。どのように動作するのか、使用パターンなどの詳細は Implementing Accessor をご参照ください。</description>
-    </item>
-    
-    <item>
       <title>スタートアップ ガイド（3.x）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -611,18 +596,16 @@ esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつで�
     </item>
     
     <item>
-      <title>Arcade</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
+      <title>バージョン 3.x から 4.x への移行</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
-      <description>Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS API for JavaScript で編集・共有・実行することができます。
-Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
-Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
-シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。
-Arcade には外部データにアクセスするためのグローバル変数が用意されています。 $feature というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。 以下のシンタックスを使用することでフィールド値を参照できます。
-$feature.fieldName このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。
-// 民主党候補者に投票した人の割合（%）を計算 ($feature.</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
+      <description>出典：ArcGIS API for JavaScript - Migrating from 3.x to 4.19
+バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
+本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
+ プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ AMD の利用 廃止項目  プロパティのハンドリング 3.x ではいくつかのプロパティは、読み取り/書き込み用のクラス固有のメソッド名を呼び出すことで、値を get（読み取り）または set（書き込み）することができました。4.x ではメソッドの呼び出しが刷新され、シンプルで一貫した方法で全てのプロパティの読み取り、書き込みをサポートします。
+ オブジェクトに直接値を書き込む方法  // ベースマップのタイプを設定 map.basemap = &amp;#39;oceans&amp;#39;;  オブジェクトから直接値を読み取る方法  // ベースマップのタイトルを取得 var title = map.basemap.title; 例えば、3.x でフィーチャ レイヤーのフィルター定義式（definitionExpression）を設定するには、以下のように記述していました。</description>
     </item>
     
     <item>
@@ -638,6 +621,23 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
 インストール   バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
   次の 2 つのコマンドを実行します
  jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号    2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット開発</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
+      <description>ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS API for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
+このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
+このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
+トピック
+ 開発要件 ウィジェット ライフサイクル ウィジェットの実装 TypeScript デコレーター サンプルコード 関連リンク  このガイドはウィジェットのフレームワークの大まかな概要を説明しています。どのようにカスタム ウィジェットを作成するかは、Hello World や Recenter widget のサンプルをご参照ください。
+開発要件 カスタム ウィジェットを作成する前に、開発に必要となる要件を確認してください。要件は、作成するウィジェットにより異なります。以下はウィジェット開発に最低限必要な要件です。
+TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript で書かれたコードは、JavaScript にコンパイルされます。ウィジェット開発には TypeScript を使用することが推奨されています。インターネット上には、TypeScript とは何か、なぜ使われるのか、そしてどのように使うのかを詳細に知ることのできる多数のリソースがあります。これらの基本を理解することで、ウィジェット開発の過程をより簡単に進めることができます。
+JSX JSX は HTML と同じようにウィジェットの UI を表現することができる JavaScript の拡張シンタックスです。JSX は HTML に似ており、JavaScript に埋め込んで使用することができます。
+esri/core/Accessor の理解 Accessor は 4.x の主要な特徴のひとつであり、ウィジェットを含むすべてのクラスの基盤です。どのように動作するのか、使用パターンなどの詳細は Implementing Accessor をご参照ください。</description>
     </item>
     
     <item>
@@ -756,6 +756,21 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
     </item>
     
     <item>
+      <title>Arcade</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
+      <description>Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS API for JavaScript で編集・共有・実行することができます。
+Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
+Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。
+Arcade には外部データにアクセスするためのグローバル変数が用意されています。 $feature というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。 以下のシンタックスを使用することでフィールド値を参照できます。
+$feature.fieldName このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。
+// 民主党候補者に投票した人の割合（%）を計算 ($feature.</description>
+    </item>
+    
+    <item>
       <title>Web マップ</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/core-concepts/web-maps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -776,22 +791,6 @@ Web マップの仕様 Web マップの仕様 は、 JSON の仕様に基づい�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
 { &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
-    </item>
-    
-    <item>
-      <title>カスタム フォント</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
-      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
-デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
-※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
-フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
-pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
-https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
-pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
- node-fontnik をクローンします。  git clone https://github.</description>
     </item>
     
     <item>
@@ -847,6 +846,22 @@ Web シーンは JSON として、ArcGIS Online または ArcGIS Enterprise で�
       <description>Experience Builder ウィジェットは、次のファイルで構成されています。
  src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
  新しいモジュールのインストール ウィジェットの追加、削除、名前の変更 ウィジェットの manifest.json の編集 ファイルやフォルダの追加、削除、名前の変更  ctrl + c で webpack サーバーを停止させることができます。</description>
+    </item>
+    
+    <item>
+      <title>カスタム フォント</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
+      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
+デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
+※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
+フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
+pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
+https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
+pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
+ node-fontnik をクローンします。  git clone https://github.</description>
     </item>
     
     <item>
@@ -921,7 +936,7 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/</guid>
       <description>ArcGIS Web AppBuilder ウィジェット一覧表 ArcGIS Web AppBuilder（ArcGIS Online 版)で提供されている過去のウィジェットの一覧表です。
 表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
- ArcGIS Web AppBuilder ウィジェット一覧表 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 ArcGIS Online (2019 年 6 月アップデート) ArcGIS Online (2019 年 10 月アップデート) ArcGIS Online (2019 年 12 月アップデート) ArcGIS Online (2020 年 3 月アップデート) ArcGIS Online (2020 年 7 月アップデート) ArcGIS Online (2020 年 9 月アップデート) ArcGIS Online (2020 年 12 月アップデート)     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 〇 〇 〇 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇 〇 〇   データ集約 データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 ベータ版〇 ベータ版〇 ベータ版〇 〇 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
+ ArcGIS Web AppBuilder ウィジェット一覧表 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 ArcGIS Online (2019 年 6 月アップデート) ArcGIS Online (2019 年 10 月アップデート) ArcGIS Online (2019 年 12 月アップデート) ArcGIS Online (2020 年 3 月アップデート) ArcGIS Online (2020 年 7 月アップデート) ArcGIS Online (2020 年 9 月アップデート) ArcGIS Online (2020 年 12 月アップデート) ArcGIS Online (2021 年 4 月アップデート)     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 〇 〇 〇 〇 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇 〇 〇 〇   データ集約 データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 ベータ版〇 ベータ版〇 ベータ版〇 〇 〇 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
     </item>
     
     <item>
@@ -935,7 +950,7 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
 NPM インストール ライブラリを 1 つのウィジェットのみで使用する場合は、使用するライブラリを npm に含めることをお勧めします。
 利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
 次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは npmjs.com にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。
-npm install &amp;lt;package-name&amp;gt;このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
+npm install &amp;lt;package-name&amp;gt; このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、node_modules ディレクトリに配置します。第二に、上記の npm init コマンドで作成した package.json ファイルにライブラリへの参照を追加します。
 パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
 package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
 このパターンの動作の説明は react-data-grid のサンプルを参照してください。
@@ -973,7 +988,7 @@ Experience のデプロイ Experience を Web サーバーにデプロイする�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/</guid>
       <description>ArcGIS Web AppBuilder ウィジェット一覧表 ArcGIS Web AppBuilder（Developer Edition 版 ※1）で提供されてい過去のウィジェットの一覧表です。
 表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
- 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 Developer Edition バージョン 2.13 ※1 Developer Edition バージョン 2.14 ※1 Developer Edition バージョン 2.15 ※1 Developer Edition バージョン 2.16 ※1 Developer Edition バージョン 2.17 ※1 Developer Edition バージョン 2.18 ※1 Developer Edition バージョン 2.19 ※1     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 〇 〇 〇 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇 〇 〇   データ集約 データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 〇:ベータ版 〇:ベータ版 〇:ベータ版 〇 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
+ 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 Developer Edition バージョン 2.13 ※1 Developer Edition バージョン 2.14 ※1 Developer Edition バージョン 2.15 ※1 Developer Edition バージョン 2.16 ※1 Developer Edition バージョン 2.17 ※1 Developer Edition バージョン 2.18 ※1 Developer Edition バージョン 2.19 ※1 Developer Edition バージョン 2.20 ※1     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 〇 〇 〇 〇 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇 〇 〇 〇   データ集約 データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 〇:ベータ版 〇:ベータ版 〇:ベータ版 〇 〇 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
     </item>
     
     <item>
