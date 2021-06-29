@@ -6,8 +6,6 @@ weight = 7
 
 ArcGIS Pro SDK の開発に役立つガイド集です。
 
-{{% children description="true"   %}}
-
 * ArcGIS Pro を使用した開発
   * [概要](https://github.com/EsriJapan/arcgis-pro-sdk/wiki)  
     * SDK の概要・コンポーネント、開発要件、リリースノート等を紹介します。
@@ -25,6 +23,8 @@ ArcGIS Pro SDK の開発に役立つガイド集です。
     * SDK のインストール、アップグレード、およびアンインストール方法を説明します。
   * [はじめてのアドイン作成](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProGuide-Build-Your-First-Add-in)  
     * ArcGIS Pro アドインの開発方法をステップで説明します。
+  * [アドインの種類](./customization)  
+    * 開発できる UI コントロールの種類を説明します。
   * [よくある問題](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProGuide-Diagnosing-ArcGIS-Pro-Add-ins)  
     * アドイン開発でよく遭遇する問題とその解決策を紹介します。
 
