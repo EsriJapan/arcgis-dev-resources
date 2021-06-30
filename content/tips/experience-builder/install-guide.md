@@ -27,11 +27,12 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 ### 1. Client ID の作成
 はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
 Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
-<br/>ここでは、ArcGIS Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。
+<br/>ここでは、ArcGIS Online/ArcGIS Enterprise を使用した作成方法について説明します。
 
-- [1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)
-- [1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](#1-2-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)
+<!-- - [1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成) -->
+- [1-1. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](#1-1-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)
 
+<!-- 
 ### 1-1. ArcGIS Developers を使用した Client ID の作成
 
 [ArcGIS Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
@@ -53,7 +54,9 @@ Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGI
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /> 
 5.  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 
-### 1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成
+-->
+
+### 1-1. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成
 
 ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。
 
@@ -92,9 +95,10 @@ Experience Builder は、Node.js の自己署名証明書を使用して HTTPS �
 
 {{% /notice %}}
 5.  ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、
-<br/>クライアント ID には、
+<br/>クライアント ID には、<!--
 「[1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)」で作成した client ID、 
-<br/>または、「[1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成](#1-2-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)」で作成したアプリケーション ID を指定します。
+<br/>または、
+-->「[1-1. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成](#1-1-arcgis-online-arcgis-enterprise-を使用した-client-id-の作成)」で作成したアプリケーション ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
 サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br/>

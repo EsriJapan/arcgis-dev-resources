@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-29T14:59:35 JST">
+<meta name="revised" content="2021-06-30T18:32:23 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -738,8 +738,7 @@
     <li><a href="#server-インストール">Server インストール</a>
       <ul>
         <li><a href="#1-client-id-の作成">1. Client ID の作成</a></li>
-        <li><a href="#1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
-        <li><a href="#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
+        <li><a href="#1-1-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-1. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
       </ul>
     </li>
     <li><a href="#2-server-サービスのインストール">2. server サービスのインストール</a></li>
@@ -787,32 +786,36 @@
 <h3 id="1-client-id-の作成">1. Client ID の作成</h3>
 <p>はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
 Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に合わせて作成を行ってください。
-<br/>ここでは、ArcGIS Developers 、ArcGIS Online/ArcGIS Enterprise を使用した 2 パターンでの作成方法について説明します。</p>
+<br/>ここでは、ArcGIS Online/ArcGIS Enterprise を使用した作成方法について説明します。</p>
+<!-- - [1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成) -->
 <ul>
-<li><a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
-<li><a href="#1-2-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
+<li><a href="#1-1-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
 </ul>
-<h3 id="1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</h3>
-<p><a href="https://developers.arcgis.com">ArcGIS Developers</a> を使用している場合は、以下の手順を行います。</p>
+<!-- 
+### 1-1. ArcGIS Developers を使用した Client ID の作成
+
+[ArcGIS Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
+
 <div class="notices tip" >
-<p>インストール手順については Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
+
+インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+
 </div>
-<ol>
-<li><a href="https://developers.arcgis.com/sign-in/">ArcGIS Developers</a> のサイトでサイン インします。</li>
-<li><code>New Application</code> をクリックします。</li>
-<li><code>New Applications Details</code> で以下の内容を入力します。
-<ul>
-<li><code>Title</code> - 例えば、<code>Experience Builder credentials</code> などのように任意のタイトルを入力します。</li>
-<li><code>Tags</code> - <code>Experience Builder</code> のような内容を入力します。</li>
-<li><code>Register New Application</code> をクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /></li>
-</ul>
-</li>
-<li>登録したアプリケーションの <code>Authentication</code> タブをクリックします。<code>Current Redirect URIs</code> のセクションで、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力して、<code>+ Add</code> をクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /></li>
-<li>Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。</li>
-</ol>
-<h3 id="1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</h3>
+
+
+1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) のサイトでサイン インします。
+2. `New Application` をクリックします。
+3. `New Applications Details` で以下の内容を入力します。
+    -   `Title` - 例えば、`Experience Builder credentials` などのように任意のタイトルを入力します。
+    -   `Tags` - `Experience Builder` のような内容を入力します。
+    -   `Register New Application` をクリックします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/newApplications.png" width="80%" /> 
+4.  登録したアプリケーションの `Authentication` タブをクリックします。`Current Redirect URIs` のセクションで、`リダイレクト URI` に `https://localhost:3001/` と入力して、`+ Add` をクリックします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/installExB.png" /> 
+5.  Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+
+-->
+<h3 id="1-1-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-1. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</h3>
 <p>ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。</p>
 <div class="notices tip" >
 <p>※ インストール手順については Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
@@ -850,9 +853,10 @@ Client ID の作成は、ArcGIS Developers 、もしくは、ArcGIS Online/ArcGI
 </div>
 <ol start="5">
 <li>ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、
-<br/>クライアント ID には、
-「<a href="#1-1-arcgis-for-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a>」で作成した client ID、 
-<br/>または、「<a href="#1-2-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
+<br/>クライアント ID には、<!--
+「[1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-for-developers-を使用した-client-id-の作成)」で作成した client ID、 
+<br/>または、
+-->「<a href="#1-1-arcgis-online-arcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
 サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br/>
