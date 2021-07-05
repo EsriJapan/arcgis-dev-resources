@@ -50,7 +50,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.11.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.11.2'
 		...
 	}
 	```

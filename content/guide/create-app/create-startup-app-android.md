@@ -80,7 +80,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
         // 追加開始
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.11.0'
+        implementation 'com.esri.arcgisruntime:arcgis-android:100.11.2'
         // 追加終了
 
     }

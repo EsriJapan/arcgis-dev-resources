@@ -38,7 +38,7 @@ ArcGIS の API を使用するには、次のインポートステートメン�
 
 1. プロジェクトの Podfile に下記を追加します。
     ```swift  
-    pod 'ArcGIS-Runtime-SDK-iOS', '100.10'
+    pod 'ArcGIS-Runtime-SDK-iOS'
     ```
 
 2. ターミナル アプリケーションを使用して、Podfile 上で pod install コマンドを実行します。これにより、ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pod ディレクトリ内に配置されます。また、ArcGIS フレームワークを正しく参照するために、プロジェクトのビルド設定に必要な変更が加えられて、新しい Xcode ワークスペース（.xcworkspace ファイル）を作成されます。
