@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-07-14T15:44:38 JST">
-<title>ウィジェット間の通信 :: ArcGIS Developers 開発リソース集</title>
+<title>ArcGIS Pro SDK :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="ウィジェット同士がどのように相互に通信する方法について紹介します。">
+<meta name="description" content="ArcGIS Pro SDK の開発に役立つガイド集です。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+  <body data-url="/arcgis-dev-resources/tips/prosdk/geodatabase/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -245,11 +245,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item">
@@ -266,7 +265,7 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
@@ -301,7 +300,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
             ウィジェット間の通信
@@ -549,10 +548,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
@@ -561,7 +561,7 @@
       <a href="/arcgis-dev-resources/tips/prosdk/customization/">ArcGIS Pro SDK</a>
       </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item parent active
         ">
       <div>
       <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ArcGIS Pro SDK</a>
@@ -723,12 +723,7 @@
 
 
 
-
-
-
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェット間の通信
-
- 
+ <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/prosdk/'>ArcGIS Pro SDK</a> > ArcGIS Pro SDK
 
  
 
@@ -743,12 +738,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</a></li>
-    <li><a href="#ウィジェット間で状態を共有するための独自の-redux-storeactionreducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -758,7 +748,7 @@
 
 <div id="body-inner">
   
-    <h1>ウィジェット間の通信</h1>
+    <h1>ArcGIS Pro SDK</h1>
   
 
 
@@ -766,74 +756,26 @@
     
     
     
-    <p>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。
-以下の方法をサポートしています。</p>
+
+<p>ArcGIS Pro SDK の開発に役立つガイド集です。</p>
 <ul>
-<li>
-<p>Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は <a href="https://developers.arcgis.com/experience-builder/guide/message-action">Message action</a> を参照してください。</p>
-</li>
-<li>
-<p>Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state  (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。</p>
-</li>
-</ul>
-<h2 id="ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</h2>
-<p>React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは <code>widgetsState</code> と呼ばれるもので、型の定義は <code>jimu-core/lib/types/state</code> にあります。<code>widgetState</code> に保存された情報は、他のすべてのウィジェットからアクセス可能です。<code>widgetsState</code> に情報を保存するには、以下のコードを参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">appActions</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">* Call this when you need to save state.
-</span><span style="color:#75715e">*
-</span><span style="color:#75715e">* widgetId: your widget id
-</span><span style="color:#75715e">* propKey: can be a string with this format &#34;a.b.c&#34;
-</span><span style="color:#75715e">* value: the info you want to store
-</span><span style="color:#75715e">*/</span>
-<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">widgetStatePropChange</span>(<span style="color:#a6e22e">widgetId</span>, <span style="color:#a6e22e">propKey</span>, <span style="color:#a6e22e">value</span>))
-</code></pre></div><p>例えば、<code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b1&quot;, &quot;value1&quot;))</code> と <code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b2&quot;, &quot;value2&quot;))</code> を呼び出すと、Redux store でこの store の state (状態) が取得されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">widgetsState</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">w1</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> {
-            <span style="color:#a6e22e">b1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value1&#39;</span>,
-            <span style="color:#a6e22e">b2</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value2&#39;</span>
-        }
-    }
-}
-</code></pre></div><p>ウィジェット2 の <code>w1</code> が格納した情報にアクセスするには、<code>mapExtraStateProps</code> を使用するか、<code>useSelect</code> hooks を使用して store から値を選択することができます。</p>
-<p>ただし、<code>widgetState</code> にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、<code>this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))</code> を使用して値を格納し、<code>MutableStoreManager.getInstance().getStateValue()</code> を使用してアクセスすることができます。</p>
-<h2 id="ウィジェット間で状態を共有するための独自の-redux-storeactionreducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</h2>
-<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state (状態)を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
+<li>ジオデータベース
 <ul>
-<li>ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。</li>
+<li><a href="https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-Geodatabase">ジオデータベース</a>
+<ul>
+<li>ジオデータベースのアーキテクチャと操作について説明します。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">extensionSpec</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyReduxStoreExtension</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">extensionSpec</span>.<span style="color:#a6e22e">ReduxStoreExtension</span>{
-    <span style="color:#a6e22e">getActions</span>(){
-        <span style="color:#75715e">// return your redux actions.
-</span><span style="color:#75715e"></span>    }
-
-    <span style="color:#a6e22e">getInitLocalState</span>(){
-        <span style="color:#75715e">// return your redux init local state.
-</span><span style="color:#75715e"></span>    }
-
-    <span style="color:#a6e22e">getReducer</span>(){
-        <span style="color:#75715e">// return your redux reducer.
-</span><span style="color:#75715e"></span>    }
-
-    <span style="color:#a6e22e">getStoreKey</span>(){
-        <span style="color:#75715e">// return your redux local key.
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></div><ul>
-<li>ウィジェットの manifest.json で拡張機能を宣言します。</li>
+</li>
+<li><a href="https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-DDL">DDL</a>
+<ul>
+<li>DDL（データ定義言語）機能を使用したジオデータベースの操作について説明します。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
-    {
-      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;My Store&#34;</span>,
-      <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;REDUX_STORE&#34;</span>,
-      <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;my-store&#34;</span>
-    }
-  ]
-</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+
+
 
     
     
@@ -844,8 +786,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成"> <i class="fa fa-chevron-left"></i><label>ウィジェット UI の作成</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" title="ウィジェット開発のデバック" style="margin-right: 0px;"><label>ウィジェット開発のデバック</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/prosdk/customization/" title="ArcGIS Pro SDK"> <i class="fa fa-chevron-left"></i><label>ArcGIS Pro SDK</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/core-concepts/" title="コア コンセプト" style="margin-right: 0px;"><label>コア コンセプト</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

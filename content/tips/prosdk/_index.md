@@ -25,6 +25,8 @@ ArcGIS Pro SDK の開発に役立つガイド集です。
     * ArcGIS Pro アドインの開発方法をステップで説明します。
   * [アドインの種類](./customization)  
     * 開発できる UI コントロールの種類を説明します。
+  * [ジオデータベース](./geodatabase)  
+    * ジオデータベースの操作について説明します。
   * [よくある問題](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProGuide-Diagnosing-ArcGIS-Pro-Add-ins)  
     * アドイン開発でよく遭遇する問題とその解決策を紹介します。
 

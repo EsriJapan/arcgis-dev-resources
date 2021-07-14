@@ -487,7 +487,7 @@
 	"title": "ArcGIS Pro SDK",
 	"tags": [],
 	"description": "ArcGIS Pro SDK の開発に役立つガイド集です。",
-	"content": "ArcGIS Pro SDK の開発に役立つガイド集です。\n  ArcGIS Pro を使用した開発\n 概要  SDK の概要・コンポーネント、開発要件、リリースノート等を紹介します。   ArcGIS Pro Extensions Nuget  ArcGIS Pro Extensions Nuget の使用方法や導入の利点を紹介します。   ArcMap から ArcGIS Pro への移行  ArcMap のカスタマイズを ArcGIS Pro に移行する際のアプローチ、ベストプラクティス、および実装上の考慮事項の概要を説明します。   フレームワーク  開発フレームワークの詳細を説明します。   非同期プログラミング  アドイン開発で使用する非同期プログラミング手法について説明します。      アドイン開発\n インストールとアップグレード  SDK のインストール、アップグレード、およびアンインストール方法を説明します。   はじめてのアドイン作成  ArcGIS Pro アドインの開発方法をステップで説明します。   アドインの種類  開発できる UI コントロールの種類を説明します。   よくある問題  アドイン開発でよく遭遇する問題とその解決策を紹介します。      構成管理\n コンセプト  ArcGIS Pro のカスタマイズ方法のひとつである構成管理のコンセプトを説明します。   カスタマイズ方法  構成管理のカスタマイズ方法をステップで説明します。      "
+	"content": "ArcGIS Pro SDK の開発に役立つガイド集です。\n  ArcGIS Pro を使用した開発\n 概要  SDK の概要・コンポーネント、開発要件、リリースノート等を紹介します。   ArcGIS Pro Extensions Nuget  ArcGIS Pro Extensions Nuget の使用方法や導入の利点を紹介します。   ArcMap から ArcGIS Pro への移行  ArcMap のカスタマイズを ArcGIS Pro に移行する際のアプローチ、ベストプラクティス、および実装上の考慮事項の概要を説明します。   フレームワーク  開発フレームワークの詳細を説明します。   非同期プログラミング  アドイン開発で使用する非同期プログラミング手法について説明します。      アドイン開発\n インストールとアップグレード  SDK のインストール、アップグレード、およびアンインストール方法を説明します。   はじめてのアドイン作成  ArcGIS Pro アドインの開発方法をステップで説明します。   アドインの種類  開発できる UI コントロールの種類を説明します。   ジオデータベース  ジオデータベースの操作について説明します。   よくある問題  アドイン開発でよく遭遇する問題とその解決策を紹介します。      構成管理\n コンセプト  ArcGIS Pro のカスタマイズ方法のひとつである構成管理のコンセプトを説明します。   カスタマイズ方法  構成管理のカスタマイズ方法をステップで説明します。      "
 },
 {
 	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/prosdk/customization/",
@@ -495,6 +495,13 @@
 	"tags": [],
 	"description": "ArcGIS Pro SDK の開発に役立つガイド集です。",
 	"content": "ArcGIS Pro SDK の開発に役立つガイド集です。\n アドインの種類  リボン/タブ/グループ ボタン ラベル コントロール    "
+},
+{
+	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/prosdk/geodatabase/",
+	"title": "ArcGIS Pro SDK",
+	"tags": [],
+	"description": "ArcGIS Pro SDK の開発に役立つガイド集です。",
+	"content": "ArcGIS Pro SDK の開発に役立つガイド集です。\n ジオデータベース  ジオデータベース  ジオデータベースのアーキテクチャと操作について説明します。   DDL  DDL（データ定義言語）機能を使用したジオデータベースの操作について説明します。      "
 },
 {
 	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/",
