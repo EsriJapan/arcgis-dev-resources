@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T15:44:38 JST">
-<title>ArcGIS Geo Suite 住居レベル住所 2021で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法 :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2021-07-21T16:22:07 JST">
+<title>ArcGIS Geo Suite 住居レベル住所 2021 で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -719,7 +719,7 @@
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > ArcGIS Geo Suite 住居レベル住所 2021で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法
+ <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > ArcGIS Geo Suite 住居レベル住所 2021 で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法
 
  
 
@@ -738,6 +738,8 @@
       <ul>
         <li><a href="#対象製品">対象製品</a></li>
         <li><a href="#内容">内容</a></li>
+        <li><a href="#arcmap-をご利用の場合">ArcMap をご利用の場合</a></li>
+        <li><a href="#arcgis-proバージョン-27-以前をご利用の場合">ArcGIS Pro（バージョン 2.7 以前）をご利用の場合</a></li>
       </ul>
     </li>
   </ul>
@@ -751,7 +753,7 @@
 
 <div id="body-inner">
   
-    <h1>ArcGIS Geo Suite 住居レベル住所 2021で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法</h1>
+    <h1>ArcGIS Geo Suite 住居レベル住所 2021 で、Runtime コンテンツ、または、モバイル マップ パッケージを作成する方法</h1>
   
 
 
@@ -762,8 +764,13 @@
     <h3 id="対象製品">対象製品</h3>
 <p>ArcGIS Runtime SDK 100.x</p>
 <h3 id="内容">内容</h3>
-<p>ArcGIS Geo Suite 住居レベル住所 2021では、街区符号や住居番号に数字以外の文字列が入力された場合のジオコーディングに新たに対応しました。
-この対応に伴い新たに追加したロケーターは、Rutume コンテンツやモバイル マップ パッケージに対応していないため、以下の手順で削除を行ってからRuntime コンテンツまたはモバイル マップ パッケージを作成する必要があります。</p>
+<p>ArcGIS Geo Suite 住居レベル住所 2021 では、街区符号や住居番号に数字以外の文字列が入力された場合のジオコーディングに新たに対応しました。
+この対応に伴い 2021 以降の新たに追加したロケーターは、Rutume コンテンツやモバイル マップ パッケージに対応していないため、以下の手順で削除を行ってから Runtime コンテンツまたはモバイル マップ パッケージを作成する必要があります。</p>
+<ul>
+<li><a href="#arcmap-%E3%82%92%E3%81%94%E5%88%A9%E7%94%A8%E3%81%AE%E5%A0%B4%E5%90%88">ArcMap をご利用の場合</a></li>
+<li><a href="#arcgis-pro%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3-27-%E4%BB%A5%E5%89%8D%E3%82%92%E3%81%94%E5%88%A9%E7%94%A8%E3%81%AE%E5%A0%B4%E5%90%88">ArcGIS Pro（バージョン 2.7 以前）をご利用の場合</a></li>
+</ul>
+<h3 id="arcmap-をご利用の場合">ArcMap をご利用の場合</h3>
 <h4 id="1-コンポジット住所ロケーターの設定変更">1. コンポジット住所ロケーターの設定変更</h4>
 <p>コンポジット住所ロケーターの構成を変更します。</p>
 <ul>
@@ -776,7 +783,7 @@
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/02.png" width="250px"></p>
 </li>
 <li>
-<p>［参加する住所ロケーター］から、住所ロケーター名の末尾に「 c 」が付いているものを、右の「×」ボタンをクリックして削除します。
+<p>［参加する住所ロケーター］から、住所ロケーター名の末尾に「c」が付いているものを、右の「×」ボタンをクリックして削除します。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/03.png" width="450px"></p>
 </li>
 <li>
@@ -787,7 +794,6 @@
 <p>ロケーターの数は、各都道府県によって異なります。</p>
 </li>
 </ul>
-<p>Runtime コンテンツを作成する場合は、「2.Runtime コンテンツの作成」へ、モバイル マップ パッケージを作成する場合は、「3. モバイル マップ パッケージの作成」へ進みます。</p>
 <h4 id="2-runtime-コンテンツの作成">2. Runtime コンテンツの作成</h4>
 <p>1.で設定変更した、コンポジット住所ロケーターから、Runtime コンテンツ を作成します。</p>
 <ul>
@@ -824,11 +830,35 @@
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/12.png" width="350px"></p>
 </li>
 </ul>
-<h4 id="3-モバイル-マップ-パッケージの作成">3. モバイル マップ パッケージの作成</h4>
+<h3 id="arcgis-proバージョン-27-以前をご利用の場合">ArcGIS Pro（バージョン 2.7 以前）をご利用の場合</h3>
+<h4 id="1-コンポジット住所ロケーターの設定変更-1">1. コンポジット住所ロケーターの設定変更</h4>
+<p>コンポジット住所ロケーターの構成を変更します。</p>
+<ul>
+<li>
+<p>ArcGIS Pro を起動し、カタログ ウィンドウでコンポジットロケーターを表示します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/15.png" width="250px"></p>
+</li>
+<li>
+<p>「C_All_iPC2021」を右クリックして［ロケーターのプロパティ］を選択します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/17.png" width="250px"></p>
+</li>
+<li>
+<p>［参加するロケーター］から、住所ロケーター名の末尾に「数字以外含」が付いているものを、右の「×」ボタンをクリックして削除します。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/16.png" width="450px"></p>
+</li>
+<li>
+<p>「数字以外含」がついた住所ロケーターがいなくなったことを確認し、［OK］ボタンをクリックします。
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/18.png" width="450px"></p>
+</li>
+<li>
+<p>ロケーターの数は、各都道府県によって異なります。</p>
+</li>
+</ul>
+<h4 id="2-モバイル-マップ-パッケージの作成">2. モバイル マップ パッケージの作成</h4>
 <p>1.で設定変更した、コンポジット住所ロケーターから、モバイル マップ パッケージ（.mmpk） を作成します。</p>
 <ul>
 <li>
-<p>ArcGIS Pro を起動し、ジオプロセシング ウィンドウで「モバイル マップ パッケージの作成」ツールを開きます。
+<p>ジオプロセシング ウィンドウで「モバイル マップ パッケージの作成」ツールを開きます。
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/product_faq/runtime/004/13.png" width="350px"></p>
 </li>
 <li>
