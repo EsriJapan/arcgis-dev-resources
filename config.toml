@@ -4,6 +4,7 @@ defaultContentLanguage = "ja-jp"
 title = "ArcGIS Developers 開発リソース集"
 theme = "hugo-theme-docdock"
 publishDir = "docs"
+googleAnalytics = "UA-159239795-1"
 
 [params]
 #themeStyle = "flex"

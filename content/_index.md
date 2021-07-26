@@ -26,7 +26,7 @@ description = ""
     - 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術 Tips をまとめています。
 {{% /panel %}}
 　　　
-#### 開発者オープン コミュニティ
+### 開発者オープン コミュニティ
 - [Esri GitHub](https://esri.github.io/)
     - 米国 Esri 社のスタッフが作成したサンプル プログラムを GitHub で共有しています。
 - [Esri Japan GitHub](https://esrijapan.github.io/)
@@ -35,3 +35,6 @@ description = ""
     - 米国 Esri 社が運営する ArcGIS ユーザー コミュニティ サイトです。世界中のユーザーと ArcGIS に関する技術情報を共有することができます。
 - [GeoNet ArcGIS 開発者コミュニティ](https://community.esri.com/groups/devcom-jp)
     - ESRIジャパンのスタッフが GeoNet 上で開発者、SIer (エスアイヤー)、ポータル管理者向けの技術ブログを発信しています。
+
+### プライバシーポリシー
+- [ESRIジャパン Web サイトポリシー](https://www.esrij.com/legal/policy/)
