@@ -5,7 +5,7 @@ Weight=5
 aliases = ["/security/"]
 +++
 
-出典：ArcGIS Developers - Security and authentication - [Introduction](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/)
+出典：ArcGIS Developer - Security and authentication - [Introduction](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/)
 
 
 ## セキュリティと認証 

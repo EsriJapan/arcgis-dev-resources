@@ -5,7 +5,7 @@ Weight=1
 aliases = ["/license-location-services/"]
 +++
 
-出典：ArcGIS Developers - licensing - [License location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-location-services/)
+出典：ArcGIS Developer - licensing - [License location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-location-services/)
 
 ## ロケーション サービスのライセンス
 アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。アプリケーションには、使用する[コンテンツやサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)、開発された [API または SDK](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/) に応じたライセンス要件があります。詳細については、[使用条件](https://www.esri.com/en-us/legal/terms/full-master-agreement/mla-e204-e300-english)および [FAQ](https://developers.arcgis.com/faq/) を確認してください。

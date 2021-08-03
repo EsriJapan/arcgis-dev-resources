@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>運用（ライセンス） on ArcGIS Developers 開発リソース集</title>
+    <title>運用（ライセンス） on ArcGIS Developer 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/</link>
-    <description>Recent content in 運用（ライセンス） on ArcGIS Developers 開発リソース集</description>
+    <description>Recent content in 運用（ライセンス） on ArcGIS Developer 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-location-services/</guid>
-      <description>出典：ArcGIS Developers - licensing - License location services
+      <description>出典：ArcGIS Developer - licensing - License location services
 ロケーション サービスのライセンス アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。アプリケーションには、使用するコンテンツやサービス、開発された API または SDK に応じたライセンス要件があります。詳細については、使用条件および FAQ を確認してください。
 ArcGIS ロケーション サービスの使用に関するライセンス アプリが ArcGIS Platform のロケーション サービスを使用する場合、アプリを構築する際に選択したクライアント API にかかわらず、以下のように本番アプリのライセンスを取得することができます。
   API キー：API キーは、ArcGIS ロケーション サービスの使用を認可するものです。ArcGIS またはオープン ソースの任意のクライアント API を使用して、API キーにてアプリを開発およびデプロイをすることができます。ダッシュボードにて API キーの使用状況の管理および追跡をします。API キーの詳細については、開発者ガイドの「セキュリティと認証」のセクションを参照してください。
@@ -26,7 +26,7 @@ ArcGIS ロケーション サービスの使用に関するライセンス ア�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-your-app/</guid>
-      <description>出典：ArcGIS Developers - Licensing - License your app
+      <description>出典：ArcGIS Developer - Licensing - License your app
 アプリのライセンス 各開発プラットフォームには、使用するコンテンツやサービス、開発に使用する API や SDK に応じて、特定のライセンス要件があります。開発者の仕事は、Esri の法的契約、ライセンス、および輸出に関する文書を確認し、アプリケーションがすべてのライセンス要件を正しく順守することです。アプリケーションのライセンス方法に関するよくある質問については、ライセンスに関する FAQをご参照ください。
 ArcGIS Platform を介した認証およびライセンスは、アプリケーションを商用利用するための認証ではありません。ArcGIS Online education サブスクリプションを使用している場合など、製品の利用規約には、ライセンス機能の条件が記載されています。
 プラットフォーム固有のライセンス情報
@@ -41,7 +41,7 @@ ArcGIS Platform を介した認証およびライセンスは、アプリケー�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/attribution/</guid>
-      <description>出典：ArcGIS Developers - licensing - Attribution
+      <description>出典：ArcGIS Developer - licensing - Attribution
 Esri では、アプリで ArcGIS ベースマップ、ArcGIS データ サービス、または ArcGIS API テクノロジを使用する場合、Esri の帰属表示を含める必要があります。アプリの構築方法や使用するデータによっては、アプリで対応が求められる帰属表示に関する特定の要件があります。
   データの帰属 (ベースマップ、データ レイヤ)：帰属を必要とする ArcGIS ロケーション サービスがホストする特定のデータを使用する場合
   Esri の表示 (Powered by Esri を使用)：アプリケーションが Esri API テクノロジで構築されているか、ArcGIS ロケーション サービスを使用している場合

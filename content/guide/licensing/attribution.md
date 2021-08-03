@@ -5,7 +5,7 @@ Weight=3
 aliases = ["/attribution/"]
 +++
 
-出典：ArcGIS Developers - licensing - [Attribution](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/attribution/)
+出典：ArcGIS Developer - licensing - [Attribution](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/attribution/)
 
 Esri では、アプリで ArcGIS ベースマップ、ArcGIS データ サービス、または ArcGIS API テクノロジを使用する場合、Esri の帰属表示を含める必要があります。アプリの構築方法や使用するデータによっては、アプリで対応が求められる帰属表示に関する特定の要件があります。
 

@@ -5,7 +5,7 @@ Weight=2
 aliases = ["/license-your-app/"]
 +++
 
-出典：ArcGIS Developers - Licensing - [License your app](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-your-app/)
+出典：ArcGIS Developer - Licensing - [License your app](https://developers.arcgis.com/documentation/mapping-apis-and-services/licensing/license-your-app/)
 
 ## アプリのライセンス
 各開発プラットフォームには、使用する[コンテンツやサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)、開発に使用する [API や SDK](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/) に応じて、特定のライセンス要件があります。開発者の仕事は、[Esri の法的契約、ライセンス、および輸出に関する文書](https://www.esri.com/en-us/legal/overview)を確認し、アプリケーションがすべてのライセンス要件を正しく順守することです。アプリケーションのライセンス方法に関するよくある質問については、ライセンスに関する [FAQ](https://developers.arcgis.com/faq/#licensing])をご参照ください。
