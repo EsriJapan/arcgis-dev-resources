@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-30T14:15:08 JST">
+<meta name="revised" content="2021-08-03T18:59:18 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -779,27 +779,27 @@ if (!doNotTrack) {
 <p>Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。</p>
 <h2 id="ライブラリのダウンロード">ライブラリのダウンロード</h2>
 <p>ライブラリとヘルプ ドキュメントは ArcGIS Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。</p>
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="1150px">
 <blockquote>
-<p>[Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
+<p>[arcgis_js_v420_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
 </blockquote>
 <h2 id="web-サーバーiisに配置">Web サーバー（IIS）に配置</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
 <ol>
 <li>ダウンロードしたライブラリの zip ファイルを解凍します。</li>
-<li><code>\arcgis_js_v419_api\arcgis_js_api\javascript\4.19\</code> とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (<code>C:\inetpub\wwwroot\javascript\api\4.19\</code>)</li>
+<li><code>\arcgis_js_v419_api\arcgis_js_api\javascript\4.20\</code> とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (<code>C:\inetpub\wwwroot\javascript\api\4.20\</code>)</li>
 </ol>
 <h2 id="ビルドのインストール">ビルドのインストール</h2>
 <p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
 <ol>
-<li><code>C:\inetpub\wwwroot\javascript\api\4.19\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/javascript/api/4.19/</code> に置き換えます。</li>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.19\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
+<li><code>C:\inetpub\wwwroot\javascript\api\4.20\init.js</code> をテキスト エディターで開きます。</li>
+<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/javascript/api/4.20/</code> に置き換えます。</li>
+<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.20\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
 <li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/</code> に置き換えます。</li>
 </ol>
 <h2 id="インストールのテスト">インストールのテスト</h2>
 <p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.19/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.20/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>インストールのテストには以下のコードを利用してください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
@@ -807,7 +807,7 @@ if (!doNotTrack) {
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1,user-scalable=no&#34;</span> /&gt;
     &lt;<span style="color:#f92672">title</span>&gt;Test Map&lt;/<span style="color:#f92672">title</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.19/esri/themes/light/main.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.20/esri/themes/light/main.css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -818,7 +818,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.19/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.20/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     &lt;<span style="color:#f92672">script</span>&gt;
       <span style="color:#a6e22e">require</span>([
         <span style="color:#e6db74">&#34;esri/Basemap&#34;</span>,
