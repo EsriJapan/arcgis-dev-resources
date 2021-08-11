@@ -7,19 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>コア コンセプト</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</guid>
-      <description>出典：ArcGIS Experience Builder - Guide - Core concepts
-はじめに Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されているjimu と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。
- ArcGIS API for JavaScript 4.x React + Redux フレームワーク Bootstrap 4 （UI用） HTML5  Experience Builderでウィジェットやテーマなどを開発するには、TypeScript が必要になります。TypeScript を利用するのは、次のようなメリットがあります。
- 型宣言によるエラー検出 よりよいIDE体験 セルフ-ドキュメント コード より読みやすく、わかりやすい  Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS API for JavaScript 4.</description>
-    </item>
-    
-    <item>
       <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

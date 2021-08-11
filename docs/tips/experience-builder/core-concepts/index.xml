@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>コア コンセプト on ArcGIS Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</link>
+    <description>Recent content in コア コンセプト on ArcGIS Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ページ（Page）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - page
+ページ（Page） エクスペリエンスの中のページは、物理的な HTML Web ページでなく、概念的なページですが、実際のHTML Web ページのように振る舞います。これは div HTMLタグを使って実装されます。エクスペリエンスは少なくとも1つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページレイアウトにはフルスクリーンのアプリページと直線的なスクロールページの2種類があり、前者はアプリのように見え、後者はウェブページのように見えます。
+ページの内容（ウィジェット/セクション）は、固定レイアウトやフローレイアウトなどのレイアウトルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builderはサイズモードによるレイアウトの設定をサポートしています。これらは Large, Medium, Small で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、City Explorerのテンプレートがあります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイルデバイスで見た場合、地図ウィジェットは最初のページから削除され、ユーザーがリストウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。
+app config では、ページは pages で定義され、ページ構造は pageStructure で定義されます。</description>
+    </item>
+    
+    <item>
+      <title>ウィンドウ（Window）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/window/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Window
+ウィンドウ（Window） ウィンドウはページに似ていて、任意のウィジェットを追加することができ、コンテンツを表示するための2つの設定（固定とアンカー設定）があります。 固定ウィンドウはモーダルを作成し、メインウィンドウを無効にしますが、ユーザーがエクスペリエンスに戻る前にウィンドウと対話できるように表示を維持します。固定ウィンドウはスプラッシュスクリーンとして使用したり、ページで開いたり、ウィジェットから開いたりすることができます。アンカー ウィンドウは、ボタンやテキストウィジェットなどのウィジェットからトリガーされます。
+app config では、ウィンドウは dialogs で定義されます。</description>
+    </item>
+    
+    <item>
+      <title>セクションとビュー（Section and view）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Section and view
+セクションとビュー（Section and view） セクションは、複数のビューを追加できる領域を占めています。ビューはレイアウトコンテナで、ページやウィンドウに似ていますが、セクションの中にしか置くことができません。ビュー・ナビゲーション・ウィジェットは、セクション内のビューをナビゲートします。メニュー &amp;ldquo;ウィジェットで複数のページを使用したり、&amp;ldquo;ビュー・ナビゲーション &amp;ldquo;ウィジェットでセクションとビューを使用して同様の操作感を得ることができますが、両者には主な違いがあります。
+ レンダリングについて - 複数のページを読み込む場合、最初は現在のページのコンテンツのみがレンダリングされます。セクション内の複数のビューを読み込む場合、ビュー内のすべてのコンテンツがレンダリングされますが、現在のビューのみが表示され、他はすべて非表示になります。 アニメーションについて - セクションでのみトランジションアニメーションを定義できます。  app config では、セクションは sections で定義され、ビューは views で定義されます。</description>
+    </item>
+    
+    <item>
+      <title>画面グループ（Screen groups）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Screen groups
+画面グループ（Screen groups） 画面グループは、複数の画面を持つレイアウトコンテナで、スクロールするページのコンテンツやウィジェットを整理するためのものです。各画面はメインステージを持ち、画面グループのテンプレートによってはスクロールパネルを持つこともできます。画面グループにスクロールすると、画面の高さ全体を占めます。画面グループにスクロールパネルがある場合、エンドユーザーがパネル内のコンテンツをスクロールしても、メインステージはその場に留まり、最後のパネルがスクロールしたときにのみ切り替わります。画面グループにパネルがない場合は、メインステージは画面の高さいっぱいにスクロールするまで固定されます。
+app config では、画面グループは screenGroups で定義され、画面は screens で定義されます。</description>
+    </item>
+    
+    <item>
+      <title>レイアウト（Layout）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Layout
+レイアウト（Layout） レイアウトは、レイアウトコンテナにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。
+アプリ コンフィグでは、レイアウトは layouts プロパティで定義され、レイアウト コンテナは layout id でレイアウトを参照します。レイアウトコンテナには、異なるサイズモードでのレイアウトを定義する layouts オブジェクトプロパティがあります。Experience Builder では、Large、Medium、Small の各サイズモードをサポートしています。レイアウトが定義されていないサイズモードでは、アプリの設定で定義された mainSizeMode レイアウトが使用されます。
+フレームワークのレイアウト・コンテナの他に、ウィジェットもレイアウト・コンテナになることができます。ウィジェットがレイアウト・コンテナになると，ユーザーは他のウィジェットをドラッグ・アンド・ドロップすることができます．例えば、Map や Card はレイアウト・コンテナ・ウィジェットです。レイアウト・コンテナ・ウィジェットは、manifest.json で layouts プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。
+import {LayoutEntry} from &amp;#39;jimu-layouts/layout-runtime&amp;#39; let LayoutEntryComponent if (window.jimuConfig.isInBuilder) { LayoutEntryComponent = this.props.builderSupportModules.LayoutEntry } else { LayoutEntryComponent = LayoutEntry } </description>
+    </item>
+    
+    <item>
+      <title>テーマ（Theme）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Theme
+テーマ（Theme） テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタムテーマの作成も可能です。テーマ開発については、theme development をご覧ください。
+app config では、アプリが使用するテーマは theme で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は customTheme に保存されます。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット（Widget）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Widget
+ウィジェット（Widget） ウィジェットは設定可能な機能単位で、エクスペリエンスなページを作成するために使用されるビルディングブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタムウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定UIを提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。
+ウィジェットの実装についてはこちらをご覧ください。
+app config では、widgets でウィジェットを定義します。</description>
+    </item>
+    
+    <item>
+      <title>Jimu</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Jimu
+Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
+ jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS API for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+    </item>
+    
+    <item>
+      <title>データ ソース（Data source）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Data sources
+データ ソース（Data source） データソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータソース クラスに入れることで、別のウィジェットで使用することができます。
+高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
+ id: データソースID。 type: どのタイプのデータソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのプロパティを使用してデータソースのステータスを取得します。これらのステータスの中には、Loading、Loaded、Errorなどがあります。  1つのデータソースには、サブデータソースを含めることができます。その結果、使いやすくするために複数のデータソースを含めることができます。このようなデータソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データソースの一種です。データソースは DataSourceManager で管理し、データソースの作成や取得を行います。
+複数のウィジェットが 1 つのデータ ソースに接続する場合、ウィジェットはデータ ソースのローカル ビューを表示したい場合があります。このシナリオでは、データ ビューを使用します。データ ビューとデータ ソースの関係は、リレーショナル データベースのビューとテーブルの関係に非常に似ています。Experience Builder のデータ ソースは、クライアント側の実際のリモート データ ソースのビューですが、データ ソースはテーブル、データ ビューはビューと考えることができます。アプリ作成者は、データソースからデータ ビューを作成し、ビルダーでデータ ビューにウィジェットを接続することができます。API レベルでは、データ ビューは DataSource クラスを使用して管理されるため、データ ビューは、属性の違いだけでデータ ソースと同じインターフェースとふるまいを持ちます。</description>
+    </item>
+    
+    <item>
+      <title>データアクション（Data action）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Data action
+データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。データアクションは、データソースのインスタンスとデータレコードの配列を受け取ります。データをサポートしているかどうかや、ユーザーが実行したときに何が実行されるかを定義することができます。フレームワークは、CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットでもデータアクションを提供することができます。例えば、Map ウィジェットは pan to とzoom to のデータアクションを提供しています。データアクションは、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成することで、ウィジェットに実装することができます。
+データ・アクションを提供するだけでなく、ウィジェットはデータ・アクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.json プロパティで canConsumeDataAction: true を宣言し、import {DataActionDropDown} from &#39;jimu-ui&#39; をインポートして、ウィジェットの UI で DataActionDropDown をレンダリングする必要があります。</description>
+    </item>
+    
+    <item>
+      <title>メッセージ と アクション（Message and action）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Message and action
+メッセージ と アクション（Message and action） メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される MessageType によって識別されます。jimu には ExtentChange や DataRecordsSelectionChange のようないくつかのメッセージタイプが定義されています。
+メッセージの発行（Publishing a message） ウィジェットは，MessageManager.getInstance().publishMessage(message) を呼び出してメッセージを発行します．例えば、List ウィジェットでは，リストアイテムがクリックされたときに DataRecordsSelectionChange メッセージを発行したり，Map ウィジェットでは，ビューが変更されたときに ExtentChange メッセージを発行して，List ウィジェットのコンテンツを更新したりします。以下の MessageTypes がサポートされています。
+ StringSelectionChange ExtentChange DataRecordsSelectionChange DataRecordSetChange  各メッセージには、それを定義するクラスがあります。例えば、ExtentChange メッセージは ExtentChangeMessage クラスで定義され、このクラスはメッセージのペイロードである extent プロパティを定義します。
+メッセージを公開するために、ウィジェットは manifest.json ファイルで公開メッセージを宣言する必要があります。
+&amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージアクションの作成（Creating a message action） メッセージアクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージアクションの開発に役立つメソッドや関数がいくつかあります。
+filterMessageType メソッドは、利用可能なアクションのフィルタリングに使用されます。
+export default class QueryAction extends AbstractMessageAction{ filterMessageType(messageType: MessageType, messageWidgetId?</description>
+    </item>
+    
+    <item>
+      <title>マップ/シーン ビュー（Map/Scene View）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
+マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS API for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの JimuMapViewSelector コンポーネントを使用してマップ/シーンビューを選択することができます。これも JimuMapViewComponent を使用してJimuMapViewオブジェクトにアクセスします。</description>
+    </item>
+    
+    <item>
+      <title>拡張ポイント（Extension points）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Extension points
+拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
+Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
+&amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
+AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。 DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。 ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
+    </item>
+    
+  </channel>
+</rss>
