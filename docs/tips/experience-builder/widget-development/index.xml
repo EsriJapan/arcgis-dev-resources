@@ -107,8 +107,8 @@ manifest.json を使用して CDN 経由で使用 ライブラリを複数のウ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Unit Testing
-単体テストの一般原則 良いユニットテストを行うためには、テスト可能なコードを書くことが重要です。シンプルな設計原則を適用することが助けになります
- 適切な命名規則を使用し、コードにはコメントを付けましょう（「どのように」ではなく「なぜ」）。コメントは不適切な命名や設計の代用にはならないことを覚えておいてください。 DRY: Don&amp;rsquo;t Repeat Yourself（同じことを繰り返さない） - コードの重複を避けましょう。 単一責任：各オブジェクト/関数は単一のタスクに集中しなければなりません。 同一コンポーネント内では、単一の抽象度を保つ。例えば、同じメソッドの中で、ビジネスロジックと低レベルの技術的詳細を混在させてはいけません。 コンポーネント間の依存関係を最小限に抑える：コンポーネント間の情報をカプセル化し、交換する量を少なくする。 ハードコーディングではなくコンフィギュラビリティをサポートする。そうすることで、テスト時に全く同じ環境を再現する必要がなくなります。  ArcGIS Experience Builder でのユニット テスト 単体テストのファイルは .test.ts(x) または .spec.ts(x) で終わり、tests フォルダに置く必要があります。 単体テストは、行動駆動型開発（BDD）スタイルで記述する必要があります。たとえば、以下のようになります。
+単体テストの一般原則 良い単体テストを行うためには、テスト可能なコードを書くことが重要です。シンプルな設計原則を適用することが助けになります
+ 適切な命名規則を使用し、コードにはコメントを付けましょう（「どのように」ではなく「なぜ」）。コメントは、名前やデザインの悪さの代用にはならないことを覚えておいてください。 DRY：Don&amp;rsquo;t Repeat Yourself（同じことを繰り返さない） - コードの重複を避ける。 単一責任：各オブジェクト/機能は、単一のタスクに集中しなければならない。 同じコンポーネント内では、1つの抽象度にとどめる。例えば、同じメソッドの中で、ビジネスロジックと低レベルの技術的詳細を混在させないようにします。 コンポーネント間の依存関係の最小化：コンポーネント間の情報のカプセル化と交換を少なくする。 ハードコーディングではなく、コンフィギュラビリティをサポートする。そうすることで、テスト時に全く同じ環境を再現する必要がなくなります。  ArcGIS Experience Builder での単体テスト 単体テストのファイルは .test.ts(x) または .spec.ts(x) で終わり、tests フォルダに置く必要があります。 単体テストは、行動駆動型開発（BDD）スタイルで記述する必要があります。たとえば、以下のようになります。
 describe(&amp;#39;calculator&amp;#39;, function() { // Describes a module with nested &amp;#34;describe&amp;#34; functions  describe(&amp;#39;add&amp;#39;, function() { // Specify the expected behavior  it(&amp;#39;should add 2 numbers&amp;#39;, function() { // Use assertion functions to test the expected behavior  expect(foo).</description>
     </item>
     

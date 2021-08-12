@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-12T16:42:54 JST">
+<meta name="revised" content="2021-08-12T16:57:59 JST">
 <title>単体テスト :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -865,7 +865,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#単体テストの一般原則">単体テストの一般原則</a>
       <ul>
-        <li><a href="#arcgis-experience-builder-でのユニット-テスト">ArcGIS Experience Builder でのユニット テスト</a></li>
+        <li><a href="#arcgis-experience-builder-での単体テスト">ArcGIS Experience Builder での単体テスト</a></li>
         <li><a href="#experience-builderで単位テストを書く">Experience Builderで単位テストを書く</a></li>
         <li><a href="#arcgis-api-for-javascript-を使用するモジュールのテスト">ArcGIS API for JavaScript を使用するモジュールのテスト</a></li>
         <li><a href="#単体テストの実行">単体テストの実行</a></li>
@@ -892,16 +892,16 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/unit-testing/">Unit Testing</a></p>
 <h2 id="単体テストの一般原則">単体テストの一般原則</h2>
-<p>良いユニットテストを行うためには、テスト可能なコードを書くことが重要です。シンプルな設計原則を適用することが助けになります</p>
+<p>良い単体テストを行うためには、テスト可能なコードを書くことが重要です。シンプルな設計原則を適用することが助けになります</p>
 <ul>
-<li>適切な命名規則を使用し、コードにはコメントを付けましょう（「どのように」ではなく「なぜ」）。コメントは不適切な命名や設計の代用にはならないことを覚えておいてください。</li>
-<li>DRY: Don&rsquo;t Repeat Yourself（同じことを繰り返さない） - コードの重複を避けましょう。</li>
-<li>単一責任：各オブジェクト/関数は単一のタスクに集中しなければなりません。</li>
-<li>同一コンポーネント内では、単一の抽象度を保つ。例えば、同じメソッドの中で、ビジネスロジックと低レベルの技術的詳細を混在させてはいけません。</li>
-<li>コンポーネント間の依存関係を最小限に抑える：コンポーネント間の情報をカプセル化し、交換する量を少なくする。</li>
-<li>ハードコーディングではなくコンフィギュラビリティをサポートする。そうすることで、テスト時に全く同じ環境を再現する必要がなくなります。</li>
+<li>適切な命名規則を使用し、コードにはコメントを付けましょう（「どのように」ではなく「なぜ」）。コメントは、名前やデザインの悪さの代用にはならないことを覚えておいてください。</li>
+<li>DRY：Don&rsquo;t Repeat Yourself（同じことを繰り返さない） - コードの重複を避ける。</li>
+<li>単一責任：各オブジェクト/機能は、単一のタスクに集中しなければならない。</li>
+<li>同じコンポーネント内では、1つの抽象度にとどめる。例えば、同じメソッドの中で、ビジネスロジックと低レベルの技術的詳細を混在させないようにします。</li>
+<li>コンポーネント間の依存関係の最小化：コンポーネント間の情報のカプセル化と交換を少なくする。</li>
+<li>ハードコーディングではなく、コンフィギュラビリティをサポートする。そうすることで、テスト時に全く同じ環境を再現する必要がなくなります。</li>
 </ul>
-<h3 id="arcgis-experience-builder-でのユニット-テスト">ArcGIS Experience Builder でのユニット テスト</h3>
+<h3 id="arcgis-experience-builder-での単体テスト">ArcGIS Experience Builder での単体テスト</h3>
 <p>単体テストのファイルは .test.ts(x) または .spec.ts(x) で終わり、tests フォルダに置く必要があります。
 単体テストは、<a href="https://en.wikipedia.org/wiki/Behavior-driven_development">行動駆動型開発（BDD）</a>スタイルで記述する必要があります。たとえば、以下のようになります。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;calculator&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -922,7 +922,7 @@ if (!doNotTrack) {
 <h3 id="experience-builderで単位テストを書く">Experience Builderで単位テストを書く</h3>
 <p>一般的には、以下の3種類のコードに対して単位テストを書く必要があります。</p>
 <ul>
-<li>TypeScript のネイティブコード：この種のコードでは、<code>Jest</code> のみを使用することができるかもしれません。ほとんどの場合、ユニットテストを書きやすくするために、いくつかのコンポーネントをモックする必要があります。</li>
+<li>TypeScript のネイティブコード：この種のコードでは、<code>Jest</code> のみを使用することができるかもしれません。ほとんどの場合、単体テストを書きやすくするために、いくつかのコンポーネントをモックする必要があります。</li>
 <li>ネイティブな React コンポーネント：この種のコードでは、<code>Jest</code> と <code>@testing-library/react</code> を使用する必要があります。テストフレームワークとしてJestを使用し、テスティングライブラリを使用してReactコンポーネントをレンダリングし、そのレンダリング結果を確認します。</li>
 <li>Experience Builder ウィジェット：エクスペリエンス・ビルダー・ウィジェットには、<code>jimu-for-test</code> からエクスポートされた <code>wrapWidget</code> と <code>wrapWidgetSetting</code> を使用する必要があります。</li>
 </ul>
@@ -943,7 +943,7 @@ if (!doNotTrack) {
 <li>フィーチャーサービスをモックするには、次のようにモックデータを使って <code>mockFeatureLayer</code> を呼び出します。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">mockFeatureLayer</span>(<span style="color:#a6e22e">mockData</span>)
-</code></pre></div><p>フィーチャ レイヤーをモックアップした後は、ユニットテストのリクエストがネットワークリクエストを行わないため、テストがより安定して高速になります。</p>
+</code></pre></div><p>フィーチャ レイヤーをモックアップした後は、単体テストのリクエストがネットワークリクエストを行わないため、テストがより安定して高速になります。</p>
 <ul>
 <li>React コンポーネントをレンダリングするには、次のようにしてレンダリングします。</li>
 </ul>
@@ -983,7 +983,7 @@ if (!doNotTrack) {
 </code></pre></div><p>モジュールをインポートすると、<code>jade.mock()</code> が使えるようになります。</p>
 <h3 id="単体テストの実行">単体テストの実行</h3>
 <p><code>client</code> フォルダで <code>npm test</code> を実行します。</p>
-<p>ユニットテストの例は <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/show-unit-tests/">show-unit-tests サンプル</a>をご覧ください。</p>
+<p>単体テストの例は <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/show-unit-tests/">show-unit-tests サンプル</a>をご覧ください。</p>
 
 
     
