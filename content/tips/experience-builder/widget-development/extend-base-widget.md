@@ -5,6 +5,9 @@ weight = 7
 aliases = ["/extend-base-widget/"]
 +++
 
+出典：ArcGIS Experience Builder - Guide - [Widget implementation](https://developers.arcgis.com/experience-builder/guide/extend-base-widget/)
+
+
 Experience Builder ウィジェットは、次のファイルで構成されています。
 
 - src: ウィジェットのソースコード
@@ -62,7 +65,7 @@ Experience Builder (開発者向けエディション)で必要なモジュー�
 //a custom pragma to transform your jsx into plain JavaScript
 /** @jsx jsx */
 import { React, AllWidgetProps, jsx } from "jimu-core";
-export default class Widget extends React.Component<AllWidgetProps, any> {
+export default class Widget extends React.PureComponent<AllWidgetProps<{}>, any> {
 
     render() {
       return (
@@ -115,7 +118,7 @@ import defaultI18nMessages from './translations/default'
 `BaseWidgetSetting` クラスは `AllWidgetSettingProps` と `IMConfig` という型で宣言されています。`supportedTypes` プロパティは、クラス全体でデータソースタイプの Web マップに使用されます。`onDataSourceSelected` は、データソースの選択を処理する関数を持つクラス プロパティです。設定 UI の変更を通知する関数 `this.props.OnSettingChange()` を使用しています。クラスプロパティの `onP1Change` と`onP2Change` は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。
 
 ```tsx
-export default class Setting extends React.Component{
+export default class Setting extends React.PureComponent{
   supportedTypes = Immutable([DataSourceTypes.WebMap]);
 
   onDataSourceSelected = (useDataSources: UseDataSource[]) => {
@@ -127,19 +130,19 @@ export default class Setting extends React.Component{
 ```
 
 ```tsx
-onP1Change = (evt: React.FormEvent<HTMLInputElement>) => {
-  this.props.onSettingChange({
-    id: this.props.id,
-    config: this.props.config.set('p1', evt.currentTarget.value)
-  });
-}
+    onP1Change = (evt: React.FormEvent<HTMLInputElement>) => {
+      this.props.onSettingChange({
+        id: this.props.id,
+        config: this.props.config.set('p1', evt.currentTarget.value)
+      });
+    }
 
-onP2Change = (evt: React.FormEvent<HTMLInputElement>) => {
-  this.props.onSettingChange({
-    id: this.props.id,
-    config: this.props.config.set('p2', evt.currentTarget.value)
-  });
-}
+    onP2Change = (evt: React.FormEvent<HTMLInputElement>) => {
+      this.props.onSettingChange({
+        id: this.props.id,
+        config: this.props.config.set('p2', evt.currentTarget.value)
+      });
+    }
 ```
 
 jimu ライブラリには、ウィジェットで使用できるコンポーネントがあります。例えば、Web マップを選択のための UI を支援するために、`DataSourceSelector` コンポーネントが、選択されたデータソースのタイプ、ID、およびコールバックを処理するために使用されます。さらに、`SettingSection` コンポーネントと `SettingRow` コンポーネントは、翻訳や config ファイルからの文字列のコンテナの整形を処理するために使用されます。
@@ -189,13 +192,13 @@ Experience Builder は `react-intl` ライブラリを使用して i18n をサ�
 翻訳文字列は `default.ts` というファイルが必要で、`runtime/translations` と `settings/translations` フォルダにあります。`default.ts` はデフォルトの文字列を定義し、ウィジェットにインポートしてデフォルトのメッセージに使うことができます。例えば、`widget.tsx` では、以下のような翻訳された文字列にアクセスする方法があります。
 
 ```tsx
-Class component
+// Class component
 this.props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessages._widgetLabel})
 
-Function component
+// Function component
 props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._widgetLabel})
 
-JSX
+// JSX
 <FormattedMessage id="widgetProperties" defaultMessage={defaultMessages.widgetProperties}/>
 ```
 
@@ -215,7 +218,7 @@ JSX
 マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で `JimuMapViewSelector` を使用して選択することができます。選択したマップ/シーンは `WidgetJson.useMapWidgetsIds` に保存されます。
 
 ```tsx
-<JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds} />
+<JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds[0]} />
 ```
 
 ## ArcGIS API for JavaScript のモジュール

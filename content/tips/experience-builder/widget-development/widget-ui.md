@@ -5,6 +5,10 @@ weight = 8
 aliases = ["/widget-ui/"]
 +++
 
+
+出典：ArcGIS Experience Builder - Guide - [Create UI for widget](https://developers.arcgis.com/experience-builder/guide/widget-ui/)
+
+
 Experience Builder のベースとなる `Widget` クラスは、React のコンポーネントサブクラスから拡張されています。[PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) から拡張されており、`render()` と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。
 
 ## JSX の記述
@@ -16,9 +20,9 @@ UI テンプレートの作成に使用される React の構文は JSX と呼�
 
 ```tsx
 // in widget.tsx:
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
+import { React, AllWidgetProps } from 'jimu-core';
 
-export default class Widget extends BaseWidget<AllWidgetProps<{}>, any>{
+export default class Widget extends React.PureComponent<AllWidgetProps<{}>, any>{
   render() {
     return <div className="myWidget">
       <p>This is a sample widget</p>
@@ -64,13 +68,13 @@ import { DatePicker } from 'jimu-ui/date-picker'; // advanced
 
 ```tsx
 // in widget.tsx:
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
+import { React, AllWidgetProps } from 'jimu-core';
 import { Button, Icon } from 'jimu-ui'; // import components
 
 // Create an svg icon using Icon component:
 const iconNode = <Icon icon={require('jimu-ui/lib/icons/star.svg')} />;
 
-export default class Widget extends BaseWidget<AllWidgetProps, any>{
+export default class Widget extends React.PureComponent<AllWidgetProps, any>{
   render(){
     // Add Button component containing an icon to the widget:
     return <Button type="primary">{iconNode} primary button</Button>;
@@ -174,15 +178,15 @@ Styled Components や Emotion など、よく知られている CSS-in-JS のラ
 
 Emotion には 2 つのスタイリング パターンがあります。
 
-### 1. css prop
+### 1. [css prop](https://emotion.sh/docs/css-prop)
 Emotion の `css` prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは `template literals` で書くことができるので、CSS の中に JS ロジックを書くことができます。
 
 例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。
 
 ```tsx
-// widget.tsx:
+/// widget.tsx:
 /** @jsx jsx */ // <-- make sure to include the jsx pragma
-import { React, BaseWidget, AllWidgetProps } from 'jimu-core';
+import { React, AllWidgetProps } from 'jimu-core';
 import { css, jsx } from 'jimu-core';
 import { Button, ButtonGroup } from 'jimu-ui';
 
@@ -190,7 +194,7 @@ interface State {
   count: number;
 }
 
-export default class Widget extends BaseWidget<AllWidgetProps<{}>, State>{
+export default class Widget extends React.PureComponent<AllWidgetProps<{}>, State>{
   constructor(props) {
     super(props);
     this.state = {
@@ -218,14 +222,14 @@ export default class Widget extends BaseWidget<AllWidgetProps<{}>, State>{
 ```
 
 Output 例:
-![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png)
+![](https://developers.arcgis.com/experience-builder/static/1bd4a1de34d6c8fc4995baaf8f1dad3b/811d1/EmotionCSSProp.png)
 
-### 2. Styled Components
+### 2. [Styled Components](https://emotion.sh/docs/styled)
 このパターンは [Styled-Components](https://www.styled-components.com/) ライブラリにインスピレーションされたもので、使い方は非常に似ています。"styled" アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。
 
 ```tsx
 /** @jsx jsx */ // <-- make sure to include the jsx pragma
-import { BaseWidget, AllWidgetProps } from 'jimu-core';
+import { React, AllWidgetProps } from 'jimu-core';
 import { styled, jsx } from 'jimu-core';
 
 // A styled button component:
@@ -238,7 +242,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export default class Widget extends BaseWidget<AllWidgetProps<{}>>{
+export default class Widget extends React.PureComponent<AllWidgetProps<{}>>{
   render() {
     return <StyledButton>
       A styled HTML Button
@@ -259,10 +263,10 @@ Experience Builder フレームワークは、テーマ変数を JSON オブジ�
 
 ```tsx
 /** @jsx jsx */ // <-- make sure to include the jsx pragma
-import { BaseWidget, AllWidgetProps } from 'jimu-core';
+import { React, AllWidgetProps } from 'jimu-core';
 import { css, jsx } from 'jimu-core';
 
-export default class Widget extends BaseWidget<AllWidgetProps<{}>>{
+export default class Widget extends React.PureComponent<AllWidgetProps<{}>>{
   render() {
     const theme = this.props.theme;
     const style = css`

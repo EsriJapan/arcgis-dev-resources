@@ -5,6 +5,9 @@ weight = 9
 aliases = ["/widget-communication/"]
 +++
 
+出典：ArcGIS Experience Builder - Guide - [Widget communication](https://developers.arcgis.com/experience-builder/guide/widget-communication/)
+
+
 Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。
 以下の方法をサポートしています。
 

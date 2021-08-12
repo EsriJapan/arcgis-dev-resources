@@ -5,6 +5,10 @@ weight = 11
 aliases = ["/debugging-widget-development/"]
 +++
 
+
+出典：ArcGIS Experience Builder - Guide - [Using third-party libraries](https://developers.arcgis.com/experience-builder/guide/third-party-libraries/)
+
+
 Experience Builder に付属の `jimu` ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
 
 サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。

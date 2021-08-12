@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-11T18:54:43 JST">
+<meta name="revised" content="2021-08-12T16:42:54 JST">
 <title>ウィジェット開発のスタート :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -423,6 +423,20 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
             サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
+            単体テスト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
+            assets の使用
           </a>
         </div>
     </li>
@@ -849,10 +863,6 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#typescript">TypeScript</a></li>
-    <li><a href="#react">React</a></li>
-    <li><a href="#jsx">JSX</a></li>
-    <li><a href="#jimu">Jimu</a></li>
     <li><a href="#インストール">インストール</a></li>
     <li><a href="#ウィジェット">ウィジェット</a></li>
     <li><a href="#基本的な考え方">基本的な考え方</a></li>
@@ -875,22 +885,14 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。</p>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/getting-started-widget/">Getting started with widget development</a></p>
+<p>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。</p>
 <ul>
-<li>TypeScript</li>
-<li>React</li>
-<li>JSX</li>
-<li>Jimu</li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a> は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。</li>
+<li><a href="https://reactjs.org/">React</a> は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。</li>
+<li><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。</li>
+<li>Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。</li>
 </ul>
-<h2 id="typescript">TypeScript</h2>
-<p><a href="https://www.typescriptlang.org/">TypeScript</a> は JavaScript のスーパーセットです。TypeScript はウィジェットの開発に使用されている言語です。TypeScript とは何か、なぜ TypeScript が使われているのか、どのように使えるのかについて詳しく説明している<a href="https://www.sitepen.com/blog/update-the-definitive-typescript-guide/">オンラインリソース</a>が多くあります。</p>
-<h2 id="react">React</h2>
-<p>React はユーザーインターフェイスを作成するための JavaScript ライブラリです。React は DOM からの抽象化であり、アプリケーションと UI は、さまざまな状態で連携し、それらの状態をレンダリングすることで UI の一貫性を保つことを容易にします。例えば、Experience Builder では、ウィジェットの状態を更新してから、この新しい状態に基づいて UI をレンダリングするだけです。インターフェースの構築を容易にするために、Experience Builder では <a href="https://reactstrap.github.io/">reactstrap</a> を使用しています。これは Bootstrap 4 をベースにした React コンポーネントの UI ライブラリです。</p>
-<p>React を使った開発については、<a href="https://reactjs.org/">React</a> のドキュメントを参照してください。</p>
-<h2 id="jsx">JSX</h2>
-<p><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> は JavaScript の拡張構文で、React を通してウィジェットの UI がどのように表示されるかを記述することができます。</p>
-<h2 id="jimu">Jimu</h2>
-<p>Jimu は、ウィジェットの作成に使用する Experience Builder の JavaScript ライブラリです。</p>
 <h2 id="インストール">インストール</h2>
 <p>Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、<a href="../../install-guide">インストールガイド</a>を参照してください。</p>
 <h2 id="ウィジェット">ウィジェット</h2>

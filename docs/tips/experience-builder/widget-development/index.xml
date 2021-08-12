@@ -12,12 +12,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</guid>
-      <description>ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
- TypeScript React JSX Jimu  TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript はウィジェットの開発に使用されている言語です。TypeScript とは何か、なぜ TypeScript が使われているのか、どのように使えるのかについて詳しく説明しているオンラインリソースが多くあります。
-React React はユーザーインターフェイスを作成するための JavaScript ライブラリです。React は DOM からの抽象化であり、アプリケーションと UI は、さまざまな状態で連携し、それらの状態をレンダリングすることで UI の一貫性を保つことを容易にします。例えば、Experience Builder では、ウィジェットの状態を更新してから、この新しい状態に基づいて UI をレンダリングするだけです。インターフェースの構築を容易にするために、Experience Builder では reactstrap を使用しています。これは Bootstrap 4 をベースにした React コンポーネントの UI ライブラリです。
-React を使った開発については、React のドキュメントを参照してください。
-JSX JSX は JavaScript の拡張構文で、React を通してウィジェットの UI がどのように表示されるかを記述することができます。
-Jimu Jimu は、ウィジェットの作成に使用する Experience Builder の JavaScript ライブラリです。</description>
+      <description>出典：ArcGIS Experience Builder - Guide - Getting started with widget development
+ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
+ TypeScript は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。 React は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。 JSX は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。 Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。  インストール Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、インストールガイドを参照してください。
+ウィジェット ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。
+ ウィジェットの設定 (id、label、configなど) state や isClassLoaded などを含むウィジェットのランタイム情報 ローカル言語の文字列 データソースのインスタンスとステータス情報 URL パラメータ情報  必要最小限のファイルですぐに始めるには、your-extensions\widgets フォルダ内の simple widget を参照してください。</description>
     </item>
     
     <item>
@@ -26,8 +25,9 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
-      <description>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
-{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
+      <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
+各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。
+{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
     </item>
     
     <item>
@@ -36,9 +36,9 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
-      <description>Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
- 新しいモジュールのインストール ウィジェットの追加、削除、名前の変更 ウィジェットの manifest.json の編集 ファイルやフォルダの追加、削除、名前の変更  ctrl + c で webpack サーバーを停止させることができます。</description>
+      <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
+Experience Builder ウィジェットは、次のファイルで構成されています。
+ src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -47,11 +47,12 @@ Jimu Jimu は、ウィジェットの作成に使用する Experience Builder �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</guid>
-      <description>Experience Builder のベースとなる Widget クラスは、React のコンポーネントサブクラスから拡張されています。PureComponent から拡張されており、render() と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。
+      <description>出典：ArcGIS Experience Builder - Guide - Create UI for widget
+Experience Builder のベースとなる Widget クラスは、React のコンポーネントサブクラスから拡張されています。PureComponent から拡張されており、render() と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。
 JSX の記述 UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。
 JSX の詳細を参照してください。
 ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。
-// in widget.tsx: import { React, BaseWidget, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends BaseWidget&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
+// in widget.tsx: import { React, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends React.PureComponent&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
     </item>
     
     <item>
@@ -60,11 +61,11 @@ JSX の詳細を参照してください。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</guid>
-      <description>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
+      <description>出典：ArcGIS Experience Builder - Guide - Widget communication
+Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
   Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
   Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
-  ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。
-import {appActions} from &amp;#39;jimu-core&amp;#39;; /* * Call this when you need to save state.</description>
+  ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。</description>
     </item>
     
     <item>
@@ -73,7 +74,8 @@ import {appActions} from &amp;#39;jimu-core&amp;#39;; /* * Call this when you ne
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</guid>
-      <description>ウィジェット開発環境の設定 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
+      <description>出典：ArcGIS Experience Builder - Guide - Debugging widget development
+ウィジェット開発環境の設定 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
 作成したカスタム ウィジェットは、Experience Builder ファイル構造の client フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして client フォルダを開きます。
  ファイル メニューをクリックします。 フォルダを開く をクリックします。 Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の client フォルダを参照します。  これにより、client フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について client フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。
 Visual Studio コード テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる拡張機能のマーケットプレイスがあります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</description>
@@ -85,7 +87,8 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</guid>
-      <description>Experience Builder に付属の jimu ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
+      <description>出典：ArcGIS Experience Builder - Guide - Using third-party libraries
+Experience Builder に付属の jimu ライブラリを使用して、ウィジェットに様々な機能を組み込むことができます。この機能に加えて、サードパーティのライブラリを追加して、Experience Builder のカスタム ウィジェット内で使用することができます。
 サードパーティのライブラリをインクルードして、ウィジェット内で使用できるようにするには、3 つの方法があります。
 NPM インストール ライブラリを 1 つのウィジェットのみで使用する場合は、使用するライブラリを npm に含めることをお勧めします。
 利用方法 ターミナルでカスタム ウィジェットのルートディレクトリを参照し、npm init を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに package.json ファイルが作成されます。
@@ -94,7 +97,35 @@ npm install &amp;lt;package-name&amp;gt;このコマンドを実行すると、
 パッケージ名は、カスタムウィジェットの import コマンドで使用できるようになりました。例えば、&amp;quot;import * as ReactDataGrid from &amp;quot;react-data-grid&amp;quot; としてインポートします。
 package.json にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、npm install を実行して、ウィジェットのすべての依存関係をインストールします。
 このパターンの動作の説明は react-data-grid のサンプルを参照してください。
-manifest.json を使用して CDN 経由で使用 ライブラリを複数のウィジェットで使用する場合は、ライブラリの CDN url を manifest.json ファイルの dependency プロパティに 配置することで、ライブラリを含めることができます。</description>
+manifest.json を使用して CDN 経由で使用 ライブラリを複数のウィジェットで使用する場合は、ライブラリの CDN url を manifest.</description>
+    </item>
+    
+    <item>
+      <title>単体テスト</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Unit Testing
+単体テストの一般原則 良いユニットテストを行うためには、テスト可能なコードを書くことが重要です。シンプルな設計原則を適用することが助けになります
+ 適切な命名規則を使用し、コードにはコメントを付けましょう（「どのように」ではなく「なぜ」）。コメントは不適切な命名や設計の代用にはならないことを覚えておいてください。 DRY: Don&amp;rsquo;t Repeat Yourself（同じことを繰り返さない） - コードの重複を避けましょう。 単一責任：各オブジェクト/関数は単一のタスクに集中しなければなりません。 同一コンポーネント内では、単一の抽象度を保つ。例えば、同じメソッドの中で、ビジネスロジックと低レベルの技術的詳細を混在させてはいけません。 コンポーネント間の依存関係を最小限に抑える：コンポーネント間の情報をカプセル化し、交換する量を少なくする。 ハードコーディングではなくコンフィギュラビリティをサポートする。そうすることで、テスト時に全く同じ環境を再現する必要がなくなります。  ArcGIS Experience Builder でのユニット テスト 単体テストのファイルは .test.ts(x) または .spec.ts(x) で終わり、tests フォルダに置く必要があります。 単体テストは、行動駆動型開発（BDD）スタイルで記述する必要があります。たとえば、以下のようになります。
+describe(&amp;#39;calculator&amp;#39;, function() { // Describes a module with nested &amp;#34;describe&amp;#34; functions  describe(&amp;#39;add&amp;#39;, function() { // Specify the expected behavior  it(&amp;#39;should add 2 numbers&amp;#39;, function() { // Use assertion functions to test the expected behavior  expect(foo).</description>
+    </item>
+    
+    <item>
+      <title>assets の使用</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Use assets
+assets の使用に関する一般的なガイドライン ウィジェットでは、画像や動画などのアセットを使用する必要があります。以下では、ArcGIS Experience Builder ウィジェットで assets を使用する方法について説明します。
+一般的に、assets を使用する方法は 2 つあります。
+ assets のインライン化 assets を動的にロードする  インライン assets 画像などの小さな assets の場合、ネットワークパフォーマンスへの悪影響が限定的であるため、この方法は妥当な方法です。assets をインライン化するには、次のように assets をrequire() します。
+const smallImage = require(&amp;#39;./small-image.png&amp;#39;) &amp;lt;img style={{width: &amp;#39;200px&amp;#39;, height: &amp;#39;200px&amp;#39;}} src={smallImage}/&amp;gt; .svg ファイルの場合、インラインで SVG DOM としてレンダリングしたい場合は、assets/icons フォルダにファイルを置き、次のように require() します。
+const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon icon={svg} color=&amp;#34;red&amp;#34; width=&amp;#34;200px&amp;#34; height=&amp;#34;200px&amp;#34;/&amp;gt; ダイナミックに読み込む 動画や大きな画像の場合、ネットワークのパフォーマンスに悪影響を与える可能性があるため、インラインではなくダイナミックにアセットをロードするのが妥当な方法です。
+アセットを動的にロードするには、2つの方法があります。アセットがランタイムで使用される場合は、ファイルを runtime/assets フォルダに配置します。それ以外の場合は、assets をsetting/assets フォルダに配置します。そうすれば、次のようにアセットを使用することができます。
+&amp;lt;img style={{width: &amp;#39;200px&amp;#39;, height: &amp;#39;200px&amp;#39;}} src={`${props.</description>
     </item>
     
   </channel>

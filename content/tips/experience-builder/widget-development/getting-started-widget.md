@@ -5,29 +5,15 @@ weight = 5
 aliases = ["/getting-started-widget/"]
 +++
 
+出典：ArcGIS Experience Builder - Guide - [Getting started with widget development](https://developers.arcgis.com/experience-builder/guide/getting-started-widget/)
+
+
 ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
 
-- TypeScript
-- React
-- JSX
-- Jimu
-
-## TypeScript
-
-[TypeScript](https://www.typescriptlang.org/) は JavaScript のスーパーセットです。TypeScript はウィジェットの開発に使用されている言語です。TypeScript とは何か、なぜ TypeScript が使われているのか、どのように使えるのかについて詳しく説明している[オンラインリソース](https://www.sitepen.com/blog/update-the-definitive-typescript-guide/)が多くあります。
-
-## React
-
-React はユーザーインターフェイスを作成するための JavaScript ライブラリです。React は DOM からの抽象化であり、アプリケーションと UI は、さまざまな状態で連携し、それらの状態をレンダリングすることで UI の一貫性を保つことを容易にします。例えば、Experience Builder では、ウィジェットの状態を更新してから、この新しい状態に基づいて UI をレンダリングするだけです。インターフェースの構築を容易にするために、Experience Builder では [reactstrap](https://reactstrap.github.io/) を使用しています。これは Bootstrap 4 をベースにした React コンポーネントの UI ライブラリです。
-
-React を使った開発については、[React](https://reactjs.org/) のドキュメントを参照してください。
-
-## JSX
-
-[JSX](https://reactjs.org/docs/introducing-jsx.html) は JavaScript の拡張構文で、React を通してウィジェットの UI がどのように表示されるかを記述することができます。
-
-## Jimu
-Jimu は、ウィジェットの作成に使用する Experience Builder の JavaScript ライブラリです。
+- [TypeScript](https://www.typescriptlang.org/) は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。
+- [React](https://reactjs.org/) は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。
+- [JSX](https://reactjs.org/docs/introducing-jsx.html) は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。
+- Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。
 
 ## インストール
 Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、[インストールガイド](../../install-guide)を参照してください。

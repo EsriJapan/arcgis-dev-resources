@@ -5,6 +5,9 @@ weight = 10
 aliases = ["/debugging-widget-development/"]
 +++
 
+出典：ArcGIS Experience Builder - Guide - [Debugging widget development](https://developers.arcgis.com/experience-builder/guide/debugging-widget-development/)
+
+
 ## ウィジェット開発環境の設定
 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。[Visual Studio Code](https://code.visualstudio.com/) は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
 

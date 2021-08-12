@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-11T18:54:43 JST">
+<meta name="revised" content="2021-08-12T16:42:54 JST">
 <title>ウィジェット UI の作成 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -423,6 +423,20 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
             サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
+            単体テスト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
+            assets の使用
           </a>
         </div>
     </li>
@@ -867,8 +881,8 @@ if (!doNotTrack) {
         <li><a href="#インライン-css">インライン CSS</a></li>
         <li><a href="#外部-css-スタイルシート">外部 CSS スタイルシート</a></li>
         <li><a href="#css-in-js-推奨">CSS-in-JS (推奨)</a></li>
-        <li><a href="#1-css-prop">1. css prop</a></li>
-        <li><a href="#2-styled-components">2. Styled Components</a></li>
+        <li><a href="#1-css-prophttpsemotionshdocscss-prop">1. <a href="https://emotion.sh/docs/css-prop">css prop</a></a></li>
+        <li><a href="#2-styled-componentshttpsemotionshdocsstyled">2. <a href="https://emotion.sh/docs/styled">Styled Components</a></a></li>
         <li><a href="#3-テーマを使った作業">3. テーマを使った作業</a></li>
       </ul>
     </li>
@@ -891,15 +905,16 @@ if (!doNotTrack) {
     
     
     
-    <p>Experience Builder のベースとなる <code>Widget</code> クラスは、React のコンポーネントサブクラスから拡張されています。<a href="https://reactjs.org/docs/react-api.html#reactpurecomponent">PureComponent</a> から拡張されており、<code>render()</code> と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。</p>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/widget-ui/">Create UI for widget</a></p>
+<p>Experience Builder のベースとなる <code>Widget</code> クラスは、React のコンポーネントサブクラスから拡張されています。<a href="https://reactjs.org/docs/react-api.html#reactpurecomponent">PureComponent</a> から拡張されており、<code>render()</code> と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。</p>
 <h2 id="jsx-の記述">JSX の記述</h2>
 <p>UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。</p>
 <p><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> の詳細を参照してください。</p>
 <p>ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span>{
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span>{
   <span style="color:#a6e22e">render() {</span>
     <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myWidget&#34;</span>&gt;
       &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
@@ -932,13 +947,13 @@ if (!doNotTrack) {
 </span></code></pre></div><h3 id="クイック-サンプル">クイック サンプル</h3>
 <p>ここでは、&ldquo;primary&rdquo; スタイルの Button コンポーネントとスターアイコンをウィジェットに追加しています。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// import components
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Create an svg icon using Icon component:
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iconNode</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">Icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;jimu-ui/lib/icons/star.svg&#39;</span>)} /&gt;;
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;{
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;{
   <span style="color:#a6e22e">render</span>(){
     <span style="color:#75715e">// Add Button component containing an icon to the widget:
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span>&gt;{<span style="color:#a6e22e">iconNode</span>} <span style="color:#a6e22e">primary</span> <span style="color:#a6e22e">button</span>&lt;/<span style="color:#f92672">Button</span>&gt;;
@@ -1009,12 +1024,12 @@ if (!doNotTrack) {
 <p>CSS-in-JS とは、ベンダープレフィックス、スコープ付き CSS、JS ロジック、テーマ機能など、CSS では解決できない問題に対処するために JavaScript で CSS を書く方法のことを指します。</p>
 <p>Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして <a href="https://emotion.sh/docs/introduction">Emotion</a> を使用しています。</p>
 <p>Emotion には 2 つのスタイリング パターンがあります。</p>
-<h3 id="1-css-prop">1. css prop</h3>
+<h3 id="1-css-prophttpsemotionshdocscss-prop">1. <a href="https://emotion.sh/docs/css-prop">css prop</a></h3>
 <p>Emotion の <code>css</code> prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは <code>template literals</code> で書くことができるので、CSS の中に JS ロジックを書くことができます。</p>
 <p>例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// widget.tsx:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/// widget.tsx:
 </span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">ButtonGroup</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>;
 
@@ -1022,7 +1037,7 @@ if (!doNotTrack) {
   <span style="color:#a6e22e">count</span>: <span style="color:#66d9ef">number</span>;
 }
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#a6e22e">State</span><span style="color:#f92672">&gt;</span>{
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#a6e22e">State</span><span style="color:#f92672">&gt;</span>{
   <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">props</span>) {
     <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
@@ -1048,11 +1063,11 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>Output 例:
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/EmotionCSSProp.png" alt=""></p>
-<h3 id="2-styled-components">2. Styled Components</h3>
+<img src="https://developers.arcgis.com/experience-builder/static/1bd4a1de34d6c8fc4995baaf8f1dad3b/811d1/EmotionCSSProp.png" alt=""></p>
+<h3 id="2-styled-componentshttpsemotionshdocsstyled">2. <a href="https://emotion.sh/docs/styled">Styled Components</a></h3>
 <p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&ldquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">styled</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
 <span style="color:#75715e">// A styled button component:
@@ -1065,7 +1080,7 @@ if (!doNotTrack) {
 </span><span style="color:#e6db74">  }
 </span><span style="color:#e6db74">`</span>;
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
   <span style="color:#a6e22e">render() {</span>
     <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">StyledButton</span>&gt;
       <span style="color:#a6e22e">A</span> <span style="color:#a6e22e">styled</span> <span style="color:#a6e22e">HTML</span> <span style="color:#a6e22e">Button</span>
@@ -1079,10 +1094,10 @@ if (!doNotTrack) {
 <p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
 <p>ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">BaseWidget</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseWidget</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;<span style="color:#f92672">&gt;</span>{
   <span style="color:#a6e22e">render() {</span>
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">theme</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">theme</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">css</span><span style="color:#e6db74">`
