@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-12T16:57:59 JST">
+<meta name="revised" content="2021-08-24T18:06:26 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -915,7 +915,7 @@ if (!doNotTrack) {
 <h2 id="ビュー">ビュー</h2>
 <p><code>AGSMapView</code>（2D表示用）と <code>AGSSceneView</code>（3D表示用）は、UI コンポーネントです。<code>AGSMapView</code> クラスの <code>map</code> プロパティに、<code>AGSMap</code> オブジェクトを、<code>AGSMapSceneView</code> クラスの <code>scene</code> プロパティには <code>AGSScene</code> オブジェクトを設定します。</p>
 <p>100.x では、以下のようにマップを表示します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップを指定してマップを初期化
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップを指定してマップを初期化
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSMap</span>(<span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span><span style="color:#a6e22e">AGSBasemap</span>.<span style="color:#a6e22e">imagery</span>())
 <span style="color:#75715e">// マップビューにマップを設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>
@@ -948,7 +948,7 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">operationalLayers</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">arcgis_map_image_layer</span>)
 
 <span style="color:#75715e">// ベースマップとしてマップに追加する
@@ -957,7 +957,7 @@ if (!doNotTrack) {
 <p>フィーチャ サービスや端末のローカルに格納されたジオデータベースのデータをマップに表示するにはフィーチャ レイヤーを使用します。
 フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーで表示する場合は <code>AGSArcGISFeatureTable</code> オブジェクト、ジオデータベースのデータを表示する場合は <code>AGSGeodatabaseFeatureTable</code> オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として <code>AGSFeatureLayer</code> オブジェクトを作成し、<code>AGSMap</code> オブジェクトの <code>OperationalLayers</code> に追加します。</p>
 <p>次のコードは、フィーチャ サービスのデータを <code>AGSFeatureLayer</code> としてマップに追加する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">featureTable</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSServiceFeatureTable</span>(<span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">string</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&#34;</span>)<span style="color:#f92672">!</span>)
 <span style="color:#75715e">// フィーチャ テーブルからフィーチャ レイヤーを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSFeatureLayer</span>(<span style="color:#a6e22e">featureTable</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">featureTable</span>)
@@ -979,7 +979,7 @@ if (!doNotTrack) {
 <li>
 <p><code>ManualCache</code>: ユーザーによるマップ操作では、フィーチャは自動的にリクエストされません。このモードを使用する場合は、<code>AGSServiceFeatureTable</code> の <code>populateFromService</code> メソッドを使用して明示的にデータをリクエストする必要があります。</p>
 <p>以下のコードは <code>populateFromService</code> メソッドを使用して、サーバー上のすべてのフィーチャを取得する方法の例です。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャの検索パラメーターを設定
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャの検索パラメーターを設定
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSQueryParameters</span>()
 <span style="color:#75715e">// すべてのフィーチャを取得するように条件を設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">whereClause</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1 = 1&#34;</span>
@@ -1003,7 +1003,7 @@ if (!doNotTrack) {
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>AGSServiceFeatureTable</code> または <code>AGSGeodatabaseFeatureTable</code> クラスの <code>queryFeaturesWithParameters</code> メソッドを使用します。</p>
 <p>次のコードは、フィーチャ サービスから作成したフィーチャ テーブルからフィーチャを検索する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">featureTable</span>.<span style="color:#a6e22e">queryFeatures</span>(<span style="color:#66d9ef">with</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">queryParameters</span>, <span style="color:#a6e22e">queryFeatureFields</span><span style="color:#f92672">:</span> .<span style="color:#a6e22e">loadAll</span>, <span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span>{ (<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">featureTable</span>.<span style="color:#a6e22e">queryFeatures</span>(<span style="color:#66d9ef">with</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">queryParameters</span>, <span style="color:#a6e22e">queryFeatureFields</span><span style="color:#f92672">:</span> .<span style="color:#a6e22e">loadAll</span>, <span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span>{ (<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span> {   
                <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Error:\(error.localizedDescription)&#34;</span>)
            } <span style="color:#66d9ef">else</span> {
@@ -1016,7 +1016,7 @@ if (!doNotTrack) {
        })
 </code></pre></div><h2 id="個別属性表示">個別属性表示</h2>
 <p>マップ上で特定の場所をタップして、その位置にあるフィーチャをすべてのレイヤーから検索して取得することができます。この操作はビューに対して行います。次のコードは、<code>AGSMapView</code> クラスの <code>identifyLayers</code> メソッドを使用してフィーチャを取得する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">identifyLayers</span>(<span style="color:#a6e22e">atScreenPoint</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">screenPoint</span>, <span style="color:#a6e22e">tolerance</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#a6e22e">returnPopupsOnly</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> { (<span style="color:#a6e22e">results</span>, <span style="color:#a6e22e">error</span>)  <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">identifyLayers</span>(<span style="color:#a6e22e">atScreenPoint</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">screenPoint</span>, <span style="color:#a6e22e">tolerance</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#a6e22e">returnPopupsOnly</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> { (<span style="color:#a6e22e">results</span>, <span style="color:#a6e22e">error</span>)  <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span> {
         <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">error</span>)
     } <span style="color:#66d9ef">else</span> {
@@ -1031,7 +1031,7 @@ if (!doNotTrack) {
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>AGSMapView</code> と <code>AGSSceneView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>AGSGraphicsOverlay</code>）が含まれています。
 グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。</p>
 <p>次のコードは、<code>AGSMapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを設定してグラフィックを作成
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを設定してグラフィックを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSGraphic</span>(<span style="color:#a6e22e">geometry</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pointGeometry</span>, <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">poitnSymbol</span>, <span style="color:#a6e22e">attributes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">nil</span>)
 <span style="color:#75715e">// グラフィックス オーバーレイに作成したグラフィックを追加
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">graphicsOverlay</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSGraphicsOverlay</span>()
@@ -1044,7 +1044,7 @@ if (!doNotTrack) {
 <h2 id="スケッチ-エディター">スケッチ エディター</h2>
 <p>スケッチ エディター（<code>AGSSketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
 <p>次のコードは、<code>AGSSketchEditor</code> の使用方法の例を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// マップ ビューにスケッチ エディターを設定
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// マップ ビューにスケッチ エディターを設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">sketchEditor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AGSSketchEditor</span>()
 <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">sketchEditor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">sketchEditor</span>
 <span style="color:#75715e">// ジオメトリの種類を設定してスケッチを開始
@@ -1062,7 +1062,7 @@ if (!doNotTrack) {
 各リソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することもできます。</p>
 <p>詳細は、<a href="https://developers.arcgis.com/ios/programming-patterns/loadable/">ArcGIS Runtime SDK for iOS: ローダブル パターン（英語）</a>をご参照ください。</p>
 <p>次のコードは、ローダブル パターンの基本的な使用方法の例を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> {(<span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> {(<span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span> {
         <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">error</span>)
     }<span style="color:#66d9ef">else</span> {
@@ -1073,7 +1073,7 @@ if (!doNotTrack) {
 <p>非同期操作を実行するメソッドは、完了ブロックを引数として受け取ります。ブロックは操作が正常に完了したとき、または、エラーが発生したときに呼び出されます。操作が成功すると、その操作の結果がブロックに渡されます。それ以外の場合はエラーが渡されます。
 これは、デリゲートを使用して各非同期操作の結果とエラーをハンドリングしていた 10.2.x のプログラミング方法を置き換えます。</p>
 <p>次のコードは、例として端末の GPS の位置情報の取得開始の操作結果をハンドリングする方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">locationDisplay</span>.<span style="color:#a6e22e">start</span>(<span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> { (<span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">mapView</span>.<span style="color:#a6e22e">locationDisplay</span>.<span style="color:#a6e22e">start</span>(<span style="color:#a6e22e">completion</span><span style="color:#f92672">:</span> { (<span style="color:#a6e22e">error</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">Void</span> <span style="color:#66d9ef">in</span>
   <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">error</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">error</span> {
     <span style="color:#75715e">// GPS の位置情報の取得に失敗
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Error:\(error.localizedDescription)&#34;</span>)

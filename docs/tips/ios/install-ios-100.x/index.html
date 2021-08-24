@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-12T16:57:59 JST">
+<meta name="revised" content="2021-08-24T18:06:26 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -910,14 +910,14 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>プロジェクトの Podfile に下記を追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">pod <span style="color:#960050;background-color:#1e0010">&#39;</span>ArcGIS<span style="color:#f92672">-</span>Runtime<span style="color:#f92672">-</span>SDK<span style="color:#f92672">-</span>iOS<span style="color:#960050;background-color:#1e0010">&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">pod <span style="color:#960050;background-color:#1e0010">&#39;</span>ArcGIS<span style="color:#f92672">-</span>Runtime<span style="color:#f92672">-</span>SDK<span style="color:#f92672">-</span>iOS<span style="color:#960050;background-color:#1e0010">&#39;</span>
 </code></pre></div></li>
 <li>
 <p>ターミナル アプリケーションを使用して、Podfile 上で pod install コマンドを実行します。これにより、ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pod ディレクトリ内に配置されます。また、ArcGIS フレームワークを正しく参照するために、プロジェクトのビルド設定に必要な変更が加えられて、新しい Xcode ワークスペース（.xcworkspace ファイル）を作成されます。</p>
 </li>
 </ol>
 <p>ArcGIS の API を使用するには、新しく作成した Xcode ワークスペースを開き、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
 </code></pre></div><h2 id="手動でダウンロードする">手動でダウンロードする</h2>
 <p>手動ダウンロードは、すべての iOS プロジェクト用に一度だけ API をインストールします。</p>
 <ol>
@@ -962,7 +962,7 @@ SDK を手動でインストールした後に、API を使用するために各
 </ol>
 <p>注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行して表示するか、Finder メニューの [移動] &gt; [フォルダへ移動] を使用して移動することもできます。</p>
 <p>以上でプロジェクトの構成は完了です。ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
 </code></pre></div>
 
     

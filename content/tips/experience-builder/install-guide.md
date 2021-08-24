@@ -59,15 +59,18 @@ ArcGIS Online または ArcGIS Enterprise を使用している場合は、以�
 
 {{% /notice %}}
 
-1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`アイテムの追加` をクリックし、`アプリケーション` を選択します。
-2. `アプリケーションの追加` ダイアログボックスで、以下のパラメータを入力します。
-    - `タイプ` - タイプとして `アプリケーション` を選択します。
+1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`新しいアイテム` をクリックし、`アプリケーション` を選択します。
+2. `アプリケーション タイプ` で `他のアプリケーション` を選択します。
+3. ダイアログボックスで、以下のパラメータを入力し、`保存` をクリックします。
     - `タイトル` -  例えば、`Experience Builder credentials` などの任意のタイトルをを入力します。
+    - `フォルダー` - アイテムを保存する任意のフォルダーを選択します。
     - `タグ` - `Experience Builder` のような内容を入力します。
-    - `アイテムの追加` をクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
-3. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
-4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+    - `サマリー` - アイテムのサマリーを入力します。
+    
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" />
+
+4. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、`更新` をクリックします。
+5. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 
 ## 2. server サービスのインストール
@@ -160,17 +163,20 @@ Experience Builder (Developer Edition) を使用するために Client ID が必
 
 ここでは、ArcGIS Online または ArcGIS Enterprise を使用した Client ID の作成手順について示します。
 
-1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`アイテムの追加` をクリックし、`アプリケーション` を選択します。
-2. `アプリケーションの追加` ダイアログボックスで、以下のパラメータを入力します。
-    - `タイプ` - タイプとして `アプリケーション` を選択します。
-    - `タイトル` -  例えば、`Experience Builder credentials` などのように任意のタイトルを入力します。
+1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`新しいアイテム` をクリックし、`アプリケーション` を選択します。
+2. `アプリケーション タイプ` で `他のアプリケーション` を選択します。
+3. ダイアログボックスで、以下のパラメータを入力し、`保存` をクリックします。
+    - `タイトル` -  例えば、`Experience Builder credentials` などの任意のタイトルをを入力します。
+    - `フォルダー` - アイテムを保存する任意のフォルダーを選択します。
     - `タグ` - `Experience Builder` のような内容を入力します。
-    - `アイテムの追加` をクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication.png" />
-3. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、更新をクリックします。
-4. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+    - `サマリー` - アイテムのサマリーを入力します。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" />
+
+4. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、`更新` をクリックします。
+5. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
-5. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
-6. ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
-7. サイン イン後の流れについては、[2. server サービスのインストール](#2-server-サービスのインストール)のステップ5 以降を参照してください。
+
+6. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
+7. ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
+8. サイン イン後の流れについては、[2. server サービスのインストール](#2-server-サービスのインストール)のステップ5 以降を参照してください。
 

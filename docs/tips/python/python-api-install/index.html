@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-12T16:57:59 JST">
+<meta name="revised" content="2021-08-24T18:06:26 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1121,7 +1121,7 @@ Python API バージョン 1.5.0 以降からは、Jupyter Lab からも操作�
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/newNoteboook.jpg" width="800px">
 </div>
 <p>次のコードを入力します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
 my_gis <span style="color:#f92672">=</span> GIS()
 my_gis<span style="color:#f92672">.</span>map()
 </code></pre></div><div align="center">
@@ -1129,7 +1129,7 @@ my_gis<span style="color:#f92672">.</span>map()
 </div>
 <div class="notices tip" >
 <p>Jupyter Notebook から使用している Python API のバージョンを確認する場合、次のコードを実行することで、現在お使いのバージョンを確認することができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> arcgis
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> arcgis
 arcgis<span style="color:#f92672">.</span>__version__
 </code></pre></div><p>もしくは、先頭に <code>!</code> を付けて以下のようにコマンドを実行して確認することも可能です。</p>
 <pre><code>!conda list arcgis
