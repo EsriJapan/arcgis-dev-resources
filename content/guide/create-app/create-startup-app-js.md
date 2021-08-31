@@ -1,5 +1,5 @@
 +++
-title = "JavaScript"
+title = "ArcGIS API for JavaScript"
 description = "ArcGIS API for JavaScript を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
 Weight=1
 aliases = ["/create-startup-app-js/"]

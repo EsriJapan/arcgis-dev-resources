@@ -1,7 +1,7 @@
 +++
 title = "iOS"
 description = "ArcGIS Runtime SDK for iOS を用いたモバイル地図アプリの作成方法を紹介します。"
-Weight=4
+Weight=5
 aliases = ["/create-startup-app-ios/"]
 +++
 

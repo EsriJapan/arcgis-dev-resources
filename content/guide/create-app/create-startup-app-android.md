@@ -1,7 +1,7 @@
 +++
 title = "Android"
 description = "ArcGIS Runtime SDK for Android を用いたモバイル地図アプリの作成方法を紹介します。"
-Weight=3
+Weight=4
 aliases = ["/create-startup-app-android/"]
 +++
 
