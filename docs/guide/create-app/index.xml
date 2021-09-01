@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JavaScript</title>
+      <title>ArcGIS API for JavaScript</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -24,17 +24,53 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
     </item>
     
     <item>
-      <title>.NET</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
+      <title>Esri Leaflet</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS Runtime SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/</guid>
+      <description>マップを表示する このチュートリアルでは、Esri Leaflet と ベースマップ レイヤー サービス を使用して、マップを表示する方法を紹介します。
+マップには、ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用しています。ベクター タイル ベースマップ レイヤーには、レイヤーをレンダリングするためのスタイル、レイヤー、フォントグリフ(Font Glyphs)、およびアイコンが含まれています。
+このチュートリアルでは、ベースマップ レイヤー サービスの地形ベースマップ レイヤーを使用して、富士山周辺の地図を作成します。
+マップとレイヤーの詳細については、Mapping APIs and services のガイドをご覧ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。
-ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 向けのアプリをサポートしています。 このチュートリアルの説明は、Visual Studio for Windows を使用して .</description>
+ 開発者ダッシュボードにアクセスして API キーを作成するには、ArcGIS アカウントが必要です。アカウントの作成手順については「開発者アカウントの作成」を参照してください。  ステップ 新しい Pen の作成 CodePen にアクセスして、マッピング アプリケーション用の新しい Pen を作成します。
+HTML の作成と各 JS ライブラリへの参照を追加する Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。 これらは、ベクター タイル ベースマップ レイヤーにアクセスして表示するために必要です。
+ &amp;lt;head&amp;gt;の中に、ライブラリを参照するための&amp;lt;script&amp;gt;要素を追加します。 &amp;lt;head&amp;gt;に，ページとマップのスタイルを決めるための&amp;lt;style&amp;gt;要素も追加します。 &amp;lt;body&amp;gt;の中に、マップ用の&amp;lt;div&amp;gt;要素を追加します。  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1,maximum-scale=1,user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Esri Leaflet&amp;lt;/title&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Mapbox GL JS</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/</guid>
+      <description>マップを表示する このチュートリアルでは、Mapbox GL JS と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
+ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、Mapbox GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む Mapbox GL スタイルです。
+このチュートリアルでは、ベースマップ レイヤー サービスの地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。
+マップとレイヤーの詳細については、Mapping APIs and servicesのガイドのDisplay maps, scenes, and layersにアクセスしてください。
+前提条件 この機能を使うには、ArcGIS アカウントが必要です。アカウントの作成手順については「開発者アカウントの作成」を参照してください。
+手順 新しい Pen の作成 CodePen にアクセスして、マッピング アプリケーション用の新しい Pen を作成します。
+HTML の作成 HTML ページを定義して、Web ブラウザの幅と高さにあわせたマップを作成します。
+ CodePen &amp;gt; HTML で、HTML と CSS を追加して、map という id 属性を持つ div 要素のあるページを作成します。 map id は、マップを表示するために使用される id 属性です。CSS はブラウザの設定をリセットして、マップがブラウザの幅と高さ全体に表示されるようにします。  &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>OpenLayers</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</guid>
+      <description>マップを表示する このチュートリアルでは、OpenLayers と ベースマップ レイヤー サービス を使用して、マップを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータ レイヤーが含まれます。マップ ビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形 ベースマップ レイヤーを使用して、 OpenLayers で富士山周辺の地図を表示します。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ 開発者ダッシュボードにアクセスして API キーを作成するには、ArcGIS アカウントが必要です。アカウントの作成手順については「開発者アカウントの作成」を参照してください。  ステップ 新しい Pen の作成 CodePen にアクセスして、マッピング アプリケーション用の新しい Pen を作成します。
+HTML の作成 HTML ページを定義して、Web ブラウザの幅と高さにあわせたマップを作成します。
+  CodePen ＞ HTML で、HTML と CSS を追加して、map という id 属性をもつ div 要素のあるページを作成します。
+HTML を使って、マップを表示する Web ページを作成します。この時マップは map div 内に表示します。CSS を使って、マップを全幅・全高で表示されるようにします。
+CodePenでは、&amp;lt;!DOCTYPE html&amp;gt;タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。
+  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1, maximum-scale=1, user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;OpenLayers Tutorials: Display a map&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #map { padding: 0; margin: 0; height: 100%; width: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #323232; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;map&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; ライブラリの読み込み OpenLayers と ol-mapbox-style の JavaScript と CSS ファイルを参照するために、&amp;lt;script&amp;gt;と&amp;lt;link&amp;gt;タグを追加します。</description>
     </item>
     
     <item>
@@ -66,6 +102,20 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
  API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。 ArcGIS Runtime SDK for iOS がインストールされていること  ステップ 新しい Xcode プロジェクトを作成する Xcode を使用してシングルビュー iOS アプリを作成し、SDK を参照するように構成します。
   Xcode を開き、[Create a new Xcode project] &amp;gt; [App] をクリックします。
  [Choose options for your new project] ウィンドウで、次の値を設定します。  Product Name: &amp;lt;任意の名前&amp;gt; Language: Swift Interface: Storyboard Organization Identifier: &amp;lt;任意の組織&amp;gt;   他のすべてのオプションのチェックを外します。 [Next] &amp;gt; [Create] をクリックします。    「インストールガイドのプロジェクトの構成」の手順に従って、API への参照を追加します。</description>
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
+      <description>マップを表示する このチュートリアルでは ArcGIS Runtime SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 向けのアプリをサポートしています。 このチュートリアルの説明は、Visual Studio for Windows を使用して .</description>
     </item>
     
   </channel>

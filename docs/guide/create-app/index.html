@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-26T12:46:49 JST">
+<meta name="revised" content="2021-09-01T10:58:30 JST">
 <title>アプリ開発 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -129,14 +129,28 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
-            JavaScript
+            ArcGIS API for JavaScript
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
-            .NET
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
+            Esri Leaflet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
+            Mapbox GL JS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
+            OpenLayers
           </a>
         </div>
     </li>
@@ -151,6 +165,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
             iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
           </a>
         </div>
     </li>
@@ -850,7 +871,12 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-apis">Web APIs</a></li>
+    <li><a href="#native-apis">Native APIs</a></li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -870,24 +896,23 @@ if (!doNotTrack) {
     
 
 <p>マップとベースマップ レイヤーを表示するシンプルな地図アプリの作成方法を紹介します。お使いの開発環境からお選びください。</p>
-<ul class="children children-li">
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" >JavaScript</a></li></p>
-<p>ArcGIS API for JavaScript を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" >.NET</a></li></p>
-<p>ArcGIS Runtime SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" >Android</a></li></p>
-<p>ArcGIS Runtime SDK for Android を用いたモバイル地図アプリの作成方法を紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" >iOS</a></li></p>
-<p>ArcGIS Runtime SDK for iOS を用いたモバイル地図アプリの作成方法を紹介します。</p>
-</span>
-</ul>
+<h2 id="web-apis">Web APIs</h2>
+<table>
+<tbody><tr>
+<td style="width:25%"><a href="./create-startup-app-js">ArcGIS API for JavaScript</td>
+<td style="width:25%"><a href="./create-startup-app-esrileaflet">Esri Leaflet</a></td>
+<td style="width:25%"><a href="./create-startup-app-mapboxgl">Mapbox GL JS</a></td>
+<td style="width:25%"><a href="./create-startup-app-openlayers">OpenLayers</a></td>
+</tr></tbody>
+</table>
+<h2 id="native-apis">Native APIs</h2>
+<table>
+<tbody><tr>
+<td style="width:25%"><a href="./create-startup-app-android">Android</td>
+<td style="width:25%"><a href="./create-startup-app-ios">iOS</a></td>
+<td style="width:25%"><a href="./create-startup-app-dotnet">.NET</a></td>
+</tr></tbody>
+</table>
 
 
 
@@ -901,7 +926,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/guide/services/create-webmap/" title="Web マップの作成"> <i class="fa fa-chevron-left"></i><label>Web マップの作成</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" title="JavaScript" style="margin-right: 0px;"><label>JavaScript</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" title="ArcGIS API for JavaScript" style="margin-right: 0px;"><label>ArcGIS API for JavaScript</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

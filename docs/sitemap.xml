@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</loc>
@@ -9,8 +11,6 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</loc>
   </url><url>
@@ -36,6 +36,8 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/</loc>
   </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/license-your-app/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</loc>
@@ -60,11 +62,11 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</loc>
   </url><url>
@@ -92,9 +94,9 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/licensing/attribution/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
   </url><url>
@@ -113,6 +115,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
   </url><url>
@@ -135,6 +139,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/core-concepts/layers/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
   </url><url>
