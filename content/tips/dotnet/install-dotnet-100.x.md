@@ -82,11 +82,12 @@ Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発す�
 
     <img src="https://developers.arcgis.com/net/static/1e2746c1b29bd4e173755374dd79619c/4cdf7/NewProject_ArcGISTemplates.png" width="650px">
 
+
+# 追加のダウンロード
 ## サンプル コード
+ArcGIS Runtime アプリで実行できる、機能については[サンプル コード](https://github.com/Esri/arcgis-runtime-samples-dotnet)を参照してください。
 
-ArcGIS Runtime アプリで実行できる、その他の内容については[サンプル コード](https://github.com/Esri/arcgis-runtime-samples-dotnet)を参照してください。
-
-コンパイル済みのサンプル ビューアー アプリケーション (WPF 版) は、[Microsoft ストア](https://www.microsoft.com/en-us/p/arcgis-runtime-sdk-for-net-samples-wpf/9mtp5013343h)から入手できます。 アプリケーションを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
+コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、[Microsoft ストア](https://www.microsoft.com/ja-jp/p/arcgis-runtime-sdk-for-net-samples-wpf/9mtp5013343h)から入手できます。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
 
 ## ArcGIS Runtime SDK for .NET Toolkit
 
@@ -102,7 +103,7 @@ ArcGIS Runtime アプリで実行できる、その他の内容については[�
 
 ツールキットは、ArcGIS Runtime SDK for .NET チームによって管理されているオープンソース プロジェクトです。 ツールキットを NuGet パッケージとしてプロジェクトに含めるか、GitHub リポジトリからソース コードをダウンロードしてローカルでビルドできます。
 
-## Supplemental data
+## 追加のデータ
 
 [グリッド ベースの地理座標変換](https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。
 

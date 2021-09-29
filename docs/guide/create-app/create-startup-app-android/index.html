@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-09-01T10:58:29 JST">
+<meta name="revised" content="2021-09-29T16:29:19 JST">
 <title>Android :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -979,7 +979,7 @@ if (!doNotTrack) {
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">constraintlayout</span><span style="color:#f92672">:</span>constraintlayout<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">11</span><span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span><span style="color:#75715e"></span>    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">12</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">}</span>
@@ -1024,8 +1024,7 @@ if (!doNotTrack) {
 <span style="color:#f92672">import</span> android.os.Bundle
 
 <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity
-<span style="color:#f92672">import</span> com.esri.arcgisruntime.ArcGISRuntimeEnvironment
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> com.esri.arcgisruntime.ArcGISRuntimeEnvironment
 <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.ArcGISMap
 <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.BasemapStyle
 <span style="color:#f92672">import</span> com.esri.arcgisruntime.mapping.Viewpoint
@@ -1204,7 +1203,14 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 </ol>
 <p>富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。</p>
 <p>完成版のプロジェクトは<a href="https://developers.arcgis.com/android/zips/display-a-map.zip">こちら</a>からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。</p>
-<h1 id="web-マップを表示する">Web マップを表示する</h1>
+<p>ビルドした際に「More than one file was found with OS independent path &lsquo;META-INF/DEPENDENCIES&rsquo;.」のエラーが発生した場合は、app の build.gradle の android ブロックに下記を追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+    <span style="color:#f92672">...</span>   
+    packagingOptions <span style="color:#f92672">{</span>
+        exclude <span style="color:#960050;background-color:#1e0010">&#39;</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>DEPENDENCIES<span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#f92672">}</span>          
+<span style="color:#f92672">}</span>
+</code></pre></div><h1 id="web-マップを表示する">Web マップを表示する</h1>
 <p>「<a href="../../services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>
 <ol>
 <li>

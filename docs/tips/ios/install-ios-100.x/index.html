@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-09-01T10:58:30 JST">
+<meta name="revised" content="2021-09-29T16:29:20 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -887,6 +887,11 @@ if (!doNotTrack) {
       </ul>
     </li>
   </ul>
+
+  <ul>
+    <li><a href="#サンプル-コード">サンプル コード</a></li>
+    <li><a href="#追加のデータ">追加のデータ</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -924,9 +929,9 @@ if (!doNotTrack) {
 <li>ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。</li>
 </ol>
 <img src="https://developers.arcgis.com/ios/679edc942ebaf2693fd1c9e6981f03bf/swiftpm.gif" width="650px">
-<p>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
--<code>swift   -import ArcGIS -</code></p>
-<h2 id="cocoapods-を使用する">CocoaPods を使用する</h2>
+<p>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
+</code></pre></div><h2 id="cocoapods-を使用する">CocoaPods を使用する</h2>
 <p><a href="https://cocoapods.org/pods/ArcGIS-Runtime-SDK-iOS">公開済みの CocoaPod</a> を利用できます。CocoaPods を初めて使用する場合は、<a href="https://cocoapods.org/">CocoaPods の使用方法</a>を確認してから、次の手順に従って iOS プロジェクト内でこの Pod を使用してください。</p>
 <ol>
 <li>
@@ -984,7 +989,14 @@ SDK を手動でインストールした後に、API を使用するために各
 <p>注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行して表示するか、Finder メニューの [移動] &gt; [フォルダへ移動] を使用して移動することもできます。</p>
 <p>以上でプロジェクトの構成は完了です。ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
-</code></pre></div>
+</code></pre></div><h1 id="追加のダウンロード">追加のダウンロード</h1>
+<h2 id="サンプル-コード">サンプル コード</h2>
+<p>ArcGIS Runtime アプリで実行できる、機能については<a href="https://github.com/Esri/arcgis-runtime-samples-ios">サンプル コード</a>を参照してください。</p>
+<p>サンプル ビューアー アプリは、<a href="https://apps.apple.com/jp/app/arcgis-runtime-sdk-samples/id1180714771">App Store</a> からも入手できます。</p>
+<h2 id="追加のデータ">追加のデータ</h2>
+<p><a href="https://developers.arcgis.com/ios/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの地理座標変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/downloads/#pedata">Projection Engine ファイル</a>をダウンロードしてください。</p>
+<p>航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/downloads/#hydrodata">hydrography directory</a> をダウンロードします。</p>
+
 
     
     

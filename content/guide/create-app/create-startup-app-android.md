@@ -80,7 +80,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
         // 追加開始
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.11.2'
+        implementation 'com.esri.arcgisruntime:arcgis-android:100.12.0'
         // 追加終了
 
     }
@@ -132,7 +132,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 // 追加開始
-import androidx.appcompat.app.AppCompatActivity
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
 import com.esri.arcgisruntime.mapping.ArcGISMap
 import com.esri.arcgisruntime.mapping.BasemapStyle
@@ -337,10 +336,20 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
 
 2. [Run] > [Run] > [app] をクリックして、アプリを実行します。アプリを実行するエミュレーターが表示されます。アプリがビルドされてもエミュレーターが表示されない場合は、エミュレーターを追加する必要があります。[Tools] > [AVD Manager] > [Create Virtual Device...] をクリックします。
 
-富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
+富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。   
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/android/zips/display-a-map.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
 
+ビルドした際に「More than one file was found with OS independent path 'META-INF/DEPENDENCIES'.」のエラーが発生した場合は、app の build.gradle の android ブロックに下記を追加します。
+
+```java
+android {
+    ...   
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }          
+}
+```
 
 # Web マップを表示する
 「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。

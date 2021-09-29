@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-09-01T10:58:30 JST">
+<meta name="revised" content="2021-09-29T16:29:20 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -881,9 +881,12 @@ if (!doNotTrack) {
     <li><a href="#オンライン-ソースの-arcgis-runtime-nuget-パッケージを参照する方法">オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法</a></li>
     <li><a href="#visual-studio-拡張機能をインストールする方法">Visual Studio 拡張機能をインストールする方法</a></li>
     <li><a href="#visual-studio-プロジェクト-テンプレートのみインストールする方法">Visual Studio プロジェクト テンプレートのみインストールする方法</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#サンプル-コード">サンプル コード</a></li>
     <li><a href="#arcgis-runtime-sdk-for-net-toolkit">ArcGIS Runtime SDK for .NET Toolkit</a></li>
-    <li><a href="#supplemental-data">Supplemental data</a></li>
+    <li><a href="#追加のデータ">追加のデータ</a></li>
     <li><a href="#local-server">Local Server</a></li>
   </ul>
 </nav>
@@ -999,9 +1002,10 @@ if (!doNotTrack) {
  <img src="https://developers.arcgis.com/net/static/1e2746c1b29bd4e173755374dd79619c/4cdf7/NewProject_ArcGISTemplates.png" width="650px">
 </li>
 </ol>
+<h1 id="追加のダウンロード">追加のダウンロード</h1>
 <h2 id="サンプル-コード">サンプル コード</h2>
-<p>ArcGIS Runtime アプリで実行できる、その他の内容については<a href="https://github.com/Esri/arcgis-runtime-samples-dotnet">サンプル コード</a>を参照してください。</p>
-<p>コンパイル済みのサンプル ビューアー アプリケーション (WPF 版) は、<a href="https://www.microsoft.com/en-us/p/arcgis-runtime-sdk-for-net-samples-wpf/9mtp5013343h">Microsoft ストア</a>から入手できます。 アプリケーションを実行する前に、システム要件を参照して、正常に実行できることを確認してください。</p>
+<p>ArcGIS Runtime アプリで実行できる、機能については<a href="https://github.com/Esri/arcgis-runtime-samples-dotnet">サンプル コード</a>を参照してください。</p>
+<p>コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、<a href="https://www.microsoft.com/ja-jp/p/arcgis-runtime-sdk-for-net-samples-wpf/9mtp5013343h">Microsoft ストア</a>から入手できます。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。</p>
 <h2 id="arcgis-runtime-sdk-for-net-toolkit">ArcGIS Runtime SDK for .NET Toolkit</h2>
 <p><a href="https://github.com/Esri/arcgis-toolkit-dotnet">ArcGIS Runtime SDK for .NET Toolkit</a> には、アプリの開発を簡略化するためのコントロールやユーティリティが含まれています。例えば、以下のようなものがあります。</p>
 <ul>
@@ -1014,7 +1018,7 @@ if (!doNotTrack) {
 <li>タイムスライダー: 時間的な範囲 (タイム エクステント) をインタラクティブに定義し、時間を前進または後退させるアニメーションの実行</li>
 </ul>
 <p>ツールキットは、ArcGIS Runtime SDK for .NET チームによって管理されているオープンソース プロジェクトです。 ツールキットを NuGet パッケージとしてプロジェクトに含めるか、GitHub リポジトリからソース コードをダウンロードしてローカルでビルドできます。</p>
-<h2 id="supplemental-data">Supplemental data</h2>
+<h2 id="追加のデータ">追加のデータ</h2>
 <p><a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの地理座標変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/downloads/#pedata">Projection Engine ファイル</a>をダウンロードしてください。</p>
 <p>航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/downloads/#hydrodata">hydrography directory</a> をダウンロードします。</p>
 <h2 id="local-server">Local Server</h2>

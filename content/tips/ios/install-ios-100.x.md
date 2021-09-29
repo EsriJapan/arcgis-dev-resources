@@ -29,9 +29,9 @@ Swift Package Manager を使用して Xcode プロジェクトに簡単に統合
 <img src="https://developers.arcgis.com/ios/679edc942ebaf2693fd1c9e6981f03bf/swiftpm.gif" width="650px">
 
 ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
--```swift  
--import ArcGIS
--```
+```swift  
+import ArcGIS
+```
 
 ## CocoaPods を使用する
 [公開済みの CocoaPod](https://cocoapods.org/pods/ArcGIS-Runtime-SDK-iOS) を利用できます。CocoaPods を初めて使用する場合は、[CocoaPods の使用方法](https://cocoapods.org/)を確認してから、次の手順に従って iOS プロジェクト内でこの Pod を使用してください。
@@ -89,3 +89,14 @@ SDK を手動でインストールした後に、API を使用するために各
 ```swift  
 import ArcGIS
 ```
+
+# 追加のダウンロード
+## サンプル コード
+ArcGIS Runtime アプリで実行できる、機能については[サンプル コード](https://github.com/Esri/arcgis-runtime-samples-ios)を参照してください。
+
+サンプル ビューアー アプリは、[App Store](https://apps.apple.com/jp/app/arcgis-runtime-sdk-samples/id1180714771) からも入手できます。
+
+## 追加のデータ
+[グリッド ベースの地理座標変換](https://developers.arcgis.com/ios/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。
+
+航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。
