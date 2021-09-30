@@ -221,13 +221,13 @@ DefaultAuthenticationChallengeHandler は、OAuth 認証の認証情報の入力
 プロジェクトが Google でサポートされていない Android サポート ライブラリに依存している場合は、androidx ライブラリでコンパイルまたはランタイムの問題が発生するため、プロジェクトを [androidx](https://developer.android.com/jetpack/androidx/migrate) に移行する必要があります。
 
 # 追加のダウンロード
-# サンプル コード
+## サンプル コード
 ArcGIS Runtime アプリで実行できる、機能については[サンプル コード](https://github.com/Esri/arcgis-runtime-samples-android)を参照してください。
 
 サンプル ビューアー アプリは、[Google Play](https://play.google.com/store/apps/details?id=com.esri.sampleviewer) か、[ArcGIS Online（.apk ファイル）](https://arcgisruntime.maps.arcgis.com/home/item.html?id=21ac248ea189406c821400dc28bf686c) からも入手できます。
 
 
-# ArcGIS Runtime API for Android Toolkit
+## ArcGIS Runtime API for Android Toolkit
 [ArcGIS Runtime SDK for Android Toolkit](https://github.com/esri/arcgis-runtime-toolkit-android) には、アプリの開発を簡略化するためのコントロールやユーティリティが含まれています。例えば、以下のようなものがあります。
 
 * ArcGISArView: SceneView を ARCore と統合し、拡張現実（AR）を実現します。

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-09-29T16:29:20 JST">
+<meta name="revised" content="2021-09-30T09:09:21 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -889,6 +889,8 @@ if (!doNotTrack) {
   </ul>
 
   <ul>
+    <li><a href="#サンプル-コード">サンプル コード</a></li>
+    <li><a href="#arcgis-runtime-api-for-android-toolkit">ArcGIS Runtime API for Android Toolkit</a></li>
     <li><a href="#追加のデータ">追加のデータ</a></li>
   </ul>
 </nav>
@@ -1097,10 +1099,10 @@ if (!doNotTrack) {
 <p>DefaultAuthenticationChallengeHandler は、OAuth 認証の認証情報の入力をユーザーに求めるために、デフォルトで <a href="https://developer.chrome.com/docs/android/custom-tabs/overview/">Chrome カスタムタブ</a> を使用するようになりました。これにより、外部ブラウザ ウィンドウで資格情報の入力を求めるよりも優れたユーザーエクスペリエンスが提供されます。Chrome カスタムタブのサポートにより、<a href="https://developer.android.com/jetpack/androidx/releases/browser">androidx.browser:browser</a> の新しい推移的依存関係が導入されました。 この依存関係は、gradle ビルドスクリプトから arcgis-android ライブラリを参照すると自動的に構成されます。API を手動でダウンロードする場合は、androidx の依存関係をサポートするように自分でプロジェクトを構成する必要があります。</p>
 <p>プロジェクトが Google でサポートされていない Android サポート ライブラリに依存している場合は、androidx ライブラリでコンパイルまたはランタイムの問題が発生するため、プロジェクトを <a href="https://developer.android.com/jetpack/androidx/migrate">androidx</a> に移行する必要があります。</p>
 <h1 id="追加のダウンロード">追加のダウンロード</h1>
-<h1 id="サンプル-コード">サンプル コード</h1>
+<h2 id="サンプル-コード">サンプル コード</h2>
 <p>ArcGIS Runtime アプリで実行できる、機能については<a href="https://github.com/Esri/arcgis-runtime-samples-android">サンプル コード</a>を参照してください。</p>
 <p>サンプル ビューアー アプリは、<a href="https://play.google.com/store/apps/details?id=com.esri.sampleviewer">Google Play</a> か、<a href="https://arcgisruntime.maps.arcgis.com/home/item.html?id=21ac248ea189406c821400dc28bf686c">ArcGIS Online（.apk ファイル）</a> からも入手できます。</p>
-<h1 id="arcgis-runtime-api-for-android-toolkit">ArcGIS Runtime API for Android Toolkit</h1>
+<h2 id="arcgis-runtime-api-for-android-toolkit">ArcGIS Runtime API for Android Toolkit</h2>
 <p><a href="https://github.com/esri/arcgis-runtime-toolkit-android">ArcGIS Runtime SDK for Android Toolkit</a> には、アプリの開発を簡略化するためのコントロールやユーティリティが含まれています。例えば、以下のようなものがあります。</p>
 <ul>
 <li>ArcGISArView: SceneView を ARCore と統合し、拡張現実（AR）を実現します。</li>
