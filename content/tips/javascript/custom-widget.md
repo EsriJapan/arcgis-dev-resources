@@ -5,6 +5,8 @@ weight = 5
 aliases = ["/javascript/custom-widget/"]
 +++
 
+出典：ArcGIS API for JavaScript - [Widget development](https://developers.arcgis.com/javascript/latest/custom-widget/)
+
 ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS API for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
 
 このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。

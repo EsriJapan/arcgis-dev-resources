@@ -5,6 +5,8 @@ weight = 6
 aliases = ["/javascript/arcade/"]
 +++
 
+出典：ArcGIS API for JavaScript - [Arcade](https://developers.arcgis.com/javascript/latest/arcade/)
+
 <a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。
 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。
 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を <a href="https://www.esrij.com/products/arcgis-pro/" target="_blank">ArcGIS Pro</a> や <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a>、<a href="https://developers.arcgis.com/arcgis-runtime/" target="_blank">ArcGIS Runtime SDK</a>、<a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a> で編集・共有・実行することができます。
