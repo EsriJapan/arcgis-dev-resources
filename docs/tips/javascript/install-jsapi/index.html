@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-10-26T19:24:09 JST">
+<meta name="revised" content="2021-11-10T17:18:43 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -880,7 +880,6 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#ライブラリのダウンロード">ライブラリのダウンロード</a></li>
     <li><a href="#web-サーバーiisに配置">Web サーバー（IIS）に配置</a></li>
-    <li><a href="#ビルドのインストール">ビルドのインストール</a></li>
     <li><a href="#インストールのテスト">インストールのテスト</a></li>
   </ul>
 </nav>
@@ -901,10 +900,11 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
+    <p>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細については<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/" target="_blank">インストールおよびセットアップ方法</a>を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。</p>
 <p>Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。</p>
 <h2 id="ライブラリのダウンロード">ライブラリのダウンロード</h2>
-<p>ライブラリとヘルプ ドキュメントは ArcGIS Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。</p>
+<p>ライブラリとヘルプ ドキュメントは ArcGIS Developers の <a href="https://developers.arcgis.com/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+（※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。）</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="1150px">
 <blockquote>
 <p>[arcgis_js_v421_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
@@ -915,75 +915,94 @@ if (!doNotTrack) {
 <li>ダウンロードしたライブラリの zip ファイルを解凍します。</li>
 <li><code>\arcgis_js_v421_api\arcgis_js_api\javascript\4.21\</code> とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (<code>C:\inetpub\wwwroot\javascript\api\4.21\</code>)</li>
 </ol>
-<h2 id="ビルドのインストール">ビルドのインストール</h2>
-<p>ライブラリ ファイルに配置した Web サーバーの FQDN とトップレベル ドメインを指定します。</p>
-<ol>
-<li><code>C:\inetpub\wwwroot\javascript\api\4.21\init.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/javascript/api/4.21/</code> に置き換えます。</li>
-<li><code>C:\inetpub\wwwroot\arcgis_js_api\library\4.21\dojo\dojo.js</code> をテキスト エディターで開きます。</li>
-<li><code>[HOSTNAME_AND_PATH_TO_JSAPI]</code> を検索して <code>www.example.com/arcgis_js_api/library/</code> に置き換えます。</li>
-</ol>
 <h2 id="インストールのテスト">インストールのテスト</h2>
-<p>ここまでの手順が完了したら、以下の URL で ArcGIS API for JavaScript のライブラリにアクセスできるようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.21/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>インストールのテストには以下のコードを利用してください。</p>
+<p>以下のサンプルは、ArcGIS API for JavaScript のダウンロード版に含まれています。
+ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v421_api/arcgis_js_api/javascript/4.21/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション <a href="https://www.example.com/javascript/api/4.21/index.html">https://www.example.com/javascript/api/4.21/index.html</a> を開くことにより、API をテストすることができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1,user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Test Map&lt;/<span style="color:#f92672">title</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.21/esri/themes/light/main.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1,maximum-scale=1,user-scalable=no&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Test local installation of ArcGIS API for JavaScript&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
       #viewDiv {
-        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
         <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">93</span><span style="color:#66d9ef">%</span>;
         <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/javascript/api/4.21/init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./esri/themes/light/main.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./init.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+
     &lt;<span style="color:#f92672">script</span>&gt;
-      <span style="color:#a6e22e">require</span>([
-        <span style="color:#e6db74">&#34;esri/Basemap&#34;</span>,
-        <span style="color:#e6db74">&#34;esri/layers/TileLayer&#34;</span>,
-        <span style="color:#e6db74">&#34;esri/Map&#34;</span>,
-        <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>
-      ], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Basemap</span>, <span style="color:#a6e22e">TileLayer</span>, <span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>){
+      <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/Basemap&#34;</span>, <span style="color:#e6db74">&#34;esri/layers/TileLayer&#34;</span>, <span style="color:#e6db74">&#34;esri/Map&#34;</span>, <span style="color:#e6db74">&#34;esri/views/SceneView&#34;</span>], <span style="color:#66d9ef">function</span> (
+        <span style="color:#a6e22e">Basemap</span>,
+        <span style="color:#a6e22e">TileLayer</span>,
+        <span style="color:#a6e22e">Map</span>,
+        <span style="color:#a6e22e">SceneView</span>
+      ) {
         <span style="color:#75715e">// --------------------------------------------------------------------
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// パブリックなインターネット アクセスができない環境の場合、
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Basemap クラスとローカルにアクセス可能なキャッシュ サービスを利用します。
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// そうでない場合は、ホストされた ArcGIS サービスのいずれかを使用することができます。
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// If you do not have public internet access, change the layer URL to
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// point to your own locally accessible cached service.
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">// --------------------------------------------------------------------
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">layer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TileLayer</span>({
-          <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.example.com/arcgis/rest/services/Folder/Custom_Base_Map/MapServer&#34;</span>
+          <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer&#34;</span>
         });
         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">customBasemap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Basemap</span>({
           <span style="color:#a6e22e">baseLayers</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">layer</span>],
-          <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Custom Basemap&#34;</span>,
-          <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;myBasemap&#34;</span>
+          <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;My Basemap&#34;</span>
         });
         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
           <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">customBasemap</span>
         });
-        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
-          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">139</span>, <span style="color:#ae81ff">35</span>], <span style="color:#75715e">// long, lat
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
-          <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">myMap</span>,
-          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SceneView</span>({
+          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>,
+          <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">myMap</span>
         });
+
+        <span style="color:#a6e22e">checkThisOne</span>(<span style="color:#e6db74">&#34;./esri/views/3d/environment/resources/stars.wsv&#34;</span>, <span style="color:#e6db74">&#34;wsv mimetype&#34;</span>);
+        <span style="color:#a6e22e">checkThisOne</span>(<span style="color:#e6db74">&#34;./esri/t9n/basemaps.json&#34;</span>, <span style="color:#e6db74">&#34;json mimetype&#34;</span>);
+        <span style="color:#a6e22e">checkThisOne</span>(<span style="color:#e6db74">&#34;./esri/themes/base/icons/fonts/CalciteWebCoreIcons.ttf&#34;</span>, <span style="color:#e6db74">&#34;ttf mimetype&#34;</span>);
+        <span style="color:#a6e22e">checkThisOne</span>(<span style="color:#e6db74">&#34;./esri/themes/base/icons/fonts/CalciteWebCoreIcons.woff&#34;</span>, <span style="color:#e6db74">&#34;woff mimetype&#34;</span>);
+
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkThisOne</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">desc</span>) {
+          <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>, {
+            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HEAD&#34;</span>
+          })
+            .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+              <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">ok</span>) {
+                <span style="color:#a6e22e">logDiv</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;* OK: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">desc</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>;
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">200</span>) {
+                  <span style="color:#a6e22e">logDiv</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;status: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>;
+                }
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">blob</span>();
+              } <span style="color:#66d9ef">else</span> {
+                <span style="color:#75715e">// response not ok
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">logDiv</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span>
+                  <span style="color:#e6db74">&#34;* HTTP error &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; for &lt;a href=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/a&gt;&lt;br/&gt;&#34;</span>;
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Problem accessing &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">desc</span>);
+              }
+            })
+            .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>) {
+              <span style="color:#a6e22e">logDiv</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;* BAD: &lt;a href=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/a&gt;&lt;br/&gt;&#34;</span>;
+            });
+        }
       });
     &lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
+
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div>
+</code></pre></div><p>以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.21となります。)
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px"></p>
+
 
     
     
