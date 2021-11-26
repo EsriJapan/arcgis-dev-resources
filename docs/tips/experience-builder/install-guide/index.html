@@ -1,918 +1,818 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-159239795-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    <title>ArcGIS Developer 開発リソース集</title>
-    
-      <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-11-24T16:16:24 JST">
+<!doctype html><html>
+<head>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-159239795-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<title>ArcGIS Developer 開発リソース集</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=revised content="2021-11-26T16:05:57 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
-<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
-<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
-
-<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
-<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
-<style type="text/css">
-  :root #header + #content > #left > #rlblock_left {
-    display:none !important;
-  }
-</style>
-<meta name="description" content="ArcGIS Experience Builder (Developer Edition) をインストールする手順を紹介します。">
-
-
-    
-  </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/install-guide/">
-    
-      <div id="headermain"></div>
-<nav id="sidebar" class="">
-
-
-
-<div class="highlightable">
-  <div id="header-wrapper">
-    <div id="header">
-      
-	
-  
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
-  
-
-
-    </div>
-        <div class="searchbox">
-		    <label for="search-by"><i class="fa fa-search"></i></label>
-		    <input data-search-input id="search-by" type="text" placeholder="検索...">
-		    <span data-search-clear=""><i class="fa fa-close"></i></span>
-		</div>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
-		<script type="text/javascript">
-        
-            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
-        
-		</script>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
-  </div>
-
-      <ul class="topics">
-            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
-            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
-            </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/get-dev-account/">
-            開発者アカウントの作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/get-api-key/">
-            API キーの取得
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
-            フィーチャサービスの作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
-            Web マップの作成
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
-            ArcGIS API for JavaScript
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
-            Esri Leaflet
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
-            OpenLayers
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
-            Android
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
-            iOS
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
-            .NET
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/security/">
-            セキュリティと認証
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
-            インストールおよびセットアップ方法
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/">
-            バージョン 4.x と 3.x の選択
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
-            バージョン 3.x から 4.x への移行
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/custom-widget/">
-            ウィジェット開発
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/arcade/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/arcade/">
-            Arcade
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
-            カスタム フォント
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
-            ページ（Page）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
-            ウィンドウ（Window）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
-            セクションとビュー（Section and view）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
-            レイアウト（Layout）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
-            テーマ（Theme）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
-            ウィジェット（Widget）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
-            Jimu
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
-            データ ソース（Data source）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
-            データアクション（Data action）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
-            メッセージ と アクション（Message and action）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
-            マップ/シーン ビュー（Map/Scene View）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
-            拡張ポイント（Extension points）
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item active">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
-            ウィジェット開発のスタート
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
-            ウィジェット manifest
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
-            ウィジェットの実装
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
-            ウィジェット UI の作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
-            ウィジェット間の通信
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
-            ウィジェット開発のデバック
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
-            サードパーティ製のライブラリ使用
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
-            単体テスト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
-            assets の使用
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
-            デプロイ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
-            チュートリアル
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
-            カスタム ウィジェット開発ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
-            デプロイ パターン
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            Web アプリケーションのデプロイ
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/migration-android-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/migration-ios-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
-            ArcGIS API for Python のコンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
-            ArcGIS API for Python のための基礎環境：conda入門
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
-            Jupyter Notebook を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
-            Jupyter Lab を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
-            スクリプト実行の自動化
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
-            matplotlib での日本語利用について
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">ArcGIS Pro SDK</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ArcGIS Pro SDK</a>
-      </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/">
-            ArcGIS とは
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/">
-            API、SDK、アプリ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/security-and-authentication/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/security-and-authentication/">
-            セキュリティと認証
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/">
-            アプリ ログインの制限
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/layers/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/layers/">
-            レイヤー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/web-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/web-maps/">
-            Web マップ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/web-scenes/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/web-scenes/">
-            Web シーン
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/rest-api/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/rest-api/">
-            REST API
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/">
-            データ可視化のワークフロー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/">
-            データ可視化の手順
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/">
-            地図上に賢くデータを可視化するための 6 つの方法
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/hackathon/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/hackathon/">
-            ミートアップ
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/samples/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/samples/">サンプル集</a>
-      </div>
-    </li>
-
-
-
-        <section id="shortcuts">
-                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
-        </section>
-
-    <hr />
-    <li></li>
-    
-    </ul>
-
- <section id="footer"><center>
+<link rel="shortcut icon" href=/arcgis-dev-resources/images/favicon.png type=image/x-icon>
+<link href=/arcgis-dev-resources/css/nucleus.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/font-awesome.min.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/hybrid.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/featherlight.min.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/auto-complete.css rel=stylesheet>
+<link href=/arcgis-dev-resources/theme-original/style.css rel=stylesheet>
+<link rel=stylesheet href=/arcgis-dev-resources/css/bootstrap.min.css>
+<script src=/arcgis-dev-resources/js/jquery-2.x.min.js></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+<meta name=description content="ArcGIS Experience Builder (Developer Edition) をインストールする手順を紹介します。">
+</head>
+<body data-url=/arcgis-dev-resources/tips/experience-builder/install-guide/>
+<div id=headermain></div>
+<nav id=sidebar>
+<div class=highlightable>
+<div id=header-wrapper>
+<div id=header>
+<a class=baselink href=https://esrijapan.github.io/arcgis-dev-resources>ArcGIS Developer 開発リソース集</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=検索...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=/arcgis-dev-resources/js/lunr.min.js></script>
+<script type=text/javascript src=/arcgis-dev-resources/js/auto-complete.js></script>
+<script type=text/javascript>var baseurl="https://esrijapan.github.io/arcgis-dev-resources"</script>
+<script type=text/javascript src=/arcgis-dev-resources/js/search.js></script>
+</div>
+<ul class=topics>
+<li data-nav-id=/arcgis-dev-resources/ class=dd-item>
+<a href=/arcgis-dev-resources/><i class="fa fa-fw fa-home"></i></a>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/ class="dd-item alwaysopen haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/>スタートアップ ガイド</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/get-dev-account/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/get-dev-account/>
+開発者アカウントの作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/get-api-key/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/get-api-key/>
+API キーの取得
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/services/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/services/>ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/services/create-feature-service/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/services/create-feature-service/>
+フィーチャサービスの作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/services/create-webmap/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/services/create-webmap/>
+Web マップの作成
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/>アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-js/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-js/>
+ArcGIS API for JavaScript
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/>
+Esri Leaflet
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/>
+Mapbox GL JS
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/>
+OpenLayers
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-android/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-android/>
+Android
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-ios/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-ios/>
+iOS
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/>
+.NET
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/security/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/security/>
+セキュリティと認証
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/>運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/license-location-services/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/license-location-services/>
+ロケーション サービスのライセンス
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/license-your-app/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/license-your-app/>
+アプリのライセンス
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/attribution/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/attribution/>
+帰属
+</a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ class="dd-item parent alwaysopen haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/>技術 Tips 集</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/>ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/install-and-setup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/install-and-setup/>
+インストールおよびセットアップ方法
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/install-jsapi/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/install-jsapi/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/>
+バージョン 4.x と 3.x の選択
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/>
+バージョン 3.x から 4.x への移行
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/custom-widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/custom-widget/>
+ウィジェット開発
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/arcade/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/arcade/>
+Arcade
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/custom-font/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/custom-font/>
+カスタム フォント
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/ class="dd-item parent haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/>ArcGIS Experience Builder (Developer Edition)</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/>コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/page/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/page/>
+ページ（Page）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/window/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/window/>
+ウィンドウ（Window）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/>
+セクションとビュー（Section and view）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/>
+画面グループ（Screen groups）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/>
+レイアウト（Layout）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/>
+テーマ（Theme）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/>
+ウィジェット（Widget）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/>
+Jimu
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/>
+データ ソース（Data source）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/>
+データアクション（Data action）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/>
+メッセージ と アクション（Message and action）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/>
+マップ/シーン ビュー（Map/Scene View）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/>
+拡張ポイント（Extension points）
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/install-guide/ class="dd-item active">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/install-guide/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/>カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/>
+ウィジェット開発のスタート
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/>
+ウィジェット manifest
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/>
+ウィジェットの実装
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/>
+ウィジェット UI の作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/>
+ウィジェット間の通信
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/>
+ウィジェット開発のデバック
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/>
+サードパーティ製のライブラリ使用
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/>
+単体テスト
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/>
+assets の使用
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/deployment-topics/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/deployment-topics/>
+デプロイ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/tutorials/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/tutorials/>
+チュートリアル
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/>ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/install-guide/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/install-guide/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/development-guide/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/development-guide/>
+カスタム ウィジェット開発ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/>
+デプロイ パターン
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/>
+Web アプリケーションのデプロイ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/>ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/>
+ウィジェット一覧表 (ArcGIS Online)
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/>
+ウィジェット一覧表 (ArcGIS Enterprise)
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/>
+ウィジェット一覧表 (Developer Edition)
+</a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/>ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/android/>ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/android/install-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/install-android-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/distribution-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/distribution-android-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/migration-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/migration-android-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/ios/>ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/install-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/install-ios-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/distribution-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/distribution-ios-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/migration-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/migration-ios-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/python/>ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-concepts/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-concepts/>
+ArcGIS API for Python のコンセプト
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-conda/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-conda/>
+ArcGIS API for Python のための基礎環境：conda入門
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-install/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-install/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-jnsetup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-jnsetup/>
+Jupyter Notebook を使ってみよう
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-jnlabsetup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-jnlabsetup/>
+Jupyter Lab を使ってみよう
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/automate-tasks/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/automate-tasks/>
+スクリプト実行の自動化
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/matplotlib-japanese/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/matplotlib-japanese/>
+matplotlib での日本語利用について
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/>ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/customization/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/customization/>ArcGIS Pro SDK</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/geodatabase/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/geodatabase/>ArcGIS Pro SDK</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/>コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/>
+ArcGIS とは
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/>
+API、SDK、アプリ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/security-and-authentication/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/security-and-authentication/>
+セキュリティと認証
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/>
+アプリ ログインの制限
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/layers/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/layers/>
+レイヤー
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/web-maps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/web-maps/>
+Web マップ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/web-scenes/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/web-scenes/>
+Web シーン
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/rest-api/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/rest-api/>
+REST API
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/>データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/>
+データ可視化のワークフロー
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/data-visualization-procedure/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/data-visualization-procedure/>
+データ可視化の手順
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/>
+地図上に賢くデータを可視化するための 6 つの方法
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/hackathon/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/hackathon/>
+ミートアップ
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/samples/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/samples/>サンプル集</a>
+</div>
+</li>
+<section id=shortcuts>
+<li role><a href=https://github.com/EsriJapan/arcgis-dev-resources target=_blank rel=noopener><i class="fa fa-github"></i> <label>Github</label></a></li>
+</section>
+<hr>
+<li></li>
+</ul>
+<section id=footer><center>
 <br>© Esri Japan. All rights reserved.<br>
 </center>
-
-    </section>
-  </div>
+</section>
+</div>
 </nav>
-
-
-
-<section id="body">
-<div id="overlay"></div>
+<section id=body>
+<div id=overlay></div>
 <div class="padding highlightable">
-
-  <div id="top-bar">
-    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-        <span id="sidebar-toggle-span">
-          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-            <i class="fa fa-bars"></i>
-          </a>
-        </span>
-        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-        <span class="links">
-        
-
-
-
-
-
-
-
-
-
-
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > インストール ガイド
-
- 
-
- 
-
- 
-
-   
-        </span>
-    </div>
-    
-    
-    <div class="progress">
-        <div class="wrapper">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#インストール">インストール</a></li>
-    <li><a href="#server-インストール">Server インストール</a>
-      <ul>
-        <li><a href="#1-client-id-の作成">1. Client ID の作成</a></li>
-        <li><a href="#1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
-        <li><a href="#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-server-サービスのインストール">2. server サービスのインストール</a></li>
-    <li><a href="#client-インストール">Client インストール</a></li>
-    <li><a href="#offline-インストール">Offline インストール</a></li>
-  </ul>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=/arcgis-dev-resources/>ArcGIS Developer 開発リソース集</a> > <a href=/arcgis-dev-resources/tips/>技術 Tips 集</a> > <a href=/arcgis-dev-resources/tips/experience-builder/>ArcGIS Experience Builder (Developer Edition)</a> > インストール ガイド
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#インストール>インストール</a></li>
+<li><a href=#server-インストール>Server インストール</a>
+<ul>
+<li><a href=#1-client-id-の作成>1. Client ID の作成</a></li>
+<li><a href=#1-1-arcgis-developers-を使用した-client-id-の作成>1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
+<li><a href=#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成>1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
+</ul>
+</li>
+<li><a href=#2-server-サービスのインストール>2. server サービスのインストール</a></li>
+<li><a href=#client-インストール>Client インストール</a></li>
+<li><a href=#offline-インストール>Offline インストール</a></li>
+</ul>
 </nav>
-        </div>
-    </div>
-    
-
-  </div>
-
-
-<div id="body-inner">
-  
-    <h1>インストール ガイド</h1>
-  
-
-
-
-    
-    
-    
-    <p><a href="https://www.esrij.com/products/arcgis-experience-builder/">ArcGIS Experience Builder</a> は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。<a href="https://developers.arcgis.com/experience-builder/">Developer Edition (開発者向けエディション)</a>は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。</p>
-<p>ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) の<a href="../core-concepts">コア コンセプト (Core concepts)</a> を参照してください。</p>
-<h2 id="インストール">インストール</h2>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>インストール ガイド</h1>
+<p><a href=https://www.esrij.com/products/arcgis-experience-builder/>ArcGIS Experience Builder</a> は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。<a href=https://developers.arcgis.com/experience-builder/>Developer Edition (開発者向けエディション)</a>は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。</p>
+<p>ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) の<a href=../core-concepts>コア コンセプト (Core concepts)</a> を参照してください。</p>
+<h2 id=インストール>インストール</h2>
 <p>ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。
-<br/>Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。</p>
+<br>Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。</p>
 <ul>
 <li>server サービス
 <ul>
@@ -926,32 +826,32 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。
-<br/>ここでは、Experience Builder (Developer Edition) の <a href="#server-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">server</a> と <a href="#client-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">client</a> のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、<a href="#offline-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">offline</a>でのインストール手順を参照してください。</p>
-<h2 id="server-インストール">Server インストール</h2>
-<h3 id="1-client-id-の作成">1. Client ID の作成</h3>
+<br>ここでは、Experience Builder (Developer Edition) の <a href=#server-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB>server</a> と <a href=#client-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB>client</a> のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、<a href=#offline-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB>offline</a>でのインストール手順を参照してください。</p>
+<h2 id=server-インストール>Server インストール</h2>
+<h3 id=1-client-id-の作成>1. Client ID の作成</h3>
 <p>はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
 Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に応じて作成を行ってください。</p>
 <ul>
-<li><a href="#1-1-arcgis-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
-<li><a href="#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
+<li><a href=#1-1-arcgis-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90>1-1. ArcGIS Developers を使用した Client ID の作成</a></li>
+<li><a href=#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90>1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a></li>
 </ul>
-<h3 id="1-1-arcgis-developers-を使用した-client-id-の作成">1-1. ArcGIS Developers を使用した Client ID の作成</h3>
-<p><a href="https://developers.arcgis.com">ArcGIS Developers</a> を使用している場合は、以下の手順を行います。</p>
-<div class="notices tip" >
+<h3 id=1-1-arcgis-developers-を使用した-client-id-の作成>1-1. ArcGIS Developers を使用した Client ID の作成</h3>
+<p><a href=https://developers.arcgis.com>ArcGIS Developers</a> を使用している場合は、以下の手順を行います。</p>
+<div class="notices tip">
 <p>インストール手順については Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
 </div>
 <ol>
-<li><a href="https://developers.arcgis.com/sign-in/">ArcGIS for Developers</a> にサイン インします。</li>
+<li><a href=https://developers.arcgis.com/sign-in/>ArcGIS for Developers</a> にサイン インします。</li>
 <li>サイン イン後にダッシュボードが表示されますので <code>OAuth 2.0</code> タブをクリックします。</li>
 <li><code>+ New Application</code> をクリックし、アプリケーションの詳細を入力して、新しいアプリケーションを登録します。</li>
 <li><code>Redirect URLs</code> のセクションまでスクロール ダウンします。</li>
 <li><code>+ Add URI</code> をクリックして、<code>https://localhost:3001/</code> を追加します。
-<img src="https://developers.arcgis.com/experience-builder/static/11a95492cfecd6790c12ca88af31ec09/4cdf7/installExB.png" width="80%" /></li>
+<img src=https://developers.arcgis.com/experience-builder/static/11a95492cfecd6790c12ca88af31ec09/4cdf7/installExB.png width=80%></li>
 <li>Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。</li>
 </ol>
-<h3 id="1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成">1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</h3>
+<h3 id=1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成>1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</h3>
 <p>ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。</p>
-<div class="notices tip" >
+<div class="notices tip">
 <p>※ インストール手順については Esri が公開している<a href="https://www.youtube.com/watch?v=BcJxNaKuTxg">インストール動画 (英語)</a>でも確認することができます。</p>
 </div>
 <ol>
@@ -959,72 +859,72 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <li><code>アプリケーション タイプ</code> で <code>他のアプリケーション</code> を選択します。</li>
 <li>ダイアログボックスで、以下のパラメータを入力し、<code>保存</code> をクリックします。
 <ul>
-<li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などの任意のタイトルをを入力します。</li>
+<li><code>タイトル</code> - 例えば、<code>Experience Builder credentials</code> などの任意のタイトルをを入力します。</li>
 <li><code>フォルダー</code> - アイテムを保存する任意のフォルダーを選択します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>サマリー</code> - アイテムのサマリーを入力します。</li>
 </ul>
 </li>
 </ol>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" /></p>
-<ol start="4">
+<p><img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png></p>
+<ol start=4>
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、<code>更新</code> をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></li>
+<img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png></li>
 </ol>
-<h2 id="2-server-サービスのインストール">2. server サービスのインストール</h2>
+<h2 id=2-server-サービスのインストール>2. server サービスのインストール</h2>
 <p>Client ID の作成が完了したら以下の手順で server サービスのインストールを行います。</p>
-<p>Experience Builder は、Node.js を使用します。長期サポート (LTS) バージョン v12 以上がサポートされています。お使いの OS に対応した最新の <a href="https://nodejs.org/en/download/">Node.js LTS バージョン</a>をダウンロードしてインストールを行ってください。</p>
+<p>Experience Builder は、Node.js を使用します。長期サポート (LTS) バージョン v12 以上がサポートされています。お使いの OS に対応した最新の <a href=https://nodejs.org/en/download/>Node.js LTS バージョン</a>をダウンロードしてインストールを行ってください。</p>
 <ol>
 <li>Experience Builder (Developer Edition) の ZIP ファイルをローカルに<a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロード</a>して、解凍します。
-<br/><span style="font-size: 75%">※ <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロードページ</a>でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span></li>
+<br><span style=font-size:75%>※ <a href="https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder">ダウンロードページ</a>でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span></li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。
-<br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start  で実行します。</span></li>
+<br><span style=font-size:75%>※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span></li>
 <li><code>npm start</code> と入力して server を起動します。</li>
 <li>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。</li>
 </ol>
-<div class="notices tip" >
+<div class="notices tip">
 <p>Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。デフォルトの証明書を独自の証明書に変更するには、/server/cert ディレクトリの server.key と server.cert の 2 つのファイルを置き換える必要があります。</p>
 </div>
-<ol start="5">
-<li>ポータルの URL には ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、クライアント ID には「<a href="#1-1-arcgis-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-1. ArcGIS Developers を使用した Client ID の作成</a>」で作成した client ID」、または「<a href="#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
-<br/>すべてを指定したらサイン インをクリックします。</li>
+<ol start=5>
+<li>ポータルの URL には ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、クライアント ID には「<a href=#1-1-arcgis-developers-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90>1-1. ArcGIS Developers を使用した Client ID の作成</a>」で作成した client ID」、または「<a href=#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90>1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成</a>」で作成したアプリケーション ID を指定します。
+<br>すべてを指定したらサイン インをクリックします。</li>
 </ol>
-<div class="notices tip" >
+<div class="notices tip">
 <p>Safari で、PKI、Kerberos、IWA、または LDAP 認証タイプを使用して Experience Builder Developer Edition にサインインするには、Safari の開発メニューにある「Cross-Origin Restrictions を無効にする」を選択する必要があります。</p>
 </div>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
-サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br/>
-<br/>● 権限のリクエスト画面
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_2.png" width="60%" /> 
-権限のリクエスト画面は、使用しているブラウザですでに ArcGIS Online などにログインしているため、ログインした組織のアカウントが表示されます。許可をクリックすることで、Experience Builder の初期画面が表示されます。もし、他のアカウントでサイン インする場合は、別のアカウントでサイン インをクリックしてください。以下の ArcGIS ログイン画面が起動しますので、目的のユーザー名、パスワードを入力してサイン インします。<br/>
-<br/>● ArcGIS ログイン画面
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_3.png" width="60%" /> 
+<p><img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png width=70%>
+サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br>
+<br>● 権限のリクエスト画面
+<img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_2.png width=60%>
+権限のリクエスト画面は、使用しているブラウザですでに ArcGIS Online などにログインしているため、ログインした組織のアカウントが表示されます。許可をクリックすることで、Experience Builder の初期画面が表示されます。もし、他のアカウントでサイン インする場合は、別のアカウントでサイン インをクリックしてください。以下の ArcGIS ログイン画面が起動しますので、目的のユーザー名、パスワードを入力してサイン インします。<br>
+<br>● ArcGIS ログイン画面
+<img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_3.png width=60%>
 使用しているブラウザで ArcGIS Online などにログインしていない場合は、ArcGIS ログイン画面が表示されます。目的のユーザー名、パスワードを入力してサイン インをクリックしてください。認証に成功すると、Experience Builder の初期画面が表示されます。
-<br/><br/>
-6. 次のステップで <a href="#client-install">client</a> インストールを行います。</p>
-<h2 id="client-インストール">Client インストール</h2>
+<br><br>
+6. 次のステップで <a href=#client-install>client</a> インストールを行います。</p>
+<h2 id=client-インストール>Client インストール</h2>
 <p>Experience Builder の開発では、ローカルの Experience Builder で使用しているカスタム ウィジェットやテーマをバンドルしてロードするため webpack を起動する必要があります。webpack を起動するために client サービスをインストールする必要があります。</p>
 <ol>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /client ディレクトリに cd コマンドで移動して <code>npm ci</code> と入力し、Enter キーを押して、必要なモジュールをインストールします。
-<br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span></li>
+<br><span style=font-size:75%>※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span></li>
 <li><code>npm start</code> と入力して client を起動します。
-<br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは <code>https://localhost:3001</code> で表示した Experience Builder 上で使用することが可能となります。</span></li>
+<br><span style=font-size:75%>※ client のサービスを起動することで、カスタム ウィジェットやテーマは <code>https://localhost:3001</code> で表示した Experience Builder 上で使用することが可能となります。</span></li>
 </ol>
-<div class="notices tip" >
+<div class="notices tip">
 <p>/client/your-extensions ディレクトリに新しいファイルやフォルダを作成した場合は、client サービスの再起動が必要になります。</p>
 </div>
-<p>同じマシンで複数のバージョンの Developer edition を持つことができます。お使いのマシンが<a href="https://developers.arcgis.com/experience-builder/guide/requirements">システム要件</a>を満たしていることを確認してください。</p>
-<h2 id="offline-インストール">Offline インストール</h2>
+<p>同じマシンで複数のバージョンの Developer edition を持つことができます。お使いのマシンが<a href=https://developers.arcgis.com/experience-builder/guide/requirements>システム要件</a>を満たしていることを確認してください。</p>
+<h2 id=offline-インストール>Offline インストール</h2>
 <ul>
 <li>
-<p>インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、<a href="https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api">JSAPI</a> をダウンロードしてローカルにインストールする必要があります。</p>
+<p>インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、<a href=https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api>JSAPI</a> をダウンロードしてローカルにインストールする必要があります。</p>
 </li>
 <li>
-<p>Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に <a href="https://nodejs.org/en/download/">Node.js (v12+.x)</a> をダウンロードしてインストールを行います。</p>
+<p>Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br> Experience Builder のインストール環境に <a href=https://nodejs.org/en/download/>Node.js (v12+.x)</a> をダウンロードしてインストールを行います。</p>
 </li>
 </ul>
-<div class="notices tip" >
+<div class="notices tip">
 <p>Esri が公開している<a href="https://youtube.com/watch?v=1rO1cZNEr0E">オフライン インストール動画 (英語)</a>でも確認することができます。</p>
 </div>
 <ol>
@@ -1035,19 +935,19 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <li>ダウンロードした Experience Builder (Developer Edition) 用 の npm-cache ディレクトリをコピーして、4 で参照しているディレクトリに貼り付けます。</li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの client ディレクトリに cd コマンドで移動して、<code>npm install --offline</code> と入力して Enter キーを押します。</li>
 <li>別のコマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの server ディレクトリに cd コマンドで移動して、<code>npm install -- offline</code> と入力して Enter キーを押します。</li>
-<li>Experience Builder の client ディレクトリを以下のパス <code>&lt;install folder&gt;/client/dist</code> で開きます。</li>
+<li>Experience Builder の client ディレクトリを以下のパス <code>&lt;install folder>/client/dist</code> で開きます。</li>
 <li>変数 <code>ARCGIS_JS_API_URL</code> をローカルで JSAPI を参照している URL に更新する必要が4箇所あります。例えば、以下の各ファイルで <code>var ARCGIS_JS_API_URL = 'https://js.arcgis.com/4.16/'</code> を <code>var ARCGIS_JS_API_URL = 'https://exb.esri.com/4.16/'</code> に置き換えてください。
 <ul>
-<li><code>&lt;install folder&gt;/client/dist/index.html</code></li>
-<li><code>&lt;install folder&gt;/client/dist/experience/index.html</code></li>
-<li><code>&lt;install folder&gt;/client/dist/template/index.html</code></li>
-<li><code>&lt;install folder&gt;/client/dist/builder/index.html</code></li>
+<li><code>&lt;install folder>/client/dist/index.html</code></li>
+<li><code>&lt;install folder>/client/dist/experience/index.html</code></li>
+<li><code>&lt;install folder>/client/dist/template/index.html</code></li>
+<li><code>&lt;install folder>/client/dist/builder/index.html</code></li>
 </ul>
 </li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の client ディレクトリに cd コマンドで移動して、npm start と入力して client サービスを起動します。</li>
 <li>コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の server ディレクトリに cd コマンドで移動して、npm start と入力して server サービスを起動します。</li>
 </ol>
-<div class="notices tip" >
+<div class="notices tip">
 <p>Experience Builder (Developer Edition) を使用するために Client ID が必要になります。Client ID を作成するために ArcGIS Online または ArcGIS Enterprise に接続します。</p>
 </div>
 <p>ここでは、ArcGIS Online または ArcGIS Enterprise を使用した Client ID の作成手順について示します。</p>
@@ -1061,11 +961,11 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <li>
 <p>ダイアログボックスで、以下のパラメータを入力し、<code>保存</code> をクリックします。</p>
 <ul>
-<li><code>タイトル</code> -  例えば、<code>Experience Builder credentials</code> などの任意のタイトルをを入力します。</li>
+<li><code>タイトル</code> - 例えば、<code>Experience Builder credentials</code> などの任意のタイトルをを入力します。</li>
 <li><code>フォルダー</code> - アイテムを保存する任意のフォルダーを選択します。</li>
 <li><code>タグ</code> - <code>Experience Builder</code> のような内容を入力します。</li>
 <li><code>サマリー</code> - アイテムのサマリーを入力します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" /></li>
+<img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png></li>
 </ul>
 </li>
 <li>
@@ -1073,7 +973,7 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 </li>
 <li>
 <p><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" /></p>
+<img src=https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png></p>
 </li>
 <li>
 <p>次の URL <code>https://localhost:3001/</code> を指定して Experience Builder をブラウザで開きます。</p>
@@ -1082,42 +982,25 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <p>ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。</p>
 </li>
 <li>
-<p>サイン イン後の流れについては、<a href="#2-server-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">2. server サービスのインストール</a>のステップ5 以降を参照してください。</p>
+<p>サイン イン後の流れについては、<a href=#2-server-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB>2. server サービスのインストール</a>のステップ5 以降を参照してください。</p>
 </li>
 </ol>
-
-
-    
-    
-          <footer class=" footline" >
-	
+<footer class=footline>
 </footer>
-  </div>
 </div>
-
-<div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" title="拡張ポイント（Extension points）"> <i class="fa fa-chevron-left"></i><label>拡張ポイント（Extension points）</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/" title="カスタム ウィジェット開発ガイド" style="margin-right: 0px;"><label>カスタム ウィジェット開発ガイド</label><i class="fa fa-chevron-right"></i></a></div>
-
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/ title="拡張ポイント（Extension points）"> <i class="fa fa-chevron-left"></i><label>拡張ポイント（Extension points）</label></a>
+<a class="nav nav-next" href=/arcgis-dev-resources/tips/experience-builder/widget-development/ title="カスタム ウィジェット開発ガイド" style=margin-right:0><label>カスタム ウィジェット開発ガイド</label><i class="fa fa-chevron-right"></i></a></div>
 </section>
-<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-</div>    
-
-<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
-<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
-<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
-
-<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
-<script src="/arcgis-dev-resources/js/docdock.js"></script>
-<script src="/arcgis-dev-resources/theme-original/script.js"></script>
-
-
-    
-
-    
-    
-
-    
-  </body>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=/arcgis-dev-resources/js/clipboard.min.js></script>
+<script src=/arcgis-dev-resources/js/featherlight.min.js></script>
+<script src=/arcgis-dev-resources/js/html5shiv-printshiv.min.js></script>
+<script src=/arcgis-dev-resources/js/modernizr.custom.71422.js></script>
+<script src=/arcgis-dev-resources/js/docdock.js></script>
+<script src=/arcgis-dev-resources/theme-original/script.js></script>
+</body>
 </html>

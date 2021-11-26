@@ -1,923 +1,818 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-159239795-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    <title>ArcGIS Developer 開発リソース集</title>
-    
-      <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-11-24T16:16:24 JST">
+<!doctype html><html>
+<head>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-159239795-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<title>ArcGIS Developer 開発リソース集</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name=revised content="2021-11-26T16:05:58 JST">
 <title>ウィジェットの実装 :: ArcGIS Developer 開発リソース集</title>
-<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
-<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
-<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
-
-<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
-<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
-<style type="text/css">
-  :root #header + #content > #left > #rlblock_left {
-    display:none !important;
-  }
-</style>
-<meta name="description" content="ウィジェットの実装方法について紹介します。">
-
-
-    
-  </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
-    
-      <div id="headermain"></div>
-<nav id="sidebar" class="">
-
-
-
-<div class="highlightable">
-  <div id="header-wrapper">
-    <div id="header">
-      
-	
-  
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
-  
-
-
-    </div>
-        <div class="searchbox">
-		    <label for="search-by"><i class="fa fa-search"></i></label>
-		    <input data-search-input id="search-by" type="text" placeholder="検索...">
-		    <span data-search-clear=""><i class="fa fa-close"></i></span>
-		</div>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
-		<script type="text/javascript">
-        
-            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
-        
-		</script>
-		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
-  </div>
-
-      <ul class="topics">
-            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
-            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
-            </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/get-dev-account/">
-            開発者アカウントの作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/get-api-key/">
-            API キーの取得
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
-            フィーチャサービスの作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
-            Web マップの作成
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
-            ArcGIS API for JavaScript
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
-            Esri Leaflet
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
-            OpenLayers
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
-            Android
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
-            iOS
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
-            .NET
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/security/">
-            セキュリティと認証
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
-            インストールおよびセットアップ方法
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/">
-            バージョン 4.x と 3.x の選択
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
-            バージョン 3.x から 4.x への移行
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/custom-widget/">
-            ウィジェット開発
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/arcade/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/arcade/">
-            Arcade
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
-            カスタム フォント
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
-            ページ（Page）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
-            ウィンドウ（Window）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
-            セクションとビュー（Section and view）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
-            レイアウト（Layout）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
-            テーマ（Theme）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
-            ウィジェット（Widget）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
-            Jimu
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
-            データ ソース（Data source）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
-            データアクション（Data action）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
-            メッセージ と アクション（Message and action）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
-            マップ/シーン ビュー（Map/Scene View）
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
-            拡張ポイント（Extension points）
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
-            ウィジェット開発のスタート
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
-            ウィジェット manifest
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item active">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
-            ウィジェットの実装
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
-            ウィジェット UI の作成
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
-            ウィジェット間の通信
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
-            ウィジェット開発のデバック
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
-            サードパーティ製のライブラリ使用
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
-            単体テスト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
-            assets の使用
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
-            デプロイ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
-            チュートリアル
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
-            カスタム ウィジェット開発ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
-            デプロイ パターン
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
-            Web アプリケーションのデプロイ
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/android/migration-android-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
-            アプリケーション配布ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-100.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/ios/migration-ios-100.x/">
-            バージョン 10.2.x から 100.x への移行
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
-            ArcGIS API for Python のコンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
-            ArcGIS API for Python のための基礎環境：conda入門
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
-            Jupyter Notebook を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
-            Jupyter Lab を使ってみよう
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
-            スクリプト実行の自動化
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
-            matplotlib での日本語利用について
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">ArcGIS Pro SDK</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ArcGIS Pro SDK</a>
-      </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/">
-            ArcGIS とは
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/">
-            API、SDK、アプリ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/security-and-authentication/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/security-and-authentication/">
-            セキュリティと認証
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/">
-            アプリ ログインの制限
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/layers/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/layers/">
-            レイヤー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/web-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/web-maps/">
-            Web マップ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/web-scenes/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/web-scenes/">
-            Web シーン
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/core-concepts/rest-api/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/core-concepts/rest-api/">
-            REST API
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/visualization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/">
-            データ可視化のワークフロー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/data-visualization-procedure/">
-            データ可視化の手順
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/">
-            地図上に賢くデータを可視化するための 6 つの方法
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/hackathon/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/hackathon/">
-            ミートアップ
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/samples/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/samples/">サンプル集</a>
-      </div>
-    </li>
-
-
-
-        <section id="shortcuts">
-                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
-        </section>
-
-    <hr />
-    <li></li>
-    
-    </ul>
-
- <section id="footer"><center>
+<link rel="shortcut icon" href=/arcgis-dev-resources/images/favicon.png type=image/x-icon>
+<link href=/arcgis-dev-resources/css/nucleus.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/font-awesome.min.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/hybrid.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/featherlight.min.css rel=stylesheet>
+<link href=/arcgis-dev-resources/css/auto-complete.css rel=stylesheet>
+<link href=/arcgis-dev-resources/theme-original/style.css rel=stylesheet>
+<link rel=stylesheet href=/arcgis-dev-resources/css/bootstrap.min.css>
+<script src=/arcgis-dev-resources/js/jquery-2.x.min.js></script>
+<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+<meta name=description content="ウィジェットの実装方法について紹介します。">
+</head>
+<body data-url=/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/>
+<div id=headermain></div>
+<nav id=sidebar>
+<div class=highlightable>
+<div id=header-wrapper>
+<div id=header>
+<a class=baselink href=https://esrijapan.github.io/arcgis-dev-resources>ArcGIS Developer 開発リソース集</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fa fa-search"></i></label>
+<input data-search-input id=search-by type=text placeholder=検索...>
+<span data-search-clear><i class="fa fa-close"></i></span>
+</div>
+<script type=text/javascript src=/arcgis-dev-resources/js/lunr.min.js></script>
+<script type=text/javascript src=/arcgis-dev-resources/js/auto-complete.js></script>
+<script type=text/javascript>var baseurl="https://esrijapan.github.io/arcgis-dev-resources"</script>
+<script type=text/javascript src=/arcgis-dev-resources/js/search.js></script>
+</div>
+<ul class=topics>
+<li data-nav-id=/arcgis-dev-resources/ class=dd-item>
+<a href=/arcgis-dev-resources/><i class="fa fa-fw fa-home"></i></a>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/ class="dd-item alwaysopen haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/>スタートアップ ガイド</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/get-dev-account/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/get-dev-account/>
+開発者アカウントの作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/get-api-key/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/get-api-key/>
+API キーの取得
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/services/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/services/>ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/services/create-feature-service/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/services/create-feature-service/>
+フィーチャサービスの作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/services/create-webmap/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/services/create-webmap/>
+Web マップの作成
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/>アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-js/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-js/>
+ArcGIS API for JavaScript
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/>
+Esri Leaflet
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/>
+Mapbox GL JS
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/>
+OpenLayers
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-android/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-android/>
+Android
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-ios/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-ios/>
+iOS
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/>
+.NET
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/security/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/security/>
+セキュリティと認証
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/>運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/license-location-services/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/license-location-services/>
+ロケーション サービスのライセンス
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/license-your-app/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/license-your-app/>
+アプリのライセンス
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/guide/licensing/attribution/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/guide/licensing/attribution/>
+帰属
+</a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ class="dd-item parent alwaysopen haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/>技術 Tips 集</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/>ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/install-and-setup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/install-and-setup/>
+インストールおよびセットアップ方法
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/install-jsapi/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/install-jsapi/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/>
+バージョン 4.x と 3.x の選択
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/>
+バージョン 3.x から 4.x への移行
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/custom-widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/custom-widget/>
+ウィジェット開発
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/arcade/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/arcade/>
+Arcade
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/javascript/custom-font/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/javascript/custom-font/>
+カスタム フォント
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/ class="dd-item parent haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/>ArcGIS Experience Builder (Developer Edition)</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/>コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/page/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/page/>
+ページ（Page）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/window/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/window/>
+ウィンドウ（Window）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/>
+セクションとビュー（Section and view）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/>
+画面グループ（Screen groups）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/>
+レイアウト（Layout）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/>
+テーマ（Theme）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/>
+ウィジェット（Widget）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/>
+Jimu
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/>
+データ ソース（Data source）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/>
+データアクション（Data action）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/>
+メッセージ と アクション（Message and action）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/>
+マップ/シーン ビュー（Map/Scene View）
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/>
+拡張ポイント（Extension points）
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/install-guide/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/install-guide/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/ class="dd-item parent haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/>カスタム ウィジェット開発ガイド</a>
+<i class="fa fa-angle-down fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/>
+ウィジェット開発のスタート
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/>
+ウィジェット manifest
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/ class="dd-item active">
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/>
+ウィジェットの実装
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/>
+ウィジェット UI の作成
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/>
+ウィジェット間の通信
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/>
+ウィジェット開発のデバック
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/>
+サードパーティ製のライブラリ使用
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/>
+単体テスト
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/>
+assets の使用
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/deployment-topics/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/deployment-topics/>
+デプロイ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/experience-builder/tutorials/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/experience-builder/tutorials/>
+チュートリアル
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/>ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/install-guide/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/install-guide/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/development-guide/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/development-guide/>
+カスタム ウィジェット開発ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/>
+デプロイ パターン
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/>
+Web アプリケーションのデプロイ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/>ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/>
+ウィジェット一覧表 (ArcGIS Online)
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/>
+ウィジェット一覧表 (ArcGIS Enterprise)
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/>
+ウィジェット一覧表 (Developer Edition)
+</a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/>ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/android/>ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/android/install-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/install-android-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/distribution-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/distribution-android-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/android/migration-android-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/android/migration-android-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/ios/>ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/install-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/install-ios-100.x/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/distribution-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/distribution-ios-100.x/>
+アプリケーション配布ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/ios/migration-ios-100.x/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/ios/migration-ios-100.x/>
+バージョン 10.2.x から 100.x への移行
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/python/>ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-concepts/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-concepts/>
+ArcGIS API for Python のコンセプト
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-conda/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-conda/>
+ArcGIS API for Python のための基礎環境：conda入門
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-install/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-install/>
+インストール ガイド
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-jnsetup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-jnsetup/>
+Jupyter Notebook を使ってみよう
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/python-api-jnlabsetup/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/python-api-jnlabsetup/>
+Jupyter Lab を使ってみよう
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/automate-tasks/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/automate-tasks/>
+スクリプト実行の自動化
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/python/matplotlib-japanese/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/python/matplotlib-japanese/>
+matplotlib での日本語利用について
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/>ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/customization/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/customization/>ArcGIS Pro SDK</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/prosdk/geodatabase/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/prosdk/geodatabase/>ArcGIS Pro SDK</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/>コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/what-is-arcgis/>
+ArcGIS とは
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/apis-sdks-apps/>
+API、SDK、アプリ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/security-and-authentication/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/security-and-authentication/>
+セキュリティと認証
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/limitation-of-app-login/>
+アプリ ログインの制限
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/layers/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/layers/>
+レイヤー
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/web-maps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/web-maps/>
+Web マップ
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/web-scenes/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/web-scenes/>
+Web シーン
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/core-concepts/rest-api/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/core-concepts/rest-api/>
+REST API
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/ class="dd-item haschildren">
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/>データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+</div>
+<ul>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/workflow-with-arcgis/>
+データ可視化のワークフロー
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/data-visualization-procedure/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/data-visualization-procedure/>
+データ可視化の手順
+</a>
+</div>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/visualization/6ways-to-improve-your-maps/>
+地図上に賢くデータを可視化するための 6 つの方法
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/tips/hackathon/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/tips/hackathon/>
+ミートアップ
+</a>
+</div>
+</li>
+</ul>
+</li>
+<li data-nav-id=/arcgis-dev-resources/samples/ class=dd-item>
+<div>
+<a href=/arcgis-dev-resources/samples/>サンプル集</a>
+</div>
+</li>
+<section id=shortcuts>
+<li role><a href=https://github.com/EsriJapan/arcgis-dev-resources target=_blank rel=noopener><i class="fa fa-github"></i> <label>Github</label></a></li>
+</section>
+<hr>
+<li></li>
+</ul>
+<section id=footer><center>
 <br>© Esri Japan. All rights reserved.<br>
 </center>
-
-    </section>
-  </div>
+</section>
+</div>
 </nav>
-
-
-
-<section id="body">
-<div id="overlay"></div>
+<section id=body>
+<div id=overlay></div>
 <div class="padding highlightable">
-
-  <div id="top-bar">
-    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-        <span id="sidebar-toggle-span">
-          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-            <i class="fa fa-bars"></i>
-          </a>
-        </span>
-        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-        <span class="links">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェットの実装
-
- 
-
- 
-
- 
-
- 
-
-   
-        </span>
-    </div>
-    
-    
-    <div class="progress">
-        <div class="wrapper">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#client-サーバー">Client サーバー</a></li>
-    <li><a href="#ウィジェットの作成">ウィジェットの作成</a>
-      <ul>
-        <li><a href="#クラスコンポーネントを使ったウィジェットの作成">クラスコンポーネントを使ったウィジェットの作成</a></li>
-        <li><a href="#関数コンポーネントを使ったウィジェットの作成">関数コンポーネントを使ったウィジェットの作成</a></li>
-      </ul>
-    </li>
-    <li><a href="#ウィジェットの-ui-設定">ウィジェットの UI 設定</a></li>
-    <li><a href="#props">Props</a></li>
-    <li><a href="#i18n-サポート">i18n サポート</a></li>
-    <li><a href="#マップ-ビューシーン-ビュー">マップ ビュー/シーン ビュー</a></li>
-    <li><a href="#arcgis-api-for-javascript-のモジュール">ArcGIS API for JavaScript のモジュール</a></li>
-    <li><a href="#インライン編集をサポート">インライン編集をサポート</a></li>
-    <li><a href="#ベストプラクティス">ベストプラクティス</a></li>
-  </ul>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fa fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fa fa-list-alt"></i></span>
+<span class=links>
+<a href=/arcgis-dev-resources/>ArcGIS Developer 開発リソース集</a> > <a href=/arcgis-dev-resources/tips/>技術 Tips 集</a> > <a href=/arcgis-dev-resources/tips/experience-builder/>ArcGIS Experience Builder (Developer Edition)</a> > <a href=/arcgis-dev-resources/tips/experience-builder/widget-development/>カスタム ウィジェット開発ガイド</a> > ウィジェットの実装
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#client-サーバー>Client サーバー</a></li>
+<li><a href=#ウィジェットの作成>ウィジェットの作成</a>
+<ul>
+<li><a href=#クラスコンポーネントを使ったウィジェットの作成>クラスコンポーネントを使ったウィジェットの作成</a></li>
+<li><a href=#関数コンポーネントを使ったウィジェットの作成>関数コンポーネントを使ったウィジェットの作成</a></li>
+</ul>
+</li>
+<li><a href=#ウィジェットの-ui-設定>ウィジェットの UI 設定</a></li>
+<li><a href=#props>Props</a></li>
+<li><a href=#i18n-サポート>i18n サポート</a></li>
+<li><a href=#マップ-ビューシーン-ビュー>マップ ビュー/シーン ビュー</a></li>
+<li><a href=#arcgis-api-for-javascript-のモジュール>ArcGIS API for JavaScript のモジュール</a></li>
+<li><a href=#インライン編集をサポート>インライン編集をサポート</a></li>
+<li><a href=#ベストプラクティス>ベストプラクティス</a></li>
+</ul>
 </nav>
-        </div>
-    </div>
-    
-
-  </div>
-
-
-<div id="body-inner">
-  
-    <h1>ウィジェットの実装</h1>
-  
-
-
-
-    
-    
-    
-    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/">Widget implementation</a></p>
+</div>
+</div>
+</div>
+<div id=body-inner>
+<h1>ウィジェットの実装</h1>
+<p>出典：ArcGIS Experience Builder - Guide - <a href=https://developers.arcgis.com/experience-builder/guide/extend-base-widget/>Widget implementation</a></p>
 <p>Experience Builder ウィジェットは、次のファイルで構成されています。</p>
 <ul>
 <li>src: ウィジェットのソースコード
@@ -943,7 +838,7 @@ if (!doNotTrack) {
 <li>config.json: ウィジェットのデフォルト設定</li>
 <li>manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示</li>
 </ul>
-<h2 id="client-サーバー">Client サーバー</h2>
+<h2 id=client-サーバー>Client サーバー</h2>
 <p>Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで <code>npm start</code> を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</p>
 <ul>
 <li>新しいモジュールのインストール</li>
@@ -951,11 +846,11 @@ if (!doNotTrack) {
 <li>ウィジェットの <code>manifest.json</code> の編集</li>
 <li>ファイルやフォルダの追加、削除、名前の変更</li>
 </ul>
-<div class="notices tip" >
+<div class="notices tip">
 <p><code>ctrl + c</code> で webpack サーバーを停止させることができます。</p>
 </div>
-<h2 id="ウィジェットの作成">ウィジェットの作成</h2>
-<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、client/your-extensions/widget ディレクトリに配置します。demo widget フォルダの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
+<h2 id=ウィジェットの作成>ウィジェットの作成</h2>
+<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href=https://github.com/esri/arcgis-experience-builder-sdk-resources>samples repo</a> にある demo widget をコピーして、client/your-extensions/widget ディレクトリに配置します。demo widget フォルダの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
 <ul>
 <li>
 <p>クラスコンポーネント</p>
@@ -977,35 +872,35 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>開発者向けドキュメントで使用されているサンプルは、1 つを除いてすべてクラスコンポーネントに基づいています。今後のリリースでは、関数コンポーネントのサンプルを追加する予定です。</p>
-<h3 id="クラスコンポーネントを使ったウィジェットの作成">クラスコンポーネントを使ったウィジェットの作成</h3>
-<p>以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、<code>export default class Widget extends React.Component&lt;AllWidgetProps&gt;, any&gt; {</code> で <code>AllWidgetProps</code> 型で宣言されており、ウィジェットの props を使用しています。 <code>render()</code> メソッドは、translations ファイル内の <code>_widgetLabel</code> のプロパティで設定した テキスト名：<code>hello world</code> とウィジェット名を返すために呼び出されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">//a custom pragma to transform your jsx into plain JavaScript
-</span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span>
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;jimu-core&#34;</span>;
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span> {
+<h3 id=クラスコンポーネントを使ったウィジェットの作成>クラスコンポーネントを使ったウィジェットの作成</h3>
+<p>以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、<code>export default class Widget extends React.Component&lt;AllWidgetProps>, any> {</code> で <code>AllWidgetProps</code> 型で宣言されており、ウィジェットの props を使用しています。 <code>render()</code> メソッドは、translations ファイル内の <code>_widgetLabel</code> のプロパティで設定した テキスト名：<code>hello world</code> とウィジェット名を返すために呼び出されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#75715e>//a custom pragma to transform your jsx into plain JavaScript
+</span><span style=color:#75715e></span><span style=color:#75715e>/** @jsx jsx */</span>
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>React</span>, <span style=color:#a6e22e>AllWidgetProps</span>, <span style=color:#a6e22e>jsx</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;jimu-core&#34;</span>;
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Widget</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>PureComponent</span>&lt;<span style=color:#f92672>AllWidgetProps</span><span style=color:#960050;background-color:#1e0010>&lt;</span>{}&gt;, <span style=color:#66d9ef>any</span><span style=color:#f92672>&gt;</span> {
 
-    <span style="color:#a6e22e">render() {</span>
-      <span style="color:#66d9ef">return</span> (
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-starter jimu-widget&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;auto&#34;</span> }}&gt;
-          &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">world</span><span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
-          &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Widget</span> <span style="color:#a6e22e">Name</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">label</span>}&lt;/<span style="color:#f92672">p</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
+    <span style=color:#a6e22e>render() {</span>
+      <span style=color:#66d9ef>return</span> (
+        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;widget-starter jimu-widget&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>overflow</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;auto&#34;</span> }}&gt;
+          &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>Hello</span> <span style=color:#a6e22e>world</span><span style=color:#f92672>!</span>&lt;/<span style=color:#f92672>p</span>&gt;
+          &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>Widget</span> <span style=color:#a6e22e>Name</span><span style=color:#f92672>:</span> {<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>label</span>}&lt;/<span style=color:#f92672>p</span>&gt;
+        &lt;/<span style=color:#f92672>div</span>&gt;
       );
     }
 
 }
-</code></pre></div><h3 id="関数コンポーネントを使ったウィジェットの作成">関数コンポーネントを使ったウィジェットの作成</h3>
+</code></pre></div><h3 id=関数コンポーネントを使ったウィジェットの作成>関数コンポーネントを使ったウィジェットの作成</h3>
 <p>以下の例では、シンプルな hello world 関数の widget/component を作成するために必要なモジュールをロードしています。ウィジェットは、<code>export default function Widget (props: AllWidgetProps) {</code> で <code>AllWidgetProps</code> 型の関数として宣言されており、ウィジェットの props を使用しています。translations ファイルの <code>_widgetLabel</code> のプロパティで設定した テキスト名: <code>hello world</code> とウィジェット名を返します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span>
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AllWidgetProps</span>, <span style="color:#a6e22e">jsx</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;jimu-core&#34;</span>;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#75715e>/** @jsx jsx */</span>
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>AllWidgetProps</span>, <span style=color:#a6e22e>jsx</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;jimu-core&#34;</span>;
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Widget</span> (<span style="color:#a6e22e">props</span>:<span style="color:#66d9ef">AllWidgetProps</span>) {
-    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-starter jimu-widget&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">overflow</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;auto&#34;</span> }}&gt;
-        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">world</span><span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
-        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Widget</span> <span style="color:#a6e22e">Name</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">label</span>}&lt;/<span style="color:#f92672">p</span>&gt;
-      &lt;/<span style="color:#f92672">div</span>&gt;
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>Widget</span> (<span style=color:#a6e22e>props</span>:<span style=color:#66d9ef>AllWidgetProps</span>) {
+    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;widget-starter jimu-widget&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>overflow</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;auto&#34;</span> }}&gt;
+        &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>Hello</span> <span style=color:#a6e22e>world</span><span style=color:#f92672>!</span>&lt;/<span style=color:#f92672>p</span>&gt;
+        &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>Widget</span> <span style=color:#a6e22e>Name</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>label</span>}&lt;/<span style=color:#f92672>p</span>&gt;
+      &lt;/<span style=color:#f92672>div</span>&gt;
   }
-</code></pre></div><h2 id="ウィジェットの-ui-設定">ウィジェットの UI 設定</h2>
+</code></pre></div><h2 id=ウィジェットの-ui-設定>ウィジェットの UI 設定</h2>
 <p>ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、<code>jimu-for-builder</code> パッケージの一部である <code>BaseWidgetSetting</code> クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。</p>
 <ul>
 <li>import <code>React.Component</code> はクラスを拡張するために使用します。</li>
@@ -1014,87 +909,87 @@ if (!doNotTrack) {
 <li>import <code>DataSourceSelector</code> もデータソースの選択に使われるコンポーネントです。</li>
 <li>import <code>IMConfig</code> は config.json ファイルに使用されます。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">Immutable</span>, <span style="color:#a6e22e">FormattedMessage</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">AllWidgetSettingProps</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-for-builder&#39;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">DataSourceTypes</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">SettingSection</span>, <span style="color:#a6e22e">SettingRow</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/setting-components&#39;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">DataSourceSelector</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/data-source-selector&#39;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">IMConfig</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;../config&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">defaultI18nMessages</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./translations/default&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>React</span>, <span style=color:#a6e22e>Immutable</span>, <span style=color:#a6e22e>FormattedMessage</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;jimu-core&#39;</span>;
+<span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>AllWidgetSettingProps</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;jimu-for-builder&#39;</span>;
+<span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>DataSourceTypes</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;jimu-arcgis&#39;</span>;
+<span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>SettingSection</span>, <span style=color:#a6e22e>SettingRow</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;jimu-ui/advanced/setting-components&#39;</span>;
+<span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>DataSourceSelector</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;jimu-ui/advanced/data-source-selector&#39;</span>;
+<span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>IMConfig</span>} <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;../config&#39;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>defaultI18nMessages</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;./translations/default&#39;</span>
 </code></pre></div><p><code>BaseWidgetSetting</code> クラスは <code>AllWidgetSettingProps</code> と <code>IMConfig</code> という型で宣言されています。<code>supportedTypes</code> プロパティは、クラス全体でデータソースタイプの Web マップに使用されます。<code>onDataSourceSelected</code> は、データソースの選択を処理する関数を持つクラス プロパティです。設定 UI の変更を通知する関数 <code>this.props.OnSettingChange()</code> を使用しています。クラスプロパティの <code>onP1Change</code> と<code>onP2Change</code> は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Setting</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>{
-  <span style="color:#a6e22e">supportedTypes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>([<span style="color:#a6e22e">DataSourceTypes</span>.<span style="color:#a6e22e">WebMap</span>]);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Setting</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>PureComponent</span>{
+  <span style=color:#a6e22e>supportedTypes</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Immutable</span>([<span style=color:#a6e22e>DataSourceTypes</span>.<span style=color:#a6e22e>WebMap</span>]);
 
-  <span style="color:#a6e22e">onDataSourceSelected</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">useDataSources</span>: <span style="color:#66d9ef">UseDataSource</span>[]) <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onSettingChange</span>({
-      <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">this.props.id</span>,
-      <span style="color:#a6e22e">useDataSources</span>: <span style="color:#66d9ef">useDataSources</span>
+  <span style=color:#a6e22e>onDataSourceSelected</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>useDataSources</span>: <span style=color:#66d9ef>UseDataSource</span>[]) <span style=color:#f92672>=&gt;</span> {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>onSettingChange</span>({
+      <span style=color:#a6e22e>id</span>: <span style=color:#66d9ef>this.props.id</span>,
+      <span style=color:#a6e22e>useDataSources</span>: <span style=color:#66d9ef>useDataSources</span>
     });
   }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">    <span style="color:#a6e22e">onP1Change</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">evt</span>: <span style="color:#66d9ef">React.FormEvent</span>&lt;<span style="color:#f92672">HTMLInputElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onSettingChange</span>({
-        <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">this.props.id</span>,
-        <span style="color:#a6e22e">config</span>: <span style="color:#66d9ef">this.props.config.set</span>(<span style="color:#e6db74">&#39;p1&#39;</span>, <span style="color:#a6e22e">evt</span>.<span style="color:#a6e22e">currentTarget</span>.<span style="color:#a6e22e">value</span>)
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>    <span style=color:#a6e22e>onP1Change</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>evt</span>: <span style=color:#66d9ef>React.FormEvent</span>&lt;<span style=color:#f92672>HTMLInputElement</span>&gt;) <span style=color:#f92672>=&gt;</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>onSettingChange</span>({
+        <span style=color:#a6e22e>id</span>: <span style=color:#66d9ef>this.props.id</span>,
+        <span style=color:#a6e22e>config</span>: <span style=color:#66d9ef>this.props.config.set</span>(<span style=color:#e6db74>&#39;p1&#39;</span>, <span style=color:#a6e22e>evt</span>.<span style=color:#a6e22e>currentTarget</span>.<span style=color:#a6e22e>value</span>)
       });
     }
 
-    <span style="color:#a6e22e">onP2Change</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">evt</span>: <span style="color:#66d9ef">React.FormEvent</span>&lt;<span style="color:#f92672">HTMLInputElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onSettingChange</span>({
-        <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">this.props.id</span>,
-        <span style="color:#a6e22e">config</span>: <span style="color:#66d9ef">this.props.config.set</span>(<span style="color:#e6db74">&#39;p2&#39;</span>, <span style="color:#a6e22e">evt</span>.<span style="color:#a6e22e">currentTarget</span>.<span style="color:#a6e22e">value</span>)
+    <span style=color:#a6e22e>onP2Change</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>evt</span>: <span style=color:#66d9ef>React.FormEvent</span>&lt;<span style=color:#f92672>HTMLInputElement</span>&gt;) <span style=color:#f92672>=&gt;</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>onSettingChange</span>({
+        <span style=color:#a6e22e>id</span>: <span style=color:#66d9ef>this.props.id</span>,
+        <span style=color:#a6e22e>config</span>: <span style=color:#66d9ef>this.props.config.set</span>(<span style=color:#e6db74>&#39;p2&#39;</span>, <span style=color:#a6e22e>evt</span>.<span style=color:#a6e22e>currentTarget</span>.<span style=color:#a6e22e>value</span>)
       });
     }
 </code></pre></div><p>jimu ライブラリには、ウィジェットで使用できるコンポーネントがあります。例えば、Web マップを選択のための UI を支援するために、<code>DataSourceSelector</code> コンポーネントが、選択されたデータソースのタイプ、ID、およびコールバックを処理するために使用されます。さらに、<code>SettingSection</code> コンポーネントと <code>SettingRow</code> コンポーネントは、翻訳や config ファイルからの文字列のコンテナの整形を処理するために使用されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">render</span>(){
-    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sample-map-view-setting p-2&#34;</span>&gt;
-      &lt;<span style="color:#f92672">DataSourceSelector</span>
-        <span style="color:#a6e22e">types</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">supportedTypes</span>}
-        <span style="color:#a6e22e">mustUseDataSource</span>
-        <span style="color:#a6e22e">useDataSources</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>}
-        <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onDataSourceSelected</span>}
-        <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">id</span>}
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#a6e22e>render</span>(){
+    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sample-map-view-setting p-2&#34;</span>&gt;
+      &lt;<span style=color:#f92672>DataSourceSelector</span>
+        <span style=color:#a6e22e>types</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>supportedTypes</span>}
+        <span style=color:#a6e22e>mustUseDataSource</span>
+        <span style=color:#a6e22e>useDataSources</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>useDataSources</span>}
+        <span style=color:#a6e22e>onChange</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>onDataSourceSelected</span>}
+        <span style=color:#a6e22e>widgetId</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>id</span>}
       /&gt;
-      &lt;<span style="color:#f92672">SettingSection</span>&gt;
-        &lt;<span style="color:#f92672">SettingRow</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span>{&lt;<span style="color:#f92672">FormattedMessage</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p1&#34;</span> <span style="color:#a6e22e">defaultMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">defaultI18nMessages</span>.<span style="color:#a6e22e">p1</span>}/&gt;}&gt; &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">defaultValue</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">p1</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onP1Change</span>}/&gt;&lt;/<span style="color:#f92672">SettingRow</span>&gt;
-        &lt;<span style="color:#f92672">SettingRow</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span>{&lt;<span style="color:#f92672">FormattedMessage</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p2&#34;</span> <span style="color:#a6e22e">defaultMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">defaultI18nMessages</span>.<span style="color:#a6e22e">p2</span>}/&gt;}&gt; &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">defaultValue</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">p2</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onP2Change</span>}/&gt;&lt;/<span style="color:#f92672">SettingRow</span>&gt;
-      &lt;/<span style="color:#f92672">SettingSection</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;<span style=color:#f92672>SettingSection</span>&gt;
+        &lt;<span style=color:#f92672>SettingRow</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span>{&lt;<span style=color:#f92672>FormattedMessage</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;p1&#34;</span> <span style=color:#a6e22e>defaultMessage</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>defaultI18nMessages</span>.<span style=color:#a6e22e>p1</span>}/&gt;}&gt; &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>defaultValue</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>config</span>.<span style=color:#a6e22e>p1</span>} <span style=color:#a6e22e>onChange</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>onP1Change</span>}/&gt;&lt;/<span style=color:#f92672>SettingRow</span>&gt;
+        &lt;<span style=color:#f92672>SettingRow</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span>{&lt;<span style=color:#f92672>FormattedMessage</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;p2&#34;</span> <span style=color:#a6e22e>defaultMessage</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>defaultI18nMessages</span>.<span style=color:#a6e22e>p2</span>}/&gt;}&gt; &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>defaultValue</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>config</span>.<span style=color:#a6e22e>p2</span>} <span style=color:#a6e22e>onChange</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>onP2Change</span>}/&gt;&lt;/<span style=color:#f92672>SettingRow</span>&gt;
+      &lt;/<span style=color:#f92672>SettingSection</span>&gt;
+    &lt;/<span style=color:#f92672>div</span>&gt;
   }
 }
-</code></pre></div><h2 id="props">Props</h2>
+</code></pre></div><h2 id=props>Props</h2>
 <p>ウィジェットでは props があります。クラス コンポーネントの <code>this.props</code> や関数コンポーネントの props パラメータ <code>{props}</code> を通してアクセスすることができます。例えば、クラス コンポーネントを使用してウィジェットの config.json にある props にアクセスするには、<code>this.props.config</code> を使用します。関数コンポーネントでアクセスするには、<code>props.config</code> を使用します。利用可能なプロパティの詳細については、Experience Builder の <code>client/jimu-core/lib/types/props.ts</code> を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">static</span> <span style="color:#a6e22e">mapExtraStateProps</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>: <span style="color:#66d9ef">IMState</span>) <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">return</span> {
-      <span style="color:#a6e22e">appMode</span>: <span style="color:#66d9ef">state</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">appRuntimeInfo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">appRuntimeInfo</span>.<span style="color:#a6e22e">appMode</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>static</span> <span style=color:#a6e22e>mapExtraStateProps</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>state</span>: <span style=color:#66d9ef>IMState</span>) <span style=color:#f92672>=&gt;</span> {
+    <span style=color:#66d9ef>return</span> {
+      <span style=color:#a6e22e>appMode</span>: <span style=color:#66d9ef>state</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>state</span>.<span style=color:#a6e22e>appRuntimeInfo</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>state</span>.<span style=color:#a6e22e>appRuntimeInfo</span>.<span style=color:#a6e22e>appMode</span>
     };
   };
-</code></pre></div><h2 id="i18n-サポート">i18n サポート</h2>
+</code></pre></div><h2 id=i18n-サポート>i18n サポート</h2>
 <p>Experience Builder は <code>react-intl</code> ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で <code>translatedLocales</code> プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、<code>translatedLocales</code> プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#e6db74">&#34;translatedLocales&#34;</span><span style="color:#f92672">:</span> [
-    <span style="color:#e6db74">&#34;en&#34;</span>,
-    <span style="color:#e6db74">&#34;es&#34;</span>,
-    <span style="color:#e6db74">&#34;zh-cn&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx> <span style=color:#e6db74>&#34;translatedLocales&#34;</span><span style=color:#f92672>:</span> [
+    <span style=color:#e6db74>&#34;en&#34;</span>,
+    <span style=color:#e6db74>&#34;es&#34;</span>,
+    <span style=color:#e6db74>&#34;zh-cn&#34;</span>
   ]
 </code></pre></div><p>翻訳文字列は <code>default.ts</code> というファイルが必要で、<code>runtime/translations</code> と <code>settings/translations</code> フォルダにあります。<code>default.ts</code> はデフォルトの文字列を定義し、ウィジェットにインポートしてデフォルトのメッセージに使うことができます。例えば、<code>widget.tsx</code> では、以下のような翻訳された文字列にアクセスする方法があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// Class component
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;_widgetLabel&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessages._widgetLabel</span>})
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#75715e>// Class component
+</span><span style=color:#75715e></span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>intl</span>.<span style=color:#a6e22e>formatMessage</span>({<span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;_widgetLabel&#39;</span>, <span style=color:#a6e22e>defaultMessage</span>: <span style=color:#66d9ef>defaultMessages._widgetLabel</span>})
 
-<span style="color:#75715e">// Function component
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;_widgetLabel&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessage._widgetLabel</span>})
+<span style=color:#75715e>// Function component
+</span><span style=color:#75715e></span><span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>intl</span>.<span style=color:#a6e22e>formatMessage</span>({<span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;_widgetLabel&#39;</span>, <span style=color:#a6e22e>defaultMessage</span>: <span style=color:#66d9ef>defaultMessage._widgetLabel</span>})
 
-<span style="color:#75715e">// JSX
-</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">FormattedMessage</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widgetProperties&#34;</span> <span style="color:#a6e22e">defaultMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">defaultMessages</span>.<span style="color:#a6e22e">widgetProperties</span>}/&gt;
-</code></pre></div><h2 id="マップ-ビューシーン-ビュー">マップ ビュー/シーン ビュー</h2>
+<span style=color:#75715e>// JSX
+</span><span style=color:#75715e></span>&lt;<span style=color:#f92672>FormattedMessage</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;widgetProperties&#34;</span> <span style=color:#a6e22e>defaultMessage</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>defaultMessages</span>.<span style=color:#a6e22e>widgetProperties</span>}/&gt;
+</code></pre></div><h2 id=マップ-ビューシーン-ビュー>マップ ビュー/シーン ビュー</h2>
 <p>ほとんどの Experience Builder では、ウィジェットはマップ ビュー/シーン ビューで動作し、同様にビュー内のレイヤーにアクセスする必要があります。一貫した拡張性モデルを持つことを保証するために、Experience Builder フレームワーク内での使用をより簡単にするために、他のクラスやメソッドに加えて、<code>MapViewManager</code> クラスが <code>jimu-arcgis</code> で利用可能です。基本的に全てのウィジェットは <code>createJimuMapView</code> メソッドを呼び出して <code>MapViewManager</code> にマップ ビュー/シーン ビューを追加し、他のウィジェットで使用できるようにすることができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">      <span style="color:#a6e22e">MapViewManager</span>.<span style="color:#a6e22e">getInstance</span>().<span style="color:#a6e22e">createJimuMapView</span>({
-        <span style="color:#a6e22e">mapWidgetId</span>: <span style="color:#66d9ef">this.props.id</span>,
-        <span style="color:#a6e22e">view</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>(<span style="color:#a6e22e">options</span>),
-        <span style="color:#a6e22e">datasourceId</span>: <span style="color:#66d9ef">webmapDs.id</span>,
-        <span style="color:#a6e22e">isActive</span>: <span style="color:#66d9ef">true</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>      <span style=color:#a6e22e>MapViewManager</span>.<span style=color:#a6e22e>getInstance</span>().<span style=color:#a6e22e>createJimuMapView</span>({
+        <span style=color:#a6e22e>mapWidgetId</span>: <span style=color:#66d9ef>this.props.id</span>,
+        <span style=color:#a6e22e>view</span>: <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>MapView</span>(<span style=color:#a6e22e>options</span>),
+        <span style=color:#a6e22e>datasourceId</span>: <span style=color:#66d9ef>webmapDs.id</span>,
+        <span style=color:#a6e22e>isActive</span>: <span style=color:#66d9ef>true</span>
       })
 </code></pre></div><p>マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で <code>JimuMapViewSelector</code> を使用して選択することができます。選択したマップ/シーンは <code>WidgetJson.useMapWidgetsIds</code> に保存されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">JimuMapViewSelector</span> <span style="color:#a6e22e">onSelect</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onMapWidgetSelected</span>} <span style="color:#a6e22e">useMapWidgetIds</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useMapWidgetIds</span>[<span style="color:#ae81ff">0</span>]} /&gt;
-</code></pre></div><h2 id="arcgis-api-for-javascript-のモジュール">ArcGIS API for JavaScript のモジュール</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>&lt;<span style=color:#f92672>JimuMapViewSelector</span> <span style=color:#a6e22e>onSelect</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>onMapWidgetSelected</span>} <span style=color:#a6e22e>useMapWidgetIds</span><span style=color:#f92672>=</span>{<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>useMapWidgetIds</span>[<span style=color:#ae81ff>0</span>]} /&gt;
+</code></pre></div><h2 id=arcgis-api-for-javascript-のモジュール>ArcGIS API for JavaScript のモジュール</h2>
 <p>既定では、Experience Builder はアプリのロード時に ArcGIS API for JavaScript (JS API) をロードしません。JS API モジュールを利用するには、2 つのオプションがあります。</p>
 <ul>
 <li>JS API に依存するウィジェット (例：JS API がないと何もできません。)
@@ -1104,10 +999,10 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Query</span>({
-    <span style="color:#a6e22e">where</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">typeIdField</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">graphic</span>.<span style="color:#a6e22e">attributes</span>[<span style="color:#a6e22e">objectIdField</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
-    <span style="color:#a6e22e">outFields</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;FirstName&#39;</span>],
-    <span style="color:#a6e22e">returnGeometry</span>: <span style="color:#66d9ef">true</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Query</span>({
+    <span style=color:#a6e22e>where</span><span style=color:#f92672>:</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>typeIdField</span><span style=color:#e6db74>}</span><span style=color:#e6db74> = </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>graphic</span>.<span style=color:#a6e22e>attributes</span>[<span style=color:#a6e22e>objectIdField</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>,
+    <span style=color:#a6e22e>outFields</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#39;FirstName&#39;</span>],
+    <span style=color:#a6e22e>returnGeometry</span>: <span style=color:#66d9ef>true</span>
   })
 </code></pre></div><ul>
 <li>条件付きで JS API に依存するウィジェット (例：JS API が無くても何かを実行することはできます。)
@@ -1116,13 +1011,13 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#a6e22e">loadArcGISJSAPIModules</span>([<span style="color:#e6db74">&#39;esri/widgets/Directions&#39;</span>]).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">module</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">=&gt;</span> {
-          [<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">Directions</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">module</span><span style="color:#a6e22e">s</span>;
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
-            <span style="color:#a6e22e">apiLoaded</span>: <span style="color:#66d9ef">true</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>  <span style=color:#a6e22e>loadArcGISJSAPIModules</span>([<span style=color:#e6db74>&#39;esri/widgets/Directions&#39;</span>]).<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>module</span><span style=color:#a6e22e>s</span> <span style=color:#f92672>=&gt;</span> {
+          [<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>Directions</span>] <span style=color:#f92672>=</span> <span style=color:#66d9ef>module</span><span style=color:#a6e22e>s</span>;
+          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>setState</span>({
+            <span style=color:#a6e22e>apiLoaded</span>: <span style=color:#66d9ef>true</span>
          });
         })
-</code></pre></div><h2 id="インライン編集をサポート">インライン編集をサポート</h2>
+</code></pre></div><h2 id=インライン編集をサポート>インライン編集をサポート</h2>
 <p>構成可能なすべてのウィジェットは、ウィジェットの構成を可能にする設定ページを提供する必要があります。ただし、構成によっては、設定パネルよりもウィジェットの設定を変更する方が簡単な場合があります。このワークフローでは、ウィジェットはインライン編集機能を提供することで、この機能をサポートすることができます。</p>
 <p>インライン編集を実装する方法はいくつかあります。</p>
 <ul>
@@ -1131,46 +1026,29 @@ if (!doNotTrack) {
 <li>ウィジェットの <code>manifest.json</code> で <code>CONTEXT_TOOL</code> 拡張機能を宣言します。宣言した拡張機能は選択ツールバーで利用できるようになります。<code>Image</code> ウィジェットは、このように選択ツールバーに shape ツールや crop ツールを追加して使用します。</li>
 </ul>
 <p>インライン編集をサポートするために、ウィジェットは Builder でウィジェットを起動した時にのみ必要なモジュールが含まれている場合があります。このシナリオでは、これらのモジュールを <code>builder-support.tsx</code> に配置します。このファイルは <code>widget.tsx</code> と同じフォルダにあるはずです。このファイル内のモジュールは、ウィジェットが Builder で起動されると、<code>this.props.builderSupportModules.widgetModules</code> 内で利用できるようになります。</p>
-<h2 id="ベストプラクティス">ベストプラクティス</h2>
+<h2 id=ベストプラクティス>ベストプラクティス</h2>
 <ul>
-<li>ウィジェットのクラス名として <code>widget-&lt;widget name&gt;</code> を、ウィジェット設定のクラス名として <code>widget-setting-&lt;widget name&gt;</code> を使用して、ウィジェットのルート CSS クラス名を指定します。</li>
+<li>ウィジェットのクラス名として <code>widget-&lt;widget name></code> を、ウィジェット設定のクラス名として <code>widget-setting-&lt;widget name></code> を使用して、ウィジェットのルート CSS クラス名を指定します。</li>
 <li>サードパーティの内蔵ライブラリをロードするには <code>import {} from 'jimu-core'</code> を使います。例えば、<code>import {React} from 'jimu-core</code> から {React} をインポートします; <code>import {} from '3rd_lib'</code> を使うと、lib がウィジェットに組み込まれるので、ウィジェットのサイズは大きくなります。</li>
 <li>widget の <code>src</code> フォルダに Typesafe 設定ファイルを作成し、<code>widget.tsx</code> と <code>setting.tsx</code> の両方で使用します。</li>
-<li>可能な限りアウトオブボックスの UI コンポーネントを活用して、<a href="../widget-ui">ウィジェット UI</a> を作成する方法の詳細をご覧ください。</li>
+<li>可能な限りアウトオブボックスの UI コンポーネントを活用して、<a href=../widget-ui>ウィジェット UI</a> を作成する方法の詳細をご覧ください。</li>
 </ul>
-
-
-    
-    
-          <footer class=" footline" >
-	
+<footer class=footline>
 </footer>
-  </div>
 </div>
-
-<div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" title="ウィジェット manifest"> <i class="fa fa-chevron-left"></i><label>ウィジェット manifest</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成" style="margin-right: 0px;"><label>ウィジェット UI の作成</label><i class="fa fa-chevron-right"></i></a></div>
-
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/ title="ウィジェット manifest"> <i class="fa fa-chevron-left"></i><label>ウィジェット manifest</label></a>
+<a class="nav nav-next" href=/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/ title="ウィジェット UI の作成" style=margin-right:0><label>ウィジェット UI の作成</label><i class="fa fa-chevron-right"></i></a></div>
 </section>
-<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-</div>    
-
-<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
-<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
-<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
-
-<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
-<script src="/arcgis-dev-resources/js/docdock.js"></script>
-<script src="/arcgis-dev-resources/theme-original/script.js"></script>
-
-
-    
-
-    
-    
-
-    
-  </body>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=/arcgis-dev-resources/js/clipboard.min.js></script>
+<script src=/arcgis-dev-resources/js/featherlight.min.js></script>
+<script src=/arcgis-dev-resources/js/html5shiv-printshiv.min.js></script>
+<script src=/arcgis-dev-resources/js/modernizr.custom.71422.js></script>
+<script src=/arcgis-dev-resources/js/docdock.js></script>
+<script src=/arcgis-dev-resources/theme-original/script.js></script>
+</body>
 </html>

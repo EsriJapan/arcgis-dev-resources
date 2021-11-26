@@ -1,67 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ArcGIS Runtime SDK for Android on ArcGIS Developer 開発リソース集</title>
-    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</link>
-    <description>Recent content in ArcGIS Runtime SDK for Android on ArcGIS Developer 開発リソース集</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/android/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</guid>
-      <description>このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcGIS Runtime SDK for Android on ArcGIS Developer 開発リソース集</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</link><description>Recent content in ArcGIS Runtime SDK for Android on ArcGIS Developer 開発リソース集</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/android/index.xml" rel="self" type="application/rss+xml"/><item><title>インストール ガイド</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</guid><description>このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が https://esri.jfrog.io/artifactory/arcgis であることに注意して下さい。2020年12月14日現在、旧 URL の https://esri.bintray.com/arcgis はサポートされていません。詳細は Announcement to developers using ArcGIS Runtime SDKs for Android and Java をご参照ください。
-インストールとセットアップ ArcGIS Runtime for Android をインストールする前に、開発マシンがシステム要件を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
+インストールとセットアップ ArcGIS Runtime for Android をインストールする前に、開発マシンがシステム要件を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 Gradle を使用してインストールすることをお勧めします。これにより、Esri の Maven リポジトリから必要な依存関係と SDK バイナリがインストールされます。Gradle を利用できない場合は、代わりに SDK をダウンロードしてから、AAR ライブラリと依存関係アーティファクトを含めることでプロジェクトに依存関係を手動で追加できます。
 注：制限された開発環境で作業していて、ユーザーディレクトリにファイルを書き込むためのオンラインアクセスまたは権限がない場合は、ダウンロードオプションを選択してください。
- Gradle で API を取得する API を手動で取得する  Gradle で API を取得する 既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。</description>
-    </item>
-    
-    <item>
-      <title>アプリケーション配布ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</guid>
-      <description>ArcGIS Runtime SDK for Android を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
+Gradle で API を取得する API を手動で取得する Gradle で API を取得する 既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。</description></item><item><title>アプリケーション配布ガイド</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-100.x/</guid><description>ArcGIS Runtime SDK for Android を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 API キーの設定 ArcGIS Platform のロケーションサービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、APIキーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
- 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+使用するライセンスの選択 ライセンスの認証方法 Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 ライセンスの認証 Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証 使用するライセンスの選択 ArcGIS Runtime SDK for Android には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
-   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
-    </item>
-    
-    <item>
-      <title>バージョン 10.2.x から 100.x への移行</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</guid>
-      <description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
+ライセンス 利用できる機能 Lite ・地図表示（2D/3D）</description></item><item><title>バージョン 10.2.x から 100.x への移行</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</guid><description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
 ArcGIS Runtime SDK for Android に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
- Gradle 参照プロジェクトの変更 マップ ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー ローダブル パターン 新しい同期パターン 既知の制限事項  Gradle 参照プロジェクトの変更 Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。
-repositories {jcenter()maven {url &#39;https://esri.jfrog.io/artifactory/arcgis&#39;}}dependencies {implementation &#39;com.esri.arcgisruntime:arcgis-android:100.10.0&#39;}ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
-    </item>
-    
-    <item>
-      <title>スタートアップ ガイド（10.2.x）</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/create-startup-app-android10.2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/create-startup-app-android10.2/</guid>
-      <description>開発環境 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
+Gradle 参照プロジェクトの変更 マップ ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー ローダブル パターン 新しい同期パターン 既知の制限事項 Gradle 参照プロジェクトの変更 Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。
+repositories {
+jcenter()
+maven {
+url 'https://esri.jfrog.io/artifactory/arcgis'
+}
+}
+dependencies {
+implementation 'com.esri.arcgisruntime:arcgis-android:100.10.0'
+}
+ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description></item><item><title>スタートアップ ガイド（10.2.x）</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/create-startup-app-android10.2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/create-startup-app-android10.2/</guid><description>開発環境 ArcGIS Runtime SDK for Android は Android Strdio に対応しています。開発環境は Android Studio をご用意ください。
 またこの後使用するサンプル アプリは ArcGIS Runtime SDK のライブラリを Android Library プロジェクトとして参照する方法を用いています。 ArcGIS Runtime SDK のライブラリをローカル環境にダウンロードしてお使いになりたい方はこちらの The SDK download（英語）手順をご覧ください。
 なお、ArcGIS Runtime SDK を使用するには ArcGIS Online 開発者アカウントが必要です。作成方法は「開発者アカウントの作成」をご参照ください。
 サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする方法は 2 通りあります。
-  リポジトリをご自身のアカウントに Fork（複製）
- GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。    zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
-  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
-地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</description>
-    </item>
-    
-  </channel>
-</rss>
+リポジトリをご自身のアカウントに Fork（複製）
+GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。 zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）
+arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。</description></item></channel></rss>

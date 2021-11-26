@@ -1,40 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ロケーションサービスの利用 on ArcGIS Developer 開発リソース集</title>
-    <link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/</link>
-    <description>Recent content in ロケーションサービスの利用 on ArcGIS Developer 開発リソース集</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/services/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>フィーチャサービスの作成</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</guid>
-      <description>配信可能な地図サービス ArcGIS Platform では、お手持ちの地図データや、住所・緯度経度を含む CSV などのテキスト データをもとに地図 (GIS) サービスを配信することが可能です。ArcGIS の地図サービスはさまざまな機能ごとに種類が分かれています。配信可能な基本的な地図サービスは以下の 2 種類です。
- フィーチャ サービス (レイヤー)   緯度経度および属性情報をフィーチャ (文字列) として配信 (クライアントでベクター データのグラフィックとして描画されます)
-  クライアント側でクエリを実行してデータを取得したり、編集したりする場合に利用
-
-機能 : 表示 (地図と属性) / 検索 / 作成 / 更新 / 削除    タイル サービス (レイヤー)  あらかじめ作成しておいたタイル状に分割された地図画像を配信 (クライアントで画像として描画されます) 描画速度が速く、背景地図などの広範囲のデータを利用したい場合に最適 機能 : 表示 (地図のみ)    Esri は無償で利用できるタイル サービスとして、全世界の背景地図サービス (道路地図、地形図、衛星画像 など) を配信しています。 なお、自分でタイル サービスを生成する場合は、10,000 タイルにつき 1 クレジットを消費して生成できます。 生成したタイル サービスを公開する方法は ArcGIS Online ヘルプのホスト タイル レイヤーの公開をご覧ください。</description>
-    </item>
-    
-    <item>
-      <title>Web マップの作成</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</guid>
-      <description>Web マップとは Web マップとは背景地図や主題となる地図データを追加し、表示方法などを設定してクラウド上に JSON 形式で保存される Web 上の地図です。Web マップの作成には ArcGIS クラウド サービスが提供する地図作成ツール（マップ ビューアー）を使用します。クラウド上に保存された Web マップを使えば、地図上に何をどのように表示するかを一つ一つコーディングする必要がなく、非常にローコストで地図アプリを作成することができます。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ロケーションサービスの利用 on ArcGIS Developer 開発リソース集</title><link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/</link><description>Recent content in ロケーションサービスの利用 on ArcGIS Developer 開発リソース集</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/services/index.xml" rel="self" type="application/rss+xml"/><item><title>フィーチャサービスの作成</title><link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</guid><description>配信可能な地図サービス ArcGIS Platform では、お手持ちの地図データや、住所・緯度経度を含む CSV などのテキスト データをもとに地図 (GIS) サービスを配信することが可能です。ArcGIS の地図サービスはさまざまな機能ごとに種類が分かれています。配信可能な基本的な地図サービスは以下の 2 種類です。
+フィーチャ サービス (レイヤー) 緯度経度および属性情報をフィーチャ (文字列) として配信 (クライアントでベクター データのグラフィックとして描画されます)
+クライアント側でクエリを実行してデータを取得したり、編集したりする場合に利用
+機能 : 表示 (地図と属性) / 検索 / 作成 / 更新 / 削除 タイル サービス (レイヤー) あらかじめ作成しておいたタイル状に分割された地図画像を配信 (クライアントで画像として描画されます) 描画速度が速く、背景地図などの広範囲のデータを利用したい場合に最適 機能 : 表示 (地図のみ) Esri は無償で利用できるタイル サービスとして、全世界の背景地図サービス (道路地図、地形図、衛星画像 など) を配信しています。 なお、自分でタイル サービスを生成する場合は、10,000 タイルにつき 1 クレジットを消費して生成できます。 生成したタイル サービスを公開する方法は ArcGIS Online ヘルプのホスト タイル レイヤーの公開をご覧ください。</description></item><item><title>Web マップの作成</title><link>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</guid><description>Web マップとは Web マップとは背景地図や主題となる地図データを追加し、表示方法などを設定してクラウド上に JSON 形式で保存される Web 上の地図です。Web マップの作成には ArcGIS クラウド サービスが提供する地図作成ツール（マップ ビューアー）を使用します。クラウド上に保存された Web マップを使えば、地図上に何をどのように表示するかを一つ一つコーディングする必要がなく、非常にローコストで地図アプリを作成することができます。
 Web マップに含まれる情報は以下の JSON 仕様で確認できます。
- Web マップ仕様 (Web Map JSON)  Web マップの作成 1. Web マップの作成とレイヤーの追加 マップ ビューアーで Web マップを作成していきましょう。
-  マップ ビューアーを開きます。
-  開発者アカウントでサインインします（サインインをしないと地図作成機能を利用できません）。
-  インターネットで公開されている ArcGIS クラウド サービスで共有中のレイヤーを追加します。[追加] をクリック後、[レイヤーの検索] を選択します。
-  レイヤーの検索を行います。検索先を「ArcGIS Online」とし、検索フォームにお好きなキーワードを入力して検索してみましょう。
-  検索結果が表示されたら、追加したいレイヤーの [追加] リンクをクリックして、[レイヤーの追加を完了] ボタンを押してレイヤーの追加は完了です。
-   画像はトイレ調査と南海トラフ巨大地震の被害想定（震度/最大クラス）のレイヤーを追加しています。  2. レイヤーの表示方法の設定   レイヤーの表示設定を変えてみましょう。レイヤー リストから表現を変更したいレイヤーを選び、[スタイルの変更] アイコンをクリックします。なお、レイヤーの種類によって設定できる項目が異なります。 レイヤーの種類はいくつかありますが、ArcGIS のクラウド サービスで配信する主なレイヤーは以下の 2 つです。フィーチャ レイヤーは Web ブラウザー上のグラフィックとして描画されるためスタイルの変更が可能です。</description>
-    </item>
-    
-  </channel>
-</rss>
+Web マップ仕様 (Web Map JSON) Web マップの作成 1. Web マップの作成とレイヤーの追加 マップ ビューアーで Web マップを作成していきましょう。
+マップ ビューアーを開きます。
+開発者アカウントでサインインします（サインインをしないと地図作成機能を利用できません）。
+インターネットで公開されている ArcGIS クラウド サービスで共有中のレイヤーを追加します。[追加] をクリック後、[レイヤーの検索] を選択します。
+レイヤーの検索を行います。検索先を「ArcGIS Online」とし、検索フォームにお好きなキーワードを入力して検索してみましょう。
+検索結果が表示されたら、追加したいレイヤーの [追加] リンクをクリックして、[レイヤーの追加を完了] ボタンを押してレイヤーの追加は完了です。
+画像はトイレ調査と南海トラフ巨大地震の被害想定（震度/最大クラス）のレイヤーを追加しています。 2. レイヤーの表示方法の設定 レイヤーの表示設定を変えてみましょう。レイヤー リストから表現を変更したいレイヤーを選び、[スタイルの変更] アイコンをクリックします。なお、レイヤーの種類によって設定できる項目が異なります。 レイヤーの種類はいくつかありますが、ArcGIS のクラウド サービスで配信する主なレイヤーは以下の 2 つです。フィーチャ レイヤーは Web ブラウザー上のグラフィックとして描画されるためスタイルの変更が可能です。</description></item></channel></rss>
