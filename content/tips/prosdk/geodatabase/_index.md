@@ -1,7 +1,7 @@
 +++
-title = "ArcGIS Pro SDK"
+title = "ジオデータベース"
 description = "ArcGIS Pro SDK の開発に役立つガイド集です。"
-weight = 7
+weight = 2
 +++
 
 ArcGIS Pro SDK の開発に役立つガイド集です。

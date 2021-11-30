@@ -1,7 +1,7 @@
 +++
-title = "ArcGIS Pro SDK"
+title = "アドインの種類"
 description = "ArcGIS Pro SDK の開発に役立つガイド集です。"
-weight = 7
+weight = 1
 +++
 
 ArcGIS Pro SDK の開発に役立つガイド集です。
