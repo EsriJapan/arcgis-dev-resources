@@ -17,8 +17,8 @@ ArcGIS API for JavaScript をアプリに導入するには、複数のオプシ
 
 API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.21/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.22/"></script>
 ```
 
 ### NPM による ES モジュール
@@ -43,9 +43,9 @@ import Map from "@arcgis/core/Map";
 
 ※ この方法は、現在のところ、開発やプロトタイピングにのみ推奨されています。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.21/@arcgis/core/assets/esri/themes/light/main.css">
+<link rel="stylesheet" href="https://js.arcgis.com/4.22/@arcgis/core/assets/esri/themes/light/main.css">
 <script type="module">
-  import Map from "https://js.arcgis.com/4.21/@arcgis/core/Map.js";
+  import Map from "https://js.arcgis.com/4.22/@arcgis/core/Map.js";
 
   // Use the Map class
 </script>

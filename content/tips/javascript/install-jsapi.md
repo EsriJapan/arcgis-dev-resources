@@ -24,12 +24,12 @@ Esri がホストしている CDN にインターネット経由で参照する�
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-1. `\arcgis_js_v421_api\arcgis_js_api\javascript\4.21\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.21\`)
+1. `\arcgis_js_v421_api\arcgis_js_api\javascript\4.22\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.22\`)
 
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS API for JavaScript のダウンロード版に含まれています。
-ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v421_api/arcgis_js_api/javascript/4.21/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/api/4.21/index.html を開くことにより、API をテストすることができます。
+ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v422_api/arcgis_js_api/javascript/4.22/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/api/4.22/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -115,5 +115,5 @@ ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v421_api/arc
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.21となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.22となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
