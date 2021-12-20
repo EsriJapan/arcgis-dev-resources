@@ -98,7 +98,7 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 
 サンプル ビューアー アプリは、[App Store](https://apps.apple.com/jp/app/arcgis-runtime-sdk-samples/id1180714771) からも入手できます。
 
-## ArcGIS Runtime API for iOS Toolkit
+## ArcGIS Runtime SDK for iOS Toolkit
 [ArcGIS Runtime SDK for iOS Toolkit](https://github.com/esri/arcgis-runtime-toolkit-ios) は ArcGIS Runtime SDK for iOS 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。これらのコンポーネントの動作を確認するには、[サンプル](https://github.com/Esri/arcgis-runtime-toolkit-ios/tree/master/Examples)や[ドキュメント](https://github.com/Esri/arcgis-runtime-toolkit-ios/tree/master/Documentation)を参照してください。
 
 ## スタンドアロンの開発者向けドキュメント

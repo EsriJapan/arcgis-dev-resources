@@ -227,7 +227,7 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 サンプル ビューアー アプリは、[Google Play](https://play.google.com/store/apps/details?id=com.esri.sampleviewer) か、[ArcGIS Online（.apk ファイル）](https://arcgisruntime.maps.arcgis.com/home/item.html?id=21ac248ea189406c821400dc28bf686c) からも入手できます。
 
 
-## ArcGIS Runtime API for Android Toolkit
+## ArcGIS Runtime SDK for Android Toolkit
 [ArcGIS Runtime SDK for Android Toolkit](https://github.com/esri/arcgis-runtime-toolkit-android) には、アプリの開発を簡略化するためのコントロールやユーティリティが含まれています。例えば、以下のようなものがあります。
 
 * ArcGISArView: SceneView を ARCore と統合し、拡張現実（AR）を実現します。
