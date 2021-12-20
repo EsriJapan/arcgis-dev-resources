@@ -73,6 +73,16 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     build.gradle (Module: Display_a_map.app)
 
     ```java
+
+    android {
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        ...
+
+    }
+
     dependencies {
         implementation fileTree(dir: "libs", include: ["*.jar"])
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -85,6 +95,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     }
     ```
+
+    注: 上記の build.gradle ファイルでは、ソースとターゲットの両方で Java 8 言語互換性を指定しています。Android Studio はこの互換性設定を利用して、必要に応じて「desugaring」と呼ばれるバイトコード変換を自動で行います。別の IDE を使用している場合は、自分で Java 8 互換性を設定する必要がある場合があります。詳しくは、[Java 8 言語機能と API を使用する](https://developer.android.com/studio/write/java8-support) を参照してください。
+
 5. android ブロックに以下の buildFeatures ブロックを追加して、ビューのバインドを有効にします。
 
     build.gradle (Module: Display_a_map.app)

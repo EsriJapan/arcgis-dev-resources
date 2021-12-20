@@ -41,7 +41,9 @@ import ArcGIS
     pod 'ArcGIS-Runtime-SDK-iOS'
     ```
 
-2. ターミナル アプリケーションを使用して、Podfile 上で pod install コマンドを実行します。これにより、ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pod ディレクトリ内に配置されます。また、ArcGIS フレームワークを正しく参照するために、プロジェクトのビルド設定に必要な変更が加えられて、新しい Xcode ワークスペース（.xcworkspace ファイル）を作成されます。
+2. オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定することができます。[pod syntax](https://guides.cocoapods.org/syntax/podfile.html#pod) を参照してください。
+
+3. ターミナル アプリケーションを使用して、Podfile 上で pod install コマンドを実行します。これにより、ArcGIS フレームワークがマシンにダウンロードされ、プロジェクトの Pod ディレクトリ内に配置されます。また、ArcGIS フレームワークを正しく参照するために、プロジェクトのビルド設定に必要な変更が加えられて、新しい Xcode ワークスペース（.xcworkspace ファイル）を作成されます。
 
 ArcGIS の API を使用するには、新しく作成した Xcode ワークスペースを開き、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
 
@@ -78,9 +80,9 @@ SDK を手動でインストールした後に、API を使用するために各
 
 2. 左側の Navigator ペインでプロジェクト名を選択して、[TARGETS (プロジェクト名)] > [General] タブを選択します。
 
- 1. [Frameworks, Libraries, and Embedded Content] セクションに $(HOME)/Library/SDKs/ArcGIS/Frameworks ディレクトリにある ArcGIS.xcframework ファイルをドラッグアンドドロップします。
+ 1. [Frameworks, Libraries, and Embedded Content] セクションに $(HOME)/Library/SDKs/ArcGIS/Frameworks ディレクトリにある ArcGIS.xcframework と Runtimecore.xcframework ファイルをドラッグアンドドロップします。
 
-    <img src="https://developers.arcgis.com/ios/61ceaf5d25107c3daad81c9afde9d4ed/get-started-xcode-framework.gif" width="650px">
+    <img src="https://developers.arcgis.com/ios/c258fcd2c3ed4ffa83eb5b1078315ada/get-started-xcode-framework-u13.gif" width="650px">
 
 注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行して表示するか、Finder メニューの [移動] > [フォルダへ移動] を使用して移動することもできます。
 
@@ -95,6 +97,20 @@ import ArcGIS
 ArcGIS Runtime アプリで実行できる、機能については[サンプル コード](https://github.com/Esri/arcgis-runtime-samples-ios)を参照してください。
 
 サンプル ビューアー アプリは、[App Store](https://apps.apple.com/jp/app/arcgis-runtime-sdk-samples/id1180714771) からも入手できます。
+
+## ArcGIS Runtime API for iOS Toolkit
+[ArcGIS Runtime SDK for iOS Toolkit](https://github.com/esri/arcgis-runtime-toolkit-ios) は ArcGIS Runtime SDK for iOS 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。これらのコンポーネントの動作を確認するには、[サンプル](https://github.com/Esri/arcgis-runtime-toolkit-ios/tree/master/Examples)や[ドキュメント](https://github.com/Esri/arcgis-runtime-toolkit-ios/tree/master/Documentation)を参照してください。
+
+## スタンドアロンの開発者向けドキュメント
+[ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメント（任意の ArcGIS Runtime SDK 用）をアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
+
+ローカルでドキュメントを公開する方法：
+
+* 使用する ArcGIS Runtime SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
+* アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、public と install という 2 つのサブフォルダがあります。
+* install フォルダ内の README.md ファイルを開き、選択した Web サーバーの指示に従います。
+
+注：ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。
 
 ## 追加のデータ
 [グリッド ベースの地理座標変換](https://developers.arcgis.com/ios/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。

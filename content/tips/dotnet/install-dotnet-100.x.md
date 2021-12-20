@@ -91,17 +91,24 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 
 ## ArcGIS Runtime SDK for .NET Toolkit
 
-[ArcGIS Runtime SDK for .NET Toolkit](https://github.com/Esri/arcgis-toolkit-dotnet) には、アプリの開発を簡略化するためのコントロールやユーティリティが含まれています。例えば、以下のようなものがあります。
+[ArcGIS Runtime SDK for .NET Toolkit](https://github.com/Esri/arcgis-toolkit-dotnet) は、ArcGIS Runtime SDK for .NET 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。ツールキットは NuGet パッケージとしてプロジェクトに含めるか、[GitHub リポジトリ](https://github.com/Esri/arcgis-toolkit-dotnet)からソース コードをダウンロードしてローカルでビルドできます。
 
-* コンパス: マップを回転させた時に向きを表示
-* 凡例: マップの 1 つのレイヤーの凡例を表示 (オプションでサブ レイヤーの凡例も表示可能)
-* 計測ツールバー: 地理的な面積や距離を測定
-* ポップアップ ビューアー: 詳細・メディアの表示、属性・ジオメトリ・関連レコードの編集、フィーチャ・グラフィックスの添付ファイルの管理 (ポップアップはフィーチャやグラフィックスのポップアップ プロパティで定義されます)
-* 縮尺ライン: 地図の現在の縮尺を表示するスケールバー
-* テーブル オブ コンテンツ (プレビュー、WPF のみ): マップに含まれるすべてのレイヤーを表示するツリー ビュー (オプションで凡例情報を含む)
-* タイムスライダー: 時間的な範囲 (タイム エクステント) をインタラクティブに定義し、時間を前進または後退させるアニメーションの実行
+## Local Server
 
-ツールキットは、ArcGIS Runtime SDK for .NET チームによって管理されているオープンソース プロジェクトです。 ツールキットを NuGet パッケージとしてプロジェクトに含めるか、GitHub リポジトリからソース コードをダウンロードしてローカルでビルドできます。
+Local Server では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
+アプリケーションでオフラインで[ジオプロセシング タスク](https://developers.arcgis.com/net/local-server/geoprocessing-tools-support/)を実行する場合は、[Local Server](https://developers.arcgis.com/net/local-server/) の手順に従って Local Server をインストールします。
+
+## スタンドアロンの開発者向けドキュメント
+
+[ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメント（任意の ArcGIS Runtime SDK 用）をアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
+
+ローカルでドキュメントを公開する方法：
+
+* 使用する ArcGIS Runtime SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
+* アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、public と install という 2 つのサブフォルダがあります。
+* install フォルダ内の README.md ファイルを開き、選択した Web サーバーの指示に従います。
+
+注：ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。
 
 ## 追加のデータ
 
@@ -109,6 +116,3 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 
 航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。
 
-## Local Server
-
-オフラインで[ジオプロセシング タスク](https://developers.arcgis.com/net/local-server/geoprocessing-tools-support/)を実行する場合は、手順に従って [Local Server](https://developers.arcgis.com/net/local-server/) をインストールします。

@@ -50,7 +50,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.12.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.13.0'
 		...
 	}
 	```
@@ -84,27 +84,27 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 以下のセットアップ手順では、インターネットから切り離された開発環境で作業していることを想定しています。たとえば、インターネット上でホストされている Maven リポジトリへのアクセスを許可しないファイアウォールの内側などです。以下の手順は、ローカルマシン上の Maven リポジトリでのセットアップを説明していますが、ネットワーク上に Maven サーバーをセットアップしている場合も同様に適用できます。
 
 #### SDK およびその依存関係をコンピュータにデプロイする
-1. arcgis-runtime-sdk-android-100.12.0.zip ファイルをダウンロードします。
+1. arcgis-runtime-sdk-android-100.13.0.zip ファイルをダウンロードします。
 2. アーカイブの内容をディスク上の任意の場所に解凍します。
 3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。
 
-	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.12.0/`
+	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/`
 	
-	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.12.0\`
+	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\`
 
 4. ディレクトリのパスは以下のようになっているはずです。
 
 	mac (2 ファイル):
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.12.0/arcgis-android-100.12.0.aar`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.aar`
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.12.0/arcgis-android-100.12.0.pom`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.pom`
 	
 	Windows (2 ファイル):
 
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.12.0\arcgis-android-100.12.0.aar`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.aar`
 	
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.12.0\arcgis-android-100.12.0.pom`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.pom`
 
 5. インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
 オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。
@@ -114,7 +114,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	* androidx.localbroadcastmanager 1.0.0: https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
 	* httpcore5 5.0.4: https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5/5.0.4/jar
 	* httpcore5-h2 5.0.4: https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5-h2/5.0.4/jar
-	* slf4j-api 1.7.25: https://search.maven.org/artifact/org.slf4j/slf4j-api/1.7.25/jar
+	* slf4j-api 1.7.32: https://search.maven.org/artifact/org.slf4j/slf4j-api/1.7.32/jar
 	* commons-codec 1.15: https://search.maven.org/artifact/commons-codec/commons-codec/1.15/jar
 	* conscrypt-openjdk-uber 2.2.1 https://search.maven.org/artifact/org.conscrypt/conscrypt-openjdk-uber/2.2.1/jar
 	* spymemcached 2.12.3 https://search.maven.org/artifact/net.spy/spymemcached/2.12.3/jar
@@ -167,13 +167,13 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	```java 
 	dependencies {
 			...
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.12.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.13.0'
 		implementation 'com.google.code.gson:gson:2.8.6'
 		implementation 'androidx.browser:browser:1.3.0'
 		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 		implementation 'org.apache.httpcomponents.core5:httpcore5:5.0.4'
 		implementation 'org.apache.httpcomponents.core5:httpcore5-h2:5.0.4'
-		implementation 'org.slf4j:slf4j-api:1.7.25'
+		implementation 'org.slf4j:slf4j-api:1.7.32'
 		implementation 'commons-codec:commons-codec:1.15'
 		implementation 'org.conscrypt:conscrypt-openjdk-uber:2.2.1'
 		implementation 'net.spy:spymemcached:2.12.3'
@@ -234,6 +234,17 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 * ブックマーク: ウェブ マップに保存されているブックマークを表示します。
 * コンパス: 北を指すコンパスのアイコンを表示して、マップやシーンの現在の向きを示します。
 * スケールバー: 地図上での正確な直線計測の表現を表示します。
+
+## スタンドアロンの開発者向けドキュメント
+[ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメント（任意の ArcGIS Runtime SDK 用）をアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
+
+ローカルでドキュメントを公開する方法：
+
+* 使用する ArcGIS Runtime SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
+* アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、public と install という 2 つのサブフォルダがあります。
+* install フォルダ内の README.md ファイルを開き、選択した Web サーバーの指示に従います。
+
+注：ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。
 
 ## 追加のデータ
 [グリッド ベースの地理座標変換](https://developers.arcgis.com/android/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。

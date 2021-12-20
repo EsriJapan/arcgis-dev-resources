@@ -1,21 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcGIS Runtime SDK for iOS on ArcGIS Developer 開発リソース集</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</link><description>Recent content in ArcGIS Runtime SDK for iOS on ArcGIS Developer 開発リソース集</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/ios/index.xml" rel="self" type="application/rss+xml"/><item><title>インストール ガイド</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</guid><description>このインストール ガイドでは、ArcGIS Runtime SDK for iOS のインストールとセットアップ手順を紹介します。インストールを進める前に、ご使用のマシン（macOS）に Xcode をインストールしてください。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArcGIS Runtime SDK for iOS on ArcGIS Developer 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</link>
+    <description>Recent content in ArcGIS Runtime SDK for iOS on ArcGIS Developer 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-100.x/</guid>
+      <description>このインストール ガイドでは、ArcGIS Runtime SDK for iOS のインストールとセットアップ手順を紹介します。インストールを進める前に、ご使用のマシン（macOS）に Xcode をインストールしてください。
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては動作環境をご覧ください。
 マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールとセットアップ Xcode プロジェクトに API をインストールして使用するには、いくつかの方法があります。Swift Package Manager か CocoaPods を使用するか、手動でダウンロードしてインストールできます。
-Swift Package Manager を使用する CocoaPods を使用する 手動でダウンロードする Swift Package Manager を使用する Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
-Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Swift Packages] &amp;gt; [Add Package Dependency] を選択します。 パッケージ リポジトリの URL として https://github.com/esri/arcgis-runtime-ios を入力します。[Next] をクリックします。 バージョンを指定するか、Xcode によって提供される最新バージョンを選択します。[Next] をクリックします。Xcode は、ArcGIS フレームワークのダウンロードを開始します。 ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。 ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.</description></item><item><title>アプリケーション配布ガイド</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</guid><description>ArcGIS Runtime SDK for iOS を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
+ Swift Package Manager を使用する CocoaPods を使用する 手動でダウンロードする  Swift Package Manager を使用する Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
+ Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Swift Packages] &amp;gt; [Add Package Dependency] を選択します。 パッケージ リポジトリの URL として https://github.com/esri/arcgis-runtime-ios を入力します。[Next] をクリックします。 バージョンを指定するか、Xcode によって提供される最新バージョンを選択します。[Next] をクリックします。Xcode は、ArcGIS フレームワークのダウンロードを開始します。 ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。  ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.</description>
+    </item>
+    
+    <item>
+      <title>アプリケーション配布ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-100.x/</guid>
+      <description>ArcGIS Runtime SDK for iOS を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 API キーの設定 ArcGIS Platform のロケーションサービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、APIキーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
-使用するライセンスの選択 ライセンスの認証方法 Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 ライセンスの認証 Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証 使用するライセンスの選択 ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
-ライセンス 利用できる機能 Lite ・地図表示（2D/3D）</description></item><item><title>バージョン 10.2.x から 100.x への移行</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</guid><description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
+   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
+    </item>
+    
+    <item>
+      <title>バージョン 10.2.x から 100.x への移行</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</guid>
+      <description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
 ArcGIS Runtime SDK for iOS に関しては、ESRIジャパン 製品ページをご参照ください。
 以下は、バージョン 100.x の主な変更点です。
-マップとシーン ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー スケッチ エディター ローダブル パターン ブロックを使用した非同期プログラミング 既知の制限事項 マップとシーン 100.x では、AGSMap オブジェクト（2D表示用）と AGSScene オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
+ マップとシーン ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー スケッチ エディター ローダブル パターン ブロックを使用した非同期プログラミング 既知の制限事項  マップとシーン 100.x では、AGSMap オブジェクト（2D表示用）と AGSScene オブジェクト（3D表示用）を API のコアとして、ArcGIS プラットフォームの Web GIS 機能を迅速に利用できるようになりました。
 AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表示する View と分離されています。AGSMap オブジェクトと AGSScene オブジェクトには 、操作レイヤー、ベースマップ、ブックマーク等の ArcGIS 固有のデータを設定でき、アプリケーションで利用することができます。
-ビュー AGSMapView（2D表示用）と AGSSceneView（3D表示用）は、UI コンポーネントです。AGSMapView クラスの map プロパティに、AGSMap オブジェクトを、AGSMapSceneView クラスの scene プロパティには AGSScene オブジェクトを設定します。</description></item><item><title>スタートアップ ガイド（10.2.x）</title><link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</guid><description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
-SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。 ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。 サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
-リポジトリをご自身のアカウントに Fork（複製） GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。 zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け） arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+ビュー AGSMapView（2D表示用）と AGSSceneView（3D表示用）は、UI コンポーネントです。AGSMapView クラスの map プロパティに、AGSMap オブジェクトを、AGSMapSceneView クラスの scene プロパティには AGSScene オブジェクトを設定します。</description>
+    </item>
+    
+    <item>
+      <title>スタートアップ ガイド（10.2.x）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/create-startup-app-ios10.2/</guid>
+      <description>SDK のインストール ArcGIS Runtime SDK for iOS のライブラリをインストールします。
+ SDK のダウンロードページ にアクセスします（開発者アカウント でサインインします）。 ArcGIS Runtime SDK for iOS の箇所の [Download] をクリックして、インストーラーをダウンロードします。  ダウンロードしたインストーラー（.pkg ファイル）を実行して SDK をインストールします。  サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
 地図の表示 まずはダウンロードしたサンプル プロジェクトを実行してみましょう。
-ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。
-ViewController.swift の 24 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成 で作成した Web マップ ID を上書きします。</description></item></channel></rss>
+  ダウンロードしたサンプル プロジェクト（arcgis-dev-resources/startup/ios/map/sample.xcodeproj）を Xcode で開きます。
+  ViewController.swift の 24 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成 で作成した Web マップ ID を上書きします。</description>
+    </item>
+    
+  </channel>
+</rss>
