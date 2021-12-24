@@ -28,7 +28,8 @@ aliases = ["/create-startup-app-ios/"]
 ### 新しい Xcode プロジェクトを作成する
 Xcode を使用してシングルビュー iOS アプリを作成し、SDK を参照するように構成します。
 
-1. Xcode を開き、[Create a new Xcode project] > [App] をクリックします。
+1. Xcode を開き、メニュー バーから [File] > [New] > [Project] > [iOS] > [App] > [Next] をクリックします。
+
    * [Choose options for your new project] ウィンドウで、次の値を設定します。
      * Product Name: <任意の名前>
      * Language: Swift

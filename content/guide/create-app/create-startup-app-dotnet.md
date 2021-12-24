@@ -251,7 +251,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:DisplayAMap"
 
-            ><!--追加開始-->
+            <!--追加開始-->
             xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
             <!--追加終了-->
 
