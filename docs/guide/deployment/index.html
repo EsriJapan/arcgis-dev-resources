@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T13:46:27 JST">
-<title>運用（ライセンス） :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2021-12-24T18:52:42 JST">
+<title>デプロイ :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="開発したアプリを運用するためのライセンスや帰属表示について紹介します。">
+<meta name="description" content="開発したアプリをデプロイするために必要なライセンスや利用規約などについて紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/guide/licensing/">
+  <body data-url="/arcgis-dev-resources/guide/deployment/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -183,35 +183,12 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item parent active haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item active">
         <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイ
           </a>
         </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -825,7 +802,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > 運用（ライセンス）
+ <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > デプロイ
 
  
 
@@ -838,7 +815,15 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#デプロイのガイドライン">デプロイのガイドライン</a>
+      <ul>
+        <li><a href="#トピックス">トピックス</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -848,7 +833,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>運用（ライセンス）</h1>
+    <h1>デプロイ</h1>
   
 
 
@@ -856,23 +841,52 @@ if (!doNotTrack) {
     
     
     
-
-<p>開発したアプリを運用するためのライセンスや帰属表示について紹介します。</p>
-<ul class="children children-li">
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/licensing/license-location-services/" >ロケーション サービスのライセンス</a></li></p>
-<p>アプリケーションを本番環境にデプロイする準備ができましたら、ArcGIS テクノロジーを使用する際のライセンス方法を検討する必要があります。ロケーション サービスを使用する際のライセンスについて紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/licensing/license-your-app/" >アプリのライセンス</a></li></p>
-<p>作成したアプリケーションを本番環境で運用するために必要となる ArcGIS テクノロジーを使用する際のライセンスについて紹介します。</p>
-</span>
-<p><span><li>
-<a href="/arcgis-dev-resources/guide/licensing/attribution/" >帰属</a></li></p>
-<p>アプリで ArcGIS ベースマップ、ArcGIS データ サービス、または ArcGIS API テクノロジを使用する場合における Esri の帰属表示を含める方法をご紹介します。</p>
-</span>
+    <p>出典：ArcGIS Developer - Deployment - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/">Introduction</a></p>
+<p>ArcGIS Platform の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ロケーションサービス</a>では、Web アプリケーション、ネイティブ アプリケーション、サービスサイド<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">アプリケーション</a>など、さまざまな種類のアプリケーションを構築およびデプロイできます。どのような種類のアプリケーションを構築する場合でも、デプロイの前に確認する必要がある<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/#deployment-guidelines">ガイドライン</a>と<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用規約</a>があります。</p>
+<p>このセクションでは、ArcGIS Platform で構築したアプリケーションをデプロイする前に知っておくべき情報を提供します。</p>
+<h2 id="デプロイのガイドライン">デプロイのガイドライン</h2>
+<ol>
+<li>
+<p>アカウント：<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/">ArcGIS アカウント</a>がサービスの使用とデプロイにどのように影響するかを確認します。</p>
+</li>
+<li>
+<p>サービス：アクセストークンを使って、有効な<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/#authentication-methods">認証方法</a>で<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ロケーションサービス</a>にアクセスします。</p>
+</li>
+<li>
+<p>データの使用：アプリケーションが使用するすべての<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/">コンテンツとデータ</a>の使用条件に従ってください。</p>
+</li>
+<li>
+<p>ベースマップの帰属：ArcGIS のベースマップ レイヤーを使用する場合は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/">クレジットと帰属</a>のガイドラインに従ってください。</p>
+</li>
+<li>
+<p>配布：アプリケーションをデプロイ、または配布する場合は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">ライセンス、または配布</a>の要件を遵守してください。</p>
+</li>
+<li>
+<p>利用規約：Esri の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用規約</a>および関連する法的文書を確認してください。</p>
+</li>
+</ol>
+<p>詳しくは、以下の<a href="#%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%82%B9">トピックス</a>をご覧ください。</p>
+<h3 id="トピックス">トピックス</h3>
+<h4 id="アカウントhttpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentaccounts"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/">アカウント</a></h4>
+<ul>
+<li>アカウントの種類によって、アプリケーションの構築やデプロイメントにどのような影響があるのかをご説明します。</li>
 </ul>
-
+<h4 id="コンテンツとデータhttpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentcontent-and-data"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/">コンテンツとデータ</a></h4>
+<ul>
+<li>アプリケーションで使用するデータの利用規約についてご説明します。</li>
+</ul>
+<h4 id="ベースマップの帰属httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentbasemap-attribution"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/">ベースマップの帰属</a></h4>
+<ul>
+<li>アプリケーションで正しいベースマップの帰属を提供する方法について説明します。</li>
+</ul>
+<h4 id="配布方法httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentdistribution"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">配布方法</a></h4>
+<ul>
+<li>異なる API で構築されたアプリケーションを配布、デプロイするための要件について説明します。</li>
+</ul>
+<h4 id="利用条件httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentterms-of-use"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用条件</a></h4>
+<ul>
+<li>利用規約などの法的文書についてご紹介します。</li>
+</ul>
 
 
     
@@ -885,7 +899,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/guide/security/" title="セキュリティと認証"> <i class="fa fa-chevron-left"></i><label>セキュリティと認証</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/guide/licensing/license-location-services/" title="ロケーション サービスのライセンス" style="margin-right: 0px;"><label>ロケーション サービスのライセンス</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/learn/" title="もっと学ぶ" style="margin-right: 0px;"><label>もっと学ぶ</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

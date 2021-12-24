@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T13:46:27 JST">
+<meta name="revised" content="2021-12-24T18:52:42 JST">
 <title>スタートアップ ガイド（10.2.x） :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -183,34 +183,12 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイ
           </a>
         </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -902,7 +880,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 <p><code>mainWindow.xaml.cs</code> の 54 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">var</span> item = <span style="color:#66d9ef">await</span> ArcGISPortalItem.CreateAsync(portal, <span style="color:#e6db74">&#34;Web マップ ID&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">var</span> item = <span style="color:#66d9ef">await</span> ArcGISPortalItem.CreateAsync(portal, <span style="color:#e6db74">&#34;Web マップ ID&#34;</span>);
 </code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
 <ol>
 <li>サンプル プロジェクトを実行すると、以下のように地図が表示されます。</li>
@@ -927,14 +905,14 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
 </ul>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//ArcGIS Online ジオコーディングサービスの URL  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//ArcGIS Online ジオコーディングサービスの URL  
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> WORLD_GEOCODE_SERVICE_URL = <span style="color:#e6db74">&#34;http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer&#34;</span>;
  <span style="color:#75715e">//住所検索用のジオコーディング タスク  
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">private</span> OnlineLocatorTask onlineLocatorTask;
 </code></pre></div><ol>
 <li>コンストラクター内でメンバー変数として定義した OnlineLocatorTask クラスを初期化します。初期化時のパラメーターとして ArcGIS Online のジオコーディング サービスの URL を指定します。OnlineLocatorTask クラスが住所検索のリクエストを発行する際にこの URL が使用されます。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">/// &lt;summary&gt;  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">/// &lt;summary&gt;  
 </span><span style="color:#75715e"></span> <span style="color:#75715e">/// コンストラクタ  
 </span><span style="color:#75715e"></span> <span style="color:#75715e">/// &lt;/summary&gt;  
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> MainWindow()  
@@ -947,7 +925,7 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
 </code></pre></div><ol>
 <li>住所検索に使用する検索文字列などを指定する住所検索パラメーターを作成します。パラメーターの作成には OnlineLocatorFindParameters クラスを使用します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//住所検索用のパラメータを作成  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//住所検索用のパラメータを作成  
 </span><span style="color:#75715e"></span> OnlineLocatorFindParameters parameters = <span style="color:#66d9ef">new</span> OnlineLocatorFindParameters(addressTextBox.Text)  
  {  
    MaxLocations = <span style="color:#ae81ff">5</span>,  
@@ -957,12 +935,12 @@ ArcGIS Online のジオコーディング サービスの URL です。ArcGIS fo
 </code></pre></div><ol>
 <li>OnlineLocatorTask クラスの FindAsync  非同期メソッドを使用して住所検索を実行します。パラメーターとして事前に作成した住所検索パラメーターを指定しています。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//住所の検索  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//住所の検索  
 </span><span style="color:#75715e"></span> IList&lt;LocatorFindResult&gt; resultCandidates = <span style="color:#66d9ef">await</span> onlineLocatorTask.FindAsync(parameters, CancellationToken.None);  
 </code></pre></div><ol>
 <li>住所検索を実行し結果の取得に成功したら、検索結果に対して地図上に表示するなどの何らかの処理を実行します。サンプル アプリケーションでは、ジオコーディング サービスから返された検索結果候補の一番最初の検索結果候補（最も一致していると思われる検索結果）を地図上に拡大表示します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//常に最初の候補を採用  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//常に最初の候補を採用  
 </span><span style="color:#75715e"></span> LocatorFindResult candidate = resultCandidates.FirstOrDefault();  
 
  <span style="color:#75715e">//最初の候補からグラフィックを作成  

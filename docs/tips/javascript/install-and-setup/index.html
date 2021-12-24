@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T13:46:27 JST">
+<meta name="revised" content="2021-12-24T18:52:42 JST">
 <title>インストールおよびセットアップ方法 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -183,34 +183,12 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイ
           </a>
         </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -880,14 +858,14 @@ if (!doNotTrack) {
 <p>ArcGIS API for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、<a href="https://developers.arcgis.com/javascript/latest/tooling-intro/">Introduction to Tooling</a> を参照してください。</p>
 <h3 id="arcgis-cdn-による-amd-モジュール">ArcGIS CDN による AMD モジュール</h3>
 <p>API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/esri/themes/light/main.css&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/esri/themes/light/main.css&#34;</span>&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><h3 id="npm-による-es-モジュール">NPM による ES モジュール</h3>
 <p>JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、<a href="https://webpack.js.org/">webpack</a> や <a href="https://rollupjs.org/">rollup.js</a> などのモジュールバンドルラーで利用することができます。</p>
 <p>インストール方法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#66d9ef">@arcgis</span><span style="color:#f92672">/</span><span style="color:#a6e22e">core</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#66d9ef">@arcgis</span><span style="color:#f92672">/</span><span style="color:#a6e22e">core</span>
 </code></pre></div><p>モジュールのインポート：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Map</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@arcgis/core/Map&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Map</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@arcgis/core/Map&#34;</span>;
 </code></pre></div><p>詳細については、以下のガイドを参照してください。</p>
 <ul>
 <li><a href="https://developers.arcgis.com/javascript/latest/tooling-intro/">ツールの紹介</a></li>
@@ -895,7 +873,7 @@ if (!doNotTrack) {
 </ul>
 <h3 id="cdn-による-es-モジュール">CDN による ES モジュール</h3>
 <p>※ この方法は、現在のところ、開発やプロトタイピングにのみ推奨されています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/@arcgis/core/assets/esri/themes/light/main.css&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/@arcgis/core/assets/esri/themes/light/main.css&#34;</span>&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
   <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Map</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/4.22/@arcgis/core/Map.js&#34;</span>;
 

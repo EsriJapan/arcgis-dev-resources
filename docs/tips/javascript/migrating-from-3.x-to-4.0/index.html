@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T13:46:27 JST">
+<meta name="revised" content="2021-12-24T18:52:42 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -183,34 +183,12 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/guide/licensing/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/guide/licensing/">運用（ライセンス）</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-location-services/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-location-services/">
-            ロケーション サービスのライセンス
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイ
           </a>
         </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/license-your-app/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/license-your-app/">
-            アプリのライセンス
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/licensing/attribution/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/guide/licensing/attribution/">
-            帰属
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -894,14 +872,14 @@ if (!doNotTrack) {
 <li>例えば <code>map.basemap.title.</code> のようにオブジェクトから直接プロパティを取得します。</li>
 </ul>
 <p>例えば、3.x ではフィーチャーレイヤーの definitionExpression 設定は、以下のようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">setDefinitionExpression</span>(<span style="color:#a6e22e">expression</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">setDefinitionExpression</span>(<span style="color:#a6e22e">expression</span>);
 </code></pre></div><p>次の行は、4.0 でフィーチャーレイヤーの definitionExpression 設定する方法を示しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">definitionExpression</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">expression</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myFeatureLayer</span>.<span style="color:#a6e22e">definitionExpression</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">expression</span>;
 </code></pre></div><p>4.0 では、以下のように <code>.get()</code> を使用して深い階層のプロパティにアクセスすることができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">basemapTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;basemap.title&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">basemapTitle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;basemap.title&#34;</span>);
 </code></pre></div><h2 id="プロパティの変更の監視">プロパティの変更の監視</h2>
 <p>4.0 より前のバージョンでは、プロパティの変更はイベントでハンドリングされていました。4.0 では、プロパティの変更を監視することが非常に簡単になりました。これは、<code>.watch(property, callback)</code> メソッドで処理されます。このコールバックは、プロパティが変更されるたびに呼び出され、プロパティの新しい値、古い値、名前を監視対象のオブジェクトと一緒に操作することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップ &#39;streets-vector&#39; を定義し、新しい map オブジェクトを作成
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップ &#39;streets-vector&#39; を定義し、新しい map オブジェクトを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
   <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;streets-vector&#39;</span>
 });
@@ -924,7 +902,7 @@ if (!doNotTrack) {
 <p>これを別の言い方をすると、Map は世界のベースマップや機能を表し、View はその地図を見るための窓ということになります。</p>
 <p>以下の構文は、2D View (MapView) と 3D View (SceneView) の両方を作成し、操作する方法を示しています。</p>
 <p>次のスニペットは、MapView を使った 2D マッピングを示しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>){
  <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
    <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;topo-vector&#34;</span>
  });
@@ -935,7 +913,7 @@ if (!doNotTrack) {
  });
 }
 </code></pre></div><p>このスニペットは、SceneView を使った 3D マッピングです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">SceneView</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">SceneView</span>){
  <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
    <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;topo-vector&#34;</span>
  });
@@ -963,16 +941,16 @@ if (!doNotTrack) {
 移動しました(例: <code>esri/layers/support</code>, <code>esri/tasks/support</code>)。</li>
 <li><code>esri/config</code> の構成が変更され、 <code>esriConfig.defaults</code> のプロパティは <code>esriConfig</code> に移動しました。以下は、デフォルトで使用されるジオメトリ サービスの設定方法の例です。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">geometryService</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GeometryService</span>(<span style="color:#e6db74">&#34;&lt;ジオメトリ サービスのURL&gt;&#34;</span>);
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">geometryService</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GeometryService</span>(<span style="color:#e6db74">&#34;&lt;ジオメトリ サービスのURL&gt;&#34;</span>);
 </code></pre></div><ul>
 <li><code>defaults.io</code> オブジェクトは <code>esriConfig.request</code> に移動しました。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </code></pre></div><ul>
 <li>3 つの <code>*-all</code> レガシー モジュールが削除されました。これは、ビルドや Website Optimizer を使用してより適切に処理されます。</li>
