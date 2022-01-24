@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T18:52:42 JST">
+<meta name="revised" content="2022-01-24T11:12:11 JST">
 <title>モバイル マップ パッケージのマップを表示した際に、ズームアウト/ズームインできない場合の対処方法 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -687,25 +687,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">アドインの種類</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ジオデータベース</a>
-      </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -847,7 +833,7 @@ if (!doNotTrack) {
 <h3 id="内容">内容</h3>
 <p>ArcGIS Runtime SDK でモバイル マップ パッケージのマップを表示した際に、ArcGIS Pro で操作した場合と同じスケールにズームアウト/ズームインできない場合があります。これは、マップの一番最初に読み込まれるレイヤー（ArcGIS Pro のレイヤー リストで一番下に追加されているレイヤー）の最小/最大縮尺が、ArcGIS Runtime SDK で作成されるマップの最小/最大縮尺に設定されるためです。</p>
 <p>この現象を回避するには、ArcGIS Pro で最下層のレイヤー（レイヤー リストで一番下に追加されているレイヤー）の最小/最大縮尺設定を「&lt;無し&gt;」に設定するか、ArcGIS Runtime SDK で Map クラスの MinScale/MaxScale プロパティに「0」または適切な値を設定します。下記は ArcGIS Runtime SDK for .NET のコード例です。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// モバイル マップ パッケージのマップをロード
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// モバイル マップ パッケージのマップをロード
 </span><span style="color:#75715e"></span>Map map = package.Maps[<span style="color:#ae81ff">0</span>];
 <span style="color:#66d9ef">await</span> map.LoadAsync();
 MyMapView.Map = map;

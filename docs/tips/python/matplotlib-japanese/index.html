@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T18:52:42 JST">
+<meta name="revised" content="2022-01-24T11:12:12 JST">
 <title>matplotlib での日本語利用について :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -688,25 +688,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">アドインの種類</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ジオデータベース</a>
-      </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -881,7 +867,7 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
 どちらが適しているかはご自身の状況に合わせて選択してください。</p>
 <h4 id="スクリプトで-matplotlib-の設定を都度変更する">スクリプトで matplotlib の設定を都度変更する</h4>
 <p>次のコードをスクリプトの最初に実行することでフォント設定を変更することが可能です。<br></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 <span style="color:#f92672">from</span> matplotlib <span style="color:#f92672">import</span> rcParams
 rcParams[<span style="color:#e6db74">&#34;font.family&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sans-serif&#34;</span>
 rcParams[<span style="color:#e6db74">&#34;font.sans-serif&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Meiryo&#34;</span>]
@@ -892,7 +878,7 @@ rcParams[<span style="color:#e6db74">&#34;font.sans-serif&#34;</span>] <span sty
 <p>上記の設定方法では毎回スクリプトの最初にコードを実行する必要がありますが、以下の方法でデフォルトのフォントを恒久的に変更することが可能です。</p>
 <h5 id="matplotlibrc-のパスを確認">matplotlibrc のパスを確認</h5>
 <p>次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib <span style="color:#66d9ef">as</span> mpl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib <span style="color:#f92672">as</span> mpl
 mpl<span style="color:#f92672">.</span>matplotlib_fname()
 </code></pre></div><h5 id="matplotlibrc-を-cusersユーザー名matplotlib-にコピー--ペーストで配置">matplotlibrc を C:\Users\&lt;ユーザー名&gt;\.matplotlib にコピー &amp; ペーストで配置</h5>
 <p>matplotlibrc が格納されているパスへ移動しファイルをコピーしたら、以下のディレクトリにペーストします。</p>
@@ -918,13 +904,13 @@ matplotlibrc は非常に長いファイルですが、160 行目あたりから
 </div>
 <h5 id="キャッシュの再構築">キャッシュの再構築</h5>
 <p>以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.font_manager
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.font_manager
 matplotlib<span style="color:#f92672">.</span>font_manager<span style="color:#f92672">.</span>_rebuild()
 </code></pre></div><p>設定が完了したらしたら以下のサンプルコードを実行してみましょう。</p>
 <h4 id="サンプル-コード">サンプル コード</h4>
 <p>フォント設定が完了したら以下のサンプル コードを実行してみましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function</span>(x):
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>x <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>
@@ -938,7 +924,7 @@ plt<span style="color:#f92672">.</span>ylim(<span style="color:#f92672">-</span>
 plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;日本語のタイトル&#34;</span>)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;日本語のX軸&#34;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;日本語のY軸&#34;</span>)
-plt<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>)
+plt<span style="color:#f92672">.</span>grid(True)
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p>次のようなグラフが描ければ成功です。</p>
 <div align="center">

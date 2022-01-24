@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T18:52:42 JST">
+<meta name="revised" content="2022-01-24T11:12:12 JST">
 <title>カスタム ウィジェット開発ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -688,25 +688,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">アドインの種類</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ジオデータベース</a>
-      </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -910,7 +896,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <ul>
 <li>nls\strings.js：「Widget.html」でローカライズするストリングを指定</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
   <span style="color:#a6e22e">root</span><span style="color:#f92672">:</span> ({
     <span style="color:#a6e22e">label1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
   }),
@@ -919,13 +905,13 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 </code></pre></div><ul>
 <li>nls\ja\strings.js：各言語フォルダーにある strings.js ファイルで表示する文字を設定</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>({
   <span style="color:#a6e22e">label1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;こんにちは&#34;</span>
 });
 </code></pre></div><ul>
 <li>Widget.html：文字を表示</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">label</span>&gt;${nls.label1}&lt;/<span style="color:#f92672">label</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">label</span>&gt;${nls.label1}&lt;/<span style="color:#f92672">label</span>&gt;
 </code></pre></div><h4 id="imagesiconpng">images\icon.png</h4>
 <p>カスタム ウィジェットのボタンのアイコンを変更したい場合は、このファイルを置き換えます。<br>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide5.png" alt="アイコン変更"></p>
@@ -939,7 +925,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <p><code>setting</code> フォルダーに <code>Setting.html</code> ファイルを作成し、以下のコードを入力します。</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">table</span>&gt;
     &lt;<span style="color:#f92672">tbody</span>&gt;
       &lt;<span style="color:#f92672">td</span>&gt;距離単位&lt;/<span style="color:#f92672">td</span>&gt;
@@ -957,14 +943,14 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 </code></pre></div><ol start="3">
 <li><code>setting</code> フォルダーに <code>Setting.js</code> ファイルを作成し、以下のコードを入力します。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
   <span style="color:#e6db74">&#39;dojo/_base/declare&#39;</span>,
   <span style="color:#e6db74">&#39;dijit/_WidgetsInTemplateMixin&#39;</span>,
   <span style="color:#e6db74">&#39;jimu/BaseWidgetSetting&#39;</span>,
   <span style="color:#e6db74">&#39;esri/units&#39;</span>,
   <span style="color:#e6db74">&#39;dijit/form/Select&#39;</span>
-], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">declare</span>, <span style="color:#ae81ff">_</span><span style="color:#a6e22e">WidgetsInTemplateMixin</span>, <span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#a6e22e">esriUnits</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">declare</span>([<span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#ae81ff">_</span><span style="color:#a6e22e">WidgetsInTemplateMixin</span>], {
+], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">declare</span>, <span style="color:#a6e22e">_WidgetsInTemplateMixin</span>, <span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#a6e22e">esriUnits</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">declare</span>([<span style="color:#a6e22e">BaseWidgetSetting</span>, <span style="color:#a6e22e">_WidgetsInTemplateMixin</span>], {
     <span style="color:#a6e22e">baseClass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jimu-widget-buffer-setting&#39;</span>,
 
     <span style="color:#a6e22e">startup</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
@@ -1003,7 +989,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 </code></pre></div><ol start="4">
 <li><code>Buffer</code> フォルダーの <code>config.json</code> ファイルを開き、以下のコードを入力します。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;measurement&#34;</span>: {}
 }
 </code></pre></div><ol start="5">
@@ -1028,7 +1014,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <ol>
 <li>
 <p><code>Buffer</code> フォルダーにある <code>Widget.html</code> ファイルを開き編集します。バッファーの半径（inputNode）とマップ上にあるレイヤーから検索対象のレイヤーを選択（layerSelectNode）する画面を作成します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">table</span>&gt;
     &lt;<span style="color:#f92672">tr</span>&gt;
       &lt;<span style="color:#f92672">td</span>&gt;半径を入力（${config.measurement.UnitLabel}）&lt;/<span style="color:#f92672">td</span>&gt;
@@ -1049,7 +1035,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <p><code>Buffer</code> フォルダーにある <code>Widget.js</code> ファイルを開き編集します。</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">define</span>([
   <span style="color:#e6db74">&#39;dojo/_base/declare&#39;</span>,
   <span style="color:#e6db74">&#39;dojo/_base/lang&#39;</span>,
   <span style="color:#e6db74">&#39;jimu/BaseWidget&#39;</span>,
@@ -1109,7 +1095,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
       <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inherited</span>(<span style="color:#a6e22e">arguments</span>);
 
       <span style="color:#75715e">// マップをクリックしたときのイベント ハンドラ
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ckickfunction</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">hitch</span>(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">clickHandler</span>));
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ckickfunction</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">hitch</span>(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_clickHandler</span>));
     },
 
     <span style="color:#75715e">// ウィジェットのパネルを閉じるときに実行されるメソッド
@@ -1124,7 +1110,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
     },
 
     <span style="color:#75715e">// マップのクリック イベント
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">_</span><span style="color:#a6e22e">clickHandler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">evt</span>) {
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">_clickHandler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">evt</span>) {
       <span style="color:#75715e">// マップ コンストラクタを取得
 </span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>;
 
@@ -1190,12 +1176,12 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <h4 id="widgethtml">Widget.html</h4>
 <p>ウィジェットの画面を作成します。Web AppBuilder には、デフォルトでいくつかの <a href="https://developers.arcgis.com/web-appbuilder/api-reference/css-framework.htm" target="_blank">css クラス</a>が含まれており、アプリのデザインを統一させることができます。各クラスの詳細は css ファイル（jimu.js/css/jimu.css）を参照ください。</p>
 <p><strong>使用例：</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jimu-input&#34;</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputNode&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10000&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jimu-input&#34;</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputNode&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10000&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
 </code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide9.png" alt="Widget.html">
 <h4 id="cssstylecss">css\style.css</h4>
 <p><code>Widget.html</code> のスタイル定義ファイルです。</p>
 <p><strong>使用例：</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">jimu-widget-</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">ウィジェット名</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">div</span>:<span style="color:#a6e22e">first-child</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">jimu-widget-</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">ウィジェット名</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">div</span>:<span style="color:#a6e22e">first-child</span> {
      <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
 }
 </code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/development-guide10.png" alt="Widget.html">
@@ -1208,11 +1194,11 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <ul>
 <li>Widget.js：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mapIdNode</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;マップのID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">id</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mapIdNode</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;マップのID：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">id</span>;
 </code></pre></div><ul>
 <li>Widget.html：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapIdNode&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">data-dojo-attach-point</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapIdNode&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>その他に利用可能なプロパティは以下です。</p>
 <ul>
 <li>id</li>
@@ -1234,7 +1220,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <p>ウィジェットは、読み込みやウィジェットの開閉などのイベントの発生で実行されるメソッドが定義されています（<a href="https://developers.arcgis.com/web-appbuilder/guide/widget-life-cycle.htm" target="_blank">ウィジェット ライフサイクル</a>）。このメソッド内に処理を追加することで、ウィジェットをカスタマイズしていきます。<br>
 例えば、ウィジェットが開かれた時に処理を実行するには <code>onOpen</code> メソッドを使用します。</p>
 <p><strong>使用例：</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">onOpen</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">onOpen</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">map</span>;
   <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>}
@@ -1278,7 +1264,7 @@ Web AppBuilder のインストール方法に関しては、<a href="../install-
 <h4 id="ダウンロードした-webアプリケーションに追加する場合">ダウンロードした Webアプリケーションに追加する場合</h4>
 <p>ダウンロードしたアプリケーションの <code>widgets</code> フォルダーの直下にカスタム ウィジェットのフォルダーを配置し、アプリケーションのルート フォルダーにある <code>config.json</code> の <code>widgetOnScreen</code>（マップ上に表示）または <code>widgetPool</code>（ツールバー上に表示）セクションの <code>widgets</code> 属性にウィジェットの参照先等を設定します。</p>
 <p><strong>widgetPool にウィジェットを追加する例：</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
   <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;ウィジェット名&gt;&#34;</span>,
   <span style="color:#e6db74">&#34;label&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;アプリで表示する名前&gt;&#34;</span>,
   <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;widgets/&lt;ウィジェット名&gt;/Widget&#34;</span>

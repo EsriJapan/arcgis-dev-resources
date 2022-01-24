@@ -2,6 +2,8 @@
 title = "アドインの種類"
 description = "ArcGIS Pro SDK の開発に役立つガイド集です。"
 weight = 1
+[_build]
+list = false
 +++
 
 ArcGIS Pro SDK の開発に役立つガイド集です。

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T18:52:42 JST">
+<meta name="revised" content="2022-01-24T11:12:12 JST">
 <title>サードパーティ製のライブラリ使用 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -689,25 +689,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/customization/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/customization/">アドインの種類</a>
-      </div>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/geodatabase/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/tips/prosdk/geodatabase/">ジオデータベース</a>
-      </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -882,7 +868,7 @@ if (!doNotTrack) {
 <h3 id="利用方法-1">利用方法</h3>
 <p>ライブラリの CDN url を見つける必要があります。通常、これはライブラリのドキュメントに記載されているか、<a href="https://www.jsdelivr.com/">jsDelivr</a> や <a href="https://unpkg.com/">unpkg</a> で見つけることができます。たとえば、jQuery サンプルでは、CDN URL は <code>https://unpkg.com/jquery@3.5.1/dist/jquery.js</code> です。</p>
 <p>ウィジェットの <code>manifest.json</code> ファイルに <code>dependency</code> と呼ばれる配列プロパティを追加し、その配列に url を追加します。例えば、以下のようになります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dependency&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dependency&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
   <span style="color:#e6db74">&#34;https://unpkg.com/jquery@3.5.1/dist/jquery.js&#34;</span>
 ]<span style="color:#960050;background-color:#1e0010">,</span>
 </code></pre></div><p>Experience Builder は Experience がロードされると自動的にライブラリをロードし、ウィジェットはライブラリのドキュメントに従ってライブラリを使用することができます。</p>
@@ -893,7 +879,7 @@ if (!doNotTrack) {
 <p>ライブラリのダウンロード可能なビルド済み assets を探します。通常、これはライブラリのドキュメントにリンクされているか、ライブラリの GitHub リポジトリの <code>Releases</code> エリアにあるダウンロード可能な assets の <code>dist</code> フォルダにあります。</p>
 <p>ダウンロード後、ファイルを展開し、ウィジェットのルートディレクトリにコピーしてください。相対パスで指定し、インポートを介してインクルードされるので、ウィジェット内の任意の場所にファイルを配置することができますが、慣習的には、<code>lib</code> というフォルダ内に配置することをお勧めします。</p>
 <p>ファイルを配置した後、相対パスを使用してライブラリをインポートすることができます。例えば、以下のようになります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">d3</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./lib/d3/d3.min.js&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">d3</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./lib/d3/d3.min.js&#34;</span>;
 </code></pre></div><p>このパターンの動作例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/d3/">D3</a> のサンプルを参照してください。</p>
 
 

@@ -2,6 +2,8 @@
 title = "ジオデータベース"
 description = "ArcGIS Pro SDK の開発に役立つガイド集です。"
 weight = 2
+[_build]
+list = false
 +++
 
 ArcGIS Pro SDK の開発に役立つガイド集です。
