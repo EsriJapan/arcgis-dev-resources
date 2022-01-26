@@ -150,7 +150,7 @@ MVVM で設計された ArcGIS Runtime アプリでは、通常、マップ ビ�
     }
     ```
 
-5. ビュー モデルに [Esri.ArcGISRuntime.Mapping.Map](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_Mapping_Map.htm) オブジェクトを公開する Map という新しいプロパティを定義します。
+5. ビュー モデルに [Esri.ArcGISRuntime.Mapping.Map](https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Map.html) オブジェクトを公開する Map という新しいプロパティを定義します。
    プロパティが設定されると、OnPropertyChanged を呼び出します。
 
     MapViewModel.cs
@@ -234,7 +234,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
 
 ### マップ ビューを追加する
 
-[MapView](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm) コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。
+[MapView](https://developers.arcgis.com/net/api-reference/api/netfx/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html) コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。
 
 1. 必要な XML 名前空間とリソースを追加します。
    * MainWindow.xaml を開き、XAML ビューに切り替えます。
@@ -268,7 +268,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
         </Grid>
     ```
 
-2. [MapView](https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm) コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。
+2. [MapView](https://developers.arcgis.com/net/api-reference/api/netfx/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html) コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。
    * 「MainMapView」という名前の MapView コントロールを定義する XAML を追加します。
    * データ バインディングを使用して、MapViewModel リソースを使用し MapView コントロールの Map プロパティを設定します。
 
@@ -308,7 +308,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
     {
     ```
 
-3. MainWindow のコンストラクターで、新しい [Viewpoint](https://developers.arcgis.com/net/wpf/api-reference/html/T_Esri_ArcGISRuntime_Mapping_Viewpoint.htm) を定義するコードを追加し、マップ ビューに適用します。
+3. MainWindow のコンストラクターで、新しい [Viewpoint](https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html) を定義するコードを追加し、マップ ビューに適用します。
 
     MainWindow.xaml.cs
 

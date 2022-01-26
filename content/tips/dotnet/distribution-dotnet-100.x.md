@@ -209,7 +209,7 @@ catch (Exception ex)
 }
 ```
 
-注意：上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい [GetLicenseInfoAsync()](https://developers.arcgis.com/net/wpf/api-reference/html/M_Esri_ArcGISRuntime_Portal_ArcGISPortal_GetLicenseInfoAsync.htm) APIを使用しています。バージョン 100.6 以前では Portal.PortalInfo.LicenseInfo を使用します。
+注意：上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい [GetLicenseInfoAsync()](https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Portal.ArcGISPortal.GetLicenseInfoAsync.html) APIを使用しています。バージョン 100.6 以前では Portal.PortalInfo.LicenseInfo を使用します。
 
 ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリのライセンスを取得します。
 

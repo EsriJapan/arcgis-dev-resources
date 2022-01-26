@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-24T11:12:11 JST">
+<meta name="revised" content="2022-01-26T18:46:22 JST">
 <title>.NET :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -975,7 +975,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 <li>
-<p>ビュー モデルに <a href="https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_Mapping_Map.htm">Esri.ArcGISRuntime.Mapping.Map</a> オブジェクトを公開する Map という新しいプロパティを定義します。
+<p>ビュー モデルに <a href="https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Map.html">Esri.ArcGISRuntime.Mapping.Map</a> オブジェクトを公開する Map という新しいプロパティを定義します。
 プロパティが設定されると、OnPropertyChanged を呼び出します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
@@ -1046,7 +1046,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <p>MVVM デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。ArcGIS Runtime for .NET はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、ArcGIS Runtime for .NET アプリ用に作成したビュー モデルのコードは、通常、サポートされているすべての .NET プラットフォームで動作します。</p>
 <p>次に、プロジェクトにビューを設定して、ビュー モデルを使用します。</p>
 <h3 id="マップ-ビューを追加する">マップ ビューを追加する</h3>
-<p><a href="https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm">MapView</a> コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。</p>
+<p><a href="https://developers.arcgis.com/net/api-reference/api/netfx/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html">MapView</a> コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。</p>
 <ol>
 <li>
 <p>必要な XML 名前空間とリソースを追加します。</p>
@@ -1080,7 +1080,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
     <span style="color:#f92672">&lt;/Grid&gt;</span>
 </code></pre></div></li>
 <li>
-<p><a href="https://developers.arcgis.com/net/wpf/api-reference/?T_Esri_ArcGISRuntime_UI_Controls_MapView.htm">MapView</a> コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。</p>
+<p><a href="https://developers.arcgis.com/net/api-reference/api/netfx/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html">MapView</a> コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。</p>
 <ul>
 <li>「MainMapView」という名前の MapView コントロールを定義する XAML を追加します。</li>
 <li>データ バインディングを使用して、MapViewModel リソースを使用し MapView コントロールの Map プロパティを設定します。</li>
@@ -1118,7 +1118,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 {
 </code></pre></div></li>
 <li>
-<p>MainWindow のコンストラクターで、新しい <a href="https://developers.arcgis.com/net/wpf/api-reference/html/T_Esri_ArcGISRuntime_Mapping_Viewpoint.htm">Viewpoint</a> を定義するコードを追加し、マップ ビューに適用します。</p>
+<p>MainWindow のコンストラクターで、新しい <a href="https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html">Viewpoint</a> を定義するコードを追加し、マップ ビューに適用します。</p>
 <p>MainWindow.xaml.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> MainWindow()
 {

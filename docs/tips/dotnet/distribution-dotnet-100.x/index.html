@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-24T11:12:11 JST">
+<meta name="revised" content="2022-01-26T18:46:22 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1128,7 +1128,7 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 {
     <span style="color:#75715e">// TODO: 例外を処理します
 </span><span style="color:#75715e"></span>}
-</code></pre></div><p>注意：上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい <a href="https://developers.arcgis.com/net/wpf/api-reference/html/M_Esri_ArcGISRuntime_Portal_ArcGISPortal_GetLicenseInfoAsync.htm">GetLicenseInfoAsync()</a> APIを使用しています。バージョン 100.6 以前では Portal.PortalInfo.LicenseInfo を使用します。</p>
+</code></pre></div><p>注意：上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい <a href="https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Portal.ArcGISPortal.GetLicenseInfoAsync.html">GetLicenseInfoAsync()</a> APIを使用しています。バージョン 100.6 以前では Portal.PortalInfo.LicenseInfo を使用します。</p>
 <p>ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリのライセンスを取得します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// icenseInfo を JSON 形式のテキストとして取得します
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">string</span> licenseJson = licenseInfo.ToJson();
