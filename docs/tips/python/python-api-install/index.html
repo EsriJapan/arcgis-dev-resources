@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-26T18:46:22 JST">
+<meta name="revised" content="2022-02-08T16:16:37 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -856,8 +856,8 @@ Python API は、<code>arcgis</code> という名前のパッケージで <a hre
 </ul>
 <h3 id="step-2-arcgis-パッケージをアップグレードするarcgis-パッケージをアップグレードする">STEP 2: <a href="#arcgis-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B"><code>arcgis</code> パッケージをアップグレードする</a></h3>
 <ul>
-<li><a href="#arcgis-pro-2.3-%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%AE%E5%A0%B4%E5%90%88">ArcGIS Pro 2.3 以上の環境の場合</a></li>
-<li><a href="#arcgis-pro-2.2-%E7%92%B0%E5%A2%83%E3%81%AE%E5%A0%B4%E5%90%88">ArcGIS Pro 2.2 環境の場合</a></li>
+<li><a href="#arcgis-pro-23-%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%AE%E5%A0%B4%E5%90%88">ArcGIS Pro 2.3 以上の環境の場合</a></li>
+<li><a href="#arcgis-pro-22-%E7%92%B0%E5%A2%83%E3%81%AE%E5%A0%B4%E5%90%88">ArcGIS Pro 2.2 環境の場合</a></li>
 <li><a href="#anaconda-%E7%92%B0%E5%A2%83%E3%81%AE%E5%A0%B4%E5%90%88">Anaconda 環境の場合</a></li>
 </ul>
 <h3 id="step-3-arcgis-api-for-python-を実行するarcgis-api-for-python-を実行する">STEP 3: <a href="#arcgis-api-for-python-%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B">ArcGIS API for Python を実行する</a></h3>
@@ -885,13 +885,13 @@ Python API は Python 3.5 以降を必要とするため、<a href="https://www.
 <!-- * [Linux](https://www.anaconda.com/download/#linux) -->
 <p>ターミナルアプリケーション（ここでは Anaconda Prompt）を開き、次のコマンドを使用して <code>arcgis</code> パッケージをインストールします。</p>
 <pre><code>conda install -c esri arcgis
-</code></pre><div align="left">
+</code></pre><!-- <div align="left">
 <img src="http://esri.github.io/arcgis-python-api/notebooks/nbimages/install_arcgis_pkg_mac.png" width="700px">
-</div>
+</div> -->
 <p>インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br></p>
-<pre><code>conda install -c esri arcgis=1.8.0
+<pre><code>conda install -c esri arcgis=2.x.x
 </code></pre><div class="notices note" >
-<p>Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に <a href="https://pypi.org/project/pyshp/">pyshp</a> を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。</p>
+<p>Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に <a href="https://pypi.org/project/pyshp/">pyshp</a> を利用しています。2022 年 2 月現在の最新版である pyshp 2.2.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。</p>
 </div>
 <p>インストールが完了したら、<a href="#arcgis-api-for-python-%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B">ArcGIS API for Python を実行する</a>を試してみましょう。</p>
 <hr>

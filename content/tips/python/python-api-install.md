@@ -22,8 +22,8 @@ ArcGIS Pro と Anaconda の違いについては以下のブログもご参照�
 * [Anaconda 経由でインストールする](#anaconda-経由でインストールする)
 
 ### STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
-* [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-2.3-以上の環境の場合)
-* [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-2.2-環境の場合)
+* [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-23-以上の環境の場合)
+* [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-22-環境の場合)
 * [Anaconda 環境の場合](#anaconda-環境の場合)
 
 ### STEP 3: [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
@@ -58,18 +58,18 @@ Python API は Python 3.5 以降を必要とするため、[Anaconda ダウン�
 conda install -c esri arcgis
 ```
 
-<div align="left">
+<!-- <div align="left">
 <img src="http://esri.github.io/arcgis-python-api/notebooks/nbimages/install_arcgis_pkg_mac.png" width="700px">
-</div>
+</div> -->
 
 インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br>
 ```
-conda install -c esri arcgis=1.8.0
+conda install -c esri arcgis=2.x.x
 ```
 
 {{% notice note %}}
 
-Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2020 年 5 月現在の最新版である pyshp 2.1.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
+Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2022 年 2 月現在の最新版である pyshp 2.2.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
 
 {{% /notice %}}
 
