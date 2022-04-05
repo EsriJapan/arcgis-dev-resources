@@ -44,6 +44,5 @@ ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
     * 製品のライセンスや日本国内のサポートに関する情報を紹介しています。
   * [Esri Community（英語）](https://community.esri.com/t5/arcgis-appstudio-questions/bd-p/arcgis-appstudio-questions)
     * 全世界のユーザーが投稿した製品に関する質問等の投稿を確認できます。
-    てはESRIジャパン製品ページのFAQをごらんください。アプリ作成に関する技術的な[FAQ（Esriジャパン）](./faq)をごらんください。
   * [その他の Tips](./faq)
     * アプリ作成に関する技術的な情報を紹介しています。
