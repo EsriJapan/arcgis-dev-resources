@@ -546,6 +546,13 @@
 	"content": "出典：ArcGIS Experience Builder - Guide - Theme\nテーマ（Theme） テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタムテーマの作成も可能です。テーマ開発については、theme development をご覧ください。\napp config では、アプリが使用するテーマは theme で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は customTheme に保存されます。\n"
 },
 {
+	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/appstudio/",
+	"title": "ArcGIS AppStudio",
+	"tags": [],
+	"description": "ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。",
+	"content": "ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。\n  ガイド\n AppStudio の概要からアプリの作成・デプロイ、AppStudio Player を使用したモバイル デバイスでのテスト、カスタマイズ方法等を紹介したガイドです。    AppStudio Framework API リファレンス（英語）\n AppStudio Framework API は、ファイルパスの管理、ネットワーク インターフェース、画像操作などの、プラットフォーム共通の基本機能を提供しています。    ユースケース\n ギャラリー（英語）  全世界のユーザーによって作成されたアプリと利活用方法が紹介されています。   国内事例  日本国内での事例を紹介しています。      システム要件\n システム要件（米国Esri社）  AppStudio のデスクトップ用のアプリ、AppStudio Player のサポート OS 等のシステム要件が記載されています。   システム要件（Esriジャパン）  日本国内での固有のシステム要件を記載しています。      ライセンス\n AppStudio の 2 つのライセンス オプション（「ArcGIS AppStudio」と「ArcGIS AppStudio Developer Edition」）について紹介しています。    ダウンロード\n AppStudio のデスクトップ用のアプリ、AppStudio Player はこちらからダウンロード（無償）できます。    インストール\n AppStudio のデスクトップ用のアプリ、AppStudio Player のインストール方法を紹介しています。    チュートリアル\n アプリの作成からデプロイまでの手順を示したチュートリアルです。はじめての方はこちらのチュートリアルをお試しください。    その他\n FAQ（米国Esri社）  よくあるご質問とその回答が記載されています。   FAQ（ESRIジャパン）  製品のライセンスや日本国内のサポートに関する情報を紹介しています。   Esri Community（英語）  全世界のユーザーが投稿した製品に関する質問等の投稿を確認できます。 てはESRIジャパン製品ページのFAQをごらんください。アプリ作成に関する技術的なFAQ（Esriジャパン）をごらんください。   その他の Tips  アプリ作成に関する技術的な情報を紹介しています。      "
+},
+{
 	"uri": "https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/",
 	"title": "ウィジェット UI の作成",
 	"tags": [],
