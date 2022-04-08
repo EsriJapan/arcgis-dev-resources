@@ -298,7 +298,7 @@
 	"title": "技術 Tips 集",
 	"tags": [],
 	"description": "開発に役立つ技術 Tips 集です。",
-	"content": "　開発ドキュメント 各 API/SDK の開発をサポートするドキュメントです。\n ArcGIS API for JavaScript ArcGIS Experience Builder (Developer Edition) ArcGIS Web AppBuilder (Developer Edition) ArcGIS Runtime SDK for .NET ArcGIS Runtime SDK for Android ArcGIS Runtime SDK for iOS ArcGIS API for Python ArcGIS Pro SDK  "
+	"content": "　開発ドキュメント 各 API/SDK の開発をサポートするドキュメントです。\n ArcGIS API for JavaScript ArcGIS Experience Builder (Developer Edition) ArcGIS Web AppBuilder (Developer Edition) ArcGIS Runtime SDK for .NET ArcGIS Runtime SDK for Android ArcGIS Runtime SDK for iOS ArcGIS API for Python ArcGIS Pro SDK ArcGIS AppStudio  "
 },
 {
 	"uri": "https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/",

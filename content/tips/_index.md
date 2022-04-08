@@ -18,3 +18,5 @@ alwaysopen = true
 * [ArcGIS Runtime SDK for iOS](../tips/ios/)
 * [ArcGIS API for Python](../tips/python/)
 * [ArcGIS Pro SDK](../tips/prosdk/)
+* [ArcGIS AppStudio](../tips/appstudio/)
+
