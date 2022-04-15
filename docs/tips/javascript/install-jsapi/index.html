@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-04-08T10:30:44 JST">
+<meta name="revised" content="2022-04-15T14:17:59 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -817,6 +817,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#ライブラリのダウンロード">ライブラリのダウンロード</a></li>
     <li><a href="#web-サーバーiisに配置">Web サーバー（IIS）に配置</a></li>
+    <li><a href="#必要条件">必要条件</a></li>
     <li><a href="#インストールのテスト">インストールのテスト</a></li>
   </ul>
 </nav>
@@ -844,17 +845,69 @@ if (!doNotTrack) {
 <p>※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="1150px">
 <blockquote>
-<p>[arcgis_js_v421_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
+<p>[arcgis_js_v423_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
 </blockquote>
 <h2 id="web-サーバーiisに配置">Web サーバー（IIS）に配置</h2>
 <p>まずはダウンロードしたサンプル コードを実行してみましょう。</p>
 <ol>
 <li>ダウンロードしたライブラリの zip ファイルを解凍します。</li>
-<li><code>\arcgis_js_v421_api\arcgis_js_api\javascript\4.22\</code> とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (<code>C:\inetpub\wwwroot\javascript\api\4.22\</code>)</li>
+<li><code>\arcgis_js_v423_api\arcgis_js_api\javascript\4.23\</code> とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (<code>C:\inetpub\wwwroot\javascript\api\4.23\</code>)</li>
 </ol>
+<h2 id="必要条件">必要条件</h2>
+<p>ArcGIS API for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</p>
+<ul>
+<li>
+<p>HTTPS では、Web サーバーに Web サーバー証明書を使用する必要があります。</p>
+</li>
+<li>
+<p>IIS には、以下の MIME タイプの登録が必要です。</p>
+<table>
+<thead>
+<tr>
+<th>拡張</th>
+<th>MIME/type</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.ttf</td>
+<td>application/octet-stream</td>
+<td>True Typeフォント</td>
+</tr>
+<tr>
+<td>.wasm</td>
+<td>application/wasm</td>
+<td><a href="http://webassembly.org/">WebAssembly</a></td>
+</tr>
+<tr>
+<td>.woff</td>
+<td>application/font-woff</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF">Web Open Font Format</a></td>
+</tr>
+<tr>
+<td>.woff2</td>
+<td>application/font-woff2</td>
+<td><a href="https://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a></td>
+</tr>
+<tr>
+<td>.wsv</td>
+<td>application/octet-stream</td>
+<td>SceneViewの星の可視化に対応</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><a href="https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https">Google: HTTPSが重要な理由</a></p>
+</li>
+<li>
+<p><a href="https://support.google.com/webmasters/answer/6073543">Google: HTTPS でサイトを保護する</a></p>
+</li>
+</ul>
 <h2 id="インストールのテスト">インストールのテスト</h2>
 <p>以下のサンプルは、ArcGIS API for JavaScript のダウンロード版に含まれています。
-ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v422_api/arcgis_js_api/javascript/4.22/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション <a href="https://www.example.com/javascript/api/4.22/index.html">https://www.example.com/javascript/api/4.22/index.html</a> を開くことにより、API をテストすることができます。</p>
+ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v423_api/arcgis_js_api/javascript/4.23/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション <a href="https://www.example.com/javascript/4.23/index.html">https://www.example.com/javascript/4.23/index.html</a> を開くことにより、API をテストすることができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
@@ -937,7 +990,7 @@ ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v422_api/arc
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.22となります。)
+</code></pre></div><p>以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.23となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px"></p>
 
 
