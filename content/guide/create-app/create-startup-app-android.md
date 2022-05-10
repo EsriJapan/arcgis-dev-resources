@@ -48,16 +48,17 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
      <img src="https://developers.arcgis.com/android/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" width="400px">
 
-3. プロジェクト ツールウィンドウから、[Gradle Scripts] > [build.gradle (Project: Display_a_map)] を開きます。Esri の Maven リポジトリから API を参照するには、allprojects の repositories ブロックに以下の行を追加します。
+3. プロジェクト ツールウィンドウから、[Gradle Scripts] > [settings.gradle] を開きます。Esri の Maven リポジトリから API を参照するには、dependencyResolutionManagement の repositories ブロックに以下の行を追加します。
 
-    build.gradle (Project: Display_a_map)
+    settings.gradle
 
     ```java
-    allprojects {
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             google()
-            jcenter()
-            
+            mavenCentral()
+
             // 追加開始
             maven {
                 url 'https://esri.jfrog.io/artifactory/arcgis'
@@ -84,13 +85,16 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     }
 
     dependencies {
-        implementation fileTree(dir: "libs", include: ["*.jar"])
-        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        implementation 'androidx.appcompat:appcompat:1.2.0'
-        implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+        implementation 'androidx.core:core-ktx:1.7.0'
+        implementation 'androidx.appcompat:appcompat:1.4.1'
+        implementation 'com.google.android.material:material:1.5.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
         // 追加開始
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.13.0'
+        implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
         // 追加終了
 
     }

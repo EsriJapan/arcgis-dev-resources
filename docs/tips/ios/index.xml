@@ -17,7 +17,10 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
 マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールとセットアップ Xcode プロジェクトに API をインストールして使用するには、いくつかの方法があります。Swift Package Manager か CocoaPods を使用するか、手動でダウンロードしてインストールできます。
  Swift Package Manager を使用する CocoaPods を使用する 手動でダウンロードする  Swift Package Manager を使用する Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
- Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Swift Packages] &amp;gt; [Add Package Dependency] を選択します。 パッケージ リポジトリの URL として https://github.com/esri/arcgis-runtime-ios を入力します。[Next] をクリックします。 バージョンを指定するか、Xcode によって提供される最新バージョンを選択します。[Next] をクリックします。Xcode は、ArcGIS フレームワークのダウンロードを開始します。 ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。  ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.</description>
+  Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Add Package&amp;hellip;] を選択します。
+  パッケージ リポジトリの URL として https://github.com/esri/arcgis-runtime-ios を入力します。
+  オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。
+  [Add Package] をクリックします。</description>
     </item>
     
     <item>

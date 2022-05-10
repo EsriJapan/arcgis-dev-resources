@@ -21,12 +21,13 @@ Xcode プロジェクトに API をインストールして使用するには、
 ## Swift Package Manager を使用する
 Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
 
-1. Xcode プロジェクトを開きます。メニューバーで、[File] > [Swift Packages] > [Add Package Dependency] を選択します。
-2. パッケージ リポジトリの URL として [https://github.com/esri/arcgis-runtime-ios](https://developers.arcgis.com/ios/install-and-set-up/) を入力します。[Next] をクリックします。
-3. バージョンを指定するか、Xcode によって提供される最新バージョンを選択します。[Next] をクリックします。Xcode は、ArcGIS フレームワークのダウンロードを開始します。
-4. ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。
+1. Xcode プロジェクトを開きます。メニューバーで、[File] > [Add Package...] を選択します。
+2. パッケージ リポジトリの URL として [https://github.com/esri/arcgis-runtime-ios](https://developers.arcgis.com/ios/install-and-set-up/) を入力します。
+3. オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。
 
-<img src="https://developers.arcgis.com/ios/679edc942ebaf2693fd1c9e6981f03bf/swiftpm.gif" width="650px">
+4. [Add Package] をクリックします。
+
+<img src="https://developers.arcgis.com/ios/8f921ee63d24ab6bcc89d6f9b6c68bd8/swiftpm-xcode13.gif" width="650px">
 
 ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
 ```swift  

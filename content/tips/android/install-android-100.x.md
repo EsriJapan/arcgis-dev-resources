@@ -50,7 +50,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.13.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
 		...
 	}
 	```
@@ -88,28 +88,28 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 2. アーカイブの内容をディスク上の任意の場所に解凍します。
 3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。
 
-	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/`
+	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/`
 	
-	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\`
+	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.0\`
 
 4. ディレクトリのパスは以下のようになっているはずです。
 
 	mac (2 ファイル):
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.aar`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.aar`
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.pom`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.pom`
 	
 	Windows (2 ファイル):
 
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.aar`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.aar`
 	
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.pom`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.pom`
 
 5. インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
 オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。
 
-	* gson 2.8.6: https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar
+	* gson 2.8.8: https://search.maven.org/artifact/com.google.code.gson/gson/2.8.8/jar
 	* androidx.browser 1.3.0: https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.3.0
 	* androidx.localbroadcastmanager 1.0.0: https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
 	* httpcore5 5.0.4: https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5/5.0.4/jar
@@ -167,8 +167,8 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	```java 
 	dependencies {
 			...
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.13.0'
-		implementation 'com.google.code.gson:gson:2.8.6'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
+		implementation 'com.google.code.gson:gson:2.8.8'
 		implementation 'androidx.browser:browser:1.3.0'
 		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 		implementation 'org.apache.httpcomponents.core5:httpcore5:5.0.4'

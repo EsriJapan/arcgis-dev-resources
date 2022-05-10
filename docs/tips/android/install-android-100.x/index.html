@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-04-08T10:30:44 JST">
+<meta name="revised" content="2022-05-10T14:51:41 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -882,7 +882,7 @@ if (!doNotTrack) {
 <p>module レベルの build.gradle ファイルの dependencies ブロック内で、ArcGIS Runtime SDK for Android の依存関係をアプリに追加します。</p>
 <p>注：この依存関係を、ArcGIS Runtime SDK for Android を使用する各モジュールに追加する必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">13</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     <span style="color:#f92672">...</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
@@ -925,23 +925,23 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。</p>
-<p>mac: <code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/</code></p>
-<p>Windows: <code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\</code></p>
+<p>mac: <code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/</code></p>
+<p>Windows: <code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.0\</code></p>
 </li>
 <li>
 <p>ディレクトリのパスは以下のようになっているはずです。</p>
 <p>mac (2 ファイル):</p>
-<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.aar</code></p>
-<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.13.0/arcgis-android-100.13.0.pom</code></p>
+<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.aar</code></p>
+<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.pom</code></p>
 <p>Windows (2 ファイル):</p>
-<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.aar</code></p>
-<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.13.0.pom</code></p>
+<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.aar</code></p>
+<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.pom</code></p>
 </li>
 <li>
 <p>インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
 オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。</p>
 <ul>
-<li>gson 2.8.6: <a href="https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar">https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar</a></li>
+<li>gson 2.8.8: <a href="https://search.maven.org/artifact/com.google.code.gson/gson/2.8.8/jar">https://search.maven.org/artifact/com.google.code.gson/gson/2.8.8/jar</a></li>
 <li>androidx.browser 1.3.0: <a href="https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.3.0">https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.3.0</a></li>
 <li>androidx.localbroadcastmanager 1.0.0: <a href="https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.0.0">https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.0.0</a></li>
 <li>httpcore5 5.0.4: <a href="https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5/5.0.4/jar">https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5/5.0.4/jar</a></li>
@@ -1000,8 +1000,8 @@ if (!doNotTrack) {
 <p>アプリの build.gradle ファイルに以下の依存関係を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
         <span style="color:#f92672">...</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">13</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gson</span><span style="color:#f92672">:</span>gson<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">8</span><span style="color:#f92672">.</span><span style="color:#a6e22e">6</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gson</span><span style="color:#f92672">:</span>gson<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">8</span><span style="color:#f92672">.</span><span style="color:#a6e22e">8</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">browser</span><span style="color:#f92672">:</span>browser<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">localbroadcastmanager</span><span style="color:#f92672">:</span>localbroadcastmanager<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">httpcomponents</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core5</span><span style="color:#f92672">:</span>httpcore5<span style="color:#f92672">:</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>

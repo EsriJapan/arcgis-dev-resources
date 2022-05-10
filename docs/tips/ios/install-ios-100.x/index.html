@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-04-08T10:30:44 JST">
+<meta name="revised" content="2022-05-10T14:51:41 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -862,12 +862,20 @@ if (!doNotTrack) {
 <h2 id="swift-package-manager-を使用する">Swift Package Manager を使用する</h2>
 <p>Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。</p>
 <ol>
-<li>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Swift Packages] &gt; [Add Package Dependency] を選択します。</li>
-<li>パッケージ リポジトリの URL として <a href="https://developers.arcgis.com/ios/install-and-set-up/">https://github.com/esri/arcgis-runtime-ios</a> を入力します。[Next] をクリックします。</li>
-<li>バージョンを指定するか、Xcode によって提供される最新バージョンを選択します。[Next] をクリックします。Xcode は、ArcGIS フレームワークのダウンロードを開始します。</li>
-<li>ArcGIS Runtime を追加するプロダクトとターゲットを選択します。[Finish] をクリックします。</li>
+<li>
+<p>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Add Package&hellip;] を選択します。</p>
+</li>
+<li>
+<p>パッケージ リポジトリの URL として <a href="https://developers.arcgis.com/ios/install-and-set-up/">https://github.com/esri/arcgis-runtime-ios</a> を入力します。</p>
+</li>
+<li>
+<p>オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。</p>
+</li>
+<li>
+<p>[Add Package] をクリックします。</p>
+</li>
 </ol>
-<img src="https://developers.arcgis.com/ios/679edc942ebaf2693fd1c9e6981f03bf/swiftpm.gif" width="650px">
+<img src="https://developers.arcgis.com/ios/8f921ee63d24ab6bcc89d6f9b6c68bd8/swiftpm-xcode13.gif" width="650px">
 <p>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
 </code></pre></div><h2 id="cocoapods-を使用する">CocoaPods を使用する</h2>

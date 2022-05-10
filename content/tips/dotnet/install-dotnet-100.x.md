@@ -30,9 +30,9 @@ ArcGIS Runtime NuGet パッケージは、NuGet.org でホストされていま�
 
 1. Visual Studio で NuGet パッケージ マネージャーを開きます (例えば、[プロジェクト] メニュー > [NuGet パッケージの管理])。
 2. [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に「nuget.org」が選択されていることを確認します。
-3. [参照] タブを選択して、[検索] テキスト ボックスに「ArcGIS Runtime」と入力します。
+3. [参照] タブを選択して、[検索] テキスト ボックスに「Esri.ArcGISRuntime」と入力します。
 
-    <img src="https://developers.arcgis.com/net/static/df1a57d106454fd0f4c5ec34b0d1a849/4cdf7/PackageManager_ArcGIS_NuGet.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/389085f5a1ae20cee11c9df48fdeb7c2/dc616/nuget-package-manager-online-markup.png" width="650px">
 
 4. [バージョン] にパッケージの「最新の安定版...」が選択されていることを確認します。
 5. [インストール] をクリックして、パッケージをプロジェクトに追加します。
@@ -53,34 +53,32 @@ Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発す�
 3. ダウンロードしたファイルをダブル クリックしてセットアップ ファイルを抽出し、インストールを開始します。
 4. 拡張機能をインストールする製品 (Visual Studio 2019 など) を選択します。サポートされているバージョンの Visual Studio のみがオプションとして表示されます。[インストール] をクリックして、ライセンス条項に同意します。 選択したすべての製品のインストールが開始されます。
 
-    <img src="https://developers.arcgis.com/net/static/154265f70e72d9b3ade93e9df829effd/f21e7/VSIX_Installer.png" width="450px">
+    <img src="https://developers.arcgis.com/net/static/1be96601a1eb631574ac1b544703189f/8574c/vsix-installer-dialog.png" width="650px">
 
 5. インストールが完了すると、選択した製品のインストール確認ダイアログが表示されます。 [閉じる] をクリックし、開いている Visual Studio のインスタンスをすべて閉じて再起動してください。
 6. 拡張機能のプロジェクト テンプレートを使用するには、Visual Studio を起動し、[新しいプロジェクトの作成] を選択します。 サポートされているプロジェクト タイプには、ArcGIS Runtime SDK のプロジェクト テンプレートが表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/1e2746c1b29bd4e173755374dd79619c/4cdf7/NewProject_ArcGISTemplates.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/1c763116abb8991bc14ab85f28b44569/0fb99/new-project-dialog-markup.png" width="650px">
 
 7. ローカルの NuGet パッケージを追加するには、NuGet パッケージ マネージャーを開き (例えば、[プロジェクト] メニュー > [NuGet パッケージの管理])、[参照] タブと、ローカルの Esri パッケージソース (Visual Studio 拡張機能インストーラーによって構成されている) を選択します。プロジェクトに適切なパッケージを選択し、[インストール] をクリックしてパッケージをプロジェクトに追加します。
 
-    <img src="https://developers.arcgis.com/net/static/df1a57d106454fd0f4c5ec34b0d1a849/4cdf7/PackageManager_ArcGIS_NuGet.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/97b48033817cea9b9feb2fdf4b7ace56/f6f78/nuget-package-manager-local-markup.png" width="650px">
 
 ## Visual Studio プロジェクト テンプレートのみインストールする方法
 
-Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発する場合、完全な Visual Studio 拡張機能をダウンロードせずに (ローカルにインストールされた NuGet パッケージを使用して) ArcGIS Runtime プロジェクト テンプレートをインストールできます。プロジェクト テンプレートは、Model-View-ViewModel (MVVM) デザイン パターンを使用し、各プラットフォームに必要なすべての NuGet パッケージを参照します。
+Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発する場合、完全な Visual Studio 拡張機能をダウンロードせずに ArcGIS Runtime プロジェクト テンプレートをインストールできます。プロジェクト テンプレートは、Model-View-ViewModel (MVVM) デザイン パターンを使用し、各プラットフォームに必要なすべての NuGet パッケージを参照します。
 
 1. Visual Studio で、[拡張機能] メニュー > [拡張機能の管理] を選択して、[拡張機能の管理] ダイアログを表示します。
-2. [検索] テキスト ボックスに、「ArcGIS Runtime」と入力します。ArcGIS Runtime  の拡張現実 (AR) プロジェクト テンプレートなどが表示されます。
-3. 「ArcGIS Runtime SDK for .NET - Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。
+2. [検索] テキスト ボックスに、「ArcGIS」と入力します。ArcGIS Runtime  の拡張現実 (AR) プロジェクト テンプレートなどが表示されます。
+3. 「ArcGIS Runtime SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/fe2856ea8bb922702191d0601b8d0f0b/4cdf7/ManageExtensions_ArcGISTemplates.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/46f8c032da39586ad0f27612861cb45b/4cdf7/manage-extensions-dialog-markup.png" width="650px">
 
 4. [拡張機能の管理] ダイアログを閉じます。
 5. [ファイル] メニュー > [終了] を選択して Visual Studio を閉じ、拡張機能をインストールします。
 6. Visual Studio を閉じた時に表示される [VSIX インストーラー] ダイアログで [変更] をクリックします。
 7. インストールが完了したら、インストーラー ダイアログで [閉じる] をクリックします。
 8. 次回 Visual Studio で [新しいプロジェクトの作成] を選択すると、使用可能なすべてのプラットフォームの ArcGIS Runtime のプロジェクト テンプレートが表示されます。
-
-    <img src="https://developers.arcgis.com/net/static/1e2746c1b29bd4e173755374dd79619c/4cdf7/NewProject_ArcGISTemplates.png" width="650px">
 
 
 # 追加のダウンロード

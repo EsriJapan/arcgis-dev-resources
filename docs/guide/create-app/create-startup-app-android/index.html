@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-04-08T10:30:44 JST">
+<meta name="revised" content="2022-05-10T14:51:41 JST">
 <title>Android :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -890,13 +890,14 @@ if (!doNotTrack) {
   <img src="https://developers.arcgis.com/android/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" width="400px">
 </li>
 <li>
-<p>プロジェクト ツールウィンドウから、[Gradle Scripts] &gt; [build.gradle (Project: Display_a_map)] を開きます。Esri の Maven リポジトリから API を参照するには、allprojects の repositories ブロックに以下の行を追加します。</p>
-<p>build.gradle (Project: Display_a_map)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">allprojects <span style="color:#f92672">{</span>
+<p>プロジェクト ツールウィンドウから、[Gradle Scripts] &gt; [settings.gradle] を開きます。Esri の Maven リポジトリから API を参照するには、dependencyResolutionManagement の repositories ブロックに以下の行を追加します。</p>
+<p>settings.gradle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencyResolutionManagement <span style="color:#f92672">{</span>
+    repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
     repositories <span style="color:#f92672">{</span>
         google<span style="color:#f92672">()</span>
-        jcenter<span style="color:#f92672">()</span>
-           
+        mavenCentral<span style="color:#f92672">()</span>
+
         <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>        maven <span style="color:#f92672">{</span>
             url <span style="color:#960050;background-color:#1e0010">&#39;</span>https<span style="color:#f92672">:</span><span style="color:#75715e">//esri.jfrog.io/artifactory/arcgis&#39;
@@ -920,13 +921,16 @@ android <span style="color:#f92672">{</span>
 <span style="color:#f92672">}</span>
 
 dependencies <span style="color:#f92672">{</span>
-    implementation <span style="color:#a6e22e">fileTree</span><span style="color:#f92672">(</span>dir<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;libs&#34;</span><span style="color:#f92672">,</span> include<span style="color:#f92672">:</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;*.jar&#34;</span><span style="color:#f92672">])</span>
-    implementation <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&#34;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">appcompat</span><span style="color:#f92672">:</span>appcompat<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">constraintlayout</span><span style="color:#f92672">:</span>constraintlayout<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">:</span>core<span style="color:#f92672">-</span>ktx<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">7</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">appcompat</span><span style="color:#f92672">:</span>appcompat<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">material</span><span style="color:#f92672">:</span>material<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">5</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">constraintlayout</span><span style="color:#f92672">:</span>constraintlayout<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    testImplementation <span style="color:#960050;background-color:#1e0010">&#39;</span>junit<span style="color:#f92672">:</span>junit<span style="color:#f92672">:</span>4<span style="color:#f92672">.</span><span style="color:#a6e22e">13</span><span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    androidTestImplementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ext</span><span style="color:#f92672">:</span>junit<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    androidTestImplementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">espresso</span><span style="color:#f92672">:</span>espresso<span style="color:#f92672">-</span>core<span style="color:#f92672">:</span>3<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">13</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span><span style="color:#75715e"></span>    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">}</span>
