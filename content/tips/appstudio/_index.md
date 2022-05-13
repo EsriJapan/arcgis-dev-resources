@@ -36,6 +36,7 @@ ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
 
 * [チュートリアル](https://learn.arcgis.com/ja/paths/try-appstudio/)
   * アプリの作成からデプロイまでの手順を示したチュートリアルです。はじめての方はこちらのチュートリアルをお試しください。
+  * コーディングによるカスタマイズのチュートリアルは、[ハイカー向けアプリの構成](https://learn.arcgis.com/ja/projects/configure-apps-for-hikers/) をお試しください。AppStudio の Nearby（近傍）テンプレートを使用したアプリ作成のチュートリアルで、最後にコーディングによるカスタマイズを行います。
 
 * その他
   * [FAQ（米国Esri社）](https://doc.arcgis.com/ja/appstudio/configure-apps/faq.htm)
