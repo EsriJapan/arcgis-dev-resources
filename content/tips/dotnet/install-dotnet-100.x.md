@@ -12,15 +12,13 @@ ArcGIS Runtime SDK for .NET がサポートする最新の動作環境につい�
 マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-dotnet/)」チュートリアルをご覧ください。
 
 # インストールとセットアップ
-ArcGIS Runtime SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 用のアプリを開発するための API が用意されています。
-
-ArcGIS Runtime の機能を Visual Studio プロジェクトに組み込むには、適切な NuGet パッケージを参照してください。これらのパッケージは、オンライン ソース (nuget.orgなど) またはローカルにインストールしたパッケージから参照できます。 Visual Studio 拡張機能 (Windowsのみ) で使用できる ArcGIS Runtime の プロジェクト テンプレートのセットには、サポートされている各プラットフォームに必要な NuGet パッケージの参照が含まれています。
+ArcGIS Runtime の機能を Visual Studio プロジェクトに組み込むには、適切な NuGet パッケージを参照してください。これらのパッケージは、オンライン ソース (nuget.orgなど) またはローカルにインストールしたパッケージから参照できます。 Visual Studio 拡張機能 (Windows のみ) で使用できる ArcGIS Runtime の プロジェクト テンプレートのセットには、サポートされている各プラットフォームに必要な NuGet パッケージの参照が含まれています。
 
 各インストール方法については、下記の各項目をご覧ください。
 
   * [オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法](#オンライン-ソースの-arcgis-runtime-nuget-パッケージを参照する方法)
-  * [Visual Studio 拡張機能をインストールする方法](#visual-studio-拡張機能をインストールする方法)
-  * [Visual Studio プロジェクト テンプレートのみインストールする方法](#visual-studio-プロジェクト-テンプレートのみインストールする方法)
+  * [Visual Studio プロジェクト テンプレートをインストールする方法](#visual-studio-プロジェクト-テンプレートをインストールする方法)
+  * [Visual Studio 拡張機能をダウンロードしてインストールする方法](#visual-studio-拡張機能をダウンロードしてインストールする方法)
 
 ## オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法
 
@@ -39,19 +37,33 @@ ArcGIS Runtime NuGet パッケージは、NuGet.org でホストされていま�
 
 パッケージを追加すると、ArcGIS Runtime SDK for.NET のコンポーネントを操作できるようになります。
 
-## Visual Studio 拡張機能をインストールする方法
+## Visual Studio プロジェクト テンプレートをインストールする方法
 
-ArcGIS Runtime SDK for .NET は、サポートされているプラ​​ットフォーム用のプロジェクト テンプレートと NuGet パッケージを含む Visual Studio 拡張機能 (.vsix ファイル) を提供します。拡張機能をインストールすると、Visual Studio にプロジェクト テンプレートが追加され、ローカルの NuGet パッケージ ソースが構成されます。ArcGIS Runtime NuGet パッケージをオンライン ソース (NuGet.org) から追加する場合は、ローカルにダウンロードしてインストールする必要はありません。ただし、Visual Studio プロジェクト テンプレートは、拡張機能をインストールしないと利用できません (拡張機能は Visual Studio for Mac では使用できません)。
+Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発する場合、Visual Studio 拡張機能をダウンロードせずに ArcGIS Runtime プロジェクト テンプレートをインストールできます。プロジェクト テンプレートは、Model-View-ViewModel (MVVM) デザイン パターンを使用し、各プラットフォームに必要なすべての NuGet パッケージを参照します。
 
-Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発する場合は、Visual Studio 拡張機能をダウンロードしてインストールできます。この拡張機能には、Visual Studio で使用するプロジェクト テンプレートのセットと、サポートされているすべてのプラットフォーム用の ArcGIS Runtime NuGetパッケージが含まれています。
+1. Visual Studio で、[拡張機能] メニュー > [拡張機能の管理] を選択して、[拡張機能の管理] ダイアログを表示します。
+2. [検索] テキスト ボックスに、「ArcGIS」と入力します。ArcGIS Runtime の拡張現実 (AR) プロジェクト テンプレートなどが表示されます。
+3. 「ArcGIS Runtime SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。
 
-信頼性の高い接続がない環境や、オンラインへのアクセスが制限されている環境で開発している場合は、ArcGIS Runtime NuGet パッケージをローカルで利用できるようにすることをお勧めします。そうでない場合、Visual Studio プロジェクト テンプレートのみをインストールすることをお勧めします。
+    <img src="https://developers.arcgis.com/net/static/46f8c032da39586ad0f27612861cb45b/4cdf7/manage-extensions-dialog-markup.png" width="650px">
+
+4. [拡張機能の管理] ダイアログを閉じます。
+5. [ファイル] メニュー > [終了] を選択して Visual Studio を閉じ、拡張機能をインストールします。
+6. Visual Studio を閉じた時に表示される [VSIX インストーラー] ダイアログで [変更] をクリックします。
+7. インストールが完了したら、インストーラー ダイアログで [閉じる] をクリックします。
+8. 次回 Visual Studio で [新しいプロジェクトの作成] を選択すると、使用可能なすべてのプラットフォームの ArcGIS Runtime のプロジェクト テンプレートが表示されます。
+
+## Visual Studio 拡張機能をダウンロードしてインストールする方法
+
+ArcGIS Runtime SDK for .NET は、サポートされているプラ​​ットフォーム用のプロジェクト テンプレートと NuGet パッケージを含む Visual Studio 拡張機能 (.vsix ファイル) を提供します。拡張機能をダウンロードしてインストールすると、Visual Studio にプロジェクト テンプレートが追加され、ローカルの NuGet パッケージ ソースが構成されます。ArcGIS Runtime NuGet パッケージをオンライン ソース (NuGet.org) から追加する場合は、ローカルにダウンロードしてインストールする必要はありません。また、Visual Studio 拡張機能は Visual Studio for Mac では使用できません。
+
+オンラインへのアクセスが制限されている環境で開発している場合は、ArcGIS Runtime NuGet パッケージをローカルで利用できるようにすることをお勧めします。
 
 1. 下記リンクから該当バージョンの Visual Studio 拡張機能 (.vsix) をインストールします。ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。<br/>
    [Visual Studio 拡張機能のダウンロード](https://developers.arcgis.com/downloads/#net)
-2. 開発マシンからアクセス可能な場所にファイルを保存します。
+2. 開発マシンからアクセス可能な場所に ArcGIS_Runtime_SDK_DotNet vsix ファイル（NuGet パッケージ）または ArcGIS_Runtime_SDK_DotNet_Templates vsix ファイル（プロジェクト テンプレート）を保存します。
 3. ダウンロードしたファイルをダブル クリックしてセットアップ ファイルを抽出し、インストールを開始します。
-4. 拡張機能をインストールする製品 (Visual Studio 2019 など) を選択します。サポートされているバージョンの Visual Studio のみがオプションとして表示されます。[インストール] をクリックして、ライセンス条項に同意します。 選択したすべての製品のインストールが開始されます。
+4. 使用可能な Visual Studio 製品のリストが表示されます。拡張機能をインストールする製品 (Visual Studio 2022 など) を選択します。[インストール] をクリックして、ライセンス条項に同意します。選択したすべての製品のインストールが開始されます。
 
     <img src="https://developers.arcgis.com/net/static/1be96601a1eb631574ac1b544703189f/8574c/vsix-installer-dialog.png" width="650px">
 
@@ -63,23 +75,6 @@ Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発す�
 7. ローカルの NuGet パッケージを追加するには、NuGet パッケージ マネージャーを開き (例えば、[プロジェクト] メニュー > [NuGet パッケージの管理])、[参照] タブと、ローカルの Esri パッケージソース (Visual Studio 拡張機能インストーラーによって構成されている) を選択します。プロジェクトに適切なパッケージを選択し、[インストール] をクリックしてパッケージをプロジェクトに追加します。
 
     <img src="https://developers.arcgis.com/net/static/97b48033817cea9b9feb2fdf4b7ace56/f6f78/nuget-package-manager-local-markup.png" width="650px">
-
-## Visual Studio プロジェクト テンプレートのみインストールする方法
-
-Visual Studio for Windows を使用して ArcGIS Runtime アプリを開発する場合、完全な Visual Studio 拡張機能をダウンロードせずに ArcGIS Runtime プロジェクト テンプレートをインストールできます。プロジェクト テンプレートは、Model-View-ViewModel (MVVM) デザイン パターンを使用し、各プラットフォームに必要なすべての NuGet パッケージを参照します。
-
-1. Visual Studio で、[拡張機能] メニュー > [拡張機能の管理] を選択して、[拡張機能の管理] ダイアログを表示します。
-2. [検索] テキスト ボックスに、「ArcGIS」と入力します。ArcGIS Runtime  の拡張現実 (AR) プロジェクト テンプレートなどが表示されます。
-3. 「ArcGIS Runtime SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。
-
-    <img src="https://developers.arcgis.com/net/static/46f8c032da39586ad0f27612861cb45b/4cdf7/manage-extensions-dialog-markup.png" width="650px">
-
-4. [拡張機能の管理] ダイアログを閉じます。
-5. [ファイル] メニュー > [終了] を選択して Visual Studio を閉じ、拡張機能をインストールします。
-6. Visual Studio を閉じた時に表示される [VSIX インストーラー] ダイアログで [変更] をクリックします。
-7. インストールが完了したら、インストーラー ダイアログで [閉じる] をクリックします。
-8. 次回 Visual Studio で [新しいプロジェクトの作成] を選択すると、使用可能なすべてのプラットフォームの ArcGIS Runtime のプロジェクト テンプレートが表示されます。
-
 
 # 追加のダウンロード
 ## サンプル コード
