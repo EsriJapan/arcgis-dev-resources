@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-05-30T17:24:23 JST">
+<meta name="revised" content="2022-06-17T13:12:45 JST">
 <title>インストール ガイド :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -851,7 +851,7 @@ if (!doNotTrack) {
     
     <p>このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-android/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
 <div class="notices warning" >
-<p>Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が <code>https://esri.jfrog.io/artifactory/arcgis</code> であることに注意して下さい。2020年12月14日現在、旧 URL の <code>https://esri.bintray.com/arcgis</code> はサポートされていません。詳細は <a href="https://www.esri.com/arcgis-blog/products/developers/announcements/announcement-to-developers-using-arcgis-runtime-sdks-for-android-and-java/">Announcement to developers using ArcGIS Runtime SDKs for Android and Java</a> をご参照ください。</p>
+<p>Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が <code>https://esri.jfrog.io/artifactory/arcgis</code> であることに注意して下さい。旧 URL の <code>https://esri.bintray.com/arcgis</code> はサポートされていません。詳細は <a href="https://www.esri.com/arcgis-blog/products/developers/announcements/announcement-to-developers-using-arcgis-runtime-sdks-for-android-and-java/">Announcement to developers using ArcGIS Runtime SDKs for Android and Java</a> をご参照ください。</p>
 </div>
 <h1 id="インストールとセットアップ">インストールとセットアップ</h1>
 <p>ArcGIS Runtime for Android をインストールする前に、開発マシンが<a href="https://www.esrij.com/products/arcgis-runtime-sdk-for-android/environments/">システム要件</a>を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。</p>
@@ -882,7 +882,7 @@ if (!doNotTrack) {
 <p>module レベルの build.gradle ファイルの dependencies ブロック内で、ArcGIS Runtime SDK for Android の依存関係をアプリに追加します。</p>
 <p>注：この依存関係を、ArcGIS Runtime SDK for Android を使用する各モジュールに追加する必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     <span style="color:#f92672">...</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
@@ -918,24 +918,24 @@ if (!doNotTrack) {
 <h4 id="sdk-およびその依存関係をコンピュータにデプロイする">SDK およびその依存関係をコンピュータにデプロイする</h4>
 <ol>
 <li>
-<p>arcgis-runtime-sdk-android-100.13.0.zip ファイルをダウンロードします。</p>
+<p>arcgis-runtime-sdk-android-100.14.1.zip ファイルをダウンロードします。</p>
 </li>
 <li>
 <p>アーカイブの内容をディスク上の任意の場所に解凍します。</p>
 </li>
 <li>
 <p>解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。</p>
-<p>mac: <code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/</code></p>
-<p>Windows: <code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.0\</code></p>
+<p>mac: <code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/</code></p>
+<p>Windows: <code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\</code></p>
 </li>
 <li>
 <p>ディレクトリのパスは以下のようになっているはずです。</p>
 <p>mac (2 ファイル):</p>
-<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.aar</code></p>
-<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.pom</code></p>
+<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.aar</code></p>
+<p><code>/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.pom</code></p>
 <p>Windows (2 ファイル):</p>
-<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.aar</code></p>
-<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.pom</code></p>
+<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.aar</code></p>
+<p><code>%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.pom</code></p>
 </li>
 <li>
 <p>インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
@@ -1000,7 +1000,7 @@ if (!doNotTrack) {
 <p>アプリの build.gradle ファイルに以下の依存関係を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
         <span style="color:#f92672">...</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gson</span><span style="color:#f92672">:</span>gson<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">8</span><span style="color:#f92672">.</span><span style="color:#a6e22e">8</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">browser</span><span style="color:#f92672">:</span>browser<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">localbroadcastmanager</span><span style="color:#f92672">:</span>localbroadcastmanager<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>

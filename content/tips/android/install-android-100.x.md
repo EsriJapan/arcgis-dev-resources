@@ -10,7 +10,7 @@ aliases = ["/android/install-android-100.x/"]
 
 {{% notice warning %}}
 
-Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が `https://esri.jfrog.io/artifactory/arcgis` であることに注意して下さい。2020年12月14日現在、旧 URL の `https://esri.bintray.com/arcgis` はサポートされていません。詳細は [Announcement to developers using ArcGIS Runtime SDKs for Android and Java](https://www.esri.com/arcgis-blog/products/developers/announcements/announcement-to-developers-using-arcgis-runtime-sdks-for-android-and-java/) をご参照ください。
+Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が `https://esri.jfrog.io/artifactory/arcgis` であることに注意して下さい。旧 URL の `https://esri.bintray.com/arcgis` はサポートされていません。詳細は [Announcement to developers using ArcGIS Runtime SDKs for Android and Java](https://www.esri.com/arcgis-blog/products/developers/announcements/announcement-to-developers-using-arcgis-runtime-sdks-for-android-and-java/) をご参照ください。
 
 {{% /notice %}}
 
@@ -50,7 +50,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
 		...
 	}
 	```
@@ -84,27 +84,27 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 以下のセットアップ手順では、インターネットから切り離された開発環境で作業していることを想定しています。たとえば、インターネット上でホストされている Maven リポジトリへのアクセスを許可しないファイアウォールの内側などです。以下の手順は、ローカルマシン上の Maven リポジトリでのセットアップを説明していますが、ネットワーク上に Maven サーバーをセットアップしている場合も同様に適用できます。
 
 #### SDK およびその依存関係をコンピュータにデプロイする
-1. arcgis-runtime-sdk-android-100.13.0.zip ファイルをダウンロードします。
+1. arcgis-runtime-sdk-android-100.14.1.zip ファイルをダウンロードします。
 2. アーカイブの内容をディスク上の任意の場所に解凍します。
 3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。
 
-	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/`
+	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/`
 	
-	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.0\`
+	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\`
 
 4. ディレクトリのパスは以下のようになっているはずです。
 
 	mac (2 ファイル):
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.aar`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.aar`
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.0/arcgis-android-100.14.0.pom`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.pom`
 	
 	Windows (2 ファイル):
 
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.aar`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.aar`
 	
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.13.0\arcgis-android-100.14.0.pom`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.pom`
 
 5. インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
 オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。
@@ -167,7 +167,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	```java 
 	dependencies {
 			...
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
 		implementation 'com.google.code.gson:gson:2.8.8'
 		implementation 'androidx.browser:browser:1.3.0'
 		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'

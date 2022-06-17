@@ -94,7 +94,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
         // 追加開始
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.14.0'
+        implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
         // 追加終了
 
     }

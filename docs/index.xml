@@ -56,7 +56,7 @@ Python API は arcgis パッケージとして配布されています。 この
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-100.x/</guid>
       <description>このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
-Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が https://esri.jfrog.io/artifactory/arcgis であることに注意して下さい。2020年12月14日現在、旧 URL の https://esri.bintray.com/arcgis はサポートされていません。詳細は Announcement to developers using ArcGIS Runtime SDKs for Android and Java をご参照ください。
+Gradle を使用して ArcGIS Runtime アプリケーションをビルドする場合、Maven リポジトリの URL が https://esri.jfrog.io/artifactory/arcgis であることに注意して下さい。旧 URL の https://esri.bintray.com/arcgis はサポートされていません。詳細は Announcement to developers using ArcGIS Runtime SDKs for Android and Java をご参照ください。
 インストールとセットアップ ArcGIS Runtime for Android をインストールする前に、開発マシンがシステム要件を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 Gradle を使用してインストールすることをお勧めします。これにより、Esri の Maven リポジトリから必要な依存関係と SDK バイナリがインストールされます。Gradle を利用できない場合は、代わりに SDK をダウンロードしてから、AAR ライブラリと依存関係アーティファクトを含めることでプロジェクトに依存関係を手動で追加できます。
 注：制限された開発環境で作業していて、ユーザーディレクトリにファイルを書き込むためのオンラインアクセスまたは権限がない場合は、ダウンロードオプションを選択してください。
