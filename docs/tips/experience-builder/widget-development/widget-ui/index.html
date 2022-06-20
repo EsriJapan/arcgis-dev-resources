@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-17T13:12:45 JST">
+<meta name="revised" content="2022-06-20T18:25:40 JST">
 <title>ウィジェット UI の作成 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -869,7 +869,7 @@ if (!doNotTrack) {
 <p>UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。</p>
 <p><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> の詳細を参照してください。</p>
 <p>ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span>{
@@ -900,11 +900,11 @@ if (!doNotTrack) {
 <h2 id="ui-コンポーネント">UI コンポーネント</h2>
 <h3 id="コンポーネントのインポート">コンポーネントのインポート</h3>
 <p>基本的な UI コンポーネントは「jimu-ui」から直接インポートでき、高度な UI コンポーネントはパスを使用して個別にインポートする必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span>, <span style="color:#a6e22e">TextInput</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// basic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span>, <span style="color:#a6e22e">TextInput</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// basic
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">DatePicker</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/date-picker&#39;</span>; <span style="color:#75715e">// advanced
 </span></code></pre></div><h3 id="クイック-サンプル">クイック サンプル</h3>
 <p>ここでは、&ldquo;primary&rdquo; スタイルの Button コンポーネントとスターアイコンをウィジェットに追加しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in widget.tsx:
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">Icon</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>; <span style="color:#75715e">// import components
 </span><span style="color:#75715e"></span>
@@ -929,7 +929,7 @@ if (!doNotTrack) {
 <li>背景色を テーマの primary color として設定</li>
 <li>テキストカラーを テーマの white color として設定</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in the render() function:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// in the render() function:
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-100 p-3 bg-primary text-white&#34;</span>&gt;
   &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">This</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">sample</span> <span style="color:#a6e22e">widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
@@ -940,7 +940,7 @@ if (!doNotTrack) {
 <p>Experience Builder では、ウィジェットのスタイルを設定するには 3 つのオプションがあります。</p>
 <h3 id="インライン-css">インライン CSS</h3>
 <p>React のコンテキストでは、インラインの CSS スタイルは JavaScript オブジェクトとして記述され、DOM 要素の <code>style</code> 属性に適用されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
 
 <span style="color:#f92672">const</span> <span style="color:#f92672">containerStyle</span> <span style="color:#f92672">=</span> {
   <span style="color:#66d9ef">background</span>: <span style="color:#e6db74">&#39;darkblue&#39;</span>,
@@ -959,7 +959,7 @@ if (!doNotTrack) {
 <h3 id="外部-css-スタイルシート">外部 CSS スタイルシート</h3>
 <p>別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。</p>
 <p>先ほどのコードサンプルを例に、CSS スタイルを別のスタイルシート (例: style.css) に移動します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* style.css */</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* style.css */</span>
 .<span style="color:#a6e22e">my-widget</span> {
   <span style="color:#66d9ef">background</span>: <span style="color:#e6db74">&#39;darkblue&#39;</span>;
   <span style="color:#66d9ef">color</span>: <span style="color:#e6db74">&#39;white&#39;</span>;
@@ -969,10 +969,10 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
 }
 </code></pre></div><p>としてウィジェットにファイルをインポートします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;path/to/style.css&#39;</span><span style="color:#f92672">;</span>
 </code></pre></div><p>そして、style.css で定義されている DOM 要素にクラス名を追加することを忘れないでください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
 <span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
 
 <span style="color:#f92672">return</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget&#34;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
@@ -985,7 +985,7 @@ if (!doNotTrack) {
 <h3 id="1-css-prophttpsemotionshdocscss-prop">1. <a href="https://emotion.sh/docs/css-prop">css prop</a></h3>
 <p>Emotion の <code>css</code> prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは <code>template literals</code> で書くことができるので、CSS の中に JS ロジックを書くことができます。</p>
 <p>例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/// widget.tsx:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/// widget.tsx:
 </span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
@@ -1024,7 +1024,7 @@ if (!doNotTrack) {
 <img src="https://developers.arcgis.com/experience-builder/static/1bd4a1de34d6c8fc4995baaf8f1dad3b/811d1/EmotionCSSProp.png" alt=""></p>
 <h3 id="2-styled-componentshttpsemotionshdocsstyled">2. <a href="https://emotion.sh/docs/styled">Styled Components</a></h3>
 <p>このパターンは <a href="https://www.styled-components.com/">Styled-Components</a> ライブラリにインスピレーションされたもので、使い方は非常に似ています。&ldquo;styled&rdquo; アプローチは、ウィジェット内で再利用可能なコンポーネントを作成するのに最適です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">styled</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
@@ -1051,7 +1051,7 @@ if (!doNotTrack) {
 <p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。</p>
 <p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
 <p>ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 

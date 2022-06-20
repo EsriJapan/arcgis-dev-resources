@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-17T13:12:45 JST">
+<meta name="revised" content="2022-06-20T18:25:40 JST">
 <title>メッセージ と アクション（Message and action） :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -862,27 +862,27 @@ if (!doNotTrack) {
 </ul>
 <p>各メッセージには、それを定義するクラスがあります。例えば、<code>ExtentChange</code> メッセージは <code>ExtentChangeMessage</code> クラスで定義され、このクラスはメッセージのペイロードである <code>extent</code> プロパティを定義します。</p>
 <p>メッセージを公開するために、ウィジェットは <code>manifest.json</code> ファイルで公開メッセージを宣言する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#e6db74">&#34;publishMessages&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#e6db74">&#34;publishMessages&#34;</span><span style="color:#f92672">:</span> [
     <span style="color:#e6db74">&#34;DATA_RECORDS_SELECTION_CHANGE&#34;</span>
   ]
 </code></pre></div><h3 id="メッセージアクションの作成creating-a-message-action">メッセージアクションの作成（Creating a message action）</h3>
 <p>メッセージアクションを作成するには、<code>AbstractMessageAction</code> クラスを継承する必要があります。メッセージアクションの開発に役立つメソッドや関数がいくつかあります。</p>
 <p><code>filterMessageType</code> メソッドは、利用可能なアクションのフィルタリングに使用されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QueryAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractMessageAction</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QueryAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractMessageAction</span>{
   <span style="color:#a6e22e">filterMessageType</span>(<span style="color:#a6e22e">messageType</span>: <span style="color:#66d9ef">MessageType</span>, <span style="color:#a6e22e">messageWidgetId?</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>{
     <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">MessageType</span>.<span style="color:#a6e22e">StringSelectionChange</span>, <span style="color:#a6e22e">MessageType</span>.<span style="color:#a6e22e">DataRecordsSelectionChange</span>].<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">messageType</span>) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
   }
 }
 </code></pre></div><p><code>filterMessage</code> メソッドは、メッセージマネージャでメッセージをフィルタリングするために使用されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">filterMessage</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">filterMessage</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>{
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
   }
 </code></pre></div><p><code>getSettingComponentUri</code> コンポーネントを使って、メッセージに基づいてアクションを設定することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">getSettingComponentUri</span>(<span style="color:#a6e22e">messageType</span>: <span style="color:#66d9ef">MessageType</span>, <span style="color:#a6e22e">messageWidgetId?</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">getSettingComponentUri</span>(<span style="color:#a6e22e">messageType</span>: <span style="color:#66d9ef">MessageType</span>, <span style="color:#a6e22e">messageWidgetId?</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;actions/query-action-setting&#39;</span>;
  }
 </code></pre></div><p><code>onExecute</code> メソッドは、メッセージタイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージタイプに基づいてアクションを選択し、<code>dispatch</code> プロパティを使用してアプリケーションから <code>getAppStore()</code> 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは<a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts">こちら</a>をご覧ください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">onExecute</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>, <span style="color:#a6e22e">actionConfig?</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">boolean</span>&gt; <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">onExecute</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>, <span style="color:#a6e22e">actionConfig?</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">boolean</span>&gt; <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span>{
    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span>(<span style="color:#a6e22e">actionConfig</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ConfigForStringChangeMessage</span>).<span style="color:#a6e22e">fieldName</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> = &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;`</span>
    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">message</span>.<span style="color:#66d9ef">type</span>){
      <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">MessageType.StringSelectionChange</span>:
@@ -897,7 +897,7 @@ if (!doNotTrack) {
    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 }
 </code></pre></div><p><code>manifest.json</code> には <code>messageActions</code> プロパティがあり、メッセージ アクション エクステンションの場所と情報を提供します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#e6db74">&#34;messageActions&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#e6db74">&#34;messageActions&#34;</span><span style="color:#f92672">:</span> [
   {
     <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;query&#34;</span>,
     <span style="color:#e6db74">&#34;label&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Query&#34;</span>,
@@ -907,7 +907,7 @@ if (!doNotTrack) {
 ]
 </code></pre></div><h3 id="国際化対応i18n-support">国際化対応（i18n support）</h3>
 <p>メッセージアクションの言語サポートは、<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#i18n-support">ウィジェット</a>と同じパターンですが、1つ重要な違いがあります。メッセージアクションには、ユーザーがアクションを選択するための <code>Select an action</code> パネルがあります。そのため、アクションのプロパティ名を記載した <code>default.ts</code> というファイルを runtime/translations フォルダに用意する必要があります。フレームワークは、このパネルのアクションラベルの翻訳を処理します。そのため、ラベルのプロパティは、<code>_action_&lt;actionName&gt;_label</code> という命名規則を持つ必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
   <span style="color:#a6e22e">_widgetLabel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Message subscriber&#39;</span>,
   <span style="color:#a6e22e">_action_query_label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Query&#39;</span>
 }

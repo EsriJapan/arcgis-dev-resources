@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-17T13:12:45 JST">
+<meta name="revised" content="2022-06-20T18:25:40 JST">
 <title>カスタム フォント :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -853,17 +853,17 @@ if (!doNotTrack) {
 <ol>
 <li>node-fontnik をクローンします。</li>
 </ol>
-<pre><code>git clone https://github.com/mapbox/node-fontnik.git
+<pre tabindex="0"><code>git clone https://github.com/mapbox/node-fontnik.git
 </code></pre><ol>
 <li>node-fontnik フォルダに移動して、モジュールをインストールします。</li>
 </ol>
-<pre><code>npm install
+<pre tabindex="0"><code>npm install
 </code></pre><ol>
 <li>fonts フォルダを作成し、作成したフォルダにダウンロードした Google フォントを配置します。</li>
 <li>glyphs フォルダと変換後のファイルを出力するサブフォルダ（例: glyphs/KosugiMaru-Regular）を作成します。</li>
 <li>build-glyphs を実行して pbf ファイルを作成します。</li>
 </ol>
-<pre><code>node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
+<pre tabindex="0"><code>node-fontnik/bin/build-glyphs fonts/KosugiMaru-Regular.ttf glyphs/KosugiMaru-Regular
 </code></pre><ol>
 <li>glyphs/KosugiMaru-Regular フォルダにユニコード文字範囲の pdf ファイル群が作成されていることを確認します。</li>
 </ol>
@@ -893,7 +893,7 @@ family、weight、style の各プロパティに設定した値をもとに設�
 </ol>
 <p>以下は作成した pbf フォントをテキスト シンボルで表示した画面とサンプルコードです。</p>
 <p><img src="https://apps.esrij.com/arcgis-dev/guide/img/js_devguid/font_api.png" alt="フォントの表示"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
   <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>

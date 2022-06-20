@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-17T13:12:45 JST">
+<meta name="revised" content="2022-06-20T18:25:40 JST">
 <title>サードパーティ製のライブラリ使用 :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -863,7 +863,7 @@ if (!doNotTrack) {
 <h3 id="利用方法">利用方法</h3>
 <p>ターミナルでカスタム ウィジェットのルートディレクトリを参照し、<code>npm init</code> を実行し、対話形式で質問に答えます。これにより、カスタム ウィジェットのルートディレクトリに <code>package.json</code> ファイルが作成されます。</p>
 <p>次に、npm のパッケージディレクトリからサードパーティのライブラリの名前を探します。これは <a href="https://www.npmjs.com/">npmjs.com</a> にアクセスして検索するか、通常はライブラリのドキュメントページにパッケージ名が記載されています。パッケージ名を使って npm インストールコマンドを実行します。</p>
-<pre><code>npm install &lt;package-name&gt;
+<pre tabindex="0"><code>npm install &lt;package-name&gt;
 </code></pre><p>このコマンドを実行すると、2 つのことができます。まず、ライブラリファイルをダウンロードし、<code>node_modules</code> ディレクトリに配置します。第二に、上記の <code>npm init</code> コマンドで作成した <code>package.json</code> ファイルにライブラリへの参照を追加します。</p>
 <p>パッケージ名は、カスタムウィジェットの <code>import</code> コマンドで使用できるようになりました。例えば、<code>&quot;import * as ReactDataGrid from &quot;react-data-grid&quot;</code> としてインポートします。</p>
 <p><code>package.json</code> にライブラリへの参照が追加されたので、他のコンピュータにすべてのウィジェットの依存関係を素早くインストールするには、ウィジェットのルートディレクトリでターミナルを開き、<code>npm install</code> を実行して、ウィジェットのすべての依存関係をインストールします。</p>
@@ -874,7 +874,7 @@ if (!doNotTrack) {
 <h3 id="利用方法-1">利用方法</h3>
 <p>ライブラリの CDN url を見つける必要があります。通常、これはライブラリのドキュメントに記載されているか、<a href="https://www.jsdelivr.com/">jsDelivr</a> や <a href="https://unpkg.com/">unpkg</a> で見つけることができます。たとえば、jQuery サンプルでは、CDN URL は <code>https://unpkg.com/jquery@3.5.1/dist/jquery.js</code> です。</p>
 <p>ウィジェットの <code>manifest.json</code> ファイルに <code>dependency</code> と呼ばれる配列プロパティを追加し、その配列に url を追加します。例えば、以下のようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dependency&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dependency&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
   <span style="color:#e6db74">&#34;https://unpkg.com/jquery@3.5.1/dist/jquery.js&#34;</span>
 ]<span style="color:#960050;background-color:#1e0010">,</span>
 </code></pre></div><p>Experience Builder は Experience がロードされると自動的にライブラリをロードし、ウィジェットはライブラリのドキュメントに従ってライブラリを使用することができます。</p>
@@ -885,7 +885,7 @@ if (!doNotTrack) {
 <p>ライブラリのダウンロード可能なビルド済み assets を探します。通常、これはライブラリのドキュメントにリンクされているか、ライブラリの GitHub リポジトリの <code>Releases</code> エリアにあるダウンロード可能な assets の <code>dist</code> フォルダにあります。</p>
 <p>ダウンロード後、ファイルを展開し、ウィジェットのルートディレクトリにコピーしてください。相対パスで指定し、インポートを介してインクルードされるので、ウィジェット内の任意の場所にファイルを配置することができますが、慣習的には、<code>lib</code> というフォルダ内に配置することをお勧めします。</p>
 <p>ファイルを配置した後、相対パスを使用してライブラリをインポートすることができます。例えば、以下のようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">d3</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./lib/d3/d3.min.js&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">d3</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./lib/d3/d3.min.js&#34;</span>;
 </code></pre></div><p>このパターンの動作例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/d3/">D3</a> のサンプルを参照してください。</p>
 
 

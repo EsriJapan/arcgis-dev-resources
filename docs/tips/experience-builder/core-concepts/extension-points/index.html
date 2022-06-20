@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-17T13:12:45 JST">
+<meta name="revised" content="2022-06-20T18:25:40 JST">
 <title>拡張ポイント（Extension points） :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -850,7 +850,7 @@ if (!doNotTrack) {
 <h3 id="拡張ポイントextension-points">拡張ポイント（Extension points）</h3>
 <p>Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。</p>
 <p>Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
   {
     <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension point name&gt;&#34;</span>,
     <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension uri, relative to src folder&gt;&#34;</span>
