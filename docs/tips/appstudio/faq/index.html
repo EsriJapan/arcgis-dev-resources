@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-20T18:25:40 JST">
+<meta name="revised" content="2022-07-06T16:11:52 JST">
 <title>その他の Tips :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -817,6 +817,7 @@ if (!doNotTrack) {
     <li>
       <ul>
         <li><a href="#arcgis-appstudio-のテンプレート-アプリの使用方法を教えてください">ArcGIS AppStudio のテンプレート アプリの使用方法を教えてください。</a></li>
+        <li><a href="#arcgis-survey123-と-arcgis-quickcapture-テンプレートの取得方法を教えてください">ArcGIS Survey123 と ArcGIS QuickCapture テンプレートの取得方法を教えてください。</a></li>
       </ul>
     </li>
   </ul>
@@ -840,7 +841,12 @@ if (!doNotTrack) {
     
 
 <ul>
-<li><strong><a href="#arcgis-appstudio-%E3%81%AE%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84">ArcGIS AppStudio のテンプレート アプリの使用方法を教えてください。</a></strong></li>
+<li>
+<p><strong><a href="#arcgis-appstudio-%E3%81%AE%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84">ArcGIS AppStudio のテンプレート アプリの使用方法を教えてください。</a></strong></p>
+</li>
+<li>
+<p><strong><a href="#arcgis-survey123-%E3%81%A8-arcgis-quickcapture-%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84">ArcGIS Survey123 と ArcGIS QuickCapture テンプレートの取得方法を教えてください。</a></strong></p>
+</li>
 </ul>
 <br>
 <h3 id="arcgis-appstudio-のテンプレート-アプリの使用方法を教えてください">ArcGIS AppStudio のテンプレート アプリの使用方法を教えてください。</h3>
@@ -883,8 +889,44 @@ if (!doNotTrack) {
 <td><a href="https://doc.arcgis.com/ja/appstudio/configure-apps/templatenearby.htm">Nearby</a></td>
 <td><a href="https://doc.arcgis.com/ja/instant-apps/latest/create-apps/nearby.htm">近傍 Web アプリ（Instant Apps）</a></td>
 </tr>
+<tr>
+<td><a href="https://doc.arcgis.com/ja/appstudio/configure-apps/templatesidebar.htm">Sidebar</a></td>
+<td><a href="https://doc.arcgis.com/ja/instant-apps/latest/create-apps/sidebar.htm">サイドバー Web アプリ（Instant Apps）</a></td>
+</tr>
 </tbody>
 </table>
+</li>
+</ul>
+<h3 id="arcgis-survey123-と-arcgis-quickcapture-テンプレートの取得方法を教えてください">ArcGIS Survey123 と ArcGIS QuickCapture テンプレートの取得方法を教えてください。</h3>
+<ul>
+<li>ArcGIS Survey123、ArcGIS Survey123 Connect、ArcGIS QuickCapure の各テンプレートは、<a href="https://survey123.arcgis.com/share/f16ab25193434ad692235565f5290619">こちら</a> のフォームから申請（英語）することで取得できます。申請フォームでは下記項目を入力します。
+<ul>
+<li>Your name
+<ul>
+<li>氏名を入力します。</li>
+</ul>
+</li>
+<li>Your email
+<ul>
+<li>メールアドレスを入力します。このメールアドレスに申請に関連するメールが届きます。</li>
+</ul>
+</li>
+<li>What AppStudio templates do you want access to?
+<ul>
+<li>使用するテンプレートを選択します。</li>
+</ul>
+</li>
+<li>Describe briefly why you want access to the template
+<ul>
+<li>テンプレートの使用用途を簡単に記入します。</li>
+</ul>
+</li>
+<li>Your ArcGIS Online account
+<ul>
+<li>ArcGIS AppStudio で使用している ArcGIS Online アカウントを入力します。申請中はアカウントの<a href="https://doc.arcgis.com/ja/arcgis-online/get-started/profile.htm#ESRI_SECTION1_E0D1584D942E463C8768258947234FFC">プロフィール表示設定</a> を「すべての人 (パブリック)」に設定する必要があります。テンプレートが共有され後に、プロフィール表示設定を「非公開」または「組織」に変更しても問題ありません。</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 

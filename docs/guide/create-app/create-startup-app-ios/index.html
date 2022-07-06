@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-20T18:25:39 JST">
+<meta name="revised" content="2022-07-06T16:11:52 JST">
 <title>iOS :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -887,18 +887,18 @@ if (!doNotTrack) {
 <li>
 <p>エディターで、API を参照するインポート ステートメントを追加し、mapViewという名前で AGSMapView タイプの @IBOutlet を追加します。これにより、ストーリーボードで作成するマップビューへの参照が提供されます。<a href="https://developers.arcgis.com/ios/api-reference/interface_a_g_s_map_view.html">AGSMapView</a> は <a href="https://developer.apple.com/documentation/uikit/uiview">UIView</a> のサブクラスです。</p>
 <p>ViewController.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 
 <span style="color:#75715e">// 追加開始</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
 <span style="color:#75715e">// 追加終了</span>
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
-
+       
     <span style="color:#75715e">// 追加開始</span>
     <span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> mapView: AGSMapView!
     <span style="color:#75715e">// 追加終了</span>
-
+       
     <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
         <span style="color:#66d9ef">super</span>.viewDidLoad()
 
@@ -943,7 +943,7 @@ if (!doNotTrack) {
 <li>
 <p>エディタで、setupMap() という名前のプライベート メソッドを定義します。 setupMap() で <a href="https://developers.arcgis.com/ios/api-reference/interface_a_g_s_map.html">AGSMap</a> を作成します。AGSBasemapStyleArcGISTopographic という名前の地形図の<a href="https://developers.arcgis.com/ios/api-reference/_a_g_s_basemap_8h.html#a4ee21ae8bfe01ad97932cdea71737db1">ベースマップスタイル</a>を使用して ArcGISMap を構成します。</p>
 <p>ViewController.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewController</span>: UIViewController {
 
     <span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> mapView: AGSMapView!
 
@@ -976,7 +976,7 @@ if (!doNotTrack) {
 <li>
 <p>mapView アウトレットの <a href="https://developers.arcgis.com/ios/api-reference/interface_a_g_s_map_view_common.html#a3a79687646c388a9307c5f3c327133b2">map</a> プロパティを新しい AGSMap に設定します。</p>
 <p>ViewController.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupMap</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupMap</span>() {
 
     <span style="color:#66d9ef">let</span> map = AGSMap(
         basemapStyle: .arcGISTopographic
@@ -999,7 +999,7 @@ if (!doNotTrack) {
 <li>
 <p>ViewController の viewDidLoad メソッドで、ビューがロードされたら setupMap() を呼び出します。</p>
 <p>ViewController.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
     <span style="color:#66d9ef">super</span>.viewDidLoad()
 
     <span style="color:#75715e">// 追加開始</span>
@@ -1019,7 +1019,7 @@ if (!doNotTrack) {
 <li>
 <p>エディターで、API を参照するインポートステートメントを追加し、AppDelegate の application(_:didFinishLaunchingWithOptions:) メソッドで、API キーを使用して <a href="https://developers.arcgis.com/ios/api-reference/interface_a_g_s_arc_g_i_s_runtime_environment.html">AGSArcGISRuntimeEnvironment</a> の <a href="https://developers.arcgis.com/ios/api-reference/interface_a_g_s_arc_g_i_s_runtime_environment.html#a7a4ca7305796e26c3ded7c84e35a6edd">apiKey</a> プロパティを設定します。</p>
 <p>AppDelegate.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 
 <span style="color:#75715e">// 追加開始</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
@@ -1031,7 +1031,7 @@ if (!doNotTrack) {
 
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
-
+           
         <span style="color:#75715e">// 追加開始</span>
         <span style="color:#75715e">// 注：API キーをソースコードに保存することはベストプラクティスではありません。</span>
         <span style="color:#75715e">//チュートリアルでは便宜上ソースコードに記載しています</span>
@@ -1055,7 +1055,7 @@ if (!doNotTrack) {
 <li>
 <p><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B">マップを表示する</a>のステップで作成したプロジェクトの ViewController.swift を開き、setupMap() メソッドを下記のように書き換えます。</p>
 <p>ViewController.swift</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupMap</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setupMap</span>() {
 
     <span style="color:#66d9ef">let</span> portal = AGSPortal.arcGISOnline(withLoginRequired: <span style="color:#66d9ef">false</span>)
     <span style="color:#66d9ef">let</span> itemID = <span style="color:#e6db74">&#34;&lt;Web マップの ID&gt;&#34;</span>
