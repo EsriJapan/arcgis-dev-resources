@@ -5,7 +5,7 @@ weight = 4
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
 
-出典：ArcGIS API for JavaScript - [Migrating from 3.x to 4.23](https://developers.arcgis.com/javascript/latest/migrating/)
+出典：ArcGIS API for JavaScript - [Migrating from 3.x to 4.24](https://developers.arcgis.com/javascript/latest/migrating/)
 
 バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 

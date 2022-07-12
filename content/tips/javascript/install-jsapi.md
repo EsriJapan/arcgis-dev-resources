@@ -17,14 +17,14 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="1150px">
 
-> [arcgis_js_v423_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+> [arcgis_js_v424_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## Web サーバー（IIS）に配置
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-1. `\arcgis_js_v423_api\arcgis_js_api\javascript\4.23\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.23\`)
+1. `\arcgis_js_v424_api\arcgis_js_api\javascript\4.24\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.24\`)
 
 ## 必要条件
 
@@ -46,7 +46,7 @@ ArcGIS API for JavaScript ライブラリおよびドキュメントのデフォ
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS API for JavaScript のダウンロード版に含まれています。
-ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v423_api/arcgis_js_api/javascript/4.23/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.23/index.html を開くことにより、API をテストすることができます。
+ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v423_api/arcgis_js_api/javascript/4.24/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.24/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -132,5 +132,5 @@ ArcGIS API for JavaScript のダウンロード版から /arcgis_js_v423_api/arc
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.23となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.24となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
