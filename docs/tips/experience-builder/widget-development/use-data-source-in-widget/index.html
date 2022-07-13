@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <title>ArcGIS Developer 開発リソース集</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2022-07-13T16:45:42 JST">
+<title>ウィジェットでデータソースを使用 :: ArcGIS Developer 開発リソース集</title>
+<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
+<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
+<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="ウィジェットでデータソースを使用する方法について紹介します。">
+
+
+    
+  </head>
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="検索...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+        
+		</script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-api-key/">
+            API キーの取得
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            ArcGIS API for JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
+            Esri Leaflet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
+            Mapbox GL JS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
+            OpenLayers
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/security/">
+            セキュリティと認証
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/learn/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/learn/">もっと学ぶ</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/learn/github/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/github/">
+            Esri Japan GitHub
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/learn/developer-community/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/developer-community/">
+            ArcGIS 開発者コミュニティ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS API for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
+            インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/">
+            バージョン 4.x と 3.x の選択
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
+            バージョン 3.x から 4.x への移行
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-widget/">
+            ウィジェット開発
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/arcade/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/arcade/">
+            Arcade
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
+            カスタム フォント
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
+            ページ（Page）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
+            ウィンドウ（Window）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
+            セクションとビュー（Section and view）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
+            画面グループ（Screen groups）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
+            レイアウト（Layout）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
+            テーマ（Theme）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
+            ウィジェット（Widget）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
+            Jimu
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
+            データ ソース（Data source）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
+            データアクション（Data action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
+            メッセージ と アクション（Message and action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
+            マップ/シーン ビュー（Map/Scene View）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
+            拡張ポイント（Extension points）
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
+            ウィジェット開発のスタート
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
+            ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
+            ウィジェットの実装
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item active">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
+            サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
+            単体テスト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
+            assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
+            チュートリアル
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
+            カスタム ウィジェット開発ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
+            Web アプリケーションのデプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
+            ウィジェット一覧表 (ArcGIS Online)
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
+            ウィジェット一覧表 (ArcGIS Enterprise)
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
+            ウィジェット一覧表 (Developer Edition)
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Runtime SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-100.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-100.x/">
+            バージョン 10.2.x から 100.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
+      </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/appstudio/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/appstudio/">ArcGIS AppStudio</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
+      </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/hackathon/">
+            ミートアップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer"><center>
+<br>© Esri Japan. All rights reserved.<br>
+</center>
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェットでデータソースを使用
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ウィジェットの設定でデータソースを選択">ウィジェットの設定でデータソースを選択</a></li>
+    <li><a href="#ウィジェット-ランタイムのデータを読み込んで表示">ウィジェット ランタイムのデータを読み込んで表示</a></li>
+    <li><a href="#ユーザー入力に基づくデータのフィルタリングやクエリ">ユーザー入力に基づくデータのフィルタリングやクエリ</a></li>
+    <li><a href="#データ上の選択を処理">データ上の選択を処理</a>
+      <ul>
+        <li><a href="#webmapwebscene-の使用">WebMap/WebScene の使用</a></li>
+        <li><a href="#featurelayer-の使用">FeatureLayer の使用</a></li>
+        <li><a href="#ウィジェット間のデータ共有">ウィジェット間のデータ共有</a></li>
+      </ul>
+    </li>
+    <li><a href="#arcgis-api-for-javascript-のフィーチャ-オブジェクトとデータソースの同期">ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期</a></li>
+    <li><a href="#mapviewsceneview-または-layerview-での作業">MapView/SceneView または LayerView での作業</a></li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>ウィジェットでデータソースを使用</h1>
+  
+
+
+
+    
+    
+    
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/use-data-source-in-widget/">Use data source in widget</a></p>
+<p><a href="http://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">データソース</a>は、ウィジェットがデータにアクセスする方法を定義します。データソースを使用して行いたいことは様々ですが、それぞれについて紹介します。</p>
+<ul>
+<li>ウィジェットの設定でデータソースを選択</li>
+<li>ウィジェット ランタイムのデータを読み込んで表示</li>
+<li>ユーザー入力に基づくデータのフィルタリングやクエリ</li>
+<li>データ上の選択を処理</li>
+<li>ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期</li>
+<li>ウィジェットで出力データソースの生成</li>
+<li>ウィジェットでメッセージの公開</li>
+</ul>
+<div class="notices note" >
+<p>本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。</p>
+</div>
+<h2 id="ウィジェットの設定でデータソースを選択">ウィジェットの設定でデータソースを選択</h2>
+<p>ウィジェットの設定でデータソースを選択するには、<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds"><code>DataSourceSelector</code></a> コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは <code>jimu-core</code> と <code>jimu-arcgis</code> の 2 つのパッケージに入っています。<code>jimu-core</code> の <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceTypes">DataSourceTypes</a> と <code>jimu-arcgis</code> の <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/DataSourceTypes">DataSourceTypes</a> をご覧ください。<code>jimu-arcgis</code> のデータソースは ArcGIS API for JavaScript に依存しており、<code>jimu-core</code> のデータソースは依存していません。</p>
+<p><code>DataSourceSelector</code> コンポーネントを使用するには、<code>types</code> プロパティを通じてウィジェットがサポートするデータソースの種類を設定する必要があります。データソースを選択した後、<code>onChange</code> コールバックにより選択されたデータソースを取得することができます。<code>onChange</code> コールバックでは、<code>props.onSettingChange()</code> を呼び出して、選択したデータソースを <code>appConfig</code> に保存する必要があります (<code>appConfig.widgets[widgetId].useDataSources</code>)。ユーザーが新しいデータソースを追加した場合、新しく追加されたデータソースは <code>appConfig.dataSources</code> に保存されます。<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/">こちらのサンプルウィジェット</a>を参照してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceSelector</span>
+   <span style="color:#a6e22e">types</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Immutable</span>([<span style="color:#a6e22e">AllDataSourceTypes</span>.<span style="color:#a6e22e">FeatureLayer</span>])}
+   <span style="color:#a6e22e">useDataSources</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>}
+   <span style="color:#a6e22e">useDataSourcesEnabled</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSourcesEnabled</span>}
+   <span style="color:#a6e22e">onToggleUseDataEnabled</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">onToggleUseDataEnabled</span>}
+   <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">onDataSourceChange</span>}
+   <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">id</span>}
+/&gt;
+</code></pre></div><p>データソースを選択した後、ユーザーがデータからフィールドを選択できるようにしたい場合があります。そのためには、<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-fieldselector--list-single-selection">FieldSelector</a> コンポーネントを使用します。データソースと同様に、<code>appConfig.widgets[widgetId].useDataSources</code> にも選択したフィールドを保存する必要があります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">{
+   <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span>
+   &lt;<span style="color:#f92672">FieldSelector</span>
+      <span style="color:#a6e22e">useDataSources</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>}
+      <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">onFieldChange</span>}
+      <span style="color:#a6e22e">selectedFields</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">fields</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">Immutable</span>([])}
+   /&gt;
+}
+</code></pre></div><h2 id="ウィジェット-ランタイムのデータを読み込んで表示">ウィジェット ランタイムのデータを読み込んで表示</h2>
+<p>ウィジェット設定でデータソースを選択すると、ウィジェットランタイムは <code>props.useDataSources</code> で選択したデータソースを取得することができます。データを読み込むには、<code>DataSource</code> インスタンスを使用します。<code>DataSource</code> インスタンスを取得するには、<code>DataSourceManager</code> または<code>DataSourceComponent</code> を使用します。<code>DataSourceComponent</code> を使用する場合は、<code>useDataSource</code> プロパティを渡します。<code>DataSource</code> インスタンスを取得するには、<code>onDataSourceCreated</code> コールバックを使用します。</p>
+<p>データを読み込むには、render 関数を使用してデータを表示します。<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/">こちらのサンプルウィジェット</a>を参照してください。別の方法として、<code>onDataSourceInfoChange</code> コールバックを使用し、データソースの現在のデータに応じてこのコールバック関数でウィジェットの UI を更新することができます。ウィジェットがデータをロードする必要がある場合、<code>query</code> と <code>widgetId</code> プロパティを渡します。フレームワークは、複数のウィジェットが同じデータソースに適用するクエリパラメータを管理するのにこのプロパティを使用するため、<code>widgetId</code> は必須です。</p>
+<p>データをロードしたいが、データソースのデータを変更したくない場合は、<code>localId</code> プロパティを渡します。これにより、ローカルデータソースが作成され、使用することができます。推奨される localId のパターンは、例えば、<code>widget_1_my_local</code> のように <code>widgetId + ???</code> とします。</p>
+<p><code>DataSourceComponent</code> をレンダリングすると、データソースのインスタンスが作成されますが、データは初期状態ではロードされません。なぜなら、<code>query</code> プロパティを渡すことを期待しているので、別のネットワーク要求が発生するためです。読み込まれたデータを取得するには、<code>dataSource.getRecords()</code> を使用します。データはページングされ、デフォルトのページングサイズは 100 です。ユーザーはビルダーデータ設定パネルでページングサイズを変更することができます。ロードされたデータはクライアント上にキャッシュされ、クエリ条件が変更されるとキャッシュはクリアされます。</p>
+<p>データを表示する際、表示されるページサイズはクエリのページサイズと同じである必要はありません。例えば、クエリのページサイズが 100 の場合、<code>dataSource.getRecordsByPage(1, 10)</code> を使用して、最初の 10 レコードを取得して表示することが可能です。</p>
+<p>レコードの総数を取得するには、<code>queryCount</code> プロパティを渡し、<code>dataSource.count</code> で件数を取得します。</p>
+<p>データソース情報が変更されるたびに、データレンダリング関数と<code>onDataSourceInfoChange</code> コールバックが呼び出されます。情報の内容は以下の通りです。</p>
+<ul>
+<li>instanceStatus: データソースのインスタンスが正常に作成されたかどうか</li>
+<li>status: データがロード中か、ロードされたか</li>
+<li>countStatus: データのカウントがロード中か、ロードされたか</li>
+<li>selectedIds: 選択されたデータ ID</li>
+<li>widgetQueries: データソースに適用されるクエリ(フィルタ)ウィジェット</li>
+<li>version: バージョン番号は、クライアント側でデータの変更を管理するために使用されます。そのため、データソース利用者はデータが変更されたことを認識することができます。</li>
+<li>gdbVersion: ブランチ バージョニングをサポートするフィーチャ サービスのためのもの。ブランチ バージョン マネージメント ウィジェットでブランチ バージョンが切り替わると、そのバージョンがここに保存されます。</li>
+</ul>
+<p>多くの場合、ウィジェットは現在のデータソース情報と以前の情報とを比較して、何を更新する必要があるかを判断する必要があります。</p>
+<p>ウィジェットがデータソースの情報変更を聞く必要があるが、データソースのデータレコードを使う必要がない場合、<code>query</code> パラメータを省略し、<code>onQueryRequired</code> コールバックでクエリを実行することが可能です。</p>
+<p>データソースのフィールドを取得するには、<code>dataSource.getSchema().fields</code> を使用します。</p>
+<h2 id="ユーザー入力に基づくデータのフィルタリングやクエリ">ユーザー入力に基づくデータのフィルタリングやクエリ</h2>
+<p>ウィジェットがデータをフィルタリングすると、データソース インスタンスのデータが変更され、すべてのウィジェットがその変更を観察します。ウィジェットがデータソースを介してデータをクエリする場合、データソースインスタンスのデータは影響を受けません。</p>
+<p>複数のウィジェットが同じデータソースにフィルタを適用する場合、属性フィルタは <code>and</code> 演算子で結びつけられます。ジオメトリ フィルタの場合、最後にジオメトリ フィルタを適用したウィジェット (アプリ設定でのウィジェット追加順) からのフィルタが使用されます。</p>
+<ul>
+<li>
+<p>データソースにフィルタをかけるには、データソースの設定により、基本的に2つの方法があります。</p>
+<ul>
+<li>ウィジェットでデータを読み込む場合は、以下のように<code>DataSourceComponent</code> を使うのがおすすめです。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceComponent</span> <span style="color:#a6e22e">useDataSource</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">query</span><span style="color:#f92672">=</span>{}&gt;
+{ <span style="color:#a6e22e">Your</span> <span style="color:#a6e22e">render</span> <span style="color:#a6e22e">method</span> }
+&lt;/<span style="color:#f92672">DataSourceComponent</span>&gt;
+</code></pre></div><p><code>DataSourceComponent</code> の使用例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/message-subscriber/">Message subscriber のサンプル</a>と <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/server-side-output/">Server-side output data source のサンプル</a>に記載されています。</p>
+  <div class="notices note" >
+<p><code>dataSource.load()</code> を使用して、データの読み込みとフィルタリングも可能です。</p>
+  </div>
+<ul>
+<li>ウィジェットがデータを読み込まない場合は、<code>Data Source</code> の <code>updateQueryParams()</code> 関数を使用することができます。例として、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/filter-feature-layer/">Filter feature layer</a> のサンプルをご覧ください。</li>
+</ul>
+</li>
+<li>
+<p>データソースからデータをクエリするには、<code>dataSource.query()</code> を使用します。データをクエリする際には、このデータソースに適用されているフィルタも使用されます。</p>
+</li>
+</ul>
+<h2 id="データ上の選択を処理">データ上の選択を処理</h2>
+<p>Experience Builder アプリで設計された選択の動作は、すべてのウィジェットが同じ選択を更新し、観察することです。例えば、ユーザーがリスト ウィジェット内のレコードを選択すると、選択ビューを使用しているテキスト ウィジェットにはその選択内容が表示されます。すべてのデータソースには、選択範囲を管理する選択範囲データ ビューがあります。選択データビューの他に、選択されたレコードの ID が Redux アプリストアに保存されるので、データソースを使用するウィジェットは、選択内容が変更されたときに通知を受けることができます。</p>
+<p>データソース内のデータレコードを選択するには、<code>dataSource.selectRecordById()</code> または <code>dataSource.selectRecordsByIds()</code> を使用することができます。レコードがデータソースに読み込まれている場合は、2 番目のパラメータを渡す必要はありません。そうでない場合は、選択項目を使用する他のウィジェットがレコードを読み込めるようにするために、2 番目のパラメータを渡す必要があります。</p>
+<p>選択範囲を読み取るには、<code>dataSource.getSelectedRecords()</code> を使用します。</p>
+<h3 id="webmapwebscene-の使用">WebMap/WebScene の使用</h3>
+<p>ArcGIS API for JavaScript の WebMap と WebScene は、データソースとして <code>jimu-arcgis</code> パッケージでラッピングされています。WebMap にアクセスする場合は <code>WebMapDataSource</code> を、WebScene にアクセスする場合は <code>WebSceneDataSource</code> を使用します。これらのデータソースの使用方法については、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/">MapView のサンプル</a>をご覧ください。WebMap と WebScene オブジェクトに加えて、これらのオブジェクト内のすべてのレイヤーはデータソースとしてラッピングされているため、<code>getChildDataSources()</code> を呼び出してすべてのレイヤーデータソースを取得できます。サポートされるレイヤーとサービスは、<code>SupportedLayerServiceTypes</code> と <code>SupportedServiceTypes</code> で定義されています。</p>
+<h3 id="featurelayer-の使用">FeatureLayer の使用</h3>
+<p>ワークフローによっては、フィーチャ レイヤーで直接動作する軽量なエクスペリエンスを作成する必要があります。このシナリオでは、<code>FeatureLayerDataSource</code> クラスを使用します。一般的に、スタンドアロン レイヤーを使用するウィジェットは、<code>layer</code> プロパティを持たない <code>FeatureLayerDataSource</code> オブジェクトを取得しますが、Web マップまたは Web シーンからのフィーチャ レイヤーを使用すると、<code>layer</code> プロパティを持つ <code>FeatureLayerDataSource</code> オブジェクトを返します。<code>Layer</code> オブジェクトは ArcGIS API for JavaScript から提供されています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getLayerObject</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ds</span>: <span style="color:#66d9ef">FeatureLayerDataSource</span>) <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">layer</span>; <span style="color:#75715e">// this can be null
+</span><span style="color:#75715e"></span> }
+</code></pre></div><h3 id="ウィジェット間のデータ共有">ウィジェット間のデータ共有</h3>
+<p>ウィジェットは、多くの場合、同じデータを共有します。この良い例が、エクスペリエンスでマップ ウィジェットとリスト ウィジェットを使用する場合です。リスト ウィジェットでフィーチャを選択すると、対応するフィーチャがマップ上で選択されます。これを実現する最も簡単な方法は、両方のウィジェットに同じデータソースを使用することです。たとえば、リスト ウィジェットでアイテムが選択されると、ウィジェットは <code>datasource.selectRecord()</code> を呼び出して、app store のデータソースの状態を更新します。これにより、マップ ウィジェットでは、現在選択されているアイテムを適宜レンダリングすることができます。また、現在選択されているアイテムの ID が URL に配置されるため、現在のアプリの状態を他の人と共有することが可能になります。</p>
+<h2 id="arcgis-api-for-javascript-のフィーチャ-オブジェクトとデータソースの同期">ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期</h2>
+<p>Experience Builder ウィジェットでは、ArcGIS API for JavaScript を使用してフィーチャを取得することができます。その後、他のウィジェットがこれらのフィーチャを使用できるようにしたい場合があります。たとえば、マップ上でこれらのフィーチャをハイライト表示したり、リスト ウィジェットでこれらのフィーチャを表示したりする必要があるかもしれません。これには、以下の 3 つのオプションがあります。</p>
+<ol>
+<li>データソースでこれらのフィーチャ レコードを選択する
+<ul>
+<li>使用できるデータソース インスタンスがあれば、<code>dataSource.selectRecordsByIds()</code> を呼んでこれらのレコードを選択することができます。<code>Graphic</code> インスタンスを取得する場合は、まず<code>FeatureRecord</code> インスタンスを作成する必要があります。</li>
+</ul>
+</li>
+<li>ウィジェットから出力データソースを生成する
+<ul>
+<li><a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/data-source/#widget-output-data-source">Widget output data source</a> サンプルを参照してください。</li>
+</ul>
+</li>
+<li>メッセージを公開する
+<ul>
+<li>ウィジェットが何らかのフィーチャを生成する場合、<code>DataRecordSetChangeMessage</code> メッセージを公開することで、他のウィジェットがサブスクライブできるようになります。</li>
+</ul>
+</li>
+</ol>
+<h2 id="mapviewsceneview-または-layerview-での作業">MapView/SceneView または LayerView での作業</h2>
+<p>ウィジェットがデータソースと連動する場合、MapView/SceneView とも連動する必要がある場合が多くあります。ウィジェットが <code>JimuMapViewComponent</code> によって<code>JimuMapView</code> インスタンスを取得した後、<code>jimuMapView.dataSourceId</code> によって MapView/SceneView の対応するデータソースを取得し、<code>jimuMapView.jimuLayerViews</code> によって関連レイヤーを取得することができます。<code>jimuLayerView</code> インスタンスを介して、<code>jimuMapView.dataSource</code> によって、レイヤービューの対応するデータソースを取得することもできます。一般に、レイヤーからデータソースと同期する機能を取得するには、以下のオプションがあります。</p>
+<ul>
+<li>フィーチャの <code>objectId</code> を使用して、データソースから関連するデータレコードを検索</li>
+<li><code>FeatureDataRecord</code> インスタンスを作成し、そのフィーチャに対応するデータレコードを作成</li>
+<li><code>FeatureDataRecord</code> のインスタンスから、<code>featureDataRecord.getFeature()</code> でフィーチャを取得</li>
+</ul>
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" title="ウィジェット UI の作成"> <i class="fa fa-chevron-left"></i><label>ウィジェット UI の作成</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" title="ウィジェット間の通信" style="margin-right: 0px;"><label>ウィジェット間の通信</label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
+<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
+<script src="/arcgis-dev-resources/js/docdock.js"></script>
+<script src="/arcgis-dev-resources/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
