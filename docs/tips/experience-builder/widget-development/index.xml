@@ -56,6 +56,18 @@ JSX の詳細を参照してください。
     </item>
     
     <item>
+      <title>ウィジェットでデータソースを使用</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
+データソースは、ウィジェットがデータにアクセスする方法を定義します。データソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
+ ウィジェットの設定でデータソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期 ウィジェットで出力データソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータソースを選択 ウィジェットの設定でデータソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータソースは ArcGIS API for JavaScript に依存しており、jimu-core のデータソースは依存していません。</description>
+    </item>
+    
+    <item>
       <title>ウィジェット間の通信</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -126,6 +138,18 @@ const smallImage = require(&amp;#39;./small-image.png&amp;#39;) &amp;lt;img styl
 const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon icon={svg} color=&amp;#34;red&amp;#34; width=&amp;#34;200px&amp;#34; height=&amp;#34;200px&amp;#34;/&amp;gt; ダイナミックに読み込む 動画や大きな画像の場合、ネットワークのパフォーマンスに悪影響を与える可能性があるため、インラインではなくダイナミックにアセットをロードするのが妥当な方法です。
 アセットを動的にロードするには、2つの方法があります。アセットがランタイムで使用される場合は、ファイルを runtime/assets フォルダに配置します。それ以外の場合は、assets をsetting/assets フォルダに配置します。そうすれば、次のようにアセットを使用することができます。
 &amp;lt;img style={{width: &amp;#39;200px&amp;#39;, height: &amp;#39;200px&amp;#39;}} src={`${props.</description>
+    </item>
+    
+    <item>
+      <title>コードリンティング</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Code linting
+バージョン 1.7 から、Experience Builder Developer Edition は、コードエディタがコードのフォーマットと lint (エラーチェック) に使用できる ESLint ルール (.eslintrc.js ファイル形式) を含むようになりました。
+これらは、standard-with-typescript に基づいて、Experience Builder チームが使用しているルールです。ご自身のコードにどの ESLint ルールを使うかについては、好みがあるかもしれません。もしこれらのルールを使いたくない場合は、以下のルールを無効にする方法を参照してください。ルールを変更したい場合は、.eslintrc.js ファイルを修正することができます。
+ これらの ESLint のルールでコードをチェックしたい場合は、client フォルダで、コマンドラインから、npm run lint. を実行します。また、ESLint 拡張機能をコードエディタにインストールすることもできます。 この ESLint のルールを無視したい場合は、以下のどちらかをお試しください。  コードエディタの ESLint 拡張を無効にする client/.eslintrc.js ファイルを削除する    </description>
     </item>
     
   </channel>
