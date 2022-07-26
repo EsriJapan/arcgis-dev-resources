@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-06T16:11:52 JST">
+<meta name="revised" content="2022-07-26T11:06:57 JST">
 <title>Jupyter Lab を使ってみよう :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -425,6 +425,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
@@ -457,6 +464,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
             assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
           </a>
         </div>
     </li>
@@ -849,7 +863,7 @@ if (!doNotTrack) {
     
     <p>JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。</br> ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_workflow.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_workflow.gif" width="600px">
 <p>JupyterLab で GIS データとグラフの操作</p>
 </div>
 <p>JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は <a href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">JupyterLab のブログ</a>や <a href="https://github.com/jupyterlab/jupyterlab">GitHub</a> をご参照ください。</p>
@@ -898,29 +912,29 @@ arcgis-map-ipywidget v1.5.1 enabled  ok
 <h3 id="ファイルエクスプローラー">ファイルエクスプローラー</h3>
 <p>JupyterLab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 JupyterLab のファイルエクスプローラは、メインビューの左側のウィンドウです。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_file_explorer.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_file_explorer.gif" width="600px">
 </div>
 <p>JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースといくつかの外部エクステンションが追加された点です。</p>
 <h3 id="ウィンドウとタブを使用する">ウィンドウとタブを使用する</h3>
 <p>JupyterLab には、Jupyter Notebook とは違って、「ウィンドウ」と「タブ」という概念があります。 これにより、ノートブックを重ねたり、横に並べたり、タブで整理したりすることができます。これらの操作は、以下のように「タブ」をクリックしてドラッグするだけで可能です。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_navigate_windows.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_navigate_windows.gif" width="600px">
 </div>
 どのようなウィンドウでもこのようにドラッグすることが可能です。*.csv、*.json などのファイルも表示や編集することができます。
 <h3 id="セルの使用">セルの使用</h3>
 <p>上記のウィンドウとタブと同様に、JupyterLab ではノートブックのセルをドラッグアンドドロップして移動することができます。 JupyterLab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_1.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_cell_utilities_1.gif" width="600px">
 </div>
 <p>JupyterLab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして [Copy Cells] を選択してコピーします。また、右クリックのメニューには、[Create New View For Output] を含む多くのオプションがあります。[Create New View For Output] を使用すると、任意のセルの実行結果を別のタブで表示することができ、重ねたり、並べて表示したりすることができます。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_2.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_cell_utilities_2.gif" width="600px">
 </div>
 JupyterLab には他にも様々なセルの操作ができるので、いろいろと探してみてください！
 <h2 id="マップ-ウィジェットとの連携">マップ ウィジェットとの連携</h2>
 <p>バージョン 1.5.0 以上の Python API では、2D 回転、3D モード、3D レンダラーのサポートなどマップ ウィジェットの機能が多数追加されています。これらの機能の詳細については、<a href="https://developers.arcgis.com/python/guide/advanced-map-widget-useage/">ガイドページ（米国ESRI ページ）</a>でご紹介しています。このガイドでは、マップ ウィジェットと JupyterLab のシームレスな連携を紹介します。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_widget_1.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_widget_1.gif" width="600px">
 </div>
 <p>Python API の <code>MapView</code> クラスのデフォルトの表示動作は、Jupyter Notebook と同じで、ウィジェットはセルの出力にマップが表示されます。JupyterLab では、これに加えて以下のようなボタンが表示されます。</p>
 <div align="left">

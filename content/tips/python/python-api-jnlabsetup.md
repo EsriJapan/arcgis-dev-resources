@@ -8,7 +8,7 @@ aliases = ["/python/python-api-jnlabsetup/"]
 JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。</br> ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_workflow.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_workflow.gif" width="600px">
 <p>JupyterLab で GIS データとグラフの操作</p>
 </div>
 
@@ -59,7 +59,7 @@ arcgis-map-ipywidget v1.5.1 enabled  ok
 JupyterLab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 JupyterLab のファイルエクスプローラは、メインビューの左側のウィンドウです。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_file_explorer.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_file_explorer.gif" width="600px">
 </div>
 
 JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースといくつかの外部エクステンションが追加された点です。
@@ -69,7 +69,7 @@ JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipyn
 JupyterLab には、Jupyter Notebook とは違って、「ウィンドウ」と「タブ」という概念があります。 これにより、ノートブックを重ねたり、横に並べたり、タブで整理したりすることができます。これらの操作は、以下のように「タブ」をクリックしてドラッグするだけで可能です。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_navigate_windows.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_navigate_windows.gif" width="600px">
 </div>
 どのようなウィンドウでもこのようにドラッグすることが可能です。*.csv、*.json などのファイルも表示や編集することができます。
 
@@ -78,12 +78,12 @@ JupyterLab には、Jupyter Notebook とは違って、「ウィンドウ」と�
 上記のウィンドウとタブと同様に、JupyterLab ではノートブックのセルをドラッグアンドドロップして移動することができます。 JupyterLab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_1.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_cell_utilities_1.gif" width="600px">
 </div>
 
 JupyterLab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして [Copy Cells] を選択してコピーします。また、右クリックのメニューには、[Create New View For Output] を含む多くのオプションがあります。[Create New View For Output] を使用すると、任意のセルの実行結果を別のタブで表示することができ、重ねたり、並べて表示したりすることができます。
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_cell_utilities_2.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_cell_utilities_2.gif" width="600px">
 </div>
 JupyterLab には他にも様々なセルの操作ができるので、いろいろと探してみてください！
 
@@ -91,7 +91,7 @@ JupyterLab には他にも様々なセルの操作ができるので、いろい
 
 バージョン 1.5.0 以上の Python API では、2D 回転、3D モード、3D レンダラーのサポートなどマップ ウィジェットの機能が多数追加されています。これらの機能の詳細については、[ガイドページ（米国ESRI ページ）](https://developers.arcgis.com/python/guide/advanced-map-widget-useage/)でご紹介しています。このガイドでは、マップ ウィジェットと JupyterLab のシームレスな連携を紹介します。
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/jlab_widget_1.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/jlab_widget_1.gif" width="600px">
 </div>
 
 Python API の `MapView` クラスのデフォルトの表示動作は、Jupyter Notebook と同じで、ウィジェットはセルの出力にマップが表示されます。JupyterLab では、これに加えて以下のようなボタンが表示されます。

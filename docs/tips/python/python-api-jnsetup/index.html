@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-06T16:11:52 JST">
+<meta name="revised" content="2022-07-26T11:06:57 JST">
 <title>Jupyter Notebook を使ってみよう :: ArcGIS Developer 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -425,6 +425,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
@@ -457,6 +464,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
             assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
           </a>
         </div>
     </li>
@@ -849,7 +863,7 @@ Jupyter Notebook の詳細については、<a href="https://jupyter.readthedocs
 </code></pre><p>他、Windows OS を実行している場合はコマンド プロンプトまたは PowerShell ウィンドウでも代用できます。以下は、Windows のコマンドプロンプトからコマンドを実行した場合の画面のスクリーンショットです。</p>
 <!-- 同様に、Mac または Linux OS を実行している場合は、ターミナルで実行できます。 -->
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_01.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_01.png" width="600px">
 <p>Windows のコマンドプロンプトからコマンドを実行した場合</p>
 </div>
 <p>Python API を root 以外の仮想環境を作成しインストールした場合、Jupyter Notebook を起動する前にその仮想環境をアクティベートする必要があります。root 以外の仮想環境を使用するメリットと仮想環境の作成および管理する方法の詳細については、<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html">公式のマニュアルページ</a>を参照してください。</p>
@@ -857,28 +871,28 @@ Jupyter Notebook の詳細については、<a href="https://jupyter.readthedocs
 上の例では、ノートブックが C:\code ディレクトリに配置されています。</p>
 <p>Jupyter Notebook 起動のコマンドを実行すると Jupyter Notebook は以下のように端末のデフォルトに設定されている Web ブラウザで開きます。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_02.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_02.png" width="600px">
 <p>Jupyert Notebook 起動画面 (Google Chrome)</p>
 </div>
 <p>このページは、ノートブック ダッシュボードと呼ばれています。</p>
 <h2 id="ノートブックを実行する">ノートブックを実行する</h2>
 <p>Jupyter Notebookでは、ディレクトリを移動してノートブックをクリックすることでそのノートブックを新しいブラウザのタブまたはウィンドウで開くことができます。各セルを選択し、[セルを実行]ボタン(または shift + Enter)をクリックすることで、各セルを実行できます。以下の画像では、実行までの一通りの手順を示しています。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_03.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_03.gif" width="600px">
 <p>ノートブックを開いて実行するまで</p>
 </div>
 <p>セルを実行すると、そのセルのコードを実行している間、左わきにアスタリスク (*) が表示されます。実行が完了するとセル実行番号に変わります。</p>
 <h2 id="新しいノートブックの作成">新しいノートブックの作成</h2>
 <p>Esri が提供するサンプルのノートブックを実行するだけでなく、プロジェクト用の新しいノートブックを作成することもできます。 これを行うには、ノートブックダッシュボードから、「New」ボタンをクリックし、以下の画像のように Python のカーネルを選択します。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_04.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_04.png" width="600px">
 <p>新しいノートブックを作成する</p>
 </div>
 実行中のノートブックの「ファイル」メニューから新しいノートブックを作成することもできます。 上の画像では、現在実行中のノートブックのアイコンが緑色で表示されています。
 <h2 id="jupyter-notebook-ヘルプとキーボードショートカット">Jupyter Notebook ヘルプとキーボードショートカット</h2>
 <p>その他、Jupyter Notebook の各機能や使い方は、任意のノートブックを開いて、[Help &gt; User Interface Tour] から体験することができます。 また、便利なキーボード ショートカットも設定されています。ショートカット キーの一覧は、[Help &gt; Keyboard Shortcuts] で表示できます。</p>
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_05.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_05.png" width="600px">
 <p>ショートカットキー一覧</p>
 </div>
 <!-- Mac では[cmd + Shift + P] -->

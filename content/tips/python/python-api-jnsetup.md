@@ -28,7 +28,7 @@ jupyter-notebook
 
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_01.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_01.png" width="600px">
 <p>Windows のコマンドプロンプトからコマンドを実行した場合</p>
 </div>
 
@@ -40,7 +40,7 @@ Esri では GitHub 上で[サンプルのノートブック](https://github.com/
 Jupyter Notebook 起動のコマンドを実行すると Jupyter Notebook は以下のように端末のデフォルトに設定されている Web ブラウザで開きます。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_02.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_02.png" width="600px">
 <p>Jupyert Notebook 起動画面 (Google Chrome)</p>
 </div>
 
@@ -51,7 +51,7 @@ Jupyter Notebook 起動のコマンドを実行すると Jupyter Notebook は以
 Jupyter Notebookでは、ディレクトリを移動してノートブックをクリックすることでそのノートブックを新しいブラウザのタブまたはウィンドウで開くことができます。各セルを選択し、[セルを実行]ボタン(または shift + Enter)をクリックすることで、各セルを実行できます。以下の画像では、実行までの一通りの手順を示しています。
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_03.gif" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_03.gif" width="600px">
 <p>ノートブックを開いて実行するまで</p>
 </div>
 
@@ -61,7 +61,7 @@ Jupyter Notebookでは、ディレクトリを移動してノートブックを�
 
 Esri が提供するサンプルのノートブックを実行するだけでなく、プロジェクト用の新しいノートブックを作成することもできます。 これを行うには、ノートブックダッシュボードから、「New」ボタンをクリックし、以下の画像のように Python のカーネルを選択します。
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_04.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_04.png" width="600px">
 <p>新しいノートブックを作成する</p>
 </div>
 実行中のノートブックの「ファイル」メニューから新しいノートブックを作成することもできます。 上の画像では、現在実行中のノートブックのアイコンが緑色で表示されています。
@@ -70,7 +70,7 @@ Esri が提供するサンプルのノートブックを実行するだけでな
 
 その他、Jupyter Notebook の各機能や使い方は、任意のノートブックを開いて、[Help > User Interface Tour] から体験することができます。 また、便利なキーボード ショートカットも設定されています。ショートカット キーの一覧は、[Help > Keyboard Shortcuts] で表示できます。
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_usingjupyternotebooks_05.png" width="600px">
+<img src="https://developers.arcgis.com/python/guide/images/guide_getstarted_usingjupyternotebooks_05.png" width="600px">
 <p>ショートカットキー一覧</p>
 </div>
 

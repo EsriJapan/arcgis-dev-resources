@@ -304,7 +304,7 @@ my_gis.map()
 ```
 
 <div align="center">
-<img src="https://developers.arcgis.com/assets/img/python-graphics/guide_getstarted_installandsetup_02.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/guide_getstarted_installandsetup_02.png" width="800px">
 </div>
 
 {{% notice tip %}}
