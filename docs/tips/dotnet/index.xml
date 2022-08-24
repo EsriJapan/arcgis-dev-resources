@@ -18,7 +18,7 @@ ArcGIS Runtime SDK for .NET がサポートする最新の動作環境につい�
 インストールとセットアップ ArcGIS Runtime の機能を Visual Studio プロジェクトに組み込むには、適切な NuGet パッケージを参照してください。これらのパッケージは、オンライン ソース (nuget.orgなど) またはローカルにインストールしたパッケージから参照できます。 Visual Studio 拡張機能 (Windows のみ) で使用できる ArcGIS Runtime の プロジェクト テンプレートのセットには、サポートされている各プラットフォームに必要な NuGet パッケージの参照が含まれています。
 各インストール方法については、下記の各項目をご覧ください。
  オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法 Visual Studio プロジェクト テンプレートをインストールする方法 Visual Studio 拡張機能をダウンロードしてインストールする方法  オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法 ArcGIS Runtime NuGet パッケージは、NuGet.org でホストされています。インターネットに接続している場合は、ローカルに何もインストールしなくても、これらのパッケージにアクセスして Visual Studio プロジェクトに追加できます。
-ローカルで利用可能な NuGet パッケージが必要であるが、Visual Studio 拡張機能をインストールできない場合 (オフラインで開発している場合や、Visual Studio for Mac を使用している場合など)、必要なパッケージを NuGet.</description>
+  Visual Studio で NuGet パッケージ マネージャーを開きます (例えば、[プロジェクト] メニュー &amp;gt; [NuGet パッケージの管理])。</description>
     </item>
     
     <item>

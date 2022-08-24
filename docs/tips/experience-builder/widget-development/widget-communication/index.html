@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T11:25:16 JST">
+<meta name="revised" content="2022-08-25T08:49:12 JST">
 <title>ウィジェット間の通信 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -869,7 +869,7 @@ if (!doNotTrack) {
 </ul>
 <h2 id="ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</h2>
 <p>React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは <code>widgetsState</code> と呼ばれるもので、型の定義は <code>jimu-core/lib/types/state</code> にあります。<code>widgetState</code> に保存された情報は、他のすべてのウィジェットからアクセス可能です。<code>widgetsState</code> に情報を保存するには、以下のコードを参照してください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">appActions</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">appActions</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
 <span style="color:#75715e">/*
 </span><span style="color:#75715e">* Call this when you need to save state.
@@ -880,7 +880,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e">*/</span>
 <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">widgetStatePropChange</span>(<span style="color:#a6e22e">widgetId</span>, <span style="color:#a6e22e">propKey</span>, <span style="color:#a6e22e">value</span>))
 </code></pre></div><p>例えば、<code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b1&quot;, &quot;value1&quot;))</code> と <code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b2&quot;, &quot;value2&quot;))</code> を呼び出すと、Redux store でこの store の state (状態) が取得されます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">widgetsState</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">widgetsState</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">w1</span><span style="color:#f92672">:</span> {
         <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> {
             <span style="color:#a6e22e">b1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value1&#39;</span>,
@@ -895,7 +895,7 @@ if (!doNotTrack) {
 <ul>
 <li>ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">extensionSpec</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">extensionSpec</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyReduxStoreExtension</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">extensionSpec</span>.<span style="color:#a6e22e">ReduxStoreExtension</span>{
     <span style="color:#a6e22e">getActions</span>(){
@@ -917,7 +917,7 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>ウィジェットの manifest.json で拡張機能を宣言します。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
     {
       <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;My Store&#34;</span>,
       <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;REDUX_STORE&#34;</span>,

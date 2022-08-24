@@ -116,4 +116,4 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 ## 追加のデータ
 [グリッド ベースの地理座標変換](https://developers.arcgis.com/ios/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。
 
-航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。
+航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。

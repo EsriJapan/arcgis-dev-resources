@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T11:25:16 JST">
+<meta name="revised" content="2022-08-25T08:49:12 JST">
 <title>単体テスト :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -876,7 +876,7 @@ if (!doNotTrack) {
 <h3 id="arcgis-experience-builder-での単体テスト">ArcGIS Experience Builder での単体テスト</h3>
 <p>単体テストのファイルは .test.ts(x) または .spec.ts(x) で終わり、tests フォルダに置く必要があります。
 単体テストは、<a href="https://en.wikipedia.org/wiki/Behavior-driven_development">行動駆動型開発（BDD）</a>スタイルで記述する必要があります。たとえば、以下のようになります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;calculator&#39;</span>, <span style="color:#66d9ef">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;calculator&#39;</span>, <span style="color:#66d9ef">function</span>() {
   <span style="color:#75715e">// Describes a module with nested &#34;describe&#34; functions
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;add&#39;</span>, <span style="color:#66d9ef">function</span>() {
     <span style="color:#75715e">// Specify the expected behavior
@@ -902,7 +902,7 @@ if (!doNotTrack) {
 <ul>
 <li>状態の初期化：<code>getInitState()</code> と <code>getDefaultAppConfig()</code> を使って、このようにストアを初期化することができます。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#a6e22e">getAppStore</span>().<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">updateStoreState</span>(<span style="color:#a6e22e">getInitState</span>().<span style="color:#a6e22e">merge</span>({
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#a6e22e">getAppStore</span>().<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">updateStoreState</span>(<span style="color:#a6e22e">getInitState</span>().<span style="color:#a6e22e">merge</span>({
     <span style="color:#a6e22e">appConfig</span>: <span style="color:#66d9ef">getDefaultAppConfig</span>().<span style="color:#a6e22e">merge</span>({
       <span style="color:#a6e22e">widgets</span><span style="color:#f92672">:</span> {
         <span style="color:#a6e22e">w1</span><span style="color:#f92672">:</span> {
@@ -914,21 +914,21 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>フィーチャーサービスをモックするには、次のようにモックデータを使って <code>mockFeatureLayer</code> を呼び出します。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">mockFeatureLayer</span>(<span style="color:#a6e22e">mockData</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">mockFeatureLayer</span>(<span style="color:#a6e22e">mockData</span>)
 </code></pre></div><p>フィーチャ レイヤーをモックアップした後は、単体テストのリクエストがネットワークリクエストを行わないため、テストがより安定して高速になります。</p>
 <ul>
 <li>React コンポーネントをレンダリングするには、次のようにしてレンダリングします。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">queryByText</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Component</span>/&gt;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">queryByText</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Component</span>/&gt;)
 <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">queryByText</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">withStoreRender</span>(&lt;<span style="color:#f92672">Component</span>/&gt;)
 </code></pre></div><ul>
 <li>そして、レンダリング結果を次のようにチェックします。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">queryByText</span>(<span style="color:#e6db74">&#39;the text&#39;</span>)).<span style="color:#a6e22e">toBeInTheDocument</span>();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">queryByText</span>(<span style="color:#e6db74">&#39;the text&#39;</span>)).<span style="color:#a6e22e">toBeInTheDocument</span>();
 </code></pre></div><ul>
 <li>ウィジェットをレンダリングするには、次のようにします。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// Get the widget render, you can pass in store/theme/locale optionally
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// Get the widget render, you can pass in store/theme/locale optionally
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">widgetRender</span>();
 <span style="color:#75715e">// Wrap the widget to inject some props into widget component
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">wrapWidget</span>(<span style="color:#a6e22e">_Widget</span>, {<span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {}});
@@ -936,7 +936,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">queryByText</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Widget</span>/&gt;)
 </code></pre></div><h3 id="arcgis-api-for-javascript-を使用するモジュールのテスト">ArcGIS API for JavaScript を使用するモジュールのテスト</h3>
 <p>コンポーネントで使用したモジュールをモックする必要があります。loadArcGISJSAPIModule でモジュールをロードした場合は、以下のようにモックを作成します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">jest</span>.<span style="color:#a6e22e">mock</span>(<span style="color:#e6db74">&#39;jimu-core&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">jest</span>.<span style="color:#a6e22e">mock</span>(<span style="color:#e6db74">&#39;jimu-core&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
   <span style="color:#66d9ef">return</span> {
     ...<span style="color:#a6e22e">jest</span>.<span style="color:#a6e22e">requireActual</span>(<span style="color:#e6db74">&#39;jimu-core&#39;</span>),
     <span style="color:#a6e22e">loadArcGISJSAPIModule</span>: <span style="color:#66d9ef">jest.fn</span>().<span style="color:#a6e22e">mockImplementation</span>(<span style="color:#66d9ef">module</span><span style="color:#a6e22e">Id</span> <span style="color:#f92672">=&gt;</span> {

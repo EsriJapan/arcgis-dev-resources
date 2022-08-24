@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T11:25:16 JST">
+<meta name="revised" content="2022-08-25T08:49:12 JST">
 <title>スタートアップ ガイド（10.2.x） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -883,7 +883,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 <p><code>MainActivity.java</code> の 30 行目の <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。32 行目の以下のコードでは、上で設定した Web マップ ID を含んだ WebMap の URL を MapView へ受け渡しています。</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> mapView <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MapView<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> webmapUrl<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> mapView <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MapView<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> webmapUrl<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
 </code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
 <ol>
 <li>サンプル プロジェクトを実行すると、以下のように地図が表示されます。</li>
@@ -898,7 +898,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 <li>現在位置の変化を受け取るための <a href="http://developer.android.com/intl/ja/reference/android/location/LocationListener.html">LocationListner</a> を実装します。今回はすでに実装してあるコードを有効化します。
 <code>MainActivity.java</code> の 41 行目から 70 行目までのコメント化されたコードをコメント解除してください。（コメント解除したい範囲を選択して <code>Ctrl + /</code> を押下）</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#75715e">// LocationListner を実装
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#75715e">// LocationListner を実装
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyLocationListener</span> <span style="color:#66d9ef">implements</span> LocationListener <span style="color:#f92672">{</span>
 
    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyLocationListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
@@ -932,7 +932,7 @@ ArcGIS Runtime SDK のライブラリをローカル環境にダウンロード�
 <ol>
 <li><code>onCreate</code> メソッド（38 行目）へ以下のコードを追加します。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#75715e">// MapView 上に現在位置を表示するために LocationDisplayManager を取得
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#75715e">// MapView 上に現在位置を表示するために LocationDisplayManager を取得
 </span><span style="color:#75715e"></span> LocationDisplayManager locationDisplayManager<span style="color:#f92672">;</span>
  locationDisplayManager <span style="color:#f92672">=</span> mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">getLocationDisplayManager</span><span style="color:#f92672">();</span>
  <span style="color:#75715e">// LocationDisplayManager に LocationListner を設定

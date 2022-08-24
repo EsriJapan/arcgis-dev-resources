@@ -48,84 +48,127 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
      <img src="https://developers.arcgis.com/android/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" width="400px">
 
-3. プロジェクト ツールウィンドウから、[Gradle Scripts] > [settings.gradle] を開きます。Esri の Maven リポジトリから API を参照するには、dependencyResolutionManagement の repositories ブロックに以下の行を追加します。
+3. プロジェクト ツールウィンドウから、[Gradle Scripts] > [build.gradle (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
+
+    build.gradle (Project: Display_a_map)
+
+    ```java
+    // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+    plugins {
+        id 'com.android.application' version '7.2.1' apply false
+        id 'com.android.library' version '7.2.1' apply false
+        id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+    }
+
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }
+    ```
+ 
+4. プロジェクト ツールウィンドウから、[Gradle Scripts] > [build.gradle (Module: Display_a_map.app)] を開きます。ファイルの内容を次のコードに置き換えます。
+
+    build.gradle (Module: Display_a_map.app)
+
+    ```java
+    plugins {
+        id 'com.android.application'
+        id 'org.jetbrains.kotlin.android'
+    }
+
+    android {
+        compileSdkVersion 32
+
+        defaultConfig {
+            applicationId "com.example.app"
+            minSdkVersion 23
+            targetSdkVersion 32
+            versionCode 1
+            versionName "1.0"
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
+
+        buildFeatures {
+            viewBinding true
+        }
+
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+        }
+
+    }
+
+    dependencies {
+        implementation fileTree(dir: "libs", include: ["*.jar"])
+        implementation 'androidx.appcompat:appcompat:1.4.2'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        implementation 'androidx.multidex:multidex:2.0.1'
+        implementation 'com.google.android.material:material:1.6.1'
+
+        implementation 'com.esri.arcgisruntime:arcgis-android:100.15.0'
+    }
+
+    ```
+
+    注: 上記の build.gradle ファイルでは、ソースとターゲットの両方で Java 8 言語互換性を指定しています。Android Studio はこの互換性設定を利用して、必要に応じて「desugaring」と呼ばれるバイトコード変換を自動で行います。別の IDE を使用している場合は、自分で Java 8 互換性を設定する必要がある場合があります。詳しくは、[Java 8 言語機能と API を使用する](https://developer.android.com/studio/write/java8-support) を参照してください。
+
+5. プロジェクト ツールウィンドウから、[Gradle Scripts] > [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。
 
     settings.gradle
 
     ```java
+    import org.gradle.api.initialization.resolve.RepositoriesMode
+
+    pluginManagement {
+        repositories {
+            gradlePluginPortal()
+            google()
+            mavenCentral()
+        }
+    }
     dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             google()
             mavenCentral()
 
-            // 追加開始
             maven {
                 url 'https://esri.jfrog.io/artifactory/arcgis'
             }
-            // 追加終了
-
         }
     }
-    ```
- 
-4. プロジェクト ツールウィンドウから、[Gradle Scripts] > [build.gradle (Module: Display_a_map.app)] を開きます。dependencies ブロックに以下の行を追加して、ArcGIS Runtime SDK for Android を含めます。
 
-    build.gradle (Module: Display_a_map.app)
+    rootProject.name = "Display a map"
 
-    ```java
-
-    android {
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
-        ...
-
-    }
-
-    dependencies {
-        implementation 'androidx.core:core-ktx:1.7.0'
-        implementation 'androidx.appcompat:appcompat:1.4.1'
-        implementation 'com.google.android.material:material:1.5.0'
-        implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-        testImplementation 'junit:junit:4.13.2'
-        androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-        androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-        // 追加開始
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
-        // 追加終了
-
-    }
-    ```
-
-    注: 上記の build.gradle ファイルでは、ソースとターゲットの両方で Java 8 言語互換性を指定しています。Android Studio はこの互換性設定を利用して、必要に応じて「desugaring」と呼ばれるバイトコード変換を自動で行います。別の IDE を使用している場合は、自分で Java 8 互換性を設定する必要がある場合があります。詳しくは、[Java 8 言語機能と API を使用する](https://developer.android.com/studio/write/java8-support) を参照してください。
-
-5. android ブロックに以下の buildFeatures ブロックを追加して、ビューのバインドを有効にします。
-
-    build.gradle (Module: Display_a_map.app)
-
-    ```java
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-
-    // 追加開始
-    buildFeatures {
-        viewBinding true
-    }
-    // 追加終了
+    include ':app'
     ```
 6. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン（Sync Project with Gradle Files）をクリックします。同期に数分かかるかもしれません。
 
 7. プロジェクトツールウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、ネットワークアクセスを許可し、アプリが OpenGL2.0 以降を使用することを示します。
+
+    これらの新しい要素を manifest 要素内に挿入します。他のステートメントを変更または削除しないでください。追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。
 
     AndroidManifest.xml
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.app">
 
     // 追加開始
@@ -180,9 +223,13 @@ import com.example.app.databinding.ActivityMainBinding
 
         // 追加開始
         <com.esri.arcgisruntime.mapping.view.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                android:id="@+id/mapView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         // 追加終了
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -219,25 +266,6 @@ import com.example.app.databinding.ActivityMainBinding
         // 追加終了
     ```
 
-4. setContentView の引数を "R.layout.activity_main" から "activityMainBinding.root" に変更します。
-
-    MainActivity.kt
-
-    ```java
-
-    private val activityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
-    
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // 変更前
-        // setContentView(R.layout.activity_main)
-        // 変更後
-        setContentView(activityMainBinding.root)
-    }
-    ```
-
 ### マップを追加する
 
 マップビューを使用して、富士山を中心としたマップを表示します。マップには、地形ベースマップレイヤーが含まれます。
@@ -249,7 +277,7 @@ import com.example.app.databinding.ActivityMainBinding
     ```java
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activityMainBinding.root)
+        setContentView(R.layout.activity_main)
     }
 
     // 追加開始
@@ -285,21 +313,25 @@ import com.example.app.databinding.ActivityMainBinding
     }
     ```
 
-3. [onCreate](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)) メソッドで、setupMap を呼び出します。
+3. [onCreate()](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)) メソッドで、Android Studio のデフォルトの呼び出しであるsetContentView(R.layout.activity_main) を setContentView(activityMainBinding.root) に置き換えます。その後、setupMap() を呼び出します。
 
     MainActivity.kt
 
     ```java
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activityMainBinding.root)
 
-        // 追加開始
+        // 変更前
+        // setContentView(R.layout.activity_main)
+
+        // 変更後
+        setContentView(activityMainBinding.root)
         setupMap()
-        // 追加終了
     }
     ```
 4. MainActivity クラスの [onPause](https://developer.android.com/reference/android/app/Activity#onPause())、[onResume](https://developer.android.com/reference/android/app/Activity#onResume())、[onDestroy](https://developer.android.com/reference/android/app/Activity#onDestroy()) メソッドをオーバーライドします。
+
+    MapView はビューを適切に管理するために、アプリがバックグラウンドになったとき、またはバックグラウンドから復元されたときを知る必要があります。ビューが不要になった時、そのリソースは dispose の呼び出しで解放される必要があります。これらのメソッドは、MainActivity クラスの定義内のどこにでも置くことができます。
 
     MainActivity.kt
 
@@ -331,42 +363,55 @@ import com.example.app.databinding.ActivityMainBinding
     ```
 
 ### API キーを設定する
-ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
+1. ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
 まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
 
-1. アプリを実行する前に、API キーを使用して [ArcGISRuntimeEnvironment](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html) の [apiKey](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html#setApiKey(java.lang.String)) プロパティを設定します。
+2. setApiKeyForApp() メソッドを作成し、API キーを使用して [ArcGISRuntimeEnvironment](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html) の [apiKey](https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html#setApiKey(java.lang.String)) プロパティを設定します。
 
     MainActivity.kt
 
     ```java
-    private fun setupMap() {
-        
-        // 追加開始
+    override fun onDestroy() {
+        mapView.dispose()
+        super.onDestroy()
+    }
+
+    // 追加開始
+    private fun setApiKeyForApp(){
+
         // API キーを設定します
         // 注：API キーをソースコードに保存することはベストプラクティスではありません。API キーが参照されます。
         //チュートリアルでは便宜上ソースコードに記載しています
         ArcGISRuntimeEnvironment.setApiKey("<API キー>")
-        // 追加終了
 
-        val map = ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC)
+    }
+    // 追加終了
     ```
 
-2. [Run] > [Run] > [app] をクリックして、アプリを実行します。アプリを実行するエミュレーターが表示されます。アプリがビルドされてもエミュレーターが表示されない場合は、エミュレーターを追加する必要があります。[Tools] > [AVD Manager] > [Create Virtual Device...] をクリックします。
+3. onCreate() ライフサイクル メソッド内で setApiKeyForApp() を呼び出す。
+
+    MainActivity.kt
+
+    ```java
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(activityMainBinding.root)
+
+        // 追加開始
+        setApiKeyForApp()
+        // 追加開始
+
+        setupMap()
+
+    }
+    ```
+
+4. [Run] > [Run] > [app] をクリックして、アプリを実行します。アプリを実行するエミュレーターが表示されます。アプリがビルドされてもエミュレーターが表示されない場合は、エミュレーターを追加する必要があります。[Tools] > [AVD Manager] > [Create Virtual Device...] をクリックします。
 
 富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。   
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/android/zips/display-a-map.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
-
-ビルドした際に「More than one file was found with OS independent path 'META-INF/DEPENDENCIES'.」のエラーが発生した場合は、app の build.gradle の android ブロックに下記を追加します。
-
-```java
-android {
-    ...   
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-    }          
-}
-```
 
 # Web マップを表示する
 「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
@@ -385,7 +430,6 @@ android {
     MainActivity.kt
 
     ```java        
-        ArcGISRuntimeEnvironment.setApiKey("<API キー>")
         val portal = Portal("https://www.arcgis.com", false)
         val itemId = "<Web マップの ID>"
         val portalItem = PortalItem(portal, itemId)

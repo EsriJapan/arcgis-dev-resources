@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T11:25:16 JST">
+<meta name="revised" content="2022-08-25T08:49:12 JST">
 <title>スクリプト実行の自動化 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -954,7 +954,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <ul>
 <li>以下のコマンドを Bash ターミナルから実行</li>
 </ul>
-<pre tabindex="0"><code>    crontab -e
+<pre><code>    crontab -e
 </code></pre><ul>
 <li>次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。</li>
 </ul>
@@ -965,7 +965,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <ul>
 <li>crontab の編集画面が開くので次のとおり実行する内容を記述</li>
 </ul>
-<pre tabindex="0"><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
+<pre><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
 </code></pre><div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
 </div>

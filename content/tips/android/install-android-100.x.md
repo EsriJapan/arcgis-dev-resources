@@ -28,15 +28,16 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 ## Gradle で API を取得する
 既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。
 
-1. project レベルの build.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL をプロジェクトに追加します。Esri のリポジトリはオープンソースではないため、スクリプトのデフォルトリポジトリでは使用できないため、この URL を指定する必要があります。
+1. settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。
 
 	```java  
-	allprojects {
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
 			google()
-			jcenter()
+			mavenCentral()
 
-			// Esri のパブリック Maven リポジトリを追加します
+			// Esri の Maven リポジトリを追加します
 			maven {
 				url 'https://esri.jfrog.io/artifactory/arcgis'
 			}
@@ -50,20 +51,29 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.0'
 		...
 	}
 	```
 
-3. Android Studio は、Java 8 言語機能のサブセットをサポートしています。これらの機能は、ArcGIS Runtime SDK for Android のドキュメントとサンプル全体で使用されています。アプリで使用する場合にコードサンプルを確実にコンパイルするには、Java 8 を使用するようにアプリ モジュールの互換性を設定します。app モジュールの build.gradle ファイルの android ブロック内に、compileOptions ディレクティブを追加して、Java 互換バージョンを設定します。
+3. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にする buildFeatures ブロックを追加してください。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
 
     ```java  
 	android {
-		...
-		compileOptions {
-			sourceCompatibility 1.8
-			targetCompatibility 1.8
-		}
+  		. . .
+ 		buildFeatures {
+    		viewBinding true
+  		}
+	}
+    ```
+4. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
+
+    ```java  
+	android {
+  		. . .
+  		packagingOptions {
+    		exclude 'META-INF/DEPENDENCIES'
+  		}
 	}
     ```
 
@@ -84,34 +94,34 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 以下のセットアップ手順では、インターネットから切り離された開発環境で作業していることを想定しています。たとえば、インターネット上でホストされている Maven リポジトリへのアクセスを許可しないファイアウォールの内側などです。以下の手順は、ローカルマシン上の Maven リポジトリでのセットアップを説明していますが、ネットワーク上に Maven サーバーをセットアップしている場合も同様に適用できます。
 
 #### SDK およびその依存関係をコンピュータにデプロイする
-1. arcgis-runtime-sdk-android-100.14.1.zip ファイルをダウンロードします。
+1. arcgis-runtime-sdk-android-100.15.0.zip ファイルをダウンロードします。
 2. アーカイブの内容をディスク上の任意の場所に解凍します。
 3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。
 
-	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/`
+	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/`
 	
-	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\`
+	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\`
 
 4. ディレクトリのパスは以下のようになっているはずです。
 
 	mac (2 ファイル):
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.aar`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/arcgis-android-100.15.0.aar`
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.14.1/arcgis-android-100.14.1.pom`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/arcgis-android-100.15.0.pom`
 	
 	Windows (2 ファイル):
 
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.aar`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\arcgis-android-100.15.0.aar`
 	
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.14.1\arcgis-android-100.14.1.pom`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\arcgis-android-100.15.0.pom`
 
 5. インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
 オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。
 
-	* gson 2.8.8: https://search.maven.org/artifact/com.google.code.gson/gson/2.8.8/jar
-	* androidx.browser 1.3.0: https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.3.0
-	* androidx.localbroadcastmanager 1.0.0: https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
+	* gson 2.9.0: https://search.maven.org/artifact/com.google.code.gson/gson/2.9.0/jar
+	* androidx.browser 1.4.0: https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.4.0
+	* androidx.localbroadcastmanager 1.1.0: https://maven.google.com/web/index.html?q=localbroadcastmanager#androidx.localbroadcastmanager:localbroadcastmanager:1.1.0
 	* httpcore5 5.0.4: https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5/5.0.4/jar
 	* httpcore5-h2 5.0.4: https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5-h2/5.0.4/jar
 	* slf4j-api 1.7.32: https://search.maven.org/artifact/org.slf4j/slf4j-api/1.7.32/jar
@@ -167,10 +177,10 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	```java 
 	dependencies {
 			...
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.14.1'
-		implementation 'com.google.code.gson:gson:2.8.8'
-		implementation 'androidx.browser:browser:1.3.0'
-		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.0'
+		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'androidx.browser:browser:1.4.0'
+		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 		implementation 'org.apache.httpcomponents.core5:httpcore5:5.0.4'
 		implementation 'org.apache.httpcomponents.core5:httpcore5-h2:5.0.4'
 		implementation 'org.slf4j:slf4j-api:1.7.32'
@@ -180,6 +190,17 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 		implementation 'org.ehcache.modules:ehcache-api:3.4.0'
 	}
 	```
+
+4. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にする buildFeatures ブロックを追加してください。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
+
+    ```java  
+	android {
+  		. . .
+ 		buildFeatures {
+    		viewBinding true
+  		}
+	}
+    ```
 
 ## 必要な権限と機能
 Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。
@@ -249,5 +270,5 @@ ArcGIS Runtime アプリで実行できる、機能については[サンプル 
 ## 追加のデータ
 [グリッド ベースの地理座標変換](https://developers.arcgis.com/android/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。
 
-航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。
+航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography directory](https://developers.arcgis.com/downloads/#hydrodata) をダウンロードします。
 
