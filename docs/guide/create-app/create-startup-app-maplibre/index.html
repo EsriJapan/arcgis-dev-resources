@@ -13,12 +13,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    <title>ArcGIS Developer 開発リソース集</title>
+    <title>ArcGIS Developers 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-06T16:11:52 JST">
-<title>Mapbox GL JS :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2022-08-24T11:25:16 JST">
+<title>MapLibre GL JS :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="Mapbox GL JS を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。">
+<meta name="description" content="MapLibre GL JS を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
+  <body data-url="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
       
 	
   
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
   
 
 
@@ -140,10 +140,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item active">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
           </a>
         </div>
     </li>
@@ -426,6 +426,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
@@ -458,6 +465,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
             assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
           </a>
         </div>
     </li>
@@ -798,7 +812,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > <a href='/arcgis-dev-resources/guide/create-app/'>アプリ開発</a> > Mapbox GL JS
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > <a href='/arcgis-dev-resources/guide/create-app/'>アプリ開発</a> > MapLibre GL JS
 
  
 
@@ -837,7 +851,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>Mapbox GL JS</h1>
+    <h1>MapLibre GL JS</h1>
   
 
 
@@ -846,9 +860,9 @@ if (!doNotTrack) {
     
     
     <h1 id="マップを表示する">マップを表示する</h1>
-<p>このチュートリアルでは、<a href="https://developers.arcgis.com/mapbox-gl-js/">Mapbox GL JS</a> と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。</p>
+<p>このチュートリアルでは、<a href="https://developers.arcgis.com/maplibre-gl-js/">MapLibre GL JS</a> と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。</p>
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
-<p>ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、Mapbox GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む Mapbox GL スタイルです。</p>
+<p>ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。</p>
 <p>このチュートリアルでは、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/">ベースマップ レイヤー サービス</a>の地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。</p>
 <p>マップとレイヤーの詳細については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping APIs and services</a>のガイドの<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/">Display maps, scenes, and layers</a>にアクセスしてください。</p>
 <h2 id="前提条件">前提条件</h2>
@@ -862,12 +876,12 @@ if (!doNotTrack) {
 <li>CodePen &gt; HTML で、HTML と CSS を追加して、map という id 属性を持つ div 要素のあるページを作成します。
 map id は、マップを表示するために使用される id 属性です。CSS はブラウザの設定をリセットして、マップがブラウザの幅と高さ全体に表示されるようにします。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Mapbox GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;MapLibre GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -888,14 +902,14 @@ map id は、マップを表示するために使用される id 属性です。
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><h3 id="api-の参照">API の参照</h3>
 <ol>
-<li><code>&lt;head&gt;</code>タグで、Mapbox GL JS CSS および JS ライブラリへの参照を追加します。</li>
+<li><code>&lt;head&gt;</code>タグで、MapLibre GL JS CSS および JS ライブラリへの参照を追加します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Mapbox GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;MapLibre GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -909,10 +923,9 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#323232</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    <span style="color:#75715e">&lt;!-- mapbox gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
-
+    <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -926,18 +939,18 @@ map id は、マップを表示するために使用される id 属性です。
 <li><a href="https://developers.arcgis.com/dashboard/">開発者ダッシュボード</a>に移動して、API キーを取得します。これは、次の手順で使います。</li>
 </ol>
 <h3 id="マップの作成">マップの作成</h3>
-<p><a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">Map</a> クラスを使用して、指定したベースマップを使用してマップを追加します。
-<a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">Map</a> クラスは、map id を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
-詳細については、Mapbox GL JS の<a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">ドキュメント</a>を参照してください。</p>
+<p><a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">Map</a> クラスを使用して、指定したベースマップを使用してマップを追加します。
+<a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">Map</a> クラスは、map の HTML 要素 を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
+詳細については、MapLibre GL JS の<a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">ドキュメント</a>を参照してください。</p>
 <ol>
 <li><code>&lt;body&gt;</code>タグ内に<code>&lt;script&gt;</code>タグを追加します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Mapbox GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;MapLibre GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -951,10 +964,9 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#323232</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    <span style="color:#75715e">&lt;!-- mapbox gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
-
+    <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -969,14 +981,14 @@ map id は、マップを表示するために使用される id 属性です。
 
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><ol start="2">
-<li>API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">mapboxgl.accessToken</a> を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。</li>
+<li>API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは <a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">maplibre.accessToken</a> を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Mapbox GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;MapLibre GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -990,11 +1002,9 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#323232</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    <span style="color:#75715e">&lt;!-- mapbox gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
-
-
+    <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1013,14 +1023,14 @@ map id は、マップを表示するために使用される id 属性です。
 
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><ol start="3">
-<li>表示と動作を制御するオプションを使用して <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">Map</a> を作成します。<a href="https://docs.mapbox.com/mapbox-gl-js/api/map/">container</a> プロパティを、作成した div の map id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。</li>
+<li>表示と動作を制御するオプションを使用して <a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">Map</a> を作成します。<a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">container</a> プロパティを、作成した div の id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Mapbox GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;MapLibre GL JS Tutorials: Display a map&lt;/<span style="color:#f92672">title</span>&gt;
     &lt;<span style="color:#f92672">style</span>&gt;
       <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
       <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
@@ -1034,10 +1044,9 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#323232</span>;
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
-    <span style="color:#75715e">&lt;!-- mapbox gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
-
+    <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1050,7 +1059,7 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#75715e">// ベースマップの指定
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemapEnum</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ArcGIS:Topographic&#34;</span>;
       
-        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">mapboxgl</span>.<span style="color:#a6e22e">Map</span>({
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">maplibregl</span>.<span style="color:#a6e22e">Map</span>({
             <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;map&#34;</span>, <span style="color:#75715e">// div 要素内の id を指定
 </span><span style="color:#75715e"></span>            <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`https://basemaps-api.arcgis.com/arcgis/rest/services/styles/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">basemapEnum</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?type=style&amp;token=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">apiKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
             <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// マップ初期表示時点でのズームレベル

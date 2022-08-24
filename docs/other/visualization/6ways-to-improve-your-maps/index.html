@@ -13,12 +13,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    <title>ArcGIS Developer 開発リソース集</title>
+    <title>ArcGIS Developers 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-06T16:11:52 JST">
-<title>地図上に賢くデータを可視化するための 6 つの方法 :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2022-08-24T11:25:16 JST">
+<title>地図上に賢くデータを可視化するための 6 つの方法 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
       
 	
   
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
   
 
 
@@ -139,10 +139,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
           </a>
         </div>
     </li>
@@ -425,6 +425,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
@@ -457,6 +464,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
             assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
           </a>
         </div>
     </li>
@@ -799,7 +813,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/other/'>その他</a> > <a href='/arcgis-dev-resources/other/visualization/'>データ ビジュアライゼーション</a> > 地図上に賢くデータを可視化するための 6 つの方法
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/other/'>その他</a> > <a href='/arcgis-dev-resources/other/visualization/'>データ ビジュアライゼーション</a> > 地図上に賢くデータを可視化するための 6 つの方法
 
  
 
@@ -867,7 +881,7 @@ if (!doNotTrack) {
 ただし、データ可視化においてはむしろ背景地図を使わないという選択肢も１つのテクニックになり得ます。</p>
 <p>データ可視化には必ず伝えたい__ストーリー__があります。
 そのストーリーを説明するような説得力のある色を選びましょう。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Atascadero-Water-Use.png" width="450" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Atascadero-Water-Use.png" width="450" />
 <p>最後に__カラーランプ__ですが、数値データに対してその値の範囲をカラーランプ（色の変化）で表現します。
 上記のストーリーとデータのもつ意味を照らし合わせて、どの色からどの色へ変化すべきなのか考えてみましょう。</p>
 <p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Themes.png" alt=""></p>
@@ -909,7 +923,7 @@ if (!doNotTrack) {
 <p>従来、地図上で属性データを可視化する場合は単一の属性値に基づいて色やサイズで表現することが基本でした。
 マップ ビューアーのビジュアライゼーション機能では、
 ２つのデータを色とサイズでそれぞれ表現することで１つのシンボルに対して２つの意味を含めることが可能です。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Single-Mothers.png" width="450" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Single-Mothers.png" width="450" />
 <p>たとえば、エリアごとの家賃相場を色、居住者の平均年収をサイズで表現することで、
 家賃相場と居住者の収入の関連を単一の主題図で可視化することができます。</p>
 <h3 id="もっとも大きい値を発見する">もっとも大きい値を発見する</h3>
@@ -922,7 +936,7 @@ A 党は赤、B 党は青、C 党は黄と色を割り振って、
 値の割合に応じて色をブレンドして１つの色で表現します。</p>
 <p>B 党がもっとも優勢なので、色味としては青が強い色になり、
 各政党が拮抗している場合には色彩の弱い色になります。</p>
-<p><img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Predominance.png" width="450" /></p>
+<img src="http://apps.esrij.com/arcgis-dev/guide/img/visualization/Predominance.png" width="450" />
 <p>以上、６つの方法を紹介してきましたが、
 まずはそれぞれの機能を実際に使ってみて表現を確かめてコツをつかんでみてください。</p>
 

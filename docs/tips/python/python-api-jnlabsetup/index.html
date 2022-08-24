@@ -13,12 +13,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    <title>ArcGIS Developer 開発リソース集</title>
+    <title>ArcGIS Developers 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-26T11:06:57 JST">
-<title>Jupyter Lab を使ってみよう :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2022-08-24T11:25:16 JST">
+<title>Jupyter Lab を使ってみよう :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
       
 	
   
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
   
 
 
@@ -139,10 +139,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
           </a>
         </div>
     </li>
@@ -812,7 +812,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/python/'>ArcGIS API for Python</a> > Jupyter Lab を使ってみよう
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/python/'>ArcGIS API for Python</a> > Jupyter Lab を使ってみよう
 
  
 
@@ -946,7 +946,7 @@ JupyterLab には他にも様々なセルの操作ができるので、いろい
 </div>
 <p>ここからは、実際にコードを試してみましょう。</br>
 以下のセルを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
 
 <span style="color:#75715e"># JupyterLab へ地図を表示する</span>
 gis <span style="color:#f92672">=</span> GIS()
@@ -957,11 +957,11 @@ map
 </div>
 <h3 id="web-マップ-と-web-シーン">Web マップ と Web シーン</h3>
 <p>Web マップ、Web シーン の両方とも、このボタンを使用することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.mapping <span style="color:#f92672">import</span> WebMap
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.mapping <span style="color:#f92672">import</span> WebMap
 webmap_item <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;ab42b088573d4253a22a8b38ee698ccd&#34;</span>)
 webmap <span style="color:#f92672">=</span> WebMap(webmap_item)
 webmap
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.mapping <span style="color:#f92672">import</span> WebScene
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.mapping <span style="color:#f92672">import</span> WebScene
 webscene_item <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;421433baeb8d487b903d4a89df79149b&#34;</span>)
 webscene <span style="color:#f92672">=</span> WebScene(webscene_item)
 webscene
@@ -971,10 +971,10 @@ webscene
 <h4 id="プログラムによるウィンドウの制御">プログラムによるウィンドウの制御</h4>
 <p>ここまではこの機能をマウスで実行しましたが、Pythonを使用して制御することもできます。
 <code>MapView</code> ウィジェットの各インスタンスには、<code>tab_mode</code> プロパティと <code>toggle_window_view（）</code> メソッドがあります。<code>tab_mode</code> を設定すると、地図ウィジェットの新しいウィンドウへの移動方法が変更されます。 この動作を試すには、以下のコードを実行してみてください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 対象の地図を表示する</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 対象の地図を表示する</span>
 map <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>map()
 map
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># コメントをひとつずつオフにして実行し、map で表示している地図の UI ボタンを都度押してみてください。</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># コメントをひとつずつオフにして実行し、map で表示している地図の UI ボタンを都度押してみてください。</span>
 <span style="color:#75715e"># map.tab_mode = &#34;split-bottom&#34;</span>
 <span style="color:#75715e"># map.tab_mode = &#34;split-right&#34;</span>
 <span style="color:#75715e"># map.tab_mode = &#34;auto&#34;</span>
@@ -984,23 +984,23 @@ map
 </div>
 <p>UI ボタンによる新しいウィンドウでの地図表示は、<code>toggle_window_view（）</code> メソッドを使用することでも制御できます。次のコードでは、マップが表示されたらメソッドを使用して新しいウィンドウで表示させます。新しいウィンドウに戻すときも、このメソッドを使用可能です。</br>
 以下のコードを実行してみてください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.widgets <span style="color:#f92672">import</span> MapView
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> arcgis.widgets <span style="color:#f92672">import</span> MapView
 <span style="color:#75715e"># 対象の地図を表示する</span>
 map <span style="color:#f92672">=</span> MapView(gis<span style="color:#f92672">=</span>gis)
 map
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">map<span style="color:#f92672">.</span>toggle_window_view()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">map<span style="color:#f92672">.</span>toggle_window_view()
 </code></pre></div><div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_toggle.gif" width="600px">
 </div>
 <p>タイトル（タブに表示されるテキスト）と <code>tab_mode</code> をメソッドを呼び出すたびに指定することも可能です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 対象の地図を表示する</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 対象の地図を表示する</span>
 map <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>map(mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3D&#34;</span>)
 map
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># このセルを実行して、新しいウィンドウに地図を表示します</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># このセルを実行して、新しいウィンドウに地図を表示します</span>
 map<span style="color:#f92672">.</span>toggle_window_view(title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;My 3D Map&#34;</span>, tab_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;split-top&#34;</span>)
 <span style="color:#75715e"># ウィンドウを元に戻す</span>
 map<span style="color:#f92672">.</span>toggle_window_view()
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
 
 <span style="color:#75715e"># このセルを実行して全てのタブモードの挙動を確認してみてください</span>
 tab_modes <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;auto&#39;</span>, <span style="color:#e6db74">&#39;split-top&#39;</span> <span style="color:#e6db74">&#39;split-bottom&#39;</span>, <span style="color:#e6db74">&#39;split-left&#39;</span>,
@@ -1016,7 +1016,7 @@ tab_modes <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_interval.gif" width="600px">
 </div>
 <p>最後に、3 つ以上の Web シーンを表示すると仮定した表示方法をご紹介します。各マップ ID で構成したリストから、1 度だけ処理を実行し、3 つの　Web シーンを一度にすべて新しいタブに表示します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#このセルの内容を1度で実行する</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#このセルの内容を1度で実行する</span>
 <span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
 <span style="color:#f92672">from</span> arcgis.widgets <span style="color:#f92672">import</span> MapView
 gis <span style="color:#f92672">=</span> GIS()

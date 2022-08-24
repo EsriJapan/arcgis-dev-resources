@@ -13,12 +13,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    <title>ArcGIS Developer 開発リソース集</title>
+    <title>ArcGIS Developers 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-13T16:45:42 JST">
-<title>レイアウト（Layout） :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2022-08-24T11:25:16 JST">
+<title>レイアウト（Layout） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
       
 	
   
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
   
 
 
@@ -139,10 +139,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
           </a>
         </div>
     </li>
@@ -816,7 +816,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > レイアウト（Layout）
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > レイアウト（Layout）
 
  
 
@@ -864,7 +864,7 @@ if (!doNotTrack) {
 <p>レイアウトは、レイアウトコンテナにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。</p>
 <p>アプリ コンフィグでは、レイアウトは <code>layouts</code> プロパティで定義され、レイアウト コンテナは layout id でレイアウトを参照します。レイアウトコンテナには、異なるサイズモードでのレイアウトを定義する <code>layouts</code> オブジェクトプロパティがあります。Experience Builder では、Large、Medium、Small の各サイズモードをサポートしています。レイアウトが定義されていないサイズモードでは、アプリの設定で定義された <code>mainSizeMode</code> レイアウトが使用されます。</p>
 <p>フレームワークのレイアウト・コンテナの他に、ウィジェットもレイアウト・コンテナになることができます。ウィジェットがレイアウト・コンテナになると，ユーザーは他のウィジェットをドラッグ・アンド・ドロップすることができます．例えば、Map や Card はレイアウト・コンテナ・ウィジェットです。レイアウト・コンテナ・ウィジェットは、<code>manifest.json</code> で <code>layouts</code> プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">LayoutEntry</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-layouts/layout-runtime&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">LayoutEntry</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-layouts/layout-runtime&#39;</span>
 
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">LayoutEntryComponent</span>
   <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">jimuConfig</span>.<span style="color:#a6e22e">isInBuilder</span>) {

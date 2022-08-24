@@ -13,12 +13,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    <title>ArcGIS Developer 開発リソース集</title>
+    <title>ArcGIS Developers 開発リソース集</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-06T16:11:52 JST">
-<title>スタートアップ ガイド（3.x） :: ArcGIS Developer 開発リソース集</title>
+<meta name="revised" content="2022-08-24T11:25:16 JST">
+<title>スタートアップ ガイド（3.x） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
       
 	
   
-    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developer 開発リソース集</a>
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
   
 
 
@@ -139,10 +139,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/">
-            Mapbox GL JS
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
           </a>
         </div>
     </li>
@@ -426,6 +426,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
@@ -458,6 +465,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
             assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
           </a>
         </div>
     </li>
@@ -798,7 +812,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developer 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/javascript/'>ArcGIS API for JavaScript</a> > スタートアップ ガイド（3.x）
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/javascript/'>ArcGIS API for JavaScript</a> > スタートアップ ガイド（3.x）
 
  
 
@@ -865,7 +879,7 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 <p><code>map.html</code> 29 行目にある以下のコードの <code>&lt;Web マップ ID&gt;</code> と記載されている箇所に <a href="../../../guide/create-map/create-webmap">Web マップの作成</a>で作成した Web マップ ID を上書きします。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapDeferred</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arcgisUtils</span>.<span style="color:#a6e22e">createMap</span>(<span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>, <span style="color:#e6db74">&#34;mapDiv&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapDeferred</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arcgisUtils</span>.<span style="color:#a6e22e">createMap</span>(<span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>, <span style="color:#e6db74">&#34;mapDiv&#34;</span>);
 </code></pre></div><p>まだ Web マップを作成しておらず、すぐに試してみたい方は<a href="https://www.arcgis.com/home/item.html?id=d3ffea931f4a455f9c3b6c2102e66eda">サンプル Web マップ</a>をご利用ください。</p>
 <ol>
 <li>Web アプリを実行すると、以下のように地図が表示されます。
@@ -878,7 +892,7 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 <ol>
 <li>ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは <code>require</code> 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/arcgis/utils&#34;</span>, <span style="color:#e6db74">&#34;esri/dijit/Search&#34;</span>, <span style="color:#e6db74">&#34;esri/layers/FeatureLayer&#34;</span>, <span style="color:#e6db74">&#34;esri/InfoTemplate&#34;</span>, <span style="color:#e6db74">&#34;dojo/domReady!&#34;</span>],
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/arcgis/utils&#34;</span>, <span style="color:#e6db74">&#34;esri/dijit/Search&#34;</span>, <span style="color:#e6db74">&#34;esri/layers/FeatureLayer&#34;</span>, <span style="color:#e6db74">&#34;esri/InfoTemplate&#34;</span>, <span style="color:#e6db74">&#34;dojo/domReady!&#34;</span>],
 <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">arcgisUtils</span>, <span style="color:#a6e22e">Search</span>, <span style="color:#a6e22e">FeatureLayer</span>, <span style="color:#a6e22e">InfoTemplate</span>) {
   ...
 });
@@ -896,12 +910,12 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 <ol>
 <li>検索ウィジェット用の DOM 要素を作成します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;searchDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;searchDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>ここで指定した DIV の ID は検索ウィジェットを作成する際に、JavaScript 側で使用します。</p>
 <ol>
 <li>検索ウィジェットの表示位置を CSS で記述します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#searchDiv {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#searchDiv {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
   <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
   <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">2</span>;
@@ -911,7 +925,7 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 </code></pre></div><ol>
 <li><code>mapDeffered.then</code> の関数内で検索ウィジェット作成のスクリプトを記述します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">mapDeferred</span>.<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">mapDeferred</span>.<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
     <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">map</span>;
     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">search</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Search</span>({
         <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
@@ -926,7 +940,7 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 <ol>
 <li>検索ソースに検索対象とするフィーチャ レイヤーを定義します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sources</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;sources&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sources</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;sources&#34;</span>);
     <span style="color:#a6e22e">sources</span>.<span style="color:#a6e22e">push</span>({
        <span style="color:#a6e22e">featureLayer</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>(<span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/tokyo_23/FeatureServer/0&#34;</span>), <span style="color:#75715e">// 検索ソースとなるフィーチャ レイヤー
 </span><span style="color:#75715e"></span>       <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;検索キーワードの入力&#34;</span>, <span style="color:#75715e">// プレースホルダー

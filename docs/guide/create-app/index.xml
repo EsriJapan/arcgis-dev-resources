@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>アプリ開発 on ArcGIS Developer 開発リソース集</title>
+    <title>アプリ開発 on ArcGIS Developers 開発リソース集</title>
     <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</link>
-    <description>Recent content in アプリ開発 on ArcGIS Developer 開発リソース集</description>
+    <description>Recent content in アプリ開発 on ArcGIS Developers 開発リソース集</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -40,13 +40,13 @@ HTML の作成と各 JS ライブラリへの参照を追加する Leaflet、Esr
     </item>
     
     <item>
-      <title>Mapbox GL JS</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/</link>
+      <title>MapLibre GL JS</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-mapboxgl/</guid>
-      <description>マップを表示する このチュートリアルでは、Mapbox GL JS と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
-ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、Mapbox GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む Mapbox GL スタイルです。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/</guid>
+      <description>マップを表示する このチュートリアルでは、MapLibre GL JS と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
+ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。
 このチュートリアルでは、ベースマップ レイヤー サービスの地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。
 マップとレイヤーの詳細については、Mapping APIs and servicesのガイドのDisplay maps, scenes, and layersにアクセスしてください。
 前提条件 この機能を使うには、ArcGIS アカウントが必要です。アカウントの作成手順については「開発者アカウントの作成」を参照してください。

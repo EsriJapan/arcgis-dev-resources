@@ -5,7 +5,7 @@ Weight=6
 aliases = ["/deployment/"]
 +++
 
-出典：ArcGIS Developer - Deployment - [Introduction](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/)
+出典：ArcGIS Developers - Deployment - [Introduction](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/)
 
 ArcGIS Platform の[ロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)では、Web アプリケーション、ネイティブ アプリケーション、サービスサイド[アプリケーション](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/)など、さまざまな種類のアプリケーションを構築およびデプロイできます。どのような種類のアプリケーションを構築する場合でも、デプロイの前に確認する必要がある[ガイドライン](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/#deployment-guidelines)と[利用規約](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/)があります。
 

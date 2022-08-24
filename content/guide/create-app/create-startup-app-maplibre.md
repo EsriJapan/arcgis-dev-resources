@@ -1,16 +1,16 @@
 +++
-title = "Mapbox GL JS"
-description = "Mapbox GL JS を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
+title = "MapLibre GL JS"
+description = "MapLibre GL JS を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
 Weight=3
 aliases = ["/create-startup-app-mapboxgl/"]
 +++
 
 # マップを表示する
-このチュートリアルでは、[Mapbox GL JS](https://developers.arcgis.com/mapbox-gl-js/) と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
+このチュートリアルでは、[MapLibre GL JS](https://developers.arcgis.com/maplibre-gl-js/) と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
 
-ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、Mapbox GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む Mapbox GL スタイルです。
+ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。
 
 このチュートリアルでは、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/)の地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。
 
@@ -37,7 +37,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Mapbox GL JS Tutorials: Display a map</title>
+    <title>MapLibre GL JS Tutorials: Display a map</title>
     <style>
       html,
       body,
@@ -59,7 +59,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 ```
 
 ### API の参照
-1. `<head>`タグで、Mapbox GL JS CSS および JS ライブラリへの参照を追加します。
+1. `<head>`タグで、MapLibre GL JS CSS および JS ライブラリへの参照を追加します。
 
 ```HTML
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Mapbox GL JS Tutorials: Display a map</title>
+    <title>MapLibre GL JS Tutorials: Display a map</title>
     <style>
       html,
       body,
@@ -81,10 +81,9 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         color: #323232;
       }
     </style>
-    <!-- mapbox gl js のライブラリと css ファイルを指定 -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-
+    <!-- maplibre gl js のライブラリと css ファイルを指定 -->
+    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
   </head>
   <body>
     <div id="map"></div>
@@ -103,9 +102,9 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 
 ### マップの作成
 
-[Map](https://docs.mapbox.com/mapbox-gl-js/api/map/) クラスを使用して、指定したベースマップを使用してマップを追加します。
-[Map](https://docs.mapbox.com/mapbox-gl-js/api/map/) クラスは、map id を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
-詳細については、Mapbox GL JS の[ドキュメント](https://docs.mapbox.com/mapbox-gl-js/api/map/)を参照してください。
+[Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) クラスを使用して、指定したベースマップを使用してマップを追加します。
+[Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) クラスは、map の HTML 要素 を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
+詳細については、MapLibre GL JS の[ドキュメント](https://maplibre.org/maplibre-gl-js-docs/api/map/)を参照してください。
 
 1. `<body>`タグ内に`<script>`タグを追加します。
 
@@ -115,7 +114,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Mapbox GL JS Tutorials: Display a map</title>
+    <title>MapLibre GL JS Tutorials: Display a map</title>
     <style>
       html,
       body,
@@ -129,10 +128,9 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         color: #323232;
       }
     </style>
-    <!-- mapbox gl js のライブラリと css ファイルを指定 -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-
+    <!-- maplibre gl js のライブラリと css ファイルを指定 -->
+    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -148,7 +146,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 </html>
 ```
 
-2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [mapboxgl.accessToken](https://docs.mapbox.com/mapbox-gl-js/api/map/) を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。
+2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [maplibre.accessToken](https://maplibre.org/maplibre-gl-js-docs/api/map/) を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。
 
 ```HTML
 <!DOCTYPE html>
@@ -156,7 +154,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Mapbox GL JS Tutorials: Display a map</title>
+    <title>MapLibre GL JS Tutorials: Display a map</title>
     <style>
       html,
       body,
@@ -170,11 +168,9 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         color: #323232;
       }
     </style>
-    <!-- mapbox gl js のライブラリと css ファイルを指定 -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-
-
+    <!-- maplibre gl js のライブラリと css ファイルを指定 -->
+    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -194,7 +190,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 </html>
 ```
 
-3. 表示と動作を制御するオプションを使用して [Map](https://docs.mapbox.com/mapbox-gl-js/api/map/) を作成します。[container](https://docs.mapbox.com/mapbox-gl-js/api/map/) プロパティを、作成した div の map id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。
+3. 表示と動作を制御するオプションを使用して [Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) を作成します。[container](https://maplibre.org/maplibre-gl-js-docs/api/map/) プロパティを、作成した div の id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。
 
 ```HTML
 <!DOCTYPE html>
@@ -202,7 +198,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Mapbox GL JS Tutorials: Display a map</title>
+    <title>MapLibre GL JS Tutorials: Display a map</title>
     <style>
       html,
       body,
@@ -216,10 +212,9 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         color: #323232;
       }
     </style>
-    <!-- mapbox gl js のライブラリと css ファイルを指定 -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-
+    <!-- maplibre gl js のライブラリと css ファイルを指定 -->
+    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -232,7 +227,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         // ベースマップの指定
         const basemapEnum = "ArcGIS:Topographic";
       
-        const map = new mapboxgl.Map({
+        const map = new maplibregl.Map({
             container: "map", // div 要素内の id を指定
             style: `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${basemapEnum}?type=style&token=${apiKey}`,
             zoom: 12, // マップ初期表示時点でのズームレベル

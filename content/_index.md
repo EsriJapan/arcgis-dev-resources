@@ -1,5 +1,5 @@
 +++
-title = "ArcGIS Developer 開発リソース集"
+title = "ArcGIS Developers 開発リソース集"
 description = ""
 +++
 
@@ -7,13 +7,12 @@ description = ""
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
-# ArcGIS Developer 開発リソース集
+# ArcGIS Developers 開発リソース集
 本サイトは、ArcGIS の API / SDK を利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS Platform を利用した開発、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術 Tips 集を紹介しています。
 
 **[ArcGIS Platform](https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview)** は、ロケーションサービスを提供する PaaS（Platform as a Service）です。サービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-platform/)をご覧ください。
 
-**[ArcGIS Developer](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
-
+**[ArcGIS Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-for-developers/)をご覧ください。
 
 {{% panel theme="success" header="目次" %}}
 

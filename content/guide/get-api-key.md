@@ -16,7 +16,7 @@ aliases = ["/get-api-key/"]
 
 以下の手順で新規の API キーを取得します。API キーの取得中に問題が発生した場合は、ESRI ジャパンまで[お問い合わせ](http://www.esrij.com/contact/)ください。
 
-1. [ArcGIS Developer](https://developers.arcgis.com/) のサイト（英語）にアクセスし、ご自身のアカウントでサインインをします。
+1. [ArcGIS Developers](https://developers.arcgis.com/) のサイト（英語）にアクセスし、ご自身のアカウントでサインインをします。
 
 2. サインインしたアカウントの専用ページに遷移したら、ヘッダー部にある [API keys] タブまたは、メイン コンテンツ内の API keys にある [Manage] をクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/top_page.png" width="1200px">
