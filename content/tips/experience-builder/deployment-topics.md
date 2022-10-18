@@ -1,7 +1,7 @@
 +++
 title = "デプロイ"
 description = "ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。"
-weight = 12
+weight = 13
 aliases = ["/experience/deployment-topics/"]
 +++
 

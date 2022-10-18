@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-10-18T11:23:04 JST">
-<title>デプロイ :: ArcGIS Developers 開発リソース集</title>
+<title>デプロイ パターン :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。">
+<meta name="description" content="ArcGIS Experience Builder (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -477,14 +477,14 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
             デプロイ
@@ -819,7 +819,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > デプロイ
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > デプロイ パターン
 
  
 
@@ -836,8 +836,28 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#experience-のダウンロード">Experience のダウンロード</a></li>
-    <li><a href="#experience-のデプロイ">Experience のデプロイ</a></li>
+    <li><a href="#トピック">トピック</a></li>
+    <li><a href="#概要">概要</a>
+      <ul>
+        <li><a href="#web-アプリケーションをデプロイ">Web アプリケーションをデプロイ</a></li>
+        <li><a href="#全体像">全体像</a></li>
+        <li><a href="#必要なコンポーネント">必要なコンポーネント</a></li>
+        <li><a href="#手順概要">手順概要</a></li>
+      </ul>
+    </li>
+    <li><a href="#ウィジェットをデプロイ">ウィジェットをデプロイ</a>
+      <ul>
+        <li><a href="#必要なコンポーネント-1">必要なコンポーネント</a></li>
+        <li><a href="#手順概要-1">手順概要</a></li>
+      </ul>
+    </li>
+    <li><a href="#テンプレートをデプロイ">テンプレートをデプロイ</a>
+      <ul>
+        <li><a href="#必要なコンポーネント-2">必要なコンポーネント</a></li>
+        <li><a href="#手順概要-2">手順概要</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-つのデプロイ-パターンの総括表">3 つのデプロイ パターンの総括表</a></li>
   </ul>
 </nav>
         </div>
@@ -849,7 +869,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>デプロイ</h1>
+    <h1>デプロイ パターン</h1>
   
 
 
@@ -857,25 +877,220 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前に<a href="https://developers.arcgis.com/experience-builder/guide/requirements">システム要件</a>を参照してください。</p>
-<h2 id="experience-のダウンロード">Experience のダウンロード</h2>
-<p>Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように <code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。</p>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" /></p>
-<h2 id="experience-のデプロイ">Experience のデプロイ</h2>
-<p>Experience を Web サーバーにデプロイするには、次の手順を実行します。</p>
+    <h2 id="トピック">トピック</h2>
+<ul>
+<li><a href="#%E6%A6%82%E8%A6%81">概要</a></li>
+<li><a href="#web-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Web アプリケーションをデプロイ</a></li>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ウィジェットをデプロイ</a></li>
+<li><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">テンプレートをデプロイ</a></li>
+</ul>
+<h2 id="概要">概要</h2>
+<p>ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
+<hr>
+<h3 id="web-アプリケーションをデプロイ">Web アプリケーションをデプロイ</h3>
+<h3 id="全体像">全体像</h3>
+<ul>
+<li>Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。
+<img src="https://cloud.screenpresso.com/LXACc/2022-09-27_17h54_17.png" alt="ExB"></li>
+</ul>
+<h3 id="必要なコンポーネント">必要なコンポーネント</h3>
+<ul>
+<li>開発時
+<ul>
+<li>Node.js</li>
+<li>Developer Edition</li>
+</ul>
+</li>
+<li>運用時
+<ul>
+<li>ArcGIS Enterprise または ArcGIS Online</li>
+<li>Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)</li>
+</ul>
+</li>
+</ul>
+<h3 id="手順概要">手順概要</h3>
+<p>以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。</p>
 <ol>
-<li>ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。</li>
-<li>アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。</li>
-<li>アプリを追加して登録します。詳細については、<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B">アプリの追加</a>と<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#REG_APP">アプリの登録</a>を参照してください。</li>
-<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある <code>config.json</code> ファイルを開きます。</li>
-<li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
-<li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度にファイルを保存します。</li>
+<li>カスタム ウィジェットを含む Web アプリケーションを作成
+<ul>
+<li>Developer Edition を用いたウィジェットの開発や Web アプリケーションの作成には Node.js が必要です。</li>
+<li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/">インストールガイド</a>をご覧下さい。</li>
+<li>カスタム ウィジェットを開発する際は、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>をご覧ください。</li>
+</ul>
+</li>
+<li>作成した Web アプリケーションを自身で用意した Web サーバーに配置
+<ul>
+<li>ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。</li>
+<li>※ ArcGIS Online を使用してホストすることはできません。</li>
+<li>詳しくは、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/">アプリケーションのデプロイ</a>をご覧ください。</li>
+</ul>
+</li>
+<li>ユーザーが作成された Web アプリケーションを利用
+<ul>
+<li>ユーザーが Web アプリケーションにアクセスして利用します。</li>
+<li>ArcGIS Enterprise や ArcGIS Online のポータルにアイテムとして表示させたい場合はアプリの URL をアイテムに登録する必要があります。
+<ul>
+<li>詳細は「<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B">アプリの追加</a>」及びその後の「<a href="https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#REG_APP">アプリの登録</a>」をご覧ください。</li>
+</ul>
+</li>
+<li>内部的には、アプリは ArcGIS Online もしくは ArcGIS Enterprise の Web マップを参照してアプリ上に地図を表示します。</li>
+</ul>
+</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-    <span style="color:#f92672">&#34;portalUrl&#34;</span>: <span style="color:#e6db74">&#34;https://exb.maps.arcgis.com&#34;</span>,
-    <span style="color:#f92672">&#34;clientId&#34;</span>: <span style="color:#e6db74">&#34;EXBAPPsag0XSRtpj&#34;</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-</code></pre></div><p>server/app name/index.html にアクセスすることでアプリを利用することができます。</p>
+<hr>
+<h2 id="ウィジェットをデプロイ">ウィジェットをデプロイ</h2>
+<ul>
+<li>ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に Web アプリケーションを作成することを想定しているものの、デフォルトの Experience Builder のウィジェットには無い機能を拡張したい場合に活用できます。
+<img src="https://cloud.screenpresso.com/8EbIf/2022-09-28_11h19_13.png" alt="widget"></li>
+</ul>
+<h3 id="必要なコンポーネント-1">必要なコンポーネント</h3>
+<ul>
+<li>開発時
+<ul>
+<li>Node.js</li>
+<li>Developer Edition</li>
+</ul>
+</li>
+<li>運用時
+<ul>
+<li>ArcGIS Enterprise</li>
+<li>Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)</li>
+</ul>
+</li>
+</ul>
+<h3 id="手順概要-1">手順概要</h3>
+<p>以下はカスタムウィジェットの作成から、デプロイ、実際の運用までの流れの概要です。</p>
+<ol>
+<li>カスタムウィジェットを作成
+<ul>
+<li>Developer Edition を用いたウィジェットの作成には Node.jsが必要です。</li>
+<li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/">インストールガイド</a>をご覧下さい。</li>
+<li>カスタムウィジェット開発の詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>をご覧下さい。</li>
+</ul>
+</li>
+<li>作成したカスタムウィジェットを自身で用意した Web サーバーに配置
+<ul>
+<li>ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。</li>
+<li>※ ウィジェットを配置するサーバーが自己署名証明書を使用している場合、Portal for ArcGIS に証明書をインポートする必要があります。詳しい方法は<a href="https://enterprise.arcgis.com/ja/portal/latest/administer/windows/import-a-certificate-into-the-portal.htm">ポータルへの証明書のインポート</a>をご覧ください。</li>
+<li>Web サーバーに配置後、ArcGIS Enterprise に組み込まれている Experience Builder にカスタムウィジェットを追加します。
+<ul>
+<li>詳しくは、<a href="https://doc.arcgis.com/ja/experience-builder/11.0/configure-widgets/add-custom-widgets.htm">カスタム ウィジェットの追加</a>をご覧ください。</li>
+<li>※ ArcGIS Online に追加することはできません。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ウィジェットを使った Web アプリケーションの作成・利用
+<ul>
+<li>ユーザーが ArcGIS Enterprise に組み込まれている Experience Builder を利用してカスタムウィジェットを使用した Web アプリケーションを作成・利用します。</li>
+<li>内部的には、アプリは Web サーバーでホストされているカスタムウィジェットを参照して動作します。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="テンプレートをデプロイ">テンプレートをデプロイ</h2>
+<ul>
+<li>Esri が用意している <a href="https://enterprise.arcgis.com/en/portal/latest/use/application-templates.htm?lg=en">Web アプリケーションのテンプレート</a>とは別に、Developer Edition で作成した Web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで Web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。</li>
+<li>ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
+<img src="https://cloud.screenpresso.com/TCQhc/2022-09-29_15h42_10.png" alt="template"></li>
+</ul>
+<h3 id="必要なコンポーネント-2">必要なコンポーネント</h3>
+<ul>
+<li>開発時
+<ul>
+<li>Node.js</li>
+<li>Developer Edition</li>
+</ul>
+</li>
+<li>運用時
+<ul>
+<li>Node.js</li>
+<li>Developer Edition</li>
+<li>ArcGIS Online または ArcGIS Enterprise</li>
+</ul>
+</li>
+</ul>
+<h3 id="手順概要-2">手順概要</h3>
+<p>以下はテンプレートの作成から、デプロイ、実際の運用までの流れの概要です。</p>
+<ol>
+<li>
+<p>カスタムウィジェットを含む Web アプリケーションを作成</p>
+<ul>
+<li>Developer Edition を用いたウィジェットの作成には Node.jsが必要です。</li>
+<li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/">インストールガイド</a>をご覧下さい。</li>
+<li>カスタム ウィジェットを開発する際は、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>をご覧ください。</li>
+</ul>
+</li>
+<li>
+<p>Web アプリケーションをテンプレートとして保存 (登録)</p>
+<ul>
+<li>Developer Edition で作成した Web アプリケーションを組織にエクスポートします。
+<ul>
+<li>Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートの生成] をクリックします。
+<img src="https://cloud.screenpresso.com/9iaab/2022-09-29_16h36_34.png" alt="export_as_template"></li>
+<li>マイ コンテンツに戻り、組織に共有します。
+<img src="https://cloud.screenpresso.com/YkWXe/2022-09-29_17h02_19.png" alt="config_params"></li>
+<li>テンプレートは、組織が設定するテンプレート グループに共有される必要があります。管理権限を持っていない場合、権限が無いことと別途マニュアルで追加する必要がある旨がダイアログで表示されます。</li>
+<li>組織の管理者権限がある場合、以下の手順でテンプレート グループを設定できます。
+<ul>
+<li>[組織] → [設定] → [マップ] の順にクリック
+<img src="https://cloud.screenpresso.com/c9m3e/2022-09-29_16h41_27.png" alt="org_setting"></li>
+<li>[テンプレート] の中でテンプレートを共有するグループを指定
+<img src="https://cloud.screenpresso.com/MChVe/2022-09-29_16h43_56.png" alt="set_template_gr">
+<ul>
+<li>[Esri のデフォルトの構成可能なアプリをグループで共有します] をクリックすると、Esri がデフォルトで用意しているテンプレートも通常どおり使用できます。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>テンプレートを使った Web アプリケーションの作成・利用</p>
+<ul>
+<li>ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから Web アプリケーションを作成・利用します。</li>
+<li>内部的には、アプリは Developer Edition のテンプレートを参照して動作します。</li>
+</ul>
+<p><br>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</br></p>
+</li>
+</ol>
+<h2 id="3-つのデプロイ-パターンの総括表">3 つのデプロイ パターンの総括表</h2>
+<table>
+<thead>
+<tr>
+<th>パターン</th>
+<th>開発時に必要なコンポーネント</th>
+<th>運用時に必要なコンポーネント</th>
+<th>ArcGIS Online での利用可否</th>
+<th>ArcGIS Enterprise での利用可否</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#web-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Web アプリケーションをデプロイ</a></td>
+<td>Node.js、Developer Edition</td>
+<td>Web サーバー、ArcGIS Online もしくは ArcGIS Enterprise</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ウィジェットをデプロイ</a></td>
+<td>Node.js、Developer Edition</td>
+<td>Web サーバー、 ArcGIS Enterprise</td>
+<td>×</td>
+<td>〇</td>
+</tr>
+<tr>
+<td><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">テンプレートをデプロイ</a></td>
+<td>Node.js、Developer Edition</td>
+<td>Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise</td>
+<td>〇</td>
+<td>〇</td>
+</tr>
+</tbody>
+</table>
 
 
     
@@ -887,8 +1102,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" title="デプロイ パターン"> <i class="fa fa-chevron-left"></i><label>デプロイ パターン</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/tutorials/" title="チュートリアル" style="margin-right: 0px;"><label>チュートリアル</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" title="コードリンティング"> <i class="fa fa-chevron-left"></i><label>コードリンティング</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" title="デプロイ" style="margin-right: 0px;"><label>デプロイ</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

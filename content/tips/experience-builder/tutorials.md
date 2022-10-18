@@ -1,7 +1,7 @@
 +++
 title = "チュートリアル"
 description = "ArcGIS Experience Builder (Developer Edition) のチュートリアルでは、カスタム ウィジェットの作成方法について説明しています。"
-weight = 13
+weight = 14
 aliases = ["/experience/tutorials/"]
 +++
 
