@@ -21,7 +21,7 @@ aliases = ["/create-startup-app-ios/"]
 
 1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)を満たしていることを確認します。
-3. ArcGIS Runtime SDK for iOS が[インストール](../tips/ios/install-ios-100.x/)されていること
+3. ArcGIS Runtime SDK for iOS が[インストール](../../../tips/ios/install-ios-100.x/)されていること
 
 ## ステップ
 

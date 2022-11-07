@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-11-07T09:57:56 JST">
+<meta name="revised" content="2022-11-07T14:12:05 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -992,7 +992,7 @@ if (!doNotTrack) {
 <p>注：${HOME}/Library フォルダは、デフォルトでは非表示になっています。ターミナル アプリケーションで chflags nohidden ~/Library/ コマンドを実行することで表示できます。</p>
 <p>インストールエラーが発生した場合は、/var/log/install.log の install.log ファイルで詳細を確認してください。失敗の一般的な理由は、ダウンロード中にインストール パッケージが破損することです。パッケージをもう一度ダウンロードしてみてください。まれに、インストーラーがインストール中にユーザー名/パスワードを要求する場合があります。これが発生すると、インストーラーは正常に終了しますが、SDK はホームディレクトリではなくルートディレクトリにインストールされます。この問題を解決するには、SDKs フォルダをルート /Library ディレクトリからユーザープロファイルの $HOME/Library ディレクトリに手動でコピーします。</p>
 <h2 id="プロジェクトを構成する">プロジェクトを構成する</h2>
-<p>この手順は、SDK を手動でインストールした場合のみ必要です。CocoaPods を使用してインストールしている場合は、この手順は不要です。
+<p>この手順は、SDK を手動でインストールした場合のみ必要です。Swift Package Manager または CocoaPods を使用してインストールしている場合は、この手順は不要です。
 SDK を手動でインストールした後に、API を使用するために各 Xcode プロジェクトを構成します。</p>
 <h3 id="プロジェクトに-arcgis-フレームワークを追加する">プロジェクトに ArcGIS フレームワークを追加する</h3>
 <ol>
