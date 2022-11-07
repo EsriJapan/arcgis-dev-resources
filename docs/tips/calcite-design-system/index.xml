@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calcite Design System on ArcGIS Developers 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/</link>
+    <description>Recent content in Calcite Design System on ArcGIS Developers 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>はじめに</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/get-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/get-started/</guid>
+      <description>出典：Calcite Design System (Beta) - Get Started
+はじめに Calcite Components は、Webアプリケーションを構築するための、柔軟でフレームワークに依存しないWebコンポーネントの豊富なライブラリです。コンポーネントの説明、例、およびプロパティ、スロット、スタイル、テーマを含む API リファレンスは、コンポーネント ドキュメントをご覧ください。Calcite Components を使い始めるには、以下の手順をご参照ください。
+まず、Calcite Components を使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
+作成方法は、開発者アカウントの作成をご覧ください。
+次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。
+CDNで利用する Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.0.0-beta.95/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.0.0-beta.95/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+NPM パッケージで利用する Calcite Components は、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
+npm install @esri/calcite-components ビルドの選択 Calcite Componentsが提供する2つのビルドから1つを選択します。
+カスタム要素 フロントエンド フレームワークを活用する場合は、カスタム要素 の構築を推奨します。このビルドを使用するには、Calcite Components のアセットへのパスを設定する必要があります。この後のステップで説明するローカル アセットと、CDN でホストされているアセットのどちらかを使用することができます。</description>
+    </item>
+    
+    <item>
+      <title>Web コンセプト</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/web-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/web-concepts/</guid>
+      <description>出典：Calcite Design System (Beta) - Web concepts
+Web コンセプト Calcite Components は、Stencil.js を使用して構築された、再利用可能な Web コンポーネントのライブラリです。Calcite Components を使用すると、ブランド力のある、軽量でアクセスしやすい Web アプリケーションをすばやく構築できます。
+Web コンポーネントはブラウザのネイティブ規格であり、Calcite Components で開発するために必要な技術的概念の多くは、このライブラリに固有のものではありません。このページでは、効果的な開発を行うために必要な、Web の主要コンセプトを紹介しています。さらに詳しい情報について、このページにあるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントのソースで見つけることができます。
+ カスタム要素 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリまたは Web フレームワークを使用して、モダン ブラウザ全体で動作します。カスタム要素は機能をカプセル化するため、他のコードとのコンフリクトを防ぐことができます。
+Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。
+&amp;lt;calcite-tip heading=&amp;#34;Platypus&amp;#34;&amp;gt;&amp;lt;/calcite-tip&amp;gt;  スロット スロットはプレースホルダー要素であり、スロットの名前を参照することで独自のコンテンツを追加することができます。スロットは一般的な Web コンポーネントの概念であり、あなたもすでに使用している可能性があります。例えば、次のような HTML を考えてみましょう。
+&amp;lt;select&amp;gt; &amp;lt;option value=&amp;#34;platypus&amp;#34;&amp;gt;Platypus&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;sloth&amp;#34;&amp;gt;Sloth&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;armadillo&amp;#34;&amp;gt;Nine-banded armadillo&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; Web コンポーネントの用語で、option 要素は select のデフォルト スロットに配置されます。また、「Platypus」、「Sloth」、「Nine-banded」のテキストは、それぞれの option のデフォルト スロットに配置されます。</description>
+    </item>
+    
+    <item>
+      <title>アクセシビリティ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/accessibility/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/accessibility/</guid>
+      <description>出典：Calcite Design System (Beta) - Accessibility
+アクセシビリティ このページは、アクセシビリティのガイダンスを提供するものであり、すべての Web アクセシビリティの状況を網羅するものではありません。Web アクセシビリティの基準を満たし、ベストプラクティスが実施されていることを確認するために、他のリソースやアクセシビリティの専門家に相談することをお勧めします。
+Calcite Components は W3C Accessibility Standards を活用して、作成するアプリケーションやエクスペリエンスが幅広い利用者に使用されることを保証します。
+Calcite はアクセシビリティを考慮して作成されていますが、多様な利用者が構築したソリューションを操作、理解、使用できるようにするための追加の手順があります。
+個人のためのデザイン W3C アクセシビリティ標準の成果物は Web Content Accessibility Guidelines (WCAG) です。これは、Web エクスペリエンスが幅広い利用者によって利用されることを保証するために設けられた、国際的に合意された一連のガイドラインです。個人向けに設計する際の考慮事項には、次のようなものがあります。
+自閉症スペクトラムの場合 ✓ 簡単な文と箇条書きを使用してください。x テキストの壁を作成しないでください。スクリーン リーダーを使用している場合 ✓ 説明的なリンクと見出しを書いてください。x あいまいなリンクや見出しを書くことは避けてください。視力が低下している場合 ✓ 色、形、テキストを組み合わせて使用​​してください。x 意味やステータスを伝えるために色だけを使用することは避けてください。身体的、運動的に困難がある場合 ✓ クリックできるアクションを大きくしてください。x 精度を要求することは避けてください。聴覚障害者または難聴者の場合 ✓ 映像には字幕をつけるか、トランスクリプトを提供してください。x 音声や動画形式のコンテンツのみを配置することは避けてください。ディスレクシアを持つ場合 ✓ リマインダーとプロンプトを提供します。x 過去の行動や場所を無理に思い出させるようなことは避けてください。コンテンツ ページの読み順は、論理的な構造になっている必要があります。読む順番を確認するには、Tab キーで前に進み、Shift キーと Tab キーで後ろに戻るという focus commands を実行します。特にフォームや検索ダイアログなどでは、視覚的に表示されているのと同じ流れになるようにする必要があります。</description>
+    </item>
+    
+    <item>
+      <title>ローカライゼーション</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/localization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/localization/</guid>
+      <description>出典：Calcite Design System (Beta) - Localization
+ローカライゼーション 言語タグとロケールは、Web の国際化のための基本的な構成要素の一つです。Calcite Components は、多くのロケールと右横書き言語（RTL）を双方向でサポートしています。
+ ロケール Calcite Components は、lang 属性で設定されたアプリケーションで定義されたデフォルトの言語を自動的に使用します。
+&amp;lt;!-- HTML lang attribute to set the locale to English --&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; Input Date Picker などの一部のコンポーネントは、任意の言語や国のフォーマットに合わせて特定のローカライズを含んでいます。
+&amp;lt;!-- Sets the component&amp;#39;s locale to English --&amp;gt; &amp;lt;!-- Dates are formatted MM/DD/YYYY --&amp;gt; &amp;lt;calcite-input-date-picker locale=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;/calcite-input-date-picker&amp;gt; &amp;lt;!-- Sets the component&amp;#39;s locale to English - Canada --&amp;gt; &amp;lt;!-- Dates are formatted YYYY-MM-DD --&amp;gt; &amp;lt;calcite-input-date-picker locale=&amp;#34;en-CA&amp;#34;&amp;gt;&amp;lt;/calcite-input-date-picker&amp;gt; &amp;lt;!-- Sets the component&amp;#39;s locale to English - UK --&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>フレームワークの統合</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/framework/</guid>
+      <description>出典：Calcite Design System (Beta) - Framework integration
+Calcite Components は、JavaScript フレームワークやビルドツールと簡単に統合でき、始めるのに役立つサンプルが提供されています。ここでは、フレームワークごとの解説をしています。特定のフレームワークやビルドツールを選んで使った経験がない方は、npm を使って始めてみましょう。
+TypeScript Stencil はすべてのコンポーネントに対して、完全な型付けを提供します。TypeScript がこれらのコンポーネントを認識できるようにするには、ライブラリをインポートするだけです。
+import &amp;#34;@esri/calcite-components&amp;#34;; これにより、コンポーネント名/プロパティのオートコンプリート、および追加の HTML 要素タイプが提供されます。
+// 作成された要素は、自動で正しい型を持つようになります。 const loader = document.createElement(&amp;#34;calcite-loader&amp;#34;); document.body.appendChild(loader); loader.active = true; // また、生成された型を使って自分で要素を持たせることもできます。 // 型名は常に HTML{CamelCaseComponentName}Element としてフォーマットされます。 const loader = document.querySelector(&amp;#34;.my-loader-element&amp;#34;) as HTMLCalciteLoaderElement; loader.active = true; Calcite Components React Calcite Components React は、Web コンポーネントをラップする React コンポーネントのセットです。React は合成イベントシステムを使用しているため、Web コンポーネントから発行されるカスタムイベントは React の JSX では動作しません。例えば、calcite-slider が変化したときに値を更新するには、標準の Web コンポーネントを使用して、要素にrefを保存し、イベントリスナーを追加する必要があります。
+const sliderEl = useRef(null); const [sliderValue, setSliderValue] = useState(50); useEffect(() =&amp;gt; { sliderEl.</description>
+    </item>
+    
+    <item>
+      <title>チュートリアル</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</guid>
+      <description>Calcite Design System のチュートリアルでは、Calcite Components の使用方法について説明しています。
+各チュートリアルの完了には、約 15 ～ 40 分かかります。
+  地図アプリの作成
+Calcite Components を使ってインタラクティブなマップ アプリケーションを作成する方法を紹介しています。
+  テーマ スイッチャーの作成（英語）
+Calcite Components と ArcGIS API for JavaScript をライトとダークの間で切り替えるテーマ スイッチャーを構築する方法を紹介しています。
+  コア コンセプトの適用（英語）
+インタラクティブなアプリケーションを作りながら、Calcite Components の基本的な概念を学ぶことができます。
+  最近の地震をフィルタリング（英語）
+Calcite Design System でユーザー インターフェース(UI)を作成します。
+  </description>
+    </item>
+    
+  </channel>
+</rss>
