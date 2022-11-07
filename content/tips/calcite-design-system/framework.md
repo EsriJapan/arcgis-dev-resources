@@ -1,6 +1,6 @@
 +++
 title = "フレームワークの統合"
-description = "Calcite Components は、JavaScriptフレームワークやビルドツールと簡単に統合でき、サンプルレポが提供されているので、使い始めるのに便利です。"
+description = "Calcite Components は、JavaScriptフレームワークやビルドツールと簡単に統合でき、サンプル集が提供されているので、使い始めるのに便利です。"
 Weight=5
 aliases = ["/frameworks/"]
 +++
