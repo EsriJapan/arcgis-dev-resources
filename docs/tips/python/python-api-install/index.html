@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-11-10T15:09:42 JST">
+<meta name="revised" content="2022-11-15T19:52:39 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1026,7 +1026,8 @@ ArcGIS Pro をインストールすると、デフォルトで &ldquo;arcgispro-
 <p>ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
 <code>conda upgrade -c esri --no-pin arcgis</code> のうち、<code>--no-pin</code> がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
 ただし、デフォルトの設定が変更されるわけではないため、アップグレード後に他のパッケージをインストールしようとすると、設定された上限のバージョンにダウングレードするように conda で計画されます。</br>
-その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し <code>arcgis</code> パッケージをアップグレードしてください。</p>
+その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し <code>arcgis</code> パッケージをアップグレードしてください。</br>
+上記のコマンドで最新バージョンにアップグレードされない場合は <code>conda install -c esri arcgis==2.x.x</code> コマンドで最新バージョンをインストールしてください。</p>
 <!-- > *以下の操作はデフォルトで想定されているパッケージ管理の制御を変更するため、必ず事前に環境を複製しておく等、適切なバックアップの処置をしてください。*</br>
 > *また、以下操作の実行による不具合等はサポートの対象としかねますので、ご承知おきください。*</br>
 > 永続的に設定を変更するには conda 環境の中の pinned ファイルを書き換える必要があります。</br>
