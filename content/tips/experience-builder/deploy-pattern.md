@@ -19,7 +19,7 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
 
 ### 全体像
 * Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。
-![ExB](https://cloud.screenpresso.com/LXACc/2022-09-27_17h54_17.png)
+![ExB](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern1.png)
 
 ### 必要なコンポーネント
 * 開発時
@@ -49,7 +49,7 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
 ---
 ## ウィジェットをデプロイ
 * ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に Web アプリケーションを作成することを想定しているものの、デフォルトの Experience Builder のウィジェットには無い機能を拡張したい場合に活用できます。
-![widget](https://cloud.screenpresso.com/8EbIf/2022-09-28_11h19_13.png)
+![widget](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern2.png)
   
 ### 必要なコンポーネント
 * 開発時
@@ -80,7 +80,7 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
 ## テンプレートをデプロイ
 * Esri が用意している [Web アプリケーションのテンプレート](https://enterprise.arcgis.com/en/portal/latest/use/application-templates.htm?lg=en)とは別に、Developer Edition で作成した Web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで Web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。
 * ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
-  ![template](https://cloud.screenpresso.com/TCQhc/2022-09-29_15h42_10.png)
+  ![template](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern3.png)
 
 ### 必要なコンポーネント
 * 開発時
@@ -101,15 +101,15 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
 1. Web アプリケーションをテンプレートとして保存 (登録)
     * Developer Edition で作成した Web アプリケーションを組織にエクスポートします。
       * Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートの生成] をクリックします。
-        ![export_as_template](https://cloud.screenpresso.com/9iaab/2022-09-29_16h36_34.png)
+        ![export_as_template](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern4.png)
       * マイ コンテンツに戻り、組織に共有します。
-        ![config_params](https://cloud.screenpresso.com/YkWXe/2022-09-29_17h02_19.png)
+        ![config_params](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern5.png)
       * テンプレートは、組織が設定するテンプレート グループに共有される必要があります。管理権限を持っていない場合、権限が無いことと別途マニュアルで追加する必要がある旨がダイアログで表示されます。
       * 組織の管理者権限がある場合、以下の手順でテンプレート グループを設定できます。
         * [組織] → [設定] → [マップ] の順にクリック
-          ![org_setting](https://cloud.screenpresso.com/c9m3e/2022-09-29_16h41_27.png)
+          ![org_setting](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern6.png)
         * [テンプレート] の中でテンプレートを共有するグループを指定
-          ![set_template_gr](https://cloud.screenpresso.com/MChVe/2022-09-29_16h43_56.png)
+          ![set_template_gr](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern7.png)
           * [Esri のデフォルトの構成可能なアプリをグループで共有します] をクリックすると、Esri がデフォルトで用意しているテンプレートも通常どおり使用できます。
 1. テンプレートを使った Web アプリケーションの作成・利用
     * ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから Web アプリケーションを作成・利用します。
