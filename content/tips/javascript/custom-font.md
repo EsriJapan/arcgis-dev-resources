@@ -5,11 +5,11 @@ weight = 7
 aliases = ["/javascript/custom-font/"]
 +++
 
-ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。
+ArcGIS Maps SDK for JavaScript のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。
 デフォルトでは、pbf フォントは Esri が `https://static.arcgis.com/fonts` でホストしているフォントを使用できます。
 利用可能なフォントの一覧は、Esri の[ガイド](https://developers.arcgis.com/javascript/latest/guide/labeling/index.html#fonts-for-featurelayer%2C-csvlayer%2C-and-streamlayer)で確認できます（"Read more" をクリックしてページを展開してください）。
 
-デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
+デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGIS Maps SDK for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
 
 ※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
 
@@ -61,7 +61,7 @@ IIS を使用する場合は、MIME に .pbf (binary/octet-stream) を登録し�
 
 ## API の設定
 
-1. ArcGIS API for JavaScript で参照するフォント リソースの URL を変更します。
+1. ArcGIS Maps SDK for JavaScript で参照するフォント リソースの URL を変更します。
 フォントの URL の設定は、esri/config クラスの [fontsUrl](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#fontsUrl) プロパティを使用します。
 
 1. マップに表示するフォントを作成します。

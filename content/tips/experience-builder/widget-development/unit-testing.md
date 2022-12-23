@@ -94,7 +94,7 @@ const Widget = wrapWidget(_Widget, {config: {}});
 const {queryByText} = render(<Widget/>)
 ```
 
-### ArcGIS API for JavaScript を使用するモジュールのテスト
+### ArcGIS Maps SDK for JavaScript を使用するモジュールのテスト
 コンポーネントで使用したモジュールをモックする必要があります。loadArcGISJSAPIModule でモジュールをロードした場合は、以下のようにモックを作成します。
 
 ```tsx

@@ -13,7 +13,7 @@
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/learn/github/</guid>
       <description>各 API や SDK のサンプルプログラムに加えて、ハンズオンや開発者セミナーで実施内容を GitHub で共有しています。
-ワークショップ  workshops  過去のウェビナーやセミナー、ハンズオンで使用した資料をまとめています。    ArcGIS API for JavaScript   maps-app-javascript
+ワークショップ  workshops  過去のウェビナーやセミナー、ハンズオンで使用した資料をまとめています。    ArcGIS Maps SDK for JavaScript   maps-app-javascript
  このリポジトリでは、ArcGIS API for JavaScript にて構築された地図アプリをすぐに使用できる Maps App というアプリを提供します。 Maps App をそのまま使うことや、ArcGIS API for JavaScript を使用して拡張することができます。    arcgis-samples-4.0-js
  ArcGIS API 4.x for JavaScript のサンプル集です。Esri Community などで紹介したサンプルなどもございます。    arcgis-samples-js
  ArcGIS API for JavaScript のサンプル集です。    webmap-startup-template-js

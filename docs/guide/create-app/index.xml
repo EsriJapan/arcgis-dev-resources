@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ArcGIS API for JavaScript</title>
+      <title>ArcGIS Maps SDK for JavaScript</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+      <description>マップを表示する このチュートリアルでは ArcGIS Maps SDK for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
@@ -20,7 +20,7 @@
 HTML の作成 HTML ページを定義して、Web ブラウザのウィンドウの幅と高さをフル利用してマップを作成します。
   CodePen ＞ HTML で、HTML と CSS を追加し、viewDiv 要素を持つページを作成します。viewDiv は地図を表示する要素で、その CSS はブラウザの設定をリセットして、ブラウザの幅と高さをフルに利用できるようにしています。
 CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1, maximum-scale=1, user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;ArcGIS API for JavaScript Tutorials: Display a map&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #viewDiv { padding: 0; margin: 0; height: 100%; width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;viewDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   API の参照   &amp;lt;head&amp;gt; タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。</description>
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1, maximum-scale=1, user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;ArcGIS Maps SDK for JavaScript Tutorials: Display a map&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #viewDiv { padding: 0; margin: 0; height: 100%; width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;viewDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   API の参照   &amp;lt;head&amp;gt; タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。</description>
     </item>
     
     <item>

@@ -28,11 +28,11 @@ aliases = ["/data-source/"]
 
 フィーチャーサービスのような最も一般的に使用されるデータ形式をサポートするために、APIにはQueriableDataSourceインターフェイスと抽象クラス AbstractQueriableDataSource があります。このインターフェイスには、url、load、query などのプロパティがあります。ロードとクエリの違いは、ロードはレコードのプロパティとデータソースのステータスを更新し、クエリはレコードのみをクエリして返すことです。
 
-具体的には、Experience Builder で `FeatureLayerDataSource` データソースを定義して、フィーチャレイヤーにアクセスします。データ ソースがスタンドアロンのフィーチャ レイヤから作成された場合、オブジェクトには `layer` プロパティはありません。Webmap/Webscene に含まれるフィーチャ レイヤから作成された場合、オブジェクトには `layer` プロパティがあり、これは ArcGIS API for JavaScript の FeatureLayer オブジェクトです。`FeatureLayerDataSource` の実際のデータは、リモート データベースからのものと、クライアント側のフィーチャのコレクションからのものがあり、どちらもクエリをサポートしています。クライアント側のデータについては、データソースがスタンドアロン フィーチャ レイヤーから作成された場合でも、クエリをサポートするためにレイヤー オブジェクトが作成されます。
+具体的には、Experience Builder で `FeatureLayerDataSource` データソースを定義して、フィーチャレイヤーにアクセスします。データ ソースがスタンドアロンのフィーチャ レイヤから作成された場合、オブジェクトには `layer` プロパティはありません。Webmap/Webscene に含まれるフィーチャ レイヤから作成された場合、オブジェクトには `layer` プロパティがあり、これは ArcGIS Maps SDK for JavaScript の FeatureLayer オブジェクトです。`FeatureLayerDataSource` の実際のデータは、リモート データベースからのものと、クライアント側のフィーチャのコレクションからのものがあり、どちらもクエリをサポートしています。クライアント側のデータについては、データソースがスタンドアロン フィーチャ レイヤーから作成された場合でも、クエリをサポートするためにレイヤー オブジェクトが作成されます。
 
 一般的にデータソースは2つの場所に保存され、データソースオブジェクトは `DataSourceManager` に保存・管理され、データソース情報はredux アプリ ストアに保存されます。`ataSourceComponent` を使う場合、コンポーネントは `DataSourceManager` を呼び出してオンデマンドでデータソースを作成し、コールバック プロップを使ってデータ ソース オブジェクトと`dataSourceInfo` を返します。`dataSourceInfo` では、データソースの `instanceStatus`, `status`, `selectedIds` などを返すことができます。
 
-ArcGIS server サービスの多くは、`MapServiceDataSource`、`FeatureServiceDataSource` など、アクセスしやすいようにデータソースにマッピングされています。 ArcGIS API for JavaScript の `WebMap` と `WebScene` は、jimu-arcgis パッケージ内で `WebMapDataSource` と `WebSceneDataSource` としてラップされています。
+ArcGIS server サービスの多くは、`MapServiceDataSource`、`FeatureServiceDataSource` など、アクセスしやすいようにデータソースにマッピングされています。 ArcGIS Maps SDK for JavaScript の `WebMap` と `WebScene` は、jimu-arcgis パッケージ内で `WebMapDataSource` と `WebSceneDataSource` としてラップされています。
 
 
 ### データ ソース セット（Data Source Set）
@@ -104,7 +104,7 @@ ArcGIS server サービスの多くは、`MapServiceDataSource`、`FeatureServic
 `jimu-arcgis` パッケージでは、データソースとして WebMap/WebScene をラッピングしています。WebMap にアクセスするには `WebMapDataSource` を、WebScene には `WebSceneDataSource` を使用します。これらのデータソースの使用方法については、[MapView サンプル](https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/)をご確認ください。WebMap/WebScene オブジェクトに加えて、これらのオブジェクトに含まれるすべてのレイヤーもデータソースとしてラップされているため、`getChildDataSources` を呼び出してすべてのレイヤーのデータソースを取得することができます。サポートされているレイヤーとサービスは、`SupportedLayerServiceTypes` と `SupportedServiceTypes` で定義されています。
 
 ### FeatureLayer の使用（Use FeatureLayer）
-ワークフローの中には、FeatureLayer を直接操作するような軽量のエクスペリエンスを作成する必要があるものもあります。このような場合、`FeatureLayerDataSource` クラスを使用します。独立したフィーチャーマップを使用するウィジェットは、`layer` プロパティを持たない `FeatureLayerDataSource` オブジェクトを取得しますが、ウェブマップやウェブシーンからフィーチャーマップを使用すると、`layer` プロパティを持つ `FeatureLayerDataSource` オブジェクトが返されます。`Layer` オブジェクトは、ArcGIS API for JavaScript のものです。
+ワークフローの中には、FeatureLayer を直接操作するような軽量のエクスペリエンスを作成する必要があるものもあります。このような場合、`FeatureLayerDataSource` クラスを使用します。独立したフィーチャーマップを使用するウィジェットは、`layer` プロパティを持たない `FeatureLayerDataSource` オブジェクトを取得しますが、ウェブマップやウェブシーンからフィーチャーマップを使用すると、`layer` プロパティを持つ `FeatureLayerDataSource` オブジェクトが返されます。`Layer` オブジェクトは、ArcGIS Maps SDK for JavaScript のものです。
 
 ```tsx
  const getLayerObject = (ds: FeatureLayerDataSource) => {

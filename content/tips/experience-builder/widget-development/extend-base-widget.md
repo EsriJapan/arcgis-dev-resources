@@ -221,8 +221,8 @@ props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._wi
 <JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds[0]} />
 ```
 
-## ArcGIS API for JavaScript のモジュール
-既定では、Experience Builder はアプリのロード時に ArcGIS API for JavaScript (JS API) をロードしません。JS API モジュールを利用するには、2 つのオプションがあります。
+## ArcGIS Maps SDK for JavaScript のモジュール
+既定では、Experience Builder はアプリのロード時に ArcGIS Maps SDK for JavaScript (JS API) をロードしません。JS API モジュールを利用するには、2 つのオプションがあります。
 
 - JS API に依存するウィジェット (例：JS API がないと何もできません。)
   - ウィジェットの `manifest.json` で `jimu-arcgis` 依存関係を宣言します。

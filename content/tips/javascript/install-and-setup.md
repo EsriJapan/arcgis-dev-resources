@@ -5,13 +5,13 @@ weight = 1
 aliases = ["/javascript/install-and-setup/"]
 +++
 
-出典：ArcGIS API for JavaScript - [Install and set up](https://developers.arcgis.com/javascript/latest/install-and-set-up/)
+出典：ArcGIS Maps SDK for JavaScript - [Install and set up](https://developers.arcgis.com/javascript/latest/install-and-set-up/)
 
 ## インストールおよびセットアップ
 
 ### API へのアクセス
 
-ArcGIS API for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、[Introduction to Tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) を参照してください。
+ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、[Introduction to Tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) を参照してください。
 
 ### ArcGIS CDN による AMD モジュール
 
@@ -55,11 +55,11 @@ import Map from "@arcgis/core/Map";
 
 場合によっては、[ArcGIS CDN を介して AMD モジュール](https://developers.arcgis.com/javascript/latest/install-and-set-up/#amd-modules-via-arcgis-cdn)のローカルにホストされたバージョンを使用する必要があります。この例は、インターネットにアクセスできない制限されたネットワーク環境で作業している場合です。また、API リファレンス、チュートリアル、およびサンプルを含むドキュメントをダウンロードしてインストールすることもできます。ダウンロード可能なドキュメントは、バージョン 4.25 のリリース日からのスナップショットであり、最新のサンプル アップデートやドキュメントの修正などは含まれていません。
 
-ArcGIS API for JavaScript およびそのドキュメントをダウンロードするには、ArcGIS API for JavaScript の[ダウンロード ページ](https://developers.arcgis.com/downloads/#javascript)に移動し、Esri グローバル アカウントでログインします。
+ArcGIS Maps SDK for JavaScript およびそのドキュメントをダウンロードするには、ArcGIS Maps SDK for JavaScript の[ダウンロード ページ](https://developers.arcgis.com/downloads/#javascript)に移動し、Esri グローバル アカウントでログインします。
 
 ## Web サーバーのホスティング設定
 
-ArcGIS API for JavaScript をホストする Web サーバのホスティング構成では、以下の MIME/type 登録が必要です。
+ArcGIS Maps SDK for JavaScript をホストする Web サーバのホスティング構成では、以下の MIME/type 登録が必要です。
 
 | エクステンション | MIME/type | 説明 |
 | --------------- | --------- | ---- |

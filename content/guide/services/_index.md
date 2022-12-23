@@ -16,7 +16,7 @@ ArcGIS Platform の[チュートリアル](https://developers.arcgis.com/documen
 
 チュートリアルは、以下の ArcGIS、オープンソース、およびサードパーティの API を利用できます。
 
-- [Web](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#web-apis): ArcGIS API for JavaScript、ArcGIS REST JS、Esri Leaflet、MapBox GL JS、OpenLayers.
+- [Web](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#web-apis): ArcGIS Maps SDK for JavaScript、ArcGIS REST JS、Esri Leaflet、MapBox GL JS、OpenLayers.
 - [ネイティブ](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#native-apis): ArcGIS Runtime APIs for Android、iOS、Java、.NET、Qt.
 
 ## フィーチャ サービス、Web マップの作成

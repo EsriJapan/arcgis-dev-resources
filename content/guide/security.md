@@ -164,7 +164,7 @@ ArcGIS Identity の詳細については[こちら](https://developers.arcgis.co
 ## API のサポート
 |  | API キー | アプリケーション認証 | ArcGIS Identity (指定ユーザー ログイン) |
 | ---- | ---- | ---- | ---- |
-| [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/latest/)| 〇 | △<sup>1</sup> | 〇 |
+| [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/)| 〇 | △<sup>1</sup> | 〇 |
 | [ArcGIS Runtime API for Android](https://developers.arcgis.com/android/) | 〇 | 〇 | 〇 |
 | [ArcGIS Runtime API for iOS](https://developers.arcgis.com/ios/) | 〇 | 〇 | 〇 |
 | [ArcGIS Runtime API for Java](https://developers.arcgis.com/java/)* | 〇 | 〇 | 〇 |

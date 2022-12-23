@@ -10,7 +10,7 @@ alwaysopen = true
 
 各 API/SDK の開発をサポートするドキュメントです。
 
-* [ArcGIS API for JavaScript](../tips/javascript/)
+* [ArcGIS Maps SDK for JavaScript](../tips/javascript/)
 * [ArcGIS Experience Builder (Developer Edition)](../tips/experience-builder/)
 * [ArcGIS Web AppBuilder (Developer Edition)](../tips/webappbuilder/)
 * [ArcGIS Runtime SDK for .NET](../tips/dotnet/)

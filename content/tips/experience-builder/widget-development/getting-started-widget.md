@@ -8,7 +8,7 @@ aliases = ["/getting-started-widget/"]
 出典：ArcGIS Experience Builder - Guide - [Getting started with widget development](https://developers.arcgis.com/experience-builder/guide/getting-started-widget/)
 
 
-ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
+ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
 
 - [TypeScript](https://www.typescriptlang.org/) は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。
 - [React](https://reactjs.org/) は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。

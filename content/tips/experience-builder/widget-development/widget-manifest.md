@@ -8,7 +8,7 @@ aliases = ["/widget-manifest/"]
 出典：ArcGIS Experience Builder - Guide - [Widget manifest](https://developers.arcgis.com/experience-builder/guide/widget-manifest/)
 
 
-各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した `manifest.json` ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、[demo widget](https://developers.arcgis.com/experience-builder/sample-code/widgets/demo) から `manifest.json` ファイルをコピーすることです。以下は `manifest.json` ファイルの例です。ウィジェット内で ArcGIS API for JavaScript を使用するには、`dependency` プロパティに `jimu-arcgis` を設定します。
+各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した `manifest.json` ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、[demo widget](https://developers.arcgis.com/experience-builder/sample-code/widgets/demo) から `manifest.json` ファイルをコピーすることです。以下は `manifest.json` ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、`dependency` プロパティに `jimu-arcgis` を設定します。
 
 ```JavaScript
 {

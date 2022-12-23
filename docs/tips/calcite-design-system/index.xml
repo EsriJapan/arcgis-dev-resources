@@ -90,11 +90,11 @@ const sliderEl = useRef(null); const [sliderValue, setSliderValue] = useState(50
 各チュートリアルの完了には、約 15 ～ 40 分かかります。
   地図アプリの作成
 Calcite Components を使ってインタラクティブなマップ アプリケーションを作成する方法を紹介しています。
-  テーマ スイッチャーの作成（英語）
-Calcite Components と ArcGIS API for JavaScript をライトとダークの間で切り替えるテーマ スイッチャーを構築する方法を紹介しています。
-  コア コンセプトの適用（英語）
+  テーマ スイッチャーの作成
+Calcite Components と ArcGIS Maps SDK for JavaScript をライトとダークの間で切り替えるテーマ スイッチャーを構築する方法を紹介しています。
+  コア コンセプトの適用
 インタラクティブなアプリケーションを作りながら、Calcite Components の基本的な概念を学ぶことができます。
-  最近の地震をフィルタリング（英語）
+  最近の地震をフィルタリング
 Calcite Design System でユーザー インターフェース(UI)を作成します。
   </description>
     </item>

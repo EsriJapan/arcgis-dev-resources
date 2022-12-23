@@ -12,7 +12,7 @@ aliases = ["/github/"]
 - [workshops](https://github.com/EsriJapan/workshops)
     - 過去のウェビナーやセミナー、ハンズオンで使用した資料をまとめています。
 
-### ArcGIS API for JavaScript
+### ArcGIS Maps SDK for JavaScript
 
 - [maps-app-javascript](https://github.com/EsriJapan/maps-app-javascript)
     - このリポジトリでは、ArcGIS API for JavaScript にて構築された地図アプリをすぐに使用できる Maps App というアプリを提供します。 Maps App をそのまま使うことや、ArcGIS API for JavaScript を使用して拡張することができます。

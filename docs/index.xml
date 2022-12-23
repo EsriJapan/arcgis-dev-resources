@@ -7,23 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ArcGIS API for JavaScript</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
-前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。  ステップ 新しい Pen の作成 CodePen にアクセスして、マッピングアプリケーション用の新しい Pen を作成します。
-HTML の作成 HTML ページを定義して、Web ブラウザのウィンドウの幅と高さをフル利用してマップを作成します。
-  CodePen ＞ HTML で、HTML と CSS を追加し、viewDiv 要素を持つページを作成します。viewDiv は地図を表示する要素で、その CSS はブラウザの設定をリセットして、ブラウザの幅と高さをフルに利用できるようにしています。
-CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1, maximum-scale=1, user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;ArcGIS API for JavaScript Tutorials: Display a map&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #viewDiv { padding: 0; margin: 0; height: 100%; width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;viewDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   API の参照   &amp;lt;head&amp;gt; タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。</description>
-    </item>
-    
-    <item>
       <title>ArcGIS API for Python のコンセプト</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -36,13 +19,30 @@ Python API は arcgis パッケージとして配布されています。 この
     </item>
     
     <item>
+      <title>ArcGIS Maps SDK for JavaScript</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</guid>
+      <description>マップを表示する このチュートリアルでは ArcGIS Maps SDK for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。  ステップ 新しい Pen の作成 CodePen にアクセスして、マッピングアプリケーション用の新しい Pen を作成します。
+HTML の作成 HTML ページを定義して、Web ブラウザのウィンドウの幅と高さをフル利用してマップを作成します。
+  CodePen ＞ HTML で、HTML と CSS を追加し、viewDiv 要素を持つページを作成します。viewDiv は地図を表示する要素で、その CSS はブラウザの設定をリセットして、ブラウザの幅と高さをフルに利用できるようにしています。
+CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;initial-scale=1, maximum-scale=1, user-scalable=no&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;ArcGIS Maps SDK for JavaScript Tutorials: Display a map&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #viewDiv { padding: 0; margin: 0; height: 100%; width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;viewDiv&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   API の参照   &amp;lt;head&amp;gt; タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。</description>
+    </item>
+    
+    <item>
       <title>Esri Japan GitHub</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/learn/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/learn/github/</guid>
       <description>各 API や SDK のサンプルプログラムに加えて、ハンズオンや開発者セミナーで実施内容を GitHub で共有しています。
-ワークショップ  workshops  過去のウェビナーやセミナー、ハンズオンで使用した資料をまとめています。    ArcGIS API for JavaScript   maps-app-javascript
+ワークショップ  workshops  過去のウェビナーやセミナー、ハンズオンで使用した資料をまとめています。    ArcGIS Maps SDK for JavaScript   maps-app-javascript
  このリポジトリでは、ArcGIS API for JavaScript にて構築された地図アプリをすぐに使用できる Maps App というアプリを提供します。 Maps App をそのまま使うことや、ArcGIS API for JavaScript を使用して拡張することができます。    arcgis-samples-4.0-js
  ArcGIS API 4.x for JavaScript のサンプル集です。Esri Community などで紹介したサンプルなどもございます。    arcgis-samples-js
  ArcGIS API for JavaScript のサンプル集です。    webmap-startup-template-js
@@ -131,10 +131,10 @@ ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につき�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</guid>
-      <description>出典：ArcGIS API for JavaScript - Install and set up
-インストールおよびセットアップ API へのアクセス ArcGIS API for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
+      <description>出典：ArcGIS Maps SDK for JavaScript - Install and set up
+インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
 ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.24/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.24/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドルラーで利用することができます。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.25/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.25/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドルラーで利用することができます。
 インストール方法：
 npm install @arcgis/core モジュールのインポート：
 import Map from &amp;#34;@arcgis/core/Map&amp;#34;; 詳細については、以下のガイドを参照してください。</description>
@@ -304,13 +304,13 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
-      <description>ArcGIS API for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
+      <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS API for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS Maps SDK for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
- [arcgis_js_v424_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ [arcgis_js_v425_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
  Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v424_api\arcgis_js_api\javascript\4.24\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.24\)  必要条件 ArcGIS API for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
+ ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v424_api\arcgis_js_api\javascript\4.25\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.</description>
     </item>
     
     <item>
@@ -431,7 +431,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
       <description>ArcGIS Experience Builder は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。Developer Edition (開発者向けエディション)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。
-ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS API for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) を参照してください。
+ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS Maps SDK for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) を参照してください。
 インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。
  server サービス  Experience Builder (Developer Edition) の本体を起動します。   client サービス  独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server サービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。    両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。</description>
     </item>
@@ -622,8 +622,8 @@ Windows のコマンドプロンプトからコマンドを実行した場合
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
-      <description>出典：ArcGIS API for JavaScript - Migrating from 3.x to 4.24
-バージョン 4.x では ArcGIS API for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
+      <description>出典：ArcGIS Maps SDK for JavaScript - Migrating from 3.x to 4.25
+バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
  プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ AMD のみ 廃止項目  バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
 プロパティ 4.0 より前のバージョンでは、getMethodName や setMethodName を呼び出すことで、一部のプロパティを get (読み込み）または set（書き込み）することができました。API では、すべてのプロパティを取得・設定するためのシンプルで一貫した方法がサポートされているため、これらのタイプのメソッドは不要になりました。
@@ -679,8 +679,8 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
-      <description>出典：ArcGIS API for JavaScript - Widget development
-ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS API for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
+      <description>出典：ArcGIS Maps SDK for JavaScript - Widget development
+ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS Maps SDK for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
 このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
 このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
 トピック
@@ -697,7 +697,7 @@ JSX JSX は HTML と同じようにウィジェットの UI を表現するこ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Getting started with widget development
-ArcGIS Experience Builder は、React と ArcGIS API for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
+ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
  TypeScript は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。 React は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。 JSX は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。 Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。  インストール Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、インストールガイドを参照してください。
 ウィジェット ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。
  ウィジェットの設定 (id、label、configなど) state や isClassLoaded などを含むウィジェットのランタイム情報 ローカル言語の文字列 データソースのインスタンスとステータス情報 URL パラメータ情報  必要最小限のファイルですぐに始めるには、your-extensions\widgets フォルダ内の simple widget を参照してください。</description>
@@ -833,12 +833,11 @@ app config では、画面グループは screenGroups で定義され、画面�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
-      <description>出典：ArcGIS API for JavaScript - Arcade
-Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS API for JavaScript で編集・共有・実行することができます。
-Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
-Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
-シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。
-Arcade には外部データにアクセスするためのグローバル変数が用意されています。 $feature というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。 以下のシンタックスを使用することでフィールド値を参照できます。</description>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Arcade
+Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS Maps SDK for JavaScript で編集・共有・実行することができます。
+Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
+Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</description>
     </item>
     
     <item>
@@ -848,7 +847,7 @@ Arcade には外部データにアクセスするためのグローバル変数�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
-各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS API for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
+各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
 { &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;dependency&amp;#34;: &amp;#34;jimu-arcgis&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.</description>
     </item>
     
@@ -879,11 +878,11 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
 各チュートリアルの完了には、約 15 ～ 40 分かかります。
   地図アプリの作成
 Calcite Components を使ってインタラクティブなマップ アプリケーションを作成する方法を紹介しています。
-  テーマ スイッチャーの作成（英語）
-Calcite Components と ArcGIS API for JavaScript をライトとダークの間で切り替えるテーマ スイッチャーを構築する方法を紹介しています。
-  コア コンセプトの適用（英語）
+  テーマ スイッチャーの作成
+Calcite Components と ArcGIS Maps SDK for JavaScript をライトとダークの間で切り替えるテーマ スイッチャーを構築する方法を紹介しています。
+  コア コンセプトの適用
 インタラクティブなアプリケーションを作りながら、Calcite Components の基本的な概念を学ぶことができます。
-  最近の地震をフィルタリング（英語）
+  最近の地震をフィルタリング
 Calcite Design System でユーザー インターフェース(UI)を作成します。
   </description>
     </item>
@@ -950,8 +949,8 @@ Experience Builder ウィジェットは、次のファイルで構成されて�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
-      <description>ArcGIS API for JavaScirpt のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
-デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGSI API for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
+      <description>ArcGIS Maps SDK for JavaScript のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
+デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGIS Maps SDK for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
 ※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
 フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
 pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
@@ -1018,7 +1017,7 @@ app config では、widgets でウィジェットを定義します。</descript
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
 Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS API for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+ jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
     </item>
     
     <item>
@@ -1029,8 +1028,8 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
 データソースは、ウィジェットがデータにアクセスする方法を定義します。データソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
- ウィジェットの設定でデータソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期 ウィジェットで出力データソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
-ウィジェットの設定でデータソースを選択 ウィジェットの設定でデータソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータソースは ArcGIS API for JavaScript に依存しており、jimu-core のデータソースは依存していません。</description>
+ ウィジェットの設定でデータソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータソースの同期 ウィジェットで出力データソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータソースを選択 ウィジェットの設定でデータソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータソースは依存していません。</description>
     </item>
     
     <item>
@@ -1209,7 +1208,7 @@ Experience のデプロイ Experience を Web サーバーにデプロイする�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
-マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS API for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
+マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
  view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの JimuMapViewSelector コンポーネントを使用してマップ/シーンビューを選択することができます。これも JimuMapViewComponent を使用してJimuMapViewオブジェクトにアクセスします。</description>
     </item>
     

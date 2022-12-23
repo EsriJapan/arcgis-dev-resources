@@ -5,18 +5,18 @@ weight = 6
 aliases = ["/javascript/arcade/"]
 +++
 
-出典：ArcGIS API for JavaScript - [Arcade](https://developers.arcgis.com/javascript/latest/arcade/)
+出典：ArcGIS Maps SDK for JavaScript - [Arcade](https://developers.arcgis.com/javascript/latest/arcade/)
 
 <a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。
 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。
-ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を <a href="https://www.esrij.com/products/arcgis-pro/" target="_blank">ArcGIS Pro</a> や <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a>、<a href="https://developers.arcgis.com/arcgis-runtime/" target="_blank">ArcGIS Runtime SDK</a>、<a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a> で編集・共有・実行することができます。
+ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を <a href="https://www.esrij.com/products/arcgis-pro/" target="_blank">ArcGIS Pro</a> や <a href="https://www.esrij.com/products/arcgis-online/" target="_blank">ArcGIS Online</a>、<a href="https://developers.arcgis.com/arcgis-runtime/" target="_blank">ArcGIS Runtime SDK</a>、<a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS Maps SDK for JavaScript</a> で編集・共有・実行することができます。
 
 Arcade が他のスクリプト言語に比べてユニークなのは、<a href="https://developers.arcgis.com/arcade/function-reference/geometry_functions/" target="_blank">ジオメトリ関数</a>を含んでいるところです。
 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。
 現在のリリースでは、ジオメトリの作成と参照が可能です。
-しかし、<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリの操作は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。
+しかし、<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
 
-<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリ関数は、4.x 系の ArcGIS API for JavaScript ではサポートされていません。3.x 系の API では、<a href="https://developers.arcgis.com/javascript/3/jsapi/esri.support.expressionutils-amd.html" target="_blank">バージョン 3.23</a> 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+<a href="https://developers.arcgis.com/arcade/guide/release-notes/#version-13" target="_blank">Arcade バージョン 1.3</a> で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、<a href="https://developers.arcgis.com/javascript/3/jsapi/esri.support.expressionutils-amd.html" target="_blank">バージョン 3.23</a> 以上で使用できます。将来的には、4.x でのサポートを予定しています。
 
 ## シンタックス
 

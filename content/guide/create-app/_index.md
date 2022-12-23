@@ -10,7 +10,7 @@ description = "シンプルな地図アプリの作成方法を紹介します�
 
 <table>
 <tbody><tr>
-<td style="width:25%"><a href="./create-startup-app-js">ArcGIS API for JavaScript</td>
+<td style="width:25%"><a href="./create-startup-app-js">ArcGIS Maps SDK for JavaScript</td>
 <td style="width:25%"><a href="./create-startup-app-esrileaflet">Esri Leaflet</a></td>
 <td style="width:25%"><a href="./create-startup-app-maplibre">MapLibre GL JS</a></td>
 <td style="width:25%"><a href="./create-startup-app-openlayers">OpenLayers</a></td>

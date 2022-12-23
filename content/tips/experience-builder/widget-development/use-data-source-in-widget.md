@@ -14,7 +14,7 @@ aliases = ["/use-data-source-in-widget/"]
 - ウィジェット ランタイムのデータを読み込んで表示
 - ユーザー入力に基づくデータのフィルタリングやクエリ
 - データ上の選択を処理
-- ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期
+- ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータソースの同期
 - ウィジェットで出力データソースの生成
 - ウィジェットでメッセージの公開
 
@@ -26,7 +26,7 @@ aliases = ["/use-data-source-in-widget/"]
 
 ## ウィジェットの設定でデータソースを選択
 
-ウィジェットの設定でデータソースを選択するには、[`DataSourceSelector`](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds) コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは `jimu-core` と `jimu-arcgis` の 2 つのパッケージに入っています。`jimu-core` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceTypes) と `jimu-arcgis` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/DataSourceTypes) をご覧ください。`jimu-arcgis` のデータソースは ArcGIS API for JavaScript に依存しており、`jimu-core` のデータソースは依存していません。
+ウィジェットの設定でデータソースを選択するには、[`DataSourceSelector`](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds) コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは `jimu-core` と `jimu-arcgis` の 2 つのパッケージに入っています。`jimu-core` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceTypes) と `jimu-arcgis` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/DataSourceTypes) をご覧ください。`jimu-arcgis` のデータソースは ArcGIS Maps SDK for JavaScript に依存しており、`jimu-core` のデータソースは依存していません。
 
 `DataSourceSelector` コンポーネントを使用するには、`types` プロパティを通じてウィジェットがサポートするデータソースの種類を設定する必要があります。データソースを選択した後、`onChange` コールバックにより選択されたデータソースを取得することができます。`onChange` コールバックでは、`props.onSettingChange()` を呼び出して、選択したデータソースを `appConfig` に保存する必要があります (`appConfig.widgets[widgetId].useDataSources`)。ユーザーが新しいデータソースを追加した場合、新しく追加されたデータソースは `appConfig.dataSources` に保存されます。[こちらのサンプルウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。
 
@@ -119,11 +119,11 @@ Experience Builder アプリで設計された選択の動作は、すべての�
 
 ### WebMap/WebScene の使用
 
-ArcGIS API for JavaScript の WebMap と WebScene は、データソースとして `jimu-arcgis` パッケージでラッピングされています。WebMap にアクセスする場合は `WebMapDataSource` を、WebScene にアクセスする場合は `WebSceneDataSource` を使用します。これらのデータソースの使用方法については、[MapView のサンプル](https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/)をご覧ください。WebMap と WebScene オブジェクトに加えて、これらのオブジェクト内のすべてのレイヤーはデータソースとしてラッピングされているため、`getChildDataSources()` を呼び出してすべてのレイヤーデータソースを取得できます。サポートされるレイヤーとサービスは、`SupportedLayerServiceTypes` と `SupportedServiceTypes` で定義されています。
+ArcGIS Maps SDK for JavaScript の WebMap と WebScene は、データソースとして `jimu-arcgis` パッケージでラッピングされています。WebMap にアクセスする場合は `WebMapDataSource` を、WebScene にアクセスする場合は `WebSceneDataSource` を使用します。これらのデータソースの使用方法については、[MapView のサンプル](https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/)をご覧ください。WebMap と WebScene オブジェクトに加えて、これらのオブジェクト内のすべてのレイヤーはデータソースとしてラッピングされているため、`getChildDataSources()` を呼び出してすべてのレイヤーデータソースを取得できます。サポートされるレイヤーとサービスは、`SupportedLayerServiceTypes` と `SupportedServiceTypes` で定義されています。
 
 ### FeatureLayer の使用
 
-ワークフローによっては、フィーチャ レイヤーで直接動作する軽量なエクスペリエンスを作成する必要があります。このシナリオでは、`FeatureLayerDataSource` クラスを使用します。一般的に、スタンドアロン レイヤーを使用するウィジェットは、`layer` プロパティを持たない `FeatureLayerDataSource` オブジェクトを取得しますが、Web マップまたは Web シーンからのフィーチャ レイヤーを使用すると、`layer` プロパティを持つ `FeatureLayerDataSource` オブジェクトを返します。`Layer` オブジェクトは ArcGIS API for JavaScript から提供されています。
+ワークフローによっては、フィーチャ レイヤーで直接動作する軽量なエクスペリエンスを作成する必要があります。このシナリオでは、`FeatureLayerDataSource` クラスを使用します。一般的に、スタンドアロン レイヤーを使用するウィジェットは、`layer` プロパティを持たない `FeatureLayerDataSource` オブジェクトを取得しますが、Web マップまたは Web シーンからのフィーチャ レイヤーを使用すると、`layer` プロパティを持つ `FeatureLayerDataSource` オブジェクトを返します。`Layer` オブジェクトは ArcGIS Maps SDK for JavaScript から提供されています。
 
 ```tsx
  const getLayerObject = (ds: FeatureLayerDataSource) => {
@@ -135,9 +135,9 @@ ArcGIS API for JavaScript の WebMap と WebScene は、データソースとし
 
 ウィジェットは、多くの場合、同じデータを共有します。この良い例が、エクスペリエンスでマップ ウィジェットとリスト ウィジェットを使用する場合です。リスト ウィジェットでフィーチャを選択すると、対応するフィーチャがマップ上で選択されます。これを実現する最も簡単な方法は、両方のウィジェットに同じデータソースを使用することです。たとえば、リスト ウィジェットでアイテムが選択されると、ウィジェットは `datasource.selectRecord()` を呼び出して、app store のデータソースの状態を更新します。これにより、マップ ウィジェットでは、現在選択されているアイテムを適宜レンダリングすることができます。また、現在選択されているアイテムの ID が URL に配置されるため、現在のアプリの状態を他の人と共有することが可能になります。
 
-## ArcGIS API for JavaScript のフィーチャ オブジェクトとデータソースの同期
+## ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータソースの同期
 
-Experience Builder ウィジェットでは、ArcGIS API for JavaScript を使用してフィーチャを取得することができます。その後、他のウィジェットがこれらのフィーチャを使用できるようにしたい場合があります。たとえば、マップ上でこれらのフィーチャをハイライト表示したり、リスト ウィジェットでこれらのフィーチャを表示したりする必要があるかもしれません。これには、以下の 3 つのオプションがあります。
+Experience Builder ウィジェットでは、ArcGIS Maps SDK for JavaScript を使用してフィーチャを取得することができます。その後、他のウィジェットがこれらのフィーチャを使用できるようにしたい場合があります。たとえば、マップ上でこれらのフィーチャをハイライト表示したり、リスト ウィジェットでこれらのフィーチャを表示したりする必要があるかもしれません。これには、以下の 3 つのオプションがあります。
 
 1. データソースでこれらのフィーチャ レコードを選択する
     - 使用できるデータソース インスタンスがあれば、`dataSource.selectRecordsByIds()` を呼んでこれらのレコードを選択することができます。`Graphic` インスタンスを取得する場合は、まず`FeatureRecord` インスタンスを作成する必要があります。

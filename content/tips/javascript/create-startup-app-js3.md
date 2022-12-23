@@ -48,7 +48,7 @@ Web サーバーをお持ちの方はサンプル コードを Web サーバー�
 
  検索ウィジェットは住所検索/属性検索機能を組み込んだ文字入力フォームの UI を提供します。
 
-1. ArcGIS API for JavaScript から使用したいモジュールを追加します。モジュールのインポートは `require` 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。
+1. ArcGIS Maps SDK for JavaScript から使用したいモジュールを追加します。モジュールのインポートは `require` 関数の第一引数に入力される配列内で行います。配列内に検索機能の実装に必要なモジュールを追加します。
  ```javascript
  require(["esri/arcgis/utils", "esri/dijit/Search", "esri/layers/FeatureLayer", "esri/InfoTemplate", "dojo/domReady!"],
  function(arcgisUtils, Search, FeatureLayer, InfoTemplate) {

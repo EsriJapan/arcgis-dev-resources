@@ -11,7 +11,7 @@ alwaysopen = false
 
 Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されている`jimu` と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。
 
-- ArcGIS API for JavaScript 4.x
+- ArcGIS Maps SDK for JavaScript 4.x
 - React + Redux フレームワーク
 - Bootstrap 4 （UI用）
 - HTML5

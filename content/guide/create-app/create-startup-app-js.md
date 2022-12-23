@@ -1,13 +1,13 @@
 +++
-title = "ArcGIS API for JavaScript"
-description = "ArcGIS API for JavaScript を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
+title = "ArcGIS Maps SDK for JavaScript"
+description = "ArcGIS Maps SDK for JavaScript を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
 Weight=1
 aliases = ["/create-startup-app-js/"]
 +++
 
 # マップを表示する
 
-このチュートリアルでは ArcGIS API for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+このチュートリアルでは ArcGIS Maps SDK for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
 
@@ -39,7 +39,7 @@ HTML ページを定義して、Web ブラウザのウィンドウの幅と高�
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
@@ -68,7 +68,7 @@ HTML ページを定義して、Web ブラウザのウィンドウの幅と高�
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
@@ -106,7 +106,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
@@ -163,7 +163,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
@@ -224,7 +224,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
@@ -315,7 +315,7 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
         <style>
           html,
