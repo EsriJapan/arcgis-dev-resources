@@ -86,15 +86,14 @@ ArcGIS Online または Portal for ArcGIS で OAuth2 認証を使用する場合
 アプリケーション ID を入手するには ArcGIS Online または Portal for ArcGIS に Web AppBuilder をアイテムとして追加します。
 
 1. 指定したポータルへログインします。
-2. Web AppBuilder をポータルにアイテムとして追加します。  
 
-3. コンテンツ ページの[マイコンテンツ] を開きます。[新しいアイテム] をクリックし、[アプリケーション] を選択します。  
+2. コンテンツ ページの[マイコンテンツ] を開きます。[新しいアイテム] をクリックし、[アプリケーション] を選択します。  
 
-4. ダイアログボックスで、[アプリケーションタイプ] に Web マッピング、[URL] オプションに Web AppBuilder の URL を入力し [次へ] をクリックします。
+3. ダイアログボックスで、[アプリケーションタイプ] に Web マッピング、[URL] オプションに Web AppBuilder の URL を入力し [次へ] をクリックします。
   
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide4-2.png" alt="アイテムの追加">
   
-5. 任意のタイトル、保存先のフォルダー、タグとサマリーを設定し、 [保存] をクリックします。これで Web AppBuilder はアイテムとしてポータルに追加されました。  
+4. 任意のタイトル、保存先のフォルダー、タグとサマリーを設定し、 [保存] をクリックします。これで Web AppBuilder はアイテムとしてポータルに追加されました。  
   <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide4-3.png" alt="アイテムの追加">
 
 5. アイテムの追加が完了すると、追加したアイテムの詳細情報のページが表示されます。
@@ -113,7 +112,7 @@ ArcGIS Online または Portal for ArcGIS で OAuth2 認証を使用する場合
       2. 手順 3 に戻り、入力したリダイレクト URI を更新するか、アプリケーションを新しく登録して、新しいアプリケーション ID を入手します。
       3. 起動中の Web AppBuilder のページを再読み込みします。
       4. [アプリケーション ID] オプションにアプリケーション ID を入力し、[続行] をクリックします。
-7. [権限のリクエスト] ダイアログが表示されます。表示されたアカウント情報が正しいことを確認し [承認] をクリックします。
+9. [権限のリクエスト] ダイアログが表示されます。表示されたアカウント情報が正しいことを確認し [承認] をクリックします。
 
 <img src="http://apps.esrij.com/arcgis-dev/guide/img/webappbuilder/install-guide6.gif" alt="アプリケーション ID の設定" width="600px">
 

@@ -41,7 +41,7 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 
 {{% /notice %}}
 
-1. [ArcGIS for Developers](https://developers.arcgis.com/sign-in/) にサイン インします。
+1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) にサイン インします。
 2. サイン イン後にダッシュボードが表示されますので `OAuth 2.0` タブをクリックします。 
 3. `+ New Application` をクリックし、アプリケーションの詳細を入力して、新しいアプリケーションを登録します。
 4. `Redirect URLs` のセクションまでスクロール ダウンします。
@@ -116,6 +116,7 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 
 1. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /client ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start で実行します。</span>
+<br/><span style="font-size: 75%">※ npm ci でのインストール時は Visual Studio C++ Build Tools と Python が端末上にある必要があります。</span>
 2. `npm start` と入力して client を起動します。
 <br/><span style="font-size: 75%">※ client のサービスを起動することで、カスタム ウィジェットやテーマは `https://localhost:3001` で表示した Experience Builder 上で使用することが可能となります。</span>
 
