@@ -5,7 +5,7 @@ weight = 1
 aliases = ["/android/install-android-100.x/"]
 +++
 
-このインストール ガイドでは、ArcGIS Runtime SDK for Android のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-android/)」のチュートリアルをご覧ください。
+このインストール ガイドでは、ArcGIS Runtime SDK for Android (バージョン 100.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-android/)」のチュートリアルをご覧ください。
 
 
 {{% notice warning %}}

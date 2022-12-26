@@ -7,7 +7,7 @@ aliases = ["/create-startup-app-ios/"]
 
 # マップを表示する
 
-このチュートリアルでは ArcGIS Runtime SDK for iOS を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+このチュートリアルでは ArcGIS Runtime SDK for iOS (バージョン 100.x) を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map.png" width="300px">
 

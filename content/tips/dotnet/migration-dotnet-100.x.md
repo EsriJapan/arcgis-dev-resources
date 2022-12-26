@@ -1,7 +1,8 @@
 +++
 title = "バージョン 10.2.x から 100.x への移行"
 description = "今まで ArcGIS Runtime SDK for .NET バージョン 10.2.x を使用してアプリケーションを開発されていた開発者向けのガイドです。"
-weight = 3
+weight = 4
+hidden = true
 aliases = ["/dotnet/migration-dotnet-100.x/"]
 +++
 

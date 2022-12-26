@@ -26,16 +26,16 @@ aliases = ["/github/"]
 - [webmap-startup-template-js](https://github.com/EsriJapan/webmap-startup-template-js)
     - Web マップを使用した開発手法を伝えるためのアプリケーション テンプレートのサンプルです。
 
-### ArcGIS Runtime SDK
+###  ArcGIS Maps SDKs for Native Apps
 
 - [nearby-android](https://github.com/EsriJapan/nearby-android)
-    - このリポジトリでは、ArcGIS Runtime SDK for Android で構築された Android デバイス用の Nearby Places というサンプル アプリを提供しています。そのまま使用したり、多少のカスタマイズで、表示する場所の種類を変更することができます。
+    - このリポジトリでは、Android SDK で構築された Android デバイス用の Nearby Places というサンプル アプリを提供しています。そのまま使用したり、多少のカスタマイズで、表示する場所の種類を変更することができます。
 
 - [find-route-ios](https://github.com/EsriJapan/find-route-ios)
     - 宮蘭航路フェリーハッカソン用に作成したオフラインで観光ルート検索を行う iOS アプリケーションです。写真から行ってみたい観光スポットを選択すると、最短時間で周れる最適ルートと移動時間を検索・表示します。検索したルートはお気に入りに登録して、後から確認することもできます。
 
 - [startup-sample-dotnet](https://github.com/EsriJapan/startup-sample-dotnet)
-    - ArcGIS Runtime SDK for .NET をはじめて使用される方に、開発キットの基本的な使い方や主要な機能を紹介するためのサンプル アプリケーションです。
+    - .NET SDK をはじめて使用される方に、開発キットの基本的な使い方や主要な機能を紹介するためのサンプル アプリケーションです。
 
 - [enc-viewer-dotnet](https://github.com/EsriJapan/enc-viewer-dotnet)
     - ENC (Electronic Navigational Charts: 航海用電子海図) を表示するビューアーです。 S-57 形式の ENC のセルをサポートしています。

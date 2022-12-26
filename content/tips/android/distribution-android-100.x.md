@@ -5,7 +5,7 @@ weight = 2
 aliases = ["/android/distribution-android-100.x/"]
 +++
 
-ArcGIS Runtime SDK for Android を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
+ArcGIS Runtime SDK for Android (バージョン 100.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 
 ## API キーの設定
 [ArcGIS Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-android/#api-キーを設定する)をご覧ください。

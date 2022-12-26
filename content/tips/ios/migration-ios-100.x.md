@@ -2,6 +2,7 @@
 title = "バージョン 10.2.x から 100.x への移行"
 description = "今まで ArcGIS Runtime SDK for iOS バージョン 10.2.x を使用してアプリケーションを開発されていた開発者向けのガイドです。"
 weight = 3
+hidden = true
 aliases = ["/ios/migration-ios-100.x/"]
 +++
 

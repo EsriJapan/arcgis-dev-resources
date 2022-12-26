@@ -7,7 +7,7 @@ aliases = ["/create-startup-app-android/"]
 
 # マップを表示する
 
-このチュートリアルでは ArcGIS Runtime SDK for Android を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+このチュートリアルでは ArcGIS Runtime SDK for Android (バージョン 100.x) を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-android100.0/display_map.png" width="300px">
 

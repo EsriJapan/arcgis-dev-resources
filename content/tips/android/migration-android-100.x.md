@@ -2,6 +2,7 @@
 title = "バージョン 10.2.x から 100.x への移行"
 description = "今まで ArcGIS Runtime SDK for Android バージョン 10.2.x を使用してアプリケーションを開発されていた開発者向けのガイドです。"
 weight = 3
+hidden = true
 aliases = ["/android/migration-android-100.x/"]
 +++
 

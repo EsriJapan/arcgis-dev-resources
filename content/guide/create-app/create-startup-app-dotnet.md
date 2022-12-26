@@ -1,13 +1,13 @@
 +++
 title = ".NET"
-description = "ArcGIS Runtime SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。"
+description = "ArcGIS Maps SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight=6
 aliases = ["/create-startup-app-dotnet/"]
 +++
 
 # マップを表示する
 
-このチュートリアルでは ArcGIS Runtime SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
 <img src="https://developers.arcgis.com/net/static/b35c1b9b0a23047d18821832dfb38a63/4cdf7/display-a-map.png" width="650px">
 
@@ -22,28 +22,28 @@ aliases = ["/create-startup-app-dotnet/"]
 1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
-必要に応じて、ArcGIS Runtime SDK for .NET をインストールして、Visual Studio (Windows のみ) のプロジェクト テンプレートとオフラインにコピーされた NuGet パッケージを利用することもできます。
+必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 
 ## ステップ
 
 ### 新しい Visual Studio プロジェクトを作成する
-ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Xamarin Android、Xamarin iOS、および Xamarin Forms (クロス プラットフォームの Android、iOS、UWP) 向けのアプリをサポートしています。
+ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
 このチュートリアルの説明は、Visual Studio for Windows を使用して .NET Core WPF プロジェクトを作成することを目的としています。
 
 1. Visual Studio を起動し、新しいプロジェクトを作成します。
    * Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします
-   * C# 用の「WPF App (.NET)」テンプレートを選択し、[次へ] をクリックします。
+   * C# 用の「WPF アプリケーション」テンプレートを選択し、[次へ] をクリックします。
    * [新しいプロジェクトを構成します] 画面で必要な値を入力します。
      * プロジェクト名: DisplayAMap
      * 場所: 任意のフォルダーを選択
    * [作成] をクリックしてプロジェクトを作成します。
 
-### プロジェクトに ArcGIS Runtime を追加する
+### API の参照を追加する
 
-1. [NuGet パッケージをインストール](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、ArcGIS Runtime への参照を追加します。
+1. [NuGet パッケージをインストール](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
    * ソリューション エクスプローラーで、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。
    * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に「nuget.org」が選択されていることを確認します。
-   * [参照] タブを選択して、[検索] テキスト ボックスに「ArcGIS Runtime」と入力します。
+   * [参照] タブを選択して、[検索] テキスト ボックスに「ArcGISRuntime」と入力します。
    * 検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは「Esri.ArcGISRuntime.WPF」NuGet パッケージを選択します。
    * [バージョン] にパッケージの「最新の安定版...」が選択されていることを確認します。
    * [インストール] をクリックします。
@@ -52,7 +52,7 @@ ArcGIS Runtime API for .NET は、Windows Presentation Framework (WPF)、Univers
    * Visual Studio の [出力] ウィンドウで、パッケージが正常にインストールされたことを確認します。
    * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
 
-「ArcGIS Runtime SDK for .NET」プロジェクト テンプレートからプロジェクトを作成した場合は、必要な NuGet パッケージがプロジェクトに追加された状態で起動します。
+ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェクトを作成した場合は、必要な NuGet パッケージがプロジェクトに追加されています。
 
 ### API キーを取得する
 
@@ -60,7 +60,7 @@ ArcGIS Online でホストされているサービス、Web マップ、およ�
 まだ取得していない場合は、[ArcGIS Developers のダッシュボード](https://developers.arcgis.com/dashboard/)に移動してAPIキーを取得します。
 
 
-### API キーを使用して ArcGIS Runtime を構成する
+### アプリで API キーを設定する
 
 1. App.xaml.cs の OnStartup メソッドをオーバーライドして、アプリケーションの起動時に API キーを設定します。
 
@@ -87,15 +87,15 @@ ArcGIS Online でホストされているサービス、Web マップ、およ�
 
 Model-View-ViewModel (MVVM) デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、「モデル」はアプリで消費されるデータを表し、「ビュー」はユーザー インターフェースであり、「ビューモデル」にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
 
-MVVM で設計された ArcGIS Runtime アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。ArcGIS Runtime クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。
+MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。
 
-すべての 「ArcGISRuntime for .NET」プロジェクト テンプレートは、MVVM デザインパターンを使用しています。
+すべての ArcGIS Maps SDK for .NET プロジェクト テンプレートは、MVVM デザインパターンを使用しています。
 
 1. プロジェクトのビュー モデルを定義する新しいクラスを追加します。
    * [プロジェクト] メニュー > [クラスの追加...] をクリックします。
    * 新しいクラスに名前を付けます。
      * 名前: MapViewModel.cs
-   * [追加]をクリックして新しいクラスを作成し、プロジェクトに追加します。
+   * [追加] をクリックして新しいクラスを作成し、プロジェクトに追加します。
    * 新しいクラスが VisualStudio で開きます。
 2. 必要な using ステートメントをビュー モデルに追加します。
 
@@ -228,7 +228,7 @@ MVVM で設計された ArcGIS Runtime アプリでは、通常、マップ ビ�
 
 これで MapViewModel が完成しました。
 
-MVVM デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。ArcGIS Runtime for .NET はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、ArcGIS Runtime for .NET アプリ用に作成したビュー モデルのコードは、通常、サポートされているすべての .NET プラットフォームで動作します。
+MVVM デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成したビュー モデルのコードは、通常、サポートされているすべての .NET プラットフォームで動作します。
 
 次に、プロジェクトにビューを設定して、ビュー モデルを使用します。
 
@@ -238,7 +238,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
 
 1. 必要な XML 名前空間とリソースを追加します。
    * MainWindow.xaml を開き、XAML ビューに切り替えます。
-   * 既存の名前空間の宣言内に、ArcGIS Runtime コントロールの esri XML 名前空間を追加します。
+   * 既存の名前空間の宣言内に、ArcGIS コントロールの esri XML 名前空間を追加します。
    * MapViewModel インスタンスを静的リソースとして定義する XAML を追加します。
 
     MainWindow.xaml
@@ -329,6 +329,9 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
 ### アプリを実行する
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。
+
+    注:「The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net6.0-windows'. Target 'net6.0-windows10.0.19041.0' or later instead.」のエラーが出ている場合は、Visual Studio の [プロジェクト] > [DisplayAMap のプロパティ] > [アプリケーション] > [全般] > [ターゲット OS バージョン] を 10.0.19041.0 に設定します。
+
 
 富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 

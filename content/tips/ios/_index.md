@@ -4,6 +4,6 @@ description = "ArcGIS Runtime SDK for iOS の開発に役立つガイド集で�
 weight = 5
 +++
 
-ArcGIS Runtime SDK for iOS の開発に役立つガイド集です。
+ArcGIS Runtime SDK for iOS (バージョン 100.x) の開発に役立つガイド集です。
 
 {{% children description="true"   %}}

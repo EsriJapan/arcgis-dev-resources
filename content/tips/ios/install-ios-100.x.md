@@ -5,7 +5,7 @@ weight = 1
 aliases = ["/ios/install-ios-100.x/"]
 +++
 
-このインストール ガイドでは、ArcGIS Runtime SDK for iOS のインストールとセットアップ手順を紹介します。インストールを進める前に、ご使用のマシン（macOS）に Xcode をインストールしてください。
+このインストール ガイドでは、ArcGIS Runtime SDK for iOS (バージョン 100.x) のインストールとセットアップ手順を紹介します。インストールを進める前に、ご使用のマシン（macOS）に Xcode をインストールしてください。
 
 ArcGIS Runtime SDK for iOS がサポートする最新の動作環境につきましては[動作環境](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/environments/)をご覧ください。
 

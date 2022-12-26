@@ -4,6 +4,6 @@ description = "ArcGIS Runtime SDK for Android の開発に役立つガイド集�
 weight = 4
 +++
 
-ArcGIS Runtime SDK for Android の開発に役立つガイド集です。
+ArcGIS Runtime SDK for Android (バージョン 100.x) の開発に役立つガイド集です。
 
 {{% children description="true"   %}}
