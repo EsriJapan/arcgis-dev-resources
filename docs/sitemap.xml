@@ -31,7 +31,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-100.x/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/</loc>
   </url>
   
   <url>
@@ -95,7 +95,7 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-100.x/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/</loc>
   </url>
   
   <url>
@@ -163,11 +163,11 @@
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</loc>
   </url>
   
   <url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/</loc>
   </url>
   
   <url>
@@ -220,6 +220,10 @@
   
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/</loc>
+  </url>
+  
+  <url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</loc>
   </url>
   
   <url>
