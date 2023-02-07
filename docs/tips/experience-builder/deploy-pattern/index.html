@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-12-26T13:41:23 JST">
+<meta name="revised" content="2023-02-07T20:49:01 JST">
 <title>デプロイ パターン :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -887,13 +887,7 @@ if (!doNotTrack) {
         <li><a href="#手順概要-1">手順概要</a></li>
       </ul>
     </li>
-    <li><a href="#テンプレートをデプロイ">テンプレートをデプロイ</a>
-      <ul>
-        <li><a href="#必要なコンポーネント-2">必要なコンポーネント</a></li>
-        <li><a href="#手順概要-2">手順概要</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-つのデプロイ-パターンの総括表">3 つのデプロイ パターンの総括表</a></li>
+    <li><a href="#2-つのデプロイ-パターンの総括表">2 つのデプロイ パターンの総括表</a></li>
   </ul>
 </nav>
         </div>
@@ -918,10 +912,10 @@ if (!doNotTrack) {
 <li><a href="#%E6%A6%82%E8%A6%81">概要</a></li>
 <li><a href="#web-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Web アプリケーションをデプロイ</a></li>
 <li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ウィジェットをデプロイ</a></li>
-<li><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">テンプレートをデプロイ</a></li>
 </ul>
+<!-- * [テンプレートをデプロイ](#テンプレートをデプロイ) -->
 <h2 id="概要">概要</h2>
-<p>ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
+<p>ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェットを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 2 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。</p>
 <hr>
 <h3 id="web-アプリケーションをデプロイ">Web アプリケーションをデプロイ</h3>
 <h3 id="全体像">全体像</h3>
@@ -1024,75 +1018,46 @@ if (!doNotTrack) {
 </li>
 </ol>
 <hr>
-<h2 id="テンプレートをデプロイ">テンプレートをデプロイ</h2>
-<ul>
-<li>Esri が用意している <a href="https://enterprise.arcgis.com/en/portal/latest/use/application-templates.htm?lg=en">Web アプリケーションのテンプレート</a>とは別に、Developer Edition で作成した Web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで Web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。</li>
-<li>ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern3.png" alt="template"></li>
-</ul>
-<h3 id="必要なコンポーネント-2">必要なコンポーネント</h3>
-<ul>
-<li>開発時
-<ul>
-<li>Node.js</li>
-<li>Developer Edition</li>
-</ul>
-</li>
-<li>運用時
-<ul>
-<li>Node.js</li>
-<li>Developer Edition</li>
-<li>ArcGIS Online または ArcGIS Enterprise</li>
-</ul>
-</li>
-</ul>
-<h3 id="手順概要-2">手順概要</h3>
-<p>以下はテンプレートの作成から、デプロイ、実際の運用までの流れの概要です。</p>
-<ol>
-<li>
-<p>カスタムウィジェットを含む Web アプリケーションを作成</p>
-<ul>
-<li>Developer Edition を用いたウィジェットの作成には Node.jsが必要です。</li>
-<li>詳しくは<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/">インストールガイド</a>をご覧下さい。</li>
-<li>カスタム ウィジェットを開発する際は、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>をご覧ください。</li>
-</ul>
-</li>
-<li>
-<p>Web アプリケーションをテンプレートとして保存 (登録)</p>
-<ul>
-<li>Developer Edition で作成した Web アプリケーションを組織にエクスポートします。
-<ul>
-<li>Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートの生成] をクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern4.png" alt="export_as_template"></li>
-<li>マイ コンテンツに戻り、組織に共有します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern5.png" alt="config_params"></li>
-<li>テンプレートは、組織が設定するテンプレート グループに共有される必要があります。管理権限を持っていない場合、権限が無いことと別途マニュアルで追加する必要がある旨がダイアログで表示されます。</li>
-<li>組織の管理者権限がある場合、以下の手順でテンプレート グループを設定できます。
-<ul>
-<li>[組織] → [設定] → [マップ] の順にクリック
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern6.png" alt="org_setting"></li>
-<li>[テンプレート] の中でテンプレートを共有するグループを指定
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern7.png" alt="set_template_gr">
-<ul>
-<li>[Esri のデフォルトの構成可能なアプリをグループで共有します] をクリックすると、Esri がデフォルトで用意しているテンプレートも通常どおり使用できます。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>テンプレートを使った Web アプリケーションの作成・利用</p>
-<ul>
-<li>ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから Web アプリケーションを作成・利用します。</li>
-<li>内部的には、アプリは Developer Edition のテンプレートを参照して動作します。</li>
-</ul>
-<p><br>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</br></p>
-</li>
-</ol>
-<h2 id="3-つのデプロイ-パターンの総括表">3 つのデプロイ パターンの総括表</h2>
+<!-- ## テンプレートをデプロイ
+* Esri が用意している [Web アプリケーションのテンプレート](https://enterprise.arcgis.com/en/portal/latest/use/application-templates.htm?lg=en)とは別に、Developer Edition で作成した Web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで Web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。
+* ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
+  ![template](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern3.png)
+
+### 必要なコンポーネント
+* 開発時
+  * Node.js
+  * Developer Edition 
+* 運用時
+  * Node.js
+  * Developer Edition 
+  * ArcGIS Online または ArcGIS Enterprise
+
+### 手順概要
+以下はテンプレートの作成から、デプロイ、実際の運用までの流れの概要です。
+
+1. カスタムウィジェットを含む Web アプリケーションを作成
+    * Developer Edition を用いたウィジェットの作成には Node.jsが必要です。
+    * 詳しくは[インストールガイド](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/)をご覧下さい。
+    * カスタム ウィジェットを開発する際は、[カスタム ウィジェット開発ガイド](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/)をご覧ください。
+1. Web アプリケーションをテンプレートとして保存 (登録)
+    * Developer Edition で作成した Web アプリケーションを組織にエクスポートします。
+      * Developer Edition でアプリを作成し、[保存] ボタンをクリックした後 [テンプレートの生成] をクリックします。
+        ![export_as_template](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern4.png)
+      * マイ コンテンツに戻り、組織に共有します。
+        ![config_params](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern5.png)
+      * テンプレートは、組織が設定するテンプレート グループに共有される必要があります。管理権限を持っていない場合、権限が無いことと別途マニュアルで追加する必要がある旨がダイアログで表示されます。
+      * 組織の管理者権限がある場合、以下の手順でテンプレート グループを設定できます。
+        * [組織] → [設定] → [マップ] の順にクリック
+          ![org_setting](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern6.png)
+        * [テンプレート] の中でテンプレートを共有するグループを指定
+          ![set_template_gr](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern7.png)
+          * [Esri のデフォルトの構成可能なアプリをグループで共有します] をクリックすると、Esri がデフォルトで用意しているテンプレートも通常どおり使用できます。
+1. テンプレートを使った Web アプリケーションの作成・利用
+    * ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから Web アプリケーションを作成・利用します。
+    * 内部的には、アプリは Developer Edition のテンプレートを参照して動作します。
+    
+    <br>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</br> -->
+<h2 id="2-つのデプロイ-パターンの総括表">2 つのデプロイ パターンの総括表</h2>
 <table>
 <thead>
 <tr>
@@ -1118,16 +1083,9 @@ if (!doNotTrack) {
 <td>×</td>
 <td>〇</td>
 </tr>
-<tr>
-<td><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">テンプレートをデプロイ</a></td>
-<td>Node.js、Developer Edition</td>
-<td>Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise</td>
-<td>〇</td>
-<td>〇</td>
-</tr>
 </tbody>
 </table>
-
+<!-- | [テンプレートをデプロイ](#テンプレートをデプロイ) | Node.js、Developer Edition | Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 | -->
 
     
     

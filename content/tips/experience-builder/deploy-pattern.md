@@ -9,10 +9,10 @@ aliases = ["/experience/deploy-pattern/"]
 * [概要](#概要)
 * [Web アプリケーションをデプロイ](#web-アプリケーションをデプロイ)
 * [ウィジェットをデプロイ](#ウィジェットをデプロイ)
-* [テンプレートをデプロイ](#テンプレートをデプロイ)
+<!-- * [テンプレートをデプロイ](#テンプレートをデプロイ) -->
 
 ## 概要
-ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
+ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェットを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 2 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
 
 ---
 ### Web アプリケーションをデプロイ
@@ -77,7 +77,7 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
     * 内部的には、アプリは Web サーバーでホストされているカスタムウィジェットを参照して動作します。
 
 ---
-## テンプレートをデプロイ
+<!-- ## テンプレートをデプロイ
 * Esri が用意している [Web アプリケーションのテンプレート](https://enterprise.arcgis.com/en/portal/latest/use/application-templates.htm?lg=en)とは別に、Developer Edition で作成した Web アプリケーションをベースに独自のテンプレートを作成できます。テンプレートを用いることで、ユーザー自身がマップや簡易な設定の変更のみで Web アプリケーションを作成することができるようになります。テンプレートを作成しておくと、必要な機能が共通している複数の業務に対して、異なるマップや設定を適用するだけですぐ各業務向けのアプリを作成できます。
 * ここでご紹介する方法では開発環境と運用環境が同じである点にご注意ください。
   ![template](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern3.png)
@@ -115,11 +115,11 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
     * ユーザーが ArcGIS Online もしくは ArcGIS Enterprise のテンプレートから Web アプリケーションを作成・利用します。
     * 内部的には、アプリは Developer Edition のテンプレートを参照して動作します。
     
-    <br>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</br>
+    <br>※ 上記理由から、運用時においてもユーザーが Developer Edition にアクセスできる必要があります。</br> -->
 
-## 3 つのデプロイ パターンの総括表
+## 2 つのデプロイ パターンの総括表
 | パターン | 開発時に必要なコンポーネント | 運用時に必要なコンポーネント | ArcGIS Online での利用可否 | ArcGIS Enterprise での利用可否 |
 |---|---|---|---|---|
 | [Web アプリケーションをデプロイ](#web-アプリケーションをデプロイ) | Node.js、Developer Edition | Web サーバー、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 |
 | [ウィジェットをデプロイ](#ウィジェットをデプロイ) | Node.js、Developer Edition | Web サーバー、 ArcGIS Enterprise | × | 〇 |
-| [テンプレートをデプロイ](#テンプレートをデプロイ) | Node.js、Developer Edition | Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 |
+<!-- | [テンプレートをデプロイ](#テンプレートをデプロイ) | Node.js、Developer Edition | Developer Edition、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 | -->
