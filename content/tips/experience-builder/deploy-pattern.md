@@ -43,7 +43,7 @@ ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では 
 1. ユーザーが作成された Web アプリケーションを利用
     * ユーザーが Web アプリケーションにアクセスして利用します。
     * ArcGIS Enterprise や ArcGIS Online のポータルにアイテムとして表示させたい場合はアプリの URL をアイテムに登録する必要があります。
-      * 詳細は「[アプリの追加]」及びその後の「[アプリの登録]」をご覧ください。
+      * 詳細は「[アプリの追加](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-app-url.htm#ESRI_SECTION1_40AB67789DE04437B77EF15922C5A75C)」及びその後の「[アプリの登録](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-app-url.htm#REG_APP)」をご覧ください。
     * 内部的には、アプリは ArcGIS Online もしくは ArcGIS Enterprise の Web マップを参照してアプリ上に地図を表示します。
 
 ---
