@@ -231,4 +231,4 @@ for webscene_id in ['31874da8a16d45bfbc1273422f772270', '91b46c2b162c48dba264b21
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_3scenes.gif" width="600px">
 </div>
 
-より詳細な情報は、マップ ウィジェットの [API リファレンス](https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.widgets.html#arcgis.widgets.MapView.toggle_window_view)を参照してください。
+より詳細な情報は、マップ ウィジェットの [API リファレンス](https://developers.arcgis.com/python/api-reference/arcgis.widgets.html#arcgis.widgets.MapView.toggle_window_view)を参照してください。

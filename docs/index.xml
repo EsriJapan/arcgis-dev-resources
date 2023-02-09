@@ -1139,7 +1139,7 @@ manifest.json を使用して CDN 経由で使用 ライブラリを複数のウ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deploy-pattern/</guid>
-      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ テンプレートをデプロイ  概要 ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェット、テンプレートを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 3 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
+      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ  概要 ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェットを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 2 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
  Web アプリケーションをデプロイ 全体像  Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。   必要なコンポーネント  開発時  Node.js Developer Edition   運用時  ArcGIS Enterprise または ArcGIS Online Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)    手順概要 以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。
  カスタム ウィジェットを含む Web アプリケーションを作成  Developer Edition を用いたウィジェットの開発や Web アプリケーションの作成には Node.</description>
     </item>

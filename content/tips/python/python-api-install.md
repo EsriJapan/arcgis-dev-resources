@@ -85,12 +85,15 @@ ArcGIS Pro 2.3 以上では Python API が最初からインストールされ�
 ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
 
 * ArcGIS Pro を起動し、スタートアップ画面の左下にある [設定] をクリックします。
-* [Python]メニューオプションを選択します。
-* [環境の管理]ボタンをクリックし、「環境の管理」ウィンドウを開いて、[デフォルトのクローン]ボタンを選択します。
+* ArcGIS Pro 3.x の場合は[パッケージマネージャー]メニューを、 ArcGIS Pro 2.x の場合は[Python]メニューオプションを選択します。
+* ArcGIS Pro 3.x の場合は[環境マネージャー]ボタンを、ArcGIS Pro 2.x の場合は[環境の管理]ボタンをクリックし、「環境の管理」ウィンドウを開いて、[デフォルトのクローン]ボタンを選択します。
 
 <div align="center">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/Pro_30/arcgis_pro_clone.png" width="800px">
+<p>(ArcGIS Pro 3.x)①[環境マネージャー]ボタンと環境の②[デフォルトのクローン]ボタン</p>
+
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng.png" width="800px">
-<p>[環境の管理]ボタンと環境の[デフォルトのクローン]ボタン</p>
+<p>(ArcGIS Pro 2.x)①[環境の管理]ボタンと環境の②[デフォルトのクローン]ボタン</p>
 </div>
 
 * デフォルト環境のクローンが作成されます。
@@ -105,14 +108,17 @@ ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" �
 
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_installing2.png" width="800px">
-<p>クローンの作成中の様子</p>
+<p>クローンの作成中の様子(ArcGIS Pro 2.x)</p>
 </div>
 
-* 作成した環境のラジオボタンをクリックして、環境をアクティブにします。
+* ArcGIS Pro 3.x の場合は、作成した環境をダブルクリック、もしくはアクティブ化をクリックし、ArcGIS Pro 2.x の場合は、作成した環境のラジオボタンをクリックして、環境をアクティブにします。
 
 <div align="center">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/Pro_30/arcgis_pro_active.png" width="800px">
+<p>(ArcGIS Pro 3.x)環境をアクティベート</p>
+
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_activate2.png" width="800px">
-<p>環境をアクティベート</p>
+<p>(ArcGIS Pro 2.x)環境をアクティベート</p>
 </div>
 
 * 環境の管理ダイアログを閉じ、ArcGIS Pro を閉じます
@@ -140,8 +146,7 @@ conda upgrade -c esri arcgis --no-pin
 ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
 `conda upgrade -c esri --no-pin arcgis` のうち、`--no-pin` がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
 ただし、デフォルトの設定が変更されるわけではないため、アップグレード後に他のパッケージをインストールしようとすると、設定された上限のバージョンにダウングレードするように conda で計画されます。</br>
-その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し `arcgis` パッケージをアップグレードしてください。</br>
-上記のコマンドで最新バージョンにアップグレードされない場合は `conda install -c esri arcgis==2.x.x` コマンドで最新バージョンをインストールしてください。
+その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し `arcgis` パッケージをアップグレードしてください。
 <!-- > *以下の操作はデフォルトで想定されているパッケージ管理の制御を変更するため、必ず事前に環境を複製しておく等、適切なバックアップの処置をしてください。*</br>
 > *また、以下操作の実行による不具合等はサポートの対象としかねますので、ご承知おきください。*</br>
 > 永続的に設定を変更するには conda 環境の中の pinned ファイルを書き換える必要があります。</br>
