@@ -11,7 +11,7 @@ aliases = ["/widget-communication/"]
 Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。
 以下の方法をサポートしています。
 
-- Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は [Message action](https://developers.arcgis.com/experience-builder/guide/message-action) を参照してください。
+- Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は [Message action](https://developers.arcgis.com/experience-builder/guide/core-concepts/message-action/) を参照してください。
 
 - Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state  (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
 
