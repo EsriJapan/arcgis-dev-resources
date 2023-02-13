@@ -20,7 +20,7 @@ conda を使用する場合、次の 2 つの選択肢があります。
 * [Anaconda Distribution](https://www.anaconda.com/what-is-anaconda/) : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。
 * [Miniconda](https://conda.io/miniconda.html) : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。
 
-Anaconda と Miniconda の詳しい違いは [Anaconda or Miniconda (英語)](https://conda.io/docs/user-guide/install/download.html#anaconda-or-miniconda) のページをご覧ください。</br>
+Anaconda と Miniconda の詳しい違いは [Anaconda or Miniconda (英語)](https://conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda) のページをご覧ください。</br>
 ※ pip でも Python API をインストールすることができますが、初心者には conda が推奨されています。参考: [ArcGIS API for Python - Install and set up (英語)](https://developers.arcgis.com/python/guide/install-and-set-up/#Disclaimer)
 
 conda をより深く理解したい方は [Getting Started with Conda (英語)](https://conda.io/docs/user-guide/getting-started.html) チュートリアルをご覧ください。
