@@ -51,12 +51,25 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.1'
 		...
 	}
 	```
 
-3. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にする buildFeatures ブロックを追加してください。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
+3. module レベルの build.gradle ファイルの android ブロック内で、Java 8 の言語機能との互換性を設定するために、以下のディレクティブがあることを確認してください。
+
+	```java  
+	android {
+  		. . .
+    	compileOptions {
+        	sourceCompatibility JavaVersion.VERSION_1_8
+        	targetCompatibility JavaVersion.VERSION_1_8
+    	}
+  	. . .
+	}
+ 	```
+
+4. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にするブロックがあることを確認します。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
 
     ```java  
 	android {
@@ -66,7 +79,8 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
   		}
 	}
     ```
-4. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
+
+5. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
 
     ```java  
 	android {
@@ -91,33 +105,32 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 依存関係を ArcGIS Runtime SDK for Android に手動で追加するか、ダウンロードに含まれる他のリソースを使用します。libs フォルダにある Android ライブラリ モジュール（.aar）には、API の jar ライブラリ arcgis-android-api とそのサードパーティの依存関係およびコア ネイティブ ライブラリが含まれています。
 
 ### ArcGIS Android API がローカルの Maven リポジトリで動作するように設定する
-以下のセットアップ手順では、インターネットから切り離された開発環境で作業していることを想定しています。たとえば、インターネット上でホストされている Maven リポジトリへのアクセスを許可しないファイアウォールの内側などです。以下の手順は、ローカルマシン上の Maven リポジトリでのセットアップを説明していますが、ネットワーク上に Maven サーバーをセットアップしている場合も同様に適用できます。
+以下のセットアップ手順では、インターネットから切り離された開発環境で作業していることを想定しています。たとえば、インターネット上でホストされている Maven リポジトリへのアクセスを許可しないファイアウォールの内側などです。インターネット アクセスを使用して開発している場合は、代わりに [Gradle で API を取得する](#gradle-で-api-を取得する) の手順に従ってください。以下の手順は、ローカルマシン上の Maven リポジトリでのセットアップを説明していますが、ネットワーク上に Maven サーバーをセットアップしている場合も同様に適用できます。
 
 #### SDK およびその依存関係をコンピュータにデプロイする
-1. arcgis-runtime-sdk-android-100.15.0.zip ファイルをダウンロードします。
+1. arcgis-runtime-sdk-android-100.15.1.zip ファイルをダウンロードします。
 2. アーカイブの内容をディスク上の任意の場所に解凍します。
-3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。
+3. 解凍した場所から、libs/aar ディレクトリの内容をディスク上の以下の場所にコピーします。（ローカル Maven リポジトリは、ユーザー ディレクトリの .m2repository をルートとするディレクトリ ツリーであることに注意してください）。
 
-	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/`
+	mac: `/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.1/`
 	
-	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\`
+	Windows: `%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.1\`
 
 4. ディレクトリのパスは以下のようになっているはずです。
 
 	mac (2 ファイル):
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/arcgis-android-100.15.0.aar`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.1/arcgis-android-100.15.1.aar`
 	
-	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.0/arcgis-android-100.15.0.pom`
+	`/Users/[user-name]/.m2/repository/com/esri/arcgisruntime/arcgis-android/100.15.1/arcgis-android-100.15.1.pom`
 	
 	Windows (2 ファイル):
 
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\arcgis-android-100.15.0.aar`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.1\arcgis-android-100.15.1.aar`
 	
-	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.0\arcgis-android-100.15.0.pom`
+	`%USERPROFILE%\.m2\repository\com\esri\arcgisruntime\arcgis-android\100.15.1\arcgis-android-100.15.1.pom`
 
-5. インターネットに接続して作業している場合は、このステップと以下のステップ6をスキップすることができます。
-オフラインで作業している場合は、ArcGIS Runtime SDK の pom ファイルに記載されているすべての依存関係を、ローカルの Maven リポジトリに展開します。これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。
+5. これらの依存関係のリストと、それらをダウンロードできる URL は以下のとおりです。作業環境のセキュリティ対策と互換性のある方法でこれらを取得する必要があります。
 
 	* gson 2.9.0: https://search.maven.org/artifact/com.google.code.gson/gson/2.9.0/jar
 	* androidx.browser 1.4.0: https://maven.google.com/web/index.html?q=browser#androidx.browser:browser:1.4.0
@@ -130,7 +143,7 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	* spymemcached 2.12.3 https://search.maven.org/artifact/net.spy/spymemcached/2.12.3/jar
 	* ehcache-api 3.4.0 https://search.maven.org/artifact/org.ehcache.modules/ehcache-api/3.4.0/jar
 
-6. オフラインで作業している場合は、上記のステップ5でダウンロードした依存関係を maven を使ってインストールします。
+6. 前の手順でダウンロードした依存関係をデプロイします。Maven を使用して、ローカルの Maven リポジトリに依存関係をインストールします。
 	* mvn maven ツールをインストールします。
 	
 		mac:
@@ -149,35 +162,30 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 
 		`mvn install:install-file -Dfile=<jar ファイルのパス> -DgroupId=<グループ ID> -DartifactId=<アーティファクト ID> -Dversion=<バージョン> -Dpackaging=jar -DgeneratePom=true`
 
-7. ローカルの Maven リポジトリを設定する必要があります。次のセクションで設定を確認します。
+7. ローカルの Maven リポジトリを設定する必要があります。次のセクションで、ローカルの Maven リポジトリを使用するようにビルド ファイルを変更します。
 
 
-#### プロジェクトと app モジュールの Gradle ビルド スクリプトの編集
+#### Gradle のビルド設定とスクリプトの編集
 
-1. プロジェクトの build.gradle ファイルを編集して、ローカルの Maven リポジトリを参照する必要があります。これを行うには、プロジェクトのルートの build.gradle ファイルに以下を追加します。
+1. プロジェクトの gradle.settings ファイルを編集して、ローカルの Maven リポジトリを参照する必要があります。これを行うには、次のように mavenLocal() を追加します。
  
 	```java  
-	allprojects {
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
+			google()
+			mavenCentral()
 			mavenLocal()
 		}
 	}
 	```
 
-2. app モジュールの build.gradle ファイルの android ブロック内に、以下のディレクティブを追加して、Java 8 の言語機能との互換性を設定します。
-	```java 
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
-	}
-	```
-
-3. アプリの build.gradle ファイルに以下の依存関係を追加します。
+2. module レベルの build.gradle ファイルに以下の依存関係を追加します。
 
 	```java 
 	dependencies {
 			...
-		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.0'
+		implementation 'com.esri.arcgisruntime:arcgis-android:100.15.1'
 		implementation 'com.google.code.gson:gson:2.9.0'
 		implementation 'androidx.browser:browser:1.4.0'
 		implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
@@ -191,13 +199,33 @@ ArcGIS Runtime for Android をインストールする前に、開発マシン�
 	}
 	```
 
-4. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にする buildFeatures ブロックを追加してください。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
+3. module レベルの build.gradle ファイルの android ブロック内に、Java 8 言語機能との互換性を設定する次のディレクティブがあることを確認します。
+
+	```java 
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+	```
+
+4. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にするブロックがあることをを確認します。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。
 
     ```java  
 	android {
   		. . .
  		buildFeatures {
     		viewBinding true
+  		}
+	}
+    ```
+
+5. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
+
+    ```java  
+	android {
+  		. . .
+  		packagingOptions {
+    		exclude 'META-INF/DEPENDENCIES'
   		}
 	}
     ```
@@ -210,18 +238,33 @@ Android は、権限が分離されたオペレーティング システムで�
 アクセス許可が必要な ArcGIS Runtime SDK for Android の機能：
 
 * インターネットへのアクセス（ほとんどのアプリはこれを必要とします）：Android API 23 以降の標準の権限
-* ローカルストレージ上のファイルへのアクセス（一部のアプリではこれが必要になります）：Android API 23以降での危険な権限。
 * デバイスの GPS にアクセスするには、FINE_LOCATION の権限が必要です：Android API 23 以降での危険な権限
 
-次のコード例（AndroidManifest.xml ファイルの場合）には、すべての権限が含まれています。
+次のコード例（AndroidManifest.xml ファイルの場合）には、これらの権限が含まれています。
 
 ```xml  
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-さらに、Android マニフェストに [uses-feature 要素](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)を追加すると、Play ストアでアプリを正しいタイプのデバイスで利用できるようになります。
+## Android のストレージと権限
+Android API Level 30 では、すべてのアプリは Android デバイスのファイルシステムにアクセスするためにスコープ付きストレージを使用します。スコープ付きストレージを使用すると、アプリは (1)自身のファイル、および (2)メディア ストア内の共有ファイルにアクセスすることができます。下記のパーミッションの宣言は、サポートされていません。
+```xml  
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージとパーミッションの詳細については、次のリンクを参照してください。
+
+* [データ ストレージとファイル ストレージの概要](https://developer.android.com/training/data-storage#permissions)
+* [Android ストレージのユースケースとおすすめの方法](https://developer.android.com/training/data-storage/use-cases)
+* [共有ストレージからメディア ファイルにアクセスする](https://developer.android.com/training/data-storage/shared/media#request-permissions)
+* [ストレージ デバイスのすべてのファイルを管理する](https://developer.android.com/training/data-storage/manage-all-files)
+
+
+## OpenGL ES バージョンの宣言
+
+Android マニフェストに [uses-feature 要素](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)を追加すると、Play ストアでアプリを正しいタイプのデバイスで利用できるようになります。
 
 MapView（2D）を使用するアプリには、最小でも OpenGL ES 2.x が必要です。
 
