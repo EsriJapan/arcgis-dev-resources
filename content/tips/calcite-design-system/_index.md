@@ -13,7 +13,6 @@ Calcite Design System で、一貫性のある考慮された体験を構築し�
 
 {{% children description="true"   %}}
 
-
 ## Design System
 Calcite Design System の基礎、包括的なコンポーネント ライブラリ、およびガイド リソースをご覧いただけます。
 
@@ -25,4 +24,3 @@ Calcite Design System の基礎、包括的なコンポーネント ライブラ
 
 - [リソース（英語）](https://developers.arcgis.com/calcite-design-system/resources/)
     <br/> <span style="font-size: 80%;">UI キット、フレームワークの統合、ローカライゼーションのガイダンス、コミュニティとサポートにアクセスできます。</span>
-
