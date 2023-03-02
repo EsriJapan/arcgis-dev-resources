@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-02-15T17:02:09 JST">
+<meta name="revised" content="2023-03-02T11:30:51 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -720,31 +720,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/">
-            Web コンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/accessibility/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/accessibility/">
-            アクセシビリティ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/localization/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/localization/">
-            ローカライゼーション
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/framework/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/framework/">
-            フレームワークの統合
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
           </a>
         </div>
     </li>
@@ -960,7 +939,7 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 </ul>
 </li>
 </ol>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" /></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" />
 <ol start="4">
 <li><code>設定</code> タブをクリックします。アプリケーションの登録の項目までスクロールして、<code>更新</code> をクリックします。</li>
 <li><code>登録情報</code> ダイアログ ボックスで、次のように、<code>リダイレクト URI</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
@@ -987,7 +966,7 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <div class="notices tip" >
 <p>Safari で、PKI、Kerberos、IWA、または LDAP 認証タイプを使用して Experience Builder Developer Edition にサインインするには、Safari の開発メニューにある「Cross-Origin Restrictions を無効にする」を選択する必要があります。</p>
 </div>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_1.png" width="70%" /> 
 サイン インをクリックすると、以下のように「権限のリクエスト画面」、もしくは、「ArcGIS ログイン画面」が表示されます。<br/>
 <br/>● 権限のリクエスト画面
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_2.png" width="60%" /> 
@@ -996,7 +975,7 @@ Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ServerInstall_3.png" width="60%" /> 
 使用しているブラウザで ArcGIS Online などにログインしていない場合は、ArcGIS ログイン画面が表示されます。目的のユーザー名、パスワードを入力してサイン インをクリックしてください。認証に成功すると、Experience Builder の初期画面が表示されます。
 <br/><br/>
-6. 次のステップで <a href="#client-install">client</a> インストールを行います。</p>
+6. 次のステップで [client](#client-install) インストールを行います。
 <h2 id="client-インストール">Client インストール</h2>
 <p>Experience Builder の開発では、ローカルの Experience Builder で使用しているカスタム ウィジェットやテーマをバンドルしてロードするため webpack を起動する必要があります。webpack を起動するために client サービスをインストールする必要があります。</p>
 <ol>

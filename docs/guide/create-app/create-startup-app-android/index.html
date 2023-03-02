@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-02-15T17:02:09 JST">
+<meta name="revised" content="2023-03-02T11:30:51 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -720,31 +720,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/">
-            Web コンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/accessibility/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/accessibility/">
-            アクセシビリティ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/localization/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/localization/">
-            ローカライゼーション
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/framework/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/framework/">
-            フレームワークの統合
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
           </a>
         </div>
     </li>
@@ -949,7 +928,7 @@ if (!doNotTrack) {
 <li>
 <p>プロジェクト ツールウィンドウから、[Gradle Scripts] &gt; [build.gradle (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>build.gradle (Project: Display_a_map)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Top-level build file where you can add configuration options common to all sub-projects/modules.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Top-level build file where you can add configuration options common to all sub-projects/modules.
 </span><span style="color:#75715e"></span>
 plugins <span style="color:#f92672">{</span>
     id <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#960050;background-color:#1e0010">&#39;</span> version <span style="color:#960050;background-color:#1e0010">&#39;</span>7<span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span> apply <span style="color:#66d9ef">false</span>
@@ -964,7 +943,7 @@ task <span style="color:#a6e22e">clean</span><span style="color:#f92672">(</span
 <li>
 <p>プロジェクト ツールウィンドウから、[Gradle Scripts] &gt; [build.gradle (Module: Display_a_map.app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>build.gradle (Module: Display_a_map.app)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">plugins <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">plugins <span style="color:#f92672">{</span>
     id <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
     id <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 <span style="color:#f92672">}</span>
@@ -1021,7 +1000,7 @@ dependencies <span style="color:#f92672">{</span>
 <li>
 <p>プロジェクト ツールウィンドウから、[Gradle Scripts] &gt; [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>settings.gradle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.gradle.api.initialization.resolve.RepositoriesMode
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.gradle.api.initialization.resolve.RepositoriesMode
 
 pluginManagement <span style="color:#f92672">{</span>
     repositories <span style="color:#f92672">{</span>
@@ -1053,7 +1032,7 @@ include <span style="color:#960050;background-color:#1e0010">&#39;</span><span s
 <p>プロジェクトツールウィンドウから、[app] &gt; [manifests] &gt; [AndroidManifest.xml] を開きます。Android マニフェストを更新して、ネットワークアクセスを許可し、アプリが OpenGL2.0 以降を使用することを示します。</p>
 <p>これらの新しい要素を manifest 要素内に挿入します。他のステートメントを変更または削除しないでください。追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。</p>
 <p>AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
 <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
 <span style="color:#a6e22e">package=</span><span style="color:#e6db74">&#34;com.example.app&#34;</span><span style="color:#f92672">&gt;</span>
@@ -1069,7 +1048,7 @@ include <span style="color:#960050;background-color:#1e0010">&#39;</span><span s
 <h3 id="インポートステートメントを追加する">インポートステートメントを追加する</h3>
 <p>[app] &gt; [java] &gt; [com.example.app] &gt; [MainActivity.kt] を開き、ArcGIS Runtime SDK を参照するようにインポートステートメントを追加します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.app
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.app
 
 <span style="color:#f92672">import</span> androidx.appcompat.app.AppCompatActivity
 <span style="color:#f92672">import</span> android.os.Bundle
@@ -1091,7 +1070,7 @@ include <span style="color:#960050;background-color:#1e0010">&#39;</span><span s
 MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスのインスタンスを作成します。</p>
 <p>メインアクティビティ ソースコードでは、android:id 属性の値で宣言されている暗黙的なプロパティを使用してその MapView インスタンスにアクセスできます。この場合、プロパティの名前は mapView になります。</p>
 <p>activity_main.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
     <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
@@ -1114,7 +1093,7 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <li>
 <p>MainActivity.kt で、生成された Android クラス <a href="https://developer.android.com/topic/libraries/data-binding/expressions#binding_data">ActivityMainBinding</a> を参照する activityMainBinding という名前の読み取り専用ローカル変数を作成します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#f92672">:</span> AppCompatActivity<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#f92672">:</span> AppCompatActivity<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> val activityMainBinding by lazy <span style="color:#f92672">{</span>
@@ -1125,7 +1104,7 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <li>
 <p>mapView という名前の読み取り専用変数を作成し、それを activity_main.xml で作成された mapView にバインドします。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#f92672">:</span> AppCompatActivity<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#f92672">:</span> AppCompatActivity<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
     <span style="color:#66d9ef">private</span> val activityMainBinding by lazy <span style="color:#f92672">{</span>
         ActivityMainBinding<span style="color:#f92672">.</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>layoutInflater<span style="color:#f92672">)</span>
@@ -1144,7 +1123,7 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <li>
 <p>MainActivity.kt で、MainActivity クラスに新しい setupMap メソッドを追加し、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/ArcGISMap.html">ArcGISMap</a> を作成します。<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/BasemapStyle.html#ARCGIS_TOPOGRAPHIC">ARCGIS_TOPOGRAPHIC</a> という名前の特定のベースマップスタイルを使用して ArcGISMap を構成します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>
     setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>
@@ -1163,12 +1142,12 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <li>
 <p>mapView の map プロパティを新しい ArcGISMap に設定します。次に、<a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/mapping/Viewpoint.html">ViewPoint</a> を作成し、それを mapView に追加します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ここでマップを設定します。このメソッドは onCreate() から呼び出します
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// ここでマップを設定します。このメソッドは onCreate() から呼び出します
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> fun <span style="color:#a6e22e">setupMap</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
     <span style="color:#75715e">// BasemapStyle で地図を作成する
 </span><span style="color:#75715e"></span>    val map <span style="color:#f92672">=</span> ArcGISMap<span style="color:#f92672">(</span>BasemapStyle<span style="color:#f92672">.</span><span style="color:#a6e22e">ARCGIS_TOPOGRAPHIC</span><span style="color:#f92672">)</span>
-       
+
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// レイアウトの MapView に表示されるマップを設定します
 </span><span style="color:#75715e"></span>    mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> map
@@ -1180,7 +1159,7 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <li>
 <p><a href="https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)">onCreate()</a> メソッドで、Android Studio のデフォルトの呼び出しであるsetContentView(R.layout.activity_main) を setContentView(activityMainBinding.root) に置き換えます。その後、setupMap() を呼び出します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>
 
     <span style="color:#75715e">// 変更前
@@ -1195,7 +1174,7 @@ MapView 要素は、ArcGIS Runtime SDK for Android から MapView クラスの�
 <p>MainActivity クラスの <a href="https://developer.android.com/reference/android/app/Activity#onPause()">onPause</a>、<a href="https://developer.android.com/reference/android/app/Activity#onResume()">onResume</a>、<a href="https://developer.android.com/reference/android/app/Activity#onDestroy()">onDestroy</a> メソッドをオーバーライドします。</p>
 <p>MapView はビューを適切に管理するために、アプリがバックグラウンドになったとき、またはバックグラウンドから復元されたときを知る必要があります。ビューが不要になった時、そのリソースは dispose の呼び出しで解放される必要があります。これらのメソッドは、MainActivity クラスの定義内のどこにでも置くことができます。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>
     setContentView<span style="color:#f92672">(</span>activityMainBinding<span style="color:#f92672">.</span><span style="color:#a6e22e">root</span><span style="color:#f92672">)</span>
 
@@ -1230,7 +1209,7 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 <li>
 <p>setApiKeyForApp() メソッドを作成し、API キーを使用して <a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html">ArcGISRuntimeEnvironment</a> の <a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/arcgisruntime/ArcGISRuntimeEnvironment.html#setApiKey(java.lang.String)">apiKey</a> プロパティを設定します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
     mapView<span style="color:#f92672">.</span><span style="color:#a6e22e">dispose</span><span style="color:#f92672">()</span>
     <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onDestroy</span><span style="color:#f92672">()</span>
 <span style="color:#f92672">}</span>
@@ -1249,7 +1228,7 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 <li>
 <p>onCreate() ライフサイクル メソッド内で setApiKeyForApp() を呼び出す。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>
 
     setContentView<span style="color:#f92672">(</span>activityMainBinding<span style="color:#f92672">.</span><span style="color:#a6e22e">root</span><span style="color:#f92672">)</span>
@@ -1274,13 +1253,13 @@ override fun <span style="color:#a6e22e">onDestroy</span><span style="color:#f92
 <li>
 <p><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B">マップを表示する</a>のステップで作成したプロジェクトの [app] &gt; [java] &gt; [com.example.app] &gt; [MainActivity.kt] を開き、必要なインポートステートメントを追加します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.esri.arcgisruntime.portal.Portal
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.esri.arcgisruntime.portal.Portal
 <span style="color:#f92672">import</span> com.esri.arcgisruntime.portal.PortalItem
 </code></pre></div></li>
 <li>
 <p>setupMap メソッドを下記のように書き換えます。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    val portal <span style="color:#f92672">=</span> Portal<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    val portal <span style="color:#f92672">=</span> Portal<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
     val itemId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;Web マップの ID&gt;&#34;</span>
     val portalItem <span style="color:#f92672">=</span> PortalItem<span style="color:#f92672">(</span>portal<span style="color:#f92672">,</span> itemId<span style="color:#f92672">)</span>
     val map <span style="color:#f92672">=</span> ArcGISMap<span style="color:#f92672">(</span>portalItem<span style="color:#f92672">)</span>

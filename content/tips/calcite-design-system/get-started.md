@@ -1,15 +1,16 @@
 +++
 title = "はじめに"
-description = "Calcite Design System の使い始めの方法を紹介します。"
+description = "次の手順に従って、すぐに Calcite Components を使い始めることができます。"
 weight = 1
 aliases = ["/calcite-desgin-sysytem/get-started/"]
 +++
 
-出典：Calcite Design System (Beta) - [Get Started](https://developers.arcgis.com/calcite-design-system/get-started/)
+出典：Calcite Design System - [Get Started](https://developers.arcgis.com/calcite-design-system/get-started/)
 
 ## はじめに
+Calcite Components は、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリです。[Web コンセプトのページ](https://developers.arcgis.com/calcite-design-system/core-concepts/) では、Calcite Design System の構成要素について説明しています。
 
-Calcite Components は、Webアプリケーションを構築するための、柔軟でフレームワークに依存しないWebコンポーネントの豊富なライブラリです。コンポーネントの説明、例、およびプロパティ、スロット、スタイル、テーマを含む API リファレンスは、[コンポーネント ドキュメント](https://developers.arcgis.com/calcite-design-system/components/)をご覧ください。Calcite Components を使い始めるには、以下の手順をご参照ください。
+例題、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、[コンポーネント ドキュメント](https://developers.arcgis.com/calcite-design-system/components/)をご覧ください。以下の手順で、Calcite Components を使い始めることができます。
 
 まず、Calcite Components を使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
 
@@ -17,11 +18,11 @@ Calcite Components は、Webアプリケーションを構築するための、�
 
 次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。
 
-### CDNで利用する
+### CDN で利用する
 Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.95/calcite.esm.js"></script>
-<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.0-beta.95/calcite.css" />
+<script type="module" src="https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js"></script>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.5/calcite.css" />
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
@@ -33,14 +34,14 @@ npm install @esri/calcite-components
 ```
 
 #### ビルドの選択
-Calcite Componentsが提供する2つのビルドから1つを選択します。
+Calcite Components が提供する2つのビルドから1つを選択します。
 
 #### カスタム要素
 フロントエンド フレームワークを活用する場合は、[カスタム要素](https://stenciljs.com/docs/custom-elements) の構築を推奨します。このビルドを使用するには、Calcite Components のアセットへのパスを設定する必要があります。この後のステップで説明するローカル アセットと、CDN でホストされているアセットのどちらかを使用することができます。
 ``` js
 import { setAssetPath } from "@esri/calcite-components/dist/components";
 // CDN ホスティング アセット
-setAssetPath("https://js.arcgis.com/calcite-components/1.0.0-beta.95/assets");
+setAssetPath("https://js.arcgis.com/calcite-components/1.0.5/assets");
 
 // ローカル アセット
 // setAssetPath(PATH); // PATH はフレームワークによって異なります。
@@ -58,7 +59,7 @@ import "@esri/calcite-components/dist/components/calcite-slider";
 import { defineCustomElements } from "@esri/calcite-components/dist/loader";
 // CDN ホスティング アセット
 defineCustomElements(window, {
-  resourcesUrl: "https://js.arcgis.com/calcite-components/1.0.0-beta.95/assets"
+  resourcesUrl: "https://js.arcgis.com/calcite-components/1.0.5/assets"
 });
 
 // ローカル アセット

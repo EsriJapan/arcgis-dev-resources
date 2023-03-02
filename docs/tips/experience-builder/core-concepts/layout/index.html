@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-02-15T17:02:09 JST">
+<meta name="revised" content="2023-03-02T11:30:51 JST">
 <title>レイアウト（Layout） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -721,31 +721,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/">
-            Web コンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/accessibility/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/accessibility/">
-            アクセシビリティ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/localization/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/localization/">
-            ローカライゼーション
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/framework/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/framework/">
-            フレームワークの統合
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
           </a>
         </div>
     </li>
@@ -907,7 +886,7 @@ if (!doNotTrack) {
 <p>レイアウトは、レイアウトコンテナにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。</p>
 <p>アプリ コンフィグでは、レイアウトは <code>layouts</code> プロパティで定義され、レイアウト コンテナは layout id でレイアウトを参照します。レイアウトコンテナには、異なるサイズモードでのレイアウトを定義する <code>layouts</code> オブジェクトプロパティがあります。Experience Builder では、Large、Medium、Small の各サイズモードをサポートしています。レイアウトが定義されていないサイズモードでは、アプリの設定で定義された <code>mainSizeMode</code> レイアウトが使用されます。</p>
 <p>フレームワークのレイアウト・コンテナの他に、ウィジェットもレイアウト・コンテナになることができます。ウィジェットがレイアウト・コンテナになると，ユーザーは他のウィジェットをドラッグ・アンド・ドロップすることができます．例えば、Map や Card はレイアウト・コンテナ・ウィジェットです。レイアウト・コンテナ・ウィジェットは、<code>manifest.json</code> で <code>layouts</code> プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">LayoutEntry</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-layouts/layout-runtime&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">LayoutEntry</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-layouts/layout-runtime&#39;</span>
 
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">LayoutEntryComponent</span>
   <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">jimuConfig</span>.<span style="color:#a6e22e">isInBuilder</span>) {

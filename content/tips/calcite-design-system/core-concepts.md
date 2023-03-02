@@ -1,17 +1,15 @@
 +++ 
-title = "Web コンセプト" 
-description = "Web マップアプリにおけるコンセプトについて説明しています。" 
+title = "コア コンセプト" 
+description = "Web コンポーネントを活用するための基本的な概念とパターンを学びます。" 
 Weight=2
 +++
 
-出典：Calcite Design System (Beta) - [Web concepts](https://developers.arcgis.com/calcite-design-system/web-concepts/)
+出典：Calcite Design System - [core concepts](https://developers.arcgis.com/calcite-design-system/core-concepts/)
 
-## Web コンセプト
 Calcite Components は、[Stencil.js](https://stenciljs.com/docs/introduction) を使用して構築された、再利用可能な Web コンポーネントのライブラリです。Calcite Components を使用すると、ブランド力のある、軽量でアクセスしやすい Web アプリケーションをすばやく構築できます。
 
 Web コンポーネントはブラウザのネイティブ規格であり、Calcite Components で開発するために必要な技術的概念の多くは、このライブラリに固有のものではありません。このページでは、効果的な開発を行うために必要な、Web の主要コンセプトを紹介しています。さらに詳しい情報について、このページにあるすべての概念は、[MDN Web Docs](https://developer.mozilla.org/ja/) やその他の Web 標準ドキュメントのソースで見つけることができます。
 
----
 ### カスタム要素
 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリまたは Web フレームワークを使用して、モダン ブラウザ全体で動作します。カスタム要素は機能をカプセル化するため、他のコードとのコンフリクトを防ぐことができます。
 

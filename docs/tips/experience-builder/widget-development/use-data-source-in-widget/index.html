@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-02-15T17:02:09 JST">
+<meta name="revised" content="2023-03-02T11:30:51 JST">
 <title>ウィジェットでデータソースを使用 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -721,31 +721,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/">
-            Web コンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/accessibility/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/accessibility/">
-            アクセシビリティ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/localization/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/localization/">
-            ローカライゼーション
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/framework/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/framework/">
-            フレームワークの統合
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
           </a>
         </div>
     </li>
@@ -926,7 +905,7 @@ if (!doNotTrack) {
 <h2 id="ウィジェットの設定でデータソースを選択">ウィジェットの設定でデータソースを選択</h2>
 <p>ウィジェットの設定でデータソースを選択するには、<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds"><code>DataSourceSelector</code></a> コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは <code>jimu-core</code> と <code>jimu-arcgis</code> の 2 つのパッケージに入っています。<code>jimu-core</code> の <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceTypes">DataSourceTypes</a> と <code>jimu-arcgis</code> の <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/DataSourceTypes">DataSourceTypes</a> をご覧ください。<code>jimu-arcgis</code> のデータソースは ArcGIS Maps SDK for JavaScript に依存しており、<code>jimu-core</code> のデータソースは依存していません。</p>
 <p><code>DataSourceSelector</code> コンポーネントを使用するには、<code>types</code> プロパティを通じてウィジェットがサポートするデータソースの種類を設定する必要があります。データソースを選択した後、<code>onChange</code> コールバックにより選択されたデータソースを取得することができます。<code>onChange</code> コールバックでは、<code>props.onSettingChange()</code> を呼び出して、選択したデータソースを <code>appConfig</code> に保存する必要があります (<code>appConfig.widgets[widgetId].useDataSources</code>)。ユーザーが新しいデータソースを追加した場合、新しく追加されたデータソースは <code>appConfig.dataSources</code> に保存されます。<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/">こちらのサンプルウィジェット</a>を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceSelector</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceSelector</span>
    <span style="color:#a6e22e">types</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">Immutable</span>([<span style="color:#a6e22e">AllDataSourceTypes</span>.<span style="color:#a6e22e">FeatureLayer</span>])}
    <span style="color:#a6e22e">useDataSources</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>}
    <span style="color:#a6e22e">useDataSourcesEnabled</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSourcesEnabled</span>}
@@ -935,7 +914,7 @@ if (!doNotTrack) {
    <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">id</span>}
 /&gt;
 </code></pre></div><p>データソースを選択した後、ユーザーがデータからフィールドを選択できるようにしたい場合があります。そのためには、<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-fieldselector--list-single-selection">FieldSelector</a> コンポーネントを使用します。データソースと同様に、<code>appConfig.widgets[widgetId].useDataSources</code> にも選択したフィールドを保存する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">{
    <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span>
    &lt;<span style="color:#f92672">FieldSelector</span>
       <span style="color:#a6e22e">useDataSources</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useDataSources</span>}
@@ -972,7 +951,7 @@ if (!doNotTrack) {
 <ul>
 <li>ウィジェットでデータを読み込む場合は、以下のように<code>DataSourceComponent</code> を使うのがおすすめです。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceComponent</span> <span style="color:#a6e22e">useDataSource</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">query</span><span style="color:#f92672">=</span>{}&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">DataSourceComponent</span> <span style="color:#a6e22e">useDataSource</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">widgetId</span><span style="color:#f92672">=</span>{} <span style="color:#a6e22e">query</span><span style="color:#f92672">=</span>{}&gt;
 { <span style="color:#a6e22e">Your</span> <span style="color:#a6e22e">render</span> <span style="color:#a6e22e">method</span> }
 &lt;/<span style="color:#f92672">DataSourceComponent</span>&gt;
 </code></pre></div><p><code>DataSourceComponent</code> の使用例は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/message-subscriber/">Message subscriber のサンプル</a>と <a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/server-side-output/">Server-side output data source のサンプル</a>に記載されています。</p>
@@ -995,7 +974,7 @@ if (!doNotTrack) {
 <p>ArcGIS Maps SDK for JavaScript の WebMap と WebScene は、データソースとして <code>jimu-arcgis</code> パッケージでラッピングされています。WebMap にアクセスする場合は <code>WebMapDataSource</code> を、WebScene にアクセスする場合は <code>WebSceneDataSource</code> を使用します。これらのデータソースの使用方法については、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/">MapView のサンプル</a>をご覧ください。WebMap と WebScene オブジェクトに加えて、これらのオブジェクト内のすべてのレイヤーはデータソースとしてラッピングされているため、<code>getChildDataSources()</code> を呼び出してすべてのレイヤーデータソースを取得できます。サポートされるレイヤーとサービスは、<code>SupportedLayerServiceTypes</code> と <code>SupportedServiceTypes</code> で定義されています。</p>
 <h3 id="featurelayer-の使用">FeatureLayer の使用</h3>
 <p>ワークフローによっては、フィーチャ レイヤーで直接動作する軽量なエクスペリエンスを作成する必要があります。このシナリオでは、<code>FeatureLayerDataSource</code> クラスを使用します。一般的に、スタンドアロン レイヤーを使用するウィジェットは、<code>layer</code> プロパティを持たない <code>FeatureLayerDataSource</code> オブジェクトを取得しますが、Web マップまたは Web シーンからのフィーチャ レイヤーを使用すると、<code>layer</code> プロパティを持つ <code>FeatureLayerDataSource</code> オブジェクトを返します。<code>Layer</code> オブジェクトは ArcGIS Maps SDK for JavaScript から提供されています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getLayerObject</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ds</span>: <span style="color:#66d9ef">FeatureLayerDataSource</span>) <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getLayerObject</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ds</span>: <span style="color:#66d9ef">FeatureLayerDataSource</span>) <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">layer</span>; <span style="color:#75715e">// this can be null
 </span><span style="color:#75715e"></span> }
 </code></pre></div><h3 id="ウィジェット間のデータ共有">ウィジェット間のデータ共有</h3>

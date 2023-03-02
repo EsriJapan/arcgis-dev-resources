@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-02-15T17:02:09 JST">
+<meta name="revised" content="2023-03-02T11:30:51 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -720,31 +720,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/web-concepts/">
-            Web コンセプト
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/accessibility/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/accessibility/">
-            アクセシビリティ
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/localization/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/localization/">
-            ローカライゼーション
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/framework/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/calcite-design-system/framework/">
-            フレームワークの統合
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
           </a>
         </div>
     </li>
@@ -925,56 +904,56 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencyResolutionManagement <span style="color:#f92672">{</span>
-    repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
-    repositories <span style="color:#f92672">{</span>
-        google<span style="color:#f92672">()</span>
-        mavenCentral<span style="color:#f92672">()</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencyResolutionManagement <span style="color:#f92672">{</span>
+	repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
+	repositories <span style="color:#f92672">{</span>
+		google<span style="color:#f92672">()</span>
+		mavenCentral<span style="color:#f92672">()</span>
 
-        <span style="color:#75715e">// Esri の Maven リポジトリを追加します
-</span><span style="color:#75715e"></span>        maven <span style="color:#f92672">{</span>
-            url <span style="color:#960050;background-color:#1e0010">&#39;</span>https<span style="color:#f92672">:</span><span style="color:#75715e">//esri.jfrog.io/artifactory/arcgis&#39;
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
+		<span style="color:#75715e">// Esri の Maven リポジトリを追加します
+</span><span style="color:#75715e"></span>		maven <span style="color:#f92672">{</span>
+			url <span style="color:#960050;background-color:#1e0010">&#39;</span>https<span style="color:#f92672">:</span><span style="color:#75715e">//esri.jfrog.io/artifactory/arcgis&#39;
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>module レベルの build.gradle ファイルの dependencies ブロック内で、ArcGIS Runtime SDK for Android の依存関係をアプリに追加します。</p>
 <p>注：この依存関係を、ArcGIS Runtime SDK for Android を使用する各モジュールに追加する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    <span style="color:#f92672">...</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内で、Java 8 の言語機能との互換性を設定するために、以下のディレクティブがあることを確認してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
-    <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
-    compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
-        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+	<span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
+	compileOptions <span style="color:#f92672">{</span>
+    	sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+    	targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にするブロックがあることを確認します。ビュー バインディングの詳細については、<a href="https://developer.android.com/topic/libraries/view-binding">ビュー バインディング</a> を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
-    <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
-    buildFeatures <span style="color:#f92672">{</span>
-        viewBinding <span style="color:#66d9ef">true</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+	<span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
+	buildFeatures <span style="color:#f92672">{</span>
+		viewBinding <span style="color:#66d9ef">true</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、<a href="https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions">PackagingOptions</a> を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
-    <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
-    packagingOptions <span style="color:#f92672">{</span>
-        exclude <span style="color:#960050;background-color:#1e0010">&#39;</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>DEPENDENCIES<span style="color:#960050;background-color:#1e0010">&#39;</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+	<span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
+	packagingOptions <span style="color:#f92672">{</span>
+		exclude <span style="color:#960050;background-color:#1e0010">&#39;</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>DEPENDENCIES<span style="color:#960050;background-color:#1e0010">&#39;</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 </ol>
@@ -1060,58 +1039,58 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>プロジェクトの gradle.settings ファイルを編集して、ローカルの Maven リポジトリを参照する必要があります。これを行うには、次のように mavenLocal() を追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencyResolutionManagement <span style="color:#f92672">{</span>
-    repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
-    repositories <span style="color:#f92672">{</span>
-        google<span style="color:#f92672">()</span>
-        mavenCentral<span style="color:#f92672">()</span>
-        mavenLocal<span style="color:#f92672">()</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencyResolutionManagement <span style="color:#f92672">{</span>
+	repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
+	repositories <span style="color:#f92672">{</span>
+		google<span style="color:#f92672">()</span>
+		mavenCentral<span style="color:#f92672">()</span>
+		mavenLocal<span style="color:#f92672">()</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
 <p>module レベルの build.gradle ファイルに以下の依存関係を追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
-        <span style="color:#f92672">...</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gson</span><span style="color:#f92672">:</span>gson<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">9</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">browser</span><span style="color:#f92672">:</span>browser<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">localbroadcastmanager</span><span style="color:#f92672">:</span>localbroadcastmanager<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">httpcomponents</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core5</span><span style="color:#f92672">:</span>httpcore5<span style="color:#f92672">:</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">httpcomponents</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core5</span><span style="color:#f92672">:</span>httpcore5<span style="color:#f92672">-</span>h2<span style="color:#f92672">:</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">slf4j</span><span style="color:#f92672">:</span>slf4j<span style="color:#f92672">-</span>api<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">7</span><span style="color:#f92672">.</span><span style="color:#a6e22e">32</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>commons<span style="color:#f92672">-</span>codec<span style="color:#f92672">:</span>commons<span style="color:#f92672">-</span>codec<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">conscrypt</span><span style="color:#f92672">:</span>conscrypt<span style="color:#f92672">-</span>openjdk<span style="color:#f92672">-</span>uber<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>net<span style="color:#f92672">.</span><span style="color:#a6e22e">spy</span><span style="color:#f92672">:</span>spymemcached<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">12</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-    implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">ehcache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span>ehcache<span style="color:#f92672">-</span>api<span style="color:#f92672">:</span>3<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">dependencies <span style="color:#f92672">{</span>
+		<span style="color:#f92672">...</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">esri</span><span style="color:#f92672">.</span><span style="color:#a6e22e">arcgisruntime</span><span style="color:#f92672">:</span>arcgis<span style="color:#f92672">-</span>android<span style="color:#f92672">:</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">google</span><span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#f92672">.</span><span style="color:#a6e22e">gson</span><span style="color:#f92672">:</span>gson<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">9</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">browser</span><span style="color:#f92672">:</span>browser<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>androidx<span style="color:#f92672">.</span><span style="color:#a6e22e">localbroadcastmanager</span><span style="color:#f92672">:</span>localbroadcastmanager<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">httpcomponents</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core5</span><span style="color:#f92672">:</span>httpcore5<span style="color:#f92672">:</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">httpcomponents</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core5</span><span style="color:#f92672">:</span>httpcore5<span style="color:#f92672">-</span>h2<span style="color:#f92672">:</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">slf4j</span><span style="color:#f92672">:</span>slf4j<span style="color:#f92672">-</span>api<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">7</span><span style="color:#f92672">.</span><span style="color:#a6e22e">32</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>commons<span style="color:#f92672">-</span>codec<span style="color:#f92672">:</span>commons<span style="color:#f92672">-</span>codec<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">15</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">conscrypt</span><span style="color:#f92672">:</span>conscrypt<span style="color:#f92672">-</span>openjdk<span style="color:#f92672">-</span>uber<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>net<span style="color:#f92672">.</span><span style="color:#a6e22e">spy</span><span style="color:#f92672">:</span>spymemcached<span style="color:#f92672">:</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">12</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+	implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">ehcache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span>ehcache<span style="color:#f92672">-</span>api<span style="color:#f92672">:</span>3<span style="color:#f92672">.</span><span style="color:#a6e22e">4</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内に、Java 8 言語機能との互換性を設定する次のディレクティブがあることを確認します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">compileOptions <span style="color:#f92672">{</span>
-    sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
-    targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">compileOptions <span style="color:#f92672">{</span>
+	sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+	targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングを有効にするブロックがあることをを確認します。ビュー バインディングの詳細については、<a href="https://developer.android.com/topic/libraries/view-binding">ビュー バインディング</a> を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
-    <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
-    buildFeatures <span style="color:#f92672">{</span>
-        viewBinding <span style="color:#66d9ef">true</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+	<span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
+	buildFeatures <span style="color:#f92672">{</span>
+		viewBinding <span style="color:#66d9ef">true</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックを追加します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、<a href="https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions">PackagingOptions</a> を参照してください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
-    <span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
-    packagingOptions <span style="color:#f92672">{</span>
-        exclude <span style="color:#960050;background-color:#1e0010">&#39;</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>DEPENDENCIES<span style="color:#960050;background-color:#1e0010">&#39;</span>
-    <span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android <span style="color:#f92672">{</span>
+	<span style="color:#f92672">.</span> <span style="color:#f92672">.</span> <span style="color:#f92672">.</span>
+	packagingOptions <span style="color:#f92672">{</span>
+		exclude <span style="color:#960050;background-color:#1e0010">&#39;</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>DEPENDENCIES<span style="color:#960050;background-color:#1e0010">&#39;</span>
+	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 </ol>
@@ -1124,12 +1103,12 @@ if (!doNotTrack) {
 <li>デバイスの GPS にアクセスするには、FINE_LOCATION の権限が必要です：Android API 23 以降での危険な権限</li>
 </ul>
 <p>次のコード例（AndroidManifest.xml ファイルの場合）には、これらの権限が含まれています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_COARSE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_FINE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><h2 id="android-のストレージと権限">Android のストレージと権限</h2>
 <p>Android API Level 30 では、すべてのアプリは Android デバイスのファイルシステムにアクセスするためにスコープ付きストレージを使用します。スコープ付きストレージを使用すると、アプリは (1)自身のファイル、および (2)メディア ストア内の共有ファイルにアクセスすることができます。下記のパーミッションの宣言は、サポートされていません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span> <span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><p>Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージとパーミッションの詳細については、次のリンクを参照してください。</p>
 <ul>
 <li><a href="https://developer.android.com/training/data-storage#permissions">データ ストレージとファイル ストレージの概要</a></li>
@@ -1140,9 +1119,9 @@ if (!doNotTrack) {
 <h2 id="opengl-es-バージョンの宣言">OpenGL ES バージョンの宣言</h2>
 <p>Android マニフェストに <a href="https://developer.android.com/guide/topics/manifest/uses-feature-element.html">uses-feature 要素</a>を追加すると、Play ストアでアプリを正しいタイプのデバイスで利用できるようになります。</p>
 <p>MapView（2D）を使用するアプリには、最小でも OpenGL ES 2.x が必要です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-feature</span> <span style="color:#a6e22e">android:glEsVersion=</span><span style="color:#e6db74">&#34;0x00020000&#34;</span> <span style="color:#a6e22e">android:required=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-feature</span> <span style="color:#a6e22e">android:glEsVersion=</span><span style="color:#e6db74">&#34;0x00020000&#34;</span> <span style="color:#a6e22e">android:required=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><p>SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-feature</span> <span style="color:#a6e22e">android:glEsVersion=</span><span style="color:#e6db74">&#34;0x00030000&#34;</span> <span style="color:#a6e22e">android:required=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-feature</span> <span style="color:#a6e22e">android:glEsVersion=</span><span style="color:#e6db74">&#34;0x00030000&#34;</span> <span style="color:#a6e22e">android:required=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><h2 id="androidx-の依存関係">androidx の依存関係</h2>
 <p>DefaultAuthenticationChallengeHandler は、OAuth 認証の認証情報の入力をユーザーに求めるために、デフォルトで <a href="https://developer.chrome.com/docs/android/custom-tabs/overview/">Chrome カスタムタブ</a> を使用するようになりました。これにより、外部ブラウザ ウィンドウで資格情報の入力を求めるよりも優れたユーザーエクスペリエンスが提供されます。Chrome カスタムタブのサポートにより、<a href="https://developer.android.com/jetpack/androidx/releases/browser">androidx.browser:browser</a> の新しい推移的依存関係が導入されました。 この依存関係は、gradle ビルドスクリプトから arcgis-android ライブラリを参照すると自動的に構成されます。API を手動でダウンロードする場合は、androidx の依存関係をサポートするように自分でプロジェクトを構成する必要があります。</p>
 <p>プロジェクトが Google でサポートされていない Android サポート ライブラリに依存している場合は、androidx ライブラリでコンパイルまたはランタイムの問題が発生するため、プロジェクトを <a href="https://developer.android.com/jetpack/androidx/migrate">androidx</a> に移行する必要があります。</p>
