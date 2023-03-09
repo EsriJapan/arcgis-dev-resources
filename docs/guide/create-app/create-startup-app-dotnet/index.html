@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-02T11:30:51 JST">
+<meta name="revised" content="2023-03-09T10:58:52 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -940,7 +940,7 @@ if (!doNotTrack) {
 <li>
 <p>App.xaml.cs の OnStartup メソッドをオーバーライドして、アプリケーションの起動時に API キーを設定します。</p>
 <p>App.xaml.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> : Application
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> : Application
 {
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> OnStartup(StartupEventArgs e)
@@ -976,7 +976,7 @@ if (!doNotTrack) {
 <li>
 <p>必要な using ステートメントをビュー モデルに追加します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> System.Text;
 
@@ -991,7 +991,7 @@ if (!doNotTrack) {
 <p>MapViewModel クラスに INotifyPropertyChanged インターフェイスを実装します。</p>
 <p>このインターフェイスは、ビュー モデルのプロパティが変更されたことをクライアント (ビュー) に通知するために使用される PropertyChanged イベントを定義します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> DisplayAMap
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> DisplayAMap
 {
     <span style="color:#75715e">// 変更前
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// class MapViewModel
@@ -1005,7 +1005,7 @@ if (!doNotTrack) {
 <p>MapViewModel クラス内に、PropertyChanged イベントを実装するコードを追加します。
 ビュー モデルのプロパティが変更されると、OnPropertyChanged の呼び出しにより、このイベントが発生します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
 {
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
@@ -1020,20 +1020,20 @@ if (!doNotTrack) {
 <p>ビュー モデルに <a href="https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Map.html">Esri.ArcGISRuntime.Mapping.Map</a> オブジェクトを公開する Map という新しいプロパティを定義します。
 プロパティが設定されると、OnPropertyChanged を呼び出します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
     <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> OnPropertyChanged([CallerMemberName] <span style="color:#66d9ef">string</span> propertyName = <span style="color:#66d9ef">null</span>)
     {
         PropertyChanged?.Invoke(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">new</span> PropertyChangedEventArgs(propertyName));
     }
 
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> Map <span style="color:#ae81ff">_</span>map;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> Map _map;
     <span style="color:#66d9ef">public</span> Map Map
     {
-        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">_</span>map; }
+        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> _map; }
         <span style="color:#66d9ef">set</span>
         {
-            <span style="color:#ae81ff">_</span>map = <span style="color:#66d9ef">value</span>;
+            _map = <span style="color:#66d9ef">value</span>;
             OnPropertyChanged();
         }
     }
@@ -1044,13 +1044,13 @@ if (!doNotTrack) {
 <p>MapViewModel クラスに SetupMap という関数を追加します。この関数は、新しいマップを作成して Map プロパティを設定します。
 マップは、「地形 (ベクトル)」ベースマップを使用します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">private</span> Map <span style="color:#ae81ff">_</span>map;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">private</span> Map _map;
     <span style="color:#66d9ef">public</span> Map Map
     {
-        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">_</span>map; }
+        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> _map; }
         <span style="color:#66d9ef">set</span>
         {
-            <span style="color:#ae81ff">_</span>map = <span style="color:#66d9ef">value</span>;
+            _map = <span style="color:#66d9ef">value</span>;
             OnPropertyChanged();
         }
     }
@@ -1068,7 +1068,7 @@ if (!doNotTrack) {
 <p>MapViewModel が新規にインスタンス化された際に、SetupMap 関数を呼び出すコンストラクターを追加します。
 MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
 {
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> MapViewModel()
@@ -1098,7 +1098,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <li>MapViewModel インスタンスを静的リソースとして定義する XAML を追加します。</li>
 </ul>
 <p>MainWindow.xaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Window</span> <span style="color:#a6e22e">x:Class=</span><span style="color:#e6db74">&#34;DisplayAMap.MainWindow&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Window</span> <span style="color:#a6e22e">x:Class=</span><span style="color:#e6db74">&#34;DisplayAMap.MainWindow&#34;</span>
         <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
         <span style="color:#a6e22e">xmlns:x=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
         <span style="color:#a6e22e">xmlns:d=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/expression/blend/2008&#34;</span>
@@ -1128,7 +1128,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <li>データ バインディングを使用して、MapViewModel リソースを使用し MapView コントロールの Map プロパティを設定します。</li>
 </ul>
 <p>MainWindow.xaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Window.Resources&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Window.Resources&gt;</span>
     <span style="color:#f92672">&lt;local:MapViewModel</span> <span style="color:#a6e22e">x:Key=</span><span style="color:#e6db74">&#34;MapViewModel&#34;</span> <span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/Window.Resources&gt;</span>
 
@@ -1148,7 +1148,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <li>
 <p>必要な using ステートメントを追加します。</p>
 <p>MainWindow.xaml.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System.Windows.Navigation;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System.Windows.Navigation;
 <span style="color:#66d9ef">using</span> System.Windows.Shapes;
 
 <span style="color:#75715e">// 追加開始
@@ -1162,7 +1162,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <li>
 <p>MainWindow のコンストラクターで、新しい <a href="https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html">Viewpoint</a> を定義するコードを追加し、マップ ビューに適用します。</p>
 <p>MainWindow.xaml.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> MainWindow()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> MainWindow()
 {
     InitializeComponent();
 
@@ -1190,13 +1190,13 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <li>
 <p>必要な using ステートメントを追加します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> Esri.ArcGISRuntime.Portal;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> Esri.ArcGISRuntime.Portal;
 <span style="color:#66d9ef">using</span> System.Threading.Tasks;
 </code></pre></div></li>
 <li>
 <p>MapViewModel.cs 内の SetupMap 関数を下記のように書き換えます。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">async</span> Task SetupMap()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">async</span> Task SetupMap()
 {
     <span style="color:#75715e">// ArcGIS ポータルを作成します。URI を指定しない場合は &#34;www.arcgis.com&#34; を使用します。
 </span><span style="color:#75715e"></span>    ArcGISPortal portal = <span style="color:#66d9ef">await</span> ArcGISPortal.CreateAsync();

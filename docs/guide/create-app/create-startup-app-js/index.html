@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-02T11:30:51 JST">
+<meta name="revised" content="2023-03-09T10:58:52 JST">
 <title>ArcGIS Maps SDK for JavaScript :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -902,7 +902,7 @@ if (!doNotTrack) {
 <li>
 <p>CodePen ＞ HTML で、HTML と CSS を追加し、viewDiv 要素を持つページを作成します。viewDiv は地図を表示する要素で、その CSS はブラウザの設定をリセットして、ブラウザの幅と高さをフルに利用できるようにしています。</p>
 <p>CodePenでは、<code>&lt;!DOCTYPE html&gt;</code> タグは必要ありません。他のエディタを使用している場合や、ローカルサーバでページを実行している場合は、必ずこのタグを HTML ページの先頭に追加してください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -930,7 +930,7 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p><code>&lt;head&gt;</code> タグ内に、CSS ファイルと JS ライブラリへの参照を追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -965,7 +965,7 @@ if (!doNotTrack) {
 <li>
 <p><code>&lt;head&gt;</code> タグ内に、<code>&lt;script&gt;</code> タグと <a href="https://dojotoolkit.org/documentation/tutorials/1.10/modules/index.html">AMD</a> の require ステートメントを追加して、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> モジュールと <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">MapView</a> モジュールを読み込みます。</p>
 <p>JavaScript のコードを HTML パネルではなく、CodePen ＞ JS パネルに追加することもできます。その場合は、<code>&lt;script&gt;</code> タグを削除してください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -986,7 +986,7 @@ if (!doNotTrack) {
     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.18/esri/themes/light/main.css&#34;</span>&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.18/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
-
+       
     <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
     &lt;<span style="color:#f92672">script</span>&gt;
       <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/config&#34;</span>,<span style="color:#e6db74">&#34;esri/Map&#34;</span>, <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">esriConfig</span>,<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>) {
@@ -1024,7 +1024,7 @@ if (!doNotTrack) {
 <p>マップおよびマップ ビューが  <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Map（2D）</a>でどのように機能するかについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">マッピングとロケーションサービス</a> を参照してください。</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -1049,7 +1049,7 @@ if (!doNotTrack) {
     <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
     &lt;<span style="color:#f92672">script</span>&gt;
       <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/config&#34;</span>,<span style="color:#e6db74">&#34;esri/Map&#34;</span>, <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">esriConfig</span>,<span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">MapView</span>) {
-
+           
         <span style="color:#75715e">// API キーの追加
 </span><span style="color:#75715e"></span>        <span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR-API-KEY&#34;</span>;
 
@@ -1088,7 +1088,7 @@ if (!doNotTrack) {
 <p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps（2D）</a>でのマップとマップビューの仕組みについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">マッピング API とロケーションサービス</a> のガイドを参照してください。</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -1149,7 +1149,7 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>require ステートメントにて、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html">WebMap</a> モジュールを追加で読み込みます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
 &lt;<span style="color:#f92672">script</span>&gt;
   <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/config&#34;</span>,<span style="color:#e6db74">&#34;esri/Map&#34;</span>, <span style="color:#e6db74">&#34;esri/WebMap&#34;</span>, <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">esriConfig</span>, <span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">WebMap</span>, <span style="color:#a6e22e">MapView</span>) {
 
@@ -1161,7 +1161,7 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> オブジェクトを下記のように書き換えます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// Web マップの参照
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// Web マップの参照
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">WebMap</span>({
    <span style="color:#a6e22e">portalItem</span><span style="color:#f92672">:</span> {
      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Web マップ ID&gt;&#34;</span>
@@ -1171,7 +1171,7 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p>Web マップに置き換えた全体のコードは下記の通りです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"> &lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"> &lt;<span style="color:#f92672">html</span>&gt;
    &lt;<span style="color:#f92672">head</span>&gt;
      &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
      &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
@@ -1187,12 +1187,12 @@ if (!doNotTrack) {
          <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
        }
      &lt;/<span style="color:#f92672">style</span>&gt;
-
+        
      <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
      &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.18/esri/themes/light/main.css&#34;</span>&gt;
      &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.18/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
      <span style="color:#75715e">&lt;!--追加終了  --&gt;</span>
-
+        
      <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
      &lt;<span style="color:#f92672">script</span>&gt;
        <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#34;esri/config&#34;</span>, <span style="color:#e6db74">&#34;esri/Map&#34;</span>, <span style="color:#e6db74">&#34;esri/WebMap&#34;</span>, <span style="color:#e6db74">&#34;esri/views/MapView&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">esriConfig</span>, <span style="color:#a6e22e">Map</span>, <span style="color:#a6e22e">WebMap</span>, <span style="color:#a6e22e">MapView</span>) {
@@ -1214,7 +1214,7 @@ if (!doNotTrack) {
                <span style="color:#75715e">//id: &#34;d3ffea931f4a455f9c3b6c2102e66eda&#34;
 </span><span style="color:#75715e"></span>             }
          });
-
+    
          <span style="color:#75715e">// マップ ビューの作成
 </span><span style="color:#75715e"></span>         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
            <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,

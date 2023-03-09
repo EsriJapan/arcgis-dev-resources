@@ -6,6 +6,12 @@ weight = 8
 
 ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
 
+{{% notice warning %}}
+
+ArcGIS AppStudio は2025年1月末日でサポートが終了します。ArcGIS AppStudio のサポートおよび移行に関する情報については[こちら](https://blog.esrij.com/2023/03/09/post-48452/)をご参照ください。
+
+{{% /notice %}}
+
 
 * [ガイド](https://doc.arcgis.com/ja/appstudio/configure-apps/guidedtour.htm)
   * AppStudio の概要からアプリの作成・デプロイ、AppStudio Player を使用したモバイル デバイスでのテスト、カスタマイズ方法等を紹介したガイドです。
@@ -22,13 +28,13 @@ ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
 * システム要件
   * [システム要件（米国Esri社）](https://doc.arcgis.com/ja/appstudio/configure-apps/systemrequirements.htm)
     * AppStudio のデスクトップ用のアプリ、AppStudio Player のサポート OS 等のシステム要件が記載されています。
-  * [システム要件（Esriジャパン）](https://www.esrij.com/products/arcgis-appstudio/environments/)
+  * [システム要件（Esriジャパン）](https://www.esrij.com/products/arcgis-appstudio/spec/)
     * 日本国内での固有のシステム要件を記載しています。
 
 * [ライセンス](https://doc.arcgis.com/ja/appstudio/configure-apps/licenseappstudio.htm)
   * AppStudio の 2 つのライセンス オプション（「ArcGIS AppStudio」と「ArcGIS AppStudio Developer Edition」）について紹介しています。
 
-* [ダウンロード](https://www.esri.com/ja-jp/arcgis/products/arcgis-appstudio/resources#settingup)
+* [ダウンロード](https://www.esri.com/ja-jp/arcgis/products/arcgis-appstudio/downloads)
   * AppStudio のデスクトップ用のアプリ、AppStudio Player はこちらからダウンロード（無償）できます。
 
 * [インストール](https://doc.arcgis.com/ja/appstudio/configure-apps/installappstudio.htm)
@@ -41,8 +47,7 @@ ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
 * その他
   * [FAQ（米国Esri社）](https://doc.arcgis.com/ja/appstudio/configure-apps/faq.htm)
     * よくあるご質問とその回答が記載されています。
-  * [FAQ（ESRIジャパン）](https://www.esrij.com/products/arcgis-appstudio/faq/)
-    * 製品のライセンスや日本国内のサポートに関する情報を紹介しています。
+
   * [Esri Community（英語）](https://community.esri.com/t5/arcgis-appstudio/ct-p/arcgis-appstudio)
     * 全世界のユーザーが投稿した製品に関する質問等の投稿を確認できます。
   * [その他の Tips](./faq)

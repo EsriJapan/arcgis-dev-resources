@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-02T11:30:51 JST">
+<meta name="revised" content="2023-03-09T10:58:52 JST">
 <title>データ ソース（Data source） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -932,7 +932,7 @@ if (!doNotTrack) {
 どのウィジェットでも、<code>RepeatedDataSourceProvider</code> を使用してリピートデータソースを提供することができます。Experience Builder の <code>List</code> ウィジェットは、リピートデータソースを提供する良い例です。リピートデータソースを使用するには、ウィジェットのマニフェストファイルに <code>supportRepeat</code> プロパティを追加します。</p>
 <h3 id="ウィジェットでのデータソースの使用use-data-source-in-widget">ウィジェットでのデータソースの使用（Use data source in widget）</h3>
 <p>データソースは、ウィジェットがデータにアクセスする方法を定義します。公開されたエクスペリエンスのすべてのデータソースは、アプリの config.json の <code>dataSources</code> プロパティに保存されます。config.json は <code>server/public/apps/</code> フォルダにあります。以下のスニペットでは、この <code>dataSources</code> プロパティに <code>WEB_MAP</code> タイプのデータソースが 1 つあります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;dataSources&#34;</span><span style="color:#f92672">:</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;dataSources&#34;</span><span style="color:#f92672">:</span> {
     <span style="color:#e6db74">&#34;dataSource_1&#34;</span><span style="color:#f92672">:</span> {
       <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;WEB_MAP&#34;</span>,
       <span style="color:#e6db74">&#34;itemId&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cb5329a59a354904a035de57f85112d3&#34;</span>,
@@ -942,7 +942,7 @@ if (!doNotTrack) {
     }
   },
 </code></pre></div><p>ウィジェットでのデータソースの使用は、app config で <code>useDataSources</code> というプロパティで宣言されます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">   <span style="color:#e6db74">&#34;useDataSources&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">   <span style="color:#e6db74">&#34;useDataSources&#34;</span><span style="color:#f92672">:</span> [
         {
           <span style="color:#e6db74">&#34;dataSourceId&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dataSource_1&#34;</span>
         }
@@ -962,7 +962,7 @@ if (!doNotTrack) {
 <p><code>jimu-arcgis</code> パッケージでは、データソースとして WebMap/WebScene をラッピングしています。WebMap にアクセスするには <code>WebMapDataSource</code> を、WebScene には <code>WebSceneDataSource</code> を使用します。これらのデータソースの使用方法については、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/">MapView サンプル</a>をご確認ください。WebMap/WebScene オブジェクトに加えて、これらのオブジェクトに含まれるすべてのレイヤーもデータソースとしてラップされているため、<code>getChildDataSources</code> を呼び出してすべてのレイヤーのデータソースを取得することができます。サポートされているレイヤーとサービスは、<code>SupportedLayerServiceTypes</code> と <code>SupportedServiceTypes</code> で定義されています。</p>
 <h3 id="featurelayer-の使用use-featurelayer">FeatureLayer の使用（Use FeatureLayer）</h3>
 <p>ワークフローの中には、FeatureLayer を直接操作するような軽量のエクスペリエンスを作成する必要があるものもあります。このような場合、<code>FeatureLayerDataSource</code> クラスを使用します。独立したフィーチャーマップを使用するウィジェットは、<code>layer</code> プロパティを持たない <code>FeatureLayerDataSource</code> オブジェクトを取得しますが、ウェブマップやウェブシーンからフィーチャーマップを使用すると、<code>layer</code> プロパティを持つ <code>FeatureLayerDataSource</code> オブジェクトが返されます。<code>Layer</code> オブジェクトは、ArcGIS Maps SDK for JavaScript のものです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getLayerObject</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ds</span>: <span style="color:#66d9ef">FeatureLayerDataSource</span>) <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getLayerObject</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">ds</span>: <span style="color:#66d9ef">FeatureLayerDataSource</span>) <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">layer</span>; <span style="color:#75715e">// this can be null
 </span><span style="color:#75715e"></span> }
 </code></pre></div><h3 id="ウィジェット間のデータ共有sharing-data-between-widgets">ウィジェット間のデータ共有（Sharing data between widgets）</h3>
