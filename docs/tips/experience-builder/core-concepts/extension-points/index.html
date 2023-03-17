@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-09T10:58:52 JST">
+<meta name="revised" content="2023-03-17T16:26:15 JST">
 <title>拡張ポイント（Extension points） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -535,34 +535,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
       </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -886,7 +863,7 @@ if (!doNotTrack) {
 <h3 id="拡張ポイントextension-points">拡張ポイント（Extension points）</h3>
 <p>Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。</p>
 <p>Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
   {
     <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension point name&gt;&#34;</span>,
     <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension uri, relative to src folder&gt;&#34;</span>

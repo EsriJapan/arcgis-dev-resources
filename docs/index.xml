@@ -416,7 +416,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</guid>
-      <description>ArcGIS Experience Builder は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。Developer Edition (開発者向けエディション)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。
+      <description>ArcGIS Experience Builder は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなく Web アプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。Developer Edition (開発者向けエディション)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Web サーバーなどの独自のサーバーにホストすることが可能です。
 ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS Maps SDK for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) のコア コンセプト (Core concepts) を参照してください。
 インストール ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcGIS Enterprise 10.6 以降をサポートしています。 Experience Builder (Developer Edition) は server と client の 2 つのサービスを使用しています。
  server サービス  Experience Builder (Developer Edition) の本体を起動します。   client サービス  独自のウィジェットやテーマを開発するためには client サービスを使用する必要があります。通常、server サービスを起動することで、Experience Builder (Developer Edition) を動作させることはできますが、開発したウィジェットなどを配置したり、デバッグするには、client サービスを起動しておく必要があります。    両方のサービスを実行しておくことで、Experience Builder での更新を自動的に反映することができます。 ここでは、Experience Builder (Developer Edition) の server と client のインストール手順について説明します。また、インターネットに接続していない環境で Experience Builder をインストールする必要がある場合は、offlineでのインストール手順を参照してください。</description>
@@ -1044,17 +1044,6 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
     </item>
     
     <item>
-      <title>ウィジェット一覧表 (ArcGIS Online)</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/</guid>
-      <description>ArcGIS Web AppBuilder ウィジェット一覧表 ArcGIS Web AppBuilder（ArcGIS Online 版)で提供されている過去のウィジェットの一覧表です。
-表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
- ArcGIS Web AppBuilder ウィジェット一覧表 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 ArcGIS Online (2019 年 6 月アップデート) ArcGIS Online (2019 年 10 月アップデート) ArcGIS Online (2019 年 12 月アップデート) ArcGIS Online (2020 年 3 月アップデート) ArcGIS Online (2020 年 7 月アップデート) ArcGIS Online (2020 年 9 月アップデート) ArcGIS Online (2020 年 12 月アップデート) ArcGIS Online (2021 年 4 月アップデート) ArcGIS Online (2021 年 6 月アップデート) ArcGIS Online (2021 年 9 月アップデート) ArcGIS Online (2021 年 12 月アップデート) ArcGIS Online (2022 年 3 月アップデート)     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   データ集約 データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 ベータ版〇 ベータ版〇 ベータ版〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
-    </item>
-    
-    <item>
       <title>サードパーティ製のライブラリ使用</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1082,17 +1071,6 @@ manifest.json を使用して CDN 経由で使用 ライブラリを複数のウ
       <description>出典：ArcGIS Experience Builder - Guide - Data action
 データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。データアクションは、データソースのインスタンスとデータレコードの配列を受け取ります。データをサポートしているかどうかや、ユーザーが実行したときに何が実行されるかを定義することができます。フレームワークは、CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットでもデータアクションを提供することができます。例えば、Map ウィジェットは pan to とzoom to のデータアクションを提供しています。データアクションは、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成することで、ウィジェットに実装することができます。
 データ・アクションを提供するだけでなく、ウィジェットはデータ・アクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.json プロパティで canConsumeDataAction: true を宣言し、import {DataActionDropDown} from &#39;jimu-ui&#39; をインポートして、ウィジェットの UI で DataActionDropDown をレンダリングする必要があります。</description>
-    </item>
-    
-    <item>
-      <title>ウィジェット一覧表 (ArcGIS Enterprise)</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/</guid>
-      <description>ArcGIS Web AppBuilder ウィジェット一覧表 ArcGIS Web AppBuilder（ArcGIS Enterprise 版）で提供されている過去のウィジェットの一覧表です。
-表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
- ArcGIS Web AppBuilder ウィジェット一覧表 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 ArcGIS Enterprise バージョン 10.7.1 ArcGIS Enterprise バージョン 10.8 ArcGIS Enterprise バージョン 10.8.1 ArcGIS Enterprise バージョン 10.9 ArcGIS Enterprise バージョン 10.9.1     情報 情報ウィジェットは、ウィジェットに表示するコンテンツを作成します。 〇 〇 〇 〇 〇   データ追加 データ追加ウィジェットを使用すると、ArcGIS Online または ArcGIS Enterprise のコンテンツからレイヤーを検索するか、URL を入力するか、ローカル ファイルをアップロードすることで、データをマップに追加できます。 〇 〇 〇 〇 〇   解析 解析ウィジェットを使用すると、アプリケーション内で ArcGIS Online または ArcGIS Enterprise の空間解析ツールを簡単に利用できます。 〇 〇 〇 〇 〇   属性テーブル 属性テーブル ウィジェットは、操作レイヤーの属性を表形式で表示します。 〇 〇 〇 〇 〇   属性一括編集 属性の一括編集ウィジェットではフィーチャ (関連フィーチャ、別のレイヤーに基づくフィーチャ、または図形内でスケッチしたフィーチャ) を選択し、共通属性を一括更新できます。 〇 〇 〇 〇 〇   ベースマップ ギャラリー ベースマップ ギャラリー ウィジェットには、ベースマップがギャラリー形式で表示され、ギャラリーの中から 1 つのベースマップを選択してアプリのベースマップにすることができます。 〇 〇 〇 〇 〇   ブックマーク ブックマーク ウィジェットには、アプリに表示されるマップ表示範囲 (空間ブックマーク) のコレクションが格納されます。 〇 〇 〇 〇 〇   Business Analyst Business Analyst ウィジェットを使用すると、マップ上のポイントまたはポリゴン フィーチャのレポートとインフォグラフィックスを実行することで、その詳細情報を表示することができます。 - 〇 〇 〇 〇   チャート チャート ウィジェットには、操作レイヤーから取得された定量属性がデータのグラフィカルな表現として表示されます。 〇 〇 〇 〇 〇   コントローラー コントローラー ウィジェットはパネル内ウィジェット用のコンテナーです。ヘッダー構成とサイドバー構成という 2 種類のコントローラーが事前に組み込まれています。 〇 〇 〇 〇 〇   座標 座標ウィジェットは、マップ上に X と Y の座標値を表示します。 〇 〇 〇 〇 〇   座標変換 座標変換ウィジェットでは、1 つの座標系を使用する座標を入力し、複数の表記形式を使用する別の座標系に出力することができます。 〇 〇 〇 〇 〇   コスト解析 コスト解析ウィジェットを使用すると、作成する各フィーチャにコスト係数を割り当てることができます。 〇 〇 〇 〇 〇   データ集約（ベータ版） データ集約ウィジェットを使用すると、CSV (カンマ区切り値) ファイルに格納されている住所または座標情報から地理フィーチャを作成し、CSV ファイルとターゲット レイヤーのフィールド情報を関連付ける方法を定義できます。 - - 〇 〇 〇   ルート案内 ルート案内ウィジェットは、2 つ以上の地点間のターンに基づくルート案内をすばやく効果的に算出する機能を提供します。 〇 〇 〇 〇 〇   地域検索 地域検索ウィジェットを使用すると、選択したポリゴンに関連するポイント フィーチャを検索したり、各フィーチャの詳細を表示したり、選択したポイント フィーチャへのルート案内を取得したりすることができます。 〇 〇 〇 〇 〇   距離と方向 距離と方向ウィジェットは、線、円、楕円、および範囲リングを描画し、重要な情報を視覚化できます。 〇 〇 〇 〇 〇   描画 描画ウィジェットでは、マップ上に任意のグラフィック (図形) を描画できます。 〇 〇 〇 〇 〇   編集 このウィジェットには、フィーチャ サービスのうち編集可能なレイヤーを編集する機能が含まれています。 〇 〇 〇 〇 〇   緊急時応急措置指針 ERG (緊急時応急措置指針) ウィジェットでは、危険物の流出の種類とユーザーが選択したマップ上の場所に基づいて、潜在的な危険を特定できます。 〇 〇 〇 〇 〇   範囲移動 範囲移動ウィジェットを使用すると、マップの前または次の範囲に移動することができます。 〇 〇 〇 〇 〇   フィルター フィルター ウィジェットを使用すると、レイヤー内のフィーチャの表示設定を制限できます。 〇 〇 〇 〇 〇   全画面 全画面ウィジェットでは、全画面モードを使用できます。 〇 〇 〇 〇 〇   ジオコーダー ジオコーダー ウィジェットは、検索ウィジェットに置き換えられました。検索ウィジェットの項目を参照してください。 〇 〇 〇 〇 〇   地理検索 地理検索ウィジェットは、マップ上のポリゴン フィーチャ レイヤーを使用して、CSV ファイル内の位置リストに情報を付加します。 〇 〇 〇 〇 〇   ジオプロセシング ジオプロセシング ウィジェットには、ジオプロセシング タスクを実行するダイナミック ユーザー インターフェイスが組み込まれています。 〇 〇 〇 〇 〇   グリッド オーバーレイ グリッド オーバーレイ ウィジェットでは、Web アプリでクライアント側のリソースを使用して、U.</description>
     </item>
     
     <item>
@@ -1151,17 +1129,6 @@ const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon ico
     </item>
     
     <item>
-      <title>ウィジェット一覧表 (Developer Edition)</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/</guid>
-      <description>ArcGIS Web AppBuilder ウィジェット一覧表 ArcGIS Web AppBuilder（Developer Edition 版 ※1）で提供されてい過去のウィジェットの一覧表です。
-表の「〇」をクリックすると、ウィジェットの詳細ページ（Web ガイド）にリンクします。表に「-」が記載されているウィジェットは提供されていません。
- 2D ウィジェット 3D ウィジェット 補足事項  2D ウィジェット    ウィジェット 機能概要 Developer Edition バージョン 2.13 ※1 Developer Edition バージョン 2.14 ※1 Developer Edition バージョン 2.15 ※1 Developer Edition バージョン 2.16 ※1 Developer Edition バージョン 2.17 ※1 Developer Edition バージョン 2.18 ※1 Developer Edition バージョン 2.19 ※1 Developer Edition バージョン 2.20 ※1 Developer Edition バージョン 2.21 ※1 Developer Edition バージョン 2.</description>
-    </item>
-    
-    <item>
       <title>デプロイ</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1191,7 +1158,7 @@ Experience のデプロイ Experience を Web サーバーにデプロイする�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</guid>
       <description>ArcGIS Experience Builder のチュートリアルでは、カスタム ウィジェットの作成方法について説明しています。各チュートリアルの完了には、約 15 分かかります。カスタム ウィジェットの作成方法と API の使用方法について理解することができます。
- スターター ウィジェットの作成 (Esri Community ブログ) Get map coordinates (英語) Add layers to a map (英語)  </description>
+ スターター ウィジェットの作成 (Esri Community ブログ) マップの座標を取得 (Esri Community ブログ) Add layers to a map (英語)  </description>
     </item>
     
     <item>

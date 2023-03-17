@@ -5,7 +5,7 @@ weight = 3
 aliases = ["/experience/install-guide/"]
 +++
 
-[ArcGIS Experience Builder](https://www.esrij.com/products/arcgis-experience-builder/) は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなくWebアプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。[Developer Edition (開発者向けエディション)](https://developers.arcgis.com/experience-builder/)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Webサーバーなどの独自のサーバーにホストすることが可能です。
+[ArcGIS Experience Builder](https://www.esrij.com/products/arcgis-experience-builder/) は、モダンな Web アプリ構築のための新しいビルダーで、コードを記述することなく Web アプリケーションを作成することができます。豊富なウィジェット セットから必要なツールを選択したり、独自のテンプレートをデザインしたり、2D コンテンツや 3D コンテンツを操作したりすることができます。[Developer Edition (開発者向けエディション)](https://developers.arcgis.com/experience-builder/)は、これらの機能に加え、ウィジェットやテーマを独自に開発するなどのアプリをカスタマイズするためのフレームワークを提供します。また、作成したアプリケーションをダウンロードして、Web サーバーなどの独自のサーバーにホストすることが可能です。
 
 ArcGIS Experience Builder (Developer Edition) で使用されている技術は、ArcGIS Maps SDK for JavaScript 4.x に加えて、React + Redux といったフレームワークや Bootstrap 4 などのコンポーネントライブラリ等を使用しています。開発に必要な情報は ArcGIS Experience Builder (Developer Edition) の[コア コンセプト (Core concepts)](../core-concepts) を参照してください。
 
@@ -81,13 +81,20 @@ Experience Builder は、Node.js を使用します。長期サポート (LTS) �
 
 1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
 <br/><span style="font-size: 75%">※ [ダウンロードページ](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span>
-2.  コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
+2. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start  で実行します。</span>
-3.  `npm start` と入力して server を起動します。
+3. `npm start` と入力して server を起動します。
+{{% notice tip %}}
+
+カスタムポートを使用するには、次のようにオプションとしてポートを指定します。： `npm start -- --port 81 --https_port 443 `.
+
+サブディレクトリ（例：https://localhost:3001/subfolder）でサーバーを実行するには、次のように path オプションを指定します： `npm start -- --path /subfolder `.
+
+{{% /notice %}}
 4.  次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
 {{% notice tip %}}
 
-Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。デフォルトの証明書を独自の証明書に変更するには、/server/cert ディレクトリの server.key と server.cert の 2 つのファイルを置き換える必要があります。
+Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。独自の証明書を使用するには、server/cert ディレクトリのこれら 2 つのファイル server.key と server.cert を置き換えます。また、次のように証明書ファイル (server.cert および server.key) が存在するフォルダへのカスタムパスを指定することもできます。：npm start -- --cert_folder <フォルダパス>
 
 {{% /notice %}}
 5.  ポータルの URL には ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、クライアント ID には「[1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-developers-を使用した-client-id-の作成)」で作成した client ID」、または「[1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成](#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成)」で作成したアプリケーション ID を指定します。
@@ -130,13 +137,13 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 
 ## Offline インストール
 
-* インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、[JSAPI](https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api) をダウンロードしてローカルにインストールする必要があります。
+- インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、[JSAPI](https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api) をダウンロードしてローカルにインストールする必要があります。
 
-* Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
+- Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
 
 {{% notice tip %}}
 
-Esri が公開している[オフライン インストール動画 (英語)](https://youtube.com/watch?v=1rO1cZNEr0E)でも確認することができます。 
+Experience Builder の機能強化や新機能をサポートするために、最新版の ArcGIS API JavaScript をインストールすることが推奨されています。Esri が公開しているオフライン インストール動画（英語）](https://youtube.com/watch?v=1rO1cZNEr0E) を参照してください。ホストされた JSAPI のために、サーバーで CORS サポートを設定することが推奨されます。例えば、Windows OS の場合、HTTPSレスポンスヘッダーに`Access-Control-Allow-Original` アクションを追加することができます。
 
 {{% /notice %}}
 
@@ -153,8 +160,8 @@ Esri が公開している[オフライン インストール動画 (英語)](ht
     -   `<install folder>/client/dist/experience/index.html`
     -   `<install folder>/client/dist/template/index.html`
     -   `<install folder>/client/dist/builder/index.html`
-9. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の client ディレクトリに cd コマンドで移動して、npm start と入力して client サービスを起動します。
-10. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の server ディレクトリに cd コマンドで移動して、npm start と入力して server サービスを起動します。
+10. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の client ディレクトリに cd コマンドで移動して、npm start と入力して client サービスを起動します。
+11. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder のインストール先の server ディレクトリに cd コマンドで移動して、npm start と入力して server サービスを起動します。
 
 {{% notice tip %}}
 
@@ -178,6 +185,21 @@ Experience Builder (Developer Edition) を使用するために Client ID が必
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
 
 6. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
-7. ポータルの URL には、ArcGIS Online または ArcGIS Enterpriseの組織サイトの URL を指定し、4. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
+7. ポータルの URL には、ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、5. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
 8. サイン イン後の流れについては、[2. server サービスのインストール](#2-server-サービスのインストール)のステップ5 以降を参照してください。
 
+## Windows サービスとしてインストール
+
+1. お使いの OS に対応した最新の [Node.js LTSバージョン](https://nodejs.org/en/download/)をダウンロードし、インストールしてください。
+
+2. Windows のコマンドプロンプトを管理者権限で開きます。
+
+3. Experience Builder の `/server` ディレクトリにディレクトリを変更 (`cd`) します。
+
+4. `npm ci ` コマンドを実行し、依存関係をインストールします。
+
+5. `npm run install-windows-service` のコマンドを実行します。
+
+6. Windows サービスアプリを開き、Experience Builder サービス（デフォルト名：exb-server）を起動します。
+
+7. Experience Builder サービスを削除するには、 `npm run uninstall-windows-service ` というコマンドを実行します。

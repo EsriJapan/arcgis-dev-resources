@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-09T10:58:52 JST">
+<meta name="revised" content="2023-03-17T16:26:15 JST">
 <title>はじめに :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -533,34 +533,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
       </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -887,29 +864,29 @@ if (!doNotTrack) {
 <p>次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。</p>
 <h3 id="cdn-で利用する">CDN で利用する</h3>
 <p>Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.css&#34;</span> /&gt;
 </code></pre></div><p>これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。</p>
 <h3 id="npm-パッケージで利用する">NPM パッケージで利用する</h3>
 <p>Calcite Components は、<a href="https://www.npmjs.com/package/@esri/calcite-components">NPM パッケージ</a>としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは<a href="https://github.com/Esri/calcite-components-examples">こちら</a>でご覧いただけます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install @esri/calcite-components
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install @esri/calcite-components
 </code></pre></div><h4 id="ビルドの選択">ビルドの選択</h4>
 <p>Calcite Components が提供する2つのビルドから1つを選択します。</p>
 <h4 id="カスタム要素">カスタム要素</h4>
 <p>フロントエンド フレームワークを活用する場合は、<a href="https://stenciljs.com/docs/custom-elements">カスタム要素</a> の構築を推奨します。このビルドを使用するには、Calcite Components のアセットへのパスを設定する必要があります。この後のステップで説明するローカル アセットと、CDN でホストされているアセットのどちらかを使用することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">setAssetPath</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">setAssetPath</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components&#34;</span>;
 <span style="color:#75715e">// CDN ホスティング アセット
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">setAssetPath</span>(<span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/1.0.5/assets&#34;</span>);
 
 <span style="color:#75715e">// ローカル アセット
 </span><span style="color:#75715e">// setAssetPath(PATH); // PATH はフレームワークによって異なります。
 </span></code></pre></div><p>次に、カスタム要素ビルドから、使用する各コンポーネントをインポートする必要があります。これにより、ウィンドウにカスタム要素が自動的に定義されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components/calcite-button&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components/calcite-button&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components/calcite-icon&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/components/calcite-slider&#34;</span>;
 </code></pre></div><h4 id="ディストリビューション">ディストリビューション</h4>
 <p><a href="https://stenciljs.com/docs/distribution">ディストリビューション</a> ビルドを使用する場合、ウィンドウ上でカスタム要素を定義する必要があります。また、ローカルと CDN にホストされたアセットのどちらかを選択することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineCustomElements</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/loader&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineCustomElements</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/loader&#34;</span>;
 <span style="color:#75715e">// CDN ホスティング アセット
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">defineCustomElements</span>(window, {
   <span style="color:#a6e22e">resourcesUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/1.0.5/assets&#34;</span>
@@ -922,10 +899,10 @@ if (!doNotTrack) {
 <p>calcite-icon や calcite-date-picker などの一部のコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述の通り、NPM パッケージでは、ローカルパスまたは CDN でホストされているアセットへの URL を指定するオプションがあります。CDN でホストされたアセットを使用することで、ディスク上のビルド サイズを減らすことができます。</p>
 <p>ローカルで使用するためには、ビルド ツールや NPM スクリプトを使用して、アセットをコピーする必要があります。ローカル アセットのディレクトリは、コピー処理を容易にするために、assets という名前にする必要があります。例えば、/public/calcite/assets は動作しますが、/public/calcite-assets は動作しません。</p>
 <p>Calcite Components の<a href="https://github.com/Esri/calcite-components-examples">サンプル集</a>では、様々な JavaScript フレームワークやビルド ツールでローカル アセットを使用することを実証しています。各例には、フレームワークやビルド ツール固有の説明を含む README があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/
 </code></pre></div><h3 id="スタイルのインポート">スタイルのインポート</h3>
 <p>最後に、カスケーディング スタイル シート（CSS）を読み込みます。これもフレームワークやビルド ツールに依存しますが、多くの場合、JavaScript で読み込むことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/calcite/calcite.css&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/calcite/calcite.css&#34;</span>;
 </code></pre></div>
 
     

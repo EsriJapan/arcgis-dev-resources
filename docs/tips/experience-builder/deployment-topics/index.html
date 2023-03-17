@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-09T10:58:52 JST">
+<meta name="revised" content="2023-03-17T16:26:15 JST">
 <title>デプロイ :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -534,34 +534,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
       </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -875,7 +852,7 @@ if (!doNotTrack) {
     <p>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前に<a href="https://developers.arcgis.com/experience-builder/guide/requirements">システム要件</a>を参照してください。</p>
 <h2 id="experience-のダウンロード">Experience のダウンロード</h2>
 <p>Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように <code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。</p>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" /></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" />
 <h2 id="experience-のデプロイ">Experience のデプロイ</h2>
 <p>Experience を Web サーバーにデプロイするには、次の手順を実行します。</p>
 <ol>
@@ -886,7 +863,7 @@ if (!doNotTrack) {
 <li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
 <li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度にファイルを保存します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
     <span style="color:#f92672">&#34;portalUrl&#34;</span>: <span style="color:#e6db74">&#34;https://exb.maps.arcgis.com&#34;</span>,
     <span style="color:#f92672">&#34;clientId&#34;</span>: <span style="color:#e6db74">&#34;EXBAPPsag0XSRtpj&#34;</span>
   }<span style="color:#960050;background-color:#1e0010">,</span>

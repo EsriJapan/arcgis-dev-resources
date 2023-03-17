@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-09T10:58:53 JST">
+<meta name="revised" content="2023-03-17T16:26:15 JST">
 <title>スクリプト実行の自動化 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -533,34 +533,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
       </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-online/">
-            ウィジェット一覧表 (ArcGIS Online)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/arcgis-enterprise/">
-            ウィジェット一覧表 (ArcGIS Enterprise)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/developer-edition/">
-            ウィジェット一覧表 (Developer Edition)
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -976,7 +953,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <ul>
 <li>以下のコマンドを Bash ターミナルから実行</li>
 </ul>
-<pre><code>    crontab -e
+<pre tabindex="0"><code>    crontab -e
 </code></pre><ul>
 <li>次のような使用するテキスト エディタを選択する画像が表示された場合、任意の番号のテキストエディタを選択します (今回は 1 番を選択)。</li>
 </ul>
@@ -987,7 +964,7 @@ cron は任意のタスクを任意の時間にバックグラウンドで実行
 <ul>
 <li>crontab の編集画面が開くので次のとおり実行する内容を記述</li>
 </ul>
-<pre><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
+<pre tabindex="0"><code>*/30 * * * * cd /home/&lt;ユーザー名&gt;/py-script &amp;&amp; /home/&lt;ユーザー名&gt;/anaconda3/envs/arcgis171/bin/python task.py
 </code></pre><div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/automate-task/crontab.png" width="500px">
 </div>

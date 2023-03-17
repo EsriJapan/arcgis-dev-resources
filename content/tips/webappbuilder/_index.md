@@ -8,5 +8,5 @@ ArcGIS Web AppBuilder (Developer Edition) の開発に役立つガイド集で�
 
 {{% children description="true"   %}}
 
-* [カスタム ウィジェットのサンプル集（外部サイト）](https://web-appbuilder-widget-search.surge.sh)   
-ArcGIS Web AppBuilder (Developer Edition) を使用して開発されたカスタム ウィジェットのサンプルを確認できるサイトです。
+#### [カスタム ウィジェットのサンプル集（外部サイト）](https://web-appbuilder-widget-search.surge.sh)   
+- ArcGIS Web AppBuilder (Developer Edition) を使用して開発されたカスタム ウィジェットのサンプルを確認できるサイトです。
