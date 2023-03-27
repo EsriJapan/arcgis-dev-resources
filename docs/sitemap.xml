@@ -4,8 +4,6 @@
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</loc>
@@ -33,6 +31,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/</loc>
   </url><url>
@@ -207,6 +207,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/</loc>
   </url><url>

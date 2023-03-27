@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2023-03-27T14:44:10 JST">
-<title>matplotlib での日本語利用について :: ArcGIS Developers 開発リソース集</title>
+<title>Web AppBuilder からの移行 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS API for Python で利用されているグラフ描画ライブラリの matplotlib で日本語を使う方法を説明します。">
+<meta name="description" content="Web AppBuilder から ArcGIS Experience Builder (Developer Edition) への移行方法について説明しています。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -279,10 +279,11 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
@@ -497,7 +498,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
             Web AppBuilder からの移行
@@ -621,11 +622,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
@@ -670,7 +670,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
             matplotlib での日本語利用について
@@ -818,7 +818,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/python/'>ArcGIS API for Python</a> > matplotlib での日本語利用について
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > Web AppBuilder からの移行
 
  
 
@@ -835,13 +835,9 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#対応環境">対応環境</a></li>
-        <li><a href="#matplotlib-での日本語フォントの設定方法">matplotlib での日本語フォントの設定方法</a></li>
-        <li><a href="#参考">参考</a></li>
-      </ul>
-    </li>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#スタートアップ">スタートアップ</a></li>
+    <li><a href="#ウィジェットの新規作成">ウィジェットの新規作成</a></li>
   </ul>
 </nav>
         </div>
@@ -853,7 +849,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>matplotlib での日本語利用について</h1>
+    <h1>Web AppBuilder からの移行</h1>
   
 
 
@@ -861,111 +857,48 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS API for Python では様々な オープンソース ライブラリを活用していますが、グラフを描画する際は主に matplotlib が使用されています。<br>
-matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますが、フォント設定を変更することで表示させることが可能です。</p>
-<h3 id="対応環境">対応環境</h3>
-<p>ここでは、次の環境を用いた場合の設定方法を説明します。</p>
-<ul>
-<li>ArcGIS Pro 2.5</li>
-<li>ArcGIS API for Python 1.7.0</li>
-<li>matplotlib 3.1.1</li>
-</ul>
-<p>日本語フォントの多くは ttc ファイルで提供されていますが、以前の matplotlib は ttc ファイルに対応していませんでした。matplotlib 3.1.0 から ttc ファイルに対応するようになったため、フォントを追加でインストールすることなく日本語を表示させることができるようになっています。それ以前のバージョンをご利用されている場合は以下をご検討ください。</p>
-<ol>
-<li>ArcGIS Pro のアップグレード
-<ul>
-<li>ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。</li>
-</ul>
-</li>
-<li>ArcGIS API for Python をアップグレード
-<ul>
-<li>Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。</li>
-</ul>
-</li>
-</ol>
-<h3 id="matplotlib-での日本語フォントの設定方法">matplotlib での日本語フォントの設定方法</h3>
-<p>設定方法は主に以下の 2 通りがあります。</p>
-<ol>
-<li>スクリプトで matplotlib の設定を都度変更する</li>
-<li>matplotlib の設定ファイル (matplotlibrc) を編集する</li>
-</ol>
-<p>前者の方法では一時的な設定変更、後者では恒久的な設定変更が可能です。
-どちらが適しているかはご自身の状況に合わせて選択してください。</p>
-<h4 id="スクリプトで-matplotlib-の設定を都度変更する">スクリプトで matplotlib の設定を都度変更する</h4>
-<p>次のコードをスクリプトの最初に実行することでフォント設定を変更することが可能です。<br></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-<span style="color:#f92672">from</span> matplotlib <span style="color:#f92672">import</span> rcParams
-rcParams[<span style="color:#e6db74">&#34;font.family&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sans-serif&#34;</span>
-rcParams[<span style="color:#e6db74">&#34;font.sans-serif&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Meiryo&#34;</span>]
-</code></pre></div><p><code>rcParams</code> は matplotlib のデフォルト設定が入っているオブジェクトです。<br>
-上記では Windows で利用可能な Meriyo に変更していますが、ご自身の OS 等に応じて適宜フォントファミリー、フォントを変更してください。<br>
-設定したら<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B3%E3%83%BC%E3%83%89">サンプル コード</a>を実行してみましょう。</p>
-<h4 id="matplotlib-の設定ファイル-matplotlibrc-を編集する">matplotlib の設定ファイル (matplotlibrc) を編集する</h4>
-<p>上記の設定方法では毎回スクリプトの最初にコードを実行する必要がありますが、以下の方法でデフォルトのフォントを恒久的に変更することが可能です。</p>
-<h5 id="matplotlibrc-のパスを確認">matplotlibrc のパスを確認</h5>
-<p>次のコードを実行して matplotlib の設定ファイルである matplotlibrc のパスを確認します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib <span style="color:#66d9ef">as</span> mpl
-mpl<span style="color:#f92672">.</span>matplotlib_fname()
-</code></pre></div><h5 id="matplotlibrc-を-cusersユーザー名matplotlib-にコピー--ペーストで配置">matplotlibrc を C:\Users\&lt;ユーザー名&gt;\.matplotlib にコピー &amp; ペーストで配置</h5>
-<p>matplotlibrc が格納されているパスへ移動しファイルをコピーしたら、以下のディレクトリにペーストします。</p>
-<ul>
-<li><code>C:\Users\&lt;ユーザー名&gt;\.matplotlib</code></li>
-</ul>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/migrating-from-web-appbuilder/">migrating-from-web-appbuilder</a></p>
+<h2 id="はじめに">はじめに</h2>
+<p>ArcGIS Experience Builder は、Web AppBuilder とはさまざまな点で異なります。これらの違いから、Web AppBuilder から Experience Builder へカスタム ウィジェットやテーマを直接変換することはできません。手動のプロセスですが、Experience Builder 用にウィジェットやテーマを再構築する際に考慮すべきヒント、テクニック、および推奨プラクティスを紹介します。</p>
 <div class="notices tip" >
-<p>conda を使用して複数の環境を作成・利用している場合、それぞれの環境が matplotlibrc を保持しています。<br>
-上記のパスに配置された matplotlibrc は各環境の matplotlibrc よりも優先されるため、当該ファイルを修正するだけで全ての環境で日本語のフォントを設定することができます。</p>
+<p>これは網羅的なものではありませんし、開発者が手動で書き直す作業であることに変わりはありません。これらの手順は、Experience Builder 内でウィジェットを再ビルドする際の準備と計画に役立つように提供されます。</p>
 </div>
-<h5 id="matplotlibrc-の内容を修正">matplotlibrc の内容を修正</h5>
-<p>ペーストした matplotlibrc のフォント設定部分を書き換えます。<br>
-matplotlibrc は非常に長いファイルですが、160 行目あたりからフォント設定のセクションが始まります。</p>
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-section.png" width="500px">
+<h2 id="スタートアップ">スタートアップ</h2>
+<p>まず、Experience Builder のドキュメントを確認し、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">ウィジェット開発のスタート ドキュメント</a>に従って TypeScript、React、JSX、Jimu を学びます。</p>
+<h2 id="ウィジェットの新規作成">ウィジェットの新規作成</h2>
+<p>コア技術の概念に慣れたら、ブランク/スターターの Experience Builder のウィジェットを作成し、ビルド環境が正しく設定されていることを確認します。次に、Web AppBuilder のカスタム ウィジェットから新しい Experience Builder のカスタム ウィジェットにコードを移動し、次の点に注意してください。</p>
+<ol>
+<li>
+<p>どちらのウィジェットにも manifest.json がありますが、Experience Builder のものは若干異なりますので、<a href="https://developers.arcgis.com/experience-builder/guide/widget-manifest/">新しい manifest.json の形式</a>を確認し、適宜更新してください。</p>
+</li>
+<li>
+<p>dojo 固有のモジュールはすべて置き換える必要があります。 - たとえば、<code>dojo/domClass</code> モジュールの <code>domClass</code> 関数を次のように使用する場合</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">domClass</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#a6e22e">domNode</span>, <span style="color:#e6db74">&#34;myClassName&#34;</span>);
+</code></pre></div><p>この場合、Dojo 以外の選択肢でそれを書き直す必要があります。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">domNode</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;myClassName&#34;</span>);
+</code></pre></div></li>
+</ol>
+<div class="notices tip" >
+<p>Dojo はブラウザのサポートを標準化してくれますが、ネイティブの JavaScript の機能を使うことはできませんので、<a href="https://developer.mozilla.org/en-US/docs/Web/API">MDN</a> や <a href="https://caniuse.com/">CanIUse</a> などのサイトで、使用する機能のブラウザ サポートを確認する必要があります。この場合、例えば CanIUse によると、<a href="https://caniuse.com/?search=classList"><code>classList</code> はすべての主要なブラウザでサポートされている</a>と述べています。</p>
 </div>
-<p>198 行目にフォント ファミリー、210 行目に sans-serif のフォント設定の箇所があります。<br>
-フォント ファミリーはデフォルトが sans-serif なので、ここではデフォルト設定のままにしておきます。<br>
-210 行目のフォント設定の行で、<code>#</code> を削除し、<code>:</code> の後に日本語のフォントを追加しましょう。<br>
-ここでは <code>Meiryo</code> に設定します。設定後の画面は以下のようになります。</p>
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/font-setting.png" width="1100px">
-</div>
-<h5 id="キャッシュの再構築">キャッシュの再構築</h5>
-<p>以上で設定は終了ですが、うまく反映されない場合があるので、念のため以下のコードを実行してキャッシュを再構築します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.font_manager
-matplotlib<span style="color:#f92672">.</span>font_manager<span style="color:#f92672">.</span>_rebuild()
-</code></pre></div><p>設定が完了したらしたら以下のサンプルコードを実行してみましょう。</p>
-<h4 id="サンプル-コード">サンプル コード</h4>
-<p>フォント設定が完了したら以下のサンプル コードを実行してみましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function</span>(x):
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>x <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>
-
-x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">200</span>)
-
-plt<span style="color:#f92672">.</span>plot(x, test_function(x), color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cornflowerblue&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;日本語のラベル&#34;</span>)
-
-plt<span style="color:#f92672">.</span>legend(loc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;upper left&#34;</span>)
-plt<span style="color:#f92672">.</span>ylim(<span style="color:#f92672">-</span><span style="color:#ae81ff">120</span>, <span style="color:#ae81ff">120</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;日本語のタイトル&#34;</span>)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;日本語のX軸&#34;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;日本語のY軸&#34;</span>)
-plt<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p>次のようなグラフが描ければ成功です。</p>
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/matplotlib-japanese/gragh.png" width="500px">
-</div>
-<h3 id="参考">参考</h3>
+<ol start="3">
+<li>
+<p><a href="https://developers.arcgis.com/web-appbuilder/guide/widget-life-cycle.htm">ウィジェットのライフサイクル メソッド</a>は、同じようには動作しません。一般的に、ウィジェット起動時に発生するウィジェットのライフサイクル メソッド (<code>constructor</code>、<code>postMixinProperties</code>、<code>buildRendering</code>、<code>postCreate</code>) は、おそらく <a href="https://reactjs.org/docs/react-component.html#componentdidmount">componentDidMount()</a> 関数(またはフックを使用する場合は同等の <code>useEffect()</code>)に移動できます。</p>
+</li>
+<li>
+<p>今まで <a href="https://developers.arcgis.com/web-appbuilder/guide/define-the-template.htm">widget.html にあったテンプレート</a>は、Experience Builder のカスタムウィジェット (React コンポーネント) の <code>render()</code> 関数で <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> に変換されるようになります。</p>
 <ul>
-<li><a href="https://qiita.com/yniji/items/3fac25c2ffa316990d0c">matplotlibで日本語 - Qiita</a></li>
-<li>matplotlib 公式ドキュメント
-<ul>
-<li><a href="https://matplotlib.org/gallery/api/font_family_rc_sgskip.html">Configuring the font family</a></li>
-<li><a href="https://matplotlib.org/tutorials/introductory/customizing.html#the-matplotlibrc-file">The matplotlibrc file</a></li>
+<li>DOM ノードに <code>data-dojo-attach-point</code> で名前を付けている場合、React でそれに相当するものは <a href="https://reactjs.org/docs/refs-and-the-dom.html">Refs</a> です。</li>
+<li>国際化/翻訳に NLS を使用している場合、テンプレート（例：<code>&lt;div&gt;${nls.label1}.&lt;/div&gt;</code> では、<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#i18n-support">「translations folder」</a>パターンを使用するようになります）。</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>Map/Scene オブジェクトへのアクセス - <code>this.map</code> を使用している場合、Experience Builder では 1 つのエクスペリエンスに複数のマップまたはシーンを持つことができるようになったため、このパターンはまったく同じようには動作しません（Web AppBuilder アプリごとに 1 つのマップしか持つことができませんでした）。<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-setting-components-mapwidgetselector--has-selected-map">MapWidgetSelector</a> と <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/">JimuMapViewComponent</a> を参照してください。</p>
+</li>
+<li>
+<p>カスタム設定パネル（<code>/setting</code> フォルダ内）がある場合、それに相当するのは Experience Builder カスタムウィジェットの <code>src/setting</code> 内です。<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#creating-a-setting-ui-for-the-widget">設定 UI の作成に関する詳細情報</a></p>
+</li>
+</ol>
 
 
     
@@ -977,8 +910,8 @@ plt<span style="color:#f92672">.</span>show()
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/automate-tasks/" title="スクリプト実行の自動化"> <i class="fa fa-chevron-left"></i><label>スクリプト実行の自動化</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/prosdk/" title="ArcGIS Pro SDK" style="margin-right: 0px;"><label>ArcGIS Pro SDK</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/tutorials/" title="チュートリアル"> <i class="fa fa-chevron-left"></i><label>チュートリアル</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/webappbuilder/" title="ArcGIS Web AppBuilder (Developer Edition)" style="margin-right: 0px;"><label>ArcGIS Web AppBuilder (Developer Edition)</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
