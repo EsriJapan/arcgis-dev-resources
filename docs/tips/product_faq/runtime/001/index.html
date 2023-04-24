@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>日本語環境の ArcGIS Pro で作成したジオプロセシング パッケージから、ジオプロセシング サービスの作成が正常にできない :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -580,20 +580,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -602,20 +609,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -864,7 +878,7 @@ if (!doNotTrack) {
 <p>ArcGIS Runtime SDK for .NET 及び ArcGIS Runtime Local Server SDK を使用して、ArcGIS Pro に標準で用意されているジオプロセシング ツールからジオプロセシング サービスを作成する際、ArcGIS Pro の言語設定を日本語の状態で作成したジオプロセシング パッケージ ファイル（.gpkx）を利用すると、Local Server でジオプロセシング サービスを正常に作成できません。ジオプロセシング サービスの REST エンドポイントは作成されますが、ジオプロセシング タスクの URL にアクセスすることができません。</p>
 <p>これは ArcGIS Pro にデフォルトで用意されているジオプロセシング ツールのタスク名に日本語が含まれていることが原因で発生する問題です。
 以下のエラーは、Visual Studio プロジェクトでタスク名が日本語のジオプロセシング サービスからジオプロセシング タスクを作成する（GeoprocessingTask インスタンスの CreateAsync メソッド実行時）際に発生するエラーの例です。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Esri</span>.<span style="color:#a6e22e">ArcGISRuntime</span>.<span style="color:#a6e22e">Http</span>.<span style="color:#a6e22e">ArcGISWebException</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bad request: GET GPServer/&lt;タスク名&gt; The specified task was not found.&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Esri</span>.<span style="color:#a6e22e">ArcGISRuntime</span>.<span style="color:#a6e22e">Http</span>.<span style="color:#a6e22e">ArcGISWebException</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bad request: GET GPServer/&lt;タスク名&gt; The specified task was not found.&#39;</span>
 </code></pre></div><h3 id="回避策">回避策</h3>
 <p>ArcGIS Pro の言語設定を英語に設定を変更後、ジオプロセシング パッケージ ファイル（.gpkx）を作成します。また、ArcMap にも同じジオプロセシング ツールが用意されている場合は、ArcMap を使用してジオプロセシング パッケージ ファイル（.gpk）を作成することも可能です。
 以下には、ArcGIS Pro の言語設定を英語に変更する手順を示しています。</p>

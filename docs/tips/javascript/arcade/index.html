@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>Arcade :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -581,20 +581,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -603,20 +610,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -884,19 +898,19 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 <p>Arcade には外部データにアクセスするためのグローバル変数が用意されています。
 <code>$feature</code> というグローバル変数は、フィーチャ レイヤー内のフィーチャが持つフィールド値にアクセスするために使用します。
 以下のシンタックスを使用することでフィールド値を参照できます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">fieldName</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">fieldName</span>
 </code></pre></div><p>このように、ランタイムでフィールド値を使用したシンプルな計算を容易に実行できます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 民主党候補者に投票した人の割合（%）を計算
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 民主党候補者に投票した人の割合（%）を計算
 </span><span style="color:#75715e"></span>(<span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">DEM_VOTES</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">TURNOUT</span> ) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
 </code></pre></div><p>Arcade はコンテクスト内、または Arcade が理解されるプロファイル内でのみ実行可能です。JavaScript アプリでは、式は常に文字列の値として参照されます。Arcade は、シンプルな一行の式、または、より複雑な複数行からなる式として書かれます。</p>
 <p>一行の式を書くとき、シンプルにダブルまたはシングル クォーテーションで囲みます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Round( ($feature.AGE_18UP / $feature.TOTAL_POP) * 100 )&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Round( ($feature.AGE_18UP / $feature.TOTAL_POP) * 100 )&#34;</span>;
 </code></pre></div><p>複数行に渡る式を書くとき、JavaScript の外に <code>&lt;script&gt;</code> タグを分け、タイプを <code>text/plain</code> に設定し、JavaScript から参照できるようユニークな ID を付与して配置することが推奨されます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;adult-population&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;adult-population&#34;</span>&gt;
   <span style="color:#75715e">// 複数行の式を記述
 </span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>そして、JavaScript は、<code>document.getElementById()</code> メソッドを呼ぶことで、文字列として参照します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;adult-population&#34;</span>).<span style="color:#a6e22e">text</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">valueExpression</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;adult-population&#34;</span>).<span style="color:#a6e22e">text</span>;
 </code></pre></div><p>下記のスニペットや <a href="https://developers.arcgis.com/javascript/latest/sample-code/visualization-arcade/index.html" target="_balnk">Create a custom visualization using an Arcade expression サンプル</a>を参照ください。</p>
 <h2 id="プロファイル">プロファイル</h2>
 <p>Arcade はいくつかのプロファイルにおける使用のためにデザインされました。プロファイルとは、理解し使用される命令語のコンテクストです。ArcGIS API 4.5 for JavaScript では、ビジュアライゼーション、ポップアップ、ラベリング（3D のみサポート）の３つのプロファイルをサポートしています。3D では、Arcade を使用することにより、フィーチャの標高を計算することも可能です。</p>
@@ -915,7 +929,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 そこで、得票数で勝った党を各州で可視化したいとします。
 サービスには優勢な党を示すフィールドが含まれていません。
 したがって、Arcade を使ってその党を明らかにしましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
 </span><span style="color:#75715e">// Max() 関数を使って最大数を算出し、
 </span><span style="color:#75715e">// 最大数を持つ党を判定するために Decode() 関数を使います。
 </span><span style="color:#75715e"></span>
@@ -952,7 +966,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 });
 </code></pre></div><p>また、各州における優勢な党の相対的な力を示すために <code>renderer</code> に対して <code>opacity</code> の可視化変数を追加します。
 より多くの人々が特定の党に投票している州を高い透過率でし、各党に対する得票数が拮抗している州は低い透過率で描画してみましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// まず、各フィールドの属性値の参照と変数宣言を記述しています。
 </span><span style="color:#75715e">// Max() 関数を使って最大数を、
 </span><span style="color:#75715e">// Sum() 関数ですべての党の得票数の合計値を算出します。
 </span><span style="color:#75715e">// 合計値に対するもっとも多くの投票を得た党の得票数の割合をパーセントで返します。
@@ -984,10 +998,10 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 <h3 id="ポップアップ">ポップアップ</h3>
 <p>Arcadeを <a href=https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html target="_blank"><code>PopupTmplate</code></a> の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#content" target="_blank"><code>コンテンツ </code></a> 内で参照することもできます。ビジュアライゼーション プロファイルと同様に、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank"><code>FeatureLayer </code></a> インスタンスに属性値として存在しないデータを表示する場合に便利です。
 例えば、サンプルアプリ （ <a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank"><code>Reference Arcade expressions in PopupTemplate</code></a> ）では、各米国郡の労働統計を含むレイヤーを表示します。いくつかの属性には、失業率、人口、および労働人口が含まれます。労働参加率の属性は含まれていません。 Arcade を使用して、実行時に算出することができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 労働参加率を計算
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 労働参加率を計算
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">Round</span>((<span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">CIVLBFR_CY</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">POP_16UP</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)
 </code></pre></div><p>この式から返された値を使用して、レイヤーを視覚化したり、レイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#popupTemplate" target="_blank"><code>PopupTmplate</code></a> に表示したりすることができます。ポップアップで値を表示するには、PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#expressionInfos" target="_blank"><code>expressioninfo</code></a> プロパティで値を参照し、 <code>name</code> と<code>  title</code> を割り当てる必要があります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {　　
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {　　
   <span style="color:#a6e22e">expressionInfos</span><span style="color:#f92672">:</span> [{　　
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;participation-rate&#34;</span>,　　
     <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;% of population 16+ participating in the labor force&#34;</span>,　　
@@ -998,9 +1012,9 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 };　　
 </code></pre></div><p>式が <code>expressionInfos</code> プロパティに存在すると、 PopupTemplate のコンテンツ内の<code>{expession/expression-name}</code> プレースホルダー テンプレートを使用して式から返された値を参照できます。
 ポップアップのコンテンツは、ユーザーが Greenlee , AZ を表現しているフィーチャーをクリックした後に次のように表示されます。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" >
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-text.png" width="450px" ></p>
 <p>また、PopupTmplate　のコンテンツ の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a>　プロパティの中で Arcade から返された値を参照できるため、表形式で表示することもできます。オブジェクトの <code>fieldName</code> プロパティで式の名前を参照するだけです。なお、 <code>expression/expression-name</code> シンタックスを使用してください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">popupTemplate</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">expressionInfos</span><span style="color:#f92672">:</span> [{
     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;participation-rate&#34;</span>,
     <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;% of population 16+ participating in the labor force&#34;</span>,
@@ -1014,14 +1028,14 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
   }]
 };
 </code></pre></div><p>ポップアップには以下のように表示されます。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" >
+<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/Arcade/arcade-popup-table.png" width="450px" ></p>
 <p>PopupTmplate の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html#fieldInfos" target="_blank"><code>fieldinfos</code></a> プロパティの書式設定オプションを利用して、式から返された数値を書式設定することもできます。
 このワークフローはサンプルアプリ（<a href="https://developers.arcgis.com/javascript/latest/sample-code/popuptemplate-arcade/index.html" target="_blank"><code>PopupTemplate Reference Arcade</code></a>）でご覧ください。</p>
 <h3 id="ラベリング">ラベリング</h3>
 <p>ラベリングは、現在、3D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html" target="_blank">SceneView</a> のみサポートしています。2D <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html" target="_blank">MapView</a> でのラベリングは将来のリリースで追加される予定です。</p>
 <p>Arcade は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html" target="_blank">FeatureLayer</a> または <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SceneLayer.html" target="_blank">SceneLayer</a> に含まれるフィーチャのラベルの式を作成するためにも使用されます。バージョン 4.5 からは、フィーチャをラベリングするためにサポートされた唯一の方法です。</p>
 <p>少なくともひとつの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> をレイヤーの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelingInfo" target="_blank">LabelingInfo</a> プロパティへ追加し、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#labelsVisible" target="_blank">labelsVisible</a> プロパティを <code>true</code> へ設定する必要があります。式は、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html" target="_blank">LabelClass</a> の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#labelExpressionInfo" target="_blank">labelExpressionInfo</a> オブジェクトの <code>expression</code> プロパティへ文字列として渡します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// レイヤーのフィールド値を返す
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// レイヤーのフィールド値を返す
 </span><span style="color:#75715e">// フィールド値は各フィーチャのラベルに使用される
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arcade</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$feature.STATION_NAME&#34;</span>;
 
@@ -1051,7 +1065,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">labelingInfo</span> <span style="color:#f92672">=</span> [ <span style="color:#a6e22e">labelClass</span> ];
 <span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">labelsVisible</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </code></pre></div><p>Arcade で書かれたラベル式は、数学的で論理的な操作を実行する複数行に渡るもっと複雑な式になるかもしれません。例えば、<a href="https://developers.arcgis.com/javascript/latest/sample-code/layers-featurelayer-labeling-3d/" target="_blank">Label features using Arcade expressions サンプル</a>は、より複雑な複数行に渡るラベル式を示しています。この式は２つの数値フィールドの値を変数に入れ、評価し、文字列を返します。Arcade の <a href="https://developers.arcgis.com/arcade/function-reference/logical_functions/#when" target="_blank">When()</a> は、風向き（0 - 360 度）を評価し、<code>N</code>、<code>NE</code>、<code>E</code>、<code>SE</code>、<code>S</code>、<code>SW</code>、<code>W</code> または <code>NW</code> のいずれかの関連する方角を返します。風力が <code>0</code> のとき、方角は返されません。式の最後で、ラベル（WIND 変数の値）を返します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wind-direction&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/plain&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wind-direction&#34;</span>&gt;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">DEG</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">WIND_DIRECT</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">SPEED</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$feature</span>.<span style="color:#a6e22e">WIND_SPEED</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">DIR</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">When</span>( <span style="color:#a6e22e">SPEED</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;&#39;</span>,
@@ -1070,7 +1084,7 @@ ArcGIS プラットフォームにおける独自のデータ可視化とラベ�
 <h2 id="その他のケース">その他のケース</h2>
 <h3 id="標高">標高</h3>
 <p>3D SceneView では、<a href="https://developers.arcgis.com/arcade/" target="_blank">Arcade</a> を使用してフィーチャごとに独自の標高を設定できます。フィーチャは Z 値を持つことができますが、属性値や Z 値を使用した計算式をもとに高さを演算したい場合に有効です。さらに、Z 値を含まないが、属性フィールドに Z 値に関連する情報を持つデータの場合、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html#elevationInfo" target="_blank">featureExpressionInfo.expression</a> プロパティに式を設定できます。例として、<a href="https://developers.arcgis.com/javascript/latest/sample-code/scene-elevationinfo/index.html" target="_blank">Elevation options</a> サンプルは Arcade を使用してポイント シンボルの高さがどのように変化するのかを示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">elevationInfo</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">elevationInfo</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;absolute-height&#34;</span>,
   <span style="color:#a6e22e">featureExpressionInfo</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Geometry($feature).z + $feature.HEIGHT&#34;</span>

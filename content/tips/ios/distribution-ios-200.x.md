@@ -1,11 +1,11 @@
 +++
 title = "アプリケーション配布ガイド"
-description = "ArcGIS Runtime SDK for iOS を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を紹介します。"
+description = "ArcGIS Maps SDK for Swift を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を紹介します。"
 weight = 2
-aliases = ["/ios/distribution-ios-100.x/"]
+aliases = ["/ios/distribution-ios-200.x/"]
 +++
 
-ArcGIS Runtime SDK for iOS (バージョン 100.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
+ArcGIS Maps SDK for Swift (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 
 ## API キーの設定
 [ArcGIS Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-ios/#api-キーを設定する)をご覧ください。
@@ -28,7 +28,7 @@ ArcGIS Runtime SDK for iOS (バージョン 100.x) を使用して開発した�
 
 ## 使用するライセンスの選択
 
-ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ArcGIS Maps SDK for Swift には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
 
@@ -39,7 +39,7 @@ ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセ�
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
 | Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索 |
 
-ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-runtime-sdk-for-ios/details/license/)をご参照ください。
+ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-swift/license/)をご参照ください。
 
 ## ライセンスの認証方法
 
@@ -50,7 +50,7 @@ ArcGIS Runtime SDK for iOS には Lite、Basic、Standard の 3 つのライセ�
 
 2. __指定ユーザーによるアカウント認証__  
     * 指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。
-    * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はランタイムアプリにコードを含める必要があります。
+    * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
 
@@ -60,12 +60,10 @@ __■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降を�
 |:-----------|:------------|
 | Viewer | Lite | 
 | Editor / Field Worker | Basic |
-| Creator / GIS Professional Basic | Standard <sup>※1</sup>  |
-| GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1,2</sup> |
-
-※1 Standard/Advanced は ArcGIS Runtime (Android/iOS/.NET) 100.7 以降から対応しております。
+| Creator / GIS Professional Basic | Standard  |
+| GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1</sup> |
   
-※2 ArcGIS Runtime SDK for iOS には Advanced ライセンスはありません。
+※1 ArcGIS Maps SDK for Swift には Advanced ライセンスはありません。
 
 __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 
@@ -103,7 +101,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-注意：この認証は、ArcGIS Runtime 100.7 より以前のバージョンでは使用できません。また、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Standard ライセンスレベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
@@ -116,7 +114,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、ArcGIS Runtime 100.7 より以前のバージョンでは使用できません。また、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Analysis アドオン ライセンス拡張機能を割り当てられた）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
@@ -129,21 +127,22 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
- 1. [ArcGIS Developers: ArcGIS Runtime license](https://developers.arcgis.com/ios/license-and-deployment/#arcgis-runtime-license) ページにアクセスします。
-    * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime license string] をクリックします。
+ 1. [ArcGIS Developers: License and deployment
+](https://developers.arcgis.com/swift/license-and-deployment/) ページにアクセスします。
+    * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime Lite license string] をクリックします。
     * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンスキーをコピーします。
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px">
- 3. 次に、アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="600px">
+ 3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
 
     ```swift
     // 取得したライセンス文字列でアプリのライセンスを設定します
+    guard let licenseKey = LicenseKey("runtimelite,1000,rud#########,none,####################") else { return }
     do {
-      let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimelite,1000,rud#########,none,####################")
+      let result = try ArcGISEnvironment.setLicense(with: licenseKey)
       print("License Result : \(result.licenseStatus)")
-    }
-    catch let error as NSError {
-      print("error: \(error)")
+    } catch {
+      print(error)
     }
     ```
 
@@ -153,106 +152,60 @@ ArcGIS Runtime の配布パックを購入し、取得したライセンスキ�
 
 ArcGIS Runtime の配布パックの購入については[ESRIジャパン](https://www.esrij.com/form/inquiry/)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。
 
-アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。
+アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。
 
 ```swift
 // 取得したライセンス文字列でアプリのライセンスを設定します
+guard let licenseKey = LicenseKey("runtimestandard,1000,rud#########,day-month-year,####################") else { return }
 do {
-  let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimestandard,1000,rud#########,day-month-year,####################")
+  let result = try ArcGISEnvironment.setLicense(with: licenseKey)
   print("License Result : \(result.licenseStatus)")
-}
-catch let error as NSError {
-  print("error: \(error)")
+} catch {
+  print(error)
 }
 ```
 
-Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
+Extension ライセンスを認証する場合は以下のコードを使用します。
 
 ```swift
 // 基本ライセンスとエクステンション ライセンスのリストを設定します
+let licenseKey = LicenseKey("runtimestandard,1000,rud#########,day-month-year,####################")!
+let extensions = [
+  LicenseKey("runtimeanalysis,1000,rud#########,day-month-year,####################")!
+]
 do {
-  let result = try AGSArcGISRuntimeEnvironment.setLicenseKey("runtimestandard,1000,rud#########,day-month-year,####################", extensions: ["runtimeanalysis,1000,rud#########,day-month-year,####################"])
-  print("License Result : \(result.licenseStatus)")
-}
-catch let error as NSError {
-  print("error: \(error)")
+  let result = try ArcGISEnvironment.setLicense(
+    with: licenseKey,
+    extensions: extensions
+  )
+} catch {
+  print(error)
 }
 ```
 
 ## 指定ユーザー アカウントを使用した認証
 アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。
 
-アプリケーションのコードにおいて ArcGIS Runtime SDK の機能が呼び出される前に、以下のコードを使用してライセンスを取得します。プロセスの一環として、アプリがオフライン環境で最大 30日 間使用されることに備えて、ライセンス情報を保存します。
+アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。
  
-認証方法の詳細については、「[License your app with a named user account（英語）](https://developers.arcgis.com/ios/license-and-deployment/license/#license-your-app-with-a-named-user-account)」や「[Security and authentication（英語）](https://developers.arcgis.com/ios/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[License your app with a named user account（英語）](https://developers.arcgis.com/swift/license-and-deployment/license/#license-your-app-with-a-named-user-account)」や「[Security and authentication（英語）](https://developers.arcgis.com/swift/security-and-authentication/)」も併せてご覧ください。
 
 ```swift
-// Portal クラスを作成し、指定ユーザーが資格情報を提供するようにします
-let theURL = URL(string: "https://www.arcgis.com")
+// Portal クラスを構築し、指定ユーザーが認証情報を提供することを確認します。
+let url = URL(string: "https://myportal.com")!
 
-// 指定ユーザーが資格情報を使用してログインするように要求します
-self.portal = AGSPortal(url: theURL!, loginRequired: true)
+// 指定ユーザーが認証情報でログインすることを要求します。
+let portal = Portal(url: url, connection: .authenticated)
 
-// ポータルをロードします
-self.portal.load { (error) in
- if let error = error {
+// ポータルをロードします。
+do {
+  try await portal.load()
+  // ポータルからユーザーのライセンス情報を取得します。
+  let licenseInfo = try await portal.licenseInfo
+  // 指定ユーザーの licenseInfo を使用してライセンスを設定します。
+  let result = try ArcGISEnvironment.setLicense(from: licenseInfo)
+} catch {
   print(error)
- }
- else {
-
-  // ポータルからユーザーのライセンス情報を取得します
-  self.portal.fetchLicenseInfo { (licenseInfo, error) in
-
-    if let error = error {
-     print("ユーザーのライセンスの取得中にエラーが発生しました... \(error)")
-     return
-    }
-
-     // 指定ユーザーの licenseInfo を使用してライセンスを設定します
-    do {
-      let result = try AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!)
-    }
-    catch let error as NSError {
-     print("error: \(error.localizedDescription)")
-    }
-
-    // これでアプリがライセンス認証されました
-
-    // アプリを起動してオフラインでライセンスを取得できるように、ライセンス情報を保存します
-    // この例では、licenseDictionary をキーチェーンに保存します
-
-    var licenseDictionary: NSDictionary?
-
-    do {licenseDictionary = try licenseInfo?.toJSON() as! NSDictionary?
-    } catch {
-     print("LicenseInfo は利用できません")
-    }
-
-    let keychainItem = AGSKeychainItem(identifier: "com.your_org.your_app_name", accessGroup: nil, acrossDevices: false)
-    keychainItem.writeObject(toKeychain: licenseDictionary!, completion: { (writeError) in
-     if let error = writeError {
-      print("キーチェーンへの書き込み中にエラーが発生しました... \(error)")
-     }
-    })
-   }
-  }
 }
-```
-
-注意：上記のコードスニペットは、ArcGIS Runtime 100.7 で導入された新しい [fetchLicenseInfoWithCompletion()](https://developers.arcgis.com/ios/api-reference/interface_a_g_s_portal.html#ad2b77a629b46bc2ce5c12875f8fda607) API を使用しています。バージョン 100.6 以前では AGSPortal.portalInfo.licenseInfo を使用します。
-
-ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリのライセンスを取得します。
-
-```swift
-// キーチェーンを取得します
-let keychainItem = AGSKeychainItem(identifier: "com.your_org.your_app_name", accessGroup: nil, acrossDevices: false)
-
-// キーチェーンからライセンスの JSON を取得します
-let licenseDictionary = keychainItem.readObjectFromKeychain() as? NSDictionary
-
-// JSON からライセンス情報を作成します
-let licenseInfo = try! AGSLicenseInfo.fromJSON(licenseDictionary!) as? AGSLicenseInfo
-
-// ライセンス情報を使用してアプリのライセンスを設定します
-AGSArcGISRuntimeEnvironment.setLicenseInfo(licenseInfo!, error: errorPointer)
+// これでアプリはライセンス認証制されました。
 ```

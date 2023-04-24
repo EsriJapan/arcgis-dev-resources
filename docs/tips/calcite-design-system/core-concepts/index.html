@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>コア コンセプト :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -580,20 +580,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -602,20 +609,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -871,18 +885,18 @@ if (!doNotTrack) {
 <h3 id="カスタム要素">カスタム要素</h3>
 <p>カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリまたは Web フレームワークを使用して、モダン ブラウザ全体で動作します。カスタム要素は機能をカプセル化するため、他のコードとのコンフリクトを防ぐことができます。</p>
 <p>Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">calcite-tip</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Platypus&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-tip</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">calcite-tip</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Platypus&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-tip</span>&gt;
 </code></pre></div><hr>
 <h3 id="スロット">スロット</h3>
 <p>スロットはプレースホルダー要素であり、スロットの名前を参照することで独自のコンテンツを追加することができます。スロットは一般的な Web コンポーネントの概念であり、あなたもすでに使用している可能性があります。例えば、次のような HTML を考えてみましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">select</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">select</span>&gt;
   &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;platypus&#34;</span>&gt;Platypus&lt;/<span style="color:#f92672">option</span>&gt;
   &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sloth&#34;</span>&gt;Sloth&lt;/<span style="color:#f92672">option</span>&gt;
   &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;armadillo&#34;</span>&gt;Nine-banded armadillo&lt;/<span style="color:#f92672">option</span>&gt;
 &lt;/<span style="color:#f92672">select</span>&gt;
 </code></pre></div><p>Web コンポーネントの用語で、<code>option</code> 要素は <code>select</code> のデフォルト スロットに配置されます。また、「Platypus」、「Sloth」、「Nine-banded」のテキストは、それぞれの <code>option</code> のデフォルト スロットに配置されます。</p>
 <p>また、多くの Calcite Components は、デフォルトのスロットを利用しています。例えば、下の <a href="https://developers.arcgis.com/calcite-design-system/components/tip/" target="_blank"><code>calcite-tip</code></a> では、デフォルトのスロットに <code>p</code> コンテンツが追加されています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">calcite-tip</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Platypus&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">calcite-tip</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Platypus&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;thumbnail&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;platypus.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;A platypus sensing its prey using electrical fields.&#34;</span> /&gt;
   &lt;<span style="color:#f92672">p</span>&gt;A platypus is a mammal with a bill, similar to a duck. They use their bill to sense prey via electrolocation.&lt;/<span style="color:#f92672">p</span>&gt;
 &lt;/<span style="color:#f92672">calcite-tip</span>&gt;
@@ -897,7 +911,7 @@ if (!doNotTrack) {
 <p>Calcite Components は、スタイルを上書きするための CSS 変数を提供しています。Web コンポーネントの Shadow DOM のため、CSS 変数がないと簡単にスタイルを変更することができません。トークンには CSS 変数があり、<a href="https://developers.arcgis.com/calcite-design-system/foundations/colors/">color</a> や <a href="https://developers.arcgis.com/calcite-design-system/foundations/type/">typography</a> など、デザインシステム全体で使用されます。</p>
 <p>さらに、一部の Calcite Components には、コンポーネント固有のスタイルを変更するための独自の CSS 変数があります。これらの CSS 変数は、<a href="https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles">CSS variables for <code>cacite-loader</code></a> のように、コンポーネントのドキュメントで見つけることができます。</p>
 <p>使用例としては、CSS 変数を使用して、<a href="https://developers.arcgis.com/calcite-design-system/components/notice/" target="_blank"><code>calcite-notice</code></a> の前景色と文字色を入れ替えることができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">calcite-notice {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">calcite-notice {
   --calcite-ui-foreground-1: #151515;
   --calcite-ui-text-1: #ffffff;
 }
@@ -910,7 +924,7 @@ if (!doNotTrack) {
 <h4 id="定義されたとき">定義されたとき</h4>
 <p><code>customElementRegistry</code> インターフェースの <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined" target="_blank"><code>whenDefined()</code></a> メソッドは、指定された要素が定義されたときに満たされる Promise を返します。</p>
 <p>Promise が満たされると、次のようにコンポーネントの定義を必要とするコードを実行できるようになります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">customElements
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">customElements
   .whenDefined(&#34;calcite-button&#34;)
   .then(() =&gt; document.querySelector(&#34;calcite-button&#34;).setFocus());
 </code></pre></div><hr>
@@ -918,7 +932,7 @@ if (!doNotTrack) {
 <p>Calcite Components は、<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent" target="_blank"><code>CustomEvent()</code></a> コンストラクターを使用して<a href="https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events">イベントの作成とトリガー</a>を行います。</p>
 <p><code>CustomEvent</code> は <code>Event</code> と似たような振る舞いをします。これは <code>button</code> をクリックしたときなどの HTML 要素から放出されます。例えば、イベント ペイロードの <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target" target="_blank"><code>target</code></a> プロパティで要素にアクセスすることは可能です。また、一部の <code>CustomEvent</code> のペイロードは、<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail" target="_blank"><code>detail</code></a> プロパティにイベント固有の情報を含みます。</p>
 <p>コンポーネントのドキュメント ページを表示すると、<a href="https://developers.arcgis.com/calcite-design-system/components/pagination/#component-api-events"><code>calcite-pagination</code> event</a> のようなイベントを持つかどうかを確認することができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">document.addEventListener(&#34;calcitePaginationChange&#34;, (event) =&gt; {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">document.addEventListener(&#34;calcitePaginationChange&#34;, (event) =&gt; {
   console.log(&#34;Pagination&#39;s starting item:&#34;, event.detail.start);
   console.log(&#34;Number of items per page:&#34;, event.target.num);
 });
@@ -926,7 +940,7 @@ if (!doNotTrack) {
 <h3 id="テーマ">テーマ</h3>
 <p>Calcite Components にはライトとダークのテーマがあり、対応する CSS クラスである <code>calcite-theme-light</code> と <code>calcite-theme-dark</code> を使って変更することができます。また、<code>calcite-theme-auto</code> クラスがあり、ブラウザの <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"><code>prefers-color-scheme</code></a> CSS メディア クエリに従い、明るいテーマか暗いテーマを使用するかを決定します。</p>
 <p>ある要素にテーマ クラスを設定すると、そのすべての子ノードも変更されます。したがって、アプリケーション全体を明るい状態から暗い状態に切り替えるには、次のようにします。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;calcite-theme-dark&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;calcite-theme-dark&#34;</span>&gt;
   <span style="color:#75715e">&lt;!-- Your application content --&gt;</span>
 &lt;/<span style="color:#f92672">body</span>&gt;
 </code></pre></div>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>ウィジェット manifest :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -582,20 +582,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -604,20 +611,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -859,7 +873,7 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/widget-manifest/">Widget manifest</a></p>
 <p>各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した <code>manifest.json</code> ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/demo">demo widget</a> から <code>manifest.json</code> ファイルをコピーすることです。以下は <code>manifest.json</code> ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、<code>dependency</code> プロパティに <code>jimu-arcgis</code> を設定します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
   <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;count-features&#34;</span>,
   <span style="color:#e6db74">&#34;label&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Count Features&#34;</span>,
   <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;widget&#34;</span>,

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>バージョン 10.2.x から 100.x への移行 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -581,20 +581,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -603,20 +610,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -893,7 +907,7 @@ if (!doNotTrack) {
 <h2 id="ビュー">ビュー</h2>
 <p><code>MapView</code>（2D表示用）と <code>SceneView</code>（3D表示用）は、UI コンポーネントです。<code>MapView</code> クラスの <code>map</code> プロパティに、<code>Map</code> オブジェクトを、<code>MapSceneView</code> クラスの <code>scene</code> プロパティには <code>Scene</code> オブジェクトを設定します。</p>
 <p>100.x では、以下のようにマップを表示します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップを指定してマップを初期化
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ベースマップを指定してマップを初期化
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">Map</span> <span style="color:#a6e22e">myMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Map</span>(<span style="color:#a6e22e">Basemap</span>.<span style="color:#a6e22e">CreateImagery</span>());
 <span style="color:#75715e">// マップビューにマップを設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">Map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myMap</span>;
@@ -927,7 +941,7 @@ if (!doNotTrack) {
 </table>
 <p>100.x でサポートされているレイヤーのタイプについては、<a href="https://developers.arcgis.com/net/layers/">ArcGIS Runtime SDK for .NET: レイヤー（英語）</a>をご参照ください。</p>
 <p>作成した各レイヤーは、以下の方法でマップに追加します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 操作レイヤーとしてマップに追加する
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">OperationalLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">arcgis_map_image_layer</span>)
 <span style="color:#75715e">// ベースマップとしてマップに追加する
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">myMap</span>.<span style="color:#a6e22e">Basemap</span>.<span style="color:#a6e22e">BaseLayers</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">arcgis_tiled_layer</span>);
@@ -935,7 +949,7 @@ if (!doNotTrack) {
 <p>フィーチャ サービスや端末のローカルに格納されたジオデータベースのデータをマップに表示するにはフィーチャ レイヤーを使用します。
 フィーチャ レイヤーを表示するには、はじめにフィーチャ テーブルを作成します（フィーチャ サービスのデータをフィーチャ レイヤーとして表示するに場合は <code>ServiceFeatureTable</code> オブジェクト、ジオデータベースのデータ表示する場合は <code>GeodatabaseFeatureTable</code> オブジェクトを使用します）。次に作成したフィーチャ テーブルを引数として <code>FeatureLayer</code> オブジェクトを作成し、<code>Map</code> オブジェクトの <code>OperationalLayers</code> に追加します。</p>
 <p>次のコードは、フィーチャ サービスのデータを <code>FeatureLayer</code> として追加する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャ サービスの URL からフィーチャ テーブルを作成
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">ServiceFeatureTable</span> <span style="color:#a6e22e">featureTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ServiceFeatureTable</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uri</span>(<span style="color:#e6db74">&#34;https://services.arcgis.com/wlVTGRSYTzAbjjiC/arcgis/rest/services/all_Japan_shikuchoson/FeatureServer/0&#34;</span>));
 <span style="color:#75715e">// フィーチャ テーブルからフィーチャ レイヤーを作成
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">FeatureLayer</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>(<span style="color:#a6e22e">featureTable</span>);
@@ -959,7 +973,7 @@ if (!doNotTrack) {
 <p>以下のコードは <code>PopulateFromServiceAsync</code> メソッドを使用して、サーバー上のすべてのフィーチャを取得する方法の例です。</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャの取得（検索）時のパラメーターを設定
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// フィーチャの取得（検索）時のパラメーターを設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">QueryParameters</span> <span style="color:#a6e22e">queryParameters</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QueryParameters</span>();
 <span style="color:#75715e">// すべてのフィーチャを取得するように条件を設定
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">queryParameters</span>.<span style="color:#a6e22e">WhereClause</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1 = 1&#34;</span>;
@@ -975,7 +989,7 @@ if (!doNotTrack) {
 <p>フィーチャの検索はフィーチャ テーブルに対して行います。フィーチャ サービスまたはジオデータベースのデータから作成したフィーチャ テーブルのどちらを編集する場合も実装方法に違いはありません。検索を行うには
 <code>ServiceFeatureTable</code> または <code>GeodatabaseFeatureTable</code> クラスの <code>QueryFeaturesAsync</code> メソッドを使用します。</p>
 <p>次のコードは、フィーチャ テーブルからフィーチャを検索する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">try</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">try</span>
 {
     <span style="color:#75715e">// フィーチャの取得（検索）時のパラメーターを設定
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">QueryParameters</span> <span style="color:#a6e22e">queryParams</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QueryParameters</span>();
@@ -1001,7 +1015,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><h2 id="個別属性表示">個別属性表示</h2>
 <p>マップ上で特定の場所をタップして、その位置にあるフィーチャをすべてのレイヤーから検索して取得することができます。その操作はビューに対して行います。次のコードは、<code>MapView</code> クラスの <code>IdentifyLayerResult</code> メソッドを使用してフィーチャを取得する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// MapView のすべてのレイヤーを識別し、タップしたポイント、許容値、戻り値のタイプ、最大結果数を渡します
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// MapView のすべてのレイヤーを識別し、タップしたポイント、許容値、戻り値のタイプ、最大結果数を渡します
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">IReadOnlyList</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">IdentifyLayerResult</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">idLayerResults</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">IdentifyLayersAsync</span>(<span style="color:#a6e22e">tapScreenPoint</span>, <span style="color:#a6e22e">pixelTolerance</span>, <span style="color:#a6e22e">returnPopupsOnly</span>, <span style="color:#a6e22e">maxLayerResults</span>);
 <span style="color:#a6e22e">foreach</span> (<span style="color:#a6e22e">IdentifyLayerResult</span> <span style="color:#a6e22e">idResults</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">idLayerResults</span>)
 {
@@ -1020,7 +1034,7 @@ if (!doNotTrack) {
 <p>グラフィックは、マップ上に一時的なデータを表示するために使用されます。<code>MapView</code> と <code>SceneView</code> オブジェクトにはグラフィックを表示するためのグラフィックス オーバーレイ（<code>GraphicsOverlay</code>）が含まれています。
 グラフィックス オーバーレイを使用することで、マップ上のレイヤーの順序が変更されても、グラフィックが常に最上位に表示されます。</p>
 <p>次のコードは、<code>MapView</code> オブジェクトに、グラフィックス オーバーレイを使用してグラフィックを追加する方法を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを使用してグラフィックを作成
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ジオメトリとシンボルを使用してグラフィックを作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>(<span style="color:#a6e22e">pointGeometry</span>, <span style="color:#a6e22e">poitnSymbol</span>);
 <span style="color:#75715e">// グラフィックス オーバーレイに作成したグラフィックを追加
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphicsOverlay</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GraphicsOverlay</span>();
@@ -1033,7 +1047,7 @@ if (!doNotTrack) {
 <h2 id="スケッチ-エディター">スケッチ エディター</h2>
 <p>スケッチ エディター（<code>SketchEditor</code>）を使用すると、ユーザーがマップ上で対話的にジオメトリをスケッチすることができます。</p>
 <p>次のコードは、<code>SketchEditor</code> の使用方法の例を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 頂点の編集、サイズ変更、移動ができるようにスケッチエディタの設定を行います
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyMapView</span>.<span style="color:#a6e22e">SketchEditor</span>.<span style="color:#a6e22e">EditConfiguration</span>;
 <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">AllowVertexEditing</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">ResizeMode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SketchResizeMode</span>.<span style="color:#a6e22e">Uniform</span>;
@@ -1061,7 +1075,7 @@ if (!doNotTrack) {
 ローダブル パターンを採用しているリソースの状態は、<code>NotLoaded（ロードが開始していない</code>、<code>Loading（ロード中）</code>、<code>Loaded（ロードに成功）</code>、<code>FailedToLoad（ロードに失敗）</code> のいずれかで監視することができ、ロードに失敗した場合はロードを再試行することができます。</p>
 <p>詳細は、<a href="https://developers.arcgis.com/net/programming-patterns/loadable/">ArcGIS Runtime SDK for .NET: ローダブル パターン（英語）</a>を参照してください。</p>
 <p>次のコードは、ローダブル パターンの使用方法の例を示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ローダブル時のイベント
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ローダブル時のイベント
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">Loaded</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">e</span>) =&gt;
 {
     <span style="color:#75715e">// フィーチャ レイヤーのプロパティにアクセス

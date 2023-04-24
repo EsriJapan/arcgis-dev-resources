@@ -1,9 +1,9 @@
 +++
-title = "ArcGIS Runtime SDK for iOS"
-description = "ArcGIS Runtime SDK for iOS の開発に役立つガイド集です。"
+title = "ArcGIS Maps SDK for Swift"
+description = "ArcGIS Maps SDK for Swift の開発に役立つガイド集です。"
 weight = 5
 +++
 
-ArcGIS Runtime SDK for iOS (バージョン 100.x) の開発に役立つガイド集です。
+ArcGIS Maps SDK for Swift (バージョン 200.x) の開発に役立つガイド集です。
 
 {{% children description="true"   %}}

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -581,20 +581,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -603,20 +610,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -835,26 +849,20 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#オンライン-ソースの-arcgis-runtime-nuget-パッケージを参照する方法">オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法</a></li>
-    <li><a href="#toolkit">Toolkit</a></li>
-    <li><a href="#visual-studio-プロジェクト-テンプレート-拡張機能イのンストールオプション">Visual Studio プロジェクト テンプレート 拡張機能イのンストール（オプション）</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#サンプル-コード">サンプル コード</a></li>
-    <li><a href="#arcgis-runtime-local-server">ArcGIS Runtime Local Server</a></li>
-    <li><a href="#追加のデータ">追加のデータ</a>
+    <li><a href="#インストールとセットアップ">インストールとセットアップ</a>
       <ul>
-        <li><a href="#projection-engine-データ">Projection Engine データ</a></li>
-        <li><a href="#electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</a></li>
+        <li><a href="#プロジェクトでの-arcgis-maps-sdk-for-net-の参照">プロジェクトでの ArcGIS Maps SDK for .NET の参照</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#visual-studio-プロジェクト-テンプレート-拡張機能イのンストールオプション">Visual Studio プロジェクト テンプレート 拡張機能イのンストール（オプション）</a></li>
+        <li><a href="#nuget-パッケージを使用したmac-および-windows-への-visual-studio-プロジェクト-テンプレートのインストール">Nuget パッケージを使用した、Mac および Windows への Visual Studio プロジェクト テンプレートのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</a>
+    <li><a href="#追加のダウンロード">追加のダウンロード</a>
       <ul>
-        <li><a href="#nuget-パッケージとプロジェクト-テンプレート">NuGet パッケージとプロジェクト テンプレート</a></li>
-        <li><a href="#visual-studio-拡張機能をダウンロードしてインストールする">Visual Studio 拡張機能をダウンロードしてインストールする</a></li>
-        <li><a href="#ローカルの-esri-パッケージ-ソースから-nuget-パッケージをインストールする">ローカルの Esri パッケージ ソースから NuGet パッケージをインストールする</a></li>
-        <li><a href="#スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</a></li>
+        <li><a href="#サンプル-コード">サンプル コード</a></li>
+        <li><a href="#arcgis-runtime-local-server">ArcGIS Runtime Local Server</a></li>
+        <li><a href="#追加のデータ">追加のデータ</a></li>
+        <li><a href="#arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</a></li>
       </ul>
     </li>
   </ul>
@@ -876,21 +884,11 @@ if (!doNotTrack) {
     
     
     
-    <p>このインストール ガイドでは、ArcGIS Maps SDK for .NET のインストールとセットアップ手順を紹介します。</p>
-<ul>
-<li>
+    <p>このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-dotnet/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
 <p>ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「<a href="../../../guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</p>
-</li>
-<li>
-<p>ArcGIS Maps SDK for .NET がサポートする最新の動作環境については <a href="https://developers.arcgis.com/net/reference/system-requirements/">system requirements</a> をご覧ください。</p>
-</li>
-<li>
-<p>マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-dotnet/">アプリの作成</a>」チュートリアルをご覧ください。</p>
-</li>
-</ul>
-<h1 id="インストールとセットアップ">インストールとセットアップ</h1>
+<h2 id="インストールとセットアップ">インストールとセットアップ</h2>
 <p>ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 つ以上の ArcGIS Maps SDK for .NET <a href="https://www.nuget.org/profiles/Esri_Inc">NuGet パッケージ</a> への参照を Visual Studio プロジェクト内に追加します。ArcGIS Maps SDK for .NET がサポートするアプリケーション プラットフォームおよび UI フレームワークのそれぞれに対応するプロジェクト テンプレート セットは、<a href="https://marketplace.visualstudio.com/items?itemName=Esri.ArcGISRuntimeTemplates">Visual Studio 拡張機能</a> として提供されています。</p>
-<h2 id="オンライン-ソースの-arcgis-runtime-nuget-パッケージを参照する方法">オンライン ソースの ArcGIS Runtime NuGet パッケージを参照する方法</h2>
+<h3 id="プロジェクトでの-arcgis-maps-sdk-for-net-の参照">プロジェクトでの ArcGIS Maps SDK for .NET の参照</h3>
 <p>ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある <a href="https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio にパッケージをインストールして使用する (Windows)</a> または <a href="https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac">Visual Studio にパッケージをインストールして使用する (Mac)</a> を参照してください。</p>
 <ol>
 <li>
@@ -913,9 +911,9 @@ if (!doNotTrack) {
 <p>インストールが完了すると、NuGet パッケージ マネージャーの [インストール済み] タブに追加したパッケージが表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。</p>
 </li>
 </ol>
-<h2 id="toolkit">Toolkit</h2>
+<h3 id="toolkit">Toolkit</h3>
 <p><a href="https://github.com/Esri/arcgis-toolkit-dotnet">ArcGIS Maps SDK for .NET Toolkit</a> は、ArcGIS Maps SDK for .NET 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。ツールキットは NuGet パッケージとしてプロジェクトに含めるか、<a href="https://github.com/Esri/arcgis-toolkit-dotnet">GitHub リポジトリ</a> からソース コードをダウンロードしてローカルでビルドできます。</p>
-<h2 id="visual-studio-プロジェクト-テンプレート-拡張機能イのンストールオプション">Visual Studio プロジェクト テンプレート 拡張機能イのンストール（オプション）</h2>
+<h3 id="visual-studio-プロジェクト-テンプレート-拡張機能イのンストールオプション">Visual Studio プロジェクト テンプレート 拡張機能イのンストール（オプション）</h3>
 <p>Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの <a href="https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions">Visual Studio の機能拡張を管理する</a> のトピックを参照してください。</p>
 <p>注: .NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は <a href="https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files">PackageReference</a> をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために <a href="https://docs.microsoft.com/ja-jp/nuget/reference/packages-config">packages.config</a> が既定になっています packages.config  このような状況を軽減するには、Microsoft の推奨に従って、<a href="https://learn.microsoft.com/ja-jp/nuget/consume-packages/migrate-packages-config-to-package-reference">packages.config から PackageReference に移行</a> することを検討してください。</p>
 <ol>
@@ -947,25 +945,41 @@ if (!doNotTrack) {
 </li>
 </ol>
 <p>注: ArcGIS Maps SDK App, Packaged (WinUI 3 in Desktop) テンプレートでは、<a href="https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17">Single-project MSIX Packaging Tools for VS 2022</a> もインストールされている必要があります。</p>
-<h1 id="追加のダウンロード">追加のダウンロード</h1>
+<h3 id="nuget-パッケージを使用したmac-および-windows-への-visual-studio-プロジェクト-テンプレートのインストール">Nuget パッケージを使用した、Mac および Windows への Visual Studio プロジェクト テンプレートのインストール</h3>
+<p>また、<a href="https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/">nuget.org</a> で公開されている Esri.ArcGISRuntime.ProjectTemplates NuGet パッケージを使用して、Mac と Windows にプロジェクト テンプレートをインストールすることができます。前述の Visual Studio の拡張機能は Windows 用のみであるため、この方法を使用して Mac 用 Visual Studio でテンプレートを利用できるようにすることができます。</p>
+<p>以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします：</p>
+<ol>
+<li>
+<p>Windows を使用している場合、コマンドプロンプトを開きます。Mac の場合は、新しいターミナルを開きます。</p>
+</li>
+<li>
+<p>以下のコマンドを使用して、新しいテンプレートをインストールします：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">dotnet <span style="color:#66d9ef">new</span> install Esri.ArcGISRuntime.ProjectTemplates
+</code></pre></div></li>
+<li>
+<p>テンプレートがインストールされたら、Visual Studio を開き、ArcGIS Maps SDK .NET MAUI App の新しくインストールした .NET MAUI テンプレートを選択します。または、次のコマンドを使用して、新しい ArcGIS Maps SDK .NET MAUI App を作成します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">dotnet <span style="color:#66d9ef">new</span> mauimap
+</code></pre></div></li>
+</ol>
+<h2 id="追加のダウンロード">追加のダウンロード</h2>
 <p><a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B3%E3%83%BC%E3%83%89">サンプルコード</a>、<a href="#%E8%BF%BD%E5%8A%A0%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF">データ、コンポーネント</a> の追加のリソースを利用できます。また、ガイドを <a href="#%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3%E3%81%AE%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88">ダウンロード</a> して、オフラインで利用することも可能です。</p>
-<h2 id="サンプル-コード">サンプル コード</h2>
+<h3 id="サンプル-コード">サンプル コード</h3>
 <p>アプリケーションに追加できるさまざまな ArcGIS Maps の強力な機能を説明するサンプル コードを入手できます。サンプルを検索し、<a href="https://developers.arcgis.com/net/wpf/sample-code/">サンプル ドキュメント</a> で関連するコードを参照するか、<a href="https://github.com/Esri/arcgis-runtime-samples-dotnet">サンプル リポジトリ</a> からソース コードをダウンロードして、サンプルをローカルに構築および実行できます。</p>
 <p>コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、<a href="https://apps.microsoft.com/store/detail/arcgis-runtime-sdk-for-net-samples-wpf/9MTP5013343H?hl=ja-jp&amp;gl=jp">Microsoft ストア</a> から入手できます。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。</p>
-<h2 id="arcgis-runtime-local-server">ArcGIS Runtime Local Server</h2>
+<h3 id="arcgis-runtime-local-server">ArcGIS Runtime Local Server</h3>
 <p>ArcGIS Runtime Local Server SDK では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
 アプリケーションでオフラインで<a href="https://developers.arcgis.com/net/local-server/supported-geoprocessing-tools/">ジオプロセシング タスク</a>を実行する場合は、<a href="https://developers.arcgis.com/net/local-server/">Local Server</a> のトピックの手順に従って Local Server をインストールします。</p>
-<h2 id="追加のデータ">追加のデータ</h2>
-<h3 id="projection-engine-データ">Projection Engine データ</h3>
+<h3 id="追加のデータ">追加のデータ</h3>
+<h4 id="projection-engine-データ">Projection Engine データ</h4>
 <p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、Projection Engine ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。Projection Engine ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
 <p><a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/downloads/#pedata">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
-<h3 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h3>
+<h4 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h4>
 <p>航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、<a href="https://iho.int/en/">国際水路機関（IHO）の S-57 規格</a> に準拠した ENC をサポートしています。</p>
 <p>航海用電子海図 (ENC) を使用する場合は、Esri.ArcGISRuntime.Hydrography NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/downloads/#hydrodata">hydrography</a> データをダウンロードします。ENC データの操作の詳細については、<a href="https://developers.arcgis.com/net/layers/display-electronic-navigational-charts/">Display electronic navigational charts</a> のトピックを参照してください。</p>
-<h2 id="arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</h2>
-<h3 id="nuget-パッケージとプロジェクト-テンプレート">NuGet パッケージとプロジェクト テンプレート</h3>
+<h3 id="arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</h3>
+<h4 id="nuget-パッケージとプロジェクト-テンプレート">NuGet パッケージとプロジェクト テンプレート</h4>
 <p>オンライン アクセスが制限された環境でアプリを開発している場合は、ローカルの NuGet パッケージ フィードから ArcGIS Maps SDK for .NET を参照することができます。 NuGet.org で公開されている NuGet パッケージのサブセットを含む、追加の Visual Studio (Windows) 拡張機能を利用できます。 この拡張機能をインストールすると、ユーザー プロファイルの %localappdata%\Esri\NuGet の下にローカル NuGet パッケージ ソースが構成されます。 詳細については、Microsoft のドキュメントの <a href="https://learn.microsoft.com/ja-jp/nuget/hosting-packages/local-feeds">ローカル NuGet パッケージ フィード</a> を参照してください。</p>
-<h3 id="visual-studio-拡張機能をダウンロードしてインストールする">Visual Studio 拡張機能をダウンロードしてインストールする</h3>
+<h4 id="visual-studio-拡張機能をダウンロードしてインストールする">Visual Studio 拡張機能をダウンロードしてインストールする</h4>
 <p>プロジェクト テンプレート 拡張機能（ArcGIS_Maps_SDK_DotNet_Templates_200_0_0.vsix）と NuGet パッケージ 拡張機能（ArcGIS_Maps_SDK_DotNet_200_0_0.vsix）の両方を、<a href="https://developers.arcgis.com/downloads/#net">ArcGIS Developers ダッシュボード</a> からダウンロードできます。</p>
 <ol>
 <li>
@@ -982,7 +996,7 @@ if (!doNotTrack) {
 <p>インストールが完了すると、選択した製品の確認が表示されます。 [閉じる] を選択して、インストールを終了します。 インストールしたら、Visual Studio の [拡張機能の管理] ダイアログを使用して、拡張機能を有効化、無効化、またはアンインストールします。 詳細については、Microsoft ドキュメントのトピック <a href="https://learn.microsoft.com/ja-jp/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2022#install-without-using-the-manage-extensions-dialog-box">[拡張機能の管理] ダイアログ ボックスを使用しないインストール</a> を参照してください。</p>
 </li>
 </ol>
-<h3 id="ローカルの-esri-パッケージ-ソースから-nuget-パッケージをインストールする">ローカルの Esri パッケージ ソースから NuGet パッケージをインストールする</h3>
+<h4 id="ローカルの-esri-パッケージ-ソースから-nuget-パッケージをインストールする">ローカルの Esri パッケージ ソースから NuGet パッケージをインストールする</h4>
 <ol>
 <li>
 <p>Visual Studio ソリューション エクスプローラー ウィンドウで、[プロジェクト] を右クリックし、[NuGet パッケージの管理] を選択します。</p>
@@ -1004,7 +1018,7 @@ if (!doNotTrack) {
 <p>インストールが完了すると、追加されたパッケージが NuGet パッケージ マネージャーの [インストール済み] タブに表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。</p>
 </li>
 </ol>
-<h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
+<h4 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h4>
 <p><a href="https://developers.arcgis.com/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、パブリックなインターネット上ではなく、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されています。</p>
 <p>ローカルでドキュメントを公開する方法：</p>
 <ul>

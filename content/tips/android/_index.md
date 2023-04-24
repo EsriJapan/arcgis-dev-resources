@@ -1,9 +1,9 @@
 +++
-title = "ArcGIS Runtime SDK for Android"
-description = "ArcGIS Runtime SDK for Android の開発に役立つガイド集です。"
+title = "ArcGIS Maps SDK for Kotlin"
+description = "ArcGIS Maps SDK for Kotlin の開発に役立つガイド集です。"
 weight = 4
 +++
 
-ArcGIS Runtime SDK for Android (バージョン 100.x) の開発に役立つガイド集です。
+ArcGIS Maps SDK for Kotlin (バージョン 200.x) の開発に役立つガイド集です。
 
 {{% children description="true"   %}}

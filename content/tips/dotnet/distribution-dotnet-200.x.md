@@ -5,6 +5,8 @@ weight = 2
 aliases = ["/dotnet/distribution-dotnet-200.x/"]
 +++
 
+ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
+
 ## API キーの設定
 [ArcGIS Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-dotnet/#api-キーを設定する)をご覧ください。
 
@@ -58,10 +60,8 @@ __■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降を�
 |:-----------|:------------|
 | Viewer | Lite | 
 | Editor / Field Worker | Basic |
-| Creator / GIS Professional Basic | Standard <sup>※1</sup> |
-| GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1</sup> |
-
-※1 Standard/Advanced は、バージョン 100.7 以降から対応しております。
+| Creator / GIS Professional Basic | Standard |
+| GIS Professional Standard / GIS Professional Advanced | Advanced |
 
 __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 
@@ -99,7 +99,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、バージョン 100.7 より以前のバージョンでは使用できません。また、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Standard ライセンスレベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
@@ -111,7 +111,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、バージョン 100.7 より以前のバージョンでは使用できません。また、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Advanced ライセンスレベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
@@ -124,7 +124,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、バージョン 100.7 より以前のバージョンでは使用できません。また、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Analysis アドオンライセンス拡張機能を割り当てられた）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
@@ -138,11 +138,11 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
- 1. [ArcGIS Developers: License and deployment](https://developers.arcgis.com/net/license-and-deployment/#arcgis-runtime-license) ページにアクセスします
-    * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime license string] をクリックします。
+ 1. [ArcGIS Developers: License and deployment](https://developers.arcgis.com/net/license-and-deployment/) ページにアクセスします
+    * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime Lite license string] をクリックします。
     * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンスキーをコピーします
- <img src="http://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="400px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="600px">
  3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
 
     ```c#
@@ -217,8 +217,6 @@ catch (Exception ex)
     Console.WriteLine("ライセンス認証中の例外:" + ex);
 }
 ```
-
-注意：上記のコードスニペットは、バージョン 100.7 で導入された新しい [GetLicenseInfoAsync()](https://developers.arcgis.com/net/api-reference/api/netfx/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Portal.ArcGISPortal.GetLicenseInfoAsync.html) APIを使用しています。バージョン 100.6 以前では Portal.PortalInfo.LicenseInfo を使用します。
 
 ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリを認証します。
 

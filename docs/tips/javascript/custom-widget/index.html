@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-03-27T14:44:10 JST">
+<meta name="revised" content="2023-04-24T12:12:28 JST">
 <title>ウィジェット開発 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -581,20 +581,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Runtime SDK for Android</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/install-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/android/distribution-android-100.x/">
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -603,20 +610,27 @@ if (!doNotTrack) {
     <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Runtime SDK for iOS</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/install-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
             インストール ガイド
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-100.x/">
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
             アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
           </a>
         </div>
     </li>
@@ -905,7 +919,7 @@ if (!doNotTrack) {
 </ol>
 <h2 id="ウィジェットの実装">ウィジェットの実装</h2>
 <p>まず、ベースとなる <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html" target="_blank">Widget</a> クラスを拡張することによりウィジェットを作成することからはじめます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// 拡張に使用する Widget クラスのインポート
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// 拡張に使用する Widget クラスのインポート
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#34;esri/widgets/Widget&#34;</span>);
 
 <span style="color:#66d9ef">@subclass</span>(<span style="color:#e6db74">&#34;esri.widgets.HelloWorld&#34;</span>)
@@ -913,7 +927,7 @@ if (!doNotTrack) {
 
 }
 </code></pre></div><p>次に、ウィジェット特有のプロパティとメソッドを実装します。このコードは、プロパティ作成において、デコレーターをどのように利用するのかを示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// &#39;name&#39; プロパティの作成
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// &#39;name&#39; プロパティの作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">@property</span>()
 <span style="color:#66d9ef">@renderable</span>()
 <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;John Smith&#34;</span>;
@@ -926,7 +940,7 @@ if (!doNotTrack) {
 <span style="color:#75715e">// プライベートな _onNameUpdate メソッドの作成
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_onNameUpdate</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;${this.name}&#39;</span>;}
 </code></pre></div><p>デフォルトでは、要素の中で参照される関数は、実際の要素を参照する <code>this</code> を持ちます。必要に応じて、<code>this</code> の参照先を変更するために <code>bind</code> 属性を使用します。以下では、<code>name</code> プロパティを更新するときに呼ばれる <code>_onNameUpdate</code> コールバック関数を結び付けています。これは次の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#postInitialize" target="_blank">postInitialize</a> メソッドに表示されます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">declared</span>(<span style="color:#a6e22e">Widget</span>) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">declared</span>(<span style="color:#a6e22e">Widget</span>) {
 
   <span style="color:#66d9ef">constructor</span>() {
     <span style="color:#66d9ef">super</span>();
@@ -935,7 +949,7 @@ if (!doNotTrack) {
 
 }
 </code></pre></div><p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#postInitialize" target="_blank">postInitialize</a> メソッドは、ウィジェットのプロパティは用意されているが、描画される前に呼ばれます。以下のコードは <code>name</code> プロパティを監視しています。プロパティが更新されると、<code>_onNameUpdate</code> コールバック関数を呼びます。<code>watchUtils.init()</code> は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Accessor.html#WatchHandle" target="_blank">WatchHandle</a> オブジェクトを返し、<code>this.own()</code> に渡されます。これは、ウィジェットを削除した時点で、リソースを解放するメソッドです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">postInitialize() {</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">postInitialize() {</span>
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">watchUtils</span>.<span style="color:#a6e22e">init</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onNameUpdate</span>);
 
   <span style="color:#75715e">// ウィジェットが削除された時点でリソースを解放するメソッド
@@ -943,7 +957,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>プロパティが実装された後、ウィジェットの UI は <a href="https://www.typescriptlang.org/docs/handbook/jsx.html" target="_blank">JSX</a> を使用して描画されます。これはウィジェットの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#render" target="_blank">renderer</a> メソッドに処理されます。</p>
 <p>ベースとなる CSS は <code>class</code> 属性に設定されます。class 属性はクラスが変更されないときに使用されます。動的にクラスを変更したいときは、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-support-widget.html#classes" target="_blank">classes</a> を使います。これは、切り替え可能な CSS クラスを表すプロパティを持ったオブジェクトです。CSS クラスは、プロパティの値が true のときに追加され、false のときに削除されます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// UI の描画
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// UI の描画
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">render() {</span>
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;hello-world-emphasized&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">emphasized</span> };
   <span style="color:#66d9ef">return</span> (
@@ -951,7 +965,7 @@ if (!doNotTrack) {
   );
 }
 </code></pre></div><p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-support-widget.html#join" target="_blank">classes</a> と同様に、<code>styles</code> は動的にスタイルを適用することができます。<code>styles</code> のプロパティの値は文字列であることに注意してください。詳細は、<a href="https://developers.arcgis.com/javascript/latest/guide/styling/index.html" target="_blank">Styling</a> トピックをご参照ください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">render() {</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">render() {</span>
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dynamicStyles</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">this.__hasBackgroundColor</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;chartreuse&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
   };
@@ -962,7 +976,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><p><strong>renderer() メソッドは、ウィジェットを実装するために必要となる唯一の必須メソッドです。</strong></p>
 <p>最後に、<code>this.destroy()</code> を呼びます。このメソッドはウィジェットを削除し、<code>postInitialize()</code> 内で参照されている <code>own()</code> メソッドに登録された、すべてのリソースを解放します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">postInitialize() {</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">postInitialize() {</span>
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">watchUtils</span>.<span style="color:#a6e22e">init</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onNameUpdate</span>);
 
   <span style="color:#75715e">// ウィジェットが削除された時点でリソースを解放するメソッド
@@ -973,7 +987,7 @@ if (!doNotTrack) {
 <h3 id="subclassdeclared-と共に使われます"><code>@subclass</code>（<code>declared</code> と共に使われます）</h3>
 <p>これらは、4.x のクラスに結びつけられる基本となるデコレーターです。</p>
 <p>以下のコードは <code>esri/widgets/Widget</code> クラスをインポートし、拡張して、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#render" target="_blank">renderer</a> メソッド内で UI を定義しています。<a href="https://www.typescriptlang.org/docs/handbook/jsx.html" target="_blank">JSX</a> は UI を定義するために使われています。この例では、<code>div</code> 要素と <code>div</code> 要素内に <code>John Smit</code> が作られます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#34;esri/widgets/Widget&#34;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#34;esri/widgets/Widget&#34;</span>);
 
 <span style="color:#66d9ef">@subclass</span>(<span style="color:#e6db74">&#34;esri.widgets.HelloWorld&#34;</span>)
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">declared</span>(<span style="color:#a6e22e">Widget</span>) {
@@ -985,23 +999,23 @@ if (!doNotTrack) {
 }
 </code></pre></div><h3 id="property"><code>@property()</code></h3>
 <p>この<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-core-accessorSupport-decorators.html#property" target="_blank">デコレーター</a>は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Accessor.html" target="_blank">Accessor</a> プロパティを定義するために使われます。このデコレーターで定義されたプロパティは、<code>get</code>、<code>set</code>、<code>watch</code> を使用できます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@property</span>()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@property</span>()
 <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
 </code></pre></div><h3 id="renderable"><code>@renderable()</code></h3>
 <p>この<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-support-widget.html#renderable" target="_blank">デコレーター</a>は描画をスケジューリングするために使われます。プロパティが修正されたとき、自動的に描画をスケジューリングし、更新します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@renderable</span>()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@renderable</span>()
 <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
 </code></pre></div><p>通常、プロパティを実装するときは、<code>@property()</code> と <code>@renderable()</code> の両方を使います。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@property</span>()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@property</span>()
 <span style="color:#66d9ef">@renderable</span>()
 <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
 </code></pre></div><h3 id="aliasof"><code>@aliasOf()</code></h3>
 <p>この<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-core-accessorSupport-decorators.html#aliasOf" target="_blank">デコレーター</a>はプロパティ エイリアスを定義します。これは、既にあるプロパティが重複しないようにコードを保つために使用されます（例えば ViewModel の内側に既に実装されています）。<em>このガイドで提供するサンプルはこのデコレーターを使っていません。もし、このファイルと関連する <code>HelloWroldViewModel</code> があるとき、この方法を通して直接プロパティへアクセスします。これにより、コードの重複を避けることができます。</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@aliasOf</span>(<span style="color:#e6db74">&#34;viewModel.name&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">@aliasOf</span>(<span style="color:#e6db74">&#34;viewModel.name&#34;</span>)
 <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
 </code></pre></div><h2 id="サンプルコード">サンプルコード</h2>
 <p>以下は、このガイドで説明したサンプルコードをまとめたものです。クラスは TypeScript で書かれ、TSX 拡張子で保存されます。TSX 拡張子は、作成するクラスが JSX を使っていることを示しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/// &lt;amd-dependency path=&#34;esri/core/tsSupport/declareExtendsHelper&#34; name=&#34;__extends&#34; /&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/// &lt;amd-dependency path=&#34;esri/core/tsSupport/declareExtendsHelper&#34; name=&#34;__extends&#34; /&gt;
 </span><span style="color:#75715e">/// &lt;amd-dependency path=&#34;esri/core/tsSupport/decorateHelper&#34; name=&#34;__decorate&#34; /&gt;
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Import decorator modules
