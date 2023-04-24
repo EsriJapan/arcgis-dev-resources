@@ -43,8 +43,8 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 
 	```java
 	dependencies {
-		implementation 'com.esri:arcgis-maps-kotlin:200.0.0-beta01'
 		...
+		implementation 'com.esri:arcgis-maps-kotlin:200.1.0'
 	}
 	```
 
