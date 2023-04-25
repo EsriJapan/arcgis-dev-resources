@@ -6,6 +6,8 @@ hidden = false
 aliases = ["/ios/migration-ios-200.x/"]
 +++
 
+出典：ArcGIS Maps SDK for Swift - Guide - [Migrate from 100.x to 200.x](https://developers.arcgis.com/swift/reference/migrate-from-100-x-to-200-x/)
+
 ## イントロダクション
 ArcGIS Maps SDK for Swift v200.0 は、Swift 開発者向けに設計された次世代マッピング API を提供します。これは、ArcGIS Runtime SDK for iOS v100.x の後継であり、同じ基盤、アーキテクチャ、および機能を継承しています。API の概念の多くは変更されていませんが、SwiftUI、構造化された同時並行処理、値型、Measurement、デフォルト パラメーターなどの Swift の規則、フレームワーク、および機能に合わせて記述されています。
 

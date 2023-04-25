@@ -5,6 +5,8 @@ weight = 1
 aliases = ["/dotnet/install-dotnet-200.x/"]
 +++
 
+出典：ArcGIS Maps SDK for .NET - Guide - [Install and set up](https://developers.arcgis.com/net/install-and-set-up/)
+
 このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-dotnet/)」のチュートリアルをご覧ください。
 
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。

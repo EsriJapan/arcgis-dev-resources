@@ -5,6 +5,8 @@ weight = 3
 aliases = ["/dotnet/migration-dotnet-200.x/"]
 +++
 
+出典：ArcGIS Maps SDK for .NET - Guide - [Migrate from 100.x to 200.x](https://developers.arcgis.com/net/reference/migrate-from-100-x-to-200-x/)
+
 ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー アップデートのみに特化した長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者向けフレームワークの技術を活用するよう設計されています。このトピックでは、変更された API の領域の概要と、200.x アプリ用に 100.x コードをリファクタリングするためのガイダンスを提供します。
 
 ## 基本的な移行手順

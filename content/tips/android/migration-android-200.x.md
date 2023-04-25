@@ -6,6 +6,8 @@ hidden = false
 aliases = ["/android/migration-android-200.x/"]
 +++
 
+出典：ArcGIS Maps SDK for Kotlin - Guide - [Migrate from 100.x to 200.x](https://developers.arcgis.com/kotlin/reference/migrate-from-100-x-to-200-x/)
+
 ArcGIS Runtime SDK バージョン 100.15 は、不具合修正とマイナー アップデートのみに焦点を当てた長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者フレームワークのイノベーションを活用するように設計されています。このトピックでは、変更された API の領域について概説し、200.x アプリ用に 100.x コードをリファクタリングするための手順を説明します。
 
 200.0 リリースでは、Android 向けの新しい Kotlin ベースの API「ArcGIS Maps SDK for Kotlin」が導入されました。

@@ -5,6 +5,8 @@ Weight=6
 aliases = ["/create-startup-app-dotnet/"]
 +++
 
+出典：ArcGIS Maps SDK for .NET - Tutorials - [Display a map](https://developers.arcgis.com/net/maps-2d/tutorials/display-a-map/)
+
 ## マップを表示する
 
 このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。

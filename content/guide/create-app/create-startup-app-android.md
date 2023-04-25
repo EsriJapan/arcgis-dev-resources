@@ -5,6 +5,8 @@ Weight =4
 aliases = ["/create-startup-app-android/"]
 +++
 
+出典：ArcGIS Maps SDK for Kotlin - Tutorials - [Display a map](https://developers.arcgis.com/kotlin/maps-2d/tutorials/display-a-map/)
+
 ## マップを表示する
 
 このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。

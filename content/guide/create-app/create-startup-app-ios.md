@@ -5,6 +5,8 @@ Weight=5
 aliases = ["/create-startup-app-ios/"]
 +++
 
+出典：ArcGIS Maps SDK for Swift - Tutorials - [Display a map](https://developers.arcgis.com/swift/maps-2d/tutorials/display-a-map/)
+
 ## マップを表示する
 
 このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
