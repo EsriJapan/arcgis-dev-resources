@@ -12,10 +12,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/</guid>
-      <description>このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+      <description>出典：ArcGIS Maps SDK for .NET - Guide - Install and set up
+このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 インストールとセットアップ ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 つ以上の ArcGIS Maps SDK for .NET NuGet パッケージ への参照を Visual Studio プロジェクト内に追加します。ArcGIS Maps SDK for .NET がサポートするアプリケーション プラットフォームおよび UI フレームワークのそれぞれに対応するプロジェクト テンプレート セットは、Visual Studio 拡張機能 として提供されています。
-プロジェクトでの ArcGIS Maps SDK for .NET の参照 ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある Visual Studio にパッケージをインストールして使用する (Windows) または Visual Studio にパッケージをインストールして使用する (Mac) を参照してください。</description>
+プロジェクトでの ArcGIS Maps SDK for .NET の参照 ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.</description>
     </item>
     
     <item>
@@ -38,9 +39,10 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/</guid>
-      <description>ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー アップデートのみに特化した長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者向けフレームワークの技術を活用するよう設計されています。このトピックでは、変更された API の領域の概要と、200.x アプリ用に 100.x コードをリファクタリングするためのガイダンスを提供します。
+      <description>出典：ArcGIS Maps SDK for .NET - Guide - Migrate from 100.x to 200.x
+ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー アップデートのみに特化した長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者向けフレームワークの技術を活用するよう設計されています。このトピックでは、変更された API の領域の概要と、200.x アプリ用に 100.x コードをリファクタリングするためのガイダンスを提供します。
 基本的な移行手順 ArcGIS Runtime SDK for .NET バージョン 100.0 から 100.15 で構築した既存のアプリを ArcGIS Maps SDK for .NET バージョン 200.0 に移行するには、以下の一般的な手順に従います。
- 以下の システム要件の変更 のセクションを確認し、推奨される変更または更新を行います。 アプリケーションのソース コードを開きます。 すべての Esri.ArcGISRuntime.* NuGet リファレンスをバージョン 200.0 に更新します。 API の破壊的変更に対処します。v100.x で非推奨とマークされた API は 200.0 で削除され、これらの API を使用するとコンパイル エラーが発生します。 アップグレードされたアプリをビルドして実行し、正しく機能することを確認します。  Xamarin アプリケーションの移行 バージョン 100.15 は、Xamarin.Forms、Xamarin.Android、Xamarin.iOS をサポートする ArcGIS Runtime SDK for .</description>
+ 以下の システム要件の変更 のセクションを確認し、推奨される変更または更新を行います。 アプリケーションのソース コードを開きます。 すべての Esri.ArcGISRuntime.* NuGet リファレンスをバージョン 200.0 に更新します。 API の破壊的変更に対処します。v100.x で非推奨とマークされた API は 200.</description>
     </item>
     
     <item>

@@ -73,14 +73,13 @@ npm install @esri/calcite-components ビルドの選択 Calcite Components が�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-200.x/</guid>
-      <description>このインストール ガイドでは、ArcGIS Maps SDK for Kotlin (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+      <description>出典：ArcGIS Maps SDK for Kotlin - Guide - Install and set up
+このインストール ガイドでは、ArcGIS Maps SDK for Kotlin (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが 動作環境 を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 Gradle を使用してインストールすることをお勧めします。これにより、Esri の Maven リポジトリから必要な依存関係と SDK バイナリがインストールされます。
 Gradle で API を取得する 既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。
-  settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。
-settings.gradle
-dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) repositories { google() mavenCentral() // Esri の Maven リポジトリを追加  maven { url &amp;#39;https://esri.</description>
+  settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。</description>
     </item>
     
     <item>
@@ -89,10 +88,11 @@ dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_P
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/</guid>
-      <description>このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+      <description>出典：ArcGIS Maps SDK for .NET - Guide - Install and set up
+このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 インストールとセットアップ ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 つ以上の ArcGIS Maps SDK for .NET NuGet パッケージ への参照を Visual Studio プロジェクト内に追加します。ArcGIS Maps SDK for .NET がサポートするアプリケーション プラットフォームおよび UI フレームワークのそれぞれに対応するプロジェクト テンプレート セットは、Visual Studio 拡張機能 として提供されています。
-プロジェクトでの ArcGIS Maps SDK for .NET の参照 ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある Visual Studio にパッケージをインストールして使用する (Windows) または Visual Studio にパッケージをインストールして使用する (Mac) を参照してください。</description>
+プロジェクトでの ArcGIS Maps SDK for .NET の参照 ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.</description>
     </item>
     
     <item>
@@ -101,7 +101,8 @@ ArcGIS Developers のダッシュボードから各インストーラーやデ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-200.x/</guid>
-      <description>このインストール ガイドでは、ArcGIS Maps SDK for Swift (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+      <description>出典：ArcGIS Maps SDK for Swift - Guide - Install and set up
+このインストール ガイドでは、ArcGIS Maps SDK for Swift (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 Swift Package Manager Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
 Xcode 14 での手順
@@ -109,9 +110,7 @@ Xcode 14 での手順
   パッケージ リポジトリの URL として https://github.com/esri/arcgis-maps-sdk-swift を入力します。
   オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。
   [Add Package] をクリックします。
-  ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
-import ArcGIS 追加のダウンロード 開発プロジェクトを強化するために、サンプル コードとデータ、ツール の追加リソースを利用できます。このガイドを、スタンドアロンの開発者ドキュメントとしてダウンロードすることもできます。
-サンプル コード 独自のアプリケーションに追加できるさまざまな強力な機能を紹介する実践的なサンプル コードを入手してください。サンプルを検索し、サンプル ドキュメントで関連するコードを参照するか、サンプル リポジトリからコードをダウンロードしてローカルで実行できます。</description>
+  ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.</description>
     </item>
     
     <item>
@@ -510,11 +509,11 @@ AGSMap オブジェクトと AGSScene オブジェクトは 、それらを表�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-200.x/</guid>
-      <description>ArcGIS Runtime SDK バージョン 100.15 は、不具合修正とマイナー アップデートのみに焦点を当てた長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者フレームワークのイノベーションを活用するように設計されています。このトピックでは、変更された API の領域について概説し、200.x アプリ用に 100.x コードをリファクタリングするための手順を説明します。
+      <description>出典：ArcGIS Maps SDK for Kotlin - Guide - Migrate from 100.x to 200.x
+ArcGIS Runtime SDK バージョン 100.15 は、不具合修正とマイナー アップデートのみに焦点を当てた長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者フレームワークのイノベーションを活用するように設計されています。このトピックでは、変更された API の領域について概説し、200.x アプリ用に 100.x コードをリファクタリングするための手順を説明します。
 200.0 リリースでは、Android 向けの新しい Kotlin ベースの API「ArcGIS Maps SDK for Kotlin」が導入されました。
 このリリースは、ArcGIS Runtime SDK for Android を Kotlin ファーストの SDK として完全に再構築したもので、コルーチン、フロー、null 安全などの機能をすぐにサポートすることができます。Java ベースの ArcGIS Runtime SDK for Android は、長期サポート（LTS）となり、不具合修正は継続されますが、それ以上の機能アップデートはありません。
-新機能を利用するには、Java ベースの ArcGIS Runtime SDK for Android を置き換える ArcGIS Maps SDK for Kotlin に移行してください。詳細については、ブログ「ArcGIS Runtime SDK の今後のバージョンアップの計画についてのお知らせ」をご確認ください。
-LifeCycleObserver GeoView クラスは MapView や SceneView のベースクラスで、DefaultLifecycleObserver を実装しています。したがって、onResume、onPause、onDestroy のようなライフサイクルイベントを GeoView に転送することは、もはや必要ではありません。</description>
+新機能を利用するには、Java ベースの ArcGIS Runtime SDK for Android を置き換える ArcGIS Maps SDK for Kotlin に移行してください。詳細については、ブログ「ArcGIS Runtime SDK の今後のバージョンアップの計画についてのお知らせ」をご確認ください。</description>
     </item>
     
     <item>
@@ -523,9 +522,10 @@ LifeCycleObserver GeoView クラスは MapView や SceneView のベースクラ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/</guid>
-      <description>ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー アップデートのみに特化した長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者向けフレームワークの技術を活用するよう設計されています。このトピックでは、変更された API の領域の概要と、200.x アプリ用に 100.x コードをリファクタリングするためのガイダンスを提供します。
+      <description>出典：ArcGIS Maps SDK for .NET - Guide - Migrate from 100.x to 200.x
+ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー アップデートのみに特化した長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者向けフレームワークの技術を活用するよう設計されています。このトピックでは、変更された API の領域の概要と、200.x アプリ用に 100.x コードをリファクタリングするためのガイダンスを提供します。
 基本的な移行手順 ArcGIS Runtime SDK for .NET バージョン 100.0 から 100.15 で構築した既存のアプリを ArcGIS Maps SDK for .NET バージョン 200.0 に移行するには、以下の一般的な手順に従います。
- 以下の システム要件の変更 のセクションを確認し、推奨される変更または更新を行います。 アプリケーションのソース コードを開きます。 すべての Esri.ArcGISRuntime.* NuGet リファレンスをバージョン 200.0 に更新します。 API の破壊的変更に対処します。v100.x で非推奨とマークされた API は 200.0 で削除され、これらの API を使用するとコンパイル エラーが発生します。 アップグレードされたアプリをビルドして実行し、正しく機能することを確認します。  Xamarin アプリケーションの移行 バージョン 100.15 は、Xamarin.Forms、Xamarin.Android、Xamarin.iOS をサポートする ArcGIS Runtime SDK for .</description>
+ 以下の システム要件の変更 のセクションを確認し、推奨される変更または更新を行います。 アプリケーションのソース コードを開きます。 すべての Esri.ArcGISRuntime.* NuGet リファレンスをバージョン 200.0 に更新します。 API の破壊的変更に対処します。v100.x で非推奨とマークされた API は 200.</description>
     </item>
     
     <item>
@@ -534,7 +534,8 @@ LifeCycleObserver GeoView クラスは MapView や SceneView のベースクラ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-200.x/</guid>
-      <description>イントロダクション ArcGIS Maps SDK for Swift v200.0 は、Swift 開発者向けに設計された次世代マッピング API を提供します。これは、ArcGIS Runtime SDK for iOS v100.x の後継であり、同じ基盤、アーキテクチャ、および機能を継承しています。API の概念の多くは変更されていませんが、SwiftUI、構造化された同時並行処理、値型、Measurement、デフォルト パラメーターなどの Swift の規則、フレームワーク、および機能に合わせて記述されています。
+      <description>出典：ArcGIS Maps SDK for Swift - Guide - Migrate from 100.x to 200.x
+イントロダクション ArcGIS Maps SDK for Swift v200.0 は、Swift 開発者向けに設計された次世代マッピング API を提供します。これは、ArcGIS Runtime SDK for iOS v100.x の後継であり、同じ基盤、アーキテクチャ、および機能を継承しています。API の概念の多くは変更されていませんが、SwiftUI、構造化された同時並行処理、値型、Measurement、デフォルト パラメーターなどの Swift の規則、フレームワーク、および機能に合わせて記述されています。
 既存のアプリを移行するには、大幅な変更が必要です。具体的には、SwiftUI を使用してユーザー インターフェイスを再構築し、async/await を使用して非同期コードを実装する必要があります。 これらのテクノロジーをしっかりと理解することは、移行を容易にし、強固な基盤を提供するのに役立ちます。
 API 名の変更 型名変更 型 (クラス、プロトコル、構造体、および列挙型) は ArcGIS モジュールにカプセル化され、名前に AGS プレフィックスが含まれなくなりました。その結果として生じる名前の変更の例を次に示します。
    v100.x v200     AGSMap Map   AGSMapView MapView   AGSLoadable Loadable   AGSViewpoint Viewpoint   AGSPoint Point   AGSFeatureLayer FeatureLayer   AGSArcGISFeatureTable ArcGISFeatureTable    ArcGIS Maps SDK への製品名変更の一環として、Runtime という単語がタイプ名から削除されました。</description>
@@ -582,13 +583,13 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+      <description>出典：ArcGIS Maps SDK for Kotlin - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
  API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。 Kotlin で Android 開発をするための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。  注: このチュートリアルの完成版のコードは、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。
-ステップ 新しい Android Studio プロジェクトを作成します。 Android Studio を使用してアプリを作成し、API を参照するように構成します。
-  Android Studio を開きます。</description>
+ステップ 新しい Android Studio プロジェクトを作成します。 Android Studio を使用してアプリを作成し、API を参照するように構成します。</description>
     </item>
     
     <item>
@@ -678,7 +679,8 @@ Map オブジェクトと Scene オブジェクトは 、それらを表示す�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+      <description>出典：ArcGIS Maps SDK for Swift - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
@@ -789,12 +791,13 @@ app config では、画面グループは screenGroups で定義され、画面�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
-      <description>マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+      <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
  API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
-ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。 このチュートリアルの説明は、Visual Studio for Windows を使用して .</description>
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.</description>
     </item>
     
     <item>
