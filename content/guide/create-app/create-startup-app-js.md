@@ -82,8 +82,8 @@ HTML ページを定義して、Web ブラウザのウィンドウの幅と高�
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.26/"></script>
         <!-- 追加終了 -->
 
       </head>
@@ -120,8 +120,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.26/"></script>
         <!-- 追加終了 -->
         
         <!-- モジュールの追加 -->
@@ -177,8 +177,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.26/"></script>
         <!-- 追加終了 -->
         　
         <!-- モジュールの追加 -->
@@ -238,8 +238,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.26/"></script>
         <!-- 追加終了 -->
         　
         <!-- モジュールの追加 -->
@@ -329,8 +329,8 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
         </style>
         
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.18/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.26/"></script>
         <!--追加終了  -->
         
         <!-- モジュールの追加 -->
