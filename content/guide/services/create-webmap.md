@@ -49,7 +49,7 @@ Web マップに含まれる情報は以下の JSON 仕様で確認できます�
 
 1. レイヤー リスト上の透過率を設定したいレイヤー下にある [...] アイコンをクリックして、メニューから [透過表示] にカーソルを合わせると、スライダ－で透過率を設定できます。
 <br>これで背景地図が見えるので場所の特定はできるようになりましたが、地震の被害想定は見たい人だけに見てほしい。そんな場合には、初期状態で非表示にしておくことができます。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/webmap/display.gif" width="450px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/webmap/display.gif" width="600px">
 1. 非表示にしたいレイヤー左にあるチェックボックスの✔を外すと、レイヤーは非表示になります。
 
 ### 3. Web マップの保存
