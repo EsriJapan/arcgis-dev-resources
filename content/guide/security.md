@@ -78,7 +78,7 @@ ArcGIS Identity (指定ユーザー ログインとも呼ばれる) は、一時
 * アプリユーザーのクレジットを使用して、プライベートなデータ、コンテンツ、サービスの取引の支払いを行う場合。
 * ユーザーが一時的なトークンを使ってアプリにサインインできる時間を制限する場合。
 
-<img src="https://developers.arcgis.com/documentation/static/c67ea902cb272c599159996a52182a35/4cdf7/arcgis-identity.png" alt="arcgis-identity">
+<img src="https://developers.arcgis.com/documentation/static/005d6b6f3604840811e441acb87f82b4/4cdf7/arcgis-identity.png" alt="arcgis-identity">
 
 1. [開発者用ダッシュボード](https://developers.arcgis.com/dashboard/)で[アプリケーションを登録](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/)し、クライアント認証情報を取得します。
 
@@ -102,7 +102,7 @@ ArcGIS Identity の詳細については[こちら](https://developers.arcgis.co
  
  * ユーザーが ArcGIS アカウントを持っていなくても、サービスにアクセスできるようにする場合。
 
-<img src="https://developers.arcgis.com/documentation/static/38eac1ebfdcb722c68a20aa2b227f8f4/4cdf7/application-credenitals.png" alt="application-credenitals">
+<img src="https://developers.arcgis.com/documentation/static/7d193ee4aa7f229586ca44bf6f4a5438/4cdf7/application-credenitals.png" alt="application-credenitals">
 
 
 1. [開発者用ダッシュボード](https://developers.arcgis.com/dashboard/)で [OAuth 2.0 アプリケーションを登録](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/)し、認証情報を受け取ります。
