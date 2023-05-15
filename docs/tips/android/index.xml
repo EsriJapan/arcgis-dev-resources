@@ -30,9 +30,10 @@ Gradle で API を取得する 既存の Android Studio プロジェクトか新
       <description>ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 API キーの設定 ArcGIS Platform のロケーションサービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、APIキーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
- 使用するライセンスの選択 ライセンスの認証方法  Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法   ライセンスの認証  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
-各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
-   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
+  使用するライセンスの選択
+  ライセンスの認証方法
+ Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 Utility Network Extension ライセンスの認証方法    ライセンスの認証
+ Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis、Utility Network の 2 つのエクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</description>
     </item>
     
     <item>
