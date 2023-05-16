@@ -1,437 +1,223 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/learn/github/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/get-started/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/visualization/workflow-with-arcgis/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/learn/developer-community/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/learn/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/development-guide/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/core-concepts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/visualization/data-visualization-procedure/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/window/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-100.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-200.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-routing/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/visualization/data-visualization-procedure-3d/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/automate-tasks/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/deployment/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/visualization/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/prosdk/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/samples/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/appstudio/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/hackathon/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deploy-pattern/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/create-startup-app-wab/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tags/</loc>
   </url>
-  
 </urlset>
