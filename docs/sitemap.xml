@@ -90,7 +90,7 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/migration-ios-200.x/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-routing/</loc>
   </url><url>
@@ -112,6 +112,8 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/</loc>
   </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</loc>
@@ -120,15 +122,13 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/migration-dotnet-100.x/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</loc>
   </url><url>
@@ -140,11 +140,11 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/automate-tasks/</loc>
   </url><url>
@@ -159,8 +159,6 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/samples/</loc>
   </url><url>

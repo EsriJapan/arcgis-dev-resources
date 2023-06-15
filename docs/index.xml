@@ -545,14 +545,17 @@ API 名の変更 型名変更 型 (クラス、プロトコル、構造体、お
     </item>
     
     <item>
-      <title>バージョン 4.x と 3.x の選択</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</link>
+      <title>バージョン 3.x から 4.x への移行</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/</guid>
-      <description>バージョン 4.x の API は、新しい機能（例えば、3D サポート、マップの回転、ポータル連携の強化等）が追加されています。しかし、バージョン 4.x に、バージョン 3.x の全ての機能が含まれているわけではありません。今後のリリースでは、バージョン 3.x と同等の機能、また、3.x を上回る多くの機能が追加されます。開発者はアプリケーションの要件を考慮して、必要な機能が現在のバージョン 4.x もしくは 3.x に実装されているかどうかを判断する必要があります。
-また、バージョン 4.x もしくは 3.x で開発を行うか判断する際は、3.x のロードマップと技術サポートに関する FAQ も併せて参照してください。
- アプリケーションで、3D 表示が必要な場合は、バージョン 4.x を使用してください 非常に大きなフィーチャ レイヤーを扱う場合は、バージョン 4.x を使用してください。 分析ウィジェットなど、4.x ではまだ利用できない機能が必要な場合は 3.x を使用してください。     機能 3.x 4.x     3D 表示 × ○   2D 表示 ○ ○   ベクター タイル レイヤー ○ ○   ラスター タイル レイヤー ○ ○   イメージ レイヤー ○ ○   マップ イメージ レイヤー（ダイナミック レイヤー） ○ ○   フィーチャ レイヤー ○ ○   ジオメトリ エンジン ○ ○   印刷 ○ ○   ルート &amp;amp; ルート案内 ○ ○   Web マップ ○（部分的なサポート） ○（部分的なサポート）   Web シーン × ○   ポータル アイテムのレイヤーの直接参照 × ○   編集と図形描画 ○（部分的なサポート） ○（部分的なサポート）   OGC レイヤー（WMS、WMTS、KML、WFS） ○ ○   OGC API の機能（OGCFeatureLayer） × ○   時系列データ ○ ○   その他の GIS 解析ウィジェット ○ ×（今後のバージョンで対応予定）    全機能の比較は 3.</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Migrating from 3.x to 4.27
+バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
+本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
+ プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ モジュール 廃止項目  バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
+プロパティ 4.0 より前のバージョンでは、getMethodName や setMethodName を呼び出すことで、一部のプロパティを get (読み込み）または set（書き込み）することができました。API では、すべてのプロパティを取得・設定するためのシンプルで一貫した方法がサポートされているため、これらのタイプのメソッドは不要になりました。
+ 例えば map.basemap = &amp;quot;oceans&amp;quot; のようにオブジェクトに直接プロパティを設定します。 例えば map.basemap.title. のようにオブジェクトから直接プロパティを取得します。  例えば、3.x ではフィーチャーレイヤーの definitionExpression 設定は、以下のようになります。</description>
     </item>
     
     <item>
@@ -653,6 +656,23 @@ Windows のコマンドプロンプトからコマンドを実行した場合
     </item>
     
     <item>
+      <title>ウィジェット開発</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Widget development
+ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS Maps SDK for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
+このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
+このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
+トピック
+ 開発要件 ウィジェット ライフサイクル ウィジェットの実装 TypeScript デコレーター サンプルコード 関連リンク  このガイドはウィジェットのフレームワークの大まかな概要を説明しています。どのようにカスタム ウィジェットを作成するかは、Hello World や Recenter widget のサンプルをご参照ください。
+開発要件 カスタム ウィジェットを作成する前に、開発に必要となる要件を確認してください。要件は、作成するウィジェットにより異なります。以下はウィジェット開発に最低限必要な要件です。
+TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript で書かれたコードは、JavaScript にコンパイルされます。ウィジェット開発には TypeScript を使用することが推奨されています。インターネット上には、TypeScript とは何か、なぜ使われるのか、そしてどのように使うのかを詳細に知ることのできる多数のリソースがあります。これらの基本を理解することで、ウィジェット開発の過程をより簡単に進めることができます。
+JSX JSX は HTML と同じようにウィジェットの UI を表現することができる JavaScript の拡張シンタックスです。JSX は HTML に似ており、JavaScript に埋め込んで使用することができます。</description>
+    </item>
+    
+    <item>
       <title>スタートアップ ガイド（3.x）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -693,17 +713,16 @@ Map オブジェクトと Scene オブジェクトは 、それらを表示す�
     </item>
     
     <item>
-      <title>バージョン 3.x から 4.x への移行</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</link>
+      <title>Arcade</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Migrating from 3.x to 4.25
-バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
-本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
- プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ AMD のみ 廃止項目  バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
-プロパティ 4.0 より前のバージョンでは、getMethodName や setMethodName を呼び出すことで、一部のプロパティを get (読み込み）または set（書き込み）することができました。API では、すべてのプロパティを取得・設定するためのシンプルで一貫した方法がサポートされているため、これらのタイプのメソッドは不要になりました。
- 例えば map.basemap = &amp;quot;oceans&amp;quot; のようにオブジェクトに直接プロパティを設定します。 例えば map.basemap.title. のようにオブジェクトから直接プロパティを取得します。  例えば、3.x ではフィーチャーレイヤーの definitionExpression 設定は、以下のようになります。</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Arcade
+Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS Maps SDK for JavaScript で編集・共有・実行することができます。
+Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
+Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</description>
     </item>
     
     <item>
@@ -735,23 +754,6 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
 インストール   バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
   次の 2 つのコマンドを実行します
  jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter labextension install arcgis-map-ipywidget@バージョン番号    2 つ目のコマンドの最後にある「バージョン番号」部分は、使用する Python API のバージョンに合わせて変更してください (例：1.</description>
-    </item>
-    
-    <item>
-      <title>ウィジェット開発</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-widget/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Widget development
-ウィジェットは再利用可能な UI コンポーネントで、リッチな UX を提供する鍵となります。ArcGIS Maps SDK for JavaScript はすぐに使えるウィジェットを提供しています。また、バージョン 4.2 からは、独自の機能を持つカスタム ウィジェットを作成する基盤を提供します。
-このガイドは、ウィジェット開発の新しいフレームワークへ移行するときに重視すべきトピックを説明することで、ウィジェット開発の基本を説明します。カスタム ウィジェット作成の基盤は、ウィジェットに実装する機能にかかわらず一貫しています。
-このフレームワークはすべての Dijit を直接差し替えることを意図していません。例えば、dgrid の利用には Dijit が必要です。
-トピック
- 開発要件 ウィジェット ライフサイクル ウィジェットの実装 TypeScript デコレーター サンプルコード 関連リンク  このガイドはウィジェットのフレームワークの大まかな概要を説明しています。どのようにカスタム ウィジェットを作成するかは、Hello World や Recenter widget のサンプルをご参照ください。
-開発要件 カスタム ウィジェットを作成する前に、開発に必要となる要件を確認してください。要件は、作成するウィジェットにより異なります。以下はウィジェット開発に最低限必要な要件です。
-TypeScript TypeScript は JavaScript のスーパーセットです。TypeScript で書かれたコードは、JavaScript にコンパイルされます。ウィジェット開発には TypeScript を使用することが推奨されています。インターネット上には、TypeScript とは何か、なぜ使われるのか、そしてどのように使うのかを詳細に知ることのできる多数のリソースがあります。これらの基本を理解することで、ウィジェット開発の過程をより簡単に進めることができます。
-JSX JSX は HTML と同じようにウィジェットの UI を表現することができる JavaScript の拡張シンタックスです。JSX は HTML に似ており、JavaScript に埋め込んで使用することができます。</description>
     </item>
     
     <item>
@@ -834,19 +836,6 @@ app config では、画面グループは screenGroups で定義され、画面�
     </item>
     
     <item>
-      <title>Arcade</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Arcade
-Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS Maps SDK for JavaScript で編集・共有・実行することができます。
-Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
-Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
-シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</description>
-    </item>
-    
-    <item>
       <title>ウィジェット manifest</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -855,6 +844,22 @@ Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系�
       <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
 各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
 { &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;dependency&amp;#34;: &amp;#34;jimu-arcgis&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.</description>
+    </item>
+    
+    <item>
+      <title>カスタム フォント</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
+      <description>ArcGIS Maps SDK for JavaScript のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
+デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGIS Maps SDK for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
+※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
+フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
+pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
+https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
+pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
+ node-fontnik をクローンします。  git clone https://github.</description>
     </item>
     
     <item>
@@ -928,22 +933,6 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
  src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
-    </item>
-    
-    <item>
-      <title>カスタム フォント</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/custom-font/</guid>
-      <description>ArcGIS Maps SDK for JavaScript のバージョン 4.10 以降、MapView 上のフィーチャ レイヤーのラベルやテキスト シンボルで使用するフォントは、pbf (Protocolbuffer Binary Format) で配信する必要があります。 デフォルトでは、pbf フォントは Esri が https://static.arcgis.com/fonts でホストしているフォントを使用できます。 利用可能なフォントの一覧は、Esri のガイドで確認できます（&amp;ldquo;Read more&amp;rdquo; をクリックしてページを展開してください）。
-デフォルトで提供されていないフォントを使用したい場合は、自身で pbf フォントを作成し Web サーバーで配信することで、API から使用することができます。このガイドでは ArcGIS Maps SDK for JavaScript バージョン 4.x で独自のフォントを使用する手順を紹介します。
-※ 本ガイドでご紹介する手順に関しては ESRIジャパンの技術サポート サービスの対象外となります。予めご了承ください。また、フォントの変換・配置を行う場合は、利用されるフォントの利用規約を予めご確認ください。
-フォントの入手 今回は、Google フォント からダウンロードして PBF に変換します。
-pbf フォントの作成 pbf ファイルは符号付き距離フィールドのセットとして以下の URL で配信する必要があります。これは MapBox GL JS のスタイル仕様と同じです。
-https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
-pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
- node-fontnik をクローンします。  git clone https://github.</description>
     </item>
     
     <item>
