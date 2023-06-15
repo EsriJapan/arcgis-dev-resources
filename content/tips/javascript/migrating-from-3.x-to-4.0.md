@@ -5,7 +5,7 @@ weight = 4
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
 
-出典：ArcGIS Maps SDK for JavaScript - [Migrating from 3.x to 4.25](https://developers.arcgis.com/javascript/latest/migrating/)
+出典：ArcGIS Maps SDK for JavaScript - [Migrating from 3.x to 4.27](https://developers.arcgis.com/javascript/latest/migrating/)
 
 バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 
@@ -17,7 +17,7 @@ aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
   * __[モジュールとパッケージの更新](#モジュールとパッケージの更新)__
   * __[Web マップのサポート](#web-マップのサポート)__
   * __[ローカライズ](#ローカライズ)__
-  * __[AMD のみ](#amd-のみ)__
+  * __[モジュール](#モジュール)__
   * __[廃止項目](#廃止項目)__
 
   バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
@@ -142,12 +142,12 @@ esriConfig.geometryService = new GeometryService("<ジオメトリ サービス�
 
  ```javascript
 // 3.x
-esriConfig.defaults.io.alwaysUseProxy = true;
+esriConfig.defaults.io.timeout = 30000;
 ```
 
  ```javascript
 // 4.x
-esriConfig.request.alwaysUseProxy = true;
+esriConfig.request.timeout = 30000;
 ```
 
 - 3 つの `*-all` レガシー モジュールが削除されました。これは、ビルドや Website Optimizer を使用してより適切に処理されます。
@@ -163,8 +163,7 @@ esriConfig.request.alwaysUseProxy = true;
 - どのロケールでも RTL をオプトインできるようになりました。[RTL サポート](https://developers.arcgis.com/javascript/latest/localization/index.html#rtl)を参照してください。
 - `<html>` または `<body>` タグで方向を指定します。[RTL サポート](https://developers.arcgis.com/javascript/latest/localization/index.html#rtl)を参照してください。
 
-## AMD のみ
-4.0 以前は、AMD とレガシー モジュールの両方を使用することができました。4.0 以降は、AMD モデルのみのサポートとなります。
-
+## モジュール
+4.x の API は、AMD モジュールと ES モジュールとして提供されます。4.0 以前は、AMD と dojo.require のレガシー モジュールの両方を使用することができました。4.0 以降は、AMD モデルのみのサポートとなり、4.18でESモジュールが導入されました。4.xの異なるモジュールタイプの概要については、[Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) を参照してください。
 ## 廃止項目
 `Geocoder` ウィジェットはバージョン 3.13 で非推奨となり、4.x では提供されません。代わりに [Search](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html) ウィジェットを使用してください。

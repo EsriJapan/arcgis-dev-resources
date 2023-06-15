@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-05-16T14:31:33 JST">
+<meta name="revised" content="2023-06-15T16:55:08 JST">
 <title>バージョン 3.x から 4.x への移行 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -247,13 +247,6 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
             インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/">
-            バージョン 4.x と 3.x の選択
           </a>
         </div>
     </li>
@@ -863,7 +856,7 @@ if (!doNotTrack) {
     <li><a href="#モジュールとパッケージの更新">モジュールとパッケージの更新</a></li>
     <li><a href="#web-マップのサポート">Web マップのサポート</a></li>
     <li><a href="#ローカライズ">ローカライズ</a></li>
-    <li><a href="#amd-のみ">AMD のみ</a></li>
+    <li><a href="#モジュール">モジュール</a></li>
     <li><a href="#廃止項目">廃止項目</a></li>
   </ul>
 </nav>
@@ -884,7 +877,7 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Maps SDK for JavaScript - <a href="https://developers.arcgis.com/javascript/latest/migrating/">Migrating from 3.x to 4.25</a></p>
+    <p>出典：ArcGIS Maps SDK for JavaScript - <a href="https://developers.arcgis.com/javascript/latest/migrating/">Migrating from 3.x to 4.27</a></p>
 <p>バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。</p>
 <p>本トピックでは <a href="https://developers.arcgis.com/javascript/3/">3.x</a> の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。</p>
 <ul>
@@ -894,7 +887,7 @@ if (!doNotTrack) {
 <li><strong><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%A8%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E6%9B%B4%E6%96%B0">モジュールとパッケージの更新</a></strong></li>
 <li><strong><a href="#web-%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">Web マップのサポート</a></strong></li>
 <li><strong><a href="#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%A9%E3%82%A4%E3%82%BA">ローカライズ</a></strong></li>
-<li><strong><a href="#amd-%E3%81%AE%E3%81%BF">AMD のみ</a></strong></li>
+<li><strong><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></strong></li>
 <li><strong><a href="#%E5%BB%83%E6%AD%A2%E9%A0%85%E7%9B%AE">廃止項目</a></strong></li>
 </ul>
 <p>バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。</p>
@@ -982,9 +975,9 @@ if (!doNotTrack) {
 <li><code>defaults.io</code> オブジェクトは <code>esriConfig.request</code> に移動しました。</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 3.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>;
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 4.x
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">alwaysUseProxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>;
 </code></pre></div><ul>
 <li>3 つの <code>*-all</code> レガシー モジュールが削除されました。これは、ビルドや Website Optimizer を使用してより適切に処理されます。</li>
 <li>各コンストラクタは JSON をサポートしなくなったため、代わりに、<code>fromJSON()</code> メソッド（例: <code>Graphic.fromJSON()</code> ）を使用してください。(注: ベータ3では、まだ 3.x のスタイルを使用したコンストラクタがいくつか含まれています。)</li>
@@ -998,8 +991,8 @@ if (!doNotTrack) {
 <li>どのロケールでも RTL をオプトインできるようになりました。<a href="https://developers.arcgis.com/javascript/latest/localization/index.html#rtl">RTL サポート</a>を参照してください。</li>
 <li><code>&lt;html&gt;</code> または <code>&lt;body&gt;</code> タグで方向を指定します。<a href="https://developers.arcgis.com/javascript/latest/localization/index.html#rtl">RTL サポート</a>を参照してください。</li>
 </ul>
-<h2 id="amd-のみ">AMD のみ</h2>
-<p>4.0 以前は、AMD とレガシー モジュールの両方を使用することができました。4.0 以降は、AMD モデルのみのサポートとなります。</p>
+<h2 id="モジュール">モジュール</h2>
+<p>4.x の API は、AMD モジュールと ES モジュールとして提供されます。4.0 以前は、AMD と dojo.require のレガシー モジュールの両方を使用することができました。4.0 以降は、AMD モデルのみのサポートとなり、4.18でESモジュールが導入されました。4.xの異なるモジュールタイプの概要については、<a href="https://developers.arcgis.com/javascript/latest/tooling-intro/">Introduction to tooling</a> を参照してください。</p>
 <h2 id="廃止項目">廃止項目</h2>
 <p><code>Geocoder</code> ウィジェットはバージョン 3.13 で非推奨となり、4.x では提供されません。代わりに <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html">Search</a> ウィジェットを使用してください。</p>
 
@@ -1013,7 +1006,7 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/javascript/choose-3.x-and-4.x/" title="バージョン 4.x と 3.x の選択"> <i class="fa fa-chevron-left"></i><label>バージョン 4.x と 3.x の選択</label></a>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/javascript/install-jsapi/" title="インストール ガイド"> <i class="fa fa-chevron-left"></i><label>インストール ガイド</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/tips/javascript/custom-widget/" title="ウィジェット開発" style="margin-right: 0px;"><label>ウィジェット開発</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
