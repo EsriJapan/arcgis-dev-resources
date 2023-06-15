@@ -1,7 +1,7 @@
 +++
 title = "バージョン 3.x から 4.x への移行"
 description = "バージョン 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を紹介します。"
-weight = 4
+weight = 3
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Arcade"
 description = "ArcGIS プラットフォーム標準で利用できる条件式のためのスクリプト言語 Arcade について紹介します。"
-weight = 6
+weight = 5
 aliases = ["/javascript/arcade/"]
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット開発"
 description = "ウィジェットと呼ばれる、再利用可能な UX コンポーネント作成の基礎を紹介します。"
-weight = 5
+weight = 4
 aliases = ["/javascript/custom-widget/"]
 +++
 

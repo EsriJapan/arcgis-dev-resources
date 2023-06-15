@@ -1,7 +1,7 @@
 +++
 title = "カスタム フォント"
 description = "独自のフォントを使用する手順を紹介します。"
-weight = 7
+weight = 6
 aliases = ["/javascript/custom-font/"]
 +++
 
