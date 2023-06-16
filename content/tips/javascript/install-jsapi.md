@@ -15,16 +15,16 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install.png" width="1150px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/install_426ver.png" width="1150px">
 
-> [arcgis_js_v425_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+> [arcgis_js_v427_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## Web サーバー（IIS）に配置
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-1. `\arcgis_js_v424_api\arcgis_js_api\javascript\4.25\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.25\`)
+1. `\arcgis_js_v427_api\arcgis_js_api\javascript\4.27\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.27\`)
 
 ## 必要条件
 
@@ -34,11 +34,12 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 - IIS には、以下の MIME タイプの登録が必要です。
   | 拡張 | MIME/type | 説明 |
   | ---- | --------- | ---- |
-  | .ttf | application/octet-stream | True Typeフォント |
-  | .wasm | application/wasm | [WebAssembly](http://webassembly.org/) |
-  | .woff | application/font-woff | [Web Open Font Format](https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF) |
-  | .woff2 | application/font-woff2 | [WOFF File Format 2.0](https://www.w3.org/TR/WOFF2/) |
-  | .wsv | application/octet-stream | SceneViewの星の可視化に対応 |
+  | `.ttf` | `application/octet-stream` | True Typeフォント |
+  | `.wasm` | `application/wasm` | [WebAssembly](https://webassembly.org/) |
+  | `.woff` | `application/font-woff` | [Web Open Font Format](https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF) |
+  | `.woff2` | `application/font-woff2` | [WOFF File Format 2.0](https://www.w3.org/TR/WOFF2/) |
+  | `.wsv` | `application/octet-stream` | SceneViewの星の可視化に対応 |
+  | `.pbf` | `application/x-protobuf` | [一部のレイヤーの MapView ラベル](https://developers.arcgis.com/javascript/latest/labeling/#mapview)用のフォント |
 
 - [Google: HTTPSが重要な理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Google: HTTPS でサイトを保護する](https://support.google.com/webmasters/answer/6073543)
@@ -46,7 +47,7 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS Maps SDK for JavaScript のダウンロード版に含まれています。
-ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v425_api/arcgis_js_api/javascript/4.25/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.25/index.html を開くことにより、API をテストすることができます。
+ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v427_api/arcgis_js_api/javascript/4.27/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.27/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -132,5 +133,5 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v425_ap
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.25となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.27となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
