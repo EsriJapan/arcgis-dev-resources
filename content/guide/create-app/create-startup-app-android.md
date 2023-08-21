@@ -111,7 +111,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         implementation 'androidx.appcompat:appcompat:1.5.1'
         implementation 'com.google.android.material:material:1.7.0'
         implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-        implementation "com.esri:arcgis-maps-kotlin:200.1.0"
+        implementation "com.esri:arcgis-maps-kotlin:200.2.0"
     }
     ```
 

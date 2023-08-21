@@ -22,7 +22,7 @@ ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされ
 2. [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に「nuget.org」が選択されていることを確認します。
 3. [参照] タブを選択して、[検索] テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET でサポートされているフレームワークに一致するものがいくつか表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/188cce1e1e6f84a81d94764717cda686/08037/nuget-package-manager-online-markup-v200.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/b895780c277623dc7fee9eae929c7444/d7ab4/nuget-package-manager-online-markup-v200.png" width="650px">
 
 4. インストールする NuGet パッケージを選択し、[インストール] ボタンをクリックします。NuGet パッケージ マネージャの詳細については、Microsoft ドキュメントの [NuGet パッケージ マネージャーを使用して Visual Studio にパッケージをインストールして管理する](https://learn.microsoft.com/ja-jp/nuget/consume-packages/install-use-packages-visual-studio) を参照してください。
 5. [変更のプレビュー] ダイアログで内容を確認し、「OK」を選択してインストールを進めてください。
@@ -42,7 +42,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 2. [検索] テキスト ボックスに、「ArcGIS」と入力します。
 3. 「ArcGIS Maps SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/15fb92e9c1003c91e8b030d7231d8ef1/05fb0/manage-extensions-dialog-markup-v200.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/970329b2e6b3db35c0d268496df178de/d9217/manage-extensions-dialog-markup-v200.png" width="650px">
 
 4. [拡張機能の管理] ダイアログを閉じます。
 5. Visual Studio を閉じ、拡張機能をインストールします。
@@ -50,7 +50,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 7. インストールが完了したら、インストーラー ダイアログで [閉じる] をクリックします。
 8. 次回、Visual Studio で [新しいプロジェクトの作成] を選択すると、使用可能なすべてのプラットフォームの ArcGIS のプロジェクト テンプレートが表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/93a93393ac9caec3b712640cf999cb81/cdef6/new-project-dialog-markup-v200.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/44dbd43129c09f2ffa420b6229eee7d3/dc616/new-project-dialog-markup-v200.png" width="650px">
 
 注: ArcGIS Maps SDK App, Packaged (WinUI 3 in Desktop) テンプレートでは、[Single-project MSIX Packaging Tools for VS 2022](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17) もインストールされている必要があります。
 
@@ -118,7 +118,7 @@ ArcGIS Runtime Local Server SDK では、オフラインでジオプロセシン
 2. [参照] タブを選択し、パッケージ ソースとして Esri を選択します。
 3. ArcGIS Maps SDK for .NET でサポートされているさまざまなフレームワーク用の NuGet パッケージがいくつか表示されます。
 
-    <img src="https://developers.arcgis.com/net/static/5c82b81c2ac0324b3f3f96e13008011b/08037/nuget-package-manager-local-markup-v200.png" width="650px">
+    <img src="https://developers.arcgis.com/net/static/7667eb6f542898528ceecd4106d54345/ad997/nuget-package-manager-local-markup-v200.png" width="650px">
 
 4. インストールする NuGet パッケージを選択し、[インストール] ボタンをクリックします。 NuGet パッケージ マネージャーの詳細については、Microsoft ドキュメントの [NuGet パッケージ マネージャーを使用して Visual Studio にパッケージをインストールして管理する](https://learn.microsoft.com/ja-jp/nuget/consume-packages/install-use-packages-visual-studio) を参照してください。
 5. [変更のプレビュー] ダイアログの内容を確認し、[OK] を選択してインストールを続行します。

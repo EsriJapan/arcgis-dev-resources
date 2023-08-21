@@ -46,14 +46,13 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 	```java
 	dependencies {
 		...
-		implementation 'com.esri:arcgis-maps-kotlin:200.1.0'
+		implementation 'com.esri:arcgis-maps-kotlin:200.2.0'
 	}
 	```
 
 3. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングまたはデータ バインディングを有効にするブロックがあることを確認します。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。データ バインディングの詳細については、[データ バインディング](https://developer.android.com/topic/libraries/data-binding/start) を参照してください。
 
 	build.gradle
-
     ```java  
 	android {
   		. . .
@@ -135,6 +134,9 @@ SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です�
 
 ### サンプル コード
 ドキュメントで[サンプル](https://developers.arcgis.com/kotlin/sample-code/)の包括的なリストを参照するか、[GitHub リポジトリ](https://github.com/Esri/arcgis-maps-sdk-kotlin-samples/tree/main)からサンプル コードをダウンロードしてください。
+
+### ArcGIS Maps SDK for Kotlin Toolkit
+[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。
 
 ### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。

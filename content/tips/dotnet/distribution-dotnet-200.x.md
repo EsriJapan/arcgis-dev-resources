@@ -198,7 +198,7 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[AuthenticationManager](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。
  
-認証方法の詳細については、「[License your app with a named user account（英語）](https://developers.arcgis.com/net/license-and-deployment/license/#license-your-app-with-a-named-user-account)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
 
 ```c#
 // ポータルの認証情報をユーザーに要求します (arcgis.com の OAuth 認証情報のリクエスト)
@@ -238,7 +238,7 @@ catch (Exception ex)
 ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリを認証します。
 
 ```c#
-// icenseInfo を JSON 形式のテキストとして取得します
+// LicenseInfo を JSON 形式のテキストとして取得します
 string licenseJson = licenseInfo.ToJson();
 // ... テキスト文字列をローカルに保存します ...
 

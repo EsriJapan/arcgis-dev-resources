@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-06-16T18:44:34 JST">
+<meta name="revised" content="2023-08-21T14:22:29 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -949,8 +949,7 @@ if (!doNotTrack) {
 <p>ソリューション エクスプローラーで、ツリー ビューの DisplayAMap プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。</p>
 </li>
 <li>
-<p><TargetFramework> 要素を &ldquo;net6.0-windows10.0.19041.0&rdquo;（またはそれ以上）で更新します。
-ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェクトを作成した場合は、必要な NuGet パッケージがプロジェクトに追加されています。</p>
+<p>TargetFramework 要素を &ldquo;net6.0-windows10.0.19041.0&rdquo;（またはそれ以上）で更新します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;PropertyGroup&gt;
 &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
 &lt;TargetFramework&gt;net6.<span style="color:#ae81ff">0</span>-windows10.<span style="color:#ae81ff">0.19041</span>.<span style="color:#ae81ff">0</span>&lt;/TargetFramework&gt;
@@ -1060,8 +1059,8 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェ
     }
 
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> Map _map;
-    <span style="color:#66d9ef">public</span> Map Map
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> Map? _map;
+    <span style="color:#66d9ef">public</span> Map? Map
     {
         <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> _map; }
         <span style="color:#66d9ef">set</span>
@@ -1075,7 +1074,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェ
 </code></pre></div></li>
 <li>
 <p>MapViewModel クラスに SetupMap という関数を追加します。この関数は、新しいマップを作成して Map プロパティを設定します。
-マップは、「地形 (ベクトル)」ベースマップを使用します。</p>
+マップは、地形 ベクタータイル ベースマップを使用します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">private</span> Map _map;
     <span style="color:#66d9ef">public</span> Map Map
@@ -1091,7 +1090,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェ
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> SetupMap()
     {
-        <span style="color:#75715e">//「地形 (ベクトル)」ベースマップを使用して新しいマップを作成します。
+        <span style="color:#75715e">//地形 ベクタータイル ベースマップを使用して新しいマップを作成します。
 </span><span style="color:#75715e"></span>        Map = <span style="color:#66d9ef">new</span> Map(BasemapStyle.ArcGISTopographic);
     }
     <span style="color:#75715e">// 追加終了
@@ -1099,7 +1098,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェ
 </code></pre></div></li>
 <li>
 <p>MapViewModel が新規にインスタンス化された際に、SetupMap 関数を呼び出すコンストラクターを追加します。
-MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。</p>
+MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。これはクラスが初期化された時に実行する必要があるコードを追加するのに良い場所です。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
 {
@@ -1210,7 +1209,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 </ol>
 <h3 id="アプリを実行する">アプリを実行する</h3>
 <p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。</p>
-<p>富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
+<p>富士山を中心に、地形 ベクタータイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
 <p>完成版のプロジェクトは<a href="https://developers.arcgis.com/net/zips/display-a-map.zip">こちら</a>からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。</p>
 <h2 id="web-マップを表示する">Web マップを表示する</h2>
 <p>「<a href="../../services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>

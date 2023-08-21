@@ -204,7 +204,7 @@ do {
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。
  
-認証方法の詳細については、「[License your app with a named user account（英語）](https://developers.arcgis.com/swift/license-and-deployment/license/#license-your-app-with-a-named-user-account)」や「[Security and authentication（英語）](https://developers.arcgis.com/swift/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/swift/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/swift/security-and-authentication/)」も併せてご覧ください。
 
 ```swift
 // Portal クラスを構築し、指定ユーザーが認証情報を提供することを確認します。
@@ -220,8 +220,21 @@ do {
   let licenseInfo = try await portal.licenseInfo
   // 指定ユーザーの licenseInfo を使用してライセンスを設定します。
   let result = try ArcGISEnvironment.setLicense(from: licenseInfo)
+
+  // これでアプリはライセンス認証されました。
+
+  // キーチェーン アイテムを作成し、ライセンス情報を保存して、アプリをオフラインで起動してライセンスを取得できるようにします。
+  let licenseInfoData = licenseInfo.toJSON().data(using: .utf8)!
+  let label = "com.your_org.your_app_name".data(using: .utf8)!
+  let keychainItem: [String: Any] = [kSecClass as String: kSecClassKey,
+                                    kSecAttrLabel as String: label,
+                                    kSecValueData as String: licenseInfoData,
+                                    kSecUseDataProtectionKeychain as String: true]
+  status = SecItemAdd(keychainItem as CFDictionary, nil)
+
 } catch {
   print(error)
 }
-// これでアプリはライセンス認証制されました。
 ```
+
+

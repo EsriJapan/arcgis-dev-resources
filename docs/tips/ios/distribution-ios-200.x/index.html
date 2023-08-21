@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-06-16T18:44:34 JST">
+<meta name="revised" content="2023-08-21T14:22:29 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1166,7 +1166,7 @@ if (!doNotTrack) {
 </code></pre></div><h2 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h2>
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
 <p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。</p>
-<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/swift/license-and-deployment/license/#license-your-app-with-a-named-user-account">License your app with a named user account（英語）</a>」や「<a href="https://developers.arcgis.com/swift/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
+<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/swift/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app">How to use named user login in your app（英語）</a>」や「<a href="https://developers.arcgis.com/swift/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// Portal クラスを構築し、指定ユーザーが認証情報を提供することを確認します。</span>
 <span style="color:#66d9ef">let</span> url = URL(string: <span style="color:#e6db74">&#34;https://myportal.com&#34;</span>)<span style="color:#f92672">!</span>
 
@@ -1180,10 +1180,21 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">let</span> licenseInfo = <span style="color:#66d9ef">try</span> await portal.licenseInfo
   <span style="color:#75715e">// 指定ユーザーの licenseInfo を使用してライセンスを設定します。</span>
   <span style="color:#66d9ef">let</span> result = <span style="color:#66d9ef">try</span> ArcGISEnvironment.setLicense(from: licenseInfo)
+
+  <span style="color:#75715e">// これでアプリはライセンス認証されました。</span>
+
+  <span style="color:#75715e">// キーチェーン アイテムを作成し、ライセンス情報を保存して、アプリをオフラインで起動してライセンスを取得できるようにします。</span>
+  <span style="color:#66d9ef">let</span> licenseInfoData = licenseInfo.toJSON().data(using: .utf8)<span style="color:#f92672">!</span>
+  <span style="color:#66d9ef">let</span> label = <span style="color:#e6db74">&#34;com.your_org.your_app_name&#34;</span>.data(using: .utf8)<span style="color:#f92672">!</span>
+  <span style="color:#66d9ef">let</span> keychainItem: [String: Any] = [kSecClass <span style="color:#66d9ef">as</span> String: kSecClassKey,
+                                    kSecAttrLabel <span style="color:#66d9ef">as</span> String: label,
+                                    kSecValueData <span style="color:#66d9ef">as</span> String: licenseInfoData,
+                                    kSecUseDataProtectionKeychain <span style="color:#66d9ef">as</span> String: <span style="color:#66d9ef">true</span>]
+  status = SecItemAdd(keychainItem <span style="color:#66d9ef">as</span> CFDictionary, <span style="color:#66d9ef">nil</span>)
+
 } <span style="color:#66d9ef">catch</span> {
   print(error)
 }
-<span style="color:#75715e">// これでアプリはライセンス認証制されました。</span>
 </code></pre></div>
 
     

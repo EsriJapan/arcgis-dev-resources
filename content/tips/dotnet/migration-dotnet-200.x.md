@@ -105,5 +105,5 @@ ArcGIS Runtime SDK for .NET を使用するアプリを開発およびデプロ�
     回答: いいえ。ArcGIS Runtime SDK として知られていた製品群は、現在 ArcGIS Maps SDK for Native Apps として提供されています。これらの SDK のバージョン 200.x は、ArcGIS Runtime 100.15 の実績あるアーキテクチャを基盤としており、最新の開発者用フレームワークの技術を活用するように設計されています。
 
 ## 既知の制限事項
-現バージョンでの既知の制限事項が、[ArcGIS Maps SDK for .NET: リリース ノート](https://developers.arcgis.com/net/reference/release-notes/)に記載されていますので、ご参照ください。
+現バージョンでの既知の制限事項が、[ArcGIS Maps SDK for .NET: リリース ノート](https://developers.arcgis.com/net/release-notes/)に記載されていますので、ご参照ください。
 

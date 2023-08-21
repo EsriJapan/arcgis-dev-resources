@@ -69,8 +69,7 @@ Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET に�
 
     * ソリューション エクスプローラーで、ツリー ビューの DisplayAMap プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。
 
-    * <TargetFramework> 要素を "net6.0-windows10.0.19041.0"（またはそれ以上）で更新します。
-ArcGIS Maps SDK for .NET プロジェクト テンプレートからプロジェクトを作成した場合は、必要な NuGet パッケージがプロジェクトに追加されています。
+    *  TargetFramework 要素を "net6.0-windows10.0.19041.0"（またはそれ以上）で更新します。
 
         ```csharp
         <PropertyGroup>
@@ -195,8 +194,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
         }
 
         // 追加開始
-        private Map _map;
-        public Map Map
+        private Map? _map;
+        public Map? Map
         {
             get { return _map; }
             set
@@ -210,7 +209,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     ```
 
 6. MapViewModel クラスに SetupMap という関数を追加します。この関数は、新しいマップを作成して Map プロパティを設定します。
-   マップは、「地形 (ベクトル)」ベースマップを使用します。
+   マップは、地形 ベクタータイル ベースマップを使用します。
 
     MapViewModel.cs
 
@@ -229,7 +228,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
         // 追加開始
         private void SetupMap()
         {
-            //「地形 (ベクトル)」ベースマップを使用して新しいマップを作成します。
+            //地形 ベクタータイル ベースマップを使用して新しいマップを作成します。
             Map = new Map(BasemapStyle.ArcGISTopographic);
         }
         // 追加終了
@@ -237,7 +236,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     ```
 
 7. MapViewModel が新規にインスタンス化された際に、SetupMap 関数を呼び出すコンストラクターを追加します。
-   MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。
+   MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。これはクラスが初期化された時に実行する必要があるコードを追加するのに良い場所です。
 
     MapViewModel.cs
 
@@ -362,7 +361,7 @@ MVVM デザイン パターンを使用する利点は、ビュー モデルの�
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。
 
-富士山を中心に、「地形 (ベクトル)」ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
+富士山を中心に、地形 ベクタータイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/net/zips/display-a-map.zip)からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。
 
