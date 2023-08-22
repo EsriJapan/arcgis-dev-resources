@@ -230,7 +230,7 @@ do {
                                     kSecAttrLabel as String: label,
                                     kSecValueData as String: licenseInfoData,
                                     kSecUseDataProtectionKeychain as String: true]
-  status = SecItemAdd(keychainItem as CFDictionary, nil)
+  let status = SecItemAdd(keychainItem as CFDictionary, nil)
 
 } catch {
   print(error)

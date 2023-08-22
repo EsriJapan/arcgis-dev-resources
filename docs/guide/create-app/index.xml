@@ -113,7 +113,7 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt;タグは必要ありません。�
       <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形 (ベクトル) ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
  API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.</description>
