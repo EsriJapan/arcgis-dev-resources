@@ -32,7 +32,7 @@ ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされ
 
 [ArcGIS Maps SDK for .NET Toolkit](https://github.com/Esri/arcgis-toolkit-dotnet) は、ArcGIS Maps SDK for .NET 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。ツールキットは NuGet パッケージとしてプロジェクトに含めるか、[GitHub リポジトリ](https://github.com/Esri/arcgis-toolkit-dotnet) からソース コードをダウンロードしてローカルでビルドできます。
 
-### Visual Studio プロジェクト テンプレート 拡張機能イのンストール（オプション）
+### Visual Studio プロジェクト テンプレート 拡張機能のインストール（オプション）
 
 Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの [Visual Studio の機能拡張を管理する](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions) のトピックを参照してください。
 
@@ -82,9 +82,9 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 
 コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、[Microsoft ストア](https://apps.microsoft.com/store/detail/arcgis-runtime-sdk-for-net-samples-wpf/9MTP5013343H?hl=ja-jp&gl=jp) から入手できます。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
 
-### ArcGIS Runtime Local Server
+### Local Server
 
-ArcGIS Runtime Local Server SDK では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
+ArcGIS Maps SDK for Local Server では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
 アプリケーションでオフラインで[ジオプロセシング タスク](https://developers.arcgis.com/net/local-server/supported-geoprocessing-tools/)を実行する場合は、[Local Server](https://developers.arcgis.com/net/local-server/) のトピックの手順に従って Local Server をインストールします。
 
 ### 追加のデータ
