@@ -26,7 +26,7 @@ aliases = ["/create-startup-app-android/"]
 2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
 3. Kotlin で Android 開発をするための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。
 
-注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。
+注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。**
 
 ## ステップ
 
