@@ -155,7 +155,7 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
 ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
- 1. [ArcGIS Developers: License and deployment](https://developers.arcgis.com/net/license-and-deployment/) ページにアクセスします
+ 1. [ArcGIS Developers: Get a license](https://developers.arcgis.com/net/license-and-deployment/get-a-license/#your-lite-license-string) ページにアクセスします
     * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime Lite license string] をクリックします。
     * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンスキーをコピーします
