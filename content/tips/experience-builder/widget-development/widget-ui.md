@@ -43,7 +43,7 @@ Jimu フレームワークは、開発者がウィジェット開発で使用す
 
 内部的には、Jimu の UI コンポーネントは [Reactstrap](http://reactstrap.github.io/) と呼ばれる React Bootstrap フレームワークから拡張・カスタマイズされています。このライブラリは、他の類似した React UI ライブラリと同様に、コンポーネントの使用方法についても同様のパターンを踏襲しています。 
 
-一般的に使用されているコンポーネントやアイコンのほとんどは、Storybookのサイト `(https://localhost:3001/storybook/index.html)` にアクセスしてプレビューすることができます。
+一般的に使用されているコンポーネントやアイコンのほとんどは、Storybookのサイト (`https://developers.arcgis.com/experience-builder/storybook`) にアクセスしてプレビューすることができます。
 
 Experience Builder の [Storybook](https://developers.arcgis.com/experience-builder/guide/storybook) の詳細を参照してください。
 
