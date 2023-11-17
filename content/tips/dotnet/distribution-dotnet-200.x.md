@@ -21,7 +21,6 @@ ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したア�
     * __[Standard ライセンスの認証方法](#standard-ライセンスの認証方法)__
     * __[Advanced ライセンスの認証方法](#advanced-ライセンスの認証方法)__
     * __[Analysis Extension ライセンスの認証方法](#analysis-extension-ライセンスの認証方法)__
-    * __[Utility Network Extension ライセンスの認証方法](#utility-network-extension-ライセンスの認証方法)__
 
 3. __[ライセンスの認証](#ライセンスの認証)__
     * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
@@ -31,7 +30,7 @@ ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したア�
 
 ## 使用するライセンスの選択
 
-ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis、Utility Network の 2つのエクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
 
@@ -42,7 +41,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能 |
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能 |
 | Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部 |
-| Utility Network Extension | ・Lite ライセンス以上で利用可能なエクステンション</br>・Utility Network の解析（トレース） |
+
 
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-dotnet/license/)をご参照ください。
@@ -133,18 +132,6 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
-### Utility Network Extension ライセンスの認証方法
-
-1. __ライセンスキーを使用した認証__
-    * ArcGIS Runtime Utility Network Extension の配布パックを購入する必要があります
-    * 基本ライセンス（Lite/Basic/Standard/Advanced）と併せて認証する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
-
-2. __Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、ArcGIS Online では使用できません。Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。 
-    * アプリケーションを使用するユーザーごとに Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Utility Network エクステンション ライセンスを割り当てられた）が必要です
-    * アプリケーションが少なくとも 30 日に 1 回は Portal for ArcGIS へログインする必要があります
-    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
 ## ライセンスの認証
 

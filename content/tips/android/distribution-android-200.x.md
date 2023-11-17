@@ -20,7 +20,6 @@ ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発した�
     * __[Basic ライセンスの認証方法](#basic-ライセンスの認証方法)__
     * __[Standard ライセンスの認証方法](#standard-ライセンスの認証方法)__
     * __[Analysis Extension ライセンスの認証方法](#analysis-extension-ライセンスの認証方法)__
-    * __[Utility Network Extension ライセンスの認証方法](#utility-network-extension-ライセンスの認証方法)__
 
 3. __[ライセンスの認証](#ライセンスの認証)__
     * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
@@ -29,7 +28,7 @@ ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発した�
 
 ## 使用するライセンスの選択
 
-ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis、Utility Network の 2 つのエクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
+ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
 
@@ -39,7 +38,6 @@ ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセ�
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（セキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
 | Analysis Extension | ・Standard ライセンスで利用可能なエクステンション<br>・オフラインでの到達圏解析/最寄り施設検索 |
-| Utility Network Extension | ・Lite ライセンス以上で利用可能なエクステンション</br>・Utility Network の解析（トレース） |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-kotlin/license/)をご参照ください。
 
@@ -120,18 +118,6 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
-### Utility Network Extension ライセンスの認証方法
-
-1. __ライセンスキーを使用した認証__
-    * ArcGIS Runtime Utility Network Extension の配布パックを購入する必要があります
-    * 基本ライセンス（Lite/Basic/Standard）と併せて認証する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
-
-2. __Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、ArcGIS Online では使用できません。Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。 
-    * アプリケーションを使用するユーザーごとに Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Utility Network エクステンション ライセンスを割り当てられた）が必要です
-    * アプリケーションが少なくとも 30 日に 1 回は Portal for ArcGIS へログインする必要があります
-    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
 ## ライセンスの認証
 

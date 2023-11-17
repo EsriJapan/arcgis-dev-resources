@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-10-02T14:45:30 JST">
+<meta name="revised" content="2023-11-17T14:14:18 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -860,7 +860,6 @@ if (!doNotTrack) {
         <li><a href="#standard-ライセンスの認証方法">Standard ライセンスの認証方法</a></li>
         <li><a href="#advanced-ライセンスの認証方法">Advanced ライセンスの認証方法</a></li>
         <li><a href="#analysis-extension-ライセンスの認証方法">Analysis Extension ライセンスの認証方法</a></li>
-        <li><a href="#utility-network-extension-ライセンスの認証方法">Utility Network Extension ライセンスの認証方法</a></li>
       </ul>
     </li>
     <li><a href="#ライセンスの認証">ライセンスの認証</a>
@@ -906,7 +905,6 @@ if (!doNotTrack) {
 <li><strong><a href="#standard-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Standard ライセンスの認証方法</a></strong></li>
 <li><strong><a href="#advanced-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Advanced ライセンスの認証方法</a></strong></li>
 <li><strong><a href="#analysis-extension-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Analysis Extension ライセンスの認証方法</a></strong></li>
-<li><strong><a href="#utility-network-extension-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E6%B3%95">Utility Network Extension ライセンスの認証方法</a></strong></li>
 </ul>
 </li>
 <li>
@@ -919,7 +917,7 @@ if (!doNotTrack) {
 </li>
 </ol>
 <h2 id="使用するライセンスの選択">使用するライセンスの選択</h2>
-<p>ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis、Utility Network の 2つのエクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</p>
+<p>ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</p>
 <p>各ライセンスで利用可能な機能の概要は以下の表をご参照ください。</p>
 <table>
 <thead>
@@ -948,10 +946,6 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:left">Analysis Extension</td>
 <td style="text-align:left">・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部</td>
-</tr>
-<tr>
-<td style="text-align:left">Utility Network Extension</td>
-<td style="text-align:left">・Lite ライセンス以上で利用可能なエクステンション</br>・Utility Network の解析（トレース）</td>
 </tr>
 </tbody>
 </table>
@@ -1110,26 +1104,6 @@ if (!doNotTrack) {
 <ul>
 <li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Analysis アドオン ライセンスを割り当てられた）が必要です</li>
 <li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
-<li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
-</ul>
-</li>
-</ol>
-<h3 id="utility-network-extension-ライセンスの認証方法">Utility Network Extension ライセンスの認証方法</h3>
-<ol>
-<li>
-<p><strong>ライセンスキーを使用した認証</strong></p>
-<ul>
-<li>ArcGIS Runtime Utility Network Extension の配布パックを購入する必要があります</li>
-<li>基本ライセンス（Lite/Basic/Standard/Advanced）と併せて認証する必要があります</li>
-<li>認証の手順は、<a href="#%E9%85%8D%E5%B8%83%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">配布パックのライセンスキーを使用した認証</a>をご参照ください</li>
-</ul>
-</li>
-<li>
-<p><strong>Portal for ArcGIS へのログインによる認証</strong><br>
-注意：この認証は、ArcGIS Online では使用できません。Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。</p>
-<ul>
-<li>アプリケーションを使用するユーザーごとに Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Utility Network エクステンション ライセンスを割り当てられた）が必要です</li>
-<li>アプリケーションが少なくとも 30 日に 1 回は Portal for ArcGIS へログインする必要があります</li>
 <li>認証の手順は、<a href="#%E6%8C%87%E5%AE%9A%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E8%AA%8D%E8%A8%BC">指定ユーザー アカウントを使用した認証</a>をご参照ください</li>
 </ul>
 </li>
