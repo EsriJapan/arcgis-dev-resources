@@ -14,7 +14,7 @@ aliases = ["/javascript/get-started/"]
 3 チュートリアル [マップの表示(2D)](https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/)の開始
 
 ## 1.インストールとセットアップ
-ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しております。
+ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
 
 AMD モジュールの場合は、以下のスクリプト タグを使用します。
 ```ts
@@ -40,7 +40,7 @@ CSSには[@import url](https://developer.mozilla.org/en-US/docs/Web/CSS/@import)
 
 {{% notice note %}}
 
-アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、[セキュリティと認証](https://esrijapan.github.io/arcgis-dev-resources/guide/security/)をご参照ください。
+アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、[セキュリティと認証](https://esrijapan.github.io/arcgis-dev-resources/guide/security/)をご覧ください。
 
 {{% /notice %}}
 
