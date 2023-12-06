@@ -157,6 +157,25 @@ import Map from &amp;#34;@arcgis/core/Map.</description>
     </item>
     
     <item>
+      <title>開発の手順</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Get Started
+1 API のインストールとセットアップ
+2 API キーの取得
+3 チュートリアル マップの表示(2D)の開始
+1.インストールとセットアップ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
+AMD モジュールの場合は、以下のスクリプト タグを使用します。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
+npm install @arcgis/core CSSには@import urlを用います
+&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
+2.API キーの取得 アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、セキュリティと認証をご覧ください。
+ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かいAPIキーを使用することもできます。</description>
+    </item>
+    
+    <item>
       <title>開発者アカウントの作成</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
