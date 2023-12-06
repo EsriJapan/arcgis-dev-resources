@@ -1,17 +1,17 @@
 ﻿+++
 title = "開発の手順"
-description = "ArcGIS Maps SDK for JavaScript のAPIキーの取得方法について紹介します。"
+description = "ArcGIS Maps SDK for JavaScript の開発におけるインストールとセットアップからの手順について紹介します。"
 weight = 1
 aliases = ["/javascript/get-started/"]
 +++
 
 出典：ArcGIS Maps SDK for JavaScript - [Get Started](https://developers.arcgis.com/javascript/latest/get-started/)
 
-1 API の[インストールとセットアップ](#1インストールとセットアップ)
+1 [インストールとセットアップ](#1インストールとセットアップ)
 
 2 [API キーの取得](#2api-キーの取得)
 
-3 チュートリアル [マップの表示(2D)](https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/)の開始
+3 [チュートリアル](https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/)の開始
 
 ## 1.インストールとセットアップ
 ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。

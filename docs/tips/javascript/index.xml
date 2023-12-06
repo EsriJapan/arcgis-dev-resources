@@ -28,9 +28,9 @@ import Map from &amp;#34;@arcgis/core/Map.</description>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Get Started
-1 API のインストールとセットアップ
+1 インストールとセットアップ
 2 API キーの取得
-3 チュートリアル マップの表示(2D)の開始
+3 チュートリアルの開始
 1.インストールとセットアップ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
 AMD モジュールの場合は、以下のスクリプト タグを使用します。
 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
