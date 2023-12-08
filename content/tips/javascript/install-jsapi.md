@@ -17,14 +17,14 @@ Esri がホストしている CDN にインターネット経由で参照する�
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/install_426ver.png" width="1150px">
 
-> [arcgis_js_v427_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+> [arcgis_js_v428_sdk.zip] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## Web サーバー（IIS）に配置
 
 まずはダウンロードしたサンプル コードを実行してみましょう。
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-1. `\arcgis_js_v427_api\arcgis_js_api\javascript\4.27\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.27\`)
+1. `\arcgis_js_v428_api\arcgis_js_api\javascript\4.28\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.28\`)
 
 ## 必要条件
 
@@ -47,7 +47,7 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS Maps SDK for JavaScript のダウンロード版に含まれています。
-ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v427_api/arcgis_js_api/javascript/4.27/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.27/index.html を開くことにより、API をテストすることができます。
+ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v428_api/arcgis_js_api/javascript/4.28/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.28/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -133,5 +133,5 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v427_ap
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.27となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.28となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">

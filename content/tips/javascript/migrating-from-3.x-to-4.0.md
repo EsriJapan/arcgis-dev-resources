@@ -5,7 +5,7 @@ weight = 3
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
 +++
 
-出典：ArcGIS Maps SDK for JavaScript - [Migrating from 3.x to 4.27](https://developers.arcgis.com/javascript/latest/migrating/)
+出典：ArcGIS Maps SDK for JavaScript - [Migrating from 3.x to 4.28](https://developers.arcgis.com/javascript/latest/migrating/)
 
 バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 
