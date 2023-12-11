@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-12-06T13:24:23 JST">
+<meta name="revised" content="2023-12-11T18:23:22 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -860,8 +860,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#プロジェクトでの-arcgis-maps-sdk-for-net-の参照">プロジェクトでの ArcGIS Maps SDK for .NET の参照</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
-        <li><a href="#visual-studio-プロジェクト-テンプレート-拡張機能のインストールオプション">Visual Studio プロジェクト テンプレート 拡張機能のインストール（オプション）</a></li>
-        <li><a href="#nuget-パッケージを使用したmac-および-windows-への-visual-studio-プロジェクト-テンプレートのインストール">Nuget パッケージを使用した、Mac および Windows への Visual Studio プロジェクト テンプレートのインストール</a></li>
+        <li><a href="#visual-studio-プロジェクト-テンプレートのインストールオプション">Visual Studio プロジェクト テンプレートのインストール（オプション）</a></li>
       </ul>
     </li>
     <li><a href="#追加のダウンロード">追加のダウンロード</a>
@@ -921,9 +920,12 @@ if (!doNotTrack) {
 </ol>
 <h3 id="toolkit">Toolkit</h3>
 <p><a href="https://github.com/Esri/arcgis-toolkit-dotnet">ArcGIS Maps SDK for .NET Toolkit</a> は、ArcGIS Maps SDK for .NET 開発チームによって管理されているオープンソース プロジェクトで、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。ツールキットは NuGet パッケージとしてプロジェクトに含めるか、<a href="https://github.com/Esri/arcgis-toolkit-dotnet">GitHub リポジトリ</a> からソース コードをダウンロードしてローカルでビルドできます。</p>
-<h3 id="visual-studio-プロジェクト-テンプレート-拡張機能のインストールオプション">Visual Studio プロジェクト テンプレート 拡張機能のインストール（オプション）</h3>
+<h3 id="visual-studio-プロジェクト-テンプレートのインストールオプション">Visual Studio プロジェクト テンプレートのインストール（オプション）</h3>
+<h4 id="拡張機能のインストールwindows-のみ">拡張機能のインストール（Windows のみ）</h4>
 <p>Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの <a href="https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions">Visual Studio の機能拡張を管理する</a> のトピックを参照してください。</p>
-<p>注: .NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は <a href="https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files">PackageReference</a> をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために <a href="https://docs.microsoft.com/ja-jp/nuget/reference/packages-config">packages.config</a> が既定になっています packages.config  このような状況を軽減するには、Microsoft の推奨に従って、<a href="https://learn.microsoft.com/ja-jp/nuget/consume-packages/migrate-packages-config-to-package-reference">packages.config から PackageReference に移行</a> することを検討してください。</p>
+<p>注:
+このリリースでは、WPF、WinUI、.NET MAUI プロジェクト テンプレートには Visual Studio 17.8 以降が必要です。</p>
+<p>注: .NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は <a href="https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files">PackageReference</a> をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために <a href="https://docs.microsoft.com/ja-jp/nuget/reference/packages-config">packages.config</a> が既定になっています。packages.config を使用すると、バージョンをアップグレードするときに問題が発生する可能性があります。このような状況を軽減するには、Microsoft の推奨に従って、<a href="https://learn.microsoft.com/ja-jp/nuget/consume-packages/migrate-packages-config-to-package-reference">packages.config から PackageReference に移行</a> することを検討してください。</p>
 <ol>
 <li>
 <p>Visual Studio で、[拡張機能] メニュー &gt; [拡張機能の管理] を選択して、[拡張機能の管理] ダイアログを表示します。</p>
@@ -932,7 +934,7 @@ if (!doNotTrack) {
 <p>[検索] テキスト ボックスに、「ArcGIS」と入力します。</p>
 </li>
 <li>
-<p>「ArcGIS Maps SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。すぐにダウンロードされ、再起動時に拡張機能がインストールされることを示すメッセージが表示されます。</p>
+<p>「ArcGIS Maps SDK for .NET Project Templates」拡張機能を選択し、[ダウンロード] を選択します。この拡張機能のインストールがスケジュールされて、Visual Studio のすべてのインスタンスが終了した後にインストールされます。</p>
  <img src="https://developers.arcgis.com/net/static/970329b2e6b3db35c0d268496df178de/d9217/manage-extensions-dialog-markup-v200.png" width="650px">
 </li>
 <li>
@@ -953,7 +955,7 @@ if (!doNotTrack) {
 </li>
 </ol>
 <p>注: ArcGIS Maps SDK App, Packaged (WinUI 3 in Desktop) テンプレートでは、<a href="https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17">Single-project MSIX Packaging Tools for VS 2022</a> もインストールされている必要があります。</p>
-<h3 id="nuget-パッケージを使用したmac-および-windows-への-visual-studio-プロジェクト-テンプレートのインストール">Nuget パッケージを使用した、Mac および Windows への Visual Studio プロジェクト テンプレートのインストール</h3>
+<h4 id="nuget-パッケージからインストールするwindows-または-mac">Nuget パッケージからインストールする（Windows または Mac）</h4>
 <p>また、<a href="https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/">nuget.org</a> で公開されている Esri.ArcGISRuntime.ProjectTemplates NuGet パッケージを使用して、Mac と Windows にプロジェクト テンプレートをインストールすることができます。前述の Visual Studio の拡張機能は Windows 用のみであるため、この方法を使用して Mac 用 Visual Studio でテンプレートを利用できるようにすることができます。</p>
 <p>以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします：</p>
 <ol>
@@ -987,8 +989,10 @@ if (!doNotTrack) {
 <h3 id="arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</h3>
 <h4 id="nuget-パッケージとプロジェクト-テンプレート">NuGet パッケージとプロジェクト テンプレート</h4>
 <p>オンライン アクセスが制限された環境でアプリを開発している場合は、ローカルの NuGet パッケージ フィードから ArcGIS Maps SDK for .NET を参照することができます。 NuGet.org で公開されている NuGet パッケージのサブセットを含む、追加の Visual Studio (Windows) 拡張機能を利用できます。 この拡張機能をインストールすると、ユーザー プロファイルの %localappdata%\Esri\NuGet の下にローカル NuGet パッケージ ソースが構成されます。 詳細については、Microsoft のドキュメントの <a href="https://learn.microsoft.com/ja-jp/nuget/hosting-packages/local-feeds">ローカル NuGet パッケージ フィード</a> を参照してください。</p>
+<p>注:
+このリリースでは、WPF、WinUI、.NET MAUI プロジェクト テンプレートには Visual Studio 17.8 以降が必要です。</p>
 <h4 id="visual-studio-拡張機能をダウンロードしてインストールする">Visual Studio 拡張機能をダウンロードしてインストールする</h4>
-<p>プロジェクト テンプレート 拡張機能（ArcGIS_Maps_SDK_DotNet_Templates_200_0_0.vsix）と NuGet パッケージ 拡張機能（ArcGIS_Maps_SDK_DotNet_200_0_0.vsix）の両方を、<a href="https://developers.arcgis.com/downloads/#net">ArcGIS Developers ダッシュボード</a> からダウンロードできます。</p>
+<p>プロジェクト テンプレート 拡張機能（ArcGIS_Maps_SDK_DotNet_Templates_200_x_x.vsix）と NuGet パッケージ 拡張機能（ArcGIS_Maps_SDK_DotNet_200_x_x.vsix）の両方を、<a href="https://developers.arcgis.com/downloads/#net">ArcGIS Developers ダッシュボード</a> からダウンロードできます。</p>
 <ol>
 <li>
 <p>開発マシンからアクセスできる場所にファイルを保存します。</p>

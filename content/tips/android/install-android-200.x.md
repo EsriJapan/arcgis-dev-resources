@@ -46,7 +46,7 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 	```java
 	dependencies {
 		...
-		implementation 'com.esri:arcgis-maps-kotlin:200.2.0'
+		implementation 'com.esri:arcgis-maps-kotlin:200.3.0'
 	}
 	```
 
@@ -72,10 +72,13 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 
     ```java  
 	android {
-  		. . .
-  		packagingOptions {
-    		exclude 'META-INF/DEPENDENCIES'
-  		}
+		. . .
+		packagingOptions {
+			resources {
+				excludes += 'META-INF/DEPENDENCIES'
+			}
+		}
+		. . .
 	}
     ```
 
@@ -134,6 +137,8 @@ SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です�
 
 ### サンプル コード
 ドキュメントで[サンプル](https://developers.arcgis.com/kotlin/sample-code/)の包括的なリストを参照するか、[GitHub リポジトリ](https://github.com/Esri/arcgis-maps-sdk-kotlin-samples/tree/main)からサンプル コードをダウンロードしてください。
+
+また、[Google Play ストア](https://play.google.com/store/apps/details?id=com.esri.arcgismaps.kotlin.sampleviewer)からサンプル ビューアー アプリをダウンロードし、お使いのデバイスでライブ サンプルをご覧いただくこともできます。
 
 ### ArcGIS Maps SDK for Kotlin Toolkit
 [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。

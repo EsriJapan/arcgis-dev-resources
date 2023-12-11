@@ -24,7 +24,7 @@ aliases = ["/create-startup-app-android/"]
 
 1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
-3. Kotlin で Android 開発をするための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。
+3. Kotlin で Android 開発をするための IDE。
 
 注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。**
 
@@ -54,9 +54,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     ```gradle
     // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
     plugins {
-        id 'com.android.application' version '7.3.1' apply false
-        id 'com.android.library' version '7.3.1' apply false
-        id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+        id 'com.android.application' version '8.1.1' apply false
+        id 'com.android.library' version '8.1.1' apply false
+        id 'org.jetbrains.kotlin.android' version '1.9.10' apply false
     }
 
 
@@ -70,49 +70,55 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     build.gradle (Module: Display_a_map)
 
     ```gradle
-    plugins {
-        id 'com.android.application'
-        id 'org.jetbrains.kotlin.android'
-    }
+        apply plugin: 'com.android.application'
+        apply plugin: 'org.jetbrains.kotlin.android'
 
-    android {
-        compileSdk 33
+        android {
+            compileSdk 33
 
-        defaultConfig {
-            applicationId "com.example.app"
-            minSdk 26
-            targetSdk 33
-            versionCode 1
-            versionName "1.0"
+            defaultConfig {
+                applicationId "com.example.app"
+                minSdkVersion 26
+                targetSdk 33
+                versionCode 1
+                versionName "1.0"
 
-            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        }
-
-        buildTypes {
-            release {
-                minifyEnabled false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+            }
+
+            buildFeatures {
+                dataBinding true
+                buildConfig true
+            }
+
+            packagingOptions {
+                exclude 'META-INF/DEPENDENCIES'
+            }
+
+            kotlinOptions {
+                jvmTarget = "17"
+            }
+
+            namespace 'com.example.app'
         }
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_11
-            targetCompatibility JavaVersion.VERSION_11
+
+        dependencies {
+            implementation 'androidx.appcompat:appcompat:1.6.1'
+            implementation 'com.google.android.material:material:1.7.0'
+            implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+            implementation "com.esri:arcgis-maps-kotlin:200.3.0"
         }
-
-        buildFeatures {
-            dataBinding true
-        }
-
-        namespace 'com.example.app'
-
-    }
-
-    dependencies {
-        implementation 'androidx.appcompat:appcompat:1.5.1'
-        implementation 'com.google.android.material:material:1.7.0'
-        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-        implementation "com.esri:arcgis-maps-kotlin:200.2.0"
-    }
     ```
 
 5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。

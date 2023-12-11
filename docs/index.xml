@@ -105,7 +105,7 @@ ArcGIS Developers のダッシュボードから各インストーラーやデ�
 このインストール ガイドでは、ArcGIS Maps SDK for Swift (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 Swift Package Manager Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
-Xcode 14.1 での手順
+Xcode 15 での手順
   Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Add Package&amp;hellip;] を選択します。
   パッケージ リポジトリの URL として https://github.com/esri/arcgis-maps-sdk-swift を入力します。
   オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。
@@ -134,7 +134,7 @@ Xcode 14.1 での手順
       <description>出典：ArcGIS Maps SDK for JavaScript - Install and set up
 インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
 ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.27/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.27/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
 インストール方法：
 npm install @arcgis/core モジュールのインポート：
 import Map from &amp;#34;@arcgis/core/Map.</description>
@@ -305,9 +305,9 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
 ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS Maps SDK for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
- [arcgis_js_v427_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ [arcgis_js_v428_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
  Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v427_api\arcgis_js_api\javascript\4.27\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.</description>
+ ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v428_api\arcgis_js_api\javascript\4.28\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.</description>
     </item>
     
     <item>
@@ -575,7 +575,7 @@ API 名の変更 型名変更 型 (クラス、プロトコル、構造体、お
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Migrating from 3.x to 4.27
+      <description>出典：ArcGIS Maps SDK for JavaScript - Migrating from 3.x to 4.28
 バージョン 4.x では ArcGIS Maps SDK for JavaScript の構成要素が大きく見直され、機能拡張が行われています。バージョン 3.x で開発したアプリケーションをアップデートすることも可能ですが、アプリケーションを書き換えることを検討してください。
 本トピックでは 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を解説します。API で更新された仕様はいくつかありますが、その中でも重要な項目について紹介します。
  プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ モジュール 廃止項目  バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
@@ -649,7 +649,8 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。 Kotlin で Android 開発をするための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。  注: このチュートリアルの完成版のコードは、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。Android Studio Flamingo 2022.</description>
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。 Kotlin で Android 開発をするための IDE。  注: このチュートリアルの完成版のコードは、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。
+ステップ 新しい Android Studio プロジェクトを作成します。 Android Studio を使用してアプリを作成し、API を参照するように構成します。</description>
     </item>
     
     <item>

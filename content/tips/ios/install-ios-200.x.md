@@ -14,7 +14,7 @@ ArcGIS Developers のダッシュボードから各インストーラーやデ�
 ## Swift Package Manager
 Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
 
-Xcode 14.1 での手順
+Xcode 15 での手順
 1. Xcode プロジェクトを開きます。メニューバーで、[File] > [Add Package...] を選択します。
 2. パッケージ リポジトリの URL として https://github.com/esri/arcgis-maps-sdk-swift を入力します。
 3. オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。

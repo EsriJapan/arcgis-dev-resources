@@ -30,7 +30,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 ### 新しい Visual Studio プロジェクトを作成する
 ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
-このチュートリアルの説明は、Visual Studio for Windows を使用して .NET 6 WPF プロジェクトを作成することを目的としています。
+このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成することを目的としています。
 
 注: .NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WP Fと UWP のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
 
@@ -42,12 +42,10 @@ ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal 
      * プロジェクト名: DisplayAMap
      * 場所: 任意のフォルダーを選択
     * [次へ] をクリックします。
-        * フレームワークで「.NET 6.0 (長期的なサポート)」を選択します。
+        * フレームワークで「.NET 8.0 (長期的なサポート)」を選択します。
    * [作成] をクリックしてプロジェクトを作成します。
 
-Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET には、サポートされる各 .NET プラットフォーム用のプロジェクト テンプレート セットが用意されています。これらのテンプレートには、基本的な Model-View-ViewModel (MVVM) アプリに必要なすべてのコードが含まれています。ArcGIS Maps SDK for .NET Visual Studio 拡張機能をインストールして、テンプレートを Visual Studio（Windows のみ）に追加します。詳細については、[インストール ガイド](../../../tips/dotnet/install-dotnet-200.x/) を参照してください。
-
-このチュートリアルの手順は、WPF for .NET 6（Visual Studio 2022 以降が必要）を使用してアプリケーションを作成することに特化しています。サポートされている他の .NET プラットフォームでアプリを完成させるには、ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成できます。Visual Studio テンプレートの 1 つから開始する場合、ガイドに記載されているコードとプロジェクトに含まれるコードにいくつかの違いがあることがあります。
+このチュートリアルの手順は、WPF for .NET（Visual Studio 2022 以降が必要）を使用してアプリケーションを作成することに特化しています。サポートされている他の .NET プラットフォームでアプリを完成させるには、ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成できます。Visual Studio テンプレートの 1 つから開始する場合、ガイドに記載されているコードとプロジェクトに含まれるコードにいくつかの違いがあることがあります。
 
 ### API の参照を追加する
 
@@ -65,16 +63,16 @@ Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET に�
    * Visual Studio の [出力] ウィンドウで、パッケージが正常にインストールされたことを確認します。ターゲットの Windows バージョンに関するエラーが表示された場合は、次の手順で修正します。
    * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
 
-2. Visual Studio エラー リストに「The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net6.0-windows'. Target 'net6.0-windows10.0.19041.0' or later instead.」のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
+2. Visual Studio エラー リストに「The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net8.0-windows'. Target 'net8.0-windows10.0.19041.0' or later instead.」のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
 
     * ソリューション エクスプローラーで、ツリー ビューの DisplayAMap プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。
 
-    *  TargetFramework 要素を "net6.0-windows10.0.19041.0"（またはそれ以上）で更新します。
+    *  TargetFramework 要素を "net8.0-windows10.0.19041.0"（またはそれ以上）で更新します。
 
         ```csharp
         <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         <UseWPF>true</UseWPF>
         </PropertyGroup>
         ```

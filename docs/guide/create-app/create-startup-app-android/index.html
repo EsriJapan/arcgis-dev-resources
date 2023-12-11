@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-12-06T13:24:22 JST">
+<meta name="revised" content="2023-12-11T18:23:22 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -899,7 +899,7 @@ if (!doNotTrack) {
 <ol>
 <li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://developers.arcgis.com/kotlin/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
-<li>Kotlin で Android 開発をするための IDE。このチュートリアルでは Android Studio を使用していますが、記述されたコードは Kotlin をサポートする任意の Android の IDE で動作します。</li>
+<li>Kotlin で Android 開発をするための IDE。</li>
 </ol>
 <p>注: このチュートリアルの<a href="https://developers.arcgis.com/kotlin/zips/display-a-map.zip">完成版のコード</a>は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。<strong>Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。</strong></p>
 <h2 id="ステップ">ステップ</h2>
@@ -932,9 +932,9 @@ if (!doNotTrack) {
 <p>build.gradle (Project: Display_a_map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#75715e">// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 </span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
-    id <span style="color:#e6db74">&#39;com.android.application&#39;</span> version <span style="color:#e6db74">&#39;7.3.1&#39;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#39;com.android.library&#39;</span> version <span style="color:#e6db74">&#39;7.3.1&#39;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span> version <span style="color:#e6db74">&#39;1.7.20&#39;</span> apply <span style="color:#66d9ef">false</span>
+    id <span style="color:#e6db74">&#39;com.android.application&#39;</span> version <span style="color:#e6db74">&#39;8.1.1&#39;</span> apply <span style="color:#66d9ef">false</span>
+    id <span style="color:#e6db74">&#39;com.android.library&#39;</span> version <span style="color:#e6db74">&#39;8.1.1&#39;</span> apply <span style="color:#66d9ef">false</span>
+    id <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span> version <span style="color:#e6db74">&#39;1.9.10&#39;</span> apply <span style="color:#66d9ef">false</span>
 <span style="color:#f92672">}</span>
 
 
@@ -945,49 +945,55 @@ task <span style="color:#a6e22e">clean</span><span style="color:#f92672">(</span
 <li>
 <p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>build.gradle (Module: Display_a_map)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
-    id <span style="color:#e6db74">&#39;com.android.application&#39;</span>
-    id <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">    apply plugin: <span style="color:#e6db74">&#39;com.android.application&#39;</span>
+    apply plugin: <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span>
 
-android <span style="color:#f92672">{</span>
-    compileSdk <span style="color:#ae81ff">33</span>
+    android <span style="color:#f92672">{</span>
+        compileSdk <span style="color:#ae81ff">33</span>
 
-    defaultConfig <span style="color:#f92672">{</span>
-        applicationId <span style="color:#e6db74">&#34;com.example.app&#34;</span>
-        minSdk <span style="color:#ae81ff">26</span>
-        targetSdk <span style="color:#ae81ff">33</span>
-        versionCode <span style="color:#ae81ff">1</span>
-        versionName <span style="color:#e6db74">&#34;1.0&#34;</span>
+        defaultConfig <span style="color:#f92672">{</span>
+            applicationId <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+            minSdkVersion <span style="color:#ae81ff">26</span>
+            targetSdk <span style="color:#ae81ff">33</span>
+            versionCode <span style="color:#ae81ff">1</span>
+            versionName <span style="color:#e6db74">&#34;1.0&#34;</span>
 
-        testInstrumentationRunner <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
-    <span style="color:#f92672">}</span>
-
-    buildTypes <span style="color:#f92672">{</span>
-        release <span style="color:#f92672">{</span>
-            minifyEnabled <span style="color:#66d9ef">false</span>
-            proguardFiles <span style="color:#a6e22e">getDefaultProguardFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;proguard-android-optimize.txt&#39;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#39;proguard-rules.pro&#39;</span>
+            testInstrumentationRunner <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
         <span style="color:#f92672">}</span>
+
+        buildTypes <span style="color:#f92672">{</span>
+            release <span style="color:#f92672">{</span>
+                minifyEnabled <span style="color:#66d9ef">false</span>
+                proguardFiles <span style="color:#a6e22e">getDefaultProguardFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;proguard-android-optimize.txt&#39;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#39;proguard-rules.pro&#39;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        compileOptions <span style="color:#f92672">{</span>
+            sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+            targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+        <span style="color:#f92672">}</span>
+
+        buildFeatures <span style="color:#f92672">{</span>
+            dataBinding <span style="color:#66d9ef">true</span>
+            buildConfig <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">}</span>
+
+        packagingOptions <span style="color:#f92672">{</span>
+            exclude <span style="color:#e6db74">&#39;META-INF/DEPENDENCIES&#39;</span>
+        <span style="color:#f92672">}</span>
+
+        kotlinOptions <span style="color:#f92672">{</span>
+            jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
+        <span style="color:#f92672">}</span>
+
+        namespace <span style="color:#e6db74">&#39;com.example.app&#39;</span>
     <span style="color:#f92672">}</span>
-    compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
-        targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
+
+    dependencies <span style="color:#f92672">{</span>
+        implementation <span style="color:#e6db74">&#39;androidx.appcompat:appcompat:1.6.1&#39;</span>
+        implementation <span style="color:#e6db74">&#39;com.google.android.material:material:1.7.0&#39;</span>
+        implementation <span style="color:#e6db74">&#39;androidx.constraintlayout:constraintlayout:2.1.4&#39;</span>
+        implementation <span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin:200.3.0&#34;</span>
     <span style="color:#f92672">}</span>
-
-    buildFeatures <span style="color:#f92672">{</span>
-        dataBinding <span style="color:#66d9ef">true</span>
-    <span style="color:#f92672">}</span>
-
-    namespace <span style="color:#e6db74">&#39;com.example.app&#39;</span>
-
-<span style="color:#f92672">}</span>
-
-dependencies <span style="color:#f92672">{</span>
-    implementation <span style="color:#e6db74">&#39;androidx.appcompat:appcompat:1.5.1&#39;</span>
-    implementation <span style="color:#e6db74">&#39;com.google.android.material:material:1.7.0&#39;</span>
-    implementation <span style="color:#e6db74">&#39;androidx.constraintlayout:constraintlayout:2.1.4&#39;</span>
-    implementation <span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin:200.2.0&#34;</span>
-<span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。</p>

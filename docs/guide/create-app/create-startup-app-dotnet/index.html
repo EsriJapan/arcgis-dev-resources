@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-12-06T13:24:22 JST">
+<meta name="revised" content="2023-12-11T18:23:22 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -906,7 +906,7 @@ if (!doNotTrack) {
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-visual-studio-プロジェクトを作成する">新しい Visual Studio プロジェクトを作成する</h3>
 <p>ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
-このチュートリアルの説明は、Visual Studio for Windows を使用して .NET 6 WPF プロジェクトを作成することを目的としています。</p>
+このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成することを目的としています。</p>
 <p>注: .NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WP Fと UWP のプロジェクトは利用できません。詳しくは、<a href="https://developers.arcgis.com/net/reference/system-requirements/">システム要件</a>をご覧ください。</p>
 <ol>
 <li>Visual Studio を起動し、新しいプロジェクトを作成します。
@@ -922,15 +922,14 @@ if (!doNotTrack) {
 </li>
 <li>[次へ] をクリックします。
 <ul>
-<li>フレームワークで「.NET 6.0 (長期的なサポート)」を選択します。</li>
+<li>フレームワークで「.NET 8.0 (長期的なサポート)」を選択します。</li>
 </ul>
 </li>
 <li>[作成] をクリックしてプロジェクトを作成します。</li>
 </ul>
 </li>
 </ol>
-<p>Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET には、サポートされる各 .NET プラットフォーム用のプロジェクト テンプレート セットが用意されています。これらのテンプレートには、基本的な Model-View-ViewModel (MVVM) アプリに必要なすべてのコードが含まれています。ArcGIS Maps SDK for .NET Visual Studio 拡張機能をインストールして、テンプレートを Visual Studio（Windows のみ）に追加します。詳細については、<a href="../../../tips/dotnet/install-dotnet-200.x/">インストール ガイド</a> を参照してください。</p>
-<p>このチュートリアルの手順は、WPF for .NET 6（Visual Studio 2022 以降が必要）を使用してアプリケーションを作成することに特化しています。サポートされている他の .NET プラットフォームでアプリを完成させるには、ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成できます。Visual Studio テンプレートの 1 つから開始する場合、ガイドに記載されているコードとプロジェクトに含まれるコードにいくつかの違いがあることがあります。</p>
+<p>このチュートリアルの手順は、WPF for .NET（Visual Studio 2022 以降が必要）を使用してアプリケーションを作成することに特化しています。サポートされている他の .NET プラットフォームでアプリを完成させるには、ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成できます。Visual Studio テンプレートの 1 つから開始する場合、ガイドに記載されているコードとプロジェクトに含まれるコードにいくつかの違いがあることがあります。</p>
 <h3 id="api-の参照を追加する">API の参照を追加する</h3>
 <p>注: ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成した場合、必要な NuGet パッケージが既にプロジェクトに追加されています。</p>
 <ol>
@@ -950,16 +949,16 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p>Visual Studio エラー リストに「The &lsquo;Esri.ArcGISRuntime.WPF&rsquo; nuget package cannot be used to target &lsquo;net6.0-windows&rsquo;. Target &lsquo;net6.0-windows10.0.19041.0&rsquo; or later instead.」のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。</p>
+<p>Visual Studio エラー リストに「The &lsquo;Esri.ArcGISRuntime.WPF&rsquo; nuget package cannot be used to target &lsquo;net8.0-windows&rsquo;. Target &lsquo;net8.0-windows10.0.19041.0&rsquo; or later instead.」のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。</p>
 <ul>
 <li>
 <p>ソリューション エクスプローラーで、ツリー ビューの DisplayAMap プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。</p>
 </li>
 <li>
-<p>TargetFramework 要素を &ldquo;net6.0-windows10.0.19041.0&rdquo;（またはそれ以上）で更新します。</p>
+<p>TargetFramework 要素を &ldquo;net8.0-windows10.0.19041.0&rdquo;（またはそれ以上）で更新します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;PropertyGroup&gt;
 &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
-&lt;TargetFramework&gt;net6.<span style="color:#ae81ff">0</span>-windows10.<span style="color:#ae81ff">0.19041</span>.<span style="color:#ae81ff">0</span>&lt;/TargetFramework&gt;
+&lt;TargetFramework&gt;net8.<span style="color:#ae81ff">0</span>-windows10.<span style="color:#ae81ff">0.19041</span>.<span style="color:#ae81ff">0</span>&lt;/TargetFramework&gt;
 &lt;UseWPF&gt;<span style="color:#66d9ef">true</span>&lt;/UseWPF&gt;
 &lt;/PropertyGroup&gt;
 </code></pre></div></li>

@@ -41,7 +41,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
    * [Next] をクリックします。
    * プロジェクトを保存する場所を選択して、[Create] をクリックします。
 
-2. Project Navigator で、display_a_mapApp.swift をクリックします。Editor で、display_a_mapApp struct を右クリックします。 [Refactor]、[Rename...] の順に選択して、構造体の名前を MainApp に変更します。 右上の [Rename] ボタンをクリックして、新しい名前を確認します。 これにより、影響を受けるすべての領域の構造体(struct)とファイルの名前が変更されます。このファイルと構造体は、以降のすべてのチュートリアルで MainApp という名前になります。
+2. Project Navigator で、display_a_mapApp.swift をクリックします。Editor で、display_a_mapApp struct を右クリックします。 [Refactor]、[Rename...] の順に選択して、構造体の名前を MainApp に変更します。 右上の [Rename] ボタンをクリックして、新しい名前を確認します。 これにより、影響を受けるすべての領域の構造体(struct)とファイルの名前が変更されます。
 
 3. [Swift Package Manager](../../../tips/ios/install-ios-200.x/#swift-package-manager) を使用して API への参照を追加します。
 
