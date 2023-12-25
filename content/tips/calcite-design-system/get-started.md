@@ -21,8 +21,8 @@ Calcite Components は、Web アプリケーションを構築するための、
 ### CDN で利用する
 Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js"></script>
-<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.5/calcite.css" />
+<script type="module" src="https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js"></script>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.11.0/calcite.css" />
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
@@ -33,15 +33,33 @@ Calcite Components は、[NPM パッケージ](https://www.npmjs.com/package/@es
 npm install @esri/calcite-components
 ```
 
+#### アセットの読み込み
+`calcite-icon` や `calcite-date-picker` のような幾つかのコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述したように NPM パッケージでは、ローカルパスか CDN でホストされているアセットの URL を提供するオプションがあります。CDN でホストされているアセットを使うことで、ディスクのビルドサイズを減らすことができます。
+
+ローカルでアセットを使用するには、ビルドツールや NPM スクリプトを使用してコピーする必要があります。ローカル アセットのディレクトリは `assets` という名前にする必要があります。例えば、`/public/calcite/assets` は動作しますが、`/public/calcite-assets` は動作しません。
+
+Calcite Components の[サンプル集](https://github.com/Esri/calcite-components-examples)では、様々な JavaScript フレームワークやビルド ツールでローカル アセットを使用する方法を示しています。各例には、フレームワークやビルド ツール固有の説明を含む README があります。
+
+``` cmd
+cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/
+```
+
+#### スタイルのインポート
+最後に、カスケーディング スタイル シート（CSS）を読み込みます。これもフレームワークやビルド ツールに依存しますが、多くの場合、JavaScript で読み込むことができます。
+``` js
+import "@esri/calcite-components/dist/calcite/calcite.css";
+```
+
 #### ビルドの選択
-Calcite Components が提供する2つのビルドから1つを選択します。
+最後に、Calcite Components が提供する 2 つのビルドから 1 つを選択する。
 
 #### カスタム要素
-フロントエンド フレームワークを活用する場合は、[カスタム要素](https://stenciljs.com/docs/custom-elements) の構築を推奨します。このビルドを使用するには、Calcite Components のアセットへのパスを設定する必要があります。この後のステップで説明するローカル アセットと、CDN でホストされているアセットのどちらかを使用することができます。
+[カスタム要素](https://stenciljs.com/docs/custom-elements) は、フロントエンド フレームワークを利用する場合に推奨されるビルドです。このビルドを使用するには、Calcite Components のアセットへのパスを設定する必要があります。次のステップで説明するローカルのアセットを使用するか、CDN でホストされているアセットを使用することができます。
+
 ``` js
 import { setAssetPath } from "@esri/calcite-components/dist/components";
-// CDN ホスティング アセット
-setAssetPath("https://js.arcgis.com/calcite-components/1.0.5/assets");
+// CDN hosted assets
+setAssetPath("https://js.arcgis.com/calcite-components/1.11.0/assets");
 
 // ローカル アセット
 // setAssetPath(PATH); // PATH はフレームワークによって異なります。
@@ -55,30 +73,16 @@ import "@esri/calcite-components/dist/components/calcite-slider";
 
 #### ディストリビューション
 [ディストリビューション](https://stenciljs.com/docs/distribution) ビルドを使用する場合、ウィンドウ上でカスタム要素を定義する必要があります。また、ローカルと CDN にホストされたアセットのどちらかを選択することができます。
+
 ``` js
 import { defineCustomElements } from "@esri/calcite-components/dist/loader";
-// CDN ホスティング アセット
+// CDN hosted assets
 defineCustomElements(window, {
-  resourcesUrl: "https://js.arcgis.com/calcite-components/1.0.5/assets"
+  resourcesUrl: "https://js.arcgis.com/calcite-components/1.11.0/assets"
 });
 
-// ローカル アセット
-// defineCustomElements(window);
-```
-カスタム エレメントはウィンドウ上で定義したため、個々のコンポーネントをインポートする必要はありません。
+// Local assets
+// defineCustomElements (window);
+``` 
 
-### アセットの読み込み
-calcite-icon や calcite-date-picker などの一部のコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述の通り、NPM パッケージでは、ローカルパスまたは CDN でホストされているアセットへの URL を指定するオプションがあります。CDN でホストされたアセットを使用することで、ディスク上のビルド サイズを減らすことができます。
-
-ローカルで使用するためには、ビルド ツールや NPM スクリプトを使用して、アセットをコピーする必要があります。ローカル アセットのディレクトリは、コピー処理を容易にするために、assets という名前にする必要があります。例えば、/public/calcite/assets は動作しますが、/public/calcite-assets は動作しません。
-
-Calcite Components の[サンプル集](https://github.com/Esri/calcite-components-examples)では、様々な JavaScript フレームワークやビルド ツールでローカル アセットを使用することを実証しています。各例には、フレームワークやビルド ツール固有の説明を含む README があります。
-``` cmd
-cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/
-```
-
-### スタイルのインポート
-最後に、カスケーディング スタイル シート（CSS）を読み込みます。これもフレームワークやビルド ツールに依存しますが、多くの場合、JavaScript で読み込むことができます。
-``` js
-import "@esri/calcite-components/dist/calcite/calcite.css";
-```
+カスタム要素をウィンドウ上で定義したので、個々のコンポーネントをインポートする必要はありません。

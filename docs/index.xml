@@ -62,9 +62,9 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
 作成方法は、開発者アカウントの作成をご覧ください。
 次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。
 CDN で利用する Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
-&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 NPM パッケージで利用する Calcite Components は、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
-npm install @esri/calcite-components ビルドの選択 Calcite Components が提供する2つのビルドから1つを選択します。</description>
+npm install @esri/calcite-components アセットの読み込み calcite-icon や calcite-date-picker のような幾つかのコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述したように NPM パッケージでは、ローカルパスか CDN でホストされているアセットの URL を提供するオプションがあります。CDN でホストされているアセットを使うことで、ディスクのビルドサイズを減らすことができます。</description>
     </item>
     
     <item>
@@ -795,24 +795,22 @@ ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使�
     </item>
     
     <item>
-      <title>セキュリティと認証</title>
+      <title>セキュリティと認証の紹介</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</guid>
-      <description>出典：ArcGIS Developers - Security and authentication - Introduction
-セキュリティと認証 ArcGIS は、ロケーション サービスやプライベート データへの安全なアクセスをサポートしています。これにより、有効かつ認証されたユーザーやサービスのみが保護された情報にアクセスできるようになります。安全なリソースにアクセスするためには、アプリケーションがサービスに対して認証されたリクエストを行えるように、認証方法を実装する必要があります。
-はじめに 以下の手順で認証を開始できます。
-  ArcGIS 開発者アカウントをお持ちでない場合は、新規作成してください。
-  利用可能な認証方法と認証方法の選択を確認します。
-  開発者用ダッシュボードにサインインし、認証情報を作成します。
-  認証チュートリアルにアクセスして、アプリの構築を始めましょう。
-  ArcGIS Enterprise アカウントを使用して認証する場合、ArcGIS identity、アプリケーション認証情報、その他の ArcGIS identity 認証方法を使用できます。ただし、API キーは ArcGIS Enterprise ではサポートされていません。
-認証方法 認証方法とは、アクセストークンを取得するためのプロセスです。アプリケーションがロケーション サービスに認証済みのリクエストを行う際には、アクセストークンを提示する必要があります。アクセストークンは、アプリケーションが利用できる範囲と権限を定義します。アクセストークンの取得に使用する認証方法はいくつかあります。
-アクセストークンには以下の 3 種類あります。
- API キー：すぐに使えるサービスや、ArcGIS Developer アカウントがあればプライベート（ベータ）なコンテンツへのアクセスをアプリケーションに与える永続的なトークンです。 ArcGIS Identity (指定ユーザー ログイン)：既存の ArcGIS ユーザのアカウントに認可されたプライベート コンテンツおよびサービスへのアクセスをアプリケーションに与える一時的なトークンです。 アプリケーション認証： OAuth 2.0 で生成された一時的なトークンで、すぐに使えるサービスへのアクセスを認証することができます。  サービスに対して認証のリクエストを行うには、token パラメーターにアクセストークンを設定する必要があります。
-https://&amp;lt;LOCATION-SERVICE-URL&amp;gt;?token=&amp;lt;ACCESS-TOKEN&amp;gt;
-各サービスへのURLリクエストのフォーマットについては、ロケーション サービスを参照してください。</description>
+      <description>出典：ArcGIS Developers - Introduction to security and authentication
+認証とは、アイデンティティー（identity）を確認するプロセスです。ArcGIS は、いくつかの認証ワークフローを通じて、認証済みのアイデンティティー（identity） に対して ArcGIS のサービス、コンテンツ、およびリソースへのセキュアなアクセスをサポートします。これにより、有効かつ認証されたユーザーとアプリケーションのみが保護された情報にアクセスできるようになります。安全なリソースにアクセスするアプリケーションを構築するには、認証の種類を選択し、認証ワークフローを実装する必要があります。このセクションでは、API キー、ユーザー認証、アプリ認証を使用して、サービスやセキュアなリソースに認証済みのリクエストを行う方法について説明します。
+トピックス ArcGIS リソースにアクセスする方法
+ArcGIS アカウントとアクセス トークンを使用して保護されたリソースにアクセスする方法について説明します。
+認証の種類
+アクセストークンを付与する認証の種類を比較します。
+API キー認証
+ロケーションサービスや保護されたコンテンツにアクセスするための永続的な API キーを作成します。
+ユーザー認証
+ユーザーに代わって ArcGIS リソースにアクセスするためのユーザー認証ワークフローを作成します。
+アプリケーション認証</description>
     </item>
     
     <item>
@@ -905,22 +903,24 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
     </item>
     
     <item>
-      <title>デプロイ</title>
+      <title>デプロイの紹介</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/deployment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/deployment/</guid>
-      <description>出典：ArcGIS Developers - Deployment - Introduction
-ArcGIS Platform のロケーションサービスでは、Web アプリケーション、ネイティブ アプリケーション、サービスサイドアプリケーションなど、さまざまな種類のアプリケーションを構築およびデプロイできます。どのような種類のアプリケーションを構築する場合でも、デプロイの前に確認する必要があるガイドラインと利用規約があります。
-このセクションでは、ArcGIS Platform で構築したアプリケーションをデプロイする前に知っておくべき情報を提供します。
-デプロイのガイドライン   アカウント：ArcGIS アカウントがサービスの使用とデプロイにどのように影響するかを確認します。
-  サービス：アクセストークンを使って、有効な認証方法でロケーションサービスにアクセスします。
-  データの使用：アプリケーションが使用するすべてのコンテンツとデータの使用条件に従ってください。
-  ベースマップの帰属：ArcGIS のベースマップ レイヤーを使用する場合は、クレジットと帰属のガイドラインに従ってください。
-  配布：アプリケーションをデプロイ、または配布する場合は、ライセンス、または配布の要件を遵守してください。
-  利用規約：Esri の利用規約および関連する法的文書を確認してください。
-  詳しくは、以下のトピックスをご覧ください。
-トピックス アカウント  アカウントの種類によって、アプリケーションの構築やデプロイメントにどのような影響があるのかをご説明します。  コンテンツとデータ  アプリケーションで使用するデータの利用規約についてご説明します。  ベースマップの帰属  アプリケーションで正しいベースマップの帰属を提供する方法について説明します。  配布方法  異なる API で構築されたアプリケーションを配布、デプロイするための要件について説明します。  利用条件  利用規約などの法的文書についてご紹介します。  </description>
+      <description>出典：ArcGIS Developers - Introduction to deployment
+さまざまな API や SDK、ArcGIS ロケーション サービス、ArcGIS アカウントを使用して、アプリケーションを構築およびデプロイできます。これには、Web、ネイティブ、およびサービス ベースのアプリケーションが含まれます。このセクションでは、ソリューションをデプロイする前に知っておくべき情報について説明します。
+製品、サブスクリプション、アカウント
+製品、サブスクリプション、アカウントが請求とデプロイメントにどのような影響があるのかを説明します。
+コンテンツとデータの利用
+アプリケーションで使用されるデータの利用規約について説明します。
+ベースマップの帰属
+アプリケーションで正しいベースマップの帰属を提供する方法について説明します。
+配布
+さまざまな API を使用して構築されたアプリケーションを配布およびデプロイするための要件について説明します。
+利用規約
+利用規約、その他の法的文書について説明します。
+ アカウント、ライセンス、価格、サービスの利用方法についての詳細は、FAQ をご確認ください。  </description>
     </item>
     
     <item>

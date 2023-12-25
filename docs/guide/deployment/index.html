@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-12-11T18:23:22 JST">
-<title>デプロイ :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2023-12-25T12:58:07 JST">
+<title>デプロイの紹介 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -186,14 +186,14 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/guide/security/">
-            セキュリティと認証
+            セキュリティと認証の紹介
           </a>
         </div>
     </li>
       <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/guide/deployment/">
-            デプロイ
+            デプロイの紹介
           </a>
         </div>
     </li>
@@ -260,20 +260,6 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
             バージョン 3.x から 4.x への移行
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-widget/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/custom-widget/">
-            ウィジェット開発
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/arcade/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/arcade/">
-            Arcade
           </a>
         </div>
     </li>
@@ -835,7 +821,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > デプロイ
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > デプロイの紹介
 
  
 
@@ -848,15 +834,7 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#デプロイのガイドライン">デプロイのガイドライン</a>
-      <ul>
-        <li><a href="#トピックス">トピックス</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -866,7 +844,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>デプロイ</h1>
+    <h1>デプロイの紹介</h1>
   
 
 
@@ -874,51 +852,67 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Developers - Deployment - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/">Introduction</a></p>
-<p>ArcGIS Platform の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ロケーションサービス</a>では、Web アプリケーション、ネイティブ アプリケーション、サービスサイド<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">アプリケーション</a>など、さまざまな種類のアプリケーションを構築およびデプロイできます。どのような種類のアプリケーションを構築する場合でも、デプロイの前に確認する必要がある<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/#deployment-guidelines">ガイドライン</a>と<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用規約</a>があります。</p>
-<p>このセクションでは、ArcGIS Platform で構築したアプリケーションをデプロイする前に知っておくべき情報を提供します。</p>
-<h2 id="デプロイのガイドライン">デプロイのガイドライン</h2>
-<ol>
-<li>
-<p>アカウント：<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/">ArcGIS アカウント</a>がサービスの使用とデプロイにどのように影響するかを確認します。</p>
-</li>
-<li>
-<p>サービス：アクセストークンを使って、有効な<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/#authentication-methods">認証方法</a>で<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ロケーションサービス</a>にアクセスします。</p>
-</li>
-<li>
-<p>データの使用：アプリケーションが使用するすべての<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/">コンテンツとデータ</a>の使用条件に従ってください。</p>
-</li>
-<li>
-<p>ベースマップの帰属：ArcGIS のベースマップ レイヤーを使用する場合は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/">クレジットと帰属</a>のガイドラインに従ってください。</p>
-</li>
-<li>
-<p>配布：アプリケーションをデプロイ、または配布する場合は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">ライセンス、または配布</a>の要件を遵守してください。</p>
-</li>
-<li>
-<p>利用規約：Esri の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用規約</a>および関連する法的文書を確認してください。</p>
-</li>
-</ol>
-<p>詳しくは、以下の<a href="#%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%82%B9">トピックス</a>をご覧ください。</p>
-<h3 id="トピックス">トピックス</h3>
-<h4 id="アカウントhttpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentaccounts"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/">アカウント</a></h4>
+    <p>出典：ArcGIS Developers - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/">Introduction to deployment</a></p>
+<p>さまざまな <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/">API や SDK</a>、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ArcGIS ロケーション サービス</a>、ArcGIS アカウントを使用して、アプリケーションを構築およびデプロイできます。これには、Web、ネイティブ、およびサービス ベースのアプリケーションが含まれます。このセクションでは、ソリューションをデプロイする前に知っておくべき情報について説明します。</p>
+<table style="border:none;">
+<tr>
+<td>
+    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M33.148 25.114a6.54 6.54 0 0 0-6.552-6.014h-7.192a6.539 6.539 0 0 0-6.552 6.011l-.972 12.593a2.57 2.57 0 0 0 .699 1.952 2.648 2.648 0 0 0 1.521.793v1.866a2.588 2.588 0 0 0 2.585 2.585h12.63a2.588 2.588 0 0 0 2.585-2.585v-1.866a2.648 2.648 0 0 0 1.521-.793 2.57 2.57 0 0 0 .699-1.953zm-.308 13.992a1.853 1.853 0 0 1-1.34.573h-.4v2.636a1.787 1.787 0 0 1-1.785 1.785h-12.63a1.787 1.787 0 0 1-1.785-1.785v-2.636h-.4a1.853 1.853 0 0 1-1.34-.573 1.768 1.768 0 0 1-.482-1.341l.972-12.595a5.737 5.737 0 0 1 5.754-5.27h7.192a5.738 5.738 0 0 1 5.754 5.273l.972 12.59a1.769 1.769 0 0 1-.482 1.343zM23 15.9A6.9 6.9 0 1 0 16.1 9a6.908 6.908 0 0 0 6.9 6.9zm0-13A6.1 6.1 0 1 1 16.9 9 6.107 6.107 0 0 1 23 2.9z"></path></svg>
+</td>
+<td>
+  <h4>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/">製品、サブスクリプション、アカウント</a></p>
+  </h4>
+<p>製品、サブスクリプション、アカウントが請求とデプロイメントにどのような影響があるのかを説明します。</p>
+</td>
+</tr>
+<tr>
+<td>
+    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M47.9 25.925a10.941 10.941 0 0 1-5.954 9.762l-.366-.711a10.176 10.176 0 0 0-3.578-19.168l-.326-.034-.03-.326A10.974 10.974 0 0 0 26.35 5.566 11.006 11.006 0 0 0 16.281 11.3l-.164.316-.333-.127a6.635 6.635 0 0 0-9.01 6.211c0 .216.013.428.033.638l.029.299-.278.111A8.998 8.998 0 0 0 9.9 36.1H12v.8H9.9a9.797 9.797 0 0 1-3.912-18.78 7.026 7.026 0 0 1-.013-.42 7.458 7.458 0 0 1 7.45-7.45 7.37 7.37 0 0 1 2.312.374A11.829 11.829 0 0 1 26.35 4.767 11.768 11.768 0 0 1 38.408 15.05 10.944 10.944 0 0 1 47.9 25.925zm-11.322 4.757l.587.342-12.206 7.12-6.675-3.893 3.128-1.825-.794-.463-3.072 1.792.057.099-2.309-1.348 3.128-1.824-.794-.463-3.922 2.287L27.5 40.552l13.794-8.046-3.922-2.287zM27.5 39.626l-1.747-1.019 12.206-7.12 1.747 1.02zm0-22.172L13.706 25.5 27.5 33.546 41.294 25.5zM39.706 25.5l-10.381 6.056c-.495-.69-.526-.943-.526-.99a2.049 2.049 0 0 1 .431-1.192 2.2 2.2 0 0 0 .456-1.225 1.905 1.905 0 0 0-1.078-1.504c-.43-.299-.693-.5-.693-.77a4.37 4.37 0 0 1 .212-.648 4.912 4.912 0 0 0 .4-1.514 1.354 1.354 0 0 0-.502-1.094 34.71 34.71 0 0 0-3.484-2.514L27.5 18.38zm-24.412 0l8.47-4.941a34.304 34.304 0 0 1 3.753 2.677.567.567 0 0 1 .211.477 4.636 4.636 0 0 1-.35 1.233 3.07 3.07 0 0 0-.263.926c0 .712.576 1.11 1.038 1.43.456.316.733.53.733.847a1.491 1.491 0 0 1-.328.792 2.805 2.805 0 0 0-.559 1.624 2.53 2.53 0 0 0 .631 1.396l-1.13.66zm9.98-1a.775.775 0 1 1-.774-.775.776.776 0 0 1 .775.775zM23.5 26.6a.9.9 0 1 0 .9.9.901.901 0 0 0-.9-.9zm-.1.9a.1.1 0 0 1 .2 0c0 .11-.2.11-.2 0zm9.1-1.1a.9.9 0 1 0-.9-.9.901.901 0 0 0 .9.9zm0-1a.1.1 0 0 1 .1.1c0 .11-.2.11-.2 0a.1.1 0 0 1 .1-.1zm4.896 11.811l3.898 2.274L27.5 47.53l-13.794-8.046 3.898-2.274.794.463-3.104 1.81 3.737 2.18a19.35 19.35 0 0 1 3.407-1.633l.892.52-.418.148a18.678 18.678 0 0 0-3.078 1.434l7.666 4.472 6.635-3.87-3.105-1.81.794-.464 3.105 1.81 3.174-1.851a23.42 23.42 0 0 0-3.96-.85l-.65-.082 1.124-.656a23.866 23.866 0 0 1 4.413 1.047l.676-.394-3.104-1.81z"></path></svg>
+</td>
+<td>
+   <h4>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/">コンテンツとデータの利用</a></p>
+   </h4>
+<p>アプリケーションで使用されるデータの利用規約について説明します。</p>
+</td>
+</tr>
+<tr>
+<td>
+    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M27.1 4.1v17.8h17.8V4.1zm.8 17V4.9h13.25l.007.125a3.379 3.379 0 0 0 .06.404c.035.184.101.529.03.61-.028.031-.15.078-.438.06-.437-.05-.84.38-.954.508a1.135 1.135 0 0 0-.343.891 4.454 4.454 0 0 0 .154.524c.223.658.29.938-.308 1.261a2.676 2.676 0 0 0-1.015 1.161c-.298.529-.443.728-.78.728a.895.895 0 0 1-.54-.258 1.622 1.622 0 0 0-1.014-.418 1.277 1.277 0 0 0-1.225 1.321c0 .507-.455 1.442-1.104 1.442-.16 0-.392-.463-.515-.711a8.13 8.13 0 0 0-.174-.333c-.291-.527-.654-1.18-1.473-1.18a1.877 1.877 0 0 0-1.681 1.778 2.621 2.621 0 0 0 .11.707 1.897 1.897 0 0 1 .084.505c0 .188-.096.29-.296.486a1.418 1.418 0 0 0-.537 1.057 1.626 1.626 0 0 0 1.474 1.332l.417-.003a6.867 6.867 0 0 1 1.05.043c.114.011.267.409.267.698 0 .35-.288.638-.622.97a1.857 1.857 0 0 0-.644 2.36.769.769 0 0 0 .106.132zm16.2 0H33.376a4.983 4.983 0 0 0-.785-.238 2.102 2.102 0 0 1-.736-.253c-.3-.601-.052-.89.494-1.434a2.206 2.206 0 0 0 .857-1.537c0-.54-.269-1.424-.988-1.493a7.873 7.873 0 0 0-1.138-.048l-.408.003a.977.977 0 0 1-.674-.532c0-.187.096-.29.296-.485a1.418 1.418 0 0 0 .537-1.058 2.621 2.621 0 0 0-.11-.707 1.897 1.897 0 0 1-.084-.504 1.092 1.092 0 0 1 .881-.979c.316 0 .47.222.803.821.041.075.083.16.127.248.243.488.575 1.156 1.232 1.156 1.162 0 1.904-1.329 1.904-2.243a.495.495 0 0 1 .425-.52.896.896 0 0 1 .533.256 1.626 1.626 0 0 0 1.02.42c.838 0 1.192-.63 1.478-1.136a2.011 2.011 0 0 1 .699-.85 1.581 1.581 0 0 0 .685-2.222c-.05-.146-.1-.288-.125-.385a1.03 1.03 0 0 1 .451-.484 1.272 1.272 0 0 0 1.096-.327 1.467 1.467 0 0 0 .157-1.29 2.598 2.598 0 0 1-.048-.304l-.004-.075h2.15zm-40 .8h17.8V4.1H4.1zm.8-17h16.2v16.2H4.9zm-.8 40h17.8V27.1H4.1zm17-.8H7.99a3.5 3.5 0 0 1-.96-1.643 5.237 5.237 0 0 1 2.737-.48l.243.032a1.358 1.358 0 0 0 1.388-.367 4.129 4.129 0 0 1 .957-.712c.57-.35 1.108-.682 1.205-1.211a1.003 1.003 0 0 0-.232-.809 1.559 1.559 0 0 1 .012-1.667 7.517 7.517 0 0 1 3.53-3.361c2.984-.15 3.535-.784 4.088-1.81.046-.084.092-.17.142-.256zM4.9 27.9h16.2v2.64a4.272 4.272 0 0 0-.846 1.152c-.392.728-.675 1.252-3.423 1.391-1.016.05-3.411 2.075-4.217 3.826a2.273 2.273 0 0 0 .08 2.49c.034.043.089.123.08.176-.033.179-.499.464-.838.673a4.707 4.707 0 0 0-1.144.872c-.137.156-.248.157-.667.098a1.92 1.92 0 0 0-.209-.025 5.506 5.506 0 0 0-3.502.724.53.53 0 0 0-.211.483 1.887 1.887 0 0 0 .036.194 4.302 4.302 0 0 0 .704 1.506H4.9zm12.2-13.8h1.8v1.8h-1.8zm-9 2h1.8v1.8H8.1zm19 28.8h17.8V27.1H27.1zm17-17v15.634l-7.154-7.154 2.266-8.48zm-16.2 0h10.484l-2.229 8.341-8.255 5.02zm0 14.298l8.54-5.193 7.094 7.095H27.9zM13.1 7.1h1.8v1.8h-1.8z"></path></svg>
+</td>
+<td>
+   <h4>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/">ベースマップの帰属</a></p>
+   </h4>
+<p>アプリケーションで正しいベースマップの帰属を提供する方法について説明します。</p>
+</td>
+</tr>
+<tr>
+<td>
+    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M40.774 31.475A2.277 2.277 0 0 1 38.9 33.86v1.007a2.036 2.036 0 0 1-2.033 2.033h-1.026v-.8h1.026a1.234 1.234 0 0 0 1.233-1.233v-1.771h.4a1.479 1.479 0 0 0 1.476-1.572l-.644-10.25a3.606 3.606 0 0 0-3.593-3.374H30.37v-.8h5.37a4.408 4.408 0 0 1 4.39 4.125zM32.5 4.9a4.6 4.6 0 1 1-.668 9.152l-.115.792A5.4 5.4 0 1 0 32.5 4.1a5.366 5.366 0 0 0-3.836 1.6l.568.563A4.57 4.57 0 0 1 32.5 4.9zm-18 10a5.456 5.456 0 0 0 .783-.056l-.115-.792a4.6 4.6 0 1 1 2.6-7.79l.568-.563a5.4 5.4 0 1 0-3.836 9.2zm-3.24 3h5.37v-.8h-5.37a4.408 4.408 0 0 0-4.39 4.125l-.644 10.25A2.278 2.278 0 0 0 8.1 33.86v1.007a2.036 2.036 0 0 0 2.033 2.033h1.026v-.8h-1.026A1.234 1.234 0 0 1 8.9 34.867v-1.771h-.4a1.48 1.48 0 0 1-1.476-1.572l.644-10.25a3.606 3.606 0 0 1 3.593-3.374zm21.749 8.678l.862 11.771a2.377 2.377 0 0 1-1.97 2.517v1.657a2.38 2.38 0 0 1-2.379 2.377H17.478a2.38 2.38 0 0 1-2.378-2.377v-1.657a2.378 2.378 0 0 1-1.971-2.517l.862-11.773a5.894 5.894 0 0 1 5.863-5.476h7.291a5.894 5.894 0 0 1 5.864 5.478zm.063 11.83l-.862-11.774a5.091 5.091 0 0 0-5.064-4.734h-7.291a5.091 5.091 0 0 0-5.065 4.732l-.862 11.776A1.577 1.577 0 0 0 15.5 40.1h.4v2.423a1.579 1.579 0 0 0 1.578 1.577h12.044a1.579 1.579 0 0 0 1.578-1.577V40.1h.4a1.576 1.576 0 0 0 1.572-1.692zM17.1 12.5a6.4 6.4 0 1 1 6.4 6.4 6.407 6.407 0 0 1-6.4-6.4zm.8 0a5.6 5.6 0 1 0 5.6-5.6 5.606 5.606 0 0 0-5.6 5.6z"></path></svg>
+</td>
+<td>
+   <h4>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">配布</a></p>
+   </h4>
+<p>さまざまな API を使用して構築されたアプリケーションを配布およびデプロイするための要件について説明します。</p>
+</td>
+</tr>
+<tr>
+<td>
+    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M41.1 31.001h.8v13.9H26V44.1h15.1zM8.1 5.1v39.8H17v-.8H8.9V5.9h32.2V18h.8V5.1zm9.9 7v.8h15v-.8zm-4 7.8h22v-.8H14zm0 4h19v-.8H14zm0 4h6v-.8h-6zm0 4h11v-.8H14zm26.724-6.151l1.182-1.183-1.446-1.446L38.583 25v-.018L20.091 43.476a1.004 1.004 0 0 0-.242.385l-.679 1.972 1.97-.682a1.002 1.002 0 0 0 .384-.24l19.177-19.178.565.567-2.632 2.632.453 2.703-8.487 8.487-.565-.566 8.194-8.195-.29-1.734-15.85 15.85a1.835 1.835 0 0 1-.688.43l-3.522 1.22 1.213-3.525a1.814 1.814 0 0 1 .434-.693l19.857-19.858v.015l1.077-1.077 2.578 2.577-1.749 1.75z"></path></svg>
+</td>
+<td>
+   <h4>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用規約</a></p>
+   </h4>
+<p>利用規約、その他の法的文書について説明します。</p>
+</td>
+</tr>
+</table>
 <ul>
-<li>アカウントの種類によって、アプリケーションの構築やデプロイメントにどのような影響があるのかをご説明します。</li>
-</ul>
-<h4 id="コンテンツとデータhttpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentcontent-and-data"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/">コンテンツとデータ</a></h4>
-<ul>
-<li>アプリケーションで使用するデータの利用規約についてご説明します。</li>
-</ul>
-<h4 id="ベースマップの帰属httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentbasemap-attribution"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/">ベースマップの帰属</a></h4>
-<ul>
-<li>アプリケーションで正しいベースマップの帰属を提供する方法について説明します。</li>
-</ul>
-<h4 id="配布方法httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentdistribution"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/">配布方法</a></h4>
-<ul>
-<li>異なる API で構築されたアプリケーションを配布、デプロイするための要件について説明します。</li>
-</ul>
-<h4 id="利用条件httpsdevelopersarcgiscomdocumentationmapping-apis-and-servicesdeploymentterms-of-use"><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/">利用条件</a></h4>
-<ul>
-<li>利用規約などの法的文書についてご紹介します。</li>
+<li>アカウント、ライセンス、価格、サービスの利用方法についての詳細は、<a href="https://developers.arcgis.com/faq/">FAQ</a> をご確認ください。</li>
 </ul>
 
 
@@ -931,7 +925,7 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/guide/security/" title="セキュリティと認証"> <i class="fa fa-chevron-left"></i><label>セキュリティと認証</label></a>
+<a class="nav nav-prev" href="/arcgis-dev-resources/guide/security/" title="セキュリティと認証の紹介"> <i class="fa fa-chevron-left"></i><label>セキュリティと認証の紹介</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/learn/" title="もっと学ぶ" style="margin-right: 0px;"><label>もっと学ぶ</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

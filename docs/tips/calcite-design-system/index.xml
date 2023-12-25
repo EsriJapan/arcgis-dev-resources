@@ -19,9 +19,9 @@
 作成方法は、開発者アカウントの作成をご覧ください。
 次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。
 CDN で利用する Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
-&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.0.5/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 NPM パッケージで利用する Calcite Components は、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
-npm install @esri/calcite-components ビルドの選択 Calcite Components が提供する2つのビルドから1つを選択します。</description>
+npm install @esri/calcite-components アセットの読み込み calcite-icon や calcite-date-picker のような幾つかのコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述したように NPM パッケージでは、ローカルパスか CDN でホストされているアセットの URL を提供するオプションがあります。CDN でホストされているアセットを使うことで、ディスクのビルドサイズを減らすことができます。</description>
     </item>
     
     <item>

@@ -9,9 +9,12 @@ Calcite Design System の開発に役立つガイド集です。
 Calcite Design System は、最小限の労力で、アプリ間で美しく、使いやすく、まとまりのある体験を生み出すためのデザインおよび開発リソースを集めたものです。UI キット、アイコン、カラー スキーム、そしてボタン、パネル、アコーディオン、アラートなどの UI 要素を含む Web コンポーネントライブラリが含まれています。
 
 ## どこから始めるか
-Calcite Design System で、一貫性のある考慮された体験を構築します。
+Calcite Design System* で、一貫性のある考慮された体験を構築します。
+<br/><b><span style="font-size: 80%;"> *国内未サポート製品です。</span></b>
 
-{{% children description="true"   %}}
+{{% children description="true"  %}}
+
+
 
 ## Design System
 Calcite Design System の基礎、包括的なコンポーネント ライブラリ、およびガイド リソースをご覧いただけます。
