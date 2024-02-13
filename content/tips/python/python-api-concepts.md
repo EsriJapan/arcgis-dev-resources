@@ -34,7 +34,7 @@ Python API は `arcgis` パッケージとして配布されています。
 このパッケージの中には、最も基本になる `gis` モジュールを中心に、Web GIS で使用できる機能がさまざまなモジュールとして編成されています。
 
 <div align="center">
- <img src="https://developers.arcgis.com/python/guide/images/guide_api_overview_modules.png" width="500px">
+ <img src="https://developers.arcgis.com/python/guide/images/guide_api_modules_overview.png" width="700px">
  <p>Python API のモジュールを表したダイアグラム</p>
 </div>
 
