@@ -59,7 +59,7 @@ Python API は次の環境と動作要件が必要です。
 * オペレーティング システム</br>
   * Windows (32 /64 ビット) /macOS/ Linux</br>
   ※macOS/Linux は国内サポート対象外となります
-* Python バージョン 3.5+
+* Python バージョン 3.9.x - 3.11
 
 * 開発環境
   * [Jupyter Notebook](http://jupyter.org/)※

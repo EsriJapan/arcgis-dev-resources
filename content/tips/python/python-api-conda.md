@@ -17,10 +17,10 @@ ArcGIS API for Python (以下、Python API) を使用する際、conda を利用
 conda の基本について説明します。conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。
 conda を使用する場合、次の 2 つの選択肢があります。
 
-* [Anaconda Distribution](https://www.anaconda.com/what-is-anaconda/) : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。
-* [Miniconda](https://conda.io/miniconda.html) : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。
+* [Anaconda Distribution](https://docs.anaconda.com/free/anaconda/) : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。
+* [Miniconda](https://docs.anaconda.com/free/miniconda/) : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。
 
-Anaconda と Miniconda の詳しい違いは [Anaconda or Miniconda (英語)](https://conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda) のページをご覧ください。</br>
+Anaconda と Miniconda の詳しい違いは [Anaconda or Miniconda (英語)](https://docs.anaconda.com/free/distro-or-miniconda/) のページをご覧ください。</br>
 ※ pip でも Python API をインストールすることができますが、初心者には conda が推奨されています。参考: [ArcGIS API for Python - Install and set up (英語)](https://developers.arcgis.com/python/guide/install-and-set-up/#Disclaimer)
 
 conda をより深く理解したい方は [Getting Started with Conda (英語)](https://conda.io/docs/user-guide/getting-started.html) チュートリアルをご覧ください。
@@ -47,7 +47,7 @@ ArcGIS Pro をインストールした後で環境を確認すると、以下の
 この環境には、Python、[ArcPy](https://www.esrij.com/gis-guide/arcgis-basic/arcpy/) の機能を含む arcgispro パッケージが含まれています。
 
 * `root`</br>
-この環境には、必要最小限の conda、Python、依存するパッケージなどが含まれる Minaconda がインストールされています。
+この環境には、必要最小限の conda、Python、依存するパッケージなどが含まれる Miniconda がインストールされています。
 
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/condalist_Pro.png" width="800px">
@@ -123,7 +123,7 @@ ArcGIS Pro と共にインストールした場合は、Python コマンド　�
 
 `conda install --name <environment_name> --channel <channel_name> <package_name>`
 
-conda コマンドや 他オプションの使用方法の詳細については[パッケージの管理 (英語)](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-packages)を参照してください。
+conda コマンドや 他オプションの使用方法の詳細については[パッケージの管理 (英語)](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html)を参照してください。
 
 > **参考：conda からパッケージをインストールできる仕組み**
 >
