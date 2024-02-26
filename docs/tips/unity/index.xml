@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArcGIS Maps SDK for Unity on ArcGIS Developers 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/</link>
+    <description>Recent content in ArcGIS Maps SDK for Unity on ArcGIS Developers 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>インストールガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/install-and-set-up/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/install-and-set-up/</guid>
+      <description>出典：ArcGIS Maps SDK for Unity - Guide - Install and set up
+このインストール ガイドでは、ArcGIS Maps SDK for Unity のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
+インストールおよびセットアップ方法 ArcGIS Maps SDK for Unity は Unity 用のプラグインです。ArcGIS Maps SDK for Unity を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
+Unity のインストール このプラグインは Unity 2021.3.x と 2022.3.x LTS でサポートしています。インストールされていない場合は、Unity をインストールしてください。
+プラグインのインストール ArcGIS Maps SDK for Unity を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。
+シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています：</description>
+    </item>
+    
+    <item>
+      <title>新規プロジェクトにプラグインを追加</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</guid>
+      <description>出典：ArcGIS Maps SDK for Unity - Guide - Add the plugin to a new project
+ArcGIS Maps SDK for Unity は、ソースコードとサンプルアセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて プロジェクト (Projects) タブを選択し、新しいプロジェクト (New project) ボタンをクリックします。
+  ポップアップウィンドウで、以下を定義します：
+ エディターバージョン：ArcGIS Maps SDK for Unity は Unity 2021.3.x および 2022.3.x LTS をサポートしています。複数の Unity エディターバージョンがインストールされている場合は、ポップアップウィンドウの上部でサポートされているエディターバージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.x) の両方をサポートしています。初めて使用する場合は、Download template ボタンをクリックして、これらのテンプレートをダウンロードする必要があります。HDRP または URP テンプレート以外のテンプレートを選択した場合は、レンダーパイプラインパッケージを手動でインストールします。(レガシービルトインレンダーパイプラインはサポートされていません。) プロジェクト名：プロジェクトに関連するアセット、シーン、その他のファイルを保存するメインプロジェクトフォルダーの名前を設定します。 場所：プロジェクトの保存場所を設定します。デフォルトのプロジェクトの場所は、コンピューターのホームフォルダーに設定されています。    プラグインのインストール Unity パッケージ マネージャー (Package Manager) を使用してプラグインをインストールします。Unity パッケージ マネージャー (Package Manager) の詳細については、Unity ドキュメントのトピック Unity の Package Manager を参照してください。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -19,4 +19,7 @@ alwaysopen = true
 * [ArcGIS API for Python](../tips/python/)
 * [ArcGIS Pro SDK](../tips/prosdk/)
 * [ArcGIS AppStudio](../tips/appstudio/)
+* [ArcGIS Maps SDK for Unity](../tips/unity/)
+* [ArcGIS Maps SDK for Unreal Engine](../tips/unreal-engine/)
+
 
