@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-03-28T15:02:27 JST">
+<meta name="revised" content="2024-03-28T15:18:03 JST">
 <title>Jimu :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -936,13 +936,11 @@ if (!doNotTrack) {
 <ul>
 <li><code>jimu-arcgis</code> パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。</li>
 <li><code>jimu-core</code> パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。</li>
-</ul>
-<!-- - `jimu-layouts` パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 -->
-<ul>
 <li><code>jimu-for-builder</code> パッケージは、ウィジェットの設定ページの開発をサポートしています。</li>
 <li><code>jimu-for-test</code> パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。</li>
 <li><code>jimu-ui</code> パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。</li>
 </ul>
+<!-- - `jimu-layouts` パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 -->
 <p>これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは <code>import</code> するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。<code>lib</code> フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには <code>import</code> しないでください。例えば、<code>jimu-ui</code> の <code>Button</code> コンポーネントを使用する必要がある場合は、<code>import {Button} from 'jimu-ui'</code> ではなく、<code>import {Button} from 'jimu-ui/lib/components/button'</code> のようにインポートする必要があります。</p>
 
 
