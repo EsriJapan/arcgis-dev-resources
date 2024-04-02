@@ -18,9 +18,9 @@ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには�
 
 AMD モジュールの場合は、以下のスクリプト タグを使用します。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+<link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
 
-<script src="https://js.arcgis.com/4.28/">
+<script src="https://js.arcgis.com/4.29/">
 </script>
 ```
 ES モジュールの場合は、ターミナル ウインドウ上で [npm](https://docs.npmjs.com/getting-started) を用いてモジュールをインストールします
@@ -31,7 +31,7 @@ CSSには[@import url](https://developer.mozilla.org/en-US/docs/Web/CSS/@import)
 ```ts
 <* CSS url as a string *>
 
-<@import "https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css";>
+<@import "https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css";>
 </script>
 ```
 詳しくは、[インストールとセットアップ](https://developers.arcgis.com/javascript/latest/install-and-set-up/)をご覧ください。
@@ -44,11 +44,11 @@ CSSには[@import url](https://developer.mozilla.org/en-US/docs/Web/CSS/@import)
 
 {{% /notice %}}
 
-ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。[ダッシュボード](https://developers.arcgis.com/dashboard/)にアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。[グローバルAPIキー](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey)だけでなく、特定のクラスでより細かいAPIキーを使用することもできます。
+ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。[ダッシュボード](https://developers.arcgis.com/dashboard/)にアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。[グローバルAPIキー](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey)だけでなく、特定のクラスでより細かい API キーを使用することもできます。
 
 １ [ダッシュボード](https://developers.arcgis.com/dashboard/)にログインする
 
-２ デフォルトのAPIキーをコピーするか、新しいキーを生成する
+２ デフォルトの API キーをコピーするか、新しいキーを生成する
 
 ## 3.チュートリアル
 [マップの表示(2D)](https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/)

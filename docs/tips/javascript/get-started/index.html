@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-02-26T17:11:01 JST">
+<meta name="revised" content="2024-04-02T13:52:46 JST">
 <title>開発の手順 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -929,25 +929,25 @@ if (!doNotTrack) {
 <h2 id="1インストールとセットアップ">1.インストールとセットアップ</h2>
 <p>ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。</p>
 <p>AMD モジュールの場合は、以下のスクリプト タグを使用します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
 
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.28/&#34;</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>ES モジュールの場合は、ターミナル ウインドウ上で <a href="https://docs.npmjs.com/getting-started">npm</a> を用いてモジュールをインストールします</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#66d9ef">@arcgis</span><span style="color:#f92672">/</span><span style="color:#a6e22e">core</span>
 </code></pre></div><p>CSSには<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">@import url</a>を用います</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#f92672">&lt;*</span> <span style="color:#a6e22e">CSS</span> <span style="color:#a6e22e">url</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">*&gt;</span>
 
-<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css&#34;</span>;<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css&#34;</span>;<span style="color:#f92672">&gt;</span>
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>詳しくは、<a href="https://developers.arcgis.com/javascript/latest/install-and-set-up/">インストールとセットアップ</a>をご覧ください。</p>
 <h2 id="2api-キーの取得">2.API キーの取得</h2>
 <div class="notices note" >
 <p>アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/security/">セキュリティと認証</a>をご覧ください。</p>
 </div>
-<p>ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。<a href="https://developers.arcgis.com/dashboard/">ダッシュボード</a>にアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey">グローバルAPIキー</a>だけでなく、特定のクラスでより細かいAPIキーを使用することもできます。</p>
+<p>ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。<a href="https://developers.arcgis.com/dashboard/">ダッシュボード</a>にアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey">グローバルAPIキー</a>だけでなく、特定のクラスでより細かい API キーを使用することもできます。</p>
 <p>１ <a href="https://developers.arcgis.com/dashboard/">ダッシュボード</a>にログインする</p>
-<p>２ デフォルトのAPIキーをコピーするか、新しいキーを生成する</p>
+<p>２ デフォルトの API キーをコピーするか、新しいキーを生成する</p>
 <h2 id="3チュートリアル">3.チュートリアル</h2>
 <p><a href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-js/">マップの表示(2D)</a></p>
 <p><a href="https://developers.arcgis.com/javascript/latest/tutorials/display-your-location/">現在地の表示(英語)</a></p>
