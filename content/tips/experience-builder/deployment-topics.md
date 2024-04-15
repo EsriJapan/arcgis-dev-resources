@@ -10,7 +10,7 @@ ArcGIS Experience Builder で作成したエクスペリエンスは、ダウン
 ## エクスペリエンスのダウンロード
 エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように `● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" />
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy2.png" width="70%" />
 
 {{% notice tip %}}
 
