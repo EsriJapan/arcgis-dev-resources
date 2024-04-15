@@ -5,22 +5,28 @@ weight = 13
 aliases = ["/experience/deployment-topics/"]
 +++
 
-ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前に[システム要件](https://developers.arcgis.com/experience-builder/guide/requirements)を参照してください。
+ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前に[システム要件](https://www.esrij.com/products/experience-builder-dev/spec/)を参照してください。
 
-## Experience のダウンロード
-Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように `● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
+## エクスペリエンスのダウンロード
+エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように `● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" />
 
-## Experience のデプロイ
-Experience を Web サーバーにデプロイするには、次の手順を実行します。
+{{% notice tip %}}
 
-1. ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。
-2. アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。
-3. アプリを追加して登録します。詳細については、[アプリの追加](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B)と[アプリの登録](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-items.htm#REG_APP)を参照してください。
-4. `AppID` をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある `config.json` ファイルを開きます。
+アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する `web.config` ファイルが付属しており、このデフォルト `web.config` に [ArcGIS Maps SDK for JavaScript](https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/#web-サーバーのホスティング設定) の設定が含まれるようになりました。
+
+{{% /notice %}}
+
+## エクスペリエンスのデプロイ
+エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。
+
+1. ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。
+2. アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。
+3. アプリを追加して登録します。詳細については、[ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90) を参照してください。
+4. `AppID` をコピーし、Experience アプリのルート ディレクトリ (例：<.zip ファイル ルート>\cdn\0\config.json) にある `config.json` ファイルを開きます。
 5. `attributes` オブジェクトの下に `clientId` プロパティを作成します。
-6. `config.json` ファイルの `clientId` プロパティに `AppID` を貼り付けます。再度にファイルを保存します。
+6. `config.json` ファイルの `clientId` プロパティに `AppID` を貼り付けます。再度ファイルを保存します。
 
 ```json
 "attributes": {
@@ -30,3 +36,30 @@ Experience を Web サーバーにデプロイするには、次の手順を実�
 ```
 
 server/app name/index.html にアクセスすることでアプリを利用することができます。
+
+## デプロイの自動化
+Experience Builder サーバーを実行せずにターミナルからアプリの ZIP エクスポートを自動で生成するには、`zipApp` コマンドを使用します。これは自動デプロイのための DevOps ワークフローでよく使用されます。
+
+ターミナルで Experience Builder (Developer Edition) がインストールされた解凍済みのルート ディレクトリ ("client" フォルダーと "server" フォルダーが含まれるディレクトリ) を参照し、次のコマンドを実行します。
+
+```shell
+node -e "require('./server/src/middlewares/dev/apps/app-download.js').zipApp('0', 'app.zip', 'my_client_id');"
+```
+
+- '0' はエクスポートしたいアプリの ID に置き換えてください。
+- 'app.zip' は生成したい ZIP ファイルの名前に置き換えてください。
+- `my_client_id` を ArcGIS Online または ArcGIS Enterprise の有効な `AppID` で置き換えます。詳細については、[ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](https://developers.arcgis.com/experience-builder/guide/install-guide/#create-client-id-using-arcgis-online-or-arcgis-enterprise) を参照してください。
+- 環境変数 `NODE_ENV` が `production` に設定されていることを確認し、最小化された (より小さな) ファイルを生成する production ビルドを作成します。
+
+## サービス ワーカー キャッシュ
+Experience Builder では[サービス ワーカー](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。
+
+1. app ディレクトリで、`cdn/0` を `cdn/1` にリネームします。
+2. アプリに必要なソース コードの修正や変更を行います。
+3. アプリケーションのルート フォルダーで `index.html` を開きます。
+    - `<base href="./cdn/0/"/>` を `<base href="./cdn/1/"/>` に変更します。
+    - `buildNumber = '0'` を `buildNumber = '1'` に変更します。
+
+より良いパフォーマンスのためのキャッシュ ヘッダーの推奨設定は以下のとおりです。
+- `index.html` を 1 分など非常に短い期間キャッシュするか、キャッシュしない。
+- `cdn` フォルダーを 1 年間など長期間キャッシュする。

@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-15T13:28:33 JST">
-<title>デプロイ :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2024-04-15T13:28:34 JST">
+<title>webpack config のオーバーライド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。">
+<meta name="description" content="webpack config をオーバーライドする方法について紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -399,10 +399,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
@@ -482,7 +483,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/">
             webpack config のオーバーライド
@@ -512,7 +513,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
             デプロイ
@@ -904,7 +905,12 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > デプロイ
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > webpack config のオーバーライド
+
+ 
 
  
 
@@ -919,14 +925,7 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#エクスペリエンスのダウンロード">エクスペリエンスのダウンロード</a></li>
-    <li><a href="#エクスペリエンスのデプロイ">エクスペリエンスのデプロイ</a></li>
-    <li><a href="#デプロイの自動化">デプロイの自動化</a></li>
-    <li><a href="#サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -936,7 +935,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>デプロイ</h1>
+    <h1>webpack config のオーバーライド</h1>
   
 
 
@@ -944,55 +943,9 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前に<a href="https://www.esrij.com/products/experience-builder-dev/spec/">システム要件</a>を参照してください。</p>
-<h2 id="エクスペリエンスのダウンロード">エクスペリエンスのダウンロード</h2>
-<p>エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように <code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。</p>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" /></p>
-<div class="notices tip" >
-<p>アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する <code>web.config</code> ファイルが付属しており、このデフォルト <code>web.config</code> に <a href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/#web-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%A8%AD%E5%AE%9A">ArcGIS Maps SDK for JavaScript</a> の設定が含まれるようになりました。</p>
-</div>
-<h2 id="エクスペリエンスのデプロイ">エクスペリエンスのデプロイ</h2>
-<p>エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。</p>
-<ol>
-<li>ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。</li>
-<li>アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。</li>
-<li>アプリを追加して登録します。詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a> を参照してください。</li>
-<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：&lt;.zip ファイル ルート&gt;\cdn\0\config.json) にある <code>config.json</code> ファイルを開きます。</li>
-<li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
-<li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度ファイルを保存します。</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-    <span style="color:#f92672">&#34;portalUrl&#34;</span>: <span style="color:#e6db74">&#34;https://exb.maps.arcgis.com&#34;</span>,
-    <span style="color:#f92672">&#34;clientId&#34;</span>: <span style="color:#e6db74">&#34;EXBAPPsag0XSRtpj&#34;</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-</code></pre></div><p>server/app name/index.html にアクセスすることでアプリを利用することができます。</p>
-<h2 id="デプロイの自動化">デプロイの自動化</h2>
-<p>Experience Builder サーバーを実行せずにターミナルからアプリの ZIP エクスポートを自動で生成するには、<code>zipApp</code> コマンドを使用します。これは自動デプロイのための DevOps ワークフローでよく使用されます。</p>
-<p>ターミナルで Experience Builder (Developer Edition) がインストールされた解凍済みのルート ディレクトリ (&ldquo;client&rdquo; フォルダーと &ldquo;server&rdquo; フォルダーが含まれるディレクトリ) を参照し、次のコマンドを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node -e <span style="color:#e6db74">&#34;require(&#39;./server/src/middlewares/dev/apps/app-download.js&#39;).zipApp(&#39;0&#39;, &#39;app.zip&#39;, &#39;my_client_id&#39;);&#34;</span>
-</code></pre></div><ul>
-<li>&lsquo;0&rsquo; はエクスポートしたいアプリの ID に置き換えてください。</li>
-<li>&lsquo;app.zip&rsquo; は生成したい ZIP ファイルの名前に置き換えてください。</li>
-<li><code>my_client_id</code> を ArcGIS Online または ArcGIS Enterprise の有効な <code>AppID</code> で置き換えます。詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/install-guide/#create-client-id-using-arcgis-online-or-arcgis-enterprise">ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a> を参照してください。</li>
-<li>環境変数 <code>NODE_ENV</code> が <code>production</code> に設定されていることを確認し、最小化された (より小さな) ファイルを生成する production ビルドを作成します。</li>
-</ul>
-<h2 id="サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</h2>
-<p>Experience Builder では<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">サービス ワーカー</a>を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。</p>
-<ol>
-<li>app ディレクトリで、<code>cdn/0</code> を <code>cdn/1</code> にリネームします。</li>
-<li>アプリに必要なソース コードの修正や変更を行います。</li>
-<li>アプリケーションのルート フォルダーで <code>index.html</code> を開きます。
-<ul>
-<li><code>&lt;base href=&quot;./cdn/0/&quot;/&gt;</code> を <code>&lt;base href=&quot;./cdn/1/&quot;/&gt;</code> に変更します。</li>
-<li><code>buildNumber = '0'</code> を <code>buildNumber = '1'</code> に変更します。</li>
-</ul>
-</li>
-</ol>
-<p>より良いパフォーマンスのためのキャッシュ ヘッダーの推奨設定は以下のとおりです。</p>
-<ul>
-<li><code>index.html</code> を 1 分など非常に短い期間キャッシュするか、キャッシュしない。</li>
-<li><code>cdn</code> フォルダーを 1 年間など長期間キャッシュする。</li>
-</ul>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/override-webpack-config/">Override webpack config</a></p>
+<p>Experience Builder Developer Edition バージョン 1.9 から、カスタム ウィジェットの webpack config のオーバーライドがサポートされるようになりました。</p>
+<p>これを行うには、<code>client/webpack/widget-webpack-override.js</code> にオーバーライド処理を配置するだけです。このファイルによってエクスポートされた関数では、デフォルトの webpack config オブジェクトが入力パラメーターとして渡され、このオブジェクトを変更して返却することができます。</p>
 
 
     
@@ -1004,8 +957,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" title="デプロイ パターン"> <i class="fa fa-chevron-left"></i><label>デプロイ パターン</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/tutorials/" title="チュートリアル" style="margin-right: 0px;"><label>チュートリアル</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" title="コードリンティング"> <i class="fa fa-chevron-left"></i><label>コードリンティング</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/" title="dist フォルダーへのファイルのコピー" style="margin-right: 0px;"><label>dist フォルダーへのファイルのコピー</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

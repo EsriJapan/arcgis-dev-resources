@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-15T13:28:33 JST">
-<title>デプロイ :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2024-04-15T13:28:34 JST">
+<title>ウィジェット間のコードの共有 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。">
+<meta name="description" content="ウィジェット間で同じコードを共有して利用する方法を紹介します。">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -399,10 +399,11 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
@@ -496,7 +497,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/">
             ウィジェット間のコードの共有
@@ -512,7 +513,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
             デプロイ
@@ -904,7 +905,12 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > デプロイ
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェット間のコードの共有
+
+ 
 
  
 
@@ -921,10 +927,8 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#エクスペリエンスのダウンロード">エクスペリエンスのダウンロード</a></li>
-    <li><a href="#エクスペリエンスのデプロイ">エクスペリエンスのデプロイ</a></li>
-    <li><a href="#デプロイの自動化">デプロイの自動化</a></li>
-    <li><a href="#サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</a></li>
+    <li><a href="#ダイナミック-ローディング">ダイナミック ローディング</a></li>
+    <li><a href="#共有エントリー">共有エントリー</a></li>
   </ul>
 </nav>
         </div>
@@ -936,7 +940,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>デプロイ</h1>
+    <h1>ウィジェット間のコードの共有</h1>
   
 
 
@@ -944,55 +948,47 @@ if (!doNotTrack) {
     
     
     
-    <p>ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前に<a href="https://www.esrij.com/products/experience-builder-dev/spec/">システム要件</a>を参照してください。</p>
-<h2 id="エクスペリエンスのダウンロード">エクスペリエンスのダウンロード</h2>
-<p>エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように <code>● (3 つのドット)</code> をクリックして <code>ダウンロード</code> をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。</p>
-<p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy.png" width="70%" /></p>
-<div class="notices tip" >
-<p>アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する <code>web.config</code> ファイルが付属しており、このデフォルト <code>web.config</code> に <a href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/#web-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%A8%AD%E5%AE%9A">ArcGIS Maps SDK for JavaScript</a> の設定が含まれるようになりました。</p>
-</div>
-<h2 id="エクスペリエンスのデプロイ">エクスペリエンスのデプロイ</h2>
-<p>エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。</p>
-<ol>
-<li>ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。</li>
-<li>アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。</li>
-<li>アプリを追加して登録します。詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/#1-2-arcgis-onlinearcgis-enterprise-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F-client-id-%E3%81%AE%E4%BD%9C%E6%88%90">ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a> を参照してください。</li>
-<li><code>AppID</code> をコピーし、Experience アプリのルート ディレクトリ (例：&lt;.zip ファイル ルート&gt;\cdn\0\config.json) にある <code>config.json</code> ファイルを開きます。</li>
-<li><code>attributes</code> オブジェクトの下に <code>clientId</code> プロパティを作成します。</li>
-<li><code>config.json</code> ファイルの <code>clientId</code> プロパティに <code>AppID</code> を貼り付けます。再度ファイルを保存します。</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-    <span style="color:#f92672">&#34;portalUrl&#34;</span>: <span style="color:#e6db74">&#34;https://exb.maps.arcgis.com&#34;</span>,
-    <span style="color:#f92672">&#34;clientId&#34;</span>: <span style="color:#e6db74">&#34;EXBAPPsag0XSRtpj&#34;</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-</code></pre></div><p>server/app name/index.html にアクセスすることでアプリを利用することができます。</p>
-<h2 id="デプロイの自動化">デプロイの自動化</h2>
-<p>Experience Builder サーバーを実行せずにターミナルからアプリの ZIP エクスポートを自動で生成するには、<code>zipApp</code> コマンドを使用します。これは自動デプロイのための DevOps ワークフローでよく使用されます。</p>
-<p>ターミナルで Experience Builder (Developer Edition) がインストールされた解凍済みのルート ディレクトリ (&ldquo;client&rdquo; フォルダーと &ldquo;server&rdquo; フォルダーが含まれるディレクトリ) を参照し、次のコマンドを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node -e <span style="color:#e6db74">&#34;require(&#39;./server/src/middlewares/dev/apps/app-download.js&#39;).zipApp(&#39;0&#39;, &#39;app.zip&#39;, &#39;my_client_id&#39;);&#34;</span>
-</code></pre></div><ul>
-<li>&lsquo;0&rsquo; はエクスポートしたいアプリの ID に置き換えてください。</li>
-<li>&lsquo;app.zip&rsquo; は生成したい ZIP ファイルの名前に置き換えてください。</li>
-<li><code>my_client_id</code> を ArcGIS Online または ArcGIS Enterprise の有効な <code>AppID</code> で置き換えます。詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/install-guide/#create-client-id-using-arcgis-online-or-arcgis-enterprise">ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a> を参照してください。</li>
-<li>環境変数 <code>NODE_ENV</code> が <code>production</code> に設定されていることを確認し、最小化された (より小さな) ファイルを生成する production ビルドを作成します。</li>
-</ul>
-<h2 id="サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</h2>
-<p>Experience Builder では<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">サービス ワーカー</a>を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。</p>
-<ol>
-<li>app ディレクトリで、<code>cdn/0</code> を <code>cdn/1</code> にリネームします。</li>
-<li>アプリに必要なソース コードの修正や変更を行います。</li>
-<li>アプリケーションのルート フォルダーで <code>index.html</code> を開きます。
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/share-code-between-widgets/">Share code between widgets</a></p>
+<p>1 つのビジネス ドメインに対して複数のウィジェットを開発する場合、それらの間でコードを共有したいケースがあります。このページでは、このような場合に Experience Builder がどのように役立つかを紹介します。</p>
+<p>Experience Builder には、ウィジェット間でコードを共有するための 2 つの方法が用意されています。</p>
 <ul>
-<li><code>&lt;base href=&quot;./cdn/0/&quot;/&gt;</code> を <code>&lt;base href=&quot;./cdn/1/&quot;/&gt;</code> に変更します。</li>
-<li><code>buildNumber = '0'</code> を <code>buildNumber = '1'</code> に変更します。</li>
+<li><b>ダイナミック ローディング</b>：この方法は実装が簡単です。しかし、共有するコードを動的に読み込む必要があるため、よく使われる ES6 の <code>import {} from ''</code> は使用できません。 また、共有するコードは &lsquo;chunks&rsquo; フォルダーにコンパイルされますが、このフォルダーには多数のファイルが含まれているため、メンテナンスが困難になる可能性があります。</li>
+<li><b>共有エントリー</b>：この方法では、標準の ES6 の import を使用して共有コードを読み込むことができ、よりクリーンな構造を提供します。ただし、追加のセットアップ手順が必要になります。</li>
 </ul>
-</li>
-</ol>
-<p>より良いパフォーマンスのためのキャッシュ ヘッダーの推奨設定は以下のとおりです。</p>
+<h2 id="ダイナミック-ローディング">ダイナミック ローディング</h2>
+<p>この方法でウィジェット間でコードを共有する必要がある場合、ベスト プラクティスはフォルダーを作成することです。コードを共有する必要があるウィジェットをフォルダーに配置し、共有コードを格納する共通フォルターを作成します。フォルダー構造は次のようになります。</p>
+<pre><code>widgets/
+  your-folder/
+    common/
+    widget1/
+    widget2/
+</code></pre><p>common フォルダーでは、<code>export const sharedFunction = () =&gt; {}</code> のように一般的な ES6 の export を使って共有するコードをエクスポートできます。widget1 と widget2 フォルダーでは、<code>import('../../../common/my-module').then()</code> のようにダイナミック ローディングを使用して共有するコードを読み込めます。</p>
+<p>コンパイル後、共有コードは <code>widgets/chunks</code> フォルダーに配置されます。</p>
+<p>完成例については、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/share-code-chunk/">ダイナミック ローディング</a>を参照してください。</p>
+<h2 id="共有エントリー">共有エントリー</h2>
+<p>この方法でウィジェット間でコードを共有する必要がある場合は、以下の手順を行います。</p>
 <ul>
-<li><code>index.html</code> を 1 分など非常に短い期間キャッシュするか、キャッシュしない。</li>
-<li><code>cdn</code> フォルダーを 1 年間など長期間キャッシュする。</li>
+<li><code>widgets</code> フォルダーの下に <code>shared-code</code> フォルダーを作成します。フォルダー名は <code>shared-code</code> でなければならないことに注意してください。</li>
+<li>共有するコードを <code>shared-code</code> フォルダーに配置します。フォルダー内のすべての <code>.ts</code> および <code>.tsx</code> ファイルは共有エントリーとしてコンパイルされます。ベスト プラクティスのフォルダー構造は以下の通りです。</li>
 </ul>
+<pre><code>shared-code/
+  entry1.ts
+  entry2.tsx
+  lib/
+    entry1/
+      module1.ts
+      module2.ts
+    entry2/
+      module1.ts
+      module2.ts
+</code></pre><p>上記のフォルダー構造では、<code>entry1</code> と <code>entry2</code> はコンパイル時に自動的に作成されます。</p>
+<p>国際化をサポートするには、<code>shared-code</code> フォルダー内、または各 entry フォルダー内に、例えば <code>shared-code/translations</code> や <code>shared-code/lib/entry1/translations</code> のように、<code>translations</code> フォルダーを作成してください。<code>translations</code> フォルダーの構造は、ウィジェットの <code>translations</code> フォルダーと同じです。</p>
+<ul>
+<li>最後に、一般的な ES6 の import を使用して、次のように共有コードを読み込みます。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">sampleFunction</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;widgets/shared-code/entry1&#39;</span>
+</code></pre></div><p>コンパイル後、共有エントリーは <code>widgets/shared-code</code> フォルダーに配置されます。</p>
+<p>完成例については、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/share-code-entry/">共有エントリー</a>を参照してください。</p>
 
 
     
@@ -1004,8 +1000,8 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" title="デプロイ パターン"> <i class="fa fa-chevron-left"></i><label>デプロイ パターン</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/tutorials/" title="チュートリアル" style="margin-right: 0px;"><label>チュートリアル</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/" title="dist フォルダーへのファイルのコピー"> <i class="fa fa-chevron-left"></i><label>dist フォルダーへのファイルのコピー</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" title="デプロイ パターン" style="margin-right: 0px;"><label>デプロイ パターン</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
