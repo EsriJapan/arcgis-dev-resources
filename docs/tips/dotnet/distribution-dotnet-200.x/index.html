@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-19T10:38:37 JST">
+<meta name="revised" content="2024-04-19T12:57:14 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1215,17 +1215,17 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 <p>ArcGIS Runtime の配布パックの購入については<a href="https://www.esrij.com/form/inquiry/">ESRIジャパン</a>にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。</p>
 <p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// 取得したライセンス文字列でアプリのライセンスを設定します
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">string</span> licenseKey = <span style="color:#e6db74">&#34;runtimestandard,1000,rud#########,day-month-year,####################&#34;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">string</span> licenseKey = <span style="color:#e6db74">&#34;runtimelite,1000,rud#########,day-month-year,####################&#34;</span>;
 ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 </code></pre></div><p>Analysis Extension ライセンスを認証する場合は以下のコードを使用します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 基本ライセンスとエクステンション ライセンスのリストを設定します
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">licenseKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;runtimestandard,1000,rud#########,day-month-year,####################&#34;</span>;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">string</span> <span style="color:#a6e22e">licenseKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;runtimelite,1000,rud#########,day-month-year,####################&#34;</span>;
 <span style="color:#a6e22e">string</span>[] <span style="color:#a6e22e">extensions</span> <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;runtimeanalysis,1000,rud#########,day-month-year,####################&#34;</span> };
 
-<span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>, <span style="color:#a6e22e">extensions</span>);
+<span style="color:#a6e22e">Esri</span>.<span style="color:#a6e22e">ArcGISRuntime</span>.<span style="color:#a6e22e">ArcGISRuntimeEnvironment</span>.<span style="color:#a6e22e">SetLicense</span>(<span style="color:#a6e22e">licenseKey</span>, <span style="color:#a6e22e">extensions</span>);
 </code></pre></div><h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
-<p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、<a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html">AuthenticationManager</a> を構成します。</p>
+<p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、<a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html"><code>AuthenticationManager</code></a> を構成します。（<a href="https://developers.arcgis.com/net/security-and-authentication/">Authentication Manager の使用</a>を参照）</p>
 <p>認証方法の詳細については、「<a href="https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app">How to use named user login in your app（英語）</a>」や「<a href="https://developers.arcgis.com/net/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// ポータルの認証情報をユーザーに要求します (arcgis.com の OAuth 認証情報のリクエスト)
 </span><span style="color:#75715e"></span>CredentialRequestInfo loginInfo = <span style="color:#66d9ef">new</span> CredentialRequestInfo();

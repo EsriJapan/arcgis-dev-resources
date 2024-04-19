@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-19T10:38:37 JST">
+<meta name="revised" content="2024-04-19T12:57:14 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -958,53 +958,63 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Maps SDK for .NET - Tutorials - <a href="https://developers.arcgis.com/net/maps-2d/tutorials/display-a-map/">Display a map</a></p>
 <h2 id="マップを表示する">マップを表示する</h2>
 <p>このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet100.0/display_map.png" width="650px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet100.0/display_map_jp.png" width="650px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。</p>
 <p>このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
+<div class="notices note" >
+<p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services</a> guide の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/">Basemap layers</a> を参照してください。</p>
+</div>
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
-<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">無料でサインアップ</a> してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://developers.arcgis.com/net/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
 </ol>
-<p>必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。</p>
+<p>必要に応じて、<a href="../../../tips/dotnet/install-dotnet-200.x/">ArcGIS Maps SDK for .NET をインストール</a>して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。</p>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-visual-studio-プロジェクトを作成する">新しい Visual Studio プロジェクトを作成する</h3>
 <p>ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
-このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成することを目的としています。</p>
-<p>注: .NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WP Fと UWP のプロジェクトは利用できません。詳しくは、<a href="https://developers.arcgis.com/net/reference/system-requirements/">システム要件</a>をご覧ください。</p>
+このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成する手順を説明します。</p>
+<div class="notices note" >
+<p>.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WP Fと UWP のプロジェクトは利用できません。詳しくは、<a href="https://developers.arcgis.com/net/reference/system-requirements/">システム要件</a>をご覧ください。</p>
+</div>
 <ol>
 <li>Visual Studio を起動し、新しいプロジェクトを作成します。
 <ul>
 <li>Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします</li>
-<li>C# 用の「WPF アプリケーション」テンプレートを選択します。テンプレートが表示されていない場合は、テンプレートの検索テキストボックスに「WPF アプリケーション」と入力すると、テンプレートを見つけることができます。</li>
+<li><b>C#</b> 用の [WPF アプリケーション]テンプレートを選択します。テンプレートが表示されていない場合は、テンプレートの検索テキストボックスに <code>WPF アプリケーション</code> と入力すると、テンプレートを見つけることができます。</li>
 <li>[次へ] をクリックします。</li>
 <li>[新しいプロジェクトを構成します] 画面で必要な値を入力します。
 <ul>
-<li>プロジェクト名: DisplayAMap</li>
-<li>場所: 任意のフォルダーを選択</li>
+<li>プロジェクト名: <code>DisplayAMap</code></li>
+<li>場所: <code>任意のフォルダーを選択</code></li>
 </ul>
 </li>
 <li>[次へ] をクリックします。
 <ul>
-<li>フレームワークで「.NET 8.0 (長期的なサポート)」を選択します。</li>
+<li>フレームワークで <code>.NET 8.0 (長期的なサポート)</code> を選択します。</li>
 </ul>
 </li>
 <li>[作成] をクリックしてプロジェクトを作成します。</li>
 </ul>
 </li>
 </ol>
+<p>Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET には、サポートされる .NET プラットフォームごとにプロジェクト テンプレート セットが用意されています。これらのテンプレートは、Model-View-ViewModel（MVVM）デザイン パターンに従っています。ArcGIS Maps SDK for .NET Visual Studio Extension をインストールして、テンプレートを Visual Studio に追加します（Windows のみ）。詳細については、<a href="../../../tips/dotnet/install-dotnet-200.x/">インストールとセットアップ</a>を参照してください。</p>
+<div class="notices tip" >
 <p>このチュートリアルの手順は、WPF for .NET（Visual Studio 2022 以降が必要）を使用してアプリケーションを作成することに特化しています。サポートされている他の .NET プラットフォームでアプリを完成させるには、ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成できます。Visual Studio テンプレートの 1 つから開始する場合、ガイドに記載されているコードとプロジェクトに含まれるコードにいくつかの違いがあることがあります。</p>
+</div>
 <h3 id="api-の参照を追加する">API の参照を追加する</h3>
-<p>注: ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成した場合、必要な NuGet パッケージが既にプロジェクトに追加されています。</p>
+<div class="notices note" >
+<p>ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプロジェクトを作成した場合、必要な NuGet パッケージが既にプロジェクトに追加されています。</p>
+</div>
 <ol>
 <li>
-<p><a href="https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio">NuGet パッケージをインストール</a>して、API への参照を追加します。</p>
+<p><a href="https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio">NuGet パッケージをインストール</a>して、API への参照を追加します。</p>
 <ul>
-<li>ソリューション エクスプローラーで、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。</li>
-<li>[NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に「nuget.org」が選択されていることを確認します。</li>
-<li>[参照] タブを選択して、[検索] テキスト ボックスに「ArcGIS Maps SDK」と入力します。</li>
-<li>検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは「Esri.ArcGISRuntime.WPF」NuGet パッケージを選択します。</li>
+<li><b>ソリューション エクスプローラー</b>で、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。</li>
+<li>[NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に <code>nuget.org</code> (右上)が選択されていることを確認します。</li>
+<li>[参照] タブを選択して、<b>ArcGIS Maps SDK</b> を検索します。</li>
+<li>検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは<b>Esri.ArcGISRuntime.WPF</b> NuGet パッケージを選択します。</li>
 <li>[バージョン] にパッケージの「最新の安定版&hellip;」が選択されていることを確認します。</li>
 <li>[インストール] をクリックします。</li>
 <li>NuGet は、パッケージの依存関係または競合を自動的に解決します。デフォルトでは、[変更のプレビュー] ダイアログが表示されます。 変更を確認し [OK] をクリックしてパッケージのインストールを続行します。</li>
@@ -1014,13 +1024,14 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p>Visual Studio エラー リストに「The &lsquo;Esri.ArcGISRuntime.WPF&rsquo; nuget package cannot be used to target &lsquo;net8.0-windows&rsquo;. Target &lsquo;net8.0-windows10.0.19041.0&rsquo; or later instead.」のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。</p>
+<p>Visual Studio エラー リストに <code>The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net8.0-windows'. Target 'net8.0-windows10.0.19041.0' or later instead.</code> のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
+*</p>
 <ul>
 <li>
-<p>ソリューション エクスプローラーで、ツリー ビューの DisplayAMap プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。</p>
+<p><b>ソリューション エクスプローラー</b>で、ツリー ビューの <b>DisplayAMap</b> プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。</p>
 </li>
 <li>
-<p>TargetFramework 要素を &ldquo;net8.0-windows10.0.19041.0&rdquo;（またはそれ以上）で更新します。</p>
+<p><code>&lt;TargetFramework&gt;</code> 要素を <code>net8.0-windows10.0.19041.0</code>（またはそれ以上）で更新します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;PropertyGroup&gt;
 &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
 &lt;TargetFramework&gt;net8.<span style="color:#ae81ff">0</span>-windows10.<span style="color:#ae81ff">0.19041</span>.<span style="color:#ae81ff">0</span>&lt;/TargetFramework&gt;
@@ -1028,22 +1039,25 @@ if (!doNotTrack) {
 &lt;/PropertyGroup&gt;
 </code></pre></div></li>
 <li>
-<p>プロジェクト ファイル (DisplayAMap) を保存して閉じます。</p>
+<p>プロジェクト ファイル (<code>DisplayAMap</code>) を保存して閉じます。</p>
 </li>
 </ul>
 </li>
 </ol>
 <h3 id="api-キーを取得する">API キーを取得する</h3>
-<p>ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスするには API キーが必要です。
-まだ取得していない場合は、<a href="https://developers.arcgis.com/dashboard/">ArcGIS Developers のダッシュボード</a>に移動してAPIキーを取得します。</p>
+<p>ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスするには API キーが必要です。</p>
+<p>まだ取得していない場合は、<a href="https://developers.arcgis.com/dashboard/">ArcGIS Developers のダッシュボード</a>に移動してAPIキーを取得します。</p>
+<p>以下では、このAPIキーを使用します。</p>
 <h3 id="アプリで-api-キーを設定する">アプリで API キーを設定する</h3>
 <ol>
 <li>
-<p>ソリューション エクスプローラーで、App.xaml のノードを展開し、App.xaml.cs をダブルクリックして開きます。</p>
+<p><b>ソリューション エクスプローラー</b>で、<b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。</p>
 </li>
 <li>
-<p>App クラスで、OnStartup() 関数のオーバーライドを追加して、ArcGISRuntimeEnvironment で ApiKey プロパティを設定します。</p>
-<p>注: API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。</p>
+<p>App クラスで、<code>OnStartup()</code> 関数のオーバーライドを追加して、<a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html"><code>ArcGISRuntimeEnvironment</code></a> で <code>ApiKey</code> プロパティを設定します。</p>
+ <div class="notices note" >
+<p>API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。</p>
+ </div>
 <p>App.xaml.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> : Application
 {
@@ -1059,26 +1073,28 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 <li>
-<p>App.xaml.cs ファイルを保存して閉じます。</p>
+<p><code>App.xaml.cs</code> ファイルを保存して閉じます。</p>
 </li>
 </ol>
 <h3 id="アプリ-ロジックを保存するビュー-モデルを作成する">アプリ ロジックを保存するビュー モデルを作成する</h3>
 <p>このアプリは、以降のすべてのチュートリアルで使用する基盤を構築するためのものです。堅固な設計で構築することをお勧めします。</p>
-<p>Model-View-ViewModel (MVVM) デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、「モデル」はアプリで消費されるデータを表し、「ビュー」はユーザー インターフェースであり、「ビューモデル」にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。</p>
+<p><b>Model-View-ViewModel (MVVM)</b> デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、<code>モデル</code>はアプリで消費されるデータを表し、<code>ビュー</code> はユーザー インターフェースであり、<code>ビューモデル</code> にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。</p>
 <p>MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。</p>
-<p>注: すべての ArcGIS Maps SDK for .NET プロジェクト テンプレートは、MVVM デザインパターンを使用しています。</p>
+<div class="notices note" >
+<p>すべての ArcGIS Maps SDK for .NET プロジェクト テンプレートは、MVVM デザインパターンを使用しています。</p>
+</div>
 <ol>
 <li>
 <p>プロジェクトのビュー モデルを定義する新しいクラスを追加します。</p>
 <ul>
 <li>[プロジェクト] メニュー &gt; [クラスの追加&hellip;] をクリックします。</li>
-<li>新しいクラスに MapViewModel.cs と名前を付けます。</li>
+<li>新しいクラスに <code>MapViewModel.cs</code> と名前を付けます。</li>
 <li>[追加] をクリックして新しいクラスを作成し、プロジェクトに追加します。</li>
 <li>新しいクラスが VisualStudio で開きます。</li>
 </ul>
 </li>
 <li>
-<p>必要な using ステートメントをビュー モデルに追加します。</p>
+<p>必要な <code>using</code> ステートメントをビュー モデルに追加します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -1091,8 +1107,8 @@ if (!doNotTrack) {
 <span style="color:#75715e">// 追加終了
 </span></code></pre></div></li>
 <li>
-<p>MapViewModel クラスに INotifyPropertyChanged インターフェイスを実装します。</p>
-<p>このインターフェイスは、ビュー モデルのプロパティが変更されたことをクライアント (ビュー) に通知するために使用される PropertyChanged イベントを定義します。</p>
+<p>MapViewModel クラスに <code>INotifyPropertyChanged</code> インターフェイスを実装します。</p>
+<p>このインターフェイスは、ビュー モデルのプロパティが変更されたことをクライアント (ビュー) に通知するために使用される <code>PropertyChanged</code> イベントを定義します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> DisplayAMap
 {
@@ -1105,14 +1121,14 @@ if (!doNotTrack) {
 }
 </code></pre></div></li>
 <li>
-<p>MapViewModel クラス内に、PropertyChanged イベントを実装するコードを追加します。
+<p><code>MapViewModel</code> クラス内に、<code>PropertyChanged</code> イベントを実装するコードを追加します。
 ビュー モデルのプロパティが変更されると、OnPropertyChanged の呼び出しにより、このイベントが発生します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
 {
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
-    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> OnPropertyChanged([CallerMemberName] <span style="color:#66d9ef">string</span> propertyName = <span style="color:#66d9ef">null</span>)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler? PropertyChanged;
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> OnPropertyChanged([CallerMemberName] <span style="color:#66d9ef">string</span> propertyName = <span style="color:#e6db74">&#34;&#34;</span>)
     {
         PropertyChanged?.Invoke(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">new</span> PropertyChangedEventArgs(propertyName));
     }
@@ -1120,10 +1136,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 <li>
-<p>ビュー モデルに <a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Map.html">Map</a> オブジェクトを公開する Map という新しいプロパティを定義します。
-プロパティが設定されると、OnPropertyChanged を呼び出します。</p>
+<p>ビュー モデルに <a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Map.html"><code>Map</code></a> オブジェクトを公開する <code>Map</code> という新しいプロパティを定義します。
+プロパティが設定されると、<code>OnPropertyChanged</code> を呼び出します。</p>
 <p>MapViewModel.cs</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler? PropertyChanged;
     <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> OnPropertyChanged([CallerMemberName] <span style="color:#66d9ef">string</span> propertyName = <span style="color:#66d9ef">null</span>)
     {
         PropertyChanged?.Invoke(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">new</span> PropertyChangedEventArgs(propertyName));
@@ -1144,8 +1160,8 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 <li>
-<p>MapViewModel クラスに SetupMap という関数を追加します。この関数は、新しいマップを作成して Map プロパティを設定します。
-マップは、地形 ベクタータイル ベースマップを使用します。</p>
+<p><code>MapViewModel</code> クラスに <code>SetupMap</code> という関数を追加します。この関数は、新しいマップを作成して <code>Map</code> プロパティを設定します。</p>
+<p>マップは、地形 ベクタータイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">private</span> Map _map;
     <span style="color:#66d9ef">public</span> Map Map
@@ -1161,15 +1177,19 @@ if (!doNotTrack) {
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> SetupMap()
     {
+        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。
+</span><span style="color:#75715e"></span>        BasemapStyleParameters bsp = <span style="color:#66d9ef">new</span> BasemapStyleParameters();
+        bsp.SpecificLanguage = System.Globalization.CultureInfo.CreateSpecificCulture(<span style="color:#e6db74">&#34;ja&#34;</span>);
+        Basemap basemap = <span style="color:#66d9ef">new</span> Basemap(BasemapStyle.ArcGISTopographic, bsp);
         <span style="color:#75715e">//地形 ベクタータイル ベースマップを使用して新しいマップを作成します。
-</span><span style="color:#75715e"></span>        Map = <span style="color:#66d9ef">new</span> Map(BasemapStyle.ArcGISTopographic);
+</span><span style="color:#75715e"></span>        Map = <span style="color:#66d9ef">new</span> Map(basemap);
     }
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 <li>
-<p>MapViewModel が新規にインスタンス化された際に、SetupMap 関数を呼び出すコンストラクターを追加します。
-MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、クラス コンストラクターが実行されます。これはクラスが初期化された時に実行する必要があるコードを追加するのに良い場所です。</p>
+<p><code>MapViewModel</code> が新規にインスタンス化された際に、<code>SetupMap</code> 関数を呼び出すコンストラクターを追加します。</p>
+<p><code>MapViewModel newMapVM = new MapViewModel();</code> のようなコードを書くと、クラス コンストラクターが実行されます。これはクラスが初期化された時に実行する必要があるコードを追加するのに良い場所です。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MapViewModel</span> : INotifyPropertyChanged
 {
@@ -1180,23 +1200,23 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
     }
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler PropertyChanged;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">event</span> PropertyChangedEventHandler? PropertyChanged;
     <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> OnPropertyChanged([CallerMemberName] <span style="color:#66d9ef">string</span> propertyName = <span style="color:#66d9ef">null</span>)
     {
         PropertyChanged?.Invoke(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">new</span> PropertyChangedEventArgs(propertyName));
     }
 </code></pre></div></li>
 </ol>
-<p>これで MapViewModel が完成しました。</p>
-<p>MVVM デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成したビュー モデルのコードは、通常、サポートされているすべての .NET プラットフォームで動作します。</p>
-<p>次に、プロジェクトにビューを設定して、ビュー モデルを使用します。</p>
+<p>これで <code>MapViewModel</code> が完成しました。</p>
+<p><b>MVVM</b> デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成した <code>ビュー モデル</code> のコードは、通常、サポートされているすべての .NET プラットフォームで動作します。</p>
+<p>次に、プロジェクトに <code>ビュー</code> を設定して、ビュー モデルを使用します。</p>
 <h3 id="マップ-ビューを追加する">マップ ビューを追加する</h3>
-<p><a href="https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html">MapView</a> コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、MapViewModel で定義したマップを使用するように設定します。</p>
+<p><a href="https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html"><code>MapView</code></a> コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、<code>MapViewModel</code> で定義したマップを使用するように設定します。</p>
 <ol>
 <li>
 <p>必要な XML 名前空間とリソースを追加します。</p>
 <ul>
-<li>MainWindow.xaml を開き、XAML ビューに切り替えます。</li>
+<li><code>MainWindow.xaml</code> を開き、<b>XAML</b> ビューに切り替えます。</li>
 <li>既存の名前空間の宣言内に、ArcGIS コントロールの esri XML 名前空間を追加します。</li>
 <li>MapViewModel インスタンスを静的リソースとして定義する XAML を追加します。</li>
 </ul>
@@ -1225,10 +1245,10 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
     <span style="color:#f92672">&lt;/Grid&gt;</span>
 </code></pre></div></li>
 <li>
-<p><a href="https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html">MapView</a> コントロールを MainWindow.xaml に追加し、MapViewModel にバインドします。</p>
+<p><a href="https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html"><code>MapView</code></a> コントロールを <code>MainWindow.xaml</code> に追加し、<code>MapViewModel</code> にバインドします。</p>
 <ul>
-<li>「MainMapView」という名前の MapView コントロールを定義する XAML を追加します。</li>
-<li>データ バインディングを使用して、MapViewModel リソースを使用し MapView コントロールの Map プロパティを設定します。</li>
+<li><code>MainMapView</code> という名前の <code>MapView</code> コントロールを定義する XAML を追加します。</li>
+<li>データ バインディングを使用して、<code>MapViewModel</code> リソースを使用しコントロールの <code>Map</code> プロパティを設定します。</li>
 </ul>
 <p>MainWindow.xaml</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Window.Resources&gt;</span>
@@ -1246,7 +1266,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 <p>ウィンドウの読み込み時にマップ ビューの視点 (ビュー ポイント) を設定します。富士山を中心にマップを表示するための、位置と縮尺を定義します。</p>
 <ol>
 <li>
-<p>MainWindow.xaml.cs を開きます。 これは、MainWindow.xaml に関連付けられたコードと、それが定義するユーザー インターフェイス要素を含むコード ビハインド ファイルです。</p>
+<p><code>MainWindow.xaml.cs</code> を開きます。 これは、<code>MainWindow.xaml</code> に関連付けられたコードと、それが定義するユーザー インターフェイス要素を含むコード ビハインド ファイルです。</p>
 </li>
 <li>
 <p>必要な using ステートメントを追加します。</p>
@@ -1263,7 +1283,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 {
 </code></pre></div></li>
 <li>
-<p>MainWindow のコンストラクターで、新しい <a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html">Viewpoint</a> を定義するコードを追加し、マップ ビューに適用します。</p>
+<p><code>MainWindow</code> のコンストラクターで、新しい <a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html"><code>Viewpoint</code></a> を定義するコードを追加し、マップ ビューに適用します。</p>
 <p>MainWindow.xaml.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> MainWindow()
 {
@@ -1279,7 +1299,7 @@ MapViewModel newMapVM = new MapViewModel(); のようなコードを書くと、
 </code></pre></div></li>
 </ol>
 <h3 id="アプリを実行する">アプリを実行する</h3>
-<p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの [F5] キーを押して) アプリを実行します。</p>
+<p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの <b>&lt;F5&gt;</b> キーを押して) アプリを実行します。</p>
 <p>富士山を中心に、地形 ベクタータイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
 <p>完成版のプロジェクトは<a href="https://developers.arcgis.com/net/zips/display-a-map.zip">こちら</a>からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。</p>
 <h2 id="web-マップを表示する">Web マップを表示する</h2>
