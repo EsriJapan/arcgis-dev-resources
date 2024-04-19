@@ -152,5 +152,42 @@ const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon ico
  これらの ESLint のルールでコードをチェックしたい場合は、client フォルダで、コマンドラインから、npm run lint. を実行します。また、ESLint 拡張機能をコードエディタにインストールすることもできます。 この ESLint のルールを無視したい場合は、以下のどちらかをお試しください。  コードエディタの ESLint 拡張を無効にする client/.eslintrc.js ファイルを削除する    </description>
     </item>
     
+    <item>
+      <title>webpack config のオーバーライド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Override webpack config
+Experience Builder Developer Edition バージョン 1.9 から、カスタム ウィジェットの webpack config のオーバーライドがサポートされるようになりました。
+これを行うには、client/webpack/widget-webpack-override.js にオーバーライド処理を配置するだけです。このファイルによってエクスポートされた関数では、デフォルトの webpack config オブジェクトが入力パラメーターとして渡され、このオブジェクトを変更して返却することができます。</description>
+    </item>
+    
+    <item>
+      <title>dist フォルダーへのファイルのコピー</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Copy files to dist folder
+デフォルトでは、コンパイル時に src/runtime/assets フォルダーと src/setting/assets フォルダー内のすべてのファイルが dist/runtime/assets フォルダーと dist/setting/assets フォルダーのそれぞれにコピーされます。Experience Builder Developer Edition バージョン 1.13 から、カスタム ウィジェットのコンパイル時に dist フォルダーに他のファイルをコピーすることをサポートしています。これを行う理由は、ウィジェットがサード パーティのライブラリを使用しており、ライブラリから dist フォルダーにファイルをコピーする必要があるためです。
+これを行うには、copy-files.json という名前のファイルをウィジェットのルート フォルダーに配置し、コピーする必要のあるファイルをこのフォルダーに置くだけです。以下は、copy-files.json ファイルの記述例です。
+[ { &amp;#34;from&amp;#34;: &amp;#34;node_modules/folderOrFile&amp;#34;, &amp;#34;to&amp;#34;: &amp;#34;folderOrFile&amp;#34; } ] from と to はいずれもウィジェット フォルダーからの相対パスです。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット間のコードの共有</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Share code between widgets
+1 つのビジネス ドメインに対して複数のウィジェットを開発する場合、それらの間でコードを共有したいケースがあります。このページでは、このような場合に Experience Builder がどのように役立つかを紹介します。
+Experience Builder には、ウィジェット間でコードを共有するための 2 つの方法が用意されています。
+ ダイナミック ローディング：この方法は実装が簡単です。しかし、共有するコードを動的に読み込む必要があるため、よく使われる ES6 の import {} from &#39;&#39; は使用できません。 また、共有するコードは &amp;lsquo;chunks&amp;rsquo; フォルダーにコンパイルされますが、このフォルダーには多数のファイルが含まれているため、メンテナンスが困難になる可能性があります。 共有エントリー：この方法では、標準の ES6 の import を使用して共有コードを読み込むことができ、よりクリーンな構造を提供します。ただし、追加のセットアップ手順が必要になります。  ダイナミック ローディング この方法でウィジェット間でコードを共有する必要がある場合、ベスト プラクティスはフォルダーを作成することです。コードを共有する必要があるウィジェットをフォルダーに配置し、共有コードを格納する共通フォルターを作成します。フォルダー構造は次のようになります。
+widgets/your-folder/common/widget1/widget2/common フォルダーでは、export const sharedFunction = () =&amp;gt; {} のように一般的な ES6 の export を使って共有するコードをエクスポートできます。widget1 と widget2 フォルダーでは、import(&#39;../../../common/my-module&#39;).then() のようにダイナミック ローディングを使用して共有するコードを読み込めます。
+コンパイル後、共有コードは widgets/chunks フォルダーに配置されます。</description>
+    </item>
+    
   </channel>
 </rss>

@@ -20,6 +20,7 @@ ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発した�
     * __[Basic ライセンスの認証方法](#basic-ライセンスの認証方法)__
     * __[Standard ライセンスの認証方法](#standard-ライセンスの認証方法)__
     * __[Analysis Extension ライセンスの認証方法](#analysis-extension-ライセンスの認証方法)__
+    * __[Advanced Editing Extension ライセンスの認証方法](#advanced-editing-extension-ライセンスの認証方法)__
 
 3. __[ライセンスの認証](#ライセンスの認証)__
     * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
@@ -34,10 +35,11 @@ ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセ�
 
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
-| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
+| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティ ネットワークのトレース  |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（セキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示 |
 | Analysis Extension | ・Standard ライセンスで利用可能なエクステンション<br>・オフラインでの到達圏解析/最寄り施設検索 |
+| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティ ネットワークのネットワーク フィーチャの編集</br>・ユーティリティ ネットワークのトポロジーの検証 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-kotlin/license/)をご参照ください。
 
@@ -53,7 +55,6 @@ ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセ�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-__■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降をご利用の場合__
 
 | User Type | Runtime Level |
 |:-----------|:------------|
@@ -63,13 +64,6 @@ __■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降を�
 | GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1</sup> |
   
 ※1 ArcGIS Maps SDK for Kotlin には Advanced ライセンスはありません。
-
-__■ ArcGIS Enterprise 10.7 以前をご利用の場合__
-
-| User Type | Runtime Level |
-|:-----------|:------------|
-| レベル1 または Viewer タイプ以上 | Lite | 
-| レベル2 または Editor タイプ以上 | Basic |
 
 ### Lite ライセンスの認証方法
 
@@ -118,7 +112,19 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
+### Advanced Editing Extension ライセンスの認証方法
 
+1. __ライセンスキーを使用した認証__
+    * ArcGIS Runtime Advanced Editing Extension の配布パックを購入する必要があります
+    * 基本ライセンス（Basic/Standard）と併せて認証する必要があります
+    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+
+2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 11.1 以前のバージョンでは使用できません。
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（Advanced Editing ユーザー タイプ エクステンションを割り当てられた）が必要です
+    * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
+    
 ## ライセンスの認証
 
 以下の認証に応じた作業を行ってください。

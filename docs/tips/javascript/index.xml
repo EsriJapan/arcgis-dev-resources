@@ -15,7 +15,7 @@
       <description>出典：ArcGIS Maps SDK for JavaScript - Install and set up
 インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
 ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
 インストール方法：
 npm install @arcgis/core モジュールのインポート：
 import Map from &amp;#34;@arcgis/core/Map.</description>
@@ -33,11 +33,11 @@ import Map from &amp;#34;@arcgis/core/Map.</description>
 3 チュートリアルの開始
 1.インストールとセットアップ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
 AMD モジュールの場合は、以下のスクリプト タグを使用します。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
 npm install @arcgis/core CSSには@import urlを用います
-&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
+&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
 2.API キーの取得 アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、セキュリティと認証をご覧ください。
-ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かいAPIキーを使用することもできます。</description>
+ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かい API キーを使用することもできます。</description>
     </item>
     
     <item>
@@ -48,11 +48,10 @@ npm install @arcgis/core CSSには@import urlを用います
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
       <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS Maps SDK for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
- [arcgis_js_v428_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v428_api\arcgis_js_api\javascript\4.28\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.</description>
+ [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v429_api\arcgis_js_api\javascript\4.29\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.29\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
     </item>
     
     <item>
