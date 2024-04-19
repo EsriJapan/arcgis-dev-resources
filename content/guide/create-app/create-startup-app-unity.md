@@ -73,11 +73,13 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
     spatial reference に関する情報は、[spatial references](https://developers.arcgis.com/unity/spatial-and-data-analysis/spatial-references/) のページを参照してください。
 
 4. **Enable Map Extent** チェックボックスをオンにして、**Map Extent** セクションを表示し、マップの範囲をこれらの値に設定します :
+
     * Longitude : 139.745723
     * Latitude : 35.659041
     * Shape : Circle
     * Spatial Reference WKID : 4326
     * Shape Dimensions : (Radius) 5000 メートル
+
 5. ArcGIS Map ゲームオブジェクトをシーンに追加するには、**Create Map** をクリックします。
 
 以下が、**Map** パネルに入力した画像です。
@@ -101,19 +103,23 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 1. Camera タブをクリックする。
 2. **Camera Position** はカメラの初期視点を定義します。パラメータをこれらの値に設定します :
-    * Longitude : 139.748091
-    * Latitude : 35.659077
-    * Attitude : 290
-    * Special Reference WKID : 4326
+
+    * Longitude : 139.745723
+    * Latitude : 35.659041
+    * Altitude : 290
+    * Spatial Reference WKID : 4326
+
 3. **Camera Rotation** はカメラの角度を定義します。パラメータをこれらの値に設定します :
+
     * Heading : 270
     * Pitch : 93
     * Roll : 0
+
 4. **Create Camera** ボタンをクリックします。
 
 以下が、Camera パネルに入力した画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-camera.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-tokyo-camera.png" width="400px">
 
 **ヒエラルキー (Hierarchy)** ウィンドウで、**Main Camera** ゲームオブジェクトが **ArcGISCamera** ゲームオブジェクトに変換され、**ArcGISMap** ゲームオブジェクトの下に移動していることがわかります。
 

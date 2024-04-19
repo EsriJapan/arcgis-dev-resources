@@ -14,7 +14,7 @@ ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー ア�
 
 1. 以下の [システム要件の変更](#システム要件の変更) のセクションを確認し、推奨される変更または更新を行います。
 2. アプリケーションのソース コードを開きます。
-3. すべての Esri.ArcGISRuntime.* NuGet リファレンスをバージョン 200.0 に更新します。
+3. すべての `Esri.ArcGISRuntime.*` NuGet リファレンスをバージョン 200.0 に更新します。
 4. API の破壊的変更に対処します。v100.x で非推奨とマークされた API は 200.0 で削除され、これらの API を使用するとコンパイル エラーが発生します。
 5. アップグレードされたアプリをビルドして実行し、正しく機能することを確認します。
 
@@ -22,7 +22,7 @@ ArcGIS Runtime SDK バージョン 100.15 は、バグ修正とマイナー ア�
 バージョン 100.15 は、Xamarin.Forms、Xamarin.Android、Xamarin.iOS をサポートする ArcGIS Runtime SDK for .NET の最後のリリースとなりました。バージョン 200.0 は、.NET MAUI、.NET for Android、.NET for iOS をサポートしています。既存の Xamarin Forms アプリケーションは .NET MAUI（Multi-platform App UI）へ、Xamarin.Android と Xamarin.iOS はそれぞれ .NET for Android と .NET for iOS へ移行する必要があります。
 
 ### .NET MAUI 用の ArcGIS Maps SDK パッケージの初期化
-ArcGIS Maps SDK for .NET を .NET MAUI アプリで使用するには、アプリの初期化時に MauiAppBuilder クラスで UseArcGISRuntime() を呼び出します。下記の例は、その方法を示しています。
+ArcGIS Maps SDK for .NET を .NET MAUI アプリで使用するには、アプリの初期化時に `MauiAppBuilder` クラスで `UseArcGISRuntime()` を呼び出します。下記の例は、その方法を示しています。
 
 MauiProgram.cs
 ```c#
@@ -43,66 +43,35 @@ public static class MauiProgram
 }
 ```
 Xamarin Forms アプリの .NET MAUI への移行については、以下のドキュメントを参照してください。
-* [Xamarin.Forms からアプリを移行する (Microsoft ドキュメント)](https://learn.microsoft.com/ja-jp/dotnet/maui/get-started/migrate?view=net-maui-7.0)
+* [Xamarin.Forms からアプリを移行する (Microsoft ドキュメント)](https://learn.microsoft.com/ja-jp/dotnet/maui/get-started/migrate)
 * [Migrating from Xamarin.Forms (Preview) - Wiki](https://github.com/dotnet/maui/wiki/Migrating-from-Xamarin.Forms-(Preview))
 
 ## API の変更
-バージョン 100.x で非推奨だった API は、バージョン 200.0 ですべて削除されました。非推奨の API を使用すると、コンパイルエラーが発生するため、バージョン 200.0 を使用してアプリケーションを正常にビルドするために対処する必要があります。
+バージョン 100.x で非推奨だった API は、バージョン 200.0 ですべて削除されました。非推奨の API を使用すると、コンパイルエラーが発生するため、バージョン 200.0.0 を使用してアプリケーションを正常にビルドするには、このエラーに対処する必要があります。
 
 ## システム要件の変更
-ArcGIS Runtime SDK for .NET を使用するアプリを開発およびデプロイするためのシステム要件がバージョン 200.0 で以下のように変更されました。詳細については、[System requirements](https://developers.arcgis.com/net/reference/system-requirements/) のトピックを参照してください。
-
-### オペレーティング システム
-* Windows 10 SDK バージョン 2004 (ビルド 19041) 以降
-* macOS Big Sur 11.0 以降
-
-### 統合開発環境(IDE)
-* Visual Studio 2022 17.3 以降
-* Visual Studio 2019 16.9 以降 (UWP、WPF/.NET Framework)
-
-### フレームワーク固有の要件
-#### .NET MAUI:
-* .NET MAUI ワークロード
-
-#### Android:
-* net6.0-android 以降
-* Android 8.0 Oreo (API レベル 26) 以降
-
-#### iOS:
-* net6.0-ios 以降
-* iOS 14 以降
-* Mac Catalyst を使用した macOS へのデプロイメントには Big Sur 11.0 以降が必要
-
-#### WPF:
-* net6.0-windows10.0.19041.0 以降
-* net472 以降
-
-#### WinUI 3.0:
-* net6.0-windows10.0.19041.0 以降
-
-#### UWP:
-* TargetPlatformMinVersion 10.0.17763.0 以降
+ArcGIS Runtime SDK for .NET を使用するアプリを開発およびデプロイするためのシステム要件がバージョン 200.x で以下のように変更されました。詳細については、[System requirements](https://developers.arcgis.com/net/system-requirements/) のトピックを参照してください。
 
 ## よくある質問 (FAQ)
 移行に関するよくある質問と回答は、以下のとおりです。
 
 * 質問: ArcGIS Runtime SDK for .NET バージョン 100.x から ArcGIS Maps SDK for .NET バージョン 200.x にアプリをすぐに移行する必要がありますか？
 
-    回答: ArcGIS Runtime SDK for .NET バージョン 100.15 は、長期サポート リリースです。バージョン 200.0（または将来のバージョンの 200.x リリース）で提供される新機能を必要としないアプリの場合、アプリは正常に動作します。詳細については、[製品ライフサイクルのドキュメント](https://support.esri.com/en/Products/Developers/native-runtime-sdks/arcgis-runtime-sdk-for-dotNET/100-15#product-support) を参照してください。
-    
+    回答: いいえ。ArcGIS Runtime SDK for .NET バージョン 100.15 は、長期サポート リリースです。バージョン 200.0（または将来のバージョンの 200.x リリース）で提供される新機能を必要としないアプリの場合、アプリは正常に動作します。詳細については、[製品ライフサイクルのドキュメント](https://support.esri.com/en-us/products/arcgis-runtime-sdks/life-cycle) を参照してください。
+
     ただし、ArcGIS Maps SDK for .NET が提供する最新の機能を使用するためには、アプリを移行する必要があります。
 
 * 質問: ArcGIS Runtime SDK for .NET バージョン 100.x で利用可能な機能で、ArcGIS Maps SDK for .NET バージョン 200.x で利用できない機能はありますか？
 
-    回答: ArcGIS Runtime SDK for .NET 100.15 に含まれるすべての機能は、ArcGIS Maps SDK for .NET 200.0 で利用可能です。さらに、バージョン 200.0 では、100.15 では利用できなかった新しい機能が提供されています。詳細については、[リリース ノート](https://developers.arcgis.com/net/release-notes/) を参照してください。
+    回答: いいえ。ArcGIS Runtime SDK for .NET 100.15 に含まれるすべての機能は、ArcGIS Maps SDK for .NET 200.0 で利用可能です。さらに、バージョン 200.0 では、100.15 では利用できなかった新しい機能が提供されています。詳細については、[リリース ノート](https://developers.arcgis.com/net/release-notes/) を参照してください。
 
 * 質問: ArcGIS Runtime SDK for .NET バージョン 100.x で作成したアプリを ArcGIS Maps SDK for .NET バージョン 200.x で使用するには、アプリを書き換える必要がありますか？
 
-    回答: ArcGIS Runtime SDK for .NET バージョン 100.15 を使用するアプリを ArcGIS Maps SDK for .NET バージョン 200.0 に更新することは、通常のバージョンアップ通りで簡単です。Xamarin.Forms アプリを .NET MAUI に移行するには、ArcGIS Maps SDK for .NET の機能とは関係なく Xamarin から MAUI アプリへ移行するための一般的な追加作業が必要です。
+    回答: いいえ。ArcGIS Runtime SDK for .NET バージョン 100.15 を使用するアプリを ArcGIS Maps SDK for .NET バージョン 200.0 に更新することは、通常のバージョンアップ通りで簡単です。Xamarin.Forms アプリを .NET MAUI に移行するには、ArcGIS Maps SDK for .NET の機能とは関係なく Xamarin から MAUI アプリへ移行するための一般的な追加作業が必要です。
 
 * 質問: ArcGIS Maps SDK for .NET はまったく新しい製品ですか？
 
-    回答: いいえ。ArcGIS Runtime SDK として知られていた製品群は、現在 ArcGIS Maps SDK for Native Apps として提供されています。これらの SDK のバージョン 200.x は、ArcGIS Runtime 100.15 の実績あるアーキテクチャを基盤としており、最新の開発者用フレームワークの技術を活用するように設計されています。
+    回答: いいえ。<b>ArcGIS Runtime SDK</b> として知られていた製品群は、現在 <b>ArcGIS Maps SDK for Native Apps</b> として提供されています。これらの SDK のバージョン 200.x は、ArcGIS Runtime 100.15 の実績あるアーキテクチャを基盤としており、最新の開発者用フレームワークの技術を活用するように設計されています。
 
 ## 既知の制限事項
 現バージョンでの既知の制限事項が、[ArcGIS Maps SDK for .NET: リリース ノート](https://developers.arcgis.com/net/release-notes/)に記載されていますので、ご参照ください。

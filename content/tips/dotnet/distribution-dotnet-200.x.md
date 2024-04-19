@@ -165,17 +165,17 @@ ArcGIS Runtime の配布パックの購入については[ESRIジャパン](http
 
 ```c#
 // 取得したライセンス文字列でアプリのライセンスを設定します
-string licenseKey = "runtimestandard,1000,rud#########,day-month-year,####################";
+string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
 ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 ```
 
 Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
 ```javascript
 // 基本ライセンスとエクステンション ライセンスのリストを設定します
-string licenseKey = "runtimestandard,1000,rud#########,day-month-year,####################";
+string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
 string[] extensions = { "runtimeanalysis,1000,rud#########,day-month-year,####################" };
 
-ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
+Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 ```
 
 
@@ -183,8 +183,8 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 
  アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。
 
-アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[AuthenticationManager](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。
- 
+アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[`AuthenticationManager`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。（[Authentication Manager の使用](https://developers.arcgis.com/net/security-and-authentication/)を参照）
+
 認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
 
 ```c#
