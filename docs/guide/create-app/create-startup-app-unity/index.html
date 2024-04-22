@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-02-26T17:11:01 JST">
+<meta name="revised" content="2024-04-19T12:57:14 JST">
 <title>Unity :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -479,6 +479,27 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
             コードリンティング
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/">
+            webpack config のオーバーライド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/">
+            dist フォルダーへのファイルのコピー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/">
+            ウィジェット間のコードの共有
           </a>
         </div>
     </li>
@@ -1022,26 +1043,32 @@ ESRIジャパンで提供する <a href="https://www.esrij.com/services/maintena
 <h3 id="カメラの作成とセットアップ">カメラの作成とセットアップ</h3>
 <p><strong>ArcGIS Maps SDK for Unity</strong> は、カメラに近いエリアにはより高い解像度の LOD を表示し、カメラから遠いエリアにはより低い解像度の LOD を表示します。</p>
 <ol>
-<li>Camera タブをクリックする。</li>
-<li><strong>Camera Position</strong> はカメラの初期視点を定義します。パラメータをこれらの値に設定します :
+<li>
+<p>Camera タブをクリックする。</p>
+</li>
+<li>
+<p><strong>Camera Position</strong> はカメラの初期視点を定義します。パラメータをこれらの値に設定します :</p>
 <ul>
-<li>Longitude : 139.748091</li>
-<li>Latitude : 35.659077</li>
-<li>Attitude : 290</li>
-<li>Special Reference WKID : 4326</li>
+<li>Longitude : 139.745723</li>
+<li>Latitude : 35.659041</li>
+<li>Altitude : 290</li>
+<li>Spatial Reference WKID : 4326</li>
 </ul>
 </li>
-<li><strong>Camera Rotation</strong> はカメラの角度を定義します。パラメータをこれらの値に設定します :
+<li>
+<p><strong>Camera Rotation</strong> はカメラの角度を定義します。パラメータをこれらの値に設定します :</p>
 <ul>
 <li>Heading : 270</li>
 <li>Pitch : 93</li>
 <li>Roll : 0</li>
 </ul>
 </li>
-<li><strong>Create Camera</strong> ボタンをクリックします。</li>
+<li>
+<p><strong>Create Camera</strong> ボタンをクリックします。</p>
+</li>
 </ol>
 <p>以下が、Camera パネルに入力した画像です。</p>
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-camera.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-tokyo-camera.png" width="400px">
 <p><strong>ヒエラルキー (Hierarchy)</strong> ウィンドウで、<strong>Main Camera</strong> ゲームオブジェクトが <strong>ArcGISCamera</strong> ゲームオブジェクトに変換され、<strong>ArcGISMap</strong> ゲームオブジェクトの下に移動していることがわかります。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgiscamera-game-opject.png" width="400px">
 <div class="notices note" >

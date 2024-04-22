@@ -21,6 +21,8 @@ ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したア�
     * __[Standard ライセンスの認証方法](#standard-ライセンスの認証方法)__
     * __[Advanced ライセンスの認証方法](#advanced-ライセンスの認証方法)__
     * __[Analysis Extension ライセンスの認証方法](#analysis-extension-ライセンスの認証方法)__
+    * __[Advanced Editing Extension ライセンスの認証方法](#advanced-editing-extension-ライセンスの認証方法)__
+
 
 3. __[ライセンスの認証](#ライセンスの認証)__
     * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
@@ -36,12 +38,12 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
-| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング |
+| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティ ネットワークのトレース |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（セキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・ローカル サーバーの標準的な機能 |
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能 |
 | Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部 |
-
+| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティ ネットワークのネットワーク フィーチャの編集</br>・ユーティリティ ネットワークのトポロジーの検証 |
 
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-dotnet/license/)をご参照ください。
@@ -58,20 +60,12 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-__■ ArcGIS Online または ArcGIS Enterprise バージョン 10.8 以降をご利用の場合__
 | ユーザータイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Editor / Field Worker | Basic |
 | Creator / GIS Professional Basic | Standard |
 | GIS Professional Standard / GIS Professional Advanced | Advanced |
-
-__■ ArcGIS Enterprise 10.7 以前をご利用の場合__
-
-| ユーザータイプ | ライセンスレベル |
-|:-----------|:------------|
-| レベル1 または Viewer タイプ以上 | Lite | 
-| レベル2 または Editor タイプ以上 | Basic |
 
 ### Lite ライセンスの認証方法
 
@@ -132,6 +126,18 @@ __■ ArcGIS Enterprise 10.7 以前をご利用の場合__
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
+### Advanced Editing Extension ライセンスの認証方法
+
+1. __ライセンスキーを使用した認証__
+    * ArcGIS Runtime Advanced Editing Extension の配布パックを購入する必要があります
+    * 基本ライセンス（Basic/Standard/Advanced）と併せて認証する必要があります
+    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+
+2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
+注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 11.1 以前のバージョンでは使用できません。
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（Advanced Editing ユーザー タイプ エクステンションを割り当てられた）が必要です
+    * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+    * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
 ## ライセンスの認証
 
@@ -165,17 +171,17 @@ ArcGIS Runtime の配布パックの購入については[ESRIジャパン](http
 
 ```c#
 // 取得したライセンス文字列でアプリのライセンスを設定します
-string licenseKey = "runtimestandard,1000,rud#########,day-month-year,####################";
+string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
 ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 ```
 
 Analysis Extension ライセンスを認証する場合は以下のコードを使用します。
 ```javascript
 // 基本ライセンスとエクステンション ライセンスのリストを設定します
-string licenseKey = "runtimestandard,1000,rud#########,day-month-year,####################";
+string licenseKey = "runtimelite,1000,rud#########,day-month-year,####################";
 string[] extensions = { "runtimeanalysis,1000,rud#########,day-month-year,####################" };
 
-ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
+Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 ```
 
 
@@ -183,8 +189,8 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 
  アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。
 
-アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[AuthenticationManager](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。
- 
+アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[`AuthenticationManager`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。（[Authentication Manager の使用](https://developers.arcgis.com/net/security-and-authentication/)を参照）
+
 認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
 
 ```c#

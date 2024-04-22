@@ -79,8 +79,9 @@ Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 
 1. **Modes Panel UI** の **Map** タブをクリックします。
 2. **Map Type** で `Local` を選択します。
 3. **Origin Position** セクションでは、GIS シーンの中心を座標と Spatial Reference Well-Known ID (WKID) で設定できます。チュートリアルでは、パラメータをこれらの値に設定します：
-    * Longitude : 138.727363
-    * Latitude : 35.360626
+
+    * Longitude : 139.745723
+    * Latitude : 35.659041
     * Altitude : 0
     * Spatial Reference WKID : 4326
 
@@ -89,41 +90,42 @@ Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 
 4. **Enable Extent** チェックボックスをオンにすると、**Map Extent** セクションが表示されます。
 
 5. **Map Extent** で、マップの範囲をこれらの値に設定します :
-    * Longitude : 138.727363
-    * Latitude : 35.360626
-    * Spatial Reference WKID : 4326
+
+    * Longitude : 139.745723
+    * Latitude : 35.659041
     * Shape : Circle
-    * Radius : 5000
+    * Spatial Reference WKID : 4326
+    * Shape Dimensions : (Radius) 5000 メートル
 
     以下が、**Map** パネルに入力した画像です。
 
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/map-tab-local.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/tokyo-map-tab-local.png" width="650px">
 
 6. **Create** ボタンをクリックします。**アウトライナー (Outliner)** パネルに、**ArcGISMapActor** が作成されます。
- 
+
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/arcgismap-actor.png" width="650px">
 
 ### カメラの作成と設定
- 
+
 **ArcGIS Maps SDK for Unreal Engine** は、カメラに近いエリアにはより高い解像度の LOD を表示し、カメラから遠いエリアにはより低い解像度の LOD を表示します。
 
 1. **Camera** タブをクリックします。
 2. **Camera Position** でカメラの初期視点を定義します。パラメータをこれらの値に設定します：
 
-    * Longitude : 139.748091
-    * Latitude : 35.659077
+    * Longitude : 139.745723
+    * Latitude : 35.659041
     * Altitude : 290
     * Spatial Reference WKID : 4326
 
 3. **Camera Rotation** でカメラの角度を定義します。
-   
+
     * Heading : 270
     * Pitch : 93
     * Roll : 0
 
     以下が、**Camera** パネルに入力した画像です。
 
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/camera-tab-local.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/camera-tab-tokyo.png" width="650px">
 
 4. **Create** ボタンをクリックします。**アウトライナー (Outliner)** パネルに、**Default Pawn** アクターが作成されます。
 
@@ -131,7 +133,7 @@ Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 
 
 この時点では、レベルはまだ空です。これからのチュートリアルステップで、マップデータがレベルに追加されます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview1.png" width="650px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview-tokyo1.png" width="650px">
 
 ### ベースマップとAPIキーの設定
 

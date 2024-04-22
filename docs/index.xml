@@ -134,7 +134,7 @@ Xcode 15 での手順
       <description>出典：ArcGIS Maps SDK for JavaScript - Install and set up
 インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
 ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
 インストール方法：
 npm install @arcgis/core モジュールのインポート：
 import Map from &amp;#34;@arcgis/core/Map.</description>
@@ -196,11 +196,11 @@ Unreal Engine のインストール このプラグインは、Unreal Engine 5.0
 3 チュートリアルの開始
 1.インストールとセットアップ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
 AMD モジュールの場合は、以下のスクリプト タグを使用します。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.28/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.28/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
 npm install @arcgis/core CSSには@import urlを用います
-&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
+&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
 2.API キーの取得 アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、セキュリティと認証をご覧ください。
-ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かいAPIキーを使用することもできます。</description>
+ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かい API キーを使用することもできます。</description>
     </item>
     
     <item>
@@ -283,7 +283,7 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
   使用するライセンスの選択
   ライセンスの認証方法
- Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法    ライセンスの認証
+ Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 Advanced Editing Extension ライセンスの認証方法    ライセンスの認証
  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
    ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
@@ -300,10 +300,8 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
   使用するライセンスの選択
   ライセンスの認証方法
- Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Advanced ライセンスの認証方法 Analysis Extension ライセンスの認証方法    ライセンスの認証
- Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
-各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
-   ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
+ Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Advanced ライセンスの認証方法 Analysis Extension ライセンスの認証方法 Advanced Editing Extension ライセンスの認証方法    ライセンスの認証
+ Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</description>
     </item>
     
     <item>
@@ -317,7 +315,7 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
   使用するライセンスの選択
   ライセンスの認証方法
- Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法    ライセンスの認証
+ Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 Advanced Editing Extension ライセンスの認証方法    ライセンスの認証
  Lite ライセンスキーを使用した認証 配布パックのライセンスキーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for Swift には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。
 各ライセンスで利用可能な機能の概要は以下の表をご参照ください。
    ライセンス 利用できる機能     Lite ・地図表示（2D/3D）</description>
@@ -331,11 +329,10 @@ API キーの設定 ArcGIS Platform のロケーションサービスを使用�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
       <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
 Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Developers の Downloads ページからダウンロードできます。[Product] のドロップダウン リストから [ArcGIS Maps SDK for JavaScript] を選択し、ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
- [arcgis_js_v428_sdk.zip] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置 まずはダウンロードしたサンプル コードを実行してみましょう。
- ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v428_api\arcgis_js_api\javascript\4.28\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.</description>
+ [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v429_api\arcgis_js_api\javascript\4.29\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.29\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
     </item>
     
     <item>
@@ -410,7 +407,7 @@ Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サー�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - page
 ページ（Page） エクスペリエンスの中のページは、物理的な HTML Web ページでなく、概念的なページですが、実際のHTML Web ページのように振る舞います。これは div HTMLタグを使って実装されます。エクスペリエンスは少なくとも1つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページレイアウトにはフルスクリーンのアプリページと直線的なスクロールページの2種類があり、前者はアプリのように見え、後者はウェブページのように見えます。
-ページの内容（ウィジェット/セクション）は、固定レイアウトやフローレイアウトなどのレイアウトルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builderはサイズモードによるレイアウトの設定をサポートしています。これらは Large, Medium, Small で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、City Explorerのテンプレートがあります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイルデバイスで見た場合、地図ウィジェットは最初のページから削除され、ユーザーがリストウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。
+ページの内容（ウィジェット/セクション/スクリーン）は、固定レイアウトやフローレイアウトなどのレイアウトルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builderはサイズモードによるレイアウトの設定をサポートしています。これらは Large, Medium, Small で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、City Explorerのテンプレートがあります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイルデバイスで見た場合、地図ウィジェットは最初のページから削除され、ユーザーがリストウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。
 app config では、ページは pages で定義され、ページ構造は pageStructure で定義されます。</description>
     </item>
     
@@ -908,9 +905,10 @@ app config では、画面グループは screenGroups で定義され、画面�
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
-ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.</description>
+このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と Basemap layers を参照してください。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、無料でサインアップ してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .</description>
     </item>
     
     <item>
@@ -1091,7 +1089,7 @@ app config では、widgets でウィジェットを定義します。</descript
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
 Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-layouts パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。 jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+ jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
     </item>
     
     <item>
@@ -1158,10 +1156,9 @@ Visual Studio コード テキストエディタとして Visual Studio Code を
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data sources
-データ ソース（Data source） データソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータソース クラスに入れることで、別のウィジェットで使用することができます。
-高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
- id: データソースID。 type: どのタイプのデータソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのプロパティを使用してデータソースのステータスを取得します。これらのステータスの中には、Loading、Loaded、Errorなどがあります。  1つのデータソースには、サブデータソースを含めることができます。その結果、使いやすくするために複数のデータソースを含めることができます。このようなデータソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データソースの一種です。データソースは DataSourceManager で管理し、データソースの作成や取得を行います。
-複数のウィジェットが 1 つのデータ ソースに接続する場合、ウィジェットはデータ ソースのローカル ビューを表示したい場合があります。このシナリオでは、データ ビューを使用します。データ ビューとデータ ソースの関係は、リレーショナル データベースのビューとテーブルの関係に非常に似ています。Experience Builder のデータ ソースは、クライアント側の実際のリモート データ ソースのビューですが、データ ソースはテーブル、データ ビューはビューと考えることができます。アプリ作成者は、データソースからデータ ビューを作成し、ビルダーでデータ ビューにウィジェットを接続することができます。API レベルでは、データ ビューは DataSource クラスを使用して管理されるため、データ ビューは、属性の違いだけでデータ ソースと同じインターフェースとふるまいを持ちます。</description>
+データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
+高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
+ id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1つのデータ ソースには、サブデータ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
     </item>
     
     <item>
@@ -1255,10 +1252,11 @@ const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon ico
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</guid>
-      <description>ArcGIS Experience Builder で作成した Experience は、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用している Experience は、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、Experience を展開する前にシステム要件を参照してください。
-Experience のダウンロード Experience ギャラリーのホームページで Experience をダウンロードするには、以下のように ● (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカルドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
-Experience のデプロイ Experience を Web サーバーにデプロイするには、次の手順を実行します。
- ダウンロードした Experience を解凍し、フォルダを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合は Experience が展開されます。 アプリを追加して登録します。詳細については、アプリの追加とアプリの登録を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：app/config.json) にある config.json ファイルを開きます。 attributes オブジェクトの下に clientId プロパティを作成します。 config.json ファイルの clientId プロパティに AppID を貼り付けます。再度にファイルを保存します。  &amp;#34;attributes&amp;#34;: { &amp;#34;portalUrl&amp;#34;: &amp;#34;https://exb.</description>
+      <description>ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前にシステム要件を参照してください。
+エクスペリエンスのダウンロード エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように ● (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
+アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する web.config ファイルが付属しており、このデフォルト web.config に ArcGIS Maps SDK for JavaScript の設定が含まれるようになりました。
+エクスペリエンスのデプロイ エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。
+ ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。 アプリを追加して登録します。詳細については、ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成 を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：&amp;lt;.zip ファイル ルート&amp;gt;\cdn\0\config.json) にある config.</description>
     </item>
     
     <item>
@@ -1322,6 +1320,43 @@ domNode.classList.contains(&amp;#34;myClassName&amp;#34;);   Dojo はブラウ�
 バージョン 1.7 から、Experience Builder Developer Edition は、コードエディタがコードのフォーマットと lint (エラーチェック) に使用できる ESLint ルール (.eslintrc.js ファイル形式) を含むようになりました。
 これらは、standard-with-typescript に基づいて、Experience Builder チームが使用しているルールです。ご自身のコードにどの ESLint ルールを使うかについては、好みがあるかもしれません。もしこれらのルールを使いたくない場合は、以下のルールを無効にする方法を参照してください。ルールを変更したい場合は、.eslintrc.js ファイルを修正することができます。
  これらの ESLint のルールでコードをチェックしたい場合は、client フォルダで、コマンドラインから、npm run lint. を実行します。また、ESLint 拡張機能をコードエディタにインストールすることもできます。 この ESLint のルールを無視したい場合は、以下のどちらかをお試しください。  コードエディタの ESLint 拡張を無効にする client/.eslintrc.js ファイルを削除する    </description>
+    </item>
+    
+    <item>
+      <title>webpack config のオーバーライド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Override webpack config
+Experience Builder Developer Edition バージョン 1.9 から、カスタム ウィジェットの webpack config のオーバーライドがサポートされるようになりました。
+これを行うには、client/webpack/widget-webpack-override.js にオーバーライド処理を配置するだけです。このファイルによってエクスポートされた関数では、デフォルトの webpack config オブジェクトが入力パラメーターとして渡され、このオブジェクトを変更して返却することができます。</description>
+    </item>
+    
+    <item>
+      <title>dist フォルダーへのファイルのコピー</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Copy files to dist folder
+デフォルトでは、コンパイル時に src/runtime/assets フォルダーと src/setting/assets フォルダー内のすべてのファイルが dist/runtime/assets フォルダーと dist/setting/assets フォルダーのそれぞれにコピーされます。Experience Builder Developer Edition バージョン 1.13 から、カスタム ウィジェットのコンパイル時に dist フォルダーに他のファイルをコピーすることをサポートしています。これを行う理由は、ウィジェットがサード パーティのライブラリを使用しており、ライブラリから dist フォルダーにファイルをコピーする必要があるためです。
+これを行うには、copy-files.json という名前のファイルをウィジェットのルート フォルダーに配置し、コピーする必要のあるファイルをこのフォルダーに置くだけです。以下は、copy-files.json ファイルの記述例です。
+[ { &amp;#34;from&amp;#34;: &amp;#34;node_modules/folderOrFile&amp;#34;, &amp;#34;to&amp;#34;: &amp;#34;folderOrFile&amp;#34; } ] from と to はいずれもウィジェット フォルダーからの相対パスです。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェット間のコードの共有</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Share code between widgets
+1 つのビジネス ドメインに対して複数のウィジェットを開発する場合、それらの間でコードを共有したいケースがあります。このページでは、このような場合に Experience Builder がどのように役立つかを紹介します。
+Experience Builder には、ウィジェット間でコードを共有するための 2 つの方法が用意されています。
+ ダイナミック ローディング：この方法は実装が簡単です。しかし、共有するコードを動的に読み込む必要があるため、よく使われる ES6 の import {} from &#39;&#39; は使用できません。 また、共有するコードは &amp;lsquo;chunks&amp;rsquo; フォルダーにコンパイルされますが、このフォルダーには多数のファイルが含まれているため、メンテナンスが困難になる可能性があります。 共有エントリー：この方法では、標準の ES6 の import を使用して共有コードを読み込むことができ、よりクリーンな構造を提供します。ただし、追加のセットアップ手順が必要になります。  ダイナミック ローディング この方法でウィジェット間でコードを共有する必要がある場合、ベスト プラクティスはフォルダーを作成することです。コードを共有する必要があるウィジェットをフォルダーに配置し、共有コードを格納する共通フォルターを作成します。フォルダー構造は次のようになります。
+widgets/your-folder/common/widget1/widget2/common フォルダーでは、export const sharedFunction = () =&amp;gt; {} のように一般的な ES6 の export を使って共有するコードをエクスポートできます。widget1 と widget2 フォルダーでは、import(&#39;../../../common/my-module&#39;).then() のようにダイナミック ローディングを使用して共有するコードを読み込めます。
+コンパイル後、共有コードは widgets/chunks フォルダーに配置されます。</description>
     </item>
     
     <item>
