@@ -16,11 +16,20 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 [Gradle](https://gradle.org/) を使用してインストールすることをお勧めします。これにより、[Esri の Maven リポジトリ](https://esri.jfrog.io/artifactory/arcgis)から必要な依存関係と SDK バイナリがインストールされます。
 
 ## Gradle で API を取得する
-既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。
 
-1. settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。
+{{% notice note %}}
 
-	settings.gradle
+Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。<b>Empty Activity</b> オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
+
+以下の手順では、<b>Android Studio Iguana 2023.2.1 Patch 1</b> を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。
+
+{{% /notice %}}
+
+Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。
+
+1. `settings.gradle.kts` ファイルの `repositories` ブロック (`dependencyResolutionManagement` 内にネストされています) で、Esri の Maven リポジトリ URL を指定して `maven` ブロックを追加します。Esri のリポジトリはオープンソースではないため、`google()` や `mavenCentral()` からは使用できないため、この URL を指定する必要があります。
+
+	settings.gradle.kts
 
 	```java  
 	dependencyResolutionManagement {
@@ -31,44 +40,95 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 
 			// Esri の Maven リポジトリを追加
 			maven {
-				url 'https://esri.jfrog.io/artifactory/arcgis'
+				url = uri("https://esri.jfrog.io/artifactory/arcgis")
 			}
 		}
 	}
     ```
 
-2. module レベルの build.gradle ファイルの dependencies ブロック内で、ArcGIS Maps SDK for Kotlin の依存関係をアプリに追加します。
+2. module レベルの build.gradle.kts (Module :app) ファイルの `dependencies` ブロック内で、ArcGIS Maps SDK for Kotlin の依存関係をアプリに追加します。
 
-	注：この依存関係を、ArcGIS Maps SDK for Kotlin を使用する各モジュールに追加する必要があります。
+	{{% notice note %}}
 
-	build.gradle
+	この依存関係を、ArcGIS Maps SDK for Kotlin を使用する各モジュールに追加する必要があります。
+
+	{{% /notice %}}
+
+	build.gradle.kts (Module: app)
 
 	```java
 	dependencies {
 		...
-		implementation 'com.esri:arcgis-maps-kotlin:200.3.0'
-	}
-	```
-
-3. module レベルの build.gradle ファイルの android ブロック内に、ビュー バインディングまたはデータ バインディングを有効にするブロックがあることを確認します。ビュー バインディングの詳細については、[ビュー バインディング](https://developer.android.com/topic/libraries/view-binding) を参照してください。データ バインディングの詳細については、[データ バインディング](https://developer.android.com/topic/libraries/data-binding/start) を参照してください。
-
-	build.gradle
-    ```java  
-	android {
-  		. . .
- 		buildFeatures {
-    		viewBinding true
-  		}
-
-		// buildFeatures {
-    	// dataBinding true
-    	// }
+		// ArcGIS Maps SDK for Kotlin の依存関係を追加
+		implementation 'com.esri:arcgis-maps-kotlin:200.4.0'
 	}
     ```
 
+3. Esri が公開しているすぐに使用できる Compose コンポーネントを提供する依存関係を追加します。[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) で定義されているこれらの Compose コンポーネントは、ArcGIS Maps SDK for Kotlin の標準 API のクラスにアクセスします。Toolkit は、Compose ベースで ArcGIS Maps SDK for Kotlin と互換性のあるテスト済みの UI 要素を含めるための最も効率的な方法です。
+<br />
+<br />
+`geoview-compose` という名前の Toolkit モジュールへの依存関係を宣言します。このモジュールには、マップ ビューとシーン ビューを実相するためのコンポーザブルな関数が含まれています。Toolkit には、他にもいくつかの便利な Compose ベースのモジュールが含まれています。使用する他の Toolkit モジュールを `dependency` ブロックに追加します。
+
+	build.gradle.kts (Module: app)
+
+	```java
+	dependencies {
+		. . .
+		// ArcGIS Maps SDK for Kotlin の依存関係を追加
+		implementation("com.esri:arcgis-maps-kotlin:200.4.0")
+		// ツールキットの依存関係を追加
+		implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose:200.4.0")
+		// 追加のツールキットのモジュールが必要な場合、以下のように記述します
+		// implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication:200.4.0")
+	}
+    ```
+
+	<b>アーティファクトのバージョン管理 (代替方法)</b>
+	<br />
+	これまでのコードでは、ツールキットの依存関係でアーティファクトのバージョンを指定しています。この方法の他に、ツールキットの BOM (Bill of Materials), に依存することもできます。BOM には、互いに互換性のある個々のツールキット コンポーネントのバージョンが指定されています。これらのバージョン番号は、[BOM の .pom](https://esri.jfrog.io/ui/native/arcgis/com/esri/arcgis-maps-kotlin-toolkit-bom/) ファイルをから確認できます。詳細は、ツールキット リポジトリのトップ レベルの README を参照してください。Toolkit BOM 自体にもバージョン番号があることに注意してください。
+
+	[Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は、依存関係のバージョンを管理する最先端の方法です。`gradle/libs.versions.toml` ファイルでは、各依存関係の Maven 名の変数とバージョン番号の変数を宣言します。ここには、Toolkit BOM、Toolkit モジュール、ArcGIS Maps SDK for Kotlin、Kotlin ライブラリ、Android ライブラリなど、すべての依存関係を宣言できます。Android Studio の最近のリリースでは、[New Project] ウィザードによってこのファイルが作成されます。
+
+	Toolkit BOM を使用するように変更すると、`build.gradle.kts` コードは以下のようになります。`libs.arcgis.map.kotlin.toolkit.bom` や `libs.arcgis.maps.kotlin.toolkit.geoview.compose` などの変数は、`gradle/libs.versions.toml` がバージョンを管理しているため、バージョンを指定しないことに注意してください。
+
+	build.gradle.kts (Module: app)
+
+	```java
+	dependencies {
+		・・・
+		// ArcGIS Maps SDK for Kotlin の SDK 依存関係
+		implementation(libs.arcgis.maps.kotlin)
+		// Toolkit の依存関係
+		implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
+		implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
+		// 追加のツールキットのモジュールが必要な場合、以下のように記述します
+		// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+	}
+    ```
+
+4. Android Studio の [New Project] ウィザードで生成されるモジュール レベルの build.gradle.kts ファイルには、Android と Kotlin のツール バージョンが宣言されています。Compose Compiler と Kotlin Compiler のオプションは互換性がなければなりません。互換性は、Android の[Compose と Kotlin の互換性マップ](https://developer.android.com/jetpack/androidx/releases/compose-kotlin?hl=ja) を参照することで確認できます。
+
+	build.gradle.kts (Module: app)
+    ```java  
+	android {
+			. . .
+			kotlinOptions {
+				jvmTarget = "1.8"
+			}
+			buildFeatures {
+				compose = true // このプロジェクトで Jetpack Compose を有効にします
+			}
+
+			composeOptions {
+				kotlinCompilerExtensionVersion = "1.5.11"
+			}
+			. . .
+	}
+    ```
+<!--
 4. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックがあることを確認します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
 
-	build.gradle
+	build.gradle.kts (Module: app)
 
     ```java  
 	android {
@@ -81,6 +141,7 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 		. . .
 	}
     ```
+-->
 
 ## 必要な権限と機能
 Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。
@@ -102,7 +163,7 @@ AndroidManifest.xml
 ```
 
 ### Android のストレージと権限
-Android API Level 30 では、すべてのアプリは Android デバイスのファイルシステムにアクセスするために[対象範囲別ストレージ](https://developer.android.com/training/data-storage?hl=ja#scoped-storage)を使用します。対象範囲別ストレージを使用すると、アプリは (1)自身のファイル、および (2)メディア ストア内の共有ファイルにアクセスすることができます。下記のパーミッションの宣言は、サポートされていません。
+Android API Level 30 では、すべてのアプリは Android デバイスのファイルシステムにアクセスするために[対象範囲別ストレージ](https://developer.android.com/training/data-storage?hl=ja#scoped-storage)を使用します。対象範囲別ストレージを使用すると、アプリは (1) 自身のファイル、および (2) メディア ストア内の共有ファイルにアクセスすることができます。下記のパーミッションの宣言は、サポートされていません。
 ```xml  
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
@@ -114,18 +175,17 @@ Android のストレージは、API レベル 29 以降、劇的に変化して�
 * [共有ストレージからメディア ファイルにアクセスする](https://developer.android.com/training/data-storage/shared/media#request-permissions)
 * [ストレージ デバイスのすべてのファイルを管理する](https://developer.android.com/training/data-storage/manage-all-files)
 
-
 ### OpenGL ES バージョンの宣言
 
 Android マニフェストに [uses-feature 要素](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)を追加すると、Play ストアでアプリを正しいタイプのデバイスで利用できるようになります。
 
-MapView（2D）を使用するアプリには、最小でも OpenGL ES 2.x が必要です。
+`MapView`（2D）を使用するアプリには、最小でも OpenGL ES 2.x が必要です。
 
 ```xml  
 <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 ```
 
-SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です。
+`SceneView`（3D）を使用するアプリには、OpenGL ES 3.x が必要です。
 
 ```xml  
 <uses-feature android:glEsVersion="0x00030000" android:required="true" />
@@ -141,7 +201,17 @@ SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です�
 また、[Google Play ストア](https://play.google.com/store/apps/details?id=com.esri.arcgismaps.kotlin.sampleviewer)からサンプル ビューアー アプリをダウンロードし、お使いのデバイスでライブ サンプルをご覧いただくこともできます。
 
 ### ArcGIS Maps SDK for Kotlin Toolkit
-[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。
+<!-- [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。 -->
+[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティ) が含まれています。`MapView` と `SceneView` のコンポーザブル関数を使用するには、モジュール レベルの build.gradle.kts に次の依存関係を含めます。
+
+* [GeoView-Compose](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/geoview-compose)：`MapView` と `SceneView` クラスのコンポーザブルな実装を提供します。
+
+Toolkit には、Compose に対応した他の特別なコンポーネントも含まれています。
+
+* [Authenticator](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/authentication)：ネットワークおよび ArcGIS 認証の必要なリクエストが発生すると、ユーザー インターフェイスが表示されます。
+* [Compass](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/compass)：地図が回転するとコンパスがその方向を示します。地図が北を指している場合は自動的に非表示になります。
+* [FeatureForm](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/featureforms)：外部から設定された `FeatureForm` API を使用して、レイヤーのフィーチャのフィールド値を編集できるようにします。
+* [FloorFilter](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/indoors)：GeoView で、敷地、敷地内の建物、または建物内のフロアでフロア プラン データをフィルタリングできます。
 
 ### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
@@ -149,10 +219,14 @@ SceneView（3D）を使用するアプリには、OpenGL ES 3.x が必要です�
 ローカルでドキュメントを公開する方法：
 
 * 使用する ArcGIS Runtime SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
-* アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、public と install という 2 つのサブフォルダがあります。
-* install フォルダ内の README.md ファイルを開き、選択した Web サーバーの指示に従います。
+* アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、`public` と `install` という 2 つのサブフォルダがあります。
+* `install` フォルダ内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。
 
-注：ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。
+{{% notice note %}}
+
+ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。
+
+{{% /notice %}}
 
 ### 追加のデータ
 #### Projection Engine データ
