@@ -389,7 +389,7 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       const apiKey = "YOUR_API_KEY";
 
       // ベースマップの設定
-      const basemapId = "ArcGIS:Topographic";
+      const basemapId = "arcgis/topographic";
 
       // ベースマップの言語設定
       const language = "ja";
@@ -446,7 +446,7 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       const apiKey = "YOUR_API_KEY";
 
       // ベースマップの設定
-      const basemapId = "ArcGIS:Topographic";
+      const basemapId = "arcgis/topographic";
 
       // ベースマップの言語設定
       const language = "ja";
