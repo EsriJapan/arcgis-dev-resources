@@ -9,7 +9,7 @@ aliases = ["/create-startup-app-js/"]
 
 このチュートリアルでは ArcGIS Maps SDK for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
@@ -82,8 +82,8 @@ HTML ページを定義して、Web ブラウザのウィンドウの幅と高�
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.26/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.29/"></script>
         <!-- 追加終了 -->
 
       </head>
@@ -120,8 +120,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.26/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.29/"></script>
         <!-- 追加終了 -->
         
         <!-- モジュールの追加 -->
@@ -152,9 +152,9 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
 1. __CodePen__ に戻ります。
 
-2. require 文の中で、新しい [Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) を作成し、[basemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap) プロパティに arcgis-topographic を設定します。[ベースマップ レイヤーサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)へのアクセスを可能にするために、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の apiKey() プロパティを設定します。
+2. require 文の中で、新しい [Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) を作成し、[basemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap) プロパティに arcgis/topographic を参照するベースマップ スタイルの情報を設定します。[ベースマップ スタイル サービス](https://developers.arcgis.com/rest/basemap-styles/)へのアクセスを可能にするために、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の apiKey() プロパティを設定します。
 
-    - マップには、データ レイヤとベースマップ レイヤがあります。[ベースマップ レイヤーサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の作成時に前のステップから設定できます。
+    - マップには、データ レイヤとベースマップ レイヤがあります。[ベースマップ スタイル サービス](https://developers.arcgis.com/rest/basemap-styles/)からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の作成時に前のステップから設定できます。
 
     - マップおよびマップ ビューが  [Map（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でどのように機能するかについては、[マッピングとロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/) を参照してください。
 
@@ -177,8 +177,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.26/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.29/"></script>
         <!-- 追加終了 -->
         　
         <!-- モジュールの追加 -->
@@ -190,7 +190,12 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
             // マップの作成
             const map = new Map({
-              basemap: "arcgis-topographic" // Basemap layer service
+              basemap:{
+                style:{
+                  id:"arcgis/topographic", // 地形図ベースマップ レイヤー
+                  language:"ja"
+                }
+              }
             });
 
           });
@@ -238,8 +243,8 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
         </style>
 
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.26/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.29/"></script>
         <!-- 追加終了 -->
         　
         <!-- モジュールの追加 -->
@@ -251,15 +256,20 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
             // マップの作成
             const map = new Map({
-              basemap: "arcgis-topographic" // Basemap layer service
+              basemap:{
+                style:{
+                  id:"arcgis/topographic", // 地形図ベースマップ レイヤー
+                  language:"ja"
+                }
+              }
             });
 
             // マップ ビューの作成
             const view = new MapView({
               map: map,
-              center: [138.727363, 35.360626], // Longitude, latitude
-              zoom: 13, // Zoom level
-              container: "viewDiv" // Div element
+              center: [138.727363, 35.360626], // 経度、緯度
+              zoom: 13, // ズーム レベル
+              container: "viewDiv" // MapView を表示する HTML 上の Div 要素の ID
             });
 
           });
@@ -329,8 +339,8 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
         </style>
         
         <!-- CSS ファイルと JS ライブラリへの参照を追加 -->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
-        <script src="https://js.arcgis.com/4.26/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.29/"></script>
         <!--追加終了  -->
         
         <!-- モジュールの追加 -->
@@ -343,7 +353,12 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
             // マップの作成
             /*
             const map = new Map({
-              basemap: "arcgis-topographic" // Basemap layer service
+              basemap:{
+                style:{
+                  id:"arcgis/topographic", // 地形図ベースマップ レイヤー
+                  language:"ja"
+                }
+              }
             });
             */
 
@@ -358,9 +373,9 @@ __CodePen__ で、作成したコードを実行して地図を表示します�
             // マップ ビューの作成
             const view = new MapView({
               map: map,
-              center: [138.727363, 35.360626], // Longitude, latitude
-              zoom: 13, // Zoom level
-              container: "viewDiv" // Div element
+              center: [138.727363, 35.360626], // 経度、緯度
+              zoom: 13, // ズーム レベル
+              container: "viewDiv" // MapView を表示する HTML 上の Div 要素の ID
             });
 
           });

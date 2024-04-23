@@ -8,7 +8,7 @@ aliases = ["/create-startup-app-OpenLayers/"]
 # マップを表示する
 このチュートリアルでは、[OpenLayers](https://developers.arcgis.com/openlayers/) と ベースマップ レイヤー サービス を使用して、マップを表示する方法を紹介します。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-openlayers/create-startup-app-openlayers.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-openlayers/create-startup-app-openlayers.png" width="600px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータ レイヤーが含まれます。マップ ビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
@@ -89,8 +89,8 @@ OpenLayers と [ol-mapbox-style](https://github.com/openlayers/ol-mapbox-style) 
     </style>
 
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
      </head>
   <body>
@@ -124,8 +124,8 @@ OpenLayers と [ol-mapbox-style](https://github.com/openlayers/ol-mapbox-style) 
     </style>
 
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -167,9 +167,9 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
         color: #323232;
       }
     </style>
-   <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -209,9 +209,9 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
         color: #323232;
       }
     </style>
-    <!-- openlayers の css ファイルと js ライブラリの参照追加 -->    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -250,8 +250,8 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -315,8 +315,8 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -343,7 +343,7 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
 </html>
 ```
 
-2. basemapId 変数を作成し、それを ArcGIS:Topographic に設定します。
+2. basemapId 変数を作成し、それを arcgis/topographic に設定します。また、ベースマップを日本語で表示するため、language 変数を作成し、ja を設定します。
 
 ```HTML
 <html>
@@ -366,8 +366,8 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
      </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -390,6 +390,9 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
 
       // ベースマップの設定
       const basemapId = "ArcGIS:Topographic";
+
+      // ベースマップの言語設定
+      const language = "ja";
 
     </script>
 
@@ -420,8 +423,8 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -445,8 +448,11 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       // ベースマップの設定
       const basemapId = "ArcGIS:Topographic";
 
+      // ベースマップの言語設定
+      const language = "ja";
+
       // ベースマップの URL を設定
-      const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
+      const basemapURL = "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/" + basemapId + "?type=style&token=" + apiKey + "&language=" + language;
 
     </script>
 
@@ -477,8 +483,8 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
@@ -500,10 +506,13 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       const apiKey = "YOUR_API_KEY";
 
       // ベースマップの設定
-      const basemapId = "ArcGIS:Topographic";
+      const basemapId = "arcgis/topographic";
+
+      // ベースマップの言語設定
+      const language = "ja";
 
       // ベースマップの URL を設定
-      const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
+      const basemapURL = "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/" + basemapId + "?type=style&token=" + apiKey + "&language=" + language;
 
       // olms 関数でベクター タイル レイヤー をベースマップに適用
       olms(map, basemapURL);

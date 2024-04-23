@@ -44,16 +44,25 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
   <title>Esri Leaflet</title>
 
   <!-- Leaflet の jsライブラリ と css ファイルの参照を追加-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
     crossorigin=""></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+    crossorigin="" />
 
   <!-- Esri Leaflet の js ライブラリ と ベクタータイル対応の js ライブラリへの参照を追加-->
-  <script src="https://unpkg.com/esri-leaflet@3.0.0/dist/esri-leaflet.js"></script>
-  <script src="https://unpkg.com/esri-leaflet-vector@3.0.0/dist/esri-leaflet-vector.js"></script>
+  <script
+    src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"
+    integrity="sha512-G4+fuKc1B96F0sUG7eKtgiJr0JM3iQC4bfc8WtYvmm7msHES0Hst2mLWASPb8zZk91tqMG86AjP0tgXIEFPPUA=="
+    crossorigin=""></script>
+  <script
+    src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"
+    integrity="sha512-/H7f4mjvCB73Rsi7cWCW0Z3Zl1InqvtGOQsipk5ClXhAxfrw6GSjEnPz2VVTuh7dE29ws8tS3OGHowmkEae2/A=="
+    crossorigin=""></script>
 
  
   <style>
@@ -91,17 +100,26 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <title>Esri Leaflet</title>
 
- <!-- Leaflet の jsライブラリ と css ファイルの参照を追加-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  <!-- Leaflet の jsライブラリ と css ファイルの参照を追加-->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
     crossorigin=""></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+    crossorigin="" />
 
   <!-- Esri Leaflet の js ライブラリ と ベクタータイル対応の js ライブラリへの参照を追加-->
-  <script src="https://unpkg.com/esri-leaflet@3.0.0/dist/esri-leaflet.js"></script>
-  <script src="https://unpkg.com/esri-leaflet-vector@3.0.0/dist/esri-leaflet-vector.js"></script>
+  <script
+    src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"
+    integrity="sha512-G4+fuKc1B96F0sUG7eKtgiJr0JM3iQC4bfc8WtYvmm7msHES0Hst2mLWASPb8zZk91tqMG86AjP0tgXIEFPPUA=="
+    crossorigin=""></script>
+  <script
+    src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"
+    integrity="sha512-/H7f4mjvCB73Rsi7cWCW0Z3Zl1InqvtGOQsipk5ClXhAxfrw6GSjEnPz2VVTuh7dE29ws8tS3OGHowmkEae2/A=="
+    crossorigin=""></script>
 
   <style>
     body { margin:0; padding:0; }
@@ -126,14 +144,15 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
   <script>
 
     const apiKey = "YOUR_API_KEY";
-    const basemapEnum = "ArcGIS:Topographic";
+    const basemapEnum = "arcgis/topographic";
 
     const map = L.map('map', {
       minZoom: 2
     }).setView([35.362752, 138.729858], 12);
 
     L.esri.Vector.vectorBasemapLayer(basemapEnum, {
-      apiKey: apiKey
+      apiKey: apiKey,
+      language: "ja"
     }).addTo(map);
 
   </script>
@@ -157,7 +176,7 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
 <script>
 
     const apiKey = "YOUR_API_KEY";
-    const basemapEnum = "ArcGIS:Topographic";
+    const basemapEnum = "arcgis/topographic";
 
     const map = L.map('map', {
       minZoom: 2

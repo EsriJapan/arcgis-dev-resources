@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-19T12:57:14 JST">
+<meta name="revised" content="2024-04-23T14:12:59 JST">
 <title>MapLibre GL JS :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -953,7 +953,7 @@ if (!doNotTrack) {
     
     <h1 id="マップを表示する">マップを表示する</h1>
 <p>このチュートリアルでは、<a href="https://developers.arcgis.com/maplibre-gl-js/">MapLibre GL JS</a> と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。</p>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
 <p>ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。</p>
 <p>このチュートリアルでは、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/">ベースマップ レイヤー サービス</a>の地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。</p>
 <p>マップとレイヤーの詳細については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping APIs and services</a>のガイドの<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/">Display maps, scenes, and layers</a>にアクセスしてください。</p>
@@ -1016,8 +1016,8 @@ map id は、マップを表示するために使用される id 属性です。
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1057,8 +1057,8 @@ map id は、マップを表示するために使用される id 属性です。
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1073,7 +1073,7 @@ map id は、マップを表示するために使用される id 属性です。
 
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><ol start="2">
-<li>API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは <a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">maplibre.accessToken</a> を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。</li>
+<li>API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは <a href="https://maplibre.org/maplibre-gl-js-docs/api/map/">maplibre.accessToken</a> を設定する必要はありません。使用するベースマップ arcgis/topographic を格納する basemapEnum 変数を作成します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
@@ -1095,8 +1095,8 @@ map id は、マップを表示するために使用される id 属性です。
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1107,7 +1107,7 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#75715e">// API キーの追加 
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
         <span style="color:#75715e">// ベースマップの指定
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemapEnum</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ArcGIS:Topographic&#34;</span>;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemapEnum</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;arcgis/topographic&#34;</span>;
       
     &lt;/<span style="color:#f92672">script</span>&gt;
 
@@ -1137,8 +1137,8 @@ map id は、マップを表示するために使用される id 属性です。
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- maplibre gl js のライブラリと css ファイルを指定 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
 
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1149,13 +1149,13 @@ map id は、マップを表示するために使用される id 属性です。
         <span style="color:#75715e">// API キーの追加 
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
         <span style="color:#75715e">// ベースマップの指定
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemapEnum</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ArcGIS:Topographic&#34;</span>;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemapEnum</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;arcgis/topographic&#34;</span>;
       
         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">maplibregl</span>.<span style="color:#a6e22e">Map</span>({
-            <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;map&#34;</span>, <span style="color:#75715e">// div 要素内の id を指定
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`https://basemaps-api.arcgis.com/arcgis/rest/services/styles/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">basemapEnum</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?type=style&amp;token=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">apiKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
-            <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// マップ初期表示時点でのズームレベル
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.729858</span>, <span style="color:#ae81ff">35.362752</span>] <span style="color:#75715e">// マップ初期表示時の位置
+          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;map&#34;</span>, <span style="color:#75715e">// div 要素内の id を指定
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">basemapEnum</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?token=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">apiKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;language=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">language</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// マップ初期表示時点でのズームレベル
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.729858</span>, <span style="color:#ae81ff">35.362752</span>] <span style="color:#75715e">// マップ初期表示時の位置
 </span><span style="color:#75715e"></span>        });
 
     &lt;/<span style="color:#f92672">script</span>&gt;
