@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-19T12:57:14 JST">
+<meta name="revised" content="2024-04-26T15:28:57 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -922,16 +922,14 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#マップを表示する">マップを表示する</a></li>
-    <li><a href="#前提条件">前提条件</a></li>
     <li><a href="#ステップ">ステップ</a>
       <ul>
-        <li><a href="#新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します。</a></li>
-        <li><a href="#インポートステートメントを追加する">インポートステートメントを追加する</a></li>
-        <li><a href="#マップビューの-ui-を追加する">マップビューの UI を追加する</a></li>
-        <li><a href="#マップを追加する">マップを追加する</a></li>
+        <li><a href="#新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</a></li>
+        <li><a href="#マップを作成する">マップを作成する</a></li>
+        <li><a href="#マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する。</a></li>
+        <li><a href="#mainactivity-クラス内で-mainscreen-を呼び出す">MainActivity クラス内で MainScreen を呼び出す</a></li>
         <li><a href="#api-キーを設定する">API キーを設定する</a></li>
         <li><a href="#アプリを実行する">アプリを実行する</a></li>
-        <li><a href="#web-マップを表示する">Web マップを表示する</a></li>
       </ul>
     </li>
   </ul>
@@ -956,33 +954,36 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Maps SDK for Kotlin - Tutorials - <a href="https://developers.arcgis.com/kotlin/maps-2d/tutorials/display-a-map/">Display a map</a></p>
 <h2 id="マップを表示する">マップを表示する</h2>
 <p>このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
-<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android100.0/display_map.png" width = "300px">
+<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android200.0/display_map.png" width = "300px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。</p>
-<p>このチュートリアルでは、地形ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
-<h2 id="前提条件">前提条件</h2>
-<p>このチュートリアルを実施するには、以下が必要です。</p>
-<ol>
-<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
-<li>開発環境が<a href="https://developers.arcgis.com/kotlin/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
-<li>Kotlin で Android 開発をするための IDE。</li>
-</ol>
-<p>注: このチュートリアルの<a href="https://developers.arcgis.com/kotlin/zips/display-a-map.zip">完成版のコード</a>は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。<strong>Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。</strong></p>
+<p>このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
+<!-- 
+## 前提条件
+
+このチュートリアルを実施するには、以下が必要です。
+
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)」をご覧ください。
+2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
+3. Kotlin で Android 開発をするための IDE。
+
+注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。** -->
 <h2 id="ステップ">ステップ</h2>
-<h3 id="新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します。</h3>
+<h3 id="新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</h3>
 <p>Android Studio を使用してアプリを作成し、API を参照するように構成します。</p>
 <ol>
 <li>
 <p>Android Studio を開きます。</p>
 <ul>
-<li>メニューバーで [File] → [New] → [New Project….] をクリックします。</li>
+<li>[Welcome to Android Studio] ウィンドウで [New Project] をクリックします。<br />
+または、メニューバーで [File] → [New] → [New Project] をクリックします。</li>
 <li>[Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。</li>
-<li>[Configure your project] ウィンドウで、以下の項目を設定します。
+<li>次のウィンドウで、以下の項目を設定します。
 <ul>
 <li>Name: Display a map</li>
 <li>Package name： com.example.app に変更します。または、組織に合わせて変更してください。</li>
 <li>Save location: 新しいフォルダに設定します。</li>
-<li>Language: Kotlin</li>
-<li>Minimum SDK: API 26:Android 8.0 (O)</li>
+<li>Minimum SDK: API 26 (&ldquo;Oreo&rdquo;; Android 8.0)</li>
+<li>Build configuration language: Kotlin DSL (build.gradle.kts)</li>
 </ul>
 </li>
 </ul>
@@ -993,104 +994,118 @@ if (!doNotTrack) {
 <img src = "https://developers.arcgis.com/kotlin/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" widgh = "300px"></p>
 </li>
 <li>
-<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
-<p>build.gradle (Project: Display_a_map)</p>
+<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
+<p>build.gradle.kts (Project: Display_a_map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#75715e">// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 </span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
-    id <span style="color:#e6db74">&#39;com.android.application&#39;</span> version <span style="color:#e6db74">&#39;8.1.1&#39;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#39;com.android.library&#39;</span> version <span style="color:#e6db74">&#39;8.1.1&#39;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span> version <span style="color:#e6db74">&#39;1.9.10&#39;</span> apply <span style="color:#66d9ef">false</span>
-<span style="color:#f92672">}</span>
-
-
-task <span style="color:#a6e22e">clean</span><span style="color:#f92672">(</span>type: Delete<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    delete rootProject<span style="color:#f92672">.</span><span style="color:#a6e22e">buildDir</span>
+    id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.android.application&#34;</span><span style="color:#f92672">)</span> version <span style="color:#e6db74">&#34;8.2.0&#34;</span> apply <span style="color:#66d9ef">false</span>
+    id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span><span style="color:#f92672">)</span> version <span style="color:#e6db74">&#34;1.9.10&#34;</span> apply <span style="color:#66d9ef">false</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
-<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
-<p>build.gradle (Module: Display_a_map)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">    apply plugin: <span style="color:#e6db74">&#39;com.android.application&#39;</span>
-    apply plugin: <span style="color:#e6db74">&#39;org.jetbrains.kotlin.android&#39;</span>
+<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
+<p>build.gradle.kts (Module: Display_a_map)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">    plugins <span style="color:#f92672">{</span>
+        id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.android.application&#34;</span><span style="color:#f92672">)</span>
+        id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
 
     android <span style="color:#f92672">{</span>
-        compileSdk <span style="color:#ae81ff">33</span>
+        compileSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
 
         defaultConfig <span style="color:#f92672">{</span>
-            applicationId <span style="color:#e6db74">&#34;com.example.app&#34;</span>
-            minSdkVersion <span style="color:#ae81ff">26</span>
-            targetSdk <span style="color:#ae81ff">33</span>
-            versionCode <span style="color:#ae81ff">1</span>
-            versionName <span style="color:#e6db74">&#34;1.0&#34;</span>
+            applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+            minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span>
+            targetSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+            versionCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+            versionName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>
 
-            testInstrumentationRunner <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
+            testInstrumentationRunner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
         <span style="color:#f92672">}</span>
 
         buildTypes <span style="color:#f92672">{</span>
             release <span style="color:#f92672">{</span>
-                minifyEnabled <span style="color:#66d9ef">false</span>
-                proguardFiles <span style="color:#a6e22e">getDefaultProguardFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;proguard-android-optimize.txt&#39;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#39;proguard-rules.pro&#39;</span>
+                isMinifyEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+                proguardFiles<span style="color:#f92672">(</span>
+                    getDefaultProguardFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;proguard-android-optimize.txt&#34;</span><span style="color:#f92672">),</span>
+                    <span style="color:#e6db74">&#34;proguard-rules.pro&#34;</span>
+                <span style="color:#f92672">)</span>
             <span style="color:#f92672">}</span>
         <span style="color:#f92672">}</span>
         compileOptions <span style="color:#f92672">{</span>
-            sourceCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
-            targetCompatibility JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+            sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+            targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
         <span style="color:#f92672">}</span>
 
         buildFeatures <span style="color:#f92672">{</span>
-            dataBinding <span style="color:#66d9ef">true</span>
-            buildConfig <span style="color:#66d9ef">true</span>
+            compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+            buildConfig <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
         <span style="color:#f92672">}</span>
 
-        packagingOptions <span style="color:#f92672">{</span>
-            exclude <span style="color:#e6db74">&#39;META-INF/DEPENDENCIES&#39;</span>
+        composeOptions <span style="color:#f92672">{</span>
+            kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.3&#34;</span>
         <span style="color:#f92672">}</span>
 
         kotlinOptions <span style="color:#f92672">{</span>
             jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
         <span style="color:#f92672">}</span>
 
-        namespace <span style="color:#e6db74">&#39;com.example.app&#39;</span>
+        packaging <span style="color:#f92672">{</span>
+            resources <span style="color:#f92672">{</span>
+                excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/DEPENDENCIES&#34;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
     <span style="color:#f92672">}</span>
 
     dependencies <span style="color:#f92672">{</span>
-        implementation <span style="color:#e6db74">&#39;androidx.appcompat:appcompat:1.6.1&#39;</span>
-        implementation <span style="color:#e6db74">&#39;com.google.android.material:material:1.7.0&#39;</span>
-        implementation <span style="color:#e6db74">&#39;androidx.constraintlayout:constraintlayout:2.1.4&#39;</span>
-        implementation <span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin:200.3.0&#34;</span>
+        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.core:core-ktx:1.12.0&#34;</span><span style="color:#f92672">)</span>
+        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.lifecycle:lifecycle-runtime-ktx:2.7.0&#34;</span><span style="color:#f92672">)</span>
+        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.activity:activity-compose:1.8.2&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#75715e">// Jetpack Compose の BOM
+</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose:compose-bom:2023.10.01&#34;</span><span style="color:#f92672">))</span>
+        <span style="color:#75715e">// Jetpack Compose の依存関係
+</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose.ui:ui&#34;</span><span style="color:#f92672">)</span>
+        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose.material3:material3&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#75715e">// ArcGIS Map Kotlin SDK の依存関係
+</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin:200.4.0&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#75715e">// Toolkit の依存関係
+</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-bom:200.4.0&#34;</span><span style="color:#f92672">))</span>
+        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span><span style="color:#f92672">)</span>
     <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
-<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。</p>
-<p>settings.gradle (Display a map)</p>
+<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。</p>
+<p>settings.gradle.kts (Display a map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">pluginManagement <span style="color:#f92672">{</span>
     repositories <span style="color:#f92672">{</span>
-        gradlePluginPortal<span style="color:#f92672">()</span>
         google<span style="color:#f92672">()</span>
         mavenCentral<span style="color:#f92672">()</span>
+        gradlePluginPortal<span style="color:#f92672">()</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 
 dependencyResolutionManagement <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Suppress</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UnstableApiUsage&#34;</span><span style="color:#f92672">)</span>
     repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@Suppress</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UnstableApiUsage&#34;</span><span style="color:#f92672">)</span>
     repositories <span style="color:#f92672">{</span>
         google<span style="color:#f92672">()</span>
         mavenCentral<span style="color:#f92672">()</span>
-        maven <span style="color:#f92672">{</span>
-            url <span style="color:#e6db74">&#39;https://esri.jfrog.io/artifactory/arcgis&#39;</span>
-        <span style="color:#f92672">}</span>
+        maven <span style="color:#f92672">{</span> url <span style="color:#f92672">=</span> uri<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://esri.jfrog.io/artifactory/arcgis&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 
 rootProject<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Display a map&#34;</span>
-include <span style="color:#e6db74">&#39;:app&#39;</span>
+include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app&#34;</span><span style="color:#f92672">)</span>
 </code></pre></div></li>
 <li>
 <p>Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。</p>
 </li>
 <li>
 <p>プロジェクト ツール ウィンドウから、[app] &gt; [manifests] &gt; [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。</p>
-<p>これらの新しい要素を manifest 要素内に挿入します。 他のステートメントを変更または削除しないでください。</p>
+<p>これらの新しい要素を <code>manifest</code> 要素内に挿入します。 他のステートメントを変更または削除しないでください。</p>
 <p>今後追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。</p>
 <p>AndroidManifest.xml</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
@@ -1100,98 +1115,59 @@ include <span style="color:#e6db74">&#39;:app&#39;</span>
 // 追加終了
 </code></pre></div></li>
 </ol>
-<h3 id="インポートステートメントを追加する">インポートステートメントを追加する</h3>
-<p>[app] &gt; [java] &gt; [com.example.app MainActivity.kt] を開き、API を参照するためのインポート ステートメントを追加します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">package</span> com.example.app
-
-<span style="color:#66d9ef">import</span> androidx.appcompat.app.AppCompatActivity
-<span style="color:#66d9ef">import</span> android.os.Bundle
-
-<span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> android.util.Log
-<span style="color:#66d9ef">import</span> android.widget.Toast
-<span style="color:#66d9ef">import</span> androidx.databinding.DataBindingUtil
-<span style="color:#66d9ef">import</span> com.arcgismaps.ApiKey
-<span style="color:#66d9ef">import</span> com.arcgismaps.ArcGISEnvironment
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.ArcGISMap
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyle
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.Viewpoint
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.view.MapView
-<span style="color:#66d9ef">import</span> com.example.app.databinding.ActivityMainBinding
-<span style="color:#75715e">// 追加終了
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity() {
-</code></pre></div><h3 id="マップビューの-ui-を追加する">マップビューの UI を追加する</h3>
-<p>マップビューは、マップを表示する UI コンポーネントです。 また、タッチジェスチャによるナビゲートなど、ユーザーによるマップの操作も処理します。XML を使用してマップビューを UI に追加し、メインアクティビティのソースコードで使用できるようにします。</p>
+<h3 id="マップを作成する">マップを作成する</h3>
 <ol>
 <li>
-<p>[app] &gt; [res] &gt; [layout] &gt; [activity_main.xml] で、TextView 要素全体を <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html">MapView</a> 要素に置き換えます。</p>
-<p>XML コードが表示されない場合は、[Code] タブを選択してデザインモードを切り替え、エディターに XML コードを表示します。</p>
-<p>MapView 要素は、ArcGIS Maps SDK for Kotlin から <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html">MapView</a> クラスのインスタンスを作成します。</p>
-<p>メインアクティビティソースコードでは、android:id 属性の値で宣言されている暗黙的なプロパティを使用してその <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html">MapView</a> インスタンスにアクセスできます。この場合、プロパティの名前は mapView になります。</p>
-<p>activity_main.xml を下記のように置き換えます。</p>
-<p>activity_main.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;layout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
+<p>プロジェクト ツール ウィンドウから、[app] &gt; [Kotlin+java] &gt; [com.example.app] を右クリックし、リストから [New] &gt; [package] を選択します。パッケージ名に <b>com.example.app.screens</b> と入力し、キーボードの [Enter] キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。</p>
+</li>
+<li>
+<p>作成した <b>screens</b> パッケージを右クリックし、リストから [New] &gt; [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に <b>MainScreen</b> と入力し、キーボードの [Enter] キーを押します。</p>
+</li>
+<li>
+<p>MainScreen.kt で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。</p>
+ <div class="notices note" >
+<p>以下のコード ブロックでコンポーザブル関数 <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">com.arcgismaps.tookit.geoviewcompose.MapView</a> をインポートしていることを確認してください。これは <a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit">ArcGIS Maps SDK for Kotlin Toolkit</a> で定義されています。コンポーザブルに対応したコードでは ArcGIS Maps SDK API の <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html">com.arcgismaps.mapping.view.MapView</a> という名前のクラスは使用しないでください。</p>
+ </div>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#a6e22e">@file</span>:OptIn(ExperimentalMaterial3Api<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>)
 
-    <span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-        <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">package</span> com.example.app.screens
 
-        <span style="color:#f92672">&lt;com.arcgismaps.mapping.view.MapView</span>
-            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/mapView&#34;</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span> <span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-<span style="color:#f92672">&lt;/layout&gt;</span>
+<span style="color:#66d9ef">import</span> androidx.compose.foundation.layout.fillMaxSize
+<span style="color:#66d9ef">import</span> androidx.compose.foundation.layout.padding
+<span style="color:#66d9ef">import</span> androidx.compose.material3.ExperimentalMaterial3Api
+<span style="color:#66d9ef">import</span> androidx.compose.material3.Scaffold
+<span style="color:#66d9ef">import</span> androidx.compose.material3.Text
+<span style="color:#66d9ef">import</span> androidx.compose.material3.TopAppBar
+<span style="color:#66d9ef">import</span> androidx.compose.runtime.Composable
+<span style="color:#66d9ef">import</span> androidx.compose.runtime.remember
+<span style="color:#66d9ef">import</span> androidx.compose.ui.Modifier
+<span style="color:#66d9ef">import</span> androidx.compose.ui.res.stringResource
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.ArcGISMap
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.Basemap
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyle
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyleLanguageStrategy
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyleParameters
+<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.Viewpoint
+<span style="color:#66d9ef">import</span> com.arcgismaps.toolkit.geoviewcompose.MapView
+<span style="color:#66d9ef">import</span> com.example.app.R
+<span style="color:#66d9ef">import</span> java.util.Locale
 </code></pre></div></li>
 <li>
-<p>MainActivity.kt で、activityMainBinding という名前の遅延プロパティを作成します。 Android クラスの <a href="https://developer.android.com/reference/android/databinding/DataBindingUtil#setContentView(android.app.Activity,%20int)">DataBindingUtil</a> を使用して、メイン アクティビティのコンテンツ ビューを特定のレイアウトに設定します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity() {
+<p><a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を返す <code>createMap()</code> という名前のトップ レベル関数を作成します。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
 
-    <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> activityMainBinding: ActivityMainBinding <span style="color:#66d9ef">by</span> lazy {
-        DataBindingUtil.setContentView(<span style="color:#66d9ef">this</span>, R.layout.activity_main)
-    }        
-    <span style="color:#75715e">// 追加終了
-</span></code></pre></div></li>
+}
+</code></pre></div></li>
 <li>
-<p>mapView という読み取り専用の変数を作成し、それを activity_main.xml で作成された mapView にバインドします。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity() {
-       
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> activityMainBinding: ActivityMainBinding <span style="color:#66d9ef">by</span> lazy {
-        DataBindingUtil.setContentView(<span style="color:#66d9ef">this</span>, R.layout.activity_main)
-    }
+<p>BasemapStyle.ArcGISTopographic を使用して <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を作成し、マップ上で apply{} を呼び出します。この関数は <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を返します。</p>
+<p>apply{} の詳細については Kotlin の <a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a> を参照してください。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
 
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> mapView: MapView <span style="color:#66d9ef">by</span> lazy {
-        activityMainBinding.mapView
-    }
-    <span style="color:#75715e">// 追加終了
-</span></code></pre></div></li>
-</ol>
-<h3 id="マップを追加する">マップを追加する</h3>
-<p>マップビューを使用して、富士山を中心としたマップを表示します。マップには、地形ベースマップ レイヤーが含まれます。</p>
-<ol>
-<li>
-<p>MainActivity.kt で、MainActivity クラスに新しい setupMap() メソッドを追加し、<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を作成します。</p>
-<p><a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-basemap-style/-arc-g-i-s-topographic/index.html">BasemapStyle.ArcGISTopographic</a> というベースマップスタイルを使用して <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を構成します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt">    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
-        <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-    }
-
-    <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">setupMap</span>() {
-
-        <span style="color:#66d9ef">val</span> map = ArcGISMap(BasemapStyle.ArcGISTopographic)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> ArcGISMap(BasemapStyle.ArcGISTopographic).apply {
 
     }
     <span style="color:#75715e">// 追加終了
@@ -1199,108 +1175,200 @@ include <span style="color:#e6db74">&#39;:app&#39;</span>
 }
 </code></pre></div></li>
 <li>
-<p>mapView の map プロパティを <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> に設定します。次に、<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html">ViewPoint</a> を作成し、それを mapView に追加します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">setupMap</span>() {
+<p><code>apply</code> ブロックで、x (経度) と y (緯度) の座標と縮尺を持つ <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html">Viewpoint</a> を作成します。この Viewpoint を <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> の <code>initialViewpoint</code> プロパティに割り当てます。
+また、ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
 
-        <span style="color:#66d9ef">val</span> map = ArcGISMap(BasemapStyle.ArcGISTopographic)
+    <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> basemapStyleParams = BasemapStyleParameters()
+    basemapStyleParams.languageStrategy = BasemapStyleLanguageStrategy.Specific(Locale(<span style="color:#e6db74">&#34;ja&#34;</span>))
+    <span style="color:#75715e">// 追加終了        
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">return</span> ArcGISMap(Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParams)).apply {
 
         <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// レイアウトの MapView に表示されるマップを設定
-</span><span style="color:#75715e"></span>        mapView.map = map
+</span><span style="color:#75715e"></span>        initialViewpoint = Viewpoint(
+            latitude = <span style="color:#ae81ff">35.360626</span>,
+            longitude = <span style="color:#ae81ff">138.727363</span>,
 
-        mapView.setViewpoint(Viewpoint(<span style="color:#ae81ff">35.360626</span>, <span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">200000.0</span>))
+            scale = <span style="color:#ae81ff">200000.0</span>
+
+        )
         <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
     }
 
 }
 </code></pre></div></li>
+</ol>
+<h3 id="マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する。</h3>
+<ol>
 <li>
-<p><a href="https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)">onCreate()</a> メソッドで、setContentView(R.layout.activity_main) コードを探し、見つかった場合は削除します。</p>
-<p>Android Studio の New Project ウィザードを使用した場合、onCreate() ライフサイクル関数で setContentView(R.layout.activity_main) が記述されている可能性があります。 そのコードを削除する必要があります。その代わりに、前の手順で宣言した遅延プロパティ activityMainBinding を使用します。</p>
-</li>
+<p><a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> を呼び出す <code>MainScreen</code> という名前のコンポーザブル関数を作成します。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Composable</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">MainScreen</span>() {
+
+}
+<span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
+    <span style="color:#960050;background-color:#1e0010">・・・</span>
+</code></pre></div></li>
 <li>
-<p><a href="https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)">onCreate()</a> メソッドで、lifecycle.addObserver() を呼び出し、マップ ビューを渡します。 次に、前の手順で定義した関数 setupMap() を呼び出します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
-    <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
-       
+<p><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember(kotlin.Function0)">remember</a> ブロックを追加し、その中で <code>createMap()</code> を呼び出します。そして <code>remember</code> を <code>map</code> というローカル変数に割り当てます。</p>
+<p>トップ レベルのコンポーザブル関数は再構成時に状態を保持するために使用されます。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#a6e22e">@Composable</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">MainScreen</span>() {
+
     <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    lifecycle.addObserver(mapView)
-    setupMap()
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> map = remember {
+        createMap()
+    }
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
 }
+</code></pre></div></li>
+<li>
+<p>Android Jetpack Compose からいくつかのコンポーザブル関数を呼び出します。<a href="https://developer.android.com/jetpack/compose/components/scaffold">Scaffold</a> を呼び出し、アプリ名 (<code>R.string.app_name</code>) を含む <a href="https://developer.android.com/jetpack/compose/text">Text</a> で <a href="https://developer.android.com/jetpack/compose/components/app-bars">TopAppBar</a> を渡します。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#a6e22e">@Composable</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">MainScreen</span>() {
+
+    <span style="color:#66d9ef">val</span> map = remember {
+        createMap()
+    }
+
+    <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>    Scaffold(
+        topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
+    ) {
+
+    }
+    <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+}
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/jetpack/compose/components/scaffold">Scaffold</a> の末尾のラムダで、<a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit">ArcGIS Maps SDK for Kotlin Toolkit</a> で定義されている <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> コンポーザブルを呼び出し、最大サイズとデフォルトのパディングを持つ <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier">Modifier</a> を設定します。そして、<code>map</code> を <code>arcGISMap</code> パラメーターとして渡します。</p>
+<p>MainScreen.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#a6e22e">@Composable</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">MainScreen</span>() {
+
+    <span style="color:#66d9ef">val</span> map = remember {
+        createMap()
+    }
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
+    ) {
+
+        <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>        MapView(
+            modifier = Modifier.fillMaxSize().padding(<span style="color:#66d9ef">it</span>),
+            arcGISMap = map
+        )
+        <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+    }
+
+}
+</code></pre></div></li>
+</ol>
+<h3 id="mainactivity-クラス内で-mainscreen-を呼び出す">MainActivity クラス内で MainScreen を呼び出す</h3>
+<ol>
+<li>
+<p>[app] &gt; [kotlin+java] &gt; [com.example.app] の <b>MainActivity.kt</b> を開きます。パッケージ宣言 (最初の行) と <code>MainActivity</code> クラスの定義以外のすべての行を削除します。</p>
+<p>MainActivity.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">package</span> com.example.app
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : ComponentActivity() {
+
+}
+</code></pre></div></li>
+<li>
+<p>MainActivity.kt に import 文を追加します。</p>
+<p>MainActivity.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">package</span> com.example.app
+
+<span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> android.os.Bundle
+<span style="color:#66d9ef">import</span> androidx.activity.ComponentActivity
+<span style="color:#66d9ef">import</span> androidx.activity.compose.setContent
+<span style="color:#66d9ef">import</span> com.arcgismaps.ApiKey
+<span style="color:#66d9ef">import</span> com.arcgismaps.ArcGISEnvironment
+<span style="color:#66d9ef">import</span> com.example.app.screens.MainScreen
+<span style="color:#66d9ef">import</span> com.example.app.ui.theme.DisplayAMapTheme
+<span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : ComponentActivity() {
+
+}
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/components/activities/activity-lifecycle">onCreate()</a> ライフサイクル関数の <code>setContent()</code> ブロックでは、デフォルトのテーマ設定を適用して、コンポーザブル関数である <code>MainScreen</code> を呼び出します。これを行うには、<code>onCreate()</code> に以下のコードを追加します。</p>
+<p>MainActivity.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : ComponentActivity() {
+
+    <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
+        <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
+
+        setContent {
+            DisplayAMapTheme {
+                MainScreen()
+            }
+        }
+
+    }
+    <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 </ol>
 <h3 id="api-キーを設定する">API キーを設定する</h3>
-<p>API キーは、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンへのアクセスを可能にします。</p>
+<p>API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。</p>
 <ol>
 <li>
-<p><a href="https://developers.arcgis.com/dashboard/">開発者用ダッシュボード</a>で、API キーを取得します。このチュートリアルでは、デフォルトの API キーを使用します。作成方法は「<a href="../../get-api-key/">API キーの取得</a>」をご覧ください。</p>
-</li>
-<li>
-<p>setApiKey() メソッドを作成し、<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/api-key.html">ArcGISEnvironment.apiKey</a> プロパティを設定します。<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-api-key/-companion/create.html">ApiKey.create()</a> を呼び出し、API キーを文字列として渡します。またダブルクォーテーションを付けるのを忘れないでください。</p>
+<p><code>MainActivity</code> クラスで <code>setApiKey()</code> メソッドを作成し、<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-api-key/-companion/create.html">ApiKey.create()</a> を呼び出し、API キーを文字列として渡すことで、<a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/api-key.html">ArcGISEnvironment.apiKey</a> プロパティを設定します。引用符を忘れないでください。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">setupMap</span>() {
-
-        <span style="color:#66d9ef">val</span> map = ArcGISMap(BasemapStyle.ArcGISTopographic)
-
-        <span style="color:#75715e">// レイアウトの MapView に表示するマップを設定
-</span><span style="color:#75715e"></span>        mapView.map = map
-
-        mapView.setViewpoint(Viewpoint(<span style="color:#ae81ff">35.360626</span>, <span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">200000.0</span>))
-
-    }
-
-    <span style="color:#75715e">//  追加開始
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">setApiKey</span>() {
-
-        <span style="color:#75715e">// API キーをソースコードに保存することはベストプラクティスではありません。
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// このチュートリアルでは便宜上ソースコードに記載しています。
-</span><span style="color:#75715e"></span>        ArcGISEnvironment.apiKey = ApiKey.create(<span style="color:#e6db74">&#34;API キーを入力&#34;</span>)
-
-    }
-    <span style="color:#75715e">//  追加終了
-</span><span style="color:#75715e"></span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : ComponentActivity() {
+    <span style="color:#960050;background-color:#1e0010">・・・</span>
 }
-</code></pre></div></li>
+
+<span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">setApiKey</span>() {
+
+    ArcGISEnvironment.apiKey = ApiKey.create(<span style="color:#e6db74">&#34;API キー&#34;</span>)
+
+}
+<span style="color:#75715e">// 追加終了
+</span></code></pre></div></li>
 <li>
-<p>onCreate() ライフサイクルメソッド内で、setupMap() を呼び出す前に setApiKey() を呼び出します。</p>
+<p>onCreate() ライフサイクル メソッド内で setContent{} の前に setApiKey() を呼び出します。</p>
 <p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
-    <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : ComponentActivity() {
 
-    lifecycle.addObserver(mapView)
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
+        <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
 
-    <span style="color:#75715e">// 追加開始
-</span><span style="color:#75715e"></span>    setApiKey()
-    <span style="color:#75715e">// 追加終了
+        <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>        setApiKey()
+        <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
-    setupMap()
+        setContent {
+            DisplayAMapTheme {
+                MainScreen()
+            }
+        }
 
+    }
 
 }
 </code></pre></div></li>
 </ol>
-<!--
-### エラーメッセージを追加する (オプション)
-1. アプリ UI のトーストにエラーを表示し、Android Studio にエラーを記録する showError() 関数を作成します（Logcat タブに表示されます）。
-
-    この最初のチュートリアル（マップを表示する）は非常にシンプルで、showError() を呼び出しません。他のチュートリアルの多くは、マップの表示に基づいており、この関数を呼び出す必要があります。それらのチュートリアルで便利に使用できるように、この関数を定義します。
-
-    MainActivity.kt
-
-    ```kt
-    // 追加開始
-    private fun showError(message: String) {
-        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
-        Log.e(localClassName, message)
-    }
-    // 追加終了
-    ```
--->
 <h3 id="アプリを実行する">アプリを実行する</h3>
 <ol>
 <li>
@@ -1317,29 +1385,6 @@ include <span style="color:#e6db74">&#39;:app&#39;</span>
 <p>富士山を中心に、地形ベースマップレイヤーが追加されたマップが表示されます。マップビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
 </li>
 </ol>
-<p>完成版のプロジェクトは<a href="https://developers.arcgis.com/kotlin/zips/display-a-map.zip">こちら</a>からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。</p>
-<h3 id="web-マップを表示する">Web マップを表示する</h3>
-<p>「<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>
-<ol>
-<li>
-<p><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B">マップを表示する</a>のステップで作成したプロジェクトの [app] &gt; [java] &gt; [com.example.app] &gt; [MainActivity.kt] を開き、必要なインポートステートメントを追加します。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">import</span> com.arcgismaps.portal.Portal
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.PortalItem
-</code></pre></div></li>
-<li>
-<p>setupMap メソッドを下記のように書き換えます。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">val</span> portal = Portal(<span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span>, Portal.Connection.Anonymous)
-
-<span style="color:#66d9ef">val</span> itemId = <span style="color:#e6db74">&#34;Web マップの ID&#34;</span>
-<span style="color:#66d9ef">val</span> portalItem = PortalItem(portal, itemId)
-<span style="color:#66d9ef">val</span> map = ArcGISMap(portalItem)
-   
-mapView.map = map
-</code></pre></div></li>
-</ol>
-<hr>
 <p>アプリの動作が確認できたら <a href="https://esrijapan.github.io/arcgis-dev-resources/guide/security/">ArcGIS の セキュリティと認証について学びましょう！</a></p>
 
 
