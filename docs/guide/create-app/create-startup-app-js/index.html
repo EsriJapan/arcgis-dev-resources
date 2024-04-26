@@ -17,7 +17,11 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<<<<<<< HEAD
 <meta name="revised" content="2024-04-26T15:14:27 JST">
+=======
+<meta name="revised" content="2024-04-23T14:12:59 JST">
+>>>>>>> 105937a5cf5a5567a3e491ce209e7b9604fa654d
 <title>ArcGIS Maps SDK for JavaScript :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -955,7 +959,7 @@ if (!doNotTrack) {
     
     <h1 id="マップを表示する">マップを表示する</h1>
 <p>このチュートリアルでは ArcGIS Maps SDK for JavaScript を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。</p>
 <p>このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。</p>
 <h2 id="前提条件">前提条件</h2>
@@ -1018,8 +1022,8 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/esri/themes/light/main.css&#34;</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
 
   &lt;/<span style="color:#f92672">head</span>&gt;
@@ -1053,8 +1057,8 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/esri/themes/light/main.css&#34;</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
        
     <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
@@ -1085,10 +1089,10 @@ if (!doNotTrack) {
 <p><strong>CodePen</strong> に戻ります。</p>
 </li>
 <li>
-<p>require 文の中で、新しい <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> を作成し、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap">basemap</a> プロパティに arcgis-topographic を設定します。<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/">ベースマップ レイヤーサービス</a>へのアクセスを可能にするために、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> の apiKey() プロパティを設定します。</p>
+<p>require 文の中で、新しい <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> を作成し、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap">basemap</a> プロパティに arcgis/topographic を参照するベースマップ スタイルの情報を設定します。<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス</a>へのアクセスを可能にするために、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> の apiKey() プロパティを設定します。</p>
 <ul>
 <li>
-<p>マップには、データ レイヤとベースマップ レイヤがあります。<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/">ベースマップ レイヤーサービス</a>からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> の作成時に前のステップから設定できます。</p>
+<p>マップには、データ レイヤとベースマップ レイヤがあります。<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス</a>からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> の作成時に前のステップから設定できます。</p>
 </li>
 <li>
 <p>マップおよびマップ ビューが  <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Map（2D）</a>でどのように機能するかについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">マッピングとロケーションサービス</a> を参照してください。</p>
@@ -1112,8 +1116,8 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/esri/themes/light/main.css&#34;</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
     　
     <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
@@ -1125,8 +1129,13 @@ if (!doNotTrack) {
 
         <span style="color:#75715e">// マップの作成
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
-          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;arcgis-topographic&#34;</span> <span style="color:#75715e">// Basemap layer service
-</span><span style="color:#75715e"></span>        });
+          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span>{
+            <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span>{
+              <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;arcgis/topographic&#34;</span>, <span style="color:#75715e">// 地形図ベースマップ レイヤー
+</span><span style="color:#75715e"></span>              <span style="color:#a6e22e">language</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;ja&#34;</span>
+            }
+          }
+        });
 
       });
     &lt;/<span style="color:#f92672">script</span>&gt;
@@ -1176,8 +1185,8 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/esri/themes/light/main.css&#34;</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
     　
     <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
@@ -1189,15 +1198,20 @@ if (!doNotTrack) {
 
         <span style="color:#75715e">// マップの作成
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
-          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;arcgis-topographic&#34;</span> <span style="color:#75715e">// Basemap layer service
-</span><span style="color:#75715e"></span>        });
+          <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span>{
+            <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span>{
+              <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;arcgis/topographic&#34;</span>, <span style="color:#75715e">// 地形図ベースマップ レイヤー
+</span><span style="color:#75715e"></span>              <span style="color:#a6e22e">language</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;ja&#34;</span>
+            }
+          }
+        });
 
         <span style="color:#75715e">// マップ ビューの作成
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
           <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">35.360626</span>], <span style="color:#75715e">// Longitude, latitude
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// Zoom level
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span> <span style="color:#75715e">// Div element
+          <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">35.360626</span>], <span style="color:#75715e">// 経度、緯度
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// ズーム レベル
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span> <span style="color:#75715e">// MapView を表示する HTML 上の Div 要素の ID
 </span><span style="color:#75715e"></span>        });
 
       });
@@ -1259,8 +1273,8 @@ if (!doNotTrack) {
      &lt;/<span style="color:#f92672">style</span>&gt;
         
      <span style="color:#75715e">&lt;!-- CSS ファイルと JS ライブラリへの参照を追加 --&gt;</span>
-     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/esri/themes/light/main.css&#34;</span>&gt;
-     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.26/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&#34;</span>&gt;
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.29/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
      <span style="color:#75715e">&lt;!--追加終了  --&gt;</span>
         
      <span style="color:#75715e">&lt;!-- モジュールの追加 --&gt;</span>
@@ -1273,7 +1287,12 @@ if (!doNotTrack) {
          <span style="color:#75715e">// マップの作成
 </span><span style="color:#75715e"></span>         <span style="color:#75715e">/*
 </span><span style="color:#75715e">         const map = new Map({
-</span><span style="color:#75715e">           basemap: &#34;arcgis-topographic&#34; // Basemap layer service
+</span><span style="color:#75715e">           basemap:{
+</span><span style="color:#75715e">             style:{
+</span><span style="color:#75715e">               id:&#34;arcgis/topographic&#34;, // 地形図ベースマップ レイヤー
+</span><span style="color:#75715e">               language:&#34;ja&#34;
+</span><span style="color:#75715e">             }
+</span><span style="color:#75715e">           }
 </span><span style="color:#75715e">         });
 </span><span style="color:#75715e">         */</span>
 
@@ -1288,9 +1307,9 @@ if (!doNotTrack) {
          <span style="color:#75715e">// マップ ビューの作成
 </span><span style="color:#75715e"></span>         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
            <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-           <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">35.360626</span>], <span style="color:#75715e">// Longitude, latitude
-</span><span style="color:#75715e"></span>           <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// Zoom level
-</span><span style="color:#75715e"></span>           <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span> <span style="color:#75715e">// Div element
+           <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">138.727363</span>, <span style="color:#ae81ff">35.360626</span>], <span style="color:#75715e">// 経度、緯度
+</span><span style="color:#75715e"></span>           <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// ズーム レベル
+</span><span style="color:#75715e"></span>           <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span> <span style="color:#75715e">// MapView を表示する HTML 上の Div 要素の ID
 </span><span style="color:#75715e"></span>         });
 
        });

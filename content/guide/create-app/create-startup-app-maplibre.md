@@ -8,7 +8,7 @@ aliases = ["/create-startup-app-mapboxgl/"]
 # マップを表示する
 このチュートリアルでは、[MapLibre GL JS](https://developers.arcgis.com/maplibre-gl-js/) と ベースマップ レイヤー サービスを使用して、マップを表示する方法を紹介します。
 
-<img src="http://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-mapboxgl/create-startup-app-mapboxgl.png" width="600px">
 
 ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。
 
@@ -82,8 +82,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
   </head>
   <body>
     <div id="map"></div>
@@ -129,8 +129,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -146,7 +146,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 </html>
 ```
 
-2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [maplibre.accessToken](https://maplibre.org/maplibre-gl-js-docs/api/map/) を設定する必要はありません。使用するベースマップ ArcGIS:topographic を格納する basemapEnum 変数を作成します。
+2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [maplibre.accessToken](https://maplibre.org/maplibre-gl-js-docs/api/map/) を設定する必要はありません。使用するベースマップ arcgis/topographic を格納する basemapEnum 変数を作成します。
 
 ```HTML
 <!DOCTYPE html>
@@ -169,8 +169,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -181,7 +181,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         // API キーの追加 
         const apiKey = "YOUR_API_KEY";
         // ベースマップの指定
-        const basemapEnum = "ArcGIS:Topographic";
+        const basemapEnum = "arcgis/topographic";
       
     </script>
 
@@ -213,8 +213,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@2.1.9/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -225,13 +225,13 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
         // API キーの追加 
         const apiKey = "YOUR_API_KEY";
         // ベースマップの指定
-        const basemapEnum = "ArcGIS:Topographic";
+        const basemapEnum = "arcgis/topographic";
       
         const map = new maplibregl.Map({
-            container: "map", // div 要素内の id を指定
-            style: `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${basemapEnum}?type=style&token=${apiKey}`,
-            zoom: 12, // マップ初期表示時点でのズームレベル
-            center: [138.729858, 35.362752] // マップ初期表示時の位置
+          container: "map", // div 要素内の id を指定
+          style: `https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/${basemapEnum}?token=${apiKey}&language=${language}`,
+          zoom: 12, // マップ初期表示時点でのズームレベル
+          center: [138.729858, 35.362752] // マップ初期表示時の位置
         });
 
     </script>
