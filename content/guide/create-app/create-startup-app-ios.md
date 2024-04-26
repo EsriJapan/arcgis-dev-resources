@@ -11,11 +11,17 @@ aliases = ["/create-startup-app-ios/"]
 
 このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map.png" width="300px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map_jp.png" width="300px">
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
 
 このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
+
+{{% notice note %}}
+
+このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [Basemap layers](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/) を参照してください。
+
+{{% /notice %}}
 
 ## 前提条件
 
@@ -60,7 +66,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
     // 追加終了
     ```
 
-3. デフォルト値を持つ [Map](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/) タイプの map という名前の @State プロパティ ラッパーを追加します。 arcGISTopographic ベースマップ スタイルで Map を作成し、それを返します。
+3. デフォルト値を持つ [Map](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/) タイプの map という名前の @State プロパティ ラッパーを追加します。 arcGISTopographic ベースマップ スタイルで Map を作成し、それを返します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
 
     ContentView.swift
     ```swift
@@ -68,7 +74,9 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 
         // 追加開始
         @State private var map = {
-            let map = Map(basemapStyle: .arcGISTopographic)
+            //ベースマップのラベルを日本語で表示します。
+            let bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: "ja")))
+            let map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
 
             return map
         }()
@@ -171,7 +179,7 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
     // 追加終了
     ```
 
-3. DisplayAMap 構造体にニシャライザを実装します。 API キーを使用して、[ArcGISEnvironment](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/) の [ArcGISEnvironment.apiKey](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/) プロパティを設定します。
+3. DisplayAMap 構造体にイニシャライザを実装します。 API キーを使用して、[ArcGISEnvironment](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/) の [ArcGISEnvironment.apiKey](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/) プロパティを設定します。
 
     MainApp.swift
     ```swift
@@ -202,6 +210,8 @@ ArcGIS Online でホストされているサービス、Web マップ、Web シ�
 
 4. <Command + R> を押してアプリを実行します。
 
+    Xcodeシミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります： macOS Monterey 12.5, Xcode 15, iOS 17.物理的なデバイスを使用する場合は、[システム要件](https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-4/)を参照してください。
+    
     富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/swift/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
