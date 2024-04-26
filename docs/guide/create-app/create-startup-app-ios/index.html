@@ -17,7 +17,11 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<<<<<<< HEAD
 <meta name="revised" content="2024-04-26T15:57:28 JST">
+=======
+<meta name="revised" content="2024-04-19T12:57:14 JST">
+>>>>>>> 128aaeb891f62754a7009aabbee1bbcc3ab89c1b
 <title>iOS :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -954,12 +958,9 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Maps SDK for Swift - Tutorials - <a href="https://developers.arcgis.com/swift/maps-2d/tutorials/display-a-map/">Display a map</a></p>
 <h2 id="マップを表示する">マップを表示する</h2>
 <p>このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map_jp.png" width="300px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-ios100.0/display_map.png" width="300px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。</p>
 <p>このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。</p>
-<div class="notices note" >
-<p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services</a> guide の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/">Basemap layers</a> を参照してください。</p>
-</div>
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
@@ -1009,15 +1010,13 @@ if (!doNotTrack) {
 <span style="color:#75715e">// 追加終了</span>
 </code></pre></div></li>
 <li>
-<p>デフォルト値を持つ <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/">Map</a> タイプの map という名前の @State プロパティ ラッパーを追加します。 arcGISTopographic ベースマップ スタイルで Map を作成し、それを返します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。</p>
+<p>デフォルト値を持つ <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/">Map</a> タイプの map という名前の @State プロパティ ラッパーを追加します。 arcGISTopographic ベースマップ スタイルで Map を作成し、それを返します。</p>
 <p>ContentView.swift</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 
     <span style="color:#75715e">// 追加開始</span>
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
-        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
-        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
-        <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
+        <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISTopographic)
 
         <span style="color:#66d9ef">return</span> map
     }()
@@ -1032,9 +1031,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
-        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
-        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
-        <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
+        <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISTopographic)
 
         <span style="color:#75715e">// 追加開始</span>
         map.initialViewpoint = Viewpoint(latitude: <span style="color:#ae81ff">35.360626</span>, longitude: <span style="color:#ae81ff">138.727363</span>, scale: <span style="color:#ae81ff">200000</span>)
@@ -1055,9 +1052,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
-        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
-        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
-        <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
+        <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISTopographic)
 
         map.initialViewpoint = Viewpoint(latitude: <span style="color:#ae81ff">35.360626</span>, longitude: <span style="color:#ae81ff">138.727363</span>, scale: <span style="color:#ae81ff">200000</span>)
 
@@ -1117,7 +1112,7 @@ if (!doNotTrack) {
 <span style="color:#75715e">// 追加終了</span>
 </code></pre></div></li>
 <li>
-<p>DisplayAMap 構造体にイニシャライザを実装します。 API キーを使用して、<a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/">ArcGISEnvironment</a> の <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/">ArcGISEnvironment.apiKey</a> プロパティを設定します。</p>
+<p>DisplayAMap 構造体にニシャライザを実装します。 API キーを使用して、<a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/">ArcGISEnvironment</a> の <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/">ArcGISEnvironment.apiKey</a> プロパティを設定します。</p>
 <p>MainApp.swift</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
 
@@ -1145,7 +1140,6 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p>&lt;Command + R&gt; を押してアプリを実行します。</p>
-<p>Xcodeシミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります： macOS Monterey 12.5, Xcode 15, iOS 17.物理的なデバイスを使用する場合は、<a href="https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-4/">システム要件</a>を参照してください。</p>
 <p>富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。</p>
 </li>
 </ol>

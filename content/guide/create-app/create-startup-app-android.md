@@ -11,13 +11,13 @@ aliases = ["/create-startup-app-android/"]
 
 このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android100.0/display_map.png" width = "300px">
+<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android200.0/display_map.png" width = "300px">
 
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
-このチュートリアルでは、地形ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-
+このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+<!-- 
 ## 前提条件
 
 このチュートリアルを実施するには、以下が必要です。
@@ -26,134 +26,149 @@ aliases = ["/create-startup-app-android/"]
 2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
 3. Kotlin で Android 開発をするための IDE。
 
-注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。**
+注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。** -->
 
 ## ステップ
 
-### 新しい Android Studio プロジェクトを作成します。
+### 新しい Android Studio プロジェクトを作成します
 Android Studio を使用してアプリを作成し、API を参照するように構成します。
 1. Android Studio を開きます。
-    * メニューバーで [File] → [New] → [New Project….] をクリックします。
+    * [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。<br />
+    または、メニューバーで [File] → [New] → [New Project] をクリックします。
     * [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。
-    * [Configure your project] ウィンドウで、以下の項目を設定します。
+    * 次のウィンドウで、以下の項目を設定します。
         * Name: Display a map
         * Package name： com.example.app に変更します。または、組織に合わせて変更してください。 
         * Save location: 新しいフォルダに設定します。
-        * Language: Kotlin
-        * Minimum SDK: API 26:Android 8.0 (O)
+        * Minimum SDK: API 26 ("Oreo"; Android 8.0)
+        * Build configuration language: Kotlin DSL (build.gradle.kts)
 
 2. プロジェクトのツール ウィンドウで、現在のビューが Android であることを確認してください。チュートリアルの説明では、そのビューを参照しています。
 
     ビュー名が Android 以外の名前 （プロジェクトやパッケージなど） の場合、プロジェクト ツール ウィンドウのタイトルバーの左端のコントロールをクリックし、リストから Android を選択します。
     <img src = "https://developers.arcgis.com/kotlin/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" widgh = "300px">
 
-3. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
+3. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    build.gradle (Project: Display_a_map)
+    build.gradle.kts (Project: Display_a_map)
 
     ```gradle
     // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
     plugins {
-        id 'com.android.application' version '8.1.1' apply false
-        id 'com.android.library' version '8.1.1' apply false
-        id 'org.jetbrains.kotlin.android' version '1.9.10' apply false
-    }
-
-
-    task clean(type: Delete) {
-        delete rootProject.buildDir
+        id("com.android.application") version "8.2.0" apply false
+        id("org.jetbrains.kotlin.android") version "1.9.10" apply false
     }
     ```
 
-4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
+4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    build.gradle (Module: Display_a_map)
+    build.gradle.kts (Module: Display_a_map)
 
     ```gradle
-        apply plugin: 'com.android.application'
-        apply plugin: 'org.jetbrains.kotlin.android'
+        plugins {
+            id("com.android.application")
+            id("org.jetbrains.kotlin.android")
+        }
 
         android {
-            compileSdk 33
+            compileSdk = 34
 
             defaultConfig {
-                applicationId "com.example.app"
-                minSdkVersion 26
-                targetSdk 33
-                versionCode 1
-                versionName "1.0"
+                applicationId = "com.example.app"
+                minSdk = 26
+                targetSdk = 34
+                versionCode = 1
+                versionName = "1.0"
 
-                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             }
 
             buildTypes {
                 release {
-                    minifyEnabled false
-                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                    isMinifyEnabled = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
                 }
             }
             compileOptions {
-                sourceCompatibility JavaVersion.VERSION_17
-                targetCompatibility JavaVersion.VERSION_17
+                sourceCompatibility = JavaVersion.VERSION_17
+                targetCompatibility = JavaVersion.VERSION_17
             }
 
             buildFeatures {
-                dataBinding true
-                buildConfig true
+                compose = true
+                buildConfig = true
             }
 
-            packagingOptions {
-                exclude 'META-INF/DEPENDENCIES'
+            composeOptions {
+                kotlinCompilerExtensionVersion = "1.5.3"
             }
 
             kotlinOptions {
                 jvmTarget = "17"
             }
 
-            namespace 'com.example.app'
+            packaging {
+                resources {
+                    excludes += "/META-INF/DEPENDENCIES"
+                }
+            }
+
+            namespace = "com.example.app"
         }
 
         dependencies {
-            implementation 'androidx.appcompat:appcompat:1.6.1'
-            implementation 'com.google.android.material:material:1.7.0'
-            implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-            implementation "com.esri:arcgis-maps-kotlin:200.3.0"
+            implementation("androidx.core:core-ktx:1.12.0")
+            implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+            implementation("androidx.activity:activity-compose:1.8.2")
+            // Jetpack Compose の BOM
+            implementation(platform("androidx.compose:compose-bom:2023.10.01"))
+            // Jetpack Compose の依存関係
+            implementation("androidx.compose.ui:ui")
+            implementation("androidx.compose.material3:material3")
+            // ArcGIS Map Kotlin SDK の依存関係
+            implementation("com.esri:arcgis-maps-kotlin:200.4.0")
+            // Toolkit の依存関係
+            implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:200.4.0"))
+            implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose")
         }
     ```
 
-5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle] を開きます。ファイルの内容を次のコードに置き換えます。
+5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    settings.gradle (Display a map)
+    settings.gradle.kts (Display a map)
 
     ```gradle
     pluginManagement {
         repositories {
-            gradlePluginPortal()
             google()
             mavenCentral()
+            gradlePluginPortal()
         }
     }
 
     dependencyResolutionManagement {
+        @Suppress("UnstableApiUsage")
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        @Suppress("UnstableApiUsage")
         repositories {
             google()
             mavenCentral()
-            maven {
-                url 'https://esri.jfrog.io/artifactory/arcgis'
-            }
+            maven { url = uri("https://esri.jfrog.io/artifactory/arcgis") }
         }
     }
 
     rootProject.name = "Display a map"
-    include ':app'
+    include(":app")
     ```
 
 6. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。 
 
 7. プロジェクト ツール ウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。
 
-    これらの新しい要素を manifest 要素内に挿入します。 他のステートメントを変更または削除しないでください。
+    これらの新しい要素を `manifest` 要素内に挿入します。 他のステートメントを変更または削除しないでください。
 
     今後追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。
 
@@ -167,116 +182,68 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     // 追加終了
     ```
 
-### インポートステートメントを追加する
-[app] > [java] > [com.example.app MainActivity.kt] を開き、API を参照するためのインポート ステートメントを追加します。
-    
-MainActivity.kt
 
-```kt
-package com.example.app
+### マップを作成する
+1. プロジェクト ツール ウィンドウから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に <b>com.example.app.screens</b> と入力し、キーボードの [Enter] キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+2. 作成した <b>screens</b> パッケージを右クリックし、リストから [New] > [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に <b>MainScreen</b> と入力し、キーボードの [Enter] キーを押します。
 
-// 追加開始
-import android.util.Log
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import com.arcgismaps.ApiKey
-import com.arcgismaps.ArcGISEnvironment
-import com.arcgismaps.mapping.ArcGISMap
-import com.arcgismaps.mapping.BasemapStyle
-import com.arcgismaps.mapping.Viewpoint
-import com.arcgismaps.mapping.view.MapView
-import com.example.app.databinding.ActivityMainBinding
-// 追加終了
+3. MainScreen.kt で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。
 
-class MainActivity : AppCompatActivity() {
-```
+    {{% notice note %}}
 
-### マップビューの UI を追加する
-マップビューは、マップを表示する UI コンポーネントです。 また、タッチジェスチャによるナビゲートなど、ユーザーによるマップの操作も処理します。XML を使用してマップビューを UI に追加し、メインアクティビティのソースコードで使用できるようにします。
-1. [app] > [res] > [layout] > [activity_main.xml] で、TextView 要素全体を [MapView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html) 要素に置き換えます。
+    以下のコード ブロックでコンポーザブル関数 [com.arcgismaps.tookit.geoviewcompose.MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) をインポートしていることを確認してください。これは [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit) で定義されています。コンポーザブルに対応したコードでは ArcGIS Maps SDK API の [com.arcgismaps.mapping.view.MapView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html) という名前のクラスは使用しないでください。
 
-    XML コードが表示されない場合は、[Code] タブを選択してデザインモードを切り替え、エディターに XML コードを表示します。
+    {{% /notice %}}
 
-    MapView 要素は、ArcGIS Maps SDK for Kotlin から [MapView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html) クラスのインスタンスを作成します。
-
-    メインアクティビティソースコードでは、android:id 属性の値で宣言されている暗黙的なプロパティを使用してその [MapView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html) インスタンスにアクセスできます。この場合、プロパティの名前は mapView になります。
-
-    activity_main.xml を下記のように置き換えます。
-
-    activity_main.xml
-
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MainActivity">
-
-            <com.arcgismaps.mapping.view.MapView
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
-    ```
-
-2. MainActivity.kt で、activityMainBinding という名前の遅延プロパティを作成します。 Android クラスの [DataBindingUtil](https://developer.android.com/reference/android/databinding/DataBindingUtil#setContentView(android.app.Activity,%20int)) を使用して、メイン アクティビティのコンテンツ ビューを特定のレイアウトに設定します。
-
-    MainActivity.kt
+    MainScreen.kt
 
     ```kt
-    class MainActivity : AppCompatActivity() {
+    @file:OptIn(ExperimentalMaterial3Api::class)
 
-        // 追加開始
-        private val activityMainBinding: ActivityMainBinding by lazy {
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-        }        
-        // 追加終了
+    package com.example.app.screens
+
+    import androidx.compose.foundation.layout.fillMaxSize
+    import androidx.compose.foundation.layout.padding
+    import androidx.compose.material3.ExperimentalMaterial3Api
+    import androidx.compose.material3.Scaffold
+    import androidx.compose.material3.Text
+    import androidx.compose.material3.TopAppBar
+    import androidx.compose.runtime.Composable
+    import androidx.compose.runtime.remember
+    import androidx.compose.ui.Modifier
+    import androidx.compose.ui.res.stringResource
+    import com.arcgismaps.mapping.ArcGISMap
+    import com.arcgismaps.mapping.Basemap
+    import com.arcgismaps.mapping.BasemapStyle
+    import com.arcgismaps.mapping.BasemapStyleLanguageStrategy
+    import com.arcgismaps.mapping.BasemapStyleParameters
+    import com.arcgismaps.mapping.Viewpoint
+    import com.arcgismaps.toolkit.geoviewcompose.MapView
+    import com.example.app.R
+    import java.util.Locale
     ```
+4. [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返す `createMap()` という名前のトップ レベル関数を作成します。
 
-3. mapView という読み取り専用の変数を作成し、それを activity_main.xml で作成された mapView にバインドします。
-
-    MainActivity.kt
+    MainScreen.kt
 
     ```kt
-    class MainActivity : AppCompatActivity() {
-        
-        private val activityMainBinding: ActivityMainBinding by lazy {
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-        }
+    fun createMap(): ArcGISMap {
 
-        // 追加開始
-        private val mapView: MapView by lazy {
-            activityMainBinding.mapView
-        }
-        // 追加終了
+    }
     ```
 
-### マップを追加する
-マップビューを使用して、富士山を中心としたマップを表示します。マップには、地形ベースマップ レイヤーが含まれます。
-1. MainActivity.kt で、MainActivity クラスに新しい setupMap() メソッドを追加し、[ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成します。
-    
-    [BasemapStyle.ArcGISTopographic](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-basemap-style/-arc-g-i-s-topographic/index.html) というベースマップスタイルを使用して [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を構成します。
+5. BasemapStyle.ArcGISTopographic を使用して [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で apply{} を呼び出します。この関数は [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
 
-    MainActivity.kt
+    apply{} の詳細については Kotlin の [Scope functions](https://kotlinlang.org/docs/scope-functions.html) を参照してください。
+
+    MainScreen.kt
 
     ```kt
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-
-        }
+    fun createMap(): ArcGISMap {
 
         // 追加開始
-        private fun setupMap() {
-
-            val map = ArcGISMap(BasemapStyle.ArcGISTopographic)
+        return ArcGISMap(BasemapStyle.ArcGISTopographic).apply {
 
         }
         // 追加終了
@@ -284,20 +251,29 @@ class MainActivity : AppCompatActivity() {
     }
     ```
 
-2. mapView の map プロパティを [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) に設定します。次に、[ViewPoint](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html) を作成し、それを mapView に追加します。
+6. `apply` ブロックで、x (経度) と y (緯度) の座標と縮尺を持つ [Viewpoint](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html) を作成します。この Viewpoint を [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) の `initialViewpoint` プロパティに割り当てます。
+    また、ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
 
-    MainActivity.kt
+    MainScreen.kt
 
     ```kt
-        private fun setupMap() {
+    fun createMap(): ArcGISMap {
 
-            val map = ArcGISMap(BasemapStyle.ArcGISTopographic)
+        // 追加開始
+        val basemapStyleParams = BasemapStyleParameters()
+        basemapStyleParams.languageStrategy = BasemapStyleLanguageStrategy.Specific(Locale("ja"))
+        // 追加終了        
+
+        return ArcGISMap(Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParams)).apply {
 
             // 追加開始
-            // レイアウトの MapView に表示されるマップを設定
-            mapView.map = map
+            initialViewpoint = Viewpoint(
+                latitude = 35.360626,
+                longitude = 138.727363,
 
-            mapView.setViewpoint(Viewpoint(35.360626, 138.727363, 200000.0))
+                scale = 200000.0
+
+            )
             // 追加終了
 
         }
@@ -305,96 +281,194 @@ class MainActivity : AppCompatActivity() {
     }
     ```
 
-3. [onCreate()](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)) メソッドで、setContentView(R.layout.activity_main) コードを探し、見つかった場合は削除します。
+### マップを保持する MainScreen を作成する。
+1. [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を呼び出す `MainScreen` という名前のコンポーザブル関数を作成します。
 
-    Android Studio の New Project ウィザードを使用した場合、onCreate() ライフサイクル関数で setContentView(R.layout.activity_main) が記述されている可能性があります。 そのコードを削除する必要があります。その代わりに、前の手順で宣言した遅延プロパティ activityMainBinding を使用します。
+    MainScreen.kt
 
-4. [onCreate()](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)) メソッドで、lifecycle.addObserver() を呼び出し、マップ ビューを渡します。 次に、前の手順で定義した関数 setupMap() を呼び出します。
+    ```kt
+    // 追加開始
+    @Composable
+    fun MainScreen() {
+
+    }
+    // 追加終了
+
+    fun createMap(): ArcGISMap {
+        ・・・
+    ```
+
+2. [remember](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember(kotlin.Function0)) ブロックを追加し、その中で `createMap()` を呼び出します。そして `remember` を `map` というローカル変数に割り当てます。
+    
+    トップ レベルのコンポーザブル関数は再構成時に状態を保持するために使用されます。
+
+    MainScreen.kt
+
+    ```kt
+    @Composable
+    fun MainScreen() {
+
+        // 追加開始
+        val map = remember {
+            createMap()
+        }
+        // 追加終了
+
+    }
+    ```
+
+3. Android Jetpack Compose からいくつかのコンポーザブル関数を呼び出します。[Scaffold](https://developer.android.com/jetpack/compose/components/scaffold) を呼び出し、アプリ名 (`R.string.app_name`) を含む [Text](https://developer.android.com/jetpack/compose/text) で [TopAppBar](https://developer.android.com/jetpack/compose/components/app-bars) を渡します。
+
+    MainScreen.kt
+
+    ```kt
+    @Composable
+    fun MainScreen() {
+
+        val map = remember {
+            createMap()
+        }
+
+        // 追加開始
+        Scaffold(
+            topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
+        ) {
+
+        }
+        // 追加終了
+
+    }
+    ```
+4. [Scaffold](https://developer.android.com/jetpack/compose/components/scaffold) の末尾のラムダで、[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit) で定義されている [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) コンポーザブルを呼び出し、最大サイズとデフォルトのパディングを持つ [Modifier](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier) を設定します。そして、`map` を `arcGISMap` パラメーターとして渡します。
+
+    MainScreen.kt
+
+    ```kt
+    @Composable
+    fun MainScreen() {
+
+        val map = remember {
+            createMap()
+        }
+
+        Scaffold(
+            topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
+        ) {
+
+            // 追加開始
+            MapView(
+                modifier = Modifier.fillMaxSize().padding(it),
+                arcGISMap = map
+            )
+            // 追加終了
+
+        }
+
+    }
+    ```
+
+### MainActivity クラス内で MainScreen を呼び出す
+1. [app] > [kotlin+java] > [com.example.app] の <b>MainActivity.kt</b> を開きます。パッケージ宣言 (最初の行) と `MainActivity` クラスの定義以外のすべての行を削除します。
 
     MainActivity.kt
 
     ```kt
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        // 追加開始
-        lifecycle.addObserver(mapView)
-        setupMap()
-        // 追加終了
+    package com.example.app
 
+    class MainActivity : ComponentActivity() {
+
+    }
+    ```
+
+2. MainActivity.kt に import 文を追加します。
+
+    MainActivity.kt
+
+    ```kt
+    package com.example.app
+
+    // 追加開始
+    import android.os.Bundle
+    import androidx.activity.ComponentActivity
+    import androidx.activity.compose.setContent
+    import com.arcgismaps.ApiKey
+    import com.arcgismaps.ArcGISEnvironment
+    import com.example.app.screens.MainScreen
+    import com.example.app.ui.theme.DisplayAMapTheme
+    // 追加終了
+
+    class MainActivity : ComponentActivity() {
+
+    }
+    ```
+
+3. [onCreate()](https://developer.android.com/guide/components/activities/activity-lifecycle) ライフサイクル関数の `setContent()` ブロックでは、デフォルトのテーマ設定を適用して、コンポーザブル関数である `MainScreen` を呼び出します。これを行うには、`onCreate()` に以下のコードを追加します。
+
+    MainActivity.kt
+
+    ```kt
+    class MainActivity : ComponentActivity() {
+
+        // 追加開始
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            setContent {
+                DisplayAMapTheme {
+                    MainScreen()
+                }
+            }
+
+        }
+        // 追加終了
     }
     ```
 
 ### API キーを設定する
-API キーは、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンへのアクセスを可能にします。
-1. [開発者用ダッシュボード](https://developers.arcgis.com/dashboard/)で、API キーを取得します。このチュートリアルでは、デフォルトの API キーを使用します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
+API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。
 
-2. setApiKey() メソッドを作成し、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/api-key.html) プロパティを設定します。[ApiKey.create()](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-api-key/-companion/create.html) を呼び出し、API キーを文字列として渡します。またダブルクォーテーションを付けるのを忘れないでください。
+1. `MainActivity` クラスで `setApiKey()` メソッドを作成し、[ApiKey.create()](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-api-key/-companion/create.html) を呼び出し、API キーを文字列として渡すことで、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/api-key.html) プロパティを設定します。引用符を忘れないでください。
 
     MainActivity.kt
 
     ```kt
-        private fun setupMap() {
-
-            val map = ArcGISMap(BasemapStyle.ArcGISTopographic)
-
-            // レイアウトの MapView に表示するマップを設定
-            mapView.map = map
-
-            mapView.setViewpoint(Viewpoint(35.360626, 138.727363, 200000.0))
-
-        }
-
-        //  追加開始
-        private fun setApiKey() {
-
-            // API キーをソースコードに保存することはベストプラクティスではありません。
-            // このチュートリアルでは便宜上ソースコードに記載しています。
-            ArcGISEnvironment.apiKey = ApiKey.create("API キーを入力")
-
-        }
-        //  追加終了
-
+    class MainActivity : ComponentActivity() {
+        ・・・
     }
-    ```
 
-3. onCreate() ライフサイクルメソッド内で、setupMap() を呼び出す前に setApiKey() を呼び出します。
-
-    MainActivity.kt
-
-    ```kt
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        lifecycle.addObserver(mapView)
-
-        // 追加開始
-        setApiKey()
-        // 追加終了
-
-        setupMap()
-
-
-    }
-    ```
-
-<!--
-### エラーメッセージを追加する (オプション)
-1. アプリ UI のトーストにエラーを表示し、Android Studio にエラーを記録する showError() 関数を作成します（Logcat タブに表示されます）。
-
-    この最初のチュートリアル（マップを表示する）は非常にシンプルで、showError() を呼び出しません。他のチュートリアルの多くは、マップの表示に基づいており、この関数を呼び出す必要があります。それらのチュートリアルで便利に使用できるように、この関数を定義します。
-
-    MainActivity.kt
-
-    ```kt
     // 追加開始
-    private fun showError(message: String) {
-        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
-        Log.e(localClassName, message)
+    private fun setApiKey() {
+
+        ArcGISEnvironment.apiKey = ApiKey.create("API キー")
+
     }
     // 追加終了
     ```
--->
+
+2. onCreate() ライフサイクル メソッド内で setContent{} の前に setApiKey() を呼び出します。
+
+    MainActivity.kt
+
+    ```kt
+    class MainActivity : ComponentActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            // 追加開始
+            setApiKey()
+            // 追加終了
+
+            setContent {
+                DisplayAMapTheme {
+                    MainScreen()
+                }
+            }
+
+        }
+
+    }
+    ```
 
 ### アプリを実行する
 1. [Run] > [Run] > [app] をクリックして、アプリを実行します。
@@ -415,33 +489,5 @@ API キーは、ArcGIS Online でホストされているサービス、Web マ�
 
     富士山を中心に、地形ベースマップレイヤーが追加されたマップが表示されます。マップビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
-完成版のプロジェクトは[こちら](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。
 
-### Web マップを表示する
-「[Web マップの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
-
-1. [マップを表示する](#マップを表示する)のステップで作成したプロジェクトの [app] > [java] > [com.example.app] > [MainActivity.kt] を開き、必要なインポートステートメントを追加します。
-
-    MainActivity.kt
-
-    ```kt
-    import com.arcgismaps.portal.Portal
-    import com.arcgismaps.mapping.PortalItem
-    ```
-
-2. setupMap メソッドを下記のように書き換えます。
-
-    MainActivity.kt
-
-    ```kt
-    val portal = Portal("https://www.arcgis.com", Portal.Connection.Anonymous)
-
-    val itemId = "Web マップの ID"
-    val portalItem = PortalItem(portal, itemId)
-    val map = ArcGISMap(portalItem)
-    
-    mapView.map = map
-    ```
-
----
 アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](https://esrijapan.github.io/arcgis-dev-resources/guide/security/)
