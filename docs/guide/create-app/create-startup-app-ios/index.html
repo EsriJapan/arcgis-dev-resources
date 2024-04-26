@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-26T15:14:27 JST">
+<meta name="revised" content="2024-04-26T15:31:00 JST">
 <title>iOS :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1032,7 +1032,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
-        <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISTopographic)
+        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
+        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
+        <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
 
         <span style="color:#75715e">// 追加開始</span>
         map.initialViewpoint = Viewpoint(latitude: <span style="color:#ae81ff">35.360626</span>, longitude: <span style="color:#ae81ff">138.727363</span>, scale: <span style="color:#ae81ff">200000</span>)
@@ -1053,7 +1055,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
-        <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISTopographic)
+        <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
+        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
+        <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
 
         map.initialViewpoint = Viewpoint(latitude: <span style="color:#ae81ff">35.360626</span>, longitude: <span style="color:#ae81ff">138.727363</span>, scale: <span style="color:#ae81ff">200000</span>)
 

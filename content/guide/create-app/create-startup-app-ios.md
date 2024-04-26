@@ -94,7 +94,9 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
     struct ContentView: View {
 
         @State private var map = {
-            let map = Map(basemapStyle: .arcGISTopographic)
+            //ベースマップのラベルを日本語で表示します。
+            let bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: "ja")))
+            let map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
 
             // 追加開始
             map.initialViewpoint = Viewpoint(latitude: 35.360626, longitude: 138.727363, scale: 200000)
@@ -116,7 +118,9 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
     struct ContentView: View {
 
         @State private var map = {
-            let map = Map(basemapStyle: .arcGISTopographic)
+            //ベースマップのラベルを日本語で表示します。
+            let bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: "ja")))
+            let map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
 
             map.initialViewpoint = Viewpoint(latitude: 35.360626, longitude: 138.727363, scale: 200000)
 
