@@ -17,8 +17,8 @@
 ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが 動作環境 を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 Gradle を使用してインストールすることをお勧めします。これにより、Esri の Maven リポジトリから必要な依存関係と SDK バイナリがインストールされます。
-Gradle で API を取得する 既存の Android Studio プロジェクトか新しいプロジェクトを作成して、次のセットアップ手順を実行します。
-  settings.gradle ファイルの repositories ブロック内で、Esri の Maven リポジトリ URL を追加します。Esri のリポジトリはオープンソースではないため、google() や mavenCentral() からは使用できないため、この URL を指定する必要があります。</description>
+Gradle で API を取得する Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。Empty Activity オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
+以下の手順では、Android Studio Iguana 2023.</description>
     </item>
     
     <item>
