@@ -489,5 +489,41 @@ API キーを使用すると、ArcGIS Online でホストされているサー�
 
     富士山を中心に、地形ベースマップレイヤーが追加されたマップが表示されます。マップビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
+### Web マップを表示する
+「[Web マップの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップを ArcGISMap クラスにから参照することができます。
+
+1. プロジェクト ツール ウィンドウから [app] > [Kotlin+java] > [com.example.app] > [screens] の <b>MainScreen.kt</b> を開きます。
+2. MainScreen.kt に以下のインポートを追加します。
+
+    MainScreen.kt
+
+    ```kt
+    import com.arcgismaps.mapping.PortalItem
+    import com.arcgismaps.portal.Portal
+    ```
+
+3. createMap() 関数を以下のように記述します。
+
+    MainScreen.kt
+
+    ```kt
+    fun createMap(): ArcGISMap {
+
+        val portal = Portal(
+            url = "https://www.arcgis.com", // 使用する ArcGIS ポータルの URL を記述
+            connection = Portal.Connection.Anonymous // ArcGIS ポータルへのアクセス方法を設定
+        )
+
+        val portalItem = PortalItem(
+            portal = portal,
+            itemId = "<Web マップの ID>"
+        )
+
+        return ArcGISMap(item = portalItem)
+
+    }
+    ```
+
+---
 
 アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](https://esrijapan.github.io/arcgis-dev-resources/guide/security/)
