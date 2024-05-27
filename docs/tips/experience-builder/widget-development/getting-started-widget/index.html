@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-26T16:52:55 JST">
+<meta name="revised" content="2024-05-27T16:18:19 JST">
 <title>ウィジェット開発のスタート :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -929,6 +929,8 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#インストール">インストール</a></li>
     <li><a href="#ウィジェット">ウィジェット</a></li>
+    <li><a href="#ウィジェットの配置場所">ウィジェットの配置場所</a></li>
+    <li><a href="#ウィジェット-ファイル">ウィジェット ファイル</a></li>
     <li><a href="#基本的な考え方">基本的な考え方</a></li>
   </ul>
 </nav>
@@ -955,7 +957,7 @@ if (!doNotTrack) {
 <li><a href="https://www.typescriptlang.org/">TypeScript</a> は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。</li>
 <li><a href="https://reactjs.org/">React</a> は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。</li>
 <li><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a> は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。</li>
-<li>Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/">Jimu</a> は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。</li>
 </ul>
 <h2 id="インストール">インストール</h2>
 <p>Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、<a href="../../install-guide">インストールガイド</a>を参照してください。</p>
@@ -970,6 +972,39 @@ if (!doNotTrack) {
 </ul>
 <p>必要最小限のファイルですぐに始めるには、<code>your-extensions\widgets</code> フォルダ内の <code>simple widget</code> を参照してください。</p>
 <p>ウィジェット開発の詳細については、<a href="../extend-base-widget">ウィジェットの実装</a>について学習してください。</p>
+<h2 id="ウィジェットの配置場所">ウィジェットの配置場所</h2>
+<p>カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリに配置されます。Web 拡張機能リポジトリは、<code>client</code> フォルダー内のフォルダーで下のコンテンツを含む <code>manifest.json</code> ファイルが格納されています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;my-web-extension-repo&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;exb-web-extension-repo&#34;</span>,
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;This is a sample extension repository.&#34;</span>,
+  <span style="color:#f92672">&#34;copyright&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+}
+</code></pre></div><p>Experience Builder (Developer Edition) には、<code>client/your-extensions</code> にサンプルの Web 拡張機能リポジトリが付属しています。このリポジトリを使用することも、独自のリポジトリを作成することもできます。Git のようなソース コード リポジトリ システムを使用する場合は、独自のものを使用した方がうまくいく場合があります。独自に作成する場合、Jimu モジュールの型宣言がないなど、コード エディター上でエラーが表示されることがあります。これを修正するには、<code>tsconfig.json</code> ファイル内の <code>include</code> 配列に、Web 拡張機能リポジトリのフォルダーを次のように追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;include&#34;</span>: [
+    <span style="color:#e6db74">&#34;dist/widgets&#34;</span>,
+    <span style="color:#e6db74">&#34;your-extensions&#34;</span>,
+    <span style="color:#e6db74">&#34;types&#34;</span>,
+    <span style="color:#e6db74">&#34;jimu-core/lib/types&#34;</span>,
+    <span style="color:#960050;background-color:#1e0010">/**</span> <span style="color:#960050;background-color:#1e0010">Web</span> <span style="color:#960050;background-color:#1e0010">拡張機能リポジトリのフォルダー名を追加します</span> <span style="color:#960050;background-color:#1e0010">**/</span>
+    <span style="color:#e6db74">&#34;my-web-extension-repo&#34;</span>
+  ],
+}
+</code></pre></div><p>widget フォルダー内では、有効なウィジェットには manifest.json ファイルとその他の必須ファイルが含まれている必要があります。</p>
+<h2 id="ウィジェット-ファイル">ウィジェット ファイル</h2>
+<p>Web 拡張機能リポジトリのルート フォルダーには、<code>widgets</code> と <code>themes</code> の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、<code>widgets</code> フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">- my-web-extension-repo/
+    - manifest.json
+    - themes/
+    - widgets/
+        - my-custom-widget/
+</code></pre></div><ul>
+<li><code>manifest.json</code> ファイルの詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">ウィジェット manifest</a> を参照してください。</li>
+<li>その他の必要なファイルや一般的なウィジェット開発の詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">ウィジェットの実装</a> を参照してください。</li>
+<li>必要最小限のファイルですぐに始めるには、<code>your-extensions/widgets</code> フォルダーにある、<code>simple</code> ウィジェットを参照してください。</li>
+</ul>
 <h2 id="基本的な考え方">基本的な考え方</h2>
 <p>Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。</p>
 <ul>

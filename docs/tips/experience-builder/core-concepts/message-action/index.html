@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-26T16:52:55 JST">
+<meta name="revised" content="2024-05-27T16:18:19 JST">
 <title>メッセージ と アクション（Message and action） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -983,10 +983,12 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">filterMessage</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>{
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
   }
-</code></pre></div><p><code>getSettingComponentUri</code> コンポーネントを使って、メッセージに基づいてアクションを設定することができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">getSettingComponentUri</span>(<span style="color:#a6e22e">messageType</span>: <span style="color:#66d9ef">MessageType</span>, <span style="color:#a6e22e">messageWidgetId?</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
-   <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;actions/query-action-setting&#39;</span>;
- }
+</code></pre></div><p>アクションによっては、アクションの動作を設定するための設定 UI が必要な場合があります。これを実現するには、manifest.json で <code>settingUri</code> を宣言します。特定のケースでは、設定 UI を省略したい場合があります。これを実現するには、<code>getSettingComponentUri</code> メソッドをオーバーライドし、該当する場合は <code>null</code> を返します。</p>
+<p>アクション設定の UI コンポーネントはいくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、<code>this.props.onSettingChange</code> を呼び出して設定を保存し、<code>onExecute</code> メソッドで利用できるようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onSettingChange</span>({
+  <span style="color:#a6e22e">actionId</span>: <span style="color:#66d9ef">this.props.actionId</span>,
+  <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {} <span style="color:#75715e">// the action config
+</span><span style="color:#75715e"></span>})
 </code></pre></div><p><code>onExecute</code> メソッドは、メッセージタイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージタイプに基づいてアクションを選択し、<code>dispatch</code> プロパティを使用してアプリケーションから <code>getAppStore()</code> 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは<a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts">こちら</a>をご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">onExecute</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>, <span style="color:#a6e22e">actionConfig?</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">boolean</span>&gt; <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span>{
    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span>(<span style="color:#a6e22e">actionConfig</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ConfigForStringChangeMessage</span>).<span style="color:#a6e22e">fieldName</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> = &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;`</span>
@@ -1002,6 +1004,10 @@ if (!doNotTrack) {
    <span style="color:#a6e22e">getAppStore</span>().<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">widgetStatePropChange</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">widgetId</span>, <span style="color:#e6db74">&#39;queryString&#39;</span>, <span style="color:#a6e22e">q</span>));
    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 }
+</code></pre></div><p>Redux ストアに格納できるのは、プレーンな JSON オブジェクトだけです。複雑な JavaScript オブジェクトを渡す必要がある場合は、<code>MutableStoreManager</code> を使ってミュータブル ストアに格納できます。値を更新したら、ウィジェットも再レンダリングできます。アクション内で次のように記述します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">MutableStoreManager</span>.<span style="color:#a6e22e">getInstance</span>().<span style="color:#a6e22e">updateStateValue</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">widgetId</span>, <span style="color:#e6db74">&#39;theKey&#39;</span>, <span style="color:#a6e22e">theComplexObject</span>)
+</code></pre></div><p>ウィジェットでは次のようにしてオブジェクトにアクセスできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">mutableStateProps</span>.<span style="color:#a6e22e">theKey</span>
 </code></pre></div><p><code>manifest.json</code> には <code>messageActions</code> プロパティがあり、メッセージ アクション エクステンションの場所と情報を提供します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#e6db74">&#34;messageActions&#34;</span><span style="color:#f92672">:</span> [
   {

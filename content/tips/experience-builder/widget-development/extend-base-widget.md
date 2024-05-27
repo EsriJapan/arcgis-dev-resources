@@ -22,7 +22,7 @@ Experience Builder ウィジェットは、次のファイルで構成されて�
 - dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成
 - icon.svg: ウィジェットパネルのウィジェットのアイコン
 - config.json: ウィジェットのデフォルト設定
-- manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示
+- manifest.json: プロパティのリストは `jimu-core/WidgetManifest` で設定した内容を表示
 
 ## Client サーバー
 Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで `npm start` を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
@@ -39,7 +39,13 @@ Experience Builder (開発者向けエディション)で必要なモジュー�
 {{% /notice %}}
 
 ## ウィジェットの作成
-ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、client/your-extensions/widget ディレクトリに配置します。demo widget フォルダの名前を変更し、`maniest.json` で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
+ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、`client/your-extensions/widget` ディレクトリに配置します。demo widget フォルダの名前を変更し、`maniest.json` で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
+
+{{% notice tip %}}
+
+default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じとすることを推奨します。
+
+{{% /notice %}}
 
 - クラスコンポーネント
 
@@ -97,9 +103,9 @@ export default function Widget (props:AllWidgetProps) {
 
 ## ウィジェットの UI 設定
 
-ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、`jimu-for-builder` パッケージの一部である `BaseWidgetSetting` クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。
+ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使用するには、`React.PureComponent` クラスを継承します。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、この例では以下のインポートに注意する必要があります。
 
-- import `React.Component` はクラスを拡張するために使用します。
+- import `React` は `React.PureComponent` クラスに使用されます。
 - import `DataSourceTypes` はデータソースの種類に使用します。
 - import `SettingSection` と `SettingRow` は設定に便利な UI コンポーネントです。
 - import `DataSourceSelector` もデータソースの選択に使われるコンポーネントです。
@@ -115,7 +121,7 @@ import {IMConfig} from '../config';
 import defaultI18nMessages from './translations/default'
 ```
 
-`BaseWidgetSetting` クラスは `AllWidgetSettingProps` と `IMConfig` という型で宣言されています。`supportedTypes` プロパティは、クラス全体でデータソースタイプの Web マップに使用されます。`onDataSourceSelected` は、データソースの選択を処理する関数を持つクラス プロパティです。設定 UI の変更を通知する関数 `this.props.OnSettingChange()` を使用しています。クラスプロパティの `onP1Change` と`onP2Change` は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。
+`React.PureComponent` クラスは `AllWidgetSettingsProps` 型と `IMConfig` 型で宣言されています。`supportedTypes` プロパティは、クラス全体を通してデータソース タイプの Webmap に使用されます。`onDataSourceSelected` は、データソースの選択を処理する関数を持つクラス プロパティです。`this.props.OnSettingChange()` 関数は、設定 UI の変更を通知するために使用されます。`onP1Change` と `onP2Change` クラス プロパティは、React のイベント処理を使用して、config.json ファイルの値の設定を助けます。
 
 ```tsx
 export default class Setting extends React.PureComponent{
@@ -189,17 +195,36 @@ Experience Builder は `react-intl` ライブラリを使用して i18n をサ�
   ]
 ```
 
-翻訳文字列は `default.ts` というファイルが必要で、`runtime/translations` と `settings/translations` フォルダにあります。`default.ts` はデフォルトの文字列を定義し、ウィジェットにインポートしてデフォルトのメッセージに使うことができます。例えば、`widget.tsx` では、以下のような翻訳された文字列にアクセスする方法があります。
+翻訳文字列は、`runtime/translations` フォルダーと `settings/translations` フォルダーにある `default.ts` というファイル内に設定する必要があります。`default.ts` はデフォルトで使用される文字列を定義し、ウィジェットにインポートしてデフォルト メッセージに使用できます。`default.ts` の書式は以下のとおりです。
+
+```tsx
+export default {
+  _widgetLabel: 'My Widget',
+  str1: 'String 1',
+}
+```
+
+サポートされる言語が増えるごとに、`translations` フォルダーにそのロケールに対応した名前のファイルを作成します。例えば、スペイン語は `translations/es.js` です。ファイルの内容は `default.ts` で定義されているものと同じプロパティを持ち、そのロケールの翻訳文字列を値として持つ形式となります。
+
+```tsx
+System.register([], function (_export) {return {execute: function () {_export({
+  // the strings
+  _widgetLabel: 'Translated Widget Name',
+  str1: 'Translated String 1',
+})}}});
+```
+
+ウィジェット ファイル (例：widget.tsx) において、翻訳された文字列にアクセスする様々な方法を示します。
 
 ```tsx
 // Class component
-this.props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessages._widgetLabel})
+this.props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessages.str1})
 
 // Function component
-props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._widgetLabel})
+props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessage.str1})
 
 // JSX
-<FormattedMessage id="widgetProperties" defaultMessage={defaultMessages.widgetProperties}/>
+<FormattedMessage id="str1" defaultMessage={defaultMessages.str1}/>
 ```
 
 ## マップ ビュー/シーン ビュー
@@ -215,10 +240,10 @@ props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._wi
       })
 ```
 
-マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で `JimuMapViewSelector` を使用して選択することができます。選択したマップ/シーンは `WidgetJson.useMapWidgetsIds` に保存されます。
+マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で `MapWidgetSelector` を使用して選択することができます。選択したマップ/シーンは `WidgetJson.useMapWidgetsIds` に保存されます。
 
 ```tsx
-<JimuMapViewSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds[0]} />
+<MapWidgetSelector onSelect={this.onMapWidgetSelected} useMapWidgetIds={this.props.useMapWidgetIds[0]} />
 ```
 
 ## ArcGIS Maps SDK for JavaScript のモジュール
@@ -237,7 +262,7 @@ props.intl.formatMessage({id: '_widgetLabel', defaultMessage: defaultMessage._wi
 ```
 
 - 条件付きで JS API に依存するウィジェット (例：JS API が無くても何かを実行することはできます。)
-  - `import {loadArcGISJSAPIModules}とloadArcGISJSAPIModules([])` を使用してモジュールを動的にロードします。
+  - `import {loadArcGISJSAPIModules}` と `loadArcGISJSAPIModules([])` を使用してモジュールを動的にロードします。
 
 ```tsx
   loadArcGISJSAPIModules(['esri/widgets/Directions']).then(modules => {

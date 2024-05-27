@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-26T16:52:55 JST">
+<meta name="revised" content="2024-05-27T16:18:19 JST">
 <title>ウィジェットの実装 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -984,7 +984,7 @@ if (!doNotTrack) {
 <li>dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成</li>
 <li>icon.svg: ウィジェットパネルのウィジェットのアイコン</li>
 <li>config.json: ウィジェットのデフォルト設定</li>
-<li>manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示</li>
+<li>manifest.json: プロパティのリストは <code>jimu-core/WidgetManifest</code> で設定した内容を表示</li>
 </ul>
 <h2 id="client-サーバー">Client サーバー</h2>
 <p>Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで <code>npm start</code> を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</p>
@@ -998,7 +998,10 @@ if (!doNotTrack) {
 <p><code>ctrl + c</code> で webpack サーバーを停止させることができます。</p>
 </div>
 <h2 id="ウィジェットの作成">ウィジェットの作成</h2>
-<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、client/your-extensions/widget ディレクトリに配置します。demo widget フォルダの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
+<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、<code>client/your-extensions/widget</code> ディレクトリに配置します。demo widget フォルダの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
+<div class="notices tip" >
+<p>default.ts の <code>_widgetLabel</code> は、常に manifest.json のラベルと同じとすることを推奨します。</p>
+</div>
 <ul>
 <li>
 <p>クラスコンポーネント</p>
@@ -1049,9 +1052,9 @@ if (!doNotTrack) {
       &lt;/<span style="color:#f92672">div</span>&gt;
   }
 </code></pre></div><h2 id="ウィジェットの-ui-設定">ウィジェットの UI 設定</h2>
-<p>ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使うと、<code>jimu-for-builder</code> パッケージの一部である <code>BaseWidgetSetting</code> クラスを拡張することができます。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、以下の例であるようにインポートに注意する必要があります。</p>
+<p>ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使用するには、<code>React.PureComponent</code> クラスを継承します。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、この例では以下のインポートに注意する必要があります。</p>
 <ul>
-<li>import <code>React.Component</code> はクラスを拡張するために使用します。</li>
+<li>import <code>React</code> は <code>React.PureComponent</code> クラスに使用されます。</li>
 <li>import <code>DataSourceTypes</code> はデータソースの種類に使用します。</li>
 <li>import <code>SettingSection</code> と <code>SettingRow</code> は設定に便利な UI コンポーネントです。</li>
 <li>import <code>DataSourceSelector</code> もデータソースの選択に使われるコンポーネントです。</li>
@@ -1064,7 +1067,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">DataSourceSelector</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/data-source-selector&#39;</span>;
 <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">IMConfig</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;../config&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">defaultI18nMessages</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./translations/default&#39;</span>
-</code></pre></div><p><code>BaseWidgetSetting</code> クラスは <code>AllWidgetSettingProps</code> と <code>IMConfig</code> という型で宣言されています。<code>supportedTypes</code> プロパティは、クラス全体でデータソースタイプの Web マップに使用されます。<code>onDataSourceSelected</code> は、データソースの選択を処理する関数を持つクラス プロパティです。設定 UI の変更を通知する関数 <code>this.props.OnSettingChange()</code> を使用しています。クラスプロパティの <code>onP1Change</code> と<code>onP2Change</code> は、React のイベント処理を利用して、config.json ファイルの値の設定を支援しています。</p>
+</code></pre></div><p><code>React.PureComponent</code> クラスは <code>AllWidgetSettingsProps</code> 型と <code>IMConfig</code> 型で宣言されています。<code>supportedTypes</code> プロパティは、クラス全体を通してデータソース タイプの Webmap に使用されます。<code>onDataSourceSelected</code> は、データソースの選択を処理する関数を持つクラス プロパティです。<code>this.props.OnSettingChange()</code> 関数は、設定 UI の変更を通知するために使用されます。<code>onP1Change</code> と <code>onP2Change</code> クラス プロパティは、React のイベント処理を使用して、config.json ファイルの値の設定を助けます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Setting</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>{
   <span style="color:#a6e22e">supportedTypes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>([<span style="color:#a6e22e">DataSourceTypes</span>.<span style="color:#a6e22e">WebMap</span>]);
 
@@ -1118,15 +1121,26 @@ if (!doNotTrack) {
     <span style="color:#e6db74">&#34;es&#34;</span>,
     <span style="color:#e6db74">&#34;zh-cn&#34;</span>
   ]
-</code></pre></div><p>翻訳文字列は <code>default.ts</code> というファイルが必要で、<code>runtime/translations</code> と <code>settings/translations</code> フォルダにあります。<code>default.ts</code> はデフォルトの文字列を定義し、ウィジェットにインポートしてデフォルトのメッセージに使うことができます。例えば、<code>widget.tsx</code> では、以下のような翻訳された文字列にアクセスする方法があります。</p>
+</code></pre></div><p>翻訳文字列は、<code>runtime/translations</code> フォルダーと <code>settings/translations</code> フォルダーにある <code>default.ts</code> というファイル内に設定する必要があります。<code>default.ts</code> はデフォルトで使用される文字列を定義し、ウィジェットにインポートしてデフォルト メッセージに使用できます。<code>default.ts</code> の書式は以下のとおりです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">_widgetLabel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;My Widget&#39;</span>,
+  <span style="color:#a6e22e">str1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;String 1&#39;</span>,
+}
+</code></pre></div><p>サポートされる言語が増えるごとに、<code>translations</code> フォルダーにそのロケールに対応した名前のファイルを作成します。例えば、スペイン語は <code>translations/es.js</code> です。ファイルの内容は <code>default.ts</code> で定義されているものと同じプロパティを持ち、そのロケールの翻訳文字列を値として持つ形式となります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">register</span>([], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">_export</span>) {<span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">execute</span>: <span style="color:#66d9ef">function</span> () {<span style="color:#a6e22e">_export</span>({
+  <span style="color:#75715e">// the strings
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">_widgetLabel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Translated Widget Name&#39;</span>,
+  <span style="color:#a6e22e">str1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Translated String 1&#39;</span>,
+})}}});
+</code></pre></div><p>ウィジェット ファイル (例：widget.tsx) において、翻訳された文字列にアクセスする様々な方法を示します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// Class component
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;_widgetLabel&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessages._widgetLabel</span>})
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str1&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessages.str1</span>})
 
 <span style="color:#75715e">// Function component
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;_widgetLabel&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessage._widgetLabel</span>})
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str1&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessage.str1</span>})
 
 <span style="color:#75715e">// JSX
-</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">FormattedMessage</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widgetProperties&#34;</span> <span style="color:#a6e22e">defaultMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">defaultMessages</span>.<span style="color:#a6e22e">widgetProperties</span>}/&gt;
+</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">FormattedMessage</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;str1&#34;</span> <span style="color:#a6e22e">defaultMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">defaultMessages</span>.<span style="color:#a6e22e">str1</span>}/&gt;
 </code></pre></div><h2 id="マップ-ビューシーン-ビュー">マップ ビュー/シーン ビュー</h2>
 <p>ほとんどの Experience Builder では、ウィジェットはマップ ビュー/シーン ビューで動作し、同様にビュー内のレイヤーにアクセスする必要があります。一貫した拡張性モデルを持つことを保証するために、Experience Builder フレームワーク内での使用をより簡単にするために、他のクラスやメソッドに加えて、<code>MapViewManager</code> クラスが <code>jimu-arcgis</code> で利用可能です。基本的に全てのウィジェットは <code>createJimuMapView</code> メソッドを呼び出して <code>MapViewManager</code> にマップ ビュー/シーン ビューを追加し、他のウィジェットで使用できるようにすることができます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">      <span style="color:#a6e22e">MapViewManager</span>.<span style="color:#a6e22e">getInstance</span>().<span style="color:#a6e22e">createJimuMapView</span>({
@@ -1135,8 +1149,8 @@ if (!doNotTrack) {
         <span style="color:#a6e22e">datasourceId</span>: <span style="color:#66d9ef">webmapDs.id</span>,
         <span style="color:#a6e22e">isActive</span>: <span style="color:#66d9ef">true</span>
       })
-</code></pre></div><p>マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で <code>JimuMapViewSelector</code> を使用して選択することができます。選択したマップ/シーンは <code>WidgetJson.useMapWidgetsIds</code> に保存されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">JimuMapViewSelector</span> <span style="color:#a6e22e">onSelect</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onMapWidgetSelected</span>} <span style="color:#a6e22e">useMapWidgetIds</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useMapWidgetIds</span>[<span style="color:#ae81ff">0</span>]} /&gt;
+</code></pre></div><p>マップ ビュー/シーン ビューを使用する必要がある他のウィジェットでは、UI 設定で <code>MapWidgetSelector</code> を使用して選択することができます。選択したマップ/シーンは <code>WidgetJson.useMapWidgetsIds</code> に保存されます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">&lt;<span style="color:#f92672">MapWidgetSelector</span> <span style="color:#a6e22e">onSelect</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">onMapWidgetSelected</span>} <span style="color:#a6e22e">useMapWidgetIds</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">useMapWidgetIds</span>[<span style="color:#ae81ff">0</span>]} /&gt;
 </code></pre></div><h2 id="arcgis-maps-sdk-for-javascript-のモジュール">ArcGIS Maps SDK for JavaScript のモジュール</h2>
 <p>既定では、Experience Builder はアプリのロード時に ArcGIS Maps SDK for JavaScript (JS API) をロードしません。JS API モジュールを利用するには、2 つのオプションがあります。</p>
 <ul>
@@ -1155,7 +1169,7 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>条件付きで JS API に依存するウィジェット (例：JS API が無くても何かを実行することはできます。)
 <ul>
-<li><code>import {loadArcGISJSAPIModules}とloadArcGISJSAPIModules([])</code> を使用してモジュールを動的にロードします。</li>
+<li><code>import {loadArcGISJSAPIModules}</code> と <code>loadArcGISJSAPIModules([])</code> を使用してモジュールを動的にロードします。</li>
 </ul>
 </li>
 </ul>

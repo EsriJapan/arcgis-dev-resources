@@ -15,4 +15,4 @@ aliases = ["/map-scene-view/"]
 - `mapWidgetId`: オブジェクトを作成するビュー
 - `jimuLayerViews`: レイヤー ビュー オブジェクトのラッパー
 
-マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの `JimuMapViewSelector` コンポーネントを使用してマップ/シーンビューを選択することができます。これも `JimuMapViewComponent` を使用してJimuMapViewオブジェクトにアクセスします。
+Experience Builder では、マップ ウィジェットが `JimuMapView` オブジェクトを作成します。ウィジェットが `JimuMapView` オブジェクトを使用する必要がある場合、設定ページの `MapWidgetSelector` コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは `JimuMapViewComponent` を使って、作成された `JimuMapView` オブジェクトを取得することができます。`JimuMapView` オブジェクトを選択するには、設定ページの `JimuMapViewSelector` コンポーネントを利用します。

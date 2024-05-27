@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-04-26T16:52:55 JST">
+<meta name="revised" content="2024-05-27T16:18:19 JST">
 <title>拡張ポイント（Extension points） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -963,9 +963,17 @@ if (!doNotTrack) {
   }
 ]
 </code></pre></div><p>Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。</p>
-<p><code>AppConfigProcessor</code> - この拡張ポイントのエクステンションは、<code>AppConfig</code> を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/translation/">Translation サンプルを参照</a>）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
-DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
-ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の <code>actions</code> と <code>reducers</code> を定義できます。</p>
+<ul>
+<li>
+<p><code>AppConfigProcessor</code> - この拡張ポイントのエクステンションは、<code>AppConfig</code> を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/translation/">Translation サンプルを参照</a>）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。</p>
+</li>
+<li>
+<p><code>DependencyDefine</code> - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。</p>
+</li>
+<li>
+<p><code>ReduxStore</code> - この拡張機能を使用すると、ウィジェットの Redux 状態の <code>actions</code> と <code>reducers</code> を定義できます。</p>
+</li>
+</ul>
 <h3 id="サンプル">サンプル</h3>
 <p>拡張機能の作成例として、<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/translation/">Translation サンプル</a>をご紹介します。</p>
 

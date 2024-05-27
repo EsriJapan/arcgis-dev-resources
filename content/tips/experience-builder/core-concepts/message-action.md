@@ -50,12 +50,15 @@ filterMessage(message: Message): boolean{
   }
 ```
 
-`getSettingComponentUri` コンポーネントを使って、メッセージに基づいてアクションを設定することができます。
+アクションによっては、アクションの動作を設定するための設定 UI が必要な場合があります。これを実現するには、manifest.json で `settingUri` を宣言します。特定のケースでは、設定 UI を省略したい場合があります。これを実現するには、`getSettingComponentUri` メソッドをオーバーライドし、該当する場合は `null` を返します。
 
- ```tsx
-getSettingComponentUri(messageType: MessageType, messageWidgetId?: string): string {
-    return 'actions/query-action-setting';
-  }
+アクション設定の UI コンポーネントはいくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、`this.props.onSettingChange` を呼び出して設定を保存し、`onExecute` メソッドで利用できるようにします。
+
+```tsx
+this.props.onSettingChange({
+  actionId: this.props.actionId,
+  config: {} // the action config
+})
 ```
 
 `onExecute` メソッドは、メッセージタイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージタイプに基づいてアクションを選択し、`dispatch` プロパティを使用してアプリケーションから `getAppStore()` 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは[こちら](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)をご覧ください。
@@ -75,6 +78,18 @@ onExecute(message: Message, actionConfig?: any): Promise<boolean> | boolean{
     getAppStore().dispatch(appActions.widgetStatePropChange(this.widgetId, 'queryString', q));
     return true;
 }
+```
+
+Redux ストアに格納できるのは、プレーンな JSON オブジェクトだけです。複雑な JavaScript オブジェクトを渡す必要がある場合は、`MutableStoreManager` を使ってミュータブル ストアに格納できます。値を更新したら、ウィジェットも再レンダリングできます。アクション内で次のように記述します。
+
+```tsx
+MutableStoreManager.getInstance().updateStateValue(this.widgetId, 'theKey', theComplexObject)
+```
+
+ウィジェットでは次のようにしてオブジェクトにアクセスできます。
+
+```tsx
+this.props.mutableStateProps.theKey
 ```
 
 `manifest.json` には `messageActions` プロパティがあり、メッセージ アクション エクステンションの場所と情報を提供します。
