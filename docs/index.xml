@@ -700,7 +700,8 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
+このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と Basemap layers を参照してください。
+ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
   Android Studio を開きます。
  [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。
 または、メニューバーで [File] → [New] → [New Project] をクリックします。 [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。 次のウィンドウで、以下の項目を設定します。  Name: Display a map Package name： com.</description>
@@ -920,7 +921,7 @@ app config では、画面グループは screenGroups で定義され、画面�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
 各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
-{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;dependency&amp;#34;: &amp;#34;jimu-arcgis&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.5.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.</description>
+{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
     </item>
     
     <item>
@@ -1011,7 +1012,7 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jim-core/lib/types/manifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
+ src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -1188,8 +1189,11 @@ manifest.json を使用して CDN 経由で使用 ライブラリを複数のウ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data action
-データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。データアクションは、データソースのインスタンスとデータレコードの配列を受け取ります。データをサポートしているかどうかや、ユーザーが実行したときに何が実行されるかを定義することができます。フレームワークは、CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットでもデータアクションを提供することができます。例えば、Map ウィジェットは pan to とzoom to のデータアクションを提供しています。データアクションは、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成することで、ウィジェットに実装することができます。
-データ・アクションを提供するだけでなく、ウィジェットはデータ・アクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.json プロパティで canConsumeDataAction: true を宣言し、import {DataActionDropDown} from &#39;jimu-ui&#39; をインポートして、ウィジェットの UI で DataActionDropDown をレンダリングする必要があります。</description>
+データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。
+データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。
+フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
+データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。
+&amp;#34;dataActions&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;showOnMap&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Show on map&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;data-actions/show-on-map&amp;#34;, &amp;#34;settingUri&amp;#34;: &amp;#34;data-actions/show-on-map-setting&amp;#34;, &amp;#34;icon&amp;#34;: &amp;#34;runtime/assets/icons/ds-map-view.svg&amp;#34; } ] データアクションを提供するだけでなく、ウィジェットはデータアクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.</description>
     </item>
     
     <item>
@@ -1268,7 +1272,7 @@ const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon ico
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
 マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
- view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの JimuMapViewSelector コンポーネントを使用してマップ/シーンビューを選択することができます。これも JimuMapViewComponent を使用してJimuMapViewオブジェクトにアクセスします。</description>
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは JimuMapViewComponent を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
     <item>
@@ -1291,7 +1295,9 @@ const svg = require(&amp;#39;./assets/icons/mysvg.svg&amp;#39;) &amp;lt;Icon ico
 拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
 Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
 &amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
-AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。 DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。 ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
+  AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
+  DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
+  ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
     </item>
     
     <item>

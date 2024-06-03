@@ -83,7 +83,8 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt;タグは必要ありません。�
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
+このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と Basemap layers を参照してください。
+ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
   Android Studio を開きます。
  [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。
 または、メニューバーで [File] → [New] → [New Project] をクリックします。 [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。 次のウィンドウで、以下の項目を設定します。  Name: Display a map Package name： com.</description>

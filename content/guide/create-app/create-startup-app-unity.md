@@ -210,19 +210,21 @@ ArcGIS Online から使用できるデータを追加します。
 
 1. **Layers** タブをクリックします。
 
-2. **Add Data** セクションで、**Type** のドロップダウンリストから適切なレイヤータイプを選択します。
+2. 右下の **Add New** ボタンを押して、**Add New Layer** ポップアップウィンドウを開きます。
 
-3. 3D オブジェクトシーンレイヤーを追加するには、サービスの URL を **Source** フィールドに入力します。
+3. **Type** のドロップダウンリストから適切なレイヤータイプを選択します。
 
-4. **Name** フィールドにレイヤー名を入力します。
+4. 3D オブジェクトシーンレイヤーを追加するには、サービスの URL を **Source** フィールドに入力します。
 
-5. **Add** ボタンをクリックして、レイヤーをマップに追加します。レイヤーが追加されると、**Layers** セクションに表示されます。
+5. **Name** フィールドにレイヤー名を入力します。
 
-6. **Opacity** スライダを動かすか、**Opacity** フィールドに正確な値を入力して、レイヤーの不透明度を設定します。
+6. **Add** ボタンをクリックして、レイヤーをマップに追加します。レイヤーが追加されると、**Layers** セクションに表示されます。
+
+7. **Opacity** スライダを動かすか、**Opacity** フィールドに正確な値を入力して、レイヤーの不透明度を設定します。
 
 以下が、Layers パネルの画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/add-data.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/add-data-1_5_0.png" width="400px">
 
 
 ### 空とライティングの調整

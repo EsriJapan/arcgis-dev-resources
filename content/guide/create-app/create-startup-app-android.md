@@ -17,6 +17,13 @@ aliases = ["/create-startup-app-android/"]
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+
+{{% notice note %}}
+
+このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [Basemap layers](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/) を参照してください。
+
+{{% /notice %}}
+
 <!-- 
 ## 前提条件
 

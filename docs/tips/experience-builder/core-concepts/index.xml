@@ -117,8 +117,11 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data action
-データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。データアクションは、データソースのインスタンスとデータレコードの配列を受け取ります。データをサポートしているかどうかや、ユーザーが実行したときに何が実行されるかを定義することができます。フレームワークは、CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットでもデータアクションを提供することができます。例えば、Map ウィジェットは pan to とzoom to のデータアクションを提供しています。データアクションは、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成することで、ウィジェットに実装することができます。
-データ・アクションを提供するだけでなく、ウィジェットはデータ・アクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.json プロパティで canConsumeDataAction: true を宣言し、import {DataActionDropDown} from &#39;jimu-ui&#39; をインポートして、ウィジェットの UI で DataActionDropDown をレンダリングする必要があります。</description>
+データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。
+データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。
+フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
+データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。
+&amp;#34;dataActions&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;showOnMap&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Show on map&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;data-actions/show-on-map&amp;#34;, &amp;#34;settingUri&amp;#34;: &amp;#34;data-actions/show-on-map-setting&amp;#34;, &amp;#34;icon&amp;#34;: &amp;#34;runtime/assets/icons/ds-map-view.svg&amp;#34; } ] データアクションを提供するだけでなく、ウィジェットはデータアクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.</description>
     </item>
     
     <item>
@@ -145,7 +148,7 @@ export default class QueryAction extends AbstractMessageAction{ filterMessageTyp
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
 マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
- view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  マップ/シーン ビューを使用する必要があるウィジェットは、設定ページの JimuMapViewSelector コンポーネントを使用してマップ/シーンビューを選択することができます。これも JimuMapViewComponent を使用してJimuMapViewオブジェクトにアクセスします。</description>
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは JimuMapViewComponent を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
     <item>
@@ -158,7 +161,9 @@ export default class QueryAction extends AbstractMessageAction{ filterMessageTyp
 拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
 Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
 &amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
-AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。 DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。 ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
+  AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
+  DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
+  ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
     </item>
     
   </channel>
