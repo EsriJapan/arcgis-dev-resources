@@ -29,3 +29,6 @@ ArcGIS Platform の[チュートリアル](https://developers.arcgis.com/documen
 
 - [ルートの検索](create-routing)  
 マッピングAPI＆ロケーションサービス内のルーティング＆ディレクションズについて紹介します。
+
+- [ベースマップ](basemaps)  
+マッピングAPI＆ロケーションサービス内のベースマップについて紹介します。

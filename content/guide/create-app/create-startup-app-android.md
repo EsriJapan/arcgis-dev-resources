@@ -20,7 +20,7 @@ aliases = ["/create-startup-app-android/"]
 
 {{% notice note %}}
 
-このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [Basemap layers](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/) を参照してください。
+このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [ベースマップ](../../../basemaps/) を参照してください。
 
 {{% /notice %}}
 
