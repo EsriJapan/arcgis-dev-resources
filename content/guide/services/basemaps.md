@@ -5,7 +5,11 @@ Weight=4
 aliases = ["/basemaps/"]
 +++
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo01_title.png" width="1200px">
+
+
+<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="
+https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-demo-662a12e21dc578539aa01d45570f8294.html"
+></iframe>
 
 ## ベースマップとは？
 
