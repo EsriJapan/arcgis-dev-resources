@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <title>ArcGIS Developers 開発リソース集</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2024-06-06T13:09:36 JST">
+<title>ベースマップ :: ArcGIS Developers 開発リソース集</title>
+<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
+<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
+<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="マッピングAPI＆ロケーションサービス内のベースマップについて紹介します">
+
+
+    
+  </head>
+  <body data-url="/arcgis-dev-resources/guide/services/basemaps/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="検索...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+        
+		</script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-api-key/">
+            API キーの取得
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-routing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-routing/">
+            ルートの検索
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/basemaps/" class="dd-item active">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/basemaps/">
+            ベースマップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            ArcGIS Maps SDK for JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
+            Esri Leaflet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
+            OpenLayers
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/">
+            Unity
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/">
+            Unreal Engine
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/security/">
+            セキュリティと認証の紹介
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイの紹介
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/learn/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/learn/">もっと学ぶ</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/learn/github/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/github/">
+            Esri Japan GitHub
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/learn/developer-community/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/developer-community/">
+            ArcGIS 開発者コミュニティ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS Maps SDK for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
+            インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started/">
+            開発の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
+            バージョン 3.x から 4.x への移行
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
+            カスタム フォント
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
+            ページ（Page）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
+            ウィンドウ（Window）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
+            セクションとビュー（Section and view）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
+            画面グループ（Screen groups）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
+            レイアウト（Layout）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
+            テーマ（Theme）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
+            ウィジェット（Widget）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
+            Jimu
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
+            データ ソース（Data source）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
+            データアクション（Data action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
+            メッセージ と アクション（Message and action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
+            マップ/シーン ビュー（Map/Scene View）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
+            拡張ポイント（Extension points）
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
+            ウィジェット開発のスタート
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
+            ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
+            ウィジェットの実装
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
+            サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
+            単体テスト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
+            assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/">
+            webpack config のオーバーライド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/">
+            dist フォルダーへのファイルのコピー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/">
+            ウィジェット間のコードの共有
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
+            チュートリアル
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
+            Web AppBuilder からの移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
+            カスタム ウィジェット開発ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
+            Web アプリケーションのデプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Maps SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
+      </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/appstudio/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/appstudio/">ArcGIS AppStudio</a>
+      </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/calcite-design-system/">Calcite Design System</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/get-started/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/get-started/">
+            はじめに
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/">
+            チュートリアル
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unity/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unity/">ArcGIS Maps SDK for Unity</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/install-and-set-up/">
+            インストールガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unreal-engine/">ArcGIS Maps SDK for Unreal Engine</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/">
+            インストールガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
+      </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/hackathon/">
+            ミートアップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer"><center>
+<br>© Esri Japan. All rights reserved.<br>
+</center>
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/guide/'>スタートアップ ガイド</a> > <a href='/arcgis-dev-resources/guide/services/'>ロケーションサービスの利用</a> > ベースマップ
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ベースマップとは">ベースマップとは？</a></li>
+    <li><a href="#ベースマップの仕組み">ベースマップの仕組み</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#データ-ソースの種類">データ ソースの種類</a>
+      <ul>
+        <li><a href="#ベースマップ-スタイル-サービス">ベースマップ スタイル サービス</a></li>
+        <li><a href="#データ-サービス">データ サービス</a></li>
+      </ul>
+    </li>
+    <li><a href="#コード例">コード例</a>
+      <ul>
+        <li><a href="#ベースマップ-スタイルの表示">ベースマップ スタイルの表示</a></li>
+        <li><a href="#ローカライズされた地名ラベルの表示">ローカライズされた地名ラベルの表示</a></li>
+        <li><a href="#ローカライズされた地名ラベル-ローカル">ローカライズされた地名ラベル (ローカル)</a></li>
+        <li><a href="#言語ベースの地名ラベル-グローバル">言語ベースの地名ラベル (グローバル)</a></li>
+        <li><a href="#worldview-の表示">worldview の表示</a></li>
+        <li><a href="#ホスト-レイヤー-データ-サービス-の表示">ホスト レイヤー (データ サービス) の表示</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>ベースマップ</h1>
+  
+
+
+
+    
+    
+    
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo01_title.png" width="1200px">
+<h2 id="ベースマップとは">ベースマップとは？</h2>
+<p>ベースマップはベースマップ レイヤーとも呼ばれ、マップとシーンの全体的なビジュアルを提供するレイヤーです。ベースマップには通常は大陸、湖沼、行政境界、道路、都市、地名などの地理的な特徴やラベルが含まれます。ベースマップの最も一般的なデータ ソースは、<a href="#%E3%83%99%E3%83%BC%E3%82%B9%E3%83%9E%E3%83%83%E3%83%97-%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">ベースマップ スタイル サービス</a>と<a href="#%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">データ サービス</a> です。</p>
+<p>ベースマップ レイヤーを使って以下のようなことができます。</p>
+<ul>
+<li>マップとシーンの両方で、世界中の地理データを表示</li>
+<li>ArcGIS streets、navigation、light gray canvas、OSM streets などのベースマップを表示</li>
+<li>自身で指定した色、字体、フォントを使用したベースマップを表示</li>
+<li>街路やナビゲーションのベクター タイル レイヤーを表示</li>
+<li>衛星画像や陰影起伏図用のマップ タイル レイヤーを表示</li>
+<li>独自のデータを独自の空間参照で表示</li>
+</ul>
+<h2 id="ベースマップの仕組み">ベースマップの仕組み</h2>
+<p>ベースマップ レイヤーは、マッピング アプリケーションの視覚的な基礎を提供します。ベースマップ レイヤーは、一般的にグローバルなデータを含み、マップやシーンに追加される最初のレイヤーです。マップを表示する場合、ベースマップ レイヤーが最初に描画され、次にデータ レイヤー、グラフィックス レイヤーの順に描画されます。</p>
+<h4 id="ベストプラクティス">ベストプラクティス</h4>
+<p>ほとんどの場合、アプリケーションはフィーチャの選択やポップアップの表示など、ベースマップ レイヤーとのやり取りを許可していません。ベースマップ レイヤーの上にある<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/data-layers/">データレイヤー</a>を使用してマップ内のフィーチャを表示して、フィーチャ内のデータにアクセスできます。</p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo02_basemaplayers.png" width="1200px">
+<h2 id="データ-ソースの種類">データ ソースの種類</h2>
+<p>ベースマップの一般的なデータ ソースは、<a href="#%E3%83%99%E3%83%BC%E3%82%B9%E3%83%9E%E3%83%83%E3%83%97-%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">ベースマップ スタイル サービス</a>と<a href="#%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">データ サービス</a>の 2 つです。</p>
+<h3 id="ベースマップ-スタイル-サービス">ベースマップ スタイル サービス</h3>
+<p><a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス</a>は、世界中のベースマップ スタイルとデータを提供するロケーション サービスです。各ベースマップ スタイルには、地理的なフィーチャとラベルの視覚的なプロパティに固有のセットがあります。このサービスには ArcGIS と OSM の 2 つのデータ プロバイダが含まれます。データ プロバイダは、streets、navigation、light gray canvas、imagery などのデフォルトのベースマップ スタイルをサポートしています。各スタイルのデータは、ArcGIS でホストされているベクター タイル レイヤーとマップ タイル レイヤーを通じて提供され、Web メルカトル空間参照に格納されます。</p>
+<h4 id="ベストプラクティス-1">ベストプラクティス</h4>
+<p>世界中のあらゆる場所の地理的特徴やラベルを表示するロケーション サービスを使用する場合や、独自の<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/visualization/basemap-styles/">カスタム ベースマップ スタイル</a>を作成する場合は、ベースマップ スタイル サービスを使用してください。このサービスでは、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-places/">場所</a>、<a href="#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%A9%E3%82%A4%E3%82%BA%E3%81%95%E3%82%8C%E3%81%9F%E5%9C%B0%E5%90%8D%E3%83%A9%E3%83%99%E3%83%AB%E3%81%AE%E8%A1%A8%E7%A4%BA">ローカル言語</a>、<a href="#worldview-%E3%81%AE%E8%A1%A8%E7%A4%BA">worldview</a> を表示することもできます。</p>
+<p>ベースマップ スタイル サービスを利用するための一般的な手順は以下の通りです。</p>
+<ol>
+<li>
+<p>ベースマップ スタイル サービスで使用できる<a href="https://developers.arcgis.com/rest/basemap-styles/">デフォルトのベースマップ スタイル</a>を確認します。</p>
+</li>
+<li>
+<p>サービス、データ プロバイダ、スタイルを参照します</p>
+<ul>
+<li>データ プロバイダ : <a href="https://developers.arcgis.com/rest/basemap-styles/#arcgis-styles">ArcGIS</a> または <a href="https://developers.arcgis.com/rest/basemap-styles/#osm-styles">OSM</a></li>
+<li>ベースマップ スタイル例 : <a href="https://developers.arcgis.com/rest/basemap-styles/#streets-and-navigation">streets</a>、<a href="https://developers.arcgis.com/rest/basemap-styles/#topography-and-imagery">imagery</a>、<a href="https://developers.arcgis.com/rest/basemap-styles/#streets-and-navigation">navigation</a>、<a href="https://developers.arcgis.com/rest/basemap-styles/#topography-and-imagery">topography</a>、<a href="https://developers.arcgis.com/rest/basemap-styles/#reference">light gray canvas</a>、<a href="https://developers.arcgis.com/rest/basemap-styles/#topography-and-imagery">outdoors</a> など</li>
+</ul>
+</li>
+<li>
+<p>ベースマップを表示します</p>
+</li>
+</ol>
+<p>ArcGIS Maps SDKs は、各スタイルにアクセスするための列挙型またはヘルパークラスを提供します。ただし、オープン ソース ライブラリを使用する場合は、ベースマップ スタイル サービスまたは基礎となるベクター タイル レイヤーまたはマップ タイル レイヤーを直接参照する必要があります。</p>
+<h5 id="例--arcgis-api-for-python">例 : ArcGIS API for Python</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">from</span> arcgis <span style="color:#f92672">import</span> GIS
+
+gis <span style="color:#f92672">=</span> GIS(api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>)
+map <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>map()
+map<span style="color:#f92672">.</span>basemap <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;streets-navigation-vector&#34;</span>
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/python/guide/part1-introduction-to-using-the-map-widget/">API リファリンスへ</a>
+</div>
+<div class="notices note" >
+<p>ベースマップ スタイル サービスを使用する方法を学ぶには<a href="#%E3%83%99%E3%83%BC%E3%82%B9%E3%83%9E%E3%83%83%E3%83%97-%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E8%A1%A8%E7%A4%BA">ベースマップ スタイルの表示</a>、<a href="#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%A9%E3%82%A4%E3%82%BA%E3%81%95%E3%82%8C%E3%81%9F%E5%9C%B0%E5%90%8D%E3%83%A9%E3%83%99%E3%83%AB%E3%81%AE%E8%A1%A8%E7%A4%BA">ローカライズされた地名ラベルの表示</a>、<a href="#worldview-%E3%81%AE%E8%A1%A8%E7%A4%BA">worldview の表示</a>を参照してください。地点の表示について学ぶ方法は <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-places/">Basemap places</a> を参照してください。</p>
+</div>
+<div class="notices note" >
+<p>REST API : さまざまなスタイルと機能の詳細については<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス (v2)</a> を参照してください。</p>
+</div>
+<h3 id="データ-サービス">データ サービス</h3>
+<p>フィーチャ サービス、ベクター タイル サービス、マップタイル サービスなどのデータ サービスは、ArcGIS Online または ArcGIS Enterprise でホストされているサービスで、お客様のデータを含んでいます。ほとんどの場合、クライアント API でサポートされているデータ サービスは、ベースマップのデータ ソースとして使用できます。データ サービスは、ArcGIS のホスト レイヤー (アイテム) でアクセスおよび管理できます。</p>
+<h4 id="ベストプラクティス-2">ベストプラクティス</h4>
+<p>ArcGIS Online または ArcGIS Enterprise でホストされている既存のデータ サービスまたは独自のホスト型データ サービスを使用する場合は、データ サービスを使用します。また、Web メルカトル以外の空間参照を必要とする小規模な地域やエリアのデータを表示する場合にも使用します。</p>
+<p>データ サービスを利用するための一般的な手順は以下の通りです。</p>
+<ol>
+<li>ホスト レイヤーおよびデータ サービスを検索または作成します。
+<ul>
+<li><a href="https://www.arcgis.com/home/search.html?restrict=false&amp;sortField=relevance&amp;sortOrder=desc&amp;focus=layers#content">ArcGIS Online</a> および <a href="https://livingatlas.arcgis.com/en/browse/#d=2">ArcGIS Living Atlas of the World</a> で既存のサービスを検索します。</li>
+<li>独自のデータ サービスを作成する方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/data-hosting/">Data hosting</a> を参照してください。</li>
+</ul>
+</li>
+<li>レイヤー アイテム ID またはサービス URL を取得します。例：
+<ul>
+<li>レイヤー アイテム : <a href="https://www.arcgis.com/home/item.html?id=4d9fb5c0a6344407aec56f47a11482b5">https://www.arcgis.com/home/item.html?id=4d9fb5c0a6344407aec56f47a11482b5</a></li>
+<li>アイテム ID : <code>4d9fb5c0a6344407aec56f47a11482b5</code></li>
+<li>サービス URL : <a href="https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/State_Geologic_Map_Compilation_%E2%80%93_Geology/FeatureServer/0">https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/State_Geologic_Map_Compilation_%E2%80%93_Geology/FeatureServer/0</a></li>
+</ul>
+</li>
+<li>ベースマップを表示します。</li>
+</ol>
+<p>ArcGIS Maps SDKs は、ホスト レイヤーのアイテム ID またはサービス URL を使用してデータ サービスにアクセスします。一方、オープンソース ライブラリは、サービス URL を使用してデータ サービスにアクセスします。</p>
+<h5 id="例--arcgis-maps-sdk-for-javascript">例 : ArcGIS Maps SDK for JavaScript</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>({
+    <span style="color:#a6e22e">portalItem</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4d9fb5c0a6344407aec56f47a11482b5&#34;</span> <span style="color:#75715e">//  ArcGIS Online 上の State Geologic Map Compilation – Geology を参照
+</span><span style="color:#75715e"></span>    }
+  });
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Basemap</span>({
+    <span style="color:#a6e22e">baseLayers</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">featureLayer</span>]
+  });
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/javascript/latest/tutorials/display-a-custom-basemap-style/">チュートリアルへ</a>
+</div>
+<div class="notices note" >
+<p>ベースマップ用のホスト レイヤーとデータ サービスを使用する方法については、<a href="#%E3%83%9B%E3%82%B9%E3%83%88-%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9-%E3%81%AE%E8%A1%A8%E7%A4%BA">ホスト レイヤー (データ サービス) の表示</a>を参照してください。</p>
+</div>
+<div class="notices note" >
+<p>ベースマップ用に独自のサービスを作成する方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/data-hosting/introduction-to-data-services/">Data services &gt; Introduction</a> を参照してください。</p>
+</div>
+<h2 id="コード例">コード例</h2>
+<h3 id="ベースマップ-スタイルの表示">ベースマップ スタイルの表示</h3>
+<p>この例では、ベースマップのデータ ソースとしてベースマップ スタイル サービスを使用する方法を示します。そのためには、デフォルトのベースマップ スタイルの 1 つを使用します。表示可能なベースマップについては、<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル (v2)</a> を参照してください。</p>
+<h4 id="ステップ">ステップ</h4>
+<ol>
+<li>マップを作成します。</li>
+<li>ベースマップ スタイル サービスからスタイルを参照します。</li>
+<li>ベースマップをマップに追加します。</li>
+</ol>
+<h5 id="例--arcgis-api-for-python-1">例 : ArcGIS API for Python</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS
+
+gis <span style="color:#f92672">=</span> GIS(api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>)
+map <span style="color:#f92672">=</span> gis<span style="color:#f92672">.</span>map()
+map<span style="color:#f92672">.</span>basemap <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;streets-vector&#34;</span>
+<span style="color:#75715e"># map.basemap = &#34;streets-navigation-vector&#34;</span>
+<span style="color:#75715e"># map.basemap = &#34;topo-vector&#34;</span>
+<span style="color:#75715e"># map.basemap = &#34;gray-vector&#34;</span>
+<span style="color:#75715e"># map.basemap = &#34;satellite&#34;</span>
+
+map<span style="color:#f92672">.</span>center <span style="color:#f92672">=</span> [<span style="color:#ae81ff">35.25615700207951</span>, <span style="color:#ae81ff">139.15502776889684</span>]
+map<span style="color:#f92672">.</span>zoom <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>
+map
+
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/python/guide/using-the-map-widget/#basemaps">APIリファリンスヘ</a>
+</div>
+<h4 id="arcgisstreets">ArcGIS/Streets</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo03_ArcStreets.png" width="1200px">
+<h4 id="arcgisnavigation">ArcGIS/Navigation</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo04_ArcNavigation.png" width="1200px">
+<h4 id="arcgistopographic">ArcGIS/Topographic</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo05_ArcToppgraphic.png" width="1200px">
+<h4 id="arcgisoutdoor">ArcGIS/Outdoor</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo06_ArcOutdoor.png" width="1200px">
+<h4 id="arcgislight-gray-canvas">ArcGIS/Light gray canvas</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo07_light-gray-canvas.png" width="1200px">
+<h4 id="arcgisimagery">ArcGIS/Imagery</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo08_ArcImagery.png" width="1200px">
+<h4 id="osmstandard">OSM/Standard</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo09_OSMStandard.png" width="1200px">
+<h4 id="osmnavigation">OSM/Navigation</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo10_OSMNavigation.png" width="1200px">
+<h4 id="osmblueprint">OSM/Blueprint</h4>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo11_OSMBlueprint.png" width="1200px">
+<h3 id="ローカライズされた地名ラベルの表示">ローカライズされた地名ラベルの表示</h3>
+<p>ベースマップ スタイル サービスはデフォルトで英語のラベルを表示します。以下の例では、ローカライズされた言語ベースの地名ラベルで OSM スタイルを表示する方法を示します。</p>
+<h4 id="ステップ-1">ステップ</h4>
+<ol>
+<li>マップまたはシーンを作成します。</li>
+<li>ベースマップ スタイル サービス (v2) からスタイルを参照します。</li>
+<li>スタイルの URL で、<code>language</code> パラメーターに言語コードを設定します。</li>
+<li>ベースマップをマップに追加します。</li>
+</ol>
+<h3 id="ローカライズされた地名ラベル-ローカル">ローカライズされた地名ラベル (ローカル)</h3>
+<p>この例では、<code>arcgis/light-gray</code> のマップ スタイルを使用します。デフォルトでは地名ラベルはグローバルな地名を表示します。ローカライズされた地名ラベルをレンダリングするには、<code>language</code> パラメーターを <code>local</code> に設定します。ローカライズされたラベルはズームレベル 10 以降でレンダリングされます。</p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo12_locallabel_hibiya.png    " width="1200px">
+<h5 id="例--esri-leaflet">例 : Esri Leaflet</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">map</span>(<span style="color:#e6db74">&#34;map&#34;</span>).<span style="color:#a6e22e">setView</span>([<span style="color:#ae81ff">35.67255187657312</span>, <span style="color:#ae81ff">139.76323442958844</span>], <span style="color:#ae81ff">14</span>);
+<span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">esri</span>.<span style="color:#a6e22e">Vector</span>.<span style="color:#a6e22e">vectorBasemapLayer</span>(<span style="color:#e6db74">&#34;arcgis/light-gray&#34;</span>, {
+  <span style="color:#a6e22e">apikey</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">apiKey</span>,
+  <span style="color:#a6e22e">language</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;local&#39;</span>,
+  <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+  }).<span style="color:#a6e22e">addTo</span>(<span style="color:#a6e22e">map</span>);
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/esri-leaflet/maps/change-the-place-label-language/">チュートリアルへ</a>
+</div>
+<h3 id="言語ベースの地名ラベル-グローバル">言語ベースの地名ラベル (グローバル)</h3>
+<p>この例では、<code>arcgis/dark-gray</code> マップ スタイルを使用しています。<code>language</code> パラメーターに言語コード (ここでは <code>ja</code>) を設定し、全てのズームレベルで地名ラベルがすべて日本語で表示されるようにしています。</p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo13_globallabel.png     " width="1200px">
+<h5 id="例--esri-leaflet-1">例 : Esri Leaflet</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">map</span>(<span style="color:#e6db74">&#34;map&#34;</span>).<span style="color:#a6e22e">setView</span>([<span style="color:#ae81ff">2.35</span>, <span style="color:#ae81ff">48.856</span>], <span style="color:#ae81ff">6</span>);
+<span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">esri</span>.<span style="color:#a6e22e">Vector</span>.<span style="color:#a6e22e">vectorBasemapLayer</span>(<span style="color:#e6db74">&#34;arcgis/dark-gray&#34;</span>, {
+  <span style="color:#a6e22e">apikey</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">apiKey</span>,
+  <span style="color:#a6e22e">language</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ja&#39;</span>,
+  <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+}).<span style="color:#a6e22e">addTo</span>(<span style="color:#a6e22e">map</span>); 
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/esri-leaflet/maps/change-the-place-label-language/">チュートリアルへ</a>
+</div>
+<h3 id="worldview-の表示">worldview の表示</h3>
+<p>ベースマップ スタイル サービスは、デフォルトのグローバルな worldview を使用して、国の境界線とラベルを表示します。この例では、ある国の特定のビューに基づいてベースマップの境界線とラベルを表示する方法を示します。 worldview は、<code>navigation</code>、<code>streets</code>、<code>community</code> など一部の ArcGIS ベースマップ スタイルでのみ使用できます。OSM スタイルはサポートされていません。</p>
+<div class="notices note" >
+<p>特定の worlview を選択した場合、その国以外の国際的な方針ではないことに注意してください。</p>
+</div>
+<h4 id="ステップ-2">ステップ</h4>
+<ol>
+<li>マップまたはシーンを作成します。</li>
+<li>ベースマップ スタイル サービス (v2) からベースマップ レイヤーを参照します。</li>
+<li>スタイルの URL で、サポートされている worldview 名を <code>worldview</code> パラメーターに設定します。</li>
+<li>ベースマップをマップに追加します。</li>
+</ol>
+<p>この例では、 <code>arcgis/light-gray</code> のマップ スタイルを使用し、境界線とラベルの <code>worldview</code> を <code>morocco</code> に設定しています。すべての <code>worldview</code> オプションを見るには、<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス (v2)</a> をご覧ください。</p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo14_worldview.png     " width="1200px">
+<h5 id="例--maplible-gl-js">例 : MapLible GL JS</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worldView</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;morocco&#34;</span> <span style="color:#75715e">// モロッコの worldview を指定
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">maplibregl</span>.<span style="color:#a6e22e">Map</span>({
+        <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;map&#34;</span>, <span style="color:#75715e">// div 要素の ID
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">style</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/arcgis/light-gray?token=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">apiKey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;worldview=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">worldView</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+        <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+        <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">7.09</span>, <span style="color:#ae81ff">31</span>], <span style="color:#75715e">// 初期位置 [経度, 緯度]
+</span><span style="color:#75715e"></span>      }) 
+</code></pre></div><h3 id="ホスト-レイヤー-データ-サービス-の表示">ホスト レイヤー (データ サービス) の表示</h3>
+<p>この例では、ベースマップのデータ ソースとして ArcGIS のデータ サービスを使用する方法を示します。データはアメリカ全土の地質を示すホスト フィーチャ レイヤーです。データ サービスを利用するためには、ホスト レイヤーのアイテム ID を参照する必要があります。</p>
+<h4 id="ステップ-3">ステップ</h4>
+<ol>
+<li>ホスト レイヤーのアイテム ID を見つけます。</li>
+<li>ベースマップを作成し、そのレイヤーをベースレイヤーとして追加します。</li>
+<li>マップを作成し、ベースマップを使用します。</li>
+</ol>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/basemaps/photo15_hostedlayer_USgeologicalmap.png     " width="1200px">
+<h5 id="例--arcgis-maps-sdk-for-javascript-1">例 : ArcGIS Maps SDK for JavaScript</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>({
+    <span style="color:#a6e22e">portalItem</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4d9fb5c0a6344407aec56f47a11482b5&#34;</span> <span style="color:#75715e">//  ArcGIS Online 上の State Geologic Map Compilation – Geology を参照
+</span><span style="color:#75715e"></span>    }
+  });
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">basemap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Basemap</span>({
+    <span style="color:#a6e22e">baseLayers</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">featureLayer</span>]
+  }); 
+</code></pre></div><div style="text-align: right;">
+<a href="https://developers.arcgis.com/javascript/latest/display-a-custom-basemap-style/#add-the-basemap-layers">チュートリアルへ</a>
+</div>
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/arcgis-dev-resources/guide/services/create-routing/" title="ルートの検索"> <i class="fa fa-chevron-left"></i><label>ルートの検索</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/guide/create-app/" title="アプリ開発" style="margin-right: 0px;"><label>アプリ開発</label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
+<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
+<script src="/arcgis-dev-resources/js/docdock.js"></script>
+<script src="/arcgis-dev-resources/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
