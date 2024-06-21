@@ -7,9 +7,9 @@ alwaysopen = true
 
 {{% notice note %}}
 
-<strong>現在、ArcGIS Developers の [Web サイト](https://developers.arcgis.com/sign-up/)はメンテナンス中となっています。</strong><br/>
-<strong>近々予定されている幾つかの変更の準備のため、開発者アカウントの新規登録を一時的に停止しています。</strong><br/>
-<strong>新規登録は 6 月 28 日またはそれ以前に再開される予定です。</strong>
+現在、ArcGIS Developers の [Web サイト](https://developers.arcgis.com/sign-up/)はメンテナンス中となっています。<br/>
+近々予定されている幾つかの変更の準備のため、開発者アカウントの新規登録を一時的に停止しています。<br/>
+新規登録は 6 月 28 日またはそれ以前に再開される予定です。
 
 {{% /notice %}}
 

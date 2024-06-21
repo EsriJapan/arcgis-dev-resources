@@ -5,6 +5,14 @@ Weight=1
 aliases = ["/get-dev-account/"]
 +++
 
+{{% notice note %}}
+
+現在、ArcGIS Developers の [Web サイト](https://developers.arcgis.com/sign-up/)はメンテナンス中となっています。<br/>
+近々予定されている幾つかの変更の準備のため、開発者アカウントの新規登録を一時的に停止しています。<br/>
+新規登録は 6 月 28 日またはそれ以前に再開される予定です。
+
+{{% /notice %}}
+
 ## ArcGIS Developers とは
 
 ArcGIS Developers は、開発者が ArcGIS アプリケーションを構築してデプロイするために必要なリソースを集めた Web サイトです。API および SDK のドキュメントやチュートリアル、ロケーションサービスの概要、価格、ヘルプなどが用意されています。このサイトに開発者としてアカウントを作成することで、開発キット（SDK）をダウンロードして ArcGIS アプリケーションの開発を開始することができます。
