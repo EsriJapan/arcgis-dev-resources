@@ -1,7 +1,7 @@
 +++
 title = "OpenLayers"
 description = "OpenLayers を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
-Weight=3
+Weight=4
 aliases = ["/create-startup-app-OpenLayers/"]
 +++
 

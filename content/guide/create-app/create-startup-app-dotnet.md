@@ -1,7 +1,7 @@
 +++
 title = ".NET"
 description = "ArcGIS Maps SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。"
-Weight=6
+Weight=8
 aliases = ["/create-startup-app-dotnet/"]
 +++
 

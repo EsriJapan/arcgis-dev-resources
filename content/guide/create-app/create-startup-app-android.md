@@ -1,7 +1,7 @@
 +++
 title = "Android"
 description = "ArcGIS Maps SDK for Kotlin を用いたネイティブ地図アプリの作成方法を紹介します。"
-Weight =4
+Weight =6
 aliases = ["/create-startup-app-android/"]
 +++
 

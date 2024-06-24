@@ -76,8 +76,6 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/install-guide/</loc>
@@ -110,11 +108,11 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnsetup/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/</loc>
   </url><url>
@@ -138,7 +136,7 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</loc>
   </url><url>
@@ -150,7 +148,7 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
   </url><url>
@@ -168,6 +166,8 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/prosdk/</loc>
   </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/matplotlib-japanese/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</loc>
@@ -176,9 +176,9 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/appstudio/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/appstudio/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
   </url><url>
@@ -190,13 +190,15 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/widget-list/</loc>
   </url><url>

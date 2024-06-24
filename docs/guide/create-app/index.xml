@@ -74,6 +74,22 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt;タグは必要ありません。�
     </item>
     
     <item>
+      <title>CesiumJS</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/</guid>
+      <description>シーンを表示する このチュートリアルでは、CesiumJS と ベースマップ レイヤー サービスを使用して、シーンを表示する方法を紹介します。
+ArcGIS マップ タイル サービスを使用すると、CesiumJS で地図が表示できます。例えば ArcGIS:Imagery マップ タイル レイヤーには、世界の地形と組み合わせて使用できる、グローバルなカバレッジを持つ衛星画像が含まれています。
+このチュートリアルでは、ArcGIS:Imagery と Cesium World Terrain を使用して、富士山周辺のシーンを表示します。
+ベースマップ レイヤーの詳細については、Mapping APIs and services ガイドの Basemaps とベースマップを参照してください。
+前提条件 この機能を使うには、ArcGIS アカウントが必要です。アカウントの作成手順については「開発者アカウントの作成」を参照してください。
+ステップ 新しい Pen の作成 CodePen にアクセスして、新しい Pen を作成します。
+HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さにあわせたマップを作成します。
+ CodePen &amp;gt; HTML で、HTML と CSS を追加して、cesiumContainer という id 属性を持つ div 要素のあるページを作成します。 cesiumContainer は、マップを表示するために使用される id 属性です。CSS はブラウザの設定をリセットして、マップがブラウザの幅と高さ全体に表示されるようにします。  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ja&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;CesiumJS: Display a Scene&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; html, body, #cesiumContainer { margin: 0; padding: 0; width: 100%; height: 100%; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;cesiumContainer&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; スクリプト参照の追加  &amp;lt;head&amp;gt;タグで、CesiumJS CSS および JS ライブラリへの参照を追加します。  &amp;lt;!</description>
+    </item>
+    
+    <item>
       <title>Android</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
