@@ -7,9 +7,8 @@ alwaysopen = true
 
 {{% notice note %}}
 
-現在、ArcGIS Developers の [Web サイト](https://developers.arcgis.com/sign-up/)はメンテナンス中となっています。<br/>
-近々予定されている幾つかの変更の準備のため、開発者アカウントの新規登録を一時的に停止しています。<br/>
-新規登録は 6 月 28 日またはそれ以前に再開される予定です。
+[ArcGIS Developers の更新](https://www.esri.com/arcgis-blog/products/developers/announcements/whats-new-in-esri-developers-june-2024/)に伴い、本ページも近日更新予定です。<br/>
+開発者アカウントの新規作成については、新しい Esri Developer サイトの [Get Started](https://developers.arcgis.com/documentation/mapping-and-location-services/get-started/) (英語) をご参照ください。<br/>
 
 {{% /notice %}}
 
