@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-06-27T18:10:23 JST">
+<meta name="revised" content="2024-07-02T17:36:42 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1054,11 +1054,12 @@ if (!doNotTrack) {
 </li>
 </ol>
 <h3 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h3>
+<p>ArcGIS Online のユーザータイプの場合</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">User Type</th>
-<th style="text-align:left">Runtime Level</th>
+<th style="text-align:left">ユーザータイプ</th>
+<th style="text-align:left">ライセンスレベル</th>
 </tr>
 </thead>
 <tbody>
@@ -1067,7 +1068,34 @@ if (!doNotTrack) {
 <td style="text-align:left">Lite</td>
 </tr>
 <tr>
-<td style="text-align:left">Editor / Field Worker</td>
+<td style="text-align:left">Contributor / Mobile Worker</td>
+<td style="text-align:left">Basic</td>
+</tr>
+<tr>
+<td style="text-align:left">Creator</td>
+<td style="text-align:left">Standard</td>
+</tr>
+<tr>
+<td style="text-align:left">Professional / Professional Plus</td>
+<td style="text-align:left">Advanced <sup>※1</sup></td>
+</tr>
+</tbody>
+</table>
+<p>ArcGIS Enterprise のユーザータイプの場合</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ユーザータイプ</th>
+<th style="text-align:left">ライセンスレベル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Viewer</td>
+<td style="text-align:left">Lite</td>
+</tr>
+<tr>
+<td style="text-align:left">Editor / Mobile Worker</td>
 <td style="text-align:left">Basic</td>
 </tr>
 <tr>
@@ -1183,10 +1211,10 @@ if (!doNotTrack) {
 最初に以下の手順で Lite レベルのライセンスキーを取得します。</p>
 <ol>
 <li>
-<p><a href="https://developers.arcgis.com/kotlin/license-and-deployment/get-a-license/#your-lite-license-string">ArcGIS Developers: Get a license</a> ページにアクセスします</p>
+<p><a href="https://developers.arcgis.com/net/license-and-deployment/get-a-license/#your-runtime-lite-license-string">Get a license</a> ページにアクセスします</p>
 <ul>
-<li>ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime Lite license string] をクリックします。</li>
-<li>ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../../guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>ArcGIS Location Platform アカウント、または、ArcGIS Online アカウントにサインインしてない場合は、いずれかのアカウントでサインインします。</li>
+<li>いずれかのアカウントもお持ちでない場合は、ArcGIS Location Platform アカウントに <a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../../guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 </ul>
 </li>
 <li>

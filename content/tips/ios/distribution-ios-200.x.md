@@ -57,14 +57,22 @@ ArcGIS Maps SDK for Swift には Lite、Basic、Standard の 3 つのライセ�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-
-| User Type | Runtime Level |
+ArcGIS Online のユーザータイプの場合
+| ユーザータイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
-| Editor / Field Worker | Basic |
-| Creator / GIS Professional Basic | Standard  |
+| Contributor / Mobile Worker | Basic |
+| Creator | Standard |
+| Professional / Professional Plus | Advanced <sup>※1</sup>|
+
+ArcGIS Enterprise のユーザータイプの場合
+| ユーザータイプ | ライセンスレベル |
+|:-----------|:------------|
+| Viewer | Lite | 
+| Editor / Mobile Worker | Basic |
+| Creator / GIS Professional Basic | Standard |
 | GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1</sup> |
-  
+
 ※1 ArcGIS Maps SDK for Swift には Advanced ライセンスはありません。
 
 ### Lite ライセンスの認証方法
@@ -135,9 +143,9 @@ ArcGIS Maps SDK for Swift には Lite、Basic、Standard の 3 つのライセ�
 ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
- 1. [ArcGIS Developers: Get a license](https://developers.arcgis.com/swift/license-and-deployment/get-a-license/#your-lite-license-string) ページにアクセスします。
-    * ArcGIS Developers にサインインしてない場合は [Sign in to retrieve your Runtime Lite license string] をクリックします。
-    * ArcGIS 開発者アカウントでサインインします。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
+ 1. [Get a license](https://developers.arcgis.com/net/license-and-deployment/get-a-license/#your-runtime-lite-license-string) ページにアクセスします
+    * ArcGIS Location Platform アカウント、または、ArcGIS Online アカウントにサインインしてない場合は、いずれかのアカウントでサインインします。
+    * いずれかのアカウントもお持ちでない場合は、ArcGIS Location Platform アカウントに [サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンスキーをコピーします。
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="600px">
  3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
