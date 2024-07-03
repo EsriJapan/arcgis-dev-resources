@@ -9,8 +9,7 @@ aliases = ["/basemaps/"]
 https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/
 )
 
-<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-demo-662a12e21dc578539aa01d45570f8294.html"
+<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-demo-662a12e21dc578539aa01d45570f8294.html"
 ></iframe>
 
 ## ベースマップとは？
@@ -171,47 +170,47 @@ map
 #### ArcGIS/Streets
 
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-js-api-streets-5337c29fa3125d500248d72f07e43b75.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-streets-5337c29fa3125d500248d72f07e43b75.html"
 ></iframe>
 
 #### ArcGIS/Navigation
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-js-api-navigation-dd09cf70e5a4704aa144d772b0d107bb.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-navigation-dd09cf70e5a4704aa144d772b0d107bb.html"
 ></iframe>
 
 #### ArcGIS/Topographic
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-js-api-topo-8de44b708e158d15c359ec647884e29e.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-topo-3d56a1f0b9a8bbe5f5713278eba715e8.html"
 ></iframe>
 
 #### ArcGIS/Outdoor
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-outdoor-ff7a587d3adb756a071a6fbc29b87200.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-outdoor-ff7a587d3adb756a071a6fbc29b87200.html"
 ></iframe>
 
 #### ArcGIS/Light gray canvas
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-js-api-gray-6c0ebf7df7ee05392a16758731700312.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-gray-6c0ebf7df7ee05392a16758731700312.html"
 ></iframe>
 
 #### ArcGIS/Imagery
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-js-api-imagery-13ef684f2844126cd272d44e7ca4a98f.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-imagery-13ef684f2844126cd272d44e7ca4a98f.html"
 ></iframe>
 
 #### OSM/Standard
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-standard-e2d6615a76847965490cb2f353b6ec93.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-standard-e2d6615a76847965490cb2f353b6ec93.html"
 ></iframe>
 
 #### OSM/Navigation
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-navigation-62ce7ed27beb0a54d3c8c7ffb1417f1a.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-navigation-62ce7ed27beb0a54d3c8c7ffb1417f1a.html"
 ></iframe>
 
 #### OSM/Blueprint
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-blueprint-c2aacd5f4a0fa70678258d5ea4b9eaf8.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-blueprint-c2aacd5f4a0fa70678258d5ea4b9eaf8.html"
 ></iframe>
 
 ### ローカライズされた地名ラベルの表示
@@ -230,7 +229,7 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-
 この例では、`arcgis/light-gray` のマップ スタイルを使用します。デフォルトでは地名ラベルはグローバルな地名を表示します。ローカライズされた地名ラベルをレンダリングするには、`language` パラメーターを `local` に設定します。ローカライズされたラベルはズームレベル 10 以降でレンダリングされます。
 
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-v2-localized-place-labels-ccbfc8d726ac2fa2ae7441a88ba41a69.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-ccbfc8d726ac2fa2ae7441a88ba41a69.html"
 ></iframe>
 
 ##### 例 : Esri Leaflet
@@ -254,7 +253,7 @@ L.esri.Vector.vectorBasemapLayer("arcgis/light-gray", {
 この例では、`arcgis/dark-gray` マップ スタイルを使用しています。`language` パラメーターに言語コード (ここでは `ja`) を設定し、全てのズームレベルで地名ラベルがすべて日本語で表示されるようにしています。
 
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-v2-localized-place-labels-ja-9152bd096725f24a64ca0c71c8fa1e79.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-ja-9152bd096725f24a64ca0c71c8fa1e79.html"
 ></iframe>
 
 ##### 例 : Esri Leaflet
@@ -294,7 +293,7 @@ L.esri.Vector.vectorBasemapLayer("arcgis/dark-gray", {
 この例では、 `arcgis/light-gray` のマップ スタイルを使用し、境界線とラベルの `worldview` を `morocco` に設定しています。すべての `worldview` オプションを見るには、[ベースマップ スタイル サービス (v2)](https://developers.arcgis.com/rest/basemap-styles/) をご覧ください。
 
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-v2-select-a-worldview-950ccd560a77cad1b43997272e52ad59.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-select-a-worldview-950ccd560a77cad1b43997272e52ad59.html"
 ></iframe>
 
 ##### 例 : MapLible GL JS
@@ -319,7 +318,7 @@ const worldView = "morocco" // モロッコの worldview を指定
 3. マップを作成し、ベースマップを使用します。
 
 <iframe width="100%" height="400" src="
-https://developers.arcgis.com/documentation/demo-apps/mapping-apis-and-services-maps-code-basemap-layers-examples-display-a-data-service-js-api-125907858dee5bd8c1e12fb9251b3924.html"
+https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-data-service-js-api-125907858dee5bd8c1e12fb9251b3924.html"
 ></iframe>
 
 
