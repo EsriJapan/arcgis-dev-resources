@@ -129,10 +129,10 @@ ArcGIS Enterprise のユーザータイプの場合
     * 基本ライセンス（Basic/Standard）と併せて認証する必要があります
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
-2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
-注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 11.1 以前のバージョンでは使用できません。
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（Advanced Editing ユーザー タイプ エクステンションを割り当てられた）が必要です
-    * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
+2. __Portal for ArcGIS へのログインによる認証__<br>
+注意：この認証は、ArcGIS Enterprise 11.1 以前のバージョンでは使用できません。
+    * アプリケーションを使用するユーザーごとに Portal for ArcGIS の指定ユーザー アカウント（Advanced Editing ユーザー タイプ エクステンションを割り当てられた）が必要です
+    * アプリケーションが少なくとも 30 日に 1 回は Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
 ## ライセンスの認証
