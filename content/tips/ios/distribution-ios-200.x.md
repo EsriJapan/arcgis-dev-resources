@@ -113,7 +113,6 @@ ArcGIS Enterprise のユーザータイプの場合
 
 1. __ライセンスキーを使用した認証__
     * ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
-    * 基本ライセンス（Standard）と併せて認証する必要があります
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
@@ -126,7 +125,6 @@ ArcGIS Enterprise のユーザータイプの場合
 
 1. __ライセンスキーを使用した認証__
     * ArcGIS Runtime Advanced Editing Extension の配布パックを購入する必要があります
-    * 基本ライセンス（Basic/Standard）と併せて認証する必要があります
     * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
 
 2. __Portal for ArcGIS へのログインによる認証__<br>
