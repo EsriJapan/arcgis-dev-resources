@@ -9,8 +9,6 @@ aliases = ["/unity/install-and-set-up/"]
 
 このインストール ガイドでは、**ArcGIS Maps SDK for Unity** のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-unity/)」のチュートリアルをご覧ください。
 
-ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
-
 ## インストールおよびセットアップ方法
 **ArcGIS Maps SDK for Unity** は Unity 用のプラグインです。**ArcGIS Maps SDK for Unity** を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ず[プラグインをダウンロード](https://developers.arcgis.com/downloads/#unity)してください。
 
@@ -28,16 +26,16 @@ ArcGIS Developers のダッシュボードから各インストーラーやデ�
 
 * [Map Creator UI](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#map-creator-ui) では、コードを記述せずにシーンを作成できます。
 * [Components](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#components) では、シーン内のゲームオブジェクトにアタッチできます。
-* [C# API](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#c-api) では、プラグインのソースコードを変更することでカスタマイズオプションを提供します。
+* [C# API](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#c-api) では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。
 
 ## 追加のダウンロード
 
-[ダウンロードページ](https://developers.arcgis.com/downloads/)から、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプルドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブサーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。
+[ダウンロードページ](https://developers.arcgis.com/downloads/)から、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプルドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。
 
 ローカルでドキュメントを使用するには:
 
 * **ArcGIS Maps SDK for Unity** の[ドキュメントをダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは zip アーカイブ形式です。
-* アーカイブをローカルフォルダーに解凍[^*]します。解凍したアーカイブには、`public` と `install` という 2 つのサブフォルダーがあります。
+* アーカイブをローカル フォルダーに解凍[^*]します。解凍したアーカイブには、`public` と `install` という 2 つのサブ フォルダーがあります。
 * `install` フォルダー内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。
 
 [^*]:パスが長いため、そのままだと Windows の標準機能で解凍できません。他のフリーソフトを用いるかフォルダーやファイルの名前を変更して解凍を行ってください。
