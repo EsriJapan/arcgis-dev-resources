@@ -9,8 +9,6 @@ aliases = ["/dotnet/install-dotnet-200.x/"]
 
 このインストール ガイドでは、ArcGIS Maps SDK for .NET (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-dotnet/)」のチュートリアルをご覧ください。
 
-ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
-
 ## インストールとセットアップ
 ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 つ以上の ArcGIS Maps SDK for .NET [NuGet パッケージ](https://www.nuget.org/profiles/Esri_Inc) への参照を Visual Studio プロジェクト内に追加します。ArcGIS Maps SDK for .NET がサポートするアプリケーション プラットフォームおよび UI フレームワークのそれぞれに対応するプロジェクト テンプレート セットは、[Visual Studio 拡張機能](https://marketplace.visualstudio.com/items?itemName=Esri.ArcGISRuntimeTemplates) として提供されています。
 
