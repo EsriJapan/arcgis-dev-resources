@@ -103,7 +103,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスするには アクセストークンが必要です。
 
-まだ取得していない場合は、[ArcGIS Developers のダッシュボード](https://location.arcgis.com/dashboard/)に移動してAPI キーを取得します。作成方法は「[API キーの取得](../get-api-key/)」をご覧ください。
+まだ取得していない場合は、[ArcGIS Location Platform のダッシュボード](https://location.arcgis.com/dashboard/)に移動してAPI キーを取得します。作成方法は「[API キーの取得](../get-api-key/)」をご覧ください。
 このチュートリアルでは、ロケーション サービスのベースマップの権限が有効になっている API キーが必要です。
 
 以下では、この API キーを使用します。
