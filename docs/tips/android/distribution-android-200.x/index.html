@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-02T14:10:17 JST">
+<meta name="revised" content="2024-08-05T16:23:14 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -976,7 +976,7 @@ if (!doNotTrack) {
     
     <p>ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。</p>
 <h2 id="api-キーの設定">API キーの設定</h2>
-<p><a href="../../../guide/services/">ArcGIS Platform のロケーションサービス</a>を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は<a href="../../../guide/get-api-key/">API キーの取得</a>を、APIキーの設定方法はアプリの作成の<a href="../../../guide/create-app/create-startup-app-android/#api-%E3%82%AD%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">API キーを設定する</a>をご覧ください。</p>
+<p><a href="../../../guide/services/">ArcGIS Location Platform のロケーションサービス</a>を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は<a href="../../../guide/get-api-key/">API キーの取得</a>を、APIキーの設定方法はアプリの作成の<a href="../../../guide/create-app/create-startup-app-android/#api-%E3%82%AD%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">API キーを設定する</a>をご覧ください。</p>
 <h2 id="ライセンス認証のステップ">ライセンス認証のステップ</h2>
 <p>開発したアプリケーションのライセンス認証のステップは以下の通りです。</p>
 <ol>
@@ -1015,15 +1015,15 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td style="text-align:left">Lite</td>
-<td style="text-align:left">・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（パブリックなフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティ ネットワークのトレース</td>
+<td style="text-align:left">・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のパブリックなフィーチャ サービス、ArcGIS Location Platform のフィーチャサービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティ ネットワークのトレース</td>
 </tr>
 <tr>
 <td style="text-align:left">Basic</td>
-<td style="text-align:left">・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（セキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
+<td style="text-align:left">・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のセキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集<br>・ArcGIS Online/Portal for ArcGIS のコンテンツの編集</td>
 </tr>
 <tr>
 <td style="text-align:left">Standard</td>
-<td style="text-align:left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示</td>
+<td style="text-align:left">・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・3D 解析</td>
 </tr>
 <tr>
 <td style="text-align:left">Analysis Extension</td>
@@ -1155,8 +1155,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong>
-注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。</p>
+<p><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
+注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。</p>
 <ul>
 <li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Standard ライセンスレベルを保有する）が必要です</li>
 <li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>
@@ -1175,7 +1175,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><strong>ArcGIS Online / Portal for ArcGIS へのログインによる認証</strong><br>
-注意：この認証は、Protal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。</p>
+注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。</p>
 <ul>
 <li>アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Analysis アドオン ライセンスを割り当てられた）が必要です</li>
 <li>アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります</li>

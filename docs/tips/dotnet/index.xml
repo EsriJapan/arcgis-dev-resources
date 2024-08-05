@@ -25,7 +25,7 @@
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/</guid>
       <description>ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
-API キーの設定 ArcGIS Platform のロケーションサービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、APIキーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
+API キーの設定 ArcGIS Location Platform のロケーションサービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、APIキーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
 ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
   使用するライセンスの選択
   ライセンスの認証方法

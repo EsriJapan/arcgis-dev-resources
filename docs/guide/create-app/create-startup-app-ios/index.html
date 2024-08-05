@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-02T14:10:17 JST">
+<meta name="revised" content="2024-08-05T16:23:13 JST">
 <title>iOS :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -940,9 +940,10 @@ if (!doNotTrack) {
     <li><a href="#ステップ">ステップ</a>
       <ul>
         <li><a href="#新しい-xcode-プロジェクトを作成する">新しい Xcode プロジェクトを作成する</a></li>
+        <li><a href="#アクセストークンを取得する">アクセストークンを取得する</a></li>
+        <li><a href="#api-キーを設定する">API キーを設定する</a></li>
         <li><a href="#マップの追加">マップの追加</a></li>
         <li><a href="#マップ-ビューの追加">マップ ビューの追加</a></li>
-        <li><a href="#api-キーを設定する">API キーを設定する</a></li>
         <li><a href="#web-マップを表示する">Web マップを表示する</a></li>
       </ul>
     </li>
@@ -977,7 +978,7 @@ if (!doNotTrack) {
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
-<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://developers.arcgis.com/swift/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
 </ol>
 <h2 id="ステップ">ステップ</h2>
@@ -989,7 +990,7 @@ if (!doNotTrack) {
 <ul>
 <li>[Choose options for your new project] ウィンドウで、次の値を設定します。
 <ul>
-<li>Product Name: display_a_mapApp</li>
+<li>Product Name: display_a_map</li>
 <li>Language: Swift</li>
 <li>Interface: SwiftUI</li>
 <li>Organization Identifier: &lt;任意の組織&gt;</li>
@@ -1005,6 +1006,53 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><a href="../../../tips/ios/install-ios-200.x/#swift-package-manager">Swift Package Manager</a> を使用して API への参照を追加します。</p>
+</li>
+</ol>
+<h3 id="アクセストークンを取得する">アクセストークンを取得する</h3>
+<p>ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
+まだ作成していない場合は、<a href="https://location.arcgis.com/dashboard/">ArcGIS Developers ダッシュボード</a> に移動して、API キーを取得します。作成方法は「<a href="../../get-api-key/">API キーの取得</a>」をご覧ください。
+このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です</p>
+<h3 id="api-キーを設定する">API キーを設定する</h3>
+<ol>
+<li>
+<p>Project Navigator で MainApp.swift をクリックします。</p>
+</li>
+<li>
+<p>エディターで、API を参照するインポートステートメントを追加します。</p>
+<p>MainApp.swift</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+   
+<span style="color:#75715e">// 追加開始</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
+<span style="color:#75715e">// 追加終了</span>
+</code></pre></div></li>
+<li>
+<p>DisplayAMap 構造体にイニシャライザを実装します。アクセストークンを使用して、<a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/">ArcGISEnvironment</a> の <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/">ArcGISEnvironment.apiKey</a> プロパティを設定します。</p>
+<p>MainApp.swift</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
+
+@main
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MainApp</span>: App {
+
+    <span style="color:#75715e">// 追加開始</span>
+    <span style="color:#66d9ef">init</span>() {
+        ArcGISEnvironment.apiKey = APIKey(<span style="color:#e6db74">&#34;&lt;#アクセストークンを入力#&gt;&#34;</span>)
+    }
+    <span style="color:#75715e">// 追加終了</span>
+
+    <span style="color:#66d9ef">var</span> body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+
+}
+ 
+</code></pre></div> <div class="notices note" >
+<p>アクセストークンは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードにアクセストークンを格納することは、ベスト プラクティスではありません。</p>
+ </div>
 </li>
 </ol>
 <h3 id="マップの追加">マップの追加</h3>
@@ -1030,7 +1078,8 @@ if (!doNotTrack) {
     <span style="color:#75715e">// 追加開始</span>
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> map = {
         <span style="color:#75715e">//ベースマップのラベルを日本語で表示します。</span>
-        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: <span style="color:#e6db74">&#34;ja&#34;</span>)))
+        <span style="color:#66d9ef">let</span> bsp = BasemapStyleParameters(language: BasemapStyleLanguage.specific(Locale.Language(identifier: <span style="color:#e6db74">&#34;ja&#34;</span>)))
+
         <span style="color:#66d9ef">let</span> map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
        
         <span style="color:#66d9ef">return</span> map
@@ -1038,7 +1087,7 @@ if (!doNotTrack) {
     <span style="color:#75715e">// 追加終了</span>
 
 }
-</code></pre></div><p>Map や Scene のような GeoModel は、作成にコストがかかり、状態を保持する可能性があります。GeoModel やその他のモデル オブジェクトが必要に応じてのみ作成されるようにするには、上記のコードのように、@State または @StateObject プロパティ ラッパーを適用することができます。詳しくは、<a href="https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app">Managing model data in your app</a> をご覧ください。</p>
+</code></pre></div><p><a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/">Map</a> や <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/scene/">Scene</a> のような <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/geomodel/">GeoModel</a> は、作成にコストがかかり、状態を保持する可能性があります。GeoModel やその他のモデル オブジェクトが必要に応じてのみ作成されるようにするには、上記のコードのように、@State または @StateObject プロパティ ラッパーを適用することができます。詳しくは、<a href="https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app">Managing model data in your app</a> をご覧ください。</p>
 </li>
 <li>
 <p>マップの initialViewpoint プロパティを、富士山付近の座標を持つ <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/viewpoint/">Viewpoint</a> で設定します。</p>
@@ -1112,50 +1161,6 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">var</span> body: some Scene {
 <span style="color:#75715e">// 変更後</span>
 <span style="color:#66d9ef">var</span> body: some SwiftUI.Scene {
-</code></pre></div></li>
-</ol>
-<h3 id="api-キーを設定する">API キーを設定する</h3>
-<p>ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
-まだ作成していない場合は、<a href="https://developers.arcgis.com/dashboard/">ArcGIS Developers ダッシュボード</a> に移動して、API キーを取得します。作成方法は「<a href="../../get-api-key/">API キーの取得</a>」をご覧ください。</p>
-<ol>
-<li>
-<p>Project Navigator で MainApp.swift をクリックします。</p>
-</li>
-<li>
-<p>エディターで、API を参照するインポートステートメントを追加します。</p>
-<p>MainApp.swift</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
-   
-<span style="color:#75715e">// 追加開始</span>
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
-<span style="color:#75715e">// 追加終了</span>
-</code></pre></div></li>
-<li>
-<p>DisplayAMap 構造体にイニシャライザを実装します。 API キーを使用して、<a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/">ArcGISEnvironment</a> の <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/">ArcGISEnvironment.apiKey</a> プロパティを設定します。</p>
-<p>MainApp.swift</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
-
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
-
-@main
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MainApp</span>: App {
-
-    <span style="color:#75715e">// 追加開始</span>
-    <span style="color:#66d9ef">init</span>() {
-        ArcGISEnvironment.apiKey = APIKey(<span style="color:#e6db74">&#34;&lt;#API キーを入力#&gt;&#34;</span>)
-    }
-    <span style="color:#75715e">// 追加終了</span>
-
-    <span style="color:#66d9ef">var</span> body: some SwiftUI.Scene {
-        WindowGroup {
-            ContentView()
-
-                .ignoresSafeArea()
-
-        }
-    }
-
-}
 </code></pre></div></li>
 <li>
 <p>&lt;Command + R&gt; を押してアプリを実行します。</p>

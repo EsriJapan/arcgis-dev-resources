@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-02T14:10:17 JST">
+<meta name="revised" content="2024-08-05T16:23:14 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -965,14 +965,14 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Maps SDK for Swift - Guide - <a href="https://developers.arcgis.com/swift/install-and-set-up/">Install and set up</a></p>
 <p>このインストール ガイドでは、ArcGIS Maps SDK for Swift (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-ios/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
-<p>ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「<a href="../../../guide/get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</p>
 <h2 id="swift-package-manager">Swift Package Manager</h2>
 <p>Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。</p>
 <p>Xcode 15 での手順</p>
 <ol>
-<li>
-<p>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Add Package&hellip;] を選択します。</p>
-</li>
+<li>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Add Package Dependencies&hellip;] を選択します。</li>
+</ol>
+<img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
+<ol start="2">
 <li>
 <p>パッケージ リポジトリの URL として <a href="https://github.com/esri/arcgis-maps-sdk-swift">https://github.com/esri/arcgis-maps-sdk-swift</a> を入力します。</p>
 </li>
@@ -982,8 +982,15 @@ if (!doNotTrack) {
 <li>
 <p>[Add Package] をクリックします。</p>
 </li>
+<li>
+<p>[Add to Target] リストからアプリを選択します。[Add Package] をクリックします。</p>
+</li>
 </ol>
-<img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
+<img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
+<ol start="6">
+<li>ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、&ldquo;ArcGIS&rdquo; がまだ存在しない場合は追加します。</li>
+</ol>
+<img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
 <p>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
 </code></pre></div><h2 id="追加のダウンロード">追加のダウンロード</h2>
@@ -993,10 +1000,10 @@ if (!doNotTrack) {
 <h3 id="arcgis-maps-sdk-for-swift-toolkit">ArcGIS Maps SDK for Swift Toolkit</h3>
 <p><a href="https://developers.arcgis.com/swift/toolkit/">ArcGIS Maps SDK for Swift Toolkit</a> は、ArcGIS Maps SDK for Swift チームによって管理されているオープン ソース プロジェクトであり、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。 <a href="https://github.com/Esri/arcgis-maps-sdk-swift-toolkit/blob/main/Examples">Examples プロジェクト</a>でこれらのコンポーネントの動作を確認するか、<a href="https://github.com/Esri/arcgis-maps-sdk-swift-toolkit/blob/main/Documentation">ドキュメント</a>を読んで詳細を確認できます。</p>
 <h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
-<p><a href="https://developers.arcgis.com/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。</p>
+<p><a href="https://developers.arcgis.com/swift/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。</p>
 <p>ローカルでドキュメントを公開する方法：</p>
 <ul>
-<li>使用する ArcGIS Runtime SDK のドキュメントを<a href="https://developers.arcgis.com/downloads/">ダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
+<li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/swift/downloads/">ダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
 <li>アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、public と install という 2 つのサブフォルダがあります。</li>
 <li>install フォルダ内の README.md ファイルを開き、選択した Web サーバーの指示に従います。</li>
 </ul>
@@ -1006,10 +1013,10 @@ if (!doNotTrack) {
 <h3 id="追加のデータ">追加のデータ</h3>
 <h4 id="projection-engine-データ">Projection Engine データ</h4>
 <p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、Projection Engine ファイルが存在する必要があります。Projection Engine ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
-<p><a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/downloads/#pedata">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
+<p><a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/swift/downloads/#projection-engine-data">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
 <h4 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h4>
 <p>航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、<a href="https://iho.int/en/">国際水路機関（IHO）</a>の <a href="https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf">S-57 規格</a> に準拠した ENC をサポートしています。</p>
-<p>航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから <a href="https://developers.arcgis.com/downloads/#hydrodata">hydrography</a> データをダウンロードします。ENC データの操作の詳細については、<a href="https://developers.arcgis.com/swift/layers/display-electronic-navigational-charts/">Display electronic navigational charts</a> のトピックを参照してください。</p>
+<p>航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから <a href="https://developers.arcgis.com/swift/downloads/#hydrography-data">hydrography</a> データをダウンロードします。ENC データの操作の詳細については、<a href="https://developers.arcgis.com/swift/layers/display-electronic-navigational-charts/">Display electronic navigational charts</a> のトピックを参照してください。</p>
 
 
     

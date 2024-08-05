@@ -27,7 +27,7 @@ aliases = ["/create-startup-app-ios/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/swift/reference/system-requirements/)を満たしていることを確認します。
 
 
@@ -39,7 +39,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 1. Xcode を開き、メニュー バーから [File] > [New] > [Project] > [iOS] > [App] > [Next] をクリックします。
 
    * [Choose options for your new project] ウィンドウで、次の値を設定します。
-     * Product Name: display_a_mapApp
+     * Product Name: display_a_map
      * Language: Swift
      * Interface: SwiftUI
      * Organization Identifier: <任意の組織>
@@ -51,6 +51,59 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 
 3. [Swift Package Manager](../../../tips/ios/install-ios-200.x/#swift-package-manager) を使用して API への参照を追加します。
 
+
+
+### アクセストークンを取得する
+ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
+まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://location.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
+このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です
+
+### API キーを設定する
+1. Project Navigator で MainApp.swift をクリックします。
+2. エディターで、API を参照するインポートステートメントを追加します。
+
+    MainApp.swift
+    ```swift
+    import SwiftUI
+    
+    // 追加開始
+    import ArcGIS
+    // 追加終了
+    ```
+
+3. DisplayAMap 構造体にイニシャライザを実装します。アクセストークンを使用して、[ArcGISEnvironment](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/) の [ArcGISEnvironment.apiKey](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/) プロパティを設定します。
+
+    MainApp.swift
+    ```swift
+    import SwiftUI
+
+    import ArcGIS
+
+    @main
+    struct MainApp: App {
+
+        // 追加開始
+        init() {
+            ArcGISEnvironment.apiKey = APIKey("<#アクセストークンを入力#>")
+        }
+        // 追加終了
+
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+            }
+        }
+
+    }
+  
+    ```
+    
+    {{% notice note %}}
+
+    アクセストークンは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードにアクセストークンを格納することは、ベスト プラクティスではありません。
+
+    {{% /notice %}}
+    
 ### マップの追加
 地形ベースマップレイヤーを含むマップを作成します。 マップは、富士山付近が中心になります。
 
@@ -75,7 +128,8 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
         // 追加開始
         @State private var map = {
             //ベースマップのラベルを日本語で表示します。
-            let bsp = BasemapStyleParameters(language:BasemapStyleLanguage.specific(Locale(languageCode: "ja")))
+            let bsp = BasemapStyleParameters(language: BasemapStyleLanguage.specific(Locale.Language(identifier: "ja")))
+ 
             let map = Map(basemap:Basemap(style:.arcGISTopographic,parameters: bsp))
         
             return map
@@ -85,7 +139,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
     }
     ```
 
-    Map や Scene のような GeoModel は、作成にコストがかかり、状態を保持する可能性があります。GeoModel やその他のモデル オブジェクトが必要に応じてのみ作成されるようにするには、上記のコードのように、@State または @StateObject プロパティ ラッパーを適用することができます。詳しくは、[Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app) をご覧ください。
+    [Map](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/) や [Scene](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/scene/) のような [GeoModel](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/geomodel/) は、作成にコストがかかり、状態を保持する可能性があります。GeoModel やその他のモデル オブジェクトが必要に応じてのみ作成されるようにするには、上記のコードのように、@State または @StateObject プロパティ ラッパーを適用することができます。詳しくは、[Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app) をご覧ください。
 
 4. マップの initialViewpoint プロパティを、富士山付近の座標を持つ [Viewpoint](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/viewpoint/) で設定します。
 
@@ -167,52 +221,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
     var body: some SwiftUI.Scene {
     ```
 
-### API キーを設定する
-ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、API キーが必要です。
-まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://developers.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
-
-1. Project Navigator で MainApp.swift をクリックします。
-2. エディターで、API を参照するインポートステートメントを追加します。
-
-    MainApp.swift
-    ```swift
-    import SwiftUI
-    
-    // 追加開始
-    import ArcGIS
-    // 追加終了
-    ```
-
-3. DisplayAMap 構造体にイニシャライザを実装します。 API キーを使用して、[ArcGISEnvironment](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/) の [ArcGISEnvironment.apiKey](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/apikey/) プロパティを設定します。
-
-    MainApp.swift
-    ```swift
-    import SwiftUI
-
-    import ArcGIS
-
-    @main
-    struct MainApp: App {
-
-        // 追加開始
-        init() {
-            ArcGISEnvironment.apiKey = APIKey("<#API キーを入力#>")
-        }
-        // 追加終了
-
-        var body: some SwiftUI.Scene {
-            WindowGroup {
-                ContentView()
-
-                    .ignoresSafeArea()
-
-            }
-        }
-
-    }
-    ```
-
-4. <Command + R> を押してアプリを実行します。
+5. <Command + R> を押してアプリを実行します。
 
     富士山を中心とした地形ベースマップレイヤーのマップが表示されます。マップビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
 
