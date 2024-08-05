@@ -152,7 +152,7 @@ ArcGIS Enterprise のユーザータイプの場合
 
 
 ### Lite ライセンスキーを使用した認証
-ArcGIS Runtime Lite のライセンスキーを ArcGIS Developers のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
+ArcGIS Runtime Lite のライセンスキーを Esri Developer のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 最初に以下の手順で Lite レベルのライセンスキーを取得します。
 
  1. [Get a license](https://developers.arcgis.com/net/license-and-deployment/get-a-license/#your-runtime-lite-license-string) ページにアクセスします
