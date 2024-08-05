@@ -55,7 +55,7 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 
 ### アクセストークンを取得する
 ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
-まだ作成していない場合は、[ArcGIS Developers ダッシュボード](https://location.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
+まだ作成していない場合は、[ArcGIS Location Platform のダッシュボード](https://location.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
 このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です。
 
 ### API キーを設定する
