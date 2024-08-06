@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-06T17:32:40 JST">
+<meta name="revised" content="2024-08-06T17:41:53 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -987,99 +987,99 @@ if (!doNotTrack) {
 <p>build.gradle.kts (Project: Display_a_map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#75715e">// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 </span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
-        alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
-        alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>build.gradle.kts (Module: app)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
-        alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span>
-        alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span>
 <span style="color:#f92672">}</span>
 
 android <span style="color:#f92672">{</span>
-        namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
-        compileSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+    namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+    compileSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
 
-        defaultConfig <span style="color:#f92672">{</span>
-                applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
-                minSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">minSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
-                targetSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
-                versionCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-                versionName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>
-                testInstrumentationRunner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
-                vectorDrawables <span style="color:#f92672">{</span>
-                        useSupportLibrary <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-                <span style="color:#f92672">}</span>
+    defaultConfig <span style="color:#f92672">{</span>
+        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+        minSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">minSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+        targetSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+        versionCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        versionName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>
+        testInstrumentationRunner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
+        vectorDrawables <span style="color:#f92672">{</span>
+                useSupportLibrary <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
         <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-        buildTypes <span style="color:#f92672">{</span>
-                release <span style="color:#f92672">{</span>
-                        isMinifyEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
-                        proguardFiles<span style="color:#f92672">(</span>getDefaultProguardFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;proguard-android-optimize.txt&#34;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;proguard-rules.pro&#34;</span><span style="color:#f92672">)</span>
-                <span style="color:#f92672">}</span>
+    buildTypes <span style="color:#f92672">{</span>
+        release <span style="color:#f92672">{</span>
+            isMinifyEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+            proguardFiles<span style="color:#f92672">(</span>getDefaultProguardFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;proguard-android-optimize.txt&#34;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;proguard-rules.pro&#34;</span><span style="color:#f92672">)</span>
         <span style="color:#f92672">}</span>
-        compileOptions <span style="color:#f92672">{</span>
-                sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
-                targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
-        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    compileOptions <span style="color:#f92672">{</span>
+        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+    <span style="color:#f92672">}</span>
 
-        kotlinOptions <span style="color:#f92672">{</span>
-                jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
-        <span style="color:#f92672">}</span>
+    kotlinOptions <span style="color:#f92672">{</span>
+        jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
+    <span style="color:#f92672">}</span>
 
-        buildFeatures <span style="color:#f92672">{</span>
-                compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-        <span style="color:#f92672">}</span>
+    buildFeatures <span style="color:#f92672">{</span>
+        compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">}</span>
 
-        composeOptions <span style="color:#f92672">{</span>
-                kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
-        <span style="color:#f92672">}</span>
+    composeOptions <span style="color:#f92672">{</span>
+        kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
+    <span style="color:#f92672">}</span>
 
-        packaging <span style="color:#f92672">{</span>
-                resources <span style="color:#f92672">{</span>
-                        excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/{AL2.0,LGPL2.1}&#34;</span>
-                <span style="color:#f92672">}</span>
+    packaging <span style="color:#f92672">{</span>
+        resources <span style="color:#f92672">{</span>
+            excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/{AL2.0,LGPL2.1}&#34;</span>
         <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 
 dependencies <span style="color:#f92672">{</span>
 
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">lifecycle</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">graphics</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">.</span><span style="color:#a6e22e">preview</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">material3</span><span style="color:#f92672">)</span>
-        testImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
-        androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
-        androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">espresso</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">)</span>
-        androidTestImplementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
-        androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit4</span><span style="color:#f92672">)</span>
-        debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">)</span>
-        debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">manifest</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">lifecycle</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">graphics</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">.</span><span style="color:#a6e22e">preview</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">material3</span><span style="color:#f92672">)</span>
+    testImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">espresso</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit4</span><span style="color:#f92672">)</span>
+    debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">)</span>
+    debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">manifest</span><span style="color:#f92672">)</span>
 
-        <span style="color:#75715e">// ArcGIS Maps for Kotlin - SDK dependency
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">)</span>
-        <span style="color:#75715e">// Toolkit dependencies
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
-        implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">geoview</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
-        <span style="color:#75715e">// Additional modules from Toolkit, if needed, such as:
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+    <span style="color:#75715e">// ArcGIS Maps for Kotlin - SDK dependency
+</span><span style="color:#75715e"></span>    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">)</span>
+    <span style="color:#75715e">// Toolkit dependencies
+</span><span style="color:#75715e"></span>    implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">geoview</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
+    <span style="color:#75715e">// Additional modules from Toolkit, if needed, such as:
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
 </span><span style="color:#75715e"></span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Android Studio の [New Project] ウィザードで生成されるモジュール レベルの <code>build.gradle.kts</code> ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (<code>kotlinOptions</code> ブロック) のオプションは互換性がなければなりません。互換性は Android の <a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照することで確認できます。</p>
 <p>build.gradle.kts (Module: app)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">kotlinOptions <span style="color:#f92672">{</span>
-        jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
+    jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
 <span style="color:#f92672">}</span>
 
 composeOptions <span style="color:#f92672">{</span>
-        kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
+    kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>

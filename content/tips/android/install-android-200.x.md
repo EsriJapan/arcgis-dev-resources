@@ -34,8 +34,8 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 	```gradle
 	// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 	plugins {
-			alias(libs.plugins.android.application) apply false
-			alias(libs.plugins.jetbrains.kotlin.android) apply false
+		alias(libs.plugins.android.application) apply false
+		alias(libs.plugins.jetbrains.kotlin.android) apply false
 	}
 	``` 
 
@@ -45,81 +45,81 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 	```gradle
 	plugins {
-			alias(libs.plugins.android.application)
-			alias(libs.plugins.jetbrains.kotlin.android)
+		alias(libs.plugins.android.application)
+		alias(libs.plugins.jetbrains.kotlin.android)
 	}
 
 	android {
-			namespace = "com.example.app"
-			compileSdk = libs.versions.compileSdk.get().toInt()
+		namespace = "com.example.app"
+		compileSdk = libs.versions.compileSdk.get().toInt()
 
-			defaultConfig {
-					applicationId = "com.example.app"
-					minSdk = libs.versions.minSdk.get().toInt()
-					targetSdk = libs.versions.targetSdk.get().toInt()
-					versionCode = 1
-					versionName = "1.0"
-					testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-					vectorDrawables {
-							useSupportLibrary = true
-					}
+		defaultConfig {
+			applicationId = "com.example.app"
+			minSdk = libs.versions.minSdk.get().toInt()
+			targetSdk = libs.versions.targetSdk.get().toInt()
+			versionCode = 1
+			versionName = "1.0"
+			testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+			vectorDrawables {
+					useSupportLibrary = true
 			}
+		}
 
-			buildTypes {
-					release {
-							isMinifyEnabled = false
-							proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-					}
+		buildTypes {
+			release {
+				isMinifyEnabled = false
+				proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 			}
-			compileOptions {
-					sourceCompatibility = JavaVersion.VERSION_17
-					targetCompatibility = JavaVersion.VERSION_17
-			}
+		}
+		compileOptions {
+			sourceCompatibility = JavaVersion.VERSION_17
+			targetCompatibility = JavaVersion.VERSION_17
+		}
 
-			kotlinOptions {
-					jvmTarget = "17"
-			}
+		kotlinOptions {
+			jvmTarget = "17"
+		}
 
-			buildFeatures {
-					compose = true
-			}
+		buildFeatures {
+			compose = true
+		}
 
-			composeOptions {
-					kotlinCompilerExtensionVersion = "1.5.11"
-			}
+		composeOptions {
+			kotlinCompilerExtensionVersion = "1.5.11"
+		}
 
-			packaging {
-					resources {
-							excludes += "/META-INF/{AL2.0,LGPL2.1}"
-					}
+		packaging {
+			resources {
+				excludes += "/META-INF/{AL2.0,LGPL2.1}"
 			}
+		}
 	}
 
 	dependencies {
 
-			implementation(libs.androidx.core.ktx)
-			implementation(libs.androidx.lifecycle.runtime.ktx)
-			implementation(libs.androidx.activity.compose)
-			implementation(platform(libs.androidx.compose.bom))
-			implementation(libs.androidx.ui)
-			implementation(libs.androidx.ui.graphics)
-			implementation(libs.androidx.ui.tooling.preview)
-			implementation(libs.androidx.material3)
-			testImplementation(libs.junit)
-			androidTestImplementation(libs.androidx.junit)
-			androidTestImplementation(libs.androidx.espresso.core)
-			androidTestImplementation(platform(libs.androidx.compose.bom))
-			androidTestImplementation(libs.androidx.ui.test.junit4)
-			debugImplementation(libs.androidx.ui.tooling)
-			debugImplementation(libs.androidx.ui.test.manifest)
+		implementation(libs.androidx.core.ktx)
+		implementation(libs.androidx.lifecycle.runtime.ktx)
+		implementation(libs.androidx.activity.compose)
+		implementation(platform(libs.androidx.compose.bom))
+		implementation(libs.androidx.ui)
+		implementation(libs.androidx.ui.graphics)
+		implementation(libs.androidx.ui.tooling.preview)
+		implementation(libs.androidx.material3)
+		testImplementation(libs.junit)
+		androidTestImplementation(libs.androidx.junit)
+		androidTestImplementation(libs.androidx.espresso.core)
+		androidTestImplementation(platform(libs.androidx.compose.bom))
+		androidTestImplementation(libs.androidx.ui.test.junit4)
+		debugImplementation(libs.androidx.ui.tooling)
+		debugImplementation(libs.androidx.ui.test.manifest)
 
-			// ArcGIS Maps for Kotlin - SDK dependency
-			implementation(libs.arcgis.maps.kotlin)
-			// Toolkit dependencies
-			implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
-			implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-			// Additional modules from Toolkit, if needed, such as:
-			// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+		// ArcGIS Maps for Kotlin - SDK dependency
+		implementation(libs.arcgis.maps.kotlin)
+		// Toolkit dependencies
+		implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
+		implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
+		// Additional modules from Toolkit, if needed, such as:
+		// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
 
 	}
 	``` 
@@ -130,11 +130,11 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 	```gradle
 	kotlinOptions {
-			jvmTarget = "17"
+		jvmTarget = "17"
 	}
 
 	composeOptions {
-			kotlinCompilerExtensionVersion = "1.5.11"
+		kotlinCompilerExtensionVersion = "1.5.11"
 	}
 	``` 
 	
@@ -218,36 +218,36 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    settings.gradle.kts (Display a map)
+	settings.gradle.kts (Display a map)
 
-    ```gradle
-    pluginManagement {
-        repositories {
-            google {
-                content {
-                    includeGroupByRegex("com\\.android.*")
-                    includeGroupByRegex("com\\.google.*")
-                    includeGroupByRegex("androidx.*")
-                }
-            }
+	```gradle
+	pluginManagement {
+		repositories {
+			google {
+				content {
+					includeGroupByRegex("com\\.android.*")
+					includeGroupByRegex("com\\.google.*")
+					includeGroupByRegex("androidx.*")
+				}
+			}
 
-            mavenCentral()
-            gradlePluginPortal()
-        }
-    }
+			mavenCentral()
+			gradlePluginPortal()
+		}
+	}
 
-    dependencyResolutionManagement {
-        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-        repositories {
-            google()
-            mavenCentral()
-            maven { url = uri("https://esri.jfrog.io/artifactory/arcgis") }
-        }
-    }
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			google()
+			mavenCentral()
+			maven { url = uri("https://esri.jfrog.io/artifactory/arcgis") }
+		}
+	}
 
-    rootProject.name = "Display a map"
-    include(":app")
-    ```
+	rootProject.name = "Display a map"
+	include(":app")
+	``` 
 
 ## 必要な権限と機能
 Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。
