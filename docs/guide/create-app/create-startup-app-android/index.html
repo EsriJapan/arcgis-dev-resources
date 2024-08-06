@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-05T19:24:36 JST">
+<meta name="revised" content="2024-08-06T17:32:40 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -936,6 +936,7 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#マップを表示する">マップを表示する</a></li>
+    <li><a href="#前提条件">前提条件</a></li>
     <li><a href="#ステップ">ステップ</a>
       <ul>
         <li><a href="#新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</a></li>
@@ -985,6 +986,12 @@ if (!doNotTrack) {
 3. Kotlin で Android 開発をするための IDE。
 
 注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。** -->
+<h2 id="前提条件">前提条件</h2>
+<p>このチュートリアルを実施するには、以下が必要です。</p>
+<ol>
+<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>開発環境が<a href="https://developers.arcgis.com/swift/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
+</ol>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</h3>
 <p>Android Studio を使用してアプリを作成し、API を参照するように構成します。</p>
@@ -1016,98 +1023,197 @@ if (!doNotTrack) {
 <p>build.gradle.kts (Project: Display_a_map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#75715e">// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 </span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
-    id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.android.application&#34;</span><span style="color:#f92672">)</span> version <span style="color:#e6db74">&#34;8.2.0&#34;</span> apply <span style="color:#66d9ef">false</span>
-    id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span><span style="color:#f92672">)</span> version <span style="color:#e6db74">&#34;1.9.10&#34;</span> apply <span style="color:#66d9ef">false</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span> apply <span style="color:#66d9ef">false</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
-<p>build.gradle.kts (Module: Display_a_map)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">    plugins <span style="color:#f92672">{</span>
-        id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.android.application&#34;</span><span style="color:#f92672">)</span>
-        id<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span><span style="color:#f92672">)</span>
+<p>build.gradle.kts (Module: app)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">application</span><span style="color:#f92672">)</span>
+    alias<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">plugins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jetbrains</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+android <span style="color:#f92672">{</span>
+    namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+    compileSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+
+    defaultConfig <span style="color:#f92672">{</span>
+        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+        minSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">minSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+        targetSdk <span style="color:#f92672">=</span> libs<span style="color:#f92672">.</span><span style="color:#a6e22e">versions</span><span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdk</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toInt</span><span style="color:#f92672">()</span>
+        versionCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        versionName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>
+        testInstrumentationRunner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
+        vectorDrawables <span style="color:#f92672">{</span>
+            useSupportLibrary <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 
-    android <span style="color:#f92672">{</span>
-        compileSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
-
-        defaultConfig <span style="color:#f92672">{</span>
-            applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
-            minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span>
-            targetSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
-            versionCode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-            versionName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>
-
-            testInstrumentationRunner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;androidx.test.runner.AndroidJUnitRunner&#34;</span>
+    buildTypes <span style="color:#f92672">{</span>
+        release <span style="color:#f92672">{</span>
+            isMinifyEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+            proguardFiles<span style="color:#f92672">(</span>getDefaultProguardFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;proguard-android-optimize.txt&#34;</span><span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;proguard-rules.pro&#34;</span><span style="color:#f92672">)</span>
         <span style="color:#f92672">}</span>
-
-        buildTypes <span style="color:#f92672">{</span>
-            release <span style="color:#f92672">{</span>
-                isMinifyEnabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
-                proguardFiles<span style="color:#f92672">(</span>
-                    getDefaultProguardFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;proguard-android-optimize.txt&#34;</span><span style="color:#f92672">),</span>
-                    <span style="color:#e6db74">&#34;proguard-rules.pro&#34;</span>
-                <span style="color:#f92672">)</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-        compileOptions <span style="color:#f92672">{</span>
-            sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
-            targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
-        <span style="color:#f92672">}</span>
-
-        buildFeatures <span style="color:#f92672">{</span>
-            compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-            buildConfig <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-        <span style="color:#f92672">}</span>
-
-        composeOptions <span style="color:#f92672">{</span>
-            kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.3&#34;</span>
-        <span style="color:#f92672">}</span>
-
-        kotlinOptions <span style="color:#f92672">{</span>
-            jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
-        <span style="color:#f92672">}</span>
-
-        packaging <span style="color:#f92672">{</span>
-            resources <span style="color:#f92672">{</span>
-                excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/DEPENDENCIES&#34;</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-
-        namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app&#34;</span>
+    <span style="color:#f92672">}</span>
+    compileOptions <span style="color:#f92672">{</span>
+        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
+        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
     <span style="color:#f92672">}</span>
 
-    dependencies <span style="color:#f92672">{</span>
-        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.core:core-ktx:1.12.0&#34;</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.lifecycle:lifecycle-runtime-ktx:2.7.0&#34;</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.activity:activity-compose:1.8.2&#34;</span><span style="color:#f92672">)</span>
-        <span style="color:#75715e">// Jetpack Compose の BOM
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose:compose-bom:2023.10.01&#34;</span><span style="color:#f92672">))</span>
-        <span style="color:#75715e">// Jetpack Compose の依存関係
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose.ui:ui&#34;</span><span style="color:#f92672">)</span>
-        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.compose.material3:material3&#34;</span><span style="color:#f92672">)</span>
-        <span style="color:#75715e">// ArcGIS Map Kotlin SDK の依存関係
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin:200.4.0&#34;</span><span style="color:#f92672">)</span>
-        <span style="color:#75715e">// Toolkit の依存関係
-</span><span style="color:#75715e"></span>        implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-bom:200.4.0&#34;</span><span style="color:#f92672">))</span>
-        implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span><span style="color:#f92672">)</span>
+    kotlinOptions <span style="color:#f92672">{</span>
+        jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
     <span style="color:#f92672">}</span>
+
+    buildFeatures <span style="color:#f92672">{</span>
+        compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">}</span>
+
+    composeOptions <span style="color:#f92672">{</span>
+        kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
+    <span style="color:#f92672">}</span>
+
+    packaging <span style="color:#f92672">{</span>
+        resources <span style="color:#f92672">{</span>
+            excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/{AL2.0,LGPL2.1}&#34;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+dependencies <span style="color:#f92672">{</span>
+
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">lifecycle</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ktx</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">graphics</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">.</span><span style="color:#a6e22e">preview</span><span style="color:#f92672">)</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">material3</span><span style="color:#f92672">)</span>
+    testImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">espresso</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">)</span>
+    androidTestImplementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    androidTestImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">junit4</span><span style="color:#f92672">)</span>
+    debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tooling</span><span style="color:#f92672">)</span>
+    debugImplementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">androidx</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ui</span><span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">.</span><span style="color:#a6e22e">manifest</span><span style="color:#f92672">)</span>
+
+    <span style="color:#75715e">// ArcGIS Maps for Kotlin - SDK dependency
+</span><span style="color:#75715e"></span>    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">)</span>
+    <span style="color:#75715e">// Toolkit dependencies
+</span><span style="color:#75715e"></span>    implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
+    implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">geoview</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
+    <span style="color:#75715e">// Additional modules from Toolkit, if needed, such as:
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Android Studio の [New Project] ウィザードで生成されるモジュール レベルの <code>build.gradle.kts</code> ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (<code>kotlinOptions</code> ブロック) のオプションは互換性がなければなりません。互換性は Android の <a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照することで確認できます。</p>
+<p>build.gradle.kts (Module: app)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">kotlinOptions <span style="color:#f92672">{</span>
+    jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
+<span style="color:#f92672">}</span>
+
+composeOptions <span style="color:#f92672">{</span>
+    kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.11&#34;</span>
+<span style="color:#f92672">}</span>
 </code></pre></div></li>
+<li>
+<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [libs.versions.toml] を開きます。<code>[version]</code> セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、<code>[libraries]</code> セクションには、以下のライブラリの宣言を追加します。</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>ArcGIS Maps SDK for Kotlin SDK</p>
+</li>
+<li>
+<p>ArcGIS Maps SDK for Kotlin Toolkit BOM</p>
+</li>
+<li>
+<p>必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> を含む <code>geoview-compose</code> コンポーネントのみが必要です。</p>
+<p>Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。</p>
+<p><a href="https://developer.android.com/build/migrate-to-catalogs">Gradle バージョン カタログ</a>は依存関係のバージョンを宣言するための標準的な Android のアプローチです。<code>build.gradle.kts</code> でバージョン番号を指定したり、<code>version.gradle</code> でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする <code>build.gradle.kts</code> と <code>gradle/libs.version.toml</code> ファイルを生成します。</p>
+<p>Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の README の <a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom">Using the BOM</a> を参照してください。</p>
+<p>gradle/libs.versions.toml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">versions</span>]
+<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.5.0&#34;</span>
+
+[<span style="color:#a6e22e">libraries</span>]
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bom</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-bom&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">geoview</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span> }
+<span style="color:#75715e"># Additional modules from Toolkit, if needed, such as:</span>
+<span style="color:#75715e"># arcgis-maps-kotlin-toolkit-authentication = { group = &#34;com.esri&#34;, name = &#34;arcgis-maps-kotlin-toolkit-authentication&#34; }</span>
+</code></pre></div>  <div class="notices note" >
+<p><code>libs.versions.toml</code> を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして <code>libs.versions.toml</code> ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。</p>
+  </div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">versions</span>]
+<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.5.0&#34;</span>
+
+<span style="color:#75715e"># Version numbers added by Android Studio New Project Wizard</span>
+<span style="color:#a6e22e">agp</span> = <span style="color:#e6db74">&#34;8.3.2&#34;</span>
+<span style="color:#a6e22e">kotlin</span> = <span style="color:#e6db74">&#34;1.9.23&#34;</span>
+<span style="color:#a6e22e">coreKtx</span> = <span style="color:#e6db74">&#34;1.13.0&#34;</span>
+<span style="color:#a6e22e">junit</span> = <span style="color:#e6db74">&#34;4.13.2&#34;</span>
+<span style="color:#a6e22e">junitVersion</span> = <span style="color:#e6db74">&#34;1.1.5&#34;</span>
+<span style="color:#a6e22e">espressoCore</span> = <span style="color:#e6db74">&#34;3.5.1&#34;</span>
+<span style="color:#a6e22e">lifecycleRuntimeKtx</span> = <span style="color:#e6db74">&#34;2.8.3&#34;</span>
+<span style="color:#a6e22e">activityCompose</span> = <span style="color:#e6db74">&#34;1.9.0&#34;</span>
+<span style="color:#a6e22e">composeBom</span> = <span style="color:#e6db74">&#34;2024.04.01&#34;</span>
+
+<span style="color:#75715e"># Other version numbers</span>
+<span style="color:#a6e22e">compileSdk</span> = <span style="color:#e6db74">&#34;34&#34;</span>
+<span style="color:#a6e22e">minSdk</span> = <span style="color:#e6db74">&#34;26&#34;</span>
+<span style="color:#a6e22e">targetSdk</span> = <span style="color:#e6db74">&#34;34&#34;</span>
+
+[<span style="color:#a6e22e">libraries</span>]
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bom</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-bom&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">geoview</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span> }
+<span style="color:#75715e"># Additional modules from Toolkit, if needed, such as:</span>
+<span style="color:#75715e"># arcgis-maps-kotlin-toolkit-authentication = { group = &#34;com.esri&#34;, name = &#34;arcgis-maps-kotlin-toolkit-authentication&#34; }</span>
+
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">core</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ktx</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.core&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;core-ktx&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;coreKtx&#34;</span> }
+<span style="color:#a6e22e">junit</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;junit&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;junit&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;junit&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">junit</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.test.ext&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;junit&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;junitVersion&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">espresso</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">core</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.test.espresso&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;espresso-core&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;espressoCore&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">lifecycle</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">runtime</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ktx</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.lifecycle&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;lifecycle-runtime-ktx&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;lifecycleRuntimeKtx&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">activity</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.activity&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;activity-compose&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;activityCompose&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bom</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;compose-bom&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;composeBom&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">graphics</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui-graphics&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">tooling</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui-tooling&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">tooling</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">preview</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui-tooling-preview&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">test</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manifest</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui-test-manifest&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ui</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">test</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">junit4</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.ui&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;ui-test-junit4&#34;</span> }
+<span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">material3</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.compose.material3&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;material3&#34;</span> }
+
+[<span style="color:#a6e22e">plugins</span>]
+<span style="color:#a6e22e">android</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">application</span> = { <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;com.android.application&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;agp&#34;</span> }
+<span style="color:#a6e22e">jetbrains</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">android</span> = { <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;kotlin&#34;</span> }
+</code></pre></div></li>
+</ul>
+<ol start="6">
 <li>
 <p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>settings.gradle.kts (Display a map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">pluginManagement <span style="color:#f92672">{</span>
     repositories <span style="color:#f92672">{</span>
-        google<span style="color:#f92672">()</span>
+        google <span style="color:#f92672">{</span>
+            content <span style="color:#f92672">{</span>
+                includeGroupByRegex<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com\\.android.*&#34;</span><span style="color:#f92672">)</span>
+                includeGroupByRegex<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com\\.google.*&#34;</span><span style="color:#f92672">)</span>
+                includeGroupByRegex<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;androidx.*&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
         mavenCentral<span style="color:#f92672">()</span>
         gradlePluginPortal<span style="color:#f92672">()</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 
 dependencyResolutionManagement <span style="color:#f92672">{</span>
-    <span style="color:#a6e22e">@Suppress</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UnstableApiUsage&#34;</span><span style="color:#f92672">)</span>
     repositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>RepositoriesMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FAIL_ON_PROJECT_REPOS</span><span style="color:#f92672">)</span>
-    <span style="color:#a6e22e">@Suppress</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;UnstableApiUsage&#34;</span><span style="color:#f92672">)</span>
     repositories <span style="color:#f92672">{</span>
         google<span style="color:#f92672">()</span>
         mavenCentral<span style="color:#f92672">()</span>
@@ -1162,14 +1268,10 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 <span style="color:#66d9ef">import</span> androidx.compose.ui.Modifier
 <span style="color:#66d9ef">import</span> androidx.compose.ui.res.stringResource
 <span style="color:#66d9ef">import</span> com.arcgismaps.mapping.ArcGISMap
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.Basemap
 <span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyle
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyleLanguageStrategy
-<span style="color:#66d9ef">import</span> com.arcgismaps.mapping.BasemapStyleParameters
 <span style="color:#66d9ef">import</span> com.arcgismaps.mapping.Viewpoint
 <span style="color:#66d9ef">import</span> com.arcgismaps.toolkit.geoviewcompose.MapView
 <span style="color:#66d9ef">import</span> com.example.app.R
-<span style="color:#66d9ef">import</span> java.util.Locale
 </code></pre></div></li>
 <li>
 <p><a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を返す <code>createMap()</code> という名前のトップ レベル関数を作成します。</p>
@@ -1179,8 +1281,8 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 }
 </code></pre></div></li>
 <li>
-<p>BasemapStyle.ArcGISTopographic を使用して <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を作成し、マップ上で apply{} を呼び出します。この関数は <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を返します。</p>
-<p>apply{} の詳細については Kotlin の <a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a> を参照してください。</p>
+<p>BasemapStyle.ArcGISTopographic を使用して <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を作成し、マップ上で <code>apply{}</code> を呼び出します。この関数は <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html">ArcGISMap</a> を返します。</p>
+<p><code>apply{}</code> の詳細については Kotlin の <a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a> を参照してください。</p>
 <p>MainScreen.kt</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
 

@@ -35,6 +35,13 @@ aliases = ["/create-startup-app-android/"]
 
 注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。** -->
 
+## 前提条件
+
+このチュートリアルを実施するには、以下が必要です。
+
+1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+2. 開発環境が[システム要件](https://developers.arcgis.com/swift/reference/system-requirements/)を満たしていることを確認します。
+
 ## ステップ
 
 ### 新しい Android Studio プロジェクトを作成します
@@ -62,104 +69,211 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     ```gradle
     // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
     plugins {
-        id("com.android.application") version "8.2.0" apply false
-        id("org.jetbrains.kotlin.android") version "1.9.10" apply false
+        alias(libs.plugins.android.application) apply false
+        alias(libs.plugins.jetbrains.kotlin.android) apply false
     }
     ```
 
 4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    build.gradle.kts (Module: Display_a_map)
+    build.gradle.kts (Module: app)
 
     ```gradle
-        plugins {
-            id("com.android.application")
-            id("org.jetbrains.kotlin.android")
+    plugins {
+        alias(libs.plugins.android.application)
+        alias(libs.plugins.jetbrains.kotlin.android)
+    }
+
+    android {
+        namespace = "com.example.app"
+        compileSdk = libs.versions.compileSdk.get().toInt()
+
+        defaultConfig {
+            applicationId = "com.example.app"
+            minSdk = libs.versions.minSdk.get().toInt()
+            targetSdk = libs.versions.targetSdk.get().toInt()
+            versionCode = 1
+            versionName = "1.0"
+            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+            vectorDrawables {
+                useSupportLibrary = true
+            }
         }
 
-        android {
-            compileSdk = 34
-
-            defaultConfig {
-                applicationId = "com.example.app"
-                minSdk = 26
-                targetSdk = 34
-                versionCode = 1
-                versionName = "1.0"
-
-                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildTypes {
+            release {
+                isMinifyEnabled = false
+                proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             }
-
-            buildTypes {
-                release {
-                    isMinifyEnabled = false
-                    proguardFiles(
-                        getDefaultProguardFile("proguard-android-optimize.txt"),
-                        "proguard-rules.pro"
-                    )
-                }
-            }
-            compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_17
-                targetCompatibility = JavaVersion.VERSION_17
-            }
-
-            buildFeatures {
-                compose = true
-                buildConfig = true
-            }
-
-            composeOptions {
-                kotlinCompilerExtensionVersion = "1.5.3"
-            }
-
-            kotlinOptions {
-                jvmTarget = "17"
-            }
-
-            packaging {
-                resources {
-                    excludes += "/META-INF/DEPENDENCIES"
-                }
-            }
-
-            namespace = "com.example.app"
+        }
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
 
-        dependencies {
-            implementation("androidx.core:core-ktx:1.12.0")
-            implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-            implementation("androidx.activity:activity-compose:1.8.2")
-            // Jetpack Compose の BOM
-            implementation(platform("androidx.compose:compose-bom:2023.10.01"))
-            // Jetpack Compose の依存関係
-            implementation("androidx.compose.ui:ui")
-            implementation("androidx.compose.material3:material3")
-            // ArcGIS Map Kotlin SDK の依存関係
-            implementation("com.esri:arcgis-maps-kotlin:200.4.0")
-            // Toolkit の依存関係
-            implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:200.4.0"))
-            implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose")
+        kotlinOptions {
+            jvmTarget = "17"
         }
+
+        buildFeatures {
+            compose = true
+        }
+
+        composeOptions {
+            kotlinCompilerExtensionVersion = "1.5.11"
+        }
+
+        packaging {
+            resources {
+                excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            }
+        }
+    }
+
+    dependencies {
+
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.lifecycle.runtime.ktx)
+        implementation(libs.androidx.activity.compose)
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.androidx.ui)
+        implementation(libs.androidx.ui.graphics)
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.androidx.material3)
+        testImplementation(libs.junit)
+        androidTestImplementation(libs.androidx.junit)
+        androidTestImplementation(libs.androidx.espresso.core)
+        androidTestImplementation(platform(libs.androidx.compose.bom))
+        androidTestImplementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.tooling)
+        debugImplementation(libs.androidx.ui.test.manifest)
+
+        // ArcGIS Maps for Kotlin - SDK dependency
+        implementation(libs.arcgis.maps.kotlin)
+        // Toolkit dependencies
+        implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
+        implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
+        // Additional modules from Toolkit, if needed, such as:
+        // implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+
+    }
     ```
 
-5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
+    Android Studio の [New Project] ウィザードで生成されるモジュール レベルの `build.gradle.kts` ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (`kotlinOptions` ブロック) のオプションは互換性がなければなりません。互換性は Android の [Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin) を参照することで確認できます。
+
+    build.gradle.kts (Module: app)
+
+    ```gradle
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.11"
+    }
+    ```
+
+5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
+* ArcGIS Maps SDK for Kotlin SDK
+* ArcGIS Maps SDK for Kotlin Toolkit BOM
+* 必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` コンポーネントのみが必要です。
+
+    Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。
+
+    [Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は依存関係のバージョンを宣言するための標準的な Android のアプローチです。`build.gradle.kts` でバージョン番号を指定したり、`version.gradle` でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする `build.gradle.kts` と `gradle/libs.version.toml` ファイルを生成します。
+
+    Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の README の [Using the BOM](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom) を参照してください。
+
+    gradle/libs.versions.toml
+
+    ```toml
+    [versions]
+    arcgisMapsKotlin = "200.5.0"
+
+    [libraries]
+    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+    # Additional modules from Toolkit, if needed, such as:
+    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+    ```
+
+    {{% notice note %}}
+
+    `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
+
+    {{% /notice %}}
+
+    ```toml
+    [versions]
+    arcgisMapsKotlin = "200.5.0"
+
+    # Version numbers added by Android Studio New Project Wizard
+    agp = "8.3.2"
+    kotlin = "1.9.23"
+    coreKtx = "1.13.0"
+    junit = "4.13.2"
+    junitVersion = "1.1.5"
+    espressoCore = "3.5.1"
+    lifecycleRuntimeKtx = "2.8.3"
+    activityCompose = "1.9.0"
+    composeBom = "2024.04.01"
+
+    # Other version numbers
+    compileSdk = "34"
+    minSdk = "26"
+    targetSdk = "34"
+
+    [libraries]
+    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+    # Additional modules from Toolkit, if needed, such as:
+    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+
+    androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+    junit = { group = "junit", name = "junit", version.ref = "junit" }
+    androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+    androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+    androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+    androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+    androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+    androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+    androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+    androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+    androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+    androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+    androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+    androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+    [plugins]
+    android-application = { id = "com.android.application", version.ref = "agp" }
+    jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    ```
+
+
+6. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
 
     settings.gradle.kts (Display a map)
 
     ```gradle
     pluginManagement {
         repositories {
-            google()
+            google {
+                content {
+                    includeGroupByRegex("com\\.android.*")
+                    includeGroupByRegex("com\\.google.*")
+                    includeGroupByRegex("androidx.*")
+                }
+            }
+
             mavenCentral()
             gradlePluginPortal()
         }
     }
 
     dependencyResolutionManagement {
-        @Suppress("UnstableApiUsage")
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-        @Suppress("UnstableApiUsage")
         repositories {
             google()
             mavenCentral()
@@ -171,9 +285,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     include(":app")
     ```
 
-6. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。 
+7. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。 
 
-7. プロジェクト ツール ウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。
+8. プロジェクト ツール ウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。
 
     これらの新しい要素を `manifest` 要素内に挿入します。 他のステートメントを変更または削除しないでください。
 
@@ -221,14 +335,10 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     import androidx.compose.ui.Modifier
     import androidx.compose.ui.res.stringResource
     import com.arcgismaps.mapping.ArcGISMap
-    import com.arcgismaps.mapping.Basemap
     import com.arcgismaps.mapping.BasemapStyle
-    import com.arcgismaps.mapping.BasemapStyleLanguageStrategy
-    import com.arcgismaps.mapping.BasemapStyleParameters
     import com.arcgismaps.mapping.Viewpoint
     import com.arcgismaps.toolkit.geoviewcompose.MapView
     import com.example.app.R
-    import java.util.Locale
     ```
 4. [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返す `createMap()` という名前のトップ レベル関数を作成します。
 
@@ -240,9 +350,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     }
     ```
 
-5. BasemapStyle.ArcGISTopographic を使用して [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で apply{} を呼び出します。この関数は [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
+5. BasemapStyle.ArcGISTopographic を使用して [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で `apply{}` を呼び出します。この関数は [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
 
-    apply{} の詳細については Kotlin の [Scope functions](https://kotlinlang.org/docs/scope-functions.html) を参照してください。
+    `apply{}` の詳細については Kotlin の [Scope functions](https://kotlinlang.org/docs/scope-functions.html) を参照してください。
 
     MainScreen.kt
 

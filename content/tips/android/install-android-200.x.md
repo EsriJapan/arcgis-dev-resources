@@ -21,127 +21,233 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 
 Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。<b>Empty Activity</b> オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
 
-以下の手順では、<b>Android Studio Iguana 2023.2.1 Patch 1</b> を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。
+以下の手順では、<b>Android Studio Koala 2024.1.1</b> を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。
 
 {{% /notice %}}
 
 Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。
 
-1. `settings.gradle.kts` ファイルの `repositories` ブロック (`dependencyResolutionManagement` 内にネストされています) で、Esri の Maven リポジトリ URL を指定して `maven` ブロックを追加します。Esri のリポジトリはオープンソースではないため、`google()` や `mavenCentral()` からは使用できないため、この URL を指定する必要があります。
+1. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
 
-	settings.gradle.kts
+	build.gradle.kts (Project: Display_a_map)
 
-	```java  
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			google()
-			mavenCentral()
-
-			// Esri の Maven リポジトリを追加
-			maven {
-				url = uri("https://esri.jfrog.io/artifactory/arcgis")
-			}
-		}
+	```gradle
+	// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
+	plugins {
+			alias(libs.plugins.android.application) apply false
+			alias(libs.plugins.jetbrains.kotlin.android) apply false
 	}
-    ```
+	``` 
 
-2. module レベルの build.gradle.kts (Module :app) ファイルの `dependencies` ブロック内で、ArcGIS Maps SDK for Kotlin の依存関係をアプリに追加します。
-
-	{{% notice note %}}
-
-	この依存関係を、ArcGIS Maps SDK for Kotlin を使用する各モジュールに追加する必要があります。
-
-	{{% /notice %}}
+2. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
 	build.gradle.kts (Module: app)
 
-	```java
-	dependencies {
-		...
-		// ArcGIS Maps SDK for Kotlin の依存関係を追加
-		implementation 'com.esri:arcgis-maps-kotlin:200.4.0'
+	```gradle
+	plugins {
+			alias(libs.plugins.android.application)
+			alias(libs.plugins.jetbrains.kotlin.android)
 	}
-    ```
 
-3. Esri が公開しているすぐに使用できる Compose コンポーネントを提供する依存関係を追加します。[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) で定義されているこれらの Compose コンポーネントは、ArcGIS Maps SDK for Kotlin の標準 API のクラスにアクセスします。Toolkit は、Compose ベースで ArcGIS Maps SDK for Kotlin と互換性のあるテスト済みの UI 要素を含めるための最も効率的な方法です。
-<br />
-<br />
-`geoview-compose` という名前の Toolkit モジュールへの依存関係を宣言します。このモジュールには、マップ ビューとシーン ビューを実相するためのコンポーザブルな関数が含まれています。Toolkit には、他にもいくつかの便利な Compose ベースのモジュールが含まれています。使用する他の Toolkit モジュールを `dependency` ブロックに追加します。
-
-	build.gradle.kts (Module: app)
-
-	```java
-	dependencies {
-		. . .
-		// ArcGIS Maps SDK for Kotlin の依存関係を追加
-		implementation("com.esri:arcgis-maps-kotlin:200.4.0")
-		// ツールキットの依存関係を追加
-		implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose:200.4.0")
-		// 追加のツールキットのモジュールが必要な場合、以下のように記述します
-		// implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication:200.4.0")
-	}
-    ```
-
-	<b>アーティファクトのバージョン管理 (代替方法)</b>
-	<br />
-	これまでのコードでは、ツールキットの依存関係でアーティファクトのバージョンを指定しています。この方法の他に、ツールキットの BOM (Bill of Materials), に依存することもできます。BOM には、互いに互換性のある個々のツールキット コンポーネントのバージョンが指定されています。これらのバージョン番号は、[BOM の .pom](https://esri.jfrog.io/ui/native/arcgis/com/esri/arcgis-maps-kotlin-toolkit-bom/) ファイルをから確認できます。詳細は、ツールキット リポジトリのトップ レベルの README を参照してください。Toolkit BOM 自体にもバージョン番号があることに注意してください。
-
-	[Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は、依存関係のバージョンを管理する最先端の方法です。`gradle/libs.versions.toml` ファイルでは、各依存関係の Maven 名の変数とバージョン番号の変数を宣言します。ここには、Toolkit BOM、Toolkit モジュール、ArcGIS Maps SDK for Kotlin、Kotlin ライブラリ、Android ライブラリなど、すべての依存関係を宣言できます。Android Studio の最近のリリースでは、[New Project] ウィザードによってこのファイルが作成されます。
-
-	Toolkit BOM を使用するように変更すると、`build.gradle.kts` コードは以下のようになります。`libs.arcgis.map.kotlin.toolkit.bom` や `libs.arcgis.maps.kotlin.toolkit.geoview.compose` などの変数は、`gradle/libs.versions.toml` がバージョンを管理しているため、バージョンを指定しないことに注意してください。
-
-	build.gradle.kts (Module: app)
-
-	```java
-	dependencies {
-		・・・
-		// ArcGIS Maps SDK for Kotlin の SDK 依存関係
-		implementation(libs.arcgis.maps.kotlin)
-		// Toolkit の依存関係
-		implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
-		implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-		// 追加のツールキットのモジュールが必要な場合、以下のように記述します
-		// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
-	}
-    ```
-
-4. Android Studio の [New Project] ウィザードで生成されるモジュール レベルの build.gradle.kts ファイルには、Android と Kotlin のツール バージョンが宣言されています。Compose Compiler と Kotlin Compiler のオプションは互換性がなければなりません。互換性は、Android の[Compose と Kotlin の互換性マップ](https://developer.android.com/jetpack/androidx/releases/compose-kotlin?hl=ja) を参照することで確認できます。
-
-	build.gradle.kts (Module: app)
-    ```java  
 	android {
-			. . .
-			kotlinOptions {
-				jvmTarget = "1.8"
+			namespace = "com.example.app"
+			compileSdk = libs.versions.compileSdk.get().toInt()
+
+			defaultConfig {
+					applicationId = "com.example.app"
+					minSdk = libs.versions.minSdk.get().toInt()
+					targetSdk = libs.versions.targetSdk.get().toInt()
+					versionCode = 1
+					versionName = "1.0"
+					testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+					vectorDrawables {
+							useSupportLibrary = true
+					}
 			}
+
+			buildTypes {
+					release {
+							isMinifyEnabled = false
+							proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+					}
+			}
+			compileOptions {
+					sourceCompatibility = JavaVersion.VERSION_17
+					targetCompatibility = JavaVersion.VERSION_17
+			}
+
+			kotlinOptions {
+					jvmTarget = "17"
+			}
+
 			buildFeatures {
-				compose = true // このプロジェクトで Jetpack Compose を有効にします
+					compose = true
 			}
 
 			composeOptions {
-				kotlinCompilerExtensionVersion = "1.5.11"
+					kotlinCompilerExtensionVersion = "1.5.11"
 			}
-			. . .
+
+			packaging {
+					resources {
+							excludes += "/META-INF/{AL2.0,LGPL2.1}"
+					}
+			}
 	}
-    ```
-<!--
-4. module レベルの build.gradle ファイルの android ブロック内に、META-INFDEPENDENCIES ファイルの複製を除外する packagingOptions ブロックがあることを確認します。この設定により、META-INF ディレクトリにある同じファイルを出力に複数回含めようとした場合に発生するコンパイラー エラーを防ぐことができます。パッケージング オプションの詳細については、[PackagingOptions](https://developer.android.com/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions) を参照してください。
+
+	dependencies {
+
+			implementation(libs.androidx.core.ktx)
+			implementation(libs.androidx.lifecycle.runtime.ktx)
+			implementation(libs.androidx.activity.compose)
+			implementation(platform(libs.androidx.compose.bom))
+			implementation(libs.androidx.ui)
+			implementation(libs.androidx.ui.graphics)
+			implementation(libs.androidx.ui.tooling.preview)
+			implementation(libs.androidx.material3)
+			testImplementation(libs.junit)
+			androidTestImplementation(libs.androidx.junit)
+			androidTestImplementation(libs.androidx.espresso.core)
+			androidTestImplementation(platform(libs.androidx.compose.bom))
+			androidTestImplementation(libs.androidx.ui.test.junit4)
+			debugImplementation(libs.androidx.ui.tooling)
+			debugImplementation(libs.androidx.ui.test.manifest)
+
+			// ArcGIS Maps for Kotlin - SDK dependency
+			implementation(libs.arcgis.maps.kotlin)
+			// Toolkit dependencies
+			implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
+			implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
+			// Additional modules from Toolkit, if needed, such as:
+			// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+
+	}
+	``` 
+
+	Android Studio の [New Project] ウィザードで生成されるモジュール レベルの `build.gradle.kts` ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (`kotlinOptions` ブロック) のオプションは互換性がなければなりません。互換性は Android の [Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin) を参照することで確認できます。
 
 	build.gradle.kts (Module: app)
 
-    ```java  
-	android {
-		. . .
-		packagingOptions {
-			resources {
-				excludes += 'META-INF/DEPENDENCIES'
-			}
-		}
-		. . .
+	```gradle
+	kotlinOptions {
+			jvmTarget = "17"
 	}
+
+	composeOptions {
+			kotlinCompilerExtensionVersion = "1.5.11"
+	}
+	``` 
+	
+3. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
+	* ArcGIS Maps SDK for Kotlin SDK
+	* ArcGIS Maps SDK for Kotlin Toolkit BOM
+	* 必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` コンポーネントのみが必要です。
+
+    Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。
+
+    [Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は依存関係のバージョンを宣言するための標準的な Android のアプローチです。`build.gradle.kts` でバージョン番号を指定したり、`version.gradle` でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする `build.gradle.kts` と `gradle/libs.version.toml` ファイルを生成します。
+
+    Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の README の [Using the BOM](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom) を参照してください。
+
+    gradle/libs.versions.toml
+
+    ```toml
+    [versions]
+    arcgisMapsKotlin = "200.5.0"
+
+    [libraries]
+    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+    # Additional modules from Toolkit, if needed, such as:
+    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
     ```
--->
+
+    {{% notice note %}}
+
+    `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
+
+    {{% /notice %}}
+
+    ```toml
+    [versions]
+    arcgisMapsKotlin = "200.5.0"
+
+    # Version numbers added by Android Studio New Project Wizard
+    agp = "8.3.2"
+    kotlin = "1.9.23"
+    coreKtx = "1.13.0"
+    junit = "4.13.2"
+    junitVersion = "1.1.5"
+    espressoCore = "3.5.1"
+    lifecycleRuntimeKtx = "2.8.3"
+    activityCompose = "1.9.0"
+    composeBom = "2024.04.01"
+
+    # Other version numbers
+    compileSdk = "34"
+    minSdk = "26"
+    targetSdk = "34"
+
+    [libraries]
+    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+    # Additional modules from Toolkit, if needed, such as:
+    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+
+    androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+    junit = { group = "junit", name = "junit", version.ref = "junit" }
+    androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+    androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+    androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+    androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+    androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+    androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+    androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+    androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+    androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+    androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+    androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+    androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+    [plugins]
+    android-application = { id = "com.android.application", version.ref = "agp" }
+    jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    ```
+
+4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
+
+    settings.gradle.kts (Display a map)
+
+    ```gradle
+    pluginManagement {
+        repositories {
+            google {
+                content {
+                    includeGroupByRegex("com\\.android.*")
+                    includeGroupByRegex("com\\.google.*")
+                    includeGroupByRegex("androidx.*")
+                }
+            }
+
+            mavenCentral()
+            gradlePluginPortal()
+        }
+    }
+
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenCentral()
+            maven { url = uri("https://esri.jfrog.io/artifactory/arcgis") }
+        }
+    }
+
+    rootProject.name = "Display a map"
+    include(":app")
+    ```
 
 ## 必要な権限と機能
 Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。
@@ -201,17 +307,16 @@ Android マニフェストに [uses-feature 要素](https://developer.android.co
 また、[Google Play ストア](https://play.google.com/store/apps/details?id=com.esri.arcgismaps.kotlin.sampleviewer)からサンプル ビューアー アプリをダウンロードし、お使いのデバイスでライブ サンプルをご覧いただくこともできます。
 
 ### ArcGIS Maps SDK for Kotlin Toolkit
-<!-- [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化するためのコントロールとユーティリティが含まれています。 -->
-[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティ) が含まれています。`MapView` と `SceneView` のコンポーザブル関数を使用するには、モジュール レベルの build.gradle.kts に次の依存関係を含めます。
+[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティ) が含まれています。`MapView` と `SceneView` のコンポーザブル関数を使用するには、モジュール レベルの `build.gradle.kts` に次の依存関係を含めます。
 
-* [GeoView-Compose](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/geoview-compose)：`MapView` と `SceneView` クラスのコンポーザブルな実装を提供します。
+```gradle
+implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:200.5.0"))
+implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose")
+```
 
-Toolkit には、Compose に対応した他の特別なコンポーネントも含まれています。
+[GeoView-Compose](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/geoview-compose)：`MapView` と `SceneView` クラスのコンポーザブルな実装を提供します。
 
-* [Authenticator](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/authentication)：ネットワークおよび ArcGIS 認証の必要なリクエストが発生すると、ユーザー インターフェイスが表示されます。
-* [Compass](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/compass)：地図が回転するとコンパスがその方向を示します。地図が北を指している場合は自動的に非表示になります。
-* [FeatureForm](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/featureforms)：外部から設定された `FeatureForm` API を使用して、レイヤーのフィーチャのフィールド値を編集できるようにします。
-* [FloorFilter](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/indoors)：GeoView で、敷地、敷地内の建物、または建物内のフロアでフロア プラン データをフィルタリングできます。
+Toolkit には、Compose に対応した他の特別なコンポーネントも含まれています。詳細は [Toolkit](https://developers.arcgis.com/kotlin/toolkit/) を参照してください。
 
 ### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
