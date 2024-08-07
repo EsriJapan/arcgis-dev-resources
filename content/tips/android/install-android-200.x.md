@@ -9,8 +9,6 @@ aliases = ["/android/install-android-200.x/"]
 
 このインストール ガイドでは、ArcGIS Maps SDK for Kotlin (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「[アプリの作成](../../../guide/create-app/create-startup-app-android/)」のチュートリアルをご覧ください。
 
-ArcGIS Developers のダッシュボードから各インストーラーやデータをダウンロードするには、ArcGIS 開発者アカウントでログインする必要があります。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
-
 ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが [動作環境](https://developers.arcgis.com/kotlin/reference/system-requirements/) を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
 
 [Gradle](https://gradle.org/) を使用してインストールすることをお勧めします。これにより、[Esri の Maven リポジトリ](https://esri.jfrog.io/artifactory/arcgis)から必要な依存関係と SDK バイナリがインストールされます。
@@ -323,7 +321,7 @@ Toolkit には、Compose に対応した他の特別なコンポーネントも�
 
 ローカルでドキュメントを公開する方法：
 
-* 使用する ArcGIS Runtime SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
+* 使用する SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
 * アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、`public` と `install` という 2 つのサブフォルダがあります。
 * `install` フォルダ内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。
 
@@ -337,10 +335,10 @@ Toolkit には、Compose に対応した他の特別なコンポーネントも�
 #### Projection Engine データ
 測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、Projection Engine ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。Projection Engine ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。
 
-[グリッド ベースの変換](https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/downloads/#pedata)をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、[Spatial references](https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/) のトピックを参照してください。
+[グリッド ベースの変換](https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/kotlin/downloads/#projection-engine-data)をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、[Spatial references](https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/) のトピックを参照してください。
 
 #### Electronic Navigational Charts (ENC)
 航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/)の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf) に準拠した ENC をサポートしています。
 
-航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography](https://developers.arcgis.com/downloads/#hydrodata) データをダウンロードします。ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/kotlin/layers/display-electronic-navigational-charts/) のトピックを参照してください。
+航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography](https://developers.arcgis.com/kotlin/downloads/#hydrography-data) データをダウンロードします。ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/kotlin/layers/display-electronic-navigational-charts/) のトピックを参照してください。
 
