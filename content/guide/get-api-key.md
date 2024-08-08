@@ -113,7 +113,7 @@ ArcGIS Online アカウントの場合
 | ベースマップ | ベースマップ スタイル サービス | `premium:user:basemaps` | アプリケーションがベースマップ スタイル サービスにアクセスできるようにします。 |
 | データ エンリッチメント | ジオエンリッチメント サービス | `premium:user:geoenrichment` | アプリケーションがジオエンリッチメント サービスにアクセスできるようにします。詳細は[こちら](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)。 |
 | ジオコーディング | 住所検索 | `premium:user:geocode` | アプリケーションがジオコーディング サービスにアクセスできるようにします。詳細は[こちら](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/)。 |
-| ルート検索 | ルート検索 (ネットワーク解析) | `premium:user:networkanalysis` | アプリケーションがルーティング サービスにアクセスできるようにします。詳細は[こちら](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions//) |
+| ルート検索 | ルート検索 (ネットワーク解析) | `premium:user:networkanalysis` | アプリケーションがルーティング サービスにアクセスできるようにします。詳細は[こちら](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions//)。|
 | ルート検索 | ラスト マイル | `premium:user:networkanalysis:lastmiledelivery` | アプリケーションがルーティング サービスにアクセスし、ラスト マイル デリバリー解析を実行できるようにします。詳細は[こちら](https://pro.arcgis.com/ja/pro-app/latest/help/analysis/networks/why-choose-lmd-over-vrp.htm)。 |
 
 2. アプリケーションに必要な権限を選択し、[次へ] をクリックします。
