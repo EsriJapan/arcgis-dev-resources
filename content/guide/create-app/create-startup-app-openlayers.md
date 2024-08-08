@@ -18,7 +18,7 @@ aliases = ["/create-startup-app-OpenLayers/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-* 開発者ダッシュボードにアクセスして API キーを作成するには、[ArcGIS アカウント](https://developers.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
+* 開発者ダッシュボードにアクセスして API キーを作成するには、[開発者アカウント](https://location.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
 
 ## ステップ
 
@@ -89,10 +89,10 @@ OpenLayers と [ol-mapbox-style](https://github.com/openlayers/ol-mapbox-style) 
     </style>
 
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
-     </head>
+    </head>
   <body>
     <div id="map"></div>
   </body>
@@ -124,13 +124,13 @@ OpenLayers と [ol-mapbox-style](https://github.com/openlayers/ol-mapbox-style) 
     </style>
 
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
 
-     </head>
+    </head>
   <body>
     <div id="map"></div>
   </body>
@@ -144,7 +144,7 @@ OpenLayers マップを作成するには、[Map](https://openlayers.org/en/late
 
 OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html) クラスは、マップのコンテンツを表示し、それを操作するためのユーザーインターフェースを提供します。マップのクリック、ズーム、パン、回転、視点の変更をサポートしています。また、マップデータの可視コンテンツを操作することもでき、例えば、マウスカーソルでフィーチャを見つけることができます。また、新しいソースを追加したり、レイヤーのプロパティを変更したりして、表示されるデータを修正することもできます。OpenLayers は、レイヤーの変更に応じて、必要に応じて自動的に再レンダリングを行います。
 
-詳細については、OpenLayers の[ドキュメント](https://openlayers.org/en/latest/doc/)を参照してください。
+詳細については、OpenLayers の[ドキュメント](https://openlayers.org/doc/)を参照してください。
  
 1. `<body>`要素の中に`<script>`要素を追加します。
  
@@ -168,11 +168,11 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
 
   </head>
   <body>
@@ -186,7 +186,6 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
 </html>
 
 ```
-
 
 2. [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html) クラスを使用して、表示や動作を制御するオプション付きのマップを作成します。target プロパティには、div 要素の id として "map" を設定します。
 
@@ -210,11 +209,11 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -250,11 +249,11 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -282,13 +281,13 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
  
 認証方法とアクセストークンの取得方法の詳細については、「[セキュリティと認証](../../security)」を参照してください。
 
-1. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)に移動して、API キーを取得します。
+1. [ダッシュボード](https://location.arcgis.com/sign-up/)にアクセスして、Developer credentials から API キーを取得します。
 
 2. 次の手順に使うため API キーをコピーします。
 
 ### ベースマップ レイヤーの追加
 
-OpenLayers はベクター ベースマップやベクター スタイル ファイルを直接サポートしていないので、[openlayers-mapbox-style](https://github.com/openlayers/ol-mapbox-style) (olms) JavaScript ライブラリを使用して、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)から Mapbox スタイルをロードし、OpenLayers でレンダリングします。
+OpenLayers はベクター ベースマップやベクター スタイル ファイルを直接サポートしていないので、[openlayers-mapbox-style](https://github.com/openlayers/ol-mapbox-style) (olms) JavaScript ライブラリを使用して、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/)から Mapbox スタイルをロードし、OpenLayers でレンダリングします。
 
 Mapbox スタイルは、スタイルで使用されるベクター タイル レイヤーへの参照と、それらのタイル内の1つまたは複数のデータ レイヤーに適用される表示スタイル ルールを含む JSON ファイルです。
 
@@ -315,11 +314,11 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -366,11 +365,11 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
      </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -423,11 +422,11 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -483,11 +482,11 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
       }
     </style>
     <!-- openlayers の css ファイルと js ライブラリの参照追加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
     <!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js"></script>
   </head>
   <body>
     <div id="map"></div>

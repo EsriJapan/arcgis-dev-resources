@@ -16,11 +16,11 @@ ArcGIS マップ タイル サービスを使用すると、CesiumJS で地図�
 
 {{% notice note %}}
 
-ベースマップ レイヤーの詳細については、[Mapping APIs and services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) ガイドの [Basemaps](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/) と[ベースマップ](https://esrijapan.github.io/arcgis-dev-resources/guide/services/basemaps/)を参照してください。
+ベースマップ レイヤーの詳細については、[Mapping and location services](https://developers.arcgis.com/documentation/mapping-and-location-services/) ガイドの [Basemaps](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/) と[ベースマップ](https://esrijapan.github.io/arcgis-dev-resources/guide/services/basemaps/)を参照してください。
 
 {{% /notice %}}
 ## 前提条件
-この機能を使うには、[ArcGIS アカウント](https://developers.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
+この機能を使うには、[開発者アカウント](https://location.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
 
 ## ステップ
 
@@ -172,7 +172,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
  
 認証方法とアクセストークンの取得方法の詳細については、「[セキュリティと認証](../../security)」を参照してください。
 
-1. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)に移動して、API キーを取得します。
+1. [ダッシュボード](https://location.arcgis.com/dashboard/)にアクセスして、Developer credentials から API キーを取得します。
 
 2. 作成した ArcGIS API キーを変数 `apiKey` に格納し、`Cesium.ArcGisMapService.defaultAccessToken` に設定します。
 {{% notice note %}}

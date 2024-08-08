@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-05T19:24:36 JST">
+<meta name="revised" content="2024-08-08T14:18:04 JST">
 <title>OpenLayers :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -974,7 +974,7 @@ if (!doNotTrack) {
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ul>
-<li>開発者ダッシュボードにアクセスして API キーを作成するには、<a href="https://developers.arcgis.com/sign-up/">ArcGIS アカウント</a>が必要です。アカウントの作成手順については「<a href="../../get-dev-account/">開発者アカウントの作成</a>」を参照してください。</li>
+<li>開発者ダッシュボードにアクセスして API キーを作成するには、<a href="https://location.arcgis.com/sign-up/">開発者アカウント</a>が必要です。アカウントの作成手順については「<a href="../../get-dev-account/">開発者アカウントの作成</a>」を参照してください。</li>
 </ul>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-pen-の作成">新しい Pen の作成</h3>
@@ -1036,10 +1036,10 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
-     &lt;/<span style="color:#f92672">head</span>&gt;
+    &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
@@ -1068,13 +1068,13 @@ if (!doNotTrack) {
     &lt;/<span style="color:#f92672">style</span>&gt;
 
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 
-     &lt;/<span style="color:#f92672">head</span>&gt;
+    &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
@@ -1083,7 +1083,7 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="map-と-view-の作成">Map と View の作成</h3>
 <p>OpenLayers マップを作成するには、<a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html">Map</a> クラスと <a href="https://openlayers.org/en/latest/apidoc/module-ol_View-View.html">View</a> クラスを使用します。</p>
 <p>OpenLayers の <a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html">Map</a> クラスは、マップのコンテンツを表示し、それを操作するためのユーザーインターフェースを提供します。マップのクリック、ズーム、パン、回転、視点の変更をサポートしています。また、マップデータの可視コンテンツを操作することもでき、例えば、マウスカーソルでフィーチャを見つけることができます。また、新しいソースを追加したり、レイヤーのプロパティを変更したりして、表示されるデータを修正することもできます。OpenLayers は、レイヤーの変更に応じて、必要に応じて自動的に再レンダリングを行います。</p>
-<p>詳細については、OpenLayers の<a href="https://openlayers.org/en/latest/doc/">ドキュメント</a>を参照してください。</p>
+<p>詳細については、OpenLayers の<a href="https://openlayers.org/doc/">ドキュメント</a>を参照してください。</p>
 <ol>
 <li><code>&lt;body&gt;</code>要素の中に<code>&lt;script&gt;</code>要素を追加します。</li>
 </ol>
@@ -1106,11 +1106,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -1145,11 +1145,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1183,11 +1183,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1212,14 +1212,14 @@ if (!doNotTrack) {
 <p>認証方法とアクセストークンの取得方法の詳細については、「<a href="../../security">セキュリティと認証</a>」を参照してください。</p>
 <ol>
 <li>
-<p><a href="https://developers.arcgis.com/dashboard/">開発者ダッシュボード</a>に移動して、API キーを取得します。</p>
+<p><a href="https://location.arcgis.com/sign-up/">ダッシュボード</a>にアクセスして、Developer credentials から API キーを取得します。</p>
 </li>
 <li>
 <p>次の手順に使うため API キーをコピーします。</p>
 </li>
 </ol>
 <h3 id="ベースマップ-レイヤーの追加">ベースマップ レイヤーの追加</h3>
-<p>OpenLayers はベクター ベースマップやベクター スタイル ファイルを直接サポートしていないので、<a href="https://github.com/openlayers/ol-mapbox-style">openlayers-mapbox-style</a> (olms) JavaScript ライブラリを使用して、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/">ベースマップ レイヤー サービス</a>から Mapbox スタイルをロードし、OpenLayers でレンダリングします。</p>
+<p>OpenLayers はベクター ベースマップやベクター スタイル ファイルを直接サポートしていないので、<a href="https://github.com/openlayers/ol-mapbox-style">openlayers-mapbox-style</a> (olms) JavaScript ライブラリを使用して、<a href="https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/">ベースマップ レイヤー サービス</a>から Mapbox スタイルをロードし、OpenLayers でレンダリングします。</p>
 <p>Mapbox スタイルは、スタイルで使用されるベクター タイル レイヤーへの参照と、それらのタイル内の1つまたは複数のデータ レイヤーに適用される表示スタイル ルールを含む JSON ファイルです。</p>
 <ol>
 <li>API キーを変数として保存します。ArcGIS サービスを呼び出す際には、必ずこの API キーを含める必要があります。</li>
@@ -1244,11 +1244,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1293,11 +1293,11 @@ if (!doNotTrack) {
       }
      &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1348,11 +1348,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -1406,11 +1406,11 @@ if (!doNotTrack) {
       }
     &lt;/<span style="color:#f92672">style</span>&gt;
     <span style="color:#75715e">&lt;!-- openlayers の css ファイルと js ライブラリの参照追加 --&gt;</span>
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> /&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css&#34;</span>&gt;
 
     <span style="color:#75715e">&lt;!-- ベクタータイル レイヤーを地図で表示するために olms.js ライブラリへの参照を追加 --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/ol-mapbox-style@10.6.0/dist/olms.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;

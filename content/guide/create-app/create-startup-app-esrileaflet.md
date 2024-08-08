@@ -6,21 +6,21 @@ aliases = ["/create-startup-app-esrileaflet/"]
 +++
 
 # マップを表示する
-このチュートリアルでは、[Esri Leaflet](https://esri.github.io/esri-leaflet/) と ベースマップ レイヤー サービス を使用して、マップを表示する方法を紹介します。
+このチュートリアルでは、[Esri Leaflet](https://developers.arcgis.com/esri-leaflet/) と ベースマップ レイヤー サービス を使用して、マップを表示する方法を紹介します。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-esrileaflet/display_map.png" width="600px">
 
 マップには、ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用しています。ベクター タイル ベースマップ レイヤーには、レイヤーをレンダリングするためのスタイル、レイヤー、フォントグリフ(Font Glyphs)、およびアイコンが含まれています。
 
-このチュートリアルでは、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/)の地形ベースマップ レイヤーを使用して、富士山周辺の地図を作成します。
+このチュートリアルでは、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/)の地形ベースマップ レイヤーを使用して、富士山周辺の地図を作成します。
 
-マップとレイヤーの詳細については、[Mapping APIs and services のガイド](https://developers.arcgis.com/documentation/mapping-apis-and-services/)をご覧ください。
+マップとレイヤーの詳細については、[Mapping and location services のガイド](https://developers.arcgis.com/documentation/mapping-and-location-services/)をご覧ください。
 
 ## 前提条件
 
 このチュートリアルを実施するには、以下が必要です。
 
-* 開発者ダッシュボードにアクセスして API キーを作成するには、[ArcGIS アカウント](https://developers.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
+* 開発者ダッシュボードにアクセスして API キーを作成するには、[開発者アカウント](https://location.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
 
 ## ステップ
 
@@ -44,26 +44,12 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
   <title>Esri Leaflet</title>
 
   <!-- Leaflet の jsライブラリ と css ファイルの参照を追加-->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
-    crossorigin=""></script>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
-    crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
   <!-- Esri Leaflet の js ライブラリ と ベクタータイル対応の js ライブラリへの参照を追加-->
-  <script
-    src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"
-    integrity="sha512-G4+fuKc1B96F0sUG7eKtgiJr0JM3iQC4bfc8WtYvmm7msHES0Hst2mLWASPb8zZk91tqMG86AjP0tgXIEFPPUA=="
-    crossorigin=""></script>
-  <script
-    src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"
-    integrity="sha512-/H7f4mjvCB73Rsi7cWCW0Z3Zl1InqvtGOQsipk5ClXhAxfrw6GSjEnPz2VVTuh7dE29ws8tS3OGHowmkEae2/A=="
-    crossorigin=""></script>
-
+  <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
  
   <style>
     body { margin:0; padding:0; }
@@ -101,25 +87,12 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
   <title>Esri Leaflet</title>
 
   <!-- Leaflet の jsライブラリ と css ファイルの参照を追加-->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
-    crossorigin=""></script>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
-    crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
   <!-- Esri Leaflet の js ライブラリ と ベクタータイル対応の js ライブラリへの参照を追加-->
-  <script
-    src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"
-    integrity="sha512-G4+fuKc1B96F0sUG7eKtgiJr0JM3iQC4bfc8WtYvmm7msHES0Hst2mLWASPb8zZk91tqMG86AjP0tgXIEFPPUA=="
-    crossorigin=""></script>
-  <script
-    src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"
-    integrity="sha512-/H7f4mjvCB73Rsi7cWCW0Z3Zl1InqvtGOQsipk5ClXhAxfrw6GSjEnPz2VVTuh7dE29ws8tS3OGHowmkEae2/A=="
-    crossorigin=""></script>
+  <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
 
   <style>
     body { margin:0; padding:0; }
@@ -168,7 +141,7 @@ Leaflet、Esri Leaflet への参照を含む HTML ページを作成します。
  
 認証方法とアクセストークンの取得方法の詳細については、「[セキュリティと認証](../../security)」を参照してください。
 
-1. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)にアクセスして、API キーを取得します。このチュートリアルで使用するサービスにアクセスするには API キーの[スコープ](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/create-and-manage-an-api-key/)を設定する必要があります。 
+1. [ダッシュボード](https://location.arcgis.com/dashboard/)にアクセスして、Developer credentials から API キーを取得します。このチュートリアルで使用するサービスにアクセスするには [API キー](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/)を設定する必要があります。 
 
 2. CodePen で、キーを使用するため、apiKey を更新します。
 

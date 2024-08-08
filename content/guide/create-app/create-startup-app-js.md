@@ -19,7 +19,8 @@ aliases = ["/create-startup-app-js/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+- API キーにアクセスするための ArcGIS 開発者アカウント
+  - アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 
 ## ステップ
 
@@ -141,10 +142,11 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
 ### API キーの取得
 
-[ArcGIS サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)にアクセスするには、API キーが必要です。
+[ロケーション サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)にアクセスするには、API キーが必要です。
+API キーの作成手順については「[API キーの取得](http://localhost:1313/arcgis-dev-resources/guide/get-api-key)」を参照してください。
 
-1. [developer dashboard](https://developers.arcgis.com/dashboard/)にアクセスして、API キーを取得します。
-2. 次のステップで使用しますので、キーをコピーしてください。
+1. [ダッシュボード](https://location.arcgis.com/dashboard/)にアクセスして、Developer credentials から API キーを取得します。
+2. 次のステップで使用しますので、API キーをコピーしてください。
 
 ### マップの作成
 
@@ -156,7 +158,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
     - マップには、データ レイヤとベースマップ レイヤがあります。[ベースマップ スタイル サービス](https://developers.arcgis.com/rest/basemap-styles/)からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、[Map](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) の作成時に前のステップから設定できます。
 
-    - マップおよびマップ ビューが  [Map（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でどのように機能するかについては、[マッピングとロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/) を参照してください。
+    - マップおよびマップ ビューが  [Map（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でどのように機能するかについては、[マッピングとロケーションサービス](https://developers.arcgis.com/documentation/mapping-and-location-services/) を参照してください。
 
     ```HTML
     <html>
@@ -221,7 +223,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 
     - [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) は、クリックやダブルクリックなどのいくつかのタッチイベントもサポートしています。これらのイベントを利用して、マップの位置を変更したり、レイヤー内のフィーチャーを探したりすることができます。
 
-    - [Maps（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でのマップとマップビューの仕組みについては、[マッピング API とロケーションサービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/) のガイドを参照してください。
+    - [Maps（2D）](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/)でのマップとマップビューの仕組みについては、[マッピングとロケーションサービス](https://developers.arcgis.com/documentation/mapping-and-location-services/) のガイドを参照してください。
 
 
     ```HTML

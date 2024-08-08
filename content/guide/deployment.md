@@ -5,89 +5,218 @@ Weight=6
 aliases = ["/deployment/"]
 +++
 
-出典：ArcGIS Developers - [Introduction to deployment](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/)
+出典：ArcGIS Location Platform - [Deployment](https://location.arcgis.com/help/deployment/)
+
+アプリケーションをデプロイするためのライセンスと配布の要件は、開発するアプリケーションのタイプと使用する [API](https://developers.arcgis.com/documentation/#sdks-and-apis) によって決まります。これには、Web、ネイティブ、およびサービスベースのアプリケーションが含まれます。このヘルプ トピックでは、ソリューションをデプロイする前に知っておく必要がある情報について説明します。
+
+{{% notice note %}}
+
+アプリケーションをデプロイする前に、必ず[利用規約](https://location.arcgis.com/help/terms-of-use/)を確認してください。
+使用条件に従わない特別な導入要件がある場合は[お問い合わせ](https://www.esrij.com/form/inquiry/)ください。
+<!-- 使用条件に従わない特別な導入要件がある場合は、[Esri の営業担当](https://www.esri.com/en-us/contact#c=us&t=1)までお問い合わせください。-->
+
+{{% /notice %}}
+
+すべての ArcGIS Location Platform アカウントには、サブスクリプション プランが関連付けられています。各サブスクリプションには、[無料枠](https://location.arcgis.com/pricing/)のロケーション サービスが付属しており、従量課金は無効になっています。このアカウントを使用して、[API キー](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/)または [OAuth 2.0](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/oauth-credentials-user/) のいずれかを使用してロケーション サービスにアクセスするアプリケーションを構築できますが、利用できるのは無料レベルの使用量でアクセスできるロケーション サービスのみです。すべてのロケーション サービスにアクセスするには、従量課金を有効にする必要があります。利用可能な機能の一覧については、以下の表をご確認ください。
+
+アプリケーションが特定の課金サイクルで無料枠を超えて使用した場合、従量課金を有効にしない限り、サービスへのアクセスは無効になります。従量課金は、アカウントのサブスクリプションの[課金](https://location.arcgis.com/billing/payments/)設定で構成することができます。従量課金と課金について詳しくは[こちら](https://location.arcgis.com/help/billing/)をご覧ください。
+
+すべてのロケーション サービスのトランザクションは米ドルで課金されます。サービスの利用料については、[価格](https://www.esrij.com/products/arcgis-location-platform/license/)をご確認ください。
+
+{{% notice tip %}}
+
+アプリケーションを導入する前に、従量課金を有効にして、中断のないサービス アクセスを確保することをお勧めします。
+
+{{% /notice %}}
+
+|  | 無料枠 | 従量課金 |
+| ---- | ---- | ---- |
+| [ベースマップ](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/)| 〇 | 〇 |
+| [プレイス](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/) | 〇 | 〇 |
+| [住所検索 (データ保存しない)](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/) | 〇 | 〇 |
+| [住所検索 (データ保存する)](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/#storage-parameter) | × | 〇 |
+| [ルート検索](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions/) | 〇 | 〇 |
+| [ルート検索（経由地の最適化）](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/) | × | 〇 |
+| [到達圏](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/service-areas/) | × | 〇 |
+| [配車ルート解析](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/fleet-routing/) | × | 〇 |
+| [最寄りの検索](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/closest-facility-routing/) | × | 〇 |
+| [ロケーション-アロケーション](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/location-allocation/) | × | 〇 |
+| [移動コスト マトリックス](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/) | × | 〇 |
+| [インフォグラフィックス](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | × | 〇 |
+| [レポート作成](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | × | 〇 |
+| [空間解析](https://developers.arcgis.com/rest/analysis/api-reference/getting-started.htm) | × | 〇 |
+| [タイル、ファイル、アタッチメント (ストレージ)](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/vector-tile-services/introduction/) | 〇 | 〇 |
+| [フィーチャの保存 (100 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
+| [フィーチャのクエリ (転送量、15 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
+| [フィーチャの編集 (転送量、5 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
+
+〇：対応　△：一部対応　×：未対応
+
+## Web アプリケーション
+
+Web アプリケーションは、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/)、[オープン ソース](https://developers.arcgis.com/documentation/#sdks-and-apis)、またはその他の [API](https://developers.arcgis.com/documentation/#sdks-and-apis) を使用して構築します。
+
+Web アプリケーションを構築してデプロイするには、以下が必要です。
+
+1. ArcGIS Location Platform アカウント
+2. [利用規約](https://location.arcgis.com/help/terms-of-use/)への同意
 
 
-さまざまな [API や SDK](https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/)、[ArcGIS ロケーション サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/services/)、ArcGIS アカウントを使用して、アプリケーションを構築およびデプロイできます。これには、Web、ネイティブ、およびサービス ベースのアプリケーションが含まれます。このセクションでは、ソリューションをデプロイする前に知っておくべき情報について説明します。
+<table>
+<tbody><tr>
+<td>          
 
-<table style="border:none;">
+#### アプリケーション例
 
-<tr>
-<td>
-    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M33.148 25.114a6.54 6.54 0 0 0-6.552-6.014h-7.192a6.539 6.539 0 0 0-6.552 6.011l-.972 12.593a2.57 2.57 0 0 0 .699 1.952 2.648 2.648 0 0 0 1.521.793v1.866a2.588 2.588 0 0 0 2.585 2.585h12.63a2.588 2.588 0 0 0 2.585-2.585v-1.866a2.648 2.648 0 0 0 1.521-.793 2.57 2.57 0 0 0 .699-1.953zm-.308 13.992a1.853 1.853 0 0 1-1.34.573h-.4v2.636a1.787 1.787 0 0 1-1.785 1.785h-12.63a1.787 1.787 0 0 1-1.785-1.785v-2.636h-.4a1.853 1.853 0 0 1-1.34-.573 1.768 1.768 0 0 1-.482-1.341l.972-12.595a5.737 5.737 0 0 1 5.754-5.27h7.192a5.738 5.738 0 0 1 5.754 5.273l.972 12.59a1.769 1.769 0 0 1-.482 1.343zM23 15.9A6.9 6.9 0 1 0 16.1 9a6.908 6.908 0 0 0 6.9 6.9zm0-13A6.1 6.1 0 1 1 16.9 9 6.107 6.107 0 0 1 23 2.9z"></path></svg>
-</td>
-<td>
-  <h4>
-  
-  [製品、サブスクリプション、アカウント](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/)
-  
-  </h4>
-  
-  製品、サブスクリプション、アカウントが請求とデプロイメントにどのような影響があるのかを説明します。
-</td>
-</tr>
+- クライアントサイド、静的、単一 Web ページアプリケーション
+- フロントエンドとバックエンドの技術を使用した動的な Web アプリケーション
+- プログレッシブ Web アプリ (PWA)
+- リッチインターネットアプリ (RIA、Web アプリをカプセル化したデスクトップ、または、モバイルのハイブリッドアプリ)
+- ブラウザと IDE の拡張機能
 
-<tr>
-<td>
-    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M47.9 25.925a10.941 10.941 0 0 1-5.954 9.762l-.366-.711a10.176 10.176 0 0 0-3.578-19.168l-.326-.034-.03-.326A10.974 10.974 0 0 0 26.35 5.566 11.006 11.006 0 0 0 16.281 11.3l-.164.316-.333-.127a6.635 6.635 0 0 0-9.01 6.211c0 .216.013.428.033.638l.029.299-.278.111A8.998 8.998 0 0 0 9.9 36.1H12v.8H9.9a9.797 9.797 0 0 1-3.912-18.78 7.026 7.026 0 0 1-.013-.42 7.458 7.458 0 0 1 7.45-7.45 7.37 7.37 0 0 1 2.312.374A11.829 11.829 0 0 1 26.35 4.767 11.768 11.768 0 0 1 38.408 15.05 10.944 10.944 0 0 1 47.9 25.925zm-11.322 4.757l.587.342-12.206 7.12-6.675-3.893 3.128-1.825-.794-.463-3.072 1.792.057.099-2.309-1.348 3.128-1.824-.794-.463-3.922 2.287L27.5 40.552l13.794-8.046-3.922-2.287zM27.5 39.626l-1.747-1.019 12.206-7.12 1.747 1.02zm0-22.172L13.706 25.5 27.5 33.546 41.294 25.5zM39.706 25.5l-10.381 6.056c-.495-.69-.526-.943-.526-.99a2.049 2.049 0 0 1 .431-1.192 2.2 2.2 0 0 0 .456-1.225 1.905 1.905 0 0 0-1.078-1.504c-.43-.299-.693-.5-.693-.77a4.37 4.37 0 0 1 .212-.648 4.912 4.912 0 0 0 .4-1.514 1.354 1.354 0 0 0-.502-1.094 34.71 34.71 0 0 0-3.484-2.514L27.5 18.38zm-24.412 0l8.47-4.941a34.304 34.304 0 0 1 3.753 2.677.567.567 0 0 1 .211.477 4.636 4.636 0 0 1-.35 1.233 3.07 3.07 0 0 0-.263.926c0 .712.576 1.11 1.038 1.43.456.316.733.53.733.847a1.491 1.491 0 0 1-.328.792 2.805 2.805 0 0 0-.559 1.624 2.53 2.53 0 0 0 .631 1.396l-1.13.66zm9.98-1a.775.775 0 1 1-.774-.775.776.776 0 0 1 .775.775zM23.5 26.6a.9.9 0 1 0 .9.9.901.901 0 0 0-.9-.9zm-.1.9a.1.1 0 0 1 .2 0c0 .11-.2.11-.2 0zm9.1-1.1a.9.9 0 1 0-.9-.9.901.901 0 0 0 .9.9zm0-1a.1.1 0 0 1 .1.1c0 .11-.2.11-.2 0a.1.1 0 0 1 .1-.1zm4.896 11.811l3.898 2.274L27.5 47.53l-13.794-8.046 3.898-2.274.794.463-3.104 1.81 3.737 2.18a19.35 19.35 0 0 1 3.407-1.633l.892.52-.418.148a18.678 18.678 0 0 0-3.078 1.434l7.666 4.472 6.635-3.87-3.105-1.81.794-.464 3.105 1.81 3.174-1.851a23.42 23.42 0 0 0-3.96-.85l-.65-.082 1.124-.656a23.866 23.866 0 0 1 4.413 1.047l.676-.394-3.104-1.81z"></path></svg>
+注意：ここに掲載されていない種類の Web プリケーションも開発できる可能性があります。
 </td>
-<td>
-   <h4>
-   
-   [コンテンツとデータの利用](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/content-and-data/)
-   
-   </h4>
-  
-   アプリケーションで使用されるデータの利用規約について説明します。
-</td>
-</tr>
-
-<tr>
-<td>
-    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M27.1 4.1v17.8h17.8V4.1zm.8 17V4.9h13.25l.007.125a3.379 3.379 0 0 0 .06.404c.035.184.101.529.03.61-.028.031-.15.078-.438.06-.437-.05-.84.38-.954.508a1.135 1.135 0 0 0-.343.891 4.454 4.454 0 0 0 .154.524c.223.658.29.938-.308 1.261a2.676 2.676 0 0 0-1.015 1.161c-.298.529-.443.728-.78.728a.895.895 0 0 1-.54-.258 1.622 1.622 0 0 0-1.014-.418 1.277 1.277 0 0 0-1.225 1.321c0 .507-.455 1.442-1.104 1.442-.16 0-.392-.463-.515-.711a8.13 8.13 0 0 0-.174-.333c-.291-.527-.654-1.18-1.473-1.18a1.877 1.877 0 0 0-1.681 1.778 2.621 2.621 0 0 0 .11.707 1.897 1.897 0 0 1 .084.505c0 .188-.096.29-.296.486a1.418 1.418 0 0 0-.537 1.057 1.626 1.626 0 0 0 1.474 1.332l.417-.003a6.867 6.867 0 0 1 1.05.043c.114.011.267.409.267.698 0 .35-.288.638-.622.97a1.857 1.857 0 0 0-.644 2.36.769.769 0 0 0 .106.132zm16.2 0H33.376a4.983 4.983 0 0 0-.785-.238 2.102 2.102 0 0 1-.736-.253c-.3-.601-.052-.89.494-1.434a2.206 2.206 0 0 0 .857-1.537c0-.54-.269-1.424-.988-1.493a7.873 7.873 0 0 0-1.138-.048l-.408.003a.977.977 0 0 1-.674-.532c0-.187.096-.29.296-.485a1.418 1.418 0 0 0 .537-1.058 2.621 2.621 0 0 0-.11-.707 1.897 1.897 0 0 1-.084-.504 1.092 1.092 0 0 1 .881-.979c.316 0 .47.222.803.821.041.075.083.16.127.248.243.488.575 1.156 1.232 1.156 1.162 0 1.904-1.329 1.904-2.243a.495.495 0 0 1 .425-.52.896.896 0 0 1 .533.256 1.626 1.626 0 0 0 1.02.42c.838 0 1.192-.63 1.478-1.136a2.011 2.011 0 0 1 .699-.85 1.581 1.581 0 0 0 .685-2.222c-.05-.146-.1-.288-.125-.385a1.03 1.03 0 0 1 .451-.484 1.272 1.272 0 0 0 1.096-.327 1.467 1.467 0 0 0 .157-1.29 2.598 2.598 0 0 1-.048-.304l-.004-.075h2.15zm-40 .8h17.8V4.1H4.1zm.8-17h16.2v16.2H4.9zm-.8 40h17.8V27.1H4.1zm17-.8H7.99a3.5 3.5 0 0 1-.96-1.643 5.237 5.237 0 0 1 2.737-.48l.243.032a1.358 1.358 0 0 0 1.388-.367 4.129 4.129 0 0 1 .957-.712c.57-.35 1.108-.682 1.205-1.211a1.003 1.003 0 0 0-.232-.809 1.559 1.559 0 0 1 .012-1.667 7.517 7.517 0 0 1 3.53-3.361c2.984-.15 3.535-.784 4.088-1.81.046-.084.092-.17.142-.256zM4.9 27.9h16.2v2.64a4.272 4.272 0 0 0-.846 1.152c-.392.728-.675 1.252-3.423 1.391-1.016.05-3.411 2.075-4.217 3.826a2.273 2.273 0 0 0 .08 2.49c.034.043.089.123.08.176-.033.179-.499.464-.838.673a4.707 4.707 0 0 0-1.144.872c-.137.156-.248.157-.667.098a1.92 1.92 0 0 0-.209-.025 5.506 5.506 0 0 0-3.502.724.53.53 0 0 0-.211.483 1.887 1.887 0 0 0 .036.194 4.302 4.302 0 0 0 .704 1.506H4.9zm12.2-13.8h1.8v1.8h-1.8zm-9 2h1.8v1.8H8.1zm19 28.8h17.8V27.1H27.1zm17-17v15.634l-7.154-7.154 2.266-8.48zm-16.2 0h10.484l-2.229 8.341-8.255 5.02zm0 14.298l8.54-5.193 7.094 7.095H27.9zM13.1 7.1h1.8v1.8h-1.8z"></path></svg>
-</td>
-<td>
-   <h4>
-   
-   [ベースマップの帰属](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/basemap-attribution/)
-   
-   </h4>
-  
-   アプリケーションで正しいベースマップの帰属を提供する方法について説明します。
-</td>
-</tr>
-
-<tr>
-<td>
-    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M40.774 31.475A2.277 2.277 0 0 1 38.9 33.86v1.007a2.036 2.036 0 0 1-2.033 2.033h-1.026v-.8h1.026a1.234 1.234 0 0 0 1.233-1.233v-1.771h.4a1.479 1.479 0 0 0 1.476-1.572l-.644-10.25a3.606 3.606 0 0 0-3.593-3.374H30.37v-.8h5.37a4.408 4.408 0 0 1 4.39 4.125zM32.5 4.9a4.6 4.6 0 1 1-.668 9.152l-.115.792A5.4 5.4 0 1 0 32.5 4.1a5.366 5.366 0 0 0-3.836 1.6l.568.563A4.57 4.57 0 0 1 32.5 4.9zm-18 10a5.456 5.456 0 0 0 .783-.056l-.115-.792a4.6 4.6 0 1 1 2.6-7.79l.568-.563a5.4 5.4 0 1 0-3.836 9.2zm-3.24 3h5.37v-.8h-5.37a4.408 4.408 0 0 0-4.39 4.125l-.644 10.25A2.278 2.278 0 0 0 8.1 33.86v1.007a2.036 2.036 0 0 0 2.033 2.033h1.026v-.8h-1.026A1.234 1.234 0 0 1 8.9 34.867v-1.771h-.4a1.48 1.48 0 0 1-1.476-1.572l.644-10.25a3.606 3.606 0 0 1 3.593-3.374zm21.749 8.678l.862 11.771a2.377 2.377 0 0 1-1.97 2.517v1.657a2.38 2.38 0 0 1-2.379 2.377H17.478a2.38 2.38 0 0 1-2.378-2.377v-1.657a2.378 2.378 0 0 1-1.971-2.517l.862-11.773a5.894 5.894 0 0 1 5.863-5.476h7.291a5.894 5.894 0 0 1 5.864 5.478zm.063 11.83l-.862-11.774a5.091 5.091 0 0 0-5.064-4.734h-7.291a5.091 5.091 0 0 0-5.065 4.732l-.862 11.776A1.577 1.577 0 0 0 15.5 40.1h.4v2.423a1.579 1.579 0 0 0 1.578 1.577h12.044a1.579 1.579 0 0 0 1.578-1.577V40.1h.4a1.576 1.576 0 0 0 1.572-1.692zM17.1 12.5a6.4 6.4 0 1 1 6.4 6.4 6.407 6.407 0 0 1-6.4-6.4zm.8 0a5.6 5.6 0 1 0 5.6-5.6 5.606 5.606 0 0 0-5.6 5.6z"></path></svg>
-</td>
-<td>
-   <h4>
-   
-   [配布](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/distribution/)
-   
-   </h4>
-  
-   さまざまな API を使用して構築されたアプリケーションを配布およびデプロイするための要件について説明します。
-</td>
-</tr>
-
-<tr>
-<td>
-    <svg width="48" height="48" viewBox="0 0 48 48" class="inline-block fill-color-icon align-middle col-start-1 row-span-2 h-48px w-48px text-color-2 group-hover:text-color-1"><path d="M41.1 31.001h.8v13.9H26V44.1h15.1zM8.1 5.1v39.8H17v-.8H8.9V5.9h32.2V18h.8V5.1zm9.9 7v.8h15v-.8zm-4 7.8h22v-.8H14zm0 4h19v-.8H14zm0 4h6v-.8h-6zm0 4h11v-.8H14zm26.724-6.151l1.182-1.183-1.446-1.446L38.583 25v-.018L20.091 43.476a1.004 1.004 0 0 0-.242.385l-.679 1.972 1.97-.682a1.002 1.002 0 0 0 .384-.24l19.177-19.178.565.567-2.632 2.632.453 2.703-8.487 8.487-.565-.566 8.194-8.195-.29-1.734-15.85 15.85a1.835 1.835 0 0 1-.688.43l-3.522 1.22 1.213-3.525a1.814 1.814 0 0 1 .434-.693l19.857-19.858v.015l1.077-1.077 2.578 2.577-1.749 1.75z"></path></svg>
-</td>
-<td>
-   <h4>
-   
-   [利用規約](https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/terms-of-use/)
-   
-   </h4>
-  
-   利用規約、その他の法的文書について説明します。
-</td>
-</tr>
-
+</tr></tbody>
 </table>
 
+## ネイティブ アプリケーション
+ネイティブ アプリケーションは、[ArcGIS Maps SDK for Native Apps](https://developers.arcgis.com/documentation/#sdks-and-apis) のいずれかを使用して構築され、デスクトップ、モバイル デバイス、または、組み込みシステムにデプロイされます。ネイティブ アプリケーションは、Microsoft Windows Installer（.msi）などの様々なインストーラー テクノロジを使用するか、Google Play ストア、Apple App Store、Microsoft Store、または [ArcGIS Marketplace](http://doc.arcgis.com/en/marketplace/provider/become-a-provider.htm) で展開できます。
 
-* アカウント、ライセンス、価格、サービスの利用方法についての詳細は、[FAQ](https://developers.arcgis.com/faq/) をご確認ください。
+ネイティブ アプリケーションを構築してデプロイするには、以下が必要です。
+
+1. ArcGIS Location Platform アカウント
+2. [利用規約](https://location.arcgis.com/help/terms-of-use/)への同意
+3. ArcGIS Runtime ライセンス文字列、または、ユーザー認証の実装。これにより、アプリケーションの「ロックが解除」され、マップおよびコンソール ログに表示される「Licensed for Developer Use Only」のウォーターマーク (透かし)が削除されます。
+
+ArcGIS Runtime ライセンス文字列の取得方法については、以下の「License and deployment」のセクションをご確認ください。
+
+- [ArcGIS Maps SDK for .NET](https://developers.arcgis.com/net/license-and-deployment/)
+- [ArcGIS Maps SDK for Swift](https://developers.arcgis.com/swift/license-and-deployment/)
+- [ArcGIS Maps SDK for Kotlin](https://developers.arcgis.com/kotlin/license-and-deployment/)
+- [ArcGIS Maps SDK for Java](https://developers.arcgis.com/java/license-and-deployment/)
+- [ArcGIS Maps SDK for Qt](https://developers.arcgis.com/qt/license-and-deployment/)
+
+{{% notice note %}}
+
+Runtime ライセンス文字列は、ArcGIS Runtime SDKs 100.x および ArcGIS Maps SDKs for Native Apps 200.x で使用されます。ネイティブ アプリケーションが ArcGIS ロケーション サービスを使用する場合でも、ロケーション サービスにアクセスするには有効な[アクセス トークン](https://developers.arcgis.com/documentation/security-and-authentication/)が必要です。
+
+{{% /notice %}}
+
+<table>
+<tbody><tr>
+<td>
+
+#### アプリケーション例
+
+- スマートフォン、または、タブレット用のモバイルアプリ
+- デスクトップ アプリ (Linux、macOS、Windows)
+
+<!-- 
+- スマートデバイス (スマートウォッチ、バンド、Apple TV)
+- 組み込み（カスタム ハードウェア デバイス、Arduino、Raspberry など）
+-->
+
+注：ここに掲載されていない種類のネイティブ アプリケーションも開発できる可能性があります。
+</td>
+</tr></tbody>
+</table>
+
+## ゲームエンジン アプリケーション
+ゲームエンジン アプリケーションは、[ArcGIS Maps SDKs](https://developers.arcgis.com/documentation/#sdks-and-apis) のいずれかを使用して構築され、サポート対象のデバイス、オペレーティング システム、または組み込みシステムにデプロイされます。
+
+ゲームエンジン アプリケーションを構築してデプロイするには、以下が必要です。
+
+1. ArcGIS Location Platform アカウント
+2. [利用規約](https://location.arcgis.com/help/terms-of-use/)への同意
+3. ArcGIS Maps SDK for Unity ガイドの[デプロイメント](https://developers.arcgis.com/unity/deployment/) もしくは、ArcGIS Maps SDK for Unreal Engine ガイドの[デプロイメント](https://developers.arcgis.com/unreal-engine/deployment/)を参照
+
+{{% notice note %}}
+
+ゲームエンジン アプリケーションが ArcGIS のロケーション サービスを使用する場合、ロケーション サービスにアクセスするには有効な[アクセス トークン](https://developers.arcgis.com/documentation/security-and-authentication/)が必要です。
+
+{{% /notice %}}
+
+<table>
+<tbody><tr>
+<td>
+
+#### アプリケーション例
+
+- Android、または iOS の携帯電話、または、タブレット用アプリ
+- スタンドアロン Windows プラットフォーム、または、ユニバーサル Windows アプリケーション
+- macOS アプリケーション
+- XR プラットフォーム向け AR/VR アプリケーション
+
+注：ここに掲載されていない種類のゲームエンジン アプリケーションも開発できる可能性があります。
+
+</td>
+</tr></tbody>
+</table>
+
+## サービス ベース アプリケーション
+サービス ベースのアプリケーションは、ArcGIS のロケーション サービスを使用するもので、エンド ユーザー インタフェースを持たない場合があります。ロケーション サービス、API、ライブラリ、または、その他のバックエンド機能を使用できます。サービス ベースのアプリケーションは、Esri 以外のクライアント側 API で構築されたサービスやプロセス、Web フック、その他のスケジュールされたプロセスなど、ユーザーとのインタラクションによってトリガーされます。
+
+通常、これらのアプリケーションは、[REST API](https://developers.arcgis.com/rest/) サービスのエンドポイント、Node.js アプリ内の [ArcGIS REST JS](https://developers.arcgis.com/arcgis-rest-js/)、または [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/) のモジュール、または [ArcGIS API for Python](https://developers.arcgis.com/python/) を使用して構築されます。
+
+サービス ベース アプリケーションを構築してデプロイするには、以下が必要です。
+
+1. ArcGIS Location Platform アカウント
+2. [利用規約](https://location.arcgis.com/help/terms-of-use/)への同意
+
+{{% notice note %}}
+
+ArcGIS Maps SDKs for Native Apps は、サービスベースのアプリケーションの構築には使用できません。
+
+{{% /notice %}}
+
+<table>
+<tbody><tr>
+<td>
+
+#### アプリケーション例
+
+- Web サービス
+- REST アプリケーション
+- スクリプト アプリケーション
+- 内部ライブラリ
+- 開発者向け API
+- M2M (Machine to Machine)
+
+注：ここに掲載されていない種類のサービスベースのアプリケーションも開発できる可能性があります。
+
+</td>
+</tr></tbody>
+</table>
+
+## ベースマップの帰属
+
+[ベースマップ スタイル サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/)を使用するマッピング アプリケーションを構築、およびデプロイする場合は、ベースマップの帰属表示が必要です。[ベースマップの帰属](https://tech-support.esrij.com/arcgis/article/web/knowledge3172.html)については、こちらをご確認ください。
+
+## 3rd party データ
+
+多くの組織は、ArcGIS で独自のコンテンツやデータをホストし、[ArcGIS Online](https://www.arcgis.com/)、[ArcGIS Hub](https://hub.arcgis.com/)、または [ArcGIS Living Atlas of the World](https://livingatlas.arcgis.com/en/home/) を通じて利用できるようにしています。これらのデータをアプリケーションで使用する前に、利用規約を準拠する必要があり、組織によって定義されている場合は、帰属表示を行う必要があります。利用規約は通常、各データ プロバイダによって異なります。
+
+## デプロイ サポート機能
+アプリケーションに実装されている ArcGIS サービスに基づくデプロイの種類については、以下の表をご確認ください。
+
+|  | ArcGIS Location Platform サブスクリプション |
+| ---- | ---- |
+| [プライベート アプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/mapping-and-location-services/faq/)| 〇 |
+| [公開アプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/) | 〇 |
+| [無料 (非商用) アプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/mapping-and-location-services/faq/) | 〇 |
+| [商用アプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/mapping-and-location-services/faq/) | 〇 |
+| [ArcGIS およびオープン ソース API を使用した Web アプリケーションの構築](https://developers.arcgis.com/documentation/#sdks-and-apis) | 〇 |
+| [ArcGIS およびオープン ソース API を使用したネイティブ アプリケーションの構築](https://developers.arcgis.com/documentation/#sdks-and-apis) | 〇 |
+| [ArcGIS およびオープン ソース API を使用したサービス ベースのアプリケーションの構築](https://developers.arcgis.com/documentation/#sdks-and-apis) | 〇 |
+| [ArcGIS のプライベート コンテンツにアクセスするアプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/) | 〇 |
+| [Living Atlas のオープン データを使用するアプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/) | △<sup>1</sup> |
+| [Living Atlas の加入者データを使用するアプリケーションの構築とデプロイ](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/) | △<sup>1</sup> |
+| [アプリケーション ストアを通じたアプリケーションの配布	](https://developers.arcgis.com/documentation/mapping-and-location-services/faq/) | 〇 |
+| [ArcGIS Marketplace を通じたアプリケーションの配布](https://www.esri.com/en-us/arcgis-marketplace/overview) | △<sup>2</sup> |
+| [オフライン機能を備えたアプリケーションの配布](https://developers.arcgis.com/documentation/offline-mapping-apps/) | △<sup>1</sup> |
+
+〇：対応　△：一部対応　×：未サポート
+
+<!-- 1. Esri 営業にお問い合わせください。-->
+1. [お問い合わせ](https://www.esrij.com/form/inquiry/)ください。
+2. Esri パートナーとしてサインアップする必要があります。

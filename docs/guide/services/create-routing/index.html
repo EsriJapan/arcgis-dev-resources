@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-05T19:24:36 JST">
+<meta name="revised" content="2024-08-08T14:18:04 JST">
 <title>ルートの検索 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -34,7 +34,7 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="マッピングAPI＆ロケーションサービス内のルーティング＆ディレクションズについて紹介します">
+<meta name="description" content="マッピング API ＆ロケーション サービス内のルーティング＆ディレクションズについて紹介します">
 
 
     
@@ -986,7 +986,8 @@ if (!doNotTrack) {
     
     
     
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/create-routing/RouteAndDirection_Smalple_ja.png" width="1200px">
+    <p>出典：Mapping and location services guide - <a href="https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions">Route and directions</a></p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/create-routing/RouteAndDirection_Smalple_ja.png" width="1200px">
 <h2 id="ルーティングとは">ルーティングとは？</h2>
 <p>ルーティングとはシンプル ルーティングとも呼ばれ、人や車両を出発地点地から目的地点地までの最適経路を導き出す手段の一つです。ルーティングは、制限速度や車線の数、時間帯といった道路網における様々なデータ パラメータを考慮しています。その他にも道路状況や事故、障害物といったリアルタイム データを考慮したルーティングも可能となります。</p>
 <p>ルーティングを利用して以下のアプリケーションを構築することができます。</p>
@@ -995,23 +996,35 @@ if (!doNotTrack) {
 <p>・多言語での経路案内を実現</p>
 <h2 id="ルーティングの仕組み">ルーティングの仕組み</h2>
 <p>経路作成における典型的なワークフロー</p>
-<p>１　出発地点と経由地点および目的地点を明確にする</p>
-<p>２　経路における移動手段を明確にする</p>
-<p>３　サービスから経路や道案内を呼び出す際に、経路の特徴や道順を確認することが可能</p>
-<p>ルーティング サービスを用い、シンプルな経路ものや最適化された経路を作成することができます。</p>
+<ol>
+<li>
+<p>出発地点と経由地点および目的地点を明確にする</p>
+</li>
+<li>
+<p>経路における移動手段を明確にする</p>
+</li>
+<li>
+<p>サービスから経路や道案内を呼び出す際に、経路の特徴や道順を確認することが可能</p>
+</li>
+</ol>
+<p>ルーティング サービスを用い、シンプルな経路や最適化された経路を作成することができます。</p>
 <p>・シンプルな経路とは地点間の最短経路のことをいいます。</p>
 <p>・最適化された経路とは、地点間の最も効率的な経路のことをいいます。</p>
-<p>最適化された経路を作成するためには、<a href="https://developers.arcgis.com/rest/network/api-reference/route-synchronous-service.htm">findBestSequence</a>パラメータを使用する必要があります。このパラメータを使用すると、地点間の最も効率的な経路を返すように順序が変更されます。</p>
-<p>ヒント： ArcGIS Developer 開発者アカウントをお持ちの場合、シンプルな経路の作成は位置情報サービスへのアクセスの無料枠に含まれています。最適化された経路の作成を利用するには、従量課金となります。</p>
+<p>最適化された経路を作成するためには、<a href="https://developers.arcgis.com/rest/network/api-reference/route-synchronous-service.htm">findBestSequence</a> パラメータを使用する必要があります。このパラメータを使用すると、地点間の最も効率的な経路を返すように順序が変更されます。</p>
+<div class="notices note" >
+<p>開発者アカウントをお持ちの場合、シンプルな経路の作成は位置情報サービスへのアクセスの無料枠に含まれています。最適化された経路の作成を利用するには、従量課金となります。</p>
+</div>
 <h2 id="経路のナビゲーションの方法">経路のナビゲーションの方法</h2>
-<p>経路が決定したら、現在の端末位置情報を使用して進行状況を把握することや、経路を縦断する際にナビゲーション指示(音声案内)を呼び出したい場合、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/apis-and-sdks/#native-apis">ArcGIS Maps SDKs for Native Apps</a>で実行するのが効果的です。</p>
-<p>注：経路案内についてより詳しく知りたい方は、以下に記載のガイド「Navigate a route」をご参照ください。</p>
-<p>・<a href="https://developers.arcgis.com/kotlin/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Kotlin</a></p>
-<p>・<a href="https://developers.arcgis.com/swift/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Swift</a></p>
-<p>・<a href="https://developers.arcgis.com/net/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for .NET</a></p>
-<p>・<a href="https://developers.arcgis.com/qt/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Qt</a></p>
+<p>経路が決定したら、現在の端末位置情報を使用して進行状況を把握することや、経路を縦断する際にナビゲーション指示(音声案内)を呼び出したい場合、<a href="https://developers.arcgis.com/documentation/#arcgis-maps-sdks">ArcGIS Maps SDKs for Native Apps</a> で実行するのが効果的です。</p>
+<div class="notices note" >
+<p>経路案内についてより詳しく知りたい方は、以下に記載のガイド「Navigate a route」をご参照ください。<br>
+・<a href="https://developers.arcgis.com/kotlin/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Kotlin</a><br>
+・<a href="https://developers.arcgis.com/swift/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Swift</a><br>
+・<a href="https://developers.arcgis.com/net/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for .NET</a><br>
+・<a href="https://developers.arcgis.com/qt/route-and-directions/navigate-a-route/">ArcGIS Maps SDK for Qt</a></p>
+</div>
 <h2 id="urlリクエスト">URLリクエスト</h2>
-<p>ルーティング サービスにhttps リクエストを行うか、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/routing/route-and-directions/#api-support">クライアント API</a>を使用することで経路と道順を検索できます。出発地点、目的地点、そしてオプションで追加のパラメータを指定すると経路検索結果を絞り込むことができます。ここで最も一般的なパラメータの一部を以下に説明します。</p>
+<p>ルーティング サービスに https リクエストを行うか、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/routing/route-and-directions/#api-support">クライアント API</a> を使用することで経路と道順を検索できます。出発地点、目的地点、そしてオプションで追加のパラメータを指定すると経路検索結果を絞り込むことができます。ここで最も一般的なパラメータの一部を以下に説明します。</p>
 <h2 id="リクエスト制限">リクエスト制限</h2>
 <table>
 <thead>
@@ -1038,32 +1051,32 @@ if (!doNotTrack) {
 <td>250</td>
 </tr>
 <tr>
-<td>ポリライン バリアと交差する道路ストリート フィーチャーの最大数</td>
+<td>ポリライン バリアと交差する道路ストリート フィーチャの最大数</td>
 <td>500</td>
 <td>500</td>
 </tr>
 <tr>
-<td>ポリゴン バリアと交差するストリートフィーチャーの最大数</td>
+<td>ポリゴン バリアと交差するストリート フィーチャの最大数</td>
 <td>2,000</td>
 <td>2,000</td>
 </tr>
 <tr>
 <td>徒歩移動モードにおける最長距離（いずれかのストップ間の直線距離がこの制限を超える場合に歩行制限を使用すると解析が失敗します）</td>
-<td><p>27マイル </p><p>(43.45km)</p></td>
-<td><p>27マイル </p><p>(43.45km)</p></td>
+<td><p>27 マイル </p><p>(43.45km)</p></td>
+<td><p>27 マイル </p><p>(43.45km)</p></td>
 </tr>
 <tr>
 <td><p>直線距離が以下の距離を超えると階層化を強制します(いずれかの停止位置間の直線距離がここに示す限界値より大きい場合、</p><p>travel_modeで階層化を使用しないと、定義されていても解析では階層化を使用します)</p></td>
-<td><p>50マイル</p><p>(80.46km)</p></td>
-<td><p>50マイル </p><p>(80.46km)</p></td>
+<td><p>50 マイル</p><p>(80.46km)</p></td>
+<td><p>50 マイル </p><p>(80.46km)</p></td>
 </tr>
 <tr>
 <td>最大スナップ許容範囲：(入力地点と最寄りのトラバース可能な道路との距離がここで指定した距離より大きい場合、その地点は解析から除外されます)</td>
-<td><p>12.42マイル </p><p>(20km)</p></td>
-<td><p>12.42マイル</p><p>(20km)</p></td>
+<td><p>12.42 マイル </p><p>(20km)</p></td>
+<td><p>12.42 マイル</p><p>(20km)</p></td>
 </tr>
 <tr>
-<td>返すことができる方向性のフィーチャ特徴の最大数(travel_modeで階層を使用しないと、定義されていても各地点間の直線距離がここに示した制限値を超える場合、解析では階層を使用します)</td>
+<td>返すことができる方向性のフィーチャ特徴の最大数( travel_mode で階層を使用しないと、定義されていても各地点間の直線距離がここに示した制限値を超える場合、解析では階層を使用します)</td>
 <td>制限なし</td>
 <td><p>1,000,000</p><p></p></td>
 </tr>
@@ -1080,29 +1093,29 @@ if (!doNotTrack) {
 <tr>
 <th>パラメータ名</th>
 <th>説明</th>
-<th>一例</th>
+<th>例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>f</td>
 <td>返されるデータ形式</td>
-<td>f=json f=pjson f=geojson f=html</td>
+<td>f=json f=pjson <br> f=geojson f=html</td>
 </tr>
 <tr>
 <td>token</td>
-<td>APIキーまたはOauth 2.0のアクセストークン アクセストークンの取得方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/">セキュリティと認証</a>をご覧ください。</td>
+<td>API キーまたは Oauth 2.0 のアクセス トークン <br> アクセス トークンの取得方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/">セキュリティと認証</a>をご覧ください。</td>
 <td><p>token=&lt;YOUR_API_KEY&gt;</p><p>token=&lt;ACCESS_TOKEN&gt;</p></td>
 </tr>
 <tr>
 <td>Stops</td>
-<td>経路上で訪問する必要のある2か所以上の場所</td>
-<td>Stops=139.767176,35.681260;139.796337. 35.710982</td>
+<td>経路上で訪問する必要のある 2 か所以上の場所</td>
+<td>Stops=139.767176,35.681260;139.796337,35.710982</td>
 </tr>
 <tr>
 <td>findBestSequence</td>
-<td>複数の目的地点を訪れる際に、サービスが最適な順序を発見するサービスを行うかどうかを指定します。注意：最適化された経路を生成する場合は、このパラメータをtrueに設定します。</td>
-<td>findBest Sequence=true</td>
+<td>複数の目的地点を訪れる際に、サービスが最適な順序を発見するサービスを行うかどうかを指定します。<br><strong>注意</strong>：最適化された経路を生成する場合は、このパラメータを true に設定します。</td>
+<td>findBestSequence=true</td>
 </tr>
 </tbody>
 </table>
@@ -1111,30 +1124,32 @@ if (!doNotTrack) {
 <h3 id="エンドポイント">エンドポイント</h3>
 <pre><code class="language-Enhanced" data-lang="Enhanced">https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?&lt;parameters&gt;
 </code></pre><pre><code class="language-Enhanced" data-lang="Enhanced">https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?&lt;parameters&gt;
-</code></pre><p>注：上記のエンドポイントは、いずれも機能は基本的に同じものです。エンハンスド エンドポイントの詳細については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/service-endpoints/">サービス エンドポイント</a>をご覧ください。</p>
+</code></pre><div class="notices note" >
+<p>上記のエンドポイントは、いずれも機能は基本的に同じものです。エンドポイントの詳細については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/service-endpoints/">サービス エンドポイント</a>をご覧ください。</p>
+</div>
 <h2 id="キー-パラメータ">キー パラメータ</h2>
 <table>
 <thead>
 <tr>
 <th>パラメータ名</th>
 <th>説明</th>
-<th>一例</th>
+<th>例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>travelMode</td>
 <td>車やトラックの運転、徒歩などの移動手段</td>
-<td>travelMode=<a href="https://developers.arcgis.com/rest/network/api-reference/route-synchronous-service.htm#ESRI_SECTION2_1A9936A9B63043B7BBD2AF79830B2330">JSONObject</a></td>
+<td>travelMode=<a href="https://developers.arcgis.com/rest/routing/route-synchronous-service/#travelmode">JSONObject</a></td>
 </tr>
 <tr>
 <td>startTime</td>
-<td>入力した地点から移動を開始する時刻です。Nnowを指定すると出発時刻を現在時刻に設定することもできます。</td>
+<td>入力した地点から移動を開始する時刻です。now を指定すると出発時刻を現在時刻に設定することもできます。</td>
 <td>startTime=now</td>
 </tr>
 <tr>
-<td>returnDirections　</td>
-<td>各経路ルートのドライブガイドを生成する</td>
+<td>returnDirections</td>
+<td>各経路のドライブ ガイドを生成する</td>
 <td>returnDirections=true</td>
 </tr>
 <tr>
@@ -1145,39 +1160,43 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h2 id="追加パラメータ">追加パラメータ</h2>
-<p>polygon_Barriersは一時的な減速など経路を追加設定する場合、</p>
-<p>route_shyapeはサービスで作成するルート フィーチャの種類を指定する場合、</p>
-<p>return_to_startは経路の開始位置と終了位置が同じ場合に設定します。</p>
-<p>ヒント：リクエストやパラメータ、有効な入力値の詳細については、<a href="https://developers.arcgis.com/rest/network/api-reference/route-asynchronous-service.htm#ESRI_SECTION1_0BF1A9C57C9E428CB440E6843E6AB5DA">Routing service REST APIドキュメント</a>を参照してください。</p>
+<p>polygon_barriers は一時的な減速など経路を追加設定する場合、</p>
+<p>route_shyape はサービスで作成するルート フィーチャの種類を指定する場合、</p>
+<p>return_to_start は経路の開始位置と終了位置が同じ場合に設定します。</p>
+<div class="notices note" >
+<p>リクエストやパラメータ、有効な入力値の詳細については、<a href="https://developers.arcgis.com/rest/routing/route-synchronous-service/">Routing service REST API ドキュメント</a>を参照してください。</p>
+</div>
 <h2 id="ジョブhttpsdevelopersarcgiscomdocumentationglossaryjob-request"><a href="https://developers.arcgis.com/documentation/glossary/job-request/">ジョブ</a></h2>
-<p>60分以内で経由地点が最大10000までの長時間の処理のものに利用します。</p>
+<p>60 分以内で経由地点が最大 10000 までの長時間の処理のものに利用します。</p>
 <h3 id="エンドポイント-1">エンドポイント</h3>
 <pre><code class="language-Enhanced" data-lang="Enhanced">https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/submitJob?&lt;parameters&gt;
-</code></pre><p>ヒント：エンドポイントについての詳細は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/service-endpoints/">サービス エンドポイント</a>をご覧ください。</p>
+</code></pre><div class="notices note" >
+<p>エンドポイントについての詳細は、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/service-endpoints/">サービス エンドポイント</a>をご覧ください。</p>
+</div>
 <h2 id="必要パラメータ">必要パラメータ</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">パラメータ名</th>
 <th style="text-align:left">説明</th>
-<th style="text-align:left">一例</th>
+<th style="text-align:left">例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">f</td>
 <td style="text-align:left">返されるデータ形式</td>
-<td style="text-align:left">f=json f=pjson f=geojson f=html</td>
+<td style="text-align:left">f=json f=pjson <br> f=geojson f=html</td>
 </tr>
 <tr>
 <td style="text-align:left">token</td>
-<td style="text-align:left">APIキーまたはOAuth 2.0のアクセス トークン  アクセストークンの取得方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/">セキュリティと認証</a>をご覧ください。</td>
+<td style="text-align:left">API キーまたは OAuth 2.0 のアクセス トークン <br> アクセス トークンの取得方法については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/">セキュリティと認証</a>をご覧ください。</td>
 <td style="text-align:left">Token=&lt;YOUR_API_KEY&gt;</td>
 </tr>
 <tr>
 <td style="text-align:left">stops</td>
 <td style="text-align:left">経路上で2か所以上の経由する地点</td>
-<td style="text-align:left">Stops=,139.767176,35.681260; 139.796337,35.710982</td>
+<td style="text-align:left">Stops=139.767176,35.681260; 139.796337,35.710982</td>
 </tr>
 <tr>
 <td style="text-align:left"><p>reorder_stops_to_</p><p>find_optimal_routes</p></td>
@@ -1192,14 +1211,14 @@ if (!doNotTrack) {
 <tr>
 <th style="text-align:left">パラメータ名</th>
 <th style="text-align:left">説明</th>
-<th style="text-align:left">一例</th>
+<th style="text-align:left">例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">travel_mode</td>
 <td style="text-align:left">車やトラックの運転、徒歩などの移動手段</td>
-<td style="text-align:left">travel_mode=<a href="https://developers.arcgis.com/rest/network/api-reference/route-asynchronous-service.htm#GUID-0C769832-F606-4002-ABF0-0A794DDC244E">JSON Object</a></td>
+<td style="text-align:left">travel_mode=<a href="https://developers.arcgis.com/rest/routing/route-synchronous-service/#travelmode">JSON Object</a></td>
 </tr>
 <tr>
 <td style="text-align:left">time_of_day</td>
@@ -1208,7 +1227,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td style="text-align:left">populate_directions</td>
-<td style="text-align:left">各経路のドライブガイドを生成</td>
+<td style="text-align:left">各経路のドライブ ガイドを生成</td>
 <td style="text-align:left">populate_directions=true</td>
 </tr>
 <tr>
@@ -1219,16 +1238,20 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h2 id="追加パラメータ-1">追加パラメータ</h2>
-<p>polygon_barriersは一時減速を設定する場合、</p>
-<p>route_shapeはサービスで作成するルート フィーチャーの種類を指定する場合、return_to_startは経路の開始位置と終了位置が同じ場合に設定します。</p>
-<p>ヒント：リクエストやパラメータ、有効な入力値の詳細については、<a href="https://developers.arcgis.com/rest/network/api-reference/route-asynchronous-service.htm#ESRI_SECTION1_0BF1A9C57C9E428CB440E6843E6AB5DA">ルーティング サービスREST APIドキュメント</a>を参照してください。</p>
+<p>polygon_barriers は一時減速を設定する場合、</p>
+<p>route_shape はサービスで作成するルート フィーチャの種類を指定する場合、return_to_start は経路の開始位置と終了位置が同じ場合に設定します。</p>
+<div class="notices note" >
+<p>リクエストやパラメータ、有効な入力値の詳細については、<a href="https://developers.arcgis.com/rest/routing/route-asynchronous-service/">ルーティング サービス REST API ドキュメント</a>を参照してください。</p>
+</div>
 <h2 id="サンプル-コード">サンプル コード</h2>
 <h3 id="ダイレクト経路や道順の検索">ダイレクト:経路や道順の検索</h3>
-<p>この例ではルーティング サービスを使用して、現在の交通状況を考慮した停留所間の経路ルートを検索し、日本語のドライブガイドを生成します。</p>
-<p>経路を見つけるには、訪れる地点を少なくとも２つ定義する必要があります。デフォルトの travelMode では自動車の走行時間ですが、徒歩やトラック輸送の走行モードでも使用可能です。最適な結果を得るためには常に startTime を指定するのがよいでしょう。この例では、startingTimeをnowと指定し、経路ルートの出発時刻を現在の時刻に設定するとともに、経路が現在の交通状況を使用することをサービスに表設定しています。また、directorsLanguage を設定して選択した言語で道案内を生成しています。</p>
-<p>応答には目的地点地やルート セグメント、ターンバイターンのテキスト道案内が含まれています。</p>
+<p>この例ではルーティング サービスを使用して、現在の交通状況を考慮した停留所間の経路ルートを検索し、日本語のドライブ ガイドを生成します。</p>
+<p>経路を見つけるには、訪れる地点を少なくとも２つ定義する必要があります。デフォルトの travelMode では自動車の走行時間ですが、徒歩やトラック輸送の走行モードでも使用可能です。最適な結果を得るためには常に startTime を指定するのがよいでしょう。この例では、startingTime を now と指定し、経路ルートの出発時刻を現在の時刻に設定するとともに、経路が現在の交通状況を使用することをサービスに表設定しています。また、directorsLanguage を設定して選択した言語で道案内を生成しています。</p>
+<p>応答には目的地点地やルート セグメント、ターン バイ ターンのテキスト道案内が含まれています。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/create-routing/RouteAndDirection_Smalple_ja.png" width="1200px">
-<p>ヒント：アクセストークンを取得するには、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/direct-username-password/">トークンの生成</a>、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/create-and-manage-an-api-key/">APIキーの生成と管理</a>、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/">OAuth2.0の実装</a>のいずれかを行ってください。</p>
+<div class="notices note" >
+<p><strong>セキュリティと認証</strong> :アクセス トークンを取得するには、<a href="https://developers.arcgis.com/documentation/security-and-authentication/get-started/">Security and Authentication &gt; Get started</a> に進みます。</p>
+</div>
 <h2 id="apis">APIs</h2>
 <h4 id="arcgis-maps-sdk-for-javascript">ArcGIS Maps SDK for JavaScript</h4>
 <details>
@@ -1408,11 +1431,11 @@ if (!doNotTrack) {
 </code></pre></div></details>
 <h2 id="rest-api">REST API</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-REST" data-lang="REST"><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>curl https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route\_World/solve? \<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>curl https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve? \<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>-d &#34;f=json&#34;<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>-d &#34;token=&lt;ACCESS\_TOKEN&gt;&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>-d &#34;token=&lt;ACCESS_TOKEN&gt;&#34;<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>-d &#34;stops=-139.77770,35.71159; 139.79016,35.711; 139.79637,35.71108&#34;<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>-d &#34;startTime=now&#34;<span style="color:#960050;background-color:#1e0010">

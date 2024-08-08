@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-05T19:24:36 JST">
+<meta name="revised" content="2024-08-08T14:18:04 JST">
 <title>ArcGIS Maps SDK for JavaScript :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -975,7 +975,11 @@ if (!doNotTrack) {
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ul>
-<li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+<li>API キーにアクセスするための ArcGIS 開発者アカウント
+<ul>
+<li>アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
+</ul>
+</li>
 </ul>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-pen-の作成">新しい Pen の作成</h3>
@@ -1087,10 +1091,11 @@ if (!doNotTrack) {
 </code></pre></div></li>
 </ol>
 <h3 id="api-キーの取得">API キーの取得</h3>
-<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ArcGIS サービス</a>にアクセスするには、API キーが必要です。</p>
+<p><a href="https://developers.arcgis.com/documentation/mapping-and-location-services/">ロケーション サービス</a>にアクセスするには、API キーが必要です。
+API キーの作成手順については「<a href="http://localhost:1313/arcgis-dev-resources/guide/get-api-key">API キーの取得</a>」を参照してください。</p>
 <ol>
-<li><a href="https://developers.arcgis.com/dashboard/">developer dashboard</a>にアクセスして、API キーを取得します。</li>
-<li>次のステップで使用しますので、キーをコピーしてください。</li>
+<li><a href="https://location.arcgis.com/dashboard/">ダッシュボード</a>にアクセスして、Developer credentials から API キーを取得します。</li>
+<li>次のステップで使用しますので、API キーをコピーしてください。</li>
 </ol>
 <h3 id="マップの作成">マップの作成</h3>
 <p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> を使ってベースマップレイヤーを設定し、API キーを適用します。</p>
@@ -1105,7 +1110,7 @@ if (!doNotTrack) {
 <p>マップには、データ レイヤとベースマップ レイヤがあります。<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス</a>からベースマップ レイヤーにアクセスするためには、API キーが必要です。キーは、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html">Map</a> の作成時に前のステップから設定できます。</p>
 </li>
 <li>
-<p>マップおよびマップ ビューが  <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Map（2D）</a>でどのように機能するかについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">マッピングとロケーションサービス</a> を参照してください。</p>
+<p>マップおよびマップ ビューが  <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Map（2D）</a>でどのように機能するかについては、<a href="https://developers.arcgis.com/documentation/mapping-and-location-services/">マッピングとロケーションサービス</a> を参照してください。</p>
 </li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
@@ -1174,7 +1179,7 @@ if (!doNotTrack) {
 <p><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">MapView</a> は、クリックやダブルクリックなどのいくつかのタッチイベントもサポートしています。これらのイベントを利用して、マップの位置を変更したり、レイヤー内のフィーチャーを探したりすることができます。</p>
 </li>
 <li>
-<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps（2D）</a>でのマップとマップビューの仕組みについては、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">マッピング API とロケーションサービス</a> のガイドを参照してください。</p>
+<p><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps（2D）</a>でのマップとマップビューの仕組みについては、<a href="https://developers.arcgis.com/documentation/mapping-and-location-services/">マッピングとロケーションサービス</a> のガイドを参照してください。</p>
 </li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;

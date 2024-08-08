@@ -12,12 +12,12 @@ aliases = ["/create-startup-app-mapboxgl/"]
 
 ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用して、MapLibre GL JS にマップを表示できます。ベクター タイル ベースマップレイヤーは、ソース、レイヤー、フォントグリフ(Font Glyphs)、およびレイヤーをレンダリングするためのアイコンを含む MapLibre GL スタイルです。
 
-このチュートリアルでは、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/)の地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。
+このチュートリアルでは、[ベースマップ レイヤー サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/)の地形ベースマップ レイヤーを使用して、富士山周辺の地図を表示します。
 
-マップとレイヤーの詳細については、[Mapping APIs and services](https://developers.arcgis.com/documentation/mapping-apis-and-services/)のガイドの[Display maps, scenes, and layers](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/)にアクセスしてください。
+マップとレイヤーの詳細については、[Mapping APIs and services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) のガイドの [Mapping](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/) にアクセスしてください。
 
 ## 前提条件
-この機能を使うには、[ArcGIS アカウント](https://developers.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
+この機能を使うには、[開発者アカウント](https://location.arcgis.com/sign-up/)が必要です。アカウントの作成手順については「[開発者アカウントの作成](../../get-dev-account/)」を参照してください。
 
 ## 手順
 
@@ -82,8 +82,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.css rel="stylesheet" />
   </head>
   <body>
     <div id="map"></div>
@@ -98,13 +98,13 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
  
 認証方法とアクセストークンの取得方法の詳細については、「[セキュリティと認証](../../security)」を参照してください。
 
-1. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)に移動して、API キーを取得します。これは、次の手順で使います。
+1. [ダッシュボード](https://location.arcgis.com/dashboard/)にアクセスして、Developer credentials から API キーを取得します。これは、次の手順で使います。
 
 ### マップの作成
 
-[Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) クラスを使用して、指定したベースマップを使用してマップを追加します。
-[Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) クラスは、map の HTML 要素 を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
-詳細については、MapLibre GL JS の[ドキュメント](https://maplibre.org/maplibre-gl-js-docs/api/map/)を参照してください。
+[Map](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/) クラスを使用して、指定したベースマップを使用してマップを追加します。
+[Map](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/) クラスは、map の HTML 要素 を使用して、マップのコンテンツを表示し、対話するためのユーザーインターフェイスを提供します。地図のクリック、ズーム、パン、回転、視点の変更をサポートします。また、マウスがクリックされた場所のフィーチャの検索など、マップデータに関する情報を操作および検出することもできます。また、新しいソースを追加したり、レイヤープロパティを変更したりして、表示されるデータを変更することもできます。
+詳細については、MapLibre GL JS の[ドキュメント](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/)を参照してください。
 
 1. `<body>`タグ内に`<script>`タグを追加します。
 
@@ -129,8 +129,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -146,7 +146,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 </html>
 ```
 
-2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [maplibre.accessToken](https://maplibre.org/maplibre-gl-js-docs/api/map/) を設定する必要はありません。使用するベースマップ arcgis/topographic を格納する basemapEnum 変数を作成します。
+2. API キーを格納するための apiKey 変数を作成します。YOUR_API_KEY を、API キーの設定で開発者ダッシュボードからコピーした API キーに置き換えます。アクセスする各 ArcGIS サービスの URL にこれを含める必要があります。なお、ここでは [maplibre.accessToken](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/) を設定する必要はありません。使用するベースマップ arcgis/topographic を格納する basemapEnum 変数を作成します。
 
 ```HTML
 <!DOCTYPE html>
@@ -169,8 +169,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
@@ -190,7 +190,7 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
 </html>
 ```
 
-3. 表示と動作を制御するオプションを使用して [Map](https://maplibre.org/maplibre-gl-js-docs/api/map/) を作成します。[container](https://maplibre.org/maplibre-gl-js-docs/api/map/) プロパティを、作成した div の id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。
+3. 表示と動作を制御するオプションを使用して [Map](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/) を作成します。[container](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/) プロパティを、作成した div の id に設定します。style プロパティは、ベースマップレイヤーサービスの場所を参照し、ベースマップ識別子と API キーを含みます。
 
 ```HTML
 <!DOCTYPE html>
@@ -213,8 +213,8 @@ HTML ページを定義して、Web ブラウザの幅と高さにあわせた�
       }
     </style>
     <!-- maplibre gl js のライブラリと css ファイルを指定 -->
-    <script src=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js></script>
-    <link href=https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css rel="stylesheet" />
+    <script src=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.js></script>
+    <link href=https://unpkg.com/maplibre-gl@4.0.0/dist/maplibre-gl.css rel="stylesheet" />
   </head>
 
   <body>
