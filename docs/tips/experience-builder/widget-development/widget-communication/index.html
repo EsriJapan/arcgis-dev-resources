@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-08T14:31:11 JST">
+<meta name="revised" content="2024-08-19T09:15:55 JST">
 <title>ウィジェット間の通信 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -274,6 +274,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/get-started/">
             開発の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-npm/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-npm/">
+            開発の手順（npm）
           </a>
         </div>
     </li>
@@ -941,8 +948,12 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</a></li>
-    <li><a href="#ウィジェット間で状態を共有するための独自の-redux-storeactionreducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</a></li>
+    <li><a href="#ウィジェット間で同じデータソースデータビューを使用する">ウィジェット間で同じデータソース/データビューを使用する</a></li>
+    <li><a href="#ウィジェットの出力するデータ-ソースを使用する">ウィジェットの出力するデータ ソースを使用する</a></li>
+    <li><a href="#メッセージアクションを使用する">メッセージ/アクションを使用する</a></li>
+    <li><a href="#データ-アクション">データ アクション</a></li>
+    <li><a href="#ウィジェットの-state-を使用してウィジェット間で状態を共有">ウィジェットの state を使用してウィジェット間で状態を共有</a></li>
+    <li><a href="#ウィジェット間で-state-を共有するための独自の-redux-storeactionreducer-を提供">ウィジェット間で state を共有するための独自の redux store/action/reducer を提供</a></li>
   </ul>
 </nav>
         </div>
@@ -963,29 +974,47 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/widget-communication/">Widget communication</a></p>
-<p>Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。
-以下の方法をサポートしています。</p>
+<p>ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィジェットは 1 つの機能に焦点を当てます。しかし、多くの場合、タスクを完了するために複数のウィジェットを連携させる必要があります。そのためには、フレーム ワーク レベルでウィジェット同士が通信できる方法が必要です。Experience Builder では次の方法でこれを実現できます。</p>
+<ol>
+<li>Configurable (設定によって実現)
 <ul>
-<li>
-<p>Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/message-action/">Message action</a> を参照してください。</p>
-</li>
-<li>
-<p>Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state  (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。</p>
-</li>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E9%96%93%E3%81%A7%E5%90%8C%E3%81%98%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%87%E3%83%BC%E3%82%BF%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">ウィジェット間で同じデータ ソース/データ ビューを使用する</a></li>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">ウィジェットの出力するデータ ソースを使用する</a></li>
+<li><a href="#%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">メッセージ/アクションを使用する</a></li>
+<li><a href="#%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">データ アクションを使用する</a></li>
 </ul>
-<h2 id="ウィジェットの状態を使用してウィジェット間で状態を共有">ウィジェットの状態を使用してウィジェット間で状態を共有</h2>
-<p>React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは <code>widgetsState</code> と呼ばれるもので、型の定義は <code>jimu-core/lib/types/state</code> にあります。<code>widgetState</code> に保存された情報は、他のすべてのウィジェットからアクセス可能です。<code>widgetsState</code> に情報を保存するには、以下のコードを参照してください。</p>
+</li>
+<li>Programming (プログラミングによって実現)
+<ul>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE-state-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E9%96%93%E3%81%A7%E7%8A%B6%E6%85%8B%E3%82%92%E5%85%B1%E6%9C%89">ウィジェットの state をウィジェット間で共有する</a></li>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E9%96%93%E3%81%A7-state-%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E7%8B%AC%E8%87%AA%E3%81%AE-redux-storeactionreducer-%E3%82%92%E6%8F%90%E4%BE%9B">ウィジェット間で state を共有するために、独自の redux ストア/アクション/リデューサーを用意する</a></li>
+</ul>
+</li>
+</ol>
+<p>Configurable とはユーザーがビルダー内でウィジェット間の通信方法を設定できることを意味します。Programming とはウィジェット間の通信がコードによって行われることを意味します。</p>
+<h2 id="ウィジェット間で同じデータソースデータビューを使用する">ウィジェット間で同じデータソース/データビューを使用する</h2>
+<p>複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。</p>
+<p>複数のウィジェットが同じデータ ソースの異なるデータ ビューを使用しても選択内容がデータ ビューのフィルター条件を満たしていれば、同じ選択内容を取得できます。</p>
+<p>詳細は<a href="../use-data-source-in-widget/">ウィジェットでデータ ソースを使用</a>を参照してください。</p>
+<h2 id="ウィジェットの出力するデータ-ソースを使用する">ウィジェットの出力するデータ ソースを使用する</h2>
+<p>詳細は<a href="../../core-concepts/data-source/#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E5%87%BA%E5%8A%9B%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%BD%E3%83%BC%E3%82%B9widget-output-data-source">ウィジェット出力データ ソース</a>を参照してください。</p>
+<h2 id="メッセージアクションを使用する">メッセージ/アクションを使用する</h2>
+<p>詳細は<a href="../../core-concepts/message-action/">メッセージとアクション</a>を参照してください。</p>
+<h2 id="データ-アクション">データ アクション</h2>
+<p>詳細は<a href="../../core-concepts/data-action/">データ アクション</a>を参照してください。</p>
+<h2 id="ウィジェットの-state-を使用してウィジェット間で状態を共有">ウィジェットの state を使用してウィジェット間で状態を共有</h2>
+<p>React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state にアクセスすることができません。Jimu は state 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは <code>widgetsState</code> と呼ばれるもので、型の定義は <code>jimu-core/lib/types/state</code> にあります。<code>widgetState</code> に保存された情報は、他のすべてのウィジェットからアクセス可能です。<code>widgetsState</code> に情報を保存するには、以下のコードを参照してください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">appActions</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
 <span style="color:#75715e">/*
-</span><span style="color:#75715e">* Call this when you need to save state.
+</span><span style="color:#75715e">* state を保存する必要がある場合に呼び出します
 </span><span style="color:#75715e">*
-</span><span style="color:#75715e">* widgetId: your widget id
-</span><span style="color:#75715e">* propKey: can be a string with this format &#34;a.b.c&#34;
-</span><span style="color:#75715e">* value: the info you want to store
+</span><span style="color:#75715e">* widgetId: 使用しているウィジェットの ID
+</span><span style="color:#75715e">* propKey: &#34;a.b.c&#34; といったフォーマットの文字列
+</span><span style="color:#75715e">* value: 保存したい情報
 </span><span style="color:#75715e">*/</span>
 <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">appActions</span>.<span style="color:#a6e22e">widgetStatePropChange</span>(<span style="color:#a6e22e">widgetId</span>, <span style="color:#a6e22e">propKey</span>, <span style="color:#a6e22e">value</span>))
-</code></pre></div><p>例えば、<code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b1&quot;, &quot;value1&quot;))</code> と <code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b2&quot;, &quot;value2&quot;))</code> を呼び出すと、Redux store でこの store の state (状態) が取得されます。</p>
+</code></pre></div><p>例えば、<code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b1&quot;, &quot;value1&quot;))</code> と <code>this.props.dispatch(appActions.widgetStatePropChange(&quot;w1&quot;, &quot;a.b2&quot;, &quot;value2&quot;))</code> を呼び出すと、Redux store でこの store の state が取得されます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">widgetsState</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">w1</span><span style="color:#f92672">:</span> {
         <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> {
@@ -994,10 +1023,10 @@ if (!doNotTrack) {
         }
     }
 }
-</code></pre></div><p>ウィジェット2 の <code>w1</code> が格納した情報にアクセスするには、<code>mapExtraStateProps</code> を使用するか、<code>useSelect</code> hooks を使用して store から値を選択することができます。</p>
+</code></pre></div><p>ウィジェット2 の <code>w1</code> が格納した情報にアクセスするには、<code>mapExtraStateProps</code> を使用するか、<code>useSelect</code> フックを使用して store から値を選択することができます。</p>
 <p>ただし、<code>widgetState</code> にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、<code>this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))</code> を使用して値を格納し、<code>MutableStoreManager.getInstance().getStateValue()</code> を使用してアクセスすることができます。</p>
-<h2 id="ウィジェット間で状態を共有するための独自の-redux-storeactionreducer-を提供します">ウィジェット間で状態を共有するための独自の redux store/action/reducer を提供します。</h2>
-<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state (状態)を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
+<h2 id="ウィジェット間で-state-を共有するための独自の-redux-storeactionreducer-を提供">ウィジェット間で state を共有するための独自の redux store/action/reducer を提供</h2>
+<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
 <ul>
 <li>ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。</li>
 </ul>
@@ -1005,19 +1034,19 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyReduxStoreExtension</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">extensionSpec</span>.<span style="color:#a6e22e">ReduxStoreExtension</span>{
     <span style="color:#a6e22e">getActions</span>(){
-        <span style="color:#75715e">// return your redux actions.
+        <span style="color:#75715e">// 値を返す redux アクション
 </span><span style="color:#75715e"></span>    }
 
     <span style="color:#a6e22e">getInitLocalState</span>(){
-        <span style="color:#75715e">// return your redux init local state.
+        <span style="color:#75715e">// ローカル state 内の redux を返す
 </span><span style="color:#75715e"></span>    }
 
     <span style="color:#a6e22e">getReducer</span>(){
-        <span style="color:#75715e">// return your redux reducer.
+        <span style="color:#75715e">// redux reducer を返す
 </span><span style="color:#75715e"></span>    }
 
     <span style="color:#a6e22e">getStoreKey</span>(){
-        <span style="color:#75715e">// return your redux local key.
+        <span style="color:#75715e">// redux のローカル キーを返す
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><ul>

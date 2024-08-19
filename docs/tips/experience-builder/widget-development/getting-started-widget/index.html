@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-08T14:31:11 JST">
+<meta name="revised" content="2024-08-19T09:15:55 JST">
 <title>ウィジェット開発のスタート :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -274,6 +274,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/get-started/">
             開発の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-npm/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-npm/">
+            開発の手順（npm）
           </a>
         </div>
     </li>
@@ -942,6 +949,8 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#インストール">インストール</a></li>
+    <li><a href="#ウィジェット開発環境のセットアップ">ウィジェット開発環境のセットアップ</a></li>
+    <li><a href="#visual-studio-code">Visual Studio Code</a></li>
     <li><a href="#ウィジェット">ウィジェット</a></li>
     <li><a href="#ウィジェットの配置場所">ウィジェットの配置場所</a></li>
     <li><a href="#ウィジェット-ファイル">ウィジェット ファイル</a></li>
@@ -974,7 +983,23 @@ if (!doNotTrack) {
 <li><a href="https://developers.arcgis.com/experience-builder/api-reference/">Jimu</a> は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。</li>
 </ul>
 <h2 id="インストール">インストール</h2>
-<p>Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、<a href="../../install-guide">インストールガイド</a>を参照してください。</p>
+<p>Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、<a href="../../install-guide">インストール ガイド</a>を参照してください。</p>
+<h2 id="ウィジェット開発環境のセットアップ">ウィジェット開発環境のセットアップ</h2>
+<p>カスタム ウィジェットの開発には、使い慣れた IDE やテキスト エディタを使うことができます。<a href="https://code.visualstudio.com/">Visual Studio Code</a> は、デフォルトで TypeScript に対応しているため、良い選択肢です。</p>
+<p>構築したカスタム ウィジェットは ArcGIS Experience Builder の <code>client</code> フォルダー内のディレクトリに配置されます。Visual Studio Code で <code>client</code> フォルダーをプロジェクトとして開きます。</p>
+<ol>
+<li>[ファイル] メニューをクリックします。</li>
+<li>[フォルダーを開く] をクリックします。</li>
+<li>Experience Builder の初回起動時に展開した Experience Builder フォルダー内の <code>client</code> フォルダーを参照します。</li>
+</ol>
+<p>これにより、<code>client</code> フォルダー内のすべてのファイル（カスタム ウィジェットのファイルを含む）が左側のエクスプローラー タブで利用できるようになります。また Visual Studio Code は Experience Builder ライブラリの TypeScript 定義について <code>client</code> フォルダーのコンテンツ全体をスキャンし、カスタム ウィジェットの作成中に TypeScript の検証とオート コンプリートが有効になります。</p>
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+<p>Visual Studio Code をテキスト エディタとして使用している場合、テキスト エディタに機能を追加するために使用できる、<a href="https://code.visualstudio.com/docs/editor/extension-gallery">拡張機能のマーケット プレイス</a>が用意されています。ArcGIS Experience Builder のカスタム ウィジェットの開発では、インストールする React 拡張機能に加えて、これらの拡張機能が推奨されます (必須ではありません)。</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion">IntelliSense for CSS class names in HTML</a>：ワークスペースにある定義に基づいて、HTML の class 属性の CSS クラス名を補完します。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components">vscode-styled-components</a>：スタイル付きコンポーネントの強調表示します。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a>：ESLint を Visual Studio Code に統合します。</li>
+</ul>
 <h2 id="ウィジェット">ウィジェット</h2>
 <p>ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。</p>
 <ul>
@@ -984,8 +1009,6 @@ if (!doNotTrack) {
 <li>データソースのインスタンスとステータス情報</li>
 <li>URL パラメータ情報</li>
 </ul>
-<p>必要最小限のファイルですぐに始めるには、<code>your-extensions\widgets</code> フォルダ内の <code>simple widget</code> を参照してください。</p>
-<p>ウィジェット開発の詳細については、<a href="../extend-base-widget">ウィジェットの実装</a>について学習してください。</p>
 <h2 id="ウィジェットの配置場所">ウィジェットの配置場所</h2>
 <p>カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリに配置されます。Web 拡張機能リポジトリは、<code>client</code> フォルダー内のフォルダーで下のコンテンツを含む <code>manifest.json</code> ファイルが格納されています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -1006,15 +1029,15 @@ if (!doNotTrack) {
     <span style="color:#e6db74">&#34;my-web-extension-repo&#34;</span>
   ],
 }
-</code></pre></div><p>widget フォルダー内では、有効なウィジェットには manifest.json ファイルとその他の必須ファイルが含まれている必要があります。</p>
-<h2 id="ウィジェット-ファイル">ウィジェット ファイル</h2>
+</code></pre></div><h2 id="ウィジェット-ファイル">ウィジェット ファイル</h2>
 <p>Web 拡張機能リポジトリのルート フォルダーには、<code>widgets</code> と <code>themes</code> の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、<code>widgets</code> フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">- my-web-extension-repo/
     - manifest.json
     - themes/
     - widgets/
         - my-custom-widget/
-</code></pre></div><ul>
+</code></pre></div><p>ウィジェット フォルダー内には、有効なウィジェットとして、manifest.json とその他の必要なファイルが含まれている必要があります。</p>
+<ul>
 <li><code>manifest.json</code> ファイルの詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">ウィジェット manifest</a> を参照してください。</li>
 <li>その他の必要なファイルや一般的なウィジェット開発の詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">ウィジェットの実装</a> を参照してください。</li>
 <li>必要最小限のファイルですぐに始めるには、<code>your-extensions/widgets</code> フォルダーにある、<code>simple</code> ウィジェットを参照してください。</li>
