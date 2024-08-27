@@ -30,7 +30,7 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 
 {{% notice note %}}
 
-ArcGIS Developerアカウントは現在、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)となっています。以前、開発者ダッシュボードで OAuth 2.0 アプリケーションを管理するためのツールは、もう利用できません。また、ArcGIS Experience Builder へのアクセスもサポートしていません。ArcGIS Online または ArcGIS Enterprise アカウントをご利用ください。
+ArcGIS Developerアカウントは現在、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)となっています。以前、開発者ダッシュボードで OAuth 2.0 アプリケーションを管理するためのツールは、利用できなくなりました。また、ArcGIS Experience Builder へのアクセスもサポートしていません。ArcGIS Online または ArcGIS Enterprise アカウントをご利用ください。
 
 {{% /notice %}}
 
@@ -63,8 +63,8 @@ ArcGIS Developerアカウントは現在、[ArcGIS Location Platform アカウ�
 
 Experience Builder は、Node.js を使用します。長期サポート (LTS) バージョン v12 以上がサポートされています。お使いの OS に対応した最新の [Node.js LTS バージョン](https://nodejs.org/en/download/)をダウンロードしてインストールを行ってください。
 
-1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
-<br/><span style="font-size: 75%">※ [ダウンロードページ](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder)でサイン イン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサイン インします。</span>
+1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](https://developers.arcgis.com/experience-builder/guide/downloads/)して、解凍します。
+<br/>
 2. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder の /server ディレクトリに cd コマンドで移動して `npm ci` と入力し、Enter キーを押して、必要なモジュールをインストールします。
 <br/><span style="font-size: 75%">※ npm ci でのインストールは初回のみになります。次回以降は Experience Builder (Devloper Edition) の起動のみになりますので、npm start  で実行します。</span>
 3. `npm start` と入力して server を起動します。
@@ -127,25 +127,25 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 
 ## Offline インストール
 
-- インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、[JSAPI](https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api) をダウンロードしてローカルにインストールする必要があります。
+- インターネットに繋がらない環境では、ArcGIS Maps SDK for JavaScript (JSSDK) CDN にアクセスすることはできません。このシナリオでは、[JSSDK](https://developers.arcgis.com/javascript/latest/downloads/) をダウンロードしてローカルにインストールする必要があります。
 
 - Experience Builder は、Node.js 12+.x 以上のバージョンで動作します。<br/> Experience Builder のインストール環境に [Node.js (v12+.x)](https://nodejs.org/en/download/) をダウンロードしてインストールを行います。 
 
 {{% notice tip %}}
 
-Experience Builder の機能強化や新機能をサポートするために、最新版の ArcGIS API JavaScript をインストールすることが推奨されています。Esri が公開している[オフライン インストール動画（英語）](https://youtube.com/watch?v=1rO1cZNEr0E) を参照してください。ホストされた JSAPI のために、サーバーで CORS サポートを設定することが推奨されます。例えば、Windows OS の場合、HTTPSレスポンスヘッダーに`Access-Control-Allow-Original` アクションを追加することができます。
+Experience Builder の機能強化や新機能をサポートするために、最新版の ArcGIS Maps SDK for JavaScript をインストールすることが推奨されています。Esri が公開している[オフライン インストール動画（英語）](https://youtube.com/watch?v=1rO1cZNEr0E) を参照してください。ホストされた JSSDK のために、サーバーで CORS サポートを設定することが推奨されます。例えば、Windows OS の場合、HTTPSレスポンスヘッダーに`Access-Control-Allow-Original` アクションを追加することができます。
 
 {{% /notice %}}
 
-1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](/downloads/apis-and-sdks?product=arcgis-experience-builder)して、解凍します。
-2. Experience Builder (Developer Edition) 用の [npm-cache zip](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder) をローカルにダウンロードして、解凍します。
+1. Experience Builder (Developer Edition) の ZIP ファイルをローカルに[ダウンロード](https://developers.arcgis.com/experience-builder/guide/downloads/)して、解凍します。
+2. Experience Builder (Developer Edition) 用の [npm-cache zip](https://developers.arcgis.com/experience-builder/guide/downloads/) をローカルにダウンロードして、解凍します。
 3. コマンド プロンプト`(例えば、Windows OS c:\Users\exbuser)`、またはターミナル`(例えば、macOS /Users/installExB)`で、ユーザーフォルダを開き、`npm config get cache` と入力します。
 4. `npm config get cache` の実行で表示された npm-cache のフォルダのパスをコピーして、そのディレクトリを Windows のエクスプローラーか Mac の場合は Finder で開きます。
 5. ダウンロードした Experience Builder (Developer Edition) 用 の npm-cache ディレクトリをコピーして、4 で参照しているディレクトリに貼り付けます。
 6. コマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの client ディレクトリに cd コマンドで移動して、`npm install --offline` と入力して Enter キーを押します。
 7. 別のコマンド プロンプト、またはターミナル ウィンドウを開き、Experience Builder インストールの server ディレクトリに cd コマンドで移動して、`npm install -- offline` と入力して Enter キーを押します。
 8. Experience Builder の client ディレクトリを以下のパス `<install folder>/client/dist` で開きます。
-9. 変数 `ARCGIS_JS_API_URL` をローカルで JSAPI を参照している URL に更新する必要が4箇所あります。例えば、以下の各ファイルで `var ARCGIS_JS_API_URL = 'https://js.arcgis.com/4.16/'` を `var ARCGIS_JS_API_URL = 'https://exb.esri.com/4.16/'` に置き換えてください。
+9. 変数 `ARCGIS_JS_API_URL` をローカルで JSAPI を参照している URL に更新する必要が4箇所あります。例えば、以下の各ファイルで `var ARCGIS_JS_API_URL = 'https://js.arcgis.com/4.xx/'` を `var ARCGIS_JS_API_URL = 'https://exb.esri.com/4.xx/'` に置き換えてください。
     -   `<install folder>/client/dist/index.html`
     -   `<install folder>/client/dist/experience/index.html`
     -   `<install folder>/client/dist/template/index.html`
