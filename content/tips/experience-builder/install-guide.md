@@ -24,34 +24,17 @@ ArcGIS Experience Builder (Developer Edition) は、ArcGIS Online および ArcG
 
 ## Server インストール
 
-### 1. Client ID の作成
-はじめに Client ID を作成する必要があります。Client ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
-Client ID の作成は、ArcGIS Developers 、もしくは ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に応じて作成を行ってください。
+### 1. クライアント ID の作成
+はじめに クライアント ID を作成する必要があります。クライアント ID は、このあとの server サービスを起動して立ち上がるアプリケーションで指定します。
+クライアント ID の作成は、ArcGIS Online/ArcGIS Enterprise を使用して作成します。ご使用の環境に応じて作成を行ってください。
 
-- [1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-developers-を使用した-client-id-の作成) 
-- [1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成) 
+{{% notice note %}}
 
-### 1-1. ArcGIS Developers を使用した Client ID の作成
-
-[ArcGIS Developers](https://developers.arcgis.com) を使用している場合は、以下の手順を行います。
-
-{{% notice tip %}}
-
-インストール手順については Esri が公開している[インストール動画 (英語)](https://www.youtube.com/watch?v=BcJxNaKuTxg)でも確認することができます。 
+ArcGIS Developerアカウントは現在、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)となっています。以前、開発者ダッシュボードで OAuth 2.0 アプリケーションを管理するためのツールは、もう利用できません。また、ArcGIS Experience Builder へのアクセスもサポートしていません。ArcGIS Online または ArcGIS Enterprise アカウントをご利用ください。
 
 {{% /notice %}}
 
-1. [ArcGIS Developers](https://developers.arcgis.com/sign-in/) にサイン インします。
-2. サイン イン後にダッシュボードが表示されますので `OAuth 2.0` タブをクリックします。 
-3. `+ New Application` をクリックし、アプリケーションの詳細を入力して、新しいアプリケーションを登録します。
-4. `Redirect URLs` のセクションまでスクロール ダウンします。
-5. `+ Add URI` をクリックして、`https://localhost:3001/` を追加します。
-<img src="https://developers.arcgis.com/experience-builder/static/11a95492cfecd6790c12ca88af31ec09/4cdf7/installExB.png" width="80%" /> 
-6. Client ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-
-### 1-2. ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成
-
-ArcGIS Online または ArcGIS Enterprise を使用している場合は、以下の手順を行います。
+### ArcGIS Online/ArcGIS Enterprise にて クライアント ID を作成
 
 {{% notice tip %}}
 
@@ -65,17 +48,18 @@ ArcGIS Online または ArcGIS Enterprise を使用している場合は、以�
     - `タイトル` -  例えば、`Experience Builder credentials` などの任意のタイトルをを入力します。
     - `フォルダー` - アイテムを保存する任意のフォルダーを選択します。
     - `タグ` - `Experience Builder` のような内容を入力します。
-    - `サマリー` - アイテムのサマリーを入力します。
+    - 必要に応じて`カテゴリ`と`サマリー`を入力してください。
     
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" />
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication3.png" />
 
-4. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、`更新` をクリックします。
-5. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
+4. `設定` タブをクリックします。`Application` までスクロールします。
+5. `URL` に任意の URL を入力します。
+6. `認証情報`までスクロールし、次のように、`リダイレクト URL` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。クライアント ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo2.png" />
 
 ## 2. server サービスのインストール
 
-Client ID の作成が完了したら以下の手順で server サービスのインストールを行います。
+クライアント ID の作成が完了したら以下の手順で server サービスのインストールを行います。
 
 Experience Builder は、Node.js を使用します。長期サポート (LTS) バージョン v12 以上がサポートされています。お使いの OS に対応した最新の [Node.js LTS バージョン](https://nodejs.org/en/download/)をダウンロードしてインストールを行ってください。
 
@@ -97,7 +81,7 @@ Experience Builder は、Node.js を使用します。長期サポート (LTS) �
 Experience Builder は、Node.js の自己署名証明書を使用して HTTPS をサポートしています。この証明書を信頼して Experience Builder を実行することもできますし、独自の証明書を使用することもできます。独自の証明書を使用するには、server/cert ディレクトリのこれら 2 つのファイル server.key と server.cert を置き換えます。また、次のように証明書ファイル (server.cert および server.key) が存在するフォルダへのカスタムパスを指定することもできます。：npm start -- --cert_folder <フォルダパス>
 
 {{% /notice %}}
-5.  ポータルの URL には ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、クライアント ID には「[1-1. ArcGIS Developers を使用した Client ID の作成](#1-1-arcgis-developers-を使用した-client-id-の作成)」で作成した client ID」、または「[1-2. ArcGIS Online/ArcGIS Enterpriseを使用した Client ID の作成](#1-2-arcgis-onlinearcgis-enterprise-を使用した-client-id-の作成)」で作成したアプリケーション ID を指定します。
+5.  ポータルの URL には ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、クライアント ID には「[1. クライアント ID の作成](#1-クライアント-id-の作成)」で作成したクライアント ID を指定します。
 <br/>すべてを指定したらサイン インをクリックします。
 
 {{% notice tip %}}
@@ -135,6 +119,12 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 
 同じマシンで複数のバージョンの Developer edition を持つことができます。お使いのマシンが[システム要件](https://developers.arcgis.com/experience-builder/guide/requirements)を満たしていることを確認してください。
 
+{{% notice note %}}
+
+マシン上で Node.js のバージョンを変更またはアップグレードする際には、Experience Builder (Developer Edition) の `server` および `client` フォルダーで再度 `npm ci` コマンドを実行することをお勧めします。これにより、新しくインストールされた Node.js のバージョンからのすべての変更が反映されます。
+
+{{% /notice %}}
+
 ## Offline インストール
 
 - インターネットに繋がらない環境では、ArcGIS API JavaScript (JSAPI) CDN にアクセスすることはできません。このシナリオでは、[JSAPI](https://developers.arcgis.com/javascript/latest/guide/get-api/#download-api) をダウンロードしてローカルにインストールする必要があります。
@@ -143,7 +133,7 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 
 {{% notice tip %}}
 
-Experience Builder の機能強化や新機能をサポートするために、最新版の ArcGIS API JavaScript をインストールすることが推奨されています。Esri が公開しているオフライン インストール動画（英語）](https://youtube.com/watch?v=1rO1cZNEr0E) を参照してください。ホストされた JSAPI のために、サーバーで CORS サポートを設定することが推奨されます。例えば、Windows OS の場合、HTTPSレスポンスヘッダーに`Access-Control-Allow-Original` アクションを追加することができます。
+Experience Builder の機能強化や新機能をサポートするために、最新版の ArcGIS API JavaScript をインストールすることが推奨されています。Esri が公開している[オフライン インストール動画（英語）](https://youtube.com/watch?v=1rO1cZNEr0E) を参照してください。ホストされた JSAPI のために、サーバーで CORS サポートを設定することが推奨されます。例えば、Windows OS の場合、HTTPSレスポンスヘッダーに`Access-Control-Allow-Original` アクションを追加することができます。
 
 {{% /notice %}}
 
@@ -165,11 +155,11 @@ Experience Builder の機能強化や新機能をサポートするために、�
 
 {{% notice tip %}}
 
-Experience Builder (Developer Edition) を使用するために Client ID が必要になります。Client ID を作成するために ArcGIS Online または ArcGIS Enterprise に接続します。
+Experience Builder (Developer Edition) を使用するために クライアント ID が必要になります。クライアント ID を作成するために ArcGIS Online または ArcGIS Enterprise に接続します。
 
 {{% /notice %}}
 
-ここでは、ArcGIS Online または ArcGIS Enterprise を使用した Client ID の作成手順について示します。
+ここでは、ArcGIS Online または ArcGIS Enterprise を使用した クライアント ID の作成手順について示します。
 
 1. ArcGIS Online または ArcGIS Enterprise ポータルにログインし、コンテンツ ページの `マイ コンテンツ` タブに移動して、`新しいアイテム` をクリックし、`アプリケーション` を選択します。
 2. `アプリケーション タイプ` で `他のアプリケーション` を選択します。
@@ -177,16 +167,17 @@ Experience Builder (Developer Edition) を使用するために Client ID が必
     - `タイトル` -  例えば、`Experience Builder credentials` などの任意のタイトルをを入力します。
     - `フォルダー` - アイテムを保存する任意のフォルダーを選択します。
     - `タグ` - `Experience Builder` のような内容を入力します。
-    - `サマリー` - アイテムのサマリーを入力します。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication2.png" />
+    - 必要に応じて`カテゴリ`と`サマリー`を入力してください。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/AddApplication3.png" />
 
-4. `設定` タブをクリックします。アプリケーションの登録の項目までスクロールして、`更新` をクリックします。
-5. `登録情報` ダイアログ ボックスで、次のように、`リダイレクト URI` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。アプリケーション ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo.png" />
+4. `設定` タブをクリックします。`Application` までスクロールします。
+5. `URL` に任意の URL を入力します。
+6. `認証情報`までスクロールし、次のように、`リダイレクト URL` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。クライアント ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo2.png" />
 
-6. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
-7. ポータルの URL には、ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、5. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
-8. サイン イン後の流れについては、[2. server サービスのインストール](#2-server-サービスのインストール)のステップ5 以降を参照してください。
+7. 次の URL `https://localhost:3001/` を指定して Experience Builder をブラウザで開きます。
+8. ポータルの URL には、ArcGIS Online または ArcGIS Enterprise の組織サイトの URL を指定し、5. で作成した アプリケーション ID を指定します。すべてを指定したらサイン インをクリックします。
+9. サイン イン後の流れについては、[2. server サービスのインストール](#2-server-サービスのインストール)のステップ5 以降を参照してください。
 
 ## Windows サービスとしてインストール
 

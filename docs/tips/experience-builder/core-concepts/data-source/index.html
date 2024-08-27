@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-08T14:31:11 JST">
+<meta name="revised" content="2024-08-27T16:17:43 JST">
 <title>データ ソース（Data source） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -267,6 +267,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
             インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/components/">
+            コンポーネント
           </a>
         </div>
     </li>
@@ -949,6 +956,9 @@ if (!doNotTrack) {
         <li><a href="#ローカルデータ-ソースとデータビューlocal-data-source-and-data-view">ローカルデータ ソースとデータビュー（Local data source and data view）</a></li>
         <li><a href="#データ-ソース内のソースレコードsource-records-in-data-source">データ ソース内のソースレコード（Source records in data source）</a></li>
         <li><a href="#ウィジェット出力データ-ソースwidget-output-data-source">ウィジェット出力データ ソース（Widget output data source）</a></li>
+        <li><a href="#データのクエリとフィルターquery-and-filter-data">データのクエリとフィルター（Query and filter data）</a></li>
+        <li><a href="#クエリ-フィールドquery-fields">クエリ フィールド（Query fields）</a></li>
+        <li><a href="#クライアント-サイド-クエリclient-side-query">クライアント サイド クエリ（Client-side query）</a></li>
         <li><a href="#データアクションdata-action">データアクション（Data action）</a></li>
         <li><a href="#リピート-データ-ソースrepeated-data-source">リピート データ ソース（Repeated Data source）</a></li>
         <li><a href="#ウィジェットでのデータ-ソースの使用use-data-source-in-widget">ウィジェットでのデータ ソースの使用（Use data source in widget）</a></li>
@@ -1006,9 +1016,15 @@ if (!doNotTrack) {
 <h3 id="データ-ソース内のソースレコードsource-records-in-data-source">データ ソース内のソースレコード（Source records in data source）</h3>
 <p>ほとんどの場合、データはリモート・データベースにあるので、データ・ソース・インスタンスはリモートからデータを取得してデータ・ソース・インスタンスに保存するだけです。しかし、一部のデータ ソースでは、ウィジェットの出力データ ソースや選択ビューのデータ ソースのように、データがクライアント側で生成される場合があります。これらのシナリオでは、データ ソースのデータは、データ ソース・インスタンスの <code>DsourceRecords</code> に格納されます。<code>getSourceRecords</code> と <code>setSourceRecords</code> を使用して、それを取得および更新することができます。</p>
 <h3 id="ウィジェット出力データ-ソースwidget-output-data-source">ウィジェット出力データ ソース（Widget output data source）</h3>
-<p>ウィジェットは、データ ソースを使用することができ、また、データ ソースを生成することもできます。一般的に、ウィジェットはその設定ページで <code>this.props.onSettingChange</code> を呼び出して出力データ ソースを宣言し、他のウィジェットがその出力データ ソースを使用できるようにする必要があります。出力データ ソースは app config の <code>dataSources</code> に保存されます。他のウィジェットでは、出力データ ソースを使用しても、ユーザーが追加したデータ ソースを使用しても、違いはありません。</p>
-<p>内部的には、ウィジェットが出力データ ソースを使用し、ウィジェットがレンダリングされると、出力データ ソースと出力データビューが作成されます。出力データビューは、<code>${outputDataSourceId}-output</code> で識別されます。出力データ ソースを使用するウィジェットは、出力ビューを使用します。出力データ ソースを生成したウィジェットは、出力データ ソースの<code>setSourceRecords</code> または <code>updateQueryParams</code> を呼び出すことで、データ ソースを更新します。</p>
-<p>出力データ ソースの JSON 内の <code>originDataSources</code> は、オリジンデータ ソースと出力データ ソースの関係を維持するために使用されます。例えば、ウィジェットの出力データ・ソースにスキーマが定義されていない場合、オリジン・データ・ソースのスキーマが使用されます。ウィジェットは、このプロパティと、id、type などの一般的なプロパティを更新する必要があります。クエリとチャートのウィジェットは、どちらも出力データ ソースを生成します。これらの出力データ ソースの JSON を参考にして、出力データ ソースの JSON に必要なプロパティを確認することができます。</p>
+<p>ウィジェットはデータソースを使用することができ、またデータソースを生成することもできます。生成されたデータソースをウィジェット出力データソースと呼びます。ウィジェットは、他のウィジェットがその出力データソースを使用できるように、設定ページで <code>this.props.onSettingChange</code> を呼び出して、出力データソースをアプリの設定に保存する必要があります。出力データソースは、アプリの設定の <code>dataSources</code> に保存されます。他のウィジェットは、出力データソースを使用する場合とユーザーが追加したデータソースを使用する場合に違いを見てはいけません。</p>
+<p>内部的には、ウィジェットが出力データソースを生成し、ウィジェットがレンダリングされるときに、出力データソースと出力データビューが作成されます。出力データビューは <code>${outputDataSourceId}-output</code> で識別されます。出力データソースを使用するウィジェットは出力ビューを使用しています。出力データソースが作成されると、そのステータスは <code>NotReady</code> になります。出力データソースを生成するウィジェットは、データが準備できたらデータソースを更新し、データソースのステータスを <code>Unloaded</code> に変更して、他のウィジェットが使用できるようにする必要があります。出力データソースのデータを更新する方法は、出力データソースがどのように生成されたかによります。ウィジェットは、リモートサービスに接続するサーバーサイドの出力データソースを生成することができます。この場合、<code>outputDs.updateQueryParams(queryParams, widgetId)</code>、<code>outputDs.load(queryParams, { widgetId })</code> または <code>&lt;DataSourceComponent useDataSource={Immutable({ dataSourceId: outputDsId, mainDataSourceId: outputDsId })} query={queryParams}&gt;</code> を使用してデータソースを更新できます。ウィジェットは、クライアントサイドにデータを保存するクライアントサイドの出力データソースを生成することができます。この場合、生成されたデータの種類に応じて、<code>outputDs.setSourceFeatures(features, options)</code> または <code>outputDs.setSourceRecords(records)</code> を使用してデータを更新できます。ウィジェットが生成したデータにジオメトリがある場合、<code>setSourceFeatures</code> を使用することをお勧めします。この方法では、フィーチャのレンダラーを指定できるためです。ウィジェットが生成したデータにジオメトリがない場合、どちらの方法でも問題ありません。</p>
+<p>出力データソース JSON の <code>originDataSources</code> は、元のデータソースと出力データソースの関係を維持するために使用されます。例えば、ウィジェットの出力データソースにスキーマが定義されていない場合、元のデータソースのスキーマが使用されます。ウィジェットは、このプロパティと <code>id</code>、<code>type</code> などの一般的なプロパティを更新する必要があります。クエリウィジェットとチャートウィジェットの両方が出力データソースを生成します。出力データソース JSON に必要なプロパティを確認するために、これらのウィジェットの出力データソース JSON を参考にすることができます。</p>
+<h3 id="データのクエリとフィルターquery-and-filter-data">データのクエリとフィルター（Query and filter data）</h3>
+<p>ウィジェットがデータを読み込む必要がある場合、推奨される方法は <code>&lt;DataSourceComponent&gt;</code> コンポーネントまたは <code>dataSource.load()</code> を使用することです。なぜなら、データソースフレームワークはデータキャッシュとページネーションの問題を管理するのに役立つからです。データを読み込むのではなく、フィルタリングしたいだけの場合は、<code>dataSource.updateQueryParams()</code> を使用できます。</p>
+<h3 id="クエリ-フィールドquery-fields">クエリ フィールド（Query fields）</h3>
+<p>フィーチャレイヤーには多くのフィールドが含まれている場合がありますが、ほとんどの場合、ウィジェットはそれらのフィールドのうちのいくつかのデータのみを必要とします。多くの場合、ウィジェットは多くのデータレコードをクエリして表示する必要があります。この種のウィジェットに推奨される方法は、設定で構成されたフィールドを <code>onSettingChange</code> メソッドを介して <code>useDataSources</code> に保存し、その後 <code>&lt;DataSourceComponent&gt;</code> を使用してデータをクエリおよびレンダリングすることです。この方法を取ると、保存されたフィールドのみがクエリされます。複数のウィジェットが同じデータソースを使用する場合、すべての保存されたフィールドが一緒にクエリされます。しかし、一部のウィジェットは1つのレコードと多くのフィールドを表示する必要がある場合があります。この場合、推奨される方法は、record ID を使用して <code>dataSource.query()</code> を使用してレコードをクエリし、複数のウィジェットが同じデータソースに接続する際に過剰なフィールドをクエリしないようにすることです。<code>dataSource.query(queryParam)</code> を使用してデータをクエリする場合、<code>queryParam</code> オブジェクトの <code>outFields</code> プロパティを設定してクエリしたいフィールドを指定できます。</p>
+<h3 id="クライアント-サイド-クエリclient-side-query">クライアント サイド クエリ（Client-side query）</h3>
+<p>URL から作成されたデータソースがデータをクエリする必要がある場合、データソースはクエリをリモート サーバーに送信します。しかし、データソースがマップ レイヤーから作成され、マップ ウィジェットがクライアント サイド クエリを有効にしている場合、データソースはバックエンド サービスにクエリを送信する代わりに、<code>MapView</code> からデータをクエリしようとします。<code>MapView</code> または対応する <code>LayerView</code> がクライアント サイド クエリの準備ができていない場合、データソースは依然としてクエリをリモート サーバーに送信します。<code>MapView</code> または <code>LayerView</code> が準備できていない理由はいくつかあります。例えば、クエリ内のジオメトリが現在のマップ範囲にない場合や、<code>LayerView</code> にすべてのフィーチャが含まれていない場合です。クライアント サイド クエリを実行する前に、<code>LayerView</code> はクエリ パラメーター内の <code>outFields</code> を <code>LayerView</code> のフィールドに追加し、その後クエリを実行します。<code>LayerView</code> にフィールドを追加しすぎるとパフォーマンスの問題が発生する可能性があるため、<code>notAddFieldsToClient</code> を使用して <code>LayerView</code> にフィールドを追加しないようにすることができます。</p>
 <h3 id="データアクションdata-action">データアクション（Data action）</h3>
 <p>データアクションの<a href="../data-action">参照</a></p>
 <h3 id="リピート-データ-ソースrepeated-data-source">リピート データ ソース（Repeated Data source）</h3>
