@@ -7,18 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>インストールおよびセットアップ方法</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</link>
+      <title>概要</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Install and set up
-インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
-ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
-インストール方法：
-npm install @arcgis/core モジュールのインポート：
-import Map from &amp;#34;@arcgis/core/Map.</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/overview/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript-Get started - Overview
+ArcGIS Maps SDK for JavaScript を使用してアプリケーションを構築する場合、複数の選択肢があり、それぞれの目的や要件に応じて利点が異なります。小規模なプロジェクトでは、ArcGIS Content Delivery Network (CDN) を利用するのが最適な方法です。最新の JavaScript フレームワークやビルド ツールを使用して構築された大規模または複雑なアプリケーションでは、npm からコンポーネント パッケージをインストールするのが最も良い方法です。
+CDN ArcGIS CDN を使用すると、ローカルにパッケージをインストールしなくても、アプリケーションに SDK の機能を簡単に組み込むことができます。これは、シンプルなアプリケーションや迅速なプロトタイピング、または最適化されたクラウド キャッシングを活用してモジュールのダウンロードを高速化したい場合に最適です。
+npm より複雑なアプリケーション、特に最新のビルド ツールや React、Vue、Angular のような JavaScript フレームワークでアプリケーションを構築する場合は、JavaScript Maps SDK を npm 経由でインストールすることをお勧めします。これにより、npm のパッケージ管理機能を利用してあらゆるパッケージをプロジェクトの依存関係として管理できるようになり、Webpack や Vite のような最新のビルド ツールとよりシームレスに統合することができます。JavaScript Maps SDK の各コンポーネント パッケージはフレームワークに依存しないように設計されており、ほとんどの JavaScript フレームワークまたはフレームワークなしでも互換性があります。 しかし、コンポーネントを特定のフレームワーク内で使い慣れたものにするために、よりカスタマイズされたエクスペリエンスを提供する追加パッケージが用意されています。@arcgis/map-components の場合、@arcgis/map-components-react と @arcgis/map-components-angular が npm パッケージとして利用可能です。
+アクセス トークン 注 : アプリケーションが認証に ArcGIS アイデンティティのみを使用している場合は、このセクションをスキップできます。詳細については、security and authentication documentation を参照してください。</description>
     </item>
     
     <item>
@@ -41,17 +39,18 @@ npm install @arcgis/core CSSには@import urlを用います
     </item>
     
     <item>
-      <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
+      <title>開発の手順 (CDN)</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-cdn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
-      <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
-Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
-※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
- [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v429_api\arcgis_js_api\javascript\4.29\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.29\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-cdn/</guid>
+      <description>出典 : ArcGIS Maps SDK for JavaScript - Get started with CDN
+コード : Map コンポーネントを表示するチュートリアル、または マップ コンポーネントの導入-2D マップの作成 サンプルから始めましょう。
+セットアップ ArcGIS Maps SDK for JavaScript をアプリに取り込むには、複数の方法があります。 最も一般的な方法は、ArcGIS CDN を使用することです。ファイルは最適化されたクラウド キャッシング経由でダウンロードされるため、アプリケーションをローカルでビルドする必要はありません。 また、アプリケーションを毎回再構築する必要がないため、SDK の新しいバージョンへのアップデートも簡単です。
+コンポーネント コンポーネントについては、HTML に以下のタグを使用して、アプリケーションに CSS とライブラリを追加します。
+&amp;lt;!-- Load Map Components from CDN--&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.30/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.30/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ArcGIS Online または ArcGIS Enterprise のポータルの WebMap を使用する場合は、arcgis-map タグを HTML に追加し、オプションの item-id を割り当てます。ステップバイステップの手順については、チュートリアルを参照してください。
+&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; それが完了したら
+ basemap、center、zoom などのプロパティを設定します。 arcgisViewReadyChange イベントを使用して、ビューの準備ができたとき、またはビューのマップやシーンが置き換えられたときを監視します。 コア API を使用してカスタム JavaScript ロジックを追加します - ステップバイステップの手順については、チュートリアルを参照してください。  const mapElem = document.</description>
     </item>
     
     <item>
@@ -66,6 +65,39 @@ Esri がホストしている CDN にインターネット経由で参照する�
  プロパティのハンドリング View の利用 Map と Layer の仕様 モジュールとパッケージの更新 Web マップのサポート ローカライズ モジュール 廃止項目  バージョン 4.0 では、大幅な変更が行われました。これらの変更は、開発者がどのようなアプリケーションを作成する場合でも、より効率的かつ効果的に作業できるようにするために行われました。この変更は、コンストラクタ、プロパティ、イベントの処理方法に見られます。
 プロパティ 4.0 より前のバージョンでは、getMethodName や setMethodName を呼び出すことで、一部のプロパティを get (読み込み）または set（書き込み）することができました。API では、すべてのプロパティを取得・設定するためのシンプルで一貫した方法がサポートされているため、これらのタイプのメソッドは不要になりました。
  例えば map.basemap = &amp;quot;oceans&amp;quot; のようにオブジェクトに直接プロパティを設定します。 例えば map.basemap.title. のようにオブジェクトから直接プロパティを取得します。  例えば、3.x ではフィーチャーレイヤーの definitionExpression 設定は、以下のようになります。</description>
+    </item>
+    
+    <item>
+      <title>開発の手順（npm）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-npm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-npm/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Get started with npm
+@arcgis/map-components Vite および @arcgis/core Vite のサンプルを使用して始めることができます。
+ArcGIS Maps SDK for JavaScript の @arcgis/map-components および @arcgis/core パッケージは、npm からローカルにインストールできます。
+npm を使用することに加えて、プロジェクトによってはフレームワーク、モジュール バンドラー、トランスパイラー、node.js などを含む、追加の最新のビルド ツールが必要になるかもしれません。これらのツールがどのように動作するかの基本的な点を理解している必要があります。これらの概念の詳細についてはこのページの追加情報のセクションを参照してください。
+依存関係の管理 npm を使用する場合、package.json ファイルはアプリケーションの実行とビルドに必要なパッケージの初期セットを指定します。これらの npm パッケージがインストールされると、それぞれ固有の依存関係も指定されます。
+ローカル ビルド ツールを使うのが初めての場合、package.json が依存関係、devDependencies、peerDependencies とどのように連動するかを理解することが重要です。
+コンポーネント Map コンポーネントを使用する場合、@arcgis/map-components パッケージをプロジェクトにインストールします。
+npm install @arcgis/map-components index.html ファイルに arcgis-map コンポーネントを追加し、main.js ファイルを参照します。
+index.html
+&amp;lt;body&amp;gt; &amp;lt;arcgis-map item-id=&amp;#34;e691172598f04ea8881cd2a4adaa45ba&amp;#34;&amp;gt; &amp;lt;arcgis-legend position=&amp;#34;top-right&amp;#34;&amp;gt;&amp;lt;/arcgis-legend&amp;gt; &amp;lt;/arcgis-map&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;/main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; 次に、main.js ファイルで CSS を設定し、@arcgis/map-components パッケージから arcgis-map などのコンポーネントを個別にインポートします。SDK のアセットはデフォルトでは ArcGIS CDN の &amp;ldquo;https://js.</description>
+    </item>
+    
+    <item>
+      <title>インストールおよびセットアップ方法</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/</guid>
+      <description>インストールおよびセットアップ API へのアクセス ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオプションがあります。AMD および ES モジュールの詳細については、Introduction to Tooling を参照してください。
+ArcGIS CDN による AMD モジュール API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.30/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.30/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; NPM による ES モジュール JavaScript API は、npm（JavaScriptのパッケージマネージャー）を使っても利用できます。ローカルに API をインストールして、React や Angular などの JavaScript フレームワークや、webpack や rollup.js などのモジュールバンドラーで利用することができます。
+インストール方法：
+npm install @arcgis/core モジュールのインポート：
+import Map from &amp;#34;@arcgis/core/Map.js&amp;#34;; CSS のインポート：
+/* URL 文字列を使用した CSS */ @import &amp;#34;https://js.</description>
     </item>
     
     <item>
@@ -86,31 +118,32 @@ TypeScript TypeScript を使うことをお勧めします。その利点のひ�
     </item>
     
     <item>
-      <title>スタートアップ ガイド（3.x）</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</guid>
-      <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
- リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
-地図の表示 まずはダウンロードしたサンプル コードを実行してみましょう。
-  ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/3.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。 Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-samples-js/simple/map.html のように localhost を指定してアクセスできます。
-  この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
-  map.html 29 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。
-  var mapDeferred = arcgisUtils.</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
+      <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
+Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
+ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
+ [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v429_api\arcgis_js_api\javascript\4.30\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.30\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
     </item>
     
     <item>
-      <title>Arcade</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
+      <title>コンポーネント</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/components/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
-      <description>出典：ArcGIS Maps SDK for JavaScript - Arcade
-Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS Maps SDK for JavaScript で編集・共有・実行することができます。
-Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
-Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
-シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</description>
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/components/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Components
+ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコードで Web アプリを構築するための事前構築された UI コンポーネントのコレクションです。
+標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML エレメント（例：）に拡張します。これらは ArcGIS CDN および npm で利用可能です。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
+現在のリリースでは、マップ、チャート（ベータ版）、コーディング コンポーネントの3つのコンポーネントパッケージがあります。
+マップ コンポーネント @arcgis/map-components パッケージには、マップ コンポーネント、シーン コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。
+これらのコンポーネントは、フレームワークと統合する際に迅速に地図アプリを構築するための代替オプションです。基本的な概念を示すコード スニペットは以下の通りです。
+&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント（ベータ版） @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用できる一連のコンポーネントが含まれています。マップと一緒に使用することで、データの完全なデータビジュアライゼーションストーリーを提供できます。現在、8種類の異なるチャートコンポーネントが利用可能です。各チャートコンポーネントは、チャートの設定を含む共通のチャート仕様に従った JSON オブジェクトを参照することでレンダリングできます。@arcgis/charts-model パッケージを使用すると、そのチャートの設定の作成と更新が容易になります。 コーディング コンポーネント @arcgis/coding-components パッケージには、Arcade エディター コンポーネントが含まれています。このコンポーネントを使用すると、エンド ユーザーはレンダラー、ポップアップ、ラベルのために新しいデータ値を動的に作成するための Arcade 式を作成できます。ユーザーは、Map Viewer や Arcade プレイグラウンドでの編集と同じ体験を得ることができます。 MDN で Web コンポーネント全般について詳しく学ぶことができます。</description>
     </item>
     
     <item>
@@ -127,6 +160,34 @@ pbf フォントの作成 pbf ファイルは符号付き距離フィールド�
 https://fonts/&amp;lt;フォントスタック&amp;gt;/&amp;lt;ユニコード文字範囲&amp;gt;.pbf
 pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォントファイルから変換して作成できます。
  node-fontnik をクローンします。  git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Arcade</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/arcade/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Arcade
+Arcade とは ArcGIS プラットフォームで使用するために作られた軽量でセキュアな条件式のためのスクリプト言語です。 他の一般的な式言語のように、数学的な計算や評価ロジックの命令語を利用できます。 ArcGIS プラットフォームにおける独自のデータ可視化とラベル表現の作成のためにデザインされており、独自の命令語を ArcGIS Pro や ArcGIS Online、ArcGIS Runtime SDK、ArcGIS Maps SDK for JavaScript で編集・共有・実行することができます。
+Arcade が他のスクリプト言語に比べてユニークなのは、ジオメトリ関数を含んでいるところです。 ジオメトリ関数は、面積や長さの計算、トポロジ リレーションシップのテスト、そしてシンプルなオーバーレイの実行を可能にします。 現在のリリースでは、ジオメトリの作成と参照が可能です。 しかし、Arcade バージョン 1.3 で導入されたジオメトリの操作は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。
+Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系の ArcGIS Maps SDK for JavaScript ではサポートされていません。3.x 系の API では、バージョン 3.23 以上で使用できます。将来的には、4.x でのサポートを予定しています。
+シンタックス Arcade のシンタックスは JavaScript ライクに変数の宣言やロジックの実行、関数の記述などができます。 しかし、二つの言語間にはいくつか異なる部分があります。 記述方法の詳細については、Arcade ドキュメント（英語）をご参照ください。 また、ArcGIS Arcade Playground では独自のスクリプトをテスト実行するための環境を提供していますので、アクセスしてみてください。</description>
+    </item>
+    
+    <item>
+      <title>スタートアップ ガイド（3.x）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/create-startup-app-js3/</guid>
+      <description>サンプル プロジェクトのダウンロード このリポジトリ（arcgis-dev-resources）には開発を試してみたい方向けのサンプル コードが含まれています。ダウンロードする際の方法は 2 通りあります。
+ リポジトリをご自身のアカウントに Fork（複製）   GitHub にログインして、arcgis-dev-resources ページを開いて [Fork] をクリックすると、ご自身のアカウントに同じリポジトリが作成されます。 Fork 後はご自身のローカル マシンにクローンを作成します。   zip ファイルでダウンロード（※GitHub アカウントをお持ちでない方向け）  arcgis-dev-resources ページを開いて [Download ZIP] をクリックするとプロジェクト ファイル一式が手に入ります。
+地図の表示 まずはダウンロードしたサンプル コードを実行してみましょう。
+  ダウンロードしたサンプル コード（arcgis-dev-resources/startup/javascript/3.x/map/index.html）を Web ブラウザーにドラッグ＆ドロップします。 Web サーバーをお持ちの方はサンプル コードを Web サーバーにホストしてアクセスすることを推奨します。http://localhost/arcgis-samples-js/simple/map.html のように localhost を指定してアクセスできます。
+  この状態では地図は表示されません。サンプル コードをテキスト エディターで開いてみましょう。
+  map.html 29 行目にある以下のコードの &amp;lt;Web マップ ID&amp;gt; と記載されている箇所に Web マップの作成で作成した Web マップ ID を上書きします。
+  var mapDeferred = arcgisUtils.</description>
     </item>
     
   </channel>

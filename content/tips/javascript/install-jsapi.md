@@ -1,7 +1,7 @@
 +++
 title = "インストール ガイド"
 description = "ArcGIS Maps SDK for JavaScript ライブラリのインストール方法を紹介します。"
-weight = 2
+weight = 5
 aliases = ["/javascript/install-jsapi/"]
 +++
 
@@ -24,7 +24,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
 <!-- まずはダウンロードしたサンプル コードを実行してみましょう。 -->
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-2. `\arcgis_js_v429_api\arcgis_js_api\javascript\4.29\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.29\`)
+2. `\arcgis_js_v429_api\arcgis_js_api\javascript\4.30\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.30\`)
 
 ## 必要条件
 
@@ -47,7 +47,7 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS Maps SDK for JavaScript のダウンロード版に含まれています。
-ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v429_api/arcgis_js_api/javascript/4.29/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.29/index.html を開くことにより、API をテストすることができます。
+ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v430_api/arcgis_js_api/javascript/4.30/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.30/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -133,5 +133,5 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v429_ap
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.29となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.30となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">

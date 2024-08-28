@@ -3,6 +3,7 @@ title = "バージョン 3.x から 4.x への移行"
 description = "バージョン 3.x の API で作成した既存のアプリケーションを 4.x に移行するために必要な情報を紹介します。"
 weight = 3
 aliases = ["/javascript/migrating-from-3.x-to-4.0/"]
+hidden = true
 +++
 
 出典：ArcGIS Maps SDK for JavaScript - [Migrating from 3.x to 4.28](https://developers.arcgis.com/javascript/latest/migrating/)

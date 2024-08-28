@@ -1,7 +1,7 @@
 +++
 title = "スタートアップ ガイド（3.x）"
 description = ""
-weight = 4
+weight = 99
 hidden = true
 aliases = ["/javascript/create-startup-app-js3/"]
 +++

@@ -3,6 +3,7 @@ title = "開発の手順"
 description = "ArcGIS Maps SDK for JavaScript の開発におけるインストールとセットアップからの手順について紹介します。"
 weight = 1
 aliases = ["/javascript/get-started/"]
+hidden = true
 +++
 
 出典：ArcGIS Maps SDK for JavaScript - [Get Started](https://developers.arcgis.com/javascript/latest/get-started/)

@@ -1,11 +1,9 @@
 +++
 title = "インストールおよびセットアップ方法"
 description = "インストールおよびセットアップの方法を紹介します。"
-weight = 1
+weight = 4
 aliases = ["/javascript/install-and-setup/"]
 +++
-
-出典：ArcGIS Maps SDK for JavaScript - [Install and set up](https://developers.arcgis.com/javascript/latest/install-and-set-up/)
 
 ## インストールおよびセットアップ
 
@@ -17,8 +15,8 @@ ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオ�
 
 API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.29/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.30/"></script>
 ```
 
 ### NPM による ES モジュール
@@ -38,7 +36,7 @@ import Map from "@arcgis/core/Map.js";
 CSS のインポート：
 ```css
 /* URL 文字列を使用した CSS */
-@import "https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css";
+@import "https://js.arcgis.com/4.30/@arcgis/core/assets/esri/themes/light/main.css";
 ```
 
 詳細については、以下のガイドを参照してください。
@@ -49,9 +47,9 @@ CSS のインポート：
 
 ※ この方法は、現在のところ、開発やプロトタイピングにのみ推奨されています。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css">
+<link rel="stylesheet" href="https://js.arcgis.com/4.30/@arcgis/core/assets/esri/themes/light/main.css">
 <script type="module">
-  import Map from "https://js.arcgis.com/4.29/@arcgis/core/Map.js";
+  import Map from "https://js.arcgis.com/4.30/@arcgis/core/Map.js";
 
   // Use the Map class
 </script>
@@ -59,7 +57,7 @@ CSS のインポート：
 
 ### ローカルにホストされる AMD モジュール
 
-場合によっては、[ArcGIS CDN を介して AMD モジュール](https://developers.arcgis.com/javascript/latest/install-and-set-up/#amd-modules-via-arcgis-cdn)のローカルにホストされたバージョンを使用する必要があります。この例は、インターネットにアクセスできない制限されたネットワーク環境で作業している場合です。また、API リファレンス、チュートリアル、およびサンプルを含むドキュメントをダウンロードしてインストールすることもできます。ダウンロード可能なドキュメントは、バージョン 4.29 のリリース日からのスナップショットであり、最新のサンプル アップデートやドキュメントの修正などは含まれていません。
+場合によっては、[ArcGIS CDN を介して AMD モジュール](https://developers.arcgis.com/javascript/latest/install-and-set-up/#amd-modules-via-arcgis-cdn)のローカルにホストされたバージョンを使用する必要があります。この例は、インターネットにアクセスできない制限されたネットワーク環境で作業している場合です。また、API リファレンス、チュートリアル、およびサンプルを含むドキュメントをダウンロードしてインストールすることもできます。ダウンロード可能なドキュメントは、バージョン 4.30 のリリース日からのスナップショットであり、最新のサンプル アップデートやドキュメントの修正などは含まれていません。
 
 ArcGIS Maps SDK for JavaScript およびそのドキュメントをダウンロードするには、ArcGIS Maps SDK for JavaScript の[ダウンロード ページ](https://developers.arcgis.com/downloads/#javascript)に移動し、Esri グローバル アカウントでログインします。
 
