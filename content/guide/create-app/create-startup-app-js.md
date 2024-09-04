@@ -143,7 +143,7 @@ ArcGIS JS API には [AMD](https://dojotoolkit.org/documentation/tutorials/1.10/
 ### API キーの取得
 
 [ロケーション サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)にアクセスするには、API キーが必要です。
-API キーの作成手順については「[API キーの取得](http://localhost:1313/arcgis-dev-resources/guide/get-api-key)」を参照してください。
+API キーの作成手順については「[API キーの取得](../../get-api-key)」を参照してください。
 
 1. [ダッシュボード](https://location.arcgis.com/dashboard/)にアクセスして、Developer credentials から API キーを取得します。
 2. 次のステップで使用しますので、API キーをコピーしてください。
