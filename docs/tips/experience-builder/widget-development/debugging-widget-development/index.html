@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-08T14:31:11 JST">
+<meta name="revised" content="2024-09-09T09:55:55 JST">
 <title>ウィジェット開発のデバック :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -263,17 +263,31 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS Maps SDK for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/overview/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/overview/">
+            概要
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-cdn/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-cdn/">
+            開発の手順 (CDN)
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-npm/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-npm/">
+            開発の手順（npm）
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
             インストールおよびセットアップ方法
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/get-started/">
-            開発の手順
           </a>
         </div>
     </li>
@@ -284,10 +298,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
-            バージョン 3.x から 4.x への移行
+          <a href="/arcgis-dev-resources/tips/javascript/components/">
+            コンポーネント
           </a>
         </div>
     </li>
@@ -459,6 +473,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
             ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/">
+            ウィジェットに下位互換性を持たせる
           </a>
         </div>
     </li>
@@ -941,8 +962,6 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#ウィジェット開発環境の設定">ウィジェット開発環境の設定</a></li>
-    <li><a href="#visual-studio-コード">Visual Studio コード</a></li>
     <li><a href="#デバッグツール">デバッグツール</a>
       <ul>
         <li><a href="#ブラウザ開発ツール">ブラウザ開発ツール</a></li>
@@ -975,32 +994,13 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/debugging-widget-development/">Debugging widget development</a></p>
-<h2 id="ウィジェット開発環境の設定">ウィジェット開発環境の設定</h2>
-<p>カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。<a href="https://code.visualstudio.com/">Visual Studio Code</a> は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。</p>
-<p>作成したカスタム ウィジェットは、Experience Builder ファイル構造の <code>client</code> フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして <code>client</code> フォルダを開きます。</p>
-<ol>
-<li><code>ファイル</code> メニューをクリックします。</li>
-<li><code>フォルダを開く</code> をクリックします。</li>
-<li>Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の <code>client</code> フォルダを参照します。</li>
-</ol>
-<p>これにより、<code>client</code> フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について <code>client</code> フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。</p>
-<h2 id="visual-studio-コード">Visual Studio コード</h2>
-<p>テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる<a href="https://code.visualstudio.com/docs/editor/extension-gallery">拡張機能のマーケットプレイス</a>があります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</p>
-<ul>
-<li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion">IntelliSense for CSS class names in HTML</a> - ワークスペースで見つけた定義に基づいてHTML クラス属性 の CSS クラス名を補完します (ワークスペースの中の CSS を読み込んで HTML 上でクラス指定するときに入力候補を表示します)。</p>
-</li>
-<li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components">vcode-styled-components</a> -  styled-components のシンタックスハイライトを付けます。</p>
-</li>
-</ul>
 <h2 id="デバッグツール">デバッグツール</h2>
 <p>Web ブラウザ内には、カスタム ウィジェットを効率的に構築するために使用できるさまざまなデバッグツールがあります。</p>
 <h3 id="ブラウザ開発ツール">ブラウザ開発ツール</h3>
 <p>Experience Builder のオーサリング インターフェイスまたはプレビュー モードでは、ブラウザの開発者ツールを開いてデバッグ ツールにアクセスすることができます。開発者ツールを開くには</p>
 <ul>
 <li>Chrome で、メイン メニューをクリックし、「その他のツール」→「開発者ツール」を選択します。(<a href="https://developers.google.com/web/tools/chrome-devtools/open">詳細</a>)</li>
-<li>Firefoxで、[メインメニュー] &gt; [Web開発者] &gt; [ツールの切り替え] ((<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">詳細</a>)をクリックします。</li>
+<li>Firefoxで、[メインメニュー] &gt; [Web開発者] &gt; [ツールの切り替え] (<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">詳細</a>)をクリックします。</li>
 </ul>
 <h3 id="dom-要素">DOM 要素</h3>
 <p>ブラウザの開発者ツールで、<strong>Sources</strong> (Chrome) または <strong>Debugger</strong> (Firefox) タブをクリックします。ここでは、カスタムウィジェットの DOM を調べて現在の状態を確認できます。</p>
@@ -1037,7 +1037,7 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" title="ウィジェット間の通信"> <i class="fa fa-chevron-left"></i><label>ウィジェット間の通信</label></a>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" title="ウィジェットに下位互換性を持たせる"> <i class="fa fa-chevron-left"></i><label>ウィジェットに下位互換性を持たせる</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" title="サードパーティ製のライブラリ使用" style="margin-right: 0px;"><label>サードパーティ製のライブラリ使用</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

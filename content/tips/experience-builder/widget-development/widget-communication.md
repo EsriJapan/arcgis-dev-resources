@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット間の通信"
 description = "ウィジェット同士がどのように相互に通信する方法について紹介します。"
-weight = 9
+weight = 10
 aliases = ["/widget-communication/"]
 +++
 

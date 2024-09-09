@@ -1,7 +1,7 @@
 +++
 title = "ウィジェット間のコードの共有"
 description = "ウィジェット間で同じコードを共有して利用する方法を紹介します。"
-weight = 18
+weight = 19
 aliases = ["/share-code-between-widgets/"]
 +++
 

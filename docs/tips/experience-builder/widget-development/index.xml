@@ -14,9 +14,8 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Getting started with widget development
 ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使用して構築されています。これにより、特定のワークフローに合わせて、カスタム ウィジェットを作成することができます。独自のウィジェットを作成するには、以下の基本的な理解が必要となります。
- TypeScript は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。 React は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。 JSX は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。 Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。  インストール Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、インストールガイドを参照してください。
-ウィジェット ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。
- ウィジェットの設定 (id、label、configなど) state や isClassLoaded などを含むウィジェットのランタイム情報 ローカル言語の文字列 データソースのインスタンスとステータス情報 URL パラメータ情報  必要最小限のファイルですぐに始めるには、your-extensions\widgets フォルダ内の simple widget を参照してください。</description>
+ TypeScript は、JavaScript のスーパーセットです。TypeScript は、ウィジェットの開発に使用される言語です。 React は、ユーザーインターフェースを作成するための JavaScript ライブラリです。React は DOM を抽象化したもので、アプリケーションや UI を様々な状態で考え、それらの状態をレンダリングすることで、UI の一貫性を保つことを容易にしています。 JSX は JavaScript の拡張構文で、React を通じてウィジェットの UI のあるべき姿を記述することができます。 Jimu は、Experience Builder がウィジェットを作成する際に使用する JavaScript ライブラリです。  インストール Experience Builder は、インストール用の ZIP ファイルとして提供されています。詳細については、インストール ガイドを参照してください。
+ウィジェット開発環境のセットアップ カスタム ウィジェットの開発には、使い慣れた IDE やテキスト エディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript に対応しているため、良い選択肢です。</description>
     </item>
     
     <item>
@@ -74,10 +73,27 @@ JSX の詳細を参照してください。
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget communication
-Experience Builder のウィジェットは、1 つの機能単位です。しかし、多くの場合、1 つのタスクを完了するために複数のウィジェットが一緒に動作する必要があるので、フレームワーク レベルでウィジェット同士がどのように相互に通信するかをサポートする必要があります。 以下の方法をサポートしています。
-  Message action (メッセージアクション): このメカニズムは、ウィジェット間の通信のための設定可能なソリューションです。詳細は Message action を参照してください。
-  Share state (状態の共有): このメカニズムは、ウィジェット間の通信のためのプログラミングを行います。ウィジェット間で state (状態) を共有するには、ウィジェットの state (状態) を使用する方法と、独自の Redux store/action/reducer を提供する方法の2つの方法があります。
-  ウィジェットの状態を使用してウィジェット間で状態を共有 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state (状態) にアクセスすることができません。Jimu は state (状態) 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは widgetsState と呼ばれるもので、型の定義は jimu-core/lib/types/state にあります。widgetState に保存された情報は、他のすべてのウィジェットからアクセス可能です。widgetsState に情報を保存するには、以下のコードを参照してください。</description>
+ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィジェットは 1 つの機能に焦点を当てます。しかし、多くの場合、タスクを完了するために複数のウィジェットを連携させる必要があります。そのためには、フレーム ワーク レベルでウィジェット同士が通信できる方法が必要です。Experience Builder では次の方法でこれを実現できます。
+ Configurable (設定によって実現)  ウィジェット間で同じデータ ソース/データ ビューを使用する ウィジェットの出力するデータ ソースを使用する メッセージ/アクションを使用する データ アクションを使用する   Programming (プログラミングによって実現)  ウィジェットの state をウィジェット間で共有する ウィジェット間で state を共有するために、独自の redux ストア/アクション/リデューサーを用意する    Configurable とはユーザーがビルダー内でウィジェット間の通信方法を設定できることを意味します。Programming とはウィジェット間の通信がコードによって行われることを意味します。
+ウィジェット間で同じデータソース/データビューを使用する 複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。
+複数のウィジェットが同じデータ ソースの異なるデータ ビューを使用しても選択内容がデータ ビューのフィルター条件を満たしていれば、同じ選択内容を取得できます。
+詳細はウィジェットでデータ ソースを使用を参照してください。
+ウィジェットの出力するデータ ソースを使用する 詳細はウィジェット出力データ ソースを参照してください。
+メッセージ/アクションを使用する 詳細はメッセージとアクションを参照してください。
+データ アクション 詳細はデータ アクションを参照してください。</description>
+    </item>
+    
+    <item>
+      <title>ウィジェットに下位互換性を持たせる</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Make widget backward compatible
+ArcGIS Experience Builder の進化に伴い、Jimu フレームワークに新機能が追加されることや、変更が加えられることがあります。ArcGIS Experience Builder の新しいバージョンでウィジェットを使用する必要がある場合は、新しいバージョンでウィジェットをテストしなければなりません。 ウィジェットが期待どおりに動作しない場合は、リリース ノートを読んで、ウィジェットに影響する変更点がないか確認してください。
+各 ArcGIS Experience Builder ウィジェットの構成は、アプリ構成に保存されます。 カスタム ウィジェットに機能を追加する場合、構成形式を変更する必要がある場合があります。ウィジェットを以前の構成と後方互換性を持たせるには、2 つの選択肢があります。プログラムで構成 フォーマットをチェックするか、VersionManager を使って古いフォーマットをアップグレードするかです。 以下の利点から、後者を強く推奨します。
+ 最新のフォーマットだけを処理するので、コードはよりシンプルになる。 変更点を 1 つの VersionManager ファイルにまとめることで、変更点の追跡が容易になる。  最初のオプションは簡単です。以下は、VersionManager を使用してウィジェットに下位互換性を持たせるためのガイドです。 VersionManager を使うには、2 つのステップを踏む必要があります。
+ WidgetVersionManager のサブクラスとして VersionManager クラスを定義します。 バージョン 1.13 以前を使用している場合は、BaseVersionManagerを使用してください。それ以降のバージョンでは、WidgetVersionManager を推奨します。 以下のように VersionManager インスタンスをウィジェットクラスまたは関数のプロパティ versionManager に割り当てます。 Widget.versionManager = new WidgetVersionManager();  BaseVersionManager を継承した VersionManager クラスでは、バージョン オブジェクトの配列である versions プロパティを定義する必要があります。各バージョンのオブジェクトには、version プロパティと upgrader 関数が含まれます。upgrader 関数は、構成を以前のバージョンから現在のバージョンにアップグレードするために使用されます。upgrader 関数は、構成 オブジェクトをパラメータとして受け取り、アップグレードされた構成 オブジェクトを返します。構成が変更されない場合は、versions 配列でバージョンをスキップできます。useDatasources や outputDataSources など、VersionManager がウィジェットの設定以上のものをアップグレードする必要がある場合、WidgetVersionManager クラスを継承することができます。WidgetVersionManager を継承した VersionManager は、BaseVersionManager を継承した VersionManager と非常によく似ていますが、バージョン オブジェクトは、さらに 1 つのプロパティ、upgradeFullInfo をサポートしています。 このプロパティが true に設定されている場合、upgrader 関数は完全なウィジェット情報オブジェクトを受け取り、アップグレードされた完全なウィジェット情報オブジェクトを返す必要があります。</description>
     </item>
     
     <item>
@@ -87,10 +103,11 @@ Experience Builder のウィジェットは、1 つの機能単位です。し�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Debugging widget development
-ウィジェット開発環境の設定 カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。Visual Studio Code は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
-作成したカスタム ウィジェットは、Experience Builder ファイル構造の client フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして client フォルダを開きます。
- ファイル メニューをクリックします。 フォルダを開く をクリックします。 Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の client フォルダを参照します。  これにより、client フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について client フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。
-Visual Studio コード テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる拡張機能のマーケットプレイスがあります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。</description>
+デバッグツール Web ブラウザ内には、カスタム ウィジェットを効率的に構築するために使用できるさまざまなデバッグツールがあります。
+ブラウザ開発ツール Experience Builder のオーサリング インターフェイスまたはプレビュー モードでは、ブラウザの開発者ツールを開いてデバッグ ツールにアクセスすることができます。開発者ツールを開くには
+ Chrome で、メイン メニューをクリックし、「その他のツール」→「開発者ツール」を選択します。(詳細) Firefoxで、[メインメニュー] &amp;gt; [Web開発者] &amp;gt; [ツールの切り替え] (詳細)をクリックします。  DOM 要素 ブラウザの開発者ツールで、Sources (Chrome) または Debugger (Firefox) タブをクリックします。ここでは、カスタムウィジェットの DOM を調べて現在の状態を確認できます。
+JavaScript のソースとブレークポイント ブラウザの開発者ツールで、Elements (Chrome) または Inspector (Firefox) タブをクリックします。ここでは、ページの JavaScript コードを閲覧することができます。ウィジェットが開かれていることを確認して(該当する場合)、左側のファイルブラウザで webpack を選択してウィジェットの widget.tsx ファイルを見つけてダブルクリックしてください。別の方法としては、ctrl + p と入力してファイル コマンドパレットを開き、widget.tsx と入力してください。目的の widget.tsx ファイルはファイル名の最後に ?zzzz (zzzz は数字と文字の組み合わせ) が付いているものになります。
+ウィジェット ファイルを開くと、その TypeScript コードを見ることができます。行番号をクリックしてブレークポイントを設定することができます (詳細: Chrome、Firefox)</description>
     </item>
     
     <item>

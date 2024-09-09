@@ -1,7 +1,7 @@
 +++
 title = "assets の使用"
 description = "assets の使用について紹介します。"
-weight = 13
+weight = 15
 aliases = ["/use-assets/"]
 +++
 

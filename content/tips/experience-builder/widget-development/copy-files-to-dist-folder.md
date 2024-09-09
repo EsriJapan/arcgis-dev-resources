@@ -1,7 +1,7 @@
 +++
 title = "dist フォルダーへのファイルのコピー"
 description = "dist フォルダーへファイルをコピーする必要がある場合の方法について紹介します。"
-weight = 17
+weight = 18
 aliases = ["/copy-files-to-dist-folder/"]
 +++
 

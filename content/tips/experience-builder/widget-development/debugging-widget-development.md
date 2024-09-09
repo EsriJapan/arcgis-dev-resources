@@ -1,30 +1,12 @@
 +++
 title = "ウィジェット開発のデバック"
 description = "ウィジェット開発におけるデバック方法について紹介します。"
-weight = 10
+weight = 12
 aliases = ["/debugging-widget-development/"]
 +++
 
 出典：ArcGIS Experience Builder - Guide - [Debugging widget development](https://developers.arcgis.com/experience-builder/guide/debugging-widget-development/)
 
-
-## ウィジェット開発環境の設定
-カスタム ウィジェットの開発には、使い慣れた IDE やテキストエディタを使うことができます。[Visual Studio Code](https://code.visualstudio.com/) は、デフォルトで TypeScript を認識する機能が組み込まれているため、よいオプションのひとつです。
-
-作成したカスタム ウィジェットは、Experience Builder ファイル構造の `client` フォルダのディレクトリ内に配置されます。Visual Studio Code 内で、プロジェクトとして `client` フォルダを開きます。
-
-1. `ファイル` メニューをクリックします。
-2. `フォルダを開く` をクリックします。
-3. Experience Builder　を初めて起動したときに解凍した Experience Builder ファイル内の `client` フォルダを参照します。
-
-これにより、`client` フォルダ内のすべてのファイル (カスタム ウィジェットのファイルを含む) が、左側の VS Code Explorer タブで利用できるようになります。また、Visual Studio Code は、Experience Builder ライブラリの TypeScript の定義について `client` フォルダの内容全体をスキャンし、カスタム ウィジェットを書いている間に TypeScript の検証と autocomplete (オートコンプリート:自動補完) を可能にします。
-
-## Visual Studio コード
-テキストエディタとして Visual Studio Code を使用している場合、テキストエディタに機能を追加するために使用できる[拡張機能のマーケットプレイス](https://code.visualstudio.com/docs/editor/extension-gallery)があります。インストールしておきたい React 拡張機能に加えて、Experience Builder のカスタム ウィジェット開発にはこれらの拡張機能が推奨されています (必須ではありません)。
-
-- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) - ワークスペースで見つけた定義に基づいてHTML クラス属性 の CSS クラス名を補完します (ワークスペースの中の CSS を読み込んで HTML 上でクラス指定するときに入力候補を表示します)。
-
-- [vcode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) -  styled-components のシンタックスハイライトを付けます。
 
 ## デバッグツール
 Web ブラウザ内には、カスタム ウィジェットを効率的に構築するために使用できるさまざまなデバッグツールがあります。
@@ -33,7 +15,7 @@ Web ブラウザ内には、カスタム ウィジェットを効率的に構築
 Experience Builder のオーサリング インターフェイスまたはプレビュー モードでは、ブラウザの開発者ツールを開いてデバッグ ツールにアクセスすることができます。開発者ツールを開くには
 
 - Chrome で、メイン メニューをクリックし、「その他のツール」→「開発者ツール」を選択します。([詳細](https://developers.google.com/web/tools/chrome-devtools/open))
-- Firefoxで、[メインメニュー] > [Web開発者] > [ツールの切り替え] (([詳細](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools))をクリックします。
+- Firefoxで、[メインメニュー] > [Web開発者] > [ツールの切り替え] ([詳細](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools))をクリックします。
 
 ### DOM 要素
 ブラウザの開発者ツールで、__Sources__ (Chrome) または __Debugger__ (Firefox) タブをクリックします。ここでは、カスタムウィジェットの DOM を調べて現在の状態を確認できます。

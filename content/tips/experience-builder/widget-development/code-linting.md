@@ -1,7 +1,7 @@
 +++
 title = "コードリンティング"
 description = "コードリンティングについて紹介します。"
-weight = 15
+weight = 16
 aliases = ["/code-linting/"]
 +++
 

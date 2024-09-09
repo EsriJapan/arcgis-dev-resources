@@ -1,7 +1,7 @@
 +++
 title = "webpack config のオーバーライド"
 description = "webpack config をオーバーライドする方法について紹介します。"
-weight = 16
+weight = 17
 aliases = ["/override-webpack-config/"]
 +++
 
