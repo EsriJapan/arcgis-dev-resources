@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-08-27T16:35:58 JST">
+<meta name="revised" content="2024-09-11T13:33:41 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -263,24 +263,31 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS Maps SDK for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/overview/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/overview/">
+            概要
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-cdn/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-cdn/">
+            開発の手順 (CDN)
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-npm/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-npm/">
+            開発の手順（npm）
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
             インストールおよびセットアップ方法
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/components/">
-            コンポーネント
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/javascript/get-started/">
-            開発の手順
           </a>
         </div>
     </li>
@@ -291,10 +298,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/javascript/migrating-from-3.x-to-4.0/">
-            バージョン 3.x から 4.x への移行
+          <a href="/arcgis-dev-resources/tips/javascript/components/">
+            コンポーネント
           </a>
         </div>
     </li>
@@ -465,6 +472,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
             ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/">
+            ウィジェットに下位互換性を持たせる
           </a>
         </div>
     </li>
@@ -1021,6 +1035,9 @@ if (!doNotTrack) {
 <li><code>認証情報</code>までスクロールし、次のように、<code>リダイレクト URL</code> に <code>https://localhost:3001/</code> と入力し、<code>追加</code>をクリックして、<code>更新</code> をクリックします。クライアント ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo2.png" /></li>
 </ol>
+<div class="notices warning" >
+<p>ArcGIS Enterprise 11.1 以前のバージョンでは、画面構成や表現が異なります。<code>クライアント ID</code> は ArcGIS Enterprise 11.1 以前では <code>アプリケーション ID</code> となっています。</p>
+</div>
 <h2 id="2-server-サービスのインストール">2. server サービスのインストール</h2>
 <p>クライアント ID の作成が完了したら以下の手順で server サービスのインストールを行います。</p>
 <p>Experience Builder は、Node.js を使用します。長期サポート (LTS) バージョン v12 以上がサポートされています。お使いの OS に対応した最新の <a href="https://nodejs.org/en/download/">Node.js LTS バージョン</a>をダウンロードしてインストールを行ってください。</p>

@@ -57,6 +57,13 @@ ArcGIS Developerアカウントは現在、[ArcGIS Location Platform アカウ�
 6. `認証情報`までスクロールし、次のように、`リダイレクト URL` に `https://localhost:3001/` と入力し、`追加`をクリックして、`更新` をクリックします。クライアント ID は、このあとの手順で使用するため、コピーなどをして控えておきます。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/Registeredinfo2.png" />
 
+{{% notice warning %}}
+
+ArcGIS Enterprise 11.1 以前のバージョンでは、画面構成や表現が異なります。`クライアント ID` は ArcGIS Enterprise 11.1 以前では `アプリケーション ID` となっています。
+
+{{% /notice %}}
+
+
 ## 2. server サービスのインストール
 
 クライアント ID の作成が完了したら以下の手順で server サービスのインストールを行います。
