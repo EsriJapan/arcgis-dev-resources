@@ -15,7 +15,7 @@
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and set up
 このインストール ガイドでは、ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unreal Engine は Unreal Engine 用のプラグインです。ArcGIS Maps SDK for Unreal Engine を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
-Unreal Engine のインストール このプラグインは、Unreal Engine 5.0、5.1、5.2、および 5.3 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
+Unreal Engine のインストール このプラグインは、Unreal Engine 5.2、5.3、および 5.4 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
 プラグインのインストール ArcGIS Maps SDK for Unreal Engine を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。</description>
     </item>
     
@@ -26,11 +26,10 @@ Unreal Engine のインストール このプラグインは、Unreal Engine 5.0
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</guid>
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unreal Engine は、ソースコードとサンプルアセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
-新規プロジェクトの作成   Unreal Engine を起動するには、Epic Games ランチャー を開き、ライブラリ (Library) をクリックします。サポートされているバージョンを選択し、起動 (Launch) をクリックします。Unreal Engine を起動すると、Unreal プロジェクトブラウザ (Project Browser) が自動的に開きます。
-  最近利用したプロジェクト (Recent Project) で、業種に最も適した開発カテゴリーを選択してください。どのカテゴリーを選べばよいかわからない場合は、ゲーム (Games) カテゴリーを選択してください。
-  リストからプロジェクトのテンプレートを選択します。プラグインを初期化するには、ブランク (Blank) のテンプレートを使用することをお勧めします。
-  プロジェクトを C++ プロジェクトに設定します。これにより、Visual Studio プロジェクトが作成され、ソースコード フォルダーに空の C++ クラスが 1 つ以上あるという条件が満たされます。品質 / パフォーマンス レベル、ターゲット プラットフォーム、スターター コンテンツを含めるかどうかなどを選択できます。詳細については、Deployment のページを参照してください。</description>
+ArcGIS Maps SDK for Unreal Engine は、ソースコードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+新規プロジェクトの作成 Unreal Engine には、お客様の業種に合ったさまざまな開発テンプレート (Developer Template)が用意されています。 どのテンプレートを選べばよいかわからない場合は、ゲーム テンプレート (Games Template) とシミュレーション テンプレート (Simulation Template) をお勧めします。これらのテンプレートの詳細については、Unreal Engine テンプレート リファレンスを参照してください。
+  Unreal Engine を起動するには、Epic Games ランチャー を開き、ライブラリ (Library) をクリックします。サポートされているバージョンを選択し、起動 (Launch) をクリックします。Unreal Engine を起動すると、Unreal プロジェクトブラウザ (Project Browser) が自動的に開きます。
+  最近利用したプロジェクト (Recent Project) の下で、開発テンプレート (Developer Template) の**ゲーム テンプレート (Games Template)**を選択してください。</description>
     </item>
     
   </channel>

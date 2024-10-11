@@ -14,7 +14,7 @@ aliases = ["/unreal-engine/install-and-set-up/"]
 
 ### Unreal Engine のインストール
 
-このプラグインは、Unreal Engine 5.0、5.1、5.2、および 5.3 をサポートしています。インストールされていない場合は、[Unreal Engine](https://www.unrealengine.com/ja/download) をインストールしてください。Visual Studio for Unreal Engine の設定については、[Unreal Engine 5 のドキュメント](https://docs.unrealengine.com/5.0/ja/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/)を参照してください。
+このプラグインは、Unreal Engine 5.2、5.3、および 5.4 をサポートしています。インストールされていない場合は、[Unreal Engine](https://www.unrealengine.com/ja/download) をインストールしてください。Visual Studio for Unreal Engine の設定については、[Unreal Engine 5 のドキュメント](https://docs.unrealengine.com/5.0/ja/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/)を参照してください。
 
 ### プラグインのインストール
 

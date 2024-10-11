@@ -11,7 +11,7 @@ aliases = ["/create-startup-app-unreal-engine/"]
 
 **Modes Panel UI** を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
 
-このチュートリアルでは、ベースマップ レイヤーサービスとデータレイヤーを含むローカルシーンを Unreal Engine で作成します。
+このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/local-scene-ui.png" width="650px">
 
@@ -26,59 +26,48 @@ ESRIジャパンで提供する <a href=https://www.esrij.com/services/maintenan
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. ArcGIS サービスにアクセスするには、[ArcGIS Developer アカウント](https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview)または [ArcGIS Online アカウント](https://www.esri.com/en-us/arcgis/products/arcgis-online/trial)と API キーが必要です。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+1. ArcGIS サービスにアクセスするには、[ArcGIS Location Platform アカウント](https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview)または [ArcGIS Online アカウント](https://www.esri.com/en-us/arcgis/products/arcgis-online/trial)と API キーが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 
     {{% notice note %}}
 
-    <b>API キー</b> ページが開発者ダッシュボードに表示されない場合は、アカウントを <a href= "https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/#arcgis-developer-accounts">ArcGIS Developer アカウント</a>にアップグレードする必要があります。
+    API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
 
     {{% /notice %}}
 
-2. 開発環境が[システム要件](https://developers.arcgis.com/unreal-engine/reference/system-requirements/)を満たしていることを確認してください。
+2. 開発環境が[システム要件](https://developers.arcgis.com/unreal-engine/system-requirements/)を満たしていることを確認してください。
 3. [インストールとセットアップ](../../../tips/unreal-engine/install-and-set-up/)の手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。
-4. [シーン設定オプション](https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/)のページを確認してください。
+4. [シーン設定オプション](https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/)のページ(英語)を確認してください。
 
-Unreal Engine のインターフェースに慣れていない場合は、最も一般的なエディターパネルとその活用方法について、[Unreal Editor のインターフェース](https://docs.unrealengine.com/5.0/ja/unreal-editor-interface/) を参照してください。
+Unreal Engine のインターフェースに慣れていない場合は、最も一般的なエディター パネルとその活用方法について、[Unreal Editor のインターフェース](https://docs.unrealengine.com/5.0/ja/unreal-editor-interface/) を参照してください。
 
 ## ステップ
 
 ### 新しいレベルを作成し、Modes Panel UI を開く
 
-{{% notice note %}}
-
-Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 を省略できます。
-
-{{% /notice %}}
-
 1. メニューバーの **ファイル (File)** をクリックし、**新規レベル (New Level)** を選択します。
 
-2. ポップアップウィンドウで **空のレベル (Empty Level)** を選択します。
+2. プロジェクトにゲーム カテゴリの ブランク テンプレートを使用する場合、ポップアップ ウィンドウで**空のレベル (Empty Level)** を選択します。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/new-level.png" width="650px">
+プロジェクトのシミュレーション カテゴリーのシミュレーション ブランク テンプレートを使用する場合は、ポップアップ ウィンドウで**シミュレーション ブランク (Simulation Blank)** を選択し、
+<img src="https://developers.arcgis.com/unreal-engine/static/adeaada48f32ace5b9c9fbbeef79e06f/a1aa0/new-level-simulation.png" width="650px">
+含まれる Floor スタティック メッシュ アクターを**アウトライナー (Outliner)** ウィンドウから削除します。
+<img src="https://developers.arcgis.com/unreal-engine/static/9db4b6bb51241a11aff46a8a2b99cb48/a9b70/new-level-outliner.png" width="650px">
 
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/new-level.png" width="650px">
-
-3. メニューバーの **ウィンドウ > ワールドセッティング (Window ‐> World Settings)** を開きます。**ワールドセッティング (World Settings)** パネルが開きます。
-
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/open-world-settings.png" width="650px">
-
-
-4. **ワールドセッティング (World Settings)** パネルで、**ワールド (World)** グループに行き、**詳細設定 (Advanced)** を開きます。**ラージワールドの有効化 (Enable Large Worlds)** オプションをチェックします。
-
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/enable-large-worlds.png" width="650px">
-
-5. メインツールバーの **モード選択 (Select Modes)** ドロップダウンをクリックし、**ArcGIS Maps SDK** を選択します。
-
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/toolbar.png" width="650px">
-
-6. Unreal Editor インターフェースの左側に、**Modes Panel UI** が開きます。
-
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/open-modes-panel.png" width="650px">
-
+3. メニュー バーの**ファイル (File)** をクリックし、**Save Level As**を選択します。 レベルに名前を付けて**保存 (Save)** をクリックします。
 
 ### マップの作成
 
-1. **Modes Panel UI** の **Map** タブをクリックします。
-2. **Map Type** で `Local` を選択します。
-3. **Origin Position** セクションでは、GIS シーンの中心を座標と Spatial Reference Well-Known ID (WKID) で設定できます。チュートリアルでは、パラメータをこれらの値に設定します：
+1. メインツールバーの **モード選択 (Select Modes)** ドロップダウンをクリックし、**ArcGIS Maps SDK** を選択します。
+
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/toolbar.png" width="650px">
+
+2. Unreal Editor インターフェースの左側に、**Modes Panel UI** が開きます。
+
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/open-modes-panel.png" width="650px">
+
+3. **Modes Panel UI** の **Map** タブをクリックします。
+4. **Map Type** で `Local` を選択します。
+5. **Origin Position** セクションでは、GIS シーンの中心を座標と Spatial Reference Well-Known ID (WKID) で設定できます。チュートリアルでは、パラメータをこれらの値に設定します：
 
     * Longitude : 139.745723
     * Latitude : 35.659041
@@ -87,9 +76,9 @@ Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 
 
     spatial reference については、[spatial references](https://developers.arcgis.com/unreal-engine/spatial-and-data-analysis/spatial-references/) のページを参照してください。
 
-4. **Enable Extent** チェックボックスをオンにすると、**Map Extent** セクションが表示されます。
+6. **Enable Extent** チェックボックスをオンにすると、**Map Extent** セクションが表示されます。
 
-5. **Map Extent** で、マップの範囲をこれらの値に設定します :
+7. **Map Extent** で、マップの範囲をこれらの値に設定します :
 
     * Longitude : 139.745723
     * Latitude : 35.659041
@@ -101,7 +90,7 @@ Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/tokyo-map-tab-local.png" width="650px">
 
-6. **Create** ボタンをクリックします。**アウトライナー (Outliner)** パネルに、**ArcGISMapActor** が作成されます。
+8. **Create** ボタンをクリックします。**アウトライナー (Outliner)** パネルに、**ArcGISMapActor** が作成されます。
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/arcgismap-actor.png" width="650px">
 

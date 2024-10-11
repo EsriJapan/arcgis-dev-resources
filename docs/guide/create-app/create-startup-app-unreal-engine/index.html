@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-10-11T10:43:49 JST">
+<meta name="revised" content="2024-10-11T13:44:02 JST">
 <title>Unreal Engine :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -992,7 +992,7 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - <a href="https://developers.arcgis.com/unreal-engine/maps/tutorials/display-a-map-ui/">Display a map (UI)</a></p>
 <h2 id="マップを表示する-ui">マップを表示する (UI)</h2>
 <p><strong>Modes Panel UI</strong> を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。</p>
-<p>このチュートリアルでは、ベースマップ レイヤーサービスとデータレイヤーを含むローカルシーンを Unreal Engine で作成します。</p>
+<p>このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/local-scene-ui.png" width="650px">
 <div class="notices note" >
 <p>ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。</br>
@@ -1002,43 +1002,42 @@ ESRIジャパンで提供する <a href=https://www.esrij.com/services/maintenan
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
 <li>
-<p>ArcGIS サービスにアクセスするには、<a href="https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview">ArcGIS Developer アカウント</a>または <a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/trial">ArcGIS Online アカウント</a>と API キーが必要です。アカウントをお持ちでない場合は、<a href="https://developers.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</p>
+<p>ArcGIS サービスにアクセスするには、<a href="https://www.esri.com/en-us/arcgis/products/arcgis-platform/overview">ArcGIS Location Platform アカウント</a>または <a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/trial">ArcGIS Online アカウント</a>と API キーが必要です。アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a> (無料) してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</p>
  <div class="notices note" >
-<p><b>API キー</b> ページが開発者ダッシュボードに表示されない場合は、アカウントを <a href= "https://developers.arcgis.com/documentation/mapping-apis-and-services/deployment/accounts/#arcgis-developer-accounts">ArcGIS Developer アカウント</a>にアップグレードする必要があります。</p>
+<p>API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。</p>
  </div>
 </li>
 <li>
-<p>開発環境が<a href="https://developers.arcgis.com/unreal-engine/reference/system-requirements/">システム要件</a>を満たしていることを確認してください。</p>
+<p>開発環境が<a href="https://developers.arcgis.com/unreal-engine/system-requirements/">システム要件</a>を満たしていることを確認してください。</p>
 </li>
 <li>
 <p><a href="../../../tips/unreal-engine/install-and-set-up/">インストールとセットアップ</a>の手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</p>
 </li>
 <li>
-<p><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/">シーン設定オプション</a>のページを確認してください。</p>
+<p><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/">シーン設定オプション</a>のページ(英語)を確認してください。</p>
 </li>
 </ol>
-<p>Unreal Engine のインターフェースに慣れていない場合は、最も一般的なエディターパネルとその活用方法について、<a href="https://docs.unrealengine.com/5.0/ja/unreal-editor-interface/">Unreal Editor のインターフェース</a> を参照してください。</p>
+<p>Unreal Engine のインターフェースに慣れていない場合は、最も一般的なエディター パネルとその活用方法について、<a href="https://docs.unrealengine.com/5.0/ja/unreal-editor-interface/">Unreal Editor のインターフェース</a> を参照してください。</p>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しいレベルを作成しmodes-panel-ui-を開く">新しいレベルを作成し、Modes Panel UI を開く</h3>
-<div class="notices note" >
-<p>Unreal Engine 5.1 または 5.2 を使用している場合は、手順 3 と 4 を省略できます。</p>
-</div>
 <ol>
 <li>
 <p>メニューバーの <strong>ファイル (File)</strong> をクリックし、<strong>新規レベル (New Level)</strong> を選択します。</p>
 </li>
 <li>
-<p>ポップアップウィンドウで <strong>空のレベル (Empty Level)</strong> を選択します。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/new-level.png" width="650px">
+<p>プロジェクトにゲーム カテゴリの ブランク テンプレートを使用する場合、ポップアップ ウィンドウで<strong>空のレベル (Empty Level)</strong> を選択します。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/new-level.png" width="650px">
+プロジェクトのシミュレーション カテゴリーのシミュレーション ブランク テンプレートを使用する場合は、ポップアップ ウィンドウで<strong>シミュレーション ブランク (Simulation Blank)</strong> を選択し、
+<img src="https://developers.arcgis.com/unreal-engine/static/adeaada48f32ace5b9c9fbbeef79e06f/a1aa0/new-level-simulation.png" width="650px">
+含まれる Floor スタティック メッシュ アクターを<strong>アウトライナー (Outliner)</strong> ウィンドウから削除します。
+<img src="https://developers.arcgis.com/unreal-engine/static/9db4b6bb51241a11aff46a8a2b99cb48/a9b70/new-level-outliner.png" width="650px"></p>
 </li>
 <li>
-<p>メニューバーの <strong>ウィンドウ &gt; ワールドセッティング (Window ‐&gt; World Settings)</strong> を開きます。<strong>ワールドセッティング (World Settings)</strong> パネルが開きます。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/open-world-settings.png" width="650px">
+<p>メニュー バーの<strong>ファイル (File)</strong> をクリックし、<strong>Save Level As</strong>を選択します。 レベルに名前を付けて<strong>保存 (Save)</strong> をクリックします。</p>
 </li>
-<li>
-<p><strong>ワールドセッティング (World Settings)</strong> パネルで、<strong>ワールド (World)</strong> グループに行き、<strong>詳細設定 (Advanced)</strong> を開きます。<strong>ラージワールドの有効化 (Enable Large Worlds)</strong> オプションをチェックします。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/enable-large-worlds.png" width="650px">
-</li>
+</ol>
+<h3 id="マップの作成">マップの作成</h3>
+<ol>
 <li>
 <p>メインツールバーの <strong>モード選択 (Select Modes)</strong> ドロップダウンをクリックし、<strong>ArcGIS Maps SDK</strong> を選択します。</p>
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/toolbar.png" width="650px">
@@ -1047,9 +1046,6 @@ ESRIジャパンで提供する <a href=https://www.esrij.com/services/maintenan
 <p>Unreal Editor インターフェースの左側に、<strong>Modes Panel UI</strong> が開きます。</p>
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/open-modes-panel.png" width="650px">
 </li>
-</ol>
-<h3 id="マップの作成">マップの作成</h3>
-<ol>
 <li>
 <p><strong>Modes Panel UI</strong> の <strong>Map</strong> タブをクリックします。</p>
 </li>
