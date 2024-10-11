@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-09-26T15:13:31 JST">
+<meta name="revised" content="2024-10-11T10:43:50 JST">
 <title>新規プロジェクトにプラグインを追加 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -984,19 +984,19 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Maps SDK for Unity - Guide - <a href="https://developers.arcgis.com/unity/install-and-set-up/add-the-plugin-to-a-new-project/">Add the plugin to a new project</a></p>
-<p><strong>ArcGIS Maps SDK for Unity</strong> は、ソースコードとサンプルアセットを含む Unity プラグインです。このページを始める前に、必ず<a href="https://developers.arcgis.com/downloads/#unity">プラグインをダウンロード</a>してください。</p>
+<p><strong>ArcGIS Maps SDK for Unity</strong> は、ソースコードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ず<a href="https://developers.arcgis.com/downloads/#unity">プラグインをダウンロード</a>してください。</p>
 <h2 id="新規プロジェクトの作成">新規プロジェクトの作成</h2>
 <ol>
 <li>
 <p>新しいプロジェクトを作成するには、<strong>Unity Hub</strong> を開いて <strong>プロジェクト (Projects)</strong> タブを選択し、<strong>新しいプロジェクト (New project)</strong> ボタンをクリックします。</p>
 </li>
 <li>
-<p>ポップアップウィンドウで、以下を定義します：</p>
+<p>ポップアップ ウィンドウで、以下を定義します：</p>
 <ul>
-<li>エディターバージョン：<strong>ArcGIS Maps SDK for Unity</strong> は Unity 2021.3.x および 2022.3.x LTS をサポートしています。複数の Unity エディターバージョンがインストールされている場合は、ポップアップウィンドウの上部でサポートされているエディターバージョンを選択してください。</li>
-<li>テンプレート：プラグインは <strong>High Definition Render Pipeline (12.x)</strong> と <strong>Universal Render Pipeline (12.x)</strong> の両方をサポートしています。初めて使用する場合は、<strong>Download template</strong> ボタンをクリックして、これらのテンプレートをダウンロードする必要があります。<strong>HDRP</strong> または <strong>URP</strong> テンプレート以外のテンプレートを選択した場合は、<a href="https://developers.arcgis.com/unity/install-and-set-up/add-the-plugin-to-an-existing-project/#convert-the-project-to-urp-or-hdrp">レンダーパイプラインパッケージを手動でインストール</a>します。(レガシービルトインレンダーパイプラインはサポートされていません。)</li>
-<li>プロジェクト名：プロジェクトに関連するアセット、シーン、その他のファイルを保存するメインプロジェクトフォルダーの名前を設定します。</li>
-<li>場所：プロジェクトの保存場所を設定します。デフォルトのプロジェクトの場所は、コンピューターのホームフォルダーに設定されています。</li>
+<li>エディター バージョン：<strong>ArcGIS Maps SDK for Unity</strong> は Unity 2021.3.x および 2022.3.x LTS をサポートしています。複数の Unity エディターバージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。</li>
+<li>テンプレート：プラグインは <strong>High Definition Render Pipeline (12.x)</strong> と <strong>Universal Render Pipeline (12.x)</strong> の両方をサポートしています。初めて使用する場合は、<strong>Download template</strong> ボタンをクリックして、これらのテンプレートをダウンロードする必要があります。<strong>HDRP</strong> または <strong>URP</strong> テンプレート以外のテンプレートを選択した場合は、<a href="https://developers.arcgis.com/unity/install-and-set-up/add-the-plugin-to-an-existing-project/#convert-the-project-to-urp-or-hdrp">レンダーパイプライン パッケージを手動でインストール</a>します。(レガシー ビルトイン レンダー パイプラインはサポートされていません。)</li>
+<li>プロジェクト名：プロジェクトに関連するアセット、シーン、その他のファイルを保存するメインプロジェクト フォルダーの名前を設定します。</li>
+<li>場所：プロジェクトの保存場所を設定します。デフォルトのプロジェクトの場所は、コンピューターのホーム フォルダーに設定されています。</li>
 </ul>
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/create_new_project.png" width="800px">
 </li>
@@ -1014,7 +1014,7 @@ if (!doNotTrack) {
 <h3 id="ローカルの-tgztarball-ファイルからプラグインをインストール">ローカルの .tgz(tarball) ファイルからプラグインをインストール</h3>
 <ol>
 <li>パッケージをインポートするプロジェクトをエディターで開きます。</li>
-<li>トップメニューで、<strong>ウィンドウ &gt; パッケージ マネージャー (Window &gt; Package Manager)</strong> を展開し、<strong>パッケージ マネージャー (Package Manager)</strong> ウィンドウを開きます。
+<li>トップ メニューで、<strong>ウィンドウ &gt; パッケージ マネージャー (Window &gt; Package Manager)</strong> を展開し、<strong>パッケージ マネージャー (Package Manager)</strong> ウィンドウを開きます。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/package-manager.png" width="800px"></li>
 <li>パッケージ マネージャー (Package Manager) ウィンドウの + アイコンをクリックします。</li>
 <li>リストから <strong>.tgz ファイルからパッケージを加える… (Add package from tarball)</strong> を選択し、ファイルブラウザーを表示します。
@@ -1023,15 +1023,15 @@ if (!doNotTrack) {
 </ol>
 <p>プラグインがプロジェクトにインポートされると、<strong>パッケージ (Package)</strong> メニューから <code>プロジェクト内 (In Project)</code> を選択したときに、プロジェクト ウィンドウの <strong>パッケージ (Packages)</strong> セクションに <strong>ArcGIS Maps SDK for Unity</strong> フォルダーが表示されます。</p>
 <h2 id="サンプルアセットのインポート">サンプルアセットのインポート</h2>
-<p><strong>ArcGIS Maps SDK for Unity</strong> には、シーンに機能とビジュアルフィデリティを追加するために使用できる追加のサンプルとツールが付属しています。</p>
-<p><strong>Unity 2021</strong> でプラグインに付属するサンプルアセットをインポートするには、次の手順に従います：</p>
-<ol>
-<li>トップメニューで、<strong>ウィンドウ &gt; パッケージ マネージャー (Window &gt; Package Manager)</strong> を展開し、<strong>パッケージ マネージャー (Package Manager)</strong> ウィンドウを開きます。</li>
-<li>左側のリストから <strong>ArcGIS Maps SDK for Unity</strong> を選択します。</li>
-<li>右側のパネルで <strong>サンプル (Samples)</strong> をクリックし、セクションを展開します。</li>
-<li><strong>Sample Content</strong> の隣にある <strong>インポート (Import)</strong> ボタンをクリックします。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/import-sample-assets.png" width="800px"></li>
-</ol>
+<p><strong>ArcGIS Maps SDK for Unity</strong> には、シーンに機能とビジュアル フィデリティを追加するために使用できる追加のサンプルとツールが付属しています。</p>
+<!-- 非対応バージョンにつきコメントアウト -->
+<!-- **Unity 2021** でプラグインに付属するサンプル アセットをインポートするには、次の手順に従います：
+
+1. トップ メニューで、**ウィンドウ > パッケージ マネージャー (Window > Package Manager)** を展開し、**パッケージ マネージャー (Package Manager)** ウィンドウを開きます。
+2. 左側のリストから **ArcGIS Maps SDK for Unity** を選択します。
+3. 右側のパネルで **サンプル (Samples)** をクリックし、セクションを展開します。
+4. **Sample Content** の隣にある **インポート (Import)** ボタンをクリックします。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/import-sample-assets.png" width="800px"> -->
 <p><strong>Unity 2022</strong> でプラグインに付属するサンプルアセットをインポートするには、次の手順に従います：</p>
 <ol>
 <li>トップメニューで、<strong>ウィンドウ &gt; パッケージ マネージャー (Window &gt; Package Manager)</strong> を展開し、<strong>パッケージ マネージャー (Package Manager)</strong> ウィンドウを開きます。</li>
