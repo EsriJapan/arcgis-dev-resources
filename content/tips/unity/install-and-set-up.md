@@ -14,7 +14,7 @@ aliases = ["/unity/install-and-set-up/"]
 
 ### Unity のインストール
 
-このプラグインは Unity 2021.3.x と 2022.3.x LTS でサポートしています。インストールされていない場合は、Unity を[インストール](https://unity.com/ja/download)してください。
+このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、Unity を[インストール](https://unity.com/ja/download)してください。
 
 ### プラグインのインストール
 
