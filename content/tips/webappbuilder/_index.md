@@ -1,7 +1,7 @@
 +++
 title = "ArcGIS Web AppBuilder (Developer Edition)"
 description = "ArcGIS Web AppBuilder (Developer Edition) の開発に役立つガイド集です。"
-weight = 2
+weight = 3
 +++
 
 ArcGIS Web AppBuilder (Developer Edition) の開発に役立つガイド集です。

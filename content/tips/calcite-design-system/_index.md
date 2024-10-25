@@ -1,7 +1,7 @@
 +++
 title = "Calcite Design System"
 description = "Calcite Design System の開発に役立つガイド集です。"
-weight = 9
+weight = 4
 +++
 
 Calcite Design System の開発に役立つガイド集です。

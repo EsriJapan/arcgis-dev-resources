@@ -90,6 +90,22 @@ HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さ�
     </item>
     
     <item>
+      <title>.NET</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
+      <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料)してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .</description>
+    </item>
+    
+    <item>
       <title>Android</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -120,22 +136,6 @@ HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さ�
 前提条件 このチュートリアルを実施するには、以下が必要です。
  API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  ステップ 新しい Xcode プロジェクトを作成する Xcode を使用してシングルビュー iOS アプリを作成し、SDK を参照するように構成します。
   Xcode を開き、メニュー バーから [File] &amp;gt; [New] &amp;gt; [Project] &amp;gt; [iOS] &amp;gt; [App] &amp;gt; [Next] をクリックします。</description>
-    </item>
-    
-    <item>
-      <title>.NET</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
-      <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
-マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
-前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料)してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
-ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .</description>
     </item>
     
     <item>

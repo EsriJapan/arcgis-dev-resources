@@ -905,20 +905,19 @@ app config では、画面グループは screenGroups で定義され、画面�
     </item>
     
     <item>
-      <title>Android</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
+      <title>.NET</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</guid>
-      <description>出典：ArcGIS Maps SDK for Kotlin - Tutorials - Display a map
-マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
+      <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
-  Android Studio を開きます。
- [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。</description>
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料)してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
+ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .</description>
     </item>
     
     <item>
@@ -994,19 +993,20 @@ import {LayoutEntry} from &amp;#39;jimu-layouts/layout-runtime&amp;#39; let Layo
     </item>
     
     <item>
-      <title>iOS</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
+      <title>Android</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
-      <description>出典：ArcGIS Maps SDK for Swift - Tutorials - Display a map
-マップを表示する このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</guid>
+      <description>出典：ArcGIS Maps SDK for Kotlin - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  ステップ 新しい Xcode プロジェクトを作成する Xcode を使用してシングルビュー iOS アプリを作成し、SDK を参照するように構成します。
-  Xcode を開き、メニュー バーから [File] &amp;gt; [New] &amp;gt; [Project] &amp;gt; [iOS] &amp;gt; [App] &amp;gt; [Next] をクリックします。</description>
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  ステップ 新しい Android Studio プロジェクトを作成します Android Studio を使用してアプリを作成し、API を参照するように構成します。
+  Android Studio を開きます。
+ [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。</description>
     </item>
     
     <item>
@@ -1061,19 +1061,19 @@ app config では、アプリが使用するテーマは theme で定義され�
     </item>
     
     <item>
-      <title>.NET</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</link>
+      <title>iOS</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/</guid>
-      <description>出典：ArcGIS Maps SDK for .NET - Tutorials - Display a map
-マップを表示する このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
-このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</guid>
+      <description>出典：ArcGIS Maps SDK for Swift - Tutorials - Display a map
+マップを表示する このチュートリアルでは ArcGIS Maps SDK for Swift を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで1つ以上のデータレイヤーを追加できます。マップビューを使用し、場所とズームレベルを設定することで、マップの特定の領域を表示できます。
+このチュートリアルでは、地形ベースマップレイヤーを使用して、富士山付近を表示する地図を作成します。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
- API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ (無料)してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
-ステップ 新しい Visual Studio プロジェクトを作成する ArcGIS Maps SDK for .</description>
+ API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、サインアップ（無料）してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  ステップ 新しい Xcode プロジェクトを作成する Xcode を使用してシングルビュー iOS アプリを作成し、SDK を参照するように構成します。
+  Xcode を開き、メニュー バーから [File] &amp;gt; [New] &amp;gt; [Project] &amp;gt; [iOS] &amp;gt; [App] &amp;gt; [Next] をクリックします。</description>
     </item>
     
     <item>
@@ -1127,23 +1127,6 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
     </item>
     
     <item>
-      <title>Unity</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
-      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
-マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
-このチュートリアルでは、ベースマップレイヤーサービスとデータレイヤーを含むローカルシーンを Unity で作成します。
-ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
-前提条件 このチュートリアルを実施するには、以下が必要です。
-  ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
-API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
-  開発環境がシステム要件を満たしていることを確認してください。
-  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
-    </item>
-    
-    <item>
       <title>ウィジェットでデータソースを使用</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1156,15 +1139,15 @@ API キー ページが開発者ダッシュボードに表示されない場合
     </item>
     
     <item>
-      <title>Unreal Engine</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</link>
+      <title>Unity</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</guid>
-      <description>出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - Display a map (UI)
-マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
-このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。
-ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
+      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
+マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
+このチュートリアルでは、ベースマップレイヤーサービスとデータレイヤーを含むローカルシーンを Unity で作成します。
+ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
   ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
@@ -1199,6 +1182,23 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
 データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
 高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
  id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1つのデータ ソースには、サブデータ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
+    </item>
+    
+    <item>
+      <title>Unreal Engine</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</guid>
+      <description>出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - Display a map (UI)
+マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
+このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。
+ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+前提条件 このチュートリアルを実施するには、以下が必要です。
+  ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
+API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
+  開発環境がシステム要件を満たしていることを確認してください。
+  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
     </item>
     
     <item>

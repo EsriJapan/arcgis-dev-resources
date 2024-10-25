@@ -22,9 +22,9 @@ description = "シンプルな地図アプリの作成方法を紹介します�
 
 <table>
 <tbody><tr>
+<td style="width:20%"><a href="./create-startup-app-dotnet">.NET</a></td>
 <td style="width:20%"><a href="./create-startup-app-android">Android</td>
 <td style="width:20%"><a href="./create-startup-app-ios">iOS</a></td>
-<td style="width:20%"><a href="./create-startup-app-dotnet">.NET</a></td>
 <td style="width:20%"><a href="./create-startup-app-unity">Unity</a></td>
 <td style="width:20%"><a href="./create-startup-app-unreal-engine">Unreal Engine</a></td>
 </tr></tbody>
