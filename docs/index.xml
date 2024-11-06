@@ -14,8 +14,10 @@
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-concepts/</guid>
       <description>ArcGIS API for Python のコンセプト ArcGIS API for Python (以下、Python API) は、Web GIS (ArcGIS Online / ArcGIS Enterprise) を活用してマップと地理空間データを扱うための Python ベースの API です。
 Python のベスト プラクティスに基づき、標準的なイディオムやデータ構造を用いた、シンプルで使いやすい設計になっており、GIS データの可視化や解析の実行だけでなく、ユーザー、グループ、アイテムなどを管理するためのシンプルで使いやすいツールを提供します。 さらに、自身が所有しているデータだけでなく、Esri 等が提供するすぐに使えるマップやデータにアクセスすることも可能です。 また、Pandas や Jupyter Notebook といった、他の Python 向けのライブラリやツールとの連携で、より豊富な機能を活用することが可能です。
-ArcGIS API for Python がどのようなモジュールから成り立っているのかを解説します。* [動作要件](#動作要件)OS などシステム要件と推奨する開発環境をご紹介します。* [ガイドページとサンプルコード](#ガイドページとサンプルコード)用途別に、初めの一歩として有用なサンプルをご紹介します。 -- Python API のアーキテクチャ Python API は、Web GIS プラットフォームを使用する目的で実装されています。 Python API には、ArcGIS プラットフォーム上で利用するデータやユーザの認証情報など、各オブジェクトを管理して作業するためのモジュール、クラス、関数、およびタイプがあります。
-Python API は arcgis パッケージとして配布されています。 このパッケージの中には、最も基本になる gis モジュールを中心に、Web GIS で使用できる機能がさまざまなモジュールとして編成されています。</description>
+ Python API のアーキテクチャ Python API は、Web GIS プラットフォームを使用する目的で実装されています。 Python API には、ArcGIS プラットフォーム上で利用するデータやユーザの認証情報など、各オブジェクトを管理して作業するためのモジュール、クラス、関数、およびタイプがあります。
+Python API は arcgis パッケージとして配布されています。 このパッケージの中には、最も基本になる gis モジュールを中心に、Web GIS で使用できる機能がさまざまなモジュールとして編成されています。
+Python API のモジュールを表したダイアグラム
+gis モジュールは最も重要なモジュールで、Web GIS への入口となり、ユーザー、グループ、およびコンテンツを管理 (作成、読み込み、更新、削除) する機能を提供します。Web GIS の管理者権限をもつユーザーは、自身の組織のメンバー、グループなどの管理にこのモジュールを使用します。</description>
     </item>
     
     <item>
@@ -229,14 +231,17 @@ API キーとは API キーは、ArcGIS の安全なサービス、コンテン�
     </item>
     
     <item>
-      <title>ArcGIS API for Python のための基礎環境：conda入門</title>
+      <title>ArcGIS API for Python のための基礎環境：Conda入門</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-conda/</guid>
-      <description>ArcGIS API for Python (以下、Python API) を使用する際、conda を利用すると Python の環境やパッケージを管理することが容易になります。 ここでは、conda の基本について簡単に説明します。conda について基本的な事項を把握しておきますと、この後のインストールガイドでの環境作成を行いやすくなります。
-conda の基本 conda の基本について説明します。conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。 conda を使用する場合、次の 2 つの選択肢があります。
- Anaconda Distribution : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。 Miniconda : Anaconda をコンパクトにしたもので、Python、conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。  Anaconda と Miniconda の詳しい違いは Anaconda or Miniconda (英語) のページをご覧ください。 ※ pip でも Python API をインストールすることができますが、初心者には conda が推奨されています。参考: ArcGIS API for Python - Install and set up (英語)</description>
+      <description>出典：ArcGIS API for Python - Understanding Conda
+ArcGIS API for Python (以下、Python API) を使用する際、Conda を利用すると Python の環境やパッケージを管理することが容易になります。
+Conda の基本について説明します。Conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。 Conda を使用する場合、次の 2 つの選択肢があります。
+ Anaconda Distribution : Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです (以下、Anaconda)。 Miniconda : Anaconda をコンパクトにしたもので、Python、Conda、それらの依存パッケージ、その他の最小限のパッケージをインストールします。ArcGIS Pro をインストールした場合、Miniconda も同時にインストールされます。  Anaconda と Miniconda の詳しい違いは Anaconda or Miniconda (英語) のページをご覧ください。
+Conda の基本 Conda を理解する最も簡単な方法は、チュートリアルに取り組むことです。 以下のセクションでは、ArcGIS API for Python を使用するために必要なコマンドの概要について説明します。
+Condaは プラットフォームに依存しないパッケージ マネージャー アプリケーションで、Python パッケージのインストールや更新、削除などを行うことができます。パッケージは、チャネルと呼ばれるさまざまなリポジトリに保存されているソフトウェアとサポートファイルのバンドルです。チャネルは、Anaconda Cloud のようなクラウド ロケーションのデフォルト セットである場合もあれば、個人や組織が作成したプライベート リポジトリである場合もあります。Conda は、パッケージのリストアップやインストールを行う際に、デフォルトのチャネルを検索します。特定のチャネルを検索するように Conda を設定する方法など、詳細については Channels を参照してください。</description>
     </item>
     
     <item>
@@ -482,10 +487,8 @@ ArcGIS Experience Builder (Developer Edition) で使用されている技術は�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/</guid>
-      <description>ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。 Python API は、arcgis という名前のパッケージで Anaconda Cloud 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については ArcGIS API for Python のための基礎環境：conda入門 を参照してください。
-Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。
-ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
- ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro  STEP 1: Python API をインストールする  ArcGIS Pro でインストールする Anaconda 経由でインストールする  STEP 2: arcgis パッケージをアップグレードする  ArcGIS Pro 2.</description>
+      <description>Python には、ArcGIS Pro で使用できるパッケージが豊富に用意されています。Python パッケージの使用を簡素化するために、ArcGIS Pro には conda と呼ばれるパッケージ管理システムが含まれています。 conda は、パッケージとその依存関係のインストールや更新の手間を省きます。 個のガイドでは ArcGIS Pro を使用したインストールの流れについてご紹介します。
+STEP 1: Python API のインストール  ArcGIS Pro でインストール Python コマンド プロンプトでインストール  STEP 2: arcgis パッケージのアップグレード STEP 3: ArcGIS API for Python の実行  Jupyter Notebook の起動 Jupyter Notebook で地図表示  参考  オフライン時のインストール方法 特定の Python 環境のカーネルの追加  Python API のインストール ArcGIS Pro でインストール ArcGIS Pro では、2.5 以降のリリースから conda と arcgis パッケージが最初からインストールされています。 conda の機能は、パッケージ マネージャー を通じて ArcGIS Pro に統合されています。ArcGIS Pro 2.</description>
     </item>
     
     <item>

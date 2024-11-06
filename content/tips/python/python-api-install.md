@@ -5,131 +5,109 @@ weight = 3
 aliases = ["/python/python-api-install/"]
 +++
 
-ArcGIS API for Python (以下、Python API) を使用するための環境構築は主に 2 つあります。一つは ArcGIS Pro でインストールする方法、もう一つは Anaconda でインストールする方法です。</br>
-Python API は、`arcgis` という名前のパッケージで [Anaconda Cloud](https://anaconda.org/) 等で配布されています。Anaconda Cloud 上のパッケージは conda を使用してインストールやバージョン管理を行うことができます。conda の詳細については [ArcGIS API for Python のための基礎環境：conda入門](../python-api-conda) を参照してください。
+Python には、ArcGIS Pro で使用できるパッケージが豊富に用意されています。Python パッケージの使用を簡素化するために、ArcGIS Pro には [conda](https://docs.conda.io/en/latest/) と呼ばれるパッケージ管理システムが含まれています。 conda は、パッケージとその依存関係のインストールや更新の手間を省きます。
+個のガイドでは ArcGIS Pro を使用したインストールの流れについてご紹介します。
 
-{{% notice warning %}}
+### STEP 1: [Python API のインストール](#python-api-のインストール)
+* [ArcGIS Pro でインストール](#arcgis-pro-でインストール)
+* [Python コマンド プロンプトでインストール](#python-コマンド-プロンプトでインストール)
 
-Python API は ArcGIS Pro 経由でインストールするか、Anaconda 経由でインストールする方法がありますが、**PATH の問題を引き起こす可能性があるため、ベストプラクティスとしては、単一のマシンに ArcGIS Pro と Anaconda の両方をインストールすることは推奨されません。**
+### STEP 2: [arcgis パッケージのアップグレード](#arcgis-パッケージのアップグレード)
 
-ArcGIS Pro と Anaconda の違いについては以下のブログもご参照ください。
-- [ArcGIS API for Python のコアコンセプト その 2：Anaconda、Conda、Jupyter Notebook、そしてArcGIS Pro](https://community.esri.com/docs/DOC-13655)
-
-{{% /notice %}}
-
-### STEP 1: [Python API をインストールする](#python-api-をインストールする)
-* [ArcGIS Pro でインストールする](#arcgis-pro-でインストールする)
-* [Anaconda 経由でインストールする](#anaconda-経由でインストールする)
-
-### STEP 2: [`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)
-* [ArcGIS Pro 2.3 以上の環境の場合](#arcgis-pro-23-以上の環境の場合)<!-- * [ArcGIS Pro 2.2 環境の場合](#arcgis-pro-22-環境の場合) -->
-* [Anaconda 環境の場合](#anaconda-環境の場合)
-
-### STEP 3: [ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)
-* [Jupyter Notebook を起動する](#jupyter-notebook-を起動する)
-* [Jupyter Notebook で地図を表示してみる](#jupyter-notebook-で地図を表示してみる)
+### STEP 3: [ArcGIS API for Python の実行](#arcgis-api-for-python-の実行)
+* [Jupyter Notebook の起動](#jupyter-notebook-の起動)
+* [Jupyter Notebook で地図表示](#jupyter-notebook-で地図表示)
 
 ### [参考](#参考)
-* [1. オフライン時のインストール方法](#1-オフライン時のインストール方法)
-<!-- * [2. Linux へのインストール](#2-linux-へのインストール) -->
+* [オフライン時のインストール方法](#オフライン時のインストール方法)
+* [特定の Python 環境のカーネルの追加](#特定の-python-環境のカーネルの追加)
 
-***
+### Python API のインストール
 
-### Python API をインストールする
+#### ArcGIS Pro でインストール
 
-#### ArcGIS Pro でインストールする
+ArcGIS Pro では、2.5 以降のリリースから conda と `arcgis` パッケージが最初からインストールされています。  conda の機能は、[パッケージ マネージャー](https://pro.arcgis.com/ja/pro-app/latest/arcpy/get-started/what-is-conda.htm) を通じて ArcGIS Pro に統合されています。ArcGIS Pro 2.5 以降では、任意の conda パッケージをダウンロードしてインストールするための パッケージ マネージャーの GUI が提供されています。ArcGIS Pro の設定画面からアクセスすることができます。
 
-ArcGIS Pro では、2.1 以降のリリースから conda と `arcgis` パッケージが最初からインストールされています。</br>
-[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。バージョンが最新でない場合は[`arcgis` パッケージをアップグレードする](#arcgis-パッケージをアップグレードする)を参照して Python API を更新します。
-
-#### Anaconda 経由でインストールする
-
-ArcGIS Pro をお持ちでない場合は、Anaconda をインストールします。</br>
-Anaconda は Python とデータサイエンス向けの Python パッケージなどを提供するプラットフォームです。 </br>
-Python API は Python 3.5 以降を必要とするため、[Anaconda ダウンロードページ](https://www.anaconda.com/download/)から、適切なバージョンをダウンロードしてください。 </br>
-※ Python API は、国内では Windows 版のサポートを提供しています。
-<!-- macOS/Linux は Python API の国内サポート対象外のため、現時点ではコメントアウトしておく -->
-<!-- * [macOS](https://www.anaconda.com/download/#macos) -->
-<!-- * [Linux](https://www.anaconda.com/download/#linux) -->
-
-ターミナルアプリケーション（ここでは Anaconda Prompt）を開き、次のコマンドを使用して `arcgis` パッケージをインストールします。
-```
-conda install -c esri arcgis
-```
-
-<!-- <div align="left">
-<img src="http://esri.github.io/arcgis-python-api/notebooks/nbimages/install_arcgis_pkg_mac.png" width="700px">
-</div> -->
-
-インストールされる Python API のバージョンは基本的に最新バージョンとなりますが、古いバージョンがインストールされた場合は以下のようにバージョン番号を指定することで指定したバージョンがインストールされます。</br>
-```
-conda install -c esri arcgis=2.x.x
-```
-
-{{% notice note %}}
-
-Anaconda で Python API の環境構築をした場合、内部ではデータの書き出し等に [pyshp](https://pypi.org/project/pyshp/) を利用しています。2022 年 2 月現在の最新版である pyshp 2.2.0 ではフィールド名が Unicode に対応して日本語が扱えるようになる等、機能が改善されていますが、Python API 1.7.1 以前のバージョンでは古いバージョンの pyshp を使っています。そのため、Anaconda で環境構築する際は 1.8.0 以降の Python API のインストールを推奨します。
-
-{{% /notice %}}
-
-インストールが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
-
-***
-
-### arcgis パッケージをアップグレードする
-
-#### ArcGIS Pro 2.3 以上の環境の場合
-
-ArcGIS Pro 2.3 以上では Python API が最初からインストールされています。</br>
-ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
-
-* ArcGIS Pro を起動し、スタートアップ画面の左下にある [設定] をクリックします。
-* ArcGIS Pro 3.x の場合は[パッケージマネージャー]メニューを、 ArcGIS Pro 2.x の場合は[Python]メニューオプションを選択します。
-* ArcGIS Pro 3.x の場合は[環境マネージャー]ボタンを、ArcGIS Pro 2.x の場合は[環境の管理]ボタンをクリックし、「環境の管理」ウィンドウを開いて、[デフォルトのクローン]ボタンを選択します。
+* ArcGIS Pro を開き [設定] ＞ [パッケージ マネージャー] を選択します。プロジェクトを開いている場合は、[プロジェクト] タブ ＞ [パッケージ マネージャー] を選択します。
+* デフォルトの arcgispro-py3 環境にインストールされているパッケージのリストが表示されます。さらにパッケージの追加や更新を行うには、以下の操作を行います。
+* パッケージ マネージャーで [環境マネージャー] ボタンをクリックし、[arcgispro-py3 のクローン作成] ボタンを選択します。
 
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/Pro_30/arcgis_pro_clone.png" width="800px">
 <p>(ArcGIS Pro 3.x)①[環境マネージャー]ボタンと環境の②[デフォルトのクローン]ボタン</p>
-
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng.png" width="800px">
-<p>(ArcGIS Pro 2.x)①[環境の管理]ボタンと環境の②[デフォルトのクローン]ボタン</p>
 </div>
 
-* デフォルト環境のクローンが作成されます。
-
-<!-- Pro2.3から環境名の変更がProからはできなくなっている -->
-<!-- <div align="center">
-<img src="https://s3-ap-northeast-1.amazonaws.com/apps.esrij.com/arcgis-dev/guide/img/pythonAPI/python-api-install/ppm_mng_env_new.png" width="800px">
-<p>[名前]の入力ボックスへ入力する </br>※日本語は推奨しません。半角英数で入力します。</p>
-</div> -->
-
-* クローンの作成中は下部にインストール中のパッケージ名が表示されます。</br>すべてのパッケージのインストールが完了すると、クローンされた環境が格納されているディレクトリ名が表示されます。</br>※完了前に操作をすると、作成した環境が正常に動作しない可能性があります。
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_installing2.png" width="800px">
-<p>クローンの作成中の様子(ArcGIS Pro 2.x)</p>
-</div>
-
-* ArcGIS Pro 3.x の場合は、作成した環境をダブルクリック、もしくはアクティブ化をクリックし、ArcGIS Pro 2.x の場合は、作成した環境のラジオボタンをクリックして、環境をアクティブにします。
+* 必要に応じてパスと名前を変更し、[OK] をクリックします。
+* すべてのパッケージのインストールが完了すると、クローンされた環境が格納されているディレクトリ名が表示されます。  
+  ※ 完了前に操作をすると、作成した環境が正常に動作しない可能性があります。
+* 環境マネージャー ウィンドウで作成した環境の右側にある [・・・] から [アクティブ化] を選択し、完了したら [OK] をクリックします。
 
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/Pro_30/arcgis_pro_active.png" width="800px">
 <p>(ArcGIS Pro 3.x)環境をアクティベート</p>
-
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_pkg_mng_activate2.png" width="800px">
-<p>(ArcGIS Pro 2.x)環境をアクティベート</p>
 </div>
 
-* 環境の管理ダイアログを閉じ、ArcGIS Pro を閉じます
-* Python コマンドプロンプトを開きます。<br>スタートメニュー>すべてのプログラム> ArcGIS> Python コマンドプロンプトで開くことができます。
-* 次のコマンドを入力します。
+アクティブ化した環境でインストールされているパッケージを確認したり、更新やパッケージの追加オプションを使用して、クローン環境をニーズに合わせて変更することができます。
+
+{{% notice note %}}
+
+パッケージ マネージャー を使用して arcgis パッケージをアップグレードすることはできません。arcgis パッケージのアップグレード手順については、「パッケージのアップグレード」のセクションを参照してください。
+
+{{% /notice %}}
+
+***
+
+#### Python コマンド プロンプトでインストール 
+ArcGIS Pro には、任意の conda パッケージをダウンロードしてインストールするための Python コマンド プロンプトが提供されています。
+
+* Windows のスタートメニュー ＞ すべてのアプリ ＞ ArcGIS ＞ Python コマンド プロンプトを選択します。 
+
+{{% notice note %}}
+
+デフォルトでは、Python コマンド プロンプトは ArcGIS Pro のデフォルトの arcgispro-py3 環境ディレクトリ(通常は C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\ ) で開き、デフォルトの conda 環境がアクティブになります。
+
+{{% /notice %}}
+
+さらにパッケージを追加するには、デフォルトの arcgispro-py3 環境のクローンを作成する必要があります。Python コマンド プロンプトでクローン環境を作成する手順についての詳細は、[Clone a Python environment with the Python Command Prompt](https://support.esri.com/en-us/knowledge-base/how-to-clone-a-python-environment-with-the-python-comma-000020560) を参照してください。クローン環境を既に作成している場合は、以下のコマンドを使用してクローン環境をデフォルトの環境に変更することができます。
 
 ```
-conda upgrade -c esri arcgis
+proswap <環境名>
+```
+* Python コマンドプロンプトで以下のコマンドを使用してパッケージをインストールします。  
+  ※ バージョン番号を指定しない場合はその時点の最新版がインストールされます。
+
+```
+conda install -c esri arcgis=<バージョン番号>
+```
+<div align="center">
+<img src="https://developers.arcgis.com/python/static/ad9a44b7ad3ad229d00006ef561e6a28/4cdf7/install-and-set-up.png" width="800px">
+<p>Python コマンド プロンプト</p>
+</div>
+
+### arcgis パッケージのアップグレード
+
+{{% notice note %}}
+
+デフォルトの arcgispro-py3 環境は変更できません。パッケージをアップデートする場合は、クローン環境を作成してください。また、パッケージ マネージャーでは arcgis パッケージを更新することはできません。以下のようにPython コマンド プロンプトを使用します。
+
+{{% /notice %}}
+
+* Python コマンドプロンプトを開きます。  
+  Windows のスタートメニュー ＞ すべてのアプリ ＞ ArcGIS ＞ Python コマンド プロンプトで開くことができます。
+* 以下のコマンドでアップグレードする arcgis パッケージを含む環境をアクティブ化します。 
+
+```
+activate <環境名>
+```
+
+* esri チャネルからバージョン番号なしでインストールして、arcgis パッケージを最新版にアップグレードします。以下のコマンドを入力します。
+
+```
+conda install -c esri arcgis
 ```
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_upgrade2.png" width="700px">
+<img src="https://developers.arcgis.com/python/static/b4b3e6d3883dc5ae4388fe1b986d9f7c/4cdf7/install-and-set-up-pcp.png" width="800px">
 <p>コマンドの入力</p>
 </div>
 
@@ -137,28 +115,17 @@ conda upgrade -c esri arcgis
 * ArcGIS Pro のバージョンによっては、最新の Python API のバージョンが表示されない場合があります。その場合、一度 `n` を入力・実行し、以下のコマンドを再入力してください。
 
 ```
-conda upgrade -c esri arcgis --no-pin
+conda install -c esri arcgis --no-pin
 ```
 
 {{% notice note %}}
 
 ArcGIS Pro のバージョンによってはデフォルトの設定で、アップグレードできる Python API のバージョンの上限が指定がされています。</br>
-`conda upgrade -c esri --no-pin arcgis` のうち、`--no-pin` がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
+`conda install -c esri arcgis --no-pin` のうち、`--no-pin` がバージョンの指定を外して最新版までアップグレードするためのオプションです。</br>
 ただし、デフォルトの設定が変更されるわけではないため、アップグレード後に他のパッケージをインストールしようとすると、設定された上限のバージョンにダウングレードするように conda で計画されます。</br>
 その場合、そのパッケージをインストールした後に再度上記のコマンドを入力し `arcgis` パッケージをアップグレードしてください。
-<!-- > *以下の操作はデフォルトで想定されているパッケージ管理の制御を変更するため、必ず事前に環境を複製しておく等、適切なバックアップの処置をしてください。*</br>
-> *また、以下操作の実行による不具合等はサポートの対象としかねますので、ご承知おきください。*</br>
-> 永続的に設定を変更するには conda 環境の中の pinned ファイルを書き換える必要があります。</br>
-> > C:\Users\ (ユーザー名) \AppData\Local\ESRI\conda\envs\ (複製した環境名) \conda-meta\pinned</br>
-> 上記ファイルをテキストエディタで開くと、`arcgis 1.5.*` と記載されているので、数字部分を `2` など、アップグレードしたいバージョン以上の数字に書き換え保存します。</br>
-> 他の記載されているパッケージの設定を変更すると、予期しない不具合を招く恐れがありますので注意してください。</br> -->
 
 {{% /notice %}}
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_23/py_cmd_plan.png" width="700px">
-<p align="center">インストールされるパッケージの確認</p>
-</div>
 
 * アップグレードしたバージョンを確認するには、次のコマンドを入力します。
 
@@ -172,98 +139,13 @@ conda list arcgis
 <p></p>
 </div>
 
-アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
-
-<!-- #### ArcGIS Pro 2.2 環境の場合
-
-ArcGIS Pro 2.2 には ArcGIS API for Python 1.4.1 がインストールされています。</br>
-ArcGIS Pro をインストールすると、デフォルトで "arcgispro-py3" という読み取り専用の conda 環境が作成されています。Python API を最新のバージョンに更新するには、Python パッケージ マネージャー (ArcGIS Pro の機能のひとつ) を使用して、デフォルトの環境をクローンし、クローンした環境の Python API を最新バージョンにアップグレードします。
-
-* 新しい空のプロジェクトで ArcGIS Pro を開きます。
-* [プロジェクト]タブを選択して、ArcGIS Pro の詳細オプションを表示します。（下記のスクリーンショットを参照）
-* [Python]メニューオプションを選択します。
-* [環境の管理]ボタンをクリックしウィンドウを開いて、[新規作成]ボタンを選択します。                                                                      
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env.png" width="800px">
-<p>[環境の管理]ボタンと環境の[新規作成ボタン]</p>
-</div>
-
-* 新しい環境の名前を入力して[保存]を選択します。
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_mng_env_new.png" width="800px">
-<p>[名前]の入力ボックスへ入力する </br>※日本語は推奨しません。半角英数で入力します。</p>
-</div>
-
-* ダイアログの下部にある青色の進行状況バーが消えたら完了です。</br>この表示が完了してから、次の操作に進んでください。</br>※完了前の操作は正しい環境が作成・動作しない可能性があります。
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_env_create_progress.png" width="800px">
-<p>青色の進行状況バー</p>
-</div>
-
-* 作成した環境のラジオボタンを選択して、環境をアクティブにします。</br>ここでの操作は、Anacondaで仮想環境をアクティベートする操作に値します。
-
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/ppm_active_env.png" width="800px">
-<p>仮想環境を指定する</p>
-</div>
-
-* 環境の管理ダイアログを閉じ、ArcGIS Pro を閉じます
-* Python コマンドプロンプトを開きます</br>またはスタートメニュー>すべてのプログラム> ArcGIS> Python コマンドプロンプトで開きます。
-* 次のコマンドを入力します。
-
-```
-conda upgrade -c esri arcgis
-```
-
-<div align="left">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_pyapi.png" width="700px">
-<p>コマンドの入力</p>
-</div>
-
-* 「Proceed([y]/n)?」 の表示は `y` を入力して実行します。
-
-<div align="left">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_y.png" width="700px">
-<p align="center">インストールするパッケージ計画が表示され、この計画でよい場合は"y"を選択します</p>
-</div>
-
-* アップグレードしたバージョンを確認するには次のコマンドを入力します。
-
-```
-conda list arcgis
-```
-
-<div align="left">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/pro_22/cmd_upgrade_verify.png" width="700px">
-<p>Python API を含む ArcGIS 関連のパッケージとそのバージョン番号が表示できます</p>
-</div>
-
-アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。 -->
-
-#### Anaconda 環境の場合
-Anaconda Prompt のようなターミナルアプリケーションを開き、次のコマンドを使用して `arcgis` を実行してアップグレードします。
-```
-conda upgrade -c esri arcgis
-```
-
-インストールするパッケージの計画が表示されるので、`y` を選択し、アップグレードします。
-
-アップデートが完了したら、[ArcGIS API for Python を実行する](#arcgis-api-for-python-を実行する)を試してみましょう。
-上記以外の ArcGIS API for Python を実行環境の構築については、[Install and Setup(英語)](https://developers.arcgis.com/python/guide/install-and-set-up/)でご確認ください。
-
 ***
 
-### ArcGIS API for Python を実行する
+### ArcGIS API for Python の実行
 
-#### Jupyter Notebook を起動する
+#### Jupyter Notebook の起動
 
-<!-- macOS、Linuxは未サポートのためコメントアウト -->
-<!-- #### Windowsの場合 -->
-
-* Pythonコマンドプロンプト (ArcGIS Pro でインストールした場合)、もしくは Anaconda Prompt (Anaconda でインストールした場合) を起動します。
+* Pythonコマンドプロンプトを起動します。
 * `cd` コマンドを使用して、ノートブックがあるディレクトリ、またはノートブックを作成したいディレクトリに移動します。
 * 次のように入力して Jupyter Notebook を起動します。
 
@@ -276,26 +158,16 @@ jupyter notebook
 jupyter-notebook
 ```
 
-
-または、スタートメニュー>すべてのプログラム> ArcGIS>Jupyter Notebook を選択しても起動することができます。
-
-<!-- 現在は未サポートのためコメントアウト -->
-<!-- #### macOS and Linux の場合
-
-* 端末のターミナルを開きます
-* ノートブックがあるディレクトリ、またはノートブックを作成したいディレクトリに変更します
-* 以下を入力してjupyterを起動します
-    * `jupyter notebook` -->
+または、スタートメニュー ＞ すべてのプログラム ＞ ArcGIS ＞ Jupyter Notebook を選択しても起動することができます。
 
 Jupyter Notebook の詳しい操作は [Jupyter Notebook を使ってみよう](../python-api-jnsetup)もご覧ください。</br>
 Python API バージョン 1.5.0 以降からは、Jupyter Lab からも操作が可能です。[Jupyter Lab を使ってみよう](../python-api-jnlabsetup)も是非ご覧ください。
 
 
-#### Jupyter Notebook で地図を表示してみる
+#### Jupyter Notebook で地図表示
 
 次の手順で、地図を表示するための新しいノートブックを作成します。
 * Click New > Python 3
-<!-- * macOS and Linux:  Click New > Python[default] -->
 
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/newNoteboook.jpg" width="800px">
@@ -331,14 +203,14 @@ arcgis.__version__
 ---
 
 ### 参考
-#### 1. オフライン時のインストール方法
+#### オフライン時のインストール方法
 
 インターネットに接続していない環境の場合、次の手順で Python API のインストールが可能です。<br>
 ただし、この場合、すべての依存パッケージがインストールされるわけではないため、Jupyter Notebook の利用など、一部の機能が制限される可能性があります (※ 組織やコンテンツの管理など特定のタスクは以下手順でインストールする [six](https://pypi.org/project/six/) パッケージのみで可能です。)<br>
 依存パッケージについては米国Esri 社のガイドページ：[System requirements](https://developers.arcgis.com/python/guide/system-requirements/) を参照ください。
 
 
-##### インターネットに接続できる環境で以下の必要なソフトウェアをダウンロードします。
+インターネットに接続できる環境で以下の必要なソフトウェアをダウンロードします。
 * 最新の Python 3.x 用の Anaconda
 * 適切なバージョンの Python API のファイル
     * [Anaconda クラウドの Esri のチャネル](https://anaconda.org/Esri/arcgis/files)からダウンロード可能です。
@@ -353,7 +225,7 @@ arcgis.__version__
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/anacondacloudesric.png" width="800px">
 </div>
 
-##### オフライン環境で Anaconda を設定
+オフライン環境で Anaconda を設定
 * Anaconda をインストールします。
 * 次のコマンドで[オフライン モード](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#offline-mode-only-offline)に設定します。
 
@@ -380,97 +252,37 @@ conda install <事前にダウンロードしたファイルのパス>
 ```
 
 "done"が表示されればインストール完了です。<br>
-より詳しい情報は 米国Esri ガイドページ：[Install-Offline](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-Offline) をご覧ください。
+より詳しい情報は Esri ガイド ページ [Install-Offline](https://developers.arcgis.com/python/guide/install-and-set-up/#Install-Offline) をご覧ください。
 
 <br>
 
-<!-- #### 2. Linux へのインストール
-ArcGIS API for Python は Linux マシンにもインストールすることができます。<br>
-ここでは、例として [Ubuntu Server](https://ubuntu.com/download/server) にインストールする手順をご紹介します。<br>
+#### 特定の Python 環境のカーネルの追加
 
-{{% notice warning %}}
-
-現在国内では ArcGIS API for Python の Linux での利用は未サポートです。ご利用そのものを妨げるものではありませんが、利用される際は ESRIジャパンの提供するサポート サービス等の対象とならない可能性がある点に留意してください。
-
-{{% /notice %}}
-
-##### Anaconda をインストール
-Linux では ArcGIS Pro を利用できないため、Anaconda から ArcGIS API for Python をインストールします。
-
-* Linux 版の Anaconda の [ダウンロード URL](https://www.anaconda.com/distribution/#download-section) を確認し、wget でファイルをダウンロードします
-    * ここでは Anaconda 2019.10 for Linux をダウンロードします。
-
+Jupyter Notebook に特定の Python 環境でカーネルを追加するには、以下で説明する手順に従います。
+1. Python コマンド プロンプトを管理者として実行します
+2. Python コマンド プロンプト ウィンドウで、次のコマンドを挿入します
 ```
-wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+python -m ipykernel install --user --name <環境名> --display-name "<Jupyter Notebook 上の表示名>"
 ```
+3. 2 のコマンドを実行すると、カーネルが作成され、次の応答が返されます
+```
+Installed kernelspec <カーネル名> in C:\Users\<user>\AppData\Roaming\jupyter\kernels\<カーネル名>
+```
+4. 次に、別の Python 環境でカーネルを作成するために別の環境をアクティベートします
+```
+activate <環境名>
+```
+5. 手順 2 と同様の方法でカーネルを作成します
+6. Python コマンド プロンプトで下記のコマンドを入力し、Jupyter Notebook を起動します
+```
+Jupyter Notebook
+```
+7. カーネルのリストに作成したカーネルが存在することが確認できます
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/dl-anaconda.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/select_kernel.png" width="400px">
 </div>
 
-* ダウンロードしたインストーラーを以下のコマンドで実行します。
+このような方法で特定の異なる環境のカーネルを作成し、Jupyter Notebook 上で切り替えられるようになります。
+また、特定の環境のパスを指定してカーネルを作成する方法については [Kernels for different environments](https://ipython.readthedocs.io/en/8.27.0/install/kernel_install.html#kernels-for-different-environments) を参照してください。
 
-```
-sh Anaconda3-2019.10-Linux-x86_64.sh
-```
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/sh-anaconda.png" width="500px">
-</div>
-
-* インストールするディレクトリは任意のディレクトリを選ぶことができます。ここではデフォルトの設定である、ログイン ユーザーのホーム ディレクトリにインストールすることにします。
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/install-dir.png" width="500px">
-</div>
-
-* 最後に PATH を通すか確認されます。ここでは [Anaconda のドキュメント](https://docs.anaconda.com/anaconda/user-guide/faq/#id2)に従い、yes として進めます。
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/initialize.png" width="500px">
-</div>
-
-
-{{% notice note %}}
-
-変更を反映させるためには一度 シェル を閉じて再度開く必要があります。
-
-{{% /notice %}}
-
-##### `arcgis` パッケージをインストール
-ArcGIS API for Python (arcgis) をインストールします。
-
-Anaconda の base 環境にインストールしてもよいですが、ここでは conda で新しい環境を作成してインストールします。
-
-* 新しい Python 環境を作成
-    * 以下のコマンドで新しい Python 環境を作成します。
-    * <環境名> には識別しやすい任意の環境名を指定します。また、ここではインストールする Python のバージョンとして 3.7 を指定しています。
-
-```
-conda create -n <環境名> python=3.7
-```
-
-* 作成した環境をアクティベート
-    * 以下のコマンドで作成した環境に切り替えます
-
-```
-conda activate <環境名>
-```
-
-* ArcGIS API for Python をインストール
-    * 以下のコマンドで ArcGIS API for Python をインストールします。
-    * 以下では ArcGIS API for Python 1.7.1 をインストールするよう指定しています。
-
-```
-conda install -c esri arcgis=1.7.1
-```
-
-* インストールの確認
-    * インストールが終了したら以下のコマンドで正常にインストールされているか確認しましょう。
-    * 正常にインストールされていれば、arcgis というパッケージ名とインストールしたバージョン番号が表示されます。
-
-```
-conda list arcgis
-```
-<div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/linux/conda-list-arcgis.png" width="500px">
-</div> -->
-
-ESRIジャパンが運営する [GIS アプリ開発者のためのコミュニティ グループ](https://community.esri.com/t5/arcgis-%E9%96%8B%E7%99%BA%E8%80%85%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3/ct-p/arcgis-japanese-developer-community) では、Python API の機能や実際のコードを[ブログ](https://community.esri.com/t5/forums/searchpage/tab/message?advanced=false&allow_punctuation=false&filter=includeTkbs,location&include_tkbs=true&location=tkb-board:arcgis-japanese-developer-community-docs&q=python)でご紹介しています。</br>
-また、[GitHub](https://github.com/EsriJapan/arcgis-samples-python-api) にも日本語による解説付きのコードを公開していますので、是非ご参照ください。
+インストールに関しての詳細は Esri ガイド ページ [Install and set up](https://developers.arcgis.com/python/guide/intro/) もご参照ください。
