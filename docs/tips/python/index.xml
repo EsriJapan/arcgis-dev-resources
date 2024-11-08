@@ -64,9 +64,10 @@ Windows のコマンドプロンプトからコマンドを実行した場合
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-jnlabsetup/</guid>
-      <description>JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。 ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。
+      <description>JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。
+ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。バージョン 2.4.0 以降は Jupyter Lab 4.0 に対応しています。
 JupyterLab で GIS データとグラフの操作
-JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は JupyterLab のブログや GitHub をご参照ください。
+JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は JupyterLab のドキュメントや GitHub をご参照ください。
 JupyterLab をはじめる Python API を JupyterLab で使用するためには、いくつかインストールなどの設定が必要です。
 インストール   バージョン 1.5.0 以上の Python API をインストールするか、既存の環境を 1.5.0 以上にアップデートする ターゲットの仮想環境がある場合は、アクティベート（activate）してから行います。Python API のインストールまたはアップデートの方法はインストールガイドをご覧ください。
   次の 2 つのコマンドを実行します

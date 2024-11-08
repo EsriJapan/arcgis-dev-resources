@@ -5,14 +5,15 @@ weight = 5
 aliases = ["/python/python-api-jnlabsetup/"]
 +++
 
-JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。</br> ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。
+JupyterLab は、コード、データ、そして Jupyter Notebook のファイル形式（*.ipynb）を扱う最新の対話型開発環境（IDE）です。Jupyter Notebook 同様、オープンソースとして公開されています。  
+ArcGIS API for Python（以下、Python API ）のバージョン 1.5.0 以降で対応しています。バージョン 2.4.0 以降は [Jupyter Lab 4.0](https://blog.jupyter.org/jupyterlab-4-0-is-here-388d05e03442) に対応しています。
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_workflow.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_workflow.gif" width="800px">
 <p>JupyterLab で GIS データとグラフの操作</p>
 </div>
 
-JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は [JupyterLab のブログ](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)や [GitHub](https://github.com/jupyterlab/jupyterlab) をご参照ください。
+JupyterLab は、より柔軟で強力なユーザー体験を実現するために Jupyter Notebook の主要コンポーネント (ノートブック、ターミナル、テキスト エディター、ファイル ブラウザー、ipywidgets など) をベースに構築されています。JupyterLab の詳細は [JupyterLab のドキュメント](https://jupyterlab.readthedocs.io/en/stable/)や [GitHub](https://github.com/jupyterlab/jupyterlab) をご参照ください。
 
 ## JupyterLab をはじめる
 
@@ -59,7 +60,7 @@ arcgis-map-ipywidget v1.5.1 enabled  ok
 JupyterLab は、従来の Jupyter Notebook のように、既存のノートブックを開いたり、新しいノートブックを作成したり、コンテンツを整理するためのファイルエクスプローラを備えています。 JupyterLab のファイルエクスプローラは、メインビューの左側のウィンドウです。
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_file_explorer.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_file_explorer.gif" width="800px">
 </div>
 
 JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipynb）で動作しコードや結果を保存できます。この 2 つのツールの違いは、主にユーザーインターフェースといくつかの外部エクステンションが追加された点です。
@@ -69,7 +70,7 @@ JupyterLab も Jupyter Notebook と同様に、ノートブック形式（*.ipyn
 JupyterLab には、Jupyter Notebook とは違って、「ウィンドウ」と「タブ」という概念があります。 これにより、ノートブックを重ねたり、横に並べたり、タブで整理したりすることができます。これらの操作は、以下のように「タブ」をクリックしてドラッグするだけで可能です。
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_navigate_windows.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_navigate_windows.gif" width="800px">
 </div>
 どのようなウィンドウでもこのようにドラッグすることが可能です。*.csv、*.json などのファイルも表示や編集することができます。
 
@@ -78,23 +79,28 @@ JupyterLab には、Jupyter Notebook とは違って、「ウィンドウ」と�
 上記のウィンドウとタブと同様に、JupyterLab ではノートブックのセルをドラッグアンドドロップして移動することができます。 JupyterLab は、1 つのノートブックから別のノートブックにセルをドラッグする機能もサポートしています。 移動したいセルの左側の領域をクリックして、それをドラッグします。
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_cell_utilities_1.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_cell_utilities_1.gif" width="800px">
 </div>
 
 JupyterLab では、Shift キーを押しながら複数のセルを選択することもできます。前述のようにこれらのセルを移動するか、右クリックして [Copy Cells] を選択してコピーします。また、右クリックのメニューには、[Create New View For Output] を含む多くのオプションがあります。[Create New View For Output] を使用すると、任意のセルの実行結果を別のタブで表示することができ、重ねたり、並べて表示したりすることができます。
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_cell_utilities_2.gif" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_cell_utilities_2.gif" width="800px">
 </div>
 JupyterLab には他にも様々なセルの操作ができるので、いろいろと探してみてください！
 
 ## マップ ウィジェットとの連携
 
-バージョン 1.5.0 以上の Python API では、2D 回転、3D モード、3D レンダラーのサポートなどマップ ウィジェットの機能が多数追加されています。これらの機能の詳細については、[ガイドページ（米国ESRI ページ）](https://developers.arcgis.com/python/guide/advanced-map-widget-useage/)でご紹介しています。このガイドでは、マップ ウィジェットと JupyterLab のシームレスな連携を紹介します。
+バージョン 1.5.0 以上の Python API では、2D 回転、3D モード、3D レンダラーのサポートなどマップ ウィジェットの機能が多数追加されています。これらの機能の詳細については、ガイド ページの [Advanced Map Widget Usage](https://developers.arcgis.com/python/latest/guide/advanced-map-widget-usage/) で紹介しています。
+<!--
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/jlab_widget_1.gif" width="600px">
 </div>
+-->
 
-Python API の `MapView` クラスのデフォルトの表示動作は、Jupyter Notebook と同じで、ウィジェットはセルの出力にマップが表示されます。JupyterLab では、これに加えて以下のようなボタンが表示されます。
+Python API の `Map` クラスのデフォルトの表示動作は、Jupyter Notebook と同じで、ウィジェットはセルの出力にマップが表示されます。
+
+<!-- 2.4.0 で削除されたため非表示に -->
+<!--
 <div align="left">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAIIxu7mQQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABI0lEQVRYw+1Wy3GDMBTch3JLBanA+TQR0gDz4JB0Y1xISkBAA4EqHOeYU6qAzYVkPAyWYSLii/Ymzb63q89qBAQEXBgyNamquYhs5zSw1v72SNOUp3gkd2VZ5uP5K1dzkrslqxnzRWQD4MVV4zQw5XguP8uyDckGwBeAm1M10Rrnqqq3fd+3JEVEYhc3WkMcQDMM46IoPv7NQJIkdyLS/oiXZXk4VxP5FDfGNEvEz17Cuciy7J7kGwB0XRfXdX0Yp+NoZ/waGMQbABzE35ekKfIkDhF5mhJf7Q6o6sOReFwUxd7BzdM0ffR5BALglaQAiK21eydZZEsSAFpfBkjy2Rhz7Vr5qimoqurTR4JWeYqDgWDAWwpUNb+ogbn/woCAgL/gG9knfWwKBGcvAAAAAElFTkSuQmC" >
 </div>
@@ -103,8 +109,9 @@ Python API の `MapView` クラスのデフォルトの表示動作は、Jupyter
 <div align="left">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcUAAYsnoHHlAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABG0lEQVRYw+2WMVLDMBBF/9q+BBUlAS5hn8BeqQk1B8HcBgpLowtgnyJwGWtTkFAEOzIgkmHQLzXjeW9nV2sBKSn/PTR1yMwtET3EBInIo7W2PTwvQh9FqfJIMUcFpoy/E6XUrEB27hlIAkngxwJa65umaS7PIsDMt977gYie55ZaKMXM4hhEJFi5iLy87yu5ByDRBIwxA4AhAO93spUxZnOyFtR1fb2rHERUdV23iT6ESqmSmdspeJ7nfSz4rICIlIc/EGZe7eHjOEaBL24BM68AfMCdc6+x9kDxFbiIlM65t5MtIq311R4OoLLWRoUHBUSkJyLJsqz8DfiSFlwAePLe3zHz5ENl6rZEnQEAa6JPW7Zd8txKSfkT2QKASXQbvOVu9AAAAABJRU5ErkJggg==" >
 </div>
+-->
 
-ここからは、実際にコードを試してみましょう。</br>
+実際にコードを試してみましょう。</br>
 以下のセルを実行します。
 
 ```python
@@ -116,31 +123,31 @@ map = gis.map()
 map
 ```
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay.png" width="800px">
 </div>
 
-### Web マップ と Web シーン
-
-Web マップ、Web シーン の両方とも、このボタンを使用することができます。
+Web マップや Web シーン も表示することができます。
 
 ```python
-from arcgis.mapping import WebMap
-webmap_item = gis.content.get("ab42b088573d4253a22a8b38ee698ccd")
-webmap = WebMap(webmap_item)
+from arcgis.map import Map
+webmap_item = gis.content.get("<Web マップのアイテム ID>")
+webmap = Map(webmap_item)
 webmap
 ```
 
 ```python
-from arcgis.mapping import WebScene
-webscene_item = gis.content.get("421433baeb8d487b903d4a89df79149b")
-webscene = WebScene(webscene_item)
+from arcgis.map import Scene
+webscene_item = gis.content.get("<Web シーンのアイテム ID>")
+webscene = Scene(webscene_item)
 webscene
 ```
 
 <div align="center">
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay2d3d.png" width="600px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/map_labdisplay2d3d2.png" width="800px">
 </div>
 
+<!-- 2.4.0 で削除されたため非表示に -->
+<!--
 #### プログラムによるウィンドウの制御
 
 ここまではこの機能をマウスで実行しましたが、Pythonを使用して制御することもできます。
@@ -230,5 +237,6 @@ for webscene_id in ['31874da8a16d45bfbc1273422f772270', '91b46c2b162c48dba264b21
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/jupyter-lab/tab_layout_3scenes.gif" width="600px">
 </div>
+-->
 
-より詳細な情報は、マップ ウィジェットの [API リファレンス](https://developers.arcgis.com/python/api-reference/arcgis.widgets.html#arcgis.widgets.MapView.toggle_window_view)を参照してください。
+より詳細な情報は、ガイド ページの [Working with web maps and web scenes](https://developers.arcgis.com/python/latest/guide/working-with-web-maps-and-web-scenes/) を参照してください。
