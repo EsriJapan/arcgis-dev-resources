@@ -42,7 +42,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のセキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML の表示/編集（ローカル ファイル）<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・3D 解析<br>・ローカル サーバーの標準的な機能 |
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能 |
-| Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ArcGIS Desktop（Spatial/3D/Network エクステンション）で利用可能なジオプロセシング ツールの一部 |
+| Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ローカル サーバーの高度な機能 |
 | Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティ ネットワークのネットワーク フィーチャの編集</br>・ユーティリティ ネットワークのトポロジーの検証 |
 
 
