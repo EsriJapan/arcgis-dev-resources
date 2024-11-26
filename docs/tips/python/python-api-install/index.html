@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-11-13T17:21:53 JST">
+<meta name="revised" content="2024-11-26T16:23:46 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1008,6 +1008,9 @@ if (!doNotTrack) {
 <h3 id="python-api-のインストール">Python API のインストール</h3>
 <h4 id="arcgis-pro-でインストール">ArcGIS Pro でインストール</h4>
 <p>ArcGIS Pro では、2.5 以降のリリースから conda と <code>arcgis</code> パッケージが最初からインストールされています。  conda の機能は、<a href="https://pro.arcgis.com/ja/pro-app/latest/arcpy/get-started/what-is-conda.htm">パッケージ マネージャー</a> を通じて ArcGIS Pro に統合されています。ArcGIS Pro 2.5 以降では、任意の conda パッケージをダウンロードしてインストールするための パッケージ マネージャーの GUI が提供されています。ArcGIS Pro の設定画面からアクセスすることができます。</p>
+<div class="notices note" >
+<p>ArcGIS API for Python 2.4.0 は ArcGIS Pro 3.4 以降でのみサポートされます。ArcGIS Pro 3.3 以前の環境では、2.4.0 の arcgis および arcgis-mapping パッケージはサポートされません。ArcGIS Pro 3.3.x 環境でのインストールについては、<a href="https://developers.arcgis.com/python-2-3/guide/install-and-set-up/arcgis-pro/">ArcGIS API for Python 2.3.x のドキュメント</a>をご参照ください。</p>
+</div>
 <ul>
 <li>ArcGIS Pro を開き [設定] ＞ [パッケージ マネージャー] を選択します。プロジェクトを開いている場合は、[プロジェクト] タブ ＞ [パッケージ マネージャー] を選択します。</li>
 <li>デフォルトの arcgispro-py3 環境にインストールされているパッケージのリストが表示されます。さらにパッケージの追加や更新を行うには、以下の操作を行います。</li>
@@ -1046,9 +1049,12 @@ if (!doNotTrack) {
 <li>Python コマンドプロンプトで以下のコマンドを使用してパッケージをインストールします。<br>
 ※ バージョン番号を指定しない場合はその時点の最新版がインストールされます。</li>
 </ul>
-<pre><code>conda install -c esri arcgis=&lt;バージョン番号&gt;
-</code></pre><div align="center">
-<img src="https://developers.arcgis.com/python/static/ad9a44b7ad3ad229d00006ef561e6a28/4cdf7/install-and-set-up.png" width="800px">
+<pre><code>conda install -c esri arcgis arcgis-mapping
+</code></pre><div class="notices note" >
+<p>arcgis 2.4.0 および arcgis-mapping パッケージは、ArcGIS Pro 3.4 以降の環境でサポートされています。ArcGIS Pro 3.3.x インストールのパッケージのアップグレードについては、<a href="https://developers.arcgis.com/python-2-3/guide/install-and-set-up/arcgis-pro/">バージョン 2.3.x のドキュメント</a>を参照してください。</p>
+</div>
+<div align="center">
+<img src="https://developers.arcgis.com/python/latest/static/6c293c32dd7e66acda7fab3729601249/4cdf7/arcgis_24_upgrade_cmd.png" width="800px">
 <p>Python コマンド プロンプト</p>
 </div>
 <h3 id="arcgis-パッケージのアップグレード">arcgis パッケージのアップグレード</h3>
@@ -1064,9 +1070,9 @@ Windows のスタートメニュー ＞ すべてのアプリ ＞ ArcGIS ＞ Pyt
 </code></pre><ul>
 <li>esri チャネルからバージョン番号なしでインストールして、arcgis パッケージを最新版にアップグレードします。以下のコマンドを入力します。</li>
 </ul>
-<pre><code>conda install -c esri arcgis
+<pre><code>conda install -c esri arcgis arcgis-mapping
 </code></pre><div align="center">
-<img src="https://developers.arcgis.com/python/static/b4b3e6d3883dc5ae4388fe1b986d9f7c/4cdf7/install-and-set-up-pcp.png" width="800px">
+<img src="https://developers.arcgis.com/python/latest/static/6c293c32dd7e66acda7fab3729601249/4cdf7/arcgis_24_upgrade_cmd.png" width="800px">
 <p>コマンドの入力</p>
 </div>
 <ul>
@@ -1182,7 +1188,8 @@ arcgis<span style="color:#f92672">.</span>__version__
 より詳しい情報は Esri ガイド ページ <a href="https://developers.arcgis.com/python/guide/install-and-set-up/#Install-Offline">Install-Offline</a> をご覧ください。</p>
 <br>
 <h4 id="特定の-python-環境のカーネルの追加">特定の Python 環境のカーネルの追加</h4>
-<p>Jupyter Notebook に特定の Python 環境でカーネルを追加するには、以下で説明する手順に従います。</p>
+<p>異なる Python 環境ごとに Jupyter Notebook のインスタンスを実行する代わりに、特定の Python 環境を持つカーネルを Jupyter Notebook にインストールすることができます。<br>
+Jupyter Notebook に特定の Python 環境でカーネルを追加するには、以下で説明する手順に従います。</p>
 <ol>
 <li>Python コマンド プロンプトを管理者として実行します</li>
 <li>Python コマンド プロンプト ウィンドウで、次のコマンドを挿入します</li>
@@ -1207,8 +1214,9 @@ arcgis<span style="color:#f92672">.</span>__version__
 <div align="center">
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/install-guide/select_kernel.png" width="400px">
 </div>
-<p>このような方法で特定の異なる環境のカーネルを作成し、Jupyter Notebook 上で切り替えられるようになります。
-また、特定の環境のパスを指定してカーネルを作成する方法については <a href="https://ipython.readthedocs.io/en/8.27.0/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a> を参照してください。</p>
+<p>このような方法で特定の異なる環境のカーネルを作成し、Jupyter Notebook 上で切り替えられるようになります。<br>
+特定の Python 環境を持つ新しいカーネルは手動で作成することでも可能です。詳細は <a href="https://support.esri.com/en-us/knowledge-base/how-to-install-a-new-kernel-in-jupyter-notebook-using-a-000019210">Install a new kernel in Jupyter Notebook using a specific Python environment</a> をご参照ください。<br>
+また、特定の環境のパスを指定してカーネルを作成する方法については <a href="https://ipython.readthedocs.io/en/8.27.0/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a> もご参照ください。</p>
 <p>インストールに関しての詳細は Esri ガイド ページ <a href="https://developers.arcgis.com/python/guide/intro/">Install and set up</a> もご参照ください。</p>
 
 
