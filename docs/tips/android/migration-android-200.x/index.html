@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-11-26T16:23:45 JST">
+<meta name="revised" content="2024-11-27T15:52:44 JST">
 <title>バージョン 100.x から 200.x への移行 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -956,6 +956,7 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#jetpack-compose-のサポート">Jetpack Compose のサポート</a></li>
     <li><a href="#lifecycleobserver">LifeCycleObserver</a></li>
     <li><a href="#コルーチンとコルーチンのスコープ">コルーチンとコルーチンのスコープ</a></li>
     <li><a href="#イベント処理">イベント処理</a></li>
@@ -992,6 +993,9 @@ if (!doNotTrack) {
 <p>200.0 リリースでは、Android 向けの新しい Kotlin ベースの API「ArcGIS Maps SDK for Kotlin」が導入されました。</p>
 <p>このリリースは、ArcGIS Runtime SDK for Android を Kotlin ファーストの SDK として完全に再構築したもので、コルーチン、フロー、null 安全などの機能をすぐにサポートすることができます。Java ベースの ArcGIS Runtime SDK for Android は、長期サポート（LTS）となり、不具合修正は継続されますが、それ以上の機能アップデートはありません。</p>
 <p>新機能を利用するには、Java ベースの ArcGIS Runtime SDK for Android を置き換える ArcGIS Maps SDK for Kotlin に移行してください。詳細については、ブログ「<a href="https://community.esri.com/t5/a/a/ta-p/1174047">ArcGIS Runtime SDK の今後のバージョンアップの計画についてのお知らせ</a>」をご確認ください。</p>
+<h2 id="jetpack-compose-のサポート">Jetpack Compose のサポート</h2>
+<p>ArcGIS Maps SDK for Kotlin 200.2 以降では、Jetpack Compose を完全にサポートしています。このページのコード スニペットは、ほかのコンポーザブルとともに、ArcGIS Maps SDK for Kotlin Toolkit で定義されているコンポーザブル関数 <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> の使用を紹介しています。詳細については <a href="https://developers.arcgis.com/kotlin/toolkit/">Toolkit</a> を参照してください。</p>
+<p>Jetpack Compose を使用しない場合は、代わりに XML レイアウトと <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> および <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-scene-view/index.html">SceneView</a> クラスを使用し続けることができます。</p>
 <h2 id="lifecycleobserver">LifeCycleObserver</h2>
 <p>GeoView クラスは MapView や SceneView のベースクラスで、<a href="https://developer.android.com/reference/android/arch/lifecycle/DefaultLifecycleObserver">DefaultLifecycleObserver</a> を実装しています。したがって、onResume、onPause、onDestroy のようなライフサイクルイベントを GeoView に転送することは、もはや必要ではありません。</p>
 <p>ArcGIS Maps SDK for Kotlin v200.x</p>
