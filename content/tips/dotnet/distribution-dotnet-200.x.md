@@ -60,20 +60,11 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-ArcGIS Online のユーザータイプの場合
 | ユーザータイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Contributor / Mobile Worker | Basic |
 | Creator | Standard |
-| Professional / Professional Plus | Advanced |
-
-ArcGIS Enterprise のユーザータイプの場合
-| ユーザータイプ | ライセンスレベル |
-|:-----------|:------------|
-| Viewer | Lite | 
-| Contributor / Mobile Worker | Basic |
-| Creator / GIS Professional Basic | Standard |
 | Professional / Professional Plus | Advanced |
 
 ### Lite ライセンスの認証方法

@@ -55,21 +55,12 @@ ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセ�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-ArcGIS Online のユーザータイプの場合
 | ユーザータイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Contributor / Mobile Worker | Basic |
 | Creator | Standard |
 | Professional / Professional Plus | Advanced <sup>※1</sup>|
-
-ArcGIS Enterprise のユーザータイプの場合
-| ユーザータイプ | ライセンスレベル |
-|:-----------|:------------|
-| Viewer | Lite | 
-| Contributor / Mobile Worker | Basic |
-| Creator / GIS Professional Basic | Standard |
-| Professional / Professional Plus | Advanced <sup>※1</sup> |
 
 ※1 ArcGIS Maps SDK for Kotlin には Advanced ライセンスはありません。
 
