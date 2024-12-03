@@ -70,8 +70,8 @@ ArcGIS Enterprise のユーザータイプの場合
 |:-----------|:------------|
 | Viewer | Lite | 
 | Editor / Mobile Worker | Basic |
-| Creator / GIS Professional Basic | Standard |
-| GIS Professional Standard / GIS Professional Advanced | Advanced <sup>※1</sup> |
+| Contributor / Mobile Worker | Standard |
+| Professional / Professional Plus | Advanced <sup>※1</sup> |
 
 ※1 ArcGIS Maps SDK for Swift には Advanced ライセンスはありません。
 
@@ -201,7 +201,7 @@ do {
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。
  
-認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/swift/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/swift/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[How to use user authentication in your app（英語）](https://developers.arcgis.com/swift/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/swift/security-and-authentication/)」も併せてご覧ください。
 
 ```swift
 // Portal クラスを構築し、指定ユーザーが認証情報を提供することを確認します。

@@ -15,7 +15,7 @@
       <description>出典：ArcGIS Maps SDK for Swift - Guide - Install and set up
 このインストール ガイドでは、ArcGIS Maps SDK for Swift (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 Swift Package Manager Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
-Xcode 15 での手順
+Xcode 16 での手順
  Xcode プロジェクトを開きます。メニューバーで、[File] &amp;gt; [Add Package Dependencies&amp;hellip;] を選択します。   パッケージ リポジトリの URL として https://github.com/esri/arcgis-maps-sdk-swift を入力します。
   オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、Dependency Rule オプションを選択します。
   [Add Package] をクリックします。

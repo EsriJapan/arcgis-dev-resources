@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-11-26T16:23:45 JST">
+<meta name="revised" content="2024-12-03T18:01:27 JST">
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1122,7 +1122,7 @@ if (!doNotTrack) {
 <td style="text-align:left">Lite</td>
 </tr>
 <tr>
-<td style="text-align:left">Editor / Mobile Worker</td>
+<td style="text-align:left">Contributor / Mobile Worker</td>
 <td style="text-align:left">Basic</td>
 </tr>
 <tr>
@@ -1130,7 +1130,7 @@ if (!doNotTrack) {
 <td style="text-align:left">Standard</td>
 </tr>
 <tr>
-<td style="text-align:left">GIS Professional Standard / GIS Professional Advanced</td>
+<td style="text-align:left">Professional / Professional Plus</td>
 <td style="text-align:left">Advanced</td>
 </tr>
 </tbody>
@@ -1287,7 +1287,7 @@ ArcGISRuntimeEnvironment.SetLicense(licenseKey);
 </code></pre></div><h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
 <p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、<a href="https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html"><code>AuthenticationManager</code></a> を構成します。（<a href="https://developers.arcgis.com/net/security-and-authentication/">Authentication Manager の使用</a>を参照）</p>
-<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app">How to use named user login in your app（英語）</a>」や「<a href="https://developers.arcgis.com/net/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
+<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app">How to use user authentication in your app（英語）</a>」や「<a href="https://developers.arcgis.com/net/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// ポータルの認証情報をユーザーに要求します (arcgis.com の OAuth 認証情報のリクエスト)
 </span><span style="color:#75715e"></span>CredentialRequestInfo loginInfo = <span style="color:#66d9ef">new</span> CredentialRequestInfo();
 

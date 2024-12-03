@@ -12,7 +12,7 @@ aliases = ["/ios/install-ios-200.x/"]
 ## Swift Package Manager
 Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。
 
-Xcode 15 での手順
+Xcode 16 での手順
 1. Xcode プロジェクトを開きます。メニューバーで、[File] > [Add Package Dependencies...] を選択します。
 
 <img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
