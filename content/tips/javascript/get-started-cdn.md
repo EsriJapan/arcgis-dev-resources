@@ -21,9 +21,9 @@ ArcGIS Maps SDK for JavaScript をアプリに取り込むには、複数の方�
 
 ``` HTML
   <!-- Load Map Components from CDN-->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
-  <script src="https://js.arcgis.com/4.30/"></script>
-  <script type="module" src="https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.31/"></script>
+  <script type="module" src="https://js.arcgis.com/map-components/4.31/arcgis-map-components.esm.js"></script>
 ```
 
 ArcGIS Online または ArcGIS Enterprise のポータルの WebMap を使用する場合は、`arcgis-map` タグを HTML に追加し、オプションの `item-id` を割り当てます。ステップバイステップの手順については、[チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/display-a-map-component/)を参照してください。
@@ -49,8 +49,8 @@ mapElem.addEventListener("arcgisViewReadyChange", (event) => {
 API の AMD モジュールには、以下のスクリプトタグを使用します : 
 
 ``` HTML
-<link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.30/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.31/"></script>
 ```
 
 HTML に div を追加し、`id` を割り当てます：

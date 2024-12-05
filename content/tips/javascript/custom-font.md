@@ -83,7 +83,7 @@ family、weight、style の各プロパティに設定した値をもとに設�
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>font_mapView</title>
 
-    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.xx/esri/themes/light/main.css" />
 
     <style>
       html,
@@ -97,7 +97,7 @@ family、weight、style の各プロパティに設定した値をもとに設�
       }
     </style>
 
-    <script src="https://js.arcgis.com/4.11/"></script>
+    <script src="https://js.arcgis.com/4.xx/"></script>
 
     <script>
       require([

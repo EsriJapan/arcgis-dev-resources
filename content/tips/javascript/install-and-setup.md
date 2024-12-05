@@ -15,8 +15,8 @@ ArcGIS Maps SDK for JavaScript をアプリに導入するには、複数のオ�
 
 API にアクセスする最も一般的な方法は、ホスト型のバージョンを使用することです。Esri の CDN から API と CSS を参照して、アプリでの API の使用を開始してください。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.30/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.31/"></script>
 ```
 
 ### NPM による ES モジュール
@@ -36,7 +36,7 @@ import Map from "@arcgis/core/Map.js";
 CSS のインポート：
 ```css
 /* URL 文字列を使用した CSS */
-@import "https://js.arcgis.com/4.30/@arcgis/core/assets/esri/themes/light/main.css";
+@import "https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css";
 ```
 
 詳細については、以下のガイドを参照してください。
@@ -47,9 +47,9 @@ CSS のインポート：
 
 ※ この方法は、現在のところ、開発やプロトタイピングにのみ推奨されています。
 ```ts
-<link rel="stylesheet" href="https://js.arcgis.com/4.30/@arcgis/core/assets/esri/themes/light/main.css">
+<link rel="stylesheet" href="https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css">
 <script type="module">
-  import Map from "https://js.arcgis.com/4.30/@arcgis/core/Map.js";
+  import Map from "https://js.arcgis.com/4.31/@arcgis/core/Map.js";
 
   // Use the Map class
 </script>

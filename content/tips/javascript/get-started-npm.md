@@ -42,7 +42,7 @@ index.html
 </body>
 ``` 
 
-次に、`main.js` ファイルで [CSS](https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css) を設定し、[@arcgis/map-components](https://www.npmjs.com/package/@arcgis/map-components) パッケージから `arcgis-map` などのコンポーネントを個別にインポートします。SDK のアセットはデフォルトでは ArcGIS CDN の ["https://js.arcgis.com/map-components/4.30/assets"](https://js.arcgis.com/map-components/4.30/assets) から読み込まれます。
+次に、`main.js` ファイルで [CSS](https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css) を設定し、[@arcgis/map-components](https://www.npmjs.com/package/@arcgis/map-components) パッケージから `arcgis-map` などのコンポーネントを個別にインポートします。SDK のアセットはデフォルトでは ArcGIS CDN の ["https://js.arcgis.com/map-components/4.31/assets"](https://js.arcgis.com/map-components/4.31/assets) から読み込まれます。
 
 main.js
 ```js
@@ -99,7 +99,7 @@ import { defineCustomElements as defineMapElements } from "@arcgis/map-component
 
 // ArcGIS CDN がホストするアセットを指定
 defineMapElements(window, {
-  resourcesUrl: "https://js.arcgis.com/map-components/4.30/assets",
+  resourcesUrl: "https://js.arcgis.com/map-components/4.31/assets",
 });
 ``` 
 
@@ -145,8 +145,8 @@ Map コンポーネント パッケージの light または dark [テーマ](ht
 
 index.css
 ```css
-@import "https://js.arcgis.com/4.30/@arcgis/core/assets/esri/themes/dark/main.css";
-@import "https://js.arcgis.com/calcite-components/2.9.0/calcite.css";
+@import "https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/dark/main.css";
+@import "https://js.arcgis.com/calcite-components/2.13.2/calcite.css";
 ``` 
 
 スタイル シートのローカル コピーの使用はオプションです。しかし、この方法では CDN を使用することによるパフォーマンス向上の利点は得られません。
