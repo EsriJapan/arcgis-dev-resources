@@ -16,6 +16,8 @@ ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 
 
 ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある [Visual Studio にパッケージをインストールして使用する (Windows)](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio) または [Visual Studio にパッケージをインストールして使用する (Mac)](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) を参照してください。
 
+たとえば、Windows の Visual Studio で ArcGIS Maps SDK for.NET への参照を追加するには、次の手順に従います。
+
 1. [Visual Studio Solution Explorer] ウィンドウで、[Project] を右クリックし、[Manage NuGet Packages] を選択します。
 2. [Browse] タブを選択し、<b>パッケージソース</b>として [nuget.org] を選択します。
 3. <b>検索</b>テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。
@@ -73,11 +75,11 @@ WPF、WinUI、.NET MAUI プロジェクト テンプレートには、Visual Stu
 
 [nuget.org](https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/) で公開されている `Esri.ArcGISRuntime.ProjectTemplates` NuGet パッケージは .NET MAUI（iOS、Android、WinUI）、WPF、WinUI、および UWP 用のアプリケーション プロジェクト テンプレートを提供します。
 
-以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします：
+以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします。
 
 1. コマンドプロンプトを開きます。
 
-2. 以下のコマンドを使用して、新しいテンプレートをインストールします：
+2. 以下のコマンドを使用して、新しいテンプレートをインストールします。
 
     ```csharp
     dotnet new --install Esri.ArcGISRuntime.ProjectTemplates
@@ -149,7 +151,13 @@ ArcGIS Maps SDK for Local Server では、オフラインでジオプロセシ�
 #### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/net/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、パブリックなインターネット上ではなく、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されています。
 
-ローカルでドキュメントを公開する方法：
+{{% notice info %}}
+
+ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソースファイルアーカイブユーティリティ [7-Zip](https://www.7-zip.org/) をお勧めします。
+
+{{% /notice %}}
+
+ローカルでドキュメントを公開する方法
 * 使用する SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/net/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
 * アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、`public` と `install` という 2 つのサブフォルダがあります。
 * `install` フォルダ内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。

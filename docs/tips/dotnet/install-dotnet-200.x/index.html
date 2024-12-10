@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-12-03T18:12:45 JST">
+<meta name="revised" content="2024-12-10T19:09:23 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -996,6 +996,7 @@ if (!doNotTrack) {
 <p>ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 つ以上の ArcGIS Maps SDK for .NET <a href="https://www.nuget.org/profiles/Esri_Inc">NuGet パッケージ</a> への参照を Visual Studio プロジェクト内に追加します。ArcGIS Maps SDK for .NET がサポートするアプリケーション プラットフォームおよび UI フレームワークのそれぞれに対応するプロジェクト テンプレート セットは、<a href="https://marketplace.visualstudio.com/items?itemName=Esri.ArcGISRuntimeTemplates">Visual Studio 拡張機能</a> として提供されています。</p>
 <h3 id="プロジェクトでの-arcgis-maps-sdk-for-net-の参照">プロジェクトでの ArcGIS Maps SDK for .NET の参照</h3>
 <p>ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある <a href="https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio にパッケージをインストールして使用する (Windows)</a> または <a href="https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac">Visual Studio にパッケージをインストールして使用する (Mac)</a> を参照してください。</p>
+<p>たとえば、Windows の Visual Studio で ArcGIS Maps SDK for.NET への参照を追加するには、次の手順に従います。</p>
 <ol>
 <li>
 <p>[Visual Studio Solution Explorer] ウィンドウで、[Project] を右クリックし、[Manage NuGet Packages] を選択します。</p>
@@ -1061,13 +1062,13 @@ if (!doNotTrack) {
 </div>
 <h4 id="nuget-パッケージからインストールする">Nuget パッケージからインストールする</h4>
 <p><a href="https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/">nuget.org</a> で公開されている <code>Esri.ArcGISRuntime.ProjectTemplates</code> NuGet パッケージは .NET MAUI（iOS、Android、WinUI）、WPF、WinUI、および UWP 用のアプリケーション プロジェクト テンプレートを提供します。</p>
-<p>以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします：</p>
+<p>以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします。</p>
 <ol>
 <li>
 <p>コマンドプロンプトを開きます。</p>
 </li>
 <li>
-<p>以下のコマンドを使用して、新しいテンプレートをインストールします：</p>
+<p>以下のコマンドを使用して、新しいテンプレートをインストールします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">dotnet <span style="color:#66d9ef">new</span> --install Esri.ArcGISRuntime.ProjectTemplates
 </code></pre></div></li>
 <li>
@@ -1138,7 +1139,10 @@ if (!doNotTrack) {
 </ol>
 <h4 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h4>
 <p><a href="https://developers.arcgis.com/net/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、パブリックなインターネット上ではなく、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されています。</p>
-<p>ローカルでドキュメントを公開する方法：</p>
+<div class="notices info" >
+<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソースファイルアーカイブユーティリティ <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
+</div>
+<p>ローカルでドキュメントを公開する方法</p>
 <ul>
 <li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/net/downloads/">ダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
 <li>アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、<code>public</code> と <code>install</code> という 2 つのサブフォルダがあります。</li>
