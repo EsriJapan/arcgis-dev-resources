@@ -251,7 +251,7 @@ package.json
 コピー後の次のステップは、SDK がこれらのリソースを正しく見つけて読み込めるように、コード内のアセット パスを構成することです。このステップはローカル ビルド環境では非常に重要です。なぜなら、デフォルトのアセット パスがプロジェクトの構造と一致しない可能性があるからです。
 
 index.js
-```
+```js
 // Configure the asset path to your desired directory for components and core
 import { setArcgisAssetPath as setMapAssetPath} from '@arcgis/map-components/dist/components';
 import esriConfig from "@arcgis/core/config.js";

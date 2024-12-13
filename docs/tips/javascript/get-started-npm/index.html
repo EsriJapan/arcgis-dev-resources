@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-12-13T19:05:05 JST">
+<meta name="revised" content="2024-12-13T19:11:46 JST">
 <title>開発の手順（npm） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1165,13 +1165,13 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>コピー後の次のステップは、SDK がこれらのリソースを正しく見つけて読み込めるように、コード内のアセット パスを構成することです。このステップはローカル ビルド環境では非常に重要です。なぜなら、デフォルトのアセット パスがプロジェクトの構造と一致しない可能性があるからです。</p>
 <p>index.js</p>
-<pre><code>// Configure the asset path to your desired directory for components and core
-import { setArcgisAssetPath as setMapAssetPath} from '@arcgis/map-components/dist/components';
-import esriConfig from &quot;@arcgis/core/config.js&quot;;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Configure the asset path to your desired directory for components and core
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">setArcgisAssetPath</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">setMapAssetPath</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@arcgis/map-components/dist/components&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">esriConfig</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/config.js&#34;</span>;
 
-setMapAssetPath(&quot;./public/assets&quot;);
-esriConfig.assetsPath = &quot;./public/assets&quot;;
-</code></pre><p>Calcite コンポーネントやローカル アセットの使用に関する詳細については、<a href="https://developers.arcgis.com/calcite-design-system/get-started/">Calcite&rsquo;s Get started</a> および <a href="https://developers.arcgis.com/javascript/latest/disconnected-environment/">SDK in a disconnected environment</a> のガイド トピックを参照してください。</p>
+<span style="color:#a6e22e">setMapAssetPath</span>(<span style="color:#e6db74">&#34;./public/assets&#34;</span>);
+<span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">assetsPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;./public/assets&#34;</span>;
+</code></pre></div><p>Calcite コンポーネントやローカル アセットの使用に関する詳細については、<a href="https://developers.arcgis.com/calcite-design-system/get-started/">Calcite&rsquo;s Get started</a> および <a href="https://developers.arcgis.com/javascript/latest/disconnected-environment/">SDK in a disconnected environment</a> のガイド トピックを参照してください。</p>
 <h2 id="esm-インポート文の使用">ESM インポート文の使用</h2>
 <p>ES モジュールの<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">インポート</a>文は、個々の API モジュールを読み込むために使用されます。インポート宣言には、デフォルト、ネームスペース、および名前付きの3つの形式があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Default import
