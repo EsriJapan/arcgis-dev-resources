@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-12-10T19:09:24 JST">
+<meta name="revised" content="2024-12-13T19:05:05 JST">
 <title>開発の手順（npm） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -959,12 +959,30 @@ if (!doNotTrack) {
     <li><a href="#依存関係の管理">依存関係の管理</a></li>
     <li><a href="#コンポーネント">コンポーネント</a>
       <ul>
+        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#レイアウトの作成">レイアウトの作成</a></li>
+        <li><a href="#css-の設定">CSS の設定</a></li>
+        <li><a href="#コンポーネントのインポート">コンポーネントのインポート</a></li>
         <li><a href="#すべてのコンポーネントのロード">すべてのコンポーネントのロード</a></li>
       </ul>
     </li>
-    <li><a href="#コア-api">コア API</a></li>
-    <li><a href="#css-の設定">CSS の設定</a></li>
-    <li><a href="#アセットの利用">アセットの利用</a></li>
+    <li><a href="#コア-api">コア API</a>
+      <ul>
+        <li><a href="#インストール-1">インストール</a></li>
+        <li><a href="#レイアウトの作成-1">レイアウトの作成</a></li>
+        <li><a href="#css-の設定-1">CSS の設定</a></li>
+        <li><a href="#モジュール-のインポート">モジュール のインポート</a></li>
+      </ul>
+    </li>
+    <li><a href="#css-のインポート">CSS のインポート</a></li>
+    <li><a href="#アセットの利用">アセットの利用</a>
+      <ul>
+        <li><a href="#デフォルト-アセット">デフォルト アセット</a></li>
+        <li><a href="#ローカル-アセット">ローカル アセット</a></li>
+      </ul>
+    </li>
+    <li><a href="#esm-インポート文の使用">ESM インポート文の使用</a></li>
+    <li><a href="#esm-cdnの使用">ESM CDNの使用</a></li>
     <li><a href="#追加情報">追加情報</a></li>
   </ul>
 </nav>
@@ -989,15 +1007,18 @@ if (!doNotTrack) {
 <div class="notices note" >
 <p><a href="https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite">@arcgis/map-components Vite</a> および <a href="https://github.com/Esri/jsapi-resources/tree/main/core-samples/jsapi-vite">@arcgis/core Vite</a> のサンプルを使用して始めることができます。</p>
 </div>
-<p>ArcGIS Maps SDK for JavaScript の <a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> および <a href="https://www.npmjs.com/package/@arcgis/core">@arcgis/core</a> パッケージは、npm からローカルにインストールできます。</p>
-<p>npm を使用することに加えて、プロジェクトによってはフレームワーク、モジュール バンドラー、トランスパイラー、node.js などを含む、追加の最新のビルド ツールが必要になるかもしれません。これらのツールがどのように動作するかの基本的な点を理解している必要があります。これらの概念の詳細についてはこのページの<a href="#%E8%BF%BD%E5%8A%A0%E6%83%85%E5%A0%B1">追加情報</a>のセクションを参照してください。</p>
+<p>ArcGIS Maps SDK for JavaScript の <a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> と <a href="https://www.npmjs.com/package/@arcgis/core">@arcgis/core</a> パッケージは、<a href="https://docs.npmjs.com/about-npm">npm</a> コマンドライン インターフェイスを使用してローカルにインストールできます。</p>
+<p>始めるには、npm と <a href="https://nodejs.org/">Node.js</a> の両方をインストールします。さらに、モジュールバンドラーとローカル Web サーバーを含むクライアントサイドのビルドツール（例：<a href="https://vitejs.dev/guide/">Vite.js</a>）が、アプリケーションの開発とテストに必要です。</p>
+<p>フレームワークやトランスパイラーの使用は任意であり、特定の要件に依存します。これらのツールの基本的な動作を理解しておくことが重要です。これらの概念の紹介については、以下の<a href="#%E8%BF%BD%E5%8A%A0%E6%83%85%E5%A0%B1">追加情報</a>セクションを参照してください。</p>
 <h2 id="依存関係の管理">依存関係の管理</h2>
 <p>npm を使用する場合、<code>package.json</code> ファイルはアプリケーションの実行とビルドに必要なパッケージの初期セットを指定します。これらの npm パッケージがインストールされると、それぞれ固有の依存関係も指定されます。</p>
 <p>ローカル ビルド ツールを使うのが初めての場合、<a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json">package.json</a> が<a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies">依存関係</a>、<a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies">devDependencies</a>、<a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependencies">peerDependencies</a> とどのように連動するかを理解することが重要です。</p>
 <h2 id="コンポーネント">コンポーネント</h2>
+<h3 id="インストール">インストール</h3>
 <p>Map コンポーネントを使用する場合、<a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> パッケージをプロジェクトにインストールします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install @arcgis/map-components
-</code></pre></div><p><code>index.html</code> ファイルに <code>arcgis-map</code> コンポーネントを追加し、<code>main.js</code> ファイルを参照します。</p>
+</code></pre></div><h3 id="レイアウトの作成">レイアウトの作成</h3>
+<p><code>index.html</code> ファイルに <code>arcgis-map</code> コンポーネントを追加し、<code>main.js</code> ファイルを参照します。各コンポーネントは<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements">カスタム要素</a>であり、HTML タグを使用してアプリケーションに追加します。これらは <code>&lt;div&gt;&lt;/div&gt;</code> などの他の HTML 要素と同様に機能します。</p>
 <p>index.html</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
    &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e691172598f04ea8881cd2a4adaa45ba&#34;</span>&gt;
@@ -1005,20 +1026,31 @@ if (!doNotTrack) {
    &lt;/<span style="color:#f92672">arcgis-map</span>&gt;
    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;/<span style="color:#f92672">body</span>&gt;
-</code></pre></div><p>次に、<code>main.js</code> ファイルで <a href="https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css">CSS</a> を設定し、<a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> パッケージから <code>arcgis-map</code> などのコンポーネントを個別にインポートします。SDK のアセットはデフォルトでは ArcGIS CDN の <a href="https://js.arcgis.com/map-components/4.31/assets">&ldquo;https://js.arcgis.com/map-components/4.31/assets&rdquo;</a> から読み込まれます。</p>
+</code></pre></div><h3 id="css-の設定">CSS の設定</h3>
+<p><a href="https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css">CSS</a> を設定し、<code>main.js</code> ファイルにインポートします。さまざまなフレームワークやモジュールバンドラーの具体例は、<a href="https://github.com/esri/jsapi-resources?tab=readme-ov-file#samples">jsapi-resources</a> の GitHub リポジトリで確認できます。以下は、arcgis-map コンポーネントの Vite の例です。</p>
+<p>index.css</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/dark/main.css&#39;</span>;
+
+<span style="color:#f92672">html</span><span style="color:#f92672">,</span>
+<span style="color:#f92672">body</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">arcgis-map</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vh</span>;
+}
+</code></pre></div><p>main.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+</code></pre></div><h3 id="コンポーネントのインポート">コンポーネントのインポート</h3>
+<p>最後に、必要な SDK のコンポーネントを <a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> パッケージから個別にインポートします。（例：<a href="https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/component-reference-map--docs"><code>arcgis-map</code></a> や <code>arcgis-legend</code>）</p>
+<p>これにより、コンポーネントがブラウザーの <a href="https://developer.mozilla.org/docs/Web/API/CustomElementRegistry">CustomElementRegistry</a> に登録されます。ブラウザーが <code>&lt;arcgis-map&gt;&lt;/arcgis-map&gt;</code> などのカスタム要素の HTML タグに遭遇すると、その要素のインスタンスを作成し、DOM に追加して機能を有効にします。</p>
 <p>main.js</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
 
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@arcgis/map-components/dist/components/arcgis-map&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@arcgis/map-components/dist/components/arcgis-legend&#34;</span>;
-
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * コンポーネント パッケージのローカル アセットを使用する場合はコメントを外します
-</span><span style="color:#75715e"> */</span>
-
-<span style="color:#75715e">// import { setArcgisAssetPath as setMapAssetPath} from &#39;@arcgis/map-components/dist/components&#39;;
-</span><span style="color:#75715e">// setMapAssetPath(`${location.origin}${location.pathname}assets`);
-</span></code></pre></div><p>ここまでで、以下のことが可能になっています。</p>
+</code></pre></div><p>ここまでで、以下のことが可能になっています。</p>
 <ul>
 <li>プロパティの設定</li>
 <li>イベントのハンドリング</li>
@@ -1026,7 +1058,7 @@ if (!doNotTrack) {
 <li>チャート（ベータ版）など、他のコンポーネントの追加</li>
 <li>最終的なアプリケーションのビルド</li>
 </ul>
-<p>以下のコード スニペットでは、機能を追加するために <code>arcgis-map</code> コンポーネントへの参照を取得しています。<code>document.querySelector()</code> を使用して、<code>arcgis-map</code> コンポーネントへの参照を取得します。次に、<code>arcgis-map</code> コンポーネントの <code>viewReadyChange</code> イベントのイベント リスナーを追加します。</p>
+<p>以下のコードスニペットでは、<code>document.querySelector()</code> を使用して <code>arcgis-map</code> コンポーネントへの参照を取得し、機能を追加しています。その後、<code>arcgis-map</code> コンポーネントの <code>arcgisViewReadyChange</code> イベントのイベントリスナーを追加します。</p>
 <p>main.js</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document
   .<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;arcgis-map&#34;</span>)
@@ -1040,7 +1072,8 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  });
 </code></pre></div><p>コンポーネントで View を使用する方法については、<a href="https://developers.arcgis.com/javascript/latest/tutorials/using-view-with-components/">チュートリアル</a>を参照してください。</p>
 <h3 id="すべてのコンポーネントのロード">すべてのコンポーネントのロード</h3>
-<p>すべてのコンポーネントを一度に登録する便利な方法もあるため、実行時にアプリケーションで使用するコンポーネントを個別にインポートする必要はありません。これはプロトタイピングやテストに便利な方法です。<code>defineCustomElements()</code> を使用して、アプリケーションの各コンポーネント パッケージを登録します。そして、<code>resourcesUrl</code> オプションで（ローカルまたは CDN の）アセットの場所を設定します。あるコンポーネント パッケージのアセット パスを設定しても、他のコンポーネント パッケージのアセット パスには影響しません。最高のパフォーマンスを実現し、アプリケーションのビルド サイズを小さくするには、ArcGIS CDN ホスト アセットを使用することをお勧めします。</p>
+<p>便利なパターンとして、すべてのコンポーネントを一度に登録する方法があります。これにより、実行時に個別にインポートする必要がなくなり、プロトタイピングやテストに役立ちます。</p>
+<p><code>defineCustomElements()</code> を使用して、アプリケーション内でコンポーネント パッケージを登録します。これにより、そのパッケージの任意のコンポーネントを個別にインポートすることなく、すぐに使用できます。パッケージのアセットの場所（ローカルまたは CDN）を <code>resourcesUrl</code> オプションで設定します。1 つのコンポーネント パッケージのアセット パスを設定しても、他のコンポーネント パッケージのアセット パスには影響しません。最高のパフォーマンスとアプリケーションのビルド サイズの削減のために、ArcGIS CDN ホストのアセットを使用することをお勧めします。</p>
 <div class="notices warning" >
 <p>すべてのコンポーネントをロードするこの方法は、プロトタイピングとテストにのみ推奨されます。最高のパフォーマンスを得るためには、コンポーネントを個別にロードしてください。</p>
 </div>
@@ -1051,12 +1084,26 @@ if (!doNotTrack) {
   <span style="color:#a6e22e">resourcesUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/map-components/4.31/assets&#34;</span>,
 });
 </code></pre></div><h2 id="コア-api">コア API</h2>
+<h3 id="インストール-1">インストール</h3>
 <p>コア API の ES モジュールを使用するには、<a href="https://www.npmjs.com/package/@arcgis/core">@arcgis/core</a> パッケージをプロジェクトにインストールします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install @arcgis/core
-</code></pre></div><p>HTML に div 要素を追加し、<code>id</code> を割り当てます。</p>
+</code></pre></div><h3 id="レイアウトの作成-1">レイアウトの作成</h3>
+<p>HTML に div 要素を追加し、<code>id</code> を割り当てます。ここにマップが挿入されます。</p>
 <p>index.html</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>次に、<a href="https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css">CSS</a> を設定し、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">import</a> 文を使って個々のモジュールをロードします。その後、 Map を初期化し、カスタム機能の追加を始めます。</p>
+</code></pre></div><h3 id="css-の設定-1">CSS の設定</h3>
+<p><a href="https://developers.arcgis.com/javascript/latest/get-started-npm/#configure-css">CSS</a> を設定し、<code>main.js</code> ファイルにインポートします。<code>height</code>, <code>width</code>, <code>margin</code>、<code>padding</code> のプロパティを設定します。さまざまなフレームワークやモジュール バンドラーの具体例は、<a href="https://github.com/esri/jsapi-resources?tab=readme-ov-file#samples">jsapi-resources</a> の GitHub リポジトリで確認できます。以下は、<code>@arcgis/core</code> を使用した Vite の例です。</p>
+<p>index.css</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#viewDiv {
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+</code></pre></div><p>main.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+</code></pre></div><h3 id="モジュール-のインポート">モジュール のインポート</h3>
+<p>最後に、必要な SDK のモジュールを個別にインポートします。（例：<a href="https://www.npmjs.com/package/@arcgis/core"><code>@arcgis/core</code></a> パッケージの <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html"><code>@arcgis/core/Map</code></a>）</p>
 <p>main.js</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Map</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/Map&#34;</span>;
@@ -1067,46 +1114,88 @@ if (!doNotTrack) {
 });
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MapView</span>({
-  <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>, <span style="color:#75715e">// div の id を参照
+  <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;viewDiv&#34;</span>, <span style="color:#75715e">// reference the div id
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
   <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>,
   <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">65</span>]
 });
 </code></pre></div><p>詳細は <a href="https://developers.arcgis.com/javascript/latest/programming-patterns/#using-esm-import-statements">Using ESM import statements</a> ガイドのトピックを参照してください。</p>
-<h2 id="css-の設定">CSS の設定</h2>
-<p>Map コンポーネント パッケージの light または dark <a href="https://developers.arcgis.com/javascript/latest/styling/#themes">テーマ</a>を選択し、対応する CSS ファイルをアプリケーションに組み込みます。ベスト プラクティスは ArcGIS CDN を使用することで、API のみを使用する場合は Calcite の組み込みは任意です。</p>
+<h2 id="css-のインポート">CSS のインポート</h2>
+<p>コア API およびコンポーネント パッケージの light または dark <a href="https://developers.arcgis.com/javascript/latest/styling/#themes">テーマ</a>を選択し、対応する CSS ファイルをアプリケーションに組み込みます。最適化されたクラウドキャッシュからスタイルファイルが提供され、効率的な読み込みとパフォーマンスの向上が図れる ArcGIS CDN を使用するのが最良の方法です。API のみを使用する場合は Calcite の組み込みは任意です。</p>
 <p>index.css</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/dark/main.css&#34;</span>;
 @<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/2.13.2/calcite.css&#34;</span>;
-</code></pre></div><p>スタイル シートのローカル コピーの使用はオプションです。しかし、この方法では CDN を使用することによるパフォーマンス向上の利点は得られません。</p>
+</code></pre></div><p>SDKは、コンポーネントやウィジェットにCalciteを使用しています。<a href="https://developers.arcgis.com/calcite-design-system/">Calcite Design System</a> を使用して、独自のカスタム機能を追加することができます。このシステムには、UI キット、アイコン、カラースキーム、およびボタンやパネルなどの UI 要素を含む Web コンポーネントライブラリが含まれています。</p>
+<p>スタイルシートのローカルコピーを使用することも可能ですが、CDN のパフォーマンス向上の利点は得られません。</p>
 <p>index.css</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@arcgis/core/assets/esri/themes/dark/main.css&#34;</span>;
 @<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/dist/calcite/calcite.css&#34;</span>;
 </code></pre></div><p>この <code>@import url</code> パスを指定する方法は使用するフレーム ワークやモジュール バンドラーに依存します。MDN では <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">@import</a> を使うための様々な方法について詳しく説明しています。</p>
 <h2 id="アセットの利用">アセットの利用</h2>
-<p>ローカル ビルドを行うほとんどのユース ケースでは、ArcGIS CDN から SDK のアセットを使用することをお勧めします。アセットには、スタイル、画像、Web ワーカー、WASM、ローカライズ ファイルが含まれます。CDN を使用する利点の 1 つは、ローカル ビルドでアセット ファイルをディスク上にバンドルする必要がないことです。代わりに、最適化されたクラウド キャッシュからファイルがダウンロードされます。</p>
-<p>SDK のアセットをローカルで管理する必要がある場合は、<code>/node_modules/@arcgis/</code> + <code>packageName/assetPath</code> からプロジェクトにコピーし、アセットが正しく解決されるようにアセット パスを設定します。これを行う簡単な方法は、ビルド プロセス中に実行される npm スクリプトを設定することです。例えば、Mac や Windows のターミナルでは <a href="https://www.npmjs.com/package/cpx2">cpx2</a> を利用できます。</p>
+<p>SDK のアセットには、スタイル、画像、Web ワーカー、WASM、およびローカライズ ファイルが含まれています。</p>
+<h3 id="デフォルト-アセット">デフォルト アセット</h3>
+<p>ローカル ビルドを行うほとんどのユースケースでは、ArcGIS CDN から SDK のアセットを使用することをお勧めします。これらは以下の URL からデフォルトで読み込まれ、追加の設定は不要です。</p>
+<ul>
+<li>@arcgis/core: <a href="https://js.arcgis.com/4.31/@arcgis/core/assets/">https://js.arcgis.com/4.31/@arcgis/core/assets/</a></li>
+<li>@arcgis/map-components: <a href="https://js.arcgis.com/map-components/4.31/assets">https://js.arcgis.com/map-components/4.31/assets</a></li>
+<li>@esri/calcite-components: <a href="https://js.arcgis.com/calcite-components/2.13.2/assets">https://js.arcgis.com/calcite-components/2.13.2/assets</a></li>
+</ul>
+<p>ArcGIS CDN を使用することで、これらのアセットをローカル ビルドにバンドルする必要がなくなります。これにより、ディスク上のビルド サイズが削減され、ビルド時間が短縮される可能性があります。</p>
+<h3 id="ローカル-アセット">ローカル アセット</h3>
+<p>インターネットにアクセスできない環境で作業する場合など、アセットをローカルで管理する必要があるシナリオもあります。その場合、以下のディレクトリからアセットをプロジェクトにコピーする必要があります。</p>
+<ul>
+<li>@arcgis/core: /node_modules/@arcgis/core/assets</li>
+<li>@arcgis/map-components: /node_modules/@arcgis/map-components/dist/arcgis-map-components/assets/</li>
+<li>@esri/calcite-components: /node_modules/@esri/calcite-components/dist/calcite/assets/</li>
+</ul>
 <div class="notices warning" >
 <p>アセットのローカル コピーで作業すると、ビルドのディスク上のサイズが大きくなります。</p>
 </div>
-<p>こちらはアセットをコピーする Vite の例です。npm スクリプトやプラグインを使ったファイル コピーのベスト プラクティスについては、フレームワークやバンドラーのドキュメントを参照してください。</p>
+<p>これを実現する簡単な方法は、ビルド プロセス中に実行される npm スクリプトを構成することです。以下に、<a href="https://www.npmjs.com/package/cpx2"><code>cpx2</code></a> を使用してアセットを正しいプロジェクト フォルダーにコピーする Vite の例を示します。パッケージのインストールについては cpx2 のドキュメントを参照してください。その後、コンポーネント、Core API、および Calcite の package.json スクリプトにコピー コマンドを追加します。ファイルをコピーするための npm スクリプトやプラグインの使用に関するベスト プラクティスについては、フレームワークやバンドラーのドキュメントを確認してください。</p>
 <p>package.json</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;script&#34;</span>: {
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
     <span style="color:#f92672">&#34;dev&#34;</span>: <span style="color:#e6db74">&#34;npm run copy:all &amp;&amp; vite&#34;</span>,
     <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;npm run copy:all &amp;&amp; vite build&#34;</span>,
     <span style="color:#f92672">&#34;copy:all&#34;</span>: <span style="color:#e6db74">&#34;npm run copy:components &amp;&amp; npm run copy:core&#34;</span>,
-    <span style="color:#f92672">&#34;copy:components&#34;</span>: <span style="color:#e6db74">&#34;cpx ./node_modules/@arcgis/map-components/dist/arcgis-map-components/assets/ ./public/assets&#34;</span>,
-    <span style="color:#f92672">&#34;copy:core&#34;</span>: <span style="color:#e6db74">&#34;cpx ./node_modules/@arcgis/core/assets ./public/assets&#34;</span>
+    <span style="color:#f92672">&#34;copy:components&#34;</span>: <span style="color:#e6db74">&#34;cpx ./node_modules/@arcgis/map-components/dist/arcgis-map-components/assets/**/*.* ./public/assets&#34;</span>,
+    <span style="color:#f92672">&#34;copy:core&#34;</span>: <span style="color:#e6db74">&#34;cpx ./node_modules/@arcgis/core/assets/**/*.* ./public/assets&#34;</span>,
+    <span style="color:#f92672">&#34;copy:calcite&#34;</span>: <span style="color:#e6db74">&#34;cpx ./node_modules/@esri/calcite-components/dist/calcite/assets/**/*.* ./public/assets&#34;</span>
   }
 }
-</code></pre></div><p>index.js</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// コンポーネントとコア API のアセット パスを任意のディレクトリに設定
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">setArcgisAssetPath</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">setMapAssetPath</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@arcgis/map-components/dist/components&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">esriConfig</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/config.js&#34;</span>;
+</code></pre></div><p>コピー後の次のステップは、SDK がこれらのリソースを正しく見つけて読み込めるように、コード内のアセット パスを構成することです。このステップはローカル ビルド環境では非常に重要です。なぜなら、デフォルトのアセット パスがプロジェクトの構造と一致しない可能性があるからです。</p>
+<p>index.js</p>
+<pre><code>// Configure the asset path to your desired directory for components and core
+import { setArcgisAssetPath as setMapAssetPath} from '@arcgis/map-components/dist/components';
+import esriConfig from &quot;@arcgis/core/config.js&quot;;
 
-<span style="color:#a6e22e">setMapAssetPath</span>(<span style="color:#e6db74">&#34;./public/assets&#34;</span>);
-<span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">assetsPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;./public/assets&#34;</span>;
+setMapAssetPath(&quot;./public/assets&quot;);
+esriConfig.assetsPath = &quot;./public/assets&quot;;
+</code></pre><p>Calcite コンポーネントやローカル アセットの使用に関する詳細については、<a href="https://developers.arcgis.com/calcite-design-system/get-started/">Calcite&rsquo;s Get started</a> および <a href="https://developers.arcgis.com/javascript/latest/disconnected-environment/">SDK in a disconnected environment</a> のガイド トピックを参照してください。</p>
+<h2 id="esm-インポート文の使用">ESM インポート文の使用</h2>
+<p>ES モジュールの<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">インポート</a>文は、個々の API モジュールを読み込むために使用されます。インポート宣言には、デフォルト、ネームスペース、および名前付きの3つの形式があります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Default import
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">WebMap</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/WebMap.js&#34;</span>;
+
+<span style="color:#75715e">// Namespace import
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">projection</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/geometry/projection.js&#34;</span>;
+</code></pre></div><p>各モジュールのコア API リファレンス ページの上部には、デフォルトとネームスペースの どちらのインポート構文を使用するかについてのガイダンスがあります。 ほとんどのモジュールは、上記の import WebMap クラスの例に示されているように、デフォルトの import 構文を使用します。 ヘルパー関数を提供するモジュールなど、他のモジュールは、<code>import * as projection</code> の例のようなネームスペース インポートを使用します。 スタイルの好みに応じて、ネームスペースインポートの代わりに、必要なメソッドを正確に参照する名前付きインポートを使用することもできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Named import
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">load</span>, <span style="color:#a6e22e">project</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/geometry/projection.js&#34;</span>;
+</code></pre></div><p>変数名の競合が発生する可能性がある場合は、エイリアスを使用することもできます。例えば、いくつかのクラスが load() メソッドを使用している場合などです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Named import using an alias
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">load</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">projectionLoad</span>, <span style="color:#a6e22e">project</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@arcgis/core/geometry/projection.js&#34;</span>;
+</code></pre></div><p>デフォルト、ネームスペース、名前付きのいずれのインポートを使用しても、esbuild、rollup.js、Webpack などのモジュール バンドラーは、ツリーシェイキング（未使用のコードを削除して最小かつ最も効率的なビルドを作成するプロセス）に関して同じように扱います。</p>
+<h2 id="esm-cdnの使用">ESM CDNの使用</h2>
+<p>ES モジュール CDN はテストとプロトタイピングのためのものであり、パフォーマンスの最適化はされていません。プロダクション アプリケーションで最高のパフォーマンスを得るには、@arcgis/core モジュールをローカルでビルドしてください。サンプルは<a href="https://github.com/Esri/jsapi-resources/tree/main/core-samples/jsapi-esm-cdn">jsapi-resources</a> の GitHub リポジトリーにあります。以下は HTML と JavaScript のコード スニペットです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+  <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Map</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;https://js.arcgis.com/4.31/@arcgis/core/Map.js&#39;</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>({
+    <span style="color:#a6e22e">basemap</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;topo-vector&#34;</span>
+  });
+&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><h2 id="追加情報">追加情報</h2>
 <p>追加の情報として、以下のリンクを参照してください。</p>
 <ul>
