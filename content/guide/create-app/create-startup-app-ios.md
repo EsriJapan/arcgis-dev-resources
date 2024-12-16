@@ -53,10 +53,11 @@ Xcode を使用してシングルビュー iOS アプリを作成し、SDK を�
 
 
 
-### アクセストークンを取得する
-ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
-まだ作成していない場合は、[ArcGIS Location Platform のダッシュボード](https://location.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
-このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です。
+### アクセス トークンを取得する
+このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。
+1. アクセス トークンを取得するには、[API キーの取得](../../get-api-key) チュートリアルに進んでください。
+2. 次の権限が有効になっていることを確認してください。[ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
+3. アクセス トークンをコピーします。アクセス トークンを取得する他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
 
 ### API キーを設定する
 1. Project Navigator で MainApp.swift をクリックします。

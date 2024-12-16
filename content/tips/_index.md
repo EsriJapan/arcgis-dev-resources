@@ -17,6 +17,7 @@ alwaysopen = true
 * [ArcGIS Maps SDK for .NET](../tips/dotnet/)
 * [ArcGIS Maps SDK for Kotlin](../tips/android/)
 * [ArcGIS Maps SDK for Swift](../tips/ios/)
+* [ArcGIS Maps SDK for Flutter](../tips/flutter/)
 * [ArcGIS Maps SDK for Unity](../tips/unity/)
 * [ArcGIS Maps SDK for Unreal Engine](../tips/unreal-engine/)
 * [ArcGIS Pro SDK](../tips/prosdk/)

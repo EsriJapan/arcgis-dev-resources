@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-11-26T16:23:45 JST">
+<meta name="revised" content="2024-12-16T17:30:54 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -193,6 +193,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
             iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/">
+            Flutter
           </a>
         </div>
     </li>
@@ -728,6 +735,28 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/arcgis-dev-resources/tips/unity/" class="dd-item haschildren
         ">
       <div>
@@ -960,11 +989,11 @@ if (!doNotTrack) {
     <li><a href="#前提条件">前提条件</a></li>
     <li><a href="#ステップ">ステップ</a>
       <ul>
-        <li><a href="#新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</a></li>
+        <li><a href="#新しい-android-studio-プロジェクトを作成する">新しい Android Studio プロジェクトを作成する</a></li>
         <li><a href="#マップを作成する">マップを作成する</a></li>
-        <li><a href="#マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する。</a></li>
+        <li><a href="#マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する</a></li>
         <li><a href="#mainactivity-クラス内で-mainscreen-を呼び出す">MainActivity クラス内で MainScreen を呼び出す</a></li>
-        <li><a href="#アクセストークンを取得する">アクセストークンを取得する</a></li>
+        <li><a href="#アクセス-トークンを取得する">アクセス トークンを取得する</a></li>
         <li><a href="#api-キーを設定する">API キーを設定する</a></li>
         <li><a href="#アプリを実行する">アプリを実行する</a></li>
         <li><a href="#web-マップを表示する">Web マップを表示する</a></li>
@@ -1015,7 +1044,7 @@ if (!doNotTrack) {
 <li>開発環境が<a href="https://developers.arcgis.com/swift/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
 </ol>
 <h2 id="ステップ">ステップ</h2>
-<h3 id="新しい-android-studio-プロジェクトを作成します">新しい Android Studio プロジェクトを作成します</h3>
+<h3 id="新しい-android-studio-プロジェクトを作成する">新しい Android Studio プロジェクトを作成する</h3>
 <p>Android Studio を使用してアプリを作成し、API を参照するように構成します。</p>
 <ol>
 <li>
@@ -1325,7 +1354,7 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
     <span style="color:#75715e">// 追加開始
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> basemapStyleParams = BasemapStyleParameters()
     basemapStyleParams.languageStrategy = BasemapStyleLanguageStrategy.Specific(Locale(<span style="color:#e6db74">&#34;ja&#34;</span>))
-    <span style="color:#75715e">// 追加終了        
+    <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>
     <span style="color:#66d9ef">return</span> ArcGISMap(Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParams)).apply {
 
@@ -1344,7 +1373,7 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 }
 </code></pre></div></li>
 </ol>
-<h3 id="マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する。</h3>
+<h3 id="マップを保持する-mainscreen-を作成する">マップを保持する MainScreen を作成する</h3>
 <ol>
 <li>
 <p><a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">MapView</a> を呼び出す <code>MainScreen</code> という名前のコンポーザブル関数を作成します。</p>
@@ -1470,10 +1499,13 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 </span><span style="color:#75715e"></span>}
 </code></pre></div></li>
 </ol>
-<h3 id="アクセストークンを取得する">アクセストークンを取得する</h3>
-<p>ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
-まだ作成していない場合は、<a href="https://location.arcgis.com/dashboard/">ArcGIS Location Platform のダッシュボード</a> に移動して、API キーを取得します。作成方法は「<a href="../../get-api-key/">API キーの取得</a>」をご覧ください。
-このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です。</p>
+<h3 id="アクセス-トークンを取得する">アクセス トークンを取得する</h3>
+<p>このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。</p>
+<ol>
+<li>アクセス トークンを取得するには、<a href="../../get-api-key">API キーの取得</a> チュートリアルに進んでください。</li>
+<li>次の権限が有効になっていることを確認してください。[ロケーション サービス] &gt; [ベースマップ] &gt; [ベースマップ スタイル サービス]</li>
+<li>アクセス トークンをコピーします。アクセス トークンを取得する他の方法については、<a href="https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/">Types of authentication</a> を参照してください。</li>
+</ol>
 <h3 id="api-キーを設定する">API キーを設定する</h3>
 <p>API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。</p>
 <ol>

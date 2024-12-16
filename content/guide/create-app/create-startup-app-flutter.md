@@ -1,8 +1,7 @@
 +++
-draft = true
 title = "Flutter"
 description = "ArcGIS Maps SDK for Flutter を用いたネイティブ地図アプリの作成方法を紹介します。"
-Weight =9
+Weight = 9
 aliases = ["/create-startup-app-flutter/"]
 +++
 
@@ -10,583 +9,506 @@ aliases = ["/create-startup-app-flutter/"]
 
 ## マップを表示する
 
-このチュートリアルでは ArcGIS Maps SDK for Kotlin を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
+このチュートリアルでは ArcGIS Maps SDK for Flutter を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 
-<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android200.0/display_map.png" width = "300px">
+<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/display-a-map-flutter.png" width="650px">
 
 
-マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
+マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。
 
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+
+このマップとコードは、他の 2D チュートリアルの出発点として使用されます。
 
 {{% notice note %}}
 
 このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [ベースマップ](../../../basemaps/) を参照してください。
 
+{{% /notice %}}  
+
+{{% notice warning %}}
+
+Android Studio の最新リリースである Ladybug 2024.2.1+ を使用している場合、Flutter アプリを起動しようとするとエラーが発生することがあります。例えば、このチュートリアルを実行しようとすると、次のようなエラーが表示されることがあります。  
+*"Unknown Kotlin JVM target: 21"*  
+同様に、flutter create コマンドを使って新しい Flutter プロジェクトを作成すると、次のような警告が表示されることがあります。  
+*"The configured version of Java detected may conflict with the Gradle version in your new Flutter app."*  
+この問題は、Ladybug にバンドルされている Java のバージョン（JDK 21）が Flutter の要件（JDK 17）と後方互換性がないことと、Flutter が使用している Gradle のバージョンに関連しています。
+
+新しい Flutter アプリを作成し、Android Studio Ladybug でこのチュートリアルを実行するための解決策は、手動で JDK 17 をインストールし、Flutter が JDK 17 を使用するようにリダイレクトすることです。  
+Android Studio からこの操作を行うためには、  
+*[設定] -> [ビルドツール] -> [Gradle JDK Location]* に行き、JDK 17 のインストール パスを設定します。  
+またはコマンド ラインから次のように実行します。
+```powershell
+flutter config --jdk-dir=<your-local-JDK-17-path>
+```
+
 {{% /notice %}}
-
-<!-- 
-## 前提条件
-
-このチュートリアルを実施するには、以下が必要です。
-
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)」をご覧ください。
-2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
-3. Kotlin で Android 開発をするための IDE。
-
-注: このチュートリアルの[完成版のコード](https://developers.arcgis.com/kotlin/zips/display-a-map.zip)は、Android Studio Chipmunk 2021.2.1 Patch 2 で作成されています。ただし、以下の手順で説明するコードは、Android Studio のその後のバージョンを含む、Kotlin をサポートする任意の Android IDE で動作するはずです。**Android Studio Flamingo 2022.2.1 以降を使用する場合は、Android Studio プロジェクトの作成時に「Empty Views Activity」テンプレートを使用してください。** -->
 
 ## 前提条件
 
 このチュートリアルを実施するには、以下が必要です。
 
 1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
-2. 開発環境が[システム要件](https://developers.arcgis.com/swift/reference/system-requirements/)を満たしていることを確認します。
+2. 開発環境が[システム要件](https://developers.arcgis.com/flutter/reference/system-requirements/)を満たしており、[Flutter の開発環境](../../../tips/flutter/install-flutter-200.x/) が整っていることを確認します。
+<!-- 3. Flutter 用の IDE。[VS Code](https://code.visualstudio.com/)を推奨しています。 -->
 
 ## ステップ
 
-### 新しい Android Studio プロジェクトを作成します
-Android Studio を使用してアプリを作成し、API を参照するように構成します。
-1. Android Studio を開きます。
-    * [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。<br />
-    または、メニューバーで [File] → [New] → [New Project] をクリックします。
-    * [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。
-    * 次のウィンドウで、以下の項目を設定します。
-        * Name: Display a map
-        * Package name： com.example.app に変更します。または、組織に合わせて変更してください。 
-        * Save location: 新しいフォルダに設定します。
-        * Minimum SDK: API 26 ("Oreo"; Android 8.0)
-        * Build configuration language: Kotlin DSL (build.gradle.kts)
+### 新しい Flutter アプリを作成します
+1. **VS Code** を開き、ウェルカム タブで [Open Folder...] を選択します。プロジェクトの場所を選んでください。
+2. [View] > [Terminal] に進みます。
+3. ターミナル ウィンドウで以下のコマンドを使い、**display_a_map** という新しい Flutter アプリを作成します。 必要なターゲット プラットフォームと 組織名 **com.example.app** を設定します。
 
-2. プロジェクトのツール ウィンドウで、現在のビューが Android であることを確認してください。チュートリアルの説明では、そのビューを参照しています。
-
-    ビュー名が Android 以外の名前 （プロジェクトやパッケージなど） の場合、プロジェクト ツール ウィンドウのタイトルバーの左端のコントロールをクリックし、リストから Android を選択します。
-    <img src = "https://developers.arcgis.com/kotlin/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" widgh = "300px">
-
-3. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
-
-    build.gradle.kts (Project: Display_a_map)
-
-    ```gradle
-    // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
-    plugins {
-        alias(libs.plugins.android.application) apply false
-        alias(libs.plugins.jetbrains.kotlin.android) apply false
-    }
+    ```powershell
+    flutter create -e display_a_map --platforms ios,android --org com.example.app
     ```
 
-4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
+### ArcGIS Maps SDK for Flutter を追加します
+`arcgis_maps` パッケージに依存関係を追加します。
 
-    build.gradle.kts (Module: app)
-
-    ```gradle
-    plugins {
-        alias(libs.plugins.android.application)
-        alias(libs.plugins.jetbrains.kotlin.android)
-    }
-
-    android {
-        namespace = "com.example.app"
-        compileSdk = libs.versions.compileSdk.get().toInt()
-
-        defaultConfig {
-            applicationId = "com.example.app"
-            minSdk = libs.versions.minSdk.get().toInt()
-            targetSdk = libs.versions.targetSdk.get().toInt()
-            versionCode = 1
-            versionName = "1.0"
-            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            vectorDrawables {
-                useSupportLibrary = true
-            }
-        }
-
-        buildTypes {
-            release {
-                isMinifyEnabled = false
-                proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            }
-        }
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
-        }
-
-        kotlinOptions {
-            jvmTarget = "17"
-        }
-
-        buildFeatures {
-            compose = true
-        }
-
-        composeOptions {
-            kotlinCompilerExtensionVersion = "1.5.11"
-        }
-
-        packaging {
-            resources {
-                excludes += "/META-INF/{AL2.0,LGPL2.1}"
-            }
-        }
-    }
-
-    dependencies {
-
-        implementation(libs.androidx.core.ktx)
-        implementation(libs.androidx.lifecycle.runtime.ktx)
-        implementation(libs.androidx.activity.compose)
-        implementation(platform(libs.androidx.compose.bom))
-        implementation(libs.androidx.ui)
-        implementation(libs.androidx.ui.graphics)
-        implementation(libs.androidx.ui.tooling.preview)
-        implementation(libs.androidx.material3)
-        testImplementation(libs.junit)
-        androidTestImplementation(libs.androidx.junit)
-        androidTestImplementation(libs.androidx.espresso.core)
-        androidTestImplementation(platform(libs.androidx.compose.bom))
-        androidTestImplementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.tooling)
-        debugImplementation(libs.androidx.ui.test.manifest)
-
-        // ArcGIS Maps for Kotlin - SDK dependency
-        implementation(libs.arcgis.maps.kotlin)
-        // Toolkit dependencies
-        implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
-        implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-        // Additional modules from Toolkit, if needed, such as:
-        // implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
-
-    }
+1. VS Code のターミナルで、ディレクトリを新しいプロジェクトに変更します。
+    ```powershell
+    cd display_a_map
+    ```
+2. 以下のコマンドを実行します。
+    ```powershell
+    dart pub add arcgis_maps
+    ```
+3. 以下のコマンドを実行します。
+    ```powershell
+    flutter pub upgrade
+    ```
+4. 最後に、以下のコマンドを実行します。
+    ```powershell
+    dart run arcgis_maps install
     ```
 
-    Android Studio の [New Project] ウィザードで生成されるモジュール レベルの `build.gradle.kts` ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (`kotlinOptions` ブロック) のオプションは互換性がなければなりません。互換性は Android の [Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin) を参照することで確認できます。
+### プラットフォーム固有の構成
+#### Android
+1. プロジェクトの `android/app/build.gradle` ファイルを編集して、最小要件を更新します。
 
-    build.gradle.kts (Module: app)
+    build.gradle
 
-    ```gradle
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+	```gradle
+	android {
+    	namespace = "com.example.app.display_a_map"
+    	compileSdk = flutter.compileSdkVersion
+		ndkVersion = "25.2.9519653"  //変更
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
-    }
-    ```
+    	compileOptions {
+        	sourceCompatibility = JavaVersion.VERSION_1_8
+        	targetCompatibility = JavaVersion.VERSION_1_8
+    	}
 
-5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
-* ArcGIS Maps SDK for Kotlin SDK
-* ArcGIS Maps SDK for Kotlin Toolkit BOM
-* 必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` コンポーネントのみが必要です。
+    	kotlinOptions {
+        	jvmTarget = JavaVersion.VERSION_1_8
+    	}
 
-    Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。
-
-    [Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は依存関係のバージョンを宣言するための標準的な Android のアプローチです。`build.gradle.kts` でバージョン番号を指定したり、`version.gradle` でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする `build.gradle.kts` と `gradle/libs.version.toml` ファイルを生成します。
-
-    Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の README の [Using the BOM](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom) を参照してください。
-
-    gradle/libs.versions.toml
-
-    ```toml
-    [versions]
-    arcgisMapsKotlin = "200.5.0"
-
-    [libraries]
-    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
-    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
-    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
-    # Additional modules from Toolkit, if needed, such as:
-    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
-    ```
-
-    {{% notice note %}}
-
-    `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
-
-    {{% /notice %}}
-
-    ```toml
-    [versions]
-    arcgisMapsKotlin = "200.5.0"
-
-    # Version numbers added by Android Studio New Project Wizard
-    agp = "8.3.2"
-    kotlin = "1.9.23"
-    coreKtx = "1.13.0"
-    junit = "4.13.2"
-    junitVersion = "1.1.5"
-    espressoCore = "3.5.1"
-    lifecycleRuntimeKtx = "2.8.3"
-    activityCompose = "1.9.0"
-    composeBom = "2024.04.01"
-
-    # Other version numbers
-    compileSdk = "34"
-    minSdk = "26"
-    targetSdk = "34"
-
-    [libraries]
-    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
-    arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
-    arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
-    # Additional modules from Toolkit, if needed, such as:
-    # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
-
-    androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-    junit = { group = "junit", name = "junit", version.ref = "junit" }
-    androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-    androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-    androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-    androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-    androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-    androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-    androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-    androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-    androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-    androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-    androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-    androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
-    [plugins]
-    android-application = { id = "com.android.application", version.ref = "agp" }
-    jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-    ```
-
-
-6. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
-
-    settings.gradle.kts (Display a map)
-
-    ```gradle
-    pluginManagement {
-        repositories {
-            google {
-                content {
-                    includeGroupByRegex("com\\.android.*")
-                    includeGroupByRegex("com\\.google.*")
-                    includeGroupByRegex("androidx.*")
-                }
-            }
-
-            mavenCentral()
-            gradlePluginPortal()
+    	defaultConfig {
+    	    // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+    	    applicationId = "com.example.app.display_a_map"
+    	    // You can update the following values to match your application needs.
+    	    // For more information, see: https://flutter.dev/to/review-gradle-config.
+    	    //
+			minSdk = 26 // 変更
+    	    targetSdk = flutter.targetSdkVersion
+    	    versionCode = flutter.versionCode
+    	    versionName = flutter.versionName
         }
     }
+	```
 
-    dependencyResolutionManagement {
-        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-        repositories {
-            google()
-            mavenCentral()
-            maven { url = uri("https://esri.jfrog.io/artifactory/arcgis") }
-        }
-    }
+2. プロジェクトの `android/settings.gradle` ファイルを編集して、Kotlin のバージョンを更新します。
 
-    rootProject.name = "Display a map"
-    include(":app")
-    ```
+    settings.gradle
 
-7. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。 
+	```gradle
+	plugins {
+        id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+        id "com.android.application" version "8.1.0" apply false
+        id "org.jetbrains.kotlin.android" version "1.9.0" apply false //変更
+	}
+	```  
 
-8. プロジェクト ツール ウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。
-
-    これらの新しい要素を `manifest` 要素内に挿入します。 他のステートメントを変更または削除しないでください。
-
-    今後追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。
+3. `android/app/src/main/AndroidManifest.xml` に、オンライン リソースにアクセスするためのパーミッションを追加します。
 
     AndroidManifest.xml
 
     ```xml
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-    // 追加開始
-    <uses-permission android:name="android.permission.INTERNET"/>
-    // 追加終了
+        <uses-permission android:name="android.permission.INTERNET" /> <!-- 追加 -->
+        <application
+            android:label="display_a_map"
+            android:name="${applicationName}"
+            android:icon="@mipmap/ic_launcher">
     ```
 
+#### iOS
+1. `ios/Podfile` ファイルを編集して iOS 16.0 を最小に設定します。 行のコメントを解除し、バージョン番号を更新します。
 
-### マップを作成する
-1. プロジェクト ツール ウィンドウから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に <b>com.example.app.screens</b> と入力し、キーボードの [Enter] キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。
+    Podfile
 
-2. 作成した <b>screens</b> パッケージを右クリックし、リストから [New] > [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に <b>MainScreen</b> と入力し、キーボードの [Enter] キーを押します。
+	```ruby
+	# Uncomment this line to define a global platform for your project
+	platform :ios, '16.0'  #変更
+	```  
 
-3. MainScreen.kt で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。
+2. `Runtimecore` pod と `arcgis_maps_ffi` pod を `Runner` ターゲット セクションに追加します。
 
-    {{% notice note %}}
+    Podfile
 
-    以下のコード ブロックでコンポーザブル関数 [com.arcgismaps.tookit.geoviewcompose.MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) をインポートしていることを確認してください。これは [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit) で定義されています。コンポーザブルに対応したコードでは ArcGIS Maps SDK API の [com.arcgismaps.mapping.view.MapView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html) という名前のクラスは使用しないでください。
+	```ruby
+	target 'Runner' do
+		use_frameworks!
+		use_modular_headers!
+
+        #変更開始
+		pod 'Runtimecore', :podspec => '../arcgis_maps_core/ios/Runtimecore.podspec'
+		pod 'arcgis_maps_ffi', :podspec => '../arcgis_maps_core/ios/arcgis_maps_ffi.podspec'
+        #変更終了
+
+		flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+		target 'RunnerTests' do
+			inherit! :search_paths
+		end
+	end
+	```  
+
+3. `pod update` を使用して Pods を設定します。
+
+    ```powershell
+	cd ios && pod update && cd ..
+	```  
+
+### アクセス トークンを取得する
+このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。
+1. アクセス トークンを取得するには、[API キーの取得](../../get-api-key) チュートリアルに進んでください。
+2. 次の権限が有効になっていることを確認してください。[ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
+3. アクセス トークンをコピーします。アクセス トークンを取得する他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
+
+### API キーを設定する
+1. VS Codeで、`lib/main.dart` を開きます。
+2. `arcgis_maps` パッケージをインポートします。
+
+    main.dart
+
+    ```dart
+    import 'package:flutter/material.dart';
+
+    import 'package:arcgis_maps/arcgis_maps.dart'; //追加
+    ```
+
+3. `main()` 関数で、[const](https://dart.dev/language/variables#final-and-const) `apiKey` を定義し、その値にアクセス トークンを設定します。
+
+    ```dart
+    void main() {
+
+        const apiKey = ''; // Your access token here. //追加
+
+        runApp(const MainApp());
+    }
+    ```
+
+    {{% notice info %}}
+
+    このチュートリアルでは便宜上、アクセス トークンをコードに直接格納しています。アクセス トークンをソース コードに格納することはベスト プラクティスではありません。
 
     {{% /notice %}}
 
-    MainScreen.kt
+4. [`ArcGISEnvironment.apiKey`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) を `apiKey` 定数に設定します。
 
-    ```kt
-    @file:OptIn(ExperimentalMaterial3Api::class)
+    main.dart
 
-    package com.example.app.screens
+    ```dart
+    void main() {
 
-    import androidx.compose.foundation.layout.fillMaxSize
-    import androidx.compose.foundation.layout.padding
-    import androidx.compose.material3.ExperimentalMaterial3Api
-    import androidx.compose.material3.Scaffold
-    import androidx.compose.material3.Text
-    import androidx.compose.material3.TopAppBar
-    import androidx.compose.runtime.Composable
-    import androidx.compose.runtime.remember
-    import androidx.compose.ui.Modifier
-    import androidx.compose.ui.res.stringResource
-    import com.arcgismaps.mapping.ArcGISMap
-    import com.arcgismaps.mapping.BasemapStyle
-    import com.arcgismaps.mapping.Viewpoint
-    import com.arcgismaps.toolkit.geoviewcompose.MapView
-    import com.example.app.R
+    const apiKey = ''; // Your access token here.
+
+    ArcGISEnvironment.apiKey = apiKey; //追加
+
+    runApp(const MainApp());
+    }
     ```
-4. [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返す `createMap()` という名前のトップ レベル関数を作成します。
+    {{% notice warning %}}
 
-    MainScreen.kt
+    API キーが必要なのにアクセス トークンが設定されていない（または無効な値が設定されている）場合、チュートリアルのコードを実行すると次のようなエラーが表示されることがあります。  
+    `Unhandled Loadable ArcGISMap load error: ArcGISException: code=22; HttpException: Failed to parse header value`  
+    このエラーが発生した場合は、有効なアクセス トークンが [`ArcGISEnvironment.apiKey`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) プロパティに設定されていることを確認してください。Flutter のコア HTTP スタックに既知の問題があるため、ArcGIS Maps SDK for Flutter は現時点でより明確なエラーを確実に提供することができません。
 
-    ```kt
-    fun createMap(): ArcGISMap {
+    {{% /notice %}}
+5. [`runApp()`](https://api.flutter.dev/flutter/widgets/runApp.html) 内で [`MaterialApp`](https://api.flutter.dev/flutter/material/MaterialApp-class.html) をインスタンス化し、名前付き引数の [`home`](https://api.flutter.dev/flutter/material/MaterialApp/home.html) に `MainApp` のインスタンスを設定します。
 
+    main.dart
+
+    ```dart
+    void main() {
+
+        const apiKey = ''; // Your access token here.
+
+        ArcGISEnvironment.apiKey = apiKey;
+
+        runApp(
+
+            //変更開始
+            const MaterialApp(
+                home: MainApp(),
+            ),
+            //変更終了
+
+        );
     }
     ```
 
-5. BasemapStyle.ArcGISTopographic を使用して [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で `apply{}` を呼び出します。この関数は [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
+### マップを追加する
+地形図ベースマップ レイヤーを含む地図を作成します。 地図は富士山の付近とします。
 
-    `apply{}` の詳細については Kotlin の [Scope functions](https://kotlinlang.org/docs/scope-functions.html) を参照してください。
+1. テンプレート `MainApp` クラス定義をリファクタリングして、[`StatefulWidget`](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html) を拡張します。 [`StatelessWidget`](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) キーワードにマウス カーソルを合わせて右クリックし、[Refactor...] から、[Convert to StatefulWidget] を選択してコードをリファクタリングします。
 
-    MainScreen.kt
+    ArcGIS Maps SDK for Flutter で作業していると、データの変更に応じて UI を更新するなど、アプリケーションの状態の更新が必要になることがよくあります。 ステートフル ウィジェットを実装することで、アプリはこのような状況に対応できます。 ステートレス ウィジェットの実装を使用して、単に地図を表示することも可能です。
 
-    ```kt
-    fun createMap(): ArcGISMap {
+    main.dart
 
-        // 追加開始
-        return ArcGISMap(BasemapStyle.ArcGISTopographic).apply {
+    ```dart
+    class MainApp extends StatefulWidget { //変更
+
+        const MainApp({super.key});
+
+        // 変更開始
+        @override
+        State<MainApp> createState() => _MainAppState();
+        // 変更終了
+
+    }
+
+    //追加開始
+    class _MainAppState extends State<MainApp> {
+        @override
+        Widget build(BuildContext context) {
+
+            return const MaterialApp(
+                home: Scaffold(
+                    body: Center(
+                        child: Text('Hello World!'),
+                    ),
+                ),
+            );
 
         }
-        // 追加終了
-
     }
+    //追加終了
     ```
 
-6. `apply` ブロックで、x (経度) と y (緯度) の座標と縮尺を持つ [Viewpoint](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html) を作成します。この Viewpoint を [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) の `initialViewpoint` プロパティに割り当てます。
-    また、ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
+2. build メソッド内で返される `MaterialApp` ウィジェットを削除します。 このコードは Flutter create テンプレートによって生成されたもので、次項でマップを含むウィジェットを返すコードに置き換えられます。
 
-    MainScreen.kt
+    main.dart
 
-    ```kt
-    fun createMap(): ArcGISMap {
+    ```dart
+    class MainApp extends StatefulWidget {
 
-        // 追加開始
-        val basemapStyleParams = BasemapStyleParameters()
-        basemapStyleParams.languageStrategy = BasemapStyleLanguageStrategy.Specific(Locale("ja"))
-        // 追加終了        
+        const MainApp({super.key});
 
-        return ArcGISMap(Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParams)).apply {
-
-            // 追加開始
-            initialViewpoint = Viewpoint(
-                latitude = 35.360626,
-                longitude = 138.727363,
-
-                scale = 200000.0
-
-            )
-            // 追加終了
-
-        }
+        @override
+        State<MainApp> createState() => _MainAppState();
 
     }
-    ```
 
-### マップを保持する MainScreen を作成する。
-1. [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を呼び出す `MainScreen` という名前のコンポーザブル関数を作成します。
+    class _MainAppState extends State<MainApp> {
+            @override
+            Widget build(BuildContext context) {
 
-    MainScreen.kt
+                // 削除開始
+                return const MaterialApp(
+                    home: Scaffold(
+                        body: Center(
+                            child: Text('Hello World!'),
+                        ),
+                    ),
+                );
+                // 削除終了
 
-    ```kt
-    // 追加開始
-    @Composable
-    fun MainScreen() {
-
-    }
-    // 追加終了
-
-    fun createMap(): ArcGISMap {
-        ・・・
-    ```
-
-2. [remember](https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#remember(kotlin.Function0)) ブロックを追加し、その中で `createMap()` を呼び出します。そして `remember` を `map` というローカル変数に割り当てます。
-    
-    トップ レベルのコンポーザブル関数は再構成時に状態を保持するために使用されます。
-
-    MainScreen.kt
-
-    ```kt
-    @Composable
-    fun MainScreen() {
-
-        // 追加開始
-        val map = remember {
-            createMap()
-        }
-        // 追加終了
-
-    }
-    ```
-
-3. Android Jetpack Compose からいくつかのコンポーザブル関数を呼び出します。[Scaffold](https://developer.android.com/jetpack/compose/components/scaffold) を呼び出し、アプリ名 (`R.string.app_name`) を含む [Text](https://developer.android.com/jetpack/compose/text) で [TopAppBar](https://developer.android.com/jetpack/compose/components/app-bars) を渡します。
-
-    MainScreen.kt
-
-    ```kt
-    @Composable
-    fun MainScreen() {
-
-        val map = remember {
-            createMap()
-        }
-
-        // 追加開始
-        Scaffold(
-            topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
-        ) {
-
-        }
-        // 追加終了
-
-    }
-    ```
-4. [Scaffold](https://developer.android.com/jetpack/compose/components/scaffold) の末尾のラムダで、[ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit) で定義されている [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) コンポーザブルを呼び出し、最大サイズとデフォルトのパディングを持つ [Modifier](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier) を設定します。そして、`map` を `arcGISMap` パラメーターとして渡します。
-
-    MainScreen.kt
-
-    ```kt
-    @Composable
-    fun MainScreen() {
-
-        val map = remember {
-            createMap()
-        }
-
-        Scaffold(
-            topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
-        ) {
-
-            // 追加開始
-            MapView(
-                modifier = Modifier.fillMaxSize().padding(it),
-                arcGISMap = map
-            )
-            // 追加終了
-
-        }
-
-    }
-    ```
-
-### MainActivity クラス内で MainScreen を呼び出す
-1. [app] > [kotlin+java] > [com.example.app] の <b>MainActivity.kt</b> を開きます。パッケージ宣言 (最初の行) と `MainActivity` クラスの定義以外のすべての行を削除します。
-
-    MainActivity.kt
-
-    ```kt
-    package com.example.app
-
-    class MainActivity : ComponentActivity() {
-
-    }
-    ```
-
-2. MainActivity.kt に import 文を追加します。
-
-    MainActivity.kt
-
-    ```kt
-    package com.example.app
-
-    // 追加開始
-    import android.os.Bundle
-    import androidx.activity.ComponentActivity
-    import androidx.activity.compose.setContent
-    import com.arcgismaps.ApiKey
-    import com.arcgismaps.ArcGISEnvironment
-    import com.example.app.screens.MainScreen
-    import com.example.app.ui.theme.DisplayAMapTheme
-    // 追加終了
-
-    class MainActivity : ComponentActivity() {
-
-    }
-    ```
-
-3. [onCreate()](https://developer.android.com/guide/components/activities/activity-lifecycle) ライフサイクル関数の `setContent()` ブロックでは、デフォルトのテーマ設定を適用して、コンポーザブル関数である `MainScreen` を呼び出します。これを行うには、`onCreate()` に以下のコードを追加します。
-
-    MainActivity.kt
-
-    ```kt
-    class MainActivity : ComponentActivity() {
-
-        // 追加開始
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-
-            setContent {
-                DisplayAMapTheme {
-                    MainScreen()
-                }
             }
+    }
+    ```
+
+3. `_MainAppState` クラスの内部で、最後のクラス メンバー変数 `_mapViewController` を定義し、[`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) クラスの [`createController()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/createController.html) を呼び出して [`ArcGISMapViewController`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController-class.html) で初期化します。
+
+    ArcGIS マップ ビュー コントローラーは、[`ArcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMap-class.html) で定義された 2 次元 (2D) 地理コンテンツを表示するユーザー インタフェース コントロールです。
+
+    main.dart
+
+    ```dart
+    class _MainAppState extends State<MainApp> {
+
+        final _mapViewController = ArcGISMapView.createController(); //追加
+
+        @override
+        Widget build(BuildContext context) {
 
         }
-        // 追加終了
+
     }
     ```
 
-### アクセストークンを取得する
-ArcGIS Online でホストされているサービス、Web マップ、Web シーンにアクセスできるようにするには、アクセストークンが必要です。
-まだ作成していない場合は、[ArcGIS Location Platform のダッシュボード](https://location.arcgis.com/dashboard/) に移動して、API キーを取得します。作成方法は「[API キーの取得](../../get-api-key/)」をご覧ください。
-このチュートリアルでは、ロケーションサービスのベースマップの権限が有効になっている API キーが必要です。
+4. build メソッド内で [`Scaffold`](https://api.flutter.dev/flutter/material/Scaffold-class.html)、[`Column`](https://api.flutter.dev/flutter/widgets/Column-class.html)、[`Expanded`](https://api.flutter.dev/flutter/widgets/Expanded-class.html) からなるウィジェット ツリーに [`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) ウィジェットを追加します。 引数名 [`controllerProvider`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/controllerProvider.html) をクラス メンバー変数 `_mapViewController` に設定し、[`onMapViewReady`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/onMapViewReady.html) 引数を次に定義する引数と同じ名前の新しいメソッドに設定します。
 
-### API キーを設定する
-API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。
+    [`Scaffold`](https://api.flutter.dev/flutter/material/Scaffold-class.html) ウィジェットは基本的な[マテリアル デザイン](https://m3.material.io/)のビジュアル レイアウト構造を提供し、[`Column`](https://api.flutter.dev/flutter/widgets/Column-class.html) ウィジェットは子ウィジェットを垂直配列で表示します。[`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) ウィジェットは、サイズが制限されたウィジェット内でのみ使用できます。 サイズが制限されていない状態で使用すると、アプリケーションは例外をスローします。 たとえば、`ArcGISMapView` を `Column` ウィジェット内で使用すると、サイズが制限されないため、このような例外が発生します。 代わりに、チュートリアルのこのステップで説明するように、`ArcGISMapView` を [`Expanded`](https://api.flutter.dev/flutter/widgets/Expanded-class.html) ウィジェットでラップして、適切な境界を提供することができます。
 
-1. `MainActivity` クラスで `setApiKey()` メソッドを作成し、[ApiKey.create()](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-api-key/-companion/create.html) を呼び出し、API キーを文字列として渡すことで、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/api-key.html) プロパティを設定します。引用符を忘れないでください。
+    main.dart
 
-    MainActivity.kt
+    ```dart
+    class _MainAppState extends State<MainApp> {
 
-    ```kt
-    class MainActivity : ComponentActivity() {
-        ・・・
+        final _mapViewController = ArcGISMapView.createController();
+
+        @override
+        Widget build(BuildContext context) {
+
+            //追加開始
+            return Scaffold(
+              body: Column(
+                children: [
+                  Expanded(
+                    child: ArcGISMapView(
+                      controllerProvider: () => _mapViewController,
+                      onMapViewReady: onMapViewReady,
+                    ),
+                  ),
+                ],
+              ),
+            );
+            //追加終了
+
+        }
+
     }
-
-    // 追加開始
-    private fun setApiKey() {
-
-        ArcGISEnvironment.apiKey = ApiKey.create("API キー")
-
-    }
-    // 追加終了
     ```
 
-2. onCreate() ライフサイクル メソッド内で setContent{} の前に setApiKey() を呼び出します。
+5. `MainAppState` 内で、何も返さない新しいメソッド `onMapViewReady()` を定義します。
 
-    MainActivity.kt
+    main.dart
 
-    ```kt
-    class MainActivity : ComponentActivity() {
+    ```dart
+    class _MainAppState extends State<MainApp> {
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        final _mapViewController = ArcGISMapView.createController();
 
-            // 追加開始
-            setApiKey()
-            // 追加終了
+        @override
+        Widget build(BuildContext context) {
 
-            setContent {
-                DisplayAMapTheme {
-                    MainScreen()
-                }
-            }
+            return Scaffold(
+                body: Column(
+                    children: [
+                        Expanded(
+                            child: ArcGISMapView(
+                                controllerProvider: () => _mapViewController,
+                                onMapViewReady: onMapViewReady,
+                            ),
+                        ),
+                    ],
+                ),
+            );
+
+        }
+
+        //追加開始
+        void onMapViewReady() {
+
+        }
+        //追加終了
+
+    }
+    ```
+
+6. 新しいメソッド内で final 変数 `basemapStyleParams`、`basemap`、`map` を定義します。それぞれの定義は以下の通りです。
+    * `basemapStyleParams`: [`BasemapStyleParameters`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/BasemapStyleParameters-class.html) をインスタンス化し、specificLanguage を日本語に変更します。
+    * `basemap`: ArcGIS Topographic ベースマップ スタイルと 生成した `basemapStyleParams` で [`Basemap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/Basemap-class.html) をインスタンス化します。
+    * `map`: `basemap` で [`ArcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMap-class.html) をインスタンス化します。  
+
+    main.dart
+
+    ```dart
+    class _MainAppState extends State<MainApp> {
+
+        final _mapViewController = ArcGISMapView.createController();
+
+        @override
+        Widget build(BuildContext context) {
+
+            return Scaffold(
+                body: Column(
+                    children: [
+                        Expanded(
+                            child: ArcGISMapView(
+                                controllerProvider: () => _mapViewController,
+                                onMapViewReady: onMapViewReady,
+                            ),
+                        ),
+                    ],
+                ),
+            );
+
+        }
+
+        void onMapViewReady() {
+
+            //追加開始
+            final basemapStyleParams = BasemapStyleParameters();
+            basemapStyleParams.specificLanguage = "ja"; //ベースマップの言語を日本語に設定
+
+            final basemap = Basemap.withStyle(BasemapStyle.arcGISTopographic, parameters: basemapStyleParams); //ベースマップに設定を適用
+            final map = ArcGISMap.withBasemap(basemap); //設定したベースマップでマップを生成
+            //追加終了
+
+        }
+
+    }
+    ```
+
+7. ArcGIS マップ ビュー コントローラーの [`arcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html) プロパティをマップに設定します。 さらに、[`setViewpoint()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html) を呼び出して、富士山にズームします。
+
+    main.dart
+
+    ```dart
+    class _MainAppState extends State<MainApp> {
+
+        final _mapViewController = ArcGISMapView.createController();
+
+        @override
+        Widget build(BuildContext context) {
+
+            return Scaffold(
+                body: Column(
+                    children: [
+                        Expanded(
+                            child: ArcGISMapView(
+                                controllerProvider: () => _mapViewController,
+                                onMapViewReady: onMapViewReady,
+                            ),
+                        ),
+                    ],
+                ),
+            );
+
+        }
+
+        void onMapViewReady() {
+
+            final basemapStyleParams = BasemapStyleParameters();
+            basemapStyleParams.specificLanguage = "ja"; //ベースマップの言語を日本語に設定
+
+            final basemap = Basemap.withStyle(BasemapStyle.arcGISTopographic, parameters: basemapStyleParams); //ベースマップに設定を適用
+            final map = ArcGISMap.withBasemap(basemap); //設定したベースマップでマップを生成
+
+            //追加開始
+            _mapViewController.arcGISMap = map;
+            _mapViewController.setViewpoint(
+                Viewpoint.withLatLongScale(
+                    latitude: 35.360626,
+                    longitude: 138.727363,
+                    scale: 200000.0,
+                ),
+            );
+            //追加終了
 
         }
 
@@ -594,59 +516,58 @@ API キーを使用すると、ArcGIS Online でホストされているサー�
     ```
 
 ### アプリを実行する
-1. [Run] > [Run] > [app] をクリックして、アプリを実行します。
+1. Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。
+2. VS Codeで、[Run] > [Run Without Debugging] を選択します。
 
-    Android Studio では、アプリを実行するのに、実際の Android 端末と Android エミュレータの 2 通りの方法があります。
+### ダウンロードしたソリューションを実行する
+プロジェクト ソリューションをダウンロードした場合は、以下の手順に従ってアプリケーションを実行します。
 
-    #### Android デバイス
-    パソコンと Android 端末を、USB または Wi-Fi で接続します。詳しくは、「[Android デバイスを接続する方法](https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device#0)」をご覧ください。
+1. VS Code で展開したプロジェクトを開きます。
+2. VS Code のターミナルで、以下のコマンドを実行します。
+    ```powershell
+    flutter pub upgrade
+    ```
+3. 以下のコマンドを実行します。
 
-    #### Android エミュレータ
-    Android エミュレータで動作させるための AVD(Android Virtual Device)を作成します。 詳しくは、「[Android Emulator 上でアプリを実行する](https://developer.android.com/studio/run/emulator)」をご覧ください。
-
-    #### デバイスの選択
-    Android Studio でアプリをビルドして実行する場合、まずデバイスを選択する必要があります。Android Studio のツールバーから、現在利用可能なデバイス（仮想および物理の両方）のドロップダウンリストにアクセスできます。
-    <img src = https://developers.arcgis.com/kotlin/static/681e1101a5d24322f1b4044d8a8b6c1d/e7c18/currently-selected-android-virtual-device.png>
-    
-    ツールバーのリストにアクセスできない場合は、[Tools] → [Device Manader] をクリックします。
-
-    富士山を中心に、地形ベースマップレイヤーが追加されたマップが表示されます。マップビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
-
-### Web マップを表示する
-「[Web マップの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップを [ArcGISMap](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) クラスから参照することができます。
-
-1. プロジェクト ツール ウィンドウから [app] > [Kotlin+java] > [com.example.app] > [screens] の <b>MainScreen.kt</b> を開きます。
-2. MainScreen.kt に以下のインポートを追加します。
-
-    MainScreen.kt
-
-    ```kt
-    import com.arcgismaps.mapping.PortalItem
-    import com.arcgismaps.portal.Portal
+    ```powershell
+    dart run arcgis_maps install lib/main.dart
     ```
 
-3. createMap() 関数を以下のように記述します。
+4. アクセス トークンを取得し、ソース コード ファイルに API キーを設定します。
+5. Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。
+6. VS Code で、[Run] > [Run Without Debugging] を選択します。
 
-    MainScreen.kt
+完成版のプロジェクトは[こちら](https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
 
-    ```kt
-    fun createMap(): ArcGISMap {
+### Web マップを表示する
+「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
 
-        val portal = Portal(
-            url = "https://www.arcgis.com", // 使用する ArcGIS ポータルの URL を記述
-            connection = Portal.Connection.Anonymous // ArcGIS ポータルへのアクセス方法を設定
-        )
+1. [マップを表示する](#マップを表示する)のステップで作成したプロジェクトの `main.dart` を開き、`onMapViewReady()` を下記のように書き換えます。
 
-        val portalItem = PortalItem(
-            portal = portal,
-            itemId = "<Web マップの ID>"
-        )
+    main.dart
 
-        return ArcGISMap(item = portalItem)
+    ```dart
+    void onMapViewReady() {
 
+        //URI を生成します。
+        var uri = Uri(
+          scheme: "https",
+          host: "example.com",
+          path: "Portal の Path"
+        );
+
+        //ArcGIS ポータルを作成します。URI を指定しない場合は "Portal.arcGISOnline()" を使用します。
+        final portal = Portal(uri);
+
+        //アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
+        final portalItem = PortalItem.withPortalAndItemId(portal: portal, itemId: "Web マップの ID");
+
+        //ポータル アイテムからマップを作成します。
+        final map = ArcGISMap.withItem(portalItem);
     }
     ```
 
----
+ ---
 
-アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](https://esrijapan.github.io/arcgis-dev-resources/guide/security/)
+ アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)
+

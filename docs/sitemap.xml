@@ -16,6 +16,8 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/</loc>
   </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/flutter/install-flutter-200.x/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/install-ios-200.x/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</loc>
@@ -49,6 +51,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-200.x/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/ios/distribution-ios-200.x/</loc>
   </url><url>
@@ -178,6 +182,8 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</loc>
   </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/flutter/</loc>
+  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/</loc>
@@ -187,6 +193,8 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/other/hackathon/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</loc>
   </url><url>

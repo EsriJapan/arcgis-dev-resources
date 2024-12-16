@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-11-26T16:23:46 JST">
+<meta name="revised" content="2024-12-16T17:30:55 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -192,6 +192,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
             iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/">
+            Flutter
           </a>
         </div>
     </li>
@@ -728,6 +735,28 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/arcgis-dev-resources/tips/unity/" class="dd-item haschildren
         ">
       <div>
@@ -1032,8 +1061,8 @@ if (!doNotTrack) {
 <p>ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。</p>
 </div>
 <h3 id="追加のデータ">追加のデータ</h3>
-<h4 id="projection-engine-データ">Projection Engine データ</h4>
-<p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、Projection Engine ファイルが存在する必要があります。Projection Engine ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
+<h4 id="投影エンジン-データ">投影エンジン データ</h4>
+<p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
 <p><a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/swift/downloads/#projection-engine-data">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/swift/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
 <h4 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h4>
 <p>航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、<a href="https://iho.int/en/">国際水路機関（IHO）</a>の <a href="https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf">S-57 規格</a> に準拠した ENC をサポートしています。</p>

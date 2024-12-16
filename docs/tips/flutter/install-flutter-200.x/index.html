@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <title>ArcGIS Developers 開発リソース集</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2024-12-16T17:30:55 JST">
+<title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
+<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
+<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
+<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="ArcGIS Maps SDK for Flutter のインストールとセットアップ手順を紹介します。">
+
+
+    
+  </head>
+  <body data-url="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="検索...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+        
+		</script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-api-key/">
+            API キーの取得
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-routing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-routing/">
+            ルートの検索
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/basemaps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/basemaps/">
+            ベースマップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            ArcGIS Maps SDK for JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
+            Esri Leaflet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
+            OpenLayers
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/">
+            CesiumJS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/">
+            Flutter
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/">
+            Unity
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/">
+            Unreal Engine
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/security/">
+            セキュリティと認証の紹介
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイの紹介
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/learn/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/learn/">もっと学ぶ</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/learn/github/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/github/">
+            Esri Japan GitHub
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/learn/developer-community/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/developer-community/">
+            ArcGIS 開発者コミュニティ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS Maps SDK for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/overview/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/overview/">
+            概要
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-cdn/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-cdn/">
+            開発の手順 (CDN)
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started-npm/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started-npm/">
+            開発の手順（npm）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-and-setup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-and-setup/">
+            インストールおよびセットアップ方法
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/components/">
+            コンポーネント
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
+            カスタム フォント
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
+            ページ（Page）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
+            ウィンドウ（Window）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
+            セクションとビュー（Section and view）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
+            画面グループ（Screen groups）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
+            レイアウト（Layout）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
+            テーマ（Theme）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
+            ウィジェット（Widget）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
+            Jimu
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
+            データ ソース（Data source）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
+            データアクション（Data action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
+            メッセージ と アクション（Message and action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
+            マップ/シーン ビュー（Map/Scene View）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
+            拡張ポイント（Extension points）
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
+            ウィジェット開発のスタート
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
+            ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
+            ウィジェットの実装
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータソースを使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/">
+            ウィジェットに下位互換性を持たせる
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/">
+            ウィジェット開発のデバック
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/">
+            サードパーティ製のライブラリ使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/">
+            単体テスト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/">
+            assets の使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/">
+            コードリンティング
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/">
+            webpack config のオーバーライド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/">
+            dist フォルダーへのファイルのコピー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/">
+            ウィジェット間のコードの共有
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">
+            チュートリアル
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
+            Web AppBuilder からの移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
+            カスタム ウィジェット開発ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
+            Web アプリケーションのデプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/calcite-design-system/">Calcite Design System</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/get-started/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/get-started/">
+            はじめに
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/">
+            チュートリアル
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Maps SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item active">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unity/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unity/">ArcGIS Maps SDK for Unity</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/install-and-set-up/">
+            インストールガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unreal-engine/">ArcGIS Maps SDK for Unreal Engine</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/">
+            インストールガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
+      </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：Conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/appstudio/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/appstudio/">ArcGIS AppStudio</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
+      </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/hackathon/">
+            ミートアップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer"><center>
+<br>© Esri Japan. All rights reserved.<br>
+</center>
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/flutter/'>ArcGIS Maps SDK for Flutter</a> > インストール ガイド
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#flutter-パッケージ-リポジトリ">Flutter パッケージ リポジトリ</a>
+      <ul>
+        <li><a href="#vs-code">VS Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#プラットフォーム固有の構成">プラットフォーム固有の構成</a>
+      <ul>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#ios">iOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#追加ダウンロード">追加ダウンロード</a>
+      <ul>
+        <li><a href="#サンプル-コード">サンプル コード</a></li>
+        <li><a href="#スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</a></li>
+        <li><a href="#補足データ">補足データ</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>インストール ガイド</h1>
+  
+
+
+
+    
+    
+    
+    <p>出典：ArcGIS Maps SDK for Flutter - Guide - <a href="https://developers.arcgis.com/flutter/install-and-set-up/">Install and set up</a></p>
+<p>このインストール ガイドでは、ArcGIS Maps SDK for Flutter (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-flutter/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
+<p>ArcGIS Maps SDK for Flutter をインストールする前に、開発マシンが <a href="https://www.esrij.com/products/arcgis-maps-sdk-for-flutter/spec/">動作環境</a> を満たしていることを確認してください。</p>
+<h2 id="flutter-パッケージ-リポジトリ">Flutter パッケージ リポジトリ</h2>
+<p>ArcGIS Maps SDK for Flutter は、Flutter のパッケージ リポジトリである <a href="https://pub.dev/packages/arcgis_maps/">pub.dev</a> を使用して、<a href="https://code.visualstudio.com/">VS Code</a> で Flutter プロジェクトに統合することができます。</p>
+<h3 id="vs-code">VS Code</h3>
+<ol>
+<li>
+<p>VS Code で Flutter プロジェクトを開きます。</p>
+</li>
+<li>
+<p><strong>View</strong> &gt; <strong>Terminal</strong> を開きます。</p>
+</li>
+<li>
+<p>プロジェクトの依存関係に <code>arcgis_maps</code> パッケージを追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart pub add arcgis_maps
+</code></pre></div> <!-- 上の行の空白を消すと、`の数がおかしくなるので注意。以下、Shell タグは同様。 bash,sh,shell-scriptも。-->
+<p><a href="https://dart.dev/tools/pub/cmd/pub-add"><code>dart pub add</code></a> は、<code>arcgis_maps</code> パッケージを依存関係として <a href="https://docs.flutter.dev/tools/pubspec"><code>pubspec.yaml</code></a> に追加し、<code>pubspec.yaml</code> を解決するために依存関係を取得します。</p>
+</li>
+<li>
+<p>以下のコマンドを実行して、すべての依存関係を最新の互換性のあるバージョンにアップデートします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flutter pub upgrade
+</code></pre></div><p>このコマンドを実行すると、アプリが依存しているパッケージのみがアップデートされます。</p>
+</li>
+<li>
+<p><code>arcgis_maps_core</code> をダウンロードしてインストールします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart run arcgis_maps install
+</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリ配布が Flutter プロジェクトにダウンロードされ、セットアップされます。</p>
+</li>
+</ol>
+<p>この API を使用するには、以下の import 文を dart コード（.dart）ファイルに追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:arcgis_maps/arcgis_maps.dart&#39;</span>;
+</code></pre></div><h2 id="プラットフォーム固有の構成">プラットフォーム固有の構成</h2>
+<p>Android、iOS、またはその両方向けに開発するには、Flutter プロジェクトで以下の設定変更も行う必要があります。</p>
+<h3 id="android">Android</h3>
+<ol>
+<li>
+<p>以下の最低要件を更新します。</p>
+<ul>
+<li>Android NDK バージョン: <code>25.2.9519653</code></li>
+<li>Android の最低 SDK バージョン: <code>26</code></li>
+</ul>
+<p>android/app/build.gradle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
+    namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
+    compileSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdkVersion</span>
+    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;25.2.9519653&#34;</span>  <span style="color:#75715e">// 変更
+</span><span style="color:#75715e"></span>
+    compileOptions <span style="color:#f92672">{</span>
+        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+    <span style="color:#f92672">}</span>
+
+    kotlinOptions <span style="color:#f92672">{</span>
+        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+    <span style="color:#f92672">}</span>
+
+    defaultConfig <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+</span><span style="color:#75715e"></span>        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
+        <span style="color:#75715e">// You can update the following values to match your application needs.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For more information, see: https://flutter.dev/to/review-gradle-config.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span> <span style="color:#75715e">// 変更
+</span><span style="color:#75715e"></span>        targetSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdkVersion</span>
+        versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
+        versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>`</p>
+</li>
+<li>
+<p>Kotlin のバージョンを更新します。</p>
+<ul>
+<li>Kotlin バージョン: <code>1.9.0</code></li>
+</ul>
+<p>android/settings.gradle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
+    id <span style="color:#e6db74">&#34;dev.flutter.flutter-plugin-loader&#34;</span> version <span style="color:#e6db74">&#34;1.0.0&#34;</span>
+    id <span style="color:#e6db74">&#34;com.android.application&#34;</span> version <span style="color:#e6db74">&#34;8.1.0&#34;</span> apply <span style="color:#66d9ef">false</span>
+    id <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span> version <span style="color:#e6db74">&#34;1.9.0&#34;</span> apply <span style="color:#66d9ef">false</span> <span style="color:#75715e">//変更
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ol>
+<h4 id="パーミッションを必要とする機能">パーミッションを必要とする機能</h4>
+<p>ArcGIS Maps SDK for Flutter に依存するアプリケーションをデプロイするには、以下の権限が必要です。オンライン リソースにアクセスする権限を追加し、デバイスの GPS にアクセスする権限を追加します。位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーは位置情報へのアクセス許可を提供するよう促されることに注意してください。</p>
+<p>android/app/src/main/AndroidManifest.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_COARSE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_FINE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+    <span style="color:#f92672">&lt;application</span>
+        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_project_template&#34;</span>
+        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;${applicationName}&#34;</span>
+        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><h4 id="デバイスのストレージへのアクセスを許可">デバイスのストレージへのアクセスを許可</h4>
+<p>添付ファイルの追加やエクスポートなど、デバイスのストレージに対する読み取り/書き込み操作が必要な場合は、以下の追加権限を追加する必要があります。</p>
+<p>android/app/src/main/AndroidManifest.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_INTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_EXTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+    <span style="color:#f92672">&lt;application</span>
+        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_project_template&#34;</span>
+        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;${applicationName}&#34;</span>
+        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><h4 id="ユーザー認証の有効化">ユーザー認証の有効化</h4>
+<p>ユーザー認証にシステム ブラウザーの使用が必要な場合は、以下を追加する必要があります。</p>
+<p>android/app/src/main/AndroidManifest.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;/activity&gt;</span> <span style="color:#75715e">&lt;!-- application タグ内の activity タグ--&gt;</span>
+    
+	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+ 	<span style="color:#f92672">&lt;activity</span>
+        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;com.linusu.flutter_web_auth_2.CallbackActivity&#34;</span>
+        <span style="color:#a6e22e">android:exported=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;intent-filter</span> <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_web_auth_2&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.action.VIEW&#34;</span> <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.DEFAULT&#34;</span> <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.BROWSABLE&#34;</span> <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">android:scheme=</span><span style="color:#e6db74">&#34;YOUR_CALLBACK_URL_SCHEME_HERE&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/intent-filter&gt;</span>
+    <span style="color:#f92672">&lt;/activity&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+</code></pre></div><p><code>YOUR_CALLBACK_URL_SCHEME_HERE</code> を、ポータルで OAuth 認証情報を設定したときに使用したリダイレクト URL のスキームに置き換えてください。 これは、ログイン ワークフローが完了した後、ブラウザーがアプリに通信して戻るために必要です。</p>
+<h3 id="ios">iOS</h3>
+<ol>
+<li>
+<p>iOS 16.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
+<p>ios/Podfile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Uncomment this line to define a global platform for your project</span>
+platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;16.0&#39;</span> <span style="color:#75715e">#変更</span>
+</code></pre></div></li>
+<li>
+<p><code>Runtimecore</code> ポッドと <code>arcgis_maps_ffi</code> ポッドを <code>Runner</code> ターゲット セクションに追加します。</p>
+<p>ios/Podfile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">target <span style="color:#e6db74">&#39;Runner&#39;</span> <span style="color:#66d9ef">do</span>
+    use_frameworks!
+    use_modular_headers!
+
+    <span style="color:#75715e">#変更開始</span>
+    pod <span style="color:#e6db74">&#39;Runtimecore&#39;</span>, <span style="color:#e6db74">:podspec</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;../arcgis_maps_core/ios/Runtimecore.podspec&#39;</span>
+    pod <span style="color:#e6db74">&#39;arcgis_maps_ffi&#39;</span>, <span style="color:#e6db74">:podspec</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;../arcgis_maps_core/ios/arcgis_maps_ffi.podspec&#39;</span>
+    <span style="color:#75715e">#変更終了</span>
+
+    flutter_install_all_ios_pods <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>dirname(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>realpath(__FILE__))
+    target <span style="color:#e6db74">&#39;RunnerTests&#39;</span> <span style="color:#66d9ef">do</span>
+        inherit! <span style="color:#e6db74">:search_paths</span>
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p><code>pod update</code> を使用して Pods を設定します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd ios &amp;&amp; pod update &amp;&amp; cd ..
+</code></pre></div></li>
+</ol>
+<h4 id="パーミッションを必要とする機能-1">パーミッションを必要とする機能</h4>
+<p>ArcGIS Maps SDK for Flutter の一部の機能には、追加のパーミッションが必要です。 ArcGIS Maps SDK for Flutter に依存する iOS アプリを App Store にデプロイするには、以下の記述が必要です。 位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーに位置情報へのアクセス許可を求めるプロンプトが表示されることに注意してください。</p>
+<ul>
+<li>ユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationusagedescription">NSLocationUsageDescription</a>）</li>
+<li>常にユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription">NSLocationAlwaysAndWhenInUseUsageDescription</a>）</li>
+<li>アプリがフォアグラウンドで実行されている間、ユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationwheninuseusagedescription">NSLocationWhenInUseUsageDescription</a>）</li>
+</ul>
+<p>次のコード例では、<a href="https://developer.apple.com/documentation/bundleresources/information_property_list">情報プロパティ リスト</a>にこれらを含めています。</p>
+<p>ios/Runner/Info.plist</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dict&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+	<span style="color:#f92672">&lt;key&gt;</span>NSLocationUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
+	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
+	<span style="color:#f92672">&lt;key&gt;</span>NSLocationAlwaysAndWhenInUseUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
+	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
+	<span style="color:#f92672">&lt;key&gt;</span>NSLocationWhenInUseUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
+	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
+	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+	<span style="color:#f92672">&lt;key&gt;</span>CFBundleDevelopmentRegion<span style="color:#f92672">&lt;/key&gt;</span>
+	<span style="color:#f92672">&lt;string&gt;</span>$(DEVELOPMENT_LANGUAGE)<span style="color:#f92672">&lt;/string&gt;</span>
+</code></pre></div><h2 id="追加ダウンロード">追加ダウンロード</h2>
+<p><a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B3%E3%83%BC%E3%83%89">サンプル コード</a>と<a href="#%E8%A3%9C%E8%B6%B3%E3%83%87%E3%83%BC%E3%82%BF">データ</a>の追加ソースは、あなたの開発プロジェクトを強化するために利用可能です。本ガイドは、<a href="#%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3%E3%81%AE%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88">スタンドアロンの開発者向けドキュメント</a>としてダウンロードすることもできます。</p>
+<h3 id="サンプル-コード">サンプル コード</h3>
+<p>独自のアプリケーションに追加できるさまざまな強力な機能を説明した、実践的なサンプル コードを入手できます。 サンプルを検索し、<a href="https://developers.arcgis.com/flutter/sample-code/">サンプル ドキュメント</a>で関連するコードを参照するか、<a href="https://github.com/Esri/arcgis-maps-sdk-flutter-samples">サンプル リポジトリ</a>からコードをダウンロードしてローカルで実行します。</p>
+<h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
+<p>開発者向けドキュメントは、ダウンロード ページからアーカイブとして<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>できます。 アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントを提供する手順が含まれています。 スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。 このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</p>
+<div class="notices info" >
+<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティ<a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
+</div>
+<p>ドキュメントをローカルに提供するために：</p>
+<ul>
+<li>使用する SDK の<a href="https://developers.arcgis.com/flutter/downloads/">ドキュメントをダウンロード</a>します。 ダウンロードしたファイルは .zip アーカイブ形式です。</li>
+<li>アーカイブをローカル フォルダに解凍します。 解凍されたアーカイブには、<code>public</code> と <code>install</code> の 2 つのサブフォルダがあります。</li>
+<li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従ってください。</li>
+</ul>
+<div class="notices note" >
+<p>ライブ ドキュメント サイトはリリースとリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。</p>
+</div>
+<h3 id="補足データ">補足データ</h3>
+<h4 id="投影-エンジン-データ">投影 エンジン データ</h4>
+<p>測地系変換は、ある空間参照から別の空間参照にジオメトリを投影する必要がある場合に使用されます。 測地系変換は、数学的に定義する方法（方程式ベースの変換）と、外部のサポート ファイルに依存する方法（グリッド ベースの変換）があります。 アプリでグリッド ベースの変換を使用する場合、投影エンジン のデータ ファイルが必要です。 API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出できます。</p>
+<p>アプリでグリッド ベースの変換が必要な場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/flutter/downloads/#projection-engine-data">投影エンジン ファイル</a>をダウンロードできます。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。</p>
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/flutter/" title="ArcGIS Maps SDK for Flutter"> <i class="fa fa-chevron-left"></i><label>ArcGIS Maps SDK for Flutter</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" title="アプリケーション配布ガイド" style="margin-right: 0px;"><label>アプリケーション配布ガイド</label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
+<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
+<script src="/arcgis-dev-resources/js/docdock.js"></script>
+<script src="/arcgis-dev-resources/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
