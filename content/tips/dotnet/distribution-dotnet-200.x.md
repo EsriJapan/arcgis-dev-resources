@@ -60,21 +60,12 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
     * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
 
 ### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-ArcGIS Online のユーザータイプの場合
 | ユーザータイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Contributor / Mobile Worker | Basic |
 | Creator | Standard |
 | Professional / Professional Plus | Advanced |
-
-ArcGIS Enterprise のユーザータイプの場合
-| ユーザータイプ | ライセンスレベル |
-|:-----------|:------------|
-| Viewer | Lite | 
-| Editor / Mobile Worker | Basic |
-| Creator / GIS Professional Basic | Standard |
-| GIS Professional Standard / GIS Professional Advanced | Advanced |
 
 ### Lite ライセンスの認証方法
 
@@ -198,7 +189,7 @@ Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。コードの前半で、ArcGIS Online ポータルを登録し、チャレンジ ハンドラーと OAuth 認証ハンドラーを設定することによって、[`AuthenticationManager`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Security.AuthenticationManager.html) を構成します。（[Authentication Manager の使用](https://developers.arcgis.com/net/security-and-authentication/)を参照）
 
-認証方法の詳細については、「[How to use named user login in your app（英語）](https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[How to use user authentication in your app（英語）](https://developers.arcgis.com/net/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/net/security-and-authentication/)」も併せてご覧ください。
 
 ```c#
 // ポータルの認証情報をユーザーに要求します (arcgis.com の OAuth 認証情報のリクエスト)

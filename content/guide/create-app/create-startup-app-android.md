@@ -60,9 +60,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 2. プロジェクトのツール ウィンドウで、現在のビューが Android であることを確認してください。チュートリアルの説明では、そのビューを参照しています。
 
     ビュー名が Android 以外の名前 （プロジェクトやパッケージなど） の場合、プロジェクト ツール ウィンドウのタイトルバーの左端のコントロールをクリックし、リストから Android を選択します。
-    <img src = "https://developers.arcgis.com/kotlin/static/8b96f6edb5d00aef8f0e7b3a31b34a86/811d1/display-a-map-android-view.png" widgh = "300px">
+    <img src = "https://developers.arcgis.com/kotlin/static/b690014120c2f491b95d42bf1e0847a3/267f6/display-a-map-android-view.png" widgh = "300px">
 
-3. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
+3. Android ビューから、[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。
 
     build.gradle.kts (Project: Display_a_map)
 
@@ -70,18 +70,20 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
     plugins {
         alias(libs.plugins.android.application) apply false
-        alias(libs.plugins.jetbrains.kotlin.android) apply false
+        alias(libs.plugins.kotlin.android) apply false
+        alias(libs.plugins.kotlin.compose) apply false
     }
     ```
 
-4. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
+4. Android ビューから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
     build.gradle.kts (Module: app)
 
     ```gradle
     plugins {
         alias(libs.plugins.android.application)
-        alias(libs.plugins.jetbrains.kotlin.android)
+        alias(libs.plugins.kotlin.android)
+        alias(libs.plugins.kotlin.compose)
     }
 
     android {
@@ -120,7 +122,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         }
 
         composeOptions {
-            kotlinCompilerExtensionVersion = "1.5.11"
+            kotlinCompilerExtensionVersion = "1.5.12"
         }
 
         packaging {
@@ -169,11 +171,11 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
     ```
 
-5. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
+5. Android ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
 * ArcGIS Maps SDK for Kotlin SDK
 * ArcGIS Maps SDK for Kotlin Toolkit BOM
 * 必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` コンポーネントのみが必要です。
@@ -188,12 +190,13 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     ```toml
     [versions]
-    arcgisMapsKotlin = "200.5.0"
+    arcgisMapsKotlin = "200.6.0"
 
     [libraries]
     arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
     arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
     arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+
     # Additional modules from Toolkit, if needed, such as:
     # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
     ```
@@ -206,23 +209,23 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     ```toml
     [versions]
-    arcgisMapsKotlin = "200.5.0"
+    arcgisMapsKotlin = "200.6.0"
 
     # Version numbers added by Android Studio New Project Wizard
-    agp = "8.3.2"
-    kotlin = "1.9.23"
-    coreKtx = "1.13.0"
+    agp = "8.7.1"
+    kotlin = "2.0.0"
+    coreKtx = "1.13.1"
     junit = "4.13.2"
-    junitVersion = "1.1.5"
-    espressoCore = "3.5.1"
-    lifecycleRuntimeKtx = "2.8.3"
-    activityCompose = "1.9.0"
-    composeBom = "2024.04.01"
+    junitVersion = "1.2.1"
+    espressoCore = "3.6.1"
+    lifecycleRuntimeKtx = "2.8.4"
+    activityCompose = "1.9.3"
+    composeBom = "2024.10.00"
 
     # Other version numbers
-    compileSdk = "34"
+    compileSdk = "35"
     minSdk = "26"
-    targetSdk = "34"
+    targetSdk = "35"
 
     [libraries]
     arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
@@ -248,7 +251,8 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     [plugins]
     android-application = { id = "com.android.application", version.ref = "agp" }
-    jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
     ```
 
 
@@ -285,7 +289,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     include(":app")
     ```
 
-7. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン(Sync Project with Gradle Files)をクリックします。同期に数分かかるかもしれません。 
+7. Gradle の変更を同期します。[Sync now] プロンプトをクリックするか、ツールバーの更新アイコン (Sync Project with Gradle Files) をクリックします。同期に数分かかるかもしれません。 
 
 8. プロジェクト ツール ウィンドウから、[app] > [manifests] > [AndroidManifest.xml] を開きます。Android マニフェストを更新して、インターネット接続を許可します。
 
@@ -567,6 +571,12 @@ API キーを使用すると、ArcGIS Online でホストされているサー�
     }
     // 追加終了
     ```
+
+    {{% notice note %}}
+
+    このチュートリアルでは便宜上、API キーをコードに直接格納していますが、API キーをソース コードに格納するのはベスト プラクティスではありません。
+
+    {{% /notice %}}
 
 2. onCreate() ライフサイクル メソッド内で setContent{} の前に setApiKey() を呼び出します。
 

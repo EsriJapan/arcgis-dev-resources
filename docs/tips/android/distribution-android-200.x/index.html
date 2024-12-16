@@ -17,7 +17,11 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<<<<<<< HEAD
 <meta name="revised" content="2024-12-16T17:30:55 JST">
+=======
+<meta name="revised" content="2024-12-10T19:09:23 JST">
+>>>>>>> 689714f61fcc13c3552b442188f24348b5043e70
 <title>アプリケーション配布ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1104,7 +1108,6 @@ if (!doNotTrack) {
 </li>
 </ol>
 <h3 id="指定ユーザーのユーザータイプとライセンスレベルの対比表">指定ユーザーのユーザータイプとライセンスレベルの対比表</h3>
-<p>ArcGIS Online のユーザータイプの場合</p>
 <table>
 <thead>
 <tr>
@@ -1127,33 +1130,6 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td style="text-align:left">Professional / Professional Plus</td>
-<td style="text-align:left">Advanced <sup>※1</sup></td>
-</tr>
-</tbody>
-</table>
-<p>ArcGIS Enterprise のユーザータイプの場合</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ユーザータイプ</th>
-<th style="text-align:left">ライセンスレベル</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Viewer</td>
-<td style="text-align:left">Lite</td>
-</tr>
-<tr>
-<td style="text-align:left">Editor / Mobile Worker</td>
-<td style="text-align:left">Basic</td>
-</tr>
-<tr>
-<td style="text-align:left">Creator / GIS Professional Basic</td>
-<td style="text-align:left">Standard</td>
-</tr>
-<tr>
-<td style="text-align:left">GIS Professional Standard / GIS Professional Advanced</td>
 <td style="text-align:left">Advanced <sup>※1</sup></td>
 </tr>
 </tbody>
@@ -1298,7 +1274,7 @@ LicenseKey.create(<span style="color:#e6db74">&#34;runtimeanalysis,1000,rud#####
 </code></pre></div><h3 id="指定ユーザー-アカウントを使用した認証">指定ユーザー アカウントを使用した認証</h3>
 <p>アプリケーションの実行時に、アプリケーションを利用するユーザーが保有する ArcGIS Online 組織向けプランもしくは Portal for ArcGIS の指定ユーザー アカウントを使用して ArcGIS Online / Portal for ArcGIS にログインすることで、ライセンスを取得することができます。</p>
 <p>アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。</p>
-<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/kotlin/license-and-deployment/use-a-license-in-your-app/#how-to-use-named-user-login-in-your-app">How to use named user login in your app（英語）</a>」や「<a href="https://developers.arcgis.com/kotlin/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
+<p>認証方法の詳細については、「<a href="https://developers.arcgis.com/kotlin/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app">How to use user authentication in your app（英語）</a>」や「<a href="https://developers.arcgis.com/kotlin/security-and-authentication/">Security and authentication（英語）</a>」も併せてご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// クレデンシャルを使用してポータル（ArcGIS Online）に接続します。
 </span><span style="color:#75715e"></span>val portal <span style="color:#f92672">=</span> Portal<span style="color:#f92672">.</span><span style="color:#a6e22e">arcGISOnline</span><span style="color:#f92672">(</span>Portal<span style="color:#f92672">.</span><span style="color:#a6e22e">Connection</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Authenticated</span><span style="color:#f92672">)</span>
 lifecycleScope<span style="color:#f92672">.</span><span style="color:#a6e22e">launch</span> <span style="color:#f92672">{</span>

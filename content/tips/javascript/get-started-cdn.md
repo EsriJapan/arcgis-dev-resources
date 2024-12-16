@@ -14,34 +14,63 @@ aliases = ["/javascript/get-started-cdn/"]
 {{% /notice %}}
 
 ### セットアップ
-ArcGIS Maps SDK for JavaScript をアプリに取り込むには、複数の方法があります。 最も一般的な方法は、ArcGIS CDN を使用することです。ファイルは最適化されたクラウド キャッシング経由でダウンロードされるため、アプリケーションをローカルでビルドする必要はありません。 また、アプリケーションを毎回再構築する必要がないため、SDK の新しいバージョンへのアップデートも簡単です。
+ArcGIS Maps SDK for JavaScript をアプリに組み込む方法はいくつかあります。最も一般的な方法は、ArcGIS CDN を使用することです。ファイルは最適化されたクラウドキャッシュを介してダウンロードされるため、アプリケーションをローカルでビルドする必要がありません。また、SDK の新しいバージョンに更新するのも簡単で、その都度アプリケーションを再ビルドする必要がありません。
 
 ### コンポーネント
-コンポーネントについては、HTML に以下のタグを使用して、アプリケーションに CSS とライブラリを追加します。
+ArcGIS Maps SDK for JavaScript のコンポーネントは、[Calcite Design System](https://developers.arcgis.com/calcite-design-system/) と SDK の[コア API](https://developers.arcgis.com/javascript/latest/api-reference/) に依存しています。まず Calcite とコア API を読み込む必要があります。
 
+Calcite を読み込むには、スタイルシート リンクとスクリプト タグを含めて Calcite コンポーネントをインポートします。
 ``` HTML
-  <!-- Load Map Components from CDN-->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
-  <script src="https://js.arcgis.com/4.30/"></script>
-  <script type="module" src="https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js"></script>
+<!-- Load Calcite -->
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.13.2/calcite.css" />
+<script type="module" src="https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js"></script>
 ```
 
-ArcGIS Online または ArcGIS Enterprise のポータルの WebMap を使用する場合は、`arcgis-map` タグを HTML に追加し、オプションの `item-id` を割り当てます。ステップバイステップの手順については、[チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/display-a-map-component/)を参照してください。
+次に、SDK のコア API を読み込むには、スタイルシート リンクとスクリプト タグを含めます。
+``` HTML
+<!-- Load the ArcGIS Maps SDK for JavaScript core API -->
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/4.31/esri/themes/dark/main.css"/>
+<script src="https://js.arcgis.com/4.31/"></script>
+```
 
+次に、Map コンポーネント パッケージやその他のコンポーネント パッケージを読み込むには、スクリプト タグ（必要に応じて関連する CSS も）を含めます。
+``` HTML
+<!-- Load map components -->
+<script type="module" src="https://js.arcgis.com/map-components/4.31/arcgis-map-components.esm.js"></script>
+```
+
+カスタム CSS を追加して、コンポーネントがアプリケーション内で表示されるようにします。これは、ArcGIS のスタイルシートとライブラリを CDN からインポートした後、アプリケーションの `<head>` セクションの最後に配置する必要があります。
+``` HTML
+<style>
+  html,
+  body {
+    margin: 0;
+  }
+
+  arcgis-map {
+    display: block;
+    height: 100vh;
+  }
+</style>
+```
+
+次に、HTML に `arcgis-map` コンポーネントを追加し、ArcGIS Online または ArcGIS Enterprise ポータルから WebMap を使用する場合はオプションの `item-id` を割り当てます。`item-id` が追加されない場合、デフォルトの[ベースマップ](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap)は `topo-vector` になります。詳細な手順については、[チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/display-a-web-map/)を参照してください。
 ``` HTML
 <arcgis-map item-id="05e015c5f0314db9a487a9b46cb37eca"></arcgis-map>
 ```
 
-それが完了したら
+それが完了したら、次のことができます：
 
-- basemap、center、zoom などのプロパティを設定します。
-- `arcgisViewReadyChange` イベントを使用して、ビューの準備ができたとき、またはビューのマップやシーンが置き換えられたときを監視します。
-- コア API を使用してカスタム JavaScript ロジックを追加します - ステップバイステップの手順については、[チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/using-view-with-components/)を参照してください。
-
-``` JavaScript
+- [プロパティ](https://developers.arcgis.com/javascript/latest/programming-patterns/#attributes-and-properties)を設定する（例：ベースマップ、中心、ズーム）
+- [変更を監視](https://developers.arcgis.com/javascript/latest/watch-for-changes/)する（例：`arcgisViewReadyChange` イベントを使用してビューが準備完了になったときや、ビューのマップまたはシーンが置き換えられたときに監視）
+- コア API を使用してカスタム JavaScript ロジックを追加する。詳細な手順については、[チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/using-view-with-components/)を参照してください。
+``` HTML
 const mapElem = document.querySelector("arcgis-map");
 mapElem.addEventListener("arcgisViewReadyChange", (event) => {
-  const { view, map } = event.target;
+  console.log('Map component is ready', event);
+
+  // Set the zoom property
+  mapElem.zoom = 10;
 });
 ```
 
@@ -49,8 +78,8 @@ mapElem.addEventListener("arcgisViewReadyChange", (event) => {
 API の AMD モジュールには、以下のスクリプトタグを使用します : 
 
 ``` HTML
-<link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.30/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.31/"></script>
 ```
 
 HTML に div を追加し、`id` を割り当てます：

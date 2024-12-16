@@ -16,6 +16,11 @@ ArcGIS Runtime SDK バージョン 100.15 は、不具合修正とマイナー �
 
 新機能を利用するには、Java ベースの ArcGIS Runtime SDK for Android を置き換える ArcGIS Maps SDK for Kotlin に移行してください。詳細については、ブログ「[ArcGIS Runtime SDK の今後のバージョンアップの計画についてのお知らせ](https://community.esri.com/t5/a/a/ta-p/1174047)」をご確認ください。
 
+## Jetpack Compose のサポート
+ArcGIS Maps SDK for Kotlin 200.2 以降では、Jetpack Compose を完全にサポートしています。このページのコード スニペットは、ほかのコンポーザブルとともに、ArcGIS Maps SDK for Kotlin Toolkit で定義されているコンポーザブル関数 [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) の使用を紹介しています。詳細については [Toolkit](https://developers.arcgis.com/kotlin/toolkit/) を参照してください。
+
+Jetpack Compose を使用しない場合は、代わりに XML レイアウトと [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) および [SceneView](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-scene-view/index.html) クラスを使用し続けることができます。
+
 ## LifeCycleObserver
 GeoView クラスは MapView や SceneView のベースクラスで、[DefaultLifecycleObserver](https://developer.android.com/reference/android/arch/lifecycle/DefaultLifecycleObserver) を実装しています。したがって、onResume、onPause、onDestroy のようなライフサイクルイベントを GeoView に転送することは、もはや必要ではありません。
 

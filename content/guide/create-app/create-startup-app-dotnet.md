@@ -15,11 +15,11 @@ aliases = ["/create-startup-app-dotnet/"]
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
-このチュートリアルでは、地形 ベクタータイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルでは、地形ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
 {{% notice note %}}
 
-このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [ベースマップ](../../../basemaps/) を参照してください。
+このチュートリアルのトピックの背景情報については、[Mapping API and location services guide](https://developers.arcgis.com/documentation/mapping-apis-and-services/) の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [ベースマップ](../../../basemaps/) を参照してください。
 
 {{% /notice %}}
 
@@ -27,7 +27,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするために 開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
 必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet-200.x/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
@@ -40,13 +40,13 @@ ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal 
 
 {{% notice note %}}
 
-.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WP Fと UWP のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
+.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WPFと UWP のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
 
 {{% /notice %}}
 
 1. Visual Studio を起動し、新しいプロジェクトを作成します。
-   * Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします
-   * <b>C#</b> 用の [WPF アプリケーション]テンプレートを選択します。テンプレートが表示されていない場合は、テンプレートの検索テキストボックスに `WPF アプリケーション` と入力すると、テンプレートを見つけることができます。
+   * Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします。
+   * <b>C#</b> 用の [WPF アプリケーション]テンプレートを選択します。テンプレートが表示されていない場合は、**テンプレートの検索**テキストボックスに `WPF アプリケーション` と入力すると、テンプレートを見つけることができます。
    * [次へ] をクリックします。
    * [新しいプロジェクトを構成します] 画面で必要な値を入力します。
      * プロジェクト名: `DisplayAMap`
@@ -72,7 +72,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 {{% /notice %}}
 
 1. [NuGet パッケージをインストール](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
-   * <b>ソリューション エクスプローラー</b>で、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。
+   * <b>ソリューション エクスプローラー</b>で、[参照] を右クリックし、[NuGet パッケージの管理] を選択します。
    * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に `nuget.org` (右上)が選択されていることを確認します。
    * [参照] タブを選択して、<b>ArcGIS Maps SDK</b> を検索します。
    * 検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは<b>Esri.ArcGISRuntime.WPF</b> NuGet パッケージを選択します。
@@ -84,7 +84,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
    * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
 
 2. Visual Studio エラー リストに `The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net8.0-windows'. Target 'net8.0-windows10.0.19041.0' or later instead.` のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
-*
+
     * <b>ソリューション エクスプローラー</b>で、ツリー ビューの <b>DisplayAMap</b> プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。
 
     *  `<TargetFramework>` 要素を `net8.0-windows10.0.19041.0`（またはそれ以上）で更新します。
@@ -99,14 +99,16 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
     * プロジェクト ファイル (`DisplayAMap`) を保存して閉じます。
 
-### API キーを取得する
+### アクセス トークンを取得する
 
-ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスするには アクセストークンが必要です。
+このチュートリアルで使用するロケーションサービスを利用するには、アクセス トークンが必要です。
+1. [API キーの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/)に進み、アクセス トークンを取得してください。
+2. 以下の権限が有効になっていることを確認してください
+    
+    [ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
+3. アクセス トークンは次のステップで使用するのでコピーしてください。
 
-まだ取得していない場合は、[ArcGIS Location Platform のダッシュボード](https://location.arcgis.com/dashboard/)に移動してAPI キーを取得します。作成方法は「[API キーの取得](../get-api-key/)」をご覧ください。
-このチュートリアルでは、ロケーション サービスのベースマップの権限が有効になっている API キーが必要です。
-
-以下では、この API キーを使用します。
+アクセス トークンを取得する他の方法については、[認証の種類](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/)をご覧ください。
 
 ### アプリで API キーを設定する
 
@@ -114,11 +116,6 @@ ArcGIS Online でホストされているサービス、Web マップ、およ�
 
 2. App クラスで、`OnStartup()` 関数のオーバーライドを追加して、[`ArcGISRuntimeEnvironment`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html) で `ApiKey` プロパティを設定します。
 
-    {{% notice note %}}
-
-    API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。
-
-    {{% /notice %}}
 
     App.xaml.cs
 
@@ -136,6 +133,12 @@ ArcGIS Online でホストされているサービス、Web マップ、およ�
         // 追加終了
     }
     ```
+    {{% notice warning %}}
+
+    API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。
+
+    {{% /notice %}}
+
 
 3. `App.xaml.cs` ファイルを保存して閉じます。
 
@@ -143,7 +146,7 @@ ArcGIS Online でホストされているサービス、Web マップ、およ�
 
 このアプリは、以降のすべてのチュートリアルで使用する基盤を構築するためのものです。堅固な設計で構築することをお勧めします。
 
-<b>Model-View-ViewModel (MVVM)</b> デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、`モデル`はアプリで消費されるデータを表し、`ビュー` はユーザー インターフェースであり、`ビューモデル` にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
+<b>Model-View-ViewModel (MVVM)</b> デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、`モデル`はアプリで消費されるデータを表し、`ビュー` はユーザー インターフェイスであり、`ビューモデル` にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
 
 MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。
 
@@ -193,7 +196,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     ```
 
 4. `MapViewModel` クラス内に、`PropertyChanged` イベントを実装するコードを追加します。
-   ビュー モデルのプロパティが変更されると、OnPropertyChanged の呼び出しにより、このイベントが発生します。
+
+   ビュー モデルのプロパティが変更されると、`OnPropertyChanged` の呼び出しにより、このイベントが発生します。
 
     MapViewModel.cs
 
@@ -304,8 +308,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 1. 必要な XML 名前空間とリソースを追加します。
    * `MainWindow.xaml` を開き、<b>XAML</b> ビューに切り替えます。
-   * 既存の名前空間の宣言内に、ArcGIS コントロールの esri XML 名前空間を追加します。
-   * MapViewModel インスタンスを静的リソースとして定義する XAML を追加します。
+   * 既存の名前空間の宣言内に、ArcGIS コントロールの `esri` XML 名前空間を追加します。
+   * `MapViewModel` インスタンスを静的リソースとして定義する XAML を追加します。
 
     MainWindow.xaml
 
