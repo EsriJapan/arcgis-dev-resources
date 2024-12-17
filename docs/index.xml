@@ -460,11 +460,10 @@ ArcGIS Maps SDK for Unreal Engine は、ソースコードとサンプル アセ
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-cdn/</guid>
       <description>出典 : ArcGIS Maps SDK for JavaScript - Get started with CDN
 コード : Map コンポーネントを表示するチュートリアル、または マップ コンポーネントの導入-2D マップの作成 サンプルから始めましょう。
-セットアップ ArcGIS Maps SDK for JavaScript をアプリに取り込むには、複数の方法があります。 最も一般的な方法は、ArcGIS CDN を使用することです。ファイルは最適化されたクラウド キャッシング経由でダウンロードされるため、アプリケーションをローカルでビルドする必要はありません。 また、アプリケーションを毎回再構築する必要がないため、SDK の新しいバージョンへのアップデートも簡単です。
-コンポーネント コンポーネントについては、HTML に以下のタグを使用して、アプリケーションに CSS とライブラリを追加します。
-&amp;lt;!-- Load Map Components from CDN--&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.31/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.31/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/map-components/4.31/arcgis-map-components.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ArcGIS Online または ArcGIS Enterprise のポータルの WebMap を使用する場合は、arcgis-map タグを HTML に追加し、オプションの item-id を割り当てます。ステップバイステップの手順については、チュートリアルを参照してください。
-&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; それが完了したら
- basemap、center、zoom などのプロパティを設定します。 arcgisViewReadyChange イベントを使用して、ビューの準備ができたとき、またはビューのマップやシーンが置き換えられたときを監視します。 コア API を使用してカスタム JavaScript ロジックを追加します - ステップバイステップの手順については、チュートリアルを参照してください。  const mapElem = document.</description>
+セットアップ ArcGIS Maps SDK for JavaScript をアプリに組み込む方法はいくつかあります。最も一般的な方法は、ArcGIS CDN を使用することです。ファイルは最適化されたクラウドキャッシュを介してダウンロードされるため、アプリケーションをローカルでビルドする必要がありません。また、SDK の新しいバージョンに更新するのも簡単で、その都度アプリケーションを再ビルドする必要がありません。
+コンポーネント ArcGIS Maps SDK for JavaScript のコンポーネントは、Calcite Design System と SDK のコア API に依存しています。まず Calcite とコア API を読み込む必要があります。
+Calcite を読み込むには、スタイルシート リンクとスクリプト タグを含めて Calcite コンポーネントをインポートします。
+&amp;lt;!-- Load Calcite --&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/2.13.2/calcite.css&amp;#34; /&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 次に、SDK のコア API を読み込むには、スタイルシート リンクとスクリプト タグを含めます。</description>
     </item>
     
     <item>
@@ -706,14 +705,15 @@ ArcGIS のビジュアライゼーション ツールにはヒストグラムを
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-npm/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Get started with npm
 @arcgis/map-components Vite および @arcgis/core Vite のサンプルを使用して始めることができます。
-ArcGIS Maps SDK for JavaScript の @arcgis/map-components および @arcgis/core パッケージは、npm からローカルにインストールできます。
-npm を使用することに加えて、プロジェクトによってはフレームワーク、モジュール バンドラー、トランスパイラー、node.js などを含む、追加の最新のビルド ツールが必要になるかもしれません。これらのツールがどのように動作するかの基本的な点を理解している必要があります。これらの概念の詳細についてはこのページの追加情報のセクションを参照してください。
+ArcGIS Maps SDK for JavaScript の @arcgis/map-components と @arcgis/core パッケージは、npm コマンドライン インターフェイスを使用してローカルにインストールできます。
+始めるには、npm と Node.js の両方をインストールします。さらに、モジュールバンドラーとローカル Web サーバーを含むクライアントサイドのビルドツール（例：Vite.js）が、アプリケーションの開発とテストに必要です。
+フレームワークやトランスパイラーの使用は任意であり、特定の要件に依存します。これらのツールの基本的な動作を理解しておくことが重要です。これらの概念の紹介については、以下の追加情報セクションを参照してください。
 依存関係の管理 npm を使用する場合、package.json ファイルはアプリケーションの実行とビルドに必要なパッケージの初期セットを指定します。これらの npm パッケージがインストールされると、それぞれ固有の依存関係も指定されます。
 ローカル ビルド ツールを使うのが初めての場合、package.json が依存関係、devDependencies、peerDependencies とどのように連動するかを理解することが重要です。
-コンポーネント Map コンポーネントを使用する場合、@arcgis/map-components パッケージをプロジェクトにインストールします。
-npm install @arcgis/map-components index.html ファイルに arcgis-map コンポーネントを追加し、main.js ファイルを参照します。
+コンポーネント インストール Map コンポーネントを使用する場合、@arcgis/map-components パッケージをプロジェクトにインストールします。
+npm install @arcgis/map-components レイアウトの作成 index.html ファイルに arcgis-map コンポーネントを追加し、main.js ファイルを参照します。各コンポーネントはカスタム要素であり、HTML タグを使用してアプリケーションに追加します。これらは &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; などの他の HTML 要素と同様に機能します。
 index.html
-&amp;lt;body&amp;gt; &amp;lt;arcgis-map item-id=&amp;#34;e691172598f04ea8881cd2a4adaa45ba&amp;#34;&amp;gt; &amp;lt;arcgis-legend position=&amp;#34;top-right&amp;#34;&amp;gt;&amp;lt;/arcgis-legend&amp;gt; &amp;lt;/arcgis-map&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;/main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; 次に、main.js ファイルで CSS を設定し、@arcgis/map-components パッケージから arcgis-map などのコンポーネントを個別にインポートします。SDK のアセットはデフォルトでは ArcGIS CDN の &amp;ldquo;https://js.</description>
+&amp;lt;body&amp;gt; &amp;lt;arcgis-map item-id=&amp;#34;e691172598f04ea8881cd2a4adaa45ba&amp;#34;&amp;gt; &amp;lt;arcgis-legend position=&amp;#34;top-right&amp;#34;&amp;gt;&amp;lt;/arcgis-legend&amp;gt; &amp;lt;/arcgis-map&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;/main.</description>
     </item>
     
     <item>
@@ -876,7 +876,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
 ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
  [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v429_api\arcgis_js_api\javascript\4.30\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.30\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
+ Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v431_api\arcgis_js_api\javascript\4.31\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.31\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
     </item>
     
     <item>
