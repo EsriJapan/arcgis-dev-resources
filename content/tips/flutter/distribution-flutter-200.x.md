@@ -177,7 +177,7 @@ ArcGISEnvironment.setLicenseUsingKey(
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、ライセンスを取得・設定します。以下のコードは、ArcGIS Online の指定ユーザーのライセンスを取得する方法を示しています。
 
-認証方法の詳細については、「[How to use named user authentication in your app（英語）](https://developers.arcgis.com/flutter/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app)」や「[Security and authentication（英語）](https://developers.arcgis.com/flutter/security-and-authentication/)」も併せてご覧ください。
+認証方法の詳細については、「[How to use user authentication in your app（英語）](https://developers.arcgis.com/flutter/license-and-deployment/use-a-license-in-your-app/#how-to-use-user-authentication-in-your-app)」も併せてご覧ください。
 
 ```dart
 // クレデンシャルを使用してポータル（ArcGIS Online）に接続します。

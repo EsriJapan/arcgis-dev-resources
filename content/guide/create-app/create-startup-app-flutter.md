@@ -18,7 +18,7 @@ aliases = ["/create-startup-app-flutter/"]
 
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
-このマップとコードは、他の 2D チュートリアルの出発点として使用されます。
+このマップとコードは、[他の 2D チュートリアル](https://developers.arcgis.com/flutter/tutorials/)の出発点として使用されます。
 
 {{% notice note %}}
 
@@ -519,6 +519,8 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 1. Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。
 2. VS Codeで、[Run] > [Run Without Debugging] を選択します。
 
+完成版のプロジェクトは[こちら](https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
+
 ### ダウンロードしたソリューションを実行する
 プロジェクト ソリューションをダウンロードした場合は、以下の手順に従ってアプリケーションを実行します。
 
@@ -537,7 +539,6 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 5. Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。
 6. VS Code で、[Run] > [Run Without Debugging] を選択します。
 
-完成版のプロジェクトは[こちら](https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
 
 ### Web マップを表示する
 「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
