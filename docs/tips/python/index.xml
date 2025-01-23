@@ -104,5 +104,21 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
  ArcGIS Pro のアップグレード  ArcGIS Pro 2.5 では、デフォルトで作成されている arcgispro-py3 という名前の環境に、ArcGIS API for Python 1.7.0 及び matplotlib 3.1.1 がインストールされています。   ArcGIS API for Python をアップグレード  Anaconda を利用して環境構築している場合、ArcGIS API for Python を最新バージョンにアップグレードすることで、依存パッケージである matplotlib も併せてアップグレードされます。    matplotlib での日本語フォントの設定方法 設定方法は主に以下の 2 通りがあります。</description>
     </item>
     
+    <item>
+      <title>アイテムのクローン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/python/cloning-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/python/cloning-content/</guid>
+      <description>参考：ArcGIS API for Python - Cloning Content
+イントロダクション 企業または組織の開発環境からステージング、そして本番環境にコンテンツを移動させる最善の方法は何ですか？という質問がよくあります。このガイドでは、ある Web GIS から別の Web GIS にコンテンツを移動する方法について、可能なロードマップの 1 つを紹介します。これは、コンテンツを移動する際の基本的なソフトウェアの概念を示すためのテンプレートであり、ワークフローを他の種類のコンテンツ用に変更したり、管理者の特定のニーズに合わせて調整したりすることができます。
+ContentManger の clone_items() メソッドは、ArcGIS Online、ArcGIS Enteprise、または ArcGIS Enterprise on Kubernetes などの元の組織から別の組織に、すべての用途と機能を持つ 1 つのアイテムの完全な複製を作成することを目的としています。アイテムのクローンを作成するときは、サポートされているアイテム、関連するアイテム、またはリソース アイテムとクローンされるアイテムとの関係を考慮する必要があります。
+アイテムのクローンついて、基本的な用語を定義しておきましょう。クローンとは、ArcGIS Enterprise、ArcGIS Online、または ArcGIS Enterprise on Kubernetes から他のデプロイメント タイプへの、あらゆる組織間でのアイテムの転送を指します。これらのポータルのタイプについて説明するときに、これらのポータルのタイプを区別しようとして混乱しないために、デプロイメントのタイプに関係なく、コンテンツ作成元の組織を「ソース」と呼び、コンテンツのクローン先の組織を「ターゲット」と呼びます。
+このドキュメントでは、ソースの管理者アカウントを使用してソース アイテムを収集し、ターゲットの管理者アカウントにクローンするワークフローを説明します。具体的には、ホスト フィーチャ レイヤーと Web マップをクローンする方法を説明します。Web マップは、これらのレイヤー アイテムとそのソース サービスを操作レイヤーの構成要素として利用できます。各アイテムの詳細については、ハイパーリンクをクリックしてください。
+これは管理者のワークフローです。管理者アカウントを使用することで、ソース内でアイテムや依存関係にアクセスすること及び、ターゲット内でアイテムやサービスを作成するための必要な権限が保証されます。ターゲットの管理者は、ユーザー アカウントを作成し、必要に応じてアイテムの所有権やグループ メンバーシップを再割り当てすることができます。これは、ポータルが外部のアイデンティティ ストアによって管理されるユーザーを持つ場合、最も単純なワークフローになります。
+対応アイテム 冒頭に記載したように、Python API の開発者は以下のアイテム タイプを転送する用に clone_items() メソッドを設計しました。
+ Web マップ ホスト フィーチャ レイヤー ホスト フィーチャ レイヤーのビュー フィーチャ コレクション ArcGIS survey123 フォーム ArcGIS Workforce プロジェクト ArcGIS StoryMaps  Cloning Complex Items を参照   ArcGIS Experience Builder  Cloning Complex Items を参照   ArcGIS Dashboards  Cloning Complex Apps を参照   ArcGIS QuickCapture プロジェクト ArcGIS Notebooks シンプルなタイプ  ダウンロードオプションのあるアイテム。(Web GIS に含まれ、ダウンロード可能なアイテムについては、Data files を参照) ジオデータベースやシェープファイル、コードサンプル、zip ファイル、その他のパッケージなどが含まれます。    clone_items() は、上記の複雑なアイテムの依存関係をクローンします。例えば、既存の Web アプリケーションをクローンする場合、Web マップと、そのマップで参照されるすべてのホスト フィーチャ レイヤーをクローンします。</description>
+    </item>
+    
   </channel>
 </rss>

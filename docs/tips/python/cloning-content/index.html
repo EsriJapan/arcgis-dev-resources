@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2025-01-23T16:44:39 JST">
-<title>ウィジェットに下位互換性を持たせる :: ArcGIS Developers 開発リソース集</title>
+<title>アイテムのクローン :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ウィジェットのバージョンと下位互換性について紹介します。">
+<meta name="description" content="Web GIS のアイテムを他のアカウントに複製する方法を紹介します">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/">
+  <body data-url="/arcgis-dev-resources/tips/python/cloning-content/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -321,11 +321,10 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
@@ -434,11 +433,10 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
@@ -483,7 +481,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/">
             ウィジェットに下位互換性を持たせる
@@ -808,10 +806,11 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
       </div>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
@@ -863,7 +862,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/python/cloning-content/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/python/cloning-content/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/python/cloning-content/">
             アイテムのクローン
@@ -976,12 +975,7 @@ if (!doNotTrack) {
 
 
 
-
-
-
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/widget-development/'>カスタム ウィジェット開発ガイド</a> > ウィジェットに下位互換性を持たせる
-
- 
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/python/'>ArcGIS API for Python</a> > アイテムのクローン
 
  
 
@@ -996,7 +990,27 @@ if (!doNotTrack) {
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#イントロダクション">イントロダクション</a></li>
+        <li><a href="#対応アイテム">対応アイテム</a></li>
+        <li><a href="#ライブラリのインポート">ライブラリのインポート</a></li>
+        <li><a href="#ソースとターゲットのポータルに接続">ソースとターゲットのポータルに接続</a></li>
+        <li><a href="#クローンの作成">クローンの作成</a></li>
+        <li><a href="#複数のアイテムを同時にクローンする">複数のアイテムを同時にクローンする</a></li>
+        <li><a href="#クローンのプロセス">クローンのプロセス</a></li>
+        <li><a href="#web-マップ">Web マップ</a></li>
+        <li><a href="#ソース">ソース</a></li>
+        <li><a href="#ターゲット">ターゲット</a></li>
+        <li><a href="#arcgis-dashboards">ArcGIS Dashboards</a></li>
+        <li><a href="#story-maps">Story Maps</a></li>
+      </ul>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -1006,7 +1020,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>ウィジェットに下位互換性を持たせる</h1>
+    <h1>アイテムのクローン</h1>
   
 
 
@@ -1014,57 +1028,180 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/make-widgets-backward-compatible/">Make widget backward compatible</a></p>
-<p>ArcGIS Experience Builder の進化に伴い、Jimu フレームワークに新機能が追加されることや、変更が加えられることがあります。ArcGIS Experience Builder の新しいバージョンでウィジェットを使用する必要がある場合は、新しいバージョンでウィジェットをテストしなければなりません。 ウィジェットが期待どおりに動作しない場合は、リリース ノートを読んで、ウィジェットに影響する変更点がないか確認してください。</p>
-<p>各 ArcGIS Experience Builder ウィジェットの構成は、アプリ構成に保存されます。 カスタム ウィジェットに機能を追加する場合、構成形式を変更する必要がある場合があります。ウィジェットを以前の構成と後方互換性を持たせるには、2 つの選択肢があります。プログラムで構成 フォーマットをチェックするか、VersionManager を使って古いフォーマットをアップグレードするかです。 以下の利点から、後者を強く推奨します。</p>
+    <p>参考：ArcGIS API for Python - <a href="https://developers.arcgis.com/python/latest/guide/cloning-content/">Cloning Content</a></p>
+<h3 id="イントロダクション">イントロダクション</h3>
+<p>企業または組織の開発環境からステージング、そして本番環境にコンテンツを移動させる最善の方法は何ですか？という質問がよくあります。このガイドでは、ある Web GIS から別の Web GIS にコンテンツを移動する方法について、可能なロードマップの 1 つを紹介します。これは、コンテンツを移動する際の基本的なソフトウェアの概念を示すためのテンプレートであり、ワークフローを他の種類のコンテンツ用に変更したり、管理者の特定のニーズに合わせて調整したりすることができます。</p>
+<p>ContentManger の <a href="https://developers.arcgis.com/python/api-reference/arcgis.gis.toc.html#arcgis.gis.ContentManager.clone_items">clone_items()</a> メソッドは、ArcGIS Online、ArcGIS Enteprise、または ArcGIS Enterprise on Kubernetes などの元の組織から別の組織に、すべての用途と機能を持つ 1 つのアイテムの完全な複製を作成することを目的としています。アイテムのクローンを作成するときは、サポートされているアイテム、関連するアイテム、またはリソース アイテムとクローンされるアイテムとの関係を考慮する必要があります。</p>
+<p>アイテムのクローンついて、基本的な用語を定義しておきましょう。クローンとは、ArcGIS Enterprise、ArcGIS Online、または ArcGIS Enterprise on Kubernetes から他のデプロイメント タイプへの、あらゆる組織間でのアイテムの転送を指します。これらのポータルのタイプについて説明するときに、これらのポータルのタイプを区別しようとして混乱しないために、デプロイメントのタイプに関係なく、コンテンツ作成元の組織を「ソース」と呼び、コンテンツのクローン先の組織を「ターゲット」と呼びます。</p>
+<p>このドキュメントでは、ソースの管理者アカウントを使用してソース アイテムを収集し、ターゲットの管理者アカウントにクローンするワークフローを説明します。具体的には、<a href="https://doc.arcgis.com/en/arcgis-online/manage-data/hosted-web-layers.htm">ホスト フィーチャ レイヤー</a>と <a href="https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-webmap/">Web マップ</a>をクローンする方法を説明します。<code>Web マップ</code>は、これらのレイヤー アイテムとそのソース サービスを操作レイヤーの構成要素として利用できます。各アイテムの詳細については、ハイパーリンクをクリックしてください。</p>
+<p>これは管理者のワークフローです。管理者アカウントを使用することで、ソース内でアイテムや依存関係にアクセスすること及び、ターゲット内でアイテムやサービスを作成するための必要な権限が保証されます。ターゲットの管理者は、ユーザー アカウントを作成し、必要に応じてアイテムの所有権やグループ メンバーシップを再割り当てすることができます。これは、ポータルが外部のアイデンティティ ストアによって管理されるユーザーを持つ場合、最も単純なワークフローになります。</p>
+<h3 id="対応アイテム">対応アイテム</h3>
+<p>冒頭に記載したように、Python API の開発者は以下のアイテム タイプを転送する用に <code>clone_items()</code> メソッドを設計しました。</p>
 <ul>
-<li>最新のフォーマットだけを処理するので、コードはよりシンプルになる。</li>
-<li>変更点を 1 つの VersionManager ファイルにまとめることで、変更点の追跡が容易になる。</li>
+<li>Web マップ</li>
+<li>ホスト フィーチャ レイヤー</li>
+<li>ホスト フィーチャ レイヤーのビュー</li>
+<li>フィーチャ コレクション</li>
+<li>ArcGIS survey123 フォーム</li>
+<li>ArcGIS Workforce プロジェクト</li>
+<li>ArcGIS StoryMaps
+<ul>
+<li><a href="https://developers.arcgis.com/python/guide/cloning-complex-apps">Cloning Complex Items</a> を参照</li>
 </ul>
-<p>最初のオプションは簡単です。以下は、VersionManager を使用してウィジェットに下位互換性を持たせるためのガイドです。
-VersionManager を使うには、2 つのステップを踏む必要があります。</p>
-<ol>
-<li><code>WidgetVersionManager</code> のサブクラスとして VersionManager クラスを定義します。 バージョン 1.13 以前を使用している場合は、<code>BaseVersionManager</code>を使用してください。それ以降のバージョンでは、<code>WidgetVersionManager</code> を推奨します。</li>
-<li>以下のように VersionManager インスタンスをウィジェットクラスまたは関数のプロパティ <code>versionManager</code> に割り当てます。
-<code>Widget.versionManager = new WidgetVersionManager();</code></li>
-</ol>
-<p><code>BaseVersionManager</code> を継承した VersionManager クラスでは、バージョン オブジェクトの配列である <code>versions</code> プロパティを定義する必要があります。各バージョンのオブジェクトには、<code>version</code> プロパティと <code>upgrader</code> 関数が含まれます。<code>upgrader</code> 関数は、構成を以前のバージョンから現在のバージョンにアップグレードするために使用されます。<code>upgrader</code> 関数は、構成 オブジェクトをパラメータとして受け取り、アップグレードされた構成 オブジェクトを返します。構成が変更されない場合は、<code>versions</code> 配列でバージョンをスキップできます。<code>useDatasources</code> や <code>outputDataSources</code> など、VersionManager がウィジェットの設定以上のものをアップグレードする必要がある場合、<code>WidgetVersionManager</code> クラスを継承することができます。<code>WidgetVersionManager</code> を継承した VersionManager は、<code>BaseVersionManager</code> を継承した VersionManager と非常によく似ていますが、バージョン オブジェクトは、さらに 1 つのプロパティ、<code>upgradeFullInfo</code> をサポートしています。 このプロパティが <code>true</code> に設定されている場合、<code>upgrader</code> 関数は完全なウィジェット情報オブジェクトを受け取り、アップグレードされた完全なウィジェット情報オブジェクトを返す必要があります。</p>
-<p>以下は、<code>WidgetVersionManager</code> を継承した VersionManager クラスの例です：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">WidgetVersionManager</span>, <span style="color:#a6e22e">WidgetUpgradeInfo</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
+</li>
+<li>ArcGIS Experience Builder
+<ul>
+<li><a href="https://developers.arcgis.com/python/guide/cloning-complex-apps/">Cloning Complex Items</a> を参照</li>
+</ul>
+</li>
+<li>ArcGIS Dashboards
+<ul>
+<li><a href="https://developers.arcgis.com/python/guide/cloning-complex-apps">Cloning Complex Apps</a> を参照</li>
+</ul>
+</li>
+<li>ArcGIS QuickCapture プロジェクト</li>
+<li>ArcGIS Notebooks</li>
+<li>シンプルなタイプ
+<ul>
+<li>ダウンロードオプションのあるアイテム。(Web GIS に含まれ、ダウンロード可能なアイテムについては、<a href="https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types/#data-files">Data files</a> を参照) ジオデータベースやシェープファイル、コードサンプル、zip ファイル、その他のパッケージなどが含まれます。</li>
+</ul>
+</li>
+</ul>
+<p><code>clone_items()</code> は、上記の複雑なアイテムの依存関係をクローンします。例えば、既存の Web アプリケーションをクローンする場合、Web マップと、そのマップで参照されるすべてのホスト フィーチャ レイヤーをクローンします。</p>
+<p><code>clone_items()</code> は、マップ サービスとイメージ サービスのクローンを作成できません。これらのサービスは、構成内のホストされているサーバー以外のサーバーに公開されるため、関数がターゲット内のどこに公開するかを決定することは不可能です。その結果、これらのアイテムはコピーされますが、元のソース URL を参照し続けます。</p>
+<p>個々のアイテムのクローンを作成し、その結果を検証する例を見てみましょう。</p>
+<p>※このドキュメントではバージョン 2.4.0 以降を対象とした書き方で紹介します。</p>
+<p>まず、必要なライブラリをインポートし、ソースの GIS とターゲットの GIS に接続します。</p>
+<h3 id="ライブラリのインポート">ライブラリのインポート</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VersionManager</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">WidgetVersionManager</span> {
-  <span style="color:#a6e22e">versions</span> <span style="color:#f92672">=</span> [{
-    <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1.6.0&#39;</span>,
-    <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Change property a to b. This demonstrates how to upgrade the widget config&#39;</span>,
-    <span style="color:#a6e22e">upgrader</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">oldConfig</span>) =&gt; {
-      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">oldConfig</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">oldConfig</span>
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newConfig</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oldConfig</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#a6e22e">oldConfig</span>.<span style="color:#a6e22e">a</span>).<span style="color:#a6e22e">without</span>(<span style="color:#e6db74">&#39;a&#39;</span>)
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newConfig</span>
-    }
-  }, {
-    <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1.15.0&#39;</span>,
-    <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Upgrade the use data source.&#39;</span>,
-    <span style="color:#a6e22e">upgradeFullInfo</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-    <span style="color:#a6e22e">upgrader</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">oldInfo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">WidgetUpgradeInfo</span>) =&gt; {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newWidgetJson</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oldInfo</span>.<span style="color:#a6e22e">widgetJson</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;useDataSources&#39;</span>, <span style="color:#a6e22e">YOUR_NEW_USE_DATA_SOURCES</span>)
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">widgetInfo</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">oldInfo</span>, <span style="color:#a6e22e">widgetJson</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newWidgetJson</span> }
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">widgetInfo</span>
-    }
-  }]
-}
+<span style="color:#f92672">from</span> arcgis.gis <span style="color:#f92672">import</span> GIS, Item
+<span style="color:#f92672">from</span> arcgis.env <span style="color:#f92672">import</span> active_gis
+<span style="color:#f92672">from</span> arcgis.features <span style="color:#f92672">import</span> FeatureLayerCollection
+<span style="color:#75715e"># 2.4.0 以降では from arcgis.mapping import WebMap の代わりに以下が必要</span>
+<span style="color:#f92672">from</span> arcgis.map <span style="color:#f92672">import</span> Map
+</code></pre></div><h3 id="ソースとターゲットのポータルに接続">ソースとターゲットのポータルに接続</h3>
+<p>管理者としてログインするところから始めます。開発環境として <a href="https://doc.arcgis.com/en/arcgis-online/get-started/what-is-agol.htm">ArcGIS Online</a> を使用してテストや開発を行ってきた管理者が、本番環境となる ArcGIS Online にアイテムをクローンする場合を想定します。</p>
+<h5 id="ログイン例">ログイン例</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">source <span style="color:#f92672">=</span> GIS(<span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span>, <span style="color:#e6db74">&#34;USERNAME1&#34;</span>)
+<span style="color:#75715e">#ID とパスワードを使用して ArcGIS Online にログイン</span>
+<span style="color:#66d9ef">print</span>(source)
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image1_ユーザー1ログイン.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">target <span style="color:#f92672">=</span> GIS(<span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span>, <span style="color:#e6db74">&#34;USERNAME2&#34;</span>)
+<span style="color:#75715e">#ここではクローン先を別のArcGIS Online アカウントとする</span>
+<span style="color:#66d9ef">print</span>(target)
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image2_ユーザー2ログイン.png" width="1200px">
+<h3 id="クローンの作成">クローンの作成</h3>
+<p>まず、<code>clone_items()</code> で何ができるかを簡単にデモンストレーションしてみます。管理者としてログインし、ソースのユーザーの 1 人が所有する特定のホスト フィーチャ レイヤー のアイテムを <code>get()</code> で取得し、ターゲットにクローンします。クローンされたフィーチャ レイヤーの <code>URL</code> を参照して、新しいアイテムを確認することができます。<code>owner</code> パラメーターを指定することで、組織内の他の<code>ユーザー</code>にクローンを転送することもできます。 　　</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">hosted_flyr <span style="color:#f92672">=</span> source<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;71af4edb22c34c92893b983d7f7b52e6&#34;</span>)
+osted_flyr
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image3_クローン元レイヤー取得get.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">hosted_flyr<span style="color:#f92672">.</span>url
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image4_レイヤー取得後URL.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_flyr <span style="color:#f92672">=</span> target<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>clone_items(items <span style="color:#f92672">=</span> [hosted_flyr],
+                                        folder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;クローン先1&#34;</span>
+                                        )<span style="color:#75715e">#ここでは owner パラメーターを使用しない</span>
+cloned_flyr[<span style="color:#ae81ff">0</span>]
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image5_クローン後レイヤー.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_flyr[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>url
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image6_クローン後レイヤーURL.png" width="1200px">
+<p><code>clone_items()</code> は、クローンされたアイテムを含むリストを返すことがわかります。リストをインデックス化すると、この操作によって、ターゲット組織に、新しいホスト フィーチャ レイヤーが作成されたことがわかります。</p>
+<h3 id="複数のアイテムを同時にクローンする">複数のアイテムを同時にクローンする</h3>
+<p>上記では、<code>items</code> パラメーター リストに 1 つのアイテムを渡す方法を示しました。次に、<code>clone_items()</code> がリスト内のすべてのアイテムをクローンする方法を見てみましょう。まず、<a href="https://developers.arcgis.com/python/api-reference/arcgis.gis.toc.html#arcgis.gis.ContentManager.search">search()</a> 関数で特定のユーザーが所有するアイテムを検索し、リストのアイテムを全て同時にターゲットにクローンします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#複数アイテムのクローン</span>
+tester_content<span style="color:#f92672">=</span>source<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>advanced_search(query<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tags:クローン AND owner:USERNAME1&#39;</span>)[<span style="color:#e6db74">&#34;results&#34;</span>]
+tester_content
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image7_テスト用複数アイテム取得.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_items <span style="color:#f92672">=</span> target<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>clone_items(items<span style="color:#f92672">=</span>tester_content, 
+                                          search_existing_items<span style="color:#f92672">=</span>True, <span style="color:#75715e">#既に存在するものはクローンしない</span>
+                                          folder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;クローン先2&#34;</span>)
+cloned_items <span style="color:#75715e">#アイテム「品川駅」は上でクローンを作成済み</span>
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image8_クローン後複数アイテム.png" width="1200px">
+<p><code>clone_items()</code> は、<code>items</code> 引数に渡したリスト内のすべてのアイテムをクローンしていることがわかります。また、<code>owner</code> 引数を渡さないことで、<code>clone_items()</code> を実行したログイン ユーザーにアイテムがクローンされます。</p>
+<p><code>clone_items()</code> がソースからターゲットへアイテムをクローンする簡単な例をご紹介しました。次に、ホスト フィーチャ レイヤーのリストを繰り返し処理し、いくつかの追加パラメーターを使用して、それらを利用する ArcGIS コンテンツのクローンを作成します。</p>
+<h3 id="クローンのプロセス">クローンのプロセス</h3>
+<p><code>clone_items()</code> 関数の非常に重要なパラメーターは、その出力に影響します :</p>
+<ul>
+<li><code>search_existing_items</code> - 設定可能な値は True または False です。</li>
+</ul>
+<p>デフォルト値は True です。この値が True に設定されている場合の動作を説明します。クローン元<code>アイテム</code>がターゲットにクローンされると、<code>clone_items()</code> は、クローンされた<code>アイテム</code>にすべての必須アイテム タイプ <a href="https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm">typeKeywords</a> (アイテムに自動的に割り当てられる <code>typeKeywords</code> についてはハイパーリンクを参照) に加えて、<code>source-&lt;source_item_id_value&gt;</code> という追加の typeKeyword を割り当てます。たとえば、<code>clone_items()</code> が <code>ID d879c7d972b1d989b97d037c7a7737d6</code> のアイテムをソースとしてフィーチャ レイヤー アイテムをクローンする場合、ターゲットのフィーチャ レイヤー アイテムは、必須の <code>typeKeyword</code> に加えて、<code>source-d879c7d972b1d989b97d037c7a7737d6</code> の <code>typeKeyword</code> を持つことになります。実際にクローンされる前に、<code>clone_items()</code> は、そのパターンに一致する <code>typeKeyword</code> を持つアイテムをターゲットから検索し、見つかった場合は、アイテムを再度クローンするのではなく、既存のターゲットアイテムを使用します。</p>
+<p>引数を False に設定すると、指定されたアイテムと参照するアイテムは、それらが既に存在するかどうかに関係なく、ターゲットにクローンされます。</p>
+<h3 id="web-マップ">Web マップ</h3>
+<p><a href="https://developers.arcgis.com/python/api-reference/arcgis.gis.toc.html#arcgis.gis.ContentManager.advanced_search">advanced_search()</a> メソッドを使用して、Web マップのアイテムのリストを作成することができます。まず、全てのアイテムのリストを取得し、それをPandas DataFrame に変換して、Web マップ用にフィルタリングします</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># ユーザーが所有するすべてのアイテムを検索</span>
+owner_items <span style="color:#f92672">=</span> source<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>advanced_search(query<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#34;owner:{source.users.me.username}&#34;</span>, 
+                                             max_items<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)[<span style="color:#e6db74">&#34;results&#34;</span>]
+owner_items
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># Pandas DataFrame 形式のリストへ変換</span>
+owner_items_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(owner_items)
+</code></pre></div><p>Pandas の <code>groupby()</code> を使用して、ユーザーが所有する各アイテムタイプ別のグループ オブジェクトを作成します。その後、<code>get_group()</code> メソッドを使用して、すべてのWeb マップを返します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># Web マップ形式を選択</span>
+wm_item_df <span style="color:#f92672">=</span> owner_items_df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#34;type&#34;</span>)<span style="color:#f92672">.</span>get_group(<span style="color:#e6db74">&#34;Web Map&#34;</span>)
+wm_item_df
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image9_DataFrame前半.png" width="1200px">
+<p>出力されたデータフレームのインデックスは、元のデータフレームの各 Web マップの行番号を行インデックスに使っているので、0 から始まるインデックスにリセットします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">wm_item_df<span style="color:#f92672">.</span>index
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image11_WebmapINDEX.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">web_maps <span style="color:#f92672">=</span> wm_item_df<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span>True)
+web_maps<span style="color:#f92672">.</span>index
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image12_ResetINDEX.png" width="1200px">
+<p>タグ検索を使ってWeb マップを取得し、それをターゲットにクローンしてみましょう :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#品川駅のみ駅タグをつけている</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_wm</span>(tag_list):
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;駅&#34;</span> <span style="color:#f92672">in</span> tag_list
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">eki_df <span style="color:#f92672">=</span> web_maps[web_maps<span style="color:#f92672">.</span>tags<span style="color:#f92672">.</span>apply(check_wm)]
+eki_df<span style="color:#f92672">.</span>index
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image13_駅タグINDEX.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">eki_df<span style="color:#f92672">.</span>loc[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>id
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image14_駅タグID.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">eki_wm_item <span style="color:#f92672">=</span> source<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>get(eki_df<span style="color:#f92672">.</span>loc[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>id)
+eki_wm_item
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image15_駅タグget.png" width="1200px">
+<p>Map オブジェクトを使って、Web マップ内の各レイヤーに関する情報を表示してみましょう。レイヤー名と URL に注目して見てみると、URL のパス コンポーネントの最初にレイヤーをホストしている組織が含まれていることが分かります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">wm_obj <span style="color:#f92672">=</span> Map(eki_wm_item)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">lyr <span style="color:#f92672">=</span> wm_obj<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
+lyrname <span style="color:#f92672">=</span> lyr<span style="color:#f92672">.</span>properties<span style="color:#f92672">.</span>name
+<span style="color:#66d9ef">print</span>(lyrname)
+<span style="color:#66d9ef">print</span>(lyr<span style="color:#f92672">.</span>url)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Host Organization id: {lyr.url.split(&#39;/&#39;)[3]}&#34;</span>)
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image16_駅タグURL_for文.png" width="1200px">
+<p>ソースの組織 ID を出力すると、Web マップのレイヤーがソースでホストされていることがわかります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{source.properties.id}&#34;</span>)
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image17_駅タグクローン元組織ID.png" width="1200px">
+<p><code>search_existing_items</code> パラメーターを使用することで、クローン作成時に <code>Web マップ</code>で利用されるアイテムの動作を処理することができます。このパラメーターについて学んできたことを踏まえると、Web マップで利用される<code>アイテムの ID</code> が、ターゲットに既に存在する <code>typeKeywords</code> のどれかと一致するかどうかを検出するために、このパラメーターを頼りにすることができます。もしこの関数がターゲットに既存のアイテムを見つけたら、新しい <code>Web マップ</code>の定義に適切な値を追加します。<code>typeKeyword</code> に基づいて既存のアイテムが見つからない場合、その<code>アイテム</code>をクローンします。ホストされていないアイテムの場合は、結果の <code>Web マップ</code>でそれらのアイテムを再作成します。</p>
+<p>この場合、この Web マップをクローンしたことがないので、<code>False</code> に設定します。ホストされているレイヤーもターゲットにクローンするようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_wm <span style="color:#f92672">=</span> target<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>clone_items(items<span style="color:#f92672">=</span>[eki_wm_item],
+                                        folder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;クローン先3&#34;</span>,
+                                        search_existing_items<span style="color:#f92672">=</span>False)
+</code></pre></div><p>その結果、ターゲットにどのようなアイテムがあるか見てみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_wm
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image18_クローンWebmap.png" width="1200px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_wm_obj <span style="color:#f92672">=</span> Map(cloned_wm[<span style="color:#ae81ff">1</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_lyr <span style="color:#f92672">=</span> cloned_wm_obj<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>layers[<span style="color:#ae81ff">0</span>]
+cloned_lyrname <span style="color:#f92672">=</span> cloned_lyr<span style="color:#f92672">.</span>properties<span style="color:#f92672">.</span>name
+<span style="color:#66d9ef">print</span>(cloned_lyrname)
+<span style="color:#66d9ef">print</span>(cloned_lyr<span style="color:#f92672">.</span>url)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Host Organization id: {cloned_lyr.url.split(&#39;/&#39;)[3]}&#34;</span>)
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image19_クローン後URL_for文.png" width="1200px">
+<p><code>clone_items()</code> によって Web マップが正常に再作成され、操作レイヤーがクローンされ、クローンされたフィーチャ レイヤーを使用するように Web マップが構成されていることがわかります。レイヤー URL からも別の ArcGIS Online へクローンされたことが確認できます。</p>
+<p>ArcGIS Enterprise へクローンした場合は、レイヤー URL のスキーム名とパス コンポーネントから、クローンされたレイヤーが ArcGIS Online の組織ではなく ArcGIS Enterprise の組織を使用していることがわかります。</p>
+<p>Web マップを視覚的に比較してみましょう :</p>
+<h3 id="ソース">ソース</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">wm_obj
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image20_クローン前ウェブマップ.png" width="1200px">
+<h3 id="ターゲット">ターゲット</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cloned_wm_obj
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/cloning-content/image21_クローン後ウェブマップ.png" width="1200px">
+<p>マップが同じレイヤーを含んでいるように見えることが視覚的にわかります。<code>wm_map</code> ディクショナリの他の <code>Web マップ</code>のソースとターゲットのペアにもこのプロセスを繰り返して、視覚的に比較することができます。</p>
+<h3 id="arcgis-dashboards">ArcGIS Dashboards</h3>
+<p>ArcGIS Dashboards のクローンの詳細については、<a href="https://developers.arcgis.com/python/guide/cloning-complex-apps#dashboards-and-editing-item-data">Cloning and Troubleshooting Complex Items</a>ガイドを参照してください。</p>
+<h3 id="story-maps">Story Maps</h3>
+<p>ArcGIS StoryMap のクローンの詳細については、<a href="https://developers.arcgis.com/python/guide/#storymaps-web-scenes-and-item-remapping">Cloning and Troubleshooting Complex Items</a>ガイドを参照してください。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>このガイドでは、ソースの Web GIS とターゲットの Web GIS の間でアイテムをクローンするための 1 つのワークフローを示しました。それぞれの GIS に管理者として接続し、個々のアイテムをクローンし、次にアイテムのセットをクローンしました。次に、Web マップ アイテムをクローンし、同時に Web マップ内のホスト フィーチャ レイヤーもクローンされ、クローンされた Web マップがターゲット組織でホストされているクローンされたフィーチャ レイヤーを読み込むように構成される方法を示した。</p>
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">versionManager</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VersionManager</span>()
-
-</code></pre></div><p>VersionManager クラスは、<code>version-manager.ts</code> のような別のファイルにして、<code>src</code> フォルダに置くことをお勧めします。 次に、<code>widget.tsx</code> ファイルで、VersionManager インスタンスを widget クラスまたは関数に割り当てます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">versionManager</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../version-manager&#39;</span>
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Widget</span> (<span style="color:#a6e22e">props</span>) {
-  <span style="color:#75715e">//...
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#a6e22e">Widget</span>.<span style="color:#a6e22e">versionManager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">versionManager</span>
-</code></pre></div>
 
     
     
@@ -1075,8 +1212,8 @@ VersionManager を使うには、2 つのステップを踏む必要がありま
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" title="ウィジェット間の通信"> <i class="fa fa-chevron-left"></i><label>ウィジェット間の通信</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/" title="ウィジェット開発のデバック" style="margin-right: 0px;"><label>ウィジェット開発のデバック</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/python/matplotlib-japanese/" title="matplotlib での日本語利用について"> <i class="fa fa-chevron-left"></i><label>matplotlib での日本語利用について</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/appstudio/" title="ArcGIS AppStudio" style="margin-right: 0px;"><label>ArcGIS AppStudio</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
