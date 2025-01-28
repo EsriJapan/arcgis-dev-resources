@@ -16,6 +16,7 @@ ArcGIS Experience Builder で作成したエクスペリエンスは、ダウン
 
 アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する `web.config` ファイルが付属しており、このデフォルト `web.config` に [ArcGIS Maps SDK for JavaScript](https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/#web-サーバーのホスティング設定) の設定が含まれるようになりました。
 
+ダウンロードに失敗した場合は、お使いのマシンでアンチウイルス ソフトがオンになっているか確認してください。アンチウイルス ソフトをオフにして、もう一度試してください。
 {{% /notice %}}
 
 ## エクスペリエンスのデプロイ
@@ -50,6 +51,23 @@ node -e "require('./server/src/middlewares/dev/apps/app-download.js').zipApp('0'
 - 'app.zip' は生成したい ZIP ファイルの名前に置き換えてください。
 - `my_client_id` を ArcGIS Online または ArcGIS Enterprise の有効な `AppID` で置き換えます。詳細については、[ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成](https://developers.arcgis.com/experience-builder/guide/install-guide/#create-client-id-using-arcgis-online-or-arcgis-enterprise) を参照してください。
 - 環境変数 `NODE_ENV` が `production` に設定されていることを確認し、最小化された (より小さな) ファイルを生成する production ビルドを作成します。
+
+バージョン 1.15 から、`zipApp` 関数はオプションの第 4 パラメーターをサポートします。このパラメーターは、`locales` または `configModifier` のプロパティを持つオブジェクトです。
+
+- `locales` プロパティは、エクスポートするロケールを指定するために使用できます。これが設定されていない場合、すべてのロケールがエクスポートされます。
+- `configModifier` プロパティは、アプリをエクスポートする前に `config.json` ファイルを変更するために使用できます。これは関数またはオブジェクトを指定できます。
+  - 関数の場合、`config` オブジェクトを引数として呼び出され、変更された `config` オブジェクトが返されます。
+  - オブジェクトである場合、以下の例のように更新値を指定することができます。
+
+```
+{
+  configModifier: {
+    'attributes.portalUrl': 'new-portal-url'
+  }
+}
+```
+
+`download-app.js` ファイルには、さらに多くの例があります。
 
 ## サービス ワーカー キャッシュ
 Experience Builder では[サービス ワーカー](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。

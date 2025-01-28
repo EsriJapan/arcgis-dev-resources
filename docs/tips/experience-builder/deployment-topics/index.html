@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-01-23T16:44:39 JST">
+<meta name="revised" content="2025-01-28T10:06:11 JST">
 <title>デプロイ :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1021,6 +1021,7 @@ if (!doNotTrack) {
 <p><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy2.png" width="70%" /></p>
 <div class="notices tip" >
 <p>アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する <code>web.config</code> ファイルが付属しており、このデフォルト <code>web.config</code> に <a href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/#web-%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%A8%AD%E5%AE%9A">ArcGIS Maps SDK for JavaScript</a> の設定が含まれるようになりました。</p>
+<p>ダウンロードに失敗した場合は、お使いのマシンでアンチウイルス ソフトがオンになっているか確認してください。アンチウイルス ソフトをオフにして、もう一度試してください。</p>
 </div>
 <h2 id="エクスペリエンスのデプロイ">エクスペリエンスのデプロイ</h2>
 <p>エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。</p>
@@ -1047,6 +1048,22 @@ if (!doNotTrack) {
 <li><code>my_client_id</code> を ArcGIS Online または ArcGIS Enterprise の有効な <code>AppID</code> で置き換えます。詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/install-guide/#create-client-id-using-arcgis-online-or-arcgis-enterprise">ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成</a> を参照してください。</li>
 <li>環境変数 <code>NODE_ENV</code> が <code>production</code> に設定されていることを確認し、最小化された (より小さな) ファイルを生成する production ビルドを作成します。</li>
 </ul>
+<p>バージョン 1.15 から、<code>zipApp</code> 関数はオプションの第 4 パラメーターをサポートします。このパラメーターは、<code>locales</code> または <code>configModifier</code> のプロパティを持つオブジェクトです。</p>
+<ul>
+<li><code>locales</code> プロパティは、エクスポートするロケールを指定するために使用できます。これが設定されていない場合、すべてのロケールがエクスポートされます。</li>
+<li><code>configModifier</code> プロパティは、アプリをエクスポートする前に <code>config.json</code> ファイルを変更するために使用できます。これは関数またはオブジェクトを指定できます。
+<ul>
+<li>関数の場合、<code>config</code> オブジェクトを引数として呼び出され、変更された <code>config</code> オブジェクトが返されます。</li>
+<li>オブジェクトである場合、以下の例のように更新値を指定することができます。</li>
+</ul>
+</li>
+</ul>
+<pre><code>{
+  configModifier: {
+    'attributes.portalUrl': 'new-portal-url'
+  }
+}
+</code></pre><p><code>download-app.js</code> ファイルには、さらに多くの例があります。</p>
 <h2 id="サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</h2>
 <p>Experience Builder では<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">サービス ワーカー</a>を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。</p>
 <ol>
