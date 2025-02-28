@@ -20,23 +20,25 @@ ArcGIS Maps SDK for JavaScript をアプリに組み込む方法はいくつか�
 ArcGIS Maps SDK for JavaScript のコンポーネントは、[Calcite Design System](https://developers.arcgis.com/calcite-design-system/) と SDK の[コア API](https://developers.arcgis.com/javascript/latest/api-reference/) に依存しています。まず Calcite とコア API を読み込む必要があります。
 
 Calcite を読み込むには、スタイルシート リンクとスクリプト タグを含めて Calcite コンポーネントをインポートします。
+
+ArcGIS Maps SDK for JavaScript のバージョン 4.32 より前のバージョンでは、Calcite CSS リンク タグを含める必要がありました。 バージョン 4.32 では、Calcite CSS リンク タグは必要なくなりました。
+
 ``` HTML
 <!-- Load Calcite -->
-<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.13.2/calcite.css" />
-<script type="module" src="https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js"></script>
+<script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
 ```
 
 次に、SDK のコア API を読み込むには、スタイルシート リンクとスクリプト タグを含めます。
 ``` HTML
 <!-- Load the ArcGIS Maps SDK for JavaScript core API -->
-<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/4.31/esri/themes/dark/main.css"/>
-<script src="https://js.arcgis.com/4.31/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.32/esri/themes/dark/main.css"/>
+<script src="https://js.arcgis.com/4.32/"></script>
 ```
 
 次に、Map コンポーネント パッケージやその他のコンポーネント パッケージを読み込むには、スクリプト タグ（必要に応じて関連する CSS も）を含めます。
 ``` HTML
 <!-- Load map components -->
-<script type="module" src="https://js.arcgis.com/map-components/4.31/arcgis-map-components.esm.js"></script>
+<script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
 ```
 
 カスタム CSS を追加して、コンポーネントがアプリケーション内で表示されるようにします。これは、ArcGIS のスタイルシートとライブラリを CDN からインポートした後、アプリケーションの `<head>` セクションの最後に配置する必要があります。
@@ -78,8 +80,8 @@ mapElem.addEventListener("arcgisViewReadyChange", (event) => {
 API の AMD モジュールには、以下のスクリプトタグを使用します : 
 
 ``` HTML
-<link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.31/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.32/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.32/"></script>
 ```
 
 HTML に div を追加し、`id` を割り当てます：

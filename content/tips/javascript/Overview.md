@@ -15,7 +15,22 @@ ArcGIS Maps SDK for JavaScript を使用してアプリケーションを構築�
 ArcGIS CDN を使用すると、ローカルにパッケージをインストールしなくても、アプリケーションに SDK の機能を簡単に組み込むことができます。これは、シンプルなアプリケーションや迅速なプロトタイピング、または最適化されたクラウド キャッシングを活用してモジュールのダウンロードを高速化したい場合に最適です。
 
 ## [npm](https://developers.arcgis.com/javascript/latest/get-started-overview/#npm)
-より複雑なアプリケーション、特に最新のビルド ツールや [React](https://react.dev/)、[Vue](https://vuejs.org/)、[Angular](https://angular.dev/) のような JavaScript フレームワークでアプリケーションを構築する場合は、JavaScript Maps SDK を npm 経由でインストールすることをお勧めします。これにより、npm のパッケージ管理機能を利用してあらゆるパッケージをプロジェクトの依存関係として管理できるようになり、[Webpack](https://webpack.js.org/) や [Vite](https://vitejs.dev/) のような最新のビルド ツールとよりシームレスに統合することができます。JavaScript Maps SDK の各コンポーネント パッケージはフレームワークに依存しないように設計されており、ほとんどの JavaScript フレームワークまたはフレームワークなしでも互換性があります。 しかし、コンポーネントを特定のフレームワーク内で使い慣れたものにするために、よりカスタマイズされたエクスペリエンスを提供する追加パッケージが用意されています。[@arcgis/map-components](https://www.npmjs.com/package/@arcgis/map-components) の場合、[@arcgis/map-components-react](https://www.npmjs.com/package/@arcgis/map-components-react) と [@arcgis/map-components-angular](https://www.npmjs.com/package/@arcgis/map-components-angular) が npm パッケージとして利用可能です。
+より複雑なアプリケーション、特に最新のビルド ツールや [React](https://react.dev/)、[Vue](https://vuejs.org/)、[Angular](https://angular.dev/) のような JavaScript フレームワークでアプリケーションを構築する場合は、JavaScript Maps SDK を npm 経由でインストールすることをお勧めします。これにより、npm のパッケージ管理機能を利用してあらゆるパッケージをプロジェクトの依存関係として管理できるようになり、[Webpack](https://webpack.js.org/) や [Vite](https://vitejs.dev/) のような最新のビルド ツールとよりシームレスに統合することができます。JavaScript Maps SDK の各コンポーネント パッケージはフレームワークに依存しないように設計されており、ほとんどの JavaScript フレームワークまたはフレームワークなしでも互換性があります。  
+
+## [CSS](https://developers.arcgis.com/javascript/latest/get-started-overview/#css)
+SDK をアプリケーションに読み込む方法によっては、追加の CSS リンクを含める必要があります。 CDN からコンポーネントを使用している場合、CSS リンクは自動的に含まれます。 npm を使用している場合は、アプリケーションに CSS ファイルを手動でインポートする必要があります。
+
+### [コンポーネント](https://developers.arcgis.com/javascript/latest/get-started-overview/#components)
+|  | コンポーネント スタイルシート | コア API スタイルシート | Calcite スタイルシート |
+|:-----:|:-----:|:-----:|:-----:|
+| npm | マニュアル                   | マニュアル             | マニュアル            |
+| CDN | オート                      | マニュアル             | オート                 |
+
+### [コア API](https://developers.arcgis.com/javascript/latest/get-started-overview/#core-api)
+|  | コア API スタイルシート | Calcite スタイルシート |
+|:-----:|:-----:|:-----:|
+| npm | マニュアル          | オート             |
+| CDN | マニュアル          | オート             |
 
 ## [アクセス トークン](https://developers.arcgis.com/javascript/latest/get-started-overview/#access-tokens)
 

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-01-30T18:44:35 JST">
+<meta name="revised" content="2025-02-28T15:36:29 JST">
 <title>概要 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -994,6 +994,12 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#cdnhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcdn"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#cdn">CDN</a></a></li>
     <li><a href="#npmhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewnpm"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#npm">npm</a></a></li>
+    <li><a href="#csshttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcss"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#css">CSS</a></a>
+      <ul>
+        <li><a href="#コンポーネントhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcomponents"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#components">コンポーネント</a></a></li>
+        <li><a href="#コア-apihttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcore-api"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#core-api">コア API</a></a></li>
+      </ul>
+    </li>
     <li><a href="#アクセス-トークンhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewaccess-tokens"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#access-tokens">アクセス トークン</a></a></li>
   </ul>
 </nav>
@@ -1019,7 +1025,56 @@ if (!doNotTrack) {
 <h2 id="cdnhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcdn"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#cdn">CDN</a></h2>
 <p>ArcGIS CDN を使用すると、ローカルにパッケージをインストールしなくても、アプリケーションに SDK の機能を簡単に組み込むことができます。これは、シンプルなアプリケーションや迅速なプロトタイピング、または最適化されたクラウド キャッシングを活用してモジュールのダウンロードを高速化したい場合に最適です。</p>
 <h2 id="npmhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewnpm"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#npm">npm</a></h2>
-<p>より複雑なアプリケーション、特に最新のビルド ツールや <a href="https://react.dev/">React</a>、<a href="https://vuejs.org/">Vue</a>、<a href="https://angular.dev/">Angular</a> のような JavaScript フレームワークでアプリケーションを構築する場合は、JavaScript Maps SDK を npm 経由でインストールすることをお勧めします。これにより、npm のパッケージ管理機能を利用してあらゆるパッケージをプロジェクトの依存関係として管理できるようになり、<a href="https://webpack.js.org/">Webpack</a> や <a href="https://vitejs.dev/">Vite</a> のような最新のビルド ツールとよりシームレスに統合することができます。JavaScript Maps SDK の各コンポーネント パッケージはフレームワークに依存しないように設計されており、ほとんどの JavaScript フレームワークまたはフレームワークなしでも互換性があります。 しかし、コンポーネントを特定のフレームワーク内で使い慣れたものにするために、よりカスタマイズされたエクスペリエンスを提供する追加パッケージが用意されています。<a href="https://www.npmjs.com/package/@arcgis/map-components">@arcgis/map-components</a> の場合、<a href="https://www.npmjs.com/package/@arcgis/map-components-react">@arcgis/map-components-react</a> と <a href="https://www.npmjs.com/package/@arcgis/map-components-angular">@arcgis/map-components-angular</a> が npm パッケージとして利用可能です。</p>
+<p>より複雑なアプリケーション、特に最新のビルド ツールや <a href="https://react.dev/">React</a>、<a href="https://vuejs.org/">Vue</a>、<a href="https://angular.dev/">Angular</a> のような JavaScript フレームワークでアプリケーションを構築する場合は、JavaScript Maps SDK を npm 経由でインストールすることをお勧めします。これにより、npm のパッケージ管理機能を利用してあらゆるパッケージをプロジェクトの依存関係として管理できるようになり、<a href="https://webpack.js.org/">Webpack</a> や <a href="https://vitejs.dev/">Vite</a> のような最新のビルド ツールとよりシームレスに統合することができます。JavaScript Maps SDK の各コンポーネント パッケージはフレームワークに依存しないように設計されており、ほとんどの JavaScript フレームワークまたはフレームワークなしでも互換性があります。</p>
+<h2 id="csshttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcss"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#css">CSS</a></h2>
+<p>SDK をアプリケーションに読み込む方法によっては、追加の CSS リンクを含める必要があります。 CDN からコンポーネントを使用している場合、CSS リンクは自動的に含まれます。 npm を使用している場合は、アプリケーションに CSS ファイルを手動でインポートする必要があります。</p>
+<h3 id="コンポーネントhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcomponents"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#components">コンポーネント</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">コンポーネント スタイルシート</th>
+<th style="text-align:center">コア API スタイルシート</th>
+<th style="text-align:center">Calcite スタイルシート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">npm</td>
+<td style="text-align:center">マニュアル</td>
+<td style="text-align:center">マニュアル</td>
+<td style="text-align:center">マニュアル</td>
+</tr>
+<tr>
+<td style="text-align:center">CDN</td>
+<td style="text-align:center">オート</td>
+<td style="text-align:center">マニュアル</td>
+<td style="text-align:center">オート</td>
+</tr>
+</tbody>
+</table>
+<h3 id="コア-apihttpsdevelopersarcgiscomjavascriptlatestget-started-overviewcore-api"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#core-api">コア API</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">コア API スタイルシート</th>
+<th style="text-align:center">Calcite スタイルシート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">npm</td>
+<td style="text-align:center">マニュアル</td>
+<td style="text-align:center">オート</td>
+</tr>
+<tr>
+<td style="text-align:center">CDN</td>
+<td style="text-align:center">マニュアル</td>
+<td style="text-align:center">オート</td>
+</tr>
+</tbody>
+</table>
 <h2 id="アクセス-トークンhttpsdevelopersarcgiscomjavascriptlatestget-started-overviewaccess-tokens"><a href="https://developers.arcgis.com/javascript/latest/get-started-overview/#access-tokens">アクセス トークン</a></h2>
 <div class="notices note" >
 <p>注 : アプリケーションが認証に <a href="https://developers.arcgis.com/documentation/glossary/arcgis-account/">ArcGIS アイデンティティ</a>のみを使用している場合は、このセクションをスキップできます。詳細については、<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/security/">security and authentication documentation</a> を参照してください。</p>
