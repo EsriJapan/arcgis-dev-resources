@@ -8,7 +8,7 @@ ArcGIS AppStudio を使用したアプリ作成に役立つガイド集です。
 
 {{% notice warning %}}
 
-ArcGIS AppStudio は2025年1月末日でサポートが終了します。ArcGIS AppStudio のサポートおよび移行に関する情報については[こちら](https://blog.esrij.com/2023/03/09/post-48452/)をご参照ください。
+ArcGIS AppStudio は2025年1月末日でサポートが終了しました。ArcGIS AppStudio のサポートおよび移行に関する情報については[こちら](https://blog.esrij.com/2023/03/09/post-48452/)をご参照ください。
 
 {{% /notice %}}
 
