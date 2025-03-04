@@ -24,12 +24,13 @@ ArcGIS は、許可されたユーザーとアプリケーションのみがセ�
 <table>
 <tr>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/sign-in-carousel-b390caadcbe87c16f77d84f0fb1baea0.png" style="max-height:250px" text="Sign in with ArcGIS">
+
+<img src="https://developers.arcgis.com/documentation/static/sign-in-carousel-f78da51d5cf81c40bd0939ebe918799f.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [OAuth 2.0 を使用して ArcGIS にサイン イン](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/credential-creator-carousel-775dc8537c5f31958c5d11e7d6301697.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/credential-creator-carousel-46b3bd8be4057c7fc91b461df3d65471.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [ポータルで開発者認証情報を作成](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)
 </td>
@@ -39,34 +40,34 @@ ArcGIS は、許可されたユーザーとアプリケーションのみがセ�
 [開発者認証情報の権限を選択](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/apikey-credentials-item-carousel-fe7dd5a1856841ac02f739e5f8bef355.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/apikey-credentials-item-carousel-5d119679c61a3a6ec1c0273ecc213c88.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [ポータルで API キーの認証情報を管理](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/api-key-credentials/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/oauth-credentials-item-carousel-5db9969a2f28bb851e35f6992fb4e554.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/oauth-credentials-item-carousel-41a9e3550d4995e4b29f35868bc8686f.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [ポータルで OAuth 認証情報を管理](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/oauth-credentials-user/)
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/apikey-flow-carousel-a2101553a5b0dcbe5c822799368d0495.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/apikey-flow-carousel-dbcea5ae5f7c5453f012fd770043784e.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [API キーの認証ワークフロー](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/how-to-use-an-api-key/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/pkce-flow-carousel-be9dd796d1bd7a677e506e2ae77295d3.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/pkce-flow-carousel-4f7c64df4e2379f6a7cf523c867aedec.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [ユーザー認証 OAuth 2.0 のフロー](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/flows/authorization-code-with-pkce/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/client-credentials-flow-carousel-81b5792eb7870e61f450eeee897fbed6.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/client-credentials-flow-carousel-ff61e2fbb0086606ab8775db688caab6.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [アプリ認証 OAuth 2.0 のフロー](https://developers.arcgis.com/documentation/security-and-authentication/app-authentication/client-credentials-flow/)
 </td>
 <td>
-<img src="https://developers.arcgis.com/documentation/static/nearby-places-carousel-3d569605cf383421c79649abe0ef8610.png" style="max-height:250px" text="Sign in with ArcGIS">
+<img src="https://developers.arcgis.com/documentation/static/nearby-places-carousel-a9e561cdb8ce07cac3c443d96ba010d6.png" style="max-height:250px" text="Sign in with ArcGIS">
 
 [認証を使用するアプリの構築](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/)
 </td>

@@ -37,18 +37,20 @@ aliases = ["/deployment/"]
 | [住所検索 (データ保存する)](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/#storage-parameter) | × | 〇 |
 | [ルート検索](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions/) | 〇 | 〇 |
 | [ルート検索（経由地の最適化）](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/) | × | 〇 |
-| [到達圏](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/service-areas/) | × | 〇 |
+| [到達圏](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/service-areas/) | 〇 | 〇 |
 | [配車ルート解析](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/fleet-routing/) | × | 〇 |
 | [最寄りの検索](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/closest-facility-routing/) | × | 〇 |
+| [ラスト マイル デリバリー](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/last-mile-delivery/) | × | 〇 |
 | [ロケーション-アロケーション](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/location-allocation/) | × | 〇 |
 | [移動コスト マトリックス](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/) | × | 〇 |
 | [インフォグラフィックス](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | × | 〇 |
 | [レポート作成](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | × | 〇 |
+| [標高サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/elevation/) | 〇 | 〇 |
 | [空間解析](https://developers.arcgis.com/rest/analysis/api-reference/getting-started.htm) | × | 〇 |
-| [タイル、ファイル、アタッチメント (ストレージ)](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/vector-tile-services/introduction/) | 〇 | 〇 |
-| [フィーチャの保存 (100 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
-| [フィーチャのクエリ (転送量、15 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
-| [フィーチャの編集 (転送量、5 MB)](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/) | 〇 | 〇 |
+| [タイル、ファイル、アタッチメントの保存 (250 MB)](https://location.arcgis.com/help/billing/#storage) | 〇 | 〇 |
+| [フィーチャの保存 (250 MB)](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/types-of-datasets/) | 〇 | 〇 |
+| [フィーチャのクエリ (転送量、125 MB)](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/types-of-datasets/) | 〇 | 〇 |
+| [フィーチャの編集 (転送量、125 MB)](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/types-of-datasets/) | 〇 | 〇 |
 
 〇：対応　△：一部対応　×：未対応
 
