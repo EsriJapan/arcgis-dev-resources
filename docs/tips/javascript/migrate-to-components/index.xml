@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>マップ コンポーネントへの移行ガイド on ArcGIS Developers 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/</link>
+    <description>Recent content in マップ コンポーネントへの移行ガイド on ArcGIS Developers 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>移行のヒント</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Tips for migrating
+移行のヒント バージョン 4.30 で ArcGIS Maps SDK for JavaScript に Web コンポーネントが追加されました。 これらのコンポーネントはカスタム HTML 要素として構築されているため、最新のブラウザーで標準的に使用でき、フレームワークに依存しません。 SDKでは、コンポーネントは、API の定型コードの多くをカプセル化することにより、一般的なコーディングパターンを簡素化します。
+Getting started Web コンポーネントが初めての方、あるいはこのトピックのブラッシュアップが必要な方には、役立つさまざまなリソースがあります
+  すぐにコーディングを始めたい場合は、コンポーネントのチュートリアルや GitHub にあるコードサンプルを調べてみましょう。
+  属性やプロパティの扱い方、変更の監視などについては、プログラミング パターンのガイド・トピックをお読みください。
+  プロパティ、メソッド、イベントを確認するには、リファレンスページをご覧ください。
+  JavaScript Maps SDK コンポーネントでアプリを構築するブログ (Build GIS Web Apps with the JavaScript Maps SDK components) をご覧ください。
+  MDN Web Components リソースページをご覧ください。
+  基本的な実装 コンポーネントを使用することで、JavaScript Maps SDK でアプリケーションを実装するたびに繰り返し必要になるコードを減らすことができます。 例えば、SDK の AMD モジュールを使用したシンプルなマップの JavaScript コードを以下に示します。</description>
+    </item>
+    
+    <item>
+      <title>移行計画</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/</guid>
+      <description>出典：ArcGIS Maps SDK for JavaScript - Transition plan: widgets to components
+移行計画：ウィジェットからコンポーネントへ JavaScript Maps SDK のコア API の &amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt; などの再利用可能なカスタム HTML 要素に拡張する標準ベースの Web コンポーネントへの置き換えが進められています。
+これは、ArcGIS 製品の内部開発にも、JavaScript Maps SDK の一部として提供されるビルド済みの UI コンポーネントにも当てはまります。 現在、SDK を使用した Web アプリの構築では、コンポーネントを使用することが推奨されています。
+コンポーネントのメリット このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。 カスタム 要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。 さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている Arcade Editor や チャート コンポーネントなど）。 SDK の上位レベルのコンポーネント 群は、時間の経過とともに増え続ける予定です。
+ウィジェットからマップ コンポーネントへ SDK が最初に作られたとき、Web コンポーネントの規格はまだ成熟しておらず、ブラウザーに広く採用されていませんでした。 同時に、JS の状況は常に変化しているため、特定の JS フレームワークに積極的ではありませんでした。 そのため、私たちはウィジェット アーキテクチャーを開発し、開発者が Web アプリケーションで使用できるよう、時間をかけて 60 以上のウィジェットを作成しました。 Web コンポーネントの標準がすべての主要なブラウザーでサポートされるようになった今、（SDK の多くの内部でそうしているように）私たちはブラウザーとともに技術を進化させることができます。</description>
+    </item>
+    
+  </channel>
+</rss>
