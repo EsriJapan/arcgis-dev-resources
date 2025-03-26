@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-03-18T11:08:15 JST">
+<meta name="revised" content="2025-03-26T17:06:41 JST">
 <title>Jimu :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -591,6 +591,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/">
+            マップの座標を取得
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
@@ -1046,13 +1053,13 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/">Jimu</a></p>
 <h3 id="jimu">Jimu</h3>
-<p>Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。</p>
+<p><a href="https://developers.arcgis.com/experience-builder/api-reference/">Jimu</a> は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。</p>
 <ul>
-<li><code>jimu-arcgis</code> パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。</li>
-<li><code>jimu-core</code> パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。</li>
-<li><code>jimu-for-builder</code> パッケージは、ウィジェットの設定ページの開発をサポートしています。</li>
-<li><code>jimu-for-test</code> パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。</li>
-<li><code>jimu-ui</code> パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/">jimu-arcgis</a> パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは <code>JimuMapView</code> と <code>JimuMapViewComponent</code> です。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/">jimu-core</a> パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-for-builder/">jimu-for-builder</a> パッケージは、<code>SettingChangeFunction</code> や <code>WidgetSettingProps</code> といったウィジェット設定ページを開発するためのクラスを提供します。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/">jimu-for-test</a> パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。</li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-ui/">jimu-ui</a> パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。<code>jimu-ui</code> のエントリには、<code>Button</code> や <code>Input</code> などの一般的な UI コンポーネントが含まれています。<code>jimu-ui/basic</code> 以下のエントリには、<code>ColorPicker</code> や <code>QRCode</code> などの目的に応じたコンポーネントが含まれます。<code>jimu-ui/advanced</code> 以下のエントリは重く、複雑です。例えば、<code>setting-components</code> エントリには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。</li>
 </ul>
 <!-- - `jimu-layouts` パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 -->
 <p>これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは <code>import</code> するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。<code>lib</code> フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには <code>import</code> しないでください。例えば、<code>jimu-ui</code> の <code>Button</code> コンポーネントを使用する必要がある場合は、<code>import {Button} from 'jimu-ui'</code> ではなく、<code>import {Button} from 'jimu-ui/lib/components/button'</code> のようにインポートする必要があります。</p>

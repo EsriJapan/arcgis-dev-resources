@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-03-18T11:08:15 JST">
+<meta name="revised" content="2025-03-26T17:06:41 JST">
 <title>データアクション（Data action） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -591,6 +591,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/">
+            マップの座標を取得
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
@@ -1047,7 +1054,12 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/data-action/">Data action</a></p>
 <h3 id="データアクションdata-action">データアクション（Data action）</h3>
 <p>データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。</p>
-<p>データアクションは <code>Data Action</code> インターフェイスによって定義され、<code>isSupported</code> と <code>onExecute</code> という 2 つの重要なメソッドを持っています。<code>isSupported</code> が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。<code>onExecute</code> メソッドは <code>DataRecordSet</code> インスタンスとオプションのアクション構成を受け取ります。<code>DataRecordSet</code> インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。</p>
+<p>データアクションは <code>Data Action</code> インターフェイスによって定義され、<code>isSupported</code> と <code>onExecute</code> という 2 つの重要なメソッドを持っています。</p>
+<ul>
+<li><code>isSupported</code> が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。</li>
+<li><code>onExecute</code> メソッドは <code>DataRecordSet</code> インスタンスとオプションのアクション構成を受け取ります。<code>DataRecordSet</code> インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。</li>
+</ul>
+<p>どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む <code>DataRecordSet</code> インスタンスの配列を取得できます。これら 2 つのメソッドは、<code>DataLevel</code> と <code>widgetId</code> パラメーターも受け取ります。<code>DataLevel</code> は、<code>DataRecordSet</code> がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。</p>
 <p>フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &ldquo;画面移動 (pan to)&rdquo; と &ldquo;ズーム (zoom to)&rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、<code>manifest.json</code> でデータアクションを宣言し、<code>AbstractDataAction</code> を継承したクラスを作成します。</p>
 <p>データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で <code>settingUri</code> を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、<code>this.props.onSettingChange</code> を呼び出して設定を保存し、<code>onExecute</code> メソッドで利用できるようにします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;dataActions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [

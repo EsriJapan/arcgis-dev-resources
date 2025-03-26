@@ -8,13 +8,13 @@ aliases = ["/jimu/"]
 
 ### Jimu
 
-Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
+[Jimu](https://developers.arcgis.com/experience-builder/api-reference/) は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
 
-- `jimu-arcgis` パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。
-- `jimu-core` パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。
-- `jimu-for-builder` パッケージは、ウィジェットの設定ページの開発をサポートしています。
-- `jimu-for-test` パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。
-- `jimu-ui` パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。
+- [jimu-arcgis](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/) パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは `JimuMapView` と `JimuMapViewComponent` です。
+- [jimu-core](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/) パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。
+- [jimu-for-builder](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-builder/) パッケージは、`SettingChangeFunction` や `WidgetSettingProps` といったウィジェット設定ページを開発するためのクラスを提供します。
+- [jimu-for-test](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/) パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。
+- [jimu-ui](https://developers.arcgis.com/experience-builder/api-reference/jimu-ui/) パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。`jimu-ui` のエントリには、`Button` や `Input` などの一般的な UI コンポーネントが含まれています。`jimu-ui/basic` 以下のエントリには、`ColorPicker` や `QRCode` などの目的に応じたコンポーネントが含まれます。`jimu-ui/advanced` 以下のエントリは重く、複雑です。例えば、`setting-components` エントリには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。
 <!-- - `jimu-layouts` パッケージは、レイアウト ウィジェットのための、一般的な実装が含まれています。 -->
 
 これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは `import` するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。`lib` フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには `import` しないでください。例えば、`jimu-ui` の `Button` コンポーネントを使用する必要がある場合は、`import {Button} from 'jimu-ui'` ではなく、`import {Button} from 'jimu-ui/lib/components/button'` のようにインポートする必要があります。

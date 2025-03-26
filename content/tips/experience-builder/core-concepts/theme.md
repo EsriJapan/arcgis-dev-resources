@@ -8,6 +8,6 @@ aliases = ["/theme/"]
 
 ### テーマ（Theme）
 
-テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタムテーマの作成も可能です。テーマ開発については、[theme development](https://developers.arcgis.com/experience-builder/guide/theme-development/) をご覧ください。
+テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタム テーマの作成も可能です。テーマ開発については、[theme development](https://developers.arcgis.com/experience-builder/guide/theme-development/) をご覧ください。
 
 app config では、アプリが使用するテーマは `theme` で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は `customTheme` に保存されます。

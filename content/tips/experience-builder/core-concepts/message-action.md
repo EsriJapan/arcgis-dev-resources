@@ -42,7 +42,7 @@ export default class QueryAction extends AbstractMessageAction{
 }
 ```
 
-`filterMessage` メソッドは、メッセージマネージャでメッセージをフィルタリングするために使用されます。
+`filterMessage` メソッドは、メッセージ マネージャーでメッセージをフィルタリングするために使用されます。
 
 ```tsx
 filterMessage(message: Message): boolean{
@@ -61,7 +61,7 @@ this.props.onSettingChange({
 })
 ```
 
-`onExecute` メソッドは、メッセージタイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージタイプに基づいてアクションを選択し、`dispatch` プロパティを使用してアプリケーションから `getAppStore()` 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは[こちら](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)をご覧ください。
+`onExecute` メソッドは、メッセージ タイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージ タイプに基づいてアクションを選択し、`dispatch` プロパティを使用してアプリケーションから `getAppStore()` 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは[こちら](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)をご覧ください。
 
  ```tsx
 onExecute(message: Message, actionConfig?: any): Promise<boolean> | boolean{
@@ -106,7 +106,7 @@ this.props.mutableStateProps.theKey
 ```
 
 ### 国際化対応（i18n support）
-メッセージアクションの言語サポートは、[ウィジェット](https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#i18n-support)と同じパターンですが、1つ重要な違いがあります。メッセージアクションには、ユーザーがアクションを選択するための `Select an action` パネルがあります。そのため、アクションのプロパティ名を記載した `default.ts` というファイルを runtime/translations フォルダに用意する必要があります。フレームワークは、このパネルのアクションラベルの翻訳を処理します。そのため、ラベルのプロパティは、`_action_<actionName>_label` という命名規則を持つ必要があります。
+メッセージ アクションの言語サポートは、[ウィジェット](https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#i18n-support)と同じパターンですが、1つ重要な違いがあります。メッセージ アクションには、ユーザーがアクションを選択するための `Select an action` パネルがあります。そのため、アクションのプロパティ名を記載した `default.ts` というファイルを runtime/translations フォルダーに用意する必要があります。フレームワークは、このパネルのアクションラベルの翻訳を処理します。そのため、ラベルのプロパティは、`_action_<actionName>_label` という命名規則を持つ必要があります。
 
 ```tsx
 export default {

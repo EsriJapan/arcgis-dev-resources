@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-03-18T11:08:15 JST">
+<meta name="revised" content="2025-03-26T17:06:41 JST">
 <title>マップ/シーン ビュー（Map/Scene View） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -591,6 +591,13 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/get-map-coordinates/">
+            マップの座標を取得
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
@@ -1046,7 +1053,7 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/map-scene-view/">Map/Scene View</a></p>
 <h3 id="マップシーン-ビューmapscene-view">マップ/シーン ビュー（Map/Scene View）</h3>
-<p>ビューの概念はArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは <code>JimuMapView</code> としてラップされます。<code>JimuMapView</code> オブジェクトを作成するには、ウィジェットは <code>JimuMapViewManager.createJimuMapView()</code> メソッドを使用します。<code>JimuMapView</code> オブジェクトは、主に以下のプロパティを持っています。</p>
+<p>ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは <code>JimuMapView</code> としてラップされます。<code>JimuMapView</code> オブジェクトを作成するには、ウィジェットは <code>JimuMapViewManager.createJimuMapView()</code> メソッドを使用します。<code>JimuMapView</code> オブジェクトは、主に以下のプロパティを持っています。</p>
 <ul>
 <li><code>view</code>: マップ/シーン ビュー オブジェクト</li>
 <li><code>datasourceId</code>: ビューを作成するデータソース (webmap/webscene)</li>

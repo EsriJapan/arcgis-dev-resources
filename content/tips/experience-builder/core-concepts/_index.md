@@ -26,3 +26,5 @@ Experience Builderでウィジェットやテーマなどを開発するには�
 Experience Builder アプリケーションは多くのパーツで構成されています。これらのコンセプトは、アプリケーションの構造を理解するのに役立ちます。
 
 {{% children style="h5" depth="2" %}}
+
+##### <span style="padding-left:40px">[高速モード（Express mode）](https://doc.arcgis.com/ja/experience-builder/latest/build-apps/express-mode.htm) （外部サイトに移動します）</span>
