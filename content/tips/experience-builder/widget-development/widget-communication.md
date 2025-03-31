@@ -73,9 +73,9 @@ widgetsState: {
 ただし、`widgetState` にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、`this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))` を使用して値を格納し、`MutableStoreManager.getInstance().getStateValue()` を使用してアクセスすることができます。
 
 ## ウィジェット間で state を共有するための独自の redux store/action/reducer を提供
-これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。
+これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は `ReduxStore` 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。
 
-- ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。
+- `ReduxStoreExtension` インターフェイスを実装する拡張クラスを作成します。このクラスは `my-store.ts` として作成します。
 
 ```tsx
 import {extensionSpec} from 'jimu-core';

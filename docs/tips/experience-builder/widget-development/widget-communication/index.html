@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-03-18T11:08:15 JST">
+<meta name="revised" content="2025-03-31T14:27:32 JST">
 <title>ウィジェット間の通信 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -494,7 +494,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
-            ウィジェットでデータソースを使用
+            ウィジェットでデータ ソースを使用
           </a>
         </div>
     </li>
@@ -1098,9 +1098,9 @@ if (!doNotTrack) {
 </code></pre></div><p>ウィジェット2 の <code>w1</code> が格納した情報にアクセスするには、<code>mapExtraStateProps</code> を使用するか、<code>useSelect</code> フックを使用して store から値を選択することができます。</p>
 <p>ただし、<code>widgetState</code> にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、<code>this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))</code> を使用して値を格納し、<code>MutableStoreManager.getInstance().getStateValue()</code> を使用してアクセスすることができます。</p>
 <h2 id="ウィジェット間で-state-を共有するための独自の-redux-storeactionreducer-を提供">ウィジェット間で state を共有するための独自の redux store/action/reducer を提供</h2>
-<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は ReduxStore 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
+<p>これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は <code>ReduxStore</code> 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。</p>
 <ul>
-<li>ReduxStoreExtension インターフェースを実装する拡張クラスを作成します。</li>
+<li><code>ReduxStoreExtension</code> インターフェイスを実装する拡張クラスを作成します。このクラスは <code>my-store.ts</code> として作成します。</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">extensionSpec</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
@@ -1142,7 +1142,7 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" title="ウィジェットでデータソースを使用"> <i class="fa fa-chevron-left"></i><label>ウィジェットでデータソースを使用</label></a>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" title="ウィジェットでデータ ソースを使用"> <i class="fa fa-chevron-left"></i><label>ウィジェットでデータ ソースを使用</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/" title="ウィジェットに下位互換性を持たせる" style="margin-right: 0px;"><label>ウィジェットに下位互換性を持たせる</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

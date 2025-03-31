@@ -134,7 +134,7 @@ Output 例:
 ![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png)
 
 ### 外部 CSS スタイルシート
-別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。
+別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は `.css`、`.sass`、および `.scss` です。
 
 先ほどのコードサンプルを例に、CSS スタイルを別のスタイルシート (例: style.css) に移動します。
 
@@ -152,14 +152,14 @@ Output 例:
 
 としてウィジェットにファイルをインポートします。
 
-```css
+```tsx
 // widget.tsx:
 import 'path/to/style.css';
 ```
 
 そして、style.css で定義されている DOM 要素にクラス名を追加することを忘れないでください。
 
-```css
+```tsx
 // widget.tsx:
 // in the render() function:
 
@@ -179,7 +179,7 @@ Styled Components や Emotion など、よく知られている CSS-in-JS のラ
 Emotion には 2 つのスタイリング パターンがあります。
 
 ### 1. [css prop](https://emotion.sh/docs/css-prop)
-Emotion の `css` prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは `template literals` で書くことができるので、CSS の中に JS ロジックを書くことができます。
+Emotion の `css` prop を使うと、React の style prop に比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは `template literals` で書くことができるので、CSS の中に JS ロジックを書くことができます。
 
 例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。
 
@@ -255,7 +255,7 @@ Output 例:
 ![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png)
 
 ### 3. テーマを使った作業
-これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。
+これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的に見た目や操作感を更新したい場合に必要です。
 
 Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。
 

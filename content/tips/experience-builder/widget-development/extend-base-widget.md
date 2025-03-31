@@ -10,27 +10,27 @@ aliases = ["/extend-base-widget/"]
 
 Experience Builder ウィジェットは、次のファイルで構成されています。
 
-- src: ウィジェットのソースコード
-    - runtime: フォルダ
-        - widget.tsx: メインのファイル
-        - assets: widget.tsx で使用される assets フォルダ
-        - translations: ウィジェットで使われる strings フォルダ
-    - setting: フォルダ
-        - setting.tsx: ウィジェットで使用する設定ファイル
-        - assets: 設定で使用する assets フォルダ
-        - translations: 設定で使用する strings フォルダ
-- dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成
-- icon.svg: ウィジェットパネルのウィジェットのアイコン
-- config.json: ウィジェットのデフォルト設定
-- manifest.json: プロパティのリストは `jimu-core/WidgetManifest` で設定した内容を表示
+- `src`: ウィジェットのソースコード
+    - `runtime`: フォルダー
+        - `widget.tsx`: メインのファイル
+        - `assets`: `widget.tsx` で使用される assets フォルダー
+        - `translations`: ウィジェットで使われる strings フォルダー
+    - `setting`: フォルダー
+        - `setting.tsx`: ウィジェットで使用する設定ファイル
+        - `assets`: 設定で使用する assets フォルダー
+        - `translations`: 設定で使用する strings フォルダー
+- `dist`: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成
+- `icon.svg`: ウィジェットパネルのウィジェットのアイコン
+- `config.json`: ウィジェットのデフォルト設定
+- `manifest.json`: プロパティのリストは `jimu-core/WidgetManifest` で設定した内容を表示
 
 ## Client サーバー
-Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで `npm start` を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
+Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで `npm start` を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
 
 - 新しいモジュールのインストール
 - ウィジェットの追加、削除、名前の変更
 - ウィジェットの `manifest.json` の編集
-- ファイルやフォルダの追加、削除、名前の変更
+- ファイルやフォルダーの追加、削除、名前の変更
 
 {{% notice tip %}}
 
@@ -39,7 +39,7 @@ Experience Builder (開発者向けエディション)で必要なモジュー�
 {{% /notice %}}
 
 ## ウィジェットの作成
-ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、`client/your-extensions/widget` ディレクトリに配置します。demo widget フォルダの名前を変更し、`maniest.json` で名前とラベルを変更し、ウィジェットの translations フォルダにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
+ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、`client/your-extensions/widgets` ディレクトリに配置する方法です。demo widget フォルダーの名前を変更し、`maniest.json` で名前とラベルを変更し、ウィジェットの translations フォルダーにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
 
 {{% notice tip %}}
 
@@ -47,7 +47,7 @@ default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じ�
 
 {{% /notice %}}
 
-- クラスコンポーネント
+- クラス コンポーネント
 
     - ES6 クラスを利用し、React のコンポーネントクラスを拡張します。
     - 独自のデータを state で維持します。
@@ -61,11 +61,11 @@ default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じ�
     - React Hooks を使用して state やその他の機能を使用します。
     - render() メソッドはありません。
 
-開発者向けドキュメントで使用されているサンプルは、1 つを除いてすべてクラスコンポーネントに基づいています。今後のリリースでは、関数コンポーネントのサンプルを追加する予定です。
+開発者向けドキュメントで使用されているサンプルは、1 つを除いてすべてクラス コンポーネントに基づいています。今後のリリースでは、関数コンポーネントのサンプルを追加する予定です。
 
-### クラスコンポーネントを使ったウィジェットの作成
+### クラス コンポーネントを使ったウィジェットの作成
 
-以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、`export default class Widget extends React.Component<AllWidgetProps>, any> {` で `AllWidgetProps` 型で宣言されており、ウィジェットの props を使用しています。 `render()` メソッドは、translations ファイル内の `_widgetLabel` のプロパティで設定した テキスト名：`hello world` とウィジェット名を返すために呼び出されます。
+以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、`export default class Widget extends React.Component<AllWidgetProps>, any>` で `AllWidgetProps` 型で宣言されており、ウィジェットの props を使用しています。 `render()` メソッドは、translations ファイル内の `_widgetLabel` のプロパティで設定した テキスト名：`hello world` とウィジェット名を返すために呼び出されます。
 
 ```tsx
 //a custom pragma to transform your jsx into plain JavaScript
@@ -103,7 +103,7 @@ export default function Widget (props:AllWidgetProps) {
 
 ## ウィジェットの UI 設定
 
-ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使用するには、`React.PureComponent` クラスを継承します。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、この例では以下のインポートに注意する必要があります。
+ウィジェットの UI 設定は、ウィジェットの作成と似ていますが、setting フォルダーの setting.tsx を使用することができます。ウィジェットの UI 設定を作成するには、クラスと関数の 2 つの方法があります。クラス コンポーネントを使用するには、`React.PureComponent` クラスを継承します。この例では、データソースを追加して設定パネルの config.json ファイルを操作する方法を示しています。また、この例では以下のインポートに注意する必要があります。
 
 - import `React` は `React.PureComponent` クラスに使用されます。
 - import `DataSourceTypes` はデータソースの種類に使用します。
@@ -171,9 +171,12 @@ render(){
   }
 }
 ```
+
 ## Props
 
-ウィジェットでは props があります。クラス コンポーネントの `this.props` や関数コンポーネントの props パラメータ `{props}` を通してアクセスすることができます。例えば、クラス コンポーネントを使用してウィジェットの config.json にある props にアクセスするには、`this.props.config` を使用します。関数コンポーネントでアクセスするには、`props.config` を使用します。利用可能なプロパティの詳細については、Experience Builder の `client/jimu-core/lib/types/props.ts` を参照してください。
+ウィジェットには様々な props を設定できます。クラス コンポーネントの `this.props` や関数コンポーネントの props パラメータ `{props}` を通してアクセスすることができます。例えば、クラス コンポーネントを使用してウィジェットの config.json にある props にアクセスするには、`this.props.config` を使用します。関数コンポーネントでアクセスするには、`props.config` を使用します。利用可能なプロパティの詳細については、Experience Builder の `client/jimu-core/lib/types/props.ts` を参照してください。
+
+場合によっては、this.props にないプロパティにアクセスする必要があるかもしれません。そのためには、ウィジェット クラスに以下のコード スニペットのような静的関数を定義します。
 
 ```tsx
 static mapExtraStateProps = (state: IMState) => {
@@ -214,7 +217,7 @@ System.register([], function (_export) {return {execute: function () {_export({
 })}}});
 ```
 
-ウィジェット ファイル (例：widget.tsx) において、翻訳された文字列にアクセスする様々な方法を示します。
+ウィジェット ファイル (例：`widget.tsx`) において、翻訳された文字列にアクセスする様々な方法を示します。
 
 ```tsx
 // Class component
@@ -261,7 +264,7 @@ props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessage.str1})
   })
 ```
 
-- 条件付きで JS API に依存するウィジェット (例：JS API が無くても何かを実行することはできます。)
+- 条件付きで JS API に依存するウィジェット (例：JS API がなくても何かを実行することはできます。)
   - `import {loadArcGISJSAPIModules}` と `loadArcGISJSAPIModules([])` を使用してモジュールを動的にロードします。
 
 ```tsx
@@ -282,12 +285,12 @@ props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessage.str1})
 - ウィジェットの `manifest.json` の `properties` オブジェクトに `hasEmbeddedLayout` を宣言します。この場合、ユーザーが他のウィジェットをウィジェットの中でドラッグ＆ドロップできるようにするために、レイアウト コンポーネントを使用することをお勧めします。`jimu-layouts/layout-builder` と `jimu-layouts/layout-runtime` からエクスポートされた 2 つのレイアウト コンポーネントがあります。ウィジェットでは、jimu-layouts/layout-runtime からエクスポートされたレイアウトコンポーネントを使用する必要があります。`jimu-layouts/layout-builder` からエクスポートされたコンポーネントにアクセスするには、`this.props.builderSupportModules.LayoutClass` を使用します。`List` ウィジェットはこの手法を使っています。
 - ウィジェットの `manifest.json` で `CONTEXT_TOOL` 拡張機能を宣言します。宣言した拡張機能は選択ツールバーで利用できるようになります。`Image` ウィジェットは、このように選択ツールバーに shape ツールや crop ツールを追加して使用します。
 
-インライン編集をサポートするために、ウィジェットは Builder でウィジェットを起動した時にのみ必要なモジュールが含まれている場合があります。このシナリオでは、これらのモジュールを `builder-support.tsx` に配置します。このファイルは `widget.tsx` と同じフォルダにあるはずです。このファイル内のモジュールは、ウィジェットが Builder で起動されると、`this.props.builderSupportModules.widgetModules` 内で利用できるようになります。
+インライン編集をサポートするために、ウィジェットは Builder でウィジェットを起動した時にのみ必要なモジュールが含まれている場合があります。このシナリオでは、これらのモジュールを `builder-support.tsx` に配置します。このファイルは `widget.tsx` と同じフォルダーにあるはずです。このファイル内のモジュールは、ウィジェットが Builder で起動されると、`this.props.builderSupportModules.widgetModules` 内で利用できるようになります。
 
 ## ベストプラクティス
 
 - ウィジェットのクラス名として `widget-<widget name>` を、ウィジェット設定のクラス名として `widget-setting-<widget name>` を使用して、ウィジェットのルート CSS クラス名を指定します。
 - サードパーティの内蔵ライブラリをロードするには `import {} from 'jimu-core'` を使います。例えば、`import {React} from 'jimu-core` から {React} をインポートします; `import {} from '3rd_lib'` を使うと、lib がウィジェットに組み込まれるので、ウィジェットのサイズは大きくなります。
-- widget の `src` フォルダに Typesafe 設定ファイルを作成し、`widget.tsx` と `setting.tsx` の両方で使用します。
+- widget の `src` フォルダーに Typesafe 設定ファイルを作成し、`widget.tsx` と `setting.tsx` の両方で使用します。
 - 可能な限りアウトオブボックスの UI コンポーネントを活用して、[ウィジェット UI](../widget-ui) を作成する方法の詳細をご覧ください。
 

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-03-18T11:08:15 JST">
+<meta name="revised" content="2025-03-31T14:27:32 JST">
 <title>ウィジェット UI の作成 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -494,7 +494,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
-            ウィジェットでデータソースを使用
+            ウィジェットでデータ ソースを使用
           </a>
         </div>
     </li>
@@ -1156,7 +1156,7 @@ if (!doNotTrack) {
 </code></pre></div><p>Output 例:
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="外部-css-スタイルシート">外部 CSS スタイルシート</h3>
-<p>別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は .css、.sass、および .scss です。</p>
+<p>別の方法としては、外部スタイルシートのファイルで CSS スタイルを定義し、ウィジェット内で個別にインポートする方法があります。使用できるスタイルシートのファイルの拡張子は <code>.css</code>、<code>.sass</code>、および <code>.scss</code> です。</p>
 <p>先ほどのコードサンプルを例に、CSS スタイルを別のスタイルシート (例: style.css) に移動します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* style.css */</span>
 .<span style="color:#a6e22e">my-widget</span> {
@@ -1168,13 +1168,13 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
 }
 </code></pre></div><p>としてウィジェットにファイルをインポートします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#39;path/to/style.css&#39;</span><span style="color:#f92672">;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// widget.tsx:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;path/to/style.css&#39;</span>;
 </code></pre></div><p>そして、style.css で定義されている DOM 要素にクラス名を追加することを忘れないでください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">widget</span>.<span style="color:#a6e22e">tsx</span><span style="color:#f92672">:</span>
-<span style="color:#f92672">//</span> <span style="color:#f92672">in</span> <span style="color:#f92672">the</span> <span style="color:#f92672">render</span><span style="color:#f92672">()</span> <span style="color:#f92672">function</span><span style="color:#f92672">:</span>
-
-<span style="color:#f92672">return</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget&#34;</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">content</span> <span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// widget.tsx:
+</span><span style="color:#75715e">// in the render() function:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget&#34;</span>&gt; <span style="color:#a6e22e">content</span> &lt;/<span style="color:#f92672">div</span>&gt;;
 </code></pre></div><p>Output 例:
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetCSSInline.png" alt=""></p>
 <h3 id="css-in-js-推奨">CSS-in-JS (推奨)</h3>
@@ -1182,7 +1182,7 @@ if (!doNotTrack) {
 <p>Styled Components や Emotion など、よく知られている CSS-in-JS のライブラリがたくさんあります。Experience Builder では、スタイリングとテーマ設定を目的としたフレームワークとして <a href="https://emotion.sh/docs/introduction">Emotion</a> を使用しています。</p>
 <p>Emotion には 2 つのスタイリング パターンがあります。</p>
 <h3 id="1-css-prophttpsemotionshdocscss-prop">1. <a href="https://emotion.sh/docs/css-prop">css prop</a></h3>
-<p>Emotion の <code>css</code> prop を使うと、React のスタイルプロップに比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは <code>template literals</code> で書くことができるので、CSS の中に JS ロジックを書くことができます。</p>
+<p>Emotion の <code>css</code> prop を使うと、React の style prop に比べて、より自然で親しみやすい方法で CSS スタイルを書くことができます。CSS スタイルは <code>template literals</code> で書くことができるので、CSS の中に JS ロジックを書くことができます。</p>
 <p>例えば、以下のサンプルの Counter ウィジェットは、カウント値が 2 以上になるとテキストの色が赤から緑に変わります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/// widget.tsx:
 </span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
@@ -1247,7 +1247,7 @@ if (!doNotTrack) {
 </code></pre></div><p>Output 例:
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetStyledComponent.png" alt=""></p>
 <h3 id="3-テーマを使った作業">3. テーマを使った作業</h3>
-<p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的にルック＆フィールを更新したい場合に必要です。</p>
+<p>これは、ウィジェットをアプリケーションの他の部分と一貫して見えるようにしたい場合や、テーマが変更されたときに自動的に見た目や操作感を更新したい場合に必要です。</p>
 <p>Experience Builder フレームワークは、テーマ変数を JSON オブジェクトとして提供し、それをプロパティとしてウィジェットに挿入します。色、フォント、サイズ、コンポーネントなど、すべてのテーマ変数にアクセスできます。</p>
 <p>ウィジェット内のテーマ変数にアクセスし、CSS 宣言でそれらを参照するには this.props.theme を使用します。例えば、以下のようになります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">/** @jsx jsx */</span> <span style="color:#75715e">// &lt;-- make sure to include the jsx pragma
@@ -1282,7 +1282,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" title="ウィジェットの実装"> <i class="fa fa-chevron-left"></i><label>ウィジェットの実装</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" title="ウィジェットでデータソースを使用" style="margin-right: 0px;"><label>ウィジェットでデータソースを使用</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" title="ウィジェットでデータ ソースを使用" style="margin-right: 0px;"><label>ウィジェットでデータ ソースを使用</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
