@@ -130,18 +130,6 @@ Xcode 16 での手順
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</guid>
-      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
-ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
- インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
-サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
-    </item>
-    
-    <item>
-      <title>インストールガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/install-and-set-up/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -151,21 +139,33 @@ Xcode 16 での手順
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unity は Unity 用のプラグインです。ArcGIS Maps SDK for Unity を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
 Unity のインストール このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、Unity をインストールしてください。
 プラグインのインストール ArcGIS Maps SDK for Unity を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。
-シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています：
- Map Creator UI では、コードを記述せずにシーンを作成できます。 Components では、シーン内のゲームオブジェクトにアタッチできます。 C# API では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。  追加のダウンロード ダウンロードページから、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプルドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</description>
+シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています。
+ Map Creator UI では、コードを記述せずにシーンを作成できます。 Components では、シーン内のゲームオブジェクトにアタッチできます。 C# API では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。  追加のダウンロード ダウンロード ページから、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルの Web サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</description>
     </item>
     
     <item>
-      <title>インストールガイド</title>
+      <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</guid>
-      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and set up
+      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and setup
 このインストール ガイドでは、ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unreal Engine は Unreal Engine 用のプラグインです。ArcGIS Maps SDK for Unreal Engine を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
-Unreal Engine のインストール このプラグインは、Unreal Engine 5.2、5.3、および 5.4 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
+Unreal Engine のインストール このプラグインは、Unreal Engine 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
 プラグインのインストール ArcGIS Maps SDK for Unreal Engine を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。</description>
+    </item>
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</guid>
+      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
+ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
+ インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
+サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
     </item>
     
     <item>
@@ -422,8 +422,8 @@ Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サー�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - page
-ページ（Page） エクスペリエンスの中のページは、物理的な HTML Web ページでなく、概念的なページですが、実際のHTML Web ページのように振る舞います。これは div HTMLタグを使って実装されます。エクスペリエンスは少なくとも1つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページレイアウトにはフルスクリーンのアプリページと直線的なスクロールページの2種類があり、前者はアプリのように見え、後者はウェブページのように見えます。
-ページの内容（ウィジェット/セクション/スクリーン）は、固定レイアウトやフローレイアウトなどのレイアウトルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builderはサイズモードによるレイアウトの設定をサポートしています。これらは Large, Medium, Small で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、City Explorerのテンプレートがあります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイルデバイスで見た場合、地図ウィジェットは最初のページから削除され、ユーザーがリストウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。
+ページ（Page） エクスペリエンスの中のページは、物理的な HTML Web ページでなく、概念的なページですが、実際の HTML Web ページのように振る舞います。これは div HTML タグを使って実装されます。エクスペリエンスは少なくとも 1 つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページ レイアウトにはフル スクリーンのアプリ ページと直線的なスクロール ページの2種類があり、前者はアプリのように見え、後者はウェブ ページのように見えます。
+ページの内容（ウィジェット/セクション/スクリーン）は、固定レイアウトやフロー レイアウトなどのレイアウト ルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builder はサイズ モードによるレイアウトの設定をサポートしています。これらは Large, Medium, Small で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、City Explorer のテンプレートがあります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイル デバイスで見た場合、マップ ウィジェットは最初のページから削除され、ユーザーがリスト ウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。
 app config では、ページは pages で定義され、ページ構造は pageStructure で定義されます。</description>
     </item>
     
@@ -434,10 +434,10 @@ app config では、ページは pages で定義され、ページ構造は page
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</guid>
       <description>出典：ArcGIS Maps SDK for Unity - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unity は、ソースコードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
-新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて プロジェクト (Projects) タブを選択し、新しいプロジェクト (New project) ボタンをクリックします。
-  ポップアップ ウィンドウで、以下を定義します：
- エディター バージョン：ArcGIS Maps SDK for Unity は Unity 2021.3.x および 2022.3.x LTS をサポートしています。複数の Unity エディターバージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.x) の両方をサポートしています。初めて使用する場合は、Download template ボタンをクリックして、これらのテンプレートをダウンロードする必要があります。HDRP または URP テンプレート以外のテンプレートを選択した場合は、レンダーパイプライン パッケージを手動でインストールします。(レガシー ビルトイン レンダー パイプラインはサポートされていません。) プロジェクト名：プロジェクトに関連するアセット、シーン、その他のファイルを保存するメインプロジェクト フォルダーの名前を設定します。 場所：プロジェクトの保存場所を設定します。デフォルトのプロジェクトの場所は、コンピューターのホーム フォルダーに設定されています。    プラグインのインストール Unity パッケージ マネージャー (Package Manager) を使用してプラグインをインストールします。Unity パッケージ マネージャー (Package Manager) の詳細については、Unity ドキュメントのトピック Unity の Package Manager を参照してください。</description>
+ArcGIS Maps SDK for Unity は、ソース コードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて [プロジェクト (Projects)] タブを選択し、[新しいプロジェクト (New project)] ボタンをクリックします。
+  ポップアップ ウィンドウで、以下を定義します。
+ エディター バージョン：ArcGIS Maps SDK for Unity は Unity 2022.3.x LTS および Unity 6 をサポートしています。複数の Unity エディター バージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.</description>
     </item>
     
     <item>
@@ -447,10 +447,10 @@ ArcGIS Maps SDK for Unity は、ソースコードとサンプル アセット�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</guid>
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unreal Engine は、ソースコードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+ArcGIS Maps SDK for Unreal Engine は、ソース コードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
 新規プロジェクトの作成 Unreal Engine には、お客様の業種に合ったさまざまな開発テンプレート (Developer Template)が用意されています。 どのテンプレートを選べばよいかわからない場合は、ゲーム テンプレート (Games Template) とシミュレーション テンプレート (Simulation Template) をお勧めします。これらのテンプレートの詳細については、Unreal Engine テンプレート リファレンスを参照してください。
-  Unreal Engine を起動するには、Epic Games ランチャー を開き、ライブラリ (Library) をクリックします。サポートされているバージョンを選択し、起動 (Launch) をクリックします。Unreal Engine を起動すると、Unreal プロジェクトブラウザ (Project Browser) が自動的に開きます。
-  最近利用したプロジェクト (Recent Project) の下で、開発テンプレート (Developer Template) の**ゲーム テンプレート (Games Template)**を選択してください。</description>
+  Unreal Engine を起動するには、Epic Games ランチャー を開き、[ライブラリ (Library)] をクリックします。サポートされているバージョンを選択し、[起動 (Launch)] をクリックします。Unreal Engine を起動すると、[Unreal プロジェクトブラウザ (Project Browser)] が自動的に開きます。
+  [最近利用したプロジェクト (Recent Project)] の下で、[開発テンプレート (Developer Template)] の[ゲーム テンプレート (Games Template)]を選択してください。</description>
     </item>
     
     <item>
@@ -529,7 +529,7 @@ STEP 1: Python API のインストール  ArcGIS Pro でインストール Pytho
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/window/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Window
-ウィンドウ（Window） ウィンドウはページに似ていて、任意のウィジェットを追加することができ、コンテンツを表示するための2つの設定（固定とアンカー設定）があります。 固定ウィンドウはモーダルを作成し、メインウィンドウを無効にしますが、ユーザーがエクスペリエンスに戻る前にウィンドウと対話できるように表示を維持します。固定ウィンドウはスプラッシュスクリーンとして使用したり、ページで開いたり、ウィジェットから開いたりすることができます。アンカー ウィンドウは、ボタンやテキストウィジェットなどのウィジェットからトリガーされます。
+ウィンドウ（Window） ウィンドウはページに似ていて、任意のウィジェットを追加することができ、コンテンツを表示するための2つの設定（固定とアンカー設定）があります。 固定ウィンドウはモーダルを作成し、メイン ウィンドウを無効にしますが、ユーザーがエクスペリエンスに戻る前にウィンドウと対話できるように表示を維持します。固定ウィンドウはスプラッシュ スクリーンとして使用したり、ページで開いたり、ウィジェットから開いたりすることができます。アンカー ウィンドウは、ボタンやテキスト ウィジェットなどのウィジェットからトリガーされます。
 app config では、ウィンドウは dialogs で定義されます。</description>
     </item>
     
@@ -801,7 +801,7 @@ TypeScript TypeScript を使うことをお勧めします。その利点のひ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Section and view
-セクションとビュー（Section and view） セクションは、複数のビューを追加できる領域を占めています。ビューはレイアウトコンテナで、ページやウィンドウに似ていますが、セクションの中にしか置くことができません。ビュー・ナビゲーション・ウィジェットは、セクション内のビューをナビゲートします。メニュー &amp;ldquo;ウィジェットで複数のページを使用したり、&amp;ldquo;ビュー・ナビゲーション &amp;ldquo;ウィジェットでセクションとビューを使用して同様の操作感を得ることができますが、両者には主な違いがあります。
+セクションとビュー（Section and view） セクションは、複数のビューを追加できる領域を占めています。ビューはレイアウト コンテナで、ページやウィンドウに似ていますが、セクションの中にしか置くことができません。ビュー ナビゲーション ウィジェットは、セクション内のビューをナビゲートします。メニュー ウィジェットで複数のページを使用したり、ビュー ナビゲーション ウィジェットでセクションとビューを使用して同様の操作感を得ることができますが、両者には主な違いがあります。
  レンダリングについて - 複数のページを読み込む場合、最初は現在のページのコンテンツのみがレンダリングされます。セクション内の複数のビューを読み込む場合、ビュー内のすべてのコンテンツがレンダリングされますが、現在のビューのみが表示され、他はすべて非表示になります。 アニメーションについて - セクションでのみトランジションアニメーションを定義できます。  app config では、セクションは sections で定義され、ビューは views で定義されます。</description>
     </item>
     
@@ -937,7 +937,7 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Screen groups
-画面グループ（Screen groups） 画面グループは、複数の画面を持つレイアウトコンテナで、スクロールするページのコンテンツやウィジェットを整理するためのものです。各画面はメインステージを持ち、画面グループのテンプレートによってはスクロールパネルを持つこともできます。画面グループにスクロールすると、画面の高さ全体を占めます。画面グループにスクロールパネルがある場合、エンドユーザーがパネル内のコンテンツをスクロールしても、メインステージはその場に留まり、最後のパネルがスクロールしたときにのみ切り替わります。画面グループにパネルがない場合は、メインステージは画面の高さいっぱいにスクロールするまで固定されます。
+画面グループ（Screen groups） 画面グループは、複数の画面を持つレイアウト コンテナで、スクロールするページのコンテンツやウィジェットを整理するためのものです。各画面はメイン ステージを持ち、画面グループのテンプレートによってはスクロール パネルを持つこともできます。画面グループにスクロールすると、画面の高さ全体を占めます。画面グループにスクロール パネルがある場合、エンド ユーザーがパネル内のコンテンツをスクロールしても、メイン ステージはその場に留まり、最後のパネルがスクロールしたときにのみ切り替わります。画面グループにパネルがない場合は、メイン ステージは画面の高さいっぱいにスクロールするまで固定されます。
 app config では、画面グループは screenGroups で定義され、画面は screens で定義されます。</description>
     </item>
     
@@ -964,7 +964,7 @@ app config では、画面グループは screenGroups で定義され、画面�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
 各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
-{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
+{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.15.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.15.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
     </item>
     
     <item>
@@ -1021,9 +1021,9 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Layout
-レイアウト（Layout） レイアウトは、レイアウトコンテナにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。
-アプリ コンフィグでは、レイアウトは layouts プロパティで定義され、レイアウト コンテナは layout id でレイアウトを参照します。レイアウトコンテナには、異なるサイズモードでのレイアウトを定義する layouts オブジェクトプロパティがあります。Experience Builder では、Large、Medium、Small の各サイズモードをサポートしています。レイアウトが定義されていないサイズモードでは、アプリの設定で定義された mainSizeMode レイアウトが使用されます。
-フレームワークのレイアウト・コンテナの他に、ウィジェットもレイアウト・コンテナになることができます。ウィジェットがレイアウト・コンテナになると，ユーザーは他のウィジェットをドラッグ・アンド・ドロップすることができます．例えば、Map や Card はレイアウト・コンテナ・ウィジェットです。レイアウト・コンテナ・ウィジェットは、manifest.json で layouts プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。
+レイアウト（Layout） レイアウトは、レイアウト コンテナにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。
+アプリ コンフィグでは、レイアウトは layouts プロパティで定義され、レイアウト コンテナは layout id でレイアウトを参照します。レイアウト コンテナには、異なるサイズ モードでのレイアウトを定義する layouts オブジェクト プロパティがあります。Experience Builder では、Large、Medium、Small の各サイズ モードをサポートしています。レイアウトが定義されていないサイズ モードでは、アプリの設定で定義された mainSizeMode レイアウトが使用されます。
+フレームワークのレイアウト コンテナの他に、ウィジェットもレイアウト コンテナになることができます。ウィジェットがレイアウト コンテナになると，ユーザーは他のウィジェットをドラッグ アンド ドロップすることができます。例えば、Map や Card はレイアウト コンテナ ウィジェットです。レイアウト コンテナ ウィジェットは、manifest.json で layouts プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。
 import {LayoutEntry} from &amp;#39;jimu-layouts/layout-runtime&amp;#39; let LayoutEntryComponent if (window.jimuConfig.isInBuilder) { LayoutEntryComponent = this.props.builderSupportModules.LayoutEntry } else { LayoutEntryComponent = LayoutEntry } </description>
     </item>
     
@@ -1065,7 +1065,7 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
+ src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -1091,7 +1091,7 @@ pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォン�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Theme
-テーマ（Theme） テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタムテーマの作成も可能です。テーマ開発については、theme development をご覧ください。
+テーマ（Theme） テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタム テーマの作成も可能です。テーマ開発については、theme development をご覧ください。
 app config では、アプリが使用するテーマは theme で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は customTheme に保存されます。</description>
     </item>
     
@@ -1148,7 +1148,7 @@ JSX の詳細を参照してください。
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget
-ウィジェット（Widget） ウィジェットは設定可能な機能単位で、エクスペリエンスなページを作成するために使用されるビルディングブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタムウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定UIを提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。
+ウィジェット（Widget） ウィジェットは設定可能な機能単位で、エクスペリエンスのページを作成するために使用されるビルディング ブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタム ウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定 UI を提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。
 ウィジェットの実装についてはこちらをご覧ください。
 app config では、widgets でウィジェットを定義します。</description>
     </item>
@@ -1191,20 +1191,20 @@ app config では、widgets でウィジェットを定義します。</descript
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
-Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用されるJavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript 4.x を実行するために必要なすべてのコンポーネントが含まれています。 jimu-core パッケージは、アプリの設定をロードして解析し、アプリの設定に基づいてレイアウト、テーマ、ウィジェットをロードします。これをサポートするために、本パッケージは WidgetManager、ConfigManager、ThemeManager などのいくつかのクラスを定義しています。また、jimu-core はウィジェットのインターフェイス、いくつかの共通型、およびいくつかの拡張ポイントを定義していますが、これらは他のパッケージやウィジェットにより拡張される可能性があります。 jimu-for-builder パッケージは、ウィジェットの設定ページの開発をサポートしています。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが利用するすべての UI コンポーネントが含まれています。より詳しくは、reactstrap と emotion-js を使用しています。さらに reactstrap に含まれていない、より多くのコンポーネントが追加されています。読み込みサイズを小さくするために、コンポーネントはindex、setting-components、sql-expression-builder などのいくつかのエントリに分割されています。詳細はAPIを参照してください。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
+ jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリは重く、複雑です。例えば、setting-components エントリには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
     </item>
     
     <item>
-      <title>ウィジェットでデータソースを使用</title>
+      <title>ウィジェットでデータ ソースを使用</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
-データソースは、ウィジェットがデータにアクセスする方法を定義します。データソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
- ウィジェットの設定でデータソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータソースの同期 ウィジェットで出力データソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
-ウィジェットの設定でデータソースを選択 ウィジェットの設定でデータソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータソースは依存していません。</description>
+データ ソースは、ウィジェットがデータにアクセスする方法を定義します。データ ソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
+ ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。これらのデータ ソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータ ソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータ ソースは依存していません。</description>
     </item>
     
     <item>
@@ -1214,14 +1214,14 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
       <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
-マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
-このチュートリアルでは、ベースマップレイヤーサービスとデータレイヤーを含むローカルシーンを Unity で作成します。
-ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
+このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unity で作成します。
+ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。
+ESRIジャパンで提供するEsri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
   ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
-  開発環境がシステム要件を満たしていることを確認してください。
-  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
+  開発環境がシステム要件を満たしていることを確認してください。</description>
     </item>
     
     <item>
@@ -1250,7 +1250,7 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
       <description>出典：ArcGIS Experience Builder - Guide - Data sources
 データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
 高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
- id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1つのデータ ソースには、サブデータ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
+ id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1 つのデータ ソースには、サブ データ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
     </item>
     
     <item>
@@ -1260,14 +1260,15 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</guid>
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - Display a map (UI)
-マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
+マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
 このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。
-ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。
+ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
   ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
   開発環境がシステム要件を満たしていることを確認してください。
-  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
+  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプル アセットをインポートしてください。</description>
     </item>
     
     <item>
@@ -1291,10 +1292,10 @@ ArcGIS Experience Builder の進化に伴い、Jimu フレームワークに新�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data action
 データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。
-データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。
+データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
+ isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
 フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
-データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。
-&amp;#34;dataActions&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;showOnMap&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Show on map&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;data-actions/show-on-map&amp;#34;, &amp;#34;settingUri&amp;#34;: &amp;#34;data-actions/show-on-map-setting&amp;#34;, &amp;#34;icon&amp;#34;: &amp;#34;runtime/assets/icons/ds-map-view.svg&amp;#34; } ] データアクションを提供するだけでなく、ウィジェットはデータアクションを使用することもできます。ウィジェットでデータアクションを使用するには、ウィジェットのmanifest.</description>
+データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。</description>
     </item>
     
     <item>
@@ -1378,7 +1379,7 @@ manifest.json を使用して CDN 経由で使用 ライブラリを複数のウ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
-マップ/シーン ビュー（Map/Scene View） ビューの概念はArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
+マップ/シーン ビュー（Map/Scene View） ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
  view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは JimuMapViewComponent を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
@@ -1412,7 +1413,7 @@ describe(&amp;#39;calculator&amp;#39;, function() { // Describes a module with n
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Extension points
 拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
-Jimu ライブラリでは、特定の拡張ポイントが定義されています。エクステンションポイントとは、エクステンションが準拠すべきインターフェースを定義したものです。エクステンションとは、エクステンションポイントのインターフェースを実装したクラスのことです。このインターフェースは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
+Jimu ライブラリでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
 &amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
   AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
   DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。

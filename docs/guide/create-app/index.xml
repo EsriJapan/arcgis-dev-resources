@@ -162,14 +162,14 @@ HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
       <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
-マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
-このチュートリアルでは、ベースマップレイヤーサービスとデータレイヤーを含むローカルシーンを Unity で作成します。
-ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
+このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unity で作成します。
+ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。
+ESRIジャパンで提供するEsri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
   ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
-  開発環境がシステム要件を満たしていることを確認してください。
-  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
+  開発環境がシステム要件を満たしていることを確認してください。</description>
     </item>
     
     <item>
@@ -179,14 +179,15 @@ API キー ページが開発者ダッシュボードに表示されない場合
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</guid>
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - Display a map (UI)
-マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データレイヤーの追加、特定エリアの表示方法をご紹介します。
+マップを表示する (UI) Modes Panel UI を使用したベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
 このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unreal Engine で作成します。
-ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。 ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
+ArcGIS Map SDK for Unreal Engine は、現在 ESRIジャパンにおけるサポート対象外の製品です。
+ESRIジャパンで提供する Esri 製品サポート サービスや開発者サポート サービスはご利用いただけませんので、予めご了承ください。
 前提条件 このチュートリアルを実施するには、以下が必要です。
   ArcGIS サービスにアクセスするには、ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントと API キーが必要です。アカウントをお持ちでない場合は、サインアップ (無料) してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。
 API キー ページが開発者ダッシュボードに表示されない場合は、アカウントを ArcGIS Location Platform アカウントにアップグレードする必要があります。
   開発環境がシステム要件を満たしていることを確認してください。
-  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプルアセットをインポートしてください。</description>
+  インストールとセットアップの手順に従って、プラグインをインストールしてください。必ずサンプル アセットをインポートしてください。</description>
     </item>
     
   </channel>

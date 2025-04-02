@@ -26,7 +26,7 @@ ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget manifest
 各 ArcGIS Experience Builder ウィジェットには、ウィジェットの属性とプロパティを記述した manifest.json ファイルがあります。ウィジェットの manifest には、name、type、version、exbVersion、および translatedLocales プロパティを含める必要があります。ウィジェットの manifest を作成する簡単な方法は、demo widget から manifest.json ファイルをコピーすることです。以下は manifest.json ファイルの例です。ウィジェット内で ArcGIS Maps SDK for JavaScript を使用するには、dependency プロパティに jimu-arcgis を設定します。
-{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.14.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
+{ &amp;#34;name&amp;#34;: &amp;#34;count-features&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;Count Features&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;widget&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.15.0&amp;#34;, &amp;#34;exbVersion&amp;#34;: &amp;#34;1.15.0&amp;#34;, &amp;#34;author&amp;#34;: &amp;#34;Esri R&amp;amp;D Center Beijing&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;This is widget is designed to display the numeric attributes of features.&amp;#34;, &amp;#34;copyright&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;http://www.apache.org/licenses/LICENSE-2.0&amp;#34;, &amp;#34;publishMessages&amp;#34;: [ &amp;#34;EXTENT_CHANGE&amp;#34;, &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ], &amp;#34;messageActions&amp;#34;: [], &amp;#34;defaultSize&amp;#34;: { &amp;#34;width&amp;#34;: 360, &amp;#34;height&amp;#34;: 80 }, &amp;#34;properties&amp;#34;: {}, &amp;#34;translatedLocales&amp;#34;: [ &amp;#34;en&amp;#34;, &amp;#34;es&amp;#34;, &amp;#34;zh-cn&amp;#34; ] } widget&amp;rsquo;s manifest で利用可能なプロパティの詳細を参照してください。</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダ  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダ translations: ウィジェットで使われる strings フォルダ   setting: フォルダ  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダ translations: 設定で使用する strings フォルダ     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション)で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
+ src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -55,15 +55,15 @@ JSX の詳細を参照してください。
     </item>
     
     <item>
-      <title>ウィジェットでデータソースを使用</title>
+      <title>ウィジェットでデータ ソースを使用</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
-データソースは、ウィジェットがデータにアクセスする方法を定義します。データソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
- ウィジェットの設定でデータソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータソースの同期 ウィジェットで出力データソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
-ウィジェットの設定でデータソースを選択 ウィジェットの設定でデータソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータソースをサポートしています。これらのデータソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータソースは依存していません。</description>
+データ ソースは、ウィジェットがデータにアクセスする方法を定義します。データ ソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
+ ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。これらのデータ ソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータ ソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータ ソースは依存していません。</description>
     </item>
     
     <item>
