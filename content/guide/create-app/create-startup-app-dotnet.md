@@ -27,13 +27,64 @@ aliases = ["/create-startup-app-dotnet/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするために 開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+1. API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
 必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet-200.x/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 
-## ステップ
+## 認証の設定
+このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証またはユーザー認証を実装する必要があります。
 
+このチュートリアルでは、API キー認証またはユーザー認証を実装することができます。以下の違いを比較してください。
+
+#### API キー認証
+* ユーザーはサインインする必要がありません。
+* 適切な権限を持つ API キーの認証情報を作成する必要があります。
+* API キーは長期間のアクセス トークンです。
+* サービス使用料は、API キーの所有者/開発者に請求されます。
+* 実装が最も簡単な認証方法です。
+* 新規の ArcGIS 開発者に推奨される方法です。
+
+詳しくは [API キー認証](https://developers.arcgis.com/kotlin/security-and-authentication/#api-key-authentication)をご覧ください。
+
+このチュートリアルで使用するセキュアなリソースにアクセスする権限を持つ、新しい API キーのアクセス トークンを作成します。
+
+1. [API キーの作成](../../get-api-key/)のチュートリアルを完了し、以下の権限を持つ API キーを作成します。
+    * **Privileges**
+        * **Location services** > **Basemaps**
+2. **API キーのアクセス トークン** をコピーし、安全な場所に貼り付けます。これは後のステップで使用します。
+
+#### ユーザー認証
+* ユーザーは、ArcGIS アカウントでサインインする必要があります。
+* ユーザー アカウントには、アプリケーションで使用する ArcGIS サービスにアクセスする権限が必要です。
+* OAuth 認証情報の作成が必要です。
+* アプリケーションには、リダイレクト URL とクライアント ID を使用します。
+* サービスの使用料は、アプリケーションにサインインしたユーザーの組織に請求されます。
+
+詳しくは、[ユーザー認証](https://developers.arcgis.com/kotlin/security-and-authentication/#user-authentication)をご覧ください。
+
+このチュートリアルで使用するセキュアなリソースにアクセスするための新しい OAuth 認証情報を作成します。
+
+1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了します。
+
+2. **ClientID** と **RedirectURL** をコピーして安全な場所に貼り付けます。これらは後のステップで使用します。
+
+このアプリケーションにアクセスするすべてのユーザーには、ベースマップ スタイル サービスにアクセスするためのアカウント権限が必要です。
+
+{{% notice note %}}
+
+**セキュリティと認証ガイド** : 認証の種類について詳しくは、[認証の種類](../../security/)をご覧ください。
+
+{{% /notice %}}
+
+
+## 開発またはダウンロード
+このチュートリアルを完了するには、2 つの選択肢があります。
+1. [オプション 1: コードを開発する](#オプション-1-コードを開発する)
+2. [オプション 2: 完成したソリューションをダウンロードする](#オプション-2-完成したソリューションをダウンロードする)
+
+
+## オプション 1: コードを開発する
 ### 新しい Visual Studio プロジェクトを作成する
 ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
 このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成する手順を説明します。
@@ -99,48 +150,6 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
     * プロジェクト ファイル (`DisplayAMap`) を保存して閉じます。
 
-### アクセス トークンを取得する
-
-このチュートリアルで使用するロケーションサービスを利用するには、アクセス トークンが必要です。
-1. [API キーの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/)に進み、アクセス トークンを取得してください。
-2. 以下の権限が有効になっていることを確認してください
-    
-    [ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
-3. アクセス トークンは次のステップで使用するのでコピーしてください。
-
-アクセス トークンを取得する他の方法については、[認証の種類](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/)をご覧ください。
-
-### アプリで API キーを設定する
-
-1. <b>ソリューション エクスプローラー</b>で、<b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。
-
-2. App クラスで、`OnStartup()` 関数のオーバーライドを追加して、[`ArcGISRuntimeEnvironment`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html) で `ApiKey` プロパティを設定します。
-
-
-    App.xaml.cs
-
-    ```csharp
-    public partial class App : Application
-    {
-        // 追加開始
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-            // 注: API キーをソース コードに保存することはベスト プラクティスではありません。
-            // API キーは、チュートリアルの便宜上、ここで参照されています。
-            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "API キー";
-        }
-        // 追加終了
-    }
-    ```
-    {{% notice warning %}}
-
-    API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。
-
-    {{% /notice %}}
-
-
-3. `App.xaml.cs` ファイルを保存して閉じます。
 
 ### アプリ ロジックを保存するビュー モデルを作成する
 
@@ -300,7 +309,351 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 <b>MVVM</b> デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成した `ビュー モデル` のコードは、通常、サポートされているすべての .NET プラットフォームで動作します。
 
-次に、プロジェクトに `ビュー` を設定して、ビュー モデルを使用します。
+
+### 開発者認証情報の設定
+アプリのユーザーが ArcGIS Location Service やセキュアなコンテンツにアクセスできるようにするには、[認証の設定](#認証の設定)ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。
+
+#### アプリで API キーを設定する
+
+1. <b>ソリューション エクスプローラー</b>で、<b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。
+
+2. App クラスで、`OnStartup()` 関数のオーバーライドを追加して、[`ArcGISRuntimeEnvironment`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html) で `ApiKey` プロパティを設定します。
+
+
+    App.xaml.cs
+
+    ```csharp
+    public partial class App : Application
+    {
+        // 追加開始
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            // 注: API キーをソース コードに保存することはベスト プラクティスではありません。
+            // API キーは、チュートリアルの便宜上、ここで参照されています。
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "API キー";
+        }
+        // 追加終了
+    }
+    ```
+    {{% notice note %}}
+
+    API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。
+
+    {{% /notice %}}
+
+
+3. `App.xaml.cs` ファイルを保存して閉じます。
+
+#### アプリでユーザー認証を使用する
+
+1. Visual Studio の [プロジェクト] メニューから [クラスの追加] を選択します。クラス名を `ArcGISLoginPrompt.cs` とし、[追加] をクリックします。新しいクラスがプロジェクトに追加され、Visual Studio で開きます。
+2. 新しいクラスのコードをすべて選択し、削除します。
+3. 以下のコードをすべてコピーし、プロジェクトの `ArcGISLoginPrompt.cs` クラスに貼り付けます。
+
+ArcGISLoginPrompt.cs
+```csharp
+// Copyright 2021 Esri.
+//
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+// language governing permissions and limitations under the License.
+
+using Esri.ArcGISRuntime.Security;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
+using System.Windows.Threading;
+
+namespace UserAuth
+{
+
+    internal static class ArcGISLoginPrompt
+    {
+        private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+        // Specify the Client ID and Redirect URL to use with OAuth authentication.
+        // See the instructions here for creating OAuth app settings:
+        // https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/
+
+        private const string AppClientId = "YOUR_CLIENT_ID";
+        private const string OAuthRedirectUrl = "YOUR_REDIRECT_URL";
+
+        public static async Task<bool> EnsureAGOLCredentialAsync()
+        {
+            bool loggedIn = false;
+
+            try
+            {
+                // Create a challenge request for portal credentials (OAuth credential request for arcgis.com)
+                CredentialRequestInfo challengeRequest = new CredentialRequestInfo
+                {
+                    // Use the OAuth authorization code workflow.
+                    GenerateTokenOptions = new GenerateTokenOptions
+                    {
+                        TokenAuthenticationType = TokenAuthenticationType.OAuthAuthorizationCode
+                    },
+
+                    // Indicate the url (portal) to authenticate with (ArcGIS Online)
+                    ServiceUri = new Uri(ArcGISOnlineUrl)
+                };
+
+                // Call GetCredentialAsync on the AuthenticationManager to invoke the challenge handler
+                Credential? cred = await AuthenticationManager.Current.GetCredentialAsync(challengeRequest, false);
+                loggedIn = cred != null;
+            }
+            catch (OperationCanceledException)
+            {
+                // OAuth login was canceled, no need to display error to user.
+            }
+            catch (Exception ex)
+            {
+                // Login failure
+                MessageBox.Show("Login failed: " + ex.Message);
+            }
+
+            return loggedIn;
+        }
+
+        public static void SetChallengeHandler()
+        {
+            var userConfig = new OAuthUserConfiguration(new Uri(ArcGISOnlineUrl), AppClientId, new Uri(OAuthRedirectUrl));
+            AuthenticationManager.Current.OAuthUserConfigurations.Add(userConfig);
+            AuthenticationManager.Current.OAuthAuthorizeHandler = new OAuthAuthorize();
+        }
+
+        #region OAuth handler
+
+        // In a desktop (WPF) app, an IOAuthAuthorizeHandler component is used to handle some of the OAuth details. Specifically, it
+        //     implements AuthorizeAsync to show the login UI (generated by the server that hosts secure content) in a web control.
+        //     When the user logs in successfully, cancels the login, or closes the window without continuing, the IOAuthAuthorizeHandler
+        //     is responsible for obtaining the authorization from the server or raising an OperationCanceledException.
+        public class OAuthAuthorize : IOAuthAuthorizeHandler
+        {
+            // Window to contain the OAuth UI.
+            private Window? _authWindow;
+
+            // Use a TaskCompletionSource to track the completion of the authorization.
+            private TaskCompletionSource<IDictionary<string, string>> _tcs;
+
+            // URL for the authorization callback result (the redirect URI configured for your application).
+            private string _callbackUrl = "";
+
+            // URL that handles the OAuth request.
+            private string? _authorizeUrl;
+
+            // Function to handle authorization requests, takes the URIs for the secured service, the authorization endpoint, and the redirect URI.
+            public Task<IDictionary<string, string>> AuthorizeAsync(Uri serviceUri, Uri authorizeUri, Uri callbackUri)
+            {
+                if (_tcs != null && !_tcs.Task.IsCompleted)
+                    throw new Exception("Task in progress");
+
+                _tcs = new TaskCompletionSource<IDictionary<string, string>>();
+
+                // Store the authorization and redirect URLs.
+                _authorizeUrl = authorizeUri.AbsoluteUri;
+                _callbackUrl = callbackUri.AbsoluteUri;
+
+                // Call a function to show the login controls, make sure it runs on the UI thread for this app.
+                Dispatcher dispatcher = Application.Current.Dispatcher;
+                if (dispatcher == null || dispatcher.CheckAccess())
+                {
+                    AuthorizeOnUIThread(_authorizeUrl);
+                }
+                else
+                {
+                    Action authorizeOnUIAction = () => AuthorizeOnUIThread(_authorizeUrl);
+                    dispatcher.BeginInvoke(authorizeOnUIAction);
+                }
+
+                // Return the task associated with the TaskCompletionSource.
+                return _tcs.Task;
+            }
+
+            // Challenge for OAuth credentials on the UI thread.
+            private void AuthorizeOnUIThread(string authorizeUri)
+            {
+                // Create a WebBrowser control to display the authorize page.
+                WebBrowser webBrowser = new WebBrowser();
+
+                // Handle the navigation event for the browser to check for a response to the redirect URL.
+                webBrowser.Navigating += WebBrowserOnNavigating;
+
+                // Display the web browser in a new window.
+                _authWindow = new Window
+                {
+                    Content = webBrowser,
+                    Width = 450,
+                    Height = 450,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner
+                };
+
+                // Set the app's window as the owner of the browser window (if main window closes, so will the browser).
+                if (Application.Current != null && Application.Current.MainWindow != null)
+                {
+                    _authWindow.Owner = Application.Current.MainWindow;
+                }
+
+                // Handle the window closed event then navigate to the authorize url.
+                _authWindow.Closed += OnWindowClosed;
+                webBrowser.Navigate(authorizeUri);
+
+                // Display the window.
+                _authWindow.ShowDialog();
+            }
+
+            // Handle the browser window closing.
+            private void OnWindowClosed(object? sender, EventArgs e)
+            {
+                // If the browser window closes, return the focus to the main window.
+                if (_authWindow != null && _authWindow.Owner != null)
+                {
+                    _authWindow.Owner.Focus();
+                }
+
+                // If the task wasn't completed, the user must have closed the window without logging in.
+                if (!_tcs.Task.IsCompleted)
+                {
+                    // Set the task completion source exception to indicate a canceled operation.
+                    _tcs.SetCanceled();
+                }
+
+                _authWindow = null;
+            }
+
+            // Handle browser navigation (content changing).
+            private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
+            {
+                // Check for a response to the callback url.
+                const string portalApprovalMarker = "/oauth2/approval";
+                WebBrowser? webBrowser = sender as WebBrowser;
+
+                Uri uri = e.Uri;
+
+                // If no browser, uri, or an empty url, return.
+                if (webBrowser == null || uri == null || string.IsNullOrEmpty(uri.AbsoluteUri))
+                    return;
+
+                // Check for redirect.
+                bool isRedirected = uri.AbsoluteUri.StartsWith(_callbackUrl) ||
+                    _callbackUrl.Contains(portalApprovalMarker) && uri.AbsoluteUri.Contains(portalApprovalMarker);
+
+                // Check if browser was redirected to the callback URL. (This indicates succesful authentication.)
+                if (isRedirected)
+                {
+                    e.Cancel = true;
+
+                    // Call a helper function to decode the response parameters.
+                    IDictionary<string, string> authResponse = DecodeParameters(uri);
+
+                    // Set the result for the task completion source.
+                    _tcs.SetResult(authResponse);
+
+                    // Close the window.
+                    if (_authWindow != null)
+                    {
+                        _authWindow.Close();
+                    }
+                }
+            }
+
+            private static IDictionary<string, string> DecodeParameters(Uri uri)
+            {
+                // Create a dictionary of key value pairs returned in an OAuth authorization response URI query string.
+                string answer = "";
+
+                // Get the values from the URI fragment or query string.
+                if (!string.IsNullOrEmpty(uri.Fragment))
+                {
+                    answer = uri.Fragment.Substring(1);
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(uri.Query))
+                    {
+                        answer = uri.Query.Substring(1);
+                    }
+                }
+
+                // Parse parameters into key / value pairs.
+                Dictionary<string, string> keyValueDictionary = new Dictionary<string, string>();
+                string[] keysAndValues = answer.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string kvString in keysAndValues)
+                {
+                    string[] pair = kvString.Split('=');
+                    string key = pair[0];
+                    string value = string.Empty;
+                    if (key.Length > 1)
+                    {
+                        value = Uri.UnescapeDataString(pair[1]);
+                    }
+
+                    keyValueDictionary.Add(key, value);
+                }
+
+                // Return the dictionary of string keys/values.
+                return keyValueDictionary;
+            }
+        }
+
+        #endregion OAuth handler
+    }
+}
+```
+
+4. クライアント ID (`AppClientId`) とリダイレクト URL (`OAuthRedirectUri`)の値を追加します。これらは、[認証の設定](#認証の設定)ステップで作成したユーザー認証設定です。
+
+ArcGISLoginPrompt.cs
+```csharp
+internal static class ArcGISLoginPrompt
+    {
+        private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+        // Specify the Client ID and Redirect URL to use with OAuth authentication.
+        // See the instructions here for creating OAuth app settings:
+        // https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/
+
+        // 更新開始
+        private const string AppClientId = "YOUR_CLIENT_ID";
+        private const string OAuthRedirectUrl = "YOUR_REDIRECT_URL";
+        // 更新終了
+```
+
+5. [ソリューション エクスプローラー] で <b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。
+6. App クラスで `OnStartup()` 関数のオーバーライドを追加して、静的 `ArcGISLoginPrompt` クラスの `SetChallengeHandler()` メソッドを呼び出します。
+
+App.xaml.cs
+```csharp
+    public partial class App : Application
+    {
+
+        // 追加開始
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // Call a function to set up the AuthenticationManager for OAuth.
+            UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+
+        }
+        // 追加終了
+
+    }
+}
+```
+
+7. App.xaml.cs ファイルを保存して閉じます。
+
+{{% notice note %}}
+
+OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
+
+{{% /notice %}}
+
 
 ### マップ ビューを追加する
 
@@ -437,6 +790,106 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
         this.Map = map;
     }
     ```
+
+## オプション 2: 完成したソリューションをダウンロードする
+1. [Download solution](https://developers.arcgis.com/net/zips/display-a-map.zip) をクリックしてください。
+2. マシンの任意の場所にファイルを解凍します。
+3. .sln ファイルを Visual Studio で開きます。
+
+ダウンロードしたソリューションには認証情報が含まれていないため、[認証の設定](#認証の設定)で作成した開発者認証情報を追加する必要があります。
+
+#### アプリで API キーを設定する
+1. Visual Studio の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。
+2. ArcGISEnvironment.ApiKey プロパティに API キーのアクセス トークンを設定します。
+
+App.xaml.cs
+```csharp
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // Set the access token for ArcGIS Maps SDK for .NET.
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "YOUR_ACCESS_TOKEN";
+
+            // Call a function to set up the AuthenticationManager for OAuth.
+            UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+
+        }
+```
+
+3. ユーザー認証を設定するコードを削除します。
+
+App.xaml.cs
+```csharp
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // Set the access token for ArcGIS Maps SDK for .NET.
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "YOUR_ACCESS_TOKEN";
+
+            // 削除開始
+            // Call a function to set up the AuthenticationManager for OAuth.
+            UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+            // 削除終了
+
+        }
+```
+
+{{% notice note %}}
+
+アクセス トークンは、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
+
+{{% /notice %}}
+
+#### アプリでユーザー認証を使用する
+1. Visual Studio のソリューション エクスプローラーから ArcGISLoginPrompt.cs ファイルを開きます。
+2. クライアント ID (`OAuthClientID`) とリダイレクト URL (`OAuthRedirectUri`) の値を設定します。これらは[認証の設定](#認証の設定)で作成したユーザー認証設定です。
+
+ArcGISLoginPrompt.cs
+```csharp
+    internal static class ArcGISLoginPrompt
+    {
+        private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+        // Specify the Client ID and Redirect URL to use with OAuth authentication.
+        // See the instructions here for creating OAuth app settings:
+        // https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/
+
+        private const string AppClientId = "YOUR_CLIENT_ID";
+        private const string OAuthRedirectUrl = "YOUR_REDIRECT_URL";
+```
+
+3. Visual Studio のソリューション エクスプローラーで App.xaml.cs をクリックしてファイルを開きます。
+4. API キーのアクセス トークンを設定するコード行を削除します。
+
+App.xaml.cs
+```csharp
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // 削除開始
+            // Set the access token for ArcGIS Maps SDK for .NET.
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "YOUR_ACCESS_TOKEN";
+            // 削除終了
+
+            // Call a function to set up the AuthenticationManager for OAuth.
+            UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+
+        }
+
+```
+
+{{% notice note %}}
+
+OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
+
+{{% /notice %}}
+
+### アプリを実行する
+
+[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。
+カリフォルニア州サンタモニカ山脈を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
 
 ---
 アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)

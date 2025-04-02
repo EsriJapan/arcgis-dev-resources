@@ -17,9 +17,9 @@ ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシン�
 
 {{% notice note %}}
 
-Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。<b>Empty Activity</b> オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
+Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。**Empty Activity** オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
 
-以下の手順では、<b>Android Studio Ladybug 2024.2.1</b> を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。
+以下の手順では、**Android Studio Ladybug 2024.2.1** を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。
 
 {{% /notice %}}
 
@@ -118,8 +118,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 			// Toolkit dependencies
 			implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
 			implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-			// Additional modules from Toolkit, if needed, such as:
-			// implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+			implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
 
 	}
 	``` 
@@ -141,81 +140,80 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 3. Android ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
 	* ArcGIS Maps SDK for Kotlin SDK
 	* ArcGIS Maps SDK for Kotlin Toolkit BOM
-	* 必要な Toolkit コンポーネント<br>このチュートリアルでは、コンポーザブル [MapView](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` コンポーネントのみが必要です。
+	* 必要な Toolkit コンポーネント  
+    コンポーザブル [`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) を含む `geoview-compose` モジュールと `authentication` モジュールが必要です。
 
 	Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。
 
 	[Gradle バージョン カタログ](https://developer.android.com/build/migrate-to-catalogs)は依存関係のバージョンを宣言するための標準的な Android のアプローチです。`build.gradle.kts` でバージョン番号を指定したり、`version.gradle` でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする `build.gradle.kts` と `gradle/libs.version.toml` ファイルを生成します。
 
-	Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の README の [Using the BOM](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom) を参照してください。
+	Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の `README` の [`Using the BOM`](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom) を参照してください。
 
 	gradle/libs.versions.toml
 
-	```toml
-	[versions]
-	arcgisMapsKotlin = "200.6.0"
+   ```toml
+   [versions]
+   arcgisMapsKotlin = "200.6.0"
 
-	[libraries]
-	arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
-	arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
-	arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
-	# Additional modules from Toolkit, if needed, such as:
-	# arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
-	```
+   [libraries]
+   arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+   arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+   arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+   arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+   ```
 
-	{{% notice note %}}
+   {{% notice note %}}
 
-	`libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
+   `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規 プロジェクト ウィザードで生成された元の内容を置き換えてください。
 
-	{{% /notice %}}
+   ```toml
+   [versions]
+   arcgisMapsKotlin = "200.6.0"
 
-	```toml
-	[versions]
-	arcgisMapsKotlin = "200.6.0"
+   # Version numbers added by Android Studio New Project Wizard
+   agp = "8.7.1"
+   kotlin = "2.0.0"
+   coreKtx = "1.13.1"
+   junit = "4.13.2"
+   junitVersion = "1.2.1"
+   espressoCore = "3.6.1"
+   lifecycleRuntimeKtx = "2.8.4"
+   activityCompose = "1.9.3"
+   composeBom = "2024.10.00"
 
-	# Version numbers added by Android Studio New Project Wizard
-	agp = "8.7.1"
-	kotlin = "2.0.0"
-	coreKtx = "1.13.1"
-	junit = "4.13.2"
-	junitVersion = "1.2.1"
-	espressoCore = "3.6.1"
-	lifecycleRuntimeKtx = "2.8.4"
-	activityCompose = "1.9.3"
-	composeBom = "2024.10.00"
+   # Other version numbers
+   compileSdk = "35"
+   minSdk = "26"
+   targetSdk = "35"
 
-	# Other version numbers
-	compileSdk = "35"
-	minSdk = "26"
-	targetSdk = "35"
+   [libraries]
+   arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+   arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+   arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+   # Additional modules from Toolkit, if needed, such as:
+   # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
 
-	[libraries]
-	arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
-	arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
-	arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
-	# Additional modules from Toolkit, if needed, such as:
-	# arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+   androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+   junit = { group = "junit", name = "junit", version.ref = "junit" }
+   androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+   androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+   androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+   androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+   androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+   androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+   androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+   androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+   androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+   androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+   androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+   androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
-	androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-	junit = { group = "junit", name = "junit", version.ref = "junit" }
-	androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-	androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-	androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-	androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-	androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-	androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-	androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-	androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-	androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-	androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-	androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-	androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
-	[plugins]
-	android-application = { id = "com.android.application", version.ref = "agp" }
-	kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-	kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-	```
+   [plugins]
+   android-application = { id = "com.android.application", version.ref = "agp" }
+   kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+   kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+   ```
+   {{% /notice %}}
 
 4. Android ビューから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
 
@@ -328,6 +326,12 @@ Toolkit には、Compose に対応した他の特別なコンポーネントも�
 
 ### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
+
+{{% notice info %}}
+
+ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティ [7-Zip](https://www.7-zip.org/) をお勧めします。
+
+{{% /notice %}}
 
 ローカルでドキュメントを公開する方法：
 
