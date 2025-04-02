@@ -25,7 +25,7 @@ aliases = ["/unity/install-and-set-up/"]
 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています。
 
 * [Map Creator UI](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#map-creator-ui) では、コードを記述せずにシーンを作成できます。
-* [Components](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#components) では、シーン内のゲームオブジェクトにアタッチできます。
+* [Components](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#components) では、シーン内のゲーム オブジェクトにアタッチできます。
 * [C# API](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#c-api) では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。
 
 ## 追加のダウンロード
