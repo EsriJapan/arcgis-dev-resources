@@ -216,13 +216,9 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/make-widget-backward-compatible/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/python/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/debugging-widget-development/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deploy-pattern/</loc>
   </url><url>
@@ -230,7 +226,7 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/appstudio/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/third-party-libraries/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</loc>
   </url><url>
@@ -238,21 +234,13 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/unit-testing/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-assets/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/code-linting/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/override-webpack-config/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/copy-files-to-dist-folder/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/share-code-between-widgets/</loc>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/add-layers-to-a-map/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/create-startup-app-wab/</loc>
   </url><url>
