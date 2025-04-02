@@ -130,18 +130,6 @@ Xcode 16 での手順
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</guid>
-      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
-ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
- インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
-サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
-    </item>
-    
-    <item>
-      <title>インストールガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/install-and-set-up/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -151,21 +139,33 @@ Xcode 16 での手順
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unity は Unity 用のプラグインです。ArcGIS Maps SDK for Unity を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
 Unity のインストール このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、Unity をインストールしてください。
 プラグインのインストール ArcGIS Maps SDK for Unity を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。
-シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています：
- Map Creator UI では、コードを記述せずにシーンを作成できます。 Components では、シーン内のゲームオブジェクトにアタッチできます。 C# API では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。  追加のダウンロード ダウンロードページから、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプルドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</description>
+シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています。
+ Map Creator UI では、コードを記述せずにシーンを作成できます。 Components では、シーン内のゲームオブジェクトにアタッチできます。 C# API では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。  追加のダウンロード ダウンロード ページから、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルの Web サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</description>
     </item>
     
     <item>
-      <title>インストールガイド</title>
+      <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</guid>
-      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and set up
+      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and setup
 このインストール ガイドでは、ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unreal Engine は Unreal Engine 用のプラグインです。ArcGIS Maps SDK for Unreal Engine を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
-Unreal Engine のインストール このプラグインは、Unreal Engine 5.2、5.3、および 5.4 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
+Unreal Engine のインストール このプラグインは、Unreal Engine 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
 プラグインのインストール ArcGIS Maps SDK for Unreal Engine を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。</description>
+    </item>
+    
+    <item>
+      <title>インストール ガイド</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</guid>
+      <description>ArcGIS Web AppBuilder は ArcGIS Online あるいは Portal for ArcGIS に組み込まれた機能として提供されており、ウィジェット（機能）やテーマ（デザイン）を組み合わせることにより、GIS やプログラミングなどの専門知識がなくても誰でも簡単に Web アプリケーションを作成できるソフトウェアです。 Developer Edition（開発者向けエディション）はこれらの機能に加え、開発者のためにウィジェットやテーマを独自に開発するためのフレームワークを提供します。また、作成したアプリケーションをダウンロードし、独自のサーバーにホストすることも可能です。
+ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
+ インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
+サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
     </item>
     
     <item>
@@ -434,10 +434,10 @@ app config では、ページは pages で定義され、ページ構造は page
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</guid>
       <description>出典：ArcGIS Maps SDK for Unity - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unity は、ソースコードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
-新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて プロジェクト (Projects) タブを選択し、新しいプロジェクト (New project) ボタンをクリックします。
-  ポップアップ ウィンドウで、以下を定義します：
- エディター バージョン：ArcGIS Maps SDK for Unity は Unity 2021.3.x および 2022.3.x LTS をサポートしています。複数の Unity エディターバージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.x) の両方をサポートしています。初めて使用する場合は、Download template ボタンをクリックして、これらのテンプレートをダウンロードする必要があります。HDRP または URP テンプレート以外のテンプレートを選択した場合は、レンダーパイプライン パッケージを手動でインストールします。(レガシー ビルトイン レンダー パイプラインはサポートされていません。) プロジェクト名：プロジェクトに関連するアセット、シーン、その他のファイルを保存するメインプロジェクト フォルダーの名前を設定します。 場所：プロジェクトの保存場所を設定します。デフォルトのプロジェクトの場所は、コンピューターのホーム フォルダーに設定されています。    プラグインのインストール Unity パッケージ マネージャー (Package Manager) を使用してプラグインをインストールします。Unity パッケージ マネージャー (Package Manager) の詳細については、Unity ドキュメントのトピック Unity の Package Manager を参照してください。</description>
+ArcGIS Maps SDK for Unity は、ソース コードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて [プロジェクト (Projects)] タブを選択し、[新しいプロジェクト (New project)] ボタンをクリックします。
+  ポップアップ ウィンドウで、以下を定義します。
+ エディター バージョン：ArcGIS Maps SDK for Unity は Unity 2022.3.x LTS および Unity 6 をサポートしています。複数の Unity エディター バージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.</description>
     </item>
     
     <item>
@@ -447,10 +447,10 @@ ArcGIS Maps SDK for Unity は、ソースコードとサンプル アセット�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</guid>
       <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unreal Engine は、ソースコードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
+ArcGIS Maps SDK for Unreal Engine は、ソース コードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
 新規プロジェクトの作成 Unreal Engine には、お客様の業種に合ったさまざまな開発テンプレート (Developer Template)が用意されています。 どのテンプレートを選べばよいかわからない場合は、ゲーム テンプレート (Games Template) とシミュレーション テンプレート (Simulation Template) をお勧めします。これらのテンプレートの詳細については、Unreal Engine テンプレート リファレンスを参照してください。
-  Unreal Engine を起動するには、Epic Games ランチャー を開き、ライブラリ (Library) をクリックします。サポートされているバージョンを選択し、起動 (Launch) をクリックします。Unreal Engine を起動すると、Unreal プロジェクトブラウザ (Project Browser) が自動的に開きます。
-  最近利用したプロジェクト (Recent Project) の下で、開発テンプレート (Developer Template) の**ゲーム テンプレート (Games Template)**を選択してください。</description>
+  Unreal Engine を起動するには、Epic Games ランチャー を開き、[ライブラリ (Library)] をクリックします。サポートされているバージョンを選択し、[起動 (Launch)] をクリックします。Unreal Engine を起動すると、[Unreal プロジェクトブラウザ (Project Browser)] が自動的に開きます。
+  [最近利用したプロジェクト (Recent Project)] の下で、[開発テンプレート (Developer Template)] の[ゲーム テンプレート (Games Template)]を選択してください。</description>
     </item>
     
     <item>
