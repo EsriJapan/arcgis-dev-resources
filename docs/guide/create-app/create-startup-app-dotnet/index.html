@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-02T20:28:03 JST">
+<meta name="revised" content="2025-04-03T14:48:46 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -995,10 +995,11 @@ if (!doNotTrack) {
     <li><a href="#web-マップを表示する">Web マップを表示する</a></li>
     <li><a href="#オプション-2-完成したソリューションをダウンロードする">オプション 2: 完成したソリューションをダウンロードする</a>
       <ul>
-        <li></li>
+        <li><a href="#ソリューションに開発者認証情報を設定する">ソリューションに開発者認証情報を設定する</a></li>
         <li><a href="#アプリを実行する-1">アプリを実行する</a></li>
       </ul>
     </li>
+    <li><a href="#次のチュートリアル">次のチュートリアル</a></li>
   </ul>
 </nav>
         </div>
@@ -1070,6 +1071,9 @@ if (!doNotTrack) {
 </ul>
 <p>詳しくは、<a href="https://developers.arcgis.com/kotlin/security-and-authentication/#user-authentication">ユーザー認証</a>をご覧ください。</p>
 <p>このチュートリアルで使用するセキュアなリソースにアクセスするための新しい OAuth 認証情報を作成します。</p>
+<div class="notices warning" >
+<p>チュートリアルの後の設定ステップでは、リダイレクト URL が my-app://auth であると仮定します。別の URL を使用する場合は、それに応じてアプリの設定を行ってください。</p>
+</div>
 <ol>
 <li>
 <p><a href="https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/">ユーザー認証用の OAuth 認証情報を作成する</a>チュートリアルを完了します。</p>
@@ -1162,10 +1166,10 @@ if (!doNotTrack) {
 </ol>
 <h3 id="アプリ-ロジックを保存するビュー-モデルを作成する">アプリ ロジックを保存するビュー モデルを作成する</h3>
 <p>このアプリは、以降のすべてのチュートリアルで使用する基盤を構築するためのものです。堅固な設計で構築することをお勧めします。</p>
-<p><strong>Model-View-ViewModel (MVVM)</strong> デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、<code>モデル</code>はアプリで消費されるデータを表し、<code>ビュー</code> はユーザー インターフェイスであり、<code>ビューモデル</code> にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。</p>
-<p>MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインのビュー コンポーネントになります。クラスの多くは、モデルの役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 ビュー モデル コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、ビューに表示するためのデータを提供したりするため、記述するコードの多くはここになります。</p>
+<p><strong>Model-View-ViewModel (MVVM)</strong> デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、<code>モデル</code>はアプリで消費されるデータを表し、<code>ビュー</code> はユーザー インターフェイスであり、<code>ビュー モデル</code> にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。</p>
+<p>MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインの<code>ビュー</code> コンポーネントになります。クラスの多くは、<code>モデル</code>の役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 <code>ビュー モデル</code> コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、<code>ビュー</code>に表示するためのデータを提供したりするため、記述するコードの多くはここになります。</p>
 <div class="notices note" >
-<p>すべての ArcGIS Maps SDK for .NET プロジェクト テンプレートは、MVVM デザインパターンを使用しています。</p>
+<p>すべての ArcGIS Maps SDK for .NET プロジェクト テンプレートは、MVVM デザイン パターンを使用しています。</p>
 </div>
 <ol>
 <li>
@@ -1191,7 +1195,7 @@ if (!doNotTrack) {
 <span style="color:#75715e">// 追加終了
 </span></code></pre></div></li>
 <li>
-<p>MapViewModel クラスに <code>INotifyPropertyChanged</code> インターフェイスを実装します。</p>
+<p><code>MapViewModel</code> クラスに <code>INotifyPropertyChanged</code> インターフェイスを実装します。</p>
 <p>このインターフェイスは、ビュー モデルのプロパティが変更されたことをクライアント (ビュー) に通知するために使用される <code>PropertyChanged</code> イベントを定義します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> DisplayAMap
@@ -1294,8 +1298,8 @@ if (!doNotTrack) {
 <p>これで <code>MapViewModel</code> が完成しました。</p>
 <p><b>MVVM</b> デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成した <code>ビュー モデル</code> のコードは、通常、サポートされているすべての .NET プラットフォームで動作します。</p>
 <h3 id="開発者認証情報の設定">開発者認証情報の設定</h3>
-<p>アプリのユーザーが ArcGIS Location Service やセキュアなコンテンツにアクセスできるようにするには、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。</p>
-<h4 id="アプリで-api-キーを設定する">アプリで API キーを設定する</h4>
+<p>アプリのユーザーが ArcGIS ロケーション サービスやセキュアなコンテンツにアクセスできるようにするには、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。</p>
+<h4 id="api-キー認証-1">API キー認証</h4>
 <ol>
 <li>
 <p><b>ソリューション エクスプローラー</b>で、<b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。</p>
@@ -1323,7 +1327,7 @@ if (!doNotTrack) {
 <p><code>App.xaml.cs</code> ファイルを保存して閉じます。</p>
 </li>
 </ol>
-<h4 id="アプリでユーザー認証を使用する">アプリでユーザー認証を使用する</h4>
+<h4 id="ユーザー認証-1">ユーザー認証</h4>
 <ol>
 <li>Visual Studio の [プロジェクト] メニューから [クラスの追加] を選択します。クラス名を <code>ArcGISLoginPrompt.cs</code> とし、[追加] をクリックします。新しいクラスがプロジェクトに追加され、Visual Studio で開きます。</li>
 <li>新しいクラスのコードをすべて選択し、削除します。</li>
@@ -1623,6 +1627,7 @@ if (!doNotTrack) {
 <div class="notices note" >
 <p>OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。</p>
 </div>
+<p>次に、ビュー モデルを使用するビューをプロジェクトに設定します。</p>
 <h3 id="マップ-ビューを追加する">マップ ビューを追加する</h3>
 <p><a href="https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html"><code>MapView</code></a> コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、<code>MapViewModel</code> で定義したマップを使用するように設定します。</p>
 <ol>
@@ -1750,13 +1755,15 @@ if (!doNotTrack) {
 <ol>
 <li><a href="https://developers.arcgis.com/net/zips/display-a-map.zip">Download solution</a> をクリックしてください。</li>
 <li>マシンの任意の場所にファイルを解凍します。</li>
-<li>.sln ファイルを Visual Studio で開きます。</li>
+<li><code>.sln</code> ファイルを Visual Studio で開きます。</li>
 </ol>
 <p>ダウンロードしたソリューションには認証情報が含まれていないため、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>で作成した開発者認証情報を追加する必要があります。</p>
-<h4 id="アプリで-api-キーを設定する-1">アプリで API キーを設定する</h4>
+<h3 id="ソリューションに開発者認証情報を設定する">ソリューションに開発者認証情報を設定する</h3>
+<p>アプリのユーザーが ArcGIS ロケーション サービスやセキュアなコンテンツにアクセスできるようにするには、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。</p>
+<h4 id="api-キー認証-2">API キー認証</h4>
 <ol>
 <li>Visual Studio の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。</li>
-<li>ArcGISEnvironment.ApiKey プロパティに API キーのアクセス トークンを設定します。</li>
+<li><code>ArcGISEnvironment.ApiKey</code> プロパティに API キーのアクセス トークンを設定します。</li>
 </ol>
 <p>App.xaml.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">        <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> OnStartup(StartupEventArgs e)
@@ -1790,9 +1797,9 @@ if (!doNotTrack) {
 </code></pre></div><div class="notices note" >
 <p>アクセス トークンは、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。</p>
 </div>
-<h4 id="アプリでユーザー認証を使用する-1">アプリでユーザー認証を使用する</h4>
+<h4 id="ユーザー認証-2">ユーザー認証</h4>
 <ol>
-<li>Visual Studio のソリューション エクスプローラーから ArcGISLoginPrompt.cs ファイルを開きます。</li>
+<li>Visual Studio の<b>ソリューション エクスプローラー</b>から <code>ArcGISLoginPrompt.cs</code> ファイルを開きます。</li>
 <li>クライアント ID (<code>OAuthClientID</code>) とリダイレクト URL (<code>OAuthRedirectUri</code>) の値を設定します。これらは<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>で作成したユーザー認証設定です。</li>
 </ol>
 <p>ArcGISLoginPrompt.cs</p>
@@ -1806,7 +1813,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> AppClientId = <span style="color:#e6db74">&#34;YOUR_CLIENT_ID&#34;</span>;
         <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> OAuthRedirectUrl = <span style="color:#e6db74">&#34;YOUR_REDIRECT_URL&#34;</span>;
 </code></pre></div><ol start="3">
-<li>Visual Studio のソリューション エクスプローラーで App.xaml.cs をクリックしてファイルを開きます。</li>
+<li><b>Visual Studio</b> の<b>ソリューション エクスプローラー</b>で <b>bApp.xaml.cs</b> をクリックしてファイルを開きます。</li>
 <li>API キーのアクセス トークンを設定するコード行を削除します。</li>
 </ol>
 <p>App.xaml.cs</p>
@@ -1830,8 +1837,13 @@ if (!doNotTrack) {
 <h3 id="アプリを実行する-1">アプリを実行する</h3>
 <p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの <b>&lt;F5&gt;</b> キーを押して) アプリを実行します。
 カリフォルニア州サンタモニカ山脈を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。</p>
-<hr>
-<p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティと認証について学びましょう！</a></p>
+<h2 id="次のチュートリアル">次のチュートリアル</h2>
+<p>これらのチュートリアルでは、追加の <a href="https://developers.arcgis.com/net/key-features/">API 機能</a>、<a href="https://developers.arcgis.com/documentation/mapping-and-location-services/">ArcGIS ロケーション サービス</a>および <a href="https://developers.arcgis.com/documentation/mapping-and-location-services/tools/">ArcGIS ツール</a>の使用方法について説明します。(英語ページ)</p>
+<ul>
+<li><a href="https://developers.arcgis.com/net/maps-2d/tutorials/add-a-point-line-and-polygon/">ポイント、ラインおよびポリゴンの追加</a></li>
+<li><a href="https://developers.arcgis.com/net/scenes-3d/tutorials/display-a-scene/">シーンの表示</a></li>
+<li><a href="https://developers.arcgis.com/net/layers/tutorials/add-a-feature-layer/">フィーチャ レイヤーの追加</a></li>
+</ul>
 
 
     
