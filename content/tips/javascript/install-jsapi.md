@@ -24,7 +24,7 @@ Esri がホストしている CDN にインターネット経由で参照する�
 <!-- まずはダウンロードしたサンプル コードを実行してみましょう。 -->
 
 1. ダウンロードしたライブラリの zip ファイルを解凍します。
-2. `\arcgis_js_v431_api\arcgis_js_api\javascript\4.31\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.31\`)
+2. `\arcgis_js_v432_api\arcgis_js_api\javascript\4.32\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.32\`)
 
 ## 必要条件
 
@@ -38,8 +38,7 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
   | `.wasm` | `application/wasm` | [WebAssembly](https://webassembly.org/) |
   | `.woff` | `application/font-woff` | [Web Open Font Format](https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF) |
   | `.woff2` | `application/font-woff2` | [WOFF File Format 2.0](https://www.w3.org/TR/WOFF2/) |
-  | `.wsv` | `application/octet-stream` | SceneViewの星の可視化に対応 |
-  | `.pbf` | `application/x-protobuf` | [一部のレイヤーの MapView ラベル](https://developers.arcgis.com/javascript/latest/labeling/#mapview)用のフォント |
+  | `.wsv` | `application/octet-stream` | SceneViewの星の可視化に対応 |(https://developers.arcgis.com/javascript/latest/labeling/#mapview)用のフォント |
 
 - [Google: HTTPSが重要な理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Google: HTTPS でサイトを保護する](https://support.google.com/webmasters/answer/6073543)
@@ -47,7 +46,7 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 ## インストールのテスト
 
 以下のサンプルは、ArcGIS Maps SDK for JavaScript のダウンロード版に含まれています。
-ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_api/arcgis_js_api/javascript/4.31/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.31/index.html を開くことにより、API をテストすることができます。
+ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_api/arcgis_js_api/javascript/4.32/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.32/index.html を開くことにより、API をテストすることができます。
 
 ```html
 <!DOCTYPE html>
@@ -133,5 +132,5 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_ap
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.31となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.32となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
