@@ -105,9 +105,9 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 ArcGIS Maps SDK for Local Server では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
 アプリケーションでオフラインで[ジオプロセシング タスク](https://developers.arcgis.com/net/local-server/supported-geoprocessing-tools/)を実行する場合は、[Local Server](https://developers.arcgis.com/net/local-server/) のトピックの手順に従って Local Server をインストールします。
 
-{{% notice note %}}
+{{% notice warning %}}
 
-ArcGIS Maps SDK for Local Server は非推奨となります。詳細は [サポート終了情報: ArcGIS Maps SDK for Local Server](https://tech-support.esrij.com/arcgis/article/web/knowledge5898.html) を参照してください。
+ArcGIS Maps SDK for Local Server は非推奨です。詳細は [サポート終了情報: ArcGIS Maps SDK for Local Server](https://tech-support.esrij.com/arcgis/article/web/knowledge5898.html) を参照してください。
 
 {{% /notice %}}
 
