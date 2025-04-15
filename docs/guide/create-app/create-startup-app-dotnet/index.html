@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-11T14:17:20 JST">
+<meta name="revised" content="2025-04-15T16:39:23 JST">
 <title>.NET :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1017,7 +1017,7 @@ if (!doNotTrack) {
 <p>このチュートリアルでは ArcGIS Maps SDK for .NET を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/startup-dotnet100.0/display_map_jp.png" width="650px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。</p>
-<p>このチュートリアルでは、地形ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
+<p>このチュートリアルでは、地形図ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
 <div class="notices note" >
 <p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services guide</a> の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="../../../basemaps/">ベースマップ</a> を参照してください。</p>
 </div>
@@ -1185,6 +1185,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> Esri.ArcGISRuntime.Mapping;
 <span style="color:#66d9ef">using</span> System.ComponentModel;
 <span style="color:#66d9ef">using</span> System.Runtime.CompilerServices;
+<span style="color:#66d9ef">using</span> Esri.ArcGISRuntime.Geometry;
 <span style="color:#75715e">// 追加終了
 </span></code></pre></div></li>
 <li>
@@ -1242,7 +1243,7 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p><code>MapViewModel</code> クラスに <code>SetupMap</code> という関数を追加します。この関数は、新しいマップを作成して <code>Map</code> プロパティを設定します。</p>
-<p>マップは、地形 ベクタータイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。</p>
+<p>マップは、地形図ベクター タイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。</p>
 <p>MapViewModel.cs</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">private</span> Map _map;
     <span style="color:#66d9ef">public</span> Map Map
@@ -1262,7 +1263,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>        BasemapStyleParameters bsp = <span style="color:#66d9ef">new</span> BasemapStyleParameters();
         bsp.SpecificLanguage = System.Globalization.CultureInfo.CreateSpecificCulture(<span style="color:#e6db74">&#34;ja&#34;</span>);
         Basemap basemap = <span style="color:#66d9ef">new</span> Basemap(BasemapStyle.ArcGISTopographic, bsp);
-        <span style="color:#75715e">//地形 ベクタータイル ベースマップを使用して新しいマップを作成します。
+        <span style="color:#75715e">//地形図ベクター タイル ベースマップを使用して新しいマップを作成します。
 </span><span style="color:#75715e"></span>        Map = <span style="color:#66d9ef">new</span> Map(basemap);
     }
     <span style="color:#75715e">// 追加終了
@@ -1312,12 +1313,15 @@ if (!doNotTrack) {
     }
     <span style="color:#75715e">// 追加終了
 </span><span style="color:#75715e"></span>}
-</code></pre></div> <div class="notices note" >
-<p>API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。</p>
- </div>
+</code></pre></div></li>
+<li>
+<p>&ldquo;API キー&rdquo; は先ほど作成した API キーに置き換えてください。</p>
 </li>
 <li>
 <p><code>App.xaml.cs</code> ファイルを保存して閉じます。</p>
+ <div class="notices note" >
+<p>API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。</p>
+ </div>
 </li>
 </ol>
 <h4 id="ユーザー認証-1">ユーザー認証</h4>
@@ -1711,7 +1715,7 @@ if (!doNotTrack) {
 </ol>
 <h3 id="アプリを実行する">アプリを実行する</h3>
 <p>[デバッグ] メニュー &gt; [デバッグの開始] をクリックして (またはキーボードの <b>&lt;F5&gt;</b> キーを押して) アプリを実行します。</p>
-<p>富士山を中心に、地形 ベクタータイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
+<p>富士山を中心に、地形図ベクター タイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。</p>
 <p>完成版のプロジェクトは<a href="https://developers.arcgis.com/net/zips/display-a-map.zip">こちら</a>からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。</p>
 <h2 id="web-マップを表示する">Web マップを表示する</h2>
 <p>「<a href="../../services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>
@@ -1806,7 +1810,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> AppClientId = <span style="color:#e6db74">&#34;YOUR_CLIENT_ID&#34;</span>;
         <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> OAuthRedirectUrl = <span style="color:#e6db74">&#34;YOUR_REDIRECT_URL&#34;</span>;
 </code></pre></div><ol start="3">
-<li><b>Visual Studio</b> の<b>ソリューション エクスプローラー</b>で <b>bApp.xaml.cs</b> をクリックしてファイルを開きます。</li>
+<li><b>Visual Studio</b> の<b>ソリューション エクスプローラー</b>で <b>App.xaml.cs</b> をクリックしてファイルを開きます。</li>
 <li>API キーのアクセス トークンを設定するコード行を削除します。</li>
 </ol>
 <p>App.xaml.cs</p>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-11T14:17:21 JST">
+<meta name="revised" content="2025-04-15T16:39:23 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1031,11 +1031,12 @@ if (!doNotTrack) {
 <h3 id="toolkit">Toolkit</h3>
 <p><a href="https://developers.arcgis.com/net/toolkit/">ArcGIS Maps SDK for .NET Toolkit</a> には、ユーザー インターフェイス（UI）コントロールとコンポーネントが含まれており、すぐに使用したり、アプリ用にカスタマイズしたりできます。Toolkit は、NuGet パッケージとしてプロジェクトに含めることも、<a href="https://github.com/Esri/arcgis-toolkit-dotnet">GitHub リポジトリ</a>からソース コードを入手して自分でビルドすることもできます。</p>
 <h3 id="visual-studio-プロジェクト-テンプレートのインストールオプション">Visual Studio プロジェクト テンプレートのインストール（オプション）</h3>
-<h4 id="拡張機能のインストール">拡張機能のインストール</h4>
-<p>Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの <a href="https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions">Visual Studio の機能拡張を管理する</a> のトピックを参照してください。</p>
+<p>Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します</p>
 <div class="notices note" >
 <p>WPF、WinUI、.NET MAUI プロジェクト テンプレートには、Visual Studio 17.8 以降が必要です。Visual Studio for Mac はサポートされなくなりました。Windows では Visual Studio からテンプレートを使用して ArcGIS Maps SDK for .NET アプリを作成できます。MacOS では、コマンド ライン インターフェイスからテンプレートを使用してアプリを作成します。</p>
 </div>
+<h4 id="拡張機能のインストール">拡張機能のインストール</h4>
+<p>Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの <a href="https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions">Visual Studio の機能拡張を管理する</a> のトピックを参照してください。</p>
 <div class="notices note" >
 <p>.NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は <a href="https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files">PackageReference</a> をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために <a href="https://docs.microsoft.com/ja-jp/nuget/reference/packages-config">packages.config</a> が既定になっています。<code>packages.config</code> を使用すると、バージョンをアップグレードするときに問題が発生する可能性があります。このような状況を軽減するには、Microsoft の推奨に従って、<a href="https://learn.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference">packages.config から PackageReference に移行</a> することを検討してください。</p>
 </div>
@@ -1094,6 +1095,9 @@ if (!doNotTrack) {
 <h3 id="local-server">Local Server</h3>
 <p>ArcGIS Maps SDK for Local Server では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
 アプリケーションでオフラインで<a href="https://developers.arcgis.com/net/local-server/supported-geoprocessing-tools/">ジオプロセシング タスク</a>を実行する場合は、<a href="https://developers.arcgis.com/net/local-server/">Local Server</a> のトピックの手順に従って Local Server をインストールします。</p>
+<div class="notices note" >
+<p>ArcGIS Maps SDK for Local Server は非推奨となります。詳細は <a href="https://tech-support.esrij.com/arcgis/article/web/knowledge5898.html">サポート終了情報: ArcGIS Maps SDK for Local Server</a> を参照してください。</p>
+</div>
 <h3 id="追加のデータ">追加のデータ</h3>
 <h4 id="投影エンジン-データ">投影エンジン データ</h4>
 <p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>

@@ -15,7 +15,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
-このチュートリアルでは、地形ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルでは、地形図ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
 {{% notice note %}}
 
@@ -189,6 +189,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     using Esri.ArcGISRuntime.Mapping;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using Esri.ArcGISRuntime.Geometry;
     // 追加終了
     ```
 
@@ -258,7 +259,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 6. `MapViewModel` クラスに `SetupMap` という関数を追加します。この関数は、新しいマップを作成して `Map` プロパティを設定します。
 
-   マップは、地形 ベクタータイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
+   マップは、地形図ベクター タイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
 
     MapViewModel.cs
 
@@ -281,7 +282,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             BasemapStyleParameters bsp = new BasemapStyleParameters();
             bsp.SpecificLanguage = System.Globalization.CultureInfo.CreateSpecificCulture("ja");
             Basemap basemap = new Basemap(BasemapStyle.ArcGISTopographic, bsp);
-            //地形 ベクタータイル ベースマップを使用して新しいマップを作成します。
+            //地形図ベクター タイル ベースマップを使用して新しいマップを作成します。
             Map = new Map(basemap);
         }
         // 追加終了
@@ -342,6 +343,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
         // 追加終了
     }
     ```
+3. "API キー" は先ほど作成した API キーに置き換えてください。
+4. `App.xaml.cs` ファイルを保存して閉じます。
+
     {{% notice note %}}
 
     API キーは、このチュートリアルの便宜上、コードに直接格納されていますが、ソース コードに API キーを格納することは、ベスト プラクティスではありません。
@@ -349,7 +353,6 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     {{% /notice %}}
 
 
-3. `App.xaml.cs` ファイルを保存して閉じます。
 
 #### ユーザー認証
 
@@ -760,7 +763,7 @@ OAuth 認証情報は、このチュートリアルの便宜上、コードに�
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。
 
-富士山を中心に、地形 ベクタータイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
+富士山を中心に、地形図ベクター タイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
 完成版のプロジェクトは[こちら](https://developers.arcgis.com/net/zips/display-a-map.zip)からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。
 
@@ -869,7 +872,7 @@ ArcGISLoginPrompt.cs
         private const string OAuthRedirectUrl = "YOUR_REDIRECT_URL";
 ```
 
-3. <b>Visual Studio</b> の<b>ソリューション エクスプローラー</b>で <b>bApp.xaml.cs</b> をクリックしてファイルを開きます。
+3. <b>Visual Studio</b> の<b>ソリューション エクスプローラー</b>で <b>App.xaml.cs</b> をクリックしてファイルを開きます。
 4. API キーのアクセス トークンを設定するコード行を削除します。
 
 App.xaml.cs

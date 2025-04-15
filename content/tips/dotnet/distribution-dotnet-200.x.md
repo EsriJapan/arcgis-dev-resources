@@ -8,7 +8,7 @@ aliases = ["/dotnet/distribution-dotnet-200.x/"]
 ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 
 ## API キーの設定
-[ArcGIS Location Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-dotnet/#api-キーを設定する)をご覧ください。
+[ArcGIS Location Platform のロケーションサービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、API キーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-dotnet/#api-キーを設定する)をご参照ください。
 
 ## ライセンス認証のステップ
 
@@ -25,8 +25,8 @@ ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したア�
 
 
 3. __[ライセンスの認証](#ライセンスの認証)__
-    * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
-    * __[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)__
+    * __[Lite ライセンス キーを使用した認証](#lite-ライセンスキーを使用した認証)__
+    * __[配布パックのライセンス キーを使用した認証](#配布パックのライセンスキーを使用した認証)__
     * __[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)__
 
 
@@ -38,12 +38,12 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 | ライセンス | 利用できる機能 |
 |:-----|:-----|
-| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のパブリックなフィーチャ サービス、ArcGIS Location Platform のフィーチャサービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティ ネットワークのトレース |
+| Lite | ・地図表示（2D/3D）<br>・フィーチャの表示/検索<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のパブリックなフィーチャ サービス、ArcGIS Location Platform のフィーチャ サービス）<br>・ルート検索/到達圏解析/最寄り施設検索<br>・住所検索/リバース ジオコーディング<br>・ユーティリティー ネットワークのトレース |
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のセキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML の表示/編集（ローカル ファイル）<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・3D 解析<br>・ローカル サーバーの標準的な機能 |
 | Advanced | ・Standard ライセンスで利用できるすべての機能<br>・ローカル サーバーの高度な機能 |
 | Analysis Extension | ・Standard ライセンス以上で利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索<br>・ローカル サーバーの高度な機能 |
-| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティ ネットワークのネットワーク フィーチャの編集</br>・ユーティリティ ネットワークのトポロジーの検証 |
+| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティー ネットワークのネットワーク フィーチャの編集</br>・ユーティリティー ネットワークのトポロジーの検証 |
 
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-dotnet/license/)をご参照ください。
@@ -52,15 +52,15 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 ライセンスの認証は次の2つの方法があります。
 
-1. __ライセンスキーを使用した認証__
-    * ライセンスキーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。
+1. __ライセンス キーを使用した認証__
+    * ライセンス キーを使用した認証は、ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証します。
 
 2. __指定ユーザーによるアカウント認証__  
     * 指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。
-    * ログインを行う指定ユーザーアカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
+    * ログインを行う指定ユーザー アカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
 
-### 指定ユーザーのユーザータイプとライセンスレベルの対比表
-| ユーザータイプ | ライセンスレベル |
+### 指定ユーザーのユーザー タイプとライセンスレベルの対比表
+| ユーザー タイプ | ライセンスレベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Contributor / Mobile Worker | Basic |
@@ -69,9 +69,9 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 ### Lite ライセンスの認証方法
 
-1. __ライセンスキーを使用した認証__
+1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Lite のライセンスキーを取得する必要があります
-    * 認証の方法は、[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)をご参照ください
+    * 認証の方法は、[Lite ライセンス キーを使用した認証](#lite-ライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Lite ライセンスレベルを保有する）が必要です
@@ -80,9 +80,9 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 ### Basic ライセンスの認証方法
 
-1. __ライセンスキーを使用した認証__
+1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Basic の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
     * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Basic ライセンスレベルを保有する）が必要です
@@ -91,9 +91,9 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 ### Standard ライセンスの認証方法
 
-1. __ライセンスキーを使用した認証__
+1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Standard の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
@@ -103,13 +103,13 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 ### Advanced ライセンスの認証方法
 
-1. __ライセンスキーを使用した認証__
+1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Advanced の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセン-スキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Advanced ライセンスレベルを保有する）が必要です
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Advanced ライセンス レベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
@@ -117,7 +117,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 1. __ライセンスキーを使用した認証__
     * ArcGIS Runtime Analysis Extension の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンス キーを使用した認証](#配布パックのライセン-スキーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
@@ -129,7 +129,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 1. __ライセンスキーを使用した認証__
     * ArcGIS Runtime Advanced Editing Extension の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンスキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、ArcGIS Enterprise 11.1 以前のバージョンでは使用できません。
@@ -142,14 +142,14 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 以下の認証に応じた作業を行ってください。
 
 
-### Lite ライセンスキーを使用した認証
-ArcGIS Runtime Lite のライセンスキーを Esri Developer のサイトから取得し、取得したライセンスキーを利用して、アプリケーションを Lite ライセンスで認証することができます。
-最初に以下の手順で Lite レベルのライセンスキーを取得します。
+### Lite ライセンス キーを使用した認証
+ArcGIS Runtime Lite のライセンス キーを Esri Developer のサイトから取得し、取得したライセンス キーを利用して、アプリケーションを Lite ライセンスで認証することができます。
+最初に以下の手順で Lite レベルのライセンス キーを取得します。
 
  1. [Get a license](https://developers.arcgis.com/net/license-and-deployment/get-a-license/#your-runtime-lite-license-string) ページにアクセスします
     * ArcGIS Location Platform アカウント、または、ArcGIS Online アカウントにサインインしてない場合は、いずれかのアカウントでサインインします。
     * いずれかのアカウントもお持ちでない場合は、ArcGIS Location Platform アカウントに [サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
- 2. 表示されたライセンスキーをコピーします
+ 2. 表示されたライセンス キーをコピーします
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="600px">
  3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
 

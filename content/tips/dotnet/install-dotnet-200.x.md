@@ -34,15 +34,17 @@ ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされ
 
 ### Visual Studio プロジェクト テンプレートのインストール（オプション）
 
-#### 拡張機能のインストール
-
-Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの [Visual Studio の機能拡張を管理する](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions) のトピックを参照してください。
+Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します
 
 {{% notice note %}}
 
 WPF、WinUI、.NET MAUI プロジェクト テンプレートには、Visual Studio 17.8 以降が必要です。Visual Studio for Mac はサポートされなくなりました。Windows では Visual Studio からテンプレートを使用して ArcGIS Maps SDK for .NET アプリを作成できます。MacOS では、コマンド ライン インターフェイスからテンプレートを使用してアプリを作成します。
 
 {{% /notice %}}
+
+#### 拡張機能のインストール
+
+Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの [Visual Studio の機能拡張を管理する](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions) のトピックを参照してください。
 
 {{% notice note %}}
 
@@ -102,6 +104,12 @@ WPF、WinUI、.NET MAUI プロジェクト テンプレートには、Visual Stu
 
 ArcGIS Maps SDK for Local Server では、オフラインでジオプロセシング タスクを実行して、アプリケーションで高度な空間解析とデータ操作を行うことができます。これらのタスクは、ArcGIS Enterprise で実行されるジオプロセシング タスクと同じように動作します。
 アプリケーションでオフラインで[ジオプロセシング タスク](https://developers.arcgis.com/net/local-server/supported-geoprocessing-tools/)を実行する場合は、[Local Server](https://developers.arcgis.com/net/local-server/) のトピックの手順に従って Local Server をインストールします。
+
+{{% notice note %}}
+
+ArcGIS Maps SDK for Local Server は非推奨となります。詳細は [サポート終了情報: ArcGIS Maps SDK for Local Server](https://tech-support.esrij.com/arcgis/article/web/knowledge5898.html) を参照してください。
+
+{{% /notice %}}
 
 ### 追加のデータ
 #### 投影エンジン データ
