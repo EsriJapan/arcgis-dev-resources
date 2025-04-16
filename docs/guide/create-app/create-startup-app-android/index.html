@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-11T14:17:20 JST">
+<meta name="revised" content="2025-04-16T11:14:32 JST">
 <title>Android :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1039,6 +1039,7 @@ if (!doNotTrack) {
 <ol>
 <li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://developers.arcgis.com/swift/reference/system-requirements/">システム要件</a>を満たしていることを確認します。</li>
+<li>Kotlin で Android 開発をするための IDE。</li>
 </ol>
 <div class="notices note" >
 <p>このチュートリアルの<strong>ダウンロード ソリューション</strong>で利用可能なコードは、<strong>Android Studio Ladybug | 2024.2.1 Patch</strong> で作成されています。しかし、以下のステップで説明するコードは、それ以降のバージョンの Android Studio を含め、Kotlin をサポートする最新の Android IDE であれば動作するはずです。</p>
@@ -1168,19 +1169,12 @@ android <span style="color:#f92672">{</span>
         sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
         targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
     <span style="color:#f92672">}</span>
-
     kotlinOptions <span style="color:#f92672">{</span>
         jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
     <span style="color:#f92672">}</span>
-
     buildFeatures <span style="color:#f92672">{</span>
         compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
     <span style="color:#f92672">}</span>
-
-    composeOptions <span style="color:#f92672">{</span>
-        kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.12&#34;</span>
-    <span style="color:#f92672">}</span>
-
     packaging <span style="color:#f92672">{</span>
         resources <span style="color:#f92672">{</span>
             excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/{AL2.0,LGPL2.1}&#34;</span>
@@ -1214,30 +1208,16 @@ dependencies <span style="color:#f92672">{</span>
     implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">authentication</span><span style="color:#f92672">)</span>
 
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Android Studio の [New Project] ウィザードで生成されるモジュール レベルの <code>build.gradle.kts</code> ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (<code>kotlinOptions</code> ブロック) のオプションは互換性がなければなりません。互換性は Android の <a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照することで確認できます。</p>
-<p>build.gradle.kts (Module: app)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">kotlinOptions <span style="color:#f92672">{</span>
-    jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
-<span style="color:#f92672">}</span>
-
-composeOptions <span style="color:#f92672">{</span>
-    kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.12&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+</code></pre></div><p>Kotlin 2.0+では、<a href="https://developer.android.com/develop/ui/compose/compiler">Compose Compiler Gradle</a> プラグインが必要です。このプラグインは、<code>build.gradle.kts(Module :app)</code>の <code>plugins</code> ブロックで <code>alias(libs.plugins.kotlin.compose)</code> として参照され、<code>libs.versions.toml</code> ファイルでは <code>kotlin-compose = { id = &quot;org.jetbrains.kotlin.plugin.compose&quot;, version.ref = &quot;kotlin&quot; }</code> として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。</p>
+<p>2.0 より前の Kotlin バージョンを使用している場合は、Compose コンパイラーと Kotlin コンパイラーのバージョンが互換性があることを確認する必要があります。詳細については、<a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照してください。</p>
+</li>
 <li>
 <p>[Android] ビューから、[Gradle Scripts] &gt; [libs.versions.toml] を開きます。<code>[version]</code> セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、<code>[libraries]</code> セクションには、以下のライブラリの宣言を追加します。</p>
-</li>
-</ol>
 <ul>
-<li>
-<p>ArcGIS Maps SDK for Kotlin SDK</p>
-</li>
-<li>
-<p>ArcGIS Maps SDK for Kotlin Toolkit BOM</p>
-</li>
-<li>
-<p>必要な Toolkit モジュール<br>
-このチュートリアルでは、コンポーザブル <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html"><code>MapView</code></a> を含む <code>geoview-compose</code> モジュールと <code>authentication</code> モジュールが必要です。</p>
+<li>ArcGIS Maps SDK for Kotlin SDK</li>
+<li>ArcGIS Maps SDK for Kotlin Toolkit BOM</li>
+<li>アプリで使用するすべてのツールキット コンポーネント。マップビューまたはシーンビューを表示するには、コンポーザブルな <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html"><code>MapView</code></a> と<a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html"><code>SceneView</code></a> を含む <code>geoview-compose</code> モジュールの宣言が必要です。ユーザー認証を実装するには、<code>authentication</code> モジュールが必要です。</li>
+</ul>
 <p>Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。</p>
 <p><a href="https://developer.android.com/build/migrate-to-catalogs">Gradle バージョン カタログ</a>は依存関係のバージョンを宣言するための標準的な Android のアプローチです。<code>build.gradle.kts</code> でバージョン番号を指定したり、<code>version.gradle</code> でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする <code>build.gradle.kts</code> と <code>gradle/libs.version.toml</code> ファイルを生成します。</p>
 <p>Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の <code>README</code> の <a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom"><code>Using the BOM</code></a> を参照してください。</p>
@@ -1250,21 +1230,21 @@ composeOptions <span style="color:#f92672">{</span>
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bom</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-bom&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">geoview</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span> }
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">authentication</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-authentication&#34;</span> }
-</code></pre></div>  <div class="notices note" >
+</code></pre></div> <div class="notices note" >
 <p><code>libs.versions.toml</code> を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして <code>libs.versions.toml</code> ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">versions</span>]
-<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.6.0&#34;</span>
+<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.7.0&#34;</span>
 
 <span style="color:#75715e"># Version numbers added by Android Studio New Project Wizard</span>
-<span style="color:#a6e22e">agp</span> = <span style="color:#e6db74">&#34;8.7.1&#34;</span>
+<span style="color:#a6e22e">agp</span> = <span style="color:#e6db74">&#34;8.7.3&#34;</span>
 <span style="color:#a6e22e">kotlin</span> = <span style="color:#e6db74">&#34;2.0.0&#34;</span>
-<span style="color:#a6e22e">coreKtx</span> = <span style="color:#e6db74">&#34;1.13.1&#34;</span>
+<span style="color:#a6e22e">coreKtx</span> = <span style="color:#e6db74">&#34;1.15.0&#34;</span>
 <span style="color:#a6e22e">junit</span> = <span style="color:#e6db74">&#34;4.13.2&#34;</span>
 <span style="color:#a6e22e">junitVersion</span> = <span style="color:#e6db74">&#34;1.2.1&#34;</span>
 <span style="color:#a6e22e">espressoCore</span> = <span style="color:#e6db74">&#34;3.6.1&#34;</span>
-<span style="color:#a6e22e">lifecycleRuntimeKtx</span> = <span style="color:#e6db74">&#34;2.8.4&#34;</span>
+<span style="color:#a6e22e">lifecycleRuntimeKtx</span> = <span style="color:#e6db74">&#34;2.8.7&#34;</span>
 <span style="color:#a6e22e">activityCompose</span> = <span style="color:#e6db74">&#34;1.9.3&#34;</span>
-<span style="color:#a6e22e">composeBom</span> = <span style="color:#e6db74">&#34;2024.10.00&#34;</span>
+<span style="color:#a6e22e">composeBom</span> = <span style="color:#e6db74">&#34;2024.11.00&#34;</span>
 
 <span style="color:#75715e"># Other version numbers</span>
 <span style="color:#a6e22e">compileSdk</span> = <span style="color:#e6db74">&#34;35&#34;</span>
@@ -1275,8 +1255,7 @@ composeOptions <span style="color:#f92672">{</span>
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bom</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-bom&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">geoview</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span> }
-<span style="color:#75715e"># Additional modules from Toolkit, if needed, such as:</span>
-<span style="color:#75715e"># arcgis-maps-kotlin-toolkit-authentication = { group = &#34;com.esri&#34;, name = &#34;arcgis-maps-kotlin-toolkit-authentication&#34; }</span>
+<span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">authentication</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-authentication&#34;</span> }
 
 <span style="color:#a6e22e">androidx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">core</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">ktx</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;androidx.core&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;core-ktx&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;coreKtx&#34;</span> }
 <span style="color:#a6e22e">junit</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;junit&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;junit&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;junit&#34;</span> }
@@ -1297,10 +1276,8 @@ composeOptions <span style="color:#f92672">{</span>
 <span style="color:#a6e22e">android</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">application</span> = { <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;com.android.application&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;agp&#34;</span> }
 <span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">android</span> = { <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;kotlin&#34;</span> }
 <span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">id</span> = <span style="color:#e6db74">&#34;org.jetbrains.kotlin.plugin.compose&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;kotlin&#34;</span> }
-</code></pre></div>  </div>
+</code></pre></div> </div>
 </li>
-</ul>
-<ol start="6">
 <li>
 <p>[Android] ビューから、[Gradle Scripts] &gt; [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。</p>
 <p>settings.gradle.kts (Tutorial)</p>
@@ -1352,13 +1329,13 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 <h3 id="マップを作成する">マップを作成する</h3>
 <ol>
 <li>
-<p>[Android] ビューから、[app] &gt; [Kotlin+java] &gt; [com.example.app] を右クリックし、リストから [New] &gt; [package] を選択します。パッケージ名に <strong>com.example.app.screens</strong> と入力し、キーボードの [Enter] キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。</p>
+<p>[Android] ビューから、[app] &gt; [Kotlin+java] &gt; [com.example.app] を右クリックし、リストから [New] &gt; [package] を選択します。パッケージ名に <strong>com.example.app.screens</strong> と入力し、キーボードの <strong><Enter></strong> キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。</p>
 </li>
 <li>
-<p>作成した <strong>screens</strong> パッケージを右クリックし、リストから [New] &gt; [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に <strong>MainScreen</strong> と入力し、キーボードの [Enter] キーを押します。</p>
+<p>作成した <strong>screens</strong> パッケージを右クリックし、リストから [New] &gt; [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に <strong>MainScreen</strong> と入力し、キーボードの <strong><Enter></strong> キーを押します。</p>
 </li>
 <li>
-<p>MainScreen.kt で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。</p>
+<p><em>MainScreen.kt</em> で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。</p>
  <div class="notices warning" >
 <p>以下のコード ブロックでコンポーザブル関数 <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html">com.arcgismaps.tookit.geoviewcompose.MapView</a> をインポートしていることを確認してください。これは <a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit">ArcGIS Maps SDK for Kotlin Toolkit</a> で定義されています。コンポーザブルに対応したコードでは ArcGIS Maps SDK API の <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-map-view/index.html">com.arcgismaps.mapping.view.MapView</a> という名前のクラスは使用しないでください。</p>
  </div>
@@ -1394,7 +1371,7 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 </span></code></pre></div></li>
 <li>
 <p><a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-basemap-style/-arc-g-i-s-topographic/index.html"><code>BasemapStyle.ArcGISTopographic</code></a> を使用して <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html"><code>ArcGISMap</code></a> を作成し、マップ上で <code>apply{}</code> を呼び出します。この関数は <a href="https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html"><code>ArcGISMap</code></a> を返します。</p>
-<p><code>apply{}</code> の詳細については Kotlin の <a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a> を参照してください。</p>
+<p><code>apply {}</code> の詳細については Kotlin の <a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a> を参照してください。</p>
 <p>MainScreen.kt</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">createMap</span>(): ArcGISMap {
 
@@ -1616,22 +1593,26 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 }
 </code></pre></div></li>
 <li>
-<p><code>MainActivity</code> クラスの <a href="https://developer.android.com/guide/components/activities/activity-lifecycle"><code>onCreate()</code></a> ライフサイクル メソッドで、<code>OAuthUserConfiguration</code> をインスタンス化して <code>authenticatorState.oAuthUserConfiguration</code> プロパティを設定します。以前のステップで作成した clientId と redirectURL を渡します。<br>
-redirectURL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は <code>scheme://host</code> です。たとえば、リダイレクト URL が <code>myscheme://myhost</code> の場合、スキームは <code>myscheme</code>、ホストは <code>myhost</code> となります。<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>ステップの<code>ユーザー認証</code>の部分で、アプリに指定した <strong>RedirectURL</strong> を使用する必要があります。</p>
-<p>MainActivity.kt</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
-    <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
+<p><code>MainActivity</code> クラスの <a href="https://developer.android.com/guide/components/activities/activity-lifecycle"><code>onCreate()</code></a> ライフサイクル メソッドで、<code>OAuthUserConfiguration</code> をインスタンス化して <code>authenticatorState.oAuthUserConfiguration</code> プロパティを設定します。以前のステップで作成した clientId と redirectURL を渡します。</p>
+</li>
+</ol>
+<p>redirectURL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は <code>scheme://host</code> です。たとえば、リダイレクト URL が <code>myscheme://myhost</code> の場合、スキームは <code>myscheme</code>、ホストは <code>myhost</code> となります。<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a>ステップの<code>ユーザー認証</code>の部分で、アプリに指定した <strong>RedirectURL</strong> を使用する必要があります。</p>
+<pre><code>MainActivity.kt
 
-    <span style="color:#75715e">//追加開始
-</span><span style="color:#75715e"></span>    authenticatorState.oAuthUserConfiguration = OAuthUserConfiguration(
+```kt
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
 
-        portalUrl = <span style="color:#e6db74">&#34;https://www.arcgis.com&#34;</span>,
-        clientId = <span style="color:#e6db74">&#34;YOUR_CLIENT_ID&#34;</span>,
-        redirectUrl = <span style="color:#e6db74">&#34;YOUR_REDIRECT_URL&#34;</span>
+    //追加開始
+    authenticatorState.oAuthUserConfiguration = OAuthUserConfiguration(
+
+        portalUrl = &quot;https://www.arcgis.com&quot;,
+        clientId = &quot;YOUR_CLIENT_ID&quot;,
+        redirectUrl = &quot;YOUR_REDIRECT_URL&quot;
 
     )
-    <span style="color:#75715e">//追加終了
-</span><span style="color:#75715e"></span>
+    //追加終了
+
     enableEdgeToEdge()
 
     setContent {
@@ -1641,9 +1622,11 @@ redirectURL は、scheme と host コンポーネントで構成されます。�
         }
     }
 }
-</code></pre></div></li>
+```
+</code></pre>
+<ol start="3">
 <li>
-<p><code>setContent</code> ブロックで、<code>DialogAuthenticator</code> コンポーザブル関数を呼び出し、authenticatorState を渡します。DialogAuthenticator 組み込み関数を、MainScreen() 組み込み関数の後で呼び出します。</p>
+<p><code>setContent</code> ブロックで、<code>DialogAuthenticator</code> コンポーザブル関数を呼び出し、<code>authenticatorState</code> を渡します。<code>DialogAuthenticator</code> 組み込み関数を、<code>MainScreen()</code> 組み込み関数の後で呼び出します。</p>
 <p>MainActivity.kt</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
     <span style="color:#66d9ef">super</span>.onCreate(savedInstanceState)
@@ -1698,7 +1681,7 @@ redirectURL は scheme と host コンポーネントで構成されます。リ
 <span style="color:#f92672">&lt;/activity&gt;</span>
 <span style="color:#75715e">&lt;!--追加終了--&gt;</span>
 </code></pre></div>  <div class="notices note" >
-<p><strong>ベスト プラクティス</strong>: アクセストークンは、このチュートリアルの便宜のためにコードに直接格納されています。本番環境では、認証情報をソース コードに直接保存しないでください。</p>
+<p><strong>ベスト プラクティス</strong>:  OAuth 認証情報は、このチュートリアルの便宜のためにコードに直接保存されています。本番環境では、認証情報をソースコードに直接保存しないでください。</p>
   </div>
 <h3 id="アプリを実行する">アプリを実行する</h3>
 <ol>
@@ -1708,7 +1691,7 @@ redirectURL は scheme と host コンポーネントで構成されます。リ
 <h4 id="android-デバイス">Android デバイス</h4>
 <p>パソコンと Android 端末を、USB または Wi-Fi で接続します。詳しくは、「<a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device#0">Android デバイスを接続する方法</a>」をご覧ください。</p>
 <h4 id="android-エミュレーター">Android エミュレーター</h4>
-<p>Android エミュレーターで動作させるための AVD(Android Virtual Device)を作成します。 詳しくは、「<a href="https://developer.android.com/studio/run/emulator">Android Emulator 上でアプリを実行する</a>」をご覧ください。</p>
+<p>Android エミュレーターで動作させるための AVD(Android Virtual Device) を作成します。 詳しくは、「<a href="https://developer.android.com/studio/run/emulator">Android Emulator 上でアプリを実行する</a>」をご覧ください。</p>
 <h4 id="デバイスの選択">デバイスの選択</h4>
 <p>Android Studio でアプリをビルドして実行する場合、まずデバイスを選択する必要があります。Android Studio のツール バーから、現在利用可能なデバイス（仮想および物理の両方）のドロップダウン リストにアクセスできます。
 <img src = https://apps.esrij.com/arcgis-dev/guide/img/startup-android200.0/currently-selected-android-virtual-device.png></p>
@@ -1839,7 +1822,7 @@ redirectURL は scheme と host コンポーネントで構成されます。リ
 
         <span style="color:#f92672">&lt;/intent-filter&gt;</span>
 </code></pre></div>  <div class="notices note" >
-<p><strong>ベスト プラクティス</strong>: アクセス トークンは、このチュートリアルの便宜のためにコードに直接格納されています。本番環境では、認証情報をソース コードに直接保存しないでください。</p>
+<p><strong>ベスト プラクティス</strong>: OAuth 認証情報は、このチュートリアルの便宜のためにコードに直接保存されています。本番環境では、認証情報をソースコードに直接保存しないでください。</p>
   </div>
 <h3 id="アプリを実行する-1">アプリを実行する</h3>
 <p>[Run] &gt; [Run] &gt; [app] をクリックしてアプリを実行します。</p>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-11T14:17:21 JST">
+<meta name="revised" content="2025-04-16T11:14:32 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -969,7 +969,7 @@ if (!doNotTrack) {
     <li><a href="#gradle-で-api-を取得する">Gradle で API を取得する</a></li>
     <li><a href="#必要な権限と機能">必要な権限と機能</a>
       <ul>
-        <li><a href="#アクセス許可が必要な-arcgis-maps-sdk-for-kotlin-の機能">アクセス許可が必要な ArcGIS Maps SDK for Kotlin の機能</a></li>
+        <li><a href="#arcgis-maps-sdk-for-kotlin-の機能に必要な権限">ArcGIS Maps SDK for Kotlin の機能に必要な権限</a></li>
         <li><a href="#android-のストレージと権限">Android のストレージと権限</a></li>
         <li><a href="#opengl-es-バージョンの宣言">OpenGL ES バージョンの宣言</a></li>
       </ul>
@@ -1003,17 +1003,16 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Maps SDK for Kotlin - Guide - <a href="https://developers.arcgis.com/kotlin/install-and-set-up/">Install and set up</a></p>
 <p>このインストール ガイドでは、ArcGIS Maps SDK for Kotlin (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-android/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
-<p>ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが <a href="https://developers.arcgis.com/kotlin/reference/system-requirements/">動作環境</a> を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。</p>
-<p><a href="https://gradle.org/">Gradle</a> を使用してインストールすることをお勧めします。これにより、<a href="https://esri.jfrog.io/artifactory/arcgis">Esri の Maven リポジトリ</a>から必要な依存関係と SDK バイナリがインストールされます。</p>
+<p>ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが<a href="https://developers.arcgis.com/kotlin/reference/system-requirements/">システム要件</a>を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、<a href="https://developers.arcgis.com/kotlin/reference/system-requirements/">システム要件</a>を参照してください。</p>
+<p><a href="https://gradle.org/">Gradle</a> を使用してインストールすることをお勧めします。これにより、<a href="https://esri.jfrog.io/artifactory/arcgis">Esri の Maven リポジトリ</a>から必要な依存関係と SDK バイナリーがインストールされます。</p>
 <h2 id="gradle-で-api-を取得する">Gradle で API を取得する</h2>
 <div class="notices note" >
-<p>Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。<strong>Empty Activity</strong> オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。</p>
-<p>以下の手順では、<strong>Android Studio Ladybug 2024.2.1</strong> を使用します。最適な結果を得るには、このバージョン以降の Android Studio を使用してください。</p>
+<p>Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。Empty Activity オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。</p>
 </div>
 <p>Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。</p>
 <ol>
 <li>
-<p>プロジェクト ツール ウィンドウから、[Gradle Scripts] &gt; [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を次のコードに置き換えます。</p>
+<p>プロジェクト ツール ウィンドウで、ドロップダウン メニューから [Android ビュー]を選択します。[Gradle Scripts] &gt; [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を以下のコードに置き換えます。</p>
 <p>build.gradle.kts (Project: Display_a_map)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="color:#75715e">// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 </span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
@@ -1057,19 +1056,12 @@ android <span style="color:#f92672">{</span>
                 sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
                 targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_17</span>
         <span style="color:#f92672">}</span>
-
         kotlinOptions <span style="color:#f92672">{</span>
                 jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
         <span style="color:#f92672">}</span>
-
         buildFeatures <span style="color:#f92672">{</span>
                 compose <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
         <span style="color:#f92672">}</span>
-
-        composeOptions <span style="color:#f92672">{</span>
-                kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.12&#34;</span>
-        <span style="color:#f92672">}</span>
-
         packaging <span style="color:#f92672">{</span>
                 resources <span style="color:#f92672">{</span>
                         excludes <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;/META-INF/{AL2.0,LGPL2.1}&#34;</span>
@@ -1103,30 +1095,22 @@ dependencies <span style="color:#f92672">{</span>
         implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">authentication</span><span style="color:#f92672">)</span>
 
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Android Studio の [New Project] ウィザードで生成されるモジュール レベルの <code>build.gradle.kts</code> ファイルでは、Android と Kotlin のツールのバージョンが宣言されます。Kotlin Compiler (<code>kotlinOptions</code> ブロック) のオプションは互換性がなければなりません。互換性は Android の <a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照することで確認できます。</p>
-<p>build.gradle.kts (Module: app)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">kotlinOptions <span style="color:#f92672">{</span>
-    jvmTarget <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;17&#34;</span>
-<span style="color:#f92672">}</span>
-
-composeOptions <span style="color:#f92672">{</span>
-    kotlinCompilerExtensionVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5.12&#34;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+</code></pre></div><p>Kotlin 2.0+では、<a href="https://developer.android.com/develop/ui/compose/compiler">Compose Compiler Gradle</a> プラグインが必要です。このプラグインは、<code>build.gradle.kts(Module :app)</code>の <code>plugins</code> ブロックで <code>alias(libs.plugins.kotlin.compose)</code> として参照され、<code>libs.versions.toml</code> ファイルでは <code>kotlin-compose = { id = &quot;org.jetbrains.kotlin.plugin.compose&quot;, version.ref = &quot;kotlin&quot; }</code> として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。</p>
+<p>2.0 より前の Kotlin バージョンを使用している場合は、Compose コンパイラーと Kotlin コンパイラーのバージョンが互換性があることを確認する必要があります。詳細については、<a href="https://developer.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a> を参照してください。</p>
+</li>
 <li>
 <p>Android ビューから、[Gradle Scripts] &gt; [libs.versions.toml] を開きます。<code>[version]</code> セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、<code>[libraries]</code> セクションには、以下のライブラリの宣言を追加します。</p>
 <ul>
 <li>ArcGIS Maps SDK for Kotlin SDK</li>
 <li>ArcGIS Maps SDK for Kotlin Toolkit BOM</li>
-<li>必要な Toolkit コンポーネント<br>
-コンポーザブル <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html"><code>MapView</code></a> を含む <code>geoview-compose</code> モジュールと <code>authentication</code> モジュールが必要です。</li>
+<li>アプリで使用するすべてのツールキット コンポーネント。マップビューまたはシーンビューを表示するには、コンポーザブルな <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html"><code>MapView</code></a> と<a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html"><code>SceneView</code></a> を含む <code>geoview-compose</code> モジュールの宣言が必要です。ユーザー認証を実装するには、<code>authentication</code> モジュールが必要です。</li>
 </ul>
 <p>Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。</p>
 <p><a href="https://developer.android.com/build/migrate-to-catalogs">Gradle バージョン カタログ</a>は依存関係のバージョンを宣言するための標準的な Android のアプローチです。<code>build.gradle.kts</code> でバージョン番号を指定したり、<code>version.gradle</code> でバージョン番号を列挙するよりも推奨されます。Android Studio の最近のリリースでは、[New Project Wizard] がこの標準をサポートする <code>build.gradle.kts</code> と <code>gradle/libs.version.toml</code> ファイルを生成します。</p>
 <p>Gradle バージョン カタログでは、BOM ファイルを使用して、BOM 内のすべての成果物に対して単一のバージョン番号を指定することもできます。詳細については、ArcGIS Maps SDK for Kotlin Toolkit の <code>README</code> の <a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/blob/main/README.md#using-the-bom"><code>Using the BOM</code></a> を参照してください。</p>
 <p>gradle/libs.versions.toml</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">versions</span>]
-<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.6.0&#34;</span>
+<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.7.0&#34;</span>
 
 [<span style="color:#a6e22e">libraries</span>]
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin&#34;</span>, <span style="color:#a6e22e">version</span>.<span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#34;arcgisMapsKotlin&#34;</span> }
@@ -1134,20 +1118,20 @@ composeOptions <span style="color:#f92672">{</span>
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">geoview</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">compose</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span> }
 <span style="color:#a6e22e">arcgis</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">maps</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">kotlin</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">toolkit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">authentication</span> = { <span style="color:#a6e22e">group</span> = <span style="color:#e6db74">&#34;com.esri&#34;</span>, <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;arcgis-maps-kotlin-toolkit-authentication&#34;</span> }
 </code></pre></div><div class="notices note" >
-<p><code>libs.versions.toml</code> を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして <code>libs.versions.toml</code> ファイルに貼り付け、新規 プロジェクト ウィザードで生成された元の内容を置き換えてください。</p>
+<p><code>libs.versions.toml</code> を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして <code>libs.versions.toml</code> ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">versions</span>]
-<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.6.0&#34;</span>
+<span style="color:#a6e22e">arcgisMapsKotlin</span> = <span style="color:#e6db74">&#34;200.7.0&#34;</span>
 
 <span style="color:#75715e"># Version numbers added by Android Studio New Project Wizard</span>
-<span style="color:#a6e22e">agp</span> = <span style="color:#e6db74">&#34;8.7.1&#34;</span>
+<span style="color:#a6e22e">agp</span> = <span style="color:#e6db74">&#34;8.7.3&#34;</span>
 <span style="color:#a6e22e">kotlin</span> = <span style="color:#e6db74">&#34;2.0.0&#34;</span>
-<span style="color:#a6e22e">coreKtx</span> = <span style="color:#e6db74">&#34;1.13.1&#34;</span>
+<span style="color:#a6e22e">coreKtx</span> = <span style="color:#e6db74">&#34;1.15.0&#34;</span>
 <span style="color:#a6e22e">junit</span> = <span style="color:#e6db74">&#34;4.13.2&#34;</span>
 <span style="color:#a6e22e">junitVersion</span> = <span style="color:#e6db74">&#34;1.2.1&#34;</span>
 <span style="color:#a6e22e">espressoCore</span> = <span style="color:#e6db74">&#34;3.6.1&#34;</span>
-<span style="color:#a6e22e">lifecycleRuntimeKtx</span> = <span style="color:#e6db74">&#34;2.8.4&#34;</span>
+<span style="color:#a6e22e">lifecycleRuntimeKtx</span> = <span style="color:#e6db74">&#34;2.8.7&#34;</span>
 <span style="color:#a6e22e">activityCompose</span> = <span style="color:#e6db74">&#34;1.9.3&#34;</span>
-<span style="color:#a6e22e">composeBom</span> = <span style="color:#e6db74">&#34;2024.10.00&#34;</span>
+<span style="color:#a6e22e">composeBom</span> = <span style="color:#e6db74">&#34;2024.11.00&#34;</span>
 
 <span style="color:#75715e"># Other version numbers</span>
 <span style="color:#a6e22e">compileSdk</span> = <span style="color:#e6db74">&#34;35&#34;</span>
@@ -1215,11 +1199,11 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 </ol>
 <h2 id="必要な権限と機能">必要な権限と機能</h2>
 <p>Android は、権限が分離されたオペレーティング システムです。アプリで使用する ArcGIS の機能によっては、マニフェストに権限を追加する必要がある場合があります。アプリに含まれていない機能の権限を含めないようにしてください。</p>
-<p>アプリが Android API バージョン 22 以前で実行されている場合、インストール時にすべての権限が要求されます（許可または拒否）。アプリが Android API バージョン 23 以降で実行されている場合、アクセス許可が要求され、インストール時に自動的に付与されます。ただし、潜在的に危険な権限は実行時にリクエストする必要があり、そのためにはアプリにコードを追加する必要があります。まだ許可されていない場合は、Android フレームワークまたは Android サポート ライブラリが、権限を確認して要求するために使用されます。詳細については、<a href="https://developer.android.com/training/permissions/declaring.html">アプリの権限を宣言する</a>と<a href="https://developer.android.com/training/permissions/requesting.html">アプリの権限をリクエストする</a>をご覧ください。</p>
-<h3 id="アクセス許可が必要な-arcgis-maps-sdk-for-kotlin-の機能">アクセス許可が必要な ArcGIS Maps SDK for Kotlin の機能</h3>
+<h3 id="arcgis-maps-sdk-for-kotlin-の機能に必要な権限">ArcGIS Maps SDK for Kotlin の機能に必要な権限</h3>
+<p>ArcGIS Maps SDK for Kotlinの機能の中には、アプリで使用する際にAndroidの権限が必要なものがあります。</p>
 <ul>
-<li>インターネットへのアクセス（ほとんどのアプリはこれを必要とします）：Android API 23 以降の標準の権限</li>
-<li>デバイスの GPS にアクセスするための FINE_LOCATION の権限：Android API 23 以降での危険な権限</li>
+<li>インターネットへのアクセス。ほとんどのアプリで必要になります。</li>
+<li>詳細な位置情報。デバイスの GPS にアクセスするには、<em>詳細な位置情報</em>の権限が必要です。これは Android 開発において<a href="https://developer.android.com/guide/topics/permissions/overview#runtime">危険な権限</a>とされています。</li>
 </ul>
 <p>次のコード例（AndroidManifest.xml ファイルの場合）には、これらの権限が含まれています。</p>
 <p>AndroidManifest.xml</p>
@@ -1227,12 +1211,11 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_COARSE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_FINE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
 </code></pre></div><h3 id="android-のストレージと権限">Android のストレージと権限</h3>
-<p>Android API Level 30 では、すべてのアプリは Android デバイスのファイルシステムにアクセスするために<a href="https://developer.android.com/training/data-storage?hl=ja#scoped-storage">対象範囲別ストレージ</a>を使用します。対象範囲別ストレージを使用すると、アプリは (1) 自身のファイル、および (2) メディア ストア内の共有ファイルにアクセスすることができます。下記のパーミッションの宣言は、サポートされていません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージとパーミッションの詳細については、次のリンクを参照してください。</p>
+<p>Android API レベル 30 以降、すべてのアプリは Android デバイスのファイル システムにアクセスするためにスコープ付きストレージを使用します。スコープ付きストレージでは、アプリは (1)自身のファイルと (2)メディア ストア内の共有ファイルにアクセスできます。<code>&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;</code> 権限の宣言はサポートされなくなりました。</p>
+<p>Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージとパーミッションの詳細については、次のリンクを参照してください。</p>
 <ul>
 <li><a href="https://developer.android.com/training/data-storage#permissions">データ ストレージとファイル ストレージの概要</a></li>
-<li><a href="https://developer.android.com/training/data-storage/use-cases">Android ストレージのユースケースとおすすめの方法</a></li>
+<li><a href="https://developer.android.com/training/data-storage/use-cases">Android ストレージのユース ケースとおすすめの方法</a></li>
 <li><a href="https://developer.android.com/training/data-storage/shared/media#request-permissions">共有ストレージからメディア ファイルにアクセスする</a></li>
 <li><a href="https://developer.android.com/training/data-storage/manage-all-files">ストレージ デバイスのすべてのファイルを管理する</a></li>
 </ul>
@@ -1248,31 +1231,36 @@ include<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;:app
 <p>ドキュメントで<a href="https://developers.arcgis.com/kotlin/sample-code/">サンプル</a>の包括的なリストを参照するか、<a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-samples/tree/main">GitHub リポジトリ</a>からサンプル コードをダウンロードしてください。</p>
 <p>また、<a href="https://play.google.com/store/apps/details?id=com.esri.arcgismaps.kotlin.sampleviewer">Google Play ストア</a>からサンプル ビューアー アプリをダウンロードし、お使いのデバイスでライブ サンプルをご覧いただくこともできます。</p>
 <h3 id="arcgis-maps-sdk-for-kotlin-toolkit">ArcGIS Maps SDK for Kotlin Toolkit</h3>
-<p><a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main">ArcGIS Maps SDK for Kotlin Toolkit</a> には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティ) が含まれています。<code>MapView</code> と <code>SceneView</code> のコンポーザブル関数を使用するには、モジュール レベルの <code>build.gradle.kts</code> に次の依存関係を含めます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-bom:200.6.0&#34;</span><span style="color:#f92672">))</span>
+<p><a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main">ArcGIS Maps SDK for Kotlin Toolkit</a> には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティー) が含まれています。<a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html"><code>MapView</code></a> と <a href="https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html"><code>SceneView</code></a> のコンポーザブル関数を使用するには、モジュール レベルの <code>build.gradle.kts</code> に次の依存関係を含めます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-bom:200.7.0&#34;</span><span style="color:#f92672">))</span>
 implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-geoview-compose&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><p>明示的なバージョン番号の代わりに、libs.versions.toml を使用している場合は以下のように記述します。</p>
+implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-authentication&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p>明示的なバージョン番号の代わりに、<code>libs.versions.toml</code> を使用している場合は以下のように記述します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation<span style="color:#f92672">(</span>platform<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bom</span><span style="color:#f92672">))</span>
 implementation<span style="color:#f92672">(</span>libs<span style="color:#f92672">.</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">kotlin</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toolkit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">geoview</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compose</span><span style="color:#f92672">)</span>
-</code></pre></div><p><a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/geoview-compose">GeoView-Compose</a>：<code>MapView</code> と <code>SceneView</code> クラスのコンポーザブルな実装を提供します。</p>
+implementation<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.esri:arcgis-maps-kotlin-toolkit-authentication&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p><code>build.gradle.kts(Module： app)</code> および <code>libs.versions.toml</code> に含めるべきコードの詳細な指示については、上記の <a href="#gradle-%E3%81%A7-api-%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B">Gradle で API を取得する</a> を参照してください。</p>
+<p>ツールキットの主要なモジュールには以下が含まれます。</p>
+<p><a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/geoview-compose"><strong>GeoView-Compose</strong></a> は、<code>MapView</code> および <code>SceneView</code> クラスのコンポーザブルな実装を提供します。</p>
+<p><a href="https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main/toolkit/authentication"><strong>Authentication</strong></a> モジュールは、ArcGIS Maps SDK for Kotlin での認証の課題を解決するためのプラグアンドプレイ ソリューションを提供します。</p>
 <p>Toolkit には、Compose に対応した他の特別なコンポーネントも含まれています。詳細は <a href="https://developers.arcgis.com/kotlin/toolkit/">Toolkit</a> を参照してください。</p>
 <h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
-<p><a href="https://developers.arcgis.com/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。</p>
+<p><a href="https://developers.arcgis.com/downloads/">ダウンロード ページ</a> から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバーからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。</p>
 <div class="notices info" >
-<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティ <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
+<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
 </div>
-<p>ローカルでドキュメントを公開する方法：</p>
+<p>ローカルでドキュメントを公開する方法。</p>
 <ul>
 <li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/downloads/">ダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
-<li>アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、<code>public</code> と <code>install</code> という 2 つのサブフォルダがあります。</li>
-<li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
+<li>アーカイブをローカル フォルダーに解凍します。解凍されたアーカイブには、<code>public</code> と <code>install</code> という 2 つのサブフォルダーがあります。</li>
+<li><code>install</code> フォルダー内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
 </ul>
 <div class="notices note" >
 <p>ライブ ドキュメント サイトはリリース時及びリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。</p>
 </div>
 <h3 id="追加のデータ">追加のデータ</h3>
 <h4 id="投影エンジン-データ">投影エンジン データ</h4>
-<p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
+<p>測地系変換は、ある空間基準から別の空間基準へジオメトリーを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッド ベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
 <p><a href="https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/kotlin/downloads/#projection-engine-data">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/kotlin/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
 <h4 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h4>
 <p>航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、<a href="https://iho.int/en/">国際水路機関（IHO）</a>の <a href="https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf">S-57 規格</a> に準拠した ENC をサポートしています。</p>
