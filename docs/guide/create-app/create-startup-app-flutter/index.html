@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-16T11:14:32 JST">
+<meta name="revised" content="2025-04-18T14:29:55 JST">
 <title>Flutter :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1011,29 +1011,33 @@ if (!doNotTrack) {
 <p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services</a> guide の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="../../../basemaps/">ベースマップ</a> を参照してください。</p>
 </div>
 <div class="notices warning" >
-<p>Android Studio の最新リリースである Ladybug 2024.2.1+ を使用している場合、Flutter アプリを起動しようとするとエラーが発生することがあります。例えば、このチュートリアルを実行しようとすると、次のようなエラーが表示されることがあります。<br>
-<em>&ldquo;Unknown Kotlin JVM target: 21&rdquo;</em><br>
-同様に、flutter create コマンドを使って新しい Flutter プロジェクトを作成すると、次のような警告が表示されることがあります。<br>
-<em>&ldquo;The configured version of Java detected may conflict with the Gradle version in your new Flutter app.&quot;</em><br>
-この問題は、Ladybug にバンドルされている Java のバージョン（JDK 21）が Flutter の要件（JDK 17）と後方互換性がないことと、Flutter が使用している Gradle のバージョンに関連しています。</p>
-<p>新しい Flutter アプリを作成し、Android Studio Ladybug でこのチュートリアルを実行するための解決策は、手動で JDK 17 をインストールし、Flutter が JDK 17 を使用するようにリダイレクトすることです。<br>
-Android Studio からこの操作を行うためには、<br>
-<em>[設定] -&gt; [ビルドツール] -&gt; [Gradle JDK Location]</em> に行き、JDK 17 のインストール パスを設定します。<br>
-またはコマンド ラインから次のように実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">flutter config --jdk-dir=&lt;your-local-JDK-17-path&gt;
-</code></pre></div></div>
+<p>Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。
+これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。</p>
+<ul>
+<li>
+<p>macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。</p>
+<pre><code>brew install openjdk@17
+sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk.jdk/Contents/Home
+</code></pre></li>
+<li>
+<p>Windowsの場合：Microsoft の <a href="https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-17">OpenJDK</a> ページから OpenJDK 17 をダウンロードして、zip ファイルを任意のフォルダに解凍した後、PowerShell を使用して設定します。</p>
+<pre><code>flutter config --jdk-dir PATH-TO-JDK
+</code></pre></li>
+</ul>
+</div>
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
 <li>API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、<a href="https://location.arcgis.com/sign-up/">サインアップ</a>（無料）してください。アカウントの作成方法は「<a href="../../get-dev-account/">開発者アカウントの作成</a>」をご覧ください。</li>
 <li>開発環境が<a href="https://developers.arcgis.com/flutter/reference/system-requirements/">システム要件</a>を満たしており、<a href="../../../tips/flutter/install-flutter-200.x/">Flutter の開発環境</a> が整っていることを確認します。</li>
+<li>Flutter 用の IDE。<a href="https://code.visualstudio.com/">VS Code</a> を推奨しています。</li>
 </ol>
-<!-- 3. Flutter 用の IDE。[VS Code](https://code.visualstudio.com/)を推奨しています。 -->
 <h2 id="ステップ">ステップ</h2>
 <h3 id="新しい-flutter-アプリを作成します">新しい Flutter アプリを作成します</h3>
 <ol>
 <li>
-<p><strong>VS Code</strong> を開き、ウェルカム タブで [Open Folder&hellip;] を選択します。プロジェクトの場所を選んでください。</p>
+<p><strong>VS Code</strong> を開き、Welcome タブで [Open Folder&hellip;] を選択します。プロジェクトの場所を選んでください。</p>
 </li>
 <li>
 <p>[View] &gt; [Terminal] に進みます。</p>
@@ -1046,7 +1050,7 @@ Android Studio からこの操作を行うためには、<br>
 <h3 id="arcgis-maps-sdk-for-flutter-を追加します">ArcGIS Maps SDK for Flutter を追加します</h3>
 <p><code>arcgis_maps</code> パッケージに依存関係を追加します。</p>
 <ol>
-<li>VS Code のターミナルで、ディレクトリを新しいプロジェクトに変更します。
+<li>VS Code のターミナルで、ディレクトリーを新しいプロジェクトに変更します。
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd display_a_map
 </code></pre></div></li>
 <li>以下のコマンドを実行します。
@@ -1063,42 +1067,40 @@ Android Studio からこの操作を行うためには、<br>
 <h4 id="android">Android</h4>
 <ol>
 <li>
-<p>プロジェクトの <code>android/app/build.gradle</code> ファイルを編集して、最小要件を更新します。</p>
-<p>build.gradle</p>
+<p>プロジェクトの <code>android/app/build.gradle.kts</code> ファイルを編集して、最小要件を更新します。</p>
+<p>build.gradle.kts</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
     namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app.display_a_map&#34;</span>
     compileSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdkVersion</span>
-    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;25.2.9519653&#34;</span>  <span style="color:#75715e">//変更
+    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span> <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span>
     compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
-        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
+        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
     <span style="color:#f92672">}</span>
 
     kotlinOptions <span style="color:#f92672">{</span>
-        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span>
     <span style="color:#f92672">}</span>
 
     defaultConfig <span style="color:#f92672">{</span>
-        <span style="color:#75715e">// TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        <span style="color:#75715e">// TODO: 任意のアプリケーション ID を指定します (https://developer.android.com/studio/build/application-id.html).
 </span><span style="color:#75715e"></span>        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app.display_a_map&#34;</span>
-        <span style="color:#75715e">// You can update the following values to match your application needs.
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For more information, see: https://flutter.dev/to/review-gradle-config.
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span> <span style="color:#75715e">// 変更
+        <span style="color:#75715e">// アプリケーションの要件に合わせて次の値を更新します。
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 詳細については https://flutter.dev/to/review-gradle-config を参照してください。
+</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span> <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span>        targetSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdkVersion</span>
         versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
         versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
     <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
 <li>
-<p>プロジェクトの <code>android/settings.gradle</code> ファイルを編集して、Kotlin のバージョンを更新します。</p>
-<p>settings.gradle</p>
+<p>プロジェクトの <code>android/settings.gradle.kts</code> ファイルを編集して、Kotlin のバージョンを更新します。</p>
+<p>settings.gradle.kts</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
     id <span style="color:#e6db74">&#34;dev.flutter.flutter-plugin-loader&#34;</span> version <span style="color:#e6db74">&#34;1.0.0&#34;</span>
-    id <span style="color:#e6db74">&#34;com.android.application&#34;</span> version <span style="color:#e6db74">&#34;8.1.0&#34;</span> apply <span style="color:#66d9ef">false</span>
+    id <span style="color:#e6db74">&#34;com.android.application&#34;</span> version <span style="color:#e6db74">&#34;8.7.0&#34;</span> apply <span style="color:#66d9ef">false</span>
     id <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span> version <span style="color:#e6db74">&#34;1.9.0&#34;</span> apply <span style="color:#66d9ef">false</span> <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
 </code></pre></div></li>
@@ -1167,7 +1169,7 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <p><code>main()</code> 関数で、<a href="https://dart.dev/language/variables#final-and-const">const</a> <code>apiKey</code> を定義し、その値にアクセス トークンを設定します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// Your access token here. //追加
+    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。 //追加
 </span><span style="color:#75715e"></span>
     runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
@@ -1180,7 +1182,7 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-<span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// Your access token here.
+<span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。
 </span><span style="color:#75715e"></span>
 ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> apiKey; <span style="color:#75715e">//追加
 </span><span style="color:#75715e"></span>
@@ -1197,7 +1199,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// Your access token here.
+    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。
 </span><span style="color:#75715e"></span>
     ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> apiKey;
 
@@ -1218,7 +1220,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 <ol>
 <li>
 <p>テンプレート <code>MainApp</code> クラス定義をリファクタリングして、<a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html"><code>StatefulWidget</code></a> を拡張します。 <a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html"><code>StatelessWidget</code></a> キーワードにマウス カーソルを合わせて右クリックし、[Refactor&hellip;] から、[Convert to StatefulWidget] を選択してコードをリファクタリングします。</p>
-<p>ArcGIS Maps SDK for Flutter で作業していると、データの変更に応じて UI を更新するなど、アプリケーションの状態の更新が必要になることがよくあります。 ステートフル ウィジェットを実装することで、アプリはこのような状況に対応できます。 ステートレス ウィジェットの実装を使用して、単に地図を表示することも可能です。</p>
+<p>ArcGIS Maps SDK for Flutter で作業していると、データの変更に応じて UI を更新するなど、アプリケーションの状態の更新が必要になることがよくあります。 ステートフル ウィジェットを実装することで、アプリはこのような状況に対応できます。 ステートレス ウィジェットの実装を使用して、単に地図を表示することも可能です。<a href="https://developers.arcgis.com/flutter/sample-code/display-map/">Display map</a> サンプルをご確認ください。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainApp</span> <span style="color:#66d9ef">extends</span> StatefulWidget { <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span>
@@ -1400,7 +1402,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
 </code></pre></div></li>
 <li>
-<p>ArcGIS マップ ビュー コントローラーの <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html"><code>arcGISMap</code></a> プロパティをマップに設定します。 さらに、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html"><code>setViewpoint()</code></a> を呼び出して、富士山にズームします。</p>
+<p>ArcGIS マップ ビュー コントローラーの <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html"><code>arcGISMap</code></a> プロパティーをマップに設定します。 さらに、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html"><code>setViewpoint()</code></a> を呼び出して、富士山にズームします。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_MainAppState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>MainApp<span style="color:#f92672">&gt;</span> {
 
@@ -1466,10 +1468,10 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 </code></pre></div></li>
 <li>
 <p>以下のコマンドを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">dart run arcgis_maps install lib/main.dart
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">dart run arcgis_maps install
 </code></pre></div></li>
 <li>
-<p>アクセス トークンを取得し、ソース コード ファイルに API キーを設定します。</p>
+<p><a href="https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/">アクセス トークンを取得</a>し、ソース コード ファイルに <a href="#api-%E3%82%AD%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">API キーを設定</a>します。</p>
 </li>
 <li>
 <p>Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。</p>
@@ -1486,26 +1488,22 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> onMapViewReady() {
 
-    <span style="color:#75715e">//URI を生成します。
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> uri <span style="color:#f92672">=</span> Uri(
-      scheme: <span style="color:#e6db74">&#34;https&#34;</span>,
-      host: <span style="color:#e6db74">&#34;example.com&#34;</span>,
-      path: <span style="color:#e6db74">&#34;Portal の Path&#34;</span>
-    );
-
-    <span style="color:#75715e">//ArcGIS ポータルを作成します。URI を指定しない場合は &#34;Portal.arcGISOnline()&#34; を使用します。
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> portal <span style="color:#f92672">=</span> Portal(uri);
-
     <span style="color:#75715e">//アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> portalItem <span style="color:#f92672">=</span> PortalItem.withPortalAndItemId(portal: portal, itemId: <span style="color:#e6db74">&#34;Web マップの ID&#34;</span>);
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> portalItem <span style="color:#f92672">=</span> PortalItem.withPortalAndItemId(
+        portal: Portal.arcGISOnline(),
+        itemId: <span style="color:#e6db74">&#34;Web マップの ID&#34;</span>,
+    );
 
     <span style="color:#75715e">//ポータル アイテムからマップを作成します。
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> map <span style="color:#f92672">=</span> ArcGISMap.withItem(portalItem);
+
+    _mapViewController.arcGISMap <span style="color:#f92672">=</span> map;
+
 }
 </code></pre></div></li>
 </ol>
 <hr>
-<p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティと認証について学びましょう！</a></p>
+<p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティーと認証について学びましょう！</a></p>
 
 
     

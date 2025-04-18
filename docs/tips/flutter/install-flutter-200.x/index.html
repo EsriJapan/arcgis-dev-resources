@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-16T11:14:32 JST">
+<meta name="revised" content="2025-04-18T14:29:55 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1030,7 +1030,7 @@ if (!doNotTrack) {
 <li>
 <p><code>arcgis_maps_core</code> をダウンロードしてインストールします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart run arcgis_maps install
-</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリ配布が Flutter プロジェクトにダウンロードされ、セットアップされます。</p>
+</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリー配布が Flutter プロジェクトにダウンロードされ、セットアップされます。ソース管理にチェックする場合は、.gitignore ファイルに arcgis_maps_core を追加することをお勧めします。</p>
 </li>
 </ol>
 <p>この API を使用するには、以下の import 文を dart コード（.dart）ファイルに追加します。</p>
@@ -1042,22 +1042,22 @@ if (!doNotTrack) {
 <li>
 <p>以下の最低要件を更新します。</p>
 <ul>
-<li>Android NDK バージョン: <code>25.2.9519653</code></li>
+<li>Android NDK バージョン: <code>27.0.12077973</code></li>
 <li>Android の最低 SDK バージョン: <code>26</code></li>
 </ul>
-<p>android/app/build.gradle</p>
+<p>android/app/build.gradle.kts</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
     namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
     compileSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdkVersion</span>
-    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;25.2.9519653&#34;</span>  <span style="color:#75715e">// 変更
+    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span>  <span style="color:#75715e">// 変更
 </span><span style="color:#75715e"></span>
     compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
-        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
+        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
     <span style="color:#f92672">}</span>
 
     kotlinOptions <span style="color:#f92672">{</span>
-        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_1_8</span>
+        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span>
     <span style="color:#f92672">}</span>
 
     defaultConfig <span style="color:#f92672">{</span>
@@ -1119,7 +1119,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;/activity&gt;</span> <span style="color:#75715e">&lt;!-- application タグ内の activity タグ--&gt;</span>
     
 	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
- 	<span style="color:#f92672">&lt;activity</span>
+    <span style="color:#f92672">&lt;activity</span>
         <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;com.linusu.flutter_web_auth_2.CallbackActivity&#34;</span>
         <span style="color:#a6e22e">android:exported=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
         <span style="color:#f92672">&lt;intent-filter</span> <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_web_auth_2&#34;</span><span style="color:#f92672">&gt;</span>
@@ -1169,7 +1169,7 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <li>常にユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription">NSLocationAlwaysAndWhenInUseUsageDescription</a>）</li>
 <li>アプリがフォアグラウンドで実行されている間、ユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationwheninuseusagedescription">NSLocationWhenInUseUsageDescription</a>）</li>
 </ul>
-<p>次のコード例では、<a href="https://developer.apple.com/documentation/bundleresources/information_property_list">情報プロパティ リスト</a>にこれらを含めています。</p>
+<p>次のコード例では、<a href="https://developer.apple.com/documentation/bundleresources/information_property_list">情報プロパティー リスト</a>にこれらを含めています。</p>
 <p>ios/Runner/Info.plist</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dict&gt;</span>
 	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
@@ -1189,7 +1189,7 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
 <p>開発者向けドキュメントは、ダウンロード ページからアーカイブとして<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>できます。 アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントを提供する手順が含まれています。 スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。 このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</p>
 <div class="notices info" >
-<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティ<a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
+<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
 </div>
 <p>ドキュメントをローカルに提供するために：</p>
 <ul>
@@ -1202,8 +1202,8 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 </div>
 <h3 id="補足データ">補足データ</h3>
 <h4 id="投影-エンジン-データ">投影 エンジン データ</h4>
-<p>測地系変換は、ある空間参照から別の空間参照にジオメトリを投影する必要がある場合に使用されます。 測地系変換は、数学的に定義する方法（方程式ベースの変換）と、外部のサポート ファイルに依存する方法（グリッド ベースの変換）があります。 アプリでグリッド ベースの変換を使用する場合、投影エンジン のデータ ファイルが必要です。 API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出できます。</p>
-<p>アプリでグリッド ベースの変換が必要な場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/flutter/downloads/#projection-engine-data">投影エンジン ファイル</a>をダウンロードできます。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。</p>
+<p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
+<p>グリッド ベースの変換を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/flutter/downloads/#projection-engine-data">投影エンジン ファイル</a>をダウンロードしてください。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。</p>
 
 
     

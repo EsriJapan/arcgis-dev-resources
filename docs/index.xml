@@ -1177,10 +1177,8 @@ app config では、widgets でウィジェットを定義します。</descript
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 このマップとコードは、他の 2D チュートリアルの出発点として使用されます。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
-Android Studio の最新リリースである Ladybug 2024.2.1+ を使用している場合、Flutter アプリを起動しようとするとエラーが発生することがあります。例えば、このチュートリアルを実行しようとすると、次のようなエラーが表示されることがあります。
-&amp;ldquo;Unknown Kotlin JVM target: 21&amp;rdquo;
-同様に、flutter create コマンドを使って新しい Flutter プロジェクトを作成すると、次のような警告が表示されることがあります。
-&amp;ldquo;The configured version of Java detected may conflict with the Gradle version in your new Flutter app.</description>
+Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。 これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。
+  macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。</description>
     </item>
     
     <item>

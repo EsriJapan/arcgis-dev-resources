@@ -28,19 +28,22 @@ aliases = ["/create-startup-app-flutter/"]
 
 {{% notice warning %}}
 
-Android Studio の最新リリースである Ladybug 2024.2.1+ を使用している場合、Flutter アプリを起動しようとするとエラーが発生することがあります。例えば、このチュートリアルを実行しようとすると、次のようなエラーが表示されることがあります。  
-*"Unknown Kotlin JVM target: 21"*  
-同様に、flutter create コマンドを使って新しい Flutter プロジェクトを作成すると、次のような警告が表示されることがあります。  
-*"The configured version of Java detected may conflict with the Gradle version in your new Flutter app."*  
-この問題は、Ladybug にバンドルされている Java のバージョン（JDK 21）が Flutter の要件（JDK 17）と後方互換性がないことと、Flutter が使用している Gradle のバージョンに関連しています。
+Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。
+これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。
 
-新しい Flutter アプリを作成し、Android Studio Ladybug でこのチュートリアルを実行するための解決策は、手動で JDK 17 をインストールし、Flutter が JDK 17 を使用するようにリダイレクトすることです。  
-Android Studio からこの操作を行うためには、  
-*[設定] -> [ビルドツール] -> [Gradle JDK Location]* に行き、JDK 17 のインストール パスを設定します。  
-またはコマンド ラインから次のように実行します。
-```powershell
-flutter config --jdk-dir=<your-local-JDK-17-path>
-```
+* macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。
+    
+    ```
+    brew install openjdk@17
+    sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+    flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk.jdk/Contents/Home
+    ```
+
+* Windowsの場合：Microsoft の [OpenJDK](https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-17) ページから OpenJDK 17 をダウンロードして、zip ファイルを任意のフォルダに解凍した後、PowerShell を使用して設定します。
+
+    ```
+    flutter config --jdk-dir PATH-TO-JDK
+    ```
 
 {{% /notice %}}
 
@@ -50,12 +53,12 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 
 1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 2. 開発環境が[システム要件](https://developers.arcgis.com/flutter/reference/system-requirements/)を満たしており、[Flutter の開発環境](../../../tips/flutter/install-flutter-200.x/) が整っていることを確認します。
-<!-- 3. Flutter 用の IDE。[VS Code](https://code.visualstudio.com/)を推奨しています。 -->
+3. Flutter 用の IDE。[VS Code](https://code.visualstudio.com/) を推奨しています。
 
 ## ステップ
 
 ### 新しい Flutter アプリを作成します
-1. **VS Code** を開き、ウェルカム タブで [Open Folder...] を選択します。プロジェクトの場所を選んでください。
+1. **VS Code** を開き、Welcome タブで [Open Folder...] を選択します。プロジェクトの場所を選んでください。
 2. [View] > [Terminal] に進みます。
 3. ターミナル ウィンドウで以下のコマンドを使い、**display_a_map** という新しい Flutter アプリを作成します。 必要なターゲット プラットフォームと 組織名 **com.example.app** を設定します。
 
@@ -66,7 +69,7 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 ### ArcGIS Maps SDK for Flutter を追加します
 `arcgis_maps` パッケージに依存関係を追加します。
 
-1. VS Code のターミナルで、ディレクトリを新しいプロジェクトに変更します。
+1. VS Code のターミナルで、ディレクトリーを新しいプロジェクトに変更します。
     ```powershell
     cd display_a_map
     ```
@@ -85,47 +88,45 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 
 ### プラットフォーム固有の構成
 #### Android
-1. プロジェクトの `android/app/build.gradle` ファイルを編集して、最小要件を更新します。
+1. プロジェクトの `android/app/build.gradle.kts` ファイルを編集して、最小要件を更新します。
 
-    build.gradle
+    build.gradle.kts
 
 	```gradle
-	android {
-    	namespace = "com.example.app.display_a_map"
-    	compileSdk = flutter.compileSdkVersion
-		ndkVersion = "25.2.9519653"  //変更
+    android {
+        namespace = "com.example.app.display_a_map"
+        compileSdk = flutter.compileSdkVersion
+        ndkVersion = "27.0.12077973" //変更
 
-    	compileOptions {
-        	sourceCompatibility = JavaVersion.VERSION_1_8
-        	targetCompatibility = JavaVersion.VERSION_1_8
-    	}
-
-    	kotlinOptions {
-        	jvmTarget = JavaVersion.VERSION_1_8
-    	}
-
-    	defaultConfig {
-    	    // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-    	    applicationId = "com.example.app.display_a_map"
-    	    // You can update the following values to match your application needs.
-    	    // For more information, see: https://flutter.dev/to/review-gradle-config.
-    	    //
-			minSdk = 26 // 変更
-    	    targetSdk = flutter.targetSdkVersion
-    	    versionCode = flutter.versionCode
-    	    versionName = flutter.versionName
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
-    }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_11.toString()
+        }
+
+        defaultConfig {
+            // TODO: 任意のアプリケーション ID を指定します (https://developer.android.com/studio/build/application-id.html).
+            applicationId = "com.example.app.display_a_map"
+            // アプリケーションの要件に合わせて次の値を更新します。
+            // 詳細については https://flutter.dev/to/review-gradle-config を参照してください。
+            minSdk = 26 //変更
+            targetSdk = flutter.targetSdkVersion
+            versionCode = flutter.versionCode
+            versionName = flutter.versionName
+        }
 	```
 
-2. プロジェクトの `android/settings.gradle` ファイルを編集して、Kotlin のバージョンを更新します。
+2. プロジェクトの `android/settings.gradle.kts` ファイルを編集して、Kotlin のバージョンを更新します。
 
-    settings.gradle
+    settings.gradle.kts
 
 	```gradle
 	plugins {
         id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-        id "com.android.application" version "8.1.0" apply false
+        id "com.android.application" version "8.7.0" apply false
         id "org.jetbrains.kotlin.android" version "1.9.0" apply false //変更
 	}
 	```  
@@ -203,7 +204,7 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
     ```dart
     void main() {
 
-        const apiKey = ''; // Your access token here. //追加
+        const apiKey = ''; // アクセス トークンをここに記入します。 //追加
 
         runApp(const MainApp());
     }
@@ -222,7 +223,7 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
     ```dart
     void main() {
 
-    const apiKey = ''; // Your access token here.
+    const apiKey = ''; // アクセス トークンをここに記入します。
 
     ArcGISEnvironment.apiKey = apiKey; //追加
 
@@ -243,7 +244,7 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
     ```dart
     void main() {
 
-        const apiKey = ''; // Your access token here.
+        const apiKey = ''; // アクセス トークンをここに記入します。
 
         ArcGISEnvironment.apiKey = apiKey;
 
@@ -264,7 +265,8 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 
 1. テンプレート `MainApp` クラス定義をリファクタリングして、[`StatefulWidget`](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html) を拡張します。 [`StatelessWidget`](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) キーワードにマウス カーソルを合わせて右クリックし、[Refactor...] から、[Convert to StatefulWidget] を選択してコードをリファクタリングします。
 
-    ArcGIS Maps SDK for Flutter で作業していると、データの変更に応じて UI を更新するなど、アプリケーションの状態の更新が必要になることがよくあります。 ステートフル ウィジェットを実装することで、アプリはこのような状況に対応できます。 ステートレス ウィジェットの実装を使用して、単に地図を表示することも可能です。
+    ArcGIS Maps SDK for Flutter で作業していると、データの変更に応じて UI を更新するなど、アプリケーションの状態の更新が必要になることがよくあります。 ステートフル ウィジェットを実装することで、アプリはこのような状況に対応できます。 ステートレス ウィジェットの実装を使用して、単に地図を表示することも可能です。[Display map](https://developers.arcgis.com/flutter/sample-code/display-map/) サンプルをご確認ください。
+
 
     main.dart
 
@@ -464,7 +466,7 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
     }
     ```
 
-7. ArcGIS マップ ビュー コントローラーの [`arcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html) プロパティをマップに設定します。 さらに、[`setViewpoint()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html) を呼び出して、富士山にズームします。
+7. ArcGIS マップ ビュー コントローラーの [`arcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html) プロパティーをマップに設定します。 さらに、[`setViewpoint()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html) を呼び出して、富士山にズームします。
 
     main.dart
 
@@ -532,10 +534,10 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
 3. 以下のコマンドを実行します。
 
     ```powershell
-    dart run arcgis_maps install lib/main.dart
+    dart run arcgis_maps install
     ```
 
-4. アクセス トークンを取得し、ソース コード ファイルに API キーを設定します。
+4. [アクセス トークンを取得](https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/)し、ソース コード ファイルに [API キーを設定](#api-キーを設定する)します。
 5. Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。
 6. VS Code で、[Run] > [Run Without Debugging] を選択します。
 
@@ -550,25 +552,21 @@ flutter config --jdk-dir=<your-local-JDK-17-path>
     ```dart
     void onMapViewReady() {
 
-        //URI を生成します。
-        var uri = Uri(
-          scheme: "https",
-          host: "example.com",
-          path: "Portal の Path"
-        );
-
-        //ArcGIS ポータルを作成します。URI を指定しない場合は "Portal.arcGISOnline()" を使用します。
-        final portal = Portal(uri);
-
         //アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
-        final portalItem = PortalItem.withPortalAndItemId(portal: portal, itemId: "Web マップの ID");
+        final portalItem = PortalItem.withPortalAndItemId(
+            portal: Portal.arcGISOnline(),
+            itemId: "Web マップの ID",
+        );
 
         //ポータル アイテムからマップを作成します。
         final map = ArcGISMap.withItem(portalItem);
+
+        _mapViewController.arcGISMap = map;
+
     }
     ```
 
  ---
 
- アプリの動作が確認できたら [ArcGIS の セキュリティと認証について学びましょう！](../../security)
+ アプリの動作が確認できたら [ArcGIS の セキュリティーと認証について学びましょう！](../../security)
 

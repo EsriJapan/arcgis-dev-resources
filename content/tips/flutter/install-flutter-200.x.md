@@ -44,7 +44,7 @@ ArcGIS Maps SDK for Flutter は、Flutter のパッケージ リポジトリで�
 	dart run arcgis_maps install
 	```  
 
-	このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリ配布が Flutter プロジェクトにダウンロードされ、セットアップされます。
+	このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリー配布が Flutter プロジェクトにダウンロードされ、セットアップされます。ソース管理にチェックする場合は、.gitignore ファイルに arcgis_maps_core を追加することをお勧めします。
 
 この API を使用するには、以下の import 文を dart コード（.dart）ファイルに追加します。
 
@@ -57,24 +57,24 @@ Android、iOS、またはその両方向けに開発するには、Flutter プ�
 
 ### Android
 1. 以下の最低要件を更新します。
-   * Android NDK バージョン: `25.2.9519653`
+   * Android NDK バージョン: `27.0.12077973`
    * Android の最低 SDK バージョン: `26`
 
-	android/app/build.gradle
+	android/app/build.gradle.kts
 
 	```gradle
 	android {
     	namespace = "com.esri.flutter_project_template"
     	compileSdk = flutter.compileSdkVersion
-		ndkVersion = "25.2.9519653"  // 変更
+		ndkVersion = "27.0.12077973"  // 変更
 
     	compileOptions {
-        	sourceCompatibility = JavaVersion.VERSION_1_8
-        	targetCompatibility = JavaVersion.VERSION_1_8
+        	sourceCompatibility = JavaVersion.VERSION_11
+        	targetCompatibility = JavaVersion.VERSION_11
     	}
 
     	kotlinOptions {
-        	jvmTarget = JavaVersion.VERSION_1_8
+        	jvmTarget = JavaVersion.VERSION_11.toString()
     	}
 
     	defaultConfig {
@@ -149,7 +149,7 @@ android/app/src/main/AndroidManifest.xml
 	</activity> <!-- application タグ内の activity タグ-->
     
 	<!-- 追加開始 -->
- 	<activity
+    <activity
         android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
         android:exported="true">
         <intent-filter android:label="flutter_web_auth_2">
@@ -208,7 +208,7 @@ ArcGIS Maps SDK for Flutter の一部の機能には、追加のパーミッシ�
 * 常にユーザーの位置情報へのアクセスを要求する（[NSLocationAlwaysAndWhenInUseUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription)）
 * アプリがフォアグラウンドで実行されている間、ユーザーの位置情報へのアクセスを要求する（[NSLocationWhenInUseUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationwheninuseusagedescription)）
 
-次のコード例では、[情報プロパティ リスト](https://developer.apple.com/documentation/bundleresources/information_property_list)にこれらを含めています。
+次のコード例では、[情報プロパティー リスト](https://developer.apple.com/documentation/bundleresources/information_property_list)にこれらを含めています。
 
 ios/Runner/Info.plist
 
@@ -237,7 +237,7 @@ ios/Runner/Info.plist
 
 {{% notice info %}}
 
-ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティ[7-Zip](https://www.7-zip.org/) をお勧めします。
+ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー [7-Zip](https://www.7-zip.org/) をお勧めします。
 
 {{% /notice %}}
 
@@ -255,6 +255,6 @@ ios/Runner/Info.plist
 ### 補足データ
 
 #### 投影 エンジン データ
-測地系変換は、ある空間参照から別の空間参照にジオメトリを投影する必要がある場合に使用されます。 測地系変換は、数学的に定義する方法（方程式ベースの変換）と、外部のサポート ファイルに依存する方法（グリッド ベースの変換）があります。 アプリでグリッド ベースの変換を使用する場合、投影エンジン のデータ ファイルが必要です。 API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出できます。
+測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。
 
-アプリでグリッド ベースの変換が必要な場合は、ダウンロード ページからサポートする [投影エンジン ファイル](https://developers.arcgis.com/flutter/downloads/#projection-engine-data)をダウンロードできます。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。
+グリッド ベースの変換を使用している場合は、ダウンロード ページからサポートする [投影エンジン ファイル](https://developers.arcgis.com/flutter/downloads/#projection-engine-data)をダウンロードしてください。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。
