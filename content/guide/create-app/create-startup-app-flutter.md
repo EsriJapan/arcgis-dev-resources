@@ -57,7 +57,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 
 ## ステップ
 
-### 新しい Flutter アプリを作成します
+### 新しい Flutter アプリを作成する
 1. **VS Code** を開き、Welcome タブで [Open Folder...] を選択します。プロジェクトの場所を選んでください。
 2. [View] > [Terminal] に進みます。
 3. ターミナル ウィンドウで以下のコマンドを使い、**display_a_map** という新しい Flutter アプリを作成します。 必要なターゲット プラットフォームと 組織名 **com.example.app** を設定します。
@@ -66,7 +66,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     flutter create -e display_a_map --platforms ios,android --org com.example.app
     ```
 
-### ArcGIS Maps SDK for Flutter を追加します
+### ArcGIS Maps SDK for Flutter を追加する
 `arcgis_maps` パッケージに依存関係を追加します。
 
 1. VS Code のターミナルで、ディレクトリーを新しいプロジェクトに変更します。
@@ -117,7 +117,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
             versionCode = flutter.versionCode
             versionName = flutter.versionName
         }
-	```
+    ```
 
 2. プロジェクトの `android/settings.gradle.kts` ファイルを編集して、Kotlin のバージョンを更新します。
 
@@ -185,7 +185,9 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。
 1. アクセス トークンを取得するには、[API キーの取得](../../get-api-key) チュートリアルに進んでください。
 2. 次の権限が有効になっていることを確認してください。[ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
-3. アクセス トークンをコピーします。アクセス トークンを取得する他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
+3. アクセス トークンをコピーします。
+
+アクセス トークンを取得する他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
 
 ### API キーを設定する
 1. VS Codeで、`lib/main.dart` を開きます。
@@ -466,7 +468,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     }
     ```
 
-7. ArcGIS マップ ビュー コントローラーの [`arcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html) プロパティーをマップに設定します。 さらに、[`setViewpoint()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html) を呼び出して、富士山にズームします。
+7. ArcGIS マップ ビュー コントローラーの [`arcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html) プロパティーを `map` に設定します。 さらに、[`setViewpoint()`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html) を呼び出して、富士山にズームします。
 
     main.dart
 

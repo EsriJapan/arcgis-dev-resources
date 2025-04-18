@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-18T14:29:55 JST">
+<meta name="revised" content="2025-04-18T15:43:47 JST">
 <title>Flutter :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -970,8 +970,8 @@ if (!doNotTrack) {
     <li><a href="#前提条件">前提条件</a></li>
     <li><a href="#ステップ">ステップ</a>
       <ul>
-        <li><a href="#新しい-flutter-アプリを作成します">新しい Flutter アプリを作成します</a></li>
-        <li><a href="#arcgis-maps-sdk-for-flutter-を追加します">ArcGIS Maps SDK for Flutter を追加します</a></li>
+        <li><a href="#新しい-flutter-アプリを作成する">新しい Flutter アプリを作成する</a></li>
+        <li><a href="#arcgis-maps-sdk-for-flutter-を追加する">ArcGIS Maps SDK for Flutter を追加する</a></li>
         <li><a href="#プラットフォーム固有の構成">プラットフォーム固有の構成</a></li>
         <li><a href="#アクセス-トークンを取得する">アクセス トークンを取得する</a></li>
         <li><a href="#api-キーを設定する">API キーを設定する</a></li>
@@ -1034,7 +1034,7 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 <li>Flutter 用の IDE。<a href="https://code.visualstudio.com/">VS Code</a> を推奨しています。</li>
 </ol>
 <h2 id="ステップ">ステップ</h2>
-<h3 id="新しい-flutter-アプリを作成します">新しい Flutter アプリを作成します</h3>
+<h3 id="新しい-flutter-アプリを作成する">新しい Flutter アプリを作成する</h3>
 <ol>
 <li>
 <p><strong>VS Code</strong> を開き、Welcome タブで [Open Folder&hellip;] を選択します。プロジェクトの場所を選んでください。</p>
@@ -1047,7 +1047,7 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">flutter create -e display_a_map --platforms ios,android --org com.example.app
 </code></pre></div></li>
 </ol>
-<h3 id="arcgis-maps-sdk-for-flutter-を追加します">ArcGIS Maps SDK for Flutter を追加します</h3>
+<h3 id="arcgis-maps-sdk-for-flutter-を追加する">ArcGIS Maps SDK for Flutter を追加する</h3>
 <p><code>arcgis_maps</code> パッケージに依存関係を追加します。</p>
 <ol>
 <li>VS Code のターミナルで、ディレクトリーを新しいプロジェクトに変更します。
@@ -1093,8 +1093,7 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
         versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
         versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
     <span style="color:#f92672">}</span>
-</code></pre></div><p>`</p>
-</li>
+</code></pre></div></li>
 <li>
 <p>プロジェクトの <code>android/settings.gradle.kts</code> ファイルを編集して、Kotlin のバージョンを更新します。</p>
 <p>settings.gradle.kts</p>
@@ -1151,8 +1150,9 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <ol>
 <li>アクセス トークンを取得するには、<a href="../../get-api-key">API キーの取得</a> チュートリアルに進んでください。</li>
 <li>次の権限が有効になっていることを確認してください。[ロケーション サービス] &gt; [ベースマップ] &gt; [ベースマップ スタイル サービス]</li>
-<li>アクセス トークンをコピーします。アクセス トークンを取得する他の方法については、<a href="https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/">Types of authentication</a> を参照してください。</li>
+<li>アクセス トークンをコピーします。</li>
 </ol>
+<p>アクセス トークンを取得する他の方法については、<a href="https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/">Types of authentication</a> を参照してください。</p>
 <h3 id="api-キーを設定する">API キーを設定する</h3>
 <ol>
 <li>
@@ -1402,7 +1402,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
 </code></pre></div></li>
 <li>
-<p>ArcGIS マップ ビュー コントローラーの <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html"><code>arcGISMap</code></a> プロパティーをマップに設定します。 さらに、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html"><code>setViewpoint()</code></a> を呼び出して、富士山にズームします。</p>
+<p>ArcGIS マップ ビュー コントローラーの <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapViewController/arcGISMap.html"><code>arcGISMap</code></a> プロパティーを <code>map</code> に設定します。 さらに、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/GeoViewController/setViewpoint.html"><code>setViewpoint()</code></a> を呼び出して、富士山にズームします。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_MainAppState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>MainApp<span style="color:#f92672">&gt;</span> {
 

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-18T14:29:55 JST">
+<meta name="revised" content="2025-04-18T15:43:47 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1030,7 +1030,7 @@ if (!doNotTrack) {
 <li>
 <p><code>arcgis_maps_core</code> をダウンロードしてインストールします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart run arcgis_maps install
-</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリー配布が Flutter プロジェクトにダウンロードされ、セットアップされます。ソース管理にチェックする場合は、.gitignore ファイルに arcgis_maps_core を追加することをお勧めします。</p>
+</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリー配布が Flutter プロジェクトにダウンロードされ、セットアップされます。ソース管理にチェックする場合は、<code>.gitignore</code> ファイルに <code>arcgis_maps_core</code> を追加することをお勧めします。</p>
 </li>
 </ol>
 <p>この API を使用するには、以下の import 文を dart コード（.dart）ファイルに追加します。</p>
@@ -1187,15 +1187,15 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <h3 id="サンプル-コード">サンプル コード</h3>
 <p>独自のアプリケーションに追加できるさまざまな強力な機能を説明した、実践的なサンプル コードを入手できます。 サンプルを検索し、<a href="https://developers.arcgis.com/flutter/sample-code/">サンプル ドキュメント</a>で関連するコードを参照するか、<a href="https://github.com/Esri/arcgis-maps-sdk-flutter-samples">サンプル リポジトリ</a>からコードをダウンロードしてローカルで実行します。</p>
 <h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
-<p>開発者向けドキュメントは、ダウンロード ページからアーカイブとして<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>できます。 アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルのウェブ サーバーからドキュメントを提供する手順が含まれています。 スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。 このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</p>
+<p>ダウンロード ページ から、開発者向けドキュメントをアーカイブとして<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>できます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、パブリックなインターネット上ではなく、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されています。</p>
 <div class="notices info" >
 <p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
 </div>
-<p>ドキュメントをローカルに提供するために：</p>
+<p>ローカルでドキュメントを公開する方法</p>
 <ul>
-<li>使用する SDK の<a href="https://developers.arcgis.com/flutter/downloads/">ドキュメントをダウンロード</a>します。 ダウンロードしたファイルは .zip アーカイブ形式です。</li>
+<li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>します。 ダウンロードしたファイルは .zip アーカイブ形式になっています。</li>
 <li>アーカイブをローカル フォルダに解凍します。 解凍されたアーカイブには、<code>public</code> と <code>install</code> の 2 つのサブフォルダがあります。</li>
-<li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従ってください。</li>
+<li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
 </ul>
 <div class="notices note" >
 <p>ライブ ドキュメント サイトはリリースとリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。</p>
