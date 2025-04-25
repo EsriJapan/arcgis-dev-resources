@@ -13,11 +13,11 @@ aliases = ["/get-dev-account/"]
 
 以下の手順で ArcGIS Location Platform の新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまで[お問い合わせ](http://www.esrij.com/contact/)ください。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/signup1.gif" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-dev-account/signup.gif" width="800px">
 
 1. [ArcGIS Location Platform](https://location.arcgis.com/) のサイト (英語) にアクセスし、[Sign Up For Free] をクリックします。
 
-2. 名前 (__※名前には半角英字のみを使用してください__)、E メールアドレスを入力し [Continue] をクリックします。
+2. 名前 (__※名前には半角英字のみを使用してください__)、E メールアドレス、メールの配信に関する設定を入力し [Continue] をクリックします。
 
 3. ユーザー名、パスワード、ポータル URL、組織名、秘密の質問とその答えを入力します。
 
