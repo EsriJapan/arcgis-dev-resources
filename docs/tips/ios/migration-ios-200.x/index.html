@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-04-25T09:57:51 JST">
+<meta name="revised" content="2025-05-12T13:14:32 JST">
 <title>バージョン 100.x から 200.x への移行 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -970,7 +970,7 @@ if (!doNotTrack) {
     <li><a href="#api-名の変更">API 名の変更</a>
       <ul>
         <li><a href="#型名変更">型名変更</a></li>
-        <li><a href="#メソッドおよびプロパティ名の変更">メソッドおよびプロパティ名の変更</a></li>
+        <li><a href="#メソッドおよびプロパティー名の変更">メソッドおよびプロパティー名の変更</a></li>
         <li><a href="#swift-構造化された同時並行処理関連の変更">Swift 構造化された同時並行処理関連の変更</a></li>
       </ul>
     </li>
@@ -1007,7 +1007,7 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Maps SDK for Swift - Guide - <a href="https://developers.arcgis.com/swift/reference/migrate-from-100-x-to-200-x/">Migrate from 100.x to 200.x</a></p>
 <h2 id="イントロダクション">イントロダクション</h2>
-<p>ArcGIS Maps SDK for Swift v200.0 は、Swift 開発者向けに設計された次世代マッピング API を提供します。これは、ArcGIS Runtime SDK for iOS v100.x の後継であり、同じ基盤、アーキテクチャ、および機能を継承しています。API の概念の多くは変更されていませんが、SwiftUI、構造化された同時並行処理、値型、Measurement、デフォルト パラメーターなどの Swift の規則、フレームワーク、および機能に合わせて記述されています。</p>
+<p>ArcGIS Maps SDK for Swift v200.x は、Swift 開発者向けに設計された次世代マッピング API を提供します。これは、ArcGIS Runtime SDK for iOS v100.x の後継であり、同じ基盤、アーキテクチャー、および機能を継承しています。API の概念の多くは変更されていませんが、SwiftUI、構造化された同時並行処理、値型、Measurement、デフォルト パラメーターなどの Swift の規則、フレームワーク、および機能に合わせて記述されています。</p>
 <p>既存のアプリを移行するには、大幅な変更が必要です。具体的には、SwiftUI を使用してユーザー インターフェイスを再構築し、async/await を使用して非同期コードを実装する必要があります。 これらのテクノロジーをしっかりと理解することは、移行を容易にし、強固な基盤を提供するのに役立ちます。</p>
 <h2 id="api-名の変更">API 名の変更</h2>
 <h3 id="型名変更">型名変更</h3>
@@ -1016,7 +1016,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>v100.x</th>
-<th>v200</th>
+<th>v200.x</th>
 </tr>
 </thead>
 <tbody>
@@ -1055,7 +1055,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>v100.x</th>
-<th>v200</th>
+<th>v200.x</th>
 </tr>
 </thead>
 <tbody>
@@ -1065,47 +1065,47 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<h3 id="メソッドおよびプロパティ名の変更">メソッドおよびプロパティ名の変更</h3>
-<p><a href="https://www.swift.org/documentation/api-design-guidelines/">Swift API Design Guidelines</a> に従うように、さまざまなメソッドとプロパティが調整されています。</p>
+<h3 id="メソッドおよびプロパティー名の変更">メソッドおよびプロパティー名の変更</h3>
+<p><a href="https://www.swift.org/documentation/api-design-guidelines/">Swift API Design Guidelines</a> に従うように、さまざまなメソッドとプロパティーが調整されています。</p>
 <ul>
 <li>
 <p>メソッド引数のラベルが読みやすくなりました。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">AGSGeometryEngine.bufferGeometry(geometry, byDistance:<span style="color:#ae81ff">5000</span>)
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">GeometryEngine.buffer(around:geometry, distance: <span style="color:#ae81ff">5000</span>)
 </code></pre></div></li>
 <li>
 <p>メソッドの引数の順序が変更されました。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">featureLayer.setFeature(feature, visible: <span style="color:#66d9ef">true</span>)
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">featureLayer.setVisible(<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">for</span>:feature)
 </code></pre></div></li>
 <li>
-<p>Boolean プロパティはアサーションとして読み取られます。</p>
+<p>Boolean プロパティーはアサーションとして読み取られます。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">trackingStatus.calculatingRoute
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">trackingStatus.isCalculatingRoute
 </code></pre></div></li>
 <li>
-<p>ファクトリ メソッドは、make プレフィックスを使用します。</p>
+<p>ファクトリー メソッドは、make プレフィックスを使用します。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">featureTable.createFeature()
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">featureTable.makeFeature()
 </code></pre></div></li>
 <li>
 <p>コレクションを含むクラスは、それらを変更するための変更メソッドを提供します。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">graphicsOverlay.graphics.add(graphic)
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">graphicsOverlay.addGraphic(graphic)
 </code></pre></div></li>
 </ul>
 <h3 id="swift-構造化された同時並行処理関連の変更">Swift 構造化された同時並行処理関連の変更</h3>
-<p>非同期メソッドの呼び出しで、完了を処理するためにクロージャ コールバックを渡す必要がなくなりました。 非同期メソッドを待機して、結果を直接使用するか、エラーを処理できます。</p>
+<p>非同期メソッドの呼び出しで、完了を処理するためにクロージャー コールバックを渡す必要がなくなりました。 非同期メソッドを待機して、結果を直接使用するか、エラーを処理できます。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">routeTask.solveRoute(with: routeParameters) { (routeResult: AGSRouteResult?, error: Error?) <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> error {
@@ -1114,14 +1114,14 @@ if (!doNotTrack) {
         <span style="color:#75715e">// 結果の使用</span>
     }
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">do</span> {
     <span style="color:#66d9ef">let</span> routeResult = <span style="color:#66d9ef">try</span> await routeTask.solveRoute(using: routeParameters)
     <span style="color:#75715e">// 結果の使用</span>
 } <span style="color:#66d9ef">catch</span> {
     <span style="color:#75715e">// エラー処理</span>
 }
-</code></pre></div><p>ジョブを開始するために、ステータスを監視したり完了を処理したりするためにクロージャ コールバックを渡す必要がなくなりました。代わりに、ジョブを開始し、その出力を待って結果を取得し、そのメッセージを非同期的に反復してステータスを監視できます。</p>
+</code></pre></div><p>ジョブを開始するために、ステータスを監視したり完了を処理したりするためにクロージャー コールバックを渡す必要がなくなりました。代わりに、ジョブを開始し、その出力を待って結果を取得し、そのメッセージを非同期的に反復してステータスを監視できます。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> job = offlineMapTask.generateOfflineMapJob(
     with: parameters,
@@ -1137,7 +1137,7 @@ job.start(statusHandler: { status <span style="color:#66d9ef">in</span>
         <span style="color:#66d9ef">self</span>.offlineMapGenerationDidFail(with: error)
     }
 })
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> job = offlineMapTask.makeGenerateOfflineMapJob(
     parameters: parameters,
     downloadDirectory: downloadDirectoryURL
@@ -1153,12 +1153,12 @@ Task {
 } <span style="color:#66d9ef">catch</span> {
     <span style="color:#66d9ef">self</span>.error = error
 }
-</code></pre></div><p>イベントは、コールバック ハンドラ、デリゲート、または通知センターではなく、非同期シーケンスを通じて提供されます。</p>
+</code></pre></div><p>イベントは、コールバック ハンドラー、デリゲート、または通知センターではなく、非同期シーケンスを通じて提供されます。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">locationDisplay.dataSourceStatusChangedHandler = { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] isStarted <span style="color:#66d9ef">in</span>
     <span style="color:#75715e">// 開始したかどうかを確認</span>
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">for</span> await isStarted <span style="color:#66d9ef">in</span> locationDisplay.statusChanged {
     <span style="color:#75715e">// 開始したかどうかを確認</span>
 }
@@ -1170,14 +1170,14 @@ Task {
         routeTraversedGraphic.geometry = trackingStatus.routeProgress.traversedGeometry
     }
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">try</span> await newStatus <span style="color:#66d9ef">in</span> routeTracker.<span style="color:#960050;background-color:#1e0010">$</span>trackingStatus {
     routeRemainingGraphic.geometry = newStatus?.routeProgress.remainingGeometry
     routeTraversedGraphic.geometry = newStatus?.routeProgress.traversedGeometry
 }
 </code></pre></div><h2 id="swiftui-関連の変更">SwiftUI 関連の変更</h2>
 <h3 id="マップ-ビューを作成する">マップ ビューを作成する</h3>
-<p>SwiftUI は宣言型 UI フレームワークです。これは、View を作成するときに、特定の状態で何を表示するかについての説明も作成することを意味します。これは、フレームが定義されたビューを作成する UIKit の UIView からの変更です。SwiftUI では、ビューは親ビューの body に含まれています。ただし、UIKit ビューは、プログラムまたは Storyboard を使用してビュー コントローラーのルート ビューに追加されていました。次のコードは、v200.0 と比較して、v100.15 でマップ ビューを作成する方法を示しています。</p>
+<p>SwiftUI は宣言型 UI フレームワークです。これは、View を作成するときに、特定の状態で何を表示するかについての説明も作成することを意味します。これは、フレームが定義されたビューを作成する UIKit の UIView からの変更です。SwiftUI では、ビューは親ビューの body に含まれています。ただし、UIKit ビューは、プログラムまたは Storyboard を使用してビュー コントローラーのルート ビューに追加されていました。次のコードは、v200.x と比較して、v100.15 でマップ ビューを作成する方法を示しています。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> mapView: AGSMapView! {
     <span style="color:#66d9ef">didSet</span> {
@@ -1185,7 +1185,7 @@ Task {
         mapView.setViewpoint(AGSViewpoint(latitude: <span style="color:#f92672">-</span><span style="color:#ae81ff">117</span>, longitude: <span style="color:#ae81ff">34</span>, scale: <span style="color:#ae81ff">1e5</span>))
     }
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// Geo ビューに必要なさまざまなモデル オブジェクトを格納するモデル</span>
 <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Model</span>: ObservableObject {
     <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISOceans)
@@ -1210,7 +1210,7 @@ Task {
 <p>ビュー修飾子をビューに適用して、ビューの外観と動作をカスタマイズします。 新しい MapView と SceneView には、対応する UIKit と同じ機能を実現するためのさまざまなビュー修飾子があります。</p>
 <ul>
 <li>
-<p>Viewpoint: ビューポイント状態変数をマップビューの現在のビューポイントで更新します。</p>
+<p>Viewpoint: ビューポイント状態変数をマップ ビューの現在のビュー ポイントで更新します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">.onViewpointChanged(kind: .centerAndScale) { viewpoint = $0 }
 </code></pre></div></li>
 <li>
@@ -1220,12 +1220,12 @@ Task {
 }
 </code></pre></div></li>
 <li>
-<p>LocationDisplay: マップビューの位置情報表示をオンにして設定します。</p>
+<p>LocationDisplay: マップ ビューの位置情報表示をオンにして設定します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">.locationDisplay(model.locationDisplay)
 </code></pre></div></li>
 <li>
 <p>Callout: マップ ビューでタップされたポイントの座標を含むコールアウトを表示します。</p>
-<p>AGSGeoViewTouchDelegate のジェスチャ デリゲート メソッドは、さまざまなビュー修飾子に置き換えられました。</p>
+<p>AGSGeoViewTouchDelegate のジェスチャー デリゲート メソッドは、さまざまなビュー修飾子に置き換えられました。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">.onSingleTapGesture { screenPoint, mapPoint <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">if</span> calloutPlacement == <span style="color:#66d9ef">nil</span> {
         <span style="color:#75715e">// タップした位置にコールアウトを WGS84 で表示する</span>
@@ -1248,8 +1248,8 @@ Task {
 </code></pre></div></li>
 </ul>
 <h3 id="ジオエレメントを識別する">ジオエレメントを識別する</h3>
-<p>UIKit と SwiftUI の違いにより、Identify(識別)の操作をマップ ビューで直接実行することはできません。 v200.0 では、SwiftUI の reader-proxy デザイン パターンに従い、MapViewProxy を導入して、Identify などの操作を実行できるようにします。</p>
-<p>次のコードは、v100.15 での AGSGeoView.identifyLayers を使用した Identify と、v200.0 での MapViewProxy.identify を使用した Identify の違いを示しています。</p>
+<p>UIKit と SwiftUI の違いにより、Identify(識別)の操作をマップ ビューで直接実行することはできません。 v200.x では、SwiftUI の reader-proxy デザイン パターンに従い、MapViewProxy を導入して、Identify などの操作を実行できるようにします。</p>
+<p>次のコードは、v100.15 での AGSGeoView.identifyLayers を使用した Identify と、v200.x での MapViewProxy.identify を使用した Identify の違いを示しています。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// Completion ブロック</span>
 mapView.identifyLayer(
@@ -1265,7 +1265,7 @@ mapView.identifyLayer(
         <span style="color:#66d9ef">self</span>.handleIdentifyResults(results)
     }
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">MapViewReader { mapViewProxy <span style="color:#66d9ef">in</span>
     MapView(map: map)
         .onSingleTapGesture { screenPoint, tapLocation <span style="color:#66d9ef">in</span>
@@ -1289,7 +1289,7 @@ mapView.identifyLayer(
         }
 }
 </code></pre></div><h3 id="state-および-stateobject">@State および @StateObject</h3>
-<p>SwiftUI でのビューの更新は、状態の変化によって駆動されます。 次のコードは、マップ ビューの最新の表示領域の取得方法を、v200.0 と v100.15 で比較しています。</p>
+<p>SwiftUI でのビューの更新は、状態の変化によって駆動されます。 次のコードは、マップ ビューの最新の表示領域の取得方法を、v200.x と v100.15 で比較しています。</p>
 <p>100.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> mapView: AGSMapView! {
     <span style="color:#66d9ef">didSet</span> {
@@ -1301,7 +1301,7 @@ mapView.identifyLayer(
 <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> visibleArea: AGSPolygon? {
     mapView.visibleArea
 }
-</code></pre></div><p>200:</p>
+</code></pre></div><p>200.x:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Model</span>: ObservableObject {
     <span style="color:#66d9ef">let</span> map = Map(basemapStyle: .arcGISOceans)
 }
@@ -1319,7 +1319,7 @@ mapView.identifyLayer(
 </code></pre></div><h2 id="認証">認証</h2>
 <p>アプリで認証コードを移行する手順については、<a href="https://developers.arcgis.com/swift/reference/migrate-authentication-100-x-to-200-x/">Migrate authentication from 100.x to 200.x</a> トピックを参照してください。</p>
 <h2 id="スケッチ">スケッチ</h2>
-<p>マップ ビューでジオメトリをインタラクティブに描画するには、AGSSketchEditor の代わりに GeometryEditor を使用します。</p>
+<p>マップ ビューでジオメトリーをインタラクティブに描画するには、AGSSketchEditor の代わりに GeometryEditor を使用します。</p>
 <h2 id="その他のリソース">その他のリソース</h2>
 <p>その他の例については、新しい<a href="https://developers.arcgis.com/swift/sample-code/">サンプル</a>または<a href="https://developers.arcgis.com/swift/toolkit/">ツールキット</a>を確認できます。</p>
 <h2 id="既知の制限事項">既知の制限事項</h2>
