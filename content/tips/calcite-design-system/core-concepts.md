@@ -6,22 +6,23 @@ Weight=2
 
 出典：Calcite Design System - [core concepts](https://developers.arcgis.com/calcite-design-system/core-concepts/)
 
-Calcite Components は、[Stencil.js](https://stenciljs.com/docs/introduction) を使用して構築された、再利用可能な Web コンポーネントのライブラリです。Calcite Components を使用すると、ブランド力のある、軽量でアクセスしやすい Web アプリケーションをすばやく構築できます。
+Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。
 
-Web コンポーネントはブラウザのネイティブ規格であり、Calcite Components で開発するために必要な技術的概念の多くは、このライブラリに固有のものではありません。このページでは、効果的な開発を行うために必要な、Web の主要コンセプトを紹介しています。さらに詳しい情報について、このページにあるすべての概念は、[MDN Web Docs](https://developer.mozilla.org/ja/) やその他の Web 標準ドキュメントのソースで見つけることができます。
+Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、[MDN Web Docs](https://developer.mozilla.org/ja/) やその他の Web 標準ドキュメントで確認できます。
 
-### カスタム要素
-カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリまたは Web フレームワークを使用して、モダン ブラウザ全体で動作します。カスタム要素は機能をカプセル化するため、他のコードとのコンフリクトを防ぐことができます。
 
-Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。
+## カスタム要素
+カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリーや Web フレームワークを使用して、モダンなブラウザーで動作します。カスタム要素は機能をカプセル化するため、他のコードとの競合を防ぐことができます。
+
+Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。例えば以下のように記述します。
 
 ```html
-<calcite-tip heading="Platypus"></calcite-tip>
+<calcite-action-bar layout="horizontal"></calcite-action-bar>
 ```
 
----
-### スロット
-スロットはプレースホルダー要素であり、スロットの名前を参照することで独自のコンテンツを追加することができます。スロットは一般的な Web コンポーネントの概念であり、あなたもすでに使用している可能性があります。例えば、次のような HTML を考えてみましょう。
+
+## スロット
+スロットは、スロット名を参照することで独自のコンテンツを追加できるプレースホルダー要素です。スロットは Web コンポーネントの一般的な概念であり、すでに使用している可能性があります。例えば、次の HTML を見てみましょう。
 
 ```html
 <select>
@@ -31,34 +32,34 @@ Calcite Components はカスタム要素であり、ネイティブの HTML 要�
 </select>
 ```
 
-Web コンポーネントの用語で、`option` 要素は `select` のデフォルト スロットに配置されます。また、「Platypus」、「Sloth」、「Nine-banded」のテキストは、それぞれの `option` のデフォルト スロットに配置されます。
+Web コンポーネントの用語では、`option` 要素は `select` のデフォルト スロットに配置されます。さらに、「Platypus」、「Sloth」、「Nine-banded armadillo」のテキストは、それぞれの `option` 要素のデフォルト スロットに配置されます。
 
-また、多くの Calcite Components は、デフォルトのスロットを利用しています。例えば、下の <a href="https://developers.arcgis.com/calcite-design-system/components/tip/" target="_blank">`calcite-tip`</a> では、デフォルトのスロットに `p` コンテンツが追加されています。
+Calcite コンポーネントの多くもデフォルト スロットを利用しています。例えば、以下の [`calcite-action-bar`](https://developers.arcgis.com/calcite-design-system/components/action-bar/) では、[`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) 要素がデフォルト スロットに追加されています。
 
 ```html
-<calcite-tip heading="Platypus">
-  <img slot="thumbnail" src="platypus.jpg" alt="A platypus sensing its prey using electrical fields." />
-  <p>A platypus is a mammal with a bill, similar to a duck. They use their bill to sense prey via electrolocation.</p>
-</calcite-tip>
+<calcite-action-bar layout="horizontal">
+  <calcite-action text="Add" icon="plus" text-enabled></calcite-action>
+  <calcite-action text="Save" icon="save" text-enabled></calcite-action>
+  <calcite-tooltip slot="expand-tooltip">Toggle Action Bar</calcite-tooltip>
+</calcite-action-bar>
 ```
 
-多くの場合、デフォルトのスロットがあれば十分です。しかし、コンポーネントが複雑になればなるほど、子要素の位置やスタイルを変える必要が出てきます。そこで活躍するのがネームドスロットです。上の例では、チップの <a href="https://developers.arcgis.com/calcite-design-system/components/tip/#component-api-slots-thumbnail" target="_blank">`thumbnail`</a> スロットに画像が配置されています。これは、画像がデフォルトスロットの要素とは異なる方法で処理されるべきであることをコンポーネントに通知するものです。
+多くの場合、デフォルト スロットだけで十分です。しかし、コンポーネントが複雑になるにつれて、子要素の配置やスタイルを個別に調整する必要が出てきます。そこで登場するのが「名前付きスロット」です。上の例では、[`calcite-tooltip`](https://developers.arcgis.com/calcite-design-system/components/tooltip/) が [`calcite-action-bar`](https://developers.arcgis.com/calcite-design-system/components/action-bar/) の [`expand-tooltip`](https://developers.arcgis.com/calcite-design-system/components/action-bar/#api-reference-slots-expand-tooltip) スロットに配置されています。これにより、ツールチップがデフォルト スロット内の要素とは異なる方法で処理されるべきであることがコンポーネントに伝えられます。
 
-もしコンポーネントにスロットがあれば、[slots for `calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/#component-api-slots) のように、ドキュメントに記載されます。また詳細については、[slots on MDN](https://developer.mozilla.org/ja/docs/Web/API/Web_components/Using_templates_and_slots#adding_flexibility_with_slots) で学ぶこともできます。
+コンポーネントにスロットがある場合、[`calcite-card` のスロット](https://developers.arcgis.com/calcite-design-system/components/card/#component-api-slots)のようにドキュメントに記載されています。スロットの詳細については [MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#adding_flexibility_with_slots) を参照してください。
 
----
-### Shadow DOM
-カスタム要素はカプセル化され、そのマークアップ構造、スタイル、動作はページ上の他のコードから隠され、分離された状態に保たれます。[Shadow DOM](https://developer.mozilla.org/ja/docs/Web/API/Web_components/Using_shadow_DOM) は、カスタム要素をカプセル化する仕組みです。その結果、Shadow DOM は Web コンポーネントの DOM 要素を隠して分離するため、ブラウザでレンダリングされますが、他のコードとぶつかることはありません。
+## Shadow DOM
+カスタム要素はカプセル化されており、マークアップ構造、スタイル、動作がページ上の他のコードから隠され、分離されます。[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) はカスタム要素をカプセル化する仕組みです。その結果、Shadow DOM は Web コンポーネントの DOM 要素を隠して分離するため、ブラウザー上にレンダリングされますが、他のコードと衝突することはありません。
 
-Shadow DOM のカプセル化により、アプリケーション間で永続的なスタイルと機能を実現し、ユーザーに一貫したユーザー エクスペリエンスを提供することができます。
+Shadow DOM によるカプセル化はアプリケーション全体で一貫したスタイルと機能を維持し、ユーザーに統一されたユーザー体験を提供します。
 
----
-### CSS 変数
-Calcite Components は、スタイルを上書きするための CSS 変数を提供しています。Web コンポーネントの Shadow DOM のため、CSS 変数がないと簡単にスタイルを変更することができません。トークンには CSS 変数があり、[color](https://developers.arcgis.com/calcite-design-system/foundations/colors/) や [typography](https://developers.arcgis.com/calcite-design-system/foundations/type/) など、デザインシステム全体で使用されます。
 
-さらに、一部の Calcite Components には、コンポーネント固有のスタイルを変更するための独自の CSS 変数があります。これらの CSS 変数は、[CSS variables for `cacite-loader`](https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles) のように、コンポーネントのドキュメントで見つけることができます。
+## CSS 変数
+Calcite コンポーネントでは、スタイルを上書きするための CSS 変数が提供されています。Web コンポーネントの Shadow DOM により、CSS 変数なしでは簡単にスタイルを変更することができません。[色](https://developers.arcgis.com/calcite-design-system/foundations/colors/)や[タイポグラフィー](https://developers.arcgis.com/calcite-design-system/foundations/typography/)など、デザイン システム全体で使用されるトークンには CSS 変数が用意されています。
 
-使用例としては、CSS 変数を使用して、<a href="https://developers.arcgis.com/calcite-design-system/components/notice/" target="_blank">`calcite-notice`</a> の前景色と文字色を入れ替えることができます。
+さらに、一部の Calcite コンポーネントにはコンポーネント固有のスタイルを変更ための CSS 変数も用意されています。これらの CSS 変数は [`calcite-loader` の CSS 変数](https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles)のようにコンポーネントのドキュメントから確認できます。
+
+使用例としては、[`calcite-notice`](https://developers.arcgis.com/calcite-design-system/components/notice/) において、CSS 変数を使って表面色とテキスト色を入れ替えることが挙げられます。
 
 ```CSS
 calcite-notice {
@@ -66,30 +67,45 @@ calcite-notice {
   --calcite-ui-text-1: #ffffff;
 }
 ```
+[CSS カスタムプロパティ（変数）の使用](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties) に、機能の詳細が説明されています。
 
-[CSS variable MDN documentation](https://developer.mozilla.org/ja/docs/Web/CSS/Using_CSS_custom_properties) に、機能の詳細が説明されています。
 
----
-### コンポーネント ロード
-Web コンポーネントはプレーンな HTML 要素として始まり、その実装が<a href="https://developer.mozilla.org/ja/docs/Web/API/CustomElementRegistry/define" targat="_blenk">ブラウザで定義</a>されると同時にアップグレードされます。Calcite Components は、インポートされ、アプリケーションで使用されると、自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるまで待つ必要がある場合があります。
+## コンポーネントのロード
+Web コンポーネントは、最初はシンプルな HTML 要素として始まり、その実装が[ブラウザーで定義される](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define)とすぐにアップグレードされます。Calcite コンポーネントは、アプリケーションにインポートされ、使用すると自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるのを待つ必要がある場合もあります。
 
-#### ハイドレーション
-Stencil.js では、コンポーネントとそのすべての子コンポーネントのハイドレーションが終了したときに、フラグを追加するオプションが用意されています。これにより、様々なコンポーネントのダウンロードとレンダリングが非同期に行われるため、FOUC（Flash of Unstyled Content）を防止することができます。Calcite Components では、一度ハイドレーションされたコンポーネントに `calcite-hydrated` というCSSクラスが追加され、アプリケーションをデバッグする際に便利です。
+### ハイドレーション
+Calcite コンポーネントには、コンポーネントおよびそのすべての子コンポーネントのハイドレーションが完了した際にフラグを追加するオプションが提供されています。これは、様々なコンポーネントが非同期に読み込まれ、レンダリングされる際に、スタイルの適用前に一瞬表示されてしまうフラッシュ（FOUC）を防ぐことができます。
 
-#### 定義されたとき
-`customElementRegistry` インターフェースの <a href="https://developer.mozilla.org/ja/docs/Web/API/CustomElementRegistry/whenDefined" target="_blank">`whenDefined()`</a> メソッドは、指定された要素が定義されたときに満たされる Promise を返します。
+Calcite コンポーネントでは、ハイドレーションが完了すると `calcite-hydrated` 属性がコンポーネントに追加されます。この属性はアプリケーションをデバッグする際に便利です。
 
-Promise が満たされると、次のようにコンポーネントの定義を必要とするコードを実行できるようになります。
+### 定義された際の挙動 (whenDefined)
+{{% notice note %}}
 
-```html
+フレームワークを使っている場合や、&lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。
+
+{{% /notice %}}
+
+`customElementRegistry` インターフェイスの [`whenDefined()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined) メソッドは、指定された要素が定義された際に解決される Promise を返します。
+
+この Promise が解決された後に、そのコンポーネントの定義を必要とするコードを実行することができます。例えば、次のように記述します。
+
+```js
 customElements.whenDefined("calcite-button").then(() => document.querySelector("calcite-button").setFocus());
 ```
-#### コンポーネントの準備
-コンポーネントがいつレンダリングされるかを決定するには、Stencilの `componentOnReady()` メソッドを使用します。このメソッドは、<a href="https://stenciljs.com/docs/component-lifecycle#componentdidload" target="_blank">`componentDidLoad()` </a>ライフサイクルメソッドが起動した後に解決される Promise を返します。これは、コンポーネントのメソッドを使用する前にコンポーネントがロードされていることを確認する場合や、あるコンポーネントが他のコンポーネントに依存している場合に便利です。
 
-例えば、他のコンポーネントのレンダリングが終了するまで、<a href="https://developers.arcgis.com/calcite-design-system/components/loader/" target="_blank">`calcite-loader` </a>を表示させたい場合があります。
+### コンポーネントの準備
+コンポーネントがレンダリングされたタイミングを判断するには、`componentOnReady()` メソッドを使用できます。このメソッドは、コンポーネントがレンダリングされた後に解決される Promise を返します。コンポーネントのメソッドを使用する前や、あるコンポーネントが別のコンポーネントに依存している場合には、対象のコンポーネントが読み込まれていることを確認することが推奨されます。
 
-```JavaScript
+例えば、他のコンポーネントのレンダリングが完了するまで [`calcite-loader`](https://developers.arcgis.com/calcite-design-system/components/loader/) を表示しておきたい場合などです。
+
+```js
+await document.querySelector("calcite-alert").componentOnReady();
+document.querySelector("calcite-loader").hidden = true;
+```
+
+フレームワークを使用している場合や &lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。しかし、&lt;script type="module"&gt; を追加できない状況では、非同期関数と [`whenDefined()`](https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined) を組み合わせて使用する必要があります。
+
+```js
 (async () => {
   await customElements.whenDefined("calcite-alert");
   await document.querySelector("calcite-alert").componentOnReady();
@@ -97,9 +113,9 @@ customElements.whenDefined("calcite-button").then(() => document.querySelector("
 })();
 ```
 
-<a href="https://developer.mozilla.org/ja/docs/Web/API/window/requestAnimationFrame" target="_blank">`requestAnimationFrame` </a> のコールバックとしてコンポーネントのメソッドを呼び出すことで、コンポーネントの状態でユーザー インターフェースが更新されます。例えば、ユーザーの閲覧履歴に基づいて、<a href="https://developers.arcgis.com/calcite-design-system/components/stepper/" target="_blank">`calcite-stepper` </a>の現在のステップを設定したい場合、<a href="https://developers.arcgis.com/calcite-design-system/components/stepper/#component-api-methods-goToStep" target="_blank">`goToStep()`</a>メソッドを使うことができます。
+[`requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) のコールバックとしてコンポーネントのメソッドを呼び出すことで、ユーザー インターフェイスがコンポーネントの状態に応じて更新されることが保証されます。例えば、ユーザーの閲覧履歴に基づいて [`calcite-stepper`](https://developers.arcgis.com/calcite-design-system/components/stepper/) の現在のステップを設定したい場合は、[`goToStep()`](https://developers.arcgis.com/calcite-design-system/components/stepper/#component-api-methods-goToStep) メソッドを使用することができます。
 
-```JavaScript
+```js
 (async () => {
   await customElements.whenDefined("calcite-stepper");
   const el = await document.querySelector("calcite-stepper").componentOnReady();
@@ -107,25 +123,86 @@ customElements.whenDefined("calcite-button").then(() => document.querySelector("
 })();
 ```
 
----
-### イベント
-Calcite Components は、<a href="https://developer.mozilla.org/ja/docs/Web/API/CustomEvent/CustomEvent" target="_blank">`CustomEvent()`</a> コンストラクターを使用して<a href="https://developer.mozilla.org/ja/docs/Web/Events/Creating_and_triggering_events" target="_blank">イベントの作成とトリガー</a>を行います。
 
-`CustomEvent` は `Event` と似たような振る舞いをします。これは `button` をクリックしたときなどの HTML 要素から放出されます。例えば、イベント ペイロードの <a href="https://developer.mozilla.org/ja/docs/Web/API/Event/target" target="_blank">`target`</a> プロパティで要素にアクセスすることは可能です。また、一部の `CustomEvent` のペイロードは、<a href="https://developer.mozilla.org/ja/docs/Web/API/CustomEvent/detail" target="_blank">`detail`</a> プロパティにイベント固有の情報を含みます。
+## イベント
+Calcite コンポーネントは、[`CustomEvent()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) コンストラクターを使用して[イベントを作成し、トリガーします](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events)。
 
-コンポーネントのドキュメント ページを表示すると、[`calcite-pagination` event](https://developers.arcgis.com/calcite-design-system/components/pagination/#events) のようなイベントを持つかどうかを確認することができます。
+`CustomEvent` は、ボタンのクリックなどで HTML 要素から発火される `Event` と同様に動作します。例えば、イベント ペイロード内の [`target`](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) プロパティを通じて発火元の要素にアクセスすることができます。
 
-```JavaScript
+各コンポーネントのドキュメント ページでは、[`calcite-pagination` のイベント](https://developers.arcgis.com/calcite-design-system/components/pagination/#events)など、どのようなイベントを持っているかを確認できます。例えば以下のようにイベントを利用できます。
+
+```js
 document.addEventListener("calcitePaginationChange", event => {
   console.log(`Starting item number on the page: ${event.target.startItem}`);
 });
 ```
 
----
-### フォーム
-フォーム送信時に適切に値を渡すためには、フォーム内の各コンポーネントに `name` 属性を設定する必要があります。例えば、<a href="https://developers.arcgis.com/calcite-design-system/components/input-date-picker/" target="_blank">`Input Date Picker`</a> と <a href="https://developers.arcgis.com/calcite-design-system/components/text-area/" target="_blank">`Text Area`</a> に `name` 属性を追加します。
+### open / close イベントの動作
+一部のコンポーネントは、`open` Boolean 型プロパティを切り替えることで表示位置や表示状態を制御できます。open プロパティの値がユーザー操作やプログラムによって変更されると、コンポーネントは対応するイベントを発火させ、その変更を通知します。
 
-```HTML
+例えば、[Dialog](https://developers.arcgis.com/calcite-design-system/components/dialog/) が開かれたり、閉じられたりすると、`calciteDialogOpen` および、`calciteDialogClose` イベントが発火されます。
+
+[Block](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントのように、`open` の代わりに `expanded` プロパティを使用するものもありますが、イベントの発火パターンは同様です。
+
+この設計により、遷移を伴うアニメーションやタイミングの一貫性が保たれますが、ユーザー操作のみがイベントに反映されると期待している場合は混乱する可能性があります。
+
+なお、open または close イベントがボタンのクリックなどのユーザー操作によるものか、`element.open = false` を設定するなどのプログラムによるものかを区別する方法は組み込まれていません。しかし、フラグを使ってプログラムによる変更を追跡することは可能です。
+
+例えば、以下のような方法です。
+
+```js
+let isProgrammaticClose = false;
+
+const dialog = document.querySelector("calcite-dialog");
+const cancelButton = document.getElementById("dialog-cancel-button");
+
+// close イベントのハンドリング
+dialog.addEventListener("calciteDialogClose", () => {
+  if (isProgrammaticClose) {
+    console.log("Dialog closed programmatically");
+  } else {
+    console.log("Dialog closed by user interaction");
+  }
+
+  // イベントの処理後、フラグをリセット
+  isProgrammaticClose = false;
+});
+
+// プログラムからダイアグラムを閉じる
+function closeDialog() {
+  isProgrammaticClose = true;
+  dialog.open = false;
+}
+
+cancelButton.addEventListener("click", () => {
+  closeDialog();
+});
+```
+
+
+## グローバル設定
+
+### バージョン
+[`バージョン 2.10`](https://developers.arcgis.com/calcite-design-system/releases/changelogs/2.10.0/) 以降、開発者は `calciteConfig` グローバル変数を使用して、実行時に Calcite のバージョンを検出することができます。
+
+``` js
+window.addEventListener("load", () => console.log(window.calciteConfig.version));
+```
+
+### ログ メッセージ
+[`バージョン 2.11`](https://developers.arcgis.com/calcite-design-system/releases/changelogs/2.11.0/) 以降、コンポーネントの非推奨化の通知などの重要なメッセージがコンソールに出力されるようになりました。開発者は `calciteConfig` を使用することで、これらのメッセージを本番環境やビルドしたアプリから除外することができます。
+
+```js
+var calciteConfig = {
+  logLevel: "off"
+};
+```
+
+
+## フォーム
+フォーム内の各コンポーネントには、フォーム送信時に値を適切に渡すために、`name` 属性を設定する必要があります。例えば、[`Input Date Picker`](https://developers.arcgis.com/calcite-design-system/components/input-date-picker/) と [`Text Area`](https://developers.arcgis.com/calcite-design-system/components/text-area/) に `name` 属性を追加することが挙げられます。
+
+```html
 <form>
   <calcite-label>
     Observation date:
@@ -139,16 +216,102 @@ document.addEventListener("calcitePaginationChange", event => {
 </form>
 ```
 
-フォームに関するその他の考慮事項については、フォームの<a href="https://developers.arcgis.com/calcite-design-system/foundations/accessibility/#forms-and-labels" target="_blank">アクセシビリティ</a>を参照してください。
+フォームに関するその他の考慮事項については、[フォームのアクセシビリティー](https://developers.arcgis.com/calcite-design-system/foundations/accessibility/#forms-and-labels)を参照してください。
 
----
-### モード
-Calcite Components には明暗モードがあり、対応する CSS クラス `calcite-mode-light` と `calcite-mode-dark` を使って変更できる。`calcite-mode-auto` クラスもあり、ブラウザの<a href="https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-color-scheme" target="_blank"> `prefers-color-scheme`</a> CSS メディアクエリに従うことで、明るいモードと暗いモードのどちらを使用するかを決定します。
+### フォームの検証
+フォームの検証には、`status`、`validationMessage`、`validationIcon` プロパティの使用が含まれます。これらのプロパティは、コンポーネントの `status` プロパティが `"invalid"` である場合に、デフォルトおよびカスタムのメッセージとアイコンをサポートします。
 
-要素に モード クラスを設定すると、その子ノードもすべて変更されます。したがって、アプリケーション全体を明るい状態から暗い状態に切り替えるには、次のようにします。
+### 検証時の制約
+カスタムの制約を設定するには、以下の手順を行います。
+* `id` を使用して、特定のフィールドのカスタム制約、メッセージ、アイコンを定義する検証用の制約配列を作成します。
+* `setCustomValidity` のような関数を使用して、対象のフィールドに `validationMessage`、`validationIcon`、および `status` を設定します。
+* イベント リスナーを使用してユーザー入力が事前に定義された制約に合致しているかを確認します。ユーザー入力が指定された制約を満たしていない場合、`setCustomValidity` 関数を使ってカスタムの検証メッセージを設定します。
+
+### パターン
+[`pattern`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) 属性を使用することで、フォーム検証における制約をサポートできます。この属性を使用すると、入力が一致しなければならない正規表現を定義できます。これにより、フォームが有効と見なされるための条件を指定できます。例えば、`pattern` の特定の部分に一致した場合に表示される `validationMessage` や `validationIcon` を定義することができます。
+
+```html
+<!-- HTML -->
+<calcite-label>
+  Full Name:
+  <calcite-input-text pattern="[a-zA-Z]{1,15}\s[a-zA-Z]{1,15}" placeholder="John Doe" name="fullName" id="fullName"
+    validation-message="Full name is a required field." validation-icon="exclamation-mark-triangle" status="invalid"
+    required></calcite-input-text>
+</calcite-label>
+```
+
+```js
+// JavaScript
+// フィールドの制約の検証、アイコン、メッセージを持つオブジェクトの配列を定義
+const validationConstraints = [
+  {
+    id: "fullName",
+    patterns: [
+      {
+        value: /^\w{16,}/,
+        message: "First name must not be longer than 15 letters.",
+        icon: "exclamation-mark-triangle-f"
+      },
+      {
+        value: /^\w+\s\w{16,}$/,
+        message: "Last name must not be longer than 15 letters.",
+        icon: "exclamation-mark-triangle-f"
+      },
+      {
+        value: /^\w*[^\s]\w*$/,
+        message: "First and last name are required.",
+        icon: "exclamation-mark-triangle-f"
+      },
+      {
+        value: /^[a-zA-Z]*$/,
+        message: "First and last name are required.",
+        icon: "exclamation-mark-triangle-f"
+      },
+    ]
+  }
+];
+
+// ユーザーがコンポーネントを操作する際のカスタムの validationMessage、validationIcon、status を設定
+function setCustomValidity(el, message, icon) {
+  if (message) {
+    el.validationMessage = message;
+    el.validationIcon = icon;
+    el.status = "invalid";
+  } else {
+    el.validationMessage = "";
+    el.validationIcon = false;
+    el.status = "idle";
+  }
+}
+
+window.onload = () => {
+  // フォーム要素にイベント リスナーを追加し、validationMessage、validationIcon、blur 時のステータスを更新
+  validationConstraints.forEach(constraint => {
+    document.querySelector(`#${constraint.id}`)?.addEventListener("blur", ({ target }) => {
+      // pattern 制約にカスタム validationMessage を設定
+      if (typeof constraint?.patterns === "object" && constraint?.patterns?.length > 0) {
+        for (const pattern of constraint?.patterns) {
+          if (target.value?.match(pattern?.value)) {
+            setCustomValidity(target, pattern?.message, pattern?.icon ?? true);
+            return;
+          }
+        }
+      }
+      // すべての制約が満たされたら、カスタム検証メッセージを削除
+      setCustomValidity(target, "");
+    });
+  });
+};
+```
+
+
+## モード
+Calcite コンポーネントは、明色 (light)、暗色 (dark) モードがあり、それぞれの CSS クラスである `calcite-mode-light` と `calcite-mode-dark` を使用して切り替えることができます。また、`calcite-mode-auto` クラスを使用すると、ブラウザーの [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) CSS メディア クエリーに従って、明色、暗色モードが自動的に決定されます。
+
+モードのクラスをある要素に設定すると、そのすべての子ノードにも適用されます。したがって、アプリケーション全体を明色モードから暗色モードに切り替えるには次のようにします。
 
 ```html
 <body class="calcite-mode-dark">
-  <!-- Your application content -->
+  <!-- アプリケーション要素 -->
 </body>
 ```
