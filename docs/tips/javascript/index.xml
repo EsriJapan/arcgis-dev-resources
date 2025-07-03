@@ -27,16 +27,10 @@ CSS SDK をアプリケーションに読み込む方法によっては、追加
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Get Started
-1 インストールとセットアップ
-2 API キーの取得
-3 チュートリアルの開始
-1.インストールとセットアップ ArcGIS Maps SDK for JavaScript をアプリケーションに読み込むには複数の方法があります。最も一般的な方法は、ArcGIS CDN 経由でAMD モジュールを使用する方法でローカルビルドにも対応しています。
-AMD モジュールの場合は、以下のスクリプト タグを使用します。
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.29/esri/themes/light/main.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.29/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; ES モジュールの場合は、ターミナル ウインドウ上で npm を用いてモジュールをインストールします
-npm install @arcgis/core CSSには@import urlを用います
-&amp;lt;* CSS url as a string *&amp;gt; &amp;lt;@import &amp;#34;https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css&amp;#34;;&amp;gt; &amp;lt;/script&amp;gt; 詳しくは、インストールとセットアップをご覧ください。
-2.API キーの取得 アプリケーションで認証に ArcGIS Identities のみを使用している場合は、この手順を省略できます。詳細については、セキュリティと認証をご覧ください。
-ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、API キーが必要です。ダッシュボードにアクセスしてデフォルトの API キーをコピーするか、特定のニーズに合わせてカスタム スコープとリファラを設定してください。チュートリアルやサンプルの説明で必要な場合は、API キーを含めてください。グローバルAPIキーだけでなく、特定のクラスでより細かい API キーを使用することもできます。</description>
+ArcGIS Maps SDK for JavaScript には、コア API と、API の機能をすぐに使用できる UI 要素にカプセル化する Web コンポーネント ライブラリーのセットが含まれています。アプリケーションのニーズに応じて、4 つのコンポーネント ライブラリー（Map、Coding、Charts、Embeddable）のどれからでもコンポーネントを使用することができます。また、SDK は Esri の Calcite Design System と統合され、一貫性のある利用しやすいユーザー エクスペリエンスを提供します。Calcite は、Web コンポーネント、アイコン、配色、デザイン パターンの豊富なライブラリーを含む、完全な UI ツールキットを提供します。
+JavaScript Maps SDK の使い始めは、目的や要件によって異なります。ローカル パッケージをインストールせずにバニラ JavaScript と HTML アプリを構築したい場合は、CDN を利用することができます。より構造化された、またはスケーラブルな Web アプリケーション、特にフロントエンド フレームワークやビルド ツールを使用する場合は、npm で SDK をインストールすることを検討してください。
+ コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始めまられます。
+ CDN Vite React Angular Vue   CDN JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。</description>
     </item>
     
     <item>

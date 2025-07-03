@@ -31,13 +31,13 @@ npm install @esri/calcite-components アセットの読み込み calcite-icon �
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/core-concepts/</guid>
       <description>出典：Calcite Design System - core concepts
-Calcite Components は、Stencil.js を使用して構築された、再利用可能な Web コンポーネントのライブラリです。Calcite Components を使用すると、ブランド力のある、軽量でアクセスしやすい Web アプリケーションをすばやく構築できます。
-Web コンポーネントはブラウザのネイティブ規格であり、Calcite Components で開発するために必要な技術的概念の多くは、このライブラリに固有のものではありません。このページでは、効果的な開発を行うために必要な、Web の主要コンセプトを紹介しています。さらに詳しい情報について、このページにあるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントのソースで見つけることができます。
-カスタム要素 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリまたは Web フレームワークを使用して、モダン ブラウザ全体で動作します。カスタム要素は機能をカプセル化するため、他のコードとのコンフリクトを防ぐことができます。
-Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。
-&amp;lt;calcite-tip heading=&amp;#34;Platypus&amp;#34;&amp;gt;&amp;lt;/calcite-tip&amp;gt;  スロット スロットはプレースホルダー要素であり、スロットの名前を参照することで独自のコンテンツを追加することができます。スロットは一般的な Web コンポーネントの概念であり、あなたもすでに使用している可能性があります。例えば、次のような HTML を考えてみましょう。
-&amp;lt;select&amp;gt; &amp;lt;option value=&amp;#34;platypus&amp;#34;&amp;gt;Platypus&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;sloth&amp;#34;&amp;gt;Sloth&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;armadillo&amp;#34;&amp;gt;Nine-banded armadillo&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; Web コンポーネントの用語で、option 要素は select のデフォルト スロットに配置されます。また、「Platypus」、「Sloth」、「Nine-banded」のテキストは、それぞれの option のデフォルト スロットに配置されます。
-また、多くの Calcite Components は、デフォルトのスロットを利用しています。例えば、下の calcite-tip では、デフォルトのスロットに p コンテンツが追加されています。</description>
+Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。
+Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントで確認できます。
+カスタム要素 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリーや Web フレームワークを使用して、モダンなブラウザーで動作します。カスタム要素は機能をカプセル化するため、他のコードとの競合を防ぐことができます。
+Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。例えば以下のように記述します。
+&amp;lt;calcite-action-bar layout=&amp;#34;horizontal&amp;#34;&amp;gt;&amp;lt;/calcite-action-bar&amp;gt; スロット スロットは、スロット名を参照することで独自のコンテンツを追加できるプレースホルダー要素です。スロットは Web コンポーネントの一般的な概念であり、すでに使用している可能性があります。例えば、次の HTML を見てみましょう。
+&amp;lt;select&amp;gt; &amp;lt;option value=&amp;#34;platypus&amp;#34;&amp;gt;Platypus&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;sloth&amp;#34;&amp;gt;Sloth&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;armadillo&amp;#34;&amp;gt;Nine-banded armadillo&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; Web コンポーネントの用語では、option 要素は select のデフォルト スロットに配置されます。さらに、「Platypus」、「Sloth」、「Nine-banded armadillo」のテキストは、それぞれの option 要素のデフォルト スロットに配置されます。
+Calcite コンポーネントの多くもデフォルト スロットを利用しています。例えば、以下の calcite-action-bar では、calcite-action 要素がデフォルト スロットに追加されています。</description>
     </item>
     
     <item>
