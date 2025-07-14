@@ -10,7 +10,6 @@ Calcite Design System は、最小限の労力で、アプリ間で美しく、�
 
 ## どこから始めるか
 Calcite Design System* で、一貫性のある考慮された体験を構築します。
-<br/><b><span style="font-size: 80%;"> *国内未サポート製品です。</span></b>
 
 {{% children description="true"  %}}
 

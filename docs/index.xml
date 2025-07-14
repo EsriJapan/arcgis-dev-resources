@@ -527,27 +527,6 @@ app config では、ウィンドウは dialogs で定義されます。</descrip
     </item>
     
     <item>
-      <title>チュートリアル</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</guid>
-      <description>出典：Calcite Design System - Tutorials
-段階的な手順に従って、ArcGIS Maps の機能と Calcite Design System のコンポーネントやパターンを組み込んだアプリケーションを構築します。
-コンセプト コア コンセプトを適用し、Calcite Design System の機能を確認します。
-  地図アプリの作成
-Calcite Components を使ってインタラクティブな地図アプリケーションを作成します。
-  ダークモードスイッチの作成
-Calcite Components と ArcGIS Maps SDK for JavaScript をライトモードとダークモードを切り替えるダークモードスイッチを構築します。
-  アプリケーションパターン 基本的な概念とパターンに基づいて構築し、それらをエクスペリエンスとワークフローに適用します。
-  コア コンセプトの適用
-インタラクティブなアプリケーションを作りながら、Calcite Components の基本的な概念を学びます。
-  最近の地震をフィルタリング
-Calcite Design System でユーザー インターフェース(UI)を作成します。
-  </description>
-    </item>
-    
-    <item>
       <title>デプロイ パターン</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -829,6 +808,19 @@ Map オブジェクトと Scene オブジェクトは 、それらを表示す�
     </item>
     
     <item>
+      <title>マッピング アプリの作成</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/create-a-mapping-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/create-a-mapping-app/</guid>
+      <description>出典：Calcite Design System - Create a mapping app
+Calcite コンポーネントと ArcGIS Maps SDK for JavaScript のマップ コンポーネントを使用して、シンプルなマッピング アプリケーションの UI を作成する方法について学びます。
+Calcite コンポーネントを使用して、マッピング アプリケーションでポジティブなユーザー エクスペリエンスを設計し、ユーザーとのインタラクションを促進します。このチュートリアルではユーザー インターフェースに焦点を当てており、ArcGIS Maps SDK for JavaScript の基本的な知識が必要です。ArcGIS Maps SDK for JavaScript に初めて触れる場合は、このアプリケーションで用いられるマッピング概念を解説したチュートリアルをご覧ください。
+前提条件 ArcGIS 開発者アカウント このチュートリアルで使用するサービスにアクセスするには、無料の ArcGIS Location Platform アカウントまたは ArcGIS Online 組織のアカウントが必要です。
+ステップ 新しいペンの作成  CodePen にアクセスして、マッピング アプリケーション用の新しいペンを作成してください。  HTML の追加 CodePen の HTML で、HTML と CSS を追加して、arcgis-mapを表示するページを作成します。CSS は、マップがブラウザー ウィンドウの全幅と全高に表示されるようにします。 &amp;lt;!DOCTYPE html&amp;gt; タグは CodePen では必要ありません。異なるエディターを使用している場合や、ページをローカル サーバーで実行している場合は、HTML ページの先頭にこのタグを追加してください。</description>
+    </item>
+    
+    <item>
       <title>CesiumJS</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -924,6 +916,20 @@ ArcGIS Online などに公開されている Web サービスを、レイヤー�
     </item>
     
     <item>
+      <title>暗色 (dark) モード スイッチの構築</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/build-a-dark-mode-switch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/build-a-dark-mode-switch/</guid>
+      <description>出典：Calcite Design System - Build a dark mode switch
+Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の明色 (light) モードと暗色 (dark) モードを切り替えるコンポーネントの作成方法について学びます。
+Calcite コンポーネントを使用して、Calcite コンポーネント、ArcGIS Maps SDK for JavaScript のコンポーネントおよびベースマップに対して暗色 (dark) モードを有効にするスイッチを設計します。このアプリケーションはマッピング アプリの作成チュートリアルで作成したアプリケーションを基にしています。
+Calcite では CSS クラスを使用して明色 (light) モードと暗色 (dark) モードを切り替えることができます (calcite-mode-light (デフォルト) と calcite-mode-dark)。また、calcite-mode-auto クラスも用意されており、これはブラウザーの CSS の prefers-color-scheme メディア クエリーに従います。モード クラスを要素に設定すると、そのすべての子ノードにも適用されます。
+モードやスタイリングに関する詳細は、Calcite Design System の colors and modes および ArcGIS Maps SDK for JavaScript の Styling ドキュメントを参照してください。
+ArcGIS 開発者アカウント このチュートリアルで使用するサービスにアクセスするには、無料の ArcGIS Location Platform アカウントまたは ArcGIS Online 組織のアカウントが必要です。</description>
+    </item>
+    
+    <item>
       <title>画面グループ（Screen groups）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -948,6 +954,19 @@ app config では、画面グループは screenGroups で定義され、画面�
 前提条件 このチュートリアルを実施するには、以下が必要です。
  API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、サインアップ (無料)してください。アカウントの作成方法は「開発者アカウントの作成」をご覧ください。 開発環境がシステム要件を満たしていることを確認します。  必要に応じて、ArcGIS Maps SDK for .NET をインストールして、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 認証の設定 このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証またはユーザー認証を実装する必要があります。</description>
+    </item>
+    
+    <item>
+      <title>Web コンポーネントでマッピング アプリを構築</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/construct-a-mapping-app-with-web-components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/construct-a-mapping-app-with-web-components/</guid>
+      <description>出典：Calcite Design System - Construct a mapping app with web components
+Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の Map コンポーネントを使用して、Web コンポーネントでマッピング アプリケーションの UI を構築する方法をご紹介します。
+Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インタフェースとマップ コンポーネントに焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。ArcGIS Maps SDK for JavaScript を初めてお使いになる場合は、このアプリケーションで使用されている同様のマッピングをコンセプトに扱った素晴らしいチュートリアルをご覧ください。
+前提条件 ArcGIS 開発者アカウント このチュートリアルで使用するサービスにアクセスするには、無料の ArcGIS Location Platform アカウントまたは ArcGIS Online 組織のアカウントが必要です。
+ステップ 新しいペンの作成  CodePen に移動し、マッピングアプリケーション用の新しいペンを作成します。  HTML の追加   CodePen &amp;gt; HTML で、地図を表示する arcgis-map コンポーネントを含むページを作成するための HTML と CSS を追加してください。</description>
     </item>
     
     <item>

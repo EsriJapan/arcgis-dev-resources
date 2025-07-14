@@ -40,26 +40,5 @@ Calcite Components はカスタム要素であり、ネイティブの HTML 要�
 Calcite コンポーネントの多くもデフォルト スロットを利用しています。例えば、以下の calcite-action-bar では、calcite-action 要素がデフォルト スロットに追加されています。</description>
     </item>
     
-    <item>
-      <title>チュートリアル</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/tutorials/</guid>
-      <description>出典：Calcite Design System - Tutorials
-段階的な手順に従って、ArcGIS Maps の機能と Calcite Design System のコンポーネントやパターンを組み込んだアプリケーションを構築します。
-コンセプト コア コンセプトを適用し、Calcite Design System の機能を確認します。
-  地図アプリの作成
-Calcite Components を使ってインタラクティブな地図アプリケーションを作成します。
-  ダークモードスイッチの作成
-Calcite Components と ArcGIS Maps SDK for JavaScript をライトモードとダークモードを切り替えるダークモードスイッチを構築します。
-  アプリケーションパターン 基本的な概念とパターンに基づいて構築し、それらをエクスペリエンスとワークフローに適用します。
-  コア コンセプトの適用
-インタラクティブなアプリケーションを作りながら、Calcite Components の基本的な概念を学びます。
-  最近の地震をフィルタリング
-Calcite Design System でユーザー インターフェース(UI)を作成します。
-  </description>
-    </item>
-    
   </channel>
 </rss>

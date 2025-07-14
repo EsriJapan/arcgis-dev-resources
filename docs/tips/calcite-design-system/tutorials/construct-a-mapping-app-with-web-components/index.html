@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-159239795-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <title>ArcGIS Developers 開発リソース集</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2025-07-14T12:48:43 JST">
+<title>Web コンポーネントでマッピング アプリを構築 :: ArcGIS Developers 開発リソース集</title>
+<link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
+<link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/hybrid.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/featherlight.min.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/css/auto-complete.css" rel="stylesheet">
+<link href="/arcgis-dev-resources/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/arcgis-dev-resources/css/bootstrap.min.css">
+<script src="/arcgis-dev-resources/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="Calcite コンポーネントと Map コンポーネントを使用して、インタラクティブなマッピング アプリケーションを構築する方法を学びます。">
+
+
+    
+  </head>
+  <body data-url="/arcgis-dev-resources/tips/calcite-design-system/tutorials/construct-a-mapping-app-with-web-components/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://esrijapan.github.io/arcgis-dev-resources">ArcGIS Developers 開発リソース集</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="検索...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "https:\/\/esrijapan.github.io\/arcgis-dev-resources";
+        
+		</script>
+		<script type="text/javascript" src="/arcgis-dev-resources/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/arcgis-dev-resources/" class="dd-item">
+            <a href="/arcgis-dev-resources/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/">スタートアップ ガイド</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-dev-account/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-dev-account/">
+            開発者アカウントの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/get-api-key/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/get-api-key/">
+            API キーの取得
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/services/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/services/">ロケーションサービスの利用</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-feature-service/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-feature-service/">
+            フィーチャサービスの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-webmap/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-webmap/">
+            Web マップの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/create-routing/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/create-routing/">
+            ルートの検索
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/services/basemaps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/services/basemaps/">
+            ベースマップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/guide/create-app/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/guide/create-app/">アプリ開発</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-js/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-js/">
+            ArcGIS Maps SDK for JavaScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-esrileaflet/">
+            Esri Leaflet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-maplibre/">
+            MapLibre GL JS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-openlayers/">
+            OpenLayers
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-cesium/">
+            CesiumJS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-dotnet/">
+            .NET
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-android/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-android/">
+            Android
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-ios/">
+            iOS
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-flutter/">
+            Flutter
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unity/">
+            Unity
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/create-app/create-startup-app-unreal-engine/">
+            Unreal Engine
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/security/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/security/">
+            セキュリティと認証の紹介
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/guide/deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/guide/deployment/">
+            デプロイの紹介
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/learn/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/learn/">もっと学ぶ</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/learn/github/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/github/">
+            Esri Japan GitHub
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/learn/developer-community/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/learn/developer-community/">
+            ArcGIS 開発者コミュニティ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/">技術 Tips 集</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/">ArcGIS Maps SDK for JavaScript</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/get-started/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/get-started/">
+            開発の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/install-jsapi/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/install-jsapi/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/components/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/components/">
+            コンポーネント
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/custom-font/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/custom-font/">
+            カスタム フォント
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrate-to-components/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/javascript/migrate-to-components/">マップ コンポーネントへの移行ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/">
+            移行のヒント
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/">
+            移行計画
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/">
+            ページ（Page）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/">
+            ウィンドウ（Window）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/">
+            セクションとビュー（Section and view）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
+            画面グループ（Screen groups）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/">
+            レイアウト（Layout）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/">
+            テーマ（Theme）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/">
+            ウィジェット（Widget）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/">
+            Jimu
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/">
+            データ ソース（Data source）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
+            データアクション（Data action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
+            メッセージ と アクション（Message and action）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/">
+            マップ/シーン ビュー（Map/Scene View）
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/">
+            拡張ポイント（Extension points）
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/">カスタム ウィジェット開発ガイド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/getting-started-widget/">
+            ウィジェット開発のスタート
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/">
+            ウィジェット manifest
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/">
+            ウィジェットの実装
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-ui/">
+            ウィジェット UI の作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/">
+            ウィジェットでデータ ソースを使用
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/widget-development/widget-communication/">
+            ウィジェット間の通信
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+            デプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/">チュートリアル</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/">
+            スターター ウィジェットの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/">
+            マップの座標を取得
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/add-layers-to-a-map/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/tutorials/add-layers-to-a-map/">
+            マップにレイヤーを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/">
+            Web AppBuilder からの移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/">ArcGIS Web AppBuilder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/install-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/install-guide/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/development-guide/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/development-guide/">
+            カスタム ウィジェット開発ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-pattern/">
+            デプロイ パターン
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/webappbuilder/deploy-your-app/">
+            Web アプリケーションのデプロイ
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/webappbuilder/widget-list/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/webappbuilder/widget-list/">ウィジェット一覧表</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/calcite-design-system/">Calcite Design System</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/get-started/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/get-started/">
+            はじめに
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/core-concepts/">
+            コア コンセプト
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/">チュートリアル</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/create-a-mapping-app/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/create-a-mapping-app/">
+            マッピング アプリの作成
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/build-a-dark-mode-switch/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/build-a-dark-mode-switch/">
+            暗色 (dark) モード スイッチの構築
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/calcite-design-system/tutorials/construct-a-mapping-app-with-web-components/" class="dd-item active">
+        <div>
+          <a href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/construct-a-mapping-app-with-web-components/">
+            Web コンポーネントでマッピング アプリを構築
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/dotnet/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/dotnet/">ArcGIS Maps SDK for .NET</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/install-dotnet-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/distribution-dotnet-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/dotnet/migration-dotnet-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/android/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/android/">ArcGIS Maps SDK for Kotlin</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/install-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/install-android-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/distribution-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/distribution-android-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/android/migration-android-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/android/migration-android-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/ios/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/ios/">ArcGIS Maps SDK for Swift</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/install-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/install-ios-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/distribution-ios-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/ios/migration-ios-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/ios/migration-ios-200.x/">
+            バージョン 100.x から 200.x への移行
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/">
+            アプリケーション配布ガイド
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unity/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unity/">ArcGIS Maps SDK for Unity</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/install-and-set-up/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/unreal-engine/">ArcGIS Maps SDK for Unreal Engine</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/">
+            新規プロジェクトにプラグインを追加
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/prosdk/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/prosdk/">ArcGIS Pro SDK</a>
+      </div>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：Conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/cloning-content/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/cloning-content/">
+            アイテムのクローン
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/tips/appstudio/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/appstudio/">ArcGIS AppStudio</a>
+      </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
+            データ可視化のワークフロー
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
+            データ可視化の手順
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
+            地図上に賢くデータを可視化するための 6 つの方法
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
+      </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/other/hackathon/">
+            ミートアップ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><a href="https://github.com/EsriJapan/arcgis-dev-resources" target="_blank" rel="noopener"><i class='fa fa-github'></i> <label>Github</label></a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer"><center>
+<br>© Esri Japan. All rights reserved.<br>
+</center>
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/calcite-design-system/'>Calcite Design System</a> > <a href='/arcgis-dev-resources/tips/calcite-design-system/tutorials/'>チュートリアル</a> > Web コンポーネントでマッピング アプリを構築
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前提条件">前提条件</a></li>
+    <li><a href="#ステップ">ステップ</a>
+      <ul>
+        <li><a href="#新しいペンの作成">新しいペンの作成</a></li>
+        <li><a href="#html-の追加">HTML の追加</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-キーの使用">API キーの使用</a></li>
+    <li><a href="#マップの表示">マップの表示</a>
+      <ul>
+        <li><a href="#レイアウトの作成">レイアウトの作成</a></li>
+        <li><a href="#マップ-コンポーネントの追加">マップ コンポーネントの追加</a></li>
+        <li><a href="#インフォメーション-カードの作成">インフォメーション カードの作成</a></li>
+        <li><a href="#コンテンツの設定">コンテンツの設定</a></li>
+        <li><a href="#コンポーネントをインタラクティブにする">コンポーネントをインタラクティブにする</a></li>
+        <li><a href="#ローダー-コンポーネントの追加">ローダー コンポーネントの追加</a></li>
+        <li><a href="#スタイルの追加">スタイルの追加</a></li>
+        <li><a href="#アプリの実行">アプリの実行</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>Web コンポーネントでマッピング アプリを構築</h1>
+  
+
+
+
+    
+    
+    
+    <p>出典：Calcite Design System - <a href="https://developers.arcgis.com/calcite-design-system/tutorials/construct-a-mapping-app-components/">Construct a mapping app with web components</a></p>
+<p>Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の <a href="https://developers.arcgis.com/javascript/latest/get-started-cdn/">Map コンポーネント</a>を使用して、Web コンポーネントでマッピング アプリケーションの UI を構築する方法をご紹介します。</p>
+<p>Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インタフェースと<a href="https://developers.arcgis.com/javascript/latest/components/">マップ コンポーネント</a>に焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。ArcGIS Maps SDK for JavaScript を初めてお使いになる場合は、このアプリケーションで使用されている同様のマッピングをコンセプトに扱った素晴らしい<a href="https://developers.arcgis.com/javascript/latest/display-a-web-map/">チュートリアル</a>をご覧ください。</p>
+<h2 id="前提条件">前提条件</h2>
+<div class="notices note" >
+<p><b>ArcGIS 開発者アカウント</b></br>
+このチュートリアルで使用するサービスにアクセスするには、無料の <a href="../../../../guide/get-dev-account/">ArcGIS Location Platform アカウント</a>または ArcGIS Online 組織のアカウントが必要です。</p>
+</div>
+<h2 id="ステップ">ステップ</h2>
+<h3 id="新しいペンの作成">新しいペンの作成</h3>
+<ol>
+<li><a href="https://codepen.io/pen/?editors=1000">CodePen</a> に移動し、マッピングアプリケーション用の新しいペンを作成します。</li>
+</ol>
+<h3 id="html-の追加">HTML の追加</h3>
+<ol>
+<li>
+<p>CodePen &gt; HTML で、地図を表示する <a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/"><code>arcgis-map</code></a> コンポーネントを含むページを作成するための HTML と CSS を追加してください。</p>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/"><code>arcgis-map</code></a> コンポーネントに <code>id</code> を追加して、アプリ開発全体で参照できるようにし、CSS を使って幅と高さをブラウザーのウィンドウに合わせて設定し、さらにアプリのスタイリングを補うために <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex_container">Flexbox</a> を使用してください。</p>
+</li>
+</ol>
+<p>CodePen では、<code>&lt;!DOCTYPE html&gt;</code> タグは必須ではありません。別のエディターを使用している場合や、ローカル サーバーでページを運営している場合は、必ずこのタグを HTML ページの先頭に追加してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Calcite Components: Construct a mapping app with web components&lt;/<span style="color:#f92672">title</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">style</span>&gt;
+    <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
+    <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
+    #mapEl {
+      <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+      <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+      <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+    }
+  &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-map</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ol start="3">
+<li><code>&lt;head&gt;</code> 要素に、Calcite コンポーネントと ArcGIS Maps SDK for JavaScript への参照を追加します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Calcite Components: Create a mapping app with web components&lt;/<span style="color:#f92672">title</span>&gt;
+
+  <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/esri/themes/light/main.css&#34;</span> /&gt;
+  <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+
+&lt;/<span style="color:#f92672">head</span>&gt;
+</code></pre></div><ol start="4">
+<li>次に、ArcGIS Maps SDK for JavaScript の<a href="https://developers.arcgis.com/javascript/latest/get-started-cdn/#components">マップ コンポーネント</a>への参照を追加します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Calcite Components: Create a mapping app with web components&lt;/<span style="color:#f92672">title</span>&gt;
+
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/esri/themes/light/main.css&#34;</span> /&gt;
+  <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/map-components&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+
+&lt;/<span style="color:#f92672">head</span>&gt;
+</code></pre></div><h2 id="api-キーの使用">API キーの使用</h2>
+<p>開発者アカウントを使用している場合、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/services/">ArcGIS サービス</a>にアクセスするには API キーが必要です。ArcGIS Online の組織に関連付けられているアカウントがある場合は、この手順を省略できます。</p>
+<ol>
+<li>セキュアなリソースにアクセスできるアプリを作るには、<a href="../../../../guide/security">セキュリティと認証</a>を始めるをご覧ください。</li>
+<li>CodePen &gt; <code>&lt;script&gt;</code> に戻り、<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html"><code>esriConfig</code></a> クラスをインポートします。</li>
+<li><a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey"><code>apiKey</code></a> プロパティを設定します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+  <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">esriConfig</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">$arcgis</span>.<span style="color:#66d9ef">import</span>([
+    <span style="color:#e6db74">&#34;@arcgis/core/config.js&#34;</span>
+  ]);
+  <span style="color:#a6e22e">esriConfig</span>.<span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
+  <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h2 id="マップの表示">マップの表示</h2>
+<p>マップはこのアプリケーションの中心です。<a href="./#html-%E3%81%AE%E8%BF%BD%E5%8A%A0">HTML の追加</a>で追加したCSSは、マップをウィンドウの幅と高さいっぱいに表示します。また、マップと連動する ArcGIS Maps SDK for JavaScript のマップ コンポーネントも追加します。</p>
+<ol>
+<li><code>&lt;body&gt;</code> 内で、<code>item-id</code> 属性を使って <a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/"><code>arcgis-map</code></a> コンポーネントを初期化します。この属性は Web マップのアイテム ID を指定します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    <span style="color:#75715e">&lt;!-- 更新開始 --&gt;</span>
+    &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;03d584a7c9874b44821c6a766c3bbc11&#34;</span>&gt;
+
+    &lt;/<span style="color:#f92672">arcgis-map</span>&gt;
+    <span style="color:#75715e">&lt;!-- 更新終了 --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><ol start="2">
+<li>次に、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/"><code>arcgis-zoom</code></a> コンポーネントを追加し、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/"><code>arcgis-map</code></a> コンポーネントに対する<code>位置</code>を設定します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;03d584a7c9874b44821c6a766c3bbc11&#34;</span>&gt;
+        <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+        &lt;<span style="color:#f92672">arcgis-zoom</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top-left&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-zoom</span>&gt;
+        <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+    &lt;/<span style="color:#f92672">arcgis-map</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>この時点でアプリケーションはマップを表示します。 次に、Calcite コンポーネントを使ってアプリのユーザー インターフェイスを構築します。</p>
+<h3 id="レイアウトの作成">レイアウトの作成</h3>
+<p>レイアウトを作るために、スロットを使ってページ上の他のコンポーネントを整理する <a href="https://developers.arcgis.com/calcite-design-system/components/shell/"><code>calcite-shell</code></a> を使います。スロットは Web コンポーネントの概念であり、<a href="../core-concepts/#%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88">コア コンセプト</a>のセクションに簡単な説明があります。Calcite コンポーネントにスロットがある場合は、その一覧が<a href="https://developers.arcgis.com/calcite-design-system/components/">リファレンス ページ</a>に記載されています。たとえば、こちらが <a href="https://developers.arcgis.com/calcite-design-system/components/shell/#slots">シェルのスロット</a>です。</p>
+<ol>
+<li>calcite-shell コンポーネントを追加し、content-behind 属性を設定して、ユーザーがシェルの背後にある地図と操作できるようにします。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+    &lt;<span style="color:#f92672">calcite-shell</span> <span style="color:#a6e22e">content-behind</span>&gt;
+    <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+        &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;03d584a7c9874b44821c6a766c3bbc11&#34;</span>&gt;
+            &lt;<span style="color:#f92672">arcgis-zoom</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top-left&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-zoom</span>&gt;
+        &lt;/<span style="color:#f92672">arcgis-map</span>&gt;
+    <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+     &lt;/<span style="color:#f92672">calcite-shell</span>&gt;
+    <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><ol start="2">
+<li>
+<p>次に、<a href="https://developers.arcgis.com/calcite-design-system/components/shell-panel/"><code>calcite-shell-panel</code></a> コンポーネントを追加し、それをシェルの <a href="https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-slots-panel-end"><code>&quot;panel-end&quot;</code></a> スロットに配置します。</p>
+</li>
+<li>
+<p>次に、シェル パネルの <a href="https://developers.arcgis.com/calcite-design-system/components/shell-panel/#api-reference-properties-displayMode"><code>displayMode</code></a> 属性を <code>&quot;float&quot;</code> に設定して、コンテンツが地図の上に浮かんで表示されるようにします。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">calcite-shell</span> <span style="color:#a6e22e">content-behind</span>&gt;
+        <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+        &lt;<span style="color:#f92672">calcite-shell-panel</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shell-panel-nav&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;panel-end&#34;</span> <span style="color:#a6e22e">display-mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;float&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;l&#34;</span>&gt;
+
+        &lt;/<span style="color:#f92672">calcite-shell-panel</span>&gt;
+        <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+        &lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;03d584a7c9874b44821c6a766c3bbc11&#34;</span>&gt;
+            &lt;<span style="color:#f92672">arcgis-zoom</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top-left&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-zoom</span>&gt;
+        &lt;/<span style="color:#f92672">arcgis-map</span>&gt;
+     &lt;/<span style="color:#f92672">calcite-shell</span>&gt;
+</code></pre></div><ol start="4">
+<li>
+<p><a href="https://developers.arcgis.com/calcite-design-system/components/panel/"><code>calcite-panel</code></a> コンポーネントを追加します。<code>heading</code> に Web マップのタイトルを動的に入力するために <code>id</code> を指定し、初期化時にコンポーネントを隠すために <code>hidden</code> 属性を追加します。</p>
+</li>
+<li>
+<p>次に、<a href="https://developers.arcgis.com/calcite-design-system/components/icon/"><code>calcite-icon</code></a> をパネルの <a href="https://developers.arcgis.com/calcite-design-system/components/panel/#api-reference-slots-header-actions-start"><code>&quot;header-actions-start&quot;</code></a> スロットに挿入します。</p>
+</li>
+<li>
+<p>次に、<a href="https://developers.arcgis.com/calcite-design-system/components/action-bar/"><code>calcite-action-bar</code></a> をパネルの <a href="https://developers.arcgis.com/calcite-design-system/components/panel/#api-reference-slots-action-bar"><code>&quot;action-bar&quot;</code></a> スロットに挿入します。ここに <a href="https://developers.arcgis.com/calcite-design-system/components/action/"><code>calcite-action</code></a> を追加して、マップ コンポーネントを表示できるようにします。</p>
+</li>
+<li>
+<p>各アクションに、一意の <code>data-action-id</code> の値を追加する。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">calcite-shell</span> <span style="color:#a6e22e">content-behind</span>&gt;
+
+        &lt;<span style="color:#f92672">calcite-shell-panel</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shell-panel-nav&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;panel-end&#34;</span> <span style="color:#a6e22e">display-mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;float&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;l&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- 追加開始--&gt;</span>
+            &lt;<span style="color:#f92672">calcite-panel</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-heading&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">calcite-icon</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo-icon&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-actions-start&#34;</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explore&#34;</span> <span style="color:#a6e22e">text-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explore&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-icon</span>&gt;
+                &lt;<span style="color:#f92672">calcite-action-bar</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map-actions&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;action-bar&#34;</span> <span style="color:#a6e22e">layout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span> <span style="color:#a6e22e">expand-disabled</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Layers&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;basemap&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Basemaps&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;basemaps&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;legend&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Legend&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;legend&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bookmark&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bookmarks&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bookmarks&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Print&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;information&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;About&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;information&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+              &lt;/<span style="color:#f92672">calcite-action-bar</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-panel</span>&gt;
+            <span style="color:#75715e">&lt;!-- 追加開始--&gt;</span>
+        &lt;/<span style="color:#f92672">calcite-shell-panel</span>&gt;
+</code></pre></div><h3 id="マップ-コンポーネントの追加">マップ コンポーネントの追加</h3>
+<p>レイアウトをさらに構築するために、ユーザーが <a href="https://developers.arcgis.com/calcite-design-system/components/action/"><code>calcite-action</code></a> に操作したときに表示される<a href="https://developers.arcgis.com/javascript/latest/components/">マップ コンポーネント</a>を追加します。</p>
+<ol>
+<li>
+<p>はじめに calcite-block コンポーネントを追加する。</p>
+<ul>
+<li>コンテンツを表示するために <code>expanded</code> 属性を追加します。</li>
+<li>ユニークな <code>heading</code> を付けます。</li>
+<li>対応する <code>data-action-id</code> の値を、ブロックの <code>data-block-id</code> 属性に指定します。</li>
+<li>アプリの初期化時にコンポーネントとそのコンテンツが表示されないように、<code>hidden</code> 属性を追加します。</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/calcite-design-system/components/block/"><code>calcite-block</code></a> に、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/"><code>arcgis-layer-list</code></a> マップ コンポーネントをスロットに挿入します。</p>
+<ul>
+<li><code>reference-element</code> にマップ コンポーネントの <code>id</code> に設定します。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">        &lt;<span style="color:#f92672">calcite-shell-panel</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shell-panel-nav&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;panel-end&#34;</span> <span style="color:#a6e22e">display-mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;float&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;l&#34;</span>&gt;
+            &lt;<span style="color:#f92672">calcite-panel</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-heading&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">calcite-icon</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo-icon&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-actions-start&#34;</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explore&#34;</span> <span style="color:#a6e22e">text-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explore&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-icon</span>&gt;
+                &lt;<span style="color:#f92672">calcite-action-bar</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map-actions&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;action-bar&#34;</span> <span style="color:#a6e22e">layout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span> <span style="color:#a6e22e">expand-disabled</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Layers&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;basemap&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Basemaps&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;basemaps&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;legend&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Legend&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;legend&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bookmark&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bookmarks&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bookmarks&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Print&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+                    &lt;<span style="color:#f92672">calcite-action</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;information&#34;</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;About&#34;</span> <span style="color:#a6e22e">data-action-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;information&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-action</span>&gt;
+              &lt;/<span style="color:#f92672">calcite-action-bar</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-panel</span>&gt;
+
+            <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+            <span style="color:#75715e">&lt;!-- ArcGIS Maps SDK for JavaScript コンポーネントを含むマップ固有のブロック --&gt;</span>
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Layers&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-layer-list</span> <span style="color:#a6e22e">drag-enabled</span> <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">visibility-appearance</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-layer-list</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+            <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+        &lt;/<span style="color:#f92672">calcite-shell-panel</span>&gt;
+</code></pre></div><ol start="3">
+<li>ステップ 1 と 2 を繰り返して、<a href="https://developers.arcgis.com/calcite-design-system/components/block/"><code>calcite-block</code></a> コンポーネントを追加し、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-gallery/"><code>arcgis-basemap-gallery</code></a>、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/"><code>arcgis-legend</code></a>、<a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/"><code>arcgis-bookmarks</code></a>、および <a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-print/"><code>arcgis-print</code></a> コンポーネントをそれぞれ含めます。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">            <span style="color:#75715e">&lt;!-- ArcGIS Maps SDK for JavaScript コンポーネントを含むマップ固有のブロック --&gt;</span>
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Layers&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;layers&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-layer-list</span> <span style="color:#a6e22e">drag-enabled</span> <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span> <span style="color:#a6e22e">visibility-appearance</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-layer-list</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+
+            <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Basemaps&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;basemaps&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-basemap-gallery</span> <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-basemap-gallery</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Legend&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;legend&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-legend</span> <span style="color:#a6e22e">legend-style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;classic&#34;</span> <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-legend</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bookmarks&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bookmarks&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-bookmarks</span> <span style="color:#a6e22e">editing-enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-bookmarks</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+            &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Print&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+                &lt;<span style="color:#f92672">arcgis-print</span> <span style="color:#a6e22e">allowed-formats</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">allowed-layouts</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">include-default-templates</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+                <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-print</span>&gt;
+            &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+            <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+</code></pre></div><h3 id="インフォメーション-カードの作成">インフォメーション カードの作成</h3>
+<p>インフォメーション カードは、アプリのデータに関する情報をユーザーに提供できます。<a href="https://developers.arcgis.com/calcite-design-system/components/card/"><code>calcite-card</code></a> を使用して Web マップの情報を表示します。このカードには、タイトル、サムネイル画像、説明、最終更新日、タグが動的に入力・整理されます。</p>
+<ol>
+<li>
+<p>他の地図コンポーネントと同様に、<a href="https://developers.arcgis.com/calcite-design-system/components/block/"><code>calcite-block</code></a> コンポーネントを追加します。</p>
+<ul>
+<li>コンテンツを表示するために <code>expanded</code> 属性を追加します。</li>
+<li>ユニークな <code>heading</code> を付けます。</li>
+<li>対応する <code>data-action-id</code> の値を、ブロックの <code>data-block-id</code> 属性に指定します。</li>
+<li><code>closed</code> 属性を追加し、アプリの初期化時にコンポーネントとそのコンテンツが表示されないようにします。</li>
+</ul>
+</li>
+<li>
+<p><a href="https://developers.arcgis.com/calcite-design-system/components/card/"><code>calcite-card</code></a> コンポーネントを追加します。</p>
+</li>
+<li>
+<p>カードに以下の子要素を、固有の ID を付けて追加します。</p>
+<ul>
+<li>カードの thumbnail スロットに img 要素を定義します。</li>
+<li>3 つの div 要素を追加してください。1 つは heading スロットに、もう 1 つは description スロットに、最後の 1 つは footer-end スロットに配置します。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">      &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Print&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+        &lt;<span style="color:#f92672">arcgis-print</span> <span style="color:#a6e22e">allowed-formats</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">allowed-layouts</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">include-default-templates</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+          <span style="color:#a6e22e">reference-element</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mapEl&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-print</span>&gt;
+      &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+
+      <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+      <span style="color:#75715e">&lt;!-- Info block (populates with info from the web map) --&gt;</span>
+      &lt;<span style="color:#f92672">calcite-block</span> <span style="color:#a6e22e">expanded</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;About the data&#34;</span> <span style="color:#a6e22e">data-block-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;information&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+        &lt;<span style="color:#f92672">calcite-card</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-content&#34;</span>&gt;
+          &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-thumbnail&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Webmap thumbnail&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;thumbnail&#34;</span> /&gt;
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-heading&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;heading&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- Dynamically populated --&gt;</span>
+          &lt;/<span style="color:#f92672">div</span>&gt;
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-description&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- Dynamically populated --&gt;</span>
+          &lt;/<span style="color:#f92672">div</span>&gt;
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-tags&#34;</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer-end&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- Dynamically populated --&gt;</span>
+          &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;/<span style="color:#f92672">calcite-card</span>&gt;
+      &lt;/<span style="color:#f92672">calcite-block</span>&gt;
+      <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+
+    &lt;/<span style="color:#f92672">calcite-shell-panel</span>&gt;
+</code></pre></div><h3 id="コンテンツの設定">コンテンツの設定</h3>
+<p>アプリケーションにコンポーネントの追加が終わりました。パネルの<a href="https://developers.arcgis.com/calcite-design-system/components/panel/#api-reference-properties-heading"><code>見出し</code></a>とインフォメーション カードに Web マップの内容を入力します。</p>
+<ol>
+<li><code>&lt;script&gt;</code> タグで <code>arcgis-map</code> コンポーネントを宣言します。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+
+  <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;mapEl&#34;</span>);
+  <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><ol start="2">
+<li>
+<p>マップの <a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/#events"><code>arcgisViewReadyChange</code></a> イベントで、Web マップのコンテンツを取得するために、次の <code>portalItem</code> の定数を宣言してください。：<code>title</code>、<code>thumbnailUrl</code>、<code>snippet</code>、<code>modified</code>、および <code>tags</code></p>
+</li>
+<li>
+<p>次に、UI に値を追加します。</p>
+<ul>
+<li><code>title</code> は、パネルの<code>見出し</code>およびカードの <code>&quot;heading&quot;</code> スロットに使用されます。</li>
+<li><code>thumbnailUrl</code> は、カードの画像（<code>img</code>）の <code>src</code> プロパティとして <code>&quot;thumbnail&quot;</code> スロットに追加されます。</li>
+<li><code>snippet</code> と <code>modified</code> は、カードの <code>&quot;description&quot;</code> スロットを補足します。</li>
+<li><code>tags</code> は、それぞれのタグを繰り返し処理して、カードの <code>&quot;footer-end&quot;</code> スロットに個別の <a href="https://developers.arcgis.com/calcite-design-system/components/chip/"><code>calcite-chip</code></a> コンポーネントを作成します。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mapEl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;mapEl&#34;</span>);
+
+  <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;arcgisViewReadyChange&#34;</span>, () =&gt; {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">thumbnailUrl</span>, <span style="color:#a6e22e">snippet</span>, <span style="color:#a6e22e">modified</span>, <span style="color:#a6e22e">tags</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">portalItem</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app-heading&#34;</span>).<span style="color:#a6e22e">heading</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> Explorer`</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-heading&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-thumbnail&#34;</span>).<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">thumbnailUrl</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-description&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;p&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">snippet</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/p&gt;&lt;p&gt;Last modified on </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">modified</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.&lt;/p&gt;`</span>;
+    <span style="color:#a6e22e">tags</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">tag</span> =&gt; {
+      document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-tags&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;calcite-chip&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tag</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/calcite-chip&gt;`</span>;
+    });
+
+  });
+  <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+</code></pre></div><h3 id="コンポーネントをインタラクティブにする">コンポーネントをインタラクティブにする</h3>
+<p>次のステップは、対応する calcite-action コンポーネントをクリックしたときに、マップ コンポーネントを含む calcite-block コンポーネントを表示します。</p>
+<ol>
+<li>各 <a href="https://developers.arcgis.com/calcite-design-system/components/action/"><code>calcite-action</code></a> がクリックされたときに実行される関数を作成します。この関数は、現在表示されている <a href="https://developers.arcgis.com/calcite-design-system/components/block/"><code>calcite-block</code></a> を非表示にし、クリックされたアクションに対応するブロックを表示します。ユーザーが現在アクティブなアクションをクリックした場合、対応するブロックは閉じられ、展開されたブロックは存在しなくなります。</li>
+</ol>
+<p>このステップでは、上で追加した<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">データ属性</a>を使って、アクション要素とブロック要素にアクセスするために<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">属性セレクター</a>を使用します。データ属性の値は、対応するマップコンポーネントの名前です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;arcgisViewReadyChange&#34;</span>, () =&gt; {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">thumbnailUrl</span>, <span style="color:#a6e22e">snippet</span>, <span style="color:#a6e22e">modified</span>, <span style="color:#a6e22e">tags</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">portalItem</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app-heading&#34;</span>).<span style="color:#a6e22e">heading</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> Explorer`</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-heading&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-thumbnail&#34;</span>).<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">thumbnailUrl</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-description&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;p&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">snippet</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/p&gt;&lt;p&gt;Last modified on </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">modified</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.&lt;/p&gt;`</span>;
+    <span style="color:#a6e22e">tags</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">tag</span> =&gt; {
+      document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-tags&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;calcite-chip&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tag</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/calcite-chip&gt;`</span>;
+    });
+
+  });
+
+  <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">activeWidget</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleActionBarClick</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">target</span> }) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;CALCITE-ACTION&#34;</span>) {
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">activeWidget</span>) {
+      document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`[data-action-id=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">activeWidget</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">active</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+      document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`[data-block-id=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">activeWidget</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">hidden</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    }
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nextWidget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">actionId</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nextWidget</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">activeWidget</span>) {
+      document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`[data-action-id=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">nextWidget</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">active</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+      document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`[data-block-id=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">nextWidget</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">hidden</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+      <span style="color:#a6e22e">activeWidget</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nextWidget</span>;
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#a6e22e">activeWidget</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    }
+  };
+  document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-action-bar&#34;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">handleActionBarClick</span>);
+  <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><h3 id="ローダー-コンポーネントの追加">ローダー コンポーネントの追加</h3>
+<p>ここまでで、アプリケーションがインタラクティブになりました。Calcite コンポーネントを使用して、マップ コンポーネントを開いたり閉じたりできます。しかし、アプリケーションのロードには1秒かかるので、それをユーザーに伝える必要があります。</p>
+<ol>
+<li>
+<body> 要素内で、シェルの終了タグの後に calcite-loader を追加して、コンポーネントを表示します。
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">     &lt;/<span style="color:#f92672">calcite-shell</span>&gt;
+     <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
+     &lt;<span style="color:#f92672">calcite-loader</span>&gt;&lt;/<span style="color:#f92672">calcite-loader</span>&gt;
+     <span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><ol start="2">
+<li><a href="https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/#events"><code>arcgisViewReadyChange</code></a> イベントの内部で、他の JavaScript コードの下に、<a href="https://developers.arcgis.com/calcite-design-system/components/loader/"><code>calcite-loader</code></a> コンポーネントを <code>hidden</code> プロパティを <code>true</code> に設定して非表示にし、<a href="https://developers.arcgis.com/calcite-design-system/components/panel/"><code>calcite-panel</code></a> を表示してください。マップとそのプロパティがアプリに読み込まれると、ローダーは非表示になり、パネルが UI に表示されます。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;arcgisViewReadyChange&#34;</span>, () =&gt; {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">thumbnailUrl</span>, <span style="color:#a6e22e">snippet</span>, <span style="color:#a6e22e">modified</span>, <span style="color:#a6e22e">tags</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">mapEl</span>.<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">portalItem</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app-heading&#34;</span>).<span style="color:#a6e22e">heading</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> Explorer`</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-heading&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-thumbnail&#34;</span>).<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">thumbnailUrl</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-description&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;p&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">snippet</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/p&gt;&lt;p&gt;Last modified on </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">modified</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.&lt;/p&gt;`</span>;
+    <span style="color:#a6e22e">tags</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">tag</span> =&gt; {
+      document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;card-tags&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;calcite-chip&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tag</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/calcite-chip&gt;`</span>;
+    });
+
+    <span style="color:#75715e">// 追加開始
+</span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-loader&#34;</span>).<span style="color:#a6e22e">hidden</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app-heading&#34;</span>).<span style="color:#a6e22e">removeAttribute</span>(<span style="color:#e6db74">&#34;hidden&#34;</span>);
+    <span style="color:#75715e">// 追加終了
+</span><span style="color:#75715e"></span>
+  });
+</code></pre></div><h3 id="スタイルの追加">スタイルの追加</h3>
+<p><code>&lt;style&gt;</code> 要素内で、見出しの <a href="https://developers.arcgis.com/calcite-design-system/components/panel/"><code>calcite-panel</code></a> と情報の <a href="https://developers.arcgis.com/calcite-design-system/components/card/"><code>calcite-card</code></a> のユーザー インターフェースを強化するために、追加の CSS を記述します。</p>
+<ol>
+<li>
+<p><code>calcite-icon</code> をパネルの <code>&quot;header-actions-start&quot;</code> にスロットしている場合、そのコンポーネントを整列させるために <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex_containerk">Flexbox</a> の変数を追加します。</p>
+</li>
+<li>
+<p>次に、パネルの幅と高さを設定するためのスタイルを追加します。</p>
+<ul>
+<li>calcite-shell-panel に &ndash;calcite-shell-panel-min-width を追加します。</li>
+<li><code>calcite-shell-panel</code> がスマートフォンなどの小型デバイスに対応できるように、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries">メディア クエリー</a>を追加します。</li>
+<li><code>data-block-id</code> 属性を含む <code>calcite-block</code> コンポーネントに対して、<code>max-height</code> を設定します。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+
+  <span style="color:#f92672">html</span><span style="color:#f92672">,</span>
+  <span style="color:#f92672">body</span><span style="color:#f92672">,</span>
+  #mapEl {
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+  }
+
+
+  <span style="color:#75715e">/** 追加開始 */</span>
+  #logo-icon {
+    <span style="color:#66d9ef">align-self</span>: <span style="color:#66d9ef">center</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;
+    margin-inline-start: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+  }
+
+  #shell-panel-nav {
+    --calcite-shell-panel-min-width: <span style="color:#ae81ff">18</span><span style="color:#66d9ef">rem</span>;
+  }
+
+  @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">400px</span><span style="color:#f92672">)</span> {
+    #shell-panel-nav {
+      --calcite-shell-panel-min-width: <span style="color:#ae81ff">80</span><span style="color:#66d9ef">vw</span>;
+    }
+  }
+
+  <span style="color:#f92672">calcite-block</span><span style="color:#f92672">[</span><span style="color:#f92672">data-block-id</span><span style="color:#f92672">]</span> {
+    <span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">vh</span>;
+    <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">auto</span>;
+  }
+  <span style="color:#75715e">/** 追加終了 */</span>
+
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><ol start="3">
+<li>最後に、<a href="https://developers.arcgis.com/calcite-design-system/components/card/"><code>calcite-card</code></a> にスタイルを追加してください。具体的には、コンポーネントに<code>パディング</code>を追加し、<a href="https://developers.arcgis.com/calcite-design-system/foundations/tokens/reference/#font">CSS 変数</a>を使って<code>フォント サイズ</code>を更新し、タグを <code>flex-wrap</code> で折り返すようにしてください。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+  <span style="color:#75715e">/** ～ 中略 ～  */</span>
+  <span style="color:#f92672">calcite-block</span><span style="color:#f92672">[</span><span style="color:#f92672">data-block-id</span><span style="color:#f92672">]</span> {
+    <span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">vh</span>;
+    <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">auto</span>;
+  }
+
+
+  <span style="color:#75715e">/* 追加開始 */</span>
+  #card-heading {
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>calcite<span style="color:#f92672">-</span>font<span style="color:#f92672">-</span>size<span style="color:#f92672">-</span>md);
+  }
+
+  #card-description {
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>calcite<span style="color:#f92672">-</span>font<span style="color:#f92672">-</span>size);
+  }
+
+  #card-tags {
+    <span style="color:#66d9ef">flex-wrap</span>: <span style="color:#66d9ef">wrap</span>;
+  }
+  <span style="color:#75715e">/* 追加終了 */</span>
+
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><h3 id="アプリの実行">アプリの実行</h3>
+<p><b>CodePen</b> でコードを実行すると、アプリケーションが表示されます。</p>
+<p>アプリケーションの読み込みが完了すると、マップが表示され、Web マップのタイトルと <a href="https://developers.arcgis.com/calcite-design-system/components/action-bar/"><code>calcite-action-bar</code></a> も一緒に表示されます。<a href="https://developers.arcgis.com/calcite-design-system/components/action/"><code>calcite-action</code></a> コンポーネントをクリックすると、<a href="https://developers.arcgis.com/calcite-design-system/components/block/"><code>calcite-block</code></a> コンポーネントが展開・折りたたみされます。これらのブロックには、<a href="https://developers.arcgis.com/javascript/latest/">ArcGIS Maps SDK for JavaScript</a> のマップ コンポーネントが含まれています。</p>
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/calcite-design-system/tutorials/build-a-dark-mode-switch/" title="暗色 (dark) モード スイッチの構築"> <i class="fa fa-chevron-left"></i><label>暗色 (dark) モード スイッチの構築</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/dotnet/" title="ArcGIS Maps SDK for .NET" style="margin-right: 0px;"><label>ArcGIS Maps SDK for .NET</label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/arcgis-dev-resources/js/clipboard.min.js"></script>
+<script src="/arcgis-dev-resources/js/featherlight.min.js"></script>
+<script src="/arcgis-dev-resources/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/arcgis-dev-resources/js/modernizr.custom.71422.js"></script>
+<script src="/arcgis-dev-resources/js/docdock.js"></script>
+<script src="/arcgis-dev-resources/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
