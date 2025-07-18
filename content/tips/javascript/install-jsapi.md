@@ -5,26 +5,27 @@ weight = 5
 aliases = ["/javascript/install-jsapi/"]
 +++
 
-ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細については<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-and-setup/" target="_blank">インストールおよびセットアップ方法</a>を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
+JavaScriptライブラリをインストールする前に[利用規約](https://ej001353.esrij.local/arcgisjsapi/4.33/arcgis_js_v433_api/legal/EULA.pdf)をご覧ください。
+ArcGIS Maps SDK for JavaScript へのアクセスには、CDN[（Content Delivery Network）](https://en.wikipedia.org/wiki/Content_delivery_network)上のホスト バージョンを使用することをお勧めします。
 
-Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
+```html
+<link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
+<script src="https://js.arcgis.com/4.33/"></script>
+```
 
-## ライブラリのダウンロード
+ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、"AMD モジュールをローカルでホストできますか？" をお読みください。 FAQ トピックをご覧ください。
 
-ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの <a href="https://developers.arcgis.com/javascript/latest/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+## ArcGIS Maps SDK for JavaScript ライブラリのインストール
+Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。
 
-※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
+### Apache HTTP サーバー
+これらの手順では、ArcGIS Maps SDK for JavaScript ライブラリーを [Apache HTTP サーバー](https://httpd.apache.org/)上の次の場所 https://www.example.com/javascript/api/4.33/ (/var/www/html/javascript/api/4.33) にインストールすることを前提としています。[www.example.com](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) は、[Web サイトの完全修飾ドメイン名](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)と[トップ レベル ドメイン](https://en.wikipedia.org/wiki/Top-level_domain)の組み合わせです。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/downloadPage_429.png" width="1150px">
+### インターネット インフォメーション サービス（IIS）
+この手順では、Windows® Server の [インターネット インフォメーション サービス (IIS)](https://www.iis.net/) 上の次の場所 https://www.example.com/javascript/api/4.33/ (C:\Inetpubwwwroot\javascript\api\4.33\) に ArcGIS Maps SDK for JavaScript ライブラリをインストールするものとします。[www.example.com](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) は、[Web サイトの完全修飾ドメイン名](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)と[トップ レベル ドメイン](https://en.wikipedia.org/wiki/Top-level_domain)の組み合わせです。
 
-> [Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+ArcGIS Maps SDK for JavaScript ライブラリーは、その全体を Web サーバー ディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロードから、\arcgis_js_v433_api\arcgis_js_api\javascript\4.33\ ディレクトリーとその中のすべてのファイルを Web サーバーにコピーします。この例では、ファイルは次の場所にコピーしています。`C:\Inetpub\wwwroot\javascript\api\4.33\`
 
-## Web サーバー（IIS）に配置
-
-<!-- まずはダウンロードしたサンプル コードを実行してみましょう。 -->
-
-1. ダウンロードしたライブラリの zip ファイルを解凍します。
-2. `\arcgis_js_v432_api\arcgis_js_api\javascript\4.32\` とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (`C:\inetpub\wwwroot\javascript\api\4.32\`)
 
 ## 必要条件
 
@@ -45,11 +46,10 @@ ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデ�
 
 ## インストールのテスト
 
-以下のサンプルは、ArcGIS Maps SDK for JavaScript のダウンロード版に含まれています。
-ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_api/arcgis_js_api/javascript/4.32/ およびそのすべてのコンテンツを Web サーバにコピーした後、<a href="https://developers.arcgis.com/javascript/latest/system-requirements/" target="_blank">サポートされている Web ブラウザ</a>でアプリケーション https://www.example.com/javascript/4.32/index.html を開くことにより、API をテストすることができます。
+次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_v433_api/arcgis_js_api/javascript/4.33/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション https://www.example.com/javascript/api/4.33/index.html を開くことで API をテストできます。
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -69,60 +69,66 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_ap
     <link rel="stylesheet" href="./esri/themes/light/main.css" />
     <script src="./init.js"></script>
 
-    <script>
-      require(["esri/Basemap", "esri/layers/TileLayer", "esri/Map", "esri/views/SceneView"], function (
-        Basemap,
-        TileLayer,
-        Map,
-        SceneView
-      ) {
-        // --------------------------------------------------------------------
-        // If you do not have public internet access, change the layer URL to
-        // point to your own locally accessible cached service.
-        // --------------------------------------------------------------------
-        const layer = new TileLayer({
-          url: "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer"
-        });
-        const customBasemap = new Basemap({
-          baseLayers: [layer],
-          title: "My Basemap"
-        });
-        const myMap = new Map({
-          basemap: customBasemap
-        });
-        const view = new SceneView({
-          container: "viewDiv",
-          map: myMap
-        });
+    <script type="module">
+      const [Basemap, TileLayer, Map, SceneView] = await $arcgis.import([
+        "@arcgis/core/Basemap.js",
+        "@arcgis/core/layers/TileLayer.js",
+        "@arcgis/core/Map.js",
+        "@arcgis/core/views/SceneView.js",
+      ]);
 
-        checkThisOne("./esri/views/3d/environment/resources/stars.wsv", "wsv mimetype");
-        checkThisOne("./esri/t9n/basemaps.json", "json mimetype");
-        checkThisOne("./esri/themes/base/icons/fonts/CalciteWebCoreIcons.ttf", "ttf mimetype");
-        checkThisOne("./esri/themes/base/icons/fonts/CalciteWebCoreIcons.woff", "woff mimetype");
-
-        function checkThisOne(url, desc) {
-          fetch(url, {
-            method: "HEAD"
-          })
-            .then(function (response) {
-              if (response.ok) {
-                logDiv.innerHTML += "* OK: " + desc + "<br/>";
-                if (response.status !== 200) {
-                  logDiv.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;status: " + response.status + "<br/>";
-                }
-                return response.blob();
-              } else {
-                // response not ok
-                logDiv.innerHTML +=
-                  "* HTTP error " + response.status + ' for <a href="' + url + '">' + url + "</a><br/>";
-                alert("Problem accessing " + desc);
-              }
-            })
-            .catch(function (error) {
-              logDiv.innerHTML += '* BAD: <a href="' + url + '">' + url + "</a><br/>";
-            });
-        }
+      // --------------------------------------------------------------------
+      // If you do not have public internet access, change the layer URL to
+      // point to your own locally accessible cached service.
+      // --------------------------------------------------------------------
+      const layer = new TileLayer({
+        url: "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer",
       });
+      const customBasemap = new Basemap({
+        baseLayers: [layer],
+        title: "My Basemap",
+      });
+      const myMap = new Map({
+        basemap: customBasemap,
+      });
+      const view = new SceneView({
+        container: "viewDiv",
+        map: myMap,
+      });
+
+      checkThisOne("./esri/views/3d/environment/resources/stars.wsv", "wsv mimetype");
+      checkThisOne("./esri/t9n/basemaps.json", "json mimetype");
+      checkThisOne("./esri/themes/base/icons/fonts/CalciteWebCoreIcons.ttf", "ttf mimetype");
+      checkThisOne("./esri/themes/base/icons/fonts/CalciteWebCoreIcons.woff", "woff mimetype");
+
+      function checkThisOne(url, desc) {
+        fetch(url, {
+          method: "HEAD",
+        })
+          .then(function (response) {
+            if (response.ok) {
+              logDiv.innerHTML += "* OK: " + desc + "<br/>";
+              if (response.status !== 200) {
+                logDiv.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;status: " + response.status + "<br/>";
+              }
+              return response.blob();
+            } else {
+              // response not ok
+              logDiv.innerHTML +=
+                "* HTTP error " +
+                response.status +
+                ' for <a href="' +
+                url +
+                '">' +
+                url +
+                "</a><br/>";
+              alert("Problem accessing " + desc);
+            }
+          })
+          .catch(function (error) {
+            logDiv.innerHTML += '* BAD: <a href="' + url + '">' + url + "</a><br/>";
+          });
+      }
     </script>
   </head>
 
@@ -132,5 +138,5 @@ ArcGIS Maps SDK for JavaScript のダウンロード版から /arcgis_js_v431_ap
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.32となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は4.33となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
