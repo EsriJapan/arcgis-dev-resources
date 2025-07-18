@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-07-18T11:00:23 JST">
+<meta name="revised" content="2025-07-18T11:11:18 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -974,7 +974,8 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#arcgis-maps-sdk-for-javascript-ライブラリのインストール">ArcGIS Maps SDK for JavaScript ライブラリのインストール</a>
+    <li><a href="#ライブラリーのダウンロード">ライブラリーのダウンロード</a></li>
+    <li><a href="#arcgis-maps-sdk-for-javascript-ライブラリーのインストール">ArcGIS Maps SDK for JavaScript ライブラリーのインストール</a>
       <ul>
         <li><a href="#apache-http-サーバー">Apache HTTP サーバー</a></li>
         <li><a href="#インターネット-インフォメーション-サービスiis">インターネット インフォメーション サービス（IIS）</a></li>
@@ -1006,7 +1007,14 @@ ArcGIS Maps SDK for JavaScript へのアクセスには、CDN<a href="https://en
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/esri/themes/light/main.css&#34;</span> /&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、&ldquo;AMD モジュールをローカルでホストできますか？&rdquo; をお読みください。 FAQ トピックをご覧ください。</p>
-<h2 id="arcgis-maps-sdk-for-javascript-ライブラリのインストール">ArcGIS Maps SDK for JavaScript ライブラリのインストール</h2>
+<h2 id="ライブラリーのダウンロード">ライブラリーのダウンロード</h2>
+<p>ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの <a href="https://developers.arcgis.com/javascript/latest/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。</p>
+<p>※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。</p>
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/downloadPage_433.png" width="1150px">
+<blockquote>
+<p>[Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank"><a href="https://developers.arcgis.com/javascript/">https://developers.arcgis.com/javascript/</a></a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。</p>
+</blockquote>
+<h2 id="arcgis-maps-sdk-for-javascript-ライブラリーのインストール">ArcGIS Maps SDK for JavaScript ライブラリーのインストール</h2>
 <p>Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。</p>
 <h3 id="apache-http-サーバー">Apache HTTP サーバー</h3>
 <p>これらの手順では、ArcGIS Maps SDK for JavaScript ライブラリーを <a href="https://httpd.apache.org/">Apache HTTP サーバー</a>上の次の場所 <a href="https://www.example.com/javascript/api/4.33/">https://www.example.com/javascript/api/4.33/</a> (/var/www/html/javascript/api/4.33) にインストールすることを前提としています。<a href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name">www.example.com</a> は、<a href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name">Web サイトの完全修飾ドメイン名</a>と<a href="https://en.wikipedia.org/wiki/Top-level_domain">トップ レベル ドメイン</a>の組み合わせです。</p>

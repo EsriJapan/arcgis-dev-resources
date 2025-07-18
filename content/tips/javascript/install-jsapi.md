@@ -15,7 +15,17 @@ ArcGIS Maps SDK for JavaScript へのアクセスには、CDN[（Content Deliver
 
 ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、"AMD モジュールをローカルでホストできますか？" をお読みください。 FAQ トピックをご覧ください。
 
-## ArcGIS Maps SDK for JavaScript ライブラリのインストール
+## ライブラリーのダウンロード
+
+ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの <a href="https://developers.arcgis.com/javascript/latest/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+
+※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/downloadPage_433.png" width="1150px">
+
+> [Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+
+## ArcGIS Maps SDK for JavaScript ライブラリーのインストール
 Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。
 
 ### Apache HTTP サーバー
