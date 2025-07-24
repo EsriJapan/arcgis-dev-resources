@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-07-14T12:48:43 JST">
-<title>メッセージ と アクション（Message and action） :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2025-07-24T14:13:30 JST">
+<title>メッセージとアクション（Message and action） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -402,14 +402,14 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
-            データアクション（Data action）
+            データ アクション（Data action）
           </a>
         </div>
     </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
-            メッセージ と アクション（Message and action）
+            メッセージとアクション（Message and action）
           </a>
         </div>
     </li>
@@ -961,7 +961,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > メッセージ と アクション（Message and action）
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > メッセージとアクション（Message and action）
 
  
 
@@ -982,9 +982,9 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
-        <li><a href="#メッセージ-と-アクションmessage-and-action">メッセージ と アクション（Message and action）</a></li>
+        <li><a href="#メッセージとアクションmessage-and-action">メッセージとアクション（Message and action）</a></li>
         <li><a href="#メッセージの発行publishing-a-message">メッセージの発行（Publishing a message）</a></li>
-        <li><a href="#メッセージアクションの作成creating-a-message-action">メッセージアクションの作成（Creating a message action）</a></li>
+        <li><a href="#メッセージ-アクションの作成creating-a-message-action">メッセージ アクションの作成（Creating a message action）</a></li>
         <li><a href="#国際化対応i18n-support">国際化対応（i18n support）</a></li>
       </ul>
     </li>
@@ -999,7 +999,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>メッセージ と アクション（Message and action）</h1>
+    <h1>メッセージとアクション（Message and action）</h1>
   
 
 
@@ -1008,11 +1008,11 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/message-action/">Message and action</a></p>
-<h3 id="メッセージ-と-アクションmessage-and-action">メッセージ と アクション（Message and action）</h3>
+<h3 id="メッセージとアクションmessage-and-action">メッセージとアクション（Message and action）</h3>
 <p>メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。
 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される <code>MessageType</code> によって識別されます。jimu には <code>ExtentChange</code> や <code>DataRecordsSelectionChange</code> のようないくつかのメッセージタイプが定義されています。</p>
 <h3 id="メッセージの発行publishing-a-message">メッセージの発行（Publishing a message）</h3>
-<p>ウィジェットは，<code>MessageManager.getInstance().publishMessage(message)</code> を呼び出してメッセージを発行します．例えば、<code>List</code> ウィジェットでは，リストアイテムがクリックされたときに <code>DataRecordsSelectionChange</code> メッセージを発行したり，<code>Map</code> ウィジェットでは，ビューが変更されたときに <code>ExtentChange</code> メッセージを発行して，<code>List</code> ウィジェットのコンテンツを更新したりします。以下の <code>MessageTypes</code> がサポートされています。</p>
+<p>ウィジェットは、<code>MessageManager.getInstance().publishMessage(message)</code> を呼び出してメッセージを発行します．例えば、<code>List</code> ウィジェットでは，リストアイテムがクリックされたときに <code>DataRecordsSelectionChange</code> メッセージを発行したり，<code>Map</code> ウィジェットでは，ビューが変更されたときに <code>ExtentChange</code> メッセージを発行して，<code>List</code> ウィジェットのコンテンツを更新したりします。以下の <code>MessageTypes</code> がサポートされています。</p>
 <ul>
 <li><code>StringSelectionChange</code></li>
 <li><code>ExtentChange</code></li>
@@ -1020,12 +1020,12 @@ if (!doNotTrack) {
 <li><code>DataRecordSetChange</code></li>
 </ul>
 <p>各メッセージには、それを定義するクラスがあります。例えば、<code>ExtentChange</code> メッセージは <code>ExtentChangeMessage</code> クラスで定義され、このクラスはメッセージのペイロードである <code>extent</code> プロパティを定義します。</p>
-<p>メッセージを公開するために、ウィジェットは <code>manifest.json</code> ファイルで公開メッセージを宣言する必要があります。</p>
+<p>メッセージを発行するために、ウィジェットは <code>manifest.json</code> ファイルで発行メッセージを宣言する必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#e6db74">&#34;publishMessages&#34;</span><span style="color:#f92672">:</span> [
     <span style="color:#e6db74">&#34;DATA_RECORDS_SELECTION_CHANGE&#34;</span>
   ]
-</code></pre></div><h3 id="メッセージアクションの作成creating-a-message-action">メッセージアクションの作成（Creating a message action）</h3>
-<p>メッセージアクションを作成するには、<code>AbstractMessageAction</code> クラスを継承する必要があります。メッセージアクションの開発に役立つメソッドや関数がいくつかあります。</p>
+</code></pre></div><h3 id="メッセージ-アクションの作成creating-a-message-action">メッセージ アクションの作成（Creating a message action）</h3>
+<p>メッセージ アクションを作成するには、<code>AbstractMessageAction</code> クラスを継承する必要があります。メッセージ アクションの開発に役立つメソッドや関数がいくつかあります。</p>
 <p><code>filterMessageType</code> メソッドは、利用可能なアクションのフィルタリングに使用されます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QueryAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractMessageAction</span>{
   <span style="color:#a6e22e">filterMessageType</span>(<span style="color:#a6e22e">messageType</span>: <span style="color:#66d9ef">MessageType</span>, <span style="color:#a6e22e">messageWidgetId?</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>{
@@ -1040,7 +1040,7 @@ if (!doNotTrack) {
 <p>アクション設定の UI コンポーネントはいくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、<code>this.props.onSettingChange</code> を呼び出して設定を保存し、<code>onExecute</code> メソッドで利用できるようにします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onSettingChange</span>({
   <span style="color:#a6e22e">actionId</span>: <span style="color:#66d9ef">this.props.actionId</span>,
-  <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {} <span style="color:#75715e">// the action config
+  <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {} <span style="color:#75715e">// アクションの config 設定
 </span><span style="color:#75715e"></span>})
 </code></pre></div><p><code>onExecute</code> メソッドは、メッセージ タイプに応じて発生させたいロジックを処理します。以下のスニペットでは、基本的にメッセージ タイプに基づいてアクションを選択し、<code>dispatch</code> プロパティを使用してアプリケーションから <code>getAppStore()</code> 関数を使用してストアに送信しています。これにより、redux アクションがディスパッチされ、ステートが更新されるようになります。Redux アクションと Redux でのストアの使用について詳しくは<a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts">こちら</a>をご覧ください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">onExecute</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Message</span>, <span style="color:#a6e22e">actionConfig?</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">boolean</span>&gt; <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span>{
@@ -1071,7 +1071,7 @@ if (!doNotTrack) {
   }
 ]
 </code></pre></div><h3 id="国際化対応i18n-support">国際化対応（i18n support）</h3>
-<p>メッセージ アクションの言語サポートは、<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/#i18n-support">ウィジェット</a>と同じパターンですが、1つ重要な違いがあります。メッセージ アクションには、ユーザーがアクションを選択するための <code>Select an action</code> パネルがあります。そのため、アクションのプロパティ名を記載した <code>default.ts</code> というファイルを runtime/translations フォルダーに用意する必要があります。フレームワークは、このパネルのアクションラベルの翻訳を処理します。そのため、ラベルのプロパティは、<code>_action_&lt;actionName&gt;_label</code> という命名規則を持つ必要があります。</p>
+<p>メッセージ アクションの言語サポートは、<a href="../widget-development/extend-base-widget.md#i18n-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">ウィジェット</a>と同じパターンですが、1 つ重要な違いがあります。メッセージ アクションには、ユーザーがアクションを選択するための <code>Select an action</code> パネルがあります。そのため、アクションのプロパティ名を記載した <code>default.ts</code> というファイルを runtime/translations フォルダーに用意する必要があります。フレームワークは、このパネルのアクションラベルの翻訳を処理します。そのため、ラベルのプロパティは、<code>_action_&lt;actionName&gt;_label</code> という命名規則を持つ必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
   <span style="color:#a6e22e">_widgetLabel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Message subscriber&#39;</span>,
   <span style="color:#a6e22e">_action_query_label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Query&#39;</span>
@@ -1087,7 +1087,7 @@ if (!doNotTrack) {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" title="データアクション（Data action）"> <i class="fa fa-chevron-left"></i><label>データアクション（Data action）</label></a>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" title="データ アクション（Data action）"> <i class="fa fa-chevron-left"></i><label>データ アクション（Data action）</label></a>
     <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/" title="マップ/シーン ビュー（Map/Scene View）" style="margin-right: 0px;"><label>マップ/シーン ビュー（Map/Scene View）</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

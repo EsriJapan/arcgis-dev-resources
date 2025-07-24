@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-07-14T12:48:43 JST">
+<meta name="revised" content="2025-07-24T14:13:30 JST">
 <title>拡張ポイント（Extension points） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -402,14 +402,14 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/">
-            データアクション（Data action）
+            データ アクション（Data action）
           </a>
         </div>
     </li>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/">
-            メッセージ と アクション（Message and action）
+            メッセージとアクション（Message and action）
           </a>
         </div>
     </li>
@@ -1007,12 +1007,12 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/extension-points/">Extension points</a></p>
 <h3 id="拡張ポイントextension-points">拡張ポイント（Extension points）</h3>
-<p>Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。</p>
-<p>Jimu ライブラリでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、<code>jimu-core</code> からエクスポートされた <code>extensionSpec</code> です。ウィジェットでエクステンションを提供するには、ウィジェットの <code>manifest.json</code> ファイルでエクステンションを宣言する必要があります。</p>
+<p>Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。</p>
+<p>Jimu ライブラリーでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、<code>jimu-core</code> からエクスポートされた <code>extensionSpec</code> です。ウィジェットでエクステンションを提供するには、ウィジェットの <code>manifest.json</code> ファイルでエクステンションを宣言する必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#e6db74">&#34;extensions&#34;</span><span style="color:#f92672">:</span> [
   {
-    <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension point name&gt;&#34;</span>,
-    <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;Extension uri, relative to src folder&gt;&#34;</span>
+    <span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;拡張ポイント名&gt;&#34;</span>,
+    <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;拡張される URI、関連するソース フォルダー&gt;&#34;</span>
   }
 ]
 </code></pre></div><p>Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。</p>
@@ -1021,7 +1021,7 @@ if (!doNotTrack) {
 <p><code>AppConfigProcessor</code> - この拡張ポイントのエクステンションは、<code>AppConfig</code> を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（<a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/translation/">Translation サンプルを参照</a>）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。</p>
 </li>
 <li>
-<p><code>DependencyDefine</code> - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。</p>
+<p><code>DependencyDefine</code> - この拡張機能を使用すると、初期化が必要なサード パーティーのライブラリーを使用できます。</p>
 </li>
 <li>
 <p><code>ReduxStore</code> - この拡張機能を使用すると、ウィジェットの Redux 状態の <code>actions</code> と <code>reducers</code> を定義できます。</p>

@@ -8,15 +8,15 @@ aliases = ["/extension-points/"]
 
 ### 拡張ポイント（Extension points）
 
-Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
+Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
 
-Jimu ライブラリでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、`jimu-core` からエクスポートされた `extensionSpec` です。ウィジェットでエクステンションを提供するには、ウィジェットの `manifest.json` ファイルでエクステンションを宣言する必要があります。
+Jimu ライブラリーでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、`jimu-core` からエクスポートされた `extensionSpec` です。ウィジェットでエクステンションを提供するには、ウィジェットの `manifest.json` ファイルでエクステンションを宣言する必要があります。
 
 ```tsx
 "extensions": [
   {
-    "point": "<Extension point name>",
-    "uri": "<Extension uri, relative to src folder>"
+    "point": "<拡張ポイント名>",
+    "uri": "<拡張される URI、関連するソース フォルダー>"
   }
 ]
 ```
@@ -25,7 +25,7 @@ Jimu では、API ドキュメントで定義されている様々な拡張ポ�
 
 - `AppConfigProcessor` - この拡張ポイントのエクステンションは、`AppConfig` を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（[Translation サンプルを参照](https://developers.arcgis.com/experience-builder/sample-code/widgets/translation/)）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
 
-- `DependencyDefine` - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
+- `DependencyDefine` - この拡張機能を使用すると、初期化が必要なサード パーティーのライブラリーを使用できます。
 
 - `ReduxStore` - この拡張機能を使用すると、ウィジェットの Redux 状態の `actions` と `reducers` を定義できます。
 
