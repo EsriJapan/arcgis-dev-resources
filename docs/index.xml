@@ -58,15 +58,19 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/get-started/</guid>
       <description>出典：Calcite Design System - Get Started
-はじめに Calcite Components は、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリです。Web コンセプトのページ では、Calcite Design System の構成要素について説明しています。
-例題、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、コンポーネント ドキュメントをご覧ください。以下の手順で、Calcite Components を使い始めることができます。
-まず、Calcite Components を使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
+はじめに Calcite コンポーネントは、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリです。Web コンセプトのページ では、Calcite Design System の構成要素について説明しています。
+例題、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、コンポーネント ドキュメントをご覧ください。以下の手順で、Calcite コンポーネントを使い始めることができます。
+まず、Calcite コンポーネントを使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
 作成方法は、開発者アカウントの作成をご覧ください。
-次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite Components を読み込みます。
-CDN で利用する Calcite Components を読み込むための最も一般的な方法は、ArcGIS CDN でホストされているバージョンを使用する方法です。コンポーネントは、HTML ドキュメントの先頭にある script および link タグを使用して読み込むことができます。
-&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;https://js.arcgis.com/calcite-components/1.11.0/calcite.css&amp;#34; /&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
-NPM パッケージで利用する Calcite Components は、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
-npm install @esri/calcite-components アセットの読み込み calcite-icon や calcite-date-picker のような幾つかのコンポーネントは、特定のパスで利用可能なアセットに依存しています。前述したように NPM パッケージでは、ローカルパスか CDN でホストされているアセットの URL を提供するオプションがあります。CDN でホストされているアセットを使うことで、ディスクのビルドサイズを減らすことができます。</description>
+次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite コンポーネントを読み込みます。
+CDN で利用する Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに &amp;lt;script&amp;gt; タグを配置することでロードできます:
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+NPM パッケージで利用する Calcite コンポーネントは、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
+npm install @esri/calcite-components アセットの読み込み 一部のコンポーネント（例：calcite-icon、calcite-date-picker）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。
+ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリにコピーできます。互換性を維持するため、ローカルのアセットは「assets」という名前のディレクトリに配置してください。
+例えば、次のコマンドを使用してアセットをコピーできます。
+cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/ アセットが用意できたら、アプリケーション内でアセットのパスを設定してください
+import { setAssetPath } from &amp;#34;@esri/calcite-components&amp;#34;; setAssetPath(&amp;#34;/path-to-your-assets/&amp;#34;); スタイルのインポート 最後に、カスケーディング スタイル シート（CSS）を読み込みます。これもフレームワークやビルド ツールに依存しますが、多くの場合、JavaScript で直接読み込むことができます。</description>
     </item>
     
     <item>
@@ -858,12 +862,12 @@ JupyterLab をはじめる Python API を JupyterLab で使用するためには
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/</guid>
-      <description>ArcGIS Maps SDK for JavaScript のライブラリを Windows® Server の IIS（インターネット インフォメーション サービス）上に配置して Web アプリからアクセスできる環境を作るまでの流れを紹介します。API の詳細についてはインストールおよびセットアップ方法を参照してください。なお、IIS 以外の Web サーバーや Linux 上の Web サーバー（Apache Tomcat® など）へインストールする場合も基本的な流れは変わりません。
-Esri がホストしている CDN にインターネット経由で参照する場合には、ライブラリをインストールする必要はありません。
-ライブラリのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
+      <description>JavaScriptライブラリをインストールする前に利用規約をご覧ください。 ArcGIS Maps SDK for JavaScript へのアクセスには、CDN（Content Delivery Network）上のホスト バージョンを使用することをお勧めします。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://js.arcgis.com/4.33/esri/themes/light/main.css&amp;#34; /&amp;gt; &amp;lt;script src=&amp;#34;https://js.arcgis.com/4.33/&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、&amp;ldquo;AMD モジュールをローカルでホストできますか？&amp;rdquo; をお読みください。 FAQ トピックをご覧ください。
+ライブラリーのダウンロード ライブラリとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの Downloads ページからダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
 ※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダ内にあります install.html をご参照ください。
  [Documentation] ボタンをクリックすると https://developers.arcgis.com/javascript/ で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
- Web サーバー（IIS）に配置  ダウンロードしたライブラリの zip ファイルを解凍します。 \arcgis_js_v432_api\arcgis_js_api\javascript\4.32\ とすべてのコンテンツをコピーして Web サーバー上に配置します。例 : (C:\inetpub\wwwroot\javascript\api\4.32\)  必要条件 ArcGIS Maps SDK for JavaScript ライブラリおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。</description>
+ ArcGIS Maps SDK for JavaScript ライブラリーのインストール Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。</description>
     </item>
     
     <item>
@@ -990,8 +994,8 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコードで Web アプリを構築するための事前構築された UI コンポーネントのコレクションです。
 標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML エレメント（例：&amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt;）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
 マップ コンポーネント @arcgis/map-components パッケージには、マップ コンポーネント、シーン コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。
-以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用してArcGIS マップを Web ページに埋め込ムことができます。
-&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント（ベータ版） @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用できる一連のコンポーネントが含まれています。マップと一緒に使用することで、データの完全なデータ ビジュアライゼーション ストーリーを提供できます。現在、8 種類の異なるチャートコンポーネントが利用可能です。各チャートコンポーネントは、チャートの設定を含む共通のチャート仕様に従った JSON オブジェクトを参照することでレンダリングできます。@arcgis/charts-model パッケージを使用すると、そのチャートの設定の作成と更新が容易になります。 コーディング コンポーネント @arcgis/coding-components パッケージには、Arcade エディター コンポーネントが含まれています。このコンポーネントを使用すると、エンド ユーザーはレンダラー、ポップアップ、ラベルのために新しいデータ値を動的に作成するための Arcade 式を作成できます。ユーザーは、Map Viewer や Arcade プレイグラウンドでの編集と同じ体験を得ることができます。 埋め込み可能なコンポーネント 埋め込み可能なコンポーネントには、埋め込み マップ コンポーネントが含まれています。 このコンポーネントを使用すると、デフォルトのコンポーネント（ズーム、凡例、ブックマークなど）があらかじめ設定されたWebマップを、あらゆるWebサイトにすばやく統合することができます。ArcGIS Online の Map Viewer から、最小限の設定でインタラクティブなマップを追加できます。</description>
+以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むことができます。
+&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント（ベータ版） @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用されるチャート コンポーネントとチャート アクション バー コンポーネントが含まれています。このパッケージは 9 種類のチャート タイプをサポートしており、各チャート タイプは、共有チャート仕様に準拠した model オブジェクトを設定することでレンダリングできます。この model オブジェクトは、Web マップまたはフィーチャ レイヤーから読み込むか、チャート モデル メソッドを使用してプログラムで構成できます。</description>
     </item>
     
     <item>
@@ -1201,8 +1205,8 @@ app config では、widgets でウィジェットを定義します。</descript
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
-Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリは重く、複雑です。例えば、setting-components エントリには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリーで、以下のようなパッケージで構成される拡張フレームワークです。
+ jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリーには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリーには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリーは重く、複雑です。例えば、setting-components エントリーには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリーを定義し、これらのエントリーはパッケージのルート フォルダーの下に置かれます。lib フォルダー内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
     </item>
     
     <item>
@@ -1258,9 +1262,9 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data sources
-データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
-高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
- id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1 つのデータ ソースには、サブ データ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
+データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
+高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェイスは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
+ id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータ レコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  データ ソースは DataSourceManager によって管理され、作成および取得できます。</description>
     </item>
     
     <item>
@@ -1282,17 +1286,17 @@ API キー ページが開発者ダッシュボードに表示されない場合
     </item>
     
     <item>
-      <title>データアクション（Data action）</title>
+      <title>データ アクション（Data action）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data action
-データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。
-データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
- isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
-フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
-データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。</description>
+データ アクション（Data action） データ アクションは、データ レコードのコレクションを拡張可能な方法で処理する方法を提供します。
+データ アクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
+ isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドはユーザーがデータ アクションをクリックしたときに呼び出されます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
+フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータ アクションを提供します。ウィジェットもデータ アクションを提供できます。例えば、Map ウィジェットは &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータ アクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
+データ アクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.</description>
     </item>
     
     <item>
@@ -1307,17 +1311,17 @@ API キー ページが開発者ダッシュボードに表示されない場合
     </item>
     
     <item>
-      <title>メッセージ と アクション（Message and action）</title>
+      <title>メッセージとアクション（Message and action）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Message and action
-メッセージ と アクション（Message and action） メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される MessageType によって識別されます。jimu には ExtentChange や DataRecordsSelectionChange のようないくつかのメッセージタイプが定義されています。
-メッセージの発行（Publishing a message） ウィジェットは，MessageManager.getInstance().publishMessage(message) を呼び出してメッセージを発行します．例えば、List ウィジェットでは，リストアイテムがクリックされたときに DataRecordsSelectionChange メッセージを発行したり，Map ウィジェットでは，ビューが変更されたときに ExtentChange メッセージを発行して，List ウィジェットのコンテンツを更新したりします。以下の MessageTypes がサポートされています。
+メッセージとアクション（Message and action） メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される MessageType によって識別されます。jimu には ExtentChange や DataRecordsSelectionChange のようないくつかのメッセージタイプが定義されています。
+メッセージの発行（Publishing a message） ウィジェットは、MessageManager.getInstance().publishMessage(message) を呼び出してメッセージを発行します．例えば、List ウィジェットでは，リストアイテムがクリックされたときに DataRecordsSelectionChange メッセージを発行したり，Map ウィジェットでは，ビューが変更されたときに ExtentChange メッセージを発行して，List ウィジェットのコンテンツを更新したりします。以下の MessageTypes がサポートされています。
  StringSelectionChange ExtentChange DataRecordsSelectionChange DataRecordSetChange  各メッセージには、それを定義するクラスがあります。例えば、ExtentChange メッセージは ExtentChangeMessage クラスで定義され、このクラスはメッセージのペイロードである extent プロパティを定義します。
-メッセージを公開するために、ウィジェットは manifest.json ファイルで公開メッセージを宣言する必要があります。
-&amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージアクションの作成（Creating a message action） メッセージアクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージアクションの開発に役立つメソッドや関数がいくつかあります。
+メッセージを発行するために、ウィジェットは manifest.json ファイルで発行メッセージを宣言する必要があります。
+&amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージ アクションの作成（Creating a message action） メッセージ アクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージ アクションの開発に役立つメソッドや関数がいくつかあります。
 filterMessageType メソッドは、利用可能なアクションのフィルタリングに使用されます。
 export default class QueryAction extends AbstractMessageAction{ filterMessageType(messageType: MessageType, messageWidgetId?</description>
     </item>
@@ -1364,7 +1368,7 @@ ArcGIS Experience Builder の開発者向け追加機能のインストール方
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
 マップ/シーン ビュー（Map/Scene View） ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
- view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは JimuMapViewComponent を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは &amp;lt;JimuMapViewComponent&amp;gt; を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
     <item>
@@ -1388,12 +1392,26 @@ ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS M
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Extension points
-拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
-Jimu ライブラリでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
-&amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
+拡張ポイント（Extension points） Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
+Jimu ライブラリーでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
+&amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;拡張ポイント名&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;拡張される URI、関連するソース フォルダー&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
   AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
-  DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
+  DependencyDefine - この拡張機能を使用すると、初期化が必要なサード パーティーのライブラリーを使用できます。
   ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
+    </item>
+    
+    <item>
+      <title>AppConfig</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - AppConfig
+AppConfig とは ArcGIS Experience Builder における AppConfig オブジェクトは、エクスペリエンスの構成を定義する JSON ベースの設定ファイルです。アプリケーションの動作、レイアウト、外観、データ接続などを定義するための、すべての重要な設定や要素が含まれています。これには、ページ、レイアウト、ウィジェット、データ ソースなどを管理するためのプロパティも含まれます。
+AppConfig は、エクスペリエンスに関連するすべての設定のリポジトリーとして機能し、開発者がアプリケーションを簡単に、管理、カスタマイズできるようにします。新しいエクスペリエンスが初期化されると作成され、アプリケーションの state の appConfig プロパティに保存されます。
+AppConfig を更新する方法 AppConfig はイミュータブル (不変) なオブジェクトです。設定値を更新するには、更新された設定を含む新しい appConfig インスタンスをプログラムで作成する必要があります。
+以下は、ウィジェットの実行時に jimu-core ライブラリーを使用して appConfig を更新する方法の例です。プログラムで appConfigChanged() アクションを割り当てることで、appConfig を更新できます。
+import { appActions, ReactRedux } from &amp;#34;jimu-core&amp;#34; // get the appConfig const appConfig = ReactRedux.useSelector((state: IMState) =&amp;gt; state.appConfig) // modify the appConfig const newAppConfig = appConfig.setIn([&amp;#34;pages&amp;#34;, pageId, &amp;#34;label&amp;#34;], theNewLabel) dispatch(appActions.appConfigChanged(newAppConfig)) appConfig を更新する最も一般的な方法は、ウィジェット構成画面でウィジェットの設定を更新することです。このとき、プログラムで props.</description>
     </item>
     
     <item>

@@ -94,8 +94,8 @@ app config では、widgets でウィジェットを定義します。</descript
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
-Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリは重く、複雑です。例えば、setting-components エントリには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリを定義し、これらのエントリはパッケージのルートフォルダの下に置かれます。lib フォルダ内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリーで、以下のようなパッケージで構成される拡張フレームワークです。
+ jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリーには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリーには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリーは重く、複雑です。例えば、setting-components エントリーには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリーを定義し、これらのエントリーはパッケージのルート フォルダーの下に置かれます。lib フォルダー内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
     </item>
     
     <item>
@@ -105,37 +105,37 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data sources
-データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
-高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェースは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
- id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータレコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリは空の結果を返します。その他のクエリ可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  1 つのデータ ソースには、サブ データ ソースを含めることができます。その結果、使いやすくするために複数のデータ ソースを含めることができます。このようなデータ ソースを DataSourceSet と呼びます。WebMapDataSource は DataSourceSet です。DataSourceSet も、isDataSourceSet プロパティをtrue に設定していれば、データ ソースの一種です。データ ソースは DataSourceManager で管理し、データ ソースの作成や取得を行います。</description>
+データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
+高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェイスは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
+ id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータ レコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  データ ソースは DataSourceManager によって管理され、作成および取得できます。</description>
     </item>
     
     <item>
-      <title>データアクション（Data action）</title>
+      <title>データ アクション（Data action）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data action
-データアクション（Data action） データアクションは、データレコードのコレクションを拡張可能な方法で処理する方法を提供します。
-データアクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
- isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドは DataRecordSet インスタンスとオプションのアクション構成を受け取ります。DataRecordSet インスタンスには、データ ソース、オプションのデータ レコードの配列、フィールドが含まれます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
-フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータアクションを提供します。ウィジェットもデータアクションを提供できます。例えば、Map ウィジェト手ゃ &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータアクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
-データアクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.props.onSettingChange を呼び出して設定を保存し、onExecute メソッドで利用できるようにします。</description>
+データ アクション（Data action） データ アクションは、データ レコードのコレクションを拡張可能な方法で処理する方法を提供します。
+データ アクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
+ isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドはユーザーがデータ アクションをクリックしたときに呼び出されます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
+フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータ アクションを提供します。ウィジェットもデータ アクションを提供できます。例えば、Map ウィジェットは &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータ アクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
+データ アクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.</description>
     </item>
     
     <item>
-      <title>メッセージ と アクション（Message and action）</title>
+      <title>メッセージとアクション（Message and action）</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/message-action/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Message and action
-メッセージ と アクション（Message and action） メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される MessageType によって識別されます。jimu には ExtentChange や DataRecordsSelectionChange のようないくつかのメッセージタイプが定義されています。
-メッセージの発行（Publishing a message） ウィジェットは，MessageManager.getInstance().publishMessage(message) を呼び出してメッセージを発行します．例えば、List ウィジェットでは，リストアイテムがクリックされたときに DataRecordsSelectionChange メッセージを発行したり，Map ウィジェットでは，ビューが変更されたときに ExtentChange メッセージを発行して，List ウィジェットのコンテンツを更新したりします。以下の MessageTypes がサポートされています。
+メッセージとアクション（Message and action） メッセージ/アクションは、ウィジェットからウィジェット、ウィジェットからフレームワーク、フレームワークからウィジェットへの通信をサポートする方法です。 ウィジェット/フレームワークはメッセージを公開したり、メッセージを聞いたりすることができます。メッセージは jimu フレームワークによって定義される MessageType によって識別されます。jimu には ExtentChange や DataRecordsSelectionChange のようないくつかのメッセージタイプが定義されています。
+メッセージの発行（Publishing a message） ウィジェットは、MessageManager.getInstance().publishMessage(message) を呼び出してメッセージを発行します．例えば、List ウィジェットでは，リストアイテムがクリックされたときに DataRecordsSelectionChange メッセージを発行したり，Map ウィジェットでは，ビューが変更されたときに ExtentChange メッセージを発行して，List ウィジェットのコンテンツを更新したりします。以下の MessageTypes がサポートされています。
  StringSelectionChange ExtentChange DataRecordsSelectionChange DataRecordSetChange  各メッセージには、それを定義するクラスがあります。例えば、ExtentChange メッセージは ExtentChangeMessage クラスで定義され、このクラスはメッセージのペイロードである extent プロパティを定義します。
-メッセージを公開するために、ウィジェットは manifest.json ファイルで公開メッセージを宣言する必要があります。
-&amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージアクションの作成（Creating a message action） メッセージアクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージアクションの開発に役立つメソッドや関数がいくつかあります。
+メッセージを発行するために、ウィジェットは manifest.json ファイルで発行メッセージを宣言する必要があります。
+&amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージ アクションの作成（Creating a message action） メッセージ アクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージ アクションの開発に役立つメソッドや関数がいくつかあります。
 filterMessageType メソッドは、利用可能なアクションのフィルタリングに使用されます。
 export default class QueryAction extends AbstractMessageAction{ filterMessageType(messageType: MessageType, messageWidgetId?</description>
     </item>
@@ -148,7 +148,7 @@ export default class QueryAction extends AbstractMessageAction{ filterMessageTyp
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
 マップ/シーン ビュー（Map/Scene View） ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
- view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは JimuMapViewComponent を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは &amp;lt;JimuMapViewComponent&amp;gt; を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
     <item>
@@ -158,12 +158,26 @@ export default class QueryAction extends AbstractMessageAction{ filterMessageTyp
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Extension points
-拡張ポイント（Extension points） Jimu ライブラリを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
-Jimu ライブラリでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
-&amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;Extension point name&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;Extension uri, relative to src folder&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
+拡張ポイント（Extension points） Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
+Jimu ライブラリーでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
+&amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;拡張ポイント名&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;拡張される URI、関連するソース フォルダー&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
   AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
-  DependencyDefine - この拡張機能を使用すると、初期化が必要なサードパーティのライブラリを使用できます。
+  DependencyDefine - この拡張機能を使用すると、初期化が必要なサード パーティーのライブラリーを使用できます。
   ReduxStore - この拡張機能を使用すると、ウィジェットの Redux 状態の actions と reducers を定義できます。</description>
+    </item>
+    
+    <item>
+      <title>AppConfig</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - AppConfig
+AppConfig とは ArcGIS Experience Builder における AppConfig オブジェクトは、エクスペリエンスの構成を定義する JSON ベースの設定ファイルです。アプリケーションの動作、レイアウト、外観、データ接続などを定義するための、すべての重要な設定や要素が含まれています。これには、ページ、レイアウト、ウィジェット、データ ソースなどを管理するためのプロパティも含まれます。
+AppConfig は、エクスペリエンスに関連するすべての設定のリポジトリーとして機能し、開発者がアプリケーションを簡単に、管理、カスタマイズできるようにします。新しいエクスペリエンスが初期化されると作成され、アプリケーションの state の appConfig プロパティに保存されます。
+AppConfig を更新する方法 AppConfig はイミュータブル (不変) なオブジェクトです。設定値を更新するには、更新された設定を含む新しい appConfig インスタンスをプログラムで作成する必要があります。
+以下は、ウィジェットの実行時に jimu-core ライブラリーを使用して appConfig を更新する方法の例です。プログラムで appConfigChanged() アクションを割り当てることで、appConfig を更新できます。
+import { appActions, ReactRedux } from &amp;#34;jimu-core&amp;#34; // get the appConfig const appConfig = ReactRedux.useSelector((state: IMState) =&amp;gt; state.appConfig) // modify the appConfig const newAppConfig = appConfig.setIn([&amp;#34;pages&amp;#34;, pageId, &amp;#34;label&amp;#34;], theNewLabel) dispatch(appActions.appConfigChanged(newAppConfig)) appConfig を更新する最も一般的な方法は、ウィジェット構成画面でウィジェットの設定を更新することです。このとき、プログラムで props.</description>
     </item>
     
   </channel>
