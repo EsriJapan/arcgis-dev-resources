@@ -44,7 +44,7 @@ ArcGIS Experience Builder のインストール ガイドを参照して、ArcGI
    // "name": "starter-widget",
    "name": "get-map-coordinates",
    "type": "widget",
-   "version": "1.16.0",
+   "version": "1.17.0",
    ・・・
 ```
 
@@ -54,7 +54,7 @@ ArcGIS Experience Builder のインストール ガイドを参照して、ArcGI
 {
    "name": "get-map-coordinates",
    "type": "widget",
-   "version": "1.16.0",
+   "version": "1.17.0",
    // *** 追加 ***
    "dependency": ["jimu-arcgis"],
 ```
@@ -95,7 +95,7 @@ export default Setting
 ### マップ ビューのデータ ソースを選択できるようにする
 ArcGIS Experience Builder では、ページに複数のマップ ウィジェットを配置することができます。そのため、カスタム ウィジェットには、作成者が使用するマップ ウィジェットを選択するためのセクションが必要です。
 
-1. <b>setting/setting.tsx</b> ファイルに、`jimu` ライブラリから `MapWidgetSelector` モジュールを記述します。
+1. <b>setting/setting.tsx</b> ファイルに、`jimu` ライブラリーから `MapWidgetSelector` モジュールを記述します。
 
 ``` javascript
 import { MapWidgetSelector } from 'jimu-ui/advanced/setting-components'
@@ -115,7 +115,7 @@ const onMapWidgetSelected = (useMapWidgetIds: string[]) => {
 return <div className="widget-setting-demo">ここはスターター ウィジェットの設定パネルです</div>;
 ```
 
-3. return() 文内に、MapWidgetSelector を表すタグを追加します。
+3. `return()` 文内に、`MapWidgetSelector` を表すタグを追加します。
 
 ``` javascript
 return (
@@ -127,9 +127,9 @@ return (
 
 
 ### マップにアクセスする
-これまでのステップでは、設定パネルに機能を追加し、マップ ウィジェットを選択できるようになりました。Map オブジェクトは [JimuMapViewComponent](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) を使用してアクセスできます。
+これまでのステップでは、設定パネルに機能を追加し、マップ ウィジェットを選択できるようになりました。Map オブジェクトは [`JimuMapViewComponent`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) を使用してアクセスできます。
 
-1. <b>widget.tsx</b> ファイルに、`jimu-arcgis` ライブラリから [JimuMapViewComponent](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) と [JimuMapView](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) の型を追加し、React 変数をデストラクチャリング (分割代入) して `getState` import にアクセスします。
+1. <b>widget.tsx</b> ファイルに、`jimu-arcgis` ライブラリーから [`JimuMapViewComponent`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) と [`JimuMapView`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) の型を追加し、React 変数をデストラクチャリング (分割代入) して `getState` import にアクセスします。
 
 ``` javascript
 import { React, type AllWidgetProps } from 'jimu-core'
@@ -164,13 +164,13 @@ return (
 )
 ```
 
-4. `widget.tsx` の上部に、次のステップで使用する [Point](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Point.html) クラスをインポートします。
+4. `widget.tsx` の上部に、次のステップで使用する [`Point`](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-Point.html) クラスをインポートします。
 
 ``` javascript
 import Point from 'esri/geometry/Point'
 ```
 
-5. `setState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。この関数は、マップが準備完了した時に一度だけ呼び出されます。この関数内で、`pointer-move` イベントがトリガーされる度に緯度と経度の state を更新するリスナーを設定します。</br>
+5. `useState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。この関数は、マップが準備完了した時に一度だけ呼び出されます。この関数内で、`pointer-move` イベントがトリガーされる度に緯度と経度の state を更新するリスナーを設定します。</br>
 マウスの x 座標と y 座標を使用して Point オブジェクトを作成し、[view.toMap()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#toMap) 関数を使用して座標を地理座標に変換します。緯度と経度の state を設定して、座標値を表示します。
 
 ``` javascript
