@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-07-25T15:24:51 JST">
+<meta name="revised" content="2025-07-28T10:41:05 JST">
 <title>ベースマップ :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1027,7 +1027,7 @@ if (!doNotTrack) {
     
     
     <p>出典：Mapping APIs and location services - <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/">Basemaps</a></p>
-<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-demo-662a12e21dc578539aa01d45570f8294.html"
+<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-basemaps-code-basemap-services-basemaps-2d3d-49beb4aec8307e6b3fda3cc00f16484e.html"
 ></iframe>
 <h2 id="ベースマップとは">ベースマップとは？</h2>
 <p>ベースマップはベースマップ レイヤーとも呼ばれ、マップとシーンの全体的なビジュアルを提供するレイヤーです。ベースマップには通常は大陸、湖沼、行政境界、道路、都市、地名などの地理的な特徴やラベルが含まれます。ベースマップの最も一般的なデータ ソースは、<a href="#%E3%83%99%E3%83%BC%E3%82%B9%E3%83%9E%E3%83%83%E3%83%97-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">ベースマップ サービス</a>と<a href="#%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">データ サービス</a> です。</p>
@@ -1204,42 +1204,52 @@ map<span style="color:#f92672">.</span>basemap <span style="color:#f92672">=</sp
 </code></pre></div><div style="text-align: right;">
 <a href="https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/">チュートリアルヘ</a>
 </div>
-<h4 id="arcgisstreets">ArcGIS/Streets</h4>
+<!--
+#### ArcGIS/Streets
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-streets-5337c29fa3125d500248d72f07e43b75.html"
 ></iframe>
-<h4 id="arcgisnavigation">ArcGIS/Navigation</h4>
+
+#### ArcGIS/Navigation
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-navigation-dd09cf70e5a4704aa144d772b0d107bb.html"
 ></iframe>
-<h4 id="arcgistopographic">ArcGIS/Topographic</h4>
+
+#### ArcGIS/Topographic
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-topo-3d56a1f0b9a8bbe5f5713278eba715e8.html"
 ></iframe>
-<h4 id="arcgisoutdoor">ArcGIS/Outdoor</h4>
+
+#### ArcGIS/Outdoor
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-outdoor-55d71e1fe483fef44647f3f5e2069268.html"
 ></iframe>
-<h4 id="arcgislight-gray-canvas">ArcGIS/Light gray canvas</h4>
+
+#### ArcGIS/Light gray canvas
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-gray-6c0ebf7df7ee05392a16758731700312.html"
 ></iframe>
-<h4 id="arcgisimagery">ArcGIS/Imagery</h4>
+
+#### ArcGIS/Imagery
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-imagery-13ef684f2844126cd272d44e7ca4a98f.html"
 ></iframe>
-<h4 id="osmstandard">OSM/Standard</h4>
+
+#### OSM/Standard
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-standard-d5ced326be25ca18a90412012b233843.html"
 ></iframe>
-<h4 id="osmnavigation">OSM/Navigation</h4>
+
+#### OSM/Navigation
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-osm-navigation-168b4bec42bb7aaa7eed6f1fee53d73b.html"
 ></iframe>
-<h4 id="osmblueprint">OSM/Blueprint</h4>
+
+#### OSM/Blueprint
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-blueprint-532cbb47c149504c90b4abfeb4b48346.html"
 ></iframe>
+-->
 <h3 id="ローカライズされた地名ラベルの表示">ローカライズされた地名ラベルの表示</h3>
 <p>ベースマップ スタイル サービスはデフォルトで英語のラベルを表示します。以下の例では、ローカライズされた言語ベースの地名ラベルで OSM スタイルを表示する方法を示します。</p>
 <h4 id="ステップ-1">ステップ</h4>
@@ -1251,9 +1261,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 </ol>
 <h4 id="ローカライズされた地名ラベル-ローカル">ローカライズされた地名ラベル (ローカル)</h4>
 <p>この例では、<code>arcgis/light-gray</code> のマップ スタイルを使用します。デフォルトでは地名ラベルはグローバルな地名を表示します。ローカライズされた地名ラベルをレンダリングするには、<code>language</code> パラメーターを <code>local</code> に設定します。ローカライズされたラベルはズームレベル 10 以降でレンダリングされます。</p>
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-933a30de5b45908b5bc519bd5dd58d0a.html"
 ></iframe>
+-->
 <h5 id="例--esri-leaflet">例 : Esri Leaflet</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">map</span>(<span style="color:#e6db74">&#34;map&#34;</span>).<span style="color:#a6e22e">setView</span>([<span style="color:#ae81ff">35.67255187657312</span>, <span style="color:#ae81ff">139.76323442958844</span>], <span style="color:#ae81ff">14</span>);
@@ -1267,9 +1279,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 </div>
 <h4 id="言語ベースの地名ラベル-グローバル">言語ベースの地名ラベル (グローバル)</h4>
 <p>この例では、<code>arcgis/dark-gray</code> マップ スタイルを使用しています。<code>language</code> パラメーターに言語コード (ここでは <code>ja</code>) を設定し、全てのズームレベルで地名ラベルがすべて日本語で表示されるようにしています。</p>
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-ja-91f1526405733b0b7d99d576e631fb0e.html"
 ></iframe>
+-->
 <h5 id="例--esri-leaflet-1">例 : Esri Leaflet</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apiKey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>;
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">L</span>.<span style="color:#a6e22e">map</span>(<span style="color:#e6db74">&#34;map&#34;</span>).<span style="color:#a6e22e">setView</span>([<span style="color:#ae81ff">2.35</span>, <span style="color:#ae81ff">48.856</span>], <span style="color:#ae81ff">6</span>);
@@ -1294,9 +1308,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 <li>ベースマップをマップに追加します。</li>
 </ol>
 <p>この例では、 <code>arcgis/light-gray</code> のマップ スタイルを使用し、境界線とラベルの <code>worldview</code> を <code>morocco</code> に設定しています。すべての <code>worldview</code> オプションを見るには、<a href="https://developers.arcgis.com/rest/basemap-styles/">ベースマップ スタイル サービス</a> をご覧ください。</p>
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-select-a-worldview-1edcb84ffad5de5fa27b03ab58457ca2.html"
 ></iframe>
+-->
 <h5 id="例--maplible-gl-js">例 : MapLible GL JS</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worldView</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;morocco&#34;</span> <span style="color:#75715e">// モロッコの worldview を指定
 </span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">maplibregl</span>.<span style="color:#a6e22e">Map</span>({
@@ -1339,26 +1355,32 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>
 });
 
-</code></pre></div><h4 id="arcgisstreets-1">ArcGIS/Streets</h4>
+</code></pre></div><!--
+#### ArcGIS/Streets
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-streets-3a7268bb7913e624a6c5a80cb8842ca4.html"
 ></iframe>
-<h4 id="arcgisnavigation-1">ArcGIS/Navigation</h4>
+
+#### ArcGIS/Navigation
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-c8c7ab9455128d7dbbf31e111fee9f3d.html"
 ></iframe>
-<h4 id="arcgisoutdoor-1">ArcGIS/Outdoor</h4>
+
+#### ArcGIS/Outdoor
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-outdoor-d2c44600063550567df10bc774da4b12.html"
 ></iframe>
-<h4 id="arcgislight-gray-canvas-1">ArcGIS/Light gray canvas</h4>
+
+#### ArcGIS/Light gray canvas
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-lightgray-1139f56ce6e23df16f76290209c44f7c.html"
 ></iframe>
-<h4 id="arcgisdark-gray-canvas">ArcGIS/Dark gray canvas</h4>
+
+#### ArcGIS/Dark gray canvas
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-darkgray-bbb6646f285f84ff4823bd9114d3527c.html"
 ></iframe>
+-->
 <h3 id="静的ベースマップ-タイル-サービスの言語ラベルの変更">静的ベースマップ タイル サービスの言語ラベルの変更</h3>
 <p>この例では、静的ベースマップ タイル サービスを使用するときに言語ラベルを変更する方法を示します。URL エンドポイントに、<a href="https://developers.arcgis.com/rest/static-basemap-tiles/arcgis-navigation-tile-get/#language">サポートされている言語コード</a>の <code>language</code> パラメーターを渡すことができます。以下のマップはスイスを中心としており、言語を切り替えるとラベルが変化するのがわかります。</p>
 <h4 id="ステップ-4">ステップ</h4>
@@ -1367,9 +1389,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 <li>静的ベースマップ タイル サービスからスタイルを参照し、<code>language</code> パラメーターを渡します。</li>
 <li>ベースマップをマップに追加します。</li>
 </ol>
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-change-language-labels-for-static-basemap-tiles-jsapi-5199467edc81e507b05734476c36c0df.html"
 ></iframe>
+-->
 <h5 id="例--arcgis-maps-sdk-for-javascript-4">例 : ArcGIS Maps SDK for JavaScript</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updateBasemapLanguage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">language</span>) =&gt; {
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">basemapLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TileLayer</span>({
@@ -1401,9 +1425,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 <li>ベースマップを作成し、そのレイヤーをベース レイヤーとして追加します。</li>
 <li>マップを作成し、ベースマップを使用します。</li>
 </ol>
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-data-service-js-api-125907858dee5bd8c1e12fb9251b3924.html"
 ></iframe>
+-->
 <h5 id="例--arcgis-maps-sdk-for-javascript-5">例 : ArcGIS Maps SDK for JavaScript</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FeatureLayer</span>({
     <span style="color:#a6e22e">portalItem</span><span style="color:#f92672">:</span> {

@@ -9,7 +9,7 @@ aliases = ["/basemaps/"]
 https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/
 )
 
-<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-demo-662a12e21dc578539aa01d45570f8294.html"
+<iframe width="100%" height="400" id="DemoApp-gf1e4f0b9-39b1-23c1-aa14-4f83e29dbd4c" title="ArcGIS Developer Guide: Basemap layers" class="relative h-full w-full border-none bg-transparent" src="https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-basemaps-code-basemap-services-basemaps-2d3d-49beb4aec8307e6b3fda3cc00f16484e.html"
 ></iframe>
 
 ## ベースマップとは？
@@ -224,6 +224,7 @@ const view = new MapView({
 <a href="https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/">チュートリアルヘ</a>
 </div>
 
+<!--
 #### ArcGIS/Streets
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-js-api-streets-5337c29fa3125d500248d72f07e43b75.html"
@@ -268,6 +269,7 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-basemap-layer-maplibre-gl-js-blueprint-532cbb47c149504c90b4abfeb4b48346.html"
 ></iframe>
+-->
 
 ### ローカライズされた地名ラベルの表示
 
@@ -284,9 +286,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 
 この例では、`arcgis/light-gray` のマップ スタイルを使用します。デフォルトでは地名ラベルはグローバルな地名を表示します。ローカライズされた地名ラベルをレンダリングするには、`language` パラメーターを `local` に設定します。ローカライズされたラベルはズームレベル 10 以降でレンダリングされます。
 
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-933a30de5b45908b5bc519bd5dd58d0a.html"
 ></iframe>
+-->
 
 ##### 例 : Esri Leaflet
 ```JavaScript
@@ -308,9 +312,11 @@ L.esri.Vector.vectorBasemapLayer("arcgis/light-gray", {
 
 この例では、`arcgis/dark-gray` マップ スタイルを使用しています。`language` パラメーターに言語コード (ここでは `ja`) を設定し、全てのズームレベルで地名ラベルがすべて日本語で表示されるようにしています。
 
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-localized-place-labels-ja-91f1526405733b0b7d99d576e631fb0e.html"
 ></iframe>
+-->
 
 ##### 例 : Esri Leaflet
 
@@ -348,9 +354,11 @@ L.esri.Vector.vectorBasemapLayer("arcgis/dark-gray", {
 
 この例では、 `arcgis/light-gray` のマップ スタイルを使用し、境界線とラベルの `worldview` を `morocco` に設定しています。すべての `worldview` オプションを見るには、[ベースマップ スタイル サービス](https://developers.arcgis.com/rest/basemap-styles/) をご覧ください。
 
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-v2-select-a-worldview-1edcb84ffad5de5fa27b03ab58457ca2.html"
 ></iframe>
+-->
 
 ##### 例 : MapLible GL JS
 ```JavaScript
@@ -403,7 +411,7 @@ const view = new MapView({
 });
 
 ```
-
+<!--
 #### ArcGIS/Streets
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-streets-3a7268bb7913e624a6c5a80cb8842ca4.html"
@@ -428,6 +436,7 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-static-basemap-tiles-jsapi-darkgray-bbb6646f285f84ff4823bd9114d3527c.html"
 ></iframe>
+-->
 
 ### 静的ベースマップ タイル サービスの言語ラベルの変更
 
@@ -439,9 +448,11 @@ https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-servi
 2. 静的ベースマップ タイル サービスからスタイルを参照し、`language` パラメーターを渡します。
 3. ベースマップをマップに追加します。
 
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-change-language-labels-for-static-basemap-tiles-jsapi-5199467edc81e507b05734476c36c0df.html"
 ></iframe>
+-->
 
 ##### 例 : ArcGIS Maps SDK for JavaScript 
 
@@ -481,10 +492,11 @@ const updateBasemapLanguage = (language) => {
 2. ベースマップを作成し、そのレイヤーをベース レイヤーとして追加します。
 3. マップを作成し、ベースマップを使用します。
 
+<!--
 <iframe width="100%" height="400" src="
 https://developers.arcgis.com/documentation/demo-apps/mapping-and-location-services-mapping-code-basemap-layers-examples-display-a-data-service-js-api-125907858dee5bd8c1e12fb9251b3924.html"
 ></iframe>
-
+-->
 
 ##### 例 : ArcGIS Maps SDK for JavaScript
 ```JavaScript
