@@ -48,7 +48,7 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
  このリポジトリでは、ArcGIS API for JavaScript にて構築された地図アプリをすぐに使用できる Maps App というアプリを提供します。 Maps App をそのまま使うことや、ArcGIS API for JavaScript を使用して拡張することができます。    arcgis-samples-4.0-js
  ArcGIS API 4.x for JavaScript のサンプル集です。Esri Community などで紹介したサンプルなどもございます。    arcgis-samples-js
  ArcGIS API for JavaScript のサンプル集です。    webmap-startup-template-js
- Web マップを使用した開発手法を伝えるためのアプリケーション テンプレートのサンプルです。    ArcGIS Maps SDKs for Native Apps   nearby-android</description>
+ Web マップを使用した開発手法を伝えるためのアプリケーション テンプレートのサンプルです。    ArcGIS Maps SDKs for Native Apps   startup-sample-dotnet</description>
     </item>
     
     <item>

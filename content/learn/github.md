@@ -28,23 +28,17 @@ aliases = ["/github/"]
 
 ###  ArcGIS Maps SDKs for Native Apps
 
-- [nearby-android](https://github.com/EsriJapan/nearby-android)
-    - このリポジトリでは、Android SDK で構築された Android デバイス用の Nearby Places というサンプル アプリを提供しています。そのまま使用したり、多少のカスタマイズで、表示する場所の種類を変更することができます。
-
-- [find-route-ios](https://github.com/EsriJapan/find-route-ios)
-    - 宮蘭航路フェリーハッカソン用に作成したオフラインで観光ルート検索を行う iOS アプリケーションです。写真から行ってみたい観光スポットを選択すると、最短時間で周れる最適ルートと移動時間を検索・表示します。検索したルートはお気に入りに登録して、後から確認することもできます。
-
 - [startup-sample-dotnet](https://github.com/EsriJapan/startup-sample-dotnet)
     - .NET SDK をはじめて使用される方に、開発キットの基本的な使い方や主要な機能を紹介するためのサンプル アプリケーションです。
 
 - [enc-viewer-dotnet](https://github.com/EsriJapan/enc-viewer-dotnet)
-    - ENC (Electronic Navigational Charts: 航海用電子海図) を表示するビューアーです。 S-57 形式の ENC のセルをサポートしています。
+    - ENC (Electronic Navigational Charts: 航海用電子海図) を表示するビューアーです。
 
-- [flightsim-game-monitor-dotnet](https://github.com/EsriJapan/flightsim-game-monitor-dotnet)
-    - Web Socket を利用した双方向通信によりマルチユーザー プレイを実現したフライト シミュレーター ゲームのスコア モニター用アプリです。 フライト シミュレーター ゲームの機体を動かしてゲームをプレイできるコントローラー用のWeb アプリと連携します。
+- [arcgis-samples-flutter](https://github.com/EsriJapan/arcgis-samples-flutter)
+    - Flutter SDK を使用した、マーカー表示、現在地表示、住所検索、オフラインマップ等のサンプル集です。
 
-- [webmap-startup-template-dotnet](https://github.com/EsriJapan/webmap-startup-template-dotnet)
-    - Web マップを使用した開発手法を伝えるためのサンプル アプリケーションです。
+- [nearby-android](https://github.com/EsriJapan/nearby-android/blob/main/README_jp.md)
+    - Android SDK で構築された Android デバイス用の Nearby Places というサンプル アプリを提供しています。そのまま使用したり、多少のカスタマイズで、表示する場所の種類を変更することができます。
 
 ### ArcPy
 
