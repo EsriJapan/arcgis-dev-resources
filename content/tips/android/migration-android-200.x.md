@@ -69,7 +69,7 @@ override fun onDestroy() {
 ```
 
 ## コルーチンとコルーチンのスコープ
-Kotlin のサスペンド関数は、より安全で、非同期操作のエラーが発生しにくくなっています。すべてのサスペンド関数は結果を返すため、try/catch ブロックは不要になりました。さらに、ライフサイクルを認識するコルーチン スコープを使用してコルーチンを起動できます。これは、ライフサイクルが破棄されると自動的にキャンセルされます。
+Kotlin のサスペンド関数は、より安全で、非同期操作のエラーが発生しにくくなっています。すべてのサスペンド関数は [`Result`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/) を返すため、try/catch ブロックは不要になりました。さらに、ライフサイクルを認識するコルーチン スコープを使用してコルーチンを起動できます。これは、ライフサイクルが破棄されると自動的にキャンセルされます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
@@ -118,7 +118,7 @@ geodatabaseFuture.addDoneListener {
 ```
 
 ## イベント処理
-すべてのイベントが SharedFlow を使用して表現されるようになったため、コールバックは不要になりました。
+すべてのイベントが [`SharedFlow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-shared-flow/) を使用して表現されるようになったため、コールバックは不要になりました。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
@@ -141,7 +141,7 @@ simulatedLocationDataSource.addLocationChangedListener { locationChangedEvent ->
 ```
 
 ## ローダブル
-ローダブルの状態 (LoadStatus) は StateFlow を使用して表されますが、load() はロード処理完了の Result<Unit> を返すサスペンド関数です。ロード エラーは、失敗した場合に Result から取得できます。
+ローダブルの状態 ([`LoadStatus`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-load-status/index.html)) は [`StateFlow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/) を使用して表されますが、[`load()`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-loadable/load.html) はロード処理完了の [`Result<Unit>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/) を返すサスペンド関数です。ロード エラーは、失敗した場合に [`Result`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-result/) から取得できます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin 
@@ -173,7 +173,7 @@ private fun loadPortalItem() {
 }
 ```
 
-LoadStatus の更新は StateFlow になったため、非同期でリッスンする方法があります。このようにして、中間の LoadStatus 値を取得できます。
+[`Loadable.loadStatus`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-loadable/load-status.html) プロパティが現在 [`StateFlow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/) であるため、[`LoadStatus`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-load-status/index.html) の更新を非同期で監視する方法があります。この方法では、途中の [`LoadStatus`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-load-status/index.html) の値も取得できます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin 
@@ -198,17 +198,17 @@ lifecycleScope.launch {
 ```
 
 ## タスクとジョブ
-ArcGIS Maps SDK for Kotlin では、ジョブまたはタスクのワークフローが大幅に変更されました。ジョブは、進行状況または完了の流れを制御する CoroutineScope で実行する必要があります。コルーチン フローを使用して複数のジョブとタスクを実行できるため、ネストされたコールバックの操作を回避できます。
+ArcGIS Maps SDK for Kotlin では、[ジョブ](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.tasks/-job/index.html) またはタスクのワークフローが大幅に変更されました。ジョブは、進行状況または完了の流れを制御する [`CoroutineScope`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope.html) で実行する必要があります。コルーチン フローを使用して複数のジョブとタスクを実行できるため、ネストされたコールバックの操作を回避できます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
 // 新しいオフライン マップ タスクを作成する
 val offlineMapTask = OfflineMapTask(mapView.map)
-// タスクのパラメータを設定する
+// タスクのパラメーターを設定する
 val generateOfflineMapParameters = GenerateOfflineMapParameters(
     geometry, minScale, maxScale
 )
-// オフライン マップ パラメータを使用してジョブを作成する
+// オフライン マップ パラメーターを使用してジョブを作成する
 val offlineMapJob = offlineMapTask.generateOfflineMap(
     generateOfflineMapParameters,
     offlineMapPath
@@ -237,11 +237,11 @@ ArcGIS Runtime API for Android v100.x
 ```kotlin
 // 新しいオフライン マップ タスクを作成する
 val offlineMapTask = OfflineMapTask(mapView.map)
-// タスクのパラメータを設定する
+// タスクのパラメーターを設定する
 val generateOfflineMapParameters = GenerateOfflineMapParameters(
     geometry, minScale, maxScale
 )
-// オフライン マップ パラメータを使用してジョブを作成する
+// オフライン マップ パラメーターを使用してジョブを作成する
 val offlineMapJob = offlineMapTask.generateOfflineMap(
     generateOfflineMapParameters,
     offlineMapPath
@@ -262,23 +262,40 @@ offlineMapJob.addJobDoneListener {
 }
 ```
 
-## ジオメトリとジオメトリ ビルダー
-読みやすさと使いやすさを向上させるために、ジオメトリとジオメトリ ビルダーの使用法にいくつかの変更があります。
+{{% notice note %}}
 
-* PolylineBuilder や PolygonBuilder などのジオメトリ ビルダーは、レシーバー タイプとしてビルダーを使用して関数パラメーターを受け取るようになり、Kotlin の慣用的な方法でビルダーにジオメトリを追加できるようになりました。
+ArcGIS Maps SDK for Kotlin バージョン 200.x のコードで示されている `map` 変数は、[`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) コンポーザブルに渡すものと同じ変数です。
 
-* MutablePart.createWithSegments を使用して、セグメントでパーツを作成できます。
+ArcGIS Maps SDK for Kotlin v200.x
+```kotlin
+MapView(
+    modifier = Modifier.fillMaxSize(),
+    arcGISMap = map
+)
+```
 
-* 可変および不変のジオメトリ コレクション タイプの名前は、Kotlin のイディオムに合わせて調整されています。以下は、ArcGIS Runtime API for Android に類似した ArcGIS Maps SDK for Kotlin で定義されているジオメトリ タイプのリストです。
+{{% /notice %}}
 
-    * MutablePart <- Part
-    * Part <- ImmutablePart
-    * MutablePartCollection <- PartCollection
-    * PartCollection <- ImmutablePartCollection
 
-* .points プロパティにアクセスすることにより、Part および MutablePart をポイントのコレクションとして表示できます。
+## ジオメトリーとジオメトリー ビルダー
+読みやすさと使いやすさを向上させるために、ジオメトリーとジオメトリー ビルダーの使用法にいくつかの変更があります。
 
-* GeometryEngine メソッドはジェネリックであり、より優れたタイプ セーフを提供するため、以下に示すように同一のジオメトリが返されます。
+* [`PolylineBuilder`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-polyline-builder/index.html) や [`PolygonBuilder`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-polygon-builder/index.html) などのジオメトリー ビルダーは、レシーバー タイプとしてビルダーを使用して関数パラメーターを受け取るようになり、Kotlin の慣用的な方法でビルダーにジオメトリーを追加できるようになりました。
+
+* [`MutablePart.createWithSegments()`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-mutable-part/-companion/create-with-segments.html) を使用して、セグメントでパーツを作成できます。
+
+* 可変および不変のジオメトリー コレクション タイプの名前は、Kotlin のイディオムに合わせて調整されています。以下は、ArcGIS Runtime API for Android に類似した ArcGIS Maps SDK for Kotlin で定義されているジオメトリー タイプのリストです。
+
+| ArcGIS Maps SDK for Kotlin 200.x | ArcGIS Runtime API for Android v100.x |
+|--------|--------|
+| [`MutablePart`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-mutable-part/index.html)  | Part  |
+| [`Part`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-part/index.html)  | ImmutablePart  |
+| [`MutablePartCollection`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-mutable-part-collection/index.html)  | PartCollection  |
+| [`PartCollection`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-part-collection/index.html)  | ImmutablePartCollection  |
+
+* points プロパティにアクセスすることにより、[`Part`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-part/index.html) および [`MutablePart`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-mutable-part/index.html) をポイントのコレクションとして表示できます。
+
+* [`GeometryEngine`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.geometry/-geometry-engine/index.html) メソッドはジェネリックであり、より優れたタイプ セーフを提供するため、以下に示すように同一のジオメトリーが返されます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
@@ -292,29 +309,29 @@ fun <T : Geometry> setZAndM(geometry: T, z: Double?, m: Double?): T
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
-// ポリライン ジオメトリを作成する
+// ポリライン ジオメトリーを作成する
 val polylineGeometry = PolylineBuilder(spatialReference) {
     addPoint(-10e5, 40e5)
     addPoint(20e5, 50e5)
 }.toGeometry()
 
-// セグメントを使用してパーツ ジオメトリを作成する
+// セグメントを使用してパーツ ジオメトリーを作成する
 val partGeometry = MutablePart.createWithSegments(
-    listOf(leftCurve, leftArc, rightArc, rightCurve),
-    spatialReference
+    segments = listOf(leftCurve, leftArc, rightArc, rightCurve),
+    spatialReference = spatialReference
 )
 val polygon = Polygon(listOf(partGeometry))
 ```
 
 ArcGIS Runtime API for Android v100.x
 ```kotlin
-// ポリライン ジオメトリを作成する
+// ポリライン ジオメトリーを作成する
 val polylineGeometry = PolylineBuilder(spatialReference).apply {
     addPoint(-10e5, 40e5)
     addPoint(20e5, 50e5)
 }.toGeometry()
 
-// セグメントを使用してパーツ ジオメトリを作成する
+// セグメントを使用してパーツ ジオメトリーを作成する
 val partGeometry = Part(spatialReference).apply {
     addAll(listOf(leftCurve,leftArc,rightArc,rightCurve))
 }
@@ -322,16 +339,19 @@ val polyon = Polygon(partGeometry, spatialReference)
 ```
 
 ## ジェスチャー
-MapView と SceneView には、DefaultMapViewOnTouchListener をオーバーライドする代わりに、ジェスチャー イベントがあります。 イベントは SharedFlow として表され、コルーチンで取得できます。
+[`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と [`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) には、`DefaultMapViewOnTouchListener` をオーバーライドする代わりに、ジェスチャー イベントがあります。 イベントは [`SharedFlow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-shared-flow/) として表され、コルーチンで取得できます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
-lifecycleScope.launch {
-    mapView.onSingleTapConfirmed.collect { tapConfirmedEvent ->
-        val mapPoint = tapConfirmedEvent.mapPoint
-        val screenCoordinate = tapConfirmedEvent.screenCoordinate
+MapView(
+    modifier = Modifier.fillMaxSize(),
+    arcGISMap = map,
+    onSingleTapConfirmed = { singleTapConfirmedEvent ->
+        val mapPoint = singleTapConfirmedEvent.mapPoint
+        val screenCoordinate = singleTapConfirmedEvent.screenCoordinate
+        // . . .
     }
-}
+)
 ```
  
 ArcGIS Runtime API for Android v100.x 
@@ -397,7 +417,7 @@ LoadStatus: Map loaded successfully
 アプリで認証コードを移行する手順については、[Migrate authentication from 100.x to 200.x](https://developers.arcgis.com/kotlin/reference/migrate-authentication-100-x-to-200-x/) トピックを参照してください。
 
 ## カスタム Location DataSource
-ArcGIS Maps SDK for Kotlin には、ユーザー定義のロケーション データ プロバイダーによって駆動できる CustomLocationDataSource が導入されています。これは、カスタム ソースからのロケーション データがあり、そのデータを LocationDataSource の形式にして、API の他の部分と連携できるようにする場合に役立ちます。
+ArcGIS Maps SDK for Kotlin には、ユーザー定義のロケーション データ プロバイダーによって駆動できる [`CustomLocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-custom-location-data-source/index.html) が導入されています。これは、カスタム ソースからのロケーション データがあり、そのデータを [`LocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-location-data-source/index.html) の形式にして、API の他の部分と連携できるようにする場合に役立ちます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
@@ -443,35 +463,65 @@ class SingleLocationEmitter() : CustomLocationDataSource.LocationProvider {
 }
 ```
 
+カスタムの位置情報データ ソースはロケーション ディスプレイの [`dataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping.view/-location-display/data-source.html) プロパティに割り当てられます。ロケーション ディスプレイを作成し、それを [`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) コンポーザブルに渡す方法の一例は以下のとおりです。
+
+
+ArcGIS Maps SDK for Kotlin v200.x
+```kotlin
+import com.arcgismaps.toolkit.geoviewcompose.rememberLocationDisplay
+
+val locationDisplay = rememberLocationDisplay {
+    dataSource = createCustomLocationDataSource()
+}
+
+MapView(
+    modifier = Modifier.fillMaxSize(),
+    arcGISMap = map,
+    locationDisplay = locationDisplay
+)
+```
+
 ## ApplicationContext の要件
-ArcGIS Runtime SDK for Android から ArcGIS Maps SDK for Kotlin へのアップデートでは、API のいくつかの部分で ArcGISEnvironment.applicationContext プロパティを設定することが必要です。LocationDataSource, CustomLocationDataSource, SystemLocationDataSource, IndoorsLocationDataSource, RouteTask, ServiceAreaTask, ClosestFacilityTask または AuthenticationManager でコンテキストが必要です。このプロパティは、以下のようにアクティビティの開始時に設定することができます。
+ArcGIS Runtime SDK for Android から ArcGIS Maps SDK for Kotlin へのアップデートでは、API のいくつかの部分で [`ArcGISEnvironment.applicationContext`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-arc-g-i-s-environment/application-context.html) プロパティを設定することが必要です。[`LocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-location-data-source/index.html)、[`CustomLocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-custom-location-data-source/index.html)、[`SystemLocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-system-location-data-source/index.html)、[`IndoorsLocationDataSource`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.location/-indoors-location-data-source/index.html)、[`RouteTask`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.tasks.networkanalysis/-route-task/index.html)、[`ServiceAreaTask`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.tasks.networkanalysis/-service-area-task/index.html)、[`ClosestFacilityTask`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.tasks.networkanalysis/-closest-facility-task/index.html) または [`AuthenticationManager`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.httpcore.authentication/-authentication-manager/index.html) でコンテキストが必要です。このプロパティは、以下のようにアクティビティーの開始時に設定することができます。
 
 ArcGIS Maps SDK for Kotlin v200.x
 ```kotlin
 ArcGISEnvironment.applicationContext = this.applicationContext
 ```
 
-## ライブラリ固有のデータ型
-Color: このアップデートにより、android.graphics.color が com.arcgismaps.Color に置き換えられます。この Color ライブラリには、すぐに使用できるデフォルトのカラーが付属しており、カスタム RGB カラーを作成したり、アプリのリソースの色を使用したりできます。
+## ライブラリー固有のデータ型
+[`Color`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-color/index.html): このアップデートにより、`android.graphics.color` が `com.arcgismaps.Color` に置き換えられます。この Color ライブラリーには、すぐに使用できるデフォルトのカラーが付属しており、カスタム RGB カラーを作成したり、アプリのリソースの色を使用したりできます。
 
 ArcGIS Maps SDK for Kotlin v200.x - Color
 ```kotlin
-// arcgismaps.Color を作成する複数の方法
-var accentColor = Color(getColor(R.color.colorAccent))
-accentColor = Color.fromRgba(10,255,0,255)
-accentColor = Color(0x0AFF00)
+import com.arcgismaps.Color
 
-// 選択色を設定
-mapView.selectionProperties.color = accentColor
+var accentColor = Color.green
+// var accentColor = Color.fromRgba(r = 0, g = 255, b = 0, a = 255)
+// var accentColor = 0xFF00FF00.toInt()
+// val accentColor = Color(colorResource(id = R.color.colorAccent).toArgb())
+
+val selectionProperties = remember {
+    SelectionProperties().apply {
+        color = accentColor
+    }
+}
+
+MapView(
+    modifier = Modifier.fillMaxSize(),
+    arcGISMap = map,
+    selectionProperties = selectionProperties
+)
 ```
 
-ArcGIS Maps GUID: ArcGIS Maps SDK for Kotlin は独自のデータ型 GUID を導入します。これは、128 ビットのグローバルに一意の識別子を表し、ArcGIS サービスおよびジオデータベースからの GlobalID および GUID フィールドを表します。
+ArcGIS Maps GUID: ArcGIS Maps SDK for Kotlin は独自のデータ型 [`GUID`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps/-guid/index.html) を導入します。これは、128 ビットのグローバルに一意の識別子を表し、ArcGIS サービスおよびジオデータベースからの GlobalID および GUID フィールドを表します。
 
 ArcGIS Maps SDK for Kotlin v200.x - Guid
 ```kotlin
-val utilityElement = utilityNetwork.createElement(
-    utilityAssetType,
-    Guid("<Unique-Identifier-Here>")
+val utilityElement = utilityNetwork.createElementOrNull(
+    assetType = utilityAssetType,
+    globalId = Guid("<Unique-Identifier-Here>"),
+    terminal = utilityTerminal
 )
 ```
 

@@ -24,20 +24,6 @@ aliases = ["/create-startup-app-android/"]
 
 {{% /notice %}}
 
-<!-- 
-## 前提条件
-
-このチュートリアルを実施するには、以下が必要です。
-
-1. API キーにアクセスするための ArcGIS 開発者アカウント。アカウントをお持ちでない場合は、[サインアップ](https://developers.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
-2. 開発環境が[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認します。
-3. Kotlin で Android 開発をするための IDE。
-
-{{% notice note %}}
-
-このチュートリアルの*ダウンロード ソリューション*で利用可能なコードは、*Android Studio Ladybug | 2024.2.1 Patch* で作成されています。しかし、以下のステップで説明するコードは、それ以降のバージョンの Android Studio を含め、Kotlin をサポートする最新の Android IDE であれば動作するはずです。 
-
-{{% /notice %}}-->
 
 ## 前提条件
 
@@ -49,7 +35,7 @@ aliases = ["/create-startup-app-android/"]
 
 {{% notice note %}}
 
-このチュートリアルの**ダウンロード ソリューション**で利用可能なコードは、**Android Studio Ladybug | 2024.2.1 Patch** で作成されています。しかし、以下のステップで説明するコードは、それ以降のバージョンの Android Studio を含め、Kotlin をサポートする最新の Android IDE であれば動作するはずです。 
+このチュートリアル アプリを作成するには、最新の安定板 Android Studio を使用することが推奨されます。ただし、以下の手順で説明されているコードは Kotlin をサポートする最新の Android IDE であれば、どれでも動作するはずです。
 
 {{% /notice %}}
 
@@ -112,14 +98,14 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     * [Welcome to Android Studio] ウィンドウで [New Project] をクリックします。  
     または、メニュー バーで [File] → [New] → [New Project] をクリックします。
     * [Create New Project] ウィンドウで、[Phone and Tablet] タブが選択されていることを確認してから、[Empty Activity] を選択して、[Next] をクリックします。
-    * 次のウィンドウで、以下の項目を設定し、[Finish]をクリックします。
+    * 次のウィンドウで、以下の項目を設定し、[Finish] をクリックします。
         * **Name**: `Tutorial`
         * **Package name**： com.example.app に変更します。または、組織に合わせて変更してください。 
         * **Save location**: 新しいフォルダーに設定します。
-        * **Minimum SDK**: API 26 ("Oreo"; Android 8.0)
+        * **Minimum SDK**: API 28 ("Pie"; Android 9.0)
         * **Build configuration language**: Kotlin DSL (build.gradle.kts)
 
-2. [プロジェクト]のツール ウィンドウで、現在のビューが [Android] であることを確認してください。チュートリアルの説明では、そのビューを参照しています。
+2. [プロジェクト] のツール ウィンドウで、現在のビューが [Android] であることを確認してください。チュートリアルの説明では、そのビューを参照しています。
 
     ビュー名が [Android] 以外の名前 （[プロジェクト]や[パッケージ]など） の場合、プロジェクト ツール ウィンドウのタイトル バーの左端のコントロールをクリックし、リストから [Android] を選択します。
     <img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-android200.0/display-a-map-android-view.png" widgh = "300px">
@@ -215,7 +201,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     }
     ```
 
-    Kotlin 2.0+では、[Compose Compiler Gradle](https://developer.android.com/develop/ui/compose/compiler) プラグインが必要です。このプラグインは、`build.gradle.kts(Module :app)`の `plugins` ブロックで `alias(libs.plugins.kotlin.compose)` として参照され、`libs.versions.toml` ファイルでは `kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }` として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。
+    Kotlin 2.0+ では、[Compose Compiler Gradle](https://developer.android.com/develop/ui/compose/compiler) プラグインが必要です。このプラグインは、`build.gradle.kts(Module :app)`の `plugins` ブロックで `alias(libs.plugins.kotlin.compose)` として参照され、`libs.versions.toml` ファイルでは `kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }` として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。
 
 	2.0 より前の Kotlin バージョンを使用している場合は、Compose コンパイラーと Kotlin コンパイラーのバージョンが互換性があることを確認する必要があります。詳細については、[Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin) を参照してください。
 
@@ -234,7 +220,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     ```toml
     [versions]
-    arcgisMapsKotlin = "200.6.0"
+    arcgisMapsKotlin = "200.8.0"
 
     [libraries]
     arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
@@ -247,25 +233,26 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
 
+    gradle/libs.versions.toml
     ```toml
     [versions]
-    arcgisMapsKotlin = "200.7.0"
+    arcgisMapsKotlin = "200.8.0"
 
     # Version numbers added by Android Studio New Project Wizard
-    agp = "8.7.3"
-    kotlin = "2.0.0"
-    coreKtx = "1.15.0"
+    agp = "8.9.2"
+    kotlin = "2.1.20"
+    coreKtx = "1.16.0"
     junit = "4.13.2"
     junitVersion = "1.2.1"
     espressoCore = "3.6.1"
     lifecycleRuntimeKtx = "2.8.7"
-    activityCompose = "1.9.3"
-    composeBom = "2024.11.00"
+    activityCompose = "1.10.1"
+    composeBom = "2025.04.00"
 
     # Other version numbers
-    compileSdk = "35"
-    minSdk = "26"
-    targetSdk = "35"
+    compileSdk = "36"
+    minSdk = "28"
+    targetSdk = "36"
 
     [libraries]
     arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
@@ -351,9 +338,9 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
 
 ### マップを作成する
-1. [Android] ビューから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に **com.example.app.screens** と入力し、キーボードの **<Enter>** キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。
+1. [Android] ビューから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に **com.example.app.screens** と入力し、キーボードの **Enter** キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。
 
-2. 作成した **screens** パッケージを右クリックし、リストから [New] > [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に **MainScreen** と入力し、キーボードの **<Enter>** キーを押します。
+2. 作成した **screens** パッケージを右クリックし、リストから [New] > [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に **MainScreen** と入力し、キーボードの **Enter** キーを押します。
 
 3. *MainScreen.kt* で、Android Studio によって自動的に挿入されたコード行をすべて削除します。次に、以下のオプトイン アノテーション、パッケージ名、インポートを追加します。
 
@@ -386,6 +373,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     import com.arcgismaps.toolkit.geoviewcompose.MapView
     import com.example.app.R
     ```
+
 4. [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返す `createMap()` という名前のトップ レベル関数を作成します。
 
     MainScreen.kt
@@ -429,18 +417,14 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
         basemapStyleParams.languageStrategy = BasemapStyleLanguageStrategy.Specific(Locale("ja"))
         // 追加終了
 
-        return ArcGISMap(Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParams)).apply {
-
-            // 追加開始
+        // 追加修正開始
+        return ArcGISMap(basemap = Basemap(BasemapStyle.ArcGISTopographic, basemapStyleParameters = basemapStyleParams)).apply {
             initialViewpoint = Viewpoint(
                 latitude = 35.360626,
                 longitude = 138.727363,
-
                 scale = 200000.0
-
             )
-            // 追加終了
-
+        // 追加修正終了
         }
 
     }
@@ -650,7 +634,7 @@ API キーを使用すると、ArcGIS Online でホストされているサー�
 
 2. `MainActivity` クラスの [`onCreate()`](https://developer.android.com/guide/components/activities/activity-lifecycle) ライフサイクル メソッドで、`OAuthUserConfiguration` をインスタンス化して `authenticatorState.oAuthUserConfiguration` プロパティを設定します。以前のステップで作成した clientId と redirectURL を渡します。  
 
-redirectURL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は `scheme://host` です。たとえば、リダイレクト URL が `myscheme://myhost` の場合、スキームは `myscheme`、ホストは `myhost` となります。[認証の設定](#認証の設定)ステップの`ユーザー認証`の部分で、アプリに指定した **RedirectURL** を使用する必要があります。
+    redirectURL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は `scheme://host` です。たとえば、リダイレクト URL が `myscheme://myhost` の場合、スキームは `myscheme`、ホストは `myhost` となります。[認証の設定](#認証の設定)ステップの`ユーザー認証`の部分で、アプリに指定した **RedirectURL** を使用する必要があります。
 
     MainActivity.kt
 
@@ -679,7 +663,7 @@ redirectURL は、scheme と host コンポーネントで構成されます。�
     }
     ```
 
-3. `setContent` ブロックで、`DialogAuthenticator` コンポーザブル関数を呼び出し、`authenticatorState` を渡します。`DialogAuthenticator` 組み込み関数を、`MainScreen()` 組み込み関数の後で呼び出します。
+3. `setContent` ブロックで、[`DialogAuthenticator`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.authentication/-dialog-authenticator.html) コンポーザブル関数を呼び出し、`authenticatorState` を渡します。`DialogAuthenticator` 組み込み関数を、`MainScreen()` 組み込み関数の後で呼び出します。
 
     MainActivity.kt
 

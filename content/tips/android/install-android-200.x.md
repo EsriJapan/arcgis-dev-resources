@@ -11,13 +11,14 @@ aliases = ["/android/install-android-200.x/"]
 
 ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンが[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、[システム要件](https://developers.arcgis.com/kotlin/reference/system-requirements/)を参照してください。
 
-[Gradle](https://gradle.org/) を使用してインストールすることをお勧めします。これにより、[Esri の Maven リポジトリ](https://esri.jfrog.io/artifactory/arcgis)から必要な依存関係と SDK バイナリーがインストールされます。
+[Gradle](https://gradle.org/) を使用してインストールすることをお勧めします。これにより、[Esri の Maven リポジトリー](https://esri.jfrog.io/artifactory/arcgis)から必要な依存関係と SDK バイナリーがインストールされます。
 
 ## Gradle で API を取得する
 
 {{% notice note %}}
 
 Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。Empty Activity オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
+
 {{% /notice %}}
 
 Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。
@@ -35,7 +36,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 	}
 	``` 
 
-2. プロジェクト ツール ウィンドウから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
+2. Android ビューから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
 	build.gradle.kts (Module: app)
 
@@ -113,11 +114,11 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 	}
 	``` 
 
-	Kotlin 2.0+では、[Compose Compiler Gradle](https://developer.android.com/develop/ui/compose/compiler) プラグインが必要です。このプラグインは、`build.gradle.kts(Module :app)`の `plugins` ブロックで `alias(libs.plugins.kotlin.compose)` として参照され、`libs.versions.toml` ファイルでは `kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }` として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。
+	Kotlin 2.0+ では、[Compose Compiler Gradle](https://developer.android.com/develop/ui/compose/compiler) プラグインが必要です。このプラグインは、`build.gradle.kts(Module :app)`の `plugins` ブロックで `alias(libs.plugins.kotlin.compose)` として参照され、`libs.versions.toml` ファイルでは `kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }` として宣言されています。Compose Compiler Gradle プラグインと Kotlin Android プラグインのバージョンは同じです。
 
 	2.0 より前の Kotlin バージョンを使用している場合は、Compose コンパイラーと Kotlin コンパイラーのバージョンが互換性があることを確認する必要があります。詳細については、[Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin) を参照してください。
 	
-3. Android ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリの宣言を追加します。
+3. Android ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、以下のライブラリーの宣言を追加します。
 	* ArcGIS Maps SDK for Kotlin SDK
 	* ArcGIS Maps SDK for Kotlin Toolkit BOM
 	* アプリで使用するすべてのツールキット コンポーネント。マップビューまたはシーンビューを表示するには、コンポーザブルな [`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と[`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) を含む `geoview-compose` モジュールの宣言が必要です。ユーザー認証を実装するには、`authentication` モジュールが必要です。
@@ -132,7 +133,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
    ```toml
    [versions]
-   arcgisMapsKotlin = "200.7.0"
+   arcgisMapsKotlin = "200.8.0"
 
    [libraries]
    arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
@@ -144,53 +145,52 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
    {{% notice note %}}
 
    `libs.versions.toml` を手で編集しないでください。代わりに、以下のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
-
-   ```toml
+	 
+	 ```toml
    [versions]
-   arcgisMapsKotlin = "200.7.0"
+		arcgisMapsKotlin = "200.8.0"
 
-   # Version numbers added by Android Studio New Project Wizard
-   agp = "8.7.3"
-   kotlin = "2.0.0"
-   coreKtx = "1.15.0"
-   junit = "4.13.2"
-   junitVersion = "1.2.1"
-   espressoCore = "3.6.1"
-   lifecycleRuntimeKtx = "2.8.7"
-   activityCompose = "1.9.3"
-   composeBom = "2024.11.00"
+		# Version numbers added by Android Studio New Project Wizard
+		agp = "8.9.2"
+		kotlin = "2.1.20"
+		coreKtx = "1.16.0"
+		junit = "4.13.2"
+		junitVersion = "1.2.1"
+		espressoCore = "3.6.1"
+		lifecycleRuntimeKtx = "2.8.7"
+		activityCompose = "1.10.1"
+		composeBom = "2025.04.00"
 
-   # Other version numbers
-   compileSdk = "35"
-   minSdk = "26"
-   targetSdk = "35"
+		# Other version numbers
+		compileSdk = "36"
+		minSdk = "28"
+		targetSdk = "36"
 
-   [libraries]
-   arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
-   arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
-   arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
-   # Additional modules from Toolkit, if needed, such as:
-   # arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
+		[libraries]
+		arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
+		arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
+		arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
+		arcgis-maps-kotlin-toolkit-authentication = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-authentication" }
 
-   androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-   junit = { group = "junit", name = "junit", version.ref = "junit" }
-   androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-   androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-   androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-   androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-   androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-   androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-   androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-   androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-   androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-   androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-   androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-   androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+		androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+		junit = { group = "junit", name = "junit", version.ref = "junit" }
+		androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+		androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+		androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+		androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+		androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+		androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+		androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+		androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+		androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+		androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+		androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+		androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
-   [plugins]
-   android-application = { id = "com.android.application", version.ref = "agp" }
-   kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-   kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+		[plugins]
+		android-application = { id = "com.android.application", version.ref = "agp" }
+		kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+		kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
    ```
    {{% /notice %}}
 
@@ -284,7 +284,7 @@ Android マニフェストに [uses-feature 要素](https://developer.android.co
 [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティー) が含まれています。[`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と [`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) のコンポーザブル関数を使用するには、モジュール レベルの `build.gradle.kts` に次の依存関係を含めます。
 
 ```gradle
-implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:200.7.0"))
+implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:200.8.0"))
 implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose")
 implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication")
 ```
@@ -294,7 +294,7 @@ implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication")
 ```gradle
 implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
 implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication")
+implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
 ```
 
 `build.gradle.kts(Module： app)` および `libs.versions.toml` に含めるべきコードの詳細な指示については、上記の [Gradle で API を取得する](#gradle-で-api-を取得する) を参照してください。
