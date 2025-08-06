@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
-<title>画面グループ（Screen groups） :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2025-08-06T11:09:19 JST">
+<title>スクリーン グループ（Screen groups） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -968,7 +983,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > 画面グループ（Screen groups）
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > スクリーン グループ（Screen groups）
 
  
 
@@ -987,11 +1002,10 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#画面グループscreen-groups">画面グループ（Screen groups）</a></li>
-      </ul>
-    </li>
+    <li><a href="#スクリーン-グループとは">スクリーン グループとは</a></li>
+    <li><a href="#スクリーン-グループでの操作方法">スクリーン グループでの操作方法</a></li>
+    <li><a href="#スクリーン-グループ-テンプレート">スクリーン グループ テンプレート</a></li>
+    <li><a href="#スクリーン-グループの-appconfig">スクリーン グループの AppConfig</a></li>
   </ul>
 </nav>
         </div>
@@ -1003,7 +1017,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>画面グループ（Screen groups）</h1>
+    <h1>スクリーン グループ（Screen groups）</h1>
   
 
 
@@ -1012,10 +1026,91 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/screen/">Screen groups</a></p>
-<h3 id="画面グループscreen-groups">画面グループ（Screen groups）</h3>
-<p>画面グループは、複数の画面を持つレイアウト コンテナで、スクロールするページのコンテンツやウィジェットを整理するためのものです。各画面はメイン ステージを持ち、画面グループのテンプレートによってはスクロール パネルを持つこともできます。画面グループにスクロールすると、画面の高さ全体を占めます。画面グループにスクロール パネルがある場合、エンド ユーザーがパネル内のコンテンツをスクロールしても、メイン ステージはその場に留まり、最後のパネルがスクロールしたときにのみ切り替わります。画面グループにパネルがない場合は、メイン ステージは画面の高さいっぱいにスクロールするまで固定されます。</p>
-<p>app config では、画面グループは <code>screenGroups</code> で定義され、画面は <code>screens</code> で定義されます。</p>
-
+<h2 id="スクリーン-グループとは">スクリーン グループとは</h2>
+<p>ArcGIS Experience Builder のスクリーン グループは、複数のスクリーンを含むことができるレイアウト コンテナーです。スクロール ページのコンテンツやウィジェットを整理するために使用されます。スクリーン グループ内の各スクリーンにはメイン ステージがあり、スクリーン グループによってはスクロール パネルもあります。</p>
+<p>ユーザーがスクリーン グループにスクロールすると、スクリーンの高さ全体を占めます。スクリーン グループにスクロール パネルがある場合、ユーザーがパネル内のコンテンツをスクロールする間、メイン ステージはその場に留まります。メイン ステージが変わるのは、最後のパネルがスクロールするときだけです。 パネルがない場合、メイン ステージはスクリーン一杯の高さまでスクロールするまでその場に留まります。</p>
+<h2 id="スクリーン-グループでの操作方法">スクリーン グループでの操作方法</h2>
+<p>アプリケーションにスクリーン グループを追加して構成するには、以下の手順に従います。</p>
+<ol>
+<li>スクリーン グループを追加したいキャンバスに移動します。</li>
+<li>キャンバス上の<strong>スクリーン グループの挿入</strong>ボタンをクリックします。</li>
+<li>ギャラリーからスクリーン グループ テンプレートを選択します。</li>
+<li>スクリーン数やレイアウト オプションなどのプロパティを設定します。</li>
+<li>スクリーン グループ内の<strong>スクリーンの追加</strong>ボタンをクリックして、必要に応じて新しいスクリーンを追加します。</li>
+</ol>
+<div class="notices note" >
+<p>スクリーン グループの詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/add-screen-groups/">add screen groups</a>を参照してください。</p>
+</div>
+<h2 id="スクリーン-グループ-テンプレート">スクリーン グループ テンプレート</h2>
+<p>スクリーン グループで利用可能なテンプレートをいくつか紹介します。</p>
+<table>
+<thead>
+<tr>
+<th>テンプレート</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>カスケード</td>
+<td>マルチスクリーン、フローティング パネル、メインステージのフェード、パネルのプッシュ スルー</td>
+</tr>
+<tr>
+<td>インデックス</td>
+<td>ドッキングされたパネル、カスケードと同様のトランジション</td>
+</tr>
+<tr>
+<td>フライヤー</td>
+<td>ブックマーク付きの地図用にデザインされたシングルスクリーンで、パネルのスクロールに合わせて地図が移動</td>
+</tr>
+<tr>
+<td>ストリーム</td>
+<td>マルチスクリーン、フローティング パネル、パララックス効果、次の画面へのフェード</td>
+</tr>
+</tbody>
+</table>
+<div class="notices note" >
+<p>スクリーン グループ テンプレートの詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/add-screen-groups/#templates">Add Screen groups &gt; templates</a> を参照してください。</p>
+</div>
+<h2 id="スクリーン-グループの-appconfig">スクリーン グループの AppConfig</h2>
+<p><code>appConfig</code> オブジェクトでは、一意の <code>screenGroupId</code> を持つオブジェクトを表す <code>screenGroups</code> プロパティの下にスクリーン グループが定義されます。<code>screenGroups</code> プロパティにはスクリーン グループ オブジェクトの配列が含まれ、各オブジェクトはアプリケーションに追加されたスクリーン グループを表します。各スクリーン グループ オブジェクトには、<code>screenId</code>、<code>name</code>、<code>layout</code> など、スクリーンの構成詳細が含まれます。</p>
+<p>appConfig でスクリーン グループを定義する例を以下に示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;screenGroups&#34;</span>: {
+    <span style="color:#f92672">&#34;screenGroup1&#34;</span>: {
+      <span style="color:#f92672">&#34;screenGroupId&#34;</span>: <span style="color:#e6db74">&#34;screenGroup1&#34;</span>,
+      <span style="color:#f92672">&#34;screens&#34;</span>: [
+        {
+          <span style="color:#f92672">&#34;screenId&#34;</span>: <span style="color:#e6db74">&#34;screen1&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Screen 1&#34;</span>,
+          <span style="color:#f92672">&#34;layout&#34;</span>: {
+            <span style="color:#f92672">&#34;mainStage&#34;</span>: {
+              <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;mainStage&#34;</span>,
+              <span style="color:#f92672">&#34;height&#34;</span>: <span style="color:#ae81ff">600</span>
+            },
+            <span style="color:#f92672">&#34;panels&#34;</span>: [
+              {
+                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;scrollingPanel&#34;</span>,
+                <span style="color:#f92672">&#34;height&#34;</span>: <span style="color:#ae81ff">300</span>
+              }
+            ]
+          }
+        },
+        {
+          <span style="color:#f92672">&#34;screenId&#34;</span>: <span style="color:#e6db74">&#34;screen2&#34;</span>,
+          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Screen 2&#34;</span>,
+          <span style="color:#f92672">&#34;layout&#34;</span>: {
+            <span style="color:#f92672">&#34;mainStage&#34;</span>: {
+              <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;mainStage&#34;</span>,
+              <span style="color:#f92672">&#34;height&#34;</span>: <span style="color:#ae81ff">600</span>
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+</code></pre></div>
 
     
     

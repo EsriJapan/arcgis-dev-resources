@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>ページ（Page） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -987,11 +1002,22 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#ページとは">ページとは</a></li>
+    <li><a href="#ページの使用方法">ページの使用方法</a>
       <ul>
-        <li><a href="#ページpage">ページ（Page）</a></li>
+        <li><a href="#1-ページの追加">1. ページの追加</a></li>
+        <li><a href="#2-ページにコンテンツを追加">2. ページにコンテンツを追加</a></li>
+        <li><a href="#3-ページ-レイアウトの設定">3. ページ レイアウトの設定</a></li>
       </ul>
     </li>
+    <li><a href="#ページ-レイアウト-タイプ">ページ レイアウト タイプ</a>
+      <ul>
+        <li><a href="#フルスクリーン-アプリ">フルスクリーン アプリ</a></li>
+        <li><a href="#スクロール-ページ">スクロール ページ</a></li>
+      </ul>
+    </li>
+    <li><a href="#ページ-サイズ-モード">ページ サイズ モード</a></li>
+    <li><a href="#ヘッダーとフッター">ヘッダーとフッター</a></li>
   </ul>
 </nav>
         </div>
@@ -1012,10 +1038,118 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/page/">page</a></p>
-<h3 id="ページpage">ページ（Page）</h3>
-<p>エクスペリエンスの中のページは、物理的な HTML Web ページでなく、概念的なページですが、実際の HTML Web ページのように振る舞います。これは <code>div</code> HTML タグを使って実装されます。エクスペリエンスは少なくとも 1 つのページを持たなければならず、複数のページを持つこともできます。Experience Builder のページ レイアウトにはフル スクリーンのアプリ ページと直線的なスクロール ページの2種類があり、前者はアプリのように見え、後者はウェブ ページのように見えます。</p>
-<p>ページの内容（ウィジェット/セクション/スクリーン）は、固定レイアウトやフロー レイアウトなどのレイアウト ルールで整理されています。異なる画面サイズでもページが反応するようにするために、Experience Builder はサイズ モードによるレイアウトの設定をサポートしています。これらは <code>Large</code>, <code>Medium</code>, <code>Small</code> で定義されています。各レイアウトの設定はエクスペリエンスの適応であり、アプリケーションをよりカスタマイズし、画面サイズをより有効に利用できるようにすることで、より大きな柔軟性を提供します。このデザインの良い例としては、<a href="https://experience.arcgis.com/template/29ffe9b151654bd4992bff0baae4a6bd/">City Explorer のテンプレート</a>があります。アプリケーションを大・中画面で見た場合、地図は表示され、構成に含まれていますが、モバイル デバイスで見た場合、マップ ウィジェットは最初のページから削除され、ユーザーがリスト ウィジェットで機能を選択した後、2番目のページにのみ表示されるようになります。</p>
-<p>app config では、ページは <code>pages</code> で定義され、ページ構造は <code>pageStructure</code> で定義されます。</p>
+<h2 id="ページとは">ページとは</h2>
+<p>ArcGIS Experience Builder では、ページはレイアウトの表現であり、物理的な HTML の Web ページではありませんが、そのように動作します。ページは、エクスペリエンス内でコンテンツを整理するための基盤です。</p>
+<p>エクスペリエンスには最低 1 ページが必要で、複数ページも可能です。ページは 2 つのレイアウト タイプでデザインできます。</p>
+<ul>
+<li><a href="./#%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3-%E3%82%A2%E3%83%97%E3%83%AA">フルスクリーン アプリ</a>： アプリケーション インターフェースに似ています。</li>
+<li><a href="./#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB-%E3%83%9A%E3%83%BC%E3%82%B8">スクロール ページ</a>：従来の Web ページに似ています。</li>
+</ul>
+<p><a href="../widget">ウィジェット</a>、<a href="../section">セクション</a>、<a href="../screen">スクリーン</a>などのページ コンテンツは、固定レイアウトやフロー レイアウトなどのレイアウト ルールに基づいて配置されます。さまざまな画面サイズに対応できるよう、レイアウトは3つのサイズ モード<code>大画面</code>、<code>中画面</code>、<code>小画面</code>）に設定できます。この構成により、さまざまな機器に対応したカスタマイズ設計が可能になります。</p>
+<p>アプリの設定では、ページは <code>pages</code> プロパティで定義され、その構造は <code>pageStructure</code> プロパティで概説されます。</p>
+<h2 id="ページの使用方法">ページの使用方法</h2>
+<p>ArcGIS Experience Builder でページを使用する一般的な手順は次のとおりです。</p>
+<ol>
+<li>
+<p><a href="./#1-%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E8%BF%BD%E5%8A%A0">ページの追加</a>
+エクスペリエンスにページを追加してください。</p>
+</li>
+<li>
+<p><a href="./#2-%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E8%BF%BD%E5%8A%A0">ページにコンテンツを追加</a>
+ページにウィジェット、セクション、またはスクリーンを追加します。</p>
+</li>
+<li>
+<p><a href="./#3-%E3%83%9A%E3%83%BC%E3%82%B8-%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E8%A8%AD%E5%AE%9A">ページ レイアウトの設定</a>
+ページのレイアウト タイプとサイズ モードを設定します。</p>
+</li>
+</ol>
+<h3 id="1-ページの追加">1. ページの追加</h3>
+<p>エクスペリエンスにページを追加するには、以下の手順に従ってください。</p>
+<ol>
+<li>ArcGIS Experience Builder の<strong>ページ</strong> パネルに移動します。</li>
+<li><strong>ページの追加</strong>ボタンをクリックしてください。</li>
+<li>ページのレイアウト タイプを選択します。
+<ul>
+<li><strong>フルスクリーン アプリ</strong>：このレイアウトはアプリケーションのインターフェイスに似ており、固定レイアウトやグリッド レイアウトをサポートしています。</li>
+<li><strong>スクロール ページ</strong>：このレイアウトは従来の Web ページに似ており、縦スクロールが可能です。</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-ページにコンテンツを追加">2. ページにコンテンツを追加</h3>
+<p>ページにコンテンツを追加するには、以下の手順に従ってください。</p>
+<ol>
+<li><strong>ページ</strong> パネルで、コンテンツを追加したいページを選択します。</li>
+<li>ウィジェット パネルからウィジェット、セクション、スクリーンをページにドラッグ＆ドロップします。</li>
+<li>エクスペリエンス ビルダーで利用可能なレイアウト オプションを使用して、必要に応じてコンテンツを配置します。</li>
+</ol>
+<h3 id="3-ページ-レイアウトの設定">3. ページ レイアウトの設定</h3>
+<p>ページ レイアウトを設定するには、以下の手順に従ってください。</p>
+<ol>
+<li><strong>ページ</strong> パネルで、設定したいページを選択します。</li>
+<li>ページのサイズ モードを設定します。
+<ul>
+<li><strong>大画面</strong>：デスクトップやラップトップなどの大画面用に設計されています。</li>
+<li><strong>中画面</strong>：タブレットなどの中型スクリーン用に設計されています。</li>
+<li><strong>小画面</strong>：スマートフォンなどの小さな画面用に設計されています。</li>
+</ul>
+</li>
+</ol>
+<h2 id="ページ-レイアウト-タイプ">ページ レイアウト タイプ</h2>
+<p>Experience Builder には、それぞれ異なるユーザー エクスペリエンスを提供するように設計された、ページ用の 2 つの主要なレイアウト タイプ（<a href="./#%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3-%E3%82%A2%E3%83%97%E3%83%AA">フルスクリーン アプリ</a>と<a href="./#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB-%E3%83%9A%E3%83%BC%E3%82%B8">スクロール ページ</a>）があります。</p>
+<h3 id="フルスクリーン-アプリ">フルスクリーン アプリ</h3>
+<p>フルスクリーン アプリのページレイアウトは、アプリケーションのインターフェイスに似せてデザインされています。より没入感のあるエクスペリエンスを提供し、ユーザーは気が散ることなくコンテンツに接することができます。レイアウトは、さまざまな画面サイズや向きに合わせてカスタマイズできます。</p>
+<p>フルスクリーン アプリのページ レイアウトは、2つのレイアウト タイプをサポートしています。</p>
+<table>
+<thead>
+<tr>
+<th>レイアウト タイプ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定</td>
+<td>幅と高さが固定されているため、さまざまなデバイスでコンテンツの一貫性が保たれます。特定のデザインとレイアウトを必要とするアプリケーションに適しています。</td>
+</tr>
+<tr>
+<td>グリッド</td>
+<td>コンテンツをより柔軟に配置することができます。さまざまな画面サイズや向きに対応できるため、レスポンシブ デザインを必要とするアプリケーションに適しています。グリッド レイアウトは、さまざまなコンテンツ タイプや配置に合わせてカスタマイズできます。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="スクロール-ページ">スクロール ページ</h3>
+<p>スクロールページ レイアウトは、従来の Web ページに似せてデザインされています。標準的な Web サイトと同じように、ユーザーがコンテンツを縦にスクロールできるようになっています。このレイアウトは、ストーリーテ リングやステップ バイ ステップのガイド、長編コンテンツなど、より直線的な情報の流れを必要とするエクスペリエンスに適しています。</p>
+<h2 id="ページ-サイズ-モード">ページ サイズ モード</h2>
+<p>ArcGIS Experience Builder では、ページの 3 つのサイズ モードがサポートされているため、開発者はさまざまな画面サイズや向きに適応するレスポンシブ デザインを作成できます。3 つのサイズ モードは次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>モード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大画面</td>
+<td>このモードは、デスクトップやラップトップなどの大画面用に設計されています。より多くのコンテンツやウィジェットを収容できるレイアウトを提供します。</td>
+</tr>
+<tr>
+<td>中画面</td>
+<td>このモードは、タブレットなどの中型スクリーン向けにデザインされています。タッチ インタラクションにコンテンツを最適化するレイアウトを提供します。</td>
+</tr>
+<tr>
+<td>小画面</td>
+<td>このモードは、スマートフォンなどの小さな画面向けに設計されています。コンパクトなレイアウトで、モバイル端末でもコンテンツにアクセスしやすく、ナビゲートしやすくなっています。</td>
+</tr>
+</tbody>
+</table>
+<p>Experience Builderは、選択したサイズ モードに基づいてレイアウトとコンテンツを自動的に調整します。開発者は、各モードのデザインと動作をカスタマイズして、すべてのデバイスで一貫したユーザー エクスペリエンスを実現できます。</p>
+<h2 id="ヘッダーとフッター">ヘッダーとフッター</h2>
+<p>Experience Builder では、ヘッダーとフッターは、追加のコンテキストまたはナビゲーション オプションを提供するためにページに追加できるオプションのコンポーネントです。ロゴ、タイトル、ナビゲーションリンク、その他の関連情報などの要素を含めることができます。</p>
+<p>ヘッダーとフッターはページ設定でオン/オフでき、内容はすべてのページで同じになります。ヘッダーとフッターは、すべてのページに表示されるように設定することも、エクスペリエンス内の特定のページにのみ表示されるように設定することもできます。また、エクスペリエンスの全体的なデザインに合わせてスタイルやカスタマイズも可能です。ヘッダーとフッターは、ページ設定でオンまたはオフにできます。</p>
+<div class="notices note" >
+<p>ページ構成とその設定方法については、<a href="https://doc.arcgis.com/ja/experience-builder/latest/build-apps/add-a-page.htm">ページの追加と管理</a>のドキュメントをご覧ください。</p>
+</div>
 
 
     

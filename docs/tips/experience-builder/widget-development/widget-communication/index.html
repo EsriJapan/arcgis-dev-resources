@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>ウィジェット間の通信 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -359,7 +359,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -988,6 +1003,7 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#ウィジェット間で同じデータソースデータビューを使用する">ウィジェット間で同じデータソース/データビューを使用する</a></li>
+    <li><a href="#ウィジェット間で同じマップ-ウィジェットを使用する">ウィジェット間で同じマップ ウィジェットを使用する</a></li>
     <li><a href="#ウィジェットの出力するデータ-ソースを使用する">ウィジェットの出力するデータ ソースを使用する</a></li>
     <li><a href="#メッセージアクションを使用する">メッセージ/アクションを使用する</a></li>
     <li><a href="#データ-アクション">データ アクション</a></li>
@@ -1018,6 +1034,7 @@ if (!doNotTrack) {
 <li>Configurable (設定によって実現)
 <ul>
 <li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E9%96%93%E3%81%A7%E5%90%8C%E3%81%98%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%87%E3%83%BC%E3%82%BF%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">ウィジェット間で同じデータ ソース/データ ビューを使用する</a></li>
+<li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E9%96%93%E3%81%A7%E5%90%8C%E3%81%98%E3%83%9E%E3%83%83%E3%83%97-%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">ウィジェット間で同じマップ ウィジェットを使用する</a></li>
 <li><a href="#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">ウィジェットの出力するデータ ソースを使用する</a></li>
 <li><a href="#%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B">メッセージ/アクションを使用する</a></li>
 <li><a href="#%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">データ アクションを使用する</a></li>
@@ -1035,6 +1052,8 @@ if (!doNotTrack) {
 <p>複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。</p>
 <p>複数のウィジェットが同じデータ ソースの異なるデータ ビューを使用しても選択内容がデータ ビューのフィルター条件を満たしていれば、同じ選択内容を取得できます。</p>
 <p>詳細は<a href="../use-data-source-in-widget/">ウィジェットでデータ ソースを使用</a>を参照してください。</p>
+<h2 id="ウィジェット間で同じマップ-ウィジェットを使用する">ウィジェット間で同じマップ ウィジェットを使用する</h2>
+<p>複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ <code>JimuMapView</code> インスタンスを取得します。この <code>JimuMapView</code> インスタンスは ArcGIS Maps SDK for JavaScript の <code>MapView</code> インスタンスをラップしたものです。 <code>JimuMapView</code> インスタンスを取得した後、ウィジェットは <code>addJimuLayerViewCreatedListener()</code> と addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/use-map-widget-in-widget/">ウィジェットでのマップ ウィジェットの使用</a>を参照してください。</p>
 <h2 id="ウィジェットの出力するデータ-ソースを使用する">ウィジェットの出力するデータ ソースを使用する</h2>
 <p>詳細は<a href="../../core-concepts/data-source/#%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E5%87%BA%E5%8A%9B%E3%83%87%E3%83%BC%E3%82%BF-%E3%82%BD%E3%83%BC%E3%82%B9widget-output-data-source">ウィジェット出力データ ソース</a>を参照してください。</p>
 <h2 id="メッセージアクションを使用する">メッセージ/アクションを使用する</h2>
@@ -1110,7 +1129,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/" title="ウィジェットでデータ ソースを使用"> <i class="fa fa-chevron-left"></i><label>ウィジェットでデータ ソースを使用</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" title="デプロイ パターン" style="margin-right: 0px;"><label>デプロイ パターン</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/deployment/" title="デプロイ" style="margin-right: 0px;"><label>デプロイ</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

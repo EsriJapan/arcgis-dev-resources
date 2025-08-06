@@ -1,8 +1,8 @@
 +++
 title = "デプロイ"
 description = "ArcGIS Experience Builder (Developer Edition) で作成したアプリケーションをダウンロードし、独自のサーバーにホストする手順を紹介します。"
-weight = 13
-aliases = ["/experience/deployment-topics/"]
+weight = 15
+aliases = ["/experience/deployment/experience-deployment/"]
 +++
 
 ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前に[システム要件](https://www.esrij.com/products/experience-builder-dev/spec/)を参照してください。

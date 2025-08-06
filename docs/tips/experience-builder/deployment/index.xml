@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>デプロイ on ArcGIS Developers 開発リソース集</title>
+    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/</link>
+    <description>Recent content in デプロイ on ArcGIS Developers 開発リソース集</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>デプロイ パターン</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/</guid>
+      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ  概要 ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェットを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 2 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
+ Web アプリケーションをデプロイ 全体像  Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。   必要なコンポーネント  開発時  Node.js Developer Edition   運用時  ArcGIS Enterprise または ArcGIS Online Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)    手順概要 以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。
+ カスタム ウィジェットを含む Web アプリケーションを作成  Developer Edition を用いたウィジェットの開発や Web アプリケーションの作成には Node.</description>
+    </item>
+    
+    <item>
+      <title>デプロイ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/</guid>
+      <description>ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前にシステム要件を参照してください。
+エクスペリエンスのダウンロード エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように ● (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
+アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する web.config ファイルが付属しており、このデフォルト web.config に ArcGIS Maps SDK for JavaScript の設定が含まれるようになりました。
+ダウンロードに失敗した場合は、お使いのマシンでアンチウイルス ソフトがオンになっているか確認してください。アンチウイルス ソフトをオフにして、もう一度試してください。
+エクスペリエンスのデプロイ エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。
+ ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。 アプリを追加して登録します。詳細については、ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成 を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：&amp;lt;.</description>
+    </item>
+    
+    <item>
+      <title>ウィジェットとテーマのデプロイ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/</guid>
+      <description>ウィジェットとテーマのデプロイ ウィジェットのデプロイ カスタム ウィジェットを配置できる場所は以下の 2 つあります。
+ ArcGIS Experience Builder Developer Edition ArcGIS Enterprise 版 ArcGIS Experience Builder  これらの場所にデプロイするガイドラインはこちらになります。
+開発者向けエディション ArcGIS Experience Builder アプリケーション内でカスタム ウィジェットとテーマをデプロイするには、まずエクスペリエンスをダウンロードし、そのエクスペリエンスを Web サーバーにデプロイします。デプロイに関する詳細な手順は、エクスペリエンスのデプロイページをご参照ください。
+ArcGIS Enterprise エディション ArcGIS Enterprise にカスタム ウィジェットをホストすることで、ArcGIS Enterprise 内で直接作成されたエクスペリエンスまたは Developer Edition（同 ArcGIS Enterprise 環境に接続されているもの）経由で作成されたエクスペリエンスが、カスタム ウィジェットを使用できるようになります。ArcGIS Enterprise 内にカスタム ウィジェットをホストするには、カスタムウィジェットの追加 ページをご覧ください。このパターンでサポートされている ArcGIS Enterprise のバージョンは 11.0 以降です。
+テーマのデプロイ 現在、カスタムテーマは Developer Editon にのみデプロイ可能です。テーマの開発に関する詳細情報は、Theme developementページをご確認ください。
+ArcGIS Online 版について ArcGIS Online へのカスタム ウィジェットとテーマのデプロイは、現在サポートされていません。
+考慮事項 カスタム ウィジェットとテーマをデプロイする適切な場所は、ご自身の目標と ArcGIS infrastructure によって異なります。これらの点を考慮し、ArcGIS Experience Builder の開発を開始する前にデプロイメント プランを作成することをおすすめします。</description>
+    </item>
+    
+  </channel>
+</rss>

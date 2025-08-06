@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>スターター ウィジェットの作成 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -359,7 +359,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -492,19 +492,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item parent haschildren
         ">
@@ -1046,8 +1061,8 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> {
    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;starter-widget&#34;</span>,
    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;widget&#34;</span>,
-   <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.16.0&#34;</span>,
-   <span style="color:#e6db74">&#34;exbVersion&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.16.0&#34;</span>,
+   <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.17.0&#34;</span>,
+   <span style="color:#e6db74">&#34;exbVersion&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.17.0&#34;</span>,
    <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Your Name&#34;</span>,
    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;A hello world starter widget&#34;</span>,
    <span style="color:#e6db74">&#34;copyright&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
@@ -1098,10 +1113,13 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>ウィジェットの挿入パネルが開きます。そこから、新しいスターター ウィジェットをエクスペリエンスにドラッグしてください。</p>
-<p>作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。ウィジェットが表示されない場合、元のセットアップ手順に従って、<strong>client</strong> フォルダーで <code>npm start</code> を実行したか再確認してください。</p>
+<p>ウィジェットは、ウィジェット一覧の下部にある「カスタム」セクションに配置されます。作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。ウィジェットが表示されない場合、元のセットアップ手順に従って、<strong>client</strong> フォルダーで <code>npm start</code> を実行したか再確認してください。</p>
 </li>
 <li>
-<p>ArcGIS Experience Builder ツールバーで、[保存]、[プレビュー]の順にクリックすると、カスタム ウィジェットと共に新しいブラウザー タブでエクスペリエンスが開きます。</p>
+<p>マップ ウィジェットをエクスペリエンスにドラッグします。</p>
+</li>
+<li>
+<p>ツールバーで、[保存] をクリックし、次に [プレビュー] をクリックすると、カスタム ウィジェットを含むエクスペリエンスが新しいブラウザ タブで開きます。</p>
 </li>
 </ol>
 

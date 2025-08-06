@@ -19,31 +19,6 @@ ArcGIS Experience Builder (Developer Edition) で使用されている技術は�
     </item>
     
     <item>
-      <title>デプロイ パターン</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deploy-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deploy-pattern/</guid>
-      <description>トピック  概要 Web アプリケーションをデプロイ ウィジェットをデプロイ  概要 ArcGIS Experience Builder (Developer Edition) (以下 Developer Edition) では ArcGIS Experience Builder を拡張して、独自の Web アプリケーションやウィジェットを作成することが可能です。エンド ユーザーの利用形態や要件により最適なデプロイは異なりますが、このページでは以下の 2 つの主要なデプロイ パターンと、それぞれのデプロイ方法についてご紹介します。
- Web アプリケーションをデプロイ 全体像  Web アプリケーションを作成し、独自のサーバーでホストすることができます。特定の業務で継続的に利用されるアプリ等、ユーザーによる設定変更が不要な場合や、ユーザーに設定変更をさせたくない場合等に活用できます。   必要なコンポーネント  開発時  Node.js Developer Edition   運用時  ArcGIS Enterprise または ArcGIS Online Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)    手順概要 以下は Web アプリケーション作成から、デプロイ、実際の運用までの流れの概要です。
- カスタム ウィジェットを含む Web アプリケーションを作成  Developer Edition を用いたウィジェットの開発や Web アプリケーションの作成には Node.</description>
-    </item>
-    
-    <item>
-      <title>デプロイ</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/deployment-topics/</guid>
-      <description>ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前にシステム要件を参照してください。
-エクスペリエンスのダウンロード エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように ● (3 つのドット) をクリックして ダウンロード をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザ用に定義されたダウンロード ディレクトリにあります。
-アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する web.config ファイルが付属しており、このデフォルト web.config に ArcGIS Maps SDK for JavaScript の設定が含まれるようになりました。
-ダウンロードに失敗した場合は、お使いのマシンでアンチウイルス ソフトがオンになっているか確認してください。アンチウイルス ソフトをオフにして、もう一度試してください。
-エクスペリエンスのデプロイ エクスペリエンスを Web サーバーにデプロイするには、次の手順を実行します。
- ダウンロードしたエクスペリエンスを解凍し、フォルダーを Web サーバーにコピーします。 アプリにプライベート コンテンツがある場合は、手順 3 ～ 6 を完了し、そうでない場合はエクスペリエンスのデプロイは完了です。 アプリを追加して登録します。詳細については、ArcGIS Online/ArcGIS Enterprise を使用した Client ID の作成 を参照してください。 AppID をコピーし、Experience アプリのルート ディレクトリ (例：&amp;lt;.</description>
-    </item>
-    
-    <item>
       <title>Web AppBuilder からの移行</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/migrating-from-web-appbuilder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,8 +1,8 @@
 +++
 title = "デプロイ パターン"
 description = "ArcGIS Experience Builder (Developer Edition) で作成したアプリやウィジェットのデプロイ パターンを紹介します。"
-weight = 12
-aliases = ["/experience/deploy-pattern/"]
+weight = 14
+aliases = ["/experience/deployment/deploy-pattern/"]
 +++
 
 ## トピック

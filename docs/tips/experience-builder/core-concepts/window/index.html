@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>ウィンドウ（Window） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -987,11 +1002,16 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#ウィンドウとは">ウィンドウとは</a></li>
+    <li><a href="#なぜウィンドウを使うのか">なぜウィンドウを使うのか</a></li>
+    <li><a href="#ウィンドウの使用方法">ウィンドウの使用方法</a>
       <ul>
-        <li><a href="#ウィンドウwindow">ウィンドウ（Window）</a></li>
+        <li><a href="#1-ウィンドウの追加">1. ウィンドウの追加</a></li>
+        <li><a href="#2-ウィンドウの設定">2. ウィンドウの設定</a></li>
+        <li><a href="#3-ウィンドウのトリガーを設定">3. ウィンドウのトリガーを設定</a></li>
       </ul>
     </li>
+    <li><a href="#ウィンドウ-テンプレート">ウィンドウ テンプレート</a></li>
   </ul>
 </nav>
         </div>
@@ -1012,10 +1032,132 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/window/">Window</a></p>
-<h3 id="ウィンドウwindow">ウィンドウ（Window）</h3>
-<p>ウィンドウはページに似ていて、任意のウィジェットを追加することができ、コンテンツを表示するための2つの設定（固定とアンカー設定）があります。
-固定ウィンドウはモーダルを作成し、メイン ウィンドウを無効にしますが、ユーザーがエクスペリエンスに戻る前にウィンドウと対話できるように表示を維持します。固定ウィンドウはスプラッシュ スクリーンとして使用したり、ページで開いたり、ウィジェットから開いたりすることができます。アンカー ウィンドウは、ボタンやテキスト ウィジェットなどのウィジェットからトリガーされます。</p>
-<p>app config では、ウィンドウは <code>dialogs</code> で定義されます。</p>
+<h2 id="ウィンドウとは">ウィンドウとは</h2>
+<p>ArcGIS Experience Builder では、ウィンドウはエクスペリエンスの上にコンテンツまたはウィジェットを表示できるパネルです。ウィンドウズでは、ユーザーはメインのエクスペリエンスから離れることなく、集中してコンテンツに触れることができます。ウィンドウは固定モーダルまたはアンカー付きポップアップとして表示するように設定できます。</p>
+<p>ウィンドウにコンテンツを表示するには、主に2つの設定があります。</p>
+<table>
+<thead>
+<tr>
+<th>ウィンドウ タイプ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定ウィンドウ</td>
+<td>閉じるまでメイン ウィンドウとのインタラクションを無効にするモーダル オーバーレイ。スプラッシュ画面や重要なメッセージによく使われます。</td>
+</tr>
+<tr>
+<td>アンカー ウィンドウ</td>
+<td>ボタンやテキストなどのウィジェットに固定されたポップアップで、通常、コンテキスト情報やアクションに使用されます。</td>
+</tr>
+</tbody>
+</table>
+<p>アプリの設定では、ウィンドウは<code>ダイアログ</code> プロパティで定義されます。</p>
+<h2 id="なぜウィンドウを使うのか">なぜウィンドウを使うのか</h2>
+<p>ArcGIS Experience Builder のウィンドウでは、メインのエクスペリエンスからナビゲートすることなく、追加のコンテンツや機能を表示できます。フォーム、メディア、その他のウィジェットを集中的に表示し、ユーザーとのインタラクションやエンゲージメントを高めることができる。</p>
+<p>ウィンドウを使用して、次を提供します。</p>
+<ul>
+<li>メインコンテンツから離れることなく、重要な情報や行動を提示します。</li>
+<li>追加の詳細、フォーム、またはメディアを専用のオーバーレイで表示します。</li>
+<li>ユーザーが別のスペースでウィジェットやコンテンツとやりとりできるようにします。</li>
+<li>特定のウィジェットからウィンドウをトリガーして、関連情報やオプションを提供します。</li>
+</ul>
+<h2 id="ウィンドウの使用方法">ウィンドウの使用方法</h2>
+<p>ArcGIS Experience Builder でウィンドウを使用する一般的な手順は次のとおりです。</p>
+<ol>
+<li><a href="./#1-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%AE%E8%BF%BD%E5%8A%A0">ウィンドウの追加</a>
+エクスペリエンスにウィンドウを追加します。</li>
+<li><a href="./#2-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%AE%E8%A8%AD%E5%AE%9A">ウィンドウの設定</a>
+ウィンドウのモード、サイズ、位置を設定します。</li>
+<li><a href="./#3-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%AE%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A">ウィンドウのトリガーを設定</a>
+ウィンドウの表示タイミングと表示方法を設定します。</li>
+</ol>
+<h3 id="1-ウィンドウの追加">1. ウィンドウの追加</h3>
+<p>エクスペリエンスにウィンドウを追加するには、以下の手順に従ってください。</p>
+<ol>
+<li>ページ パネルに移動し、ウィンドウ タブを選択し、ウィンドウの追加をクリックします。</li>
+<li>ウィンドウのテンプレートを選択します。</li>
+<li>ウィンドウ タイプを決定します。
+<ul>
+<li><strong>固定</strong>：画面上の固定位置に表示されます。</li>
+<li><strong>アンカー</strong>：リンクされたウィジェットに隣接して表示されます。
+ウィンドウがエクスペリエンスに追加され、プロパティの設定を開始できます。</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-ウィンドウの設定">2. ウィンドウの設定</h3>
+<p>ウィンドウのプロパティを設定するには、以下の設定を考慮する必要があります。</p>
+<ol>
+<li>
+<p><strong>位置とサイズ</strong></p>
+<ul>
+<li>固定ウィンドウの場合は、ページ上の9つのアンカー ポイントから1つを選択します。</li>
+<li><strong>幅</strong>と<strong>高さ</strong>を<code>ピクセル</code>または<code>パーセント</code>で指定します。</li>
+<li>ウィンドウの位置を調整するには、<strong>オフセット X/Y</strong>を使用します。</li>
+<li>ウィンドウの周囲にスペースを設定するために<strong>マージン</strong>を定義します。</li>
+</ul>
+</li>
+<li>
+<p><strong>動作設定</strong></p>
+<ul>
+<li><strong>ブロック ページ</strong>：ウィンドウがアクティブな間、基礎となるアプリとのインタラクションを防ぎます。</li>
+<li><strong>マスク色</strong>：ウィンドウがアクティブなときに、アプリの残りの部分をオーバーレイする色を選択します。</li>
+<li><strong>終了オプション</strong>
+<ul>
+<li>ユーザーがウィンドウの外側をクリックしてウィンドウを閉じられるようにします。</li>
+<li>ウィンドウ内に閉じるボタンを追加します。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-ウィンドウのトリガーを設定">3. ウィンドウのトリガーを設定</h3>
+<p>アプリのロード、ページのロード、ウィジェットとのユーザーインタラクションなどのトリガーを設定することで、ウィンドウがいつ、どのように表示されるかを制御できます。</p>
+<p>ウィンドウのトリガーを設定するには、以下の方法を使用できます。</p>
+<ol>
+<li>
+<p><strong>アプリまたはページのロード時</strong></p>
+<ul>
+<li>アプリのロード時に表示されるスプラッシュとしてウィンドウを設定します。</li>
+<li>ウィンドウを特定のページにリンクするには、「ウィンドウで開く」設定を使用します。</li>
+</ul>
+</li>
+<li>
+<p><strong>ウィジェット インタラクション</strong></p>
+<ul>
+<li>ウィジェットの設定でリンクを設定オプションを使用して、ユーザー インタラクションでウィンドウを開きます。</li>
+<li>このトリガーでは、スプラッシュ ウィンドウを除いて、アンカー ウィンドウか固定ウィンドウのいずれかを選択します。</li>
+</ul>
+</li>
+</ol>
+<h2 id="ウィンドウ-テンプレート">ウィンドウ テンプレート</h2>
+<p>使用するケースに合わせて、さまざまなウィンドウ テンプレートから選択することができます。以下の表は、一般的なテンプレートとその目的をまとめたものです。</p>
+<table>
+<thead>
+<tr>
+<th>テンプレート</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定ブロッカー</td>
+<td>閉じるまで操作をブロックします。</td>
+</tr>
+<tr>
+<td>固定パススルー</td>
+<td>メイン ウィンドウとのインタラクションを許可します。</td>
+</tr>
+<tr>
+<td>アンカー</td>
+<td>ウィジェットにウィンドウをリンクする場合に適切です。</td>
+</tr>
+</tbody>
+</table>
+<div class="notices note" >
+<p>ウィンドウ テンプレートの詳細については、<a href="https://doc.arcgis.com/ja/experience-builder/latest/build-apps/add-windows.htm#ESRI_SECTION1_9FE5C0104290470AB9589C2A4B53BB0D">ウィンドウの追加 -&gt; テンプレート</a>を参照してください。</p>
+</div>
 
 
     

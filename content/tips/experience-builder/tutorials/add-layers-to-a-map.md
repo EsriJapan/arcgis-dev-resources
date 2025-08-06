@@ -43,7 +43,7 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
    // "name": "starter-widget",
    "name": "add-layers-to-a-map",
    "type": "widget",
-   "version": "1.16.0",
+   "version": "1.17.0",
 ```
 
 7. **manifest.json** の `version` プロパティの後に、`jimu-arcgis` の依存関係を追加します。 これを宣言することで、ウィジェット内で [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/) モジュールを使用できるようになります。
@@ -51,7 +51,7 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
 {
    "name": "add-layers-to-a-map",
    "type": "widget",
-   "version": "1.16.0",
+   "version": "1.17.0",
    // *** 追加 ***
    "dependency": ["jimu-arcgis"],
 ```

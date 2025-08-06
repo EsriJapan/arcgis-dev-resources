@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>セクションとビュー（Section and view） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -987,11 +1002,11 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#セクションとビューsection-and-view">セクションとビュー（Section and view）</a></li>
-      </ul>
-    </li>
+    <li><a href="#セクションとは">セクションとは</a></li>
+    <li><a href="#ビューとは">ビューとは</a></li>
+    <li><a href="#セクションとビューの使用方法">セクションとビューの使用方法</a></li>
+    <li><a href="#セクションとビューの違い">セクションとビューの違い</a></li>
+    <li><a href="#セクションとビューの-appconfig">セクションとビューの AppConfig</a></li>
   </ul>
 </nav>
         </div>
@@ -1012,13 +1027,87 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/section-view/">Section and view</a></p>
-<h3 id="セクションとビューsection-and-view">セクションとビュー（Section and view）</h3>
-<p>セクションは、複数のビューを追加できる領域を占めています。ビューはレイアウト コンテナで、ページやウィンドウに似ていますが、セクションの中にしか置くことができません。ビュー ナビゲーション ウィジェットは、セクション内のビューをナビゲートします。メニュー ウィジェットで複数のページを使用したり、ビュー ナビゲーション ウィジェットでセクションとビューを使用して同様の操作感を得ることができますが、両者には主な違いがあります。</p>
+<p>このページでは、ArcGIS Experience Builder の<strong>セクション</strong> コンポーネントと<strong>ビュー</strong> コンポーネントについて説明します。また、セクションが複数のビューのコンテナとしてどのように機能するか、セクション内でビューがページやウィンドウとどのように同じように機能するか、<strong>ビュー ナビゲーション</strong> ウィジェットを使用してビュー間を移動する方法についても学びます。</p>
+<h2 id="セクションとは">セクションとは</h2>
+<p>セクションは、<a href="../page">ページ</a>に追加できるレイアウト コンテナーです。セクションは、アプリケーション内のコンテンツを整理し、構造化します。セクションはモジュール レイアウトに便利で、関連するコンテンツをグループ化できます。ヘッダー、フッター、サイドバー、メイン コンテンツ エリアに使用できます。</p>
+<p>セクションには、そのセクションの代替レイアウトやコンテンツ領域である複数の<a href="./#%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AF">ビュー</a>を含めることができます。これにより、ページを離れることなく異なるコンテンツ セットを切り替えることで、よりダイナミックなユーザー エクスペリエンスを生み出すことができます。</p>
+<h2 id="ビューとは">ビューとは</h2>
+<p>ビューはセクションに追加されるレイアウト コンテナーです。ページやウィンドウの機能に類似しますが、セクションで使用されます。ビューは、ウィジェットとコンテンツのための明確な領域を作成します。</p>
+<p>ビューは、タブ、ワークフローのステップ、異なる情報の状態など、同じセクションで別のコンテンツやレイアウトを表示するのに便利です。ビューの切り替えは、<a href="https://doc.arcgis.com/en/experience-builder/11.5/configure-widgets/view-navigation-widget.htm"><strong>ビュー ナビゲーション</strong></a> ウィジェットなどのナビゲーション コントロールを使用するか、トリガーを設定することで行うことができます。</p>
+<p>ビューは、関連するコンテンツへのアクセスを維持しながら、ユーザーが一度に 1 つのコンテンツ セットに集中できるようにすることで、アプリケーションを整理するのに役立ちます。これは、ユーザーがページを離れることなく異なる情報やツールの間を移動する、ガイド付きエクスペリエンス、ウィザード、またはダッシュボードに役立ちます。</p>
+<p>ビューは異なるレイアウトやウィジェットを持つことができ、切り替え時にトランジション アニメーションを適用できます。</p>
+<h2 id="セクションとビューの使用方法">セクションとビューの使用方法</h2>
+<p>セクションとビューをナビゲーション ウィジェットと一緒に使うことで、インタラクティブで、整理された、モジュール化されたエクスペリエンスを作ることができます。</p>
+<p>セクションとビューを使用するには、次の手順に従います。</p>
+<ol>
+<li>ページにセクションを追加します。</li>
+<li>セクションにビューを追加します。</li>
+<li>ビューを設定し、ビュー間のナビゲーションを設定する。</li>
+<li>オプションで、よりスムーズなユーザー エクスペリエンスのためにトランジション アニメーションを適用する。</li>
+</ol>
+<div class="notices note" >
+<p>セクションとビューの追加方法については、<a href="https://doc.arcgis.com/en/experience-builder/latest/create-apps/add-section.htm">セクションの追加</a>と<a href="https://doc.arcgis.com/en/experience-builder/latest/create-apps/add-view.htm">ビューの追加</a>のトピックを参照してください。</p>
+</div>
+<h2 id="セクションとビューの違い">セクションとビューの違い</h2>
+<p>セクションとビューはどちらもコンテンツを整理するために使用されますが、構造、レンダリング、ユーザー インタラクションが異なります。以下の表は、主な違いをまとめたものです。</p>
+<table>
+<thead>
+<tr>
+<th>観点</th>
+<th>セクション</th>
+<th>ビュー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定義</td>
+<td>コンテンツをグループ化し、レイアウトを管理するためにページに追加されるコンテナー</td>
+<td>代替コンテンツやレイアウトを表示するためにセクションに追加されるコンテナー</td>
+</tr>
+<tr>
+<td>階層</td>
+<td>ページレベルまたは他のビュー内に存在</td>
+<td>セクション内に存在</td>
+</tr>
+<tr>
+<td>コンテンツ</td>
+<td>複数のビューを含むことが可能</td>
+<td>そのビューに固有のウィジェットやコンテンツを含むことが可能</td>
+</tr>
+<tr>
+<td>ナビゲーション</td>
+<td>ナビゲーションはセクション内のビュー間で行われる</td>
+<td>ビューナビゲーションウィジェットやトリガーを使ってナビゲート可能</td>
+</tr>
+<tr>
+<td>レンダリング</td>
+<td>セクション内のすべてのビューがレンダリングされるが、アクティブなビューだけが表示される</td>
+<td>一度に表示されるのは1つのビューのみで、他のビューは非表示になるがレンダリングはされる</td>
+</tr>
+<tr>
+<td>アニメーション</td>
+<td>ビューの切り替えにトランジション アニメーションを設定可能</td>
+<td>セクションのアニメーションを継承</td>
+</tr>
+<tr>
+<td>ユースケース</td>
+<td>ページレイアウトの整理、関連するコンテンツのグループ化、モジュール化されたデザインの作成</td>
+<td>タブ、ワークフローのステップ、代替状態、ガイド付きエクスペリエンス</td>
+</tr>
+</tbody>
+</table>
+<p>セクションとビューの主な違いは以下の通りです。</p>
 <ul>
-<li>レンダリングについて - 複数のページを読み込む場合、最初は現在のページのコンテンツのみがレンダリングされます。セクション内の複数のビューを読み込む場合、ビュー内のすべてのコンテンツがレンダリングされますが、現在のビューのみが表示され、他はすべて非表示になります。</li>
-<li>アニメーションについて - セクションでのみトランジションアニメーションを定義できます。</li>
+<li><strong>レンダリング</strong>：複数のページをロードする場合、最初にレンダリングされるのは現在のページのコンテンツだけです。一方、セクション内の複数のビューをロードする場合、ビュー内のすべてのコンテンツがレンダリングされますが、現在のビューのみが表示され、他のビューは非表示になります。</li>
+<li><strong>アニメーション</strong>：トランジション アニメーションをセクション上で定義することができ、セクション内のビュー間のスムーズなトランジションが可能になります。</li>
+<li><strong>ナビゲーション</strong>：セクションは構造を提供し、ビューはその構造の中で異なるコンテンツのセットを切り替える機能を提供します。</li>
 </ul>
-<p>app config では、セクションは <code>sections</code> で定義され、ビューは <code>views</code> で定義されます。</p>
+<h2 id="セクションとビューの-appconfig">セクションとビューの AppConfig</h2>
+<p><strong>AppConfig</strong> では、セクションは <code>sections</code> プロパティで定義され、<code>sectionId</code> がキーとなる。ビューは <code>views</code> プロパティで定義します。この構造により、アプリケーションを効果的に整理し、セクションとビューを簡単に管理し、アクセスできるようにすることができます。</p>
+<ul>
+<li><code>sections</code> プロパティには、アプリケーションに追加されたセクションを表すセクション オブジェクトの配列が含まれます。各セクション オブジェクトには、スタイルや含まれるビューのリストなどの構成の詳細が含まれます。</li>
+<li><code>views</code> プロパティには、セクション内の各ビューの定義が含まれます。各ビュー オブジェクトは、固有の ID、保持するウィジェットやコンテンツ、そのビューに適用される特定の設定やスタイルを指定します。</li>
+</ul>
 
 
     
@@ -1031,7 +1120,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/window/" title="ウィンドウ（Window）"> <i class="fa fa-chevron-left"></i><label>ウィンドウ（Window）</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" title="画面グループ（Screen groups）" style="margin-right: 0px;"><label>画面グループ（Screen groups）</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" title="スクリーン グループ（Screen groups）" style="margin-right: 0px;"><label>スクリーン グループ（Screen groups）</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

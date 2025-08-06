@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>コア コンセプト :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -493,19 +493,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item haschildren
         ">
@@ -982,9 +997,11 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#jimu-とは">Jimu とは</a></li>
+    <li><a href="#開発">開発</a></li>
+    <li><a href="#コア-コンセプト">コア コンセプト</a>
       <ul>
-        <li><a href="#はじめに">はじめに</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -1008,22 +1025,28 @@ if (!doNotTrack) {
     
 
 <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/">Core concepts</a></p>
-<h3 id="はじめに">はじめに</h3>
+<p>ArcGIS Experience Builder Developer Edition は、開発者がノー コード/ロー コード アプローチでカスタム Web アプリケーションを作成できる Web アプリケーション フレームワークです。 ArcGIS のサービスやデータと統合できる、インタラクティブで応答性の高いアプリケーションを構築するためのツールやコンポーネントのセットを提供します。</p>
+<p>開発者は、カスタム ウィジェット、テーマ、およびアクションを作成して、ArcGIS Experience Builder を拡張できます。<strong>Jimu</strong> と呼ばれるこの拡張性フレームワークにより、開発ニーズに合ったアプリケーションを構築することができる。</p>
+<h2 id="jimu-とは">Jimu とは</h2>
+<p><a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/">Jimu</a> は ArcGIS Experience Builder の拡張性フレームワークで、開発者はカスタム ウィジェット、テーマ、およびアクションを作成できます。Experience Builder アプリケーションの機能を拡張するための API とツールのセットを提供します。</p>
 <p>Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されている<code>jimu</code> と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。</p>
+<p>Jimu フレームワークは、以下を含むいくつかの技術の上に構築されています。</p>
 <ul>
-<li>ArcGIS Maps SDK for JavaScript 4.x</li>
-<li>React + Redux フレームワーク</li>
-<li>Bootstrap 4 （UI用）</li>
-<li>HTML5</li>
+<li><a href="https://developers.arcgis.com/javascript/latest/">ArcGIS Maps SDK for JavaScript 4.x</a> は、地図と地理空間データを統合します。</li>
+<li>ユーザーインターフェースの構築とアプリケーションの状態管理のための <a href="https://react.dev/">React</a> と <a href="https://react-redux.js.org/">Redux</a> フレームワーク</li>
+<li>ユーザー インターフェース コンポーネントの <a href="https://emotion.sh/docs/introduction">Emotion</a></li>
+<li>Web 標準に準拠した <a href="https://developer.mozilla.org/ja/docs/Glossary/HTML5">HTML5</a> と <a href="https://developer.mozilla.org/ja/docs/Web/CSS">CSS3</a></li>
 </ul>
-<p>Experience Builderでウィジェットやテーマなどを開発するには、TypeScript が必要になります。TypeScript を利用するのは、次のようなメリットがあります。</p>
+<h2 id="開発">開発</h2>
+<p><a href="https://www.typescriptlang.org/">TypeScript</a> は JavaScript のスーパーセットで、言語に静的な型付けを追加しています。ArcGIS Experience Builder でウィジェット、テーマ、その他のコンポーネントを開発するには、TypeScript を使用します。TypeScript には、次のような多くの利点があります。</p>
 <ul>
 <li>型宣言によるエラー検出</li>
-<li>よりよい IDE 体験</li>
+<li>よりよい IDE エクスペリエンス</li>
 <li>セルフ-ドキュメント コード</li>
 <li>より読みやすく、わかりやすい</li>
 </ul>
-<p>Experience Builder アプリケーションは多くのパーツで構成されています。これらのコンセプトは、アプリケーションの構造を理解するのに役立ちます。</p>
+<h2 id="コア-コンセプト">コア コンセプト</h2>
+<p>Experience Builder のエクスペリエンスは、Web アプリケーションを作成するために連携するさまざまなコンポーネントで構成されます。これらのコア コンセプトを理解することで、Experience Builder のフレームワークを効果的にナビゲートし、開発することができます。</p>
 <ul class="children children-h5">
 <p><span><h5>
 <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" >ページ（Page）</a></h5>
@@ -1035,7 +1058,7 @@ if (!doNotTrack) {
 <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/section-view/" >セクションとビュー（Section and view）</a></h5>
 </span></p>
 <p><span><h5>
-<a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" >画面グループ（Screen groups）</a></h5>
+<a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" >スクリーン グループ（Screen groups）</a></h5>
 </span></p>
 <p><span><h5>
 <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/" >レイアウト（Layout）</a></h5>
@@ -1069,6 +1092,7 @@ if (!doNotTrack) {
 </span></p>
 </ul>
 <h5 id="span-stylepadding-left40px高速モードexpress-modehttpsdocarcgiscomjaexperience-builderlatestbuild-appsexpress-modehtm-外部サイトに移動しますspan"><span style="padding-left:40px"><a href="https://doc.arcgis.com/ja/experience-builder/latest/build-apps/express-mode.htm">高速モード（Express mode）</a> （外部サイトに移動します）</span></h5>
+<h5 id="span-stylepadding-left40px高度な書式設定httpsdocarcgiscomjaexperience-builderlatestconfigure-widgetsadvanced-formattinghtm-外部サイトに移動しますspan"><span style="padding-left:40px"><a href="https://doc.arcgis.com/ja/experience-builder/latest/configure-widgets/advanced-formatting.htm">高度な書式設定</a> （外部サイトに移動します）</span></h5>
 
 
 

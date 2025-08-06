@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-06T09:57:32 JST">
+<meta name="revised" content="2025-08-06T11:09:19 JST">
 <title>マップにレイヤーを追加 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -359,7 +359,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/screen/">
-            画面グループ（Screen groups）
+            スクリーン グループ（Screen groups）
           </a>
         </div>
     </li>
@@ -492,19 +492,34 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/" class="dd-item">
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/arcgis-dev-resources/tips/experience-builder/deployment/">デプロイ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deploy-pattern/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/deploy-pattern/">
             デプロイ パターン
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment-topics/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/" class="dd-item">
         <div>
-          <a href="/arcgis-dev-resources/tips/experience-builder/deployment-topics/">
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/experience-deployment/">
             デプロイ
           </a>
         </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/deployment/widget-and-theme-deployment/">
+            ウィジェットとテーマのデプロイ
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/tutorials/" class="dd-item parent haschildren
         ">
@@ -1057,14 +1072,14 @@ if (!doNotTrack) {
    <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;starter-widget&#34;</span>,
    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;add-layers-to-a-map&#34;</span>,
    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;widget&#34;</span>,
-   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.16.0&#34;</span>,
+   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.17.0&#34;</span>,
 </code></pre></div><ol start="7">
 <li><strong>manifest.json</strong> の <code>version</code> プロパティの後に、<code>jimu-arcgis</code> の依存関係を追加します。 これを宣言することで、ウィジェット内で <a href="https://developers.arcgis.com/javascript/">ArcGIS Maps SDK for JavaScript</a> モジュールを使用できるようになります。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;add-layers-to-a-map&#34;</span>,
    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;widget&#34;</span>,
-   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.16.0&#34;</span>,
+   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.17.0&#34;</span>,
    <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">***</span> <span style="color:#960050;background-color:#1e0010">追加</span> <span style="color:#960050;background-color:#1e0010">***</span>
    <span style="color:#f92672">&#34;dependency&#34;</span>: [<span style="color:#e6db74">&#34;jimu-arcgis&#34;</span>],
 </code></pre></div><h3 id="設定パネルの実装">設定パネルの実装</h3>
