@@ -8,7 +8,7 @@ aliases = ["/android/distribution-android-200.x/"]
 ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
 
 ## API キーの設定
-[ArcGIS Location Platform のロケーション サービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、APIキーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-android/#api-キーを設定する)をご覧ください。
+[ArcGIS Location Platform のロケーション サービス](../../../guide/services/)を使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細は[API キーの取得](../../../guide/get-api-key/)を、API キーの設定方法はアプリの作成の[API キーを設定する](../../../guide/create-app/create-startup-app-android/#api-キーを設定する)をご覧ください。
 
 ## ライセンス認証のステップ
 
@@ -23,7 +23,7 @@ ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発した�
     * __[Advanced Editing Extension ライセンスの認証方法](#advanced-editing-extension-ライセンスの認証方法)__
 
 3. __[ライセンスの認証](#ライセンスの認証)__
-    * __[Lite ライセンスキーを使用した認証](#lite-ライセンスキーを使用した認証)__
+    * __[Lite ライセンス キーを使用した認証](#lite-ライセンス-キーを使用した認証)__
     * __[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)__
     * __[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)__
 

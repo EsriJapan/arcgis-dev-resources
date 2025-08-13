@@ -44,16 +44,16 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 ### 新しいシーンを作成する
 
-1. 上部メニューで、[ファイル] > [新しいシーン (File > New Scene)] をクリックし、ポップアップ ウィンドウを開きます。
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-new-scene.png" width="350px">
+1. 上部メニューで、[ファイル (File)] > [新しいシーン (New Scene)] をクリックし、ポップアップ ウィンドウを開きます。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-new-scene-2-0.png" width="350px">
 
 2. [Basic Outdoors (HDRP)] テンプレートを選択し、[作成 (Create)] ボタンをクリックします。
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/basic-outdoor-template.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/basic-outdoor-template-2-0.png" width="650px">
 
 
 ### Map Creator UI を開く
-上部メニューで、[ArcGIS Maps SDK] > [Map Creator] をクリックします。必要に応じて、**Map Creator UI** を開いた後にウィンドウ サイズを調整します。
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/open-the-map-creator.png" width="650px">
+上部メニューで、[ツール (Tool)] > [ArcGIS Maps SDK] > [Map Creator] をクリックします。必要に応じて、**Map Creator UI** を開いた後にウィンドウ サイズを調整します。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/open-the-map-creator-2-0.png" width="650px">
 
 
 ### マップを作成する
@@ -64,7 +64,7 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 2. [Map Type] セクションで [Local] をクリックします。
 
-3. [Origin Position] セクションでは、GIS シーンの中心を座標とSpatial Reference Well-Known ID (WKID) で設定できます。チュートリアルでは、パラメーターを以下の値に設定します :
+3. [Origin Position] セクションでは、GIS シーンの中心を座標とSpatial Reference Well-Known ID (WKID) で設定できます。チュートリアルでは、パラメーターを以下の値に設定します。
 
     * Longitude : 139.745723
     * Latitude : 35.659041
@@ -73,7 +73,7 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
     spatial reference に関する情報は、[spatial references](https://developers.arcgis.com/unity/spatial-and-data-analysis/spatial-references/) のページを参照してください。
 
-4. [Enable Map Extent] チェック ボックスをオンにして、[Map Extent] セクションを表示し、マップの範囲をこれらの値に設定します :
+4. [Enable Map Extent] チェック ボックスをオンにして、[Map Extent] セクションを表示し、マップの範囲をこれらの値に設定します。
 
     * Longitude : 139.745723
     * Latitude : 35.659041
@@ -85,15 +85,15 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 以下が、[Map] パネルに入力した画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-map-local.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-map-local-2-0.png" width="500px">
 
 [ヒエラルキー (Hierarchy)] ウィンドウで、作成された **ArcGISMap** ゲーム オブジェクトを確認できます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgismap-game-object.png" width="650px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgismap-game-object-2-0.png" width="650px">
 
 [ヒエラルキー (Hierarchy)] ウィンドウで **ArcGISMap** ゲーム オブジェクトをクリックすると、ゲーム オブジェクトに **ArcGIS Map** コンポーネントがアタッチされていることがわかります。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/no-api-arcgis-map-component.png" width="650px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/no-api-arcgis-map-component-2-0.png" width="650px">
 
 **ArcGIS Map** の作成の詳細については、[Maps](https://developers.arcgis.com/unity/maps/) のページを参照してください。
 
@@ -103,14 +103,14 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 **ArcGIS Maps SDK for Unity** は、カメラに近いエリアにはより高い解像度の LOD を表示し、カメラから遠いエリアにはより低い解像度の LOD を表示します。
 
 1. [Camera] タブをクリックする。
-2. [Camera Position] はカメラの初期視点を定義します。パラメーターをこれらの値に設定します :
+2. [Camera Position] はカメラの初期視点を定義します。パラメーターをこれらの値に設定します。
 
     * Longitude : 139.745723
     * Latitude : 35.659041
     * Altitude : 290
     * Spatial Reference WKID : 4326
 
-3. [Camera Rotation] はカメラの角度を定義します。パラメーターをこれらの値に設定します :
+3. [Camera Rotation] はカメラの角度を定義します。パラメーターをこれらの値に設定します。
 
     * Heading : 270
     * Pitch : 93
@@ -120,11 +120,11 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 以下が、[Camera] パネルに入力した画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-tokyo-camera.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-tokyo-camera-2-0.png" width="400px">
 
 [ヒエラルキー (Hierarchy)] ウィンドウで、**Main Camera** ゲーム オブジェクトが **ArcGISCamera** ゲーム オブジェクトに変換され、**ArcGISMap** ゲーム オブジェクトの下に移動していることがわかります。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgiscamera-game-opject.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgiscamera-game-opject-2-0.png" width="400px">
 
 {{% notice note %}}
 
@@ -132,9 +132,9 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 {{% /notice %}}
 
-この時点で、追加するベースマップとデータ レイヤーを見るために、[Sky and Fog Volume] の [フォグ (Fog)] を無効にするとよいでしょう。このチュートリアルの最後では、ライティングを調整します。
+この時点で、追加するベースマップとデータ レイヤーを見るために、**Volume Proflie** の [フォグ (Fog)] を無効にするとよいでしょう。このチュートリアルの最後では、ライティングを調整します。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/disable-fog.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/disable-fog-2-0.png" width="500px">
 
 カメラについての詳細は、[Camera](https://developers.arcgis.com/unity/maps/camera/) のページを参照してください。
 
@@ -149,32 +149,32 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 以下が、プリセットからベースマップを [Imagery] に設定した画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-basemap-apikey.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-basemap-apikey-2-0.png" width="450px">
 
 
 ### API キーの設定
 
 前のセクションで選択したプリセット ベースマップには API キーが必要です。
 
-1. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)にアクセスして API キーを取得してください。
+1. ポータルへアクセスして API キーを取得してください。
 
 2. [Auth] タブをクリックしてパネルの内容を表示します。
 
 3. [API Key] セクションで API キーを設定します。
 
-このスクリーンショットで `Paste your API key here` と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、UI の [[API キーの取得](../../get-api-key/)] をクリックしてください。
+このスクリーンショットで `Paste your API key here` と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、[[API キーの取得](../../get-api-key/)] をご覧ください。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/api-key-ui.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/api-key-ui-2-0.png" width="400px">
 
 Unity プロジェクト内の複数のシーンに対してグローバル API キーを設定するもう 1 つの方法は、プロジェクト設定です。API キーの詳細については、[API キー](https://developers.arcgis.com/unity/authentication/#api-keys)のセクションを参照してください。
 
 [Basemap] タブに戻ると、以前はグレーアウトしていたベースマップ アイコンが有効になり、API キーが正常に登録されたことがわかります。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-basemap.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-basemap-2-0.png" width="450px">
 
 この時点で、ローカル エクステントを持つマップデータが表示されるはずです。[シーン (Scene)] ビューに何も表示されない場合は、[ヒエラルキー (Hierarchy)] ウィンドウを開き、[ArcGIS Camera] をダブル クリックしてエディター カメラの位置を移動し、角度を調整してマップを表示します。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/map-preview1.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/map-preview1-2-0.png" width="500px">
 
 {{% notice tip %}}
 
@@ -193,8 +193,9 @@ Unity プロジェクト内の複数のシーンに対してグローバル API 
 
 以下が、設定した [Elevation] パネルの画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-elevation.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/set-elevation-2-0.png" width="450px">
 
+標高の詳細については、[Elevation](https://developers.arcgis.com/unity/maps/elevation/) のページを参照してください。
 
 ### データ レイヤーの追加
 
@@ -211,7 +212,7 @@ ArcGIS Online から使用できるデータを追加します。
 
 1. [Layers] タブをクリックします。
 
-2. 右下の [Add New] ボタンを押して、[Add New Layer] ポップアップ ウィンドウを開きます。
+2. 右下の [+ Add New] ボタンを押して、[Add New Layer] ポップアップ ウィンドウを開きます。
 
 3. [Type] のドロップダウン リストから適切なレイヤー タイプを選択します。
 
@@ -225,7 +226,7 @@ ArcGIS Online から使用できるデータを追加します。
 
 以下が、[Layers] パネルの画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/add-data-1_5_0.png" width="400px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/add-data-2-0.png" width="400px">
 
 
 ### 空とライティングの調整
@@ -244,21 +245,21 @@ Unity には空とライティングのシステムがあります。詳しく�
 
 以下が、設定した **Sun** ゲーム オブジェクトの画像です。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/sun-settings.png" width="500px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/sun-settings-2-0.png" width="500px">
 
 #### 空と霧のボリュームの調整
 
-1. [ヒエラルキー (Hierarchy)] ウィンドウの [Sky and Fog Volume] をクリックします。
+1. [ヒエラルキー (Hierarchy)] ウィンドウの **Volume Profile** をクリックします。
 
-2. **ArcGIS Maps SDK for Unity** には、HDRP 用の Sky and Fog Volume のサンプル プロファイルが用意されています。[インスペクター (Inspector)] ウィンドウの [Volume] セクションで、プロファイル名の横にあるアイコンをクリックします。
+2. **ArcGIS Maps SDK for Unity** には、HDRP 用の Sky and Fog volume のサンプル プロファイルが用意されています。[インスペクター (Inspector)] ウィンドウの [Volume] セクションで、**プロフィール**名の横にあるアイコンをクリックします。
 
 3. ポップアップ ウィンドウで [Sky and Fog Settings SampleScenes Profile] を選択します。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/select-sample-volume-profile.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/select-sample-volume-profile-2-0.png" width="450px">
 
 ### カメラ コントローラーのアタッチ
 
-エディター モードが有効になっている間、ビューポート内をナビゲートするために、**シーン (Scene)** ビューカメラがあります。プレイ モードでは、シーンを探索するためにカメラ コントローラーをアタッチする必要があります。このチュートリアルでは、**ArcGIS Maps SDK for Unity** のサンプル アセットからコントローラーをアタッチします。
+エディター モードが有効になっている間、ビューポート内をナビゲートするために、**シーン (Scene)** ビュー カメラがあります。プレイ モードでは、シーンを探索するためにカメラ コントローラーをアタッチする必要があります。このチュートリアルでは、**ArcGIS Maps SDK for Unity** のサンプル アセットからコントローラーをアタッチします。
 
 1. [ヒエラルキー (Hierarchy)] ウィンドウで [ArcGISCamera] をクリックします。
 
@@ -266,8 +267,8 @@ Unity には空とライティングのシステムがあります。詳しく�
 
 3. [ArcGIS Camera Controller] を検索し、[ArcGISCamera] ゲーム オブジェクトにアタッチします。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/attach-camera-controller.png" width="450px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/attach-camera-controller-2-0.png" width="450px">
 
 **Map Creator UI** でマップの設定が完了しました。[Toolbar] の [Play] アイコンをクリックすると、[ゲーム (Game)] ビューにマップが表示されます。
 
-**WASD** キーで左右前後に移動します。マウスの左ボタンでシーンをパン、右ボタンでオービット、スクロール ホイールで拡大・縮小します。
+**<WASD>** キーで左右前後に移動します。マウスの左ボタンでシーンをパン、右ボタンでオービット、スクロール ホイールで拡大・縮小します。
