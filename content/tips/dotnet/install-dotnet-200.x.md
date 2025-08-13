@@ -19,14 +19,14 @@ ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされ
 たとえば、Windows の Visual Studio で ArcGIS Maps SDK for.NET への参照を追加するには、次の手順に従います。
 
 1. [Visual Studio Solution Explorer] ウィンドウで、[Project] を右クリックし、[Manage NuGet Packages] を選択します。
-2. [Browse] タブを選択し、<b>パッケージソース</b>として [nuget.org] を選択します。
-3. <b>検索</b>テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。
+2. [Browse] タブを選択し、**パッケージソース**として [nuget.org] を選択します。
+3. **検索** テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。
 
     <img src="https://developers.arcgis.com/net/static/b895780c277623dc7fee9eae929c7444/d7ab4/nuget-package-manager-online-markup-v200.png" width="650px">
 
 4. インストールする NuGet パッケージを選択し、[インストール] ボタンをクリックします。NuGet パッケージ マネージャーの詳細については、Microsoft ドキュメントの [NuGet パッケージ マネージャーを使用して Visual Studio にパッケージをインストールして管理する](https://learn.microsoft.com/ja-jp/nuget/consume-packages/install-use-packages-visual-studio) を参照してください。
 5. [変更のプレビュー] ダイアログで内容を確認し、[OK] を選択してインストールを進めてください。
-6. インストールが完了すると、<b>NuGet パッケージ マネージャー</b>の [インストール済み] タブに追加したパッケージが表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。
+6. インストールが完了すると、**NuGet パッケージ マネージャー**の [インストール済み] タブに追加したパッケージが表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。
 
 ### Toolkit
 
@@ -120,7 +120,9 @@ ArcGIS Maps SDK for Local Server は非推奨です。詳細は [サポート終
 #### Electronic Navigational Charts (ENC)
 航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/) の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf)に準拠した ENC をサポートしています。
 
-航海用電子海図 (ENC) を使用する場合は、`Esri.ArcGISRuntime.Hydrography` NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography](https://developers.arcgis.com/net/downloads/#hydrography-data) データをダウンロードします。ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/net/layers/display-electronic-navigational-charts/) のトピックを参照してください。
+航海用電子海図 (ENC) を使用する場合は、`Esri.ArcGISRuntime.Hydrography` NuGet パッケージをアプリに追加するか、ダウンロード ページから [hydrography](https://developers.arcgis.com/net/downloads/#hydrography-data) データをダウンロードします。
+
+ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/net/layers/display-electronic-navigational-charts/) のトピックを参照してください。
 
 ### ArcGIS Maps SDK for .NET を使用したオフライン環境での開発
 #### NuGet パッケージとプロジェクト テンプレート
@@ -133,7 +135,7 @@ ArcGIS Maps SDK for Local Server は非推奨です。詳細は [サポート終
 {{% /notice %}}
 
 #### Visual Studio 拡張機能をダウンロードしてインストールする
-プロジェクト テンプレート拡張機能と NuGet パッケージ拡張機能の両方を、[ダウンロードページ](https://developers.arcgis.com/net/downloads/#arcgis-maps-sdk-for-net) からダウンロードできます。
+プロジェクト テンプレート拡張機能と NuGet パッケージ拡張機能の両方を、[ダウンロード ページ](https://developers.arcgis.com/net/downloads/#arcgis-maps-sdk-for-net) からダウンロードできます。
 
 1. 開発マシンからアクセスできる場所にファイルを保存します。
 2. ダウンロードした Visual Studio 拡張機能をインストールするには、.vsix ファイルをダブルクリックします (またはファイルを選択して <b>Enter</b> キーを押します)。
@@ -166,7 +168,7 @@ ArcGIS Maps SDK for Local Server は非推奨です。詳細は [サポート終
 {{% /notice %}}
 
 ローカルでドキュメントを公開する方法
-* 使用する SDK のドキュメントを[ダウンロード](https://developers.arcgis.com/net/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
+* 使用する SDK の[ドキュメントをダウンロード](https://developers.arcgis.com/net/downloads/)します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。
 * アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、`public` と `install` という 2 つのサブフォルダがあります。
 * `install` フォルダ内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。
 

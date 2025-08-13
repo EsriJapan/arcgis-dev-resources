@@ -67,7 +67,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 {{% notice warning %}}
 
-チュートリアルの後の設定ステップでは、リダイレクト URL が my-app://auth であると仮定します。別の URL を使用する場合は、それに応じてアプリの設定を行ってください。
+チュートリアルの後の設定ステップでは、リダイレクト URL が `my-app://auth` であると仮定します。別の URL を使用する場合は、それに応じてアプリの設定を行ってください。
 
 {{% /notice %}}
 
@@ -142,7 +142,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 2. Visual Studio エラー リストに `The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net8.0-windows'. Target 'net8.0-windows10.0.19041.0' or later instead.` のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
 
-    * <b>ソリューション エクスプローラー</b>で、ツリー ビューの <b>DisplayAMap</b> プロジェクト エントリを右クリックし、[プロジェクト ファイルの編集] を選択します。
+    * <b>ソリューション エクスプローラー</b>で、ツリー ビューの <b>DisplayAMap</b> プロジェクト エントリーを右クリックし、[プロジェクト ファイルの編集] を選択します。
 
     *  `<TargetFramework>` 要素を `net8.0-windows10.0.19041.0`（またはそれ以上）で更新します。
 
@@ -259,7 +259,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 6. `MapViewModel` クラスに `SetupMap` という関数を追加します。この関数は、新しいマップを作成して `Map` プロパティを設定します。
 
-   マップは、地形図ベクター タイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
+    地図は、セキュアな ArcGIS ベースマップ スタイルの1つを使用し、富士山を中心に表示されます。
+
+    マップは、地形図ベクター タイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
 
     MapViewModel.cs
 
@@ -804,7 +806,7 @@ OAuth 認証情報は、このチュートリアルの便宜上、コードに�
 ## オプション 2: 完成したソリューションをダウンロードする
 1. [Download solution](https://developers.arcgis.com/net/zips/display-a-map.zip) をクリックしてください。
 2. マシンの任意の場所にファイルを解凍します。
-3. `.sln` ファイルを Visual Studio で開きます。
+3. `.sln` ファイルを **Visual Studio** で開きます。
 
 ダウンロードしたソリューションには認証情報が含まれていないため、[認証の設定](#認証の設定)で作成した開発者認証情報を追加する必要があります。
 
@@ -812,8 +814,8 @@ OAuth 認証情報は、このチュートリアルの便宜上、コードに�
 アプリのユーザーが ArcGIS ロケーション サービスやセキュアなコンテンツにアクセスできるようにするには、[認証の設定](#認証の設定)ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。
 
 #### API キー認証
-1. Visual Studio の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。
-2. `ArcGISEnvironment.ApiKey` プロパティに API キーのアクセス トークンを設定します。
+1. **Visual Studio** の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。
+2. `ArcGISEnvironment.ApiKey` プロパティーに API キーのアクセス トークンを設定します。
 
 App.xaml.cs
 ```csharp
@@ -903,7 +905,7 @@ OAuth 認証情報は、このチュートリアルの便宜上、コードに�
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。
 
-カリフォルニア州サンタモニカ山脈を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
+富士山を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
 
 ## 次のチュートリアル
 これらのチュートリアルでは、追加の [API 機能](https://developers.arcgis.com/net/key-features/)、[ArcGIS ロケーション サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)および [ArcGIS ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/tools/)の使用方法について説明します。(英語ページ)

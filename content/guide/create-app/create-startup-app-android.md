@@ -694,7 +694,7 @@ API キーを使用すると、ArcGIS Online でホストされているサー�
     }
     ```
 
-4. [app] > [manifests] > [AndroidManifest.xml] を開きます。OAuth ユーザー サインイン アクティビティを宣言する `<activity>` タグを追加します。**RedirectURL** のスキームとホストを使用して、`android:scheme` と `android:host` を設定します。  
+4. [app] > [manifests] > [AndroidManifest.xml] を開きます。OAuth ユーザー サインイン アクティビティーを宣言する `<activity>` タグを追加します。**RedirectURL** のスキームとホストを使用して、`android:scheme` と `android:host` を設定します。  
 redirectURL は scheme と host コンポーネントで構成されます。リダイレクト URL のフォーマットは `scheme://host` です。たとえば、リダイレクト URL が `myscheme://myhost` の場合、スキームは `myscheme`、ホストは `myhost` となります。[認証の設定](#認証の設定)ステップの`ユーザー認証`の部分で、アプリに指定した **RedirectURL** を使用する必要があります。
 
   AndroidManifest.xml
@@ -901,7 +901,7 @@ class MainActivity : ComponentActivity() {
 
 [Run] > [Run] > [app] をクリックしてアプリを実行します。
 
-カリフォルニア州サンタモニカ山脈を中心とした地形ベースマップ レイヤーの地図が表示されるはずです。マップ ビューをピンチ、ドラッグ、ダブルタップしてマップを探索します。
+富士山を中心とした地形ベースマップ レイヤーの地図が表示されるはずです。マップ ビューをピンチ、ドラッグ、ダブルタップしてマップを探索します。
 
 ---
 

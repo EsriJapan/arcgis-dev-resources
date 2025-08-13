@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-13T13:10:39 JST">
+<meta name="revised" content="2025-08-13T16:58:29 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1042,10 +1042,10 @@ if (!doNotTrack) {
 <p>[Visual Studio Solution Explorer] ウィンドウで、[Project] を右クリックし、[Manage NuGet Packages] を選択します。</p>
 </li>
 <li>
-<p>[Browse] タブを選択し、<b>パッケージソース</b>として [nuget.org] を選択します。</p>
+<p>[Browse] タブを選択し、<strong>パッケージソース</strong>として [nuget.org] を選択します。</p>
 </li>
 <li>
-<p><b>検索</b>テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。</p>
+<p><strong>検索</strong> テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。</p>
  <img src="https://developers.arcgis.com/net/static/b895780c277623dc7fee9eae929c7444/d7ab4/nuget-package-manager-online-markup-v200.png" width="650px">
 </li>
 <li>
@@ -1055,7 +1055,7 @@ if (!doNotTrack) {
 <p>[変更のプレビュー] ダイアログで内容を確認し、[OK] を選択してインストールを進めてください。</p>
 </li>
 <li>
-<p>インストールが完了すると、<b>NuGet パッケージ マネージャー</b>の [インストール済み] タブに追加したパッケージが表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。</p>
+<p>インストールが完了すると、<strong>NuGet パッケージ マネージャー</strong>の [インストール済み] タブに追加したパッケージが表示され、ArcGIS Maps SDK for .NET を使用して開発できるようになります。</p>
 </li>
 </ol>
 <h3 id="toolkit">Toolkit</h3>
@@ -1134,7 +1134,8 @@ if (!doNotTrack) {
 <p><a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/#grid-based-transformations">グリッド ベースの変換</a>を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/net/downloads/#projection-engine-data">Projection Engine ファイル</a>をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、<a href="https://developers.arcgis.com/net/spatial-and-data-analysis/spatial-references/">Spatial references</a> のトピックを参照してください。</p>
 <h4 id="electronic-navigational-charts-enc">Electronic Navigational Charts (ENC)</h4>
 <p>航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、<a href="https://iho.int/en/">国際水路機関（IHO）</a> の <a href="https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf">S-57 規格</a>に準拠した ENC をサポートしています。</p>
-<p>航海用電子海図 (ENC) を使用する場合は、<code>Esri.ArcGISRuntime.Hydrography</code> NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/net/downloads/#hydrography-data">hydrography</a> データをダウンロードします。ENC データの操作の詳細については、<a href="https://developers.arcgis.com/net/layers/display-electronic-navigational-charts/">Display electronic navigational charts</a> のトピックを参照してください。</p>
+<p>航海用電子海図 (ENC) を使用する場合は、<code>Esri.ArcGISRuntime.Hydrography</code> NuGet パッケージをアプリに追加するか、ダウンロード ページから <a href="https://developers.arcgis.com/net/downloads/#hydrography-data">hydrography</a> データをダウンロードします。</p>
+<p>ENC データの操作の詳細については、<a href="https://developers.arcgis.com/net/layers/display-electronic-navigational-charts/">Display electronic navigational charts</a> のトピックを参照してください。</p>
 <h3 id="arcgis-maps-sdk-for-net-を使用したオフライン環境での開発">ArcGIS Maps SDK for .NET を使用したオフライン環境での開発</h3>
 <h4 id="nuget-パッケージとプロジェクト-テンプレート">NuGet パッケージとプロジェクト テンプレート</h4>
 <p>オンライン アクセスが制限された環境でアプリを開発している場合は、ローカルの NuGet パッケージ フィードから ArcGIS Maps SDK for .NET を参照することができます。 NuGet.org で公開されている NuGet パッケージのサブセットを含む、追加の Visual Studio (Windows) 拡張機能を利用できます。 この拡張機能をインストールすると、ユーザー プロファイルの <code>%localappdata%\Esri\NuGet</code> の下にローカル NuGet パッケージ ソースが構成されます。 詳細については、Microsoft のドキュメントの <a href="https://learn.microsoft.com/nuget/hosting-packages/local-feeds">ローカル NuGet パッケージ フィード</a> を参照してください。</p>
@@ -1142,7 +1143,7 @@ if (!doNotTrack) {
 <p>このリリースでは、WPF、WinUI、.NET MAUI プロジェクト テンプレートには Visual Studio 17.8 以降が必要です。</p>
 </div>
 <h4 id="visual-studio-拡張機能をダウンロードしてインストールする">Visual Studio 拡張機能をダウンロードしてインストールする</h4>
-<p>プロジェクト テンプレート拡張機能と NuGet パッケージ拡張機能の両方を、<a href="https://developers.arcgis.com/net/downloads/#arcgis-maps-sdk-for-net">ダウンロードページ</a> からダウンロードできます。</p>
+<p>プロジェクト テンプレート拡張機能と NuGet パッケージ拡張機能の両方を、<a href="https://developers.arcgis.com/net/downloads/#arcgis-maps-sdk-for-net">ダウンロード ページ</a> からダウンロードできます。</p>
 <ol>
 <li>
 <p>開発マシンからアクセスできる場所にファイルを保存します。</p>
@@ -1188,7 +1189,7 @@ if (!doNotTrack) {
 </div>
 <p>ローカルでドキュメントを公開する方法</p>
 <ul>
-<li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/net/downloads/">ダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
+<li>使用する SDK の<a href="https://developers.arcgis.com/net/downloads/">ドキュメントをダウンロード</a>します。ダウンロードしたファイルは、.zip アーカイブ形式になっています。</li>
 <li>アーカイブをローカル フォルダに解凍します。解凍されたアーカイブには、<code>public</code> と <code>install</code> という 2 つのサブフォルダがあります。</li>
 <li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
 </ul>

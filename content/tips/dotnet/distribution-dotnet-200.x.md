@@ -26,7 +26,7 @@ ArcGIS Maps SDK for .NET (バージョン 200.x) を使用して開発したア�
 
 3. __[ライセンスの認証](#ライセンスの認証)__
     * __[Lite ライセンス キーを使用した認証](#lite-ライセンスキーを使用した認証)__
-    * __[配布パックのライセンス キーを使用した認証](#配布パックのライセンスキーを使用した認証)__
+    * __[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)__
     * __[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)__
 
 
@@ -59,8 +59,8 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
     * 指定ユーザーによるアカウント認証とは、ArcGIS Online または ArcGIS Enterprise の組織のメンバーである ArcGIS 組織アカウントを使用してログイン認証を行います。
     * ログインを行う指定ユーザー アカウントのタイプによって関連付けられたライセンスのレベルが異なり、また認証はアプリにコードを含める必要があります。
 
-### 指定ユーザーのユーザー タイプとライセンスレベルの対比表
-| ユーザー タイプ | ライセンスレベル |
+### 指定ユーザーのユーザー タイプとライセンス レベルの対比表
+| ユーザー タイプ | ライセンス レベル |
 |:-----------|:------------|
 | Viewer | Lite | 
 | Contributor / Mobile Worker | Basic |
@@ -74,7 +74,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
     * 認証の方法は、[Lite ライセンス キーを使用した認証](#lite-ライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Lite ライセンスレベルを保有する）が必要です
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Lite ライセンス レベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
@@ -82,10 +82,10 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Basic の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Basic ライセンスレベルを保有する）が必要です
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Basic ライセンス レベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
@@ -93,11 +93,11 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Standard の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
-    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Standard ライセンスレベルを保有する）が必要です
+    * アプリケーションを使用するユーザーごとに ArcGIS Online 組織向けプラン/ Portal for ArcGIS の指定ユーザー アカウント（ArcGIS Runtime Standard ライセンス レベルを保有する）が必要です
     * アプリケーションが少なくとも 30 日に 1 回は ArcGIS Online 組織向けプラン/ Portal for ArcGIS へログインする必要があります
     * 認証の手順は、[指定ユーザー アカウントを使用した認証](#指定ユーザー-アカウントを使用した認証)をご参照ください
 
@@ -105,7 +105,7 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 
 1. __ライセンス キーを使用した認証__
     * ArcGIS Runtime Advanced の配布パックを購入する必要があります
-    * 認証の手順は、[配布パックのライセンスキーを使用した認証](#配布パックのライセン-スキーを使用した認証)をご参照ください
+    * 認証の手順は、[配布パックのライセンス キーを使用した認証](#配布パックのライセンス-キーを使用した認証)をご参照ください
 
 2. __ArcGIS Online / Portal for ArcGIS へのログインによる認証__<br>
 注意：この認証は、Portal for ArcGIS をご利用の場合は、ArcGIS Enterprise 10.7 以前のバージョンでは使用できません。
@@ -151,7 +151,7 @@ ArcGIS Runtime Lite のライセンス キーを Esri Developer のサイトか�
     * いずれかのアカウントもお持ちでない場合は、ArcGIS Location Platform アカウントに [サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
  2. 表示されたライセンス キーをコピーします
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/lite_license.png" width="600px">
- 3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンスキーを設定します。
+ 3. 次に、アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用してアプリケーションにコピーしたライセンス キーを設定します。
 
     ```c#
     // 取得したライセンス文字列でアプリのライセンスを設定します
@@ -159,11 +159,11 @@ ArcGIS Runtime Lite のライセンス キーを Esri Developer のサイトか�
     ArcGISRuntimeEnvironment.SetLicense(licenseKey);
     ```
 
-### 配布パックのライセンスキーを使用した認証
+### 配布パックのライセンス キーを使用した認証
 
-ArcGIS Runtime の配布パックを購入し、取得したライセンスキーを利用して、アプリケーションを認証することができます。
+ArcGIS Runtime の配布パックを購入し、取得したライセンス キーを利用して、アプリケーションを認証することができます。
 
-ArcGIS Runtime の配布パックの購入については[ESRIジャパン](https://www.esrij.com/form/inquiry/)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンスキーをメールにてお送りします。
+ArcGIS Runtime の配布パックの購入については[ESRIジャパン](https://www.esrij.com/form/inquiry/)にお問合せください。ArcGIS Runtime の配布パックをご購入頂いた場合、ESRIジャパンよりライセンス キーをメールにてお送りします。
 
 アプリケーションのコードにおいて SDK の機能が呼び出される前に、以下のコードを使用して配布パックのライセンスキーを設定します。
 
@@ -195,7 +195,7 @@ Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.SetLicense(licenseKey, extensions);
 // ポータルの認証情報をユーザーに要求します (arcgis.com の OAuth 認証情報のリクエスト)
 CredentialRequestInfo loginInfo = new CredentialRequestInfo();
 
-// OAuth の暗黙的なグラントフローを使用します
+// OAuth の暗黙的なグラント フローを使用します
 loginInfo.GenerateTokenOptions = new GenerateTokenOptions
 {
     TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit
@@ -206,7 +206,7 @@ loginInfo.ServiceUri = new Uri("http://www.arcgis.com/sharing/rest");
 
 try
 {
-    // AuthenticationManager の GetCredentialAsync を呼び出し、チャレンジハンドラを起動します
+    // AuthenticationManager の GetCredentialAsync を呼び出し、チャレンジ ハンドラーを起動します
     Credential cred = await AuthenticationManager.Current.GetCredentialAsync(loginInfo, false);
     AuthenticationManager.Current.AddCredential(cred);
 
@@ -226,7 +226,7 @@ catch (Exception ex)
 }
 ```
 
-ライセンス情報をローカルストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリを認証します。
+ライセンス情報をローカル ストレージに保存した場合、保存したライセンス情報を使用して、オフライン環境でアプリを起動してライセンスを取得できます。ストレージからライセンスを取得し、アプリを認証します。
 
 ```c#
 // LicenseInfo を JSON 形式のテキストとして取得します
