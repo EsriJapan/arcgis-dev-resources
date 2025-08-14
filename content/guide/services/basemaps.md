@@ -304,7 +304,7 @@ L.esri.Vector.vectorBasemapLayer("arcgis/light-gray", {
 ```
 
 <div style="text-align: right;">
-<a href="https://developers.arcgis.com/esri-leaflet/maps/change-the-place-label-language/">チュートリアルへ</a>
+<a href="https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemaps/arcgis-styles/#change-the-place-label-language">チュートリアルへ</a>
 </div>
 
 
