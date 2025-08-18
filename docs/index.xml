@@ -240,10 +240,10 @@ ArcGIS Location Platform アカウントの作成 以下の手順で ArcGIS Loca
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</guid>
       <description>出典：Security and authentication guide - Tutorial: Create an API key
 APIキーの認証情報を使用してAPIキーを作成し、管理する方法を学びます。
-API キーとは API キーは、ArcGIS の安全なサービス、コンテンツ、および機能へのアクセスをアプリケーションに許可する、長期間のアクセス トークンです。API キーは、ポータルでホストされているアイテムの一種である API キーの認証情報を使用して生成されます。API キーの認証情報には、API キーを生成し、その権限や有効期限などのプロパティを管理するための設定が含まれています。 API キーの認証情報を作成し、アプリケーションで API キーを使用するプロセスは、API キー認証として知られています。
+API キーとは API キーは、ArcGIS のセキュアなサービス、コンテンツ、および機能へのアクセスをアプリケーションに許可する、長期間のアクセス トークンです。API キーは、ポータルでホストされているアイテムの一種である API キーの認証情報を使用して生成されます。API キーの認証情報には、API キーを生成し、その権限や有効期限などのプロパティを管理するための設定が含まれています。 API キーの認証情報を作成し、アプリケーションで API キーを使用するプロセスは、API キー認証として知られています。
 このガイドでは、APIキーの認証情報を作成し、以下のことを行う方法を説明します。
  長期的な API キーを生成し、アプリケーションに保存 API キーが ArcGIS のサービス、コンテンツ、および機能にアクセスできる権限の設定 API キーの有効期限と参照元 URL の設定 API キーの認証情報のアイテムページを使用した、API キーの管理  API キーの詳細については Introduction to API key authentication (英語) をご参照ください。
-前提条件  ArcGIS Location Platform アカウントまたは ArcGIS Online アカウントが必要です。ArcGIS Online アカウントをお持ちの場合は、アカウントに管理者権限または API キーの生成権限を持つカスタム ロールが設定されている必要があります。詳細については、Limitations を参照してください。 アプリケーションに必要な権限を確認します。詳細は Privileges を参照してください。  API キーの作成手順 ポータルにサイン イン APIキーの認証情報を含むアイテムの作成と管理にはポータルを使用します。</description>
+前提条件  ArcGIS Location Platform アカウント、ArcGIS Online アカウント、ArcGIS Enterprise アカウントのいずれかが必要です。ArcGIS Online アカウントおよび ArcGIS Enterprise アカウントの場合は、アカウントに適切なユーザー タイプとロールが設定されている必要があります。詳細については、製品およびアカウントの要件 を参照してください。 API キーに割り当てる権限を把握する必要があります。割り当てられた権限により、アプリケーションは特定の ArcGIS サービスおよびリソースにアクセスできるようになります。詳細は Privileges を参照してください。  API キーの作成手順 ポータルにサイン イン APIキーの認証情報を含むアイテムの作成と管理にはポータルを使用します。</description>
     </item>
     
     <item>
