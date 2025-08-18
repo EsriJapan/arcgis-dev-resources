@@ -78,7 +78,7 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript お�
 {{% /notice %}}
 
 以下のコードは、マップのビューの準備ができるのを待ちます。ビューの準備が整えば、さらに機能を追加することができます。
-```
+```html
 <script type="module">
   const Graphic = await $arcgis.import("@arcgis/core/Graphic.js");
   const viewElement = document.querySelector("arcgis-map");

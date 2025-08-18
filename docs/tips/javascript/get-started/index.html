@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-14T13:56:58 JST">
+<meta name="revised" content="2025-08-18T17:22:46 JST">
 <title>開発の手順 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1089,22 +1089,22 @@ if (!doNotTrack) {
 <p><code>$arcgis.import()</code> メソッドは、CDN 経由で使用する場合の ArcGIS Maps SDK for JavaScript 専用であり、標準の ES モジュール システムのネイティブ機能ではありません。</p>
 </div>
 <p>以下のコードは、マップのビューの準備ができるのを待ちます。ビューの準備が整えば、さらに機能を追加することができます。</p>
-<pre><code>&lt;script type=&quot;module&quot;&gt;
-  const Graphic = await $arcgis.import(&quot;@arcgis/core/Graphic.js&quot;);
-  const viewElement = document.querySelector(&quot;arcgis-map&quot;);
-  // Wait for the view to be ready before adding additional functionality
-  await viewElement.viewOnReady();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Graphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">$arcgis</span>.<span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#34;@arcgis/core/Graphic.js&#34;</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">viewElement</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;arcgis-map&#34;</span>);
+  <span style="color:#75715e">// Wait for the view to be ready before adding additional functionality
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">viewElement</span>.<span style="color:#a6e22e">viewOnReady</span>();
 
   ...
 
-  // Create a graphic and add the geometry and symbol to it
-  const pointGraphic = new Graphic({
-    geometry: point, // A point geometry
-    symbol: markerSymbol // A symbol for drawing the point
-  })
-  viewElement.graphics.add(pointGraphic);
-&lt;/script&gt;
-</code></pre><h2 id="npm">npm</h2>
+  <span style="color:#75715e">// Create a graphic and add the geometry and symbol to it
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pointGraphic</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graphic</span>({
+    <span style="color:#a6e22e">geometry</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">point</span>, <span style="color:#75715e">// A point geometry
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">markerSymbol</span> <span style="color:#75715e">// A symbol for drawing the point
+</span><span style="color:#75715e"></span>  })
+  <span style="color:#a6e22e">viewElement</span>.<span style="color:#a6e22e">graphics</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">pointGraphic</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h2 id="npm">npm</h2>
 <p><a href="https://vitejs.dev/">Vite</a> のような最新のビルド ツールや、<a href="https://react.dev/">React</a>、<a href="https://angular.dev/">Angular</a>、<a href="https://vuejs.org/">Vue</a> のような JavaScript フレームワークの場合は、<a href="https://docs.npmjs.com/about-npm">npm</a> のようなパッケージ マネージャー経由で JavaScript Maps SDK をインストールすることをお勧めします。</p>
 <h3 id="セットアップ-1">セットアップ</h3>
 <p><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">node.js と npm</a> の最新の長期サポート（LTS）バージョンを使用していることを確認してください。次に、好みのビルド ツールやフレームワークの推奨テンプレートを使ってプロジェクトの大枠を作成します。モジュール バンドラーとローカル Web サーバーを含むクライアント サイド ビルド ツールである Vite には、多くの<a href="https://vite.dev/guide/">テンプレート プロジェクト</a>が用意されています。</p>
