@@ -73,7 +73,7 @@ API キーの認証情報は、API キーと呼ばれる長期間のアクセス
 {{% /notice %}}
 
 ### 権限の選択
-API キーの認証情報を設定することで、アクセス トークンの権限を校正できます。アプリケーションでアクセス トークンを正常に機能させるためには、アプリケーションが使用するコンテンツやサービスにアクセスするための適切な権限が必要です。必要な権限を選択して、API キーのアクセス トークンに適用してください。
+API キーの認証情報を設定することで、アクセス トークンの権限を構成できます。アプリケーションでアクセス トークンを正常に機能させるためには、アプリケーションが使用するコンテンツやサービスにアクセスするための適切な権限が必要です。必要な権限を選択して、API キーのアクセス トークンに適用してください。
 
 {{% notice note %}}
 
@@ -88,10 +88,11 @@ API キーの認証情報を設定することで、アクセス トークンの
 {{% notice note %}}
 
 開発者の認証情報に権限が表示されない場合は、アカウントに適切な権限が設定されていない可能性があります。[前提条件](#前提条件)をご確認ください。  
+また、アカウントの種類に応じて利用可能なロケーションサービスについては __[List of privileges](https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/#list-of-privileges)__ をご参照ください。
 
 {{% /notice %}}
 
-アカウントの種類に応じて利用可能なロケーションサービスについては [List of privileges](https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/#list-of-privileges) をご参照ください。
+
 
 2. アプリケーションに必要な権限を選択し、[次へ] をクリックします。
 
