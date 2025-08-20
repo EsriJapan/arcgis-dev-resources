@@ -148,10 +148,10 @@ API キー認証  ユーザーはサイン インする必要がありません�
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for Flutter を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-このマップとコードは、他の 2D チュートリアルの出発点として使用されます。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
 Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。 これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。
-  macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。</description>
+  macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。
+brew install openjdk@17sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@ API キー認証  ユーザーはサイン インする必要がありません�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
-      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
+      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map（UI）
 マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
 このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unity で作成します。
 ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。

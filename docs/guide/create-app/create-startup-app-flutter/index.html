@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-19T09:38:37 JST">
+<meta name="revised" content="2025-08-20T19:07:17 JST">
 <title>Flutter :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -774,13 +774,6 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
-            新規プロジェクトにプラグインを追加
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
@@ -998,17 +991,26 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#マップを表示する">マップを表示する</a></li>
     <li><a href="#前提条件">前提条件</a></li>
-    <li><a href="#ステップ">ステップ</a>
+    <li><a href="#認証の設定">認証の設定</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#開発またはダウンロード">開発またはダウンロード</a></li>
+    <li><a href="#オプション-1コードを開発する">オプション 1:コードを開発する</a>
       <ul>
         <li><a href="#新しい-flutter-アプリを作成する">新しい Flutter アプリを作成する</a></li>
         <li><a href="#arcgis-maps-sdk-for-flutter-を追加する">ArcGIS Maps SDK for Flutter を追加する</a></li>
         <li><a href="#プラットフォーム固有の構成">プラットフォーム固有の構成</a></li>
-        <li><a href="#アクセス-トークンを取得する">アクセス トークンを取得する</a></li>
-        <li><a href="#api-キーを設定する">API キーを設定する</a></li>
+        <li><a href="#開発者資格情報を設定する">開発者資格情報を設定する</a></li>
         <li><a href="#マップを追加する">マップを追加する</a></li>
         <li><a href="#アプリを実行する">アプリを実行する</a></li>
-        <li><a href="#ダウンロードしたソリューションを実行する">ダウンロードしたソリューションを実行する</a></li>
-        <li><a href="#web-マップを表示する">Web マップを表示する</a></li>
+      </ul>
+    </li>
+    <li><a href="#オプション-2完成したソリューションをダウンロードする">オプション 2:完成したソリューションをダウンロードする</a>
+      <ul>
+        <li><a href="#ソリューションに開発者資格情報を設定する">ソリューションに開発者資格情報を設定する</a></li>
+        <li><a href="#アプリを実行する-1">アプリを実行する</a></li>
       </ul>
     </li>
   </ul>
@@ -1036,7 +1038,6 @@ if (!doNotTrack) {
 <img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/display-a-map-flutter.png" width="650px">
 <p>マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。</p>
 <p>このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。</p>
-<p>このマップとコードは、<a href="https://developers.arcgis.com/flutter/tutorials/">他の 2D チュートリアル</a>の出発点として使用されます。</p>
 <div class="notices note" >
 <p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services</a> guide の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="../../../basemaps/">ベースマップ</a> を参照してください。</p>
 </div>
@@ -1063,7 +1064,29 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 <li>開発環境が<a href="https://developers.arcgis.com/flutter/reference/system-requirements/">システム要件</a>を満たしており、<a href="../../../tips/flutter/install-flutter-200.x/">Flutter の開発環境</a> が整っていることを確認します。</li>
 <li>Flutter 用の IDE。<a href="https://code.visualstudio.com/">VS Code</a> を推奨しています。</li>
 </ol>
-<h2 id="ステップ">ステップ</h2>
+<h2 id="認証の設定">認証の設定</h2>
+<p>このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証を実装する必要があります。</p>
+<h4 id="api-キー認証">API キー認証</h4>
+<p>このチュートリアルで使用するセキュアなリソースにアクセスする権限を持つ、新しい API キーのアクセス トークンを作成します。</p>
+<ol>
+<li><a href="../../get-api-key/">API キーの作成</a>のチュートリアルを完了し、以下の権限を持つ API キーを作成します。
+<ul>
+<li><strong>Privileges</strong>
+<ul>
+<li><strong>Location services</strong> &gt; <strong>Basemaps</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>API キーのアクセス トークン</strong> をコピーし、安全な場所に貼り付けます。これは後のステップで使用します。</li>
+</ol>
+<h2 id="開発またはダウンロード">開発またはダウンロード</h2>
+<p>このチュートリアルを完了するには、2 つの選択肢があります。</p>
+<ol>
+<li><a href="#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3-1%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E9%96%8B%E7%99%BA%E3%81%99%E3%82%8B">オプション 1:コードを開発する</a> か</li>
+<li><a href="#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3-2%E5%AE%8C%E6%88%90%E3%81%97%E3%81%9F%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B">オプション 2:完成したソリューションをダウンロードする</a></li>
+</ol>
+<h2 id="オプション-1コードを開発する">オプション 1:コードを開発する</h2>
 <h3 id="新しい-flutter-アプリを作成する">新しい Flutter アプリを作成する</h3>
 <ol>
 <li>
@@ -1101,8 +1124,8 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 <p>build.gradle.kts</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
     namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app.display_a_map&#34;</span>
-    compileSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdkVersion</span>
-    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span> <span style="color:#75715e">//変更
+    compileSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span> <span style="color:#75715e">//変更
+</span><span style="color:#75715e"></span>    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span> <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span>
     compileOptions <span style="color:#f92672">{</span>
         sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
@@ -1118,20 +1141,11 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 </span><span style="color:#75715e"></span>        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.example.app.display_a_map&#34;</span>
         <span style="color:#75715e">// アプリケーションの要件に合わせて次の値を更新します。
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">// 詳細については https://flutter.dev/to/review-gradle-config を参照してください。
-</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span> <span style="color:#75715e">//変更
+</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span> <span style="color:#75715e">//変更
 </span><span style="color:#75715e"></span>        targetSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdkVersion</span>
         versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
         versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
     <span style="color:#f92672">}</span>
-</code></pre></div></li>
-<li>
-<p>プロジェクトの <code>android/settings.gradle.kts</code> ファイルを編集して、Kotlin のバージョンを更新します。</p>
-<p>settings.gradle.kts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
-    id <span style="color:#e6db74">&#34;dev.flutter.flutter-plugin-loader&#34;</span> version <span style="color:#e6db74">&#34;1.0.0&#34;</span>
-    id <span style="color:#e6db74">&#34;com.android.application&#34;</span> version <span style="color:#e6db74">&#34;8.7.0&#34;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span> version <span style="color:#e6db74">&#34;1.9.0&#34;</span> apply <span style="color:#66d9ef">false</span> <span style="color:#75715e">//変更
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p><code>android/app/src/main/AndroidManifest.xml</code> に、オンライン リソースにアクセスするためのパーミッションを追加します。</p>
@@ -1147,10 +1161,10 @@ flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk
 <h4 id="ios">iOS</h4>
 <ol>
 <li>
-<p><code>ios/Podfile</code> ファイルを編集して iOS 16.0 を最小に設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
+<p><code>ios/Podfile</code> ファイルを編集して iOS 17.0 を最小に設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
 <p>Podfile</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Uncomment this line to define a global platform for your project</span>
-platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;16.0&#39;</span>  <span style="color:#75715e">#変更</span>
+platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;17.0&#39;</span>  <span style="color:#75715e">#変更</span>
 </code></pre></div></li>
 <li>
 <p><code>Runtimecore</code> pod と <code>arcgis_maps_ffi</code> pod を <code>Runner</code> ターゲット セクションに追加します。</p>
@@ -1175,15 +1189,9 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd ios &amp;&amp; pod update &amp;&amp; cd ..
 </code></pre></div></li>
 </ol>
-<h3 id="アクセス-トークンを取得する">アクセス トークンを取得する</h3>
-<p>このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。</p>
-<ol>
-<li>アクセス トークンを取得するには、<a href="../../get-api-key">API キーの取得</a> チュートリアルに進んでください。</li>
-<li>次の権限が有効になっていることを確認してください。[ロケーション サービス] &gt; [ベースマップ] &gt; [ベースマップ スタイル サービス]</li>
-<li>アクセス トークンをコピーします。</li>
-</ol>
-<p>アクセス トークンを取得する他の方法については、<a href="https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/">Types of authentication</a> を参照してください。</p>
-<h3 id="api-キーを設定する">API キーを設定する</h3>
+<h3 id="開発者資格情報を設定する">開発者資格情報を設定する</h3>
+<p>アプリ ユーザーが ArcGIS の位置情報サービスにアクセスできるようにするには、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a> ステップで作成した開発者資格情報を使用して、リソースへのリクエストを認証します。</p>
+<h4 id="api-キーを設定する">API キーを設定する</h4>
 <ol>
 <li>
 <p>VS Codeで、<code>lib/main.dart</code> を開きます。</p>
@@ -1196,10 +1204,10 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:arcgis_maps/arcgis_maps.dart&#39;</span>; <span style="color:#75715e">//追加
 </span></code></pre></div></li>
 <li>
-<p><code>main()</code> 関数で、<a href="https://dart.dev/language/variables#final-and-const">const</a> <code>apiKey</code> を定義し、その値にアクセス トークンを設定します。</p>
+<p><code>main()</code> 関数で、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html">ArcGISEnvironment.apiKey</a> の値をアクセス トークンに設定します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。 //追加
+     ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。 //追加
 </span><span style="color:#75715e"></span>
     runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
@@ -1208,40 +1216,17 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
  </div>
 </li>
 <li>
-<p><a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html"><code>ArcGISEnvironment.apiKey</code></a> を <code>apiKey</code> 定数に設定します。</p>
+<p><a href="https://api.flutter.dev/flutter/widgets/runApp.html"><code>runApp()</code></a> 内で <a href="https://api.flutter.dev/flutter/material/MaterialApp-class.html"><code>MaterialApp</code></a> をインスタンス化し、名前付き引数 <a href="https://api.flutter.dev/flutter/material/MaterialApp/home.html"><code>home</code></a> に <code>MainApp</code> のインスタンスを設定します。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-<span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。
+ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。
 </span><span style="color:#75715e"></span>
 ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> apiKey; <span style="color:#75715e">//追加
 </span><span style="color:#75715e"></span>
-runApp(<span style="color:#66d9ef">const</span> MainApp());
-}
-</code></pre></div> <div class="notices warning" >
-<p>API キーが必要なのにアクセス トークンが設定されていない（または無効な値が設定されている）場合、チュートリアルのコードを実行すると次のようなエラーが表示されることがあります。<br>
-<code>Unhandled Loadable ArcGISMap load error: ArcGISException: code=22; HttpException: Failed to parse header value</code><br>
-このエラーが発生した場合は、有効なアクセス トークンが <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html"><code>ArcGISEnvironment.apiKey</code></a> プロパティに設定されていることを確認してください。Flutter のコア HTTP スタックに既知の問題があるため、ArcGIS Maps SDK for Flutter は現時点でより明確なエラーを確実に提供することができません。</p>
- </div>
-</li>
-<li>
-<p><a href="https://api.flutter.dev/flutter/widgets/runApp.html"><code>runApp()</code></a> 内で <a href="https://api.flutter.dev/flutter/material/MaterialApp-class.html"><code>MaterialApp</code></a> をインスタンス化し、名前付き引数の <a href="https://api.flutter.dev/flutter/material/MaterialApp/home.html"><code>home</code></a> に <code>MainApp</code> のインスタンスを設定します。</p>
-<p>main.dart</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
-
-    <span style="color:#66d9ef">const</span> apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。
-</span><span style="color:#75715e"></span>
-    ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> apiKey;
-
-    runApp(
-
-        <span style="color:#75715e">//変更開始
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> MaterialApp(
-            home: MainApp(),
-        ),
-        <span style="color:#75715e">//変更終了
-</span><span style="color:#75715e"></span>
-    );
+runApp(
+    <span style="color:#66d9ef">const</span> MaterialApp(home: MainApp()) <span style="color:#75715e">//変更
+</span><span style="color:#75715e"></span>    );
 }
 </code></pre></div></li>
 </ol>
@@ -1281,7 +1266,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 <span style="color:#75715e">//追加終了
 </span></code></pre></div></li>
 <li>
-<p>build メソッド内で返される <code>MaterialApp</code> ウィジェットを削除します。 このコードは Flutter create テンプレートによって生成されたもので、次項でマップを含むウィジェットを返すコードに置き換えられます。</p>
+<p><code>_MainAppState</code> クラスの build メソッド内で返される <code>MaterialApp</code> ウィジェットを削除します。 このコードは Flutter create テンプレートによって生成されたもので、次項でマップを含むウィジェットを返すコードに置き換えられます。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainApp</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
 
@@ -1355,7 +1340,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
 </code></pre></div></li>
 <li>
-<p><code>MainAppState</code> 内で、何も返さない新しいメソッド <code>onMapViewReady()</code> を定義します。</p>
+<p><code>_MainAppState</code> 内で、何も返さない新しいメソッド <code>onMapViewReady()</code> を定義します。</p>
 <p>main.dart</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_MainAppState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>MainApp<span style="color:#f92672">&gt;</span> {
 
@@ -1388,7 +1373,7 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
 </code></pre></div></li>
 <li>
-<p>新しいメソッド内で final 変数 <code>basemapStyleParams</code>、<code>basemap</code>、<code>map</code> を定義します。それぞれの定義は以下の通りです。</p>
+<p>新しいメソッド内で、final 変数 <code>map</code> を定義し、ArcGIS Topographic ベースマップ スタイルを持つ <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMap-class.html"><code>ArcGISMap</code></a> インスタンスに初期化します。</p>
 <ul>
 <li><code>basemapStyleParams</code>: <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/BasemapStyleParameters-class.html"><code>BasemapStyleParameters</code></a> をインスタンス化し、specificLanguage を日本語に変更します。</li>
 <li><code>basemap</code>: ArcGIS Topographic ベースマップ スタイルと 生成した <code>basemapStyleParams</code> で <a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/Basemap-class.html"><code>Basemap</code></a> をインスタンス化します。</li>
@@ -1485,53 +1470,54 @@ runApp(<span style="color:#66d9ef">const</span> MainApp());
 <li>Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。</li>
 <li>VS Codeで、[Run] &gt; [Run Without Debugging] を選択します。</li>
 </ol>
-<p>完成版のプロジェクトは<a href="https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip">こちら</a>からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。</p>
-<h3 id="ダウンロードしたソリューションを実行する">ダウンロードしたソリューションを実行する</h3>
-<p>プロジェクト ソリューションをダウンロードした場合は、以下の手順に従ってアプリケーションを実行します。</p>
+<p>富士山を中心に、地形図のベースマップ層が表示された地図が表示されます。地図ビューをピンチ、ドラッグ、またはダブルタップして、地図を閲覧してください。</p>
+<hr>
+<p>または、以下の手順に従ってチュートリアルの解答をダウンロードすることもできます。</p>
+<h2 id="オプション-2完成したソリューションをダウンロードする">オプション 2:完成したソリューションをダウンロードする</h2>
 <ol>
-<li>
-<p>VS Code で展開したプロジェクトを開きます。</p>
-</li>
-<li>
-<p>VS Code のターミナルで、以下のコマンドを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">flutter pub upgrade
-</code></pre></div></li>
-<li>
-<p>以下のコマンドを実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">dart run arcgis_maps install
-</code></pre></div></li>
-<li>
-<p><a href="https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/">アクセス トークンを取得</a>し、ソース コード ファイルに <a href="#api-%E3%82%AD%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">API キーを設定</a>します。</p>
-</li>
-<li>
-<p>Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。</p>
-</li>
-<li>
-<p>VS Code で、[Run] &gt; [Run Without Debugging] を選択します。</p>
-</li>
+<li><a href="https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip">こちら</a>をクリックしファイルをダウンロードし、コンピュータ内の任意の場所に解凍してください。</li>
+<li>VS Code で、プロジェクトを開いてください。</li>
 </ol>
-<h3 id="web-マップを表示する">Web マップを表示する</h3>
-<p>「<a href="../../services/create-webmap/">Web マップの作成</a>」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。</p>
+<p>ダウンロードしたソリューションには認証情報が含まれていないため、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a> セクションで作成した開発者資格情報を追加する必要があります。</p>
+<h3 id="ソリューションに開発者資格情報を設定する">ソリューションに開発者資格情報を設定する</h3>
+<p>アプリ ユーザーが ArcGIS の位置情報サービスにアクセスできるようにするには、<a href="#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a> ステップで作成した開発者資格情報を使用して、リソースへのリクエストを認証します。</p>
+<h4 id="api-キーを設定する-1">API キーを設定する</h4>
 <ol>
 <li>
-<p><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B">マップを表示する</a>のステップで作成したプロジェクトの <code>main.dart</code> を開き、<code>onMapViewReady()</code> を下記のように書き換えます。</p>
-<p>main.dart</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> onMapViewReady() {
+<p>VS Codeで、<code>lib/main.dart</code> を開きます。</p>
+</li>
+<li>
+<p><code>main()</code> 関数で、<a href="https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html">ArcGISEnvironment.apiKey</a> の値をアクセス トークンに設定します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
 
-    <span style="color:#75715e">//アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> portalItem <span style="color:#f92672">=</span> PortalItem.withPortalAndItemId(
-        portal: Portal.arcGISOnline(),
-        itemId: <span style="color:#e6db74">&#34;Web マップの ID&#34;</span>,
-    );
-
-    <span style="color:#75715e">//ポータル アイテムからマップを作成します。
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> map <span style="color:#f92672">=</span> ArcGISMap.withItem(portalItem);
-
-    _mapViewController.arcGISMap <span style="color:#f92672">=</span> map;
-
+     ArcGISEnvironment.apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// アクセス トークンをここに記入します。 //追加
+</span><span style="color:#75715e"></span>
+    runApp(<span style="color:#66d9ef">const</span> MainApp());
 }
-</code></pre></div></li>
+</code></pre></div> <div class="notices info" >
+<p>このチュートリアルでは便宜上、アクセス トークンをコードに直接格納しています。アクセス トークンをソース コードに格納することはベスト プラクティスではありません。</p>
+ </div>
+</li>
 </ol>
+<h3 id="アプリを実行する-1">アプリを実行する</h3>
+<p>以下の手順に従ってアプリケーションを実行してください。</p>
+<ol>
+<li>
+<p>VS Codeのターミナルで、次のコマンドを実行してください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flutter pub upgrade
+</code></pre></div></li>
+<li>
+<p>実行します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart run arcgis_maps install
+</code></pre></div></li>
+<li>
+<p>Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。</p>
+</li>
+<li>
+<p>VS Codeで、[Run] &gt; [Run Without Debugging] を選択します。</p>
+</li>
+</ol>
+<p>富士山を中心に、地形図のベースマップ層が表示された地図が表示されます。地図ビューをピンチ、ドラッグ、またはダブルタップして、地図を閲覧してください。</p>
 <hr>
 <p>アプリの動作が確認できたら <a href="../../security">ArcGIS の セキュリティーと認証について学びましょう！</a></p>
 

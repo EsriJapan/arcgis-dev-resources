@@ -18,8 +18,6 @@ aliases = ["/create-startup-app-flutter/"]
 
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
-このマップとコードは、[他の 2D チュートリアル](https://developers.arcgis.com/flutter/tutorials/)の出発点として使用されます。
-
 {{% notice note %}}
 
 このチュートリアルのトピックの背景情報については、[Mapping API and location services](https://developers.arcgis.com/documentation/mapping-apis-and-services/) guide の [Maps (2D)](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/) と [ベースマップ](../../../basemaps/) を参照してください。
@@ -55,9 +53,28 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 2. 開発環境が[システム要件](https://developers.arcgis.com/flutter/reference/system-requirements/)を満たしており、[Flutter の開発環境](../../../tips/flutter/install-flutter-200.x/) が整っていることを確認します。
 3. Flutter 用の IDE。[VS Code](https://code.visualstudio.com/) を推奨しています。
 
-## ステップ
+## 認証の設定
+
+このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証を実装する必要があります。
+
+#### API キー認証
+
+このチュートリアルで使用するセキュアなリソースにアクセスする権限を持つ、新しい API キーのアクセス トークンを作成します。
+
+1. [API キーの作成](../../get-api-key/)のチュートリアルを完了し、以下の権限を持つ API キーを作成します。
+    * **Privileges**
+        * **Location services** > **Basemaps**
+2. **API キーのアクセス トークン** をコピーし、安全な場所に貼り付けます。これは後のステップで使用します。
+
+## 開発またはダウンロード
+このチュートリアルを完了するには、2 つの選択肢があります。
+1. [オプション 1:コードを開発する](#オプション-1コードを開発する) か
+2. [オプション 2:完成したソリューションをダウンロードする](#オプション-2完成したソリューションをダウンロードする)
+
+## オプション 1:コードを開発する
 
 ### 新しい Flutter アプリを作成する
+
 1. **VS Code** を開き、Welcome タブで [Open Folder...] を選択します。プロジェクトの場所を選んでください。
 2. [View] > [Terminal] に進みます。
 3. ターミナル ウィンドウで以下のコマンドを使い、**display_a_map** という新しい Flutter アプリを作成します。 必要なターゲット プラットフォームと 組織名 **com.example.app** を設定します。
@@ -67,6 +84,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     ```
 
 ### ArcGIS Maps SDK for Flutter を追加する
+
 `arcgis_maps` パッケージに依存関係を追加します。
 
 1. VS Code のターミナルで、ディレクトリーを新しいプロジェクトに変更します。
@@ -87,6 +105,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     ```
 
 ### プラットフォーム固有の構成
+
 #### Android
 1. プロジェクトの `android/app/build.gradle.kts` ファイルを編集して、最小要件を更新します。
 
@@ -95,7 +114,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 	```gradle
     android {
         namespace = "com.example.app.display_a_map"
-        compileSdk = flutter.compileSdkVersion
+        compileSdk = 36 //変更
         ndkVersion = "27.0.12077973" //変更
 
         compileOptions {
@@ -112,26 +131,14 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
             applicationId = "com.example.app.display_a_map"
             // アプリケーションの要件に合わせて次の値を更新します。
             // 詳細については https://flutter.dev/to/review-gradle-config を参照してください。
-            minSdk = 26 //変更
+            minSdk = 28 //変更
             targetSdk = flutter.targetSdkVersion
             versionCode = flutter.versionCode
             versionName = flutter.versionName
         }
     ```
 
-2. プロジェクトの `android/settings.gradle.kts` ファイルを編集して、Kotlin のバージョンを更新します。
-
-    settings.gradle.kts
-
-	```gradle
-	plugins {
-        id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-        id "com.android.application" version "8.7.0" apply false
-        id "org.jetbrains.kotlin.android" version "1.9.0" apply false //変更
-	}
-	```  
-
-3. `android/app/src/main/AndroidManifest.xml` に、オンライン リソースにアクセスするためのパーミッションを追加します。
+2. `android/app/src/main/AndroidManifest.xml` に、オンライン リソースにアクセスするためのパーミッションを追加します。
 
     AndroidManifest.xml
 
@@ -145,13 +152,14 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     ```
 
 #### iOS
-1. `ios/Podfile` ファイルを編集して iOS 16.0 を最小に設定します。 行のコメントを解除し、バージョン番号を更新します。
+
+1. `ios/Podfile` ファイルを編集して iOS 17.0 を最小に設定します。 行のコメントを解除し、バージョン番号を更新します。
 
     Podfile
 
 	```ruby
 	# Uncomment this line to define a global platform for your project
-	platform :ios, '16.0'  #変更
+	platform :ios, '17.0'  #変更
 	```  
 
 2. `Runtimecore` pod と `arcgis_maps_ffi` pod を `Runner` ターゲット セクションに追加します。
@@ -181,15 +189,12 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 	cd ios && pod update && cd ..
 	```  
 
-### アクセス トークンを取得する
-このチュートリアルで使用するロケーション サービスを使用するには、アクセス トークンが必要です。
-1. アクセス トークンを取得するには、[API キーの取得](../../get-api-key) チュートリアルに進んでください。
-2. 次の権限が有効になっていることを確認してください。[ロケーション サービス] > [ベースマップ] > [ベースマップ スタイル サービス]
-3. アクセス トークンをコピーします。
+### 開発者資格情報を設定する
 
-アクセス トークンを取得する他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
+アプリ ユーザーが ArcGIS の位置情報サービスにアクセスできるようにするには、[認証の設定](#認証の設定) ステップで作成した開発者資格情報を使用して、リソースへのリクエストを認証します。
 
-### API キーを設定する
+#### API キーを設定する
+
 1. VS Codeで、`lib/main.dart` を開きます。
 2. `arcgis_maps` パッケージをインポートします。
 
@@ -201,12 +206,12 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     import 'package:arcgis_maps/arcgis_maps.dart'; //追加
     ```
 
-3. `main()` 関数で、[const](https://dart.dev/language/variables#final-and-const) `apiKey` を定義し、その値にアクセス トークンを設定します。
+3. `main()` 関数で、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) の値をアクセス トークンに設定します。
 
     ```dart
     void main() {
 
-        const apiKey = ''; // アクセス トークンをここに記入します。 //追加
+         ArcGISEnvironment.apiKey = ''; // アクセス トークンをここに記入します。 //追加
 
         runApp(const MainApp());
     }
@@ -218,51 +223,25 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 
     {{% /notice %}}
 
-4. [`ArcGISEnvironment.apiKey`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) を `apiKey` 定数に設定します。
+4. [`runApp()`](https://api.flutter.dev/flutter/widgets/runApp.html) 内で [`MaterialApp`](https://api.flutter.dev/flutter/material/MaterialApp-class.html) をインスタンス化し、名前付き引数 [`home`](https://api.flutter.dev/flutter/material/MaterialApp/home.html) に `MainApp` のインスタンスを設定します。
 
     main.dart
 
     ```dart
     void main() {
 
-    const apiKey = ''; // アクセス トークンをここに記入します。
+    ArcGISEnvironment.apiKey = ''; // アクセス トークンをここに記入します。
 
     ArcGISEnvironment.apiKey = apiKey; //追加
 
-    runApp(const MainApp());
-    }
-    ```
-    {{% notice warning %}}
-
-    API キーが必要なのにアクセス トークンが設定されていない（または無効な値が設定されている）場合、チュートリアルのコードを実行すると次のようなエラーが表示されることがあります。  
-    `Unhandled Loadable ArcGISMap load error: ArcGISException: code=22; HttpException: Failed to parse header value`  
-    このエラーが発生した場合は、有効なアクセス トークンが [`ArcGISEnvironment.apiKey`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) プロパティに設定されていることを確認してください。Flutter のコア HTTP スタックに既知の問題があるため、ArcGIS Maps SDK for Flutter は現時点でより明確なエラーを確実に提供することができません。
-
-    {{% /notice %}}
-5. [`runApp()`](https://api.flutter.dev/flutter/widgets/runApp.html) 内で [`MaterialApp`](https://api.flutter.dev/flutter/material/MaterialApp-class.html) をインスタンス化し、名前付き引数の [`home`](https://api.flutter.dev/flutter/material/MaterialApp/home.html) に `MainApp` のインスタンスを設定します。
-
-    main.dart
-
-    ```dart
-    void main() {
-
-        const apiKey = ''; // アクセス トークンをここに記入します。
-
-        ArcGISEnvironment.apiKey = apiKey;
-
-        runApp(
-
-            //変更開始
-            const MaterialApp(
-                home: MainApp(),
-            ),
-            //変更終了
-
+    runApp(
+        const MaterialApp(home: MainApp()) //変更
         );
     }
     ```
 
 ### マップを追加する
+
 地形図ベースマップ レイヤーを含む地図を作成します。 地図は富士山の付近とします。
 
 1. テンプレート `MainApp` クラス定義をリファクタリングして、[`StatefulWidget`](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html) を拡張します。 [`StatelessWidget`](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) キーワードにマウス カーソルを合わせて右クリックし、[Refactor...] から、[Convert to StatefulWidget] を選択してコードをリファクタリングします。
@@ -302,7 +281,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     //追加終了
     ```
 
-2. build メソッド内で返される `MaterialApp` ウィジェットを削除します。 このコードは Flutter create テンプレートによって生成されたもので、次項でマップを含むウィジェットを返すコードに置き換えられます。
+2. `_MainAppState` クラスの build メソッド内で返される `MaterialApp` ウィジェットを削除します。 このコードは Flutter create テンプレートによって生成されたもので、次項でマップを含むウィジェットを返すコードに置き換えられます。
 
     main.dart
 
@@ -387,7 +366,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     }
     ```
 
-5. `MainAppState` 内で、何も返さない新しいメソッド `onMapViewReady()` を定義します。
+5. `_MainAppState` 内で、何も返さない新しいメソッド `onMapViewReady()` を定義します。
 
     main.dart
 
@@ -423,7 +402,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     }
     ```
 
-6. 新しいメソッド内で final 変数 `basemapStyleParams`、`basemap`、`map` を定義します。それぞれの定義は以下の通りです。
+6. 新しいメソッド内で、final 変数 `map` を定義し、ArcGIS Topographic ベースマップ スタイルを持つ [`ArcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMap-class.html) インスタンスに初期化します。
     * `basemapStyleParams`: [`BasemapStyleParameters`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/BasemapStyleParameters-class.html) をインスタンス化し、specificLanguage を日本語に変更します。
     * `basemap`: ArcGIS Topographic ベースマップ スタイルと 生成した `basemapStyleParams` で [`Basemap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/Basemap-class.html) をインスタンス化します。
     * `map`: `basemap` で [`ArcGISMap`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMap-class.html) をインスタンス化します。  
@@ -523,52 +502,64 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
 1. Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。
 2. VS Codeで、[Run] > [Run Without Debugging] を選択します。
 
-完成版のプロジェクトは[こちら](https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip)からダウンロードできます（マップの表示場所は本チュートリアルで設定した場所とは異なります）。
+富士山を中心に、地形図のベースマップ層が表示された地図が表示されます。地図ビューをピンチ、ドラッグ、またはダブルタップして、地図を閲覧してください。
 
-### ダウンロードしたソリューションを実行する
-プロジェクト ソリューションをダウンロードした場合は、以下の手順に従ってアプリケーションを実行します。
+---
 
-1. VS Code で展開したプロジェクトを開きます。
-2. VS Code のターミナルで、以下のコマンドを実行します。
-    ```powershell
-    flutter pub upgrade
-    ```
-3. 以下のコマンドを実行します。
+または、以下の手順に従ってチュートリアルの解答をダウンロードすることもできます。
 
-    ```powershell
-    dart run arcgis_maps install
-    ```
+## オプション 2:完成したソリューションをダウンロードする
 
-4. [アクセス トークンを取得](https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/)し、ソース コード ファイルに [API キーを設定](#api-キーを設定する)します。
-5. Android エミュレーター、iOS シミュレーター、または物理デバイスが設定され、実行されていることを確認します。
-6. VS Code で、[Run] > [Run Without Debugging] を選択します。
+1. [こちら](https://developers.arcgis.com/flutter/zips/display-a-map-solution.zip)をクリックしファイルをダウンロードし、コンピュータ内の任意の場所に解凍してください。
+2. VS Code で、プロジェクトを開いてください。
 
+ダウンロードしたソリューションには認証情報が含まれていないため、[認証の設定](#認証の設定) セクションで作成した開発者資格情報を追加する必要があります。
 
-### Web マップを表示する
-「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
+### ソリューションに開発者資格情報を設定する
 
-1. [マップを表示する](#マップを表示する)のステップで作成したプロジェクトの `main.dart` を開き、`onMapViewReady()` を下記のように書き換えます。
+アプリ ユーザーが ArcGIS の位置情報サービスにアクセスできるようにするには、[認証の設定](#認証の設定) ステップで作成した開発者資格情報を使用して、リソースへのリクエストを認証します。
 
-    main.dart
+#### API キーを設定する
+
+1. VS Codeで、`lib/main.dart` を開きます。
+
+2. `main()` 関数で、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) の値をアクセス トークンに設定します。
 
     ```dart
-    void onMapViewReady() {
+    void main() {
 
-        //アイテム ID を使用して、Web マップをポータル アイテムとして取得します。
-        final portalItem = PortalItem.withPortalAndItemId(
-            portal: Portal.arcGISOnline(),
-            itemId: "Web マップの ID",
-        );
+         ArcGISEnvironment.apiKey = ''; // アクセス トークンをここに記入します。 //追加
 
-        //ポータル アイテムからマップを作成します。
-        final map = ArcGISMap.withItem(portalItem);
-
-        _mapViewController.arcGISMap = map;
-
+        runApp(const MainApp());
     }
     ```
 
- ---
+    {{% notice info %}}
 
- アプリの動作が確認できたら [ArcGIS の セキュリティーと認証について学びましょう！](../../security)
+    このチュートリアルでは便宜上、アクセス トークンをコードに直接格納しています。アクセス トークンをソース コードに格納することはベスト プラクティスではありません。
+
+    {{% /notice %}}
+
+### アプリを実行する
+
+以下の手順に従ってアプリケーションを実行してください。
+
+1. VS Codeのターミナルで、次のコマンドを実行してください。
+    ```shell
+    flutter pub upgrade
+    ```
+
+2. 実行します。
+    ```shell
+    dart run arcgis_maps install
+    ```
+
+3. Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。
+4. VS Codeで、[Run] > [Run Without Debugging] を選択します。
+
+富士山を中心に、地形図のベースマップ層が表示された地図が表示されます。地図ビューをピンチ、ドラッグ、またはダブルタップして、地図を閲覧してください。
+
+---
+
+アプリの動作が確認できたら [ArcGIS の セキュリティーと認証について学びましょう！](../../security)
 

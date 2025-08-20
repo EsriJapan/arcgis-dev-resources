@@ -5,7 +5,7 @@ Weight=10
 aliases = ["/create-startup-app-unity/"]
 +++
 
-出典：ArcGIS Maps SDK for Unity - Tutorials - [Display a map(UI)](https://developers.arcgis.com/unity/maps/tutorials/display-a-map-ui/)
+出典：ArcGIS Maps SDK for Unity - Tutorials - [Display a map（UI）](https://developers.arcgis.com/unity/maps/tutorials/display-a-map-ui/)
 
 ## マップを表示する (UI)
 
@@ -47,8 +47,11 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 1. 上部メニューで、[ファイル (File)] > [新しいシーン (New Scene)] をクリックし、ポップアップ ウィンドウを開きます。
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-new-scene-2-0.png" width="350px">
 
-2. [Basic Outdoors (HDRP)] テンプレートを選択し、[作成 (Create)] ボタンをクリックします。
+2. [Basic Outdoors （HDRP）] テンプレートを選択し、[作成 (Create)] ボタンをクリックします。
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/basic-outdoor-template-2-0.png" width="650px">
+
+3. [ヒエラルキー（Hierarchy）]ウィンドウで、**Geometry** のゲーム オブジェクトを選択し、右クリックしてコンテキスト メニューから[削除（Delete）]を選択して、シーンから削除します。
+    <img src="" width="650px">
 
 
 ### Map Creator UI を開く
@@ -71,7 +74,7 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
     * Altitude : 0
     * Spatial Reference WKID : 4326
 
-    spatial reference に関する情報は、[spatial references](https://developers.arcgis.com/unity/spatial-and-data-analysis/spatial-references/) のページを参照してください。
+    spatial reference に関する情報は、[spatial references](https://developers.arcgis.com/unity/spatial-reference-and-data-analysis/spatial-references/) のページを参照してください。
 
 4. [Enable Map Extent] チェック ボックスをオンにして、[Map Extent] セクションを表示し、マップの範囲をこれらの値に設定します。
 
@@ -87,7 +90,7 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-map-local-2-0.png" width="500px">
 
-[ヒエラルキー (Hierarchy)] ウィンドウで、作成された **ArcGISMap** ゲーム オブジェクトを確認できます。
+[ヒエラルキー （Hierarchy）] ウィンドウで、作成された **ArcGISMap** ゲーム オブジェクトを確認できます。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgismap-game-object-2-0.png" width="650px">
 
@@ -162,7 +165,7 @@ Unity のインターフェイスに慣れていない場合は、最も一般�
 
 3. [API Key] セクションで API キーを設定します。
 
-このスクリーンショットで `Paste your API key here` と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、[[API キーの取得](../../get-api-key/)] をご覧ください。
+このスクリーンショットで `Paste your API key here` と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、[API キーの取得](../../get-api-key/) をご覧ください。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/api-key-ui-2-0.png" width="400px">
 
@@ -235,9 +238,9 @@ Unity には空とライティングのシステムがあります。詳しく�
 
 #### 太陽の調整
 
-1. [ヒエラルキー (Hierarchy)] ウィンドウで、**Sun** ゲーム オブジェクトをクリックします。
+1. [ヒエラルキー (Hierarchy)] ウィンドウで、親オブジェクトの **Lighting** ゲーム オブジェクトを展開し、子オブジェクトの **Sun** ゲーム オブジェクトをクリックします。
 
-2. [ヒエラルキー (Hierarchy)] ウィンドウの [トランスフォーム (Transform)] セクションで、回転を以下の値に設定します。
+2. [インスペクター (Inspector)] ウィンドウの [トランスフォーム (Transform)] セクションで、回転を以下の値に設定します。
     * X : `36`
     * Y : `110`
     * Z : `85`

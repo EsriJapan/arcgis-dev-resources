@@ -57,15 +57,16 @@ Android、iOS、またはその両方向けに開発するには、Flutter プ�
 
 ### Android
 1. 以下の最低要件を更新します。
+   * Android コンパイル SDK: `36` 
    * Android NDK バージョン: `27.0.12077973`
-   * Android の最低 SDK バージョン: `26`
+   * Android の最低 SDK バージョン: `28`
 
 	android/app/build.gradle.kts
 
 	```gradle
 	android {
     	namespace = "com.esri.flutter_project_template"
-    	compileSdk = flutter.compileSdkVersion
+    	compileSdk = 36  // 変更
 		ndkVersion = "27.0.12077973"  // 変更
 
     	compileOptions {
@@ -83,26 +84,14 @@ Android、iOS、またはその両方向けに開発するには、Flutter プ�
     	    // You can update the following values to match your application needs.
     	    // For more information, see: https://flutter.dev/to/review-gradle-config.
     	    //
-			minSdk = 26 // 変更
+			minSdk = 28 // 変更
     	    targetSdk = flutter.targetSdkVersion
     	    versionCode = flutter.versionCode
     	    versionName = flutter.versionName
     	}
 	}
 	```
-
-2. Kotlin のバージョンを更新します。
-	* Kotlin バージョン: `1.9.0`
-
-	android/settings.gradle
-
-	```gradle
-	plugins {
-    	id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-    	id "com.android.application" version "8.1.0" apply false
-    	id "org.jetbrains.kotlin.android" version "1.9.0" apply false //変更
-	}
-	```  
+  
 
 #### パーミッションを必要とする機能
 ArcGIS Maps SDK for Flutter に依存するアプリケーションをデプロイするには、以下の権限が必要です。オンライン リソースにアクセスする権限を追加し、デバイスの GPS にアクセスする権限を追加します。位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーは位置情報へのアクセス許可を提供するよう促されることに注意してください。
@@ -165,13 +154,13 @@ android/app/src/main/AndroidManifest.xml
 `YOUR_CALLBACK_URL_SCHEME_HERE` を、ポータルで OAuth 認証情報を設定したときに使用したリダイレクト URL のスキームに置き換えてください。 これは、ログイン ワークフローが完了した後、ブラウザーがアプリに通信して戻るために必要です。
 
 ### iOS
-1. iOS 16.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。
+1. iOS 17.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。
 
 	ios/Podfile
 
 	```ruby
 	# Uncomment this line to define a global platform for your project
-	platform :ios, '16.0' #変更
+	platform :ios, '17.0' #変更
 	```  
 
 2. `Runtimecore` ポッドと `arcgis_maps_ffi` ポッドを `Runner` ターゲット セクションに追加します。

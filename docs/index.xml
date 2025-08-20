@@ -142,10 +142,11 @@ Xcode 16 での手順
       <description>出典：ArcGIS Maps SDK for Unity - Guide - Install and set up
 このインストール ガイドでは、ArcGIS Maps SDK for Unity のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
 インストールおよびセットアップ方法 ArcGIS Maps SDK for Unity は Unity 用のプラグインです。ArcGIS Maps SDK for Unity を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
-Unity のインストール このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、Unity をインストールしてください。
-プラグインのインストール ArcGIS Maps SDK for Unity を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。
-シーン設定オプションの選択 プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています。
- Map Creator UI では、コードを記述せずにシーンを作成できます。 Components では、シーン内のゲーム オブジェクトにアタッチできます。 C# API では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。  追加のダウンロード ダウンロード ページから、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルの Web サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピューターまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</description>
+1.Unity のインストール このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、Unity をインストールしてください。
+以下の手順は、プラグインを新しいプロジェクトにインストールする方法を説明します。既存のプロジェクトがある場合は、そのプロジェクトにプラグインをインストールできます。
+2.プラグインのインストール   新しいプロジェクトを作成するには、Unity Hub を開き、[プロジェクト] タブを選択し、[新しいプロジェクト] ボタンをクリックします。
+  ポップアップ ウィンドウで、以下の設定を定義してください。
+ エディター バージョン: ArcGIS Maps SDK for Unity は、Unity 2022.</description>
     </item>
     
     <item>
@@ -429,19 +430,6 @@ Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サー�
   ページ レイアウトの設定 ページのレイアウト タイプとサイズ モードを設定します。
   1. ページの追加 エクスペリエンスにページを追加するには、以下の手順に従ってください。
  ArcGIS Experience Builder のページ パネルに移動します。 ページの追加ボタンをクリックしてください。 ページのレイアウト タイプを選択します。  フルスクリーン アプリ：このレイアウトはアプリケーションのインターフェイスに似ており、固定レイアウトやグリッド レイアウトをサポートしています。 スクロール ページ：このレイアウトは従来の Web ページに似ており、縦スクロールが可能です。    2.</description>
-    </item>
-    
-    <item>
-      <title>新規プロジェクトにプラグインを追加</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/</guid>
-      <description>出典：ArcGIS Maps SDK for Unity - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unity は、ソース コードとサンプル アセットを含む Unity プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
-新規プロジェクトの作成   新しいプロジェクトを作成するには、Unity Hub を開いて [プロジェクト (Projects)] タブを選択し、[新しいプロジェクト (New project)] ボタンをクリックします。
-  ポップアップ ウィンドウで、以下を定義します。
- エディター バージョン：ArcGIS Maps SDK for Unity は Unity 2022.3.x LTS および Unity 6 をサポートしています。複数の Unity エディター バージョンがインストールされている場合は、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。 テンプレート：プラグインは High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.</description>
     </item>
     
     <item>
@@ -1220,10 +1208,10 @@ app config では、widgets でウィジェットを定義します。</descript
 マップを表示する このチュートリアルでは ArcGIS Maps SDK for Flutter を使用して、マップとベースマップ レイヤーを表示する方法を紹介します。
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。
 このチュートリアルでは、地形図ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
-このマップとコードは、他の 2D チュートリアルの出発点として使用されます。
 このチュートリアルのトピックの背景情報については、Mapping API and location services guide の Maps (2D) と ベースマップ を参照してください。
 Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。 これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。
-  macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。</description>
+  macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。
+brew install openjdk@17sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.</description>
     </item>
     
     <item>
@@ -1255,7 +1243,7 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-unity/</guid>
-      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map(UI)
+      <description>出典：ArcGIS Maps SDK for Unity - Tutorials - Display a map（UI）
 マップを表示する (UI) Unity の Map Creator UI と High Definition Render Pipeline を使用して、ベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。
 このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unity で作成します。
 ArcGIS Map SDK for Unity は、現在 ESRIジャパンにおけるサポート対象外の製品です。

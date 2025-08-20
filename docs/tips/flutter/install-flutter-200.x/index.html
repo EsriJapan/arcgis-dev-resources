@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-19T09:38:38 JST">
+<meta name="revised" content="2025-08-20T19:07:17 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -774,13 +774,6 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
-            新規プロジェクトにプラグインを追加
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
@@ -1072,14 +1065,15 @@ if (!doNotTrack) {
 <li>
 <p>以下の最低要件を更新します。</p>
 <ul>
+<li>Android コンパイル SDK: <code>36</code></li>
 <li>Android NDK バージョン: <code>27.0.12077973</code></li>
-<li>Android の最低 SDK バージョン: <code>26</code></li>
+<li>Android の最低 SDK バージョン: <code>28</code></li>
 </ul>
 <p>android/app/build.gradle.kts</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
     namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
-    compileSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">compileSdkVersion</span>
-    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span>  <span style="color:#75715e">// 変更
+    compileSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>  <span style="color:#75715e">// 変更
+</span><span style="color:#75715e"></span>    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span>  <span style="color:#75715e">// 変更
 </span><span style="color:#75715e"></span>
     compileOptions <span style="color:#f92672">{</span>
         sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
@@ -1096,7 +1090,7 @@ if (!doNotTrack) {
         <span style="color:#75715e">// You can update the following values to match your application needs.
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">// For more information, see: https://flutter.dev/to/review-gradle-config.
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span> <span style="color:#75715e">// 変更
+</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span> <span style="color:#75715e">// 変更
 </span><span style="color:#75715e"></span>        targetSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdkVersion</span>
         versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
         versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
@@ -1104,18 +1098,6 @@ if (!doNotTrack) {
 <span style="color:#f92672">}</span>
 </code></pre></div><p>`</p>
 </li>
-<li>
-<p>Kotlin のバージョンを更新します。</p>
-<ul>
-<li>Kotlin バージョン: <code>1.9.0</code></li>
-</ul>
-<p>android/settings.gradle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">plugins <span style="color:#f92672">{</span>
-    id <span style="color:#e6db74">&#34;dev.flutter.flutter-plugin-loader&#34;</span> version <span style="color:#e6db74">&#34;1.0.0&#34;</span>
-    id <span style="color:#e6db74">&#34;com.android.application&#34;</span> version <span style="color:#e6db74">&#34;8.1.0&#34;</span> apply <span style="color:#66d9ef">false</span>
-    id <span style="color:#e6db74">&#34;org.jetbrains.kotlin.android&#34;</span> version <span style="color:#e6db74">&#34;1.9.0&#34;</span> apply <span style="color:#66d9ef">false</span> <span style="color:#75715e">//変更
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div></li>
 </ol>
 <h4 id="パーミッションを必要とする機能">パーミッションを必要とする機能</h4>
 <p>ArcGIS Maps SDK for Flutter に依存するアプリケーションをデプロイするには、以下の権限が必要です。オンライン リソースにアクセスする権限を追加し、デバイスの GPS にアクセスする権限を追加します。位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーは位置情報へのアクセス許可を提供するよう促されることに注意してください。</p>
@@ -1164,10 +1146,10 @@ if (!doNotTrack) {
 <h3 id="ios">iOS</h3>
 <ol>
 <li>
-<p>iOS 16.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
+<p>iOS 17.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
 <p>ios/Podfile</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Uncomment this line to define a global platform for your project</span>
-platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;16.0&#39;</span> <span style="color:#75715e">#変更</span>
+platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;17.0&#39;</span> <span style="color:#75715e">#変更</span>
 </code></pre></div></li>
 <li>
 <p><code>Runtimecore</code> ポッドと <code>arcgis_maps_ffi</code> ポッドを <code>Runner</code> ターゲット セクションに追加します。</p>

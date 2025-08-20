@@ -12,31 +12,73 @@ aliases = ["/unity/install-and-set-up/"]
 ## インストールおよびセットアップ方法
 **ArcGIS Maps SDK for Unity** は Unity 用のプラグインです。**ArcGIS Maps SDK for Unity** を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unity プロジェクトを準備する必要があります。作業を開始する前に、必ず[プラグインをダウンロード](https://developers.arcgis.com/downloads/#unity)してください。
 
-### Unity のインストール
+### 1.Unity のインストール
 
 このプラグインは Unity 2022.3.x と Unity 6 でサポートしています。インストールされていない場合は、[Unity をインストール](https://unity.com/ja/download)してください。
 
-### プラグインのインストール
+以下の手順は、プラグインを新しいプロジェクトにインストールする方法を説明します。既存のプロジェクトがある場合は、その[プロジェクトにプラグインをインストール](https://developers.arcgis.com/unity/install-and-set-up/add-the-plugin-to-an-existing-project/)できます。
 
-**ArcGIS Maps SDK for Unity** を使用するには、[新規プロジェクト](../add-the-plugin-to-a-new-project/)または[既存プロジェクト (英語) ](https://developers.arcgis.com/unity/install-and-set-up/add-the-plugin-to-an-existing-project/)のいずれかにプラグインをインストールします。
+### 2.プラグインのインストール
 
-### シーン設定オプションの選択
+1. 新しいプロジェクトを作成するには、**Unity Hub** を開き、[プロジェクト] タブを選択し、[新しいプロジェクト] ボタンをクリックします。
 
-プラグインには、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 3 つのオプションが用意されています。
+2. ポップアップ ウィンドウで、以下の設定を定義してください。
+    * エディター バージョン: ArcGIS Maps SDK for Unity は、Unity 2022.3 LTS、6.0 LTS、および 6.1 をサポートしています。複数の Unity エディター バージョンがインストールされている場合、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。
+    * テンプレート: このプラグインは、High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.x) の両方をサポートしています。High Definition 3D Core または Universal 3D Core テンプレートをダウンロードできます。これらのテンプレート以外のテンプレートを選択した場合、レンダリング パイプライン パッケージを手動でインストールする必要があります。（レガシー ビルトイン レンダリング パイプラインはサポートされていません。）
+    * プロジェクト名: プロジェクトのメイン フォルダーの名前を設定します。このフォルダーには、プロジェクトに関連するアセット、シーン、その他のファイルが含まれます。
+    * 場所: プロジェクトがコンピューターのファイル システム内に保存されている場所。デフォルトのプロジェクトの場所は、コンピュータのホーム フォルダーに設定されています。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/create_new_project.png" width="800px">
 
-* [Map Creator UI](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#map-creator-ui) では、コードを記述せずにシーンを作成できます。
-* [Components](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#components) では、シーン内のゲーム オブジェクトにアタッチできます。
-* [C# API](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#c-api) では、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。
+### 3. プラグインのダウンロードとインストール
 
-## 追加のダウンロード
+プラグインは、[Unity Asset Store](https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537) または[ダウンロード ページ](https://developers.arcgis.com/unity/downloads/)からダウンロードできます。
 
-[ダウンロード ページ](https://developers.arcgis.com/downloads/)から、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルの Web サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピューターまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。
+#### Unity Asset Store からダウンロードする
 
-以下の方法で、ローカルでドキュメントを使用します。
+1. [Unity Asset Store](https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537) からプラグインをダウンローします。
+2. ダウンロード後、上部メニューの [ウィンドウ（Window）] > [パッケージ マネージャー（Package Manager）] > [マイ アセット（My Assets）]を展開し、ダウンロードしたアセットを開きます。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/package-manager.png" width="800px">
+3. Unity ドキュメントの [Importing an Asset Store package](https://docs.unity3d.com/6000.0/Documentation/Manual/upm-ui-import.html) の手順に従ってください。
 
-* **ArcGIS Maps SDK for Unity** の[ドキュメントをダウンロード](https://developers.arcgis.com/downloads/)します。ダウンロードしたファイルは zip アーカイブ形式です。
-* アーカイブをローカル フォルダーに解凍[^*]します。解凍したアーカイブには、`public` と `install` という 2 つのサブ フォルダーがあります。
-* `install` フォルダー内の `README.md` ファイルを開き、選択した Web サーバーの指示に従います。
+プラグインがプロジェクトにインポートされると、[パッケージ (Package)] メニューから [`プロジェクト内 (In Project)`] を選択したときに、プロジェクト ウィンドウの [パッケージ (Packages)] セクションに **ArcGIS Maps SDK for Unity** フォルダーが表示されます。
 
-[^*]:パスが長いため、そのままだと Windows の標準機能で解凍できません。他のフリー ソフトを用いるかフォルダーやファイルの名前を変更して解凍を行ってください。
+#### ダウンロード ページからダウンロードする
+
+1. [ダウンロード ページ](https://developers.arcgis.com/unity/downloads/)からプラグインをダウンロードしてください。
+
+2. ダウンロード後、上部メニューから[ウィンドウ（Window）] > [パッケージ マネージャー（Package Manager）] をクリックして、[パッケージ マネージャー（Package Manager）] ウィンドウを開きます。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/package-manager.png" width="800px">
+
+3. [パッケージ マネージャー（Package Manager）] ウィンドウの [+] アイコンをクリックします。
+
+4. リストから [.tgz ファイルからパッケージを加える… (Add package from tarball)] を選択し、ファイル ブラウザーを表示します。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/tarball.png" width="400px">
+
+5. .tgz(tarball) ファイルを保存したフォルダーに移動します。
+
+プラグインがプロジェクトにインポートされると、[パッケージ (Package)] メニューから [`プロジェクト内 (In Project)`] を選択したときに、プロジェクト ウィンドウの [パッケージ (Packages)] セクションに **ArcGIS Maps SDK for Unity** フォルダーが表示されます。
+
+### 4. サンプル アセットのインポート
+
+**ArcGIS Maps SDK for Unity** には、シーンに機能とビジュアル フィデリティーを追加するために使用できる追加のサンプルとツールが付属しています。
+
+以下の方法で、プラグインに付属しているサンプルアセットをインポートします。
+
+1. トップ メニューで、[ウィンドウ(Window)] > [パッケージ マネージャー(Package Manager)]** を展開し、[パッケージ マネージャー (Package Manager)] ウィンドウを開きます。
+2. 左側のリストから [ArcGIS Maps SDK for Unity] を選択します。
+3. 右側のパネルで [サンプル (Samples)] タブをクリックします。
+4. [Sample Content] の隣にある [インポート (Import)] ボタンをクリックします。
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/import-sample-assets-2022.png" width="800px">
+
+サンプル アセットがプロジェクトにインポートされると、[プロジェクト (Project)] ウィンドウの [Assets] > [Samples] の下にフォルダーとそのコンテンツが表示されます。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/samples-folder.png" width="800px">
+
+### 5. シーン設定オプションの選択
+
+プラグインは、シーン内で ArcGIS データおよびその他の地理空間コンテンツを使用するための 3 つのオプションを提供します。
+
+* [Map Creator UI](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#map-creator-ui)では、コードを一切書かずにシーンを作成するオプションが提供されます。
+* [コンポーネント](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#components)は、シーン内のゲームオブジェクトに添付できます。
+* [C# API](https://developers.arcgis.com/unity/install-and-set-up/scene-setting-options/#c-api) では、プラグインのソースコードを修正することでカスタマイズ オプションが利用可能です。
 

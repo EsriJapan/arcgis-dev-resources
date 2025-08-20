@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-19T09:38:37 JST">
+<meta name="revised" content="2025-08-20T19:07:17 JST">
 <title>Unity :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -774,13 +774,6 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/unity/add-the-plugin-to-a-new-project/">
-            新規プロジェクトにプラグインを追加
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/" class="dd-item haschildren
@@ -1031,7 +1024,7 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Maps SDK for Unity - Tutorials - <a href="https://developers.arcgis.com/unity/maps/tutorials/display-a-map-ui/">Display a map(UI)</a></p>
+    <p>出典：ArcGIS Maps SDK for Unity - Tutorials - <a href="https://developers.arcgis.com/unity/maps/tutorials/display-a-map-ui/">Display a map（UI）</a></p>
 <h2 id="マップを表示する-ui">マップを表示する (UI)</h2>
 <p>Unity の <strong>Map Creator UI</strong> と <strong>High Definition Render Pipeline</strong> を使用して、ベースマップ、標高ソースの設定、データ レイヤーの追加、特定エリアの表示方法をご紹介します。</p>
 <p>このチュートリアルでは、ベースマップ レイヤー サービスとデータ レイヤーを含むローカル シーンを Unity で作成します。</p>
@@ -1068,8 +1061,12 @@ ESRIジャパンで提供する<a href="https://www.esrij.com/services/maintenan
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-new-scene-2-0.png" width="350px"></p>
 </li>
 <li>
-<p>[Basic Outdoors (HDRP)] テンプレートを選択し、[作成 (Create)] ボタンをクリックします。
+<p>[Basic Outdoors （HDRP）] テンプレートを選択し、[作成 (Create)] ボタンをクリックします。
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/basic-outdoor-template-2-0.png" width="650px"></p>
+</li>
+<li>
+<p>[ヒエラルキー（Hierarchy）]ウィンドウで、<strong>Geometry</strong> のゲーム オブジェクトを選択し、右クリックしてコンテキスト メニューから[削除（Delete）]を選択して、シーンから削除します。
+<img src="" width="650px"></p>
 </li>
 </ol>
 <h3 id="map-creator-ui-を開く">Map Creator UI を開く</h3>
@@ -1092,7 +1089,7 @@ ESRIジャパンで提供する<a href="https://www.esrij.com/services/maintenan
 <li>Altitude : 0</li>
 <li>Spatial Reference WKID : 4326</li>
 </ul>
-<p>spatial reference に関する情報は、<a href="https://developers.arcgis.com/unity/spatial-and-data-analysis/spatial-references/">spatial references</a> のページを参照してください。</p>
+<p>spatial reference に関する情報は、<a href="https://developers.arcgis.com/unity/spatial-reference-and-data-analysis/spatial-references/">spatial references</a> のページを参照してください。</p>
 </li>
 <li>
 <p>[Enable Map Extent] チェック ボックスをオンにして、[Map Extent] セクションを表示し、マップの範囲をこれらの値に設定します。</p>
@@ -1110,7 +1107,7 @@ ESRIジャパンで提供する<a href="https://www.esrij.com/services/maintenan
 </ol>
 <p>以下が、[Map] パネルに入力した画像です。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/create-map-local-2-0.png" width="500px">
-<p>[ヒエラルキー (Hierarchy)] ウィンドウで、作成された <strong>ArcGISMap</strong> ゲーム オブジェクトを確認できます。</p>
+<p>[ヒエラルキー （Hierarchy）] ウィンドウで、作成された <strong>ArcGISMap</strong> ゲーム オブジェクトを確認できます。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/arcgismap-game-object-2-0.png" width="650px">
 <p>[ヒエラルキー (Hierarchy)] ウィンドウで <strong>ArcGISMap</strong> ゲーム オブジェクトをクリックすると、ゲーム オブジェクトに <strong>ArcGIS Map</strong> コンポーネントがアタッチされていることがわかります。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/no-api-arcgis-map-component-2-0.png" width="650px">
@@ -1177,7 +1174,7 @@ ESRIジャパンで提供する<a href="https://www.esrij.com/services/maintenan
 <p>[API Key] セクションで API キーを設定します。</p>
 </li>
 </ol>
-<p>このスクリーンショットで <code>Paste your API key here</code> と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、[<a href="../../get-api-key/">API キーの取得</a>] をご覧ください。</p>
+<p>このスクリーンショットで <code>Paste your API key here</code> と表示されているフィールドに API キーが入力されていることを確認してください。API キーの取得方法については、<a href="../../get-api-key/">API キーの取得</a> をご覧ください。</p>
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-startup-app/api-key-ui-2-0.png" width="400px">
 <p>Unity プロジェクト内の複数のシーンに対してグローバル API キーを設定するもう 1 つの方法は、プロジェクト設定です。API キーの詳細については、<a href="https://developers.arcgis.com/unity/authentication/#api-keys">API キー</a>のセクションを参照してください。</p>
 <p>[Basemap] タブに戻ると、以前はグレーアウトしていたベースマップ アイコンが有効になり、API キーが正常に登録されたことがわかります。</p>
@@ -1246,10 +1243,10 @@ ESRIジャパンで提供する<a href="https://www.esrij.com/services/maintenan
 <h4 id="太陽の調整">太陽の調整</h4>
 <ol>
 <li>
-<p>[ヒエラルキー (Hierarchy)] ウィンドウで、<strong>Sun</strong> ゲーム オブジェクトをクリックします。</p>
+<p>[ヒエラルキー (Hierarchy)] ウィンドウで、親オブジェクトの <strong>Lighting</strong> ゲーム オブジェクトを展開し、子オブジェクトの <strong>Sun</strong> ゲーム オブジェクトをクリックします。</p>
 </li>
 <li>
-<p>[ヒエラルキー (Hierarchy)] ウィンドウの [トランスフォーム (Transform)] セクションで、回転を以下の値に設定します。</p>
+<p>[インスペクター (Inspector)] ウィンドウの [トランスフォーム (Transform)] セクションで、回転を以下の値に設定します。</p>
 <ul>
 <li>X : <code>36</code></li>
 <li>Y : <code>110</code></li>
