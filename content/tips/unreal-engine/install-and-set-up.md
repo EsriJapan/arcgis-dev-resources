@@ -1,6 +1,6 @@
 +++
-title = "インストールとセット アップ"
-description = "ArcGIS Maps SDK for Unreal Engine のインストールとセット アップ手順を紹介します。"
+title = "インストールとセットアップ"
+description = "ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。"
 weight = 1
 aliases = ["/unreal-engine/install-and-set-up/"]
 +++
