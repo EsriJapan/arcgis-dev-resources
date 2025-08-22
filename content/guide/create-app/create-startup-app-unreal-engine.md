@@ -74,7 +74,7 @@ Unreal Engine のインターフェースに慣れていない場合は、最も
     * Altitude : 0
     * Spatial Reference WKID : 4326
 
-    spatial reference については、[spatial references](https://developers.arcgis.com/unreal-engine/spatial-and-data-analysis/spatial-references/) のページを参照してください。
+    spatial reference については、[spatial references](https://developers.arcgis.com/unreal-engine/spatial-reference-and-data-analysis/spatial-references/) のページを参照してください。
 
 6. [Enable Extent] チェック ボックスをオンにすると、[Map Extent] セクションが表示されます。
 
@@ -134,7 +134,7 @@ Unreal Engine のインターフェースに慣れていない場合は、最も
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/set-basemap-ui-apikey.png" width="650px">
 
-3. [開発者ダッシュボード](https://developers.arcgis.com/dashboard/)にアクセスし、API キーを取得してください。
+3. ポータルにアクセスして API キーを取得してください。
 
 4. [Auth] タブをクリックしてパネルの内容を表示します。
 
@@ -142,7 +142,7 @@ Unreal Engine のインターフェースに慣れていない場合は、最も
 
     API キーが、このスクリーンショットの [`Paste your API key here`] と表示されているフィールドに入力されていることを確認してください。API キーの取得方法については、UI の [[API キーの取得]](../../get-api-key/)をクリックしてください。
 
-    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/api-key-ui.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/api_key_ui.png" width="650px">
 
 6. [Basemap] タブに戻ると、以前はグレー表示だったベースマップ アイコンが有効になり、API キーが正常に登録されたことがわかります。
 
@@ -236,7 +236,16 @@ ArcGIS Online から使用できるデータを追加します。
 
 この時点で、エクステントの設定で切り取られたマップ データが表示されるはずです。[アウトライナー (Outliner)] パネルで、**Default Pawn** をダブルクリックして、エディター カメラを設定されたカメラ位置に移動します。マウスの右ボタンを押しながら **WASD** キーを使って移動するか、マウスの左ボタンを押しながらエディター モード中に周囲を見回します。エディター モード中に [ビューポート (Viewport)] のカメラ移動速度を上げるには、[ビューポート (Viewport)] 右上の [カメラ速度 (Camera Speed)] アイコンをクリックし、スライダーをドラッグして値を上げます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview2.png" width="650px">
+
+| <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview2.png" width="650px"> | 
+| :---: |
+| ブランク テンプレートを使用した場合 | 
+
+| <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview_simulation.png" width="650px"> | 
+| :---: |
+| シミュレーション ブランク テンプレートを使用した場合 | 
+
+
 
 ### Default Pawn を ArcGIS Pawn に置き換える
 
