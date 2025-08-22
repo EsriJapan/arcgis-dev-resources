@@ -151,19 +151,6 @@ Xcode 16 での手順
     
     <item>
       <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</guid>
-      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and setup
-このインストール ガイドでは、ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
-インストールおよびセットアップ方法 ArcGIS Maps SDK for Unreal Engine は Unreal Engine 用のプラグインです。ArcGIS Maps SDK for Unreal Engine を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
-Unreal Engine のインストール このプラグインは、Unreal Engine 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
-プラグインのインストール ArcGIS Maps SDK for Unreal Engine を使用するには、新規プロジェクトまたは既存プロジェクト (英語) のいずれかにプラグインをインストールします。</description>
-    </item>
-    
-    <item>
-      <title>インストール ガイド</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -172,6 +159,19 @@ Unreal Engine のインストール このプラグインは、Unreal Engine 5.5
 ここでは、ArcGIS Web AppBuilder (Developer Edition) (以下 Web AppBuilder) のインストール手順を説明します。
  インストール Web AppBuilder の起動 ポータル URL の指定 アプリケーション ID の設定 インストールの確認  インストール  Web AppBuilder の ZIP ファイルをローカルにダウンロードし、解凍します。
 サインイン ページが表示される場合は、ArcGIS Developers 開発者アカウント（あるいは ArcGIS Online 組織向けプランのアカウント）のユーザー名およびパスワードを入力しサインインします。 Web AppBuilder は Node.js 上で動作するため、インストールする端末に Node.js が必要です。Web AppBuilder のインストール ファイルには Windows バージョンの Node.js が含まれていますが、Mac や Linux など他の OS をお使いの場合は Web AppBuilder を起動する前に Node.</description>
+    </item>
+    
+    <item>
+      <title>インストールとセットアップ</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</guid>
+      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Install and setup
+ここでは、ArcGIS Maps SDK for Unreal Engine のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
+インストールおよびセットアップ方法 ArcGIS Maps SDK for Unreal Engine は Unreal Engine 用のプラグインです。ArcGIS Maps SDK for Unreal Engine を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ずプラグインをダウンロードしてください。
+1. Unreal Engine のインストール このプラグインは、Unreal Engine 5.6、 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、Unreal Engine をインストールしてください。Visual Studio for Unreal Engine の設定については、Unreal Engine 5 のドキュメントを参照してください。
+2. 新規プロジェクトの作成 Unreal Engine には、お客様の業種に合ったさまざまな開発テンプレート (Developer Template)が用意されています。 どのテンプレートを選べばよいかわからない場合は、ゲーム テンプレート (Games Template) とシミュレーション テンプレート (Simulation Template) をお勧めします。これらのテンプレートの詳細については、Unreal Engine テンプレート リファレンスを参照してください。</description>
     </item>
     
     <item>
@@ -430,19 +430,6 @@ Web からレイヤーの追加 URL を指定して、ArcGIS Server Web サー�
   ページ レイアウトの設定 ページのレイアウト タイプとサイズ モードを設定します。
   1. ページの追加 エクスペリエンスにページを追加するには、以下の手順に従ってください。
  ArcGIS Experience Builder のページ パネルに移動します。 ページの追加ボタンをクリックしてください。 ページのレイアウト タイプを選択します。  フルスクリーン アプリ：このレイアウトはアプリケーションのインターフェイスに似ており、固定レイアウトやグリッド レイアウトをサポートしています。 スクロール ページ：このレイアウトは従来の Web ページに似ており、縦スクロールが可能です。    2.</description>
-    </item>
-    
-    <item>
-      <title>新規プロジェクトにプラグインを追加</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</guid>
-      <description>出典：ArcGIS Maps SDK for Unreal Engine - Guide - Add the plugin to a new project
-ArcGIS Maps SDK for Unreal Engine は、ソース コードとサンプル アセットを含む Unreal Engine プラグインです。このページを始める前に、必ずプラグインをダウンロードしてください。
-新規プロジェクトの作成 Unreal Engine には、お客様の業種に合ったさまざまな開発テンプレート (Developer Template)が用意されています。 どのテンプレートを選べばよいかわからない場合は、ゲーム テンプレート (Games Template) とシミュレーション テンプレート (Simulation Template) をお勧めします。これらのテンプレートの詳細については、Unreal Engine テンプレート リファレンスを参照してください。
-  Unreal Engine を起動するには、Epic Games ランチャー を開き、[ライブラリ (Library)] をクリックします。サポートされているバージョンを選択し、[起動 (Launch)] をクリックします。Unreal Engine を起動すると、[Unreal プロジェクトブラウザ (Project Browser)] が自動的に開きます。
-  [最近利用したプロジェクト (Recent Project)] の下で、[開発テンプレート (Developer Template)] の[ゲーム テンプレート (Games Template)]を選択してください。</description>
     </item>
     
     <item>

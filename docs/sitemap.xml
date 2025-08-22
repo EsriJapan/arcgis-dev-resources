@@ -22,9 +22,9 @@
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unity/install-and-set-up/</loc>
   </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</loc>
-  </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/webappbuilder/install-guide/</loc>
+  </url><url>
+    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/</loc>
   </url><url>
@@ -67,8 +67,6 @@
     <loc>https://esrijapan.github.io/arcgis-dev-resources/guide/services/create-feature-service/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/page/</loc>
-  </url><url>
-    <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/</loc>
   </url><url>
     <loc>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/get-started-cdn/</loc>
   </url><url>

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-20T19:15:51 JST">
+<meta name="revised" content="2025-08-22T19:51:36 JST">
 <title>Unreal Engine :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -785,14 +785,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/">
-            新規プロジェクトにプラグインを追加
+            インストールとセットアップ
           </a>
         </div>
     </li>
@@ -1093,7 +1086,7 @@ ESRIジャパンで提供する <a href="https://www.esrij.com/services/maintena
 <li>Altitude : 0</li>
 <li>Spatial Reference WKID : 4326</li>
 </ul>
-<p>spatial reference については、<a href="https://developers.arcgis.com/unreal-engine/spatial-and-data-analysis/spatial-references/">spatial references</a> のページを参照してください。</p>
+<p>spatial reference については、<a href="https://developers.arcgis.com/unreal-engine/spatial-reference-and-data-analysis/spatial-references/">spatial references</a> のページを参照してください。</p>
 </li>
 <li>
 <p>[Enable Extent] チェック ボックスをオンにすると、[Map Extent] セクションが表示されます。</p>
@@ -1158,7 +1151,7 @@ ESRIジャパンで提供する <a href="https://www.esrij.com/services/maintena
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/set-basemap-ui-apikey.png" width="650px">
 </li>
 <li>
-<p><a href="https://developers.arcgis.com/dashboard/">開発者ダッシュボード</a>にアクセスし、API キーを取得してください。</p>
+<p>ポータルにアクセスして API キーを取得してください。</p>
 </li>
 <li>
 <p>[Auth] タブをクリックしてパネルの内容を表示します。</p>
@@ -1166,7 +1159,7 @@ ESRIジャパンで提供する <a href="https://www.esrij.com/services/maintena
 <li>
 <p>[API Key] セクションで API キーを設定します。</p>
 <p>API キーが、このスクリーンショットの [<code>Paste your API key here</code>] と表示されているフィールドに入力されていることを確認してください。API キーの取得方法については、UI の <a href="../../get-api-key/">[API キーの取得]</a>をクリックしてください。</p>
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/api-key-ui.png" width="650px">
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/api_key_ui.png" width="650px">
 </li>
 <li>
 <p>[Basemap] タブに戻ると、以前はグレー表示だったベースマップ アイコンが有効になり、API キーが正常に登録されたことがわかります。</p>
@@ -1280,7 +1273,30 @@ ESRIジャパンで提供する <a href="https://www.esrij.com/services/maintena
 </li>
 </ol>
 <p>この時点で、エクステントの設定で切り取られたマップ データが表示されるはずです。[アウトライナー (Outliner)] パネルで、<strong>Default Pawn</strong> をダブルクリックして、エディター カメラを設定されたカメラ位置に移動します。マウスの右ボタンを押しながら <strong>WASD</strong> キーを使って移動するか、マウスの左ボタンを押しながらエディター モード中に周囲を見回します。エディター モード中に [ビューポート (Viewport)] のカメラ移動速度を上げるには、[ビューポート (Viewport)] 右上の [カメラ速度 (Camera Speed)] アイコンをクリックし、スライダーをドラッグして値を上げます。</p>
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview2.png" width="650px">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview2.png" width="650px"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ブランク テンプレートを使用した場合</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-startup-app/level-preview_simulation.png" width="650px"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">シミュレーション ブランク テンプレートを使用した場合</td>
+</tr>
+</tbody>
+</table>
 <h3 id="default-pawn-を-arcgis-pawn-に置き換える">Default Pawn を ArcGIS Pawn に置き換える</h3>
 <p>エディター モードでは、Unreal Engine の標準の <a href="https://docs.unrealengine.com/5.0/ja/viewport-controls-in-unreal-engine/">ビューポート制御</a> を使用してシーンを自由に移動できます。プレイ モードでシーンを移動するには、<strong>Pawn</strong> 用の独自のコントローラー コンポーネントを作成するか、<strong>Default Pawn</strong> の移動コンポーネントを修正します。また、<strong>Default Pawn</strong> を Samples で使用されているサンプル <strong>ArcGIS Pawn</strong> に置き換えることもできます。サンプル <strong>ArcGIS Pawn</strong> については、 <a href="https://developers.arcgis.com/unreal-engine/maps/camera/#arcgis-pawn"><strong>ArcGIS Pawn</strong></a> のセクションを参照してください。</p>
 <ol>

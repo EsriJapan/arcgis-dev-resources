@@ -17,8 +17,8 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-20T19:15:51 JST">
-<title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
+<meta name="revised" content="2025-08-22T19:51:36 JST">
+<title>インストールとセットアップ :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -785,14 +785,7 @@ if (!doNotTrack) {
       <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/unreal-engine/install-and-set-up/">
-            インストール ガイド
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/">
-            新規プロジェクトにプラグインを追加
+            インストールとセットアップ
           </a>
         </div>
     </li>
@@ -972,7 +965,7 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/unreal-engine/'>ArcGIS Maps SDK for Unreal Engine</a> > インストール ガイド
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/unreal-engine/'>ArcGIS Maps SDK for Unreal Engine</a> > インストールとセットアップ
 
  
 
@@ -989,14 +982,20 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#インストールおよびセットアップ方法">インストールおよびセットアップ方法</a>
+    <li><a href="#インストールおよびセットアップ方法">インストールおよびセットアップ方法</a></li>
+    <li><a href="#1-unreal-engine-のインストール">1. Unreal Engine のインストール</a></li>
+    <li><a href="#2-新規プロジェクトの作成">2. 新規プロジェクトの作成</a>
       <ul>
-        <li><a href="#unreal-engine-のインストール">Unreal Engine のインストール</a></li>
-        <li><a href="#プラグインのインストール">プラグインのインストール</a></li>
-        <li><a href="#シーン設定オプションを選択する">シーン設定オプションを選択する</a></li>
+        <li><a href="#ゲーム-テンプレートのシミュレーション-ブランク-テンプレート">ゲーム テンプレートのシミュレーション ブランク テンプレート</a></li>
+        <li><a href="#シミュレーション-テンプレートのシミュレーション-ブランク-テンプレート">シミュレーション テンプレートのシミュレーション ブランク テンプレート</a></li>
       </ul>
     </li>
-    <li><a href="#追加のダウンロード">追加のダウンロード</a></li>
+    <li><a href="#3-プラグインのダウンロード">3. プラグインのダウンロード</a></li>
+    <li><a href="#4-プラグインのインストール">4. プラグインのインストール</a>
+      <ul>
+        <li><a href="#5-シーン設定オプションを選択する">5. シーン設定オプションを選択する</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -1008,7 +1007,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>インストール ガイド</h1>
+    <h1>インストールとセットアップ</h1>
   
 
 
@@ -1017,28 +1016,91 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Maps SDK for Unreal Engine - Guide - <a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/">Install and setup</a></p>
-<p>このインストール ガイドでは、<strong>ArcGIS Maps SDK for Unreal Engine</strong> のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-unreal-engine/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
+<p>ここでは、<strong>ArcGIS Maps SDK for Unreal Engine</strong> のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-unreal-engine/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
 <h2 id="インストールおよびセットアップ方法">インストールおよびセットアップ方法</h2>
 <p><strong>ArcGIS Maps SDK for Unreal Engine</strong> は Unreal Engine 用のプラグインです。<strong>ArcGIS Maps SDK for Unreal Engine</strong> を使用して ArcGIS の実世界のマップや 3D コンテンツを使用した 3D GIS アプリケーションを作成するには、Unreal プロジェクトを準備する必要があります。作業を開始する前に、必ず<a href="https://developers.arcgis.com/downloads/#unreal-engine">プラグインをダウンロード</a>してください。</p>
-<h3 id="unreal-engine-のインストール">Unreal Engine のインストール</h3>
-<p>このプラグインは、Unreal Engine 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、<a href="https://www.unrealengine.com/ja/download">Unreal Engine</a> をインストールしてください。Visual Studio for Unreal Engine の設定については、<a href="https://docs.unrealengine.com/5.0/ja/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/">Unreal Engine 5 のドキュメント</a>を参照してください。</p>
-<h3 id="プラグインのインストール">プラグインのインストール</h3>
-<p><strong>ArcGIS Maps SDK for Unreal Engine</strong> を使用するには、<a href="../add-the-plugin-to-a-new-project/">新規プロジェクト</a>または<a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/add-the-plugin-to-an-existing-project/">既存プロジェクト (英語)</a> のいずれかにプラグインをインストールします。</p>
-<h3 id="シーン設定オプションを選択する">シーン設定オプションを選択する</h3>
+<h2 id="1-unreal-engine-のインストール">1. Unreal Engine のインストール</h2>
+<p>このプラグインは、Unreal Engine 5.6、 5.5、5.4、および 5.3 をサポートしています。インストールされていない場合は、<a href="https://www.unrealengine.com/ja/download">Unreal Engine</a> をインストールしてください。Visual Studio for Unreal Engine の設定については、<a href="https://docs.unrealengine.com/5.0/ja/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/">Unreal Engine 5 のドキュメント</a>を参照してください。</p>
+<h2 id="2-新規プロジェクトの作成">2. 新規プロジェクトの作成</h2>
+<p>Unreal Engine には、お客様の業種に合ったさまざまな<strong>開発テンプレート (Developer Template)<strong>が用意されています。 どのテンプレートを選べばよいかわからない場合は、<strong>ゲーム テンプレート (Games Template)</strong> と</strong>シミュレーション テンプレート (Simulation Template)</strong> をお勧めします。これらのテンプレートの詳細については、<a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-templates-reference">Unreal Engine テンプレート リファレンス</a>を参照してください。</p>
+<h3 id="ゲーム-テンプレートのシミュレーション-ブランク-テンプレート">ゲーム テンプレートのシミュレーション ブランク テンプレート</h3>
+<ol>
+<li>
+<p>Unreal Engine を起動するには、<strong>Epic Games ランチャー</strong> を開き、[ライブラリ (Library)] をクリックします。サポートされているバージョンを選択し、[起動 (Launch)] をクリックします。Unreal Engine を起動すると、[Unreal プロジェクトブラウザ (Project Browser)] が自動的に開きます。</p>
+</li>
+<li>
+<p>[最近利用したプロジェクト (Recent Project)] の下で、[開発テンプレート (Developer Template)] の[ゲーム テンプレート (Games Template)]を選択してください。</p>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/categories.png" width="800px">
+</li>
+<li>
+<p>リストからプロジェクトのテンプレートを選択します。プラグインを初期化するには、[ブランク (Blank)]のテンプレートを使用することをお勧めします。</p>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/select-template.png" width="800px">
+</li>
+<li>
+<p>プロジェクトを [C++] プロジェクトに設定します。これにより、Visual Studio プロジェクトが作成され、ソース コード フォルダーに空の C++ クラスが 1 つ以上あるという条件が満たされます。品質 / パフォーマンス レベル、ターゲット プラットフォーム、スターター コンテンツを含めるかどうかなどを選択できます。詳細については、<a href="https://developers.arcgis.com/unreal-engine/deployment/">Deployment</a> のページを参照してください。</p>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/project-settings.png" width="800px">
+</li>
+<li>
+<p>ウィンドウの下部で、プロジェクトを保存する場所を選択し、プロジェクト名を付けます。[作成 (Create)]をクリックして終了します。</p>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/create-new-project.png" width="800px">
+</li>
+</ol>
+<p>プロジェクト設定の詳細については、Unreal Engine ドキュメント の <a href="https://dev.epicgames.com/documentation/ja-jp/unreal-engine/creating-a-new-project-in-unreal-engine">新規プロジェクトを作成する</a> を参照してください。</p>
+<h3 id="シミュレーション-テンプレートのシミュレーション-ブランク-テンプレート">シミュレーション テンプレートのシミュレーション ブランク テンプレート</h3>
+<p>Unreal Engine バージョン 5.1 以降には、さまざまなシミュレーション アプリケーション用の <strong>シミュレーション テンプレート</strong> が含まれています。 空、照明、体積雲、地理座標などの設定済みのシミュレーション ブランク テンプレートを活用して、プロジェクトを開始できます。</p>
+<ol>
+<li>
+<p>Unreal Engine を起動するには、<strong>Epic Games ランチャー</strong> を開き、[ライブラリ (Library)]をクリックします。サポートされているバージョンを選択し、[起動 (Launch)]をクリックします。Unreal Engine を起動すると、[Unreal プロジェクト ブラウザー (Project Browser)]が自動的に開きます。</p>
+</li>
+<li>
+<p>[最近利用したプロジェクト (Recent Project)]の下で、[シミュレーション テンプレート (Simulation Template)]を選択してください。</p>
+</li>
+<li>
+<p>[シミュレーション ブランク (Simulation Blank)]テンプレートを使用してください。</p>
+</li>
+<li>
+<p>プロジェクトを [C++] プロジェクトに設定します。これにより、Visual Studio プロジェクトが作成され、ソース コード フォルダーに空の C++ クラスが 1 つ以上あるという条件が満たされます。品質 / パフォーマンス レベル、ターゲット プラットフォーム、スターター コンテンツを含めるかどうかなどを選択できます。詳細については、<a href="https://developers.arcgis.com/unreal-engine/deployment/">Deployment</a> のページを参照してください。</p>
+</li>
+<li>
+<p>ウィンドウの下部で、プロジェクトを保存する場所を選択し、プロジェクト名を付けます。[作成 (Create)] をクリックして終了します。
+<img src="https://developers.arcgis.com/unreal-engine/static/87effbca79deb4fc3252b1ede4b7b2da/6e7b6/create-new-project-simulation.png" width="800px"></p>
+</li>
+</ol>
+<p>プロジェクト設定の詳細については、Unreal Engine 5 ドキュメント の <a href="https://dev.epicgames.com/documentation/ja-jp/unreal-engine/creating-a-new-project-in-unreal-engine">新規プロジェクトを作成する</a> を参照してください。</p>
+<h2 id="3-プラグインのダウンロード">3. プラグインのダウンロード</h2>
+<p><a href="https://developers.arcgis.com/unreal-engine/system-requirements/">システム要件</a>を確認し、<a href="https://developers.arcgis.com/unreal-engine/downloads/">プラグインをダウンロード</a>してください。</p>
+<h2 id="4-プラグインのインストール">4. プラグインのインストール</h2>
+<p>ArcGIS Maps SDK for Unreal Engine をプロジェクト ディレクトリにインストールする必要があります。</p>
+<ol>
+<li>
+<p>Unreal Engine を終了し、Visual Studio を終了します。次に、メインのプロジェクト ディレクトリに <strong>Plugins</strong> フォルダーを作成します。</p>
+ <div class="notices note" >
+<p>作成したフォルダーの名前は必ず <strong>Plugins</strong> にしてください。</p>
+ </div>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/create-plugin-folder.png" width="800px">
+</li>
+<li>
+<p><em>.zip</em> ファイルから <strong>ArcGISMapsSDK</strong> フォルダーを解凍し、新しい <strong>Plugins</strong> フォルダーにコピーします。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/place-folder.png" width="800px"></p>
+ <div class="notices note" >
+<p>プロジェクトの再構築に関する警告メッセージが表示された場合は、[Yes] をクリックして続行できます。</p>
+ </div>
+</li>
+<li>
+<p>プロジェクトを開いたら、メニュー バーの [編集(Edit)] -&gt; [プラグイン(Plugins)] に移動し、<strong>ArcGIS Maps SDK for Unreal Engine</strong> プラグインが正しくインストールされていることを確認します。</p>
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/unreal-engine-add-the-plugin/plugins.png" width="800px">
+ <div class="notices note" >
+<p>macOS をお使いの場合は、プライバシーとセキュリティでプラグインを許可する必要があるかもしれません。</p>
+ </div>
+</li>
+</ol>
+<h3 id="5-シーン設定オプションを選択する">5. シーン設定オプションを選択する</h3>
 <p>SDK には、シーン内で ArcGIS データやその他の地理空間コンテンツを使用するための 4 つのオプションが用意されています。</p>
 <ul>
 <li><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/#modes-panel-ui">Modes Panel UI</a> は、コードを記述せずにシーンを作成できます。</li>
-<li><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/#components">Components</a> は、<strong>Modes Panel UI</strong> の背後にあり、コードを記述せずにシーンを作成できます。</li>
+<li><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/#components">コンポーネント</a> は、<strong>Modes Panel UI</strong> の背後にあり、コードを記述せずにシーンを作成できます。</li>
 <li><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/#blueprints">BluePrints</a> は、Unreal Engine で提供されているノードベースのビジュアル スクリプト インターフェイスを使用してシーンを作成するオプションを提供します。</li>
 <li><a href="https://developers.arcgis.com/unreal-engine/install-and-set-up/scene-setting-options/#c-api">C++ API</a> は、プラグインのソース コードを変更することでカスタマイズ オプションを提供します。</li>
-</ul>
-<h2 id="追加のダウンロード">追加のダウンロード</h2>
-<p><a href="https://developers.arcgis.com/downloads/">ダウンロード ページ</a>から、開発者向けドキュメントをアーカイブ形式としてダウンロードできます。ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、サンプル ドキュメントが含まれています。アーカイブには、インターネットに接続しなくてもドキュメントにアクセスできるように、ローカルの Web サーバーからドキュメントにアクセスする手順が記述されています。このドキュメントは、ローカルのコンピュータまたは内部ネットワーク上で実行するように設計されており、公共のインターネット上では実行できません。</p>
-<p>ローカルでドキュメントを使用するには、</p>
-<ul>
-<li><strong>ArcGIS Maps SDK for Unreal Engine</strong> の<a href="https://developers.arcgis.com/downloads/">ドキュメントをダウンロード</a>します。ダウンロードしたファイルは zip アーカイブ形式です。</li>
-<li>アーカイブをローカル フォルダーに解凍します。解凍したアーカイブには、<code>public</code> と <code>install</code> という 2 つのサブ フォルダーがあります。</li>
-<li><code>install</code> フォルダー内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
 </ul>
 
 
@@ -1052,7 +1114,7 @@ if (!doNotTrack) {
 
 <div id="navigation">
 <a class="nav nav-prev" href="/arcgis-dev-resources/tips/unreal-engine/" title="ArcGIS Maps SDK for Unreal Engine"> <i class="fa fa-chevron-left"></i><label>ArcGIS Maps SDK for Unreal Engine</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/unreal-engine/add-the-plugin-to-a-new-project/" title="新規プロジェクトにプラグインを追加" style="margin-right: 0px;"><label>新規プロジェクトにプラグインを追加</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/prosdk/" title="ArcGIS Pro SDK" style="margin-right: 0px;"><label>ArcGIS Pro SDK</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
