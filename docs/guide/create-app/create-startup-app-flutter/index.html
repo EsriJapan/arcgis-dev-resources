@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-22T19:51:36 JST">
+<meta name="revised" content="2025-08-25T13:03:02 JST">
 <title>Flutter :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1034,22 +1034,30 @@ if (!doNotTrack) {
 <div class="notices note" >
 <p>このチュートリアルのトピックの背景情報については、<a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Mapping API and location services</a> guide の <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/maps-2d/">Maps (2D)</a> と <a href="../../../basemaps/">ベースマップ</a> を参照してください。</p>
 </div>
+<!--下記記述はバージョンを追えないのでコメントアウト。問い合わせ用に残しておく-->
+<!--
 <div class="notices warning" >
-<p>Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。
-これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。</p>
-<ul>
-<li>
-<p>macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。</p>
-<pre><code>brew install openjdk@17
-sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
-flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk.jdk/Contents/Home
-</code></pre></li>
-<li>
-<p>Windowsの場合：Microsoft の <a href="https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-17">OpenJDK</a> ページから OpenJDK 17 をダウンロードして、zip ファイルを任意のフォルダに解凍した後、PowerShell を使用して設定します。</p>
-<pre><code>flutter config --jdk-dir PATH-TO-JDK
-</code></pre></li>
-</ul>
+
+Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用している場合、pub.dev で arcgis_maps パッケージを使用すると、SDK の依存関係の管理で問題が発生する可能性があります。
+これを解決するには、Flutter のデフォルト JDK として JDK 17 を設定する必要があります。
+
+* macOS の場合：Homebrew を使用して macOS に JDK 17 をインストールします。
+    
+    ```
+    brew install openjdk@17
+    sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+    flutter config --jdk-dir=/opt/homebrew/Cellar/openjdk@17/17.0.14/libexec/openjdk.jdk/Contents/Home
+    ```
+
+* Windowsの場合：Microsoft の [OpenJDK](https://learn.microsoft.com/ja-jp/java/openjdk/download#openjdk-17) ページから OpenJDK 17 をダウンロードして、zip ファイルを任意のフォルダに解凍した後、PowerShell を使用して設定します。
+
+    ```
+    flutter config --jdk-dir PATH-TO-JDK
+    ```
+
 </div>
+
+-->
 <h2 id="前提条件">前提条件</h2>
 <p>このチュートリアルを実施するには、以下が必要です。</p>
 <ol>
