@@ -133,7 +133,6 @@ aliases = ["/create-startup-app-ios/"]
 アプリのユーザーが ArcGIS Location Services にアクセスできるようにするには、[認証の設定](https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/#認証の設定) ステップで作成した開発者認証情報を使用して、リソースへの要求を認証します。
 
 #### API キーでの認証
-API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。
 
 API キー アクセストークンを [`ArcGISEnvironment`](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/) に渡します。
 
@@ -208,6 +207,19 @@ API キー アクセストークンを [`ArcGISEnvironment`](https://developers.
     ```
 
 - body で、`ContentView` に`.authenticator(authenticator)`  修飾子を追加します。
+
+    ``` Swift
+        var body: some SwiftUI.Scene {
+
+            WindowGroup {
+                ContentView()
+
+                    // 追加開始
+                    .authenticator(authenticator)
+                    // 追加終了
+            }
+        }
+    ```
 
     {{% notice note %}}
 
@@ -335,9 +347,10 @@ ArcGIS Enterprise ユーザーは、ArcGIS Location ベースマップ スタイ
 
 3. <Command + R> を押してアプリを実行します。
 
-    富士山を中心とした地形ベースマップ レイヤーのマップが表示されます。マップ ビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
+    Xcode シミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります ( macOS 14 (Sonoma), Xcode 16, iOS 18)。 物理的なデバイスを使用する場合は、[システム要件](https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-8/)を参照してください。
 
-Xcode シミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります ( macOS 14 (Sonoma), Xcode 16, iOS 18)。 物理的なデバイスを使用する場合は、[システム要件](https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-7/)を参照してください。
+
+    富士山を中心とした地形ベースマップ レイヤーのマップが表示されます。マップ ビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。
 
 あるいは、以下のチュートリアル ソリューションをダウンロードすることもできます。
 

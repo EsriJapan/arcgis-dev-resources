@@ -15,7 +15,7 @@ ArcGIS Maps SDK for Swift v200.x は、Swift 開発者向けに設計された�
 
 ## API 名の変更
 ### 型名変更
-型 (クラス、プロトコル、構造体、および列挙型) は ArcGIS モジュールにカプセル化され、名前に AGS プレフィックスが含まれなくなりました。その結果として生じる名前の変更の例を次に示します。
+型 (クラス、プロトコル、構造体、および列挙型) は `ArcGIS` モジュールにカプセル化され、名前に AGS プレフィックスが含まれなくなりました。その結果として生じる名前の変更の例を次に示します。
 | v100.x | v200.x |
 | ---- | ---- |
 | AGSMap | Map |
@@ -26,7 +26,7 @@ ArcGIS Maps SDK for Swift v200.x は、Swift 開発者向けに設計された�
 | AGSFeatureLayer | FeatureLayer |
 | AGSArcGISFeatureTable | ArcGISFeatureTable |
 
-[ArcGIS Maps SDK への製品名変更](https://community.esri.com/t5/a/a/ta-p/1234968)の一環として、Runtime という単語がタイプ名から削除されました。
+[ArcGIS Maps SDK への製品名変更](https://community.esri.com/t5/a/a/ta-p/1234968)の一環として、`Runtime` という単語がタイプ名から削除されました。
 | v100.x | v200.x |
 | ---- | ---- |
 | ArcGISRuntimeEnvironment | ArcGISEnvironment |
@@ -112,6 +112,8 @@ do {
 }
 ```
 
+---
+
 ジョブを開始するために、ステータスを監視したり完了を処理したりするためにクロージャー コールバックを渡す必要がなくなりました。代わりに、ジョブを開始し、その出力を待って結果を取得し、そのメッセージを非同期的に反復してステータスを監視できます。
 
 100.x:
@@ -150,6 +152,8 @@ do {
 }
 ```
 
+---
+
 イベントは、コールバック ハンドラー、デリゲート、または通知センターではなく、非同期シーケンスを通じて提供されます。
 
 100.x:
@@ -165,7 +169,9 @@ for await isStarted in locationDisplay.statusChanged {
 }
 ```
 
-具体的には、AGSRouteTrackerDelegate によって提供されるルート トラッカーなどのデリゲート メソッドの場合、新しい一致パターンは非同期ストリームを使用します。
+---
+
+具体的には、`AGSRouteTrackerDelegate` によって提供されるルート トラッカーなどのデリゲート メソッドの場合、新しい一致パターンは非同期ストリームを使用します。
 
 100.x:
 ```swift
@@ -187,7 +193,7 @@ for try await newStatus in routeTracker.$trackingStatus {
 
 ## SwiftUI 関連の変更
 ### マップ ビューを作成する
-SwiftUI は宣言型 UI フレームワークです。これは、View を作成するときに、特定の状態で何を表示するかについての説明も作成することを意味します。これは、フレームが定義されたビューを作成する UIKit の UIView からの変更です。SwiftUI では、ビューは親ビューの body に含まれています。ただし、UIKit ビューは、プログラムまたは Storyboard を使用してビュー コントローラーのルート ビューに追加されていました。次のコードは、v200.x と比較して、v100.15 でマップ ビューを作成する方法を示しています。
+SwiftUI は宣言型 UI フレームワークです。これは、`View` を作成するときに、特定の状態で何を表示するかについての説明も作成することを意味します。これは、フレームが定義されたビューを作成する UIKit の `UIView` からの変更です。SwiftUI では、ビューは親ビューの `body` に含まれています。ただし、UIKit ビューは、プログラムまたは Storyboard を使用してビュー コントローラーのルート ビューに追加されていました。次のコードは、v200.x と比較して、v100.15 でマップ ビューを作成する方法を示しています。
 
 100.x:
 ```swift
@@ -223,14 +229,14 @@ var body: some View {
 ```
 
 ### 修飾子を表示
-ビュー修飾子をビューに適用して、ビューの外観と動作をカスタマイズします。 新しい MapView と SceneView には、対応する UIKit と同じ機能を実現するためのさまざまなビュー修飾子があります。
+ビュー修飾子をビューに適用して、ビューの外観と動作をカスタマイズします。 新しい `MapView` と `SceneView` には、対応する UIKit と同じ機能を実現するためのさまざまなビュー修飾子があります。
 
-* Viewpoint: ビューポイント状態変数をマップ ビューの現在のビュー ポイントで更新します。
+* **Viewpoint**: ビューポイント状態変数をマップ ビューの現在のビュー ポイントで更新します。
     ```swift
     .onViewpointChanged(kind: .centerAndScale) { viewpoint = $0 }
     ```
 
-* DrawStatus: マップ ビューの描画ステータスが変化したときにアクションを実行します。
+* **DrawStatus**: マップ ビューの描画ステータスが変化したときにアクションを実行します。
  
     ```swift
     .onDrawStatusChanged {
@@ -238,15 +244,15 @@ var body: some View {
     }
     ```
 
-* LocationDisplay: マップ ビューの位置情報表示をオンにして設定します。
+* **LocationDisplay**: マップ ビューの位置情報表示をオンにして設定します。
 
     ```swift
     .locationDisplay(model.locationDisplay)
     ```
 
-* Callout: マップ ビューでタップされたポイントの座標を含むコールアウトを表示します。
+* **Callout**: マップ ビューでタップされたポイントの座標を含むコールアウトを表示します。
     
-    AGSGeoViewTouchDelegate のジェスチャー デリゲート メソッドは、さまざまなビュー修飾子に置き換えられました。
+    `AGSGeoViewTouchDelegate` のジェスチャー デリゲート メソッドは、さまざまなビュー修飾子に置き換えられました。
 
     ```swift
     .onSingleTapGesture { screenPoint, mapPoint in
@@ -271,9 +277,9 @@ var body: some View {
     ```
 
 ### ジオエレメントを識別する
-UIKit と SwiftUI の違いにより、Identify(識別)の操作をマップ ビューで直接実行することはできません。 v200.x では、SwiftUI の reader-proxy デザイン パターンに従い、MapViewProxy を導入して、Identify などの操作を実行できるようにします。
+UIKit と SwiftUI の違いにより、Identify(識別)の操作をマップ ビューで直接実行することはできません。 v200.x では、SwiftUI の reader-proxy デザイン パターンに従い、`MapViewProxy` を導入して、Identify などの操作を実行できるようにします。
 
-次のコードは、v100.15 での AGSGeoView.identifyLayers を使用した Identify と、v200.x での MapViewProxy.identify を使用した Identify の違いを示しています。
+次のコードは、v100.15 での `AGSGeoView.identifyLayers` を使用した Identify と、v200.x での `MapViewProxy.identify` を使用した Identify の違いを示しています。
 
 100.x:
 ```swift
@@ -357,10 +363,12 @@ var body: some View {
 アプリで認証コードを移行する手順については、[Migrate authentication from 100.x to 200.x](https://developers.arcgis.com/swift/reference/migrate-authentication-100-x-to-200-x/) トピックを参照してください。
 
 ## スケッチ
-マップ ビューでジオメトリーをインタラクティブに描画するには、AGSSketchEditor の代わりに GeometryEditor を使用します。
+マップ ビューでジオメトリーをインタラクティブに描画するには、`AGSSketchEditor` の代わりに `GeometryEditor` を使用します。
 
 ## その他のリソース
 その他の例については、新しい[サンプル](https://developers.arcgis.com/swift/sample-code/)または[ツールキット](https://developers.arcgis.com/swift/toolkit/)を確認できます。
+
+---
 
 ## 既知の制限事項
 現バージョンでの既知の制限事項が、[ArcGIS Maps SDK for Swift: リリース ノート](https://developers.arcgis.com/swift/release-notes/) に記載されていますので、ご参照ください。

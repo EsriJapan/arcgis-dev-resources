@@ -15,37 +15,37 @@ Swift Package Manager を使用して Xcode プロジェクトに簡単に統合
 Xcode 16 での手順
 1. Xcode プロジェクトを開きます。メニューバーで、[File] > [Add Package Dependencies...] を選択します。
 
-<img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
+    <img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
 
-2. パッケージ リポジトリの URL として https://github.com/esri/arcgis-maps-sdk-swift を入力します。
+2. パッケージ リポジトリの URL として `https://github.com/esri/arcgis-maps-sdk-swift` を入力します。
 3. オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、**Dependency Rule** オプションを選択します。
 
 4. [Add Package] をクリックします。
 
 5. [Add to Target] リストからアプリを選択します。[Add Package] をクリックします。
 
-<img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
+    <img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
 
 6. ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、"ArcGIS" がまだ存在しない場合は追加します。
 
-<img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
+    <img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
 
 7. ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
-```swift
-import ArcGIS
-```
+    ```swift
+    import ArcGIS
+    ```
 
 8. ArcGIS をインポートした後、SwiftUI プロトコルと ArcGIS プロトコルを区別する必要があるかもしれません。これを行うには、API 接頭辞を追加します。
 
-```swift
-    var body: some SwiftUI.Scene {
+    ```swift
+        var body: some SwiftUI.Scene {
 
-        WindowGroup {
-            ContentView()
+            WindowGroup {
+                ContentView()
 
+            }
         }
-    }
-```
+    ```
 
 ## 追加のダウンロード
 開発プロジェクトを強化するために、[サンプル コード](#サンプル-コード)と[データ](#追加のデータ)、[ツール](#arcgis-maps-sdk-for-swift-toolkit) の追加リソースを利用できます。このガイドを、[スタンドアロンの開発者ドキュメント](#スタンドアロンの開発者向けドキュメント)としてダウンロードすることもできます。
