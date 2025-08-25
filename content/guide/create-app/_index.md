@@ -23,8 +23,8 @@ description = "シンプルな地図アプリの作成方法を紹介します�
 <table>
 <tbody><tr>
 <td style="width:calc(1/6*100%)"><a href="./create-startup-app-dotnet">.NET</a></td>
-<td style="width:calc(1/6*100%)"><a href="./create-startup-app-android">Android</td>
-<td style="width:calc(1/6*100%)"><a href="./create-startup-app-ios">iOS</a></td>
+<td style="width:calc(1/6*100%)"><a href="./create-startup-app-android">Kotlin</td>
+<td style="width:calc(1/6*100%)"><a href="./create-startup-app-ios">Swift</a></td>
 <td style="width:calc(1/6*100%)"><a href="./create-startup-app-flutter">Flutter</a></td>
 <td style="width:calc(1/6*100%)"><a href="./create-startup-app-unity">Unity</a></td>
 <td style="width:calc(1/6*100%)"><a href="./create-startup-app-unreal-engine">Unreal Engine</a></td>

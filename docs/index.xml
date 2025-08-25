@@ -1047,7 +1047,7 @@ import {LayoutEntry} from &amp;#39;jimu-layouts/layout-runtime&amp;#39; let Layo
     </item>
     
     <item>
-      <title>Android</title>
+      <title>Kotlin</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1114,7 +1114,7 @@ app config では、アプリが使用するテーマは theme で定義され�
     </item>
     
     <item>
-      <title>iOS</title>
+      <title>Swift</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

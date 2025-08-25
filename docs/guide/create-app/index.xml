@@ -106,7 +106,7 @@ HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さ�
     </item>
     
     <item>
-      <title>Android</title>
+      <title>Kotlin</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -122,7 +122,7 @@ HTML の追加 HTML ページを定義して、Web ブラウザの幅と高さ�
     </item>
     
     <item>
-      <title>iOS</title>
+      <title>Swift</title>
       <link>https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
