@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-25T13:41:36 JST">
+<meta name="revised" content="2025-09-29T13:40:20 JST">
 <title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -869,56 +869,6 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
-            データ可視化のワークフロー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
-            データ可視化の手順
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
-            地図上に賢くデータを可視化するための 6 つの方法
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
-      </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/hackathon/">
-            ミートアップ
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
 
 
 
@@ -1016,12 +966,12 @@ if (!doNotTrack) {
 <p>Swift Package Manager を使用して Xcode プロジェクトに簡単に統合できます。</p>
 <p>Xcode 16 での手順</p>
 <ol>
-<li>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Add Package Dependencies&hellip;] を選択します。</li>
-</ol>
-<img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
-<ol start="2">
 <li>
-<p>パッケージ リポジトリの URL として <a href="https://github.com/esri/arcgis-maps-sdk-swift">https://github.com/esri/arcgis-maps-sdk-swift</a> を入力します。</p>
+<p>Xcode プロジェクトを開きます。メニューバーで、[File] &gt; [Add Package Dependencies&hellip;] を選択します。</p>
+ <img src="https://developers.arcgis.com/swift/static/f419aeb428f027c28577da5386a1eb6f/4cdf7/swiftpm-xcode15.png" width="650px">
+</li>
+<li>
+<p>パッケージ リポジトリの URL として <code>https://github.com/esri/arcgis-maps-sdk-swift</code> を入力します。</p>
 </li>
 <li>
 <p>オプションとして、正確なバージョンまたは使用するバージョンの範囲を指定したい場合は、<strong>Dependency Rule</strong> オプションを選択します。</p>
@@ -1031,20 +981,18 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>[Add to Target] リストからアプリを選択します。[Add Package] をクリックします。</p>
+ <img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
 </li>
-</ol>
-<img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
-<ol start="6">
-<li>ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、&ldquo;ArcGIS&rdquo; がまだ存在しない場合は追加します。</li>
-</ol>
-<img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
-<ol start="7">
-<li>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</li>
-</ol>
+<li>
+<p>ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、&ldquo;ArcGIS&rdquo; がまだ存在しない場合は追加します。</p>
+ <img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
+</li>
+<li>
+<p>ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ArcGIS</span>
-</code></pre></div><ol start="8">
-<li>ArcGIS をインポートした後、SwiftUI プロトコルと ArcGIS プロトコルを区別する必要があるかもしれません。これを行うには、API 接頭辞を追加します。</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>ArcGIS をインポートした後、SwiftUI プロトコルと ArcGIS プロトコルを区別する必要があるかもしれません。これを行うには、API 接頭辞を追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">var</span> body: some SwiftUI.Scene {
 
         WindowGroup {
@@ -1052,7 +1000,9 @@ if (!doNotTrack) {
 
         }
     }
-</code></pre></div><h2 id="追加のダウンロード">追加のダウンロード</h2>
+</code></pre></div></li>
+</ol>
+<h2 id="追加のダウンロード">追加のダウンロード</h2>
 <p>開発プロジェクトを強化するために、<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B3%E3%83%BC%E3%83%89">サンプル コード</a>と<a href="#%E8%BF%BD%E5%8A%A0%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF">データ</a>、<a href="#arcgis-maps-sdk-for-swift-toolkit">ツール</a> の追加リソースを利用できます。このガイドを、<a href="#%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3%E3%81%AE%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88">スタンドアロンの開発者ドキュメント</a>としてダウンロードすることもできます。</p>
 <h3 id="サンプル-コード">サンプル コード</h3>
 <p>独自のアプリケーションに追加できるさまざまな強力な機能を紹介する実践的なサンプル コードを入手してください。サンプルを検索し、<a href="https://developers.arcgis.com/swift/sample-code/">サンプル ドキュメント</a>で関連するコードを参照するか、<a href="https://github.com/Esri/arcgis-maps-sdk-swift-samples">サンプル リポジトリ</a>からコードをダウンロードしてローカルで実行できます。</p>

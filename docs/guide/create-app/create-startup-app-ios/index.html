@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-08-25T13:41:36 JST">
+<meta name="revised" content="2025-09-29T13:40:20 JST">
 <title>Swift :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -869,56 +869,6 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/other/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/">その他</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/arcgis-dev-resources/other/visualization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/visualization/">データ ビジュアライゼーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/workflow-with-arcgis/">
-            データ可視化のワークフロー
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/data-visualization-procedure/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/data-visualization-procedure/">
-            データ可視化の手順
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/visualization/6ways-to-improve-your-maps/">
-            地図上に賢くデータを可視化するための 6 つの方法
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/arcgis-dev-resources/other/samples/" class="dd-item
-        ">
-      <div>
-      <a href="/arcgis-dev-resources/other/samples/">サンプル集</a>
-      </div>
-    </li>
-      <li data-nav-id="/arcgis-dev-resources/other/hackathon/" class="dd-item">
-        <div>
-          <a href="/arcgis-dev-resources/other/hackathon/">
-            ミートアップ
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
 
 
 
@@ -1155,7 +1105,6 @@ if (!doNotTrack) {
 <h3 id="開発者認証情報を設定する">開発者認証情報を設定する</h3>
 <p>アプリのユーザーが ArcGIS Location Services にアクセスできるようにするには、<a href="https://esrijapan.github.io/arcgis-dev-resources/guide/create-app/create-startup-app-ios/#%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">認証の設定</a> ステップで作成した開発者認証情報を使用して、リソースへの要求を認証します。</p>
 <h4 id="api-キーでの認証">API キーでの認証</h4>
-<p>API キーを使用すると、ArcGIS Online でホストされているサービス、Web マップ、および Web シーンにアクセスできるようになります。</p>
 <p>API キー アクセストークンを <a href="https://developers.arcgis.com/swift/api-reference/documentation/arcgis/arcgisenvironment/"><code>ArcGISEnvironment</code></a> に渡します。</p>
 <ol>
 <li>
@@ -1239,7 +1188,17 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p>body で、<code>ContentView</code> に<code>.authenticator(authenticator)</code>  修飾子を追加します。</p>
-  <div class="notices note" >
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift">    <span style="color:#66d9ef">var</span> body: some SwiftUI.Scene {
+
+        WindowGroup {
+            ContentView()
+
+                <span style="color:#75715e">// 追加開始</span>
+                .authenticator(authenticator)
+                <span style="color:#75715e">// 追加終了</span>
+        }
+    }
+</code></pre></div>  <div class="notices note" >
 <p><strong>ベストプラクティス</strong> : OAuth 認証情報は、このチュートリアルの便宜のためにコードに直接格納されています。本番環境では、認証情報をソース コードに直接保存しないでください。</p>
   </div>
 </li>
@@ -1356,10 +1315,10 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li>
 <p>&lt;Command + R&gt; を押してアプリを実行します。</p>
+<p>Xcode シミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります ( macOS 14 (Sonoma), Xcode 16, iOS 18)。 物理的なデバイスを使用する場合は、<a href="https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-8/">システム要件</a>を参照してください。</p>
 <p>富士山を中心とした地形ベースマップ レイヤーのマップが表示されます。マップ ビューをピンチ、ドラッグ、およびダブルタップして、マップを操作します。</p>
 </li>
 </ol>
-<p>Xcode シミュレータを使用する場合、システムは以下の最低要件を満たしている必要があります ( macOS 14 (Sonoma), Xcode 16, iOS 18)。 物理的なデバイスを使用する場合は、<a href="https://developers.arcgis.com/swift/system-requirements/system-requirements-for-200-7/">システム要件</a>を参照してください。</p>
 <p>あるいは、以下のチュートリアル ソリューションをダウンロードすることもできます。</p>
 <h2 id="オプション-2完成したソリューションをダウンロードする">オプション 2:完成したソリューションをダウンロードする</h2>
 <ol>
