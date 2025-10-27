@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-10-27T14:19:11 JST">
 <title>コンポーネント :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -935,7 +935,7 @@ if (!doNotTrack) {
     <li>
       <ul>
         <li><a href="#マップ-コンポーネント">マップ コンポーネント</a></li>
-        <li><a href="#チャート-コンポーネントベータ版">チャート コンポーネント（ベータ版）</a></li>
+        <li><a href="#チャート-コンポーネント">チャート コンポーネント</a></li>
         <li><a href="#コーディング-コンポーネント">コーディング コンポーネント</a></li>
         <li><a href="#埋め込み可能なコンポーネント">埋め込み可能なコンポーネント</a></li>
       </ul>
@@ -961,40 +961,32 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Maps SDK for JavaScript - <a href="https://developers.arcgis.com/javascript/latest/components/">Components</a></p>
 <p>ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコードで Web アプリを構築するための事前構築された UI コンポーネントのコレクションです。</p>
-<p>標準ベースの <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">Web コンポーネント</a>として構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML エレメント（例：<code>&lt;arcgis-map&gt;&lt;/arcgis-map&gt;</code>）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。</p>
+<p>標準ベースの <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">Web コンポーネント</a>として構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML 要素（例：<code>&lt;arcgis-map&gt;&lt;/arcgis-map&gt;</code>）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。</p>
 <h3 id="マップ-コンポーネント">マップ コンポーネント</h3>
 <p><a href="https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/welcome--docs"><code>@arcgis/map-components</code></a> パッケージには、マップ コンポーネント、シーン コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。</p>
-<p>以下は、<code>item-id</code> 属性を持つマップ コンポーネント <code>&lt;arcgis-map&gt;</code> の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むことができます。</p>
+<p>以下は、<code>item-id</code> 属性を持つマップ コンポーネント <code>&lt;arcgis-map&gt;</code> の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むこと方法を示しています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">arcgis-map</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;05e015c5f0314db9a487a9b46cb37eca&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-map</span>&gt;
-</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/map-component.png" width="600px">
-<h3 id="チャート-コンポーネントベータ版">チャート コンポーネント（ベータ版）</h3>
-<p><a href="https://developers.arcgis.com/javascript/latest/references/charts-components/"><code>@arcgis/charts-components</code></a> パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用される<a href="https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-chart/">チャート コンポーネント</a>と<a href="https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-charts-action-bar/">チャート アクション バー コンポーネント</a>が含まれています。このパッケージは 9 種類のチャート タイプをサポートしており、各チャート タイプは、共有チャート仕様に準拠した <code>model</code> オブジェクトを設定することでレンダリングできます。この <code>model</code>  オブジェクトは、Web マップまたはフィーチャ レイヤーから読み込むか、チャート モデル メソッドを使用してプログラムで構成できます。</p>
-<p>以下は、<code>&lt;arcgis-chart&gt;</code> チャート コンポーネントとデフォルトのチャート インタラクション アクションを追加する <code>&lt;arcgis-charts-action-bar&gt;</code> の使用方法を示すコード スニペットです。チャート要素に有効な <code>model</code> が設定され、チャートがレンダリングされます:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">-</span><span style="color:#a6e22e">chart</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">arcgis</span><span style="color:#f92672">-</span><span style="color:#a6e22e">charts</span><span style="color:#f92672">-</span><span style="color:#a6e22e">action</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bar</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;action-bar&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/arcgis-charts-action-bar&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/arcgis-chart&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WebMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">$arcgis</span>.<span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#34;@arcgis/core/WebMap.js&#34;</span>);
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webmap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">WebMap</span>({ <span style="color:#a6e22e">portalItem</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;96cb2d2825dc459abadcabc941958125&#34;</span> }});
-  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">webmap</span>.<span style="color:#a6e22e">loadAll</span>();
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureLayer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">webmap</span>.<span style="color:#a6e22e">layers</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">layer</span>) =&gt; <span style="color:#a6e22e">layer</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;College Scorecard&#34;</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scatterplotModel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">featureLayer</span>.<span style="color:#a6e22e">charts</span>[<span style="color:#ae81ff">0</span>];
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chartElement</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;arcgis-chart&#34;</span>);
-
-  <span style="color:#a6e22e">chartElement</span>.<span style="color:#a6e22e">layer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">featureLayer</span>;
-  <span style="color:#a6e22e">chartElement</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scatterplotModel</span>;
-<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/chart-component_ver433.png" width="600px">
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/map-component.png">
+<h3 id="チャート-コンポーネント">チャート コンポーネント</h3>
+<p><a href="https://developers.arcgis.com/javascript/latest/references/charts-components/"><code>@arcgis/charts-components</code></a> パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用される<a href="https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-chart/">チャート コンポーネント</a>と<a href="https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-charts-action-bar/">チャート アクション バー コンポーネント</a>が含まれています。各チャートは、共有チャート仕様に準拠した <code>model</code> オブジェクトを設定することでレンダリングできます。この <code>model</code> オブジェクトは、フィーチャ レイヤーから読み込むか、チャート モデルを使用してプログラムで構成できます。</p>
+<p>以下は、<code>&lt;arcgis-chart&gt;</code> チャート コンポーネントと、デフォルトのチャート操作を追加する <code>&lt;arcgis-charts-action-bar&gt;</code> の使用例を示すコード スニペットです。<code>layer-item-id</code> と <code>chart-index</code> の 2 つの属性を使用して、データ ソースとレンダリングするチャートのインデックスを指定します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">arcgis-chart</span> <span style="color:#a6e22e">layer-item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8871626e970a4f3e9d6113ec63a92f2f&#34;</span> <span style="color:#a6e22e">chart-index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;
+  &lt;<span style="color:#f92672">arcgis-charts-action-bar</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;action-bar&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-charts-action-bar</span>&gt;
+&lt;/<span style="color:#f92672">arcgis-chart</span>&gt;
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/chart-component_ver433.png">
 <h3 id="コーディング-コンポーネント">コーディング コンポーネント</h3>
-<p><a href="https://developers.arcgis.com/javascript/latest/references/coding-components/?path=/docs/welcome--docs"><code>@arcgis/coding-components</code></a> パッケージには、<a href="https://developers.arcgis.com/javascript/latest/references/coding-components/?path=/docs/component-reference-arcade-editor--docs"><code>Arcade エディター コンポーネント</code></a>が含まれています。このコンポーネントを使用すると、エンド ユーザーはレンダラー、ポップアップ、ラベルのために新しいデータ値を動的に作成するための Arcade 式を作成できます。ユーザーは、Map Viewer や <a href="https://developers.arcgis.com/arcade/playground/"><code>Arcade プレイグラウンド</code></a>での編集と同じ体験を得ることができます。
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/components/coding-components.png" width="600px"></p>
+<p><a href="https://developers.arcgis.com/javascript/latest/references/coding-components/"><code>@arcgis/coding-components</code></a> パッケージには、<a href="https://developers.arcgis.com/javascript/latest/references/coding-components/arcgis-arcade-editor/"><code>Arcade エディター コンポーネント</code></a>が含まれています。このコンポーネントを使用すると、エンド ユーザーはレンダラー、ポップアップ、ラベルのために新しいデータ値を動的に作成するための Arcade 式を作成できます。ユーザーは、Map Viewer や <a href="https://developers.arcgis.com/arcade/playground/"><code>Arcade プレイグラウンド</code></a>での編集と同じ体験を得ることができます。
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/components/coding-components.png"></p>
 <h3 id="埋め込み可能なコンポーネント">埋め込み可能なコンポーネント</h3>
-<p><a href="https://developers.arcgis.com/javascript/latest/references/embeddable-components/">埋め込み可能なコンポーネント</a>には、<a href="https://developers.arcgis.com/javascript/latest/references/embeddable-components/arcgis-embedded-map/">埋め込み マップ コンポーネント</a>が含まれています。 このコンポーネントを使用すると、デフォルトのコンポーネント（ズーム、凡例、ブックマークなど）があらかじめ設定されたWebマップを、あらゆる Web サイトにすばやく統合することができます。ArcGIS Online の Map Viewer から、最小限の設定でインタラクティブなマップを追加できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">arcgis-embedded-map</span> <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ceb8954a5f2c457284c5074efd5a5ca0&#34;</span> <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span> <span style="color:#a6e22e">heading-enabled</span> <span style="color:#a6e22e">legend-enabled</span> <span style="color:#a6e22e">information-enabled</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:300px;&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-embedded-map</span>&gt;
-</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/embedded-map.png" width="600px">
+<p><a href="https://developers.arcgis.com/javascript/latest/references/embeddable-components/">埋め込み可能なコンポーネント</a>には、<a href="https://developers.arcgis.com/javascript/latest/references/embeddable-components/arcgis-embedded-map/">埋め込み マップ コンポーネント</a>が含まれています。 このコンポーネントを使用すると、デフォルトのコンポーネント（ズーム、凡例、ブックマークなど）があらかじめ設定された Web マップを、あらゆる Web サイトにすばやく統合することができます。ユーザーは ArcGIS Online のマップ ビューアーから、最小限の設定でインタラクティブなマップを追加できます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">arcgis-embedded-map</span>
+  <span style="color:#a6e22e">item-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ceb8954a5f2c457284c5074efd5a5ca0&#34;</span>
+  <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span>
+  <span style="color:#a6e22e">heading-enabled</span>
+  <span style="color:#a6e22e">legend-enabled</span>
+  <span style="color:#a6e22e">information-enabled</span>
+  <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:300px;&#34;</span>&gt;&lt;/<span style="color:#f92672">arcgis-embedded-map</span>&gt;
+</code></pre></div><img src="https://apps.esrij.com/arcgis-dev/guide/img/components/embedded-map.png">
 <div class="notices note" >
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">MDN</a> で Web コンポーネント全般について詳しく学ぶことができます。</p>
 </div>
