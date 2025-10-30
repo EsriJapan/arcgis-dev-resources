@@ -22,13 +22,13 @@ Calcite コンポーネントは、Web アプリケーションを構築する�
 Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを配置することでロードできます:
 
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js"></script>
+<script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 
 ### NPM パッケージで利用する
-Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-components-examples)でご覧いただけます。
+Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-design-system/tree/main/examples/components)でご覧いただけます。
 ``` cmd
 npm install @esri/calcite-components
 ```

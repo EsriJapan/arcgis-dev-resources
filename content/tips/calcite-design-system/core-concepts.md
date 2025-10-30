@@ -8,7 +8,7 @@ Weight=2
 
 Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。
 
-Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、[MDN Web Docs](https://developer.mozilla.org/ja/) やその他の Web 標準ドキュメントで確認できます。
+Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的な開発に必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、[MDN Web Docs](https://developer.mozilla.org/ja/) やその他の Web 標準ドキュメントで確認できます。
 
 
 ## カスタム要素
@@ -57,21 +57,21 @@ Shadow DOM によるカプセル化はアプリケーション全体で一貫し
 ## CSS 変数
 Calcite コンポーネントでは、スタイルを上書きするための CSS 変数が提供されています。Web コンポーネントの Shadow DOM により、CSS 変数なしでは簡単にスタイルを変更することができません。[色](https://developers.arcgis.com/calcite-design-system/foundations/colors/)や[タイポグラフィー](https://developers.arcgis.com/calcite-design-system/foundations/typography/)など、デザイン システム全体で使用されるトークンには CSS 変数が用意されています。
 
-さらに、一部の Calcite コンポーネントにはコンポーネント固有のスタイルを変更ための CSS 変数も用意されています。これらの CSS 変数は [`calcite-loader` の CSS 変数](https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles)のようにコンポーネントのドキュメントから確認できます。
+さらに、一部の Calcite コンポーネントにはコンポーネント固有のスタイルを変更するための CSS 変数も用意されています。これらの CSS 変数は [`calcite-loader` の CSS 変数](https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles)のようにコンポーネントのドキュメントから確認できます。
 
 使用例としては、[`calcite-notice`](https://developers.arcgis.com/calcite-design-system/components/notice/) において、CSS 変数を使って表面色とテキスト色を入れ替えることが挙げられます。
 
 ```CSS
 calcite-notice {
-  --calcite-ui-foreground-1: #151515;
-  --calcite-ui-text-1: #ffffff;
+  --calcite-color-foreground-1: #151515;
+  --calcite-color-text-1: #ffffff;
 }
 ```
 [CSS カスタムプロパティ（変数）の使用](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties) に、機能の詳細が説明されています。
 
 
 ## コンポーネントのロード
-Web コンポーネントは、最初はシンプルな HTML 要素として始まり、その実装が[ブラウザーで定義される](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define)とすぐにアップグレードされます。Calcite コンポーネントは、アプリケーションにインポートされ、使用すると自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるのを待つ必要がある場合もあります。
+Web コンポーネントは、最初はシンプルな HTML 要素として始まり、その実装が[ブラウザーで定義される](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define)とすぐにアップグレードされます。Calcite コンポーネントは、アプリケーションにインポートされ、使用されると自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるのを待つ必要がある場合もあります。
 
 ### ハイドレーション
 Calcite コンポーネントには、コンポーネントおよびそのすべての子コンポーネントのハイドレーションが完了した際にフラグを追加するオプションが提供されています。これは、様々なコンポーネントが非同期に読み込まれ、レンダリングされる際に、スタイルの適用前に一瞬表示されてしまうフラッシュ（FOUC）を防ぐことができます。
