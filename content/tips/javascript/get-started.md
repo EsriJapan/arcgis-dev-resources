@@ -11,38 +11,42 @@ ArcGIS Maps SDK for JavaScript には、[コア API](https://developers.arcgis.c
 
 JavaScript Maps SDK の使い始めは、目的や要件によって異なります。ローカル パッケージをインストールせずにバニラ JavaScript と HTML アプリを構築したい場合は、CDN を利用することができます。より構造化された、またはスケーラブルな Web アプリケーション、特にフロントエンド フレームワークやビルド ツールを使用する場合は、[npm](https://developers.arcgis.com/javascript/latest/get-started/#npm) で SDK をインストールすることを検討してください。
 
-> コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始めまられます。
-> - [CDN](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/cdn)
-> - [Vite](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
-> - [React](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/react)
-> - [Angular](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/angular)
-> - [Vue](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
+{{% notice tip %}}
+
+コード例：React、Angular、Vite など、様々なサンプルについては [Esri/jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples) のリポジトリーを参照してください。
+
+{{% /notice %}}
 
 ## CDN
 JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。
 
 ### セットアップ
-はじめに、基本的なHTMLファイルの `<head>` セクションに、必要なライブラリー スクリプトと CSS リンク タグを以下に示す順番ですべて含めます。
+はじめに、基本的な HTML ファイルの `<head>` セクションに、必要なライブラリー スクリプトと CSS リンク タグを以下に示す順番ですべて含めます。  
+index.html
 ```html
-<!-- Load Calcite Design System -->
-<script
-  type="module"
-  src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js"></script>
+<!-- Calcite Design System のロード -->
+<script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
 
-<!-- Load the JavaScript Maps SDK core API -->
-<link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
-<script src="https://js.arcgis.com/4.33/"></script>
+<!-- ArcGIS Maps SDK for JavaScript コア API のロード -->
+<script src="https://js.arcgis.com/4.34/"></script>
 
-<!-- Load the JavaScript Maps SDK Map components or other component packages -->
-<script
-  type="module"
-  src="https://js.arcgis.com/4.33/map-components/"></script>
+<!-- ArcGIS Maps SDK for JavaScript のマップ コンポーネントおよびその他のコンポーネントのロード -->
+<script type="module" src="https://js.arcgis.com/4.34/map-components/"></script>
 ```
+
+{{% notice warning %}}
+
+まだコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)を使用している場合は、[コンポーネントへの移行](https://developers.arcgis.com/javascript/latest/components-transition-plan/)をご検討ください。ウィジェットの使用や、プログラムによる新しい [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)/[SceneView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html) の初期化には、引き続きコア API スタイルシートが必要です。
+
+index.html
+```html
+<link rel="stylesheet" href="https://js.arcgis.com/4.34/esri/themes/light/main.css" />
+```
+{{% /notice %}}
 
 ### CSS の設定
 カスタム CSS を追加して、コンポーネントがアプリケーションで表示されるようにします。これは、CDN から ArcGIS スタイルシートとライブラリーをインポートした後、`<head>` セクションの最後の項目にする必要があります。
 
-お好みの CSS スタイルシートと [Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)を含めることで、ライトまたはダークの[テーマ](https://developers.arcgis.com/javascript/latest/styling/)を選択できます。
 
 ```html
 <style>
@@ -53,17 +57,18 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript お�
   }
 </style>
 ```
+[Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)でライトまたはダークの[テーマ](https://developers.arcgis.com/javascript/latest/building-your-ui/#light-and-dark-modes)を選択してください。
 
 ### レイアウトの作成
-2D [マップ コンポーネント](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) (または [3D シーン コンポーネント](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-scene/)) を HTML の `<body>` に追加し、ArcGIS Online または ArcGIS Enterprise ポータルの [WebMap](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を使用している場合は、オプションの `item-id` を割り当てます。
+2D [マップ コンポーネント](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) (または [3D シーン コンポーネント](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-scene/)) を HTML の `<body>` に追加し、ArcGIS Online または ArcGIS Enterprise ポータルの [WebMap](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) を使用している場合は、オプションの `item-id` を割り当てます。[マップ](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/#slots)または[シーン](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-scene/#slots)のスロットを使用して、マップやシーン内で[ズーム](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/)などの他のコンポーネントを配置します。
 
 詳細については、[Programming Patterns](https://developers.arcgis.com/javascript/latest/programming-patterns/#configure-map-and-scene-components)、チュートリアル [Display a web map](https://developers.arcgis.com/javascript/latest/tutorials/display-a-web-map/)、およびサンプル [Create a 2D map](https://developers.arcgis.com/javascript/latest/sample-code/intro-map-components/) を参照してください。
 
 ```html
-<!-- There is no need to programmatically set the basemap, extent or zoom -->
-<!-- All this information comes from the WebMap -->
+<!-- ベースマップ、範囲、ズームレベルをプログラムで設定する必要はありません -->
+<!-- この情報はすべて WebMap から得られています -->
 <arcgis-map item-id="02b37471d5d84cacbebcccd785460e94">
-  <arcgis-zoom position="top-left"></arcgis-zoom>
+  <arcgis-zoom slot="top-left"></arcgis-zoom>
 </arcgis-map>
 ```
 
@@ -77,20 +82,21 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript お�
 
 {{% /notice %}}
 
-以下のコードは、マップのビューの準備ができるのを待ちます。ビューの準備が整えば、さらに機能を追加することができます。
+以下のコードは、マップのビューの準備ができるのを待ちます。[ビュー](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html)の準備が整えば、さらに機能を追加することができます。
+index.html
 ```html
 <script type="module">
   const Graphic = await $arcgis.import("@arcgis/core/Graphic.js");
   const viewElement = document.querySelector("arcgis-map");
-  // Wait for the view to be ready before adding additional functionality
+  // ビューの準備が整うまで追加機能の実装を待つ
   await viewElement.viewOnReady();
 
-  ...
+  // ...
 
-  // Create a graphic and add the geometry and symbol to it
+  // グラフィックを作成し、それにジオメトリーとシンボルを追加する
   const pointGraphic = new Graphic({
-    geometry: point, // A point geometry
-    symbol: markerSymbol // A symbol for drawing the point
+    geometry: point, // ポイントのジオメトリー
+    symbol: markerSymbol // ポイントを描画するシンボル
   })
   viewElement.graphics.add(pointGraphic);
 </script>
@@ -100,6 +106,12 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript お�
 
 ### セットアップ
 [node.js と npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) の最新の長期サポート（LTS）バージョンを使用していることを確認してください。次に、好みのビルド ツールやフレームワークの推奨テンプレートを使ってプロジェクトの大枠を作成します。モジュール バンドラーとローカル Web サーバーを含むクライアント サイド ビルド ツールである Vite には、多くの[テンプレート プロジェクト](https://vite.dev/guide/)が用意されています。
+
+{{% notice warning %}}
+
+Yarn Plug’n’Play (PnP) は現在サポートされていません。
+
+{{% /notice %}}
 
 プロジェクトでマップ コンポーネントを使用するには、[@arcgis/map-components](https://www.npmjs.com/package/@arcgis/map-components) パッケージとその依存関係をインストールします。
 
@@ -114,41 +126,32 @@ yarn の場合
 ```
 
 ### CSS の設定
-CSS スタイルシートは、CDN または `/node_modules` からローカルに読み込むことができます。CDN を使用すると、ファイルがローカルにバンドルされずに実行時にロードされるため、ディスク上のビルド サイズが最小になります。
+バージョン 4.34 以降、npm を使用したコンポーネントでは CSS が自動的に読み込まれます。これにはコンポーネントと Calcite 両方のスタイルシートが含まれます。
 
-お好みの CSS スタイルシートと [Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)を含めることで、ライトまたはダークの[テーマ](https://developers.arcgis.com/javascript/latest/styling/)を選択できます。SDK はコンポーネントのスタイリングに Calcite を使用しています。 また、Calciteを使って独自のカスタムUIを追加することもできる。
-
-CDN の場合
+index.css
 ```css
-    /* Include calcite, core API and SDK component CSS */
-    @import "https://js.arcgis.com/calcite-components/3.2.1/calcite.css";
-    @import "https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/light/main.css";
-    @import "https://js.arcgis.com/4.33/map-components/main.css";
-
-    #root,
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 ```
 
-/node_modules の場合
+{{% notice warning %}}
+
+まだコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)を使用している場合は、[コンポーネントへの移行](https://developers.arcgis.com/javascript/latest/components-transition-plan/)をご検討ください。ウィジェットの使用や、プログラムによる新しい [MapView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)/[SceneView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html) の初期化には、引き続きコア API スタイルシートが必要です。
+
+index.css
 ```css
-    /* Include calcite, core API and SDK component CSS */
-    @import "@esri/calcite-components/dist/calcite/calcite.css";
-    @import "@arcgis/core/assets/esri/themes/light/main.css";
-    @import "@arcgis/map-components/dist/cdn/main.css";
-
-    #root,
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
+@import "@arcgis/core/assets/esri/themes/light/main.css";
 ```
+{{% /notice %}}
 
-import の URL パスを指定するパターンは、使用するフレームワークやモジュール バンドラーに依存します。[jsapi-resources](https://github.com/esri/jsapi-resources?tab=readme-ov-file#samples) の GitHub リポジトリーには、様々なフレームワークやモジュール バンドラーの CSS 設定例があります。MDN には、[@import](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) を使用する様々なパターンに関する詳細情報も掲載されています。
+{{% notice tip %}}
+
+アプリケーションをローカル環境でホストする必要がある場合、または CSS プラグインのないビルド ツールを使用している場合は、詳細について[ローカル アセット](https://developers.arcgis.com/javascript/latest/working-with-assets/#local-assets) ガイド トピックを参照してください。
+
+{{% /notice %}}
 
 ### レイアウトの作成
 Vite + vanilla JavaScript スターター プロジェクトの index.html ファイルに、2D マップ コンポーネント（または 3D シーン コンポーネント）を追加し、main.js ファイルを参照してください。各コンポーネントは、`<div></div>` のような他の HTML 要素と同様に、HTML タグを使用してアプリケーションに追加できる[カスタム要素](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)です。
@@ -156,7 +159,7 @@ Vite + vanilla JavaScript スターター プロジェクトの index.html フ�
 ```html
 <body>
   <arcgis-map item-id="02b37471d5d84cacbebcccd785460e94">
-    <arcgis-zoom position="top-left"></arcgis-zoom>
+    <arcgis-zoom slot="top-left"></arcgis-zoom>
   </arcgis-map>
   <script type="module" src="./main.js"></script>
 </body>
@@ -167,6 +170,7 @@ Vite + vanilla JavaScript スターター プロジェクトの index.html フ�
 
 ブラウザーの [CustomElementRegistry](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry) にコンポーネントを登録します。ブラウザーが `<arcgis-map></arcgis-map>` のようなカスタム要素の HTML タグに出会うと、要素のインスタンスを作成し、DOM に追加してその機能を有効にします。
 
+main.js
 ```javascript
 import "./index.css";
 
@@ -175,17 +179,19 @@ import "@arcgis/map-components/components/arcgis-zoom";
 import Graphic from "@arcgis/core/Graphic.js";
 
 const viewElement = document.querySelector("arcgis-map");
-// Wait for the view to be ready before adding additional functionality
-viewElement.addEventListener("arcgisViewReadyChange", () => {
-  ...
 
-  // Create a graphic and add the geometry and symbol to it
+// ビューの準備が整うまで追加機能の実装を待つ
+viewElement.addEventListener("arcgisViewReadyChange", () => {
+  // ...
+
+  // グラフィックを作成し、それにジオメトリーとシンボルを追加する
   const pointGraphic = new Graphic({
-    geometry: point, // A point geometry
-    symbol: markerSymbol // A symbol for drawing the point
+    geometry: point, // ポイントのジオメトリー
+    symbol: markerSymbol // ポイントを描画するシンボル
   });
   viewElement.graphics.add(pointGraphic);
 });
+
 ```
 
 ### TypeScript
@@ -194,27 +200,28 @@ TypeScriptは、実行時ではなく開発時にエラーを特定する静的�
 コア API の TypeScript [デコレーター](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-accessorSupport-decorators.html)を使用する場合、例えば [Accessor サブクラス](https://developers.arcgis.com/javascript/latest/implementing-accessor/#create-a-simple-subclass)を作成するときやベース レイヤーを拡張するときには、後方互換性のために `useDefineForClassFields` フラグを `false` に設定する必要があるかもしれません。このフラグの詳細については、[TSConfig Reference](https://www.typescriptlang.org/tsconfig#useDefineForClassFields)を参照してください。
 
 以下に tsconfig.json の最小例になります。
-```javascript
+tsconfig.json
+```json
 {
   "$schema": "https://json.schemastore.org/tsconfig.json",
-  // Array of `.ts` files to compile. You can also use glob patterns such as `"src/**/*"`.
+  // コンパイル対象の `.ts` ファイルの配列。`"src/**/*"` のようなグローブ パターンも使用できます。
   "include": ["src", "*.ts"],
   "compilerOptions": {
-    // When `true`, this allows use of `import` syntax such as `import x from 'xyz'`.
+    // `true`の場合、`import x from 'xyz'` のような `import` 構文の使用を許可します。
     "esModuleInterop": true,
-    // Specify library type definitions to be included in the compilation.
+    // コンパイルに含めるライブラリー型定義を指定します。
     "lib": ["DOM", "DOM.Iterable", "ES2023"],
-    // The module system to use for compilation.
-    // Here, ES modules are targeted (ESNext) to enable top-level await and dynamic imports.
+    // コンパイルに使用するモジュール システム。
+    // ここでは、トップレベル await と動的インポートを可能にするため、ES モジュール（ESNext）を対象としています。
     "module": "ES2022",
-    // Respects package.json's "exports" conditions.
+    // package.json の exports 条件を尊重します。
     "moduleResolution": "Bundler",
-    // Allow importing from JSON files
+    // JSON ファイルからのインポートを許可する
     "resolveJsonModule": true,
-    // This sets the output at the minimum version of JavaScript features that will be supported.
+    // これにより、サポートされる JavaScript 機能の最小バージョンが設定されます。
     "target": "ES2023",
-    // Improves performance by checking only the .ts files you write
-    // rather than the .d.ts files from the libraries you are using.
+    // ライブラリーから読み込む .d.ts ファイルではなく、
+    // 自身が記述した .ts ファイルのみをチェックすることでパフォーマンスを向上させます。
     "skipLibCheck": true,
   },
 }
@@ -226,6 +233,8 @@ TypeScriptは、実行時ではなく開発時にエラーを特定する静的�
 
 {{% /notice %}}
 
+コンポーネントとコア　API　の両方を使用する方法を示す完全な例については、SDK の TypeScript テンプレート プロジェクトを参照してください。これは Vite + TypeScript テンプレートを出発点としており、JavaScript サンプルを反映していますが、型安全性を提供するために TypeScript(.ts) で記述されています。
+
 ### React
 React 19 プロジェクトで JSX を使用して SDK を使用することは、通常の JavaScript と HTML のプロジェクトで SDK を使用することに似ています。主な違いは、JSX の構文と React のプログラミング パターンです。React のようなフレームワークで作業する場合、コンポーネントのライフサイクルとの統合性を高めるために、一般的にはメソッドを直接呼び出すよりもイベントを使用することが推奨されます。
 
@@ -233,27 +242,45 @@ index.jsx
 ```jsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
-import "@arcgis/map-components/dist/components/arcgis-map";
 import "./index.css";
+
+import "@arcgis/map-components/components/arcgis-map";
+import "@arcgis/map-components/components/arcgis-zoom";
+import Graphic from "@arcgis/core/Graphic.js";
+
+function App() {
+  const handleViewReady = (event) => {
+    const viewElement = event.target;
+
+    // ...
+
+    // グラフィックを作成し、それにジオメトリーとシンボルを追加する
+    const pointGraphic = new Graphic({
+      geometry: point, // ポイントのジオメトリー
+      symbol: markerSymbol // ポイントを描画するシンボル
+    });
+
+    viewElement.graphics.add(pointGraphic);
+  };
+
+  return (
+    <arcgis-map item-id="02b37471d5d84cacbebcccd785460e94" onarcgisViewReadyChange={handleViewReady}>
+      <arcgis-zoom slot="top-left" />
+    </arcgis-map>
+  );
+}
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <arcgis-map
-      itemId="45b77c869ba14b6dbc2de43a817304a6"
-      // All events for the SDK's components in React will start with `onarcgis`
-      onarcgisViewReadyChange={(event) => {
-        // The view is ready, add additional functionality below
-      }}>
-    ></arcgis-map>
+    <App />
   </StrictMode>,
 );
 ```
 
 コンポーネントとコア API の両方を使用する方法を示す完全な例については、[SDK の React テンプレート プロジェクト](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/react)を参照してください。
 
-すでに React 19 プロジェクトで TypeScript を設定しており、TSX で Web コンポーネントを使用したい場合は、メインの `.tsx` ファイルまたは Vite の [`vite-env.d.ts`](https://vite.dev/guide/env-and-mode.html#intellisense-for-typescript) ファイルの先頭に1行のコードを書くだけで可能です。
+すでに React 19 プロジェクトで TypeScript を設定しており、TSX で Web コンポーネントを使用したい場合は、メインの `.tsx` ファイルまたは Vite の [`vite-env.d.ts`](https://vite.dev/guide/env-and-mode.html#intellisense-for-typescript) ファイルの先頭に1行のコードを書くだけで可能です。これにより、イベント リスナーやプロパティなどに対する型安全性が向上します。
 
 vite.env.d.ts
 ```ts
@@ -275,16 +302,32 @@ import "@arcgis/map-components/components/arcgis-map";
   selector: "app-root",
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css",
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Set the schema here
+  templateUrl: "./app.html",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // ここにスキーマを設定
 })
 export class AppComponent {
   arcgisViewReadyChange(event: CustomEvent) {
-    // The view is ready, add additional functionality below
+    // ビューの準備が整いました。以下の追加機能を追加してください。
   }
 }
 ```
+
+現在 Angular では、マップ コンポーネントの CSS はバンドルされますが、**本番ビルドでは自動的に読み込まれません**。CSS はプロジェクトのルート スタイルシートで明示的にインポートする必要があります。`src/styles.css` に以下を追加してください。
+
+sytles.css
+```css
+@import "@esri/calcite-components/calcite/calcite.css";
+@import "@arcgis/map-components/main.css";
+@import "@arcgis/coding-components/main.css";
+```
+
+{{% notice warning %}}
+
+一部のコンポーネントはフォント ファイル（`.woff2`）を読み込みます。これらのアセットが Angular でサポートされるようにするには、`angular.json` にローダー設定を追加してください：
+`"loader": { ".woff2": "file" }`
+
+詳細については、Angular の[ファイル拡張子ローダーのカスタマイズ](https://angular.dev/tools/cli/build-system-migration#file-extension-loader-customization) ガイドを参照してください。
+{{% /notice %}}
 
 `app.html` の HTML インテリセンスについては、[インテリセンス](https://developers.arcgis.com/javascript/latest/intellisense/#html)のドキュメントをご覧ください。Angular のようなフレームワークで作業する場合、コンポーネントのライフサイクルとの統合性を高めるために、一般的にはメソッドを直接呼び出すよりもイベントを使用することをお勧めします。
 
@@ -294,7 +337,7 @@ app.html
   item-id="45b77c869ba14b6dbc2de43a817304a6"
   (arcgisViewReadyChange)="arcgisViewReadyChange($event)"
 >
-  <arcgis-zoom position="top-left"></arcgis-zoom>
+  <arcgis-zoom slot="top-left"></arcgis-zoom>
 </arcgis-map>
 ```
 
@@ -303,11 +346,11 @@ app.html
 ## アクセス トークン
 {{% notice note %}}
 
-ヒント：アプリケーションで認証に ArcGIS Identities のみを使用している場合は、このセクションをスキップできます。詳しくは、[セキュリティと認証](../../../guide/security)のドキュメントを参照してください。
+アプリケーションで認証に ArcGIS Identities のみを使用している場合は、このセクションをスキップできます。詳しくは、[セキュリティと認証](../../../guide/security)のドキュメントを参照してください。
 
 {{% /notice %}}
 
-ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、アクセス トークンが必要です。ポータルにアクセスし、特定のニーズに合わせてカスタム権限とリファラーを持つアクセス トークンを作成します。チュートリアルやサンプルの説明で必要な場合は、アクセストークンを含めてください。グローバル API キーだけでなく、特定のクラスでより細かい API キーを使用することもできます。
+ベースマップ、ジオコーディング、ルーティングなどの ArcGIS サービスにアクセスするには、アクセス トークンが必要です。ポータルにアクセスし、特定のニーズに合わせてカスタム権限とリファラーを持つアクセス トークンを作成します。チュートリアルやサンプルの説明で必要な場合は、アクセストークンを含めてください。[グローバル API キー](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey)だけでなく、特定のクラスでより細かい API キーを使用することもできます。
 
 ## 追加情報
 詳細については、以下のリンクをご参照ください。

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-10-31T15:33:01 JST">
 <title>コア コンセプト :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -943,6 +943,11 @@ if (!doNotTrack) {
         <li><a href="#コンポーネントの準備">コンポーネントの準備</a></li>
       </ul>
     </li>
+    <li><a href="#属性とプロパティ">属性とプロパティ</a>
+      <ul>
+        <li><a href="#ブール型の属性">ブール型の属性</a></li>
+      </ul>
+    </li>
     <li><a href="#イベント">イベント</a>
       <ul>
         <li><a href="#open--close-イベントの動作">open / close イベントの動作</a></li>
@@ -983,7 +988,7 @@ if (!doNotTrack) {
     
     <p>出典：Calcite Design System - <a href="https://developers.arcgis.com/calcite-design-system/core-concepts/">core concepts</a></p>
 <p>Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。</p>
-<p>Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、<a href="https://developer.mozilla.org/ja/">MDN Web Docs</a> やその他の Web 標準ドキュメントで確認できます。</p>
+<p>Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的な開発に必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、<a href="https://developer.mozilla.org/ja/">MDN Web Docs</a> やその他の Web 標準ドキュメントで確認できます。</p>
 <h2 id="カスタム要素">カスタム要素</h2>
 <p>カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリーや Web フレームワークを使用して、モダンなブラウザーで動作します。カスタム要素は機能をカプセル化するため、他のコードとの競合を防ぐことができます。</p>
 <p>Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。例えば以下のように記述します。</p>
@@ -1009,15 +1014,15 @@ if (!doNotTrack) {
 <p>Shadow DOM によるカプセル化はアプリケーション全体で一貫したスタイルと機能を維持し、ユーザーに統一されたユーザー体験を提供します。</p>
 <h2 id="css-変数">CSS 変数</h2>
 <p>Calcite コンポーネントでは、スタイルを上書きするための CSS 変数が提供されています。Web コンポーネントの Shadow DOM により、CSS 変数なしでは簡単にスタイルを変更することができません。<a href="https://developers.arcgis.com/calcite-design-system/foundations/colors/">色</a>や<a href="https://developers.arcgis.com/calcite-design-system/foundations/typography/">タイポグラフィー</a>など、デザイン システム全体で使用されるトークンには CSS 変数が用意されています。</p>
-<p>さらに、一部の Calcite コンポーネントにはコンポーネント固有のスタイルを変更ための CSS 変数も用意されています。これらの CSS 変数は <a href="https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles"><code>calcite-loader</code> の CSS 変数</a>のようにコンポーネントのドキュメントから確認できます。</p>
+<p>さらに、一部の Calcite コンポーネントにはコンポーネント固有のスタイルを変更するための CSS 変数も用意されています。これらの CSS 変数は <a href="https://developers.arcgis.com/calcite-design-system/components/loader/#component-api-styles"><code>calcite-loader</code> の CSS 変数</a>のようにコンポーネントのドキュメントから確認できます。</p>
 <p>使用例としては、<a href="https://developers.arcgis.com/calcite-design-system/components/notice/"><code>calcite-notice</code></a> において、CSS 変数を使って表面色とテキスト色を入れ替えることが挙げられます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">calcite-notice</span> {
-  --calcite-ui-foreground-1: <span style="color:#ae81ff">#151515</span>;
-  --calcite-ui-text-1: <span style="color:#ae81ff">#ffffff</span>;
+  --calcite-color-foreground-1: <span style="color:#ae81ff">#151515</span>;
+  --calcite-color-text-1: <span style="color:#ae81ff">#ffffff</span>;
 }
 </code></pre></div><p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties">CSS カスタムプロパティ（変数）の使用</a> に、機能の詳細が説明されています。</p>
 <h2 id="コンポーネントのロード">コンポーネントのロード</h2>
-<p>Web コンポーネントは、最初はシンプルな HTML 要素として始まり、その実装が<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define">ブラウザーで定義される</a>とすぐにアップグレードされます。Calcite コンポーネントは、アプリケーションにインポートされ、使用すると自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるのを待つ必要がある場合もあります。</p>
+<p>Web コンポーネントは、最初はシンプルな HTML 要素として始まり、その実装が<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define">ブラウザーで定義される</a>とすぐにアップグレードされます。Calcite コンポーネントは、アプリケーションにインポートされ、使用されると自動的に定義されます。しかし、特定のコードを実行する前に、コンポーネントが定義されるのを待つ必要がある場合もあります。</p>
 <h3 id="ハイドレーション">ハイドレーション</h3>
 <p>Calcite コンポーネントには、コンポーネントおよびそのすべての子コンポーネントのハイドレーションが完了した際にフラグを追加するオプションが提供されています。これは、様々なコンポーネントが非同期に読み込まれ、レンダリングされる際に、スタイルの適用前に一瞬表示されてしまうフラッシュ（FOUC）を防ぐことができます。</p>
 <p>Calcite コンポーネントでは、ハイドレーションが完了すると <code>calcite-hydrated</code> 属性がコンポーネントに追加されます。この属性はアプリケーションをデバッグする際に便利です。</p>
@@ -1029,11 +1034,11 @@ if (!doNotTrack) {
 <p>この Promise が解決された後に、そのコンポーネントの定義を必要とするコードを実行することができます。例えば、次のように記述します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">whenDefined</span>(<span style="color:#e6db74">&#34;calcite-button&#34;</span>).<span style="color:#a6e22e">then</span>(() =&gt; document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-button&#34;</span>).<span style="color:#a6e22e">setFocus</span>());
 </code></pre></div><h3 id="コンポーネントの準備">コンポーネントの準備</h3>
-<p>コンポーネントがレンダリングされたタイミングを判断するには、<code>componentOnReady()</code> メソッドを使用できます。このメソッドは、コンポーネントがレンダリングされた後に解決される Promise を返します。コンポーネントのメソッドを使用する前や、あるコンポーネントが別のコンポーネントに依存している場合には、対象のコンポーネントが読み込まれていることを確認することが推奨されます。</p>
+<p>コンポーネントがレンダリングされたタイミングを判断するには、<code>componentOnReady()</code> メソッドを使用できます。このメソッドは、コンポーネントがレンダリングされ、DOM 上でアクセス可能になった後に解決される Promise を返します。コンポーネントのメソッドを使用する前や、あるコンポーネントが別のコンポーネントに依存している場合には、対象のコンポーネントが読み込まれていることを確認することが推奨されます。</p>
 <p>例えば、他のコンポーネントのレンダリングが完了するまで <a href="https://developers.arcgis.com/calcite-design-system/components/loader/"><code>calcite-loader</code></a> を表示しておきたい場合などです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">await</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-alert&#34;</span>).<span style="color:#a6e22e">componentOnReady</span>();
 document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-loader&#34;</span>).<span style="color:#a6e22e">hidden</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><p>フレームワークを使用している場合や &lt;script type=&ldquo;module&rdquo;&gt; を読み込んでいる場合は、<code>whenDefined()</code> メソッドを使用する必要はありません。しかし、&lt;script type=&ldquo;module&rdquo;&gt; を追加できない状況では、非同期関数と <a href="https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined"><code>whenDefined()</code></a> を組み合わせて使用する必要があります。</p>
+</code></pre></div><p>フレームワークを使用している場合や &lt;script type=&ldquo;module&rdquo;&gt; を読み込んでいる場合は、<code>whenDefined()</code> メソッドを使用する必要はありません。しかし、&lt;script type=&ldquo;module&rdquo;&gt; を追加できない状況では、非同期関数と <a href="https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined"><code>whenDefined()</code></a> メソッドを組み合わせて使用する必要があります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">async</span> () =&gt; {
   <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">whenDefined</span>(<span style="color:#e6db74">&#34;calcite-alert&#34;</span>);
   <span style="color:#66d9ef">await</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-alert&#34;</span>).<span style="color:#a6e22e">componentOnReady</span>();
@@ -1045,7 +1050,26 @@ document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-stepper&#34;</span>).<span style="color:#a6e22e">componentOnReady</span>();
   <span style="color:#a6e22e">requestAnimationFrame</span>(() =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">goToStep</span>(<span style="color:#ae81ff">3</span>));
 })();
-</code></pre></div><h2 id="イベント">イベント</h2>
+</code></pre></div><h2 id="属性とプロパティ">属性とプロパティ</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes">属性</a>は HTML における要素の初期状態を表すものである一方、<a href="https://developer.mozilla.org/en-US/docs/Glossary/Property/JavaScript">プロパティ</a>はDOMの一部であり、要素の現在の状態を更新する手段を提供します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Button&#39;s label and icon-start attributes --&gt;</span>
+&lt;<span style="color:#f92672">calcite-button</span> <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Add new folder&#34;</span> <span style="color:#a6e22e">icon-start</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;folder-plus&#34;</span>&gt;&lt;/<span style="color:#f92672">calcite-button</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/* Button&#39;s label and iconStart properties */</span>
+document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-button&#34;</span>).<span style="color:#a6e22e">label</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Remove folder&#34;</span>;
+document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;calcite-button&#34;</span>).<span style="color:#a6e22e">iconStart</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;recycle-bin&#34;</span>;
+</code></pre></div><h3 id="ブール型の属性">ブール型の属性</h3>
+<p>一部の属性は<a href="https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML">ブール型</a>であり、属性に値を設定しなくても、その属性が存在するだけで <code>true</code> と解釈されます。属性が存在しない場合は <code>false</code> と解釈されます。<code>true</code> や <code>false</code> という値を属性に設定することは避けてください。現代のブラウザではどんな文字列でも <code>true</code> として解釈されますが、この仕様を意図的に利用することは推奨されていません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Do specify boolean attributes by name --&gt;</span>
+&lt;<span style="color:#f92672">calcite-button</span> <span style="color:#a6e22e">disabled</span>&gt;A disabled button&lt;/<span style="color:#f92672">calcite-button</span>&gt;
+&lt;<span style="color:#f92672">calcite-button</span>&gt;A non-disabled button&lt;/<span style="color:#f92672">calcite-button</span>&gt;
+
+<span style="color:#75715e">&lt;!-- Avoid boolean specified values --&gt;</span>
+&lt;<span style="color:#f92672">calcite-button</span> <span style="color:#a6e22e">disabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>&gt;Another disabled button&lt;/<span style="color:#f92672">calcite-button</span>&gt;
+</code></pre></div><div class="notices note" >
+<p>ブール型属性は「属性名のみ」で<strong>指定してください</strong>。その属性は <code>true</code> として解釈されます。<br>
+ブール型属性に <code>true</code> や <code>false</code> という値を指定するのは<strong>避けてください</strong>。</p>
+</div>
+<h2 id="イベント">イベント</h2>
 <p>Calcite コンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent"><code>CustomEvent()</code></a> コンストラクターを使用して<a href="https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events">イベントを作成し、トリガーします</a>。</p>
 <p><code>CustomEvent</code> は、ボタンのクリックなどで HTML 要素から発火される <code>Event</code> と同様に動作します。例えば、イベント ペイロード内の <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target"><code>target</code></a> プロパティを通じて発火元の要素にアクセスすることができます。</p>
 <p>各コンポーネントのドキュメント ページでは、<a href="https://developers.arcgis.com/calcite-design-system/components/pagination/#events"><code>calcite-pagination</code> のイベント</a>など、どのようなイベントを持っているかを確認できます。例えば以下のようにイベントを利用できます。</p>

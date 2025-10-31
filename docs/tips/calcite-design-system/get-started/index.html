@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-10-31T15:33:01 JST">
 <title>はじめに :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -966,10 +966,10 @@ if (!doNotTrack) {
 <p>次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite コンポーネントを読み込みます。</p>
 <h3 id="cdn-で利用する">CDN で利用する</h3>
 <p>Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに <code>&lt;script&gt;</code> タグを配置することでロードできます:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。</p>
 <h3 id="npm-パッケージで利用する">NPM パッケージで利用する</h3>
-<p>Calcite コンポーネントは、<a href="https://www.npmjs.com/package/@esri/calcite-components">NPM パッケージ</a>としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは<a href="https://github.com/Esri/calcite-components-examples">こちら</a>でご覧いただけます。</p>
+<p>Calcite コンポーネントは、<a href="https://www.npmjs.com/package/@esri/calcite-components">NPM パッケージ</a>としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは<a href="https://github.com/Esri/calcite-design-system/tree/main/examples/components">こちら</a>でご覧いただけます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install @esri/calcite-components
 </code></pre></div><h4 id="アセットの読み込み">アセットの読み込み</h4>
 <p>一部のコンポーネント（例：<code>calcite-icon</code>、<code>calcite-date-picker</code>）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。</p>
@@ -994,7 +994,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/components/calcite-icon&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@esri/calcite-components/components/calcite-slider&#34;</span>;
 </code></pre></div><h4 id="ディストリビューション">ディストリビューション</h4>
-<p>ディストリビューション ビルドでは、グローバル <code>ウィンドウ</code> オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。</p>
+<p>ディストリビューション ビルドでは、グローバルの <code>window</code> オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineCustomElements</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@esri/calcite-components/loader&#34;</span>;
 
 <span style="color:#75715e">// CDN hosted assets (default)

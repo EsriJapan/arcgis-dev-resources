@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-10-31T15:33:01 JST">
 <title>マッピング アプリの作成 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -997,7 +997,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;initial-scale=1, maximum-scale=1, user-scalable=no&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span> /&gt;
     &lt;<span style="color:#f92672">title</span>&gt;Calcite Components: Create a mapping app&lt;/<span style="color:#f92672">title</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">style</span>&gt;
@@ -1028,7 +1028,7 @@ if (!doNotTrack) {
   &lt;<span style="color:#f92672">title</span>&gt;Calcite Components: Create a mapping app&lt;/<span style="color:#f92672">title</span>&gt;
 
 <span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 
   &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://js.arcgis.com/4.33/esri/themes/light/main.css&#34;</span> /&gt;
@@ -1356,7 +1356,7 @@ if (!doNotTrack) {
     <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">flex</span>;
   }
 
-  <span style="color:#a6e22e">calcite</span><span style="color:#f92672">-</span><span style="color:#a6e22e">loader</span> {
+  <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">app</span><span style="color:#f92672">-</span><span style="color:#a6e22e">loader</span> {
     <span style="color:#a6e22e">align</span><span style="color:#f92672">-</span><span style="color:#a6e22e">self</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">center</span>;
     <span style="color:#a6e22e">justify</span><span style="color:#f92672">-</span><span style="color:#a6e22e">self</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">center</span>;
   }
