@@ -76,7 +76,7 @@ import "@esri/calcite-components/components/calcite-slider";
 ```
 
 #### ディストリビューション
-ディストリビューション ビルドでは、グローバル `ウィンドウ` オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
+ディストリビューション ビルドでは、グローバルの `window` オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
 
 ``` js
 import { defineCustomElements } from "@esri/calcite-components/loader";

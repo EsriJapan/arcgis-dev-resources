@@ -34,7 +34,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Calcite Components: Create a mapping app</title>
   </head>
   <style>
@@ -67,7 +67,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
   <title>Calcite Components: Create a mapping app</title>
 
 <!-- 追加開始 -->
-  <script src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js" type="module"></script>
+  <script src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js" type="module"></script>
 
   <script src="https://js.arcgis.com/4.33/"></script>
   <link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
@@ -419,7 +419,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
     display: flex;
   }
 
-  calcite-loader {
+  #app-loader {
     align-self: center;
     justify-self: center;
   }

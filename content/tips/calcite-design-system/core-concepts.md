@@ -94,7 +94,7 @@ customElements.whenDefined("calcite-button").then(() => document.querySelector("
 ```
 
 ### コンポーネントの準備
-コンポーネントがレンダリングされたタイミングを判断するには、`componentOnReady()` メソッドを使用できます。このメソッドは、コンポーネントがレンダリングされた後に解決される Promise を返します。コンポーネントのメソッドを使用する前や、あるコンポーネントが別のコンポーネントに依存している場合には、対象のコンポーネントが読み込まれていることを確認することが推奨されます。
+コンポーネントがレンダリングされたタイミングを判断するには、`componentOnReady()` メソッドを使用できます。このメソッドは、コンポーネントがレンダリングされ、DOM 上でアクセス可能になった後に解決される Promise を返します。コンポーネントのメソッドを使用する前や、あるコンポーネントが別のコンポーネントに依存している場合には、対象のコンポーネントが読み込まれていることを確認することが推奨されます。
 
 例えば、他のコンポーネントのレンダリングが完了するまで [`calcite-loader`](https://developers.arcgis.com/calcite-design-system/components/loader/) を表示しておきたい場合などです。
 
@@ -103,7 +103,7 @@ await document.querySelector("calcite-alert").componentOnReady();
 document.querySelector("calcite-loader").hidden = true;
 ```
 
-フレームワークを使用している場合や &lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。しかし、&lt;script type="module"&gt; を追加できない状況では、非同期関数と [`whenDefined()`](https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined) を組み合わせて使用する必要があります。
+フレームワークを使用している場合や &lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。しかし、&lt;script type="module"&gt; を追加できない状況では、非同期関数と [`whenDefined()`](https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined) メソッドを組み合わせて使用する必要があります。
 
 ```js
 (async () => {
@@ -123,6 +123,39 @@ document.querySelector("calcite-loader").hidden = true;
 })();
 ```
 
+
+## 属性とプロパティ
+[属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes)は HTML における要素の初期状態を表すものである一方、[プロパティ](https://developer.mozilla.org/en-US/docs/Glossary/Property/JavaScript)はDOMの一部であり、要素の現在の状態を更新する手段を提供します。
+
+```html
+<!-- Button's label and icon-start attributes -->
+<calcite-button label="Add new folder" icon-start="folder-plus"></calcite-button>
+```
+
+```js
+/* Button's label and iconStart properties */
+document.querySelector("calcite-button").label = "Remove folder";
+document.querySelector("calcite-button").iconStart = "recycle-bin";
+```
+
+
+### ブール型の属性
+一部の属性は[ブール型](https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML)であり、属性に値を設定しなくても、その属性が存在するだけで `true` と解釈されます。属性が存在しない場合は `false` と解釈されます。`true` や `false` という値を属性に設定することは避けてください。現代のブラウザではどんな文字列でも `true` として解釈されますが、この仕様を意図的に利用することは推奨されていません。
+
+```html
+<!-- Do specify boolean attributes by name -->
+<calcite-button disabled>A disabled button</calcite-button>
+<calcite-button>A non-disabled button</calcite-button>
+
+<!-- Avoid boolean specified values -->
+<calcite-button disabled="false">Another disabled button</calcite-button>
+```
+{{% notice note %}}
+
+ブール型属性は「属性名のみ」で**指定してください**。その属性は `true` として解釈されます。<br>
+ブール型属性に `true` や `false` という値を指定するのは**避けてください**。
+
+{{% /notice %}}
 
 ## イベント
 Calcite コンポーネントは、[`CustomEvent()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) コンストラクターを使用して[イベントを作成し、トリガーします](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events)。
