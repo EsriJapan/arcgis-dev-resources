@@ -37,7 +37,7 @@ ArcGIS Experience Builder は、React と ArcGIS Maps SDK for JavaScript を使�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
+ src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (Developer Edition) で必要なモジュールをインストールしたら、/client ディレクトリーで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -49,9 +49,8 @@ Experience Builder ウィジェットは、次のファイルで構成されて�
       <description>出典：ArcGIS Experience Builder - Guide - Create UI for widget
 Experience Builder のベースとなる Widget クラスは、React のコンポーネントサブクラスから拡張されています。PureComponent から拡張されており、render() と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。
 JSX の記述 UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。
-JSX の詳細を参照してください。
-ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。
-// in widget.tsx: import { React, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends React.PureComponent&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
+以下は、クラス コンポーネントを使ってウィジェットの UI に基本的な HTML 要素を追加する簡単な例です。
+// widget.tsx 内: import { React, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends React.PureComponent&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } PureComponent クラスは、renderer() という関数を提供しており、UI のほとんどの処理はこの関数内で実装されます。</description>
     </item>
     
     <item>
@@ -62,8 +61,9 @@ JSX の詳細を参照してください。
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
 データ ソースは、ウィジェットがデータにアクセスする方法を定義します。データ ソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
- ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
-ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。これらのデータ ソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータ ソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータ ソースは依存していません。</description>
+ ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリー データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。
+DataSourceSelector コンポーネントを使用するには、ウィジェットが対応するデータ ソースの種類を types プロパティで設定する必要があります。jimu-core の AllDataSourceTypes がサポートされているデータ ソース タイプです。データ ソースを選択した後は、onChange コールバックを通じて選択されたデータ ソースを取得できます。onChange の中では、props.</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
 ウィジェット間で同じデータソース/データビューを使用する 複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。
 複数のウィジェットが同じデータ ソースの異なるデータ ビューを使用しても選択内容がデータ ビューのフィルター条件を満たしていれば、同じ選択内容を取得できます。
 詳細はウィジェットでデータ ソースを使用を参照してください。
-ウィジェット間で同じマップ ウィジェットを使用する 複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ JimuMapView インスタンスを取得します。この JimuMapView インスタンスは ArcGIS Maps SDK for JavaScript の MapView インスタンスをラップしたものです。 JimuMapView インスタンスを取得した後、ウィジェットは addJimuLayerViewCreatedListener() と addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、ウィジェットでのマップ ウィジェットの使用を参照してください。</description>
+ウィジェット間で同じマップ ウィジェットを使用する 複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ JimuMapView インスタンスを取得します。この JimuMapView インスタンスは ArcGIS Maps SDK for JavaScript の MapView インスタンスをラップしたものです。 JimuMapView インスタンスを取得した後、ウィジェットは addJimuLayerViewCreatedListener() と addJimuLayerViewRemovedListener を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、ウィジェットでのマップ ウィジェットの使用を参照してください。</description>
     </item>
     
   </channel>

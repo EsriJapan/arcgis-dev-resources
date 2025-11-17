@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-11-17T14:42:15 JST">
 <title>カスタム ウィジェット開発ガイド :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -804,6 +804,62 @@ if (!doNotTrack) {
       <a href="/arcgis-dev-resources/tips/python/">ArcGIS API for Python</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-concepts/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-concepts/">
+            ArcGIS API for Python のコンセプト
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-conda/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-conda/">
+            ArcGIS API for Python のための基礎環境：Conda入門
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-install/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-install/">
+            インストール ガイド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnsetup/">
+            Jupyter Notebook を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/python-api-jnlabsetup/">
+            Jupyter Lab を使ってみよう
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/automate-tasks/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/automate-tasks/">
+            スクリプト実行の自動化
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/matplotlib-japanese/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/matplotlib-japanese/">
+            matplotlib での日本語利用について
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/python/cloning-content/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/python/cloning-content/">
+            アイテムのクローン
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/arcgis-dev-resources/tips/appstudio/" class="dd-item
@@ -889,6 +945,7 @@ if (!doNotTrack) {
         <li><a href="#dist-フォルダーへのファイルのコピーhttpsdevelopersarcgiscomexperience-builderguidecopy-files-to-dist-folder"><a href="https://developers.arcgis.com/experience-builder/guide/copy-files-to-dist-folder/">dist フォルダーへのファイルのコピー</a></a></li>
         <li><a href="#ウィジェット間のコードの共有httpsdevelopersarcgiscomexperience-builderguideshare-code-between-widgets"><a href="https://developers.arcgis.com/experience-builder/guide/share-code-between-widgets/">ウィジェット間のコードの共有</a></a></li>
         <li><a href="#ウィジェットにヘルプを追加httpsdevelopersarcgiscomexperience-builderguideadd-help-to-your-widget"><a href="https://developers.arcgis.com/experience-builder/guide/add-help-to-your-widget/">ウィジェットにヘルプを追加</a></a></li>
+        <li><a href="#新しいテーマへのアップグレードhttpsdevelopersarcgiscomexperience-builderguideupgrade-to-new-theme"><a href="https://developers.arcgis.com/experience-builder/guide/upgrade-to-new-theme/">新しいテーマへのアップグレード</a></a></li>
       </ul>
     </li>
   </ul>
@@ -940,25 +997,27 @@ if (!doNotTrack) {
 </ul>
 <ul class="children children-h3">
 <h3 id="ウィジェットに下位互換性を持たせるhttpsdevelopersarcgiscomexperience-builderguidemake-widgets-backward-compatible"><a href="https://developers.arcgis.com/experience-builder/guide/make-widgets-backward-compatible/">ウィジェットに下位互換性を持たせる</a></h3>
-<p>ウィジェットのバージョンと下位互換性について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>ウィジェットのバージョンと下位互換性について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="ウィジェット開発のデバックhttpsdevelopersarcgiscomexperience-builderguidedebugging-widget-development"><a href="https://developers.arcgis.com/experience-builder/guide/debugging-widget-development/">ウィジェット開発のデバック</a></h3>
-<p>ウィジェット開発におけるデバック方法について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>ウィジェット開発におけるデバック方法について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="サードパーティ製のライブラリ使用httpsdevelopersarcgiscomexperience-builderguidethird-party-libraries"><a href="https://developers.arcgis.com/experience-builder/guide/third-party-libraries/">サードパーティ製のライブラリ使用</a></h3>
-<p>サードパーティ製のライブラリの使用方法について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>サードパーティ製のライブラリの使用方法について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="単体テストhttpsdevelopersarcgiscomexperience-builderguideunit-testing"><a href="https://developers.arcgis.com/experience-builder/guide/unit-testing/">単体テスト</a></h3>
-<p>単体テストの方法について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>単体テストの方法について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="アセットの使用httpsdevelopersarcgiscomexperience-builderguideuse-assets"><a href="https://developers.arcgis.com/experience-builder/guide/use-assets/">アセットの使用</a></h3>
-<p>アセットの使用について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>アセットの使用について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="コード-リンティングhttpsdevelopersarcgiscomexperience-builderguidelinting"><a href="https://developers.arcgis.com/experience-builder/guide/linting/">コード リンティング</a></h3>
-<p>コード リンティングについて紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>コード リンティングについて紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="webpack-config-のオーバーライドhttpsdevelopersarcgiscomexperience-builderguideoverride-webpack-config"><a href="https://developers.arcgis.com/experience-builder/guide/override-webpack-config/">Webpack config のオーバーライド</a></h3>
-<p>Webpack config をオーバーライドする方法について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>Webpack config をオーバーライドする方法について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="dist-フォルダーへのファイルのコピーhttpsdevelopersarcgiscomexperience-builderguidecopy-files-to-dist-folder"><a href="https://developers.arcgis.com/experience-builder/guide/copy-files-to-dist-folder/">dist フォルダーへのファイルのコピー</a></h3>
-<p>dist フォルダーへファイルをコピーする必要がある場合の方法について紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>dist フォルダーへファイルをコピーする必要がある場合の方法について紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="ウィジェット間のコードの共有httpsdevelopersarcgiscomexperience-builderguideshare-code-between-widgets"><a href="https://developers.arcgis.com/experience-builder/guide/share-code-between-widgets/">ウィジェット間のコードの共有</a></h3>
-<p>ウィジェット間で同じコードを共有して利用する方法を紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>ウィジェット間で同じコードを共有して利用する方法を紹介しています。（米国 Esri のサイトに移動します）</p>
 <h3 id="ウィジェットにヘルプを追加httpsdevelopersarcgiscomexperience-builderguideadd-help-to-your-widget"><a href="https://developers.arcgis.com/experience-builder/guide/add-help-to-your-widget/">ウィジェットにヘルプを追加</a></h3>
-<p>作成したウィジェットのヘルプの追加する方法を紹介しています。（米国 Esri のサイトに移動します）</p>
+  <p>作成したウィジェットのヘルプの追加する方法を紹介しています。（米国 Esri のサイトに移動します）</p>
+<h3 id="新しいテーマへのアップグレードhttpsdevelopersarcgiscomexperience-builderguideupgrade-to-new-theme"><a href="https://developers.arcgis.com/experience-builder/guide/upgrade-to-new-theme/">新しいテーマへのアップグレード</a></h3>
+  <P>古いテーマ変数から新しいテーマ変数へ移行する方法を紹介しています（米国 Esri のサイトに移動します）</p>
 </ul>
 
 

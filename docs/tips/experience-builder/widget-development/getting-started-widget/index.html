@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-11-17T14:42:15 JST">
 <title>ウィジェット開発のスタート :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -1000,7 +1000,7 @@ if (!doNotTrack) {
 <li>URL パラメータ情報</li>
 </ul>
 <h2 id="ウィジェットの配置場所">ウィジェットの配置場所</h2>
-<p>カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリに配置されます。Web 拡張機能リポジトリは、<code>client</code> フォルダー内のフォルダーで下のコンテンツを含む <code>manifest.json</code> ファイルが格納されています。</p>
+<p>カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリーに配置されます。Web 拡張機能リポジトリーは、<code>client</code> フォルダー内のフォルダーで下のコンテンツを含む <code>manifest.json</code> ファイルが格納されています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;my-web-extension-repo&#34;</span>,
   <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;exb-web-extension-repo&#34;</span>,
@@ -1008,19 +1008,19 @@ if (!doNotTrack) {
   <span style="color:#f92672">&#34;copyright&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
   <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
 }
-</code></pre></div><p>Experience Builder (Developer Edition) には、<code>client/your-extensions</code> にサンプルの Web 拡張機能リポジトリが付属しています。このリポジトリを使用することも、独自のリポジトリを作成することもできます。Git のようなソース コード リポジトリ システムを使用する場合は、独自のものを使用した方がうまくいく場合があります。独自に作成する場合、Jimu モジュールの型宣言がないなど、コード エディター上でエラーが表示されることがあります。これを修正するには、<code>tsconfig.json</code> ファイル内の <code>include</code> 配列に、Web 拡張機能リポジトリのフォルダーを次のように追加します。</p>
+</code></pre></div><p>Experience Builder (Developer Edition) には、<code>client/your-extensions</code> にサンプルの Web 拡張機能リポジトリーが付属しています。このリポジトリーを使用することも、独自のリポジトリーを作成することもできます。Git のようなソース コード リポジトリー システムを使用する場合は、独自のものを使用した方がうまくいく場合があります。独自に作成する場合、Jimu モジュールの型宣言がないなど、コード エディター上でエラーが表示されることがあります。これを修正するには、<code>tsconfig.json</code> ファイル内の <code>include</code> 配列に、Web 拡張機能リポジトリーのフォルダーを次のように追加します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;include&#34;</span>: [
     <span style="color:#e6db74">&#34;dist/widgets&#34;</span>,
     <span style="color:#e6db74">&#34;your-extensions&#34;</span>,
     <span style="color:#e6db74">&#34;types&#34;</span>,
     <span style="color:#e6db74">&#34;jimu-core/lib/types&#34;</span>,
-    <span style="color:#960050;background-color:#1e0010">/**</span> <span style="color:#960050;background-color:#1e0010">Web</span> <span style="color:#960050;background-color:#1e0010">拡張機能リポジトリのフォルダー名を追加します</span> <span style="color:#960050;background-color:#1e0010">**/</span>
+    <span style="color:#960050;background-color:#1e0010">/**</span> <span style="color:#960050;background-color:#1e0010">Web</span> <span style="color:#960050;background-color:#1e0010">拡張機能リポジトリーのフォルダー名を追加します</span> <span style="color:#960050;background-color:#1e0010">**/</span>
     <span style="color:#e6db74">&#34;my-web-extension-repo&#34;</span>
   ],
 }
 </code></pre></div><h2 id="ウィジェット-ファイル">ウィジェット ファイル</h2>
-<p>Web 拡張機能リポジトリのルート フォルダーには、<code>widgets</code> と <code>themes</code> の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、<code>widgets</code> フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。</p>
+<p>Web 拡張機能リポジトリーのルート フォルダーには、<code>widgets</code> と <code>themes</code> の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、<code>widgets</code> フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">- my-web-extension-repo/
     - manifest.json
     - themes/
@@ -1036,7 +1036,7 @@ if (!doNotTrack) {
 <p>Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。</p>
 <ul>
 <li><a href="../../core-concepts">コア コンセプト</a></li>
-<li>コードを見て学ぶのが一番良い場合は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">リポジトリ</a>からクローンして、<a href="https://developers.arcgis.com/experience-builder/sample-code/">サンプル</a>を参照してください。</li>
+<li>コードを見て学ぶのが一番良い場合は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">リポジトリー</a>からクローンして、<a href="https://developers.arcgis.com/experience-builder/sample-code/">サンプル</a>を参照してください。</li>
 </ul>
 
 

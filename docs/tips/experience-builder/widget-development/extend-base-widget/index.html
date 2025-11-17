@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-11-17T14:42:15 JST">
 <title>ウィジェットの実装 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -998,7 +998,7 @@ if (!doNotTrack) {
 <li><code>manifest.json</code>: プロパティのリストは <code>jimu-core/WidgetManifest</code> で設定した内容を表示</li>
 </ul>
 <h2 id="client-サーバー">Client サーバー</h2>
-<p>Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで <code>npm start</code> を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</p>
+<p>Experience Builder (Developer Edition) で必要なモジュールをインストールしたら、/client ディレクトリーで <code>npm start</code> を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</p>
 <ul>
 <li>新しいモジュールのインストール</li>
 <li>ウィジェットの追加、削除、名前の変更</li>
@@ -1009,7 +1009,7 @@ if (!doNotTrack) {
 <p><code>ctrl + c</code> で webpack サーバーを停止させることができます。</p>
 </div>
 <h2 id="ウィジェットの作成">ウィジェットの作成</h2>
-<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、<code>client/your-extensions/widgets</code> ディレクトリに配置する方法です。demo widget フォルダーの名前を変更し、<code>maniest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダーにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
+<p>ウィジェットに必要なファイルを作成する簡単な方法は、<a href="https://github.com/esri/arcgis-experience-builder-sdk-resources">samples repo</a> にある demo widget をコピーして、<code>client/your-extensions/widgets</code> ディレクトリーに配置する方法です。demo widget フォルダーの名前を変更し、<code>manifest.json</code> で名前とラベルを変更し、ウィジェットの translations フォルダーにある default.ts ファイルの <code>_widgetLabel</code> のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。</p>
 <div class="notices tip" >
 <p>default.ts の <code>_widgetLabel</code> は、常に manifest.json のラベルと同じとすることを推奨します。</p>
 </div>
@@ -1036,7 +1036,7 @@ if (!doNotTrack) {
 <p>開発者向けドキュメントで使用されているサンプルは、1 つを除いてすべてクラス コンポーネントに基づいています。今後のリリースでは、関数コンポーネントのサンプルを追加する予定です。</p>
 <h3 id="クラス-コンポーネントを使ったウィジェットの作成">クラス コンポーネントを使ったウィジェットの作成</h3>
 <p>以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、<code>export default class Widget extends React.Component&lt;AllWidgetProps&gt;, any&gt;</code> で <code>AllWidgetProps</code> 型で宣言されており、ウィジェットの props を使用しています。 <code>render()</code> メソッドは、translations ファイル内の <code>_widgetLabel</code> のプロパティで設定した テキスト名：<code>hello world</code> とウィジェット名を返すために呼び出されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">//a custom pragma to transform your jsx into plain JavaScript
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// JSX をプレーンな JavaScript に変換するカスタム pragma
 </span><span style="color:#75715e"></span><span style="color:#75715e">/** @jsx jsx */</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">AllWidgetProps</span>, <span style="color:#a6e22e">jsx</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;jimu-core&#34;</span>;
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span>&lt;<span style="color:#f92672">AllWidgetProps</span><span style="color:#960050;background-color:#1e0010">&lt;</span>{}&gt;, <span style="color:#66d9ef">any</span><span style="color:#f92672">&gt;</span> {
@@ -1127,7 +1127,7 @@ if (!doNotTrack) {
     };
   };
 </code></pre></div><h2 id="i18n-サポート">i18n サポート</h2>
-<p>Experience Builder は <code>react-intl</code> ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で <code>translatedLocales</code> プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、<code>translatedLocales</code> プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。</p>
+<p>Experience Builder は <code>react-intl</code> ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの <code>manifest.json</code> で <code>translatedLocales</code> プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、<code>translatedLocales</code> プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"> <span style="color:#e6db74">&#34;translatedLocales&#34;</span><span style="color:#f92672">:</span> [
     <span style="color:#e6db74">&#34;en&#34;</span>,
     <span style="color:#e6db74">&#34;es&#34;</span>,
@@ -1140,15 +1140,15 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>サポートされる言語が増えるごとに、<code>translations</code> フォルダーにそのロケールに対応した名前のファイルを作成します。例えば、スペイン語は <code>translations/es.js</code> です。ファイルの内容は <code>default.ts</code> で定義されているものと同じプロパティを持ち、そのロケールの翻訳文字列を値として持つ形式となります。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#a6e22e">System</span>.<span style="color:#a6e22e">register</span>([], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">_export</span>) {<span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">execute</span>: <span style="color:#66d9ef">function</span> () {<span style="color:#a6e22e">_export</span>({
-  <span style="color:#75715e">// the strings
+  <span style="color:#75715e">// 文字列
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">_widgetLabel</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Translated Widget Name&#39;</span>,
   <span style="color:#a6e22e">str1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Translated String 1&#39;</span>,
 })}}});
 </code></pre></div><p>ウィジェット ファイル (例：<code>widget.tsx</code>) において、翻訳された文字列にアクセスする様々な方法を示します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// Class component
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#75715e">// クラス コンポーネント
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str1&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessages.str1</span>})
 
-<span style="color:#75715e">// Function component
+<span style="color:#75715e">// 関数コンポーネント
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">intl</span>.<span style="color:#a6e22e">formatMessage</span>({<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;str1&#39;</span>, <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">defaultMessage.str1</span>})
 
 <span style="color:#75715e">// JSX
@@ -1169,7 +1169,7 @@ if (!doNotTrack) {
 <li>JS API に依存するウィジェット (例：JS API がないと何もできません。)
 <ul>
 <li>ウィジェットの <code>manifest.json</code> で <code>jimu-arcgis</code> 依存関係を宣言します。</li>
-<li><code>widget.tsx</code> で必要なモジュールをインポート <code>import Query = require('esri/tasks/support/Query')</code> します。</li>
+<li><code>widget.tsx</code> で必要なモジュールをインポート <code>import Query from 'esri/tasks/support/Query'</code> します。</li>
 </ul>
 </li>
 </ul>

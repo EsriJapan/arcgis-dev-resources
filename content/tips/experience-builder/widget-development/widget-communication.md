@@ -22,6 +22,7 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
 
 Configurable とはユーザーがビルダー内でウィジェット間の通信方法を設定できることを意味します。Programming とはウィジェット間の通信がコードによって行われることを意味します。
 
+
 ## ウィジェット間で同じデータソース/データビューを使用する
 複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。
 
@@ -29,9 +30,9 @@ Configurable とはユーザーがビルダー内でウィジェット間の通�
 
 詳細は[ウィジェットでデータ ソースを使用](../use-data-source-in-widget/)を参照してください。
 
-## ウィジェット間で同じマップ ウィジェットを使用する
 
-複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ `JimuMapView` インスタンスを取得します。この `JimuMapView` インスタンスは ArcGIS Maps SDK for JavaScript の `MapView` インスタンスをラップしたものです。 `JimuMapView` インスタンスを取得した後、ウィジェットは `addJimuLayerViewCreatedListener()` と addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、[ウィジェットでのマップ ウィジェットの使用](https://developers.arcgis.com/experience-builder/guide/use-map-widget-in-widget/)を参照してください。
+## ウィジェット間で同じマップ ウィジェットを使用する
+複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ `JimuMapView` インスタンスを取得します。この `JimuMapView` インスタンスは ArcGIS Maps SDK for JavaScript の `MapView` インスタンスをラップしたものです。 `JimuMapView` インスタンスを取得した後、ウィジェットは `addJimuLayerViewCreatedListener()` と `addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、[ウィジェットでのマップ ウィジェットの使用](https://developers.arcgis.com/experience-builder/guide/use-map-widget-in-widget/)を参照してください。
 
 ## ウィジェットの出力するデータ ソースを使用する
 詳細は[ウィジェット出力データ ソース](../../core-concepts/data-source/#ウィジェット出力データ-ソースwidget-output-data-source)を参照してください。
@@ -44,7 +45,6 @@ Configurable とはユーザーがビルダー内でウィジェット間の通�
 
 
 ## ウィジェットの state を使用してウィジェット間で状態を共有
-
 React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state にアクセスすることができません。Jimu は state 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは `widgetsState` と呼ばれるもので、型の定義は `jimu-core/lib/types/state` にあります。`widgetState` に保存された情報は、他のすべてのウィジェットからアクセス可能です。`widgetsState` に情報を保存するには、以下のコードを参照してください。
 
 ```tsx

@@ -12,7 +12,7 @@ aliases = ["/use-data-source-in-widget/"]
 
 - ウィジェットの設定でデータ ソースを選択
 - ウィジェット ランタイムのデータを読み込んで表示
-- ユーザー入力に基づくデータのフィルタリングやクエリ
+- ユーザー入力に基づくデータのフィルタリングやクエリー
 - データ上の選択を処理
 - ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期
 - ウィジェットで出力データ ソースの生成
@@ -20,15 +20,16 @@ aliases = ["/use-data-source-in-widget/"]
 
 {{% notice note %}}
 
-本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+本ドキュメントで使用している `appConfig` という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では `server/public/apps/[appId]/config.json` (公開版) または `server/public/apps/[appId]/resources/config.json` (ドラフト版) の下に保存されます。
 
 {{% /notice %}}
 
+
 ## ウィジェットの設定でデータ ソースを選択
 
-ウィジェットの設定でデータ ソースを選択するには、[`DataSourceSelector`](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds) コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。これらのデータ ソースは `jimu-core` と `jimu-arcgis` の 2 つのパッケージに入っています。`jimu-core` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceTypes) と `jimu-arcgis` の [DataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/DataSourceTypes) をご覧ください。`jimu-arcgis` のデータ ソースは ArcGIS Maps SDK for JavaScript に依存しており、`jimu-core` のデータ ソースは依存していません。
+ウィジェットの設定でデータ ソースを選択するには、[`DataSourceSelector`](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-datasourceselector--single-selection-no-default-selected-ds) コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。
 
-`DataSourceSelector` コンポーネントを使用するには、`types` プロパティを通じてウィジェットがサポートするデータ ソースの種類を設定する必要があります。データ ソースを選択した後、`onChange` コールバックにより選択されたデータ ソースを取得することができます。`onChange` コールバックでは、`props.onSettingChange()` を呼び出して、選択したデータ ソースを `appConfig` に保存する必要があります (`appConfig.widgets[widgetId].useDataSources`)。ユーザーが新しいデータ ソースを追加した場合、新しく追加されたデータ ソースは `appConfig.dataSources` に保存されます。[こちらのサンプルウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。
+`DataSourceSelector` コンポーネントを使用するには、ウィジェットが対応するデータ ソースの種類を `types` プロパティで設定する必要があります。`jimu-core` の [AllDataSourceTypes](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/AllDataSourceTypes/) がサポートされているデータ ソース タイプです。データ ソースを選択した後は、`onChange` コールバックを通じて選択されたデータ ソースを取得できます。`onChange` の中では、`props.onSettingChange()` を呼び出して、選択されたソースを `appConfig` に保存します（`appConfig.widgets[widgetId].useDataSources`）。ユーザーが新しいデータ ソースを追加した場合、そのデータ ソースは `appConfig.dataSources` に保存されます。詳しくは[サンプル ウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)をご覧ください。
 
 ```tsx
 <DataSourceSelector
@@ -41,7 +42,7 @@ aliases = ["/use-data-source-in-widget/"]
 />
 ```
 
-データ ソースを選択した後、ユーザーがデータからフィールドを選択できるようにしたい場合があります。そのためには、[FieldSelector](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-fieldselector--list-single-selection) コンポーネントを使用します。データ ソースと同様に、`appConfig.widgets[widgetId].useDataSources` にも選択したフィールドを保存する必要があります。
+データ ソースを選択した後、ユーザーがデータからフィールドを選択できるようにしたい場合があります。そのためには、[FieldSelector](https://developers.arcgis.com/experience-builder/storybook/?path=/story/components-jimu-ui-advanced-data-source-selector-fieldselector--list-single-selection) コンポーネントを使用します。データ ソースと同様に、`appConfig.widgets[widgetId].useDataSources` にも選択したフィールドを保存する必要があります。データ ソースはこれらのフィールドを自動的に読み込みますが、パフォーマンスの観点から、使用されていないフィールドは読み込まれません。
 
 ```tsx
 {
@@ -54,11 +55,11 @@ aliases = ["/use-data-source-in-widget/"]
 }
 ```
 
+
 ## ウィジェット ランタイムのデータを読み込んで表示
+ウィジェット設定でデータ ソースを選択すると、ウィジェット ランタイムは `props.useDataSources` で選択したデータ ソースを取得することができます。データを読み込むには、`DataSource` インスタンスを使用します。`DataSource` インスタンスを取得するには、`DataSourceManager` または `DataSourceComponent` を使用します。`DataSourceComponent` を使用する場合は、`useDataSource` プロパティを渡します。`DataSource` インスタンスを取得するには、`onDataSourceCreated` コールバックを使用します。
 
-ウィジェット設定でデータ ソースを選択すると、ウィジェットランタイムは `props.useDataSources` で選択したデータ ソースを取得することができます。データを読み込むには、`DataSource` インスタンスを使用します。`DataSource` インスタンスを取得するには、`DataSourceManager` または`DataSourceComponent` を使用します。`DataSourceComponent` を使用する場合は、`useDataSource` プロパティを渡します。`DataSource` インスタンスを取得するには、`onDataSourceCreated` コールバックを使用します。
-
-データを読み込むには、render 関数を使用してデータを表示します。[こちらのサンプルウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。別の方法として、`onDataSourceInfoChange` コールバックを使用し、データ ソースの現在のデータに応じてこのコールバック関数でウィジェットの UI を更新することができます。ウィジェットがデータをロードする必要がある場合、`query` と `widgetId` プロパティを渡します。フレームワークは、複数のウィジェットが同じデータ ソースに適用するクエリパラメータを管理するのにこのプロパティを使用するため、`widgetId` は必須です。
+データを読み込むには、render 関数を使用してデータを表示します。こちらの[サンプルウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。別の方法として、`onDataSourceInfoChange` コールバックを使用し、データ ソースの現在のデータに応じてこのコールバック関数でウィジェットの UI を更新することができます。ウィジェットがデータをロードする必要がある場合、`query` と `widgetId` プロパティを渡します。フレームワークは、複数のウィジェットが同じデータ ソースに適用するクエリパラメータを管理するのにこのプロパティを使用するため、`widgetId` は必須です。
 
 データをロードしたいが、データ ソースのデータを変更したくない場合は、`localId` プロパティを渡します。これにより、ローカルデータ ソースが作成され、使用することができます。推奨される localId のパターンは、例えば、`widget_1_my_local` のように `widgetId + ???` とします。
 
@@ -84,13 +85,13 @@ aliases = ["/use-data-source-in-widget/"]
 
 データ ソースのフィールドを取得するには、`dataSource.getSchema().fields` を使用します。
 
-## ユーザー入力に基づくデータのフィルタリングやクエリ
 
-ウィジェットがデータをフィルタリングすると、データ ソース インスタンスのデータが変更され、すべてのウィジェットがその変更を観察します。ウィジェットがデータ ソースを介してデータをクエリする場合、データ ソース インスタンスのデータは影響を受けません。
+## ユーザー入力に基づくデータのフィルタリングやクエリー
+ウィジェットがデータをフィルタリングすると、データ ソース インスタンスのデータが変更され、すべてのウィジェットがその変更を観察します。ウィジェットがデータ ソースを介してデータをクエリーする場合、データ ソース インスタンスのデータは影響を受けません。
 
-複数のウィジェットが同じデータ ソースにフィルタを適用する場合、属性フィルターは `and` 演算子で結びつけられます。ジオメトリ フィルターの場合、最後にジオメトリ フィルターを適用したウィジェット (アプリ設定でのウィジェット追加順) からのフィルタが使用されます。
+複数のウィジェットが同じデータ ソースにフィルターを適用する場合、属性フィルターは `and` 演算子で結びつけられます。ジオメトリ フィルターの場合、最後にジオメトリ フィルターを適用したウィジェット (アプリ設定でのウィジェット追加順) からのフィルターが使用されます。
 
-- データ ソースにフィルタをかけるには、データ ソースの設定により、基本的に2つの方法があります。
+- データ ソースにフィルターをかけるには、データ ソースの設定により、基本的に 2 つの方法があります。
     - ウィジェットでデータを読み込む場合は、以下のように`DataSourceComponent` を使うのがおすすめです。
     
     ```tsx
@@ -108,19 +109,21 @@ aliases = ["/use-data-source-in-widget/"]
 
     - ウィジェットがデータを読み込まない場合は、`Data Source` の `updateQueryParams()` 関数を使用することができます。例として、[Filter feature layer](https://developers.arcgis.com/experience-builder/sample-code/widgets/filter-feature-layer/) のサンプルをご覧ください。
 
-- データ ソースからデータをクエリするには、`dataSource.query()` を使用します。データをクエリする際には、このデータ ソースに適用されているフィルタも使用されます。
+- データ ソースからデータをクエリーするには、`dataSource.query()` を使用します。データをクエリーする際には、このデータ ソースに適用されているフィルターも使用されます。
+
 
 ## データ上の選択を処理
+Experience Builder アプリにおける選択動作の設計は、すべてのウィジェットが同じ選択を更新、監視することを前提としています。例えば、ユーザーがリスト ウィジェット内でレコードを選択すると、テキスト ウィジェットも選択ビューを使用していればその選択を認識できます。すべてのデータ ソースには、選択データ ビューがあり、選択を管理します。さらに、選択されたレコード ID は Redux のアプリ ストアに保存されるため、同じデータ ソースを使用する他のウィジェットは選択の変更を検知できます。
 
-Experience Builder アプリで設計された選択の動作は、すべてのウィジェットが同じ選択を更新し、観察することです。例えば、ユーザーがリスト ウィジェット内のレコードを選択すると、選択ビューを使用しているテキスト ウィジェットにはその選択内容が表示されます。すべてのデータ ソースには、選択範囲を管理する選択範囲データ ビューがあります。選択データビューの他に、選択されたレコードの ID が Redux アプリ ストアに保存されるので、データ ソースを使用するウィジェットは、選択内容が変更されたときに通知を受けることができます。
+データ ソース内のデータ レコードを選択するには、`dataSource.selectRecordById()`、`dataSource.selectRecordsByIds()`、または `dataSource.selectRecords()` を使用できます。`dataSource.selectRecordById()` や `dataSource.selectRecordsByIds()` を使用する場合、レコードがすでにデータ ソースに読み込まれていれば、第 2 引数は不要です。読み込まれていない場合は、第 2 引数にレコード情報を渡す必要があります。これにより、他のウィジェットも選択されたレコードを読み取れるようになります。`dataSource.selectRecords()` はクエリー パラメーターを使ってレコードを選択できます。この場合、クエリー結果はデータソース情報に設定され、他のウィジェットもそれに応じて更新されます。
 
-データ ソース内のデータレコードを選択するには、`dataSource.selectRecordById()` または `dataSource.selectRecordsByIds()` を使用することができます。レコードがデータ ソースに読み込まれている場合は、2 番目のパラメータを渡す必要はありません。そうでない場合は、選択項目を使用する他のウィジェットがレコードを読み込めるようにするために、2 番目のパラメータを渡す必要があります。
+選択されたレコードを読み取るには、`dataSource.getSelectedRecords()` を使用します。
 
-選択範囲を読み取るには、`dataSource.getSelectedRecords()` を使用します。
 
 ### WebMap/WebScene の使用
 
 ArcGIS Maps SDK for JavaScript の WebMap と WebScene は、データ ソースとして `jimu-arcgis` パッケージでラッピングされています。WebMap にアクセスする場合は `WebMapDataSource` を、WebScene にアクセスする場合は `WebSceneDataSource` を使用します。これらのデータ ソースの使用方法については、[MapView のサンプル](https://developers.arcgis.com/experience-builder/sample-code/widgets/map-view/)をご覧ください。WebMap と WebScene オブジェクトに加えて、これらのオブジェクト内のすべてのレイヤーはデータ ソースとしてラッピングされているため、`getChildDataSources()` を呼び出してすべてのレイヤー データ ソースを取得できます。サポートされるレイヤーとサービスは、`SupportedLayerServiceTypes` と `SupportedServiceTypes` で定義されています。ArcGIS Maps SDK for JavaScript の`layer`があり、関連するレイヤーのデータ ソースを検索したい場合は、`mapDs.getDataSourceByLayer()` または `mapDs.createDataSourceByLayer()` を実行します。`DataSourceComponent` または `DataSourceManager` でマップ データ ソース (`WebMapDataSource` または `WebSceneDataSource`) を作成した場合、アプリの起動後、その子データ ソースは自動的に作成されないことに注意してください。すべての子データ ソースを作成するには、`await mapDs.childDataSourcesReady()` を実行します。
+
 
 ### FeatureLayer の使用
 
@@ -128,16 +131,16 @@ ArcGIS Maps SDK for JavaScript の WebMap と WebScene は、データ ソース
 
 ```tsx
  const getLayerObject = (ds: FeatureLayerDataSource) => {
-    return ds.layer; // this can be null
+    return ds.layer; // null に設定することも可能です
  }
 ```
 
-### ウィジェット間のデータ共有
 
-ウィジェットは、多くの場合、同じデータを共有します。この良い例が、エクスペリエンスでマップ ウィジェットとリスト ウィジェットを使用する場合です。リスト ウィジェットでフィーチャを選択すると、対応するフィーチャがマップ上で選択されます。これを実現する最も簡単な方法は、両方のウィジェットに同じデータ ソースを使用することです。たとえば、リスト ウィジェットでアイテムが選択されると、ウィジェットは `datasource.selectRecord()` を呼び出して、app store のデータ ソースの状態を更新します。これにより、マップ ウィジェットでは、現在選択されているアイテムを適宜レンダリングすることができます。また、現在選択されているアイテムの ID が URL に配置されるため、現在のアプリの状態を他の人と共有することが可能になります。
+### ウィジェット間のデータ共有
+ウィジェットは、多くの場合、同じデータを共有します。この良い例が、エクスペリエンスでマップ ウィジェットとリスト ウィジェットを使用する場合です。リスト ウィジェットでフィーチャを選択すると、対応するフィーチャがマップ上で選択されます。これを実現する最も簡単な方法は、両方のウィジェットに同じデータ ソースを使用することです。たとえば、リスト ウィジェットでアイテムが選択されると、ウィジェットは `datasource.selectRecordById()` を呼び出して、app store のデータ ソースの状態を更新します。これにより、マップ ウィジェットでは、現在選択されているアイテムを適宜レンダリングすることができます。また、現在選択されているアイテムの ID が URL に配置されるため、現在のアプリの状態を他の人と共有することが可能になります。
+
 
 ## ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期
-
 Experience Builder ウィジェットでは、ArcGIS Maps SDK for JavaScript を使用してフィーチャを取得することができます。その後、他のウィジェットがこれらのフィーチャを使用できるようにしたい場合があります。たとえば、マップ上でこれらのフィーチャをハイライト表示したり、リスト ウィジェットでこれらのフィーチャを表示したりする必要があるかもしれません。これには、以下の 3 つのオプションがあります。
 
 1. データ ソースでこれらのフィーチャ レコードを選択する
@@ -147,8 +150,9 @@ Experience Builder ウィジェットでは、ArcGIS Maps SDK for JavaScript を
 3. メッセージを公開する
     - ウィジェットが何らかのフィーチャを生成する場合、`DataRecordSetChangeMessage` メッセージを公開することで、他のウィジェットがサブスクライブできるようになります。
 
-## MapView/SceneView または LayerView での作業
 
+
+## MapView/SceneView または LayerView での作業
 ウィジェットがデータ ソースと連動する場合、[MapView/SceneView](../../core-concepts/map-scene-view/) とも連動する必要がある場合が多くあります。ウィジェットが `JimuMapViewComponent` によって`JimuMapView` インスタンスを取得した後、`jimuMapView.dataSourceId` によって MapView/SceneView の対応するデータ ソースを取得し、`jimuMapView.jimuLayerViews` によって関連レイヤーを取得することができます。`jimuLayerView` インスタンスを介して、`jimuMapView.dataSource` によって、レイヤー ビューの対応するデータ ソースを取得することもできます。一般に、レイヤーからデータ ソースと同期する機能を取得するには、以下のオプションがあります。
 
 - フィーチャの ID フィールドを使用して、データ ソースから関連するデータ レコードを検索

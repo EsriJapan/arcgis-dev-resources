@@ -45,7 +45,7 @@ Visual Studio Code をテキスト エディタとして使用している場合
 - URL パラメータ情報
 
 ## ウィジェットの配置場所
-カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリに配置されます。Web 拡張機能リポジトリは、`client` フォルダー内のフォルダーで下のコンテンツを含む `manifest.json` ファイルが格納されています。
+カスタム ウィジェットは Experience Builder の Web 拡張機能リポジトリーに配置されます。Web 拡張機能リポジトリーは、`client` フォルダー内のフォルダーで下のコンテンツを含む `manifest.json` ファイルが格納されています。
 
 ```json
 {
@@ -57,7 +57,7 @@ Visual Studio Code をテキスト エディタとして使用している場合
 }
 ```
 
-Experience Builder (Developer Edition) には、`client/your-extensions` にサンプルの Web 拡張機能リポジトリが付属しています。このリポジトリを使用することも、独自のリポジトリを作成することもできます。Git のようなソース コード リポジトリ システムを使用する場合は、独自のものを使用した方がうまくいく場合があります。独自に作成する場合、Jimu モジュールの型宣言がないなど、コード エディター上でエラーが表示されることがあります。これを修正するには、`tsconfig.json` ファイル内の `include` 配列に、Web 拡張機能リポジトリのフォルダーを次のように追加します。
+Experience Builder (Developer Edition) には、`client/your-extensions` にサンプルの Web 拡張機能リポジトリーが付属しています。このリポジトリーを使用することも、独自のリポジトリーを作成することもできます。Git のようなソース コード リポジトリー システムを使用する場合は、独自のものを使用した方がうまくいく場合があります。独自に作成する場合、Jimu モジュールの型宣言がないなど、コード エディター上でエラーが表示されることがあります。これを修正するには、`tsconfig.json` ファイル内の `include` 配列に、Web 拡張機能リポジトリーのフォルダーを次のように追加します。
 
 ```json
 {
@@ -66,14 +66,14 @@ Experience Builder (Developer Edition) には、`client/your-extensions` にサ�
     "your-extensions",
     "types",
     "jimu-core/lib/types",
-    /** Web 拡張機能リポジトリのフォルダー名を追加します **/
+    /** Web 拡張機能リポジトリーのフォルダー名を追加します **/
     "my-web-extension-repo"
   ],
 }
 ```
 
 ## ウィジェット ファイル
-Web 拡張機能リポジトリのルート フォルダーには、`widgets` と `themes` の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、`widgets` フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。
+Web 拡張機能リポジトリーのルート フォルダーには、`widgets` と `themes` の 2 つのフォルダーがあります。カスタム ウィジェットを作成するには、`widgets` フォルダー内にカスタム ウィジェットの名前で新しいフォルダーを作成してください。カスタム ウィジェットのすべてのファイルは、この新しいフォルダーに配置されます。
 
 ```txt
 - my-web-extension-repo/
@@ -93,5 +93,5 @@ Web 拡張機能リポジトリのルート フォルダーには、`widgets` �
 Experience Builder 開発が初めての方で、基本的な考え方を理解したい方は、以下をチェックしてください。
 
 - [コア コンセプト](../../core-concepts)
-- コードを見て学ぶのが一番良い場合は、[リポジトリ](https://github.com/esri/arcgis-experience-builder-sdk-resources)からクローンして、[サンプル](https://developers.arcgis.com/experience-builder/sample-code/)を参照してください。
+- コードを見て学ぶのが一番良い場合は、[リポジトリー](https://github.com/esri/arcgis-experience-builder-sdk-resources)からクローンして、[サンプル](https://developers.arcgis.com/experience-builder/sample-code/)を参照してください。
 

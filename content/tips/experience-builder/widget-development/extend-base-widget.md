@@ -25,7 +25,7 @@ Experience Builder ウィジェットは、次のファイルで構成されて�
 - `manifest.json`: プロパティのリストは `jimu-core/WidgetManifest` で設定した内容を表示
 
 ## Client サーバー
-Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで `npm start` を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
+Experience Builder (Developer Edition) で必要なモジュールをインストールしたら、/client ディレクトリーで `npm start` を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。
 
 - 新しいモジュールのインストール
 - ウィジェットの追加、削除、名前の変更
@@ -39,7 +39,7 @@ Experience Builder (開発者向けエディション) で必要なモジュー�
 {{% /notice %}}
 
 ## ウィジェットの作成
-ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、`client/your-extensions/widgets` ディレクトリに配置する方法です。demo widget フォルダーの名前を変更し、`maniest.json` で名前とラベルを変更し、ウィジェットの translations フォルダーにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
+ウィジェットに必要なファイルを作成する簡単な方法は、[samples repo](https://github.com/esri/arcgis-experience-builder-sdk-resources) にある demo widget をコピーして、`client/your-extensions/widgets` ディレクトリーに配置する方法です。demo widget フォルダーの名前を変更し、`manifest.json` で名前とラベルを変更し、ウィジェットの translations フォルダーにある default.ts ファイルの `_widgetLabel` のプロパティを変更します。widget/React コンポーネントを作成するには、クラスと関数の 2 つの方法があります。以下に、2 つの違いについて紹介します。
 
 {{% notice tip %}}
 
@@ -68,7 +68,7 @@ default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じ�
 以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、`export default class Widget extends React.Component<AllWidgetProps>, any>` で `AllWidgetProps` 型で宣言されており、ウィジェットの props を使用しています。 `render()` メソッドは、translations ファイル内の `_widgetLabel` のプロパティで設定した テキスト名：`hello world` とウィジェット名を返すために呼び出されます。
 
 ```tsx
-//a custom pragma to transform your jsx into plain JavaScript
+// JSX をプレーンな JavaScript に変換するカスタム pragma
 /** @jsx jsx */
 import { React, AllWidgetProps, jsx } from "jimu-core";
 export default class Widget extends React.PureComponent<AllWidgetProps<{}>, any> {
@@ -188,7 +188,7 @@ static mapExtraStateProps = (state: IMState) => {
 
 ## i18n サポート
 
-Experience Builder は `react-intl` ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの manifest.json で `translatedLocales` プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、`translatedLocales` プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。
+Experience Builder は `react-intl` ライブラリを使用して i18n をサポートしています。ウィジェットで言語のサポートを有効にするには、ウィジェットの `manifest.json` で `translatedLocales` プロパティのロケールを宣言します。慣例によりデフォルトのロケールを最初に指定しなければなりません。例えば、以下のスニペットでは、`translatedLocales` プロパティのデフォルトロケールは、英語(米国)、スペイン語、中国語(北京語) の順になっています。
 
 ```tsx
  "translatedLocales": [
@@ -211,7 +211,7 @@ export default {
 
 ```tsx
 System.register([], function (_export) {return {execute: function () {_export({
-  // the strings
+  // 文字列
   _widgetLabel: 'Translated Widget Name',
   str1: 'Translated String 1',
 })}}});
@@ -220,10 +220,10 @@ System.register([], function (_export) {return {execute: function () {_export({
 ウィジェット ファイル (例：`widget.tsx`) において、翻訳された文字列にアクセスする様々な方法を示します。
 
 ```tsx
-// Class component
+// クラス コンポーネント
 this.props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessages.str1})
 
-// Function component
+// 関数コンポーネント
 props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessage.str1})
 
 // JSX
@@ -254,7 +254,7 @@ props.intl.formatMessage({id: 'str1', defaultMessage: defaultMessage.str1})
 
 - JS API に依存するウィジェット (例：JS API がないと何もできません。)
   - ウィジェットの `manifest.json` で `jimu-arcgis` 依存関係を宣言します。
-  - `widget.tsx` で必要なモジュールをインポート `import Query = require('esri/tasks/support/Query')` します。
+  - `widget.tsx` で必要なモジュールをインポート `import Query from 'esri/tasks/support/Query'` します。
 
 ```tsx
   const query = new Query({
