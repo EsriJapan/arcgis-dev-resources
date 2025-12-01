@@ -18,7 +18,7 @@ if (!doNotTrack) {
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2025-12-01T11:24:32 JST">
-<title>インストール ガイド :: ArcGIS Developers 開発リソース集</title>
+<title>イミュータブル オブジェクト（Immutable objects） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
 <link href="/arcgis-dev-resources/css/font-awesome.min.css" rel="stylesheet">
@@ -34,12 +34,12 @@ if (!doNotTrack) {
     display:none !important;
   }
 </style>
-<meta name="description" content="ArcGIS Maps SDK for Flutter のインストールとセットアップ手順を紹介します。">
+<meta name="description" content="">
 
 
     
   </head>
-  <body data-url="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
+  <body data-url="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -322,16 +322,18 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/">ArcGIS Experience Builder (Developer Edition)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/">コア コンセプト</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/page/" class="dd-item">
@@ -432,7 +434,7 @@ if (!doNotTrack) {
           </a>
         </div>
     </li>
-      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item active">
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
             イミュータブル オブジェクト（Immutable objects）
@@ -745,14 +747,13 @@ if (!doNotTrack) {
     </li>
         </ul>
     </li>
-    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item parent haschildren
+    <li data-nav-id="/arcgis-dev-resources/tips/flutter/" class="dd-item haschildren
         ">
       <div>
-      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/arcgis-dev-resources/tips/flutter/">ArcGIS Maps SDK for Flutter</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item active">
+      <li data-nav-id="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/" class="dd-item">
         <div>
           <a href="/arcgis-dev-resources/tips/flutter/install-flutter-200.x/">
             インストール ガイド
@@ -922,7 +923,12 @@ if (!doNotTrack) {
 
 
 
- <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/flutter/'>ArcGIS Maps SDK for Flutter</a> > インストール ガイド
+
+
+
+ <a href='/arcgis-dev-resources/'>ArcGIS Developers 開発リソース集</a> > <a href='/arcgis-dev-resources/tips/'>技術 Tips 集</a> > <a href='/arcgis-dev-resources/tips/experience-builder/'>ArcGIS Experience Builder (Developer Edition)</a> > <a href='/arcgis-dev-resources/tips/experience-builder/core-concepts/'>コア コンセプト</a> > イミュータブル オブジェクト（Immutable objects）
+
+ 
 
  
 
@@ -939,24 +945,23 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#flutter-パッケージ-リポジトリ">Flutter パッケージ リポジトリ</a>
+    <li><a href="#イミュータブル-オブジェクトとは">イミュータブル オブジェクトとは</a></li>
+    <li><a href="#なぜイミュータブル-オブジェクトを使うのか">なぜイミュータブル オブジェクトを使うのか</a></li>
+    <li><a href="#イミュータブル型">イミュータブル型</a></li>
+    <li><a href="#コード例">コード例</a>
       <ul>
-        <li><a href="#vs-code">VS Code</a></li>
+        <li><a href="#イミュータブル-オブジェクトのプロパティ更新">イミュータブル オブジェクトのプロパティ更新</a></li>
+        <li><a href="#配列へのアイテムの追加">配列へのアイテムの追加</a></li>
+        <li><a href="#配列からのアイテムの消去">配列からのアイテムの消去</a></li>
+        <li><a href="#配列のアイテムの更新">配列のアイテムの更新</a></li>
       </ul>
     </li>
-    <li><a href="#プラットフォーム固有の構成">プラットフォーム固有の構成</a>
+    <li><a href="#パフォーマンスに関する考慮事項">パフォーマンスに関する考慮事項</a>
       <ul>
-        <li><a href="#android">Android</a></li>
-        <li><a href="#ios">iOS</a></li>
+        <li><a href="#パフォーマンスのベストプラクティス">パフォーマンスのベストプラクティス</a></li>
       </ul>
     </li>
-    <li><a href="#追加ダウンロード">追加ダウンロード</a>
-      <ul>
-        <li><a href="#サンプル-コード">サンプル コード</a></li>
-        <li><a href="#スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</a></li>
-        <li><a href="#補足データ">補足データ</a></li>
-      </ul>
-    </li>
+    <li><a href="#リソース">リソース</a></li>
   </ul>
 </nav>
         </div>
@@ -968,7 +973,7 @@ if (!doNotTrack) {
 
 <div id="body-inner">
   
-    <h1>インストール ガイド</h1>
+    <h1>イミュータブル オブジェクト（Immutable objects）</h1>
   
 
 
@@ -976,196 +981,190 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Maps SDK for Flutter - Guide - <a href="https://developers.arcgis.com/flutter/install-and-set-up/">Install and set up</a></p>
-<p>このインストール ガイドでは、ArcGIS Maps SDK for Flutter (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「<a href="../../../guide/create-app/create-startup-app-flutter/">アプリの作成</a>」のチュートリアルをご覧ください。</p>
-<p>ArcGIS Maps SDK for Flutter をインストールする前に、開発マシンが <a href="https://www.esrij.com/products/arcgis-maps-sdk-for-flutter/spec/">動作環境</a> を満たしていることを確認してください。</p>
-<h2 id="flutter-パッケージ-リポジトリ">Flutter パッケージ リポジトリ</h2>
-<p>ArcGIS Maps SDK for Flutter は、Flutter のパッケージ リポジトリである <a href="https://pub.dev/packages/arcgis_maps/">pub.dev</a> を使用して、<a href="https://code.visualstudio.com/">VS Code</a> で Flutter プロジェクトに統合することができます。</p>
-<h3 id="vs-code">VS Code</h3>
-<ol>
-<li>
-<p>VS Code で Flutter プロジェクトを開きます。</p>
-</li>
-<li>
-<p><strong>View</strong> &gt; <strong>Terminal</strong> を開きます。</p>
-</li>
-<li>
-<p>プロジェクトの依存関係に <code>arcgis_maps</code> パッケージを追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart pub add arcgis_maps
-</code></pre></div> <!-- 上の行の空白を消すと、`の数がおかしくなるので注意。以下、Shell タグは同様。 bash,sh,shell-scriptも。-->
-<p><a href="https://dart.dev/tools/pub/cmd/pub-add"><code>dart pub add</code></a> は、<code>arcgis_maps</code> パッケージを依存関係として <a href="https://docs.flutter.dev/tools/pubspec"><code>pubspec.yaml</code></a> に追加し、<code>pubspec.yaml</code> を解決するために依存関係を取得します。</p>
-</li>
-<li>
-<p>以下のコマンドを実行して、すべての依存関係を最新の互換性のあるバージョンにアップデートします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flutter pub upgrade
-</code></pre></div><p>このコマンドを実行すると、アプリが依存しているパッケージのみがアップデートされます。</p>
-</li>
-<li>
-<p><code>arcgis_maps_core</code> をダウンロードしてインストールします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dart run arcgis_maps install
-</code></pre></div><p>このコマンドを実行すると、ArcGIS Maps のコア機能のバイナリー配布が Flutter プロジェクトにダウンロードされ、セットアップされます。ソース管理にチェックする場合は、<code>.gitignore</code> ファイルに <code>arcgis_maps_core</code> を追加することをお勧めします。</p>
-</li>
-</ol>
-<p>この API を使用するには、以下の import 文を dart コード（.dart）ファイルに追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:arcgis_maps/arcgis_maps.dart&#39;</span>;
-</code></pre></div><h2 id="プラットフォーム固有の構成">プラットフォーム固有の構成</h2>
-<p>Android、iOS、またはその両方向けに開発するには、Flutter プロジェクトで以下の設定変更も行う必要があります。</p>
-<h3 id="android">Android</h3>
-<ol>
-<li>
-<p>以下の最低要件を更新します。</p>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/immutable/">Immutable-objects</a></p>
+<h2 id="イミュータブル-オブジェクトとは">イミュータブル オブジェクトとは</h2>
+<p><strong>イミュータビリティ</strong> (不変性) とは、一度作成されたデータは変更できないという性質を指します。
+対して、ミュータブル (可変) なデータは作成後に変更可能です。
+JavaScript のオブジェクトや配列はデフォルトでミュータブルですが、<a href="https://react.dev/">React</a> や <a href="https://redux.js.org/">Redux</a> では状態更新をイミュータブルに行うことが推奨されています。
+ArcGIS Experience Builder では、<a href="https://www.npmjs.com/package/seamless-immutable-mod">seamless-immutable</a> ライブラリーを使用して、不変性を実現しています。</p>
+<h2 id="なぜイミュータブル-オブジェクトを使うのか">なぜイミュータブル オブジェクトを使うのか</h2>
+<p>ArcGIS Experience Builder が基盤としている React と Redux は、次の理由でイミュータブルな状態更新が必要です。</p>
 <ul>
-<li>Android コンパイル SDK: <code>36</code></li>
-<li>Android NDK バージョン: <code>27.0.12077973</code></li>
-<li>Android の最低 SDK バージョン: <code>28</code></li>
+<li><strong>予測可能な状態変化</strong>: 変更のタイミングや方法を追跡しやすい。</li>
+<li><strong>パフォーマンス最適化</strong>: React が再レンダリングすべき箇所を効率的に判断できる。</li>
+<li><strong>デバッグ</strong>: 状態変化の追跡が簡単になり、問題を特定しやすい。</li>
 </ul>
-<p>android/app/build.gradle.kts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">android <span style="color:#f92672">{</span>
-    namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
-    compileSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>  <span style="color:#75715e">// 変更
-</span><span style="color:#75715e"></span>    ndkVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;27.0.12077973&#34;</span>  <span style="color:#75715e">// 変更
-</span><span style="color:#75715e"></span>
-    compileOptions <span style="color:#f92672">{</span>
-        sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
-        targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
-    <span style="color:#f92672">}</span>
+<h2 id="イミュータブル型">イミュータブル型</h2>
+<p>Experience Builder 内のイミュータブル型は、次のように慣例として <code>IM</code> で始まります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Examples of immutable types
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IMConfig</span> {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+}
 
-    kotlinOptions <span style="color:#f92672">{</span>
-        jvmTarget <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span>
-    <span style="color:#f92672">}</span>
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IMDataSource</span> {
+  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+  <span style="color:#a6e22e">fields</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>[];
+}
+</code></pre></div><h2 id="コード例">コード例</h2>
+<h3 id="イミュータブル-オブジェクトのプロパティ更新">イミュータブル オブジェクトのプロパティ更新</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Immutable</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
-    defaultConfig <span style="color:#f92672">{</span>
-        <span style="color:#75715e">// TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-</span><span style="color:#75715e"></span>        applicationId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.esri.flutter_project_template&#34;</span>
-        <span style="color:#75715e">// You can update the following values to match your application needs.
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For more information, see: https://flutter.dev/to/review-gradle-config.
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>        minSdk <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span> <span style="color:#75715e">// 変更
-</span><span style="color:#75715e"></span>        targetSdk <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">targetSdkVersion</span>
-        versionCode <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionCode</span>
-        versionName <span style="color:#f92672">=</span> flutter<span style="color:#f92672">.</span><span style="color:#a6e22e">versionName</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>`</p>
-</li>
-</ol>
-<h4 id="パーミッションを必要とする機能">パーミッションを必要とする機能</h4>
-<p>ArcGIS Maps SDK for Flutter に依存するアプリケーションをデプロイするには、以下の権限が必要です。オンライン リソースにアクセスする権限を追加し、デバイスの GPS にアクセスする権限を追加します。位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーは位置情報へのアクセス許可を提供するよう促されることに注意してください。</p>
-<p>android/app/src/main/AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_COARSE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.ACCESS_FINE_LOCATION&#34;</span> <span style="color:#f92672">/&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
-    <span style="color:#f92672">&lt;application</span>
-        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_project_template&#34;</span>
-        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;${applicationName}&#34;</span>
-        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><h4 id="デバイスのストレージへのアクセスを許可">デバイスのストレージへのアクセスを許可</h4>
-<p>添付ファイルの追加やエクスポートなど、デバイスのストレージに対する読み取り/書き込み操作が必要な場合は、以下の追加権限を追加する必要があります。</p>
-<p>android/app/src/main/AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;manifest</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#f92672">&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_INTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.READ_EXTERNAL_STORAGE&#34;</span><span style="color:#f92672">/&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
-    <span style="color:#f92672">&lt;application</span>
-        <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_project_template&#34;</span>
-        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;${applicationName}&#34;</span>
-        <span style="color:#a6e22e">android:icon=</span><span style="color:#e6db74">&#34;@mipmap/ic_launcher&#34;</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><h4 id="ユーザー認証の有効化">ユーザー認証の有効化</h4>
-<p>ユーザー認証にシステム ブラウザーの使用が必要な場合は、以下を追加する必要があります。</p>
-<p>android/app/src/main/AndroidManifest.xml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;/activity&gt;</span> <span style="color:#75715e">&lt;!-- application タグ内の activity タグ--&gt;</span>
-    
-	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
-    <span style="color:#f92672">&lt;activity</span>
-        <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;com.linusu.flutter_web_auth_2.CallbackActivity&#34;</span>
-        <span style="color:#a6e22e">android:exported=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;intent-filter</span> <span style="color:#a6e22e">android:label=</span><span style="color:#e6db74">&#34;flutter_web_auth_2&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.action.VIEW&#34;</span> <span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.DEFAULT&#34;</span> <span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.BROWSABLE&#34;</span> <span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">android:scheme=</span><span style="color:#e6db74">&#34;YOUR_CALLBACK_URL_SCHEME_HERE&#34;</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/intent-filter&gt;</span>
-    <span style="color:#f92672">&lt;/activity&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
-</code></pre></div><p><code>YOUR_CALLBACK_URL_SCHEME_HERE</code> を、ポータルで OAuth 認証情報を設定したときに使用したリダイレクト URL のスキームに置き換えてください。 これは、ログイン ワークフローが完了した後、ブラウザーがアプリに通信して戻るために必要です。</p>
-<h3 id="ios">iOS</h3>
-<ol>
-<li>
-<p>iOS 17.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。</p>
-<p>ios/Podfile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Uncomment this line to define a global platform for your project</span>
-platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;17.0&#39;</span> <span style="color:#75715e">#変更</span>
-</code></pre></div></li>
-<li>
-<p><code>Runtimecore</code> ポッドと <code>arcgis_maps_ffi</code> ポッドを <code>Runner</code> ターゲット セクションに追加します。</p>
-<p>ios/Podfile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">target <span style="color:#e6db74">&#39;Runner&#39;</span> <span style="color:#66d9ef">do</span>
-    use_frameworks!
-    use_modular_headers!
+<span style="color:#75715e">// イミュータブルオブジェクトを作成
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>({
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;My Widget&#39;</span>,
+  <span style="color:#a6e22e">settings</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">theme</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;light&#39;</span>, <span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;medium&#39;</span> }
+});
 
-    <span style="color:#75715e">#変更開始</span>
-    pod <span style="color:#e6db74">&#39;Runtimecore&#39;</span>, <span style="color:#e6db74">:podspec</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;../arcgis_maps_core/ios/Runtimecore.podspec&#39;</span>
-    pod <span style="color:#e6db74">&#39;arcgis_maps_ffi&#39;</span>, <span style="color:#e6db74">:podspec</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;../arcgis_maps_core/ios/arcgis_maps_ffi.podspec&#39;</span>
-    <span style="color:#75715e">#変更終了</span>
+<span style="color:#75715e">// 単一プロパティ更新
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedConfig</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;Updated Widget&#39;</span>);
 
-    flutter_install_all_ios_pods <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>dirname(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>realpath(__FILE__))
-    target <span style="color:#e6db74">&#39;RunnerTests&#39;</span> <span style="color:#66d9ef">do</span>
-        inherit! <span style="color:#e6db74">:search_paths</span>
-    <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div></li>
-<li>
-<p><code>pod update</code> を使用して Pods を設定します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd ios &amp;&amp; pod update &amp;&amp; cd ..
-</code></pre></div></li>
-</ol>
-<h4 id="パーミッションを必要とする機能-1">パーミッションを必要とする機能</h4>
-<p>ArcGIS Maps SDK for Flutter の一部の機能には、追加のパーミッションが必要です。 ArcGIS Maps SDK for Flutter に依存する iOS アプリを App Store にデプロイするには、以下の記述が必要です。 位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーに位置情報へのアクセス許可を求めるプロンプトが表示されることに注意してください。</p>
+<span style="color:#75715e">// ネストされたプロパティ更新
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nestedUpdate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">setIn</span>([<span style="color:#e6db74">&#39;settings&#39;</span>, <span style="color:#e6db74">&#39;theme&#39;</span>], <span style="color:#e6db74">&#39;dark&#39;</span>);
+
+<span style="color:#75715e">// 複数プロパティをマージ
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mergedConfig</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">merge</span>({
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Merged Widget&#39;</span>,
+  <span style="color:#a6e22e">settings</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;large&#39;</span> }
+});
+</code></pre></div><p>イミュータブル オブジェクトの更新に利用できるメソッドは下記があります。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set()</code></td>
+<td>単一プロパティを設定</td>
+<td><code>obj.set('title', 'New Title')</code></td>
+</tr>
+<tr>
+<td><code>setIn()</code></td>
+<td>ネストされたプロパティを設定</td>
+<td><code>obj.setIn(['user', 'name'], 'John')</code></td>
+</tr>
+<tr>
+<td><code>merge()</code></td>
+<td>複数プロパティを統合</td>
+<td><code>obj.merge({title: 'New', active: true})</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="配列へのアイテムの追加">配列へのアイテムの追加</h3>
+<p>イミュータブルな配列へのアイテムの追加方法を下記に例示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Recommended approach
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>(
+  <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">Immutable</span>([<span style="color:#a6e22e">newItem</span>]))
+);
+
+<span style="color:#75715e">// Alternative approach (when you need multiple operations)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mutableArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">asMutable</span>();
+<span style="color:#a6e22e">mutableArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newItem</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">immutableArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>(<span style="color:#a6e22e">mutableArray</span>);
+</code></pre></div><h3 id="配列からのアイテムの消去">配列からのアイテムの消去</h3>
+<p>イミュータブルな配列からアイテムを消去する方法を下記に例示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Remove item by ID
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filteredArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flatMap</span>(<span style="color:#a6e22e">item</span> =&gt;
+  <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">itemToRemove</span> <span style="color:#f92672">?</span> [] <span style="color:#f92672">:</span> [<span style="color:#a6e22e">item</span>]
+);
+
+<span style="color:#75715e">// Remove item by index
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexToRemove</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arrayWithoutItem</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flatMap</span>((<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) =&gt;
+  <span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">indexToRemove</span> <span style="color:#f92672">?</span> [] <span style="color:#f92672">:</span> [<span style="color:#a6e22e">item</span>]
+);
+</code></pre></div><h3 id="配列のアイテムの更新">配列のアイテムの更新</h3>
+<p>イミュータブルな配列のアイテムを更新する方法を下記に例示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Update item by index
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">targetIndex</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;property&#39;</span>, <span style="color:#a6e22e">newValue</span>);
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>;
+});
+
+<span style="color:#75715e">// Update item by condition
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedByCondition</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">item</span> =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">targetId</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">merge</span>({
+      <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Updated Title&#39;</span>,
+      <span style="color:#a6e22e">modified</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    });
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>;
+});
+</code></pre></div><h2 id="パフォーマンスに関する考慮事項">パフォーマンスに関する考慮事項</h2>
+<p>複数の操作が必要な場合に、<code>asMutable()</code> をどのように、いつ使用するかを下記に例示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Good: Multiple operations
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mutableArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">asMutable</span>();
+<span style="color:#a6e22e">mutableArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item1</span>);
+<span style="color:#a6e22e">mutableArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item2</span>);
+<span style="color:#a6e22e">mutableArray</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">localeCompare</span>(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span>));
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>(<span style="color:#a6e22e">mutableArray</span>);
+
+<span style="color:#75715e">// Avoid: Single operations
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mutableArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">asMutable</span>();
+<span style="color:#a6e22e">mutableArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Immutable</span>(<span style="color:#a6e22e">mutableArray</span>);
+
+<span style="color:#75715e">// If in large loop, use .merge():
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">modifierObject</span> <span style="color:#f92672">=</span> {}
+<span style="color:#75715e">// Example large loop:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">++</span>) {
+  <span style="color:#a6e22e">modifierObject</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some value&#39;</span>
+}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imNewObject</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">imObject</span>.<span style="color:#a6e22e">merge</span>(<span style="color:#a6e22e">modifierObject</span>)
+</code></pre></div><h3 id="パフォーマンスのベストプラクティス">パフォーマンスのベストプラクティス</h3>
+<p>イミュータブルなオブジェクトに関するパフォーマンスのベストプラクティスを、下表で示します。</p>
+<table>
+<thead>
+<tr>
+<th>シナリオ</th>
+<th>推奨される方法</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>単一プロパティの更新</td>
+<td><code>set()</code> または <code>setIn()</code></td>
+<td>効率的</td>
+</tr>
+<tr>
+<td>複数プロパティの更新</td>
+<td><code>merge()</code></td>
+<td>オブジェクトの生成数を削減</td>
+</tr>
+<tr>
+<td>配列のフィルタリング</td>
+<td><code>flatMap()</code></td>
+<td>機能的なアプローチ</td>
+</tr>
+<tr>
+<td>複数操作をまとめて行う</td>
+<td><code>asMutable()</code> に続けて <code>Immutable()</code></td>
+<td>中間オブジェクトの削減</td>
+</tr>
+<tr>
+<td>深い階層のオブジェクト更新</td>
+<td><code>setIn()</code></td>
+<td>ディープ クローニングの回避</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リソース">リソース</h2>
 <ul>
-<li>ユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationusagedescription">NSLocationUsageDescription</a>）</li>
-<li>常にユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription">NSLocationAlwaysAndWhenInUseUsageDescription</a>）</li>
-<li>アプリがフォアグラウンドで実行されている間、ユーザーの位置情報へのアクセスを要求する（<a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationwheninuseusagedescription">NSLocationWhenInUseUsageDescription</a>）</li>
+<li><a href="https://www.npmjs.com/package/seamless-immutable-mod">Seamless immutable documentation</a></li>
+<li><a href="https://reactjs.org/docs/state-and-lifecycle.html">React state management</a></li>
+<li><a href="https://redux.js.org/usage/structuring-reducers/immutable-update-patterns">Redux immutable update patterns</a></li>
+<li><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/">Jimu core API reference</a></li>
 </ul>
-<p>次のコード例では、<a href="https://developer.apple.com/documentation/bundleresources/information_property_list">情報プロパティー リスト</a>にこれらを含めています。</p>
-<p>ios/Runner/Info.plist</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dict&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加開始 --&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>NSLocationUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>NSLocationAlwaysAndWhenInUseUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>NSLocationWhenInUseUsageDescription<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;string&gt;</span>Location permission is required to view your position.<span style="color:#f92672">&lt;/string&gt;</span>
-	<span style="color:#75715e">&lt;!-- 追加終了 --&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>CFBundleDevelopmentRegion<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;string&gt;</span>$(DEVELOPMENT_LANGUAGE)<span style="color:#f92672">&lt;/string&gt;</span>
-</code></pre></div><h2 id="追加ダウンロード">追加ダウンロード</h2>
-<p><a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B3%E3%83%BC%E3%83%89">サンプル コード</a>と<a href="#%E8%A3%9C%E8%B6%B3%E3%83%87%E3%83%BC%E3%82%BF">データ</a>の追加ソースは、あなたの開発プロジェクトを強化するために利用可能です。本ガイドは、<a href="#%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3%E3%81%AE%E9%96%8B%E7%99%BA%E8%80%85%E5%90%91%E3%81%91%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88">スタンドアロンの開発者向けドキュメント</a>としてダウンロードすることもできます。</p>
-<h3 id="サンプル-コード">サンプル コード</h3>
-<p>独自のアプリケーションに追加できるさまざまな強力な機能を説明した、実践的なサンプル コードを入手できます。 サンプルを検索し、<a href="https://developers.arcgis.com/flutter/sample-code/">サンプル ドキュメント</a>で関連するコードを参照するか、<a href="https://github.com/Esri/arcgis-maps-sdk-flutter-samples">サンプル リポジトリ</a>からコードをダウンロードしてローカルで実行します。</p>
-<h3 id="スタンドアロンの開発者向けドキュメント">スタンドアロンの開発者向けドキュメント</h3>
-<p>ダウンロード ページ から、開発者向けドキュメントをアーカイブとして<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>できます。アーカイブには、ローカル Web サーバからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、パブリックなインターネット上ではなく、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されています。</p>
-<div class="notices info" >
-<p>ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー <a href="https://www.7-zip.org/">7-Zip</a> をお勧めします。</p>
-</div>
-<p>ローカルでドキュメントを公開する方法</p>
-<ul>
-<li>使用する SDK のドキュメントを<a href="https://developers.arcgis.com/flutter/downloads/">ダウンロード</a>します。 ダウンロードしたファイルは .zip アーカイブ形式になっています。</li>
-<li>アーカイブをローカル フォルダに解凍します。 解凍されたアーカイブには、<code>public</code> と <code>install</code> の 2 つのサブフォルダがあります。</li>
-<li><code>install</code> フォルダ内の <code>README.md</code> ファイルを開き、選択した Web サーバーの指示に従います。</li>
-</ul>
-<div class="notices note" >
-<p>ライブ ドキュメント サイトはリリースとリリースの間に定期的に更新されますが、スタンドアロン ドキュメントは静的で、最初のリリース後は更新されません。</p>
-</div>
-<h3 id="補足データ">補足データ</h3>
-<h4 id="投影-エンジン-データ">投影 エンジン データ</h4>
-<p>測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。</p>
-<p>グリッド ベースの変換を使用している場合は、ダウンロード ページからサポートする <a href="https://developers.arcgis.com/flutter/downloads/#projection-engine-data">投影エンジン ファイル</a>をダウンロードしてください。 座標系、投影、測地系変換の操作に関する詳細は、Spatial references トピックを参照してください。</p>
 
 
     
@@ -1177,8 +1176,8 @@ platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/arcgis-dev-resources/tips/flutter/" title="ArcGIS Maps SDK for Flutter"> <i class="fa fa-chevron-left"></i><label>ArcGIS Maps SDK for Flutter</label></a>
-    <a class="nav nav-next" href="/arcgis-dev-resources/tips/flutter/distribution-flutter-200.x/" title="アプリケーション配布ガイド" style="margin-right: 0px;"><label>アプリケーション配布ガイド</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/" title="AppConfig"> <i class="fa fa-chevron-left"></i><label>AppConfig</label></a>
+    <a class="nav nav-next" href="/arcgis-dev-resources/tips/experience-builder/install-guide/" title="インストール ガイド" style="margin-right: 0px;"><label>インストール ガイド</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

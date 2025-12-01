@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>ウィジェット（Widget） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -938,11 +945,17 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#ウィジェットwidget">ウィジェット（Widget）</a></li>
+    <li><a href="#ウィジェットの機能">ウィジェットの機能</a></li>
+    <li><a href="#ウィジェットの使い方">ウィジェットの使い方</a>
       <ul>
-        <li><a href="#ウィジェットwidget">ウィジェット（Widget）</a></li>
+        <li><a href="#1-ウィジェットの追加">1. ウィジェットの追加</a></li>
+        <li><a href="#2-ウィジェットの設定の構成">2. ウィジェットの設定の構成</a></li>
+        <li><a href="#3-ウィジェットの配置とスタイルの設定">3. ウィジェットの配置とスタイルの設定</a></li>
       </ul>
     </li>
+    <li><a href="#ウィジェットのui構築">ウィジェットのUI構築</a></li>
+    <li><a href="#データとマップの操作">データとマップの操作</a></li>
   </ul>
 </nav>
         </div>
@@ -963,7 +976,111 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/widget/">Widget</a></p>
-<h3 id="ウィジェットwidget">ウィジェット（Widget）</h3>
+<h2 id="ウィジェットwidget">ウィジェット（Widget）</h2>
+<p>ArcGIS Experience Builder におけるウィジェットは、Web アプリケーション内で特定の機能を提供するモジュール型の柔軟なコンポーネントです。ウィジェットは、地図の表示、ボタンによるユーザー操作の管理、リストやチャートによるデータの可視化など、さまざまなタスクを処理できます。ウィジェットを設定することで、インタラクティブで動的な Web アプリケーションを作成できます。</p>
+<p>Experience Builder に含まれるウィジェットには以下の2つのカテゴリがあります。</p>
+<ul>
+<li><strong>標準ウィジェット</strong>（Out-of-the-box widgets）：
+地図、ボタン、データ可視化ツールなど、一般的な機能を実装した事前構築済みのコンポーネント</li>
+<li><strong>カスタムウィジェット</strong>（Custom widgets）：
+Developer Edition を使用して開発者が作成するコンポーネントで、特定の要件に対応するための機能を実装</li>
+</ul>
+<p>各ウィジェットは、動作や外観をカスタマイズするための設定が可能です。設定は次の方法で管理できます。</p>
+<p>標準プロパティを変更するためのインターフェイスである、ビルダー環境の設定 UI
+設定 UI がない場合に高度な設定オプションを編集できる、JSON エディター</p>
+<h2 id="ウィジェットの機能">ウィジェットの機能</h2>
+<p>ほとんどのウィジェットには UI がありますが、必須ではありません。ウィジェットは UI 以外にもさまざまな機能があります。</p>
+<ul>
+<li>
+<p><strong>メッセージ アクションとデータ アクション</strong></p>
+<p>ウィジェットは、メッセージアクションを通じて他のウィジェットと連携し、データアクションを通じてデータを処理できます。これによりウィジェット同士が通信し、異なるソースからのデータを処理できます。詳細は <a href="https://developers.arcgis.com/experience-builder/guide/widget-communication/"><strong>ウィジェット コミュニケーション</strong></a>をご覧ください。</p>
+</li>
+<li>
+<p><strong>拡張機能</strong></p>
+<p>ウィジェットは、拡張機能を用いることでアプリケーションライフサイクルの特定のポイントにフックできます。たとえば、<code>AppConfigProcessor</code> のエクステンション ポイントを使用すると、ウィジェットは実行時にアプリケーション構成を処理・変更できます。利用可能なエクステンション ポイントの詳細は、<a href="https://developers.arcgis.com/experience-builder/guide/extension-points/"><strong>エクステンション ポイント</strong></a>のガイドをご覧ください。</p>
+</li>
+</ul>
+<h2 id="ウィジェットの使い方">ウィジェットの使い方</h2>
+<p>ArcGIS Experience Builder でウィジェットを使用する一般的な手順は次のとおりです。</p>
+<ol>
+<li>
+<p><a href="./#1-%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">ウィジェットの追加</a>
+ページやレイアウトにウィジェットを追加します。</p>
+</li>
+<li>
+<p><a href="./#2-%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E6%A7%8B%E6%88%90">ウィジェットの設定の構成</a>
+ウィジェットのプロパティや動作を調整します。</p>
+</li>
+<li>
+<p><a href="./#3-%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%81%AE%E9%85%8D%E7%BD%AE%E3%81%A8%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A">ウィジェットの配置とスタイルの設定</a>
+レイアウト内でウィジェットを整理し、スタイルを適用します。</p>
+</li>
+</ol>
+<h3 id="1-ウィジェットの追加">1. ウィジェットの追加</h3>
+<p>次のステップに従って、エクスペリエンスにウィジェットを追加します。</p>
+<ol>
+<li>ArcGIS Experience Builder の<strong>ウィジェット</strong>パネルに移動します。</li>
+<li>追加したいウィジェットをページまたはレイアウト セクションに ドラッグ＆ドロップします。</li>
+<li>ウィジェットがエクスペリエンスに追加され、詳細な設定が可能になります。</li>
+</ol>
+<div class="notices note" >
+<p>ウィジェットの追加について詳しくは、<a href="https://developers.arcgis.com/experience-builder/guide/add-widgets/#insert-widgets"><strong>ウィジェットの追加</strong></a>ガイドをご覧ください。</p>
+</div>
+<h3 id="2-ウィジェットの設定の構成">2. ウィジェットの設定の構成</h3>
+<p>次のステップに従って、ウィジェットのプロパティを設定します。</p>
+<ol>
+<li>設定したいウィジェットを選択します。</li>
+<li>設定パネルを使用して、データソース、外観、動作などのウィジェットのプロパティを調整します。</li>
+<li>設定 UI がないウィジェットの場合は、JSON エディターを使用して手動でオプションを構成します。</li>
+</ol>
+<h3 id="3-ウィジェットの配置とスタイルの設定">3. ウィジェットの配置とスタイルの設定</h3>
+<p>次のステップに従って、エクスペリエンス内でウィジェットを配置・スタイル設定をします。</p>
+<ol>
+<li>レイアウト内でウィジェットを移動・サイズ変更し、配置を変更します。</li>
+<li>背景、枠線、余白などのスタイルを適用して、各ウィジェットの外観をカスタマイズします。</li>
+<li>整列ツールや分布ツールを使用して、ユーザビリティーに配慮してウィジェットを整理します。</li>
+</ol>
+<h2 id="ウィジェットのui構築">ウィジェットのUI構築</h2>
+<p>カスタムウィジェットを開発する際、UI を構築するには下記の方法があります。</p>
+<ul>
+<li>
+<p>Jimu-UI ライブラリ
+このライブラリはウィジェット開発に推奨される方法です。Experience Builderのテーマ システムと統合された事前構築済みコンポーネントを提供します。これにより、ウィジェット間で一貫したスタイルと動作が可能となります。</p>
+</li>
+<li>
+<p>Calcite Design System
+<code>Jimu-UI</code> で必要な機能が提供されていない場合、Calcite コンポーネントを使用します。Calcite にはウィジェットの UI 構築に利用できる事前構築済みコンポーネントが含まれています。Calcite コンポーネントは <code>@esri/calcite-components</code> によってアクセス可能です。</p>
+</li>
+</ul>
+<div class="notices note" >
+<p>ウィジェット UI の構築やコンポーネント オプションについての詳細は、<a href="https://developers.arcgis.com/experience-builder/guide/widget-ui/"><strong>ウィジェット UI</strong></a>をご覧ください。</p>
+</div>
+<h2 id="データとマップの操作">データとマップの操作</h2>
+<p>ウィジェットは、下記の方法でデータやマップと連携できます。</p>
+<ul>
+<li>
+<p>データを扱う場合（例：フィーチャ レイヤー）</p>
+<ul>
+<li>設定画面で DataSourceSelector を使用</li>
+<li>実行時に DataSourceComponent を使用</li>
+<li>詳細は <a href="https://developers.arcgis.com/experience-builder/guide/use-data-source-in-widget/"><strong>ウィジェットでのデータの使用</strong></a>をご覧ください</li>
+</ul>
+</li>
+<li>
+<p>マップウィジェットを扱う場合</p>
+<ul>
+<li>設定画面で MapWidgetSelector と JimuLayerViewSelector を使用</li>
+<li>実行時に JimuMapViewComponent を使用</li>
+</ul>
+</li>
+<li>
+<p>カスタム ウィジェット開発
+カスタム ウィジェットを作成することで、ArcGIS Experience Builder の機能の拡張が可能です。カスタム ウィジェットは、<a href="https://developers.arcgis.com/experience-builder/guide/install-guide/">ArcGIS Experience Builder Developer Edition</a> を使用して構築します。Developer Edition は、新しいウィジェットをビルダー環境に作成・統合することができるツールと API を提供します。</p>
+</li>
+</ul>
+<div class="notices note" >
+<p>ウィジェットの実装やカスタマイズの詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/"><strong>ウィジェットの実装</strong></a>をご覧ください。</p>
+</div>
 <p>ウィジェットは設定可能な機能単位で、エクスペリエンスのページを作成するために使用されるビルディング ブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタム ウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定 UI を提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。</p>
 <p>ウィジェットの実装については<a href="https://developers.arcgis.com/experience-builder/guide/extend-base-widget/">こちら</a>をご覧ください。</p>
 <p>app config では、<code>widgets</code> でウィジェットを定義します。</p>

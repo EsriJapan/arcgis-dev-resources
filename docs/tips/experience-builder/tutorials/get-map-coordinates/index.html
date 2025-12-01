@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>マップの座標を取得 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -430,6 +430,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -973,10 +980,10 @@ if (!doNotTrack) {
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/get-map-coordinates/">Get map coordinates</a></p>
 <h2 id="概要">概要</h2>
 <p><b>学習内容：</b>カスタム ウィジェットでマップの緯度と経度、縮尺、ズーム レベルを表示する方法</p>
-<p>ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> インスタンスが含まれています。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> はマップと対話し、位置情報を取得する方法を提供します。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html">空間参照</a>の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。</p>
+<p>ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">View</a> インスタンスが含まれています。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html"><code>View</code></a> はマップと対話し、位置情報を取得する方法を提供します。<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html">&lsquo;View&rsquo;</a> のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の<a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html">空間参照</a>の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。</p>
 <p>このチュートリアルでは、マップ ウィジェットにアクセスし、カスタム ウィジェットでマウス カーソルが地図上にある時の緯度と経度を表示します。</p>
 <h2 id="前提条件">前提条件</h2>
-<p>ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) のダウンロード、インストール、設定を行います。</p>
+<p>ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) の<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/">ダウンロード、インストール、設定</a>を行います。</p>
 <h2 id="ステップ">ステップ</h2>
 <h3 id="スターター-ウィジェットの入手">スターター ウィジェットの入手</h3>
 <ol>
@@ -1044,7 +1051,7 @@ if (!doNotTrack) {
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">MapWidgetSelector</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/setting-components&#39;</span>
 </code></pre></div><ol start="2">
-<li>コンポーネント内で onMapWidgetSelected 関数を定義します。</li>
+<li>コンポーネント内で <code>onMapWidgetSelected</code> 関数を定義します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// *** 追加 ***
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onMapWidgetSelected</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">useMapWidgetIds</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>[]) =&gt; {
@@ -1073,7 +1080,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">JimuMapViewComponent</span>, <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">JimuMapView</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>
 <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>
 </code></pre></div><ol start="2">
-<li>マウスの位置の緯度と経度のプロパティを表示するには、マウス ポインターの状態を追跡する必要があります。これにはコンポーネント内で、<code>useState()</code> を使用し <a href="https://reactjs.org/docs/state-and-lifecycle.html">state</a> として追跡できるように設定します。</li>
+<li>マウスの位置の緯度と経度のプロパティを表示するには、マウス ポインターの state を追跡する必要があります。これにはコンポーネント内で、<code>useState()</code> を使用し <a href="https://reactjs.org/docs/state-and-lifecycle.html">state</a> として追跡できるように設定します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>
 
@@ -1146,6 +1153,7 @@ Experience Builder タブが開かなかった場合は、https://localhost:3001
 <li>ウィジェットの設定パネルで、マップを選択するドロップダウンから「<b>Map</b>」を選択します。</li>
 <li>Experience Builder のツールバーで [<b>保存</b>] をクリックし、[<b>プレビュー</b>] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。マップ上にマウスを移動させると、カーソルの位置の緯度と経度が表示されます。</li>
 </ol>
+<p>完成版のウィジェットと比較する場合は<a href="https://developers.arcgis.com/experience-builder/zips/get-map-coordinates.zip">こちら</a>をご参照ください。</p>
 
 
     

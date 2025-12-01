@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>デプロイ :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -430,6 +430,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -1004,12 +1011,12 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<pre><code>{
-  configModifier: {
-    'attributes.portalUrl': 'new-portal-url'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{
+  <span style="color:#a6e22e">configModifier</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;attributes.portalUrl&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;new-portal-url&#39;</span>
   }
 }
-</code></pre><p><code>download-app.js</code> ファイルには、さらに多くの例があります。</p>
+</code></pre></div><p><code>download-app.js</code> ファイルには、さらに多くの例があります。</p>
 <h2 id="サービス-ワーカー-キャッシュ">サービス ワーカー キャッシュ</h2>
 <p>Experience Builder では<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">サービス ワーカー</a>を使用してアセットのキャッシュ先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。</p>
 <ol>

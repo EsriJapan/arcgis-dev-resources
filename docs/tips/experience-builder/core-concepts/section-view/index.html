@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>セクションとビュー（Section and view） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -962,7 +969,7 @@ if (!doNotTrack) {
     
     
     
-    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/section-view/">Section and view</a></p>
+    <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/section-view/">Section and view</a></p>
 <p>このページでは、ArcGIS Experience Builder の<strong>セクション</strong> コンポーネントと<strong>ビュー</strong> コンポーネントについて説明します。また、セクションが複数のビューのコンテナとしてどのように機能するか、セクション内でビューがページやウィンドウとどのように同じように機能するか、<strong>ビュー ナビゲーション</strong> ウィジェットを使用してビュー間を移動する方法についても学びます。</p>
 <h2 id="セクションとは">セクションとは</h2>
 <p>セクションは、<a href="../page">ページ</a>に追加できるレイアウト コンテナーです。セクションは、アプリケーション内のコンテンツを整理し、構造化します。セクションはモジュール レイアウトに便利で、関連するコンテンツをグループ化できます。ヘッダー、フッター、サイドバー、メイン コンテンツ エリアに使用できます。</p>
@@ -973,7 +980,7 @@ if (!doNotTrack) {
 <p>ビューは、関連するコンテンツへのアクセスを維持しながら、ユーザーが一度に 1 つのコンテンツ セットに集中できるようにすることで、アプリケーションを整理するのに役立ちます。これは、ユーザーがページを離れることなく異なる情報やツールの間を移動する、ガイド付きエクスペリエンス、ウィザード、またはダッシュボードに役立ちます。</p>
 <p>ビューは異なるレイアウトやウィジェットを持つことができ、切り替え時にトランジション アニメーションを適用できます。</p>
 <h2 id="セクションとビューの使用方法">セクションとビューの使用方法</h2>
-<p>セクションとビューをナビゲーション ウィジェットと一緒に使うことで、インタラクティブで、整理された、モジュール化されたエクスペリエンスを作ることができます。</p>
+<p>セクションとビューをナビゲーション ウィジェットと一緒に使うことで、インタラクティブで、整理された、モジュール化されたエクスペリエンスを作ることができ、ページを離れることなく異なるコンテンツ セットを簡単に切り替えることができます。</p>
 <p>セクションとビューを使用するには、次の手順に従います。</p>
 <ol>
 <li>ページにセクションを追加します。</li>
@@ -1013,7 +1020,7 @@ if (!doNotTrack) {
 <tr>
 <td>ナビゲーション</td>
 <td>ナビゲーションはセクション内のビュー間で行われる</td>
-<td>ビューナビゲーションウィジェットやトリガーを使ってナビゲート可能</td>
+<td>ビューナビゲーション ウィジェットやトリガーを使ってナビゲート可能</td>
 </tr>
 <tr>
 <td>レンダリング</td>
@@ -1039,7 +1046,7 @@ if (!doNotTrack) {
 <li><strong>ナビゲーション</strong>：セクションは構造を提供し、ビューはその構造の中で異なるコンテンツのセットを切り替える機能を提供します。</li>
 </ul>
 <h2 id="セクションとビューの-appconfig">セクションとビューの AppConfig</h2>
-<p><strong>AppConfig</strong> では、セクションは <code>sections</code> プロパティで定義され、<code>sectionId</code> がキーとなる。ビューは <code>views</code> プロパティで定義します。この構造により、アプリケーションを効果的に整理し、セクションとビューを簡単に管理し、アクセスできるようにすることができます。</p>
+<p><strong>AppConfig</strong> では、セクションは <code>sections</code> プロパティで定義され、<code>sectionId</code> がキーとなります。ビューは <code>views</code> プロパティで定義します。この構造により、アプリケーションを効果的に整理し、セクションとビューを簡単に管理し、アクセスできるようにすることができます。</p>
 <ul>
 <li><code>sections</code> プロパティには、アプリケーションに追加されたセクションを表すセクション オブジェクトの配列が含まれます。各セクション オブジェクトには、スタイルや含まれるビューのリストなどの構成の詳細が含まれます。</li>
 <li><code>views</code> プロパティには、セクション内の各ビューの定義が含まれます。各ビュー オブジェクトは、固有の ID、保持するウィジェットやコンテンツ、そのビューに適用される特定の設定やスタイルを指定します。</li>

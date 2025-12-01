@@ -13,14 +13,12 @@
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Tips for migrating
-移行のヒント バージョン 4.30 で ArcGIS Maps SDK for JavaScript に Web コンポーネントが追加されました。 これらのコンポーネントはカスタム HTML 要素として構築されているため、最新のブラウザーで標準的に使用でき、フレームワークに依存しません。 SDKでは、コンポーネントは、API の定型コードの多くをカプセル化することにより、一般的なコーディングパターンを簡素化します。
-Getting started Web コンポーネントが初めての方、あるいはこのトピックのブラッシュアップが必要な方には、役立つさまざまなリソースがあります
+移行のヒント バージョン 4.30 で ArcGIS Maps SDK for JavaScript に Web コンポーネントが追加されました。これらのコンポーネントはカスタム HTML 要素として構築されているため、最新のブラウザーで標準的に使用でき、フレームワークに依存しません。SDK では、コンポーネントは、API の定型コードの多くをカプセル化することにより、一般的なコーディングパターンを簡素化します。
+アプリケーションは、カスタム HTML 要素を使って宣言的に定義できるようになり、ビューやコンテナ、モジュールのインポートなどの設定が不要になります。コンポーネントのスクリプトを読み込むだけで、要素がすぐに使用可能になります。
+&amp;lt;!-- Load the JavaScript Maps SDK Map components or other component packages --&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/4.34/map-components/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; &amp;lt;body&amp;gt; &amp;lt;arcgis-map basemap=&amp;#34;topo-vector&amp;#34; zoom=&amp;#34;4&amp;#34; center=&amp;#34;15, 65&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; &amp;lt;/body&amp;gt; Getting started Web コンポーネントが初めての方、あるいはこのトピックの復習が必要な方のために、さまざまなリソースが用意されています。
   すぐにコーディングを始めたい場合は、コンポーネントのチュートリアルや GitHub にあるコードサンプルを調べてみましょう。
-  属性やプロパティの扱い方、変更の監視などについては、プログラミング パターンのガイド・トピックをお読みください。
-  プロパティ、メソッド、イベントを確認するには、リファレンスページをご覧ください。
-  JavaScript Maps SDK コンポーネントでアプリを構築するブログ (Build GIS Web Apps with the JavaScript Maps SDK components) をご覧ください。
-  MDN Web Components リソースページをご覧ください。
-  基本的な実装 コンポーネントを使用することで、JavaScript Maps SDK でアプリケーションを実装するたびに繰り返し必要になるコードを減らすことができます。 例えば、SDK の AMD モジュールを使用したシンプルなマップの JavaScript コードを以下に示します。</description>
+  属性やプロパティの扱い方、変更の監視などについては、プログラミング パターンのガイド トピックをお読みください。
+  プロパティ、メソッド、イベントを確認するには、リファレンス ページをご覧ください。</description>
     </item>
     
     <item>
@@ -30,10 +28,10 @@ Getting started Web コンポーネントが初めての方、あるいはこの
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Transition plan: widgets to components
-移行計画：ウィジェットからコンポーネントへ JavaScript Maps SDK のコア API の &amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt; などの再利用可能なカスタム HTML 要素に拡張する標準ベースの Web コンポーネントへの置き換えが進められています。
+移行計画：ウィジェットからコンポーネントへ Esri は、JavaScript Maps SDK のコア API を &amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt; のような再利用可能なカスタム HTML 要素へと拡張する、Web コンポーネントの開発に全面的に取り組んでいます。
 これは、ArcGIS 製品の内部開発にも、JavaScript Maps SDK の一部として提供されるビルド済みの UI コンポーネントにも当てはまります。 現在、SDK を使用した Web アプリの構築では、コンポーネントを使用することが推奨されています。
-コンポーネントのメリット このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。 カスタム 要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。 さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている Arcade Editor や チャート コンポーネントなど）。 SDK の上位レベルのコンポーネント 群は、時間の経過とともに増え続ける予定です。
-ウィジェットからマップ コンポーネントへ SDK が最初に作られたとき、Web コンポーネントの規格はまだ成熟しておらず、ブラウザーに広く採用されていませんでした。 同時に、JS の状況は常に変化しているため、特定の JS フレームワークに積極的ではありませんでした。 そのため、私たちはウィジェット アーキテクチャーを開発し、開発者が Web アプリケーションで使用できるよう、時間をかけて 60 以上のウィジェットを作成しました。 Web コンポーネントの標準がすべての主要なブラウザーでサポートされるようになった今、（SDK の多くの内部でそうしているように）私たちはブラウザーとともに技術を進化させることができます。</description>
+コンポーネントのメリット このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。 カスタム要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。 さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている Arcade Editor や チャート コンポーネントなど）。 SDK の上位レベルのコンポーネント群は、今後も継続的に拡充されていきます。
+ウィジェットからマップ コンポーネントへ SDK が最初に開発された当時、Web コンポーネントの規格はまだ成熟しておらず、ブラウザーに広く採用されていませんでした。同時に、JavaScript の技術動向は常に変化しているため、特定の JavaScript フレームワークに積極的なコミットはしませんでした。そのため、私たちは ウィジェット アーキテクチャーを開発し、開発者が Web アプリケーションで使用できるよう、時間をかけて 60 以上のウィジェットを作成しました。 現在では、Web コンポーネントの標準がすべての主要なブラウザーでサポートされているため、（SDK の内部構造と同様に）ブラウザーの進化に合わせて技術を進化させることが可能になりました。</description>
     </item>
     
   </channel>

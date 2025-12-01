@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>レイアウト（Layout） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -938,11 +945,18 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#レイアウトlayout">レイアウト（Layout）</a></li>
+    <li><a href="#なぜレイアウトを使うのか">なぜレイアウトを使うのか？</a></li>
+    <li><a href="#主要な概念">主要な概念</a></li>
+    <li><a href="#レイアウトの使用方法">レイアウトの使用方法</a>
       <ul>
-        <li><a href="#レイアウトlayout">レイアウト（Layout）</a></li>
+        <li><a href="#1-レイアウトの追加">1. レイアウトの追加</a></li>
+        <li><a href="#2-レイアウト設定の構成">2. レイアウト設定の構成</a></li>
+        <li><a href="#3-レイアウトの追加と配置">3. レイアウトの追加と配置</a></li>
       </ul>
     </li>
+    <li><a href="#レイアウト機能を持つウィジェットの種類">レイアウト機能を持つウィジェットの種類</a></li>
+    <li><a href="#コード例">コード例</a></li>
   </ul>
 </nav>
         </div>
@@ -963,19 +977,115 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/layout/">Layout</a></p>
-<h3 id="レイアウトlayout">レイアウト（Layout）</h3>
-<p>レイアウトは、レイアウト コンテナーにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナーには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。</p>
-<p>アプリ コンフィグでは、レイアウトは <code>layouts</code> プロパティで定義され、レイアウト コンテナーは layout id でレイアウトを参照します。レイアウト コンテナーには、異なるサイズ モードでのレイアウトを定義する <code>layout</code> オブジェクト プロパティがあります。Experience Builder では、Large、Medium、Small の各サイズ モードをサポートしています。レイアウトが定義されていないサイズ モードでは、アプリの設定で定義された <code>mainSizeMode</code> レイアウトが使用されます。</p>
-<p>フレームワークのレイアウト コンテナーの他に、ウィジェットもレイアウト コンテナーになることができます。ウィジェットがレイアウト コンテナになると，ユーザーは他のウィジェットをドラッグ アンド ドロップすることができます。例えば、Map や Card はレイアウト コンテナー ウィジェットです。レイアウト コンテナー ウィジェットは、<code>manifest.json</code> で <code>layouts</code> プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">LayoutEntry</span>} <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-layouts/layout-runtime&#39;</span>
+<h2 id="レイアウトlayout">レイアウト（Layout）</h2>
+<p>レイアウトは、レイアウト コンテナーにウィジェット、セクション、スクリーングループなどのコンテンツを配置する方法を定義します。レイアウト コンテナーには、ページ、ビュー、ウィンドウ、そしてウィジェットそのものでさえも含めることができます。レイアウトは、アプリケーション内のコンテンツの構造と視覚的な配置を決定します。</p>
+<h2 id="なぜレイアウトを使うのか">なぜレイアウトを使うのか？</h2>
+<p>レイアウトによって明確なナビゲーションと操作パターンが提供されることで、ユーザー エクスペリエンスを向上させる構造化的なデザインを作成するすることができます。レイアウトを使用することで次のことが可能になります。</p>
+<ul>
+<li>コンテンツを視覚的に整理し、アプリケーションを使いやすくします。</li>
+<li>大・中・小など異なるサイズモードに対応した、レスポンシブ デザインを可能にします。</li>
+<li>ウィジェットやその他の要素の、複数のコンテナーやスクリーンにおける配置方法を定義することで、再利用性と一貫性を実現します。</li>
+<li>ウィジェットをレイアウト コンテナーとして機能させることで、他のウィジェットをその中へドラッグ＆ドロップできるようになります。</li>
+</ul>
+<h2 id="主要な概念">主要な概念</h2>
+<p>Experience Builder におけるレイアウトは、ウィジェットやセクションなど他のコンテンツを保持するコンテナーです。レイアウトに関連する主要な概念は次のとおりです。</p>
+<ul>
+<li>ページ、ビュー、ウィンドウといったフレームワーク要素はレイアウトを持ちます。ページのレイアウトは固定、フロー、またはグリッドのうちから選択し、ビューとウィンドウのレイアウトは固定となります。</li>
+<li>構造化されたレイアウトを作成するための高度なレイアウト オプションを提供するレイアウト ウィジェット（Row、Column、Grid、Fixed など）もあります。</li>
+<li>各レイアウトには 3 つのサイズ モード（<code>Large</code>、<code>Medium</code>、<code>Small</code>）があります。Medium と Small はオプションで、定義されていない場合は Large モードが使用されます。</li>
+<li>各サイズ モードのレイアウトにはレイアウト アイテムが含まれ、ウィジェット、セクション、スクリーン グループなどのコンテンツを保持します。レイアウト アイテムにはスタイル オプションを設定可能です。</li>
+<li>開発者は次の 2 つの方法でレイアウトを拡張できます。
+<ol>
+<li>Row や Column ウィジェットなどの manifest において <code>widgetType=LAYOUT</code> を設定してレイアウト ウィジェットを作成する。</li>
+<li>List や Card ウィジェットなどの manifest において <code>layouts</code> プロパティを定義し、<code>LayoutEntry</code> コンポーネントを使用することで、レイアウト機能を持つ通常のウィジェットを作成する。</li>
+</ol>
+</li>
+</ul>
+<h2 id="レイアウトの使用方法">レイアウトの使用方法</h2>
+<p>ArcGIS Experience Builder でレイアウトを使用する一般的な手順は次のとおりです。</p>
+<ol>
+<li>
+<p><a href="./#1-%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">レイアウトの追加</a>
+エクスペリエンスにページを追加してください。</p>
+</li>
+<li>
+<p><a href="./#2-%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E8%A8%AD%E5%AE%9A%E3%81%AE%E6%A7%8B%E6%88%90">レイアウト設定の構成</a>
+ページにウィジェット、セクション、またはスクリーンを追加します。</p>
+</li>
+<li>
+<p><a href="./#3-%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0%E3%81%A8%E9%85%8D%E7%BD%AE">レイアウトの追加と配置</a>
+ページのレイアウト タイプとサイズ モードを設定します。</p>
+</li>
+</ol>
+<h3 id="1-レイアウトの追加">1. レイアウトの追加</h3>
+<p>次の手順に従って、エクスペリエンスにレイアウトを追加します。</p>
+<ol>
+<li>Page パネルまたは Window パネルに移動し、レイアウトを追加したい領域を選択します。</li>
+<li>[<strong>レイアウトの追加</strong>] をクリックし、Row、Column、Grid、Fixed などのレイアウト タイプを選択します。</li>
+<li>レイアウトがエクスペリエンスに追加され、さらに設定できる状態になります。</li>
+</ol>
+<h3 id="2-レイアウト設定の構成">2. レイアウト設定の構成</h3>
+<p>レイアウトのプロパティを設定する際は、次の項目を考慮します。</p>
+<ol>
+<li>
+<p><strong>レイアウト タイプと構造</strong></p>
+<ul>
+<li>利用可能なレイアウト タイプ（Row、Column、Grid、Fixed など）から選択します。</li>
+<li>必要に応じてセクション、列、行の数を調整します。</li>
+<li>レイアウトの配置、間隔、余白を設定します。</li>
+</ul>
+</li>
+<li>
+<p><strong>レスポンシブ動作</strong></p>
+<ul>
+<li>レイアウトが異なる画面サイズに対応するよう、レスポンシブ設定を有効化または調整します。</li>
+<li>デスクトップ、タブレット、モバイル ビューでプレビューし、微調整します。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-レイアウトの追加と配置">3. レイアウトの追加と配置</h3>
+<p>レイアウトを設定した後、ウィジェットを追加し、必要に応じて配置を調整します。</p>
+<ol>
+<li>
+<p><strong>ウィジェットを追加</strong></p>
+<ul>
+<li>ウィジェットをレイアウトセクションにドラッグ＆ドロップします。</li>
+<li>ウィジェットを希望する順序と場所に配置します。</li>
+</ul>
+</li>
+<li>
+<p><strong>配置とサイズ調整</strong></p>
+<ul>
+<li>レイアウト内でウィジェットのサイズと位置を調整します。</li>
+<li>配置や分布ツールを使用して、ウィジェットを見やすく、使いやすく整理します。</li>
+</ul>
+</li>
+</ol>
+<h2 id="レイアウト機能を持つウィジェットの種類">レイアウト機能を持つウィジェットの種類</h2>
+<p>レイアウト機能を持つウィジェットには、次の 2 種類があります。</p>
+<ol>
+<li>
+<p>レイアウトウィジェット（例：Fix Panel ウィジェット）
+ー レイアウト専用に設計されたウィジェットです。</p>
+</li>
+<li>
+<p>レイアウト機能を備えたウィジェット（例：Card ウィジェット）
+ー 通常のウィジェットですが、レイアウト機能を含んでいます。</p>
+</li>
+</ol>
+<h2 id="コード例">コード例</h2>
+<p>レイアウト ウィジェットやレイアウト機能を持つウィジェットの完全な動作コード例については、<a href="https://github.com/Esri/arcgis-experience-builder-sdk-resources/tree/master/widgets/layout-widgets">ArcGIS Experience Builder SDK Resources リポジトリ</a>をご覧ください。具体的には次のものなどがあります。</p>
+<ul>
+<li><a href="https://github.com/Esri/arcgis-experience-builder-sdk-resources/tree/master/widgets/layout-widgets/dock">Dock layout widget</a>：ドラッグ、リサイズ、インタラクティブ機能を備えたカスタムレイアウトウィジェットの完全な例。</li>
+<li><a href="https://github.com/Esri/arcgis-experience-builder-sdk-resources/tree/master/widgets/layout-widgets/widget-with-layout">Widget with layout</a>：レイアウト機能を含む通常のウィジェットの例</li>
+</ul>
+<p>これらの例には次の内容が含まれます。</p>
+<ul>
+<li><strong>動作するコード</strong>：最新のベスト プラクティスに従ったテスト済みの実装</li>
+<li><strong>ドキュメント</strong>：各例を詳しく説明する README ファイル</li>
+<li><strong>ベストプラクティス</strong>：レイアウト実装の推奨パターン</li>
+</ul>
 
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">LayoutEntryComponent</span>
-  <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">jimuConfig</span>.<span style="color:#a6e22e">isInBuilder</span>) {
-    <span style="color:#a6e22e">LayoutEntryComponent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">builderSupportModules</span>.<span style="color:#a6e22e">LayoutEntry</span>
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">LayoutEntryComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LayoutEntry</span>
-  }
-</code></pre></div>
 
     
     

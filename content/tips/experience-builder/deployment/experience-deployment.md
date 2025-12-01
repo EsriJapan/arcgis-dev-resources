@@ -59,7 +59,7 @@ node -e "require('./server/src/middlewares/dev/apps/app-download.js').zipApp('0'
   - 関数の場合、`config` オブジェクトを引数として呼び出され、変更された `config` オブジェクトが返されます。
   - オブジェクトである場合、以下の例のように更新値を指定することができます。
 
-```
+```js
 {
   configModifier: {
     'attributes.portalUrl': 'new-portal-url'

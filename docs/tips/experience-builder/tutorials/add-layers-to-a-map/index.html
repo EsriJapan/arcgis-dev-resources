@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>マップにレイヤーを追加 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -430,6 +430,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -950,6 +957,7 @@ if (!doNotTrack) {
         <li><a href="#ボタンの追加">ボタンの追加</a></li>
         <li><a href="#レイヤーの追加">レイヤーの追加</a></li>
         <li><a href="#ウィジェットのテスト">ウィジェットのテスト</a></li>
+        <li><a href="#関連するトピック">関連するトピック</a></li>
       </ul>
     </li>
   </ul>
@@ -985,10 +993,10 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>スターター ウィジェットのテンプレートを<a href="https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip">こちら</a>からダウンロードします。
-すでにスターター ウィジェットの作成チュートリアルを完了している場合は、それを使用して開始できます。<strong>client/your-extensions/widgets</strong> 内のウィジェット フォルダーをコピーしてください。</p>
+すでに<a href="https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/">スターター ウィジェットの作成</a>チュートリアルを完了している場合は、それを使用して開始できます。<strong>client/your-extensions/widgets</strong> 内のウィジェット フォルダーをコピーしてください。</p>
 </li>
 <li>
-<p>手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder <strong>フォルダー</strong>内で、zip ファイルを以下のパスに展開してください。<br>
+<p>手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder <strong>フォルダー</strong>内で、zip ファイルを以下のパスに展開してください。
 <strong>/client/your-extensions/widgets</strong></p>
 </li>
 </ol>
@@ -996,11 +1004,11 @@ if (!doNotTrack) {
 <ol>
 <li>ArcGIS Experience Builder の <strong>client</strong> フォルダーで <code>npm start</code> が実行されたターミナルがある場合、<code>ctrl + c</code> を押してスクリプトを停止します。</li>
 <li><strong>ファイル ブラウザー</strong>で、Experience Builder を展開されたフォルダーに移動します。</li>
-<li>Experience Builder <strong>フォルダー</strong>で、以下のパスを展開します。<br>
+<li>Experience Builder <strong>フォルダー</strong>で、以下のパスを展開します。
 <strong>/client/your-extensions/widgets</strong></li>
 <li><strong>widgets</strong> フォルダー内で <strong>starter-widget</strong> フォルダーの名前を <code>add-layers-to-a-map</code> に変更します。</li>
 <li>新しく名前を変更した <strong>add-layers-to-a-map</strong> フォルダーの、<strong>manifest.json</strong> ファイルをコード エディターで開きます。</li>
-<li>コード エディターで、<code>name</code> プロパティを <code>add-layers-to-a-map</code> に変更します。<br>
+<li>コード エディターで、<code>name</code> プロパティを <code>add-layers-to-a-map</code> に変更します。
 <code>manifest.json</code> の <code>name</code> プロパティがウィジェットのフォルダー名と一致することが重要です。この時点で、ウィジェットの説明、作成者など <code>manifest.json</code> ファイル内の他のメタデータも更新できます。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> {
@@ -1021,7 +1029,7 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="設定パネルの実装">設定パネルの実装</h3>
 <p>設定パネルを実装することで、エクスペリエンスの作成者がウィジェットをカスタマイズできるようになります。設定パネルは、ArcGIS Experience Builder でウィジェットが選択された時に右側のサイドバーに表示されます。パネルを作成するには、React コンポーネントを作成します。</p>
 <ol>
-<li>ウィジェットのルート フォルダーに、空のオブジェクトを含む <code>config.json</code> ファイルを作成します。<br>
+<li>ウィジェットのルート フォルダーに、空のオブジェクトを含む <code>config.json</code> ファイルを作成します。
 後で、ウィジェットの設定値を保存するために、このオブジェクトにウィジェットの構成パラメーターを追加できます。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{}
@@ -1048,9 +1056,9 @@ if (!doNotTrack) {
 <ol>
 <li><strong>setting/setting.tsx</strong> ファイルに、<code>jimu</code> ライブラリから <code>MapWidgetSelector</code> モジュールを記述します。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">MapWidgetSelector</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/setting-components&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">MapWidgetSelector</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-ui/advanced/setting-components&#39;</span>
 </code></pre></div><ol start="2">
-<li>コンポーネント内で onMapWidgetSelected 関数を定義します。</li>
+<li>コンポーネント内で <code>onMapWidgetSelected</code> 関数を定義します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">// *** 追加 ***
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onMapWidgetSelected</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">useMapWidgetIds</span>: <span style="color:#66d9ef">string</span>[]) <span style="color:#f92672">=&gt;</span> {
@@ -1062,7 +1070,7 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-setting-demo&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">ここはスターター</span> <span style="color:#960050;background-color:#1e0010">ウィジェットの設定パネルです</span>&lt;/<span style="color:#f92672">div</span>&gt;;
 </code></pre></div><ol start="3">
-<li>return() 文内に、MapWidgetSelector を表すタグを追加します。</li>
+<li><code>return()</code> 文内に、<code>MapWidgetSelector</code> を表すタグを追加します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">return</span> (
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-setting-demo&#34;</span>&gt;
@@ -1074,12 +1082,12 @@ if (!doNotTrack) {
 <ol>
 <li><strong>widget.tsx</strong> ファイルに、<code>jimu-arcgis</code> ライブラリから <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/"><code>JimuMapViewComponent</code></a> と <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/"><code>JimuMapView</code></a> の型を追加し、React 変数をデストラクチャリング (分割代入) して <code>getState</code> import にアクセスします。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
 <span style="color:#75715e">/** 追加 **/</span>
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">JimuMapViewComponent</span>, <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">JimuMapView</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">JimuMapViewComponent</span>, <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">JimuMapView</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>
 <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>
 </code></pre></div><ol start="2">
-<li>レイヤーをマップに追加するには、マップへの参照をコンポーネントの状態を保存する必要があります。これにはコンポーネント内で、<code>useState()</code> を使用し <a href="https://reactjs.org/docs/state-and-lifecycle.html">state</a> として保存できるように設定します。</li>
+<li>レイヤーをマップに追加するには、マップへの参照をコンポーネントの state に保存する必要があります。これにはコンポーネント内で、<code>useState()</code> を使用し <a href="https://reactjs.org/docs/state-and-lifecycle.html">state</a> として保存できるように設定します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>
 
@@ -1089,7 +1097,7 @@ if (!doNotTrack) {
 
   <span style="color:#66d9ef">return</span> (
 </code></pre></div><ol start="3">
-<li><code>return</code> 文で、<code>JimuMapViewComponent</code> を JSX マークアップに追加します。<br>
+<li><code>return</code> 文で、<code>JimuMapViewComponent</code> を JSX マークアップに追加します。
 追加されたコードの最初の 2 行 (<code>{props.useMapWidgetIds &amp;&amp;...</code>)は、JSX で条件を使用する方法です。これは基本的に「エクスペリエンス作成者が設定パネルで有効なマップ ウィジェットを選択した場合にのみ JimuMapViewComponent を追加する」という意味です。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">return</span> (
@@ -1100,7 +1108,7 @@ if (!doNotTrack) {
   &lt;/<span style="color:#f92672">div</span>&gt;
 )
 </code></pre></div><ol start="4">
-<li><code>setState</code> コマンドのすぐ下に <code>activeViewChangeHandler</code> 関数を定義します。 この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の状態を更新します。</li>
+<li><code>setState</code> コマンドのすぐ下に <code>activeViewChangeHandler</code> 関数を定義します。 この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の state を更新します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">/** 追加 **/</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">activeViewChangeHandler</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">jmv</span>: <span style="color:#66d9ef">JimuMapView</span>) <span style="color:#f92672">=&gt;</span> {
@@ -1111,7 +1119,7 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="ボタンの追加">ボタンの追加</h3>
 <p>クリックするとレイヤーをマップに追加するボタンをウィジェットの UI に追加します。</p>
 <ol>
-<li>コード エディターで、render 関数内の既存の div に <code>form</code> と <code>input</code> タグ要素を追加します。</li>
+<li>コード エディターで、<code>render</code> 関数内の既存の <code>div</code> に、 <code>form</code> と <code>input</code> タグ要素を追加します。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">return</span> (
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-starter jimu-widget&#34;</span>&gt;
@@ -1128,17 +1136,21 @@ if (!doNotTrack) {
   &lt;/<span style="color:#f92672">div</span>&gt;
 )
 </code></pre></div><ol start="2">
-<li>コンポーネント内で、<code>formSubmit</code> という名前の新しい関数を作成します。 この関数はユーザーが <strong>Add Layer</strong> ボタンをクリックした時に呼び出されます。<br>
-<code>evt.preventDefault</code> は、フォームが送信された際にページをリロードしないようにします。</li>
+<li>コンポーネント内で、<code>formSubmit</code> という名前の新しい関数を作成します。 この関数はユーザーが <strong>Add Layer</strong> ボタンをクリックした時に呼び出されます。
+<code>evt.preventDefault</code> は、フォームが送信された際にページがリロードされるのを防ぎます。</li>
 </ol>
-<h3 id="レイヤーの追加">レイヤーの追加</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formSubmit</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">evt</span>) <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">evt</span>.<span style="color:#a6e22e">preventDefault</span>()
+  <span style="color:#75715e">// この行には、さらにコードを追加予定
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="レイヤーの追加">レイヤーの追加</h3>
 <p>ボタンをクリックしたとき、マップにレイヤーを追加します。</p>
 <ol>
 <li><code>widget.tsx</code> ファイルの先頭で、 <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html"><code>FeatureLayer</code></a> クラスをインポートします。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">FeatureLayer</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;esri/layers/FeatureLayer&#39;</span>
 </code></pre></div><ol start="2">
-<li><code>formSubmit</code> 関数の内に、<a href="https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0">Trailheads</a>（ポイント）のフィーチャ レイヤーを作成し、そのレイヤーをマップに追加するコードを追加します。<br>
+<li><code>formSubmit</code> 関数の内に、<a href="https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0">Trailheads</a>（ポイント）のフィーチャ レイヤーを作成し、そのレイヤーをマップに追加するコードを追加します。
 <code>jimuMapView.view</code> は <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html"><code>MapView</code></a> のインスタンスのため、ここで使用する <code>add()</code> メソッドのように、MapView で定義されているメソッドやプロパティも使うことができます。</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formSubmit</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">evt</span>) <span style="color:#f92672">=&gt;</span> {
@@ -1156,24 +1168,27 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="ウィジェットのテスト">ウィジェットのテスト</h3>
 <p>コードの変更が完了したら、ArcGIS Experience Builder を実行してエクスペリエンスを表示することでウィジェットをテストできます。</p>
 <ol>
-<li>Web ブラウザーで、Experience Builder にアクセスします。<br>
-例：https://localhost:3001<br>
+<li>Web ブラウザーで、Experience Builder にアクセスします。
+例：https://localhost:3001
 Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。</li>
 <li>Experience Builder で [<strong>新規作成</strong>] をクリックして新しいエクスペリエンス ページを作成します。</li>
 <li>[<strong>空白のスクロール</strong>] の [<strong>作成</strong>] ボタンをクリックします。
 <ol>
 <li>[<strong>ウィジェットの挿入</strong>] ボタンをクリックし、<strong>マップ</strong> ウィジェットをエクスペリエンスにドラッグします。</li>
 <li>[プレビュー エリア]の<strong>マップ</strong> ウィジェットをクリックし、[ウィジェット設定パネル]の[<strong>マップの選択</strong>]をクリックします。</li>
-<li>[<strong>データの選択</strong>パネル]の[<strong>新しいデータの追加</strong>]ボタンをクリックします。</li>
+<li>[<strong>データの選択</strong>]パネルの[<strong>新しいデータの追加</strong>]ボタンをクリックします。</li>
 <li>[<strong>データの追加</strong>]モーダルで、[<strong>ArcGIS Online</strong>] タブを選択し、Web マップの <code>eb1be6543e304b4d81ed55439c412c2c</code> を検索します。検索結果をクリックして選択し、[<strong>終了</strong>]をクリックします。 (この Web マップには意図的に操作するレイヤーがないことに注意してください。)</li>
-<li>[<strong>Select data</strong> パネル]に新しく追加された [LA Parks and Trails Map] をクリックして、Web マップを選択してください。</li>
+<li>[<strong>データの選択</strong>]パネルに新しく追加された [LA Parks and Trails Map] をクリックして、Web マップを選択してください。</li>
 </ol>
 </li>
-<li>[<strong>ウィジェットの挿入</strong>] パネルが開きます。そこから、新しく作成した [<strong>add layers to a map</strong>]ウィジェットをエクスペリエンスにドラッグします。<br>
+<li>[<strong>ウィジェットの挿入</strong>] ボタンをクリックします。そこから、新しく作成した [<strong>add layers to a map</strong>]ウィジェットをエクスペリエンスにドラッグします。
 作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。</li>
-<li>ウィジェットの設定パネルで、マップを選択するドロップダウンから「<strong>Map</strong>」を選択します。</li>
+<li>ウィジェットの設定パネルで、マップを選択するドロップダウンから「<strong>マップ</strong>」を選択します。</li>
 <li>Experience Builder のツールバーで [<strong>保存</strong>] をクリックし、[<strong>プレビュー</strong>] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。[Add Layer]ボタンをクリックするとレイヤーをマップに追加されます。</li>
 </ol>
+<p>完成版のウィジェットと比較する場合は<a href="https://developers.arcgis.com/experience-builder/zips/add-layers-to-a-map.zip">こちら</a>をご参照ください。</p>
+<h3 id="関連するトピック">関連するトピック</h3>
+<p><a href="https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-class/">How to add a feature layer as a data source in a custom widget</a></p>
 
 
     

@@ -25,7 +25,7 @@ ArcGIS Enterprise にカスタム ウィジェットをホストすることで�
 
 ### テーマのデプロイ
 
-現在、カスタムテーマは Developer Editon にのみデプロイ可能です。テーマの開発に関する詳細情報は、[Theme developement](https://developers.arcgis.com/experience-builder/guide/theme-development/)ページをご確認ください。
+現在、カスタムテーマは Developer Editon にのみデプロイ可能です。テーマの開発に関する詳細情報は、[Theme developement](https://developers.arcgis.com/experience-builder/guide/theme-development/)ページをご確認ください。サポートされる ArcGIS Enterprise のバージョンは 11.0 以降です。
 
 ### ArcGIS Online 版について
 

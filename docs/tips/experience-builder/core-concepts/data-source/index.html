@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>データ ソース（Data source） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -949,7 +956,7 @@ if (!doNotTrack) {
         <li><a href="#データのクエリーとフィルターquery-and-filter-data">データのクエリーとフィルター（Query and filter data）</a></li>
         <li><a href="#クエリー-フィールドquery-fields">クエリー フィールド（Query fields）</a></li>
         <li><a href="#クライアント-サイド-クエリーclient-side-query">クライアント サイド クエリー（Client-side query）</a></li>
-        <li><a href="#データアクションdata-action">データアクション（Data action）</a></li>
+        <li><a href="#データ-アクションdata-action">データ アクション（Data action）</a></li>
         <li><a href="#リピート-データ-ソースrepeated-data-source">リピート データ ソース（Repeated Data source）</a></li>
       </ul>
     </li>
@@ -974,47 +981,47 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/data-source/">Data sources</a></p>
 <h3 id="データ-ソースdata-source">データ ソース（Data source）</h3>
-<p>データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。</p>
+<p>データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモート サーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。</p>
 <p>高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。
 <code>DataSource</code> インターフェイスは <code>jimu-core</code> パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。</p>
 <ul>
-<li><code>id</code>: データ ソースID。</li>
+<li><code>id</code>: データ ソース ID。</li>
 <li><code>type</code>: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。</li>
-<li><code>fetchSchema</code>: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために <code>fetchSchema</code> メソッドが呼び出されます。</li>
+<li><code>fetchSchema</code>: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーが Experience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために <code>fetchSchema</code> メソッドが呼び出されます。</li>
 <li><code>getSchema</code>: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。</li>
 <li><code>getRecords</code>: ウィジェットがデータ ソースのデータ レコードにアクセスするために使用するメソッドです。</li>
-<li><code>getStatus</code>: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、<code>NotReady</code>、<code>Unloaded</code>、<code>Loading</code>、<code>Loaded</code> および <code>LoadError</code> があります。<code>NotReady</code> はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは <code>Unloaded</code> です。データが要求されると <code>Loading</code> に変更され、最後に <code>Loaded</code> または <code>LoadError</code> に変更されます。</li>
+<li><code>getStatus</code>: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、<code>NotReady</code>、<code>Unloaded</code>、<code>Loading</code>、<code>Loaded</code> および <code>LoadError</code> があります。<code>NotReady</code> はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceStatusChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは <code>Unloaded</code> です。データが要求されると <code>Loading</code> に変更され、最後に <code>Loaded</code> または <code>LoadError</code> に変更されます。</li>
 </ul>
 <p>データ ソースは <code>DataSourceManager</code> によって管理され、作成および取得できます。</p>
 <p>データ ソースの使用を簡単にするために、<code>DataSourceComponent</code> コンポーネントが定義されています。これは <code>useDataSource</code> プロパティを受け取り、コールバックを通じてデータ ソース オブジェクトとそのステータス情報を返します。また、子要素として関数を受け取ることで、その関数を使ってデータ ソース オブジェクトとデータ ソース内のデータをレンダリングするための情報を取得することができます。<code>DataSourceComponent</code> コンポーネントは、オプションの <code>query</code> プロパティを受け入れることもでき、クエリーが変更されたときにデータを再読み込みします。</p>
-<p>多くの一般的なデータ サービスはデータのクエリーをサポートしているため、API では <code>QueriableDataSource</code> インターフェイスが定義されています。このインターフェイスには、<code>url</code>、<code>load</code>、<code>query</code> などのプロパティがあります。<code>load</code> と <code>query</code> の違いは、<code>load</code> はレコードのプロパティとデータ ソースのステータスを更新し、<code>query</code> はレコードのみをクエリーして返すことです。</p>
+<p>多くの一般的なデータ サービスはデータのクエリーをサポートしているため、API では <code>QueriableDataSource</code> インターフェイスが定義されています。このインターフェイスには、<code>url</code>、<code>load</code>、<code>query</code> などのプロパティがあります。<code>load</code> と <code>query</code> の違いは、<code>load</code> はデータとデータ ソースのステータスを更新し、<code>query</code> はレコードのみをクエリーして返すことです。</p>
 <p>一部の ArcGIS サービスもデータのクエリーをサポートしており、同様のクエリー動作を持っています。そのため、これらのサービスの共通操作をサポートするために、<code>ArcGISQueriableDataSource</code> インターフェイスが定義されています。また、<code>FeatureLayerDataSource</code>、<code>SceneLayerDataSource</code> など、これらのサービスの特定の操作をサポートするためのサブ インターフェイスも定義されています。</p>
 <p>より具体的には、Experience Builder で <code>FeatureLayerDataSource</code> データ ソースを定義して、フィーチャ レイヤーにアクセスします。FeatureLayerDataSource を通じて ArcGIS Maps SDK for JavaScript の <code>FeatureLayer</code> オブジェクトを取得するには、<code>createJSAPILayerByDataSource()</code> メソッドを呼び出します。<code>FeatureLayerDataSource</code> の実際のデータは、リモート データベースからのものと、クライアント側のフィーチャのコレクションからのものがあり、どちらもクエリーをサポートしています。</p>
 <p>一般的にデータ ソースは 2 つの場所に保存されます。データ ソース オブジェクトは <code>DataSourceManager</code> に管理され、データ ソース情報は redux アプリ ストアに保存されます。<code>DataSourceComponent</code> を使う場合、コンポーネントは <code>DataSourceManager</code> を呼び出してオンデマンドでデータ ソースを作成し、コールバック プロップを使ってデータ ソース オブジェクトと<code>dataSourceInfo</code> を返します。<code>dataSourceInfo</code> では、データ ソースの <code>instanceStatus</code>, <code>status</code>, <code>selectedIds</code> などを返すことができます。</p>
 <p>ArcGIS Server サービスの多くは、<code>MapServiceDataSource</code>、<code>FeatureServiceDataSource</code> など、アクセスしやすいようにデータ ソースにマッピングされています。 ArcGIS Maps SDK for JavaScript の <code>WebMap</code> と <code>WebScene</code> は、<code>jimu-arcgis</code> パッケージ内で <code>WebMapDataSource</code> と <code>WebSceneDataSource</code> としてラップされています。</p>
 <h3 id="データ-ソース-セットdata-source-set">データ ソース セット（Data Source Set）</h3>
-<p>データ ソースは子データ ソースを持つことができます。そのため、使いやすいように複数のデータ ソースを含めることが可能です。このようなデータ ソースを <code>DataSourceSet</code> と呼ばれます。<code>WebMapDataSource</code> は <code>DataSourceSet</code> の一つです。<code>DataSourceSet</code> はデータ ソースの一種ですが、<code>isDataSourceSet</code> プロパティが true に設定されています。親データ ソースから子データ ソースを取得するには <code>getChildDataSources</code> を使用し、子データ ソースから親データ ソースを取得するには <code>parentDataSource</code> を使用します。子データ ソースは必要に応じて作成され、createDataSouceById(dsId) を使って ID に基づいて子 データ ソースを作成することもできます。</p>
+<p>データ ソースは子データ ソースを持つことができます。そのため、使いやすいように複数のデータ ソースを含めることが可能です。このようなデータ ソースを <code>DataSourceSet</code> と呼ばれます。<code>WebMapDataSource</code> は <code>DataSourceSet</code> の一つです。<code>DataSourceSet</code> はデータ ソースの一種ですが、<code>isDataSourceSet</code> プロパティが true に設定されています。親データ ソースから子データ ソースを取得するには <code>getChildDataSources</code> を使用し、子データ ソースから親データ ソースを取得するには <code>parentDataSource</code> を使用します。子データ ソースは必要に応じて作成され、<code>createDataSouceById(dsId)</code> を使って ID に基づいて子 データ ソースを作成することもできます。</p>
 <h3 id="データ-ビューdata-view">データ ビュー（Data View）</h3>
-<p>複数のウィジェットが 1 つのデータ ソースに接続している場合、ウィジェットがそのデータ ソースのローカル ビューを参照したい場合があります。このような場合には、データ ビューを使用します。データ ビューとデータ ソースの関係は、リレーショナル データベースのビューとテーブルの関係によく似ています。Experience Builder のデータ ソースは、クライアント側の実際のリモート データ ソースのビューですが、データ ソースはテーブル、データ ビューはビューと考えることができます。アプリ作成者は、データ ソースからデータ ビューを作成し、ビルダー内のデータビューにウィジェットを接続することができます。API レベルでは、データ ビューは <code>DataSource</code> クラスを使用して管理されているため、データ ビューは、いくつかのプロパティの違いがあるだけで、データ ソースと同じインターフェイスと動作を持っています。データ ビューのベースとなるデータ ソースはメイン データ ソースと呼ばれ、<code>getMainDataSource</code> を使ってデータ ビューからデータ ソースを取得したり、<code>getDataViews</code> を使ってメイン データ ソースのすべてのビューを取得することができます。</p>
+<p>複数のウィジェットが 1 つのデータ ソースに接続している場合、ウィジェットがそのデータ ソースのローカル ビューを参照したい場合があります。このような場合には、データ ビューを使用します。データ ビューとデータ ソースの関係は、リレーショナル データベースのビューとテーブルの関係によく似ています。Experience Builder のデータ ソースは、クライアント側の実際のリモート データ ソースのビューですが、データ ソースはテーブル、データ ビューはビューと考えることができます。アプリ作成者は、データ ソースからデータ ビューを作成し、ビルダー内のデータ ビューにウィジェットを接続することができます。API レベルでは、データ ビューは <code>DataSource</code> クラスを使用して管理されているため、データ ビューは、いくつかのプロパティの違いがあるだけで、データ ソースと同じインターフェイスと動作を持っています。データ ビューのベースとなるデータ ソースはメイン データ ソースと呼ばれ、<code>getMainDataSource</code> を使ってデータ ビューからデータ ソースを取得したり、<code>getDataViews</code> を使ってメイン データ ソースのすべてのビューを取得することができます。</p>
 <p>選択状態は、メイン データ ソースとそのすべてのデータ ビューの間で共有されます。選択されたレコードはデータ ソースの選択ビューに保存され、選択されたレコード ID は redux app store のデータ ソース ID の下に保存されます。選択ビューは、メイン データ ソースの特別なデータビューで、<code>${mainDataSourceId}-sclection</code> で識別されます。</p>
 <h3 id="ローカル-データ-ソースとデータ-ビューlocal-data-source-and-data-view">ローカル データ ソースとデータ ビュー（Local data source and data view）</h3>
 <p>複数のウィジェットが異なるデータを取得するために異なるデータ ビューを使用することは可能ですが、同じデータ ソースまたは同じデータ ビューに接続しながら、ウィジェット毎に異なるデータを取得する必要があるケースもあります。例えば、ウィジェット内のドロップ ダウン リストなどです。このような場合、ウィジェットはローカル データ ソースまたはデータ ビューを作成することができます。ローカル データ ソースまたはデータ ビューに適用されたフィルターは、関連する元のデータ ソースまたはデータ ビューに影響を与えません。ローカル データ ソースやデータ ビューを使用するには、<code>DataSourceComponent</code> を使用して <code>localId</code> を渡すか、<code>DataSourceManager().getinstance().createLocalDataSource</code> を使用します。</p>
 <h3 id="データ-ソース内のソース-レコードsource-records-in-data-source">データ ソース内のソース レコード（Source records in data source）</h3>
-<p>ほとんどの場合、データはリモート データベースにあるので、データ ソース インスタンスはリモートからデータを取得してデータ ソース インスタンスに保存するだけです。しかし、一部のデータ ソースでは、ウィジェットの出力データ ソースや選択ビューのデータ ソースのように、データがクライアント側で生成される場合があります。これらのシナリオでは、データ ソースのデータは、データ ソース インスタンスの <code>DsourceRecords</code> に格納されます。<code>getSourceRecords</code> と <code>setSourceRecords</code> を使用して、それを取得および更新することができます。</p>
+<p>ほとんどの場合、データはリモート データベースにあるので、データ ソース インスタンスはリモートからデータを取得してデータ ソース インスタンスに保存するだけです。しかし、一部のデータ ソースでは、ウィジェットの出力データ ソースや選択ビューのデータ ソースのように、データがクライアント側で生成される場合があります。これらのシナリオでは、データ ソースのデータは、データ ソース インスタンスの <code>sourceRecords</code> に格納されます。<code>getSourceRecords</code> と <code>setSourceRecords</code> を使用して、それを取得および更新することができます。</p>
 <h3 id="ウィジェット出力データ-ソースwidget-output-data-source">ウィジェット出力データ ソース（Widget output data source）</h3>
 <p>ウィジェットはデータ ソースを使用するだけでなく、データ ソースを生成することもできます。生成されたデータ ソースをウィジェット出力データ ソースと呼びます。ウィジェットは、他のウィジェットがその出力データ ソースを使用できるように、設定ページで <code>this.props.onSettingChange</code> を呼び出して、出力データ ソースをアプリの設定に保存する必要があります。出力データ ソースは、アプリの設定の <code>dataSources</code> に保存されます。他のウィジェットは、出力データ ソースを使用する場合でも、ユーザーが追加したデータ ソースを使用する場合でも、違いを意識する必要はありません。</p>
-<p>内部的には、ウィジェットが出力データ ソースを生成し、ウィジェットがレンダリングされるときに、出力データ ソースと出力データ ビューが作成されます。出力データ ビューは <code>${outputDataSourceId}-output</code> という ID で識別されます。出力データ ソースを使用するウィジェットは出力ビューを使用しています。出力データ ソースが作成されると、そのステータスは <code>NotReady</code> になります。出力データ ソースを生成するウィジェットは、データが準備できたらデータ ソースを更新し、データ ソースのステータスを <code>Unloaded</code> に変更して、他のウィジェットが使用できるようにする必要があります。出力データ ソースのデータを更新する方法は、出力データ ソースがどのように生成されたかによります。ウィジェットがリモート サービスに接続するサーバー サイドの出力データ ソースを生成する場合、<code>outputDs.updateQueryParams(queryParams, widgetId)</code>、<code>outputDs.load(queryParams, { widgetId })</code> または <code>&lt;DataSourceComponent useDataSource={Immutable({ dataSourceId: outputDsId, mainDataSourceId: outputDsId })} query={queryParams}&gt;</code> を使用してデータ ソースを更新できます。ウィジェットがクライアント サイドにデータを保存するクライアント サイドの出力データ ソースを生成する場合、生成されたデータの種類に応じて、<code>outputDs.setSourceFeatures(features, options)</code> または <code>outputDs.setSourceRecords(records)</code> を使用してデータを更新できます。ウィジェットが生成したデータにジオメトリがある場合、<code>setSourceFeatures</code> を使用することをお勧めします。この方法では、フィーチャのレンダラーを指定できるためです。ウィジェットが生成したデータにジオメトリがない場合、どちらの方法でも問題ありません。</p>
+<p>内部的には、ウィジェットが出力データ ソースを生成し、ウィジェットがレンダリングされるときに、出力データ ソースと出力データ ビューが作成されます。出力データ ビューは <code>${outputDataSourceId}-output</code> という ID で識別されます。出力データ ソースを使用するウィジェットは出力ビューを使用しています。出力データ ソースが作成されると、そのステータスは <code>NotReady</code> になります。出力データ ソースを生成するウィジェットは、データが準備できたらデータ ソースを更新し、データ ソースのステータスを <code>Unloaded</code> に変更して、他のウィジェットが使用できるようにする必要があります。出力データ ソースのデータを更新する方法は、出力データ ソースがどのように生成されたかによります。ウィジェットがリモート サービスに接続するサーバー サイドの出力データ ソースを生成する場合、<code>outputDs.updateQueryParams(queryParams, widgetId)</code>、<code>outputDs.load(queryParams, { widgetId })</code> または <code>&lt;DataSourceComponent useDataSource={Immutable({ dataSourceId: outputDsId, mainDataSourceId: outputDsId })} query={queryParams}&gt;</code> を使用してデータ ソースを更新できます。ウィジェットがクライアント サイドにデータを保存するクライアント サイドの出力データ ソースを生成する場合、生成されたデータの種類に応じて、<code>outputDs.setSourceFeatures(features, options)</code> または <code>outputDs.setSourceRecords(records)</code> を使用してデータを更新できます。ウィジェットが生成したデータにジオメトリ―がある場合、<code>setSourceFeatures</code> を使用することをお勧めします。この方法では、フィーチャのレンダラーを指定できるためです。ウィジェットが生成したデータにジオメトリ―がない場合、どちらの方法でも問題ありません。</p>
 <p>出力データソース JSON の <code>originDataSources</code> は、元のデータ ソースと出力データ ソースの関係を維持するために使用されます。例えば、ウィジェットの出力データ ソースにスキーマが定義されていない場合、元のデータ ソースのスキーマが使用されます。ウィジェットは、このプロパティと <code>id</code>、<code>type</code> などの一般的なプロパティを更新する必要があります。クエリー ウィジェットとチャート ウィジェットの両方が出力データ ソースを生成します。これらのウィジェットの出力データ ソース JSON を参考にすると、出力データ ソース JSON に必要なプロパティを確認できます。</p>
 <h3 id="データのクエリーとフィルターquery-and-filter-data">データのクエリーとフィルター（Query and filter data）</h3>
 <p>ウィジェットがデータを読み込む必要がある場合、推奨される方法は <code>&lt;DataSourceComponent&gt;</code> コンポーネントまたは <code>dataSource.load()</code> を使用することです。なぜなら、データ ソース フレームワークはデータ キャッシュとページネーションの問題を管理するのに役立つからです。データを読み込むのではなく、フィルタリングしたいだけの場合は、<code>dataSource.updateQueryParams()</code> を使用できます。</p>
 <h3 id="クエリー-フィールドquery-fields">クエリー フィールド（Query fields）</h3>
 <p>フィーチャ レイヤーには多くのフィールドが含まれている場合がありますが、ほとんどの場合、ウィジェットはそれらのフィールドのうちのいくつかのデータのみを必要とします。多くの場合、ウィジェットは多くのデータ レコードをクエリーして表示する必要があります。この種のウィジェットに推奨される方法は、設定で構成されたフィールドを <code>onSettingChange</code> メソッドを介して <code>useDataSources</code> に保存し、その後 <code>&lt;DataSourceComponent&gt;</code> を使用してデータをクエリーおよびレンダリングすることです。この方法を取ると、保存されたフィールドのみがクエリーされます。複数のウィジェットが同じデータ ソースを使用する場合、すべての保存されたフィールドが一緒にクエリーされます。しかし、一部のウィジェットは1つのレコードと多くのフィールドを表示する必要がある場合があります。この場合、推奨される方法は、record ID を使用して <code>dataSource.query()</code> を使用してレコードをクエリーし、複数のウィジェットが同じデータ ソースに接続する際に過剰なフィールドをクエリーしないようにすることです。<code>dataSource.query(queryParam)</code> を使用してデータをクエリーする場合、<code>queryParam</code> オブジェクトの <code>outFields</code> プロパティを設定してクエリーしたいフィールドを指定できます。</p>
 <h3 id="クライアント-サイド-クエリーclient-side-query">クライアント サイド クエリー（Client-side query）</h3>
-<p>URL から作成されたデータ ソースがデータをクエリーする必要がある場合、データ ソースはクエリーをリモート サーバーに送信します。しかし、データ ソースがマップ レイヤーから作成され、マップ ウィジェットがクライアント サイド クエリーを有効にしている場合、データソースはバックエンド サービスにクエリーを送信する代わりに、<code>MapView</code> からデータをクエリーしようとします。<code>MapView</code> または対応する <code>LayerView</code> がクライアント サイド クエリーの準備ができていない場合、データ ソースは依然としてクエリーをリモート サーバーに送信します。<code>MapView</code> または <code>LayerView</code> が準備できていない理由はいくつかあります。例えば、クエリー内のジオメトリが現在のマップ範囲にない場合や、<code>LayerView</code> にすべてのフィーチャが含まれていない場合です。クライアント サイド クエリーを実行する前に、<code>LayerView</code> はクエリー パラメーター内の <code>outFields</code> を <code>LayerView</code> のフィールドに追加し、その後クエリーを実行します。<code>LayerView</code> にフィールドを追加しすぎるとパフォーマンスの問題が発生する可能性があるため、<code>notAddFieldsToClient</code> を使用して <code>LayerView</code> にフィールドを追加しないようにすることができます。</p>
-<h3 id="データアクションdata-action">データアクション（Data action）</h3>
-<p>データアクションの<a href="../data-action">参照</a></p>
+<p>URL から作成されたデータ ソースがデータをクエリーする必要がある場合、データ ソースはクエリーをリモート サーバーに送信します。しかし、データ ソースがマップ レイヤーから作成され、マップ ウィジェットがクライアント サイド クエリーを有効にしている場合、データ ソースはバックエンド サービスにクエリーを送信する代わりに、<code>MapView</code> からデータをクエリーしようとします。<code>MapView</code> または対応する <code>LayerView</code> がクライアント サイド クエリーの準備ができていない場合、データ ソースは依然としてクエリーをリモート サーバーに送信します。<code>MapView</code> または <code>LayerView</code> が準備できていない理由はいくつかあります。例えば、クエリー内のジオメトリ―が現在のマップ範囲にない場合や、<code>LayerView</code> にすべてのフィーチャが含まれていない場合です。クライアント サイド クエリーを実行する前に、<code>LayerView</code> はクエリー パラメーター内の <code>outFields</code> を <code>LayerView</code> のフィールドに追加し、その後クエリーを実行します。<code>LayerView</code> にフィールドを追加しすぎるとパフォーマンスの問題が発生する可能性があるため、<code>notAddFieldsToClient</code> を使用して <code>LayerView</code> にフィールドを追加しないようにすることができます。</p>
+<h3 id="データ-アクションdata-action">データ アクション（Data action）</h3>
+<p><a href="../data-action">データ アクション</a>をご参照ください。</p>
 <h3 id="リピート-データ-ソースrepeated-data-source">リピート データ ソース（Repeated Data source）</h3>
-<p><code>RepeatedDataSourceProvider</code> が提供するデータ ソースをリピートデータ ソースと呼びます。データ ソースを提供するウィジェットのすべての子ウィジェットは、リピート データ ソースを受け取ります。これは <a href="https://reactjs.org/docs/context.html">React&rsquo;s Context</a> と似ています。ウィジェットは <code>this.props.repetedDataSource</code> でリピート データ ソースにアクセスできます。リピート データ ソースは、データ ソースの <code>id</code>、<code>record</code>、<code>recordIndx</code> を取得します。
+<p><code>RepeatedDataSourceProvider</code> が提供するデータ ソースをリピート データ ソースと呼びます。データ ソースを提供するウィジェットのすべての子ウィジェットは、リピート データ ソースを受け取ります。これは <a href="https://reactjs.org/docs/context.html">React&rsquo;s Context</a> と似ています。ウィジェットは <code>this.props.repetedDataSource</code> でリピート データ ソースにアクセスできます。リピート データ ソースは、データ ソースの <code>id</code>、<code>record</code>、<code>recordIndx</code> を取得します。
 どのウィジェットでも、<code>RepeatedDataSourceProvider</code> を使用してリピート データ ソースを提供することができます。Experience Builder の <code>List</code> ウィジェットは、リピート データ ソースを提供する良い例です。リピート データ ソースを使用するには、ウィジェットのマニフェストファイルに <code>supportRepeat</code> プロパティを追加します。</p>
 
 

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>ウィンドウ（Window） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -969,7 +976,7 @@ if (!doNotTrack) {
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/window/">Window</a></p>
 <h2 id="ウィンドウとは">ウィンドウとは</h2>
-<p>ArcGIS Experience Builder では、ウィンドウはエクスペリエンスの上にコンテンツまたはウィジェットを表示できるパネルです。ウィンドウズでは、ユーザーはメインのエクスペリエンスから離れることなく、集中してコンテンツに触れることができます。ウィンドウは固定モーダルまたはアンカー付きポップアップとして表示するように設定できます。</p>
+<p>ArcGIS Experience Builder では、ウィンドウはエクスペリエンスの上にコンテンツまたはウィジェットを表示できるパネルです。ウィンドウを使用すると、ユーザーはメインのエクスペリエンスから離れることなく、集中してコンテンツに触れることができます。ウィンドウは固定モーダルまたはアンカー付きポップアップとして表示するように設定できます。</p>
 <p>ウィンドウにコンテンツを表示するには、主に2つの設定があります。</p>
 <table>
 <thead>
@@ -991,7 +998,7 @@ if (!doNotTrack) {
 </table>
 <p>アプリの設定では、ウィンドウは<code>ダイアログ</code> プロパティで定義されます。</p>
 <h2 id="なぜウィンドウを使うのか">なぜウィンドウを使うのか</h2>
-<p>ArcGIS Experience Builder のウィンドウでは、メインのエクスペリエンスからナビゲートすることなく、追加のコンテンツや機能を表示できます。フォーム、メディア、その他のウィジェットを集中的に表示し、ユーザーとのインタラクションやエンゲージメントを高めることができる。</p>
+<p>ArcGIS Experience Builder のウィンドウでは、メインのエクスペリエンスからナビゲートすることなく、追加のコンテンツや機能を表示できます。フォーム、メディア、その他のウィジェットを集中的に表示し、ユーザーとのインタラクションやエンゲージメントを高めることができます。</p>
 <p>ウィンドウを使用して、次を提供します。</p>
 <ul>
 <li>メインコンテンツから離れることなく、重要な情報や行動を提示します。</li>
@@ -1017,11 +1024,11 @@ if (!doNotTrack) {
 <li>ウィンドウ タイプを決定します。
 <ul>
 <li><strong>固定</strong>：画面上の固定位置に表示されます。</li>
-<li><strong>アンカー</strong>：リンクされたウィジェットに隣接して表示されます。
-ウィンドウがエクスペリエンスに追加され、プロパティの設定を開始できます。</li>
+<li><strong>アンカー</strong>：リンクされたウィジェットに隣接して表示されます。</li>
 </ul>
 </li>
 </ol>
+<p>ウィンドウがエクスペリエンスに追加され、プロパティの設定を開始できます。</p>
 <h3 id="2-ウィンドウの設定">2. ウィンドウの設定</h3>
 <p>ウィンドウのプロパティを設定するには、以下の設定を考慮する必要があります。</p>
 <ol>
@@ -1029,7 +1036,7 @@ if (!doNotTrack) {
 <p><strong>位置とサイズ</strong></p>
 <ul>
 <li>固定ウィンドウの場合は、ページ上の9つのアンカー ポイントから1つを選択します。</li>
-<li><strong>幅</strong>と<strong>高さ</strong>を<code>ピクセル</code>または<code>パーセント</code>で指定します。</li>
+<li><strong>幅</strong>と<strong>高さ</strong>を<code>pixel</code>または<code>percentage</code>で指定します。</li>
 <li>ウィンドウの位置を調整するには、<strong>オフセット X/Y</strong>を使用します。</li>
 <li>ウィンドウの周囲にスペースを設定するために<strong>マージン</strong>を定義します。</li>
 </ul>
@@ -1049,7 +1056,7 @@ if (!doNotTrack) {
 </li>
 </ol>
 <h3 id="3-ウィンドウのトリガーを設定">3. ウィンドウのトリガーを設定</h3>
-<p>アプリのロード、ページのロード、ウィジェットとのユーザーインタラクションなどのトリガーを設定することで、ウィンドウがいつ、どのように表示されるかを制御できます。</p>
+<p>アプリのロード、ページのロード、ウィジェットとのユーザー インタラクションなどのトリガーを設定することで、ウィンドウがいつ、どのように表示されるかを制御できます。</p>
 <p>ウィンドウのトリガーを設定するには、以下の方法を使用できます。</p>
 <ol>
 <li>
@@ -1062,7 +1069,7 @@ if (!doNotTrack) {
 <li>
 <p><strong>ウィジェット インタラクション</strong></p>
 <ul>
-<li>ウィジェットの設定でリンクを設定オプションを使用して、ユーザー インタラクションでウィンドウを開きます。</li>
+<li>ウィジェットの設定で「リンクを設定」オプションを使用して、ユーザー インタラクションでウィンドウを開きます。</li>
 <li>このトリガーでは、スプラッシュ ウィンドウを除いて、アンカー ウィンドウか固定ウィンドウのいずれかを選択します。</li>
 </ul>
 </li>

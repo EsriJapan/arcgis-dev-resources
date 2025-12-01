@@ -19,7 +19,7 @@
 作成方法は、開発者アカウントの作成をご覧ください。
 次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite コンポーネントを読み込みます。
 CDN で利用する Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに &amp;lt;script&amp;gt; タグを配置することでロードできます:
-&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 NPM パッケージで利用する Calcite コンポーネントは、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
 npm install @esri/calcite-components アセットの読み込み 一部のコンポーネント（例：calcite-icon、calcite-date-picker）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。
 ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリにコピーできます。互換性を維持するため、ローカルのアセットは「assets」という名前のディレクトリに配置してください。
@@ -36,7 +36,7 @@ import { setAssetPath } from &amp;#34;@esri/calcite-components&amp;#34;; setAsse
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/core-concepts/</guid>
       <description>出典：Calcite Design System - core concepts
 Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。
-Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントで確認できます。
+Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的な開発に必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントで確認できます。
 カスタム要素 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリーや Web フレームワークを使用して、モダンなブラウザーで動作します。カスタム要素は機能をカプセル化するため、他のコードとの競合を防ぐことができます。
 Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。例えば以下のように記述します。
 &amp;lt;calcite-action-bar layout=&amp;#34;horizontal&amp;#34;&amp;gt;&amp;lt;/calcite-action-bar&amp;gt; スロット スロットは、スロット名を参照することで独自のコンテンツを追加できるプレースホルダー要素です。スロットは Web コンポーネントの一般的な概念であり、すでに使用している可能性があります。例えば、次の HTML を見てみましょう。

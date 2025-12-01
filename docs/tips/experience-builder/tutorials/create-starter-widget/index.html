@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>スターター ウィジェットの作成 :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -430,6 +430,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -1015,14 +1022,14 @@ if (!doNotTrack) {
 
 </code></pre></div><h4 id="コンポーネントの実装">[コンポーネントの実装]</h4>
 <p>ウィジェットのメイン ロジックは、<strong>widget.tsx</strong> の React コンポーネントに実装します。このファイルは単一の関数 React コンポーネントをエクスポートします。</p>
-<p>ArcGIS Experience Builder では、関数スタイルまたはクラス スタイルのコンポーネントを使用できます。この 2 つのタイプの詳細については、<a href="https://reactjs.org/docs/components-and-props.html#function-and-class-components">React ドキュメント</a>を参照してください。</p>
+<p>ArcGIS Experience Builder では、関数スタイルまたはクラス スタイルのコンポーネントを使用でき、このチュートリアルでは関数スタイルのコンポーネントを使用します。この 2 つのタイプの詳細については、<a href="https://reactjs.org/docs/components-and-props.html#function-and-class-components">React ドキュメント</a>を参照してください。</p>
 <ol>
 <li>
-<p><strong>starter-widget</strong> フォルダーに、<strong>src</strong> という新しいフォルダーを作成します。このフォルダーの中に、runtime という別のフォルダーを作成します。</p>
+<p><strong>starter-widget</strong> フォルダーに、<strong>src</strong> という新しいフォルダーを作成します。このフォルダーの中に、<strong>runtime</strong> という別のフォルダーを作成します。</p>
 </li>
 <li>
-<p><strong>Runtime</strong> フォルダーに、<code>widget.tsx</code> という名前のファイルを作成します。以下のコードを追加して、React コンポーネントを作成します。</p>
-<p>最初の行は、<code>jimu-core</code> モジュールから Reactをインポートしている。</p>
+<p><strong>runtime</strong> フォルダーに、<code>widget.tsx</code> という名前のファイルを作成します。以下のコードを追加して、React コンポーネントを作成します。</p>
+<p>最初の行は、<code>jimu-core</code> モジュールから Reactをインポートしています。</p>
 <p>ウィジェットを実装するには、React コンポーネントとなる関数を作成する必要がある。この関数は、ユーザーに表示される <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>（この例では、<code>div</code> 要素といくつかのテキスト）、HTML のような構文を返します。</p>
 </li>
 </ol>
@@ -1033,13 +1040,14 @@ if (!doNotTrack) {
  }
  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Widget</span>
 </code></pre></div><ol start="3">
-<li>ターミナルで、<strong>client</strong> フォルダーで実行中の <code>npm start</code> スクリプトを停止（ctrl + c）し、再スタートします。</li>
+<li>ターミナルで、<strong>client</strong> フォルダーで実行中の <code>npm start</code> スクリプトを停止 (ctrl + c) し、再スタートします。</li>
 </ol>
 <h4 id="ウィジェットをテストする">ウィジェットをテストする</h4>
 <p>フォルダーとメイン ファイルを配置したら、ArcGIS Experience Builder を実行して新しいページにウィジェットを追加して、ウィジェットをテストできます。ビルダーは自動的にウィジェットを検出し、利用可能にします。</p>
 <ol>
 <li>
-<p>Web ブラウザーで ArcGIS Experience Builder にアクセスします。例： <a href="https://localhost:3001/">https://localhost:3001</a></p>
+<p>Web ブラウザーで ArcGIS Experience Builder にアクセスします。例： <a href="https://localhost:3001/">https://localhost:3001</a></br>
+Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。</p>
 </li>
 <li>
 <p>ArcGIS Experience Builder で [<strong>新規作成</strong>] をクリックして、新しいエクスペリエンス ページを作成します。</p>
@@ -1052,12 +1060,13 @@ if (!doNotTrack) {
 <p>ウィジェットは、ウィジェット一覧の下部にある「カスタム」セクションに配置されます。作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。ウィジェットが表示されない場合、元のセットアップ手順に従って、<strong>client</strong> フォルダーで <code>npm start</code> を実行したか再確認してください。</p>
 </li>
 <li>
-<p>マップ ウィジェットをエクスペリエンスにドラッグします。</p>
+<p><strong>マップ</strong> ウィジェットをエクスペリエンスにドラッグします。</p>
 </li>
 <li>
-<p>ツールバーで、[保存] をクリックし、次に [プレビュー] をクリックすると、カスタム ウィジェットを含むエクスペリエンスが新しいブラウザ タブで開きます。</p>
+<p>ツールバーで、<strong>[保存]</strong> をクリックし、次に <strong>[プレビュー]</strong> をクリックすると、カスタム ウィジェットを含むエクスペリエンスが新しいブラウザ タブで開きます。</p>
 </li>
 </ol>
+<p>完成版のウィジェットと比較する場合は<a href="https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip">こちら</a>をご参照ください。ウィジェットに機能を追加するには、次の<a href="https://developers.arcgis.com/experience-builder/guide/get-map-coordinates/">チュートリアル</a>に進んでください。</p>
 
 
     

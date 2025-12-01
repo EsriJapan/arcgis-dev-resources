@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>ページ（Page） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -981,7 +988,7 @@ if (!doNotTrack) {
 <li><a href="./#%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3-%E3%82%A2%E3%83%97%E3%83%AA">フルスクリーン アプリ</a>： アプリケーション インターフェースに似ています。</li>
 <li><a href="./#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB-%E3%83%9A%E3%83%BC%E3%82%B8">スクロール ページ</a>：従来の Web ページに似ています。</li>
 </ul>
-<p><a href="../widget">ウィジェット</a>、<a href="../section">セクション</a>、<a href="../screen">スクリーン</a>などのページ コンテンツは、固定レイアウトやフロー レイアウトなどのレイアウト ルールに基づいて配置されます。さまざまな画面サイズに対応できるよう、レイアウトは3つのサイズ モード<code>大画面</code>、<code>中画面</code>、<code>小画面</code>）に設定できます。この構成により、さまざまな機器に対応したカスタマイズ設計が可能になります。</p>
+<p><a href="../widget">ウィジェット</a>、<a href="../section">セクション</a>、<a href="../screen">スクリーン</a>などのページ コンテンツは、固定レイアウトやフロー レイアウトなどのレイアウト ルールに基づいて配置されます。さまざまな画面サイズに対応できるよう、レイアウトは3つのサイズ モード（<code>Large</code>、<code>Medium</code>、<code>Small</code>）に設定できます。この構成により、さまざまな機器に対応したカスタマイズ設計が可能になります。</p>
 <p>アプリの設定では、ページは <code>pages</code> プロパティで定義され、その構造は <code>pageStructure</code> プロパティで概説されます。</p>
 <h2 id="ページの使用方法">ページの使用方法</h2>
 <p>ArcGIS Experience Builder でページを使用する一般的な手順は次のとおりです。</p>
@@ -1054,7 +1061,7 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h3 id="スクロール-ページ">スクロール ページ</h3>
-<p>スクロールページ レイアウトは、従来の Web ページに似せてデザインされています。標準的な Web サイトと同じように、ユーザーがコンテンツを縦にスクロールできるようになっています。このレイアウトは、ストーリーテ リングやステップ バイ ステップのガイド、長編コンテンツなど、より直線的な情報の流れを必要とするエクスペリエンスに適しています。</p>
+<p>スクロールページ レイアウトは、従来の Web ページに似せてデザインされています。標準的な Web サイトと同じように、ユーザーがコンテンツを縦にスクロールできるようになっています。このレイアウトは、ストーリー テリングやステップ バイ ステップのガイド、長編コンテンツなど、より直線的な情報の流れを必要とするエクスペリエンスに適しています。</p>
 <h2 id="ページ-サイズ-モード">ページ サイズ モード</h2>
 <p>ArcGIS Experience Builder では、ページの 3 つのサイズ モードがサポートされているため、開発者はさまざまな画面サイズや向きに適応するレスポンシブ デザインを作成できます。3 つのサイズ モードは次のとおりです。</p>
 <table>
@@ -1071,7 +1078,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>中画面</td>
-<td>このモードは、タブレットなどの中型スクリーン向けにデザインされています。タッチ インタラクションにコンテンツを最適化するレイアウトを提供します。</td>
+<td>このモードは、タブレットなどの中型スクリーン向けにデザインされています。コンテンツのタッチ操作を最適化するレイアウトを提供します。</td>
 </tr>
 <tr>
 <td>小画面</td>

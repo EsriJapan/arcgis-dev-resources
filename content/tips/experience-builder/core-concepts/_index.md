@@ -10,12 +10,11 @@ alwaysopen = false
 
 ArcGIS Experience Builder Developer Edition は、開発者がノー コード/ロー コード アプローチでカスタム Web アプリケーションを作成できる Web アプリケーション フレームワークです。 ArcGIS のサービスやデータと統合できる、インタラクティブで応答性の高いアプリケーションを構築するためのツールやコンポーネントのセットを提供します。
 
-開発者は、カスタム ウィジェット、テーマ、およびアクションを作成して、ArcGIS Experience Builder を拡張できます。**Jimu** と呼ばれるこの拡張性フレームワークにより、開発ニーズに合ったアプリケーションを構築することができる。
+開発者は、カスタム ウィジェット、テーマ、およびアクションを作成して、ArcGIS Experience Builder を拡張できます。**Jimu** と呼ばれるこの拡張性フレームワークにより、開発ニーズに合ったアプリケーションを構築することができます。
 
 ## Jimu とは
 [Jimu](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/) は ArcGIS Experience Builder の拡張性フレームワークで、開発者はカスタム ウィジェット、テーマ、およびアクションを作成できます。Experience Builder アプリケーションの機能を拡張するための API とツールのセットを提供します。
 
-Experience Builder は、カスタム ウィジェットの作成、カスタム テーマの作成、カスタム データソース、メッセージ/アクションの作成を通じて拡張することが可能です。これらはすべて、以下のコンポーネントで構成されている`jimu` と呼ばれる Experience Builder の拡張フレームワークを使用することで可能になります。
 
 Jimu フレームワークは、以下を含むいくつかの技術の上に構築されています。
 - [ArcGIS Maps SDK for JavaScript 4.x](https://developers.arcgis.com/javascript/latest/) は、地図と地理空間データを統合します。

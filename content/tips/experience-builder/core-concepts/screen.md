@@ -42,7 +42,7 @@ ArcGIS Experience Builder のスクリーン グループは、複数のスク�
 {{% /notice %}}
 
 ## スクリーン グループの AppConfig
-`appConfig` オブジェクトでは、一意の `screenGroupId` を持つオブジェクトを表す `screenGroups` プロパティの下にスクリーン グループが定義されます。`screenGroups` プロパティにはスクリーン グループ オブジェクトの配列が含まれ、各オブジェクトはアプリケーションに追加されたスクリーン グループを表します。各スクリーン グループ オブジェクトには、`screenId`、`name`、`layout` など、スクリーンの構成詳細が含まれます。
+`appConfig` オブジェクトでは、一意の `screenGroupId` を持つオブジェクトを表す `screenGroups` プロパティの下にスクリーン グループが定義されます。`screenGroups` プロパティにはスクリーン グループ オブジェクトの配列が含まれ、各オブジェクトはアプリケーションに追加されたスクリーン グループを表します。各スクリーン グループ オブジェクトには、`screenId`、`name`、`layout` など、`screens`の構成詳細が含まれます。
 
 appConfig でスクリーン グループを定義する例を以下に示します。
 ```json

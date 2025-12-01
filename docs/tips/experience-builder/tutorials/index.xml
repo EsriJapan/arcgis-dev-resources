@@ -34,7 +34,7 @@ ArcGIS Experience Builder の開発者向け追加機能のインストール方
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Get map coordinates
 概要 学習内容：カスタム ウィジェットでマップの緯度と経度、縮尺、ズーム レベルを表示する方法
-ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の View インスタンスが含まれています。View はマップと対話し、位置情報を取得する方法を提供します。View のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の空間参照の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
+ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の View インスタンスが含まれています。View はマップと対話し、位置情報を取得する方法を提供します。&amp;lsquo;View&amp;rsquo; のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の空間参照の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
 このチュートリアルでは、マップ ウィジェットにアクセスし、カスタム ウィジェットでマウス カーソルが地図上にある時の緯度と経度を表示します。
 前提条件 ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) のダウンロード、インストール、設定を行います。
 ステップ スターター ウィジェットの入手  スターター ウィジェット テンプレートをこちらからダウンロードします。 すでに、スターター ウィジェットの作成 チュートリアルを完了している場合は、それを使用して開始できます。/client/your-extensions/widgets 内のウィジェット フォルダーをコピーしてください。 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。 /client/your-extensions/widgets  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで Experience Builder が展開されたフォルダーに移動します。 Experience Builder フォルダー内で以下のパスを開きます。 /client/your-extensions/widgets widgets フォルダー内で、starter-widget フォルダーの名前を get-map-coordinates に変更します。 新しく名前を変更した get-map-coordinates フォルダー内で、manifest.</description>
@@ -51,9 +51,8 @@ ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS M
 ArcGIS Experience Builder のマップ ウィジェットは、ロードするように構成されている Web マップに基づいてレイヤーを自動的にロードします。ワークフローによっては、ウィジェットとのユーザー インタラクションに基づいてマップに動的にレイヤーを追加するカスタム ウィジェットが必要な場合があります。
 このチュートリアルでは、マップにフィーチャ レイヤーを追加するためのボタンをウィジェットに追加します。
 前提条件  ArcGIS Experience Builder のインストール ガイドを参照して、 ArcGIS Experience Builder (Developer Edition) をダウンロード、インストール、設定を行います。  ステップ スターター ウィジェットの取得   スターター ウィジェットのテンプレートをこちらからダウンロードします。 すでにスターター ウィジェットの作成チュートリアルを完了している場合は、それを使用して開始できます。client/your-extensions/widgets 内のウィジェット フォルダーをコピーしてください。
-  手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。
-/client/your-extensions/widgets
-  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで、Experience Builder を展開されたフォルダーに移動します。 Experience Builder フォルダーで、以下のパスを展開します。</description>
+  手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。 /client/your-extensions/widgets
+  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで、Experience Builder を展開されたフォルダーに移動します。 Experience Builder フォルダーで、以下のパスを展開します。 /client/your-extensions/widgets widgets フォルダー内で starter-widget フォルダーの名前を add-layers-to-a-map に変更します。 新しく名前を変更した add-layers-to-a-map フォルダーの、manifest.</description>
     </item>
     
   </channel>

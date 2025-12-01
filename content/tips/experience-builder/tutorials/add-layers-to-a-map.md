@@ -17,25 +17,25 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
 
 
 ## 前提条件
-1. ArcGIS Experience Builder のインストール ガイドを参照して、 ArcGIS Experience Builder (Developer Edition) を[ダウンロード、インストール、設定](https://developers.arcgis.com/experience-builder/guide/install-guide/)を行います。  
+1. ArcGIS Experience Builder のインストール ガイドを参照して、 ArcGIS Experience Builder (Developer Edition) を[ダウンロード、インストール、設定](https://developers.arcgis.com/experience-builder/guide/install-guide/)を行います。
 
 
 ## ステップ
 ### スターター ウィジェットの取得
 1. スターター ウィジェットのテンプレートを[こちら](https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip)からダウンロードします。
-  すでにスターター ウィジェットの作成チュートリアルを完了している場合は、それを使用して開始できます。**client/your-extensions/widgets** 内のウィジェット フォルダーをコピーしてください。  
+  すでに[スターター ウィジェットの作成](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/)チュートリアルを完了している場合は、それを使用して開始できます。**client/your-extensions/widgets** 内のウィジェット フォルダーをコピーしてください。
 
-2. 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder **フォルダー**内で、zip ファイルを以下のパスに展開してください。  
+2. 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder **フォルダー**内で、zip ファイルを以下のパスに展開してください。
 **/client/your-extensions/widgets**
 
 ### ウィジェット名の変更
-1. ArcGIS Experience Builder の **client** フォルダーで `npm start` が実行されたターミナルがある場合、`ctrl + c` を押してスクリプトを停止します。  
+1. ArcGIS Experience Builder の **client** フォルダーで `npm start` が実行されたターミナルがある場合、`ctrl + c` を押してスクリプトを停止します。
 2. **ファイル ブラウザー**で、Experience Builder を展開されたフォルダーに移動します。
-3. Experience Builder **フォルダー**で、以下のパスを展開します。  
-**/client/your-extensions/widgets**  
+3. Experience Builder **フォルダー**で、以下のパスを展開します。
+**/client/your-extensions/widgets**
 4. **widgets** フォルダー内で **starter-widget** フォルダーの名前を `add-layers-to-a-map` に変更します。
 5. 新しく名前を変更した **add-layers-to-a-map** フォルダーの、**manifest.json** ファイルをコード エディターで開きます。
-6. コード エディターで、`name` プロパティを `add-layers-to-a-map` に変更します。  
+6. コード エディターで、`name` プロパティを `add-layers-to-a-map` に変更します。
 `manifest.json` の `name` プロパティがウィジェットのフォルダー名と一致することが重要です。この時点で、ウィジェットの説明、作成者など `manifest.json` ファイル内の他のメタデータも更新できます。
 ``` json
  {
@@ -57,10 +57,10 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
 ```
 
 ### 設定パネルの実装
-設定パネルを実装することで、エクスペリエンスの作成者がウィジェットをカスタマイズできるようになります。設定パネルは、ArcGIS Experience Builder でウィジェットが選択された時に右側のサイドバーに表示されます。パネルを作成するには、React コンポーネントを作成します。  
+設定パネルを実装することで、エクスペリエンスの作成者がウィジェットをカスタマイズできるようになります。設定パネルは、ArcGIS Experience Builder でウィジェットが選択された時に右側のサイドバーに表示されます。パネルを作成するには、React コンポーネントを作成します。
 
-1. ウィジェットのルート フォルダーに、空のオブジェクトを含む `config.json` ファイルを作成します。  
-後で、ウィジェットの設定値を保存するために、このオブジェクトにウィジェットの構成パラメーターを追加できます。  
+1. ウィジェットのルート フォルダーに、空のオブジェクトを含む `config.json` ファイルを作成します。
+後で、ウィジェットの設定値を保存するために、このオブジェクトにウィジェットの構成パラメーターを追加できます。
 ``` json
 {}
 ```
@@ -84,15 +84,15 @@ export default Setting
 6. ArcGIS Experience Builder の **client** フォルダーで `npm start` が実行されたターミナルがある場合、`ctrl + c` を押してスクリプトを停止します。その後、**client** フォルダーで `npm start` スクリプトを開始します。
 
 ### マップ ビューのデータ ソースを選択できるようにする
-ArcGIS Experience Builder では、ページに複数のマップ ウィジェットを配置することができます。そのため、カスタム ウィジェットには、作成者が使用するマップ ウィジェットを選択するためのセクションが必要です。  
+ArcGIS Experience Builder では、ページに複数のマップ ウィジェットを配置することができます。そのため、カスタム ウィジェットには、作成者が使用するマップ ウィジェットを選択するためのセクションが必要です。
 
 1. **setting/setting.tsx** ファイルに、`jimu` ライブラリから `MapWidgetSelector` モジュールを記述します。
 
-``` javascript
+``` typescript
 import { MapWidgetSelector } from 'jimu-ui/advanced/setting-components'
 ```
 
-2. コンポーネント内で onMapWidgetSelected 関数を定義します。
+2. コンポーネント内で `onMapWidgetSelected` 関数を定義します。
 
 ``` typescript
 // *** 追加 ***
@@ -106,7 +106,7 @@ const onMapWidgetSelected = (useMapWidgetIds: string[]) => {
 return <div className="widget-setting-demo">ここはスターター ウィジェットの設定パネルです</div>;
 ```
 
-3. return() 文内に、MapWidgetSelector を表すタグを追加します。
+3. `return()` 文内に、`MapWidgetSelector` を表すタグを追加します。
 
 ``` typescript
 return (
@@ -121,14 +121,14 @@ return (
 
 1. **widget.tsx** ファイルに、`jimu-arcgis` ライブラリから [`JimuMapViewComponent`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) と [`JimuMapView`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) の型を追加し、React 変数をデストラクチャリング (分割代入) して `getState` import にアクセスします。
 
-``` javascript
+``` typescript
 import { React, type AllWidgetProps } from 'jimu-core'
 /** 追加 **/
 import { JimuMapViewComponent, type JimuMapView } from 'jimu-arcgis'
 const { useState } = React
 ```
 
-2. レイヤーをマップに追加するには、マップへの参照をコンポーネントの状態を保存する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として保存できるように設定します。
+2. レイヤーをマップに追加するには、マップへの参照をコンポーネントの state に保存する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として保存できるように設定します。
 
 ``` typescript
 const { useState } = React
@@ -140,7 +140,7 @@ const Widget = (props: AllWidgetProps<any>) => {
   return (
 ```
 
-3. `return` 文で、`JimuMapViewComponent` を JSX マークアップに追加します。  
+3. `return` 文で、`JimuMapViewComponent` を JSX マークアップに追加します。
 追加されたコードの最初の 2 行 (`{props.useMapWidgetIds &&...`)は、JSX で条件を使用する方法です。これは基本的に「エクスペリエンス作成者が設定パネルで有効なマップ ウィジェットを選択した場合にのみ JimuMapViewComponent を追加する」という意味です。
 
 ``` typescript
@@ -153,7 +153,7 @@ return (
 )
 ```
 
-4. `setState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。 この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の状態を更新します。
+4. `setState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。 この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の state を更新します。
 
 ```typescript
 /** 追加 **/
@@ -167,7 +167,7 @@ const activeViewChangeHandler = (jmv: JimuMapView) => {
 ### ボタンの追加
 クリックするとレイヤーをマップに追加するボタンをウィジェットの UI に追加します。
 
-1. コード エディターで、render 関数内の既存の div に `form` と `input` タグ要素を追加します。
+1. コード エディターで、`render` 関数内の既存の `div` に、 `form` と `input` タグ要素を追加します。
 
 ``` typescript
 return (
@@ -186,8 +186,15 @@ return (
 )
 ```
 
-2. コンポーネント内で、`formSubmit` という名前の新しい関数を作成します。 この関数はユーザーが **Add Layer** ボタンをクリックした時に呼び出されます。  
-`evt.preventDefault` は、フォームが送信された際にページをリロードしないようにします。
+2. コンポーネント内で、`formSubmit` という名前の新しい関数を作成します。 この関数はユーザーが **Add Layer** ボタンをクリックした時に呼び出されます。
+`evt.preventDefault` は、フォームが送信された際にページがリロードされるのを防ぎます。
+
+```typescript
+const formSubmit = (evt) => {
+  evt.preventDefault()
+  // この行には、さらにコードを追加予定
+}
+```
 
 ### レイヤーの追加
 ボタンをクリックしたとき、マップにレイヤーを追加します。
@@ -198,8 +205,8 @@ return (
 import FeatureLayer from 'esri/layers/FeatureLayer'
 ```
 
-2. `formSubmit` 関数の内に、[Trailheads](https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0)（ポイント）のフィーチャ レイヤーを作成し、そのレイヤーをマップに追加するコードを追加します。  
-`jimuMapView.view` は [`MapView`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) のインスタンスのため、ここで使用する `add()` メソッドのように、MapView で定義されているメソッドやプロパティも使うことができます。  
+2. `formSubmit` 関数の内に、[Trailheads](https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0)（ポイント）のフィーチャ レイヤーを作成し、そのレイヤーをマップに追加するコードを追加します。
+`jimuMapView.view` は [`MapView`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) のインスタンスのため、ここで使用する `add()` メソッドのように、MapView で定義されているメソッドやプロパティも使うことができます。
 ``` typescript
 const formSubmit = (evt) => {
   evt.preventDefault()
@@ -218,17 +225,22 @@ const formSubmit = (evt) => {
 ### ウィジェットのテスト
 コードの変更が完了したら、ArcGIS Experience Builder を実行してエクスペリエンスを表示することでウィジェットをテストできます。
 
-1. Web ブラウザーで、Experience Builder にアクセスします。  
-例：https://localhost:3001  
-Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。  
+1. Web ブラウザーで、Experience Builder にアクセスします。
+例：https://localhost:3001
+Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。
 2. Experience Builder で \[**新規作成**\] をクリックして新しいエクスペリエンス ページを作成します。  
-3. \[**空白のスクロール**\] の \[**作成**\] ボタンをクリックします。  
+3. \[**空白のスクロール**\] の \[**作成**\] ボタンをクリックします。
    1. \[**ウィジェットの挿入**\] ボタンをクリックし、**マップ** ウィジェットをエクスペリエンスにドラッグします。
    2. \[プレビュー エリア\]の**マップ** ウィジェットをクリックし、\[ウィジェット設定パネル\]の\[**マップの選択**\]をクリックします。
-   3. \[**データの選択**パネル\]の\[**新しいデータの追加**\]ボタンをクリックします。
+   3. \[**データの選択**\]パネルの\[**新しいデータの追加**\]ボタンをクリックします。
    4. \[**データの追加**\]モーダルで、\[**ArcGIS Online**\] タブを選択し、Web マップの `eb1be6543e304b4d81ed55439c412c2c` を検索します。検索結果をクリックして選択し、\[**終了**\]をクリックします。 (この Web マップには意図的に操作するレイヤーがないことに注意してください。)
-   5. \[**Select data** パネル\]に新しく追加された \[LA Parks and Trails Map\] をクリックして、Web マップを選択してください。
-4. \[**ウィジェットの挿入**\] パネルが開きます。そこから、新しく作成した \[**add layers to a map**\]ウィジェットをエクスペリエンスにドラッグします。  
-作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。  
-5. ウィジェットの設定パネルで、マップを選択するドロップダウンから「**Map**」を選択します。  
+   5. \[**データの選択**\]パネルに新しく追加された \[LA Parks and Trails Map\] をクリックして、Web マップを選択してください。
+4. \[**ウィジェットの挿入**\] ボタンをクリックします。そこから、新しく作成した \[**add layers to a map**\]ウィジェットをエクスペリエンスにドラッグします。
+作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。
+5. ウィジェットの設定パネルで、マップを選択するドロップダウンから「**マップ**」を選択します。
 6. Experience Builder のツールバーで \[**保存**\] をクリックし、\[**プレビュー**\] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。\[Add Layer\]ボタンをクリックするとレイヤーをマップに追加されます。
+
+完成版のウィジェットと比較する場合は[こちら](https://developers.arcgis.com/experience-builder/zips/add-layers-to-a-map.zip)をご参照ください。
+
+### 関連するトピック
+[How to add a feature layer as a data source in a custom widget](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-class/)

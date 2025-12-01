@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>スクリーン グループ（Screen groups） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -1009,7 +1016,7 @@ if (!doNotTrack) {
 <p>スクリーン グループ テンプレートの詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/add-screen-groups/#templates">Add Screen groups &gt; templates</a> を参照してください。</p>
 </div>
 <h2 id="スクリーン-グループの-appconfig">スクリーン グループの AppConfig</h2>
-<p><code>appConfig</code> オブジェクトでは、一意の <code>screenGroupId</code> を持つオブジェクトを表す <code>screenGroups</code> プロパティの下にスクリーン グループが定義されます。<code>screenGroups</code> プロパティにはスクリーン グループ オブジェクトの配列が含まれ、各オブジェクトはアプリケーションに追加されたスクリーン グループを表します。各スクリーン グループ オブジェクトには、<code>screenId</code>、<code>name</code>、<code>layout</code> など、スクリーンの構成詳細が含まれます。</p>
+<p><code>appConfig</code> オブジェクトでは、一意の <code>screenGroupId</code> を持つオブジェクトを表す <code>screenGroups</code> プロパティの下にスクリーン グループが定義されます。<code>screenGroups</code> プロパティにはスクリーン グループ オブジェクトの配列が含まれ、各オブジェクトはアプリケーションに追加されたスクリーン グループを表します。各スクリーン グループ オブジェクトには、<code>screenId</code>、<code>name</code>、<code>layout</code> など、<code>screens</code>の構成詳細が含まれます。</p>
 <p>appConfig でスクリーン グループを定義する例を以下に示します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;screenGroups&#34;</span>: {

@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-09-29T13:40:20 JST">
+<meta name="revised" content="2025-12-01T11:24:32 JST">
 <title>テーマ（Theme） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -431,6 +431,13 @@ if (!doNotTrack) {
         <div>
           <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/appconfig/">
             AppConfig
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/" class="dd-item">
+        <div>
+          <a href="/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/">
+            イミュータブル オブジェクト（Immutable objects）
           </a>
         </div>
     </li>
@@ -938,11 +945,17 @@ if (!doNotTrack) {
         <div class="wrapper">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#テーマtheme">テーマ（Theme）</a></li>
+    <li><a href="#なぜウィンドウを使うのか">なぜウィンドウを使うのか</a></li>
+    <li><a href="#テーマの使用方法">テーマの使用方法</a>
       <ul>
-        <li><a href="#テーマtheme">テーマ（Theme）</a></li>
+        <li><a href="#1-テーマの選択">1. テーマの選択</a></li>
+        <li><a href="#2-テーマのカスタマイズ">2. テーマのカスタマイズ</a></li>
+        <li><a href="#3-テーマの適用">3. テーマの適用</a></li>
       </ul>
     </li>
+    <li><a href="#カスタムテーマの開発">カスタムテーマの開発</a></li>
+    <li><a href="#リソース">リソース</a></li>
   </ul>
 </nav>
         </div>
@@ -963,9 +976,119 @@ if (!doNotTrack) {
     
     
     <p>出典：ArcGIS Experience Builder - Guide - <a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/theme/">Theme</a></p>
-<h3 id="テーマtheme">テーマ（Theme）</h3>
-<p>テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタム テーマの作成も可能です。テーマ開発については、<a href="https://developers.arcgis.com/experience-builder/guide/theme-development/">theme development</a> をご覧ください。</p>
-<p>app config では、アプリが使用するテーマは <code>theme</code> で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は <code>customTheme</code> に保存されます。</p>
+<h2 id="テーマtheme">テーマ（Theme）</h2>
+<p>ArcGIS Experience Builder におけるテーマは、アプリケーションの外観やスタイルをカスタマイズするための体系的なアプローチです。Jimu フレームワークと Theme Design System を基盤としており、構造化され、カスタマイズ可能で拡張性のあるテーマ設定を提供することで、統一感のある見た目と操作感のあるエクスペリエンスを実現します。</p>
+<p>テーマは、Jimu UI の基本コンポーネントに対して設定可能なテーマ変数とスタイル モジュールを提供することで機能します。内部的には、スタイル モジュールがテーマ変数を読み取り、ランタイムで CSS スタイルを動的に生成し、それをコンポーネントに適用します。</p>
+<p>基本的には、テーマは次の要素で構成されます：</p>
+<ul>
+<li>manifest、翻訳ファイル、テーマのサムネイルを含むテーマ定義</li>
+<li>colors、shadows、shapes などのプロパティをカスタマイズ可能な、 <code>variables.json</code> で定義されるテーマ変数の上書き</li>
+<li>高度なカスタマイズのために Sass (<code>.scss</code>) または TypeScript (<code>.ts</code>) ファイルで記述されるスタイルの上書き</li>
+<li><code>assets</code> フォルダーに格納される画像、アイコン、フォントなどのアセット</li>
+</ul>
+<p>アプリ構成では、テーマは <code>theme</code> プロパティで定義され、エクスペリエンスに適用するテーマへの URI 参照を含みます。さらに、テーマ設定パネルでテーマをカスタマイズできます。</p>
+<h2 id="なぜウィンドウを使うのか">なぜウィンドウを使うのか</h2>
+<p>テーマを使うと、 Experience Builder のアプリケーションにおいて次のようなメリットがあります。</p>
+<table>
+<thead>
+<tr>
+<th>メリット</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>統一された外観と操作感</td>
+<td>すべてのコンポーネントで一貫したビジュアル デザインを保証します。</td>
+</tr>
+<tr>
+<td>簡単なカスタマイズ</td>
+<td>コードを変更せずにブランドや好みに合わせた調整が可能です。</td>
+</tr>
+<tr>
+<td>柔軟な構成</td>
+<td>テーマの切り替えや動的なスタイリングをサポートします。</td>
+</tr>
+<tr>
+<td>保守性</td>
+<td>スタイルを集中管理することで更新や変更が容易になります。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="テーマの使用方法">テーマの使用方法</h2>
+<p>ArcGIS Experience Builder でテーマを使用する一般的な手順は次のとおりです。</p>
+<ol>
+<li>
+<p><a href="./#1-%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E9%81%B8%E6%8A%9E">テーマの選択</a>
+エクスペリエンスのベース テーマを選択します。</p>
+</li>
+<li>
+<p><a href="./#2-%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">テーマのカスタマイズ</a>
+色、フォント、その他視覚的な要素を修正します。</p>
+</li>
+<li>
+<p><a href="./#3-%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E9%81%A9%E7%94%A8">テーマの適用</a>
+テーマをエクスペリエンスに適用し変更をプレビューします。</p>
+</li>
+</ol>
+<h3 id="1-テーマの選択">1. テーマの選択</h3>
+<p>以下のステップに従って、エクスペリエンスのテーマを選択します。</p>
+<ol>
+<li>ArcGIS Experience Builder の<strong>テーマ</strong>パネルへ移動します。</li>
+<li>利用可能なテーマ オプションを確認します。</li>
+<li>テーマをクリックし、コンテンツに適用した際の見た目をプレビューします。</li>
+<li>デザイン要件に最も適したテーマを選択します。</li>
+</ol>
+<h3 id="2-テーマのカスタマイズ">2. テーマのカスタマイズ</h3>
+<p>次のステップに従って、選択したテーマをカスタマイズします。</p>
+<ol>
+<li><strong>テーマ</strong>パネルで、選択したテーマの<strong>カスタマイズ</strong>ボタンをクリックします。</li>
+<li><strong>テーマのカスタマイズ</strong>ページで、テーマのプロパティを変更します。
+<ul>
+<li><strong>色</strong>：プライマリ、セカンダリ、アクセントカラーを調整</li>
+<li><strong>タイポグラフィ</strong>：フォント ファミリー、サイズ、太さを変更</li>
+<li><strong>ボーダー半径</strong>：コンポーネントの角の丸みを調整</li>
+<li><strong>コンポーネント</strong>：ボタンスタイル、フォーム要素、その他のコンポーネントをカスタマイズ</li>
+</ul>
+</li>
+<li>ライブ プレビューで変更を確認できます。</li>
+</ol>
+<h3 id="3-テーマの適用">3. テーマの適用</h3>
+<p>テーマをカスタマイズすると、その変更はエクスペリエンス内のすべてのページにリアルタイムで適用されます。</p>
+<ol>
+<li><strong>保存</strong>をクリックして、テーマをエクスペリエンスに保存します。</li>
+<li><strong>プレビュー</strong>をクリックして、新しいテーマでの見た目を確認します。</li>
+</ol>
+<div class="notices note" >
+<p>ページを切り替えることで異なるスタイルをプレビューできます。異なるデバイスでエクスペリエンスをテストし、テーマがあらゆる画面サイズで適切に機能することを確認することを強く推奨します。</p>
+</div>
+<h2 id="カスタムテーマの開発">カスタムテーマの開発</h2>
+<p>高度なカスタマイズを行う場合、Jimu フレームワークとテーマ オプションを使用してカスタム テーマを作成できます。テーマ オプションは、テーマのプロパティをカスタマイズできるように構造化されています。</p>
+<div class="notices note" >
+<p>テーマ オプションの詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/customize-theme-options/">テーマ オプションのカスタマイズ</a>をご覧ください。</p>
+</div>
+<p>テーマの変数やコンポーネント、グローバル スタイルを上書きすることで、テーマ スタイルをカスタマイズすることができます。</p>
+<ul>
+<li>
+<p>テーマ変数の上書き（推奨）：
+<code>variables.json</code> ファイルを使用してテーマ プロパティを変更することにより、カスタム CSS を記述せずに、色、タイポグラフィ、形状などのデザイン要素をカスタマイズできます。</p>
+</li>
+<li>
+<p>コンポーネントとグローバル スタイルの上書き：
+カスタム CSS または CSS-in-JS を記述し、より細かいコンポーネントのスタイル制御を行います。</p>
+</li>
+</ul>
+<div class="notices note" >
+<p>カスタマイズ方法の詳細については、<a href="https://developers.arcgis.com/experience-builder/guide/create-a-custom-theme/">テーマの作成方法</a>をご覧ください。</p>
+</div>
+<h2 id="リソース">リソース</h2>
+<ul>
+<li>カスタム テーマの作成について詳しくは、<a href="https://developers.arcgis.com/experience-builder/guide/create-a-custom-theme/">テーマの作成方法</a>をご覧ください。</li>
+<li>詳細なテーマ カスタマイズ オプションについては、<a href="https://developers.arcgis.com/experience-builder/guide/customize-theme-options/">テーマ オプションのカスタマイズ</a>をご覧ください。</li>
+<li>高度なコンポーネント スタイリングについては、<a href="https://developers.arcgis.com/experience-builder/guide/customize-component-styles/">コンポーネント スタイルのカスタマイズ</a>をご覧ください。</li>
+<li>カスタム フォントの使用については、<a href="https://developers.arcgis.com/experience-builder/guide/using-custom-fonts/">テーマでカスタム フォントを使用する</a>をご覧ください。</li>
+<li>テーマ デザイン システムの探索やサンプルについては、<a href="https://developers.arcgis.com/experience-builder/storybook/?path=/docs/theme-theme-design-system-introduction--docs">テーマ デザイン システムのドキュメント</a>をご覧ください。</li>
+</ul>
 
 
     

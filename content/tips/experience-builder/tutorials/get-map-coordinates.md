@@ -11,13 +11,13 @@ aliases = ["/experience/tutorials/"]
 ## 概要
 <b>学習内容：</b>カスタム ウィジェットでマップの緯度と経度、縮尺、ズーム レベルを表示する方法
 
-ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) インスタンスが含まれています。[View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) はマップと対話し、位置情報を取得する方法を提供します。[View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の[空間参照](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html)の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
+ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) インスタンスが含まれています。[`View`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) はマップと対話し、位置情報を取得する方法を提供します。['View'](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の[空間参照](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html)の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
 
 このチュートリアルでは、マップ ウィジェットにアクセスし、カスタム ウィジェットでマウス カーソルが地図上にある時の緯度と経度を表示します。
 
 
 ## 前提条件
-ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) のダウンロード、インストール、設定を行います。
+ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) の[ダウンロード、インストール、設定](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/)を行います。
 
 
 ## ステップ
@@ -101,7 +101,7 @@ ArcGIS Experience Builder では、ページに複数のマップ ウィジェ�
 import { MapWidgetSelector } from 'jimu-ui/advanced/setting-components'
 ```
 
-2. コンポーネント内で onMapWidgetSelected 関数を定義します。
+2. コンポーネント内で `onMapWidgetSelected` 関数を定義します。
 
 ``` javascript
 // *** 追加 ***
@@ -138,7 +138,7 @@ import { JimuMapViewComponent, type JimuMapView } from 'jimu-arcgis'
 const { useState } = React
 ```
 
-2. マウスの位置の緯度と経度のプロパティを表示するには、マウス ポインターの状態を追跡する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として追跡できるように設定します。
+2. マウスの位置の緯度と経度のプロパティを表示するには、マウス ポインターの state を追跡する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として追跡できるように設定します。
 
 ``` javascript
 const { useState } = React
@@ -224,3 +224,5 @@ Experience Builder タブが開かなかった場合は、https://localhost:3001
 作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。
 5. ウィジェットの設定パネルで、マップを選択するドロップダウンから「<b>Map</b>」を選択します。
 6. Experience Builder のツールバーで [<b>保存</b>] をクリックし、[<b>プレビュー</b>] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。マップ上にマウスを移動させると、カーソルの位置の緯度と経度が表示されます。
+
+完成版のウィジェットと比較する場合は[こちら](https://developers.arcgis.com/experience-builder/zips/get-map-coordinates.zip)をご参照ください。

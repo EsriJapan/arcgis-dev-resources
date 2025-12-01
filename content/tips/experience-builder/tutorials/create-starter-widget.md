@@ -70,13 +70,13 @@ ArcGIS Experience Builder を[ダウンロード、インストール、およ�
 
 ウィジェットのメイン ロジックは、**widget.tsx** の React コンポーネントに実装します。このファイルは単一の関数 React コンポーネントをエクスポートします。
 
-ArcGIS Experience Builder では、関数スタイルまたはクラス スタイルのコンポーネントを使用できます。この 2 つのタイプの詳細については、[React ドキュメント](https://reactjs.org/docs/components-and-props.html#function-and-class-components)を参照してください。
+ArcGIS Experience Builder では、関数スタイルまたはクラス スタイルのコンポーネントを使用でき、このチュートリアルでは関数スタイルのコンポーネントを使用します。この 2 つのタイプの詳細については、[React ドキュメント](https://reactjs.org/docs/components-and-props.html#function-and-class-components)を参照してください。
 
-1. **starter-widget** フォルダーに、**src** という新しいフォルダーを作成します。このフォルダーの中に、runtime という別のフォルダーを作成します。
+1. **starter-widget** フォルダーに、**src** という新しいフォルダーを作成します。このフォルダーの中に、**runtime** という別のフォルダーを作成します。
 
-2. **Runtime** フォルダーに、`widget.tsx` という名前のファイルを作成します。以下のコードを追加して、React コンポーネントを作成します。
+2. **runtime** フォルダーに、`widget.tsx` という名前のファイルを作成します。以下のコードを追加して、React コンポーネントを作成します。
 
-    最初の行は、`jimu-core` モジュールから Reactをインポートしている。
+    最初の行は、`jimu-core` モジュールから Reactをインポートしています。
 
     ウィジェットを実装するには、React コンポーネントとなる関数を作成する必要がある。この関数は、ユーザーに表示される [JSX](https://reactjs.org/docs/introducing-jsx.html)（この例では、`div` 要素といくつかのテキスト）、HTML のような構文を返します。
 
@@ -88,14 +88,14 @@ ArcGIS Experience Builder では、関数スタイルまたはクラス スタ�
  }
  export default Widget
 ```
-3. ターミナルで、**client** フォルダーで実行中の `npm start` スクリプトを停止（ctrl + c）し、再スタートします。
+3. ターミナルで、**client** フォルダーで実行中の `npm start` スクリプトを停止 (ctrl + c) し、再スタートします。
 
 #### ウィジェットをテストする
 
 フォルダーとメイン ファイルを配置したら、ArcGIS Experience Builder を実行して新しいページにウィジェットを追加して、ウィジェットをテストできます。ビルダーは自動的にウィジェットを検出し、利用可能にします。
 
-1. Web ブラウザーで ArcGIS Experience Builder にアクセスします。例： [https://localhost:3001](https://localhost:3001/)
-
+1. Web ブラウザーで ArcGIS Experience Builder にアクセスします。例： [https://localhost:3001](https://localhost:3001/)</br>
+Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。
 2. ArcGIS Experience Builder で [**新規作成**] をクリックして、新しいエクスペリエンス ページを作成します。
 
 3. **空白のスクロール** テンプレートの [**作成**] ボタンをクリックします。
@@ -104,7 +104,8 @@ ArcGIS Experience Builder では、関数スタイルまたはクラス スタ�
 
     ウィジェットは、ウィジェット一覧の下部にある「カスタム」セクションに配置されます。作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。ウィジェットが表示されない場合、元のセットアップ手順に従って、**client** フォルダーで `npm start` を実行したか再確認してください。
 
-5. マップ ウィジェットをエクスペリエンスにドラッグします。
+5. **マップ** ウィジェットをエクスペリエンスにドラッグします。
 
-6. ツールバーで、[保存] をクリックし、次に [プレビュー] をクリックすると、カスタム ウィジェットを含むエクスペリエンスが新しいブラウザ タブで開きます。
+6. ツールバーで、**[保存]** をクリックし、次に **[プレビュー]** をクリックすると、カスタム ウィジェットを含むエクスペリエンスが新しいブラウザ タブで開きます。
 
+完成版のウィジェットと比較する場合は[こちら](https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip)をご参照ください。ウィジェットに機能を追加するには、次の[チュートリアル](https://developers.arcgis.com/experience-builder/guide/get-map-coordinates/)に進んでください。

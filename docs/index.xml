@@ -64,7 +64,7 @@ CodePenでは、&amp;lt;!DOCTYPE html&amp;gt; タグは必要ありません。�
 作成方法は、開発者アカウントの作成をご覧ください。
 次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリを使用して、Calcite コンポーネントを読み込みます。
 CDN で利用する Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに &amp;lt;script&amp;gt; タグを配置することでロードできます:
-&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 NPM パッケージで利用する Calcite コンポーネントは、NPM パッケージとしても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルはこちらでご覧いただけます。
 npm install @esri/calcite-components アセットの読み込み 一部のコンポーネント（例：calcite-icon、calcite-date-picker）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。
 ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリにコピーできます。互換性を維持するため、ローカルのアセットは「assets」という名前のディレクトリに配置してください。
@@ -198,8 +198,8 @@ CSS SDK をアプリケーションに読み込む方法によっては、追加
       <description>出典：ArcGIS Maps SDK for JavaScript - Get Started
 ArcGIS Maps SDK for JavaScript には、コア API と、API の機能をすぐに使用できる UI 要素にカプセル化する Web コンポーネント ライブラリーのセットが含まれています。アプリケーションのニーズに応じて、4 つのコンポーネント ライブラリー（Map、Coding、Charts、Embeddable）のどれからでもコンポーネントを使用することができます。また、SDK は Esri の Calcite Design System と統合され、一貫性のある利用しやすいユーザー エクスペリエンスを提供します。Calcite は、Web コンポーネント、アイコン、配色、デザイン パターンの豊富なライブラリーを含む、完全な UI ツールキットを提供します。
 JavaScript Maps SDK の使い始めは、目的や要件によって異なります。ローカル パッケージをインストールせずにバニラ JavaScript と HTML アプリを構築したい場合は、CDN を利用することができます。より構造化された、またはスケーラブルな Web アプリケーション、特にフロントエンド フレームワークやビルド ツールを使用する場合は、npm で SDK をインストールすることを検討してください。
- コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始めまられます。
- CDN Vite React Angular Vue   CDN JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。</description>
+コード例：React、Angular、Vite など、様々なサンプルについては Esri/jsapi-resources のリポジトリーを参照してください。
+CDN JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。</description>
     </item>
     
     <item>
@@ -356,7 +356,7 @@ Web AppBuilder のインストール方法に関しては、ArcGIS Web AppBuilde
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/calcite-design-system/core-concepts/</guid>
       <description>出典：Calcite Design System - core concepts
 Calcite コンポーネントは、最小限のコードで Web アプリケーションを構築するための、再利用可能な Web コンポーネントのライブラリーです。Calcite コンポーネントを使用すると、ブランドに沿った、軽量でアクセスしやすい Web アプリケーションを素早く構築できます。
-Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的なに必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントで確認できます。
+Web コンポーネントはブラウザーのネイティブ規格であり、Calcite コンポーネントで開発するために必要な技術的概念の多くは、このライブラリー特有のものではありません。このページでは、効果的な開発に必要な、主要な Web コンセプトを紹介します。さらに詳しい情報について、このページで紹介されるすべての概念は、MDN Web Docs やその他の Web 標準ドキュメントで確認できます。
 カスタム要素 カスタム要素は、Web コンポーネント標準の一部であり、HTML と任意の JavaScript ライブラリーや Web フレームワークを使用して、モダンなブラウザーで動作します。カスタム要素は機能をカプセル化するため、他のコードとの競合を防ぐことができます。
 Calcite Components はカスタム要素であり、ネイティブの HTML 要素と同様に使用することができます。例えば以下のように記述します。
 &amp;lt;calcite-action-bar layout=&amp;#34;horizontal&amp;#34;&amp;gt;&amp;lt;/calcite-action-bar&amp;gt; スロット スロットは、スロット名を参照することで独自のコンテンツを追加できるプレースホルダー要素です。スロットは Web コンポーネントの一般的な概念であり、すでに使用している可能性があります。例えば、次の HTML を見てみましょう。
@@ -388,7 +388,7 @@ Calcite コンポーネントの多くもデフォルト スロットを利用�
       <description>出典：ArcGIS Experience Builder - Guide - page
 ページとは ArcGIS Experience Builder では、ページはレイアウトの表現であり、物理的な HTML の Web ページではありませんが、そのように動作します。ページは、エクスペリエンス内でコンテンツを整理するための基盤です。
 エクスペリエンスには最低 1 ページが必要で、複数ページも可能です。ページは 2 つのレイアウト タイプでデザインできます。
- フルスクリーン アプリ： アプリケーション インターフェースに似ています。 スクロール ページ：従来の Web ページに似ています。  ウィジェット、セクション、スクリーンなどのページ コンテンツは、固定レイアウトやフロー レイアウトなどのレイアウト ルールに基づいて配置されます。さまざまな画面サイズに対応できるよう、レイアウトは3つのサイズ モード大画面、中画面、小画面）に設定できます。この構成により、さまざまな機器に対応したカスタマイズ設計が可能になります。
+ フルスクリーン アプリ： アプリケーション インターフェースに似ています。 スクロール ページ：従来の Web ページに似ています。  ウィジェット、セクション、スクリーンなどのページ コンテンツは、固定レイアウトやフロー レイアウトなどのレイアウト ルールに基づいて配置されます。さまざまな画面サイズに対応できるよう、レイアウトは3つのサイズ モード（Large、Medium、Small）に設定できます。この構成により、さまざまな機器に対応したカスタマイズ設計が可能になります。
 アプリの設定では、ページは pages プロパティで定義され、その構造は pageStructure プロパティで概説されます。
 ページの使用方法 ArcGIS Experience Builder でページを使用する一般的な手順は次のとおりです。
   ページの追加 エクスペリエンスにページを追加してください。
@@ -474,14 +474,14 @@ STEP 1: Python API のインストール  ArcGIS Pro でインストール Pytho
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/window/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Window
-ウィンドウとは ArcGIS Experience Builder では、ウィンドウはエクスペリエンスの上にコンテンツまたはウィジェットを表示できるパネルです。ウィンドウズでは、ユーザーはメインのエクスペリエンスから離れることなく、集中してコンテンツに触れることができます。ウィンドウは固定モーダルまたはアンカー付きポップアップとして表示するように設定できます。
+ウィンドウとは ArcGIS Experience Builder では、ウィンドウはエクスペリエンスの上にコンテンツまたはウィジェットを表示できるパネルです。ウィンドウを使用すると、ユーザーはメインのエクスペリエンスから離れることなく、集中してコンテンツに触れることができます。ウィンドウは固定モーダルまたはアンカー付きポップアップとして表示するように設定できます。
 ウィンドウにコンテンツを表示するには、主に2つの設定があります。
    ウィンドウ タイプ 説明     固定ウィンドウ 閉じるまでメイン ウィンドウとのインタラクションを無効にするモーダル オーバーレイ。スプラッシュ画面や重要なメッセージによく使われます。   アンカー ウィンドウ ボタンやテキストなどのウィジェットに固定されたポップアップで、通常、コンテキスト情報やアクションに使用されます。    アプリの設定では、ウィンドウはダイアログ プロパティで定義されます。
-なぜウィンドウを使うのか ArcGIS Experience Builder のウィンドウでは、メインのエクスペリエンスからナビゲートすることなく、追加のコンテンツや機能を表示できます。フォーム、メディア、その他のウィジェットを集中的に表示し、ユーザーとのインタラクションやエンゲージメントを高めることができる。
+なぜウィンドウを使うのか ArcGIS Experience Builder のウィンドウでは、メインのエクスペリエンスからナビゲートすることなく、追加のコンテンツや機能を表示できます。フォーム、メディア、その他のウィジェットを集中的に表示し、ユーザーとのインタラクションやエンゲージメントを高めることができます。
 ウィンドウを使用して、次を提供します。
  メインコンテンツから離れることなく、重要な情報や行動を提示します。 追加の詳細、フォーム、またはメディアを専用のオーバーレイで表示します。 ユーザーが別のスペースでウィジェットやコンテンツとやりとりできるようにします。 特定のウィジェットからウィンドウをトリガーして、関連情報やオプションを提供します。  ウィンドウの使用方法 ArcGIS Experience Builder でウィンドウを使用する一般的な手順は次のとおりです。
  ウィンドウの追加 エクスペリエンスにウィンドウを追加します。 ウィンドウの設定 ウィンドウのモード、サイズ、位置を設定します。 ウィンドウのトリガーを設定 ウィンドウの表示タイミングと表示方法を設定します。  1. ウィンドウの追加 エクスペリエンスにウィンドウを追加するには、以下の手順に従ってください。
- ページ パネルに移動し、ウィンドウ タブを選択し、ウィンドウの追加をクリックします。 ウィンドウのテンプレートを選択します。 ウィンドウ タイプを決定します。  固定：画面上の固定位置に表示されます。 アンカー：リンクされたウィジェットに隣接して表示されます。 ウィンドウがエクスペリエンスに追加され、プロパティの設定を開始できます。    2.</description>
+ ページ パネルに移動し、ウィンドウ タブを選択し、ウィンドウの追加をクリックします。 ウィンドウのテンプレートを選択します。 ウィンドウ タイプを決定します。  固定：画面上の固定位置に表示されます。 アンカー：リンクされたウィジェットに隣接して表示されます。    ウィンドウがエクスペリエンスに追加され、プロパティの設定を開始できます。</description>
     </item>
     
     <item>
@@ -713,11 +713,11 @@ TypeScript TypeScript を使うことをお勧めします。その利点のひ�
 ビューは、タブ、ワークフローのステップ、異なる情報の状態など、同じセクションで別のコンテンツやレイアウトを表示するのに便利です。ビューの切り替えは、ビュー ナビゲーション ウィジェットなどのナビゲーション コントロールを使用するか、トリガーを設定することで行うことができます。
 ビューは、関連するコンテンツへのアクセスを維持しながら、ユーザーが一度に 1 つのコンテンツ セットに集中できるようにすることで、アプリケーションを整理するのに役立ちます。これは、ユーザーがページを離れることなく異なる情報やツールの間を移動する、ガイド付きエクスペリエンス、ウィザード、またはダッシュボードに役立ちます。
 ビューは異なるレイアウトやウィジェットを持つことができ、切り替え時にトランジション アニメーションを適用できます。
-セクションとビューの使用方法 セクションとビューをナビゲーション ウィジェットと一緒に使うことで、インタラクティブで、整理された、モジュール化されたエクスペリエンスを作ることができます。
+セクションとビューの使用方法 セクションとビューをナビゲーション ウィジェットと一緒に使うことで、インタラクティブで、整理された、モジュール化されたエクスペリエンスを作ることができ、ページを離れることなく異なるコンテンツ セットを簡単に切り替えることができます。
 セクションとビューを使用するには、次の手順に従います。
  ページにセクションを追加します。 セクションにビューを追加します。 ビューを設定し、ビュー間のナビゲーションを設定する。 オプションで、よりスムーズなユーザー エクスペリエンスのためにトランジション アニメーションを適用する。  セクションとビューの追加方法については、セクションの追加とビューの追加のトピックを参照してください。
 セクションとビューの違い セクションとビューはどちらもコンテンツを整理するために使用されますが、構造、レンダリング、ユーザー インタラクションが異なります。以下の表は、主な違いをまとめたものです。
-   観点 セクション ビュー     定義 コンテンツをグループ化し、レイアウトを管理するためにページに追加されるコンテナー 代替コンテンツやレイアウトを表示するためにセクションに追加されるコンテナー   階層 ページレベルまたは他のビュー内に存在 セクション内に存在   コンテンツ 複数のビューを含むことが可能 そのビューに固有のウィジェットやコンテンツを含むことが可能   ナビゲーション ナビゲーションはセクション内のビュー間で行われる ビューナビゲーションウィジェットやトリガーを使ってナビゲート可能   レンダリング セクション内のすべてのビューがレンダリングされるが、アクティブなビューだけが表示される 一度に表示されるのは1つのビューのみで、他のビューは非表示になるがレンダリングはされる   アニメーション ビューの切り替えにトランジション アニメーションを設定可能 セクションのアニメーションを継承   ユースケース ページレイアウトの整理、関連するコンテンツのグループ化、モジュール化されたデザインの作成 タブ、ワークフローのステップ、代替状態、ガイド付きエクスペリエンス    セクションとビューの主な違いは以下の通りです。</description>
+   観点 セクション ビュー     定義 コンテンツをグループ化し、レイアウトを管理するためにページに追加されるコンテナー 代替コンテンツやレイアウトを表示するためにセクションに追加されるコンテナー   階層 ページレベルまたは他のビュー内に存在 セクション内に存在   コンテンツ 複数のビューを含むことが可能 そのビューに固有のウィジェットやコンテンツを含むことが可能   ナビゲーション ナビゲーションはセクション内のビュー間で行われる ビューナビゲーション ウィジェットやトリガーを使ってナビゲート可能   レンダリング セクション内のすべてのビューがレンダリングされるが、アクティブなビューだけが表示される 一度に表示されるのは1つのビューのみで、他のビューは非表示になるがレンダリングはされる   アニメーション ビューの切り替えにトランジション アニメーションを設定可能 セクションのアニメーションを継承   ユースケース ページレイアウトの整理、関連するコンテンツのグループ化、モジュール化されたデザインの作成 タブ、ワークフローのステップ、代替状態、ガイド付きエクスペリエンス    セクションとビューの主な違いは以下の通りです。</description>
     </item>
     
     <item>
@@ -916,10 +916,10 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/components/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Components
 ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコードで Web アプリを構築するための事前構築された UI コンポーネントのコレクションです。
-標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML エレメント（例：&amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt;）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
+標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML 要素（例：&amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt;）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
 マップ コンポーネント @arcgis/map-components パッケージには、マップ コンポーネント、シーン コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。
-以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むことができます。
-&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント（ベータ版） @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用されるチャート コンポーネントとチャート アクション バー コンポーネントが含まれています。このパッケージは 9 種類のチャート タイプをサポートしており、各チャート タイプは、共有チャート仕様に準拠した model オブジェクトを設定することでレンダリングできます。この model オブジェクトは、Web マップまたはフィーチャ レイヤーから読み込むか、チャート モデル メソッドを使用してプログラムで構成できます。</description>
+以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むこと方法を示しています。
+&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用されるチャート コンポーネントとチャート アクション バー コンポーネントが含まれています。各チャートは、共有チャート仕様に準拠した model オブジェクトを設定することでレンダリングできます。この model オブジェクトは、フィーチャ レイヤーから読み込むか、チャート モデルを使用してプログラムで構成できます。</description>
     </item>
     
     <item>
@@ -962,10 +962,10 @@ Windows のタスク スケジューラを使用する場合 Windows ではタ�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/layout/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Layout
-レイアウト（Layout） レイアウトは、レイアウト コンテナーにコンテンツを配置する方法を定義します。コンテンツには、ウィジェット、セクション、または画面グループが含まれ、レイアウト コンテナーには、ページ、ビュー、またはダイアログなどがあります。ArcGIS Experience Builder には、いくつかのレイアウト規則があります。たとえば、新しいページを作成するときに、Fixed レイアウトまたは Flow レイアウトを選択したり、Layout ウィジェットを使用して異なるレイアウトを作成したりすることができます。
-アプリ コンフィグでは、レイアウトは layouts プロパティで定義され、レイアウト コンテナーは layout id でレイアウトを参照します。レイアウト コンテナーには、異なるサイズ モードでのレイアウトを定義する layout オブジェクト プロパティがあります。Experience Builder では、Large、Medium、Small の各サイズ モードをサポートしています。レイアウトが定義されていないサイズ モードでは、アプリの設定で定義された mainSizeMode レイアウトが使用されます。
-フレームワークのレイアウト コンテナーの他に、ウィジェットもレイアウト コンテナーになることができます。ウィジェットがレイアウト コンテナになると，ユーザーは他のウィジェットをドラッグ アンド ドロップすることができます。例えば、Map や Card はレイアウト コンテナー ウィジェットです。レイアウト コンテナー ウィジェットは、manifest.json で layouts プロパティを宣言し、LayoutEntry コンポーネントを使用する必要があります。パフォーマンス上の理由から、以下のロジックを使用する必要があります。
-import {LayoutEntry} from &amp;#39;jimu-layouts/layout-runtime&amp;#39; let LayoutEntryComponent if (window.jimuConfig.isInBuilder) { LayoutEntryComponent = this.props.builderSupportModules.LayoutEntry } else { LayoutEntryComponent = LayoutEntry } </description>
+レイアウト（Layout） レイアウトは、レイアウト コンテナーにウィジェット、セクション、スクリーングループなどのコンテンツを配置する方法を定義します。レイアウト コンテナーには、ページ、ビュー、ウィンドウ、そしてウィジェットそのものでさえも含めることができます。レイアウトは、アプリケーション内のコンテンツの構造と視覚的な配置を決定します。
+なぜレイアウトを使うのか？ レイアウトによって明確なナビゲーションと操作パターンが提供されることで、ユーザー エクスペリエンスを向上させる構造化的なデザインを作成するすることができます。レイアウトを使用することで次のことが可能になります。
+ コンテンツを視覚的に整理し、アプリケーションを使いやすくします。 大・中・小など異なるサイズモードに対応した、レスポンシブ デザインを可能にします。 ウィジェットやその他の要素の、複数のコンテナーやスクリーンにおける配置方法を定義することで、再利用性と一貫性を実現します。 ウィジェットをレイアウト コンテナーとして機能させることで、他のウィジェットをその中へドラッグ＆ドロップできるようになります。  主要な概念 Experience Builder におけるレイアウトは、ウィジェットやセクションなど他のコンテンツを保持するコンテナーです。レイアウトに関連する主要な概念は次のとおりです。
+ ページ、ビュー、ウィンドウといったフレームワーク要素はレイアウトを持ちます。ページのレイアウトは固定、フロー、またはグリッドのうちから選択し、ビューとウィンドウのレイアウトは固定となります。 構造化されたレイアウトを作成するための高度なレイアウト オプションを提供するレイアウト ウィジェット（Row、Column、Grid、Fixed など）もあります。 各レイアウトには 3 つのサイズ モード（Large、Medium、Small）があります。Medium と Small はオプションで、定義されていない場合は Large モードが使用されます。 各サイズ モードのレイアウトにはレイアウト アイテムが含まれ、ウィジェット、セクション、スクリーン グループなどのコンテンツを保持します。レイアウト アイテムにはスタイル オプションを設定可能です。 開発者は次の 2 つの方法でレイアウトを拡張できます。  Row や Column ウィジェットなどの manifest において widgetType=LAYOUT を設定してレイアウト ウィジェットを作成する。 List や Card ウィジェットなどの manifest において layouts プロパティを定義し、LayoutEntry コンポーネントを使用することで、レイアウト機能を持つ通常のウィジェットを作成する。    レイアウトの使用方法 ArcGIS Experience Builder でレイアウトを使用する一般的な手順は次のとおりです。</description>
     </item>
     
     <item>
@@ -1005,7 +1005,7 @@ matplotlib をデフォルトのまま使用すると日本語のテキストは
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget implementation
 Experience Builder ウィジェットは、次のファイルで構成されています。
- src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (開発者向けエディション) で必要なモジュールをインストールしたら、/client ディレクトリで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
+ src: ウィジェットのソースコード  runtime: フォルダー  widget.tsx: メインのファイル assets: widget.tsx で使用される assets フォルダー translations: ウィジェットで使われる strings フォルダー   setting: フォルダー  setting.tsx: ウィジェットで使用する設定ファイル assets: 設定で使用する assets フォルダー translations: 設定で使用する strings フォルダー     dist: コンパイル済みのウィジェットのソースコードを配置。ウィジェットのソースコードのフォルダーと同じ構成 icon.svg: ウィジェットパネルのウィジェットのアイコン config.json: ウィジェットのデフォルト設定 manifest.json: プロパティのリストは jimu-core/WidgetManifest で設定した内容を表示  Client サーバー Experience Builder (Developer Edition) で必要なモジュールをインストールしたら、/client ディレクトリーで npm start を実行して webpack サーバーを起動します。webpack サーバーを起動した状態にすることでソースコードの編集におけるファイル変更を監視し、自動的にコンパイルを行います。通常は、ソースコードを編集する際に webpack サーバーを再起動する必要はありませんが、以下の場合では、サーバーを再起動する必要があります。</description>
     </item>
     
     <item>
@@ -1031,8 +1031,12 @@ pbf ファイルは node-fontnik を使用して、ttf や otf 等のフォン�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/theme/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Theme
-テーマ（Theme） テーマは、エクスペリエンスの外観と使用感を定義します。エクスペリエンスは、すぐに使える (OOB) テーマがあり、カスタム テーマの作成も可能です。テーマ開発については、theme development をご覧ください。
-app config では、アプリが使用するテーマは theme で定義されます。テーマをカスタマイズした場合、そのカスタマイズ内容は customTheme に保存されます。</description>
+テーマ（Theme） ArcGIS Experience Builder におけるテーマは、アプリケーションの外観やスタイルをカスタマイズするための体系的なアプローチです。Jimu フレームワークと Theme Design System を基盤としており、構造化され、カスタマイズ可能で拡張性のあるテーマ設定を提供することで、統一感のある見た目と操作感のあるエクスペリエンスを実現します。
+テーマは、Jimu UI の基本コンポーネントに対して設定可能なテーマ変数とスタイル モジュールを提供することで機能します。内部的には、スタイル モジュールがテーマ変数を読み取り、ランタイムで CSS スタイルを動的に生成し、それをコンポーネントに適用します。
+基本的には、テーマは次の要素で構成されます：
+ manifest、翻訳ファイル、テーマのサムネイルを含むテーマ定義 colors、shadows、shapes などのプロパティをカスタマイズ可能な、 variables.json で定義されるテーマ変数の上書き 高度なカスタマイズのために Sass (.scss) または TypeScript (.ts) ファイルで記述されるスタイルの上書き assets フォルダーに格納される画像、アイコン、フォントなどのアセット  アプリ構成では、テーマは theme プロパティで定義され、エクスペリエンスに適用するテーマへの URI 参照を含みます。さらに、テーマ設定パネルでテーマをカスタマイズできます。
+なぜウィンドウを使うのか テーマを使うと、 Experience Builder のアプリケーションにおいて次のようなメリットがあります。
+   メリット 説明     統一された外観と操作感 すべてのコンポーネントで一貫したビジュアル デザインを保証します。   簡単なカスタマイズ コードを変更せずにブランドや好みに合わせた調整が可能です。   柔軟な構成 テーマの切り替えや動的なスタイリングをサポートします。   保守性 スタイルを集中管理することで更新や変更が容易になります。    テーマの使用方法 ArcGIS Experience Builder でテーマを使用する一般的な手順は次のとおりです。</description>
     </item>
     
     <item>
@@ -1077,9 +1081,8 @@ ContentManger の clone_items() メソッドは、ArcGIS Online、ArcGIS Entepri
       <description>出典：ArcGIS Experience Builder - Guide - Create UI for widget
 Experience Builder のベースとなる Widget クラスは、React のコンポーネントサブクラスから拡張されています。PureComponent から拡張されており、render() と呼ばれる関数を提供しています。UI の作業のほとんどは、この関数の内部で行われることが予想されます。
 JSX の記述 UI テンプレートの作成に使用される React の構文は JSX と呼ばれています。これは HTML を書くのと非常に似ていますが、JavaScript の機能を完全に組み込んでいます。
-JSX の詳細を参照してください。
-ここでは、ウィジェットの UI にいくつかの基本的な HTML 要素を追加する簡単な例を示します。
-// in widget.tsx: import { React, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends React.PureComponent&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } Output 例: Jimu UI ライブラリの使用 Jimu フレームワークは、開発者がウィジェット開発で使用するコンポーネントの UI ライブラリを提供しています。</description>
+以下は、クラス コンポーネントを使ってウィジェットの UI に基本的な HTML 要素を追加する簡単な例です。
+// widget.tsx 内: import { React, AllWidgetProps } from &amp;#39;jimu-core&amp;#39;; export default class Widget extends React.PureComponent&amp;lt;AllWidgetProps&amp;lt;{}&amp;gt;, any&amp;gt;{ render() { return &amp;lt;div className=&amp;#34;myWidget&amp;#34;&amp;gt; &amp;lt;p&amp;gt;This is a sample widget&amp;lt;/p&amp;gt; &amp;lt;button type=&amp;#34;button&amp;#34; style={{background: &amp;#39;orange&amp;#39;}}&amp;gt;I&amp;#39;m a button&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;; } } PureComponent クラスは、renderer() という関数を提供しており、UI のほとんどの処理はこの関数内で実装されます。</description>
     </item>
     
     <item>
@@ -1089,9 +1092,18 @@ JSX の詳細を参照してください。
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Widget
-ウィジェット（Widget） ウィジェットは設定可能な機能単位で、エクスペリエンスのページを作成するために使用されるビルディング ブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタム ウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定 UI を提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。
-ウィジェットの実装についてはこちらをご覧ください。
-app config では、widgets でウィジェットを定義します。</description>
+ウィジェット（Widget） ArcGIS Experience Builder におけるウィジェットは、Web アプリケーション内で特定の機能を提供するモジュール型の柔軟なコンポーネントです。ウィジェットは、地図の表示、ボタンによるユーザー操作の管理、リストやチャートによるデータの可視化など、さまざまなタスクを処理できます。ウィジェットを設定することで、インタラクティブで動的な Web アプリケーションを作成できます。
+Experience Builder に含まれるウィジェットには以下の2つのカテゴリがあります。
+ 標準ウィジェット（Out-of-the-box widgets）： 地図、ボタン、データ可視化ツールなど、一般的な機能を実装した事前構築済みのコンポーネント カスタムウィジェット（Custom widgets）： Developer Edition を使用して開発者が作成するコンポーネントで、特定の要件に対応するための機能を実装  各ウィジェットは、動作や外観をカスタマイズするための設定が可能です。設定は次の方法で管理できます。
+標準プロパティを変更するためのインターフェイスである、ビルダー環境の設定 UI 設定 UI がない場合に高度な設定オプションを編集できる、JSON エディター
+ウィジェットの機能 ほとんどのウィジェットには UI がありますが、必須ではありません。ウィジェットは UI 以外にもさまざまな機能があります。
+  メッセージ アクションとデータ アクション
+ウィジェットは、メッセージアクションを通じて他のウィジェットと連携し、データアクションを通じてデータを処理できます。これによりウィジェット同士が通信し、異なるソースからのデータを処理できます。詳細は ウィジェット コミュニケーションをご覧ください。
+  拡張機能
+ウィジェットは、拡張機能を用いることでアプリケーションライフサイクルの特定のポイントにフックできます。たとえば、AppConfigProcessor のエクステンション ポイントを使用すると、ウィジェットは実行時にアプリケーション構成を処理・変更できます。利用可能なエクステンション ポイントの詳細は、エクステンション ポイントのガイドをご覧ください。
+  ウィジェットの使い方 ArcGIS Experience Builder でウィジェットを使用する一般的な手順は次のとおりです。
+  ウィジェットの追加 ページやレイアウトにウィジェットを追加します。
+  ウィジェットの設定の構成 ウィジェットのプロパティや動作を調整します。</description>
     </item>
     
     <item>
@@ -1115,8 +1127,13 @@ app config では、widgets でウィジェットを定義します。</descript
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/jimu/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Jimu
-Jimu Jimu は、設定可能なエクスペリエンスを作成するために使用される JavaScript ライブラリーで、以下のようなパッケージで構成される拡張フレームワークです。
- jimu-arcgis パッケージは、ArcGIS Maps SDK for JavaScript を実行するためのクラスとメソッドが含まれています。よく使われるクラスは JimuMapView と JimuMapViewComponent です。 jimu-core パッケージは、ウィジェットのプロパティ、メッセージ アクション、データ ソースを扱うためのインターフェイスと型を提供します。また、エクスペリエンスを通じて使用されるいくつかのクラスも定義しています。 jimu-for-builder パッケージは、SettingChangeFunction や WidgetSettingProps といったウィジェット設定ページを開発するためのクラスを提供します。 jimu-for-test パッケージは、ユニット テストに使用できるクラス、型、関数が含まれています。 jimu-ui パッケージは、エクスペリエンスが使用するすべての UI コンポーネントが含まれています。パフォーマンス上の理由から、UI コンポーネントは 3 つのカテゴリに分かれています。jimu-ui のエントリーには、Button や Input などの一般的な UI コンポーネントが含まれています。jimu-ui/basic 以下のエントリーには、ColorPicker や QRCode などの目的に応じたコンポーネントが含まれます。jimu-ui/advanced 以下のエントリーは重く、複雑です。例えば、setting-components エントリーには、ウィジェットの設定で使用される可能性のある複数のコンポーネントが含まれています。  これらのパッケージは同じ構造パターンを使用しているため、同じベストプラクティスに沿って使用することができます。各パッケージは import するためのいくつかのエントリーを定義し、これらのエントリーはパッケージのルート フォルダーの下に置かれます。lib フォルダー内のコンテンツは，パッケージの内部コンテンツとみなされますので，ウィジェットには import しないでください。例えば、jimu-ui の Button コンポーネントを使用する必要がある場合は、import {Button} from &#39;jimu-ui&#39; ではなく、import {Button} from &#39;jimu-ui/lib/components/button&#39; のようにインポートする必要があります。</description>
+Jimu Jimuは、ArcGIS Experience Builder の根幹となる JavaScript フレームワークです。Experience Builder を拡張可能かつカスタマイズ可能にする基盤です。Jimu は以下の機能を提供します。
+ 拡張性フレームワーク：カスタムコンポーネントを作成できるアーキテクチャー 構成システム：ノーコードでエクスペリエンスをカスタマイズすることが可能 パッケージ ライブラリー：さまざまな開発ニーズに対応するライブラリーのコレクション 開発ツール：アプリケーション構築のためのユーティリティーとパターン  Jimuはモジュール性を重視して設計されており、必要なものだけを使用して、アプリケーション間で一貫性を維持できます。
+Jimu を使って次のものを作成できます。
+Experience Builder の機能を拡張するウィジェット Experience Builder の機能を強化するエクステンション エクスペリエンスに適用できるテーマ エクスペリエンスの動作や外観をカスタマイズする構成
+Jimu のアーキテクチャー Jimu は以下の主要な原則に基づくモジュール型アーキテクチャー パターンを採用しています：
+モジュール設計 Jimuは、機能ごとに分けられたパッケージで構成されるモジュール型アーキテクチャを採用しています。この設計により、開発者は必要なパッケージのみを使用しながら、アプリケーション間で一貫性を維持できます。
+   パッケージ 説明     jimu-core ユーティリティー、状態管理、データソース、基底クラス   jimu-ui コンポーネントとテーマ   jimu-arcgis ArcGIS機能と地図の統合   jimu-for-builder ビルダー コンポーネントとユーティリティー   jimu-theme テーマ管理とスタイル   jimu-layouts レイアウト管理とコンポーネント   jimu-for-test テスト用ユーティリティー   jimu-icons アイコン管理とSVG    拡張パターン (Extensibility pattern) Jimu は、機能を拡張する上で、一貫したパターンを採用しています。カスタム ウィジェットを作成するコード例は次の通りです。</description>
     </item>
     
     <item>
@@ -1127,8 +1144,9 @@ Jimu Jimu は、設定可能なエクスペリエンスを作成するために�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/use-data-source-in-widget/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Use data source in widget
 データ ソースは、ウィジェットがデータにアクセスする方法を定義します。データ ソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
- ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリ データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
-ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。これらのデータ ソースは jimu-core と jimu-arcgis の 2 つのパッケージに入っています。jimu-core の DataSourceTypes と jimu-arcgis の DataSourceTypes をご覧ください。jimu-arcgis のデータ ソースは ArcGIS Maps SDK for JavaScript に依存しており、jimu-core のデータ ソースは依存していません。</description>
+ ウィジェットの設定でデータ ソースを選択 ウィジェット ランタイムのデータを読み込んで表示 ユーザー入力に基づくデータのフィルタリングやクエリー データ上の選択を処理 ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期 ウィジェットで出力データ ソースの生成 ウィジェットでメッセージの公開  本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+ウィジェットの設定でデータ ソースを選択 ウィジェットの設定でデータ ソースを選択するには、DataSourceSelector コンポーネントを使用する必要があります。Experience Builder は、複数の種類のデータ ソースをサポートしています。
+DataSourceSelector コンポーネントを使用するには、ウィジェットが対応するデータ ソースの種類を types プロパティで設定する必要があります。jimu-core の AllDataSourceTypes がサポートされているデータ ソース タイプです。データ ソースを選択した後は、onChange コールバックを通じて選択されたデータ ソースを取得できます。onChange の中では、props.</description>
     </item>
     
     <item>
@@ -1160,7 +1178,7 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
 ウィジェット間で同じデータソース/データビューを使用する 複数のウィジェットが同じデータ ソースまたはデータ ビューを使用する場合、それらのウィジェットは同じ選択、同じデータ レコードなど、同じデータ ソースの状態を取得できます。ウィジェットはこれらのデータを使用してデータ ソースの状態を同期できます。例えば、複数のウィジェットが同じデータ レコードを読み込んで、異なるビューを表示することができます。あるウィジェットはユーザーに選択を行わせ、別のウィジェットは選択状態を監視し、選択されたデータの詳細を表示することができます。
 複数のウィジェットが同じデータ ソースの異なるデータ ビューを使用しても選択内容がデータ ビューのフィルター条件を満たしていれば、同じ選択内容を取得できます。
 詳細はウィジェットでデータ ソースを使用を参照してください。
-ウィジェット間で同じマップ ウィジェットを使用する 複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ JimuMapView インスタンスを取得します。この JimuMapView インスタンスは ArcGIS Maps SDK for JavaScript の MapView インスタンスをラップしたものです。 JimuMapView インスタンスを取得した後、ウィジェットは addJimuLayerViewCreatedListener() と addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、ウィジェットでのマップ ウィジェットの使用を参照してください。</description>
+ウィジェット間で同じマップ ウィジェットを使用する 複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ JimuMapView インスタンスを取得します。この JimuMapView インスタンスは ArcGIS Maps SDK for JavaScript の MapView インスタンスをラップしたものです。 JimuMapView インスタンスを取得した後、ウィジェットは addJimuLayerViewCreatedListener() と addJimuLayerViewRemovedListener を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、ウィジェットでのマップ ウィジェットの使用を参照してください。</description>
     </item>
     
     <item>
@@ -1170,9 +1188,9 @@ ArcGIS Experience Builder ウィジェットは機能の単位であり、ウィ
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Data sources
-データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモートサーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
+データ ソース（Data source） データ ソースは、ウィジェットがどのようにデータにアクセスするかを定義します。例えば、データがリモート サーバーからのものである場合、ウィジェットはクライアント側にクエリーするために、データ ソース クラスを使用します。ウィジェットでデータが生成された場合、それ自身をデータ ソース クラスに入れることで、別のウィジェットで使用することができます。
 高レベルでは、データ ソースはスキーマといくつかのレコードを持ち、子/親データ ソースを持つ場合があります。さらに、すべてのデータ ソースは、それを識別するのに役立つ型、ID、ステータスがあります。 DataSource インターフェイスは jimu-core パッケージで定義されており、これは以下のメソッドとプロパティのいくつかを定義しています。
- id: データ ソースID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーがExperience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータ レコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  データ ソースは DataSourceManager によって管理され、作成および取得できます。</description>
+ id: データ ソース ID。 type: どのタイプのデータ ソースを使っているかチェックするため、ウィジェットで使っているプロパティ。 fetchSchema: すべてのデータ ソースは、スキーマを返すためにこのメソッドを実装しなければなりません。これは、リモート データ サービスで定義されたスキーマです。例えば、ユーザーが Experience Builder でデータ ソースを追加した場合、データ ソースのスキーマはアプリ構成に保存されません。代わりに、最新のデータ ソース スキーマを取得するために fetchSchema メソッドが呼び出されます。 getSchema: ウィジェットがデータ ソースのスキーマとフィールドにアクセスするために使用するメソッドです。 getRecords: ウィジェットがデータ ソースのデータ レコードにアクセスするために使用するメソッドです。 getStatus: ウィジェットはこのメソッドを使用してデータ ソースのステータスを取得します。これらのステータスには、NotReady、Unloaded、Loading、Loaded および LoadError があります。NotReady はウィジェットの出力データ ソース専用です。出力データ ソースのインスタンスが作成されても、そのインスタンスは使用する準備ができていません。出力データ ソースを生成するウィジェットはデータ ソースを使用可能な状態にするアクション (DataSourceStatusChanged) を送る必要があります。データ ソースのステータスが準備できていない場合、クエリーは空の結果を返します。その他のクエリー可能なデータ ソースでは、既定のステータスは Unloaded です。データが要求されると Loading に変更され、最後に Loaded または LoadError に変更されます。  データ ソースは DataSourceManager によって管理され、作成および取得できます。</description>
     </item>
     
     <item>
@@ -1202,8 +1220,8 @@ API キー ページが開発者ダッシュボードに表示されない場合
       <description>出典：ArcGIS Experience Builder - Guide - Data action
 データ アクション（Data action） データ アクションは、データ レコードのコレクションを拡張可能な方法で処理する方法を提供します。
 データ アクションは Data Action インターフェイスによって定義され、isSupported と onExecute という 2 つの重要なメソッドを持っています。
- isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータアクションは実行中は非表示になります。 onExecute メソッドはユーザーがデータ アクションをクリックしたときに呼び出されます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
-フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータ アクションを提供します。ウィジェットもデータ アクションを提供できます。例えば、Map ウィジェットは &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータアクションを提供します。ウィジェットにデータ アクションを実装するには、manifest.json でデータアクションを宣言し、AbstractDataAction を継承したクラスを作成します。
+ isSupported が呼び出されると、アクションがデータを処理できるかがチェックされます。サポートされていないデータ　アクションは実行中は非表示になります。 onExecute メソッドはユーザーがデータ アクションをクリックしたときに呼び出されます。  どちらのメソッドも、データ ソース、オプションのデータ レコード配列およびフィールドを含む DataRecordSet インスタンスの配列を取得できます。これら 2 つのメソッドは、DataLevel と widgetId パラメーターも受け取ります。DataLevel は、DataRecordSet がすべてのレコードを含むか、レコードのサブセットを含むかを示すために使用されます。
+フレームワークは CSV へのエクスポートや JSON へのエクスポートなどのデータ アクションを提供します。ウィジェットもデータ アクションを提供できます。例えば、Map ウィジェットは &amp;ldquo;画面移動 (pan to)&amp;rdquo; と &amp;ldquo;ズーム (zoom to)&amp;rdquo; というデータ アクションを提供します。ウィジェットにデータ アクションを実装するには、manifest.json でデータ アクションを宣言し、AbstractDataAction を継承したクラスを作成します。
 データ アクションによっては、アクションの動作を設定するための UI が必要な場合があります。これを実現するには、manifest.json で settingUri を宣言します。アクション設定の UI コンポーネントは、いくつかの差し込まれたプロパティを持つ React コンポーネントです。ユーザーが設定を変更したら、this.</description>
     </item>
     
@@ -1220,7 +1238,7 @@ API キー ページが開発者ダッシュボードに表示されない場合
 メッセージを発行するために、ウィジェットは manifest.json ファイルで発行メッセージを宣言する必要があります。
 &amp;#34;publishMessages&amp;#34;: [ &amp;#34;DATA_RECORDS_SELECTION_CHANGE&amp;#34; ] メッセージ アクションの作成（Creating a message action） メッセージ アクションを作成するには、AbstractMessageAction クラスを継承する必要があります。メッセージ アクションの開発に役立つメソッドや関数がいくつかあります。
 filterMessageType メソッドは、利用可能なアクションのフィルタリングに使用されます。
-export default class QueryAction extends AbstractMessageAction{ filterMessageType(messageType: MessageType, messageWidgetId?</description>
+export default class QueryAction extends AbstractMessageAction{ filterMessageDescription: (messageDescription: MessageDescription): boolean{ return [MessageType.</description>
     </item>
     
     <item>
@@ -1251,7 +1269,7 @@ ArcGIS Experience Builder の開発者向け追加機能のインストール方
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/map-scene-view/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Map/Scene View
 マップ/シーン ビュー（Map/Scene View） ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは JimuMapView としてラップされます。JimuMapView オブジェクトを作成するには、ウィジェットは JimuMapViewManager.createJimuMapView() メソッドを使用します。JimuMapView オブジェクトは、主に以下のプロパティを持っています。
- view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは &amp;lt;JimuMapViewComponent&amp;gt; を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
+ view: マップ/シーン ビュー オブジェクト datasourceId: ビューを作成するデータ ソース (webmap/webscene) mapWidgetId: オブジェクトを作成するビュー jimuLayerViews: レイヤー ビュー オブジェクトのラッパー  Experience Builder では、マップ ウィジェットが JimuMapView オブジェクトを作成します。ウィジェットが JimuMapView オブジェクトを使用する必要がある場合、設定ページの MapWidgetSelector コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは &amp;lt;JimuMapViewComponent&amp;gt; を使って、作成された JimuMapView オブジェクトを取得することができます。JimuMapView オブジェクトを選択するには、設定ページの JimuMapViewSelector コンポーネントを利用します。</description>
     </item>
     
     <item>
@@ -1273,7 +1291,7 @@ ArcGIS Experience Builder の開発者向け追加機能のインストール方
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/get-map-coordinates/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Get map coordinates
 概要 学習内容：カスタム ウィジェットでマップの緯度と経度、縮尺、ズーム レベルを表示する方法
-ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の View インスタンスが含まれています。View はマップと対話し、位置情報を取得する方法を提供します。View のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の空間参照の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
+ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の View インスタンスが含まれています。View はマップと対話し、位置情報を取得する方法を提供します。&amp;lsquo;View&amp;rsquo; のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の空間参照の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
 このチュートリアルでは、マップ ウィジェットにアクセスし、カスタム ウィジェットでマウス カーソルが地図上にある時の緯度と経度を表示します。
 前提条件 ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) のダウンロード、インストール、設定を行います。
 ステップ スターター ウィジェットの入手  スターター ウィジェット テンプレートをこちらからダウンロードします。 すでに、スターター ウィジェットの作成 チュートリアルを完了している場合は、それを使用して開始できます。/client/your-extensions/widgets 内のウィジェット フォルダーをコピーしてください。 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。 /client/your-extensions/widgets  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで Experience Builder が展開されたフォルダーに移動します。 Experience Builder フォルダー内で以下のパスを開きます。 /client/your-extensions/widgets widgets フォルダー内で、starter-widget フォルダーの名前を get-map-coordinates に変更します。 新しく名前を変更した get-map-coordinates フォルダー内で、manifest.</description>
@@ -1286,7 +1304,7 @@ ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS M
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/extension-points/</guid>
       <description>出典：ArcGIS Experience Builder - Guide - Extension points
-拡張ポイント（Extension points） Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションにより、より深いカスタマイズを行うことができます。
+拡張ポイント（Extension points） Jimu ライブラリーを使用すると、ArcGIS Experience Builder を拡張することができます。多くの場合、カスタム ウィジェットやテーマを作成することで Experience Builder を拡張します。また、Jimu エクステンションを使うことで、より深いカスタマイズを行うことができます。
 Jimu ライブラリーでは、特定の拡張ポイントが定義されています。拡張ポイントとは、エクステンションが準拠すべきインターフェイスを定義したものです。エクステンションとは、拡張ポイントのインターフェイスを実装したクラスのことです。このインターフェイスは、jimu-core からエクスポートされた extensionSpec です。ウィジェットでエクステンションを提供するには、ウィジェットの manifest.json ファイルでエクステンションを宣言する必要があります。
 &amp;#34;extensions&amp;#34;: [ { &amp;#34;point&amp;#34;: &amp;#34;&amp;lt;拡張ポイント名&amp;gt;&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;&amp;lt;拡張される URI、関連するソース フォルダー&amp;gt;&amp;#34; } ] Jimu では、API ドキュメントで定義されている様々な拡張ポイントが定義されています。よく使われる拡張ポイントは以下の 2 つです。
   AppConfigProcessor - この拡張ポイントのエクステンションは、AppConfig を受け取り、処理された app config を解決するプロミスを返す必要があります。これは、文字列の翻訳（Translation サンプルを参照）のように、app config を実行時に修正するために使用できます。この処理は、app config がロードされた直後に起動されます。
@@ -1350,9 +1368,21 @@ domNode.classList.contains(&amp;#34;myClassName&amp;#34;);   Dojo はブラウ�
 ArcGIS Experience Builder のマップ ウィジェットは、ロードするように構成されている Web マップに基づいてレイヤーを自動的にロードします。ワークフローによっては、ウィジェットとのユーザー インタラクションに基づいてマップに動的にレイヤーを追加するカスタム ウィジェットが必要な場合があります。
 このチュートリアルでは、マップにフィーチャ レイヤーを追加するためのボタンをウィジェットに追加します。
 前提条件  ArcGIS Experience Builder のインストール ガイドを参照して、 ArcGIS Experience Builder (Developer Edition) をダウンロード、インストール、設定を行います。  ステップ スターター ウィジェットの取得   スターター ウィジェットのテンプレートをこちらからダウンロードします。 すでにスターター ウィジェットの作成チュートリアルを完了している場合は、それを使用して開始できます。client/your-extensions/widgets 内のウィジェット フォルダーをコピーしてください。
-  手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。
-/client/your-extensions/widgets
-  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで、Experience Builder を展開されたフォルダーに移動します。 Experience Builder フォルダーで、以下のパスを展開します。</description>
+  手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。 /client/your-extensions/widgets
+  ウィジェット名の変更  ArcGIS Experience Builder の client フォルダーで npm start が実行されたターミナルがある場合、ctrl + c を押してスクリプトを停止します。 ファイル ブラウザーで、Experience Builder を展開されたフォルダーに移動します。 Experience Builder フォルダーで、以下のパスを展開します。 /client/your-extensions/widgets widgets フォルダー内で starter-widget フォルダーの名前を add-layers-to-a-map に変更します。 新しく名前を変更した add-layers-to-a-map フォルダーの、manifest.</description>
+    </item>
+    
+    <item>
+      <title>イミュータブル オブジェクト（Immutable objects）</title>
+      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/immutable-objects/</guid>
+      <description>出典：ArcGIS Experience Builder - Guide - Immutable-objects
+イミュータブル オブジェクトとは イミュータビリティ (不変性) とは、一度作成されたデータは変更できないという性質を指します。 対して、ミュータブル (可変) なデータは作成後に変更可能です。 JavaScript のオブジェクトや配列はデフォルトでミュータブルですが、React や Redux では状態更新をイミュータブルに行うことが推奨されています。 ArcGIS Experience Builder では、seamless-immutable ライブラリーを使用して、不変性を実現しています。
+なぜイミュータブル オブジェクトを使うのか ArcGIS Experience Builder が基盤としている React と Redux は、次の理由でイミュータブルな状態更新が必要です。
+ 予測可能な状態変化: 変更のタイミングや方法を追跡しやすい。 パフォーマンス最適化: React が再レンダリングすべき箇所を効率的に判断できる。 デバッグ: 状態変化の追跡が簡単になり、問題を特定しやすい。  イミュータブル型 Experience Builder 内のイミュータブル型は、次のように慣例として IM で始まります。
+// Examples of immutable types interface IMConfig { title: string; description: string; } interface IMDataSource { id: string; url: string; fields: string[]; } コード例 イミュータブル オブジェクトのプロパティ更新 import { Immutable } from &amp;#39;jimu-core&amp;#39;; // イミュータブルオブジェクトを作成 const config = Immutable({ title: &amp;#39;My Widget&amp;#39;, settings: { theme: &amp;#39;light&amp;#39;, size: &amp;#39;medium&amp;#39; } }); // 単一プロパティ更新 const updatedConfig = config.</description>
     </item>
     
     <item>
@@ -1365,9 +1395,8 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
  ArcGIS Experience Builder Developer Edition ArcGIS Enterprise 版 ArcGIS Experience Builder  これらの場所にデプロイするガイドラインはこちらになります。
 開発者向けエディション ArcGIS Experience Builder アプリケーション内でカスタム ウィジェットとテーマをデプロイするには、まずエクスペリエンスをダウンロードし、そのエクスペリエンスを Web サーバーにデプロイします。デプロイに関する詳細な手順は、エクスペリエンスのデプロイページをご参照ください。
 ArcGIS Enterprise エディション ArcGIS Enterprise にカスタム ウィジェットをホストすることで、ArcGIS Enterprise 内で直接作成されたエクスペリエンスまたは Developer Edition（同 ArcGIS Enterprise 環境に接続されているもの）経由で作成されたエクスペリエンスが、カスタム ウィジェットを使用できるようになります。ArcGIS Enterprise 内にカスタム ウィジェットをホストするには、カスタムウィジェットの追加 ページをご覧ください。このパターンでサポートされている ArcGIS Enterprise のバージョンは 11.0 以降です。
-テーマのデプロイ 現在、カスタムテーマは Developer Editon にのみデプロイ可能です。テーマの開発に関する詳細情報は、Theme developementページをご確認ください。
-ArcGIS Online 版について ArcGIS Online へのカスタム ウィジェットとテーマのデプロイは、現在サポートされていません。
-考慮事項 カスタム ウィジェットとテーマをデプロイする適切な場所は、ご自身の目標と ArcGIS infrastructure によって異なります。これらの点を考慮し、ArcGIS Experience Builder の開発を開始する前にデプロイメント プランを作成することをおすすめします。</description>
+テーマのデプロイ 現在、カスタムテーマは Developer Editon にのみデプロイ可能です。テーマの開発に関する詳細情報は、Theme developementページをご確認ください。サポートされる ArcGIS Enterprise のバージョンは 11.0 以降です。
+ArcGIS Online 版について ArcGIS Online へのカスタム ウィジェットとテーマのデプロイは、現在サポートされていません。</description>
     </item>
     
     <item>
@@ -1424,14 +1453,12 @@ Arcade バージョン 1.3 で導入されたジオメトリ関数は、4.x 系�
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/tips-for-migrating/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Tips for migrating
-移行のヒント バージョン 4.30 で ArcGIS Maps SDK for JavaScript に Web コンポーネントが追加されました。 これらのコンポーネントはカスタム HTML 要素として構築されているため、最新のブラウザーで標準的に使用でき、フレームワークに依存しません。 SDKでは、コンポーネントは、API の定型コードの多くをカプセル化することにより、一般的なコーディングパターンを簡素化します。
-Getting started Web コンポーネントが初めての方、あるいはこのトピックのブラッシュアップが必要な方には、役立つさまざまなリソースがあります
+移行のヒント バージョン 4.30 で ArcGIS Maps SDK for JavaScript に Web コンポーネントが追加されました。これらのコンポーネントはカスタム HTML 要素として構築されているため、最新のブラウザーで標準的に使用でき、フレームワークに依存しません。SDK では、コンポーネントは、API の定型コードの多くをカプセル化することにより、一般的なコーディングパターンを簡素化します。
+アプリケーションは、カスタム HTML 要素を使って宣言的に定義できるようになり、ビューやコンテナ、モジュールのインポートなどの設定が不要になります。コンポーネントのスクリプトを読み込むだけで、要素がすぐに使用可能になります。
+&amp;lt;!-- Load the JavaScript Maps SDK Map components or other component packages --&amp;gt; &amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;https://js.arcgis.com/4.34/map-components/&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; &amp;lt;body&amp;gt; &amp;lt;arcgis-map basemap=&amp;#34;topo-vector&amp;#34; zoom=&amp;#34;4&amp;#34; center=&amp;#34;15, 65&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; &amp;lt;/body&amp;gt; Getting started Web コンポーネントが初めての方、あるいはこのトピックの復習が必要な方のために、さまざまなリソースが用意されています。
   すぐにコーディングを始めたい場合は、コンポーネントのチュートリアルや GitHub にあるコードサンプルを調べてみましょう。
-  属性やプロパティの扱い方、変更の監視などについては、プログラミング パターンのガイド・トピックをお読みください。
-  プロパティ、メソッド、イベントを確認するには、リファレンスページをご覧ください。
-  JavaScript Maps SDK コンポーネントでアプリを構築するブログ (Build GIS Web Apps with the JavaScript Maps SDK components) をご覧ください。
-  MDN Web Components リソースページをご覧ください。
-  基本的な実装 コンポーネントを使用することで、JavaScript Maps SDK でアプリケーションを実装するたびに繰り返し必要になるコードを減らすことができます。 例えば、SDK の AMD モジュールを使用したシンプルなマップの JavaScript コードを以下に示します。</description>
+  属性やプロパティの扱い方、変更の監視などについては、プログラミング パターンのガイド トピックをお読みください。
+  プロパティ、メソッド、イベントを確認するには、リファレンス ページをご覧ください。</description>
     </item>
     
     <item>
@@ -1441,10 +1468,10 @@ Getting started Web コンポーネントが初めての方、あるいはこの
       
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/migrate-to-components/translation-plan/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Transition plan: widgets to components
-移行計画：ウィジェットからコンポーネントへ JavaScript Maps SDK のコア API の &amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt; などの再利用可能なカスタム HTML 要素に拡張する標準ベースの Web コンポーネントへの置き換えが進められています。
+移行計画：ウィジェットからコンポーネントへ Esri は、JavaScript Maps SDK のコア API を &amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt; のような再利用可能なカスタム HTML 要素へと拡張する、Web コンポーネントの開発に全面的に取り組んでいます。
 これは、ArcGIS 製品の内部開発にも、JavaScript Maps SDK の一部として提供されるビルド済みの UI コンポーネントにも当てはまります。 現在、SDK を使用した Web アプリの構築では、コンポーネントを使用することが推奨されています。
-コンポーネントのメリット このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。 カスタム 要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。 さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている Arcade Editor や チャート コンポーネントなど）。 SDK の上位レベルのコンポーネント 群は、時間の経過とともに増え続ける予定です。
-ウィジェットからマップ コンポーネントへ SDK が最初に作られたとき、Web コンポーネントの規格はまだ成熟しておらず、ブラウザーに広く採用されていませんでした。 同時に、JS の状況は常に変化しているため、特定の JS フレームワークに積極的ではありませんでした。 そのため、私たちはウィジェット アーキテクチャーを開発し、開発者が Web アプリケーションで使用できるよう、時間をかけて 60 以上のウィジェットを作成しました。 Web コンポーネントの標準がすべての主要なブラウザーでサポートされるようになった今、（SDK の多くの内部でそうしているように）私たちはブラウザーとともに技術を進化させることができます。</description>
+コンポーネントのメリット このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。 カスタム要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。 さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている Arcade Editor や チャート コンポーネントなど）。 SDK の上位レベルのコンポーネント群は、今後も継続的に拡充されていきます。
+ウィジェットからマップ コンポーネントへ SDK が最初に開発された当時、Web コンポーネントの規格はまだ成熟しておらず、ブラウザーに広く採用されていませんでした。同時に、JavaScript の技術動向は常に変化しているため、特定の JavaScript フレームワークに積極的なコミットはしませんでした。そのため、私たちは ウィジェット アーキテクチャーを開発し、開発者が Web アプリケーションで使用できるよう、時間をかけて 60 以上のウィジェットを作成しました。 現在では、Web コンポーネントの標準がすべての主要なブラウザーでサポートされているため、（SDK の内部構造と同様に）ブラウザーの進化に合わせて技術を進化させることが可能になりました。</description>
     </item>
     
   </channel>

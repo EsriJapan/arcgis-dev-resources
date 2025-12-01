@@ -29,8 +29,8 @@ CSS SDK をアプリケーションに読み込む方法によっては、追加
       <description>出典：ArcGIS Maps SDK for JavaScript - Get Started
 ArcGIS Maps SDK for JavaScript には、コア API と、API の機能をすぐに使用できる UI 要素にカプセル化する Web コンポーネント ライブラリーのセットが含まれています。アプリケーションのニーズに応じて、4 つのコンポーネント ライブラリー（Map、Coding、Charts、Embeddable）のどれからでもコンポーネントを使用することができます。また、SDK は Esri の Calcite Design System と統合され、一貫性のある利用しやすいユーザー エクスペリエンスを提供します。Calcite は、Web コンポーネント、アイコン、配色、デザイン パターンの豊富なライブラリーを含む、完全な UI ツールキットを提供します。
 JavaScript Maps SDK の使い始めは、目的や要件によって異なります。ローカル パッケージをインストールせずにバニラ JavaScript と HTML アプリを構築したい場合は、CDN を利用することができます。より構造化された、またはスケーラブルな Web アプリケーション、特にフロントエンド フレームワークやビルド ツールを使用する場合は、npm で SDK をインストールすることを検討してください。
- コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始めまられます。
- CDN Vite React Angular Vue   CDN JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。</description>
+コード例：React、Angular、Vite など、様々なサンプルについては Esri/jsapi-resources のリポジトリーを参照してください。
+CDN JavaScript Maps SDK は、ArcGIS CDN を使用して、バニラ JavaScript および HTML アプリケーションに簡単に統合できます。このアプローチでは、最適化されたクラウド キャッシングを活用することで、ローカル ビルドの必要性をなくし、SDK の最新バージョンへの更新を容易にします。</description>
     </item>
     
     <item>
@@ -134,10 +134,10 @@ TypeScript TypeScript を使うことをお勧めします。その利点のひ�
       <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/components/</guid>
       <description>出典：ArcGIS Maps SDK for JavaScript - Components
 ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコードで Web アプリを構築するための事前構築された UI コンポーネントのコレクションです。
-標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML エレメント（例：&amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt;）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
+標準ベースの Web コンポーネントとして構築されており、JavaScript Maps SDK のコア API を再利用可能なカスタム HTML 要素（例：&amp;lt;arcgis-map&amp;gt;&amp;lt;/arcgis-map&amp;gt;）に拡張します。また、JavaScript フレームワークに依存しないように設計されているため、バニラ JavaScript やほとんどのフレームワークおよびモジュール バンドラーで構築されたアプリケーションで使用できます。
 マップ コンポーネント @arcgis/map-components パッケージには、マップ コンポーネント、シーン コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。
-以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むことができます。
-&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント（ベータ版） @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用されるチャート コンポーネントとチャート アクション バー コンポーネントが含まれています。このパッケージは 9 種類のチャート タイプをサポートしており、各チャート タイプは、共有チャート仕様に準拠した model オブジェクトを設定することでレンダリングできます。この model オブジェクトは、Web マップまたはフィーチャ レイヤーから読み込むか、チャート モデル メソッドを使用してプログラムで構成できます。</description>
+以下は、item-id 属性を持つマップ コンポーネント &amp;lt;arcgis-map&amp;gt; の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込むこと方法を示しています。
+&amp;lt;arcgis-map item-id=&amp;#34;05e015c5f0314db9a487a9b46cb37eca&amp;#34;&amp;gt;&amp;lt;/arcgis-map&amp;gt; チャート コンポーネント @arcgis/charts-components パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用されるチャート コンポーネントとチャート アクション バー コンポーネントが含まれています。各チャートは、共有チャート仕様に準拠した model オブジェクトを設定することでレンダリングできます。この model オブジェクトは、フィーチャ レイヤーから読み込むか、チャート モデルを使用してプログラムで構成できます。</description>
     </item>
     
     <item>

@@ -11,7 +11,7 @@ aliases = ["/map-scene-view/"]
 ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは `JimuMapView` としてラップされます。`JimuMapView` オブジェクトを作成するには、ウィジェットは `JimuMapViewManager.createJimuMapView()` メソッドを使用します。`JimuMapView` オブジェクトは、主に以下のプロパティを持っています。
 
 - `view`: マップ/シーン ビュー オブジェクト
-- `datasourceId`: ビューを作成するデータソース (webmap/webscene)
+- `datasourceId`: ビューを作成するデータ ソース (webmap/webscene)
 - `mapWidgetId`: オブジェクトを作成するビュー
 - `jimuLayerViews`: レイヤー ビュー オブジェクトのラッパー
 
