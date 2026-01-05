@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2025-12-01T11:24:32 JST">
+<meta name="revised" content="2026-01-05T16:54:09 JST">
 <title>Jimu :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -988,21 +988,23 @@ if (!doNotTrack) {
 <h2 id="jimu">Jimu</h2>
 <p>Jimuは、ArcGIS Experience Builder の根幹となる JavaScript フレームワークです。Experience Builder を拡張可能かつカスタマイズ可能にする基盤です。Jimu は以下の機能を提供します。</p>
 <ul>
-<li>拡張性フレームワーク：カスタムコンポーネントを作成できるアーキテクチャー</li>
+<li>拡張性フレームワーク：カスタム コンポーネントを作成できるアーキテクチャー</li>
 <li>構成システム：ノーコードでエクスペリエンスをカスタマイズすることが可能</li>
 <li>パッケージ ライブラリー：さまざまな開発ニーズに対応するライブラリーのコレクション</li>
 <li>開発ツール：アプリケーション構築のためのユーティリティーとパターン</li>
 </ul>
 <p>Jimuはモジュール性を重視して設計されており、必要なものだけを使用して、アプリケーション間で一貫性を維持できます。</p>
 <p>Jimu を使って次のものを作成できます。</p>
-<p>Experience Builder の機能を拡張するウィジェット
-Experience Builder の機能を強化するエクステンション
-エクスペリエンスに適用できるテーマ
-エクスペリエンスの動作や外観をカスタマイズする構成</p>
+<ul>
+<li>Experience Builder の機能を拡張するウィジェット</li>
+<li>Experience Builder の機能を強化するエクステンション</li>
+<li>エクスペリエンスに適用できるテーマ</li>
+<li>エクスペリエンスの動作や外観をカスタマイズする構成</li>
+</ul>
 <h2 id="jimu-のアーキテクチャー">Jimu のアーキテクチャー</h2>
 <p>Jimu は以下の主要な原則に基づくモジュール型アーキテクチャー パターンを採用しています：</p>
 <h3 id="モジュール設計">モジュール設計</h3>
-<p>Jimuは、機能ごとに分けられたパッケージで構成されるモジュール型アーキテクチャを採用しています。この設計により、開発者は必要なパッケージのみを使用しながら、アプリケーション間で一貫性を維持できます。</p>
+<p>Jimu は、機能ごとに分けられたパッケージで構成されるモジュール型アーキテクチャーを採用しています。この設計により、開発者は必要なパッケージのみを使用しながら、アプリケーション間で一貫性を維持できます。</p>
 <table>
 <thead>
 <tr>
@@ -1041,26 +1043,26 @@ Experience Builder の機能を強化するエクステンション
 </tr>
 <tr>
 <td><a href="https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-icons">jimu-icons</a></td>
-<td>アイコン管理とSVG</td>
+<td>アイコン管理と SVG</td>
 </tr>
 </tbody>
 </table>
 <h3 id="拡張パターン-extensibility-pattern">拡張パターン (Extensibility pattern)</h3>
 <p>Jimu は、機能を拡張する上で、一貫したパターンを採用しています。カスタム ウィジェットを作成するコード例は次の通りです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Example: Creating a custom widget
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// Example: Creating a custom widget
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">AllWidgetProps</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">AllWidgetProps</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span>) =&gt; {
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Widget</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">AllWidgetProps</span>&lt;<span style="color:#f92672">any</span>&gt;) =&gt; {
   <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget jimu-widget &#34;</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">My</span> <span style="color:#a6e22e">Widget</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-widget jimu-widget &#34;</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">My</span> <span style="color:#a6e22e">Widget</span>&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
   )
 }
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Widget</span>
 </code></pre></div><p>メッセージ アクション と データ アクション は JavaScript クラスであり、<code>AbstractDataAction</code> および <code>AbstractMessageAction</code> クラスを継承することが推奨されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyDataAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractDataAction</span> {}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyDataAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractDataAction</span> {}
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyMessageAction</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractMessageAction</span> {}
 </code></pre></div><p>Jimu の拡張機能は JavaScript クラスとして実装されますが、その種類によって異なるインターフェイスを持ちます。それぞれの機能に合わせたインターフェイスを実装することが推奨されます。</p>
@@ -1081,7 +1083,7 @@ Experience Builder の機能を強化するエクステンション
 </code></pre></div><h2 id="コア-パッケージ-core-packages">コア パッケージ (Core packages)</h2>
 <p>Jimu は、開発ニーズに応じてパッケージとして構成されています。以下は各パッケージの概要です。</p>
 <h3 id="jimu-core">jimu-core</h3>
-<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/"><code>jimu-core</code></a> パッケージによって、エクスペリエンス構築のためのユーティリティと基底クラスを利用できます。</p>
+<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-core/"><code>jimu-core</code></a> パッケージによって、エクスペリエンス構築のためのユーティリティーと基底クラスを利用できます。</p>
 <table>
 <thead>
 <tr>
@@ -1092,23 +1094,23 @@ Experience Builder の機能を強化するエクステンション
 <tbody>
 <tr>
 <td>基底クラスとインターフェイス</td>
-<td><code>Message</code>、<code>MessageAction</code>、<code>DataAction</code>、<code>BaseExtension</code>、<code>DataSource</code>など</td>
+<td><code>Message</code>、<code>MessageAction</code>、<code>DataAction</code>、<code>BaseExtension</code>、<code>DataSource</code> など</td>
 </tr>
 <tr>
 <td>マネージャー</td>
-<td><code>WidgetManager</code>、<code>MessageManager</code>、<code>DataActionManager</code>、<code>ExtensionManager</code>、<code>DataSourceManager</code>、<code>SessionManager</code>など</td>
+<td><code>WidgetManager</code>、<code>MessageManager</code>、<code>DataActionManager</code>、<code>ExtensionManager</code>、<code>DataSourceManager</code>、<code>SessionManager</code> など</td>
 </tr>
 <tr>
-<td>Reduxアクション</td>
-<td>状態管理のための<code>appActions</code>など</td>
+<td>Redux アクション</td>
+<td>状態管理のための <code>appActions</code> など</td>
 </tr>
 <tr>
 <td>ユーティリティー関数</td>
-<td><code>utils</code>、<code>urlUtils</code>、<code>portalUrlUtils</code>、<code>appConfigUtils</code>、<code>dataSourceUtils</code>、<code>geometryUtils</code>など</td>
+<td><code>utils</code>、<code>urlUtils</code>、<code>portalUrlUtils</code>、<code>appConfigUtils</code>、<code>dataSourceUtils</code>、<code>geometryUtils</code> など</td>
 </tr>
 <tr>
 <td>コンポーネント</td>
-<td><code>DataSourceComponent</code>、<code>ExpressionResolverComponent</code>など</td>
+<td><code>DataSourceComponent</code>、<code>ExpressionResolverComponent</code> など</td>
 </tr>
 <tr>
 <td>モジュール ローダー</td>
@@ -1128,21 +1130,21 @@ Experience Builder の機能を強化するエクステンション
 <tbody>
 <tr>
 <td>index</td>
-<td><code>Button</code>、<code>TextInput</code>、<code>Modal</code>などの一般的な UI コンポーネント</td>
+<td><code>Button</code>、<code>TextInput</code>、<code>Modal</code> などの一般的な UI コンポーネント</td>
 </tr>
 <tr>
 <td>Basic</td>
-<td><code>DatePicker</code>、<code>ColorPicker</code>などの特定機能に特化したコンポーネント</td>
+<td><code>DatePicker</code>、<code>ColorPicker</code> などの特定機能に特化したコンポーネント</td>
 </tr>
 <tr>
 <td>Advanced</td>
-<td><code>ExpressionBuilder</code>、<code>DataSourceSelector</code>など Experience Builder 特有の複雑なコンポーネント</td>
+<td><code>ExpressionBuilder</code>、<code>DataSourceSelector</code> など Experience Builder 特有の複雑なコンポーネント</td>
 </tr>
 </tbody>
 </table>
 <p>UI コンポーネントを作成する推奨方法は styled component を使用することです。詳細は <code>jimu-ui</code> パッケージのドキュメントに記載されています。</p>
 <p>以下は UI コンポーネントの使用例です：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">TextInput</span>, <span style="color:#a6e22e">Modal</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Button</span>, <span style="color:#a6e22e">TextInput</span>, <span style="color:#a6e22e">Modal</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">css</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>;
 
@@ -1157,28 +1159,49 @@ Experience Builder の機能を強化するエクステンション
   <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">isModalOpen</span>, <span style="color:#a6e22e">setIsModalOpen</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
 
   <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">css</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">widgetStyle</span>}<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">TextInput</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter data...&#34;</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#a6e22e">setIsModalOpen</span>(<span style="color:#66d9ef">true</span>)}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Button&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Modal</span> <span style="color:#a6e22e">isOpen</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">isModalOpen</span>}<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Modal</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Modal&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">css</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">widgetStyle</span>}&gt;
+      &lt;<span style="color:#f92672">TextInput</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter data...&#34;</span> /&gt;
+      &lt;<span style="color:#f92672">Button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#a6e22e">setIsModalOpen</span>(<span style="color:#66d9ef">true</span>)}&gt;<span style="color:#a6e22e">Submit</span>&lt;/<span style="color:#f92672">Button</span>&gt;
+      &lt;<span style="color:#f92672">Modal</span> <span style="color:#a6e22e">isOpen</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">isModalOpen</span>}&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;<span style="color:#a6e22e">Modal</span> <span style="color:#a6e22e">content</span>&lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;/<span style="color:#f92672">Modal</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
   );
 }
 </code></pre></div><h3 id="jimu-arcgis">jimu-arcgis</h3>
-<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/"><code>jimu-arcgis</code></a> パッケージには、<a href="https://developers.arcgis.com/javascript/">ArcGIS Maps SDK for JavaScript</a>を扱うためのコンポーネント、インターフェイス、クラス、プロパティ、メソッドが含まれています。</p>
+<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/"><code>jimu-arcgis</code></a> パッケージには、<a href="https://developers.arcgis.com/javascript/">ArcGIS Maps SDK for JavaScript</a> を扱うためのコンポーネント、インターフェイス、クラス、プロパティ、メソッドが含まれています。</p>
 <p><code>jimu-arcgis</code> パッケージに含まれるクラスとコンポーネントは以下の通りです。</p>
-<p>| コンポーネント | 説明 |
-| <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/">JimuMapView</a> | MapView や SceneView インスタンスにアクセスするためのクラス |
-| <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/">JimuMapViewComponent</a> | マップ ウィジェットとビューを統合するためのコンポーネント |
-| <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerView/">JimuLayerView</a> | レイヤー ビューを扱うためのクラス |
-| <a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerViewComponent/">JimuLayerViewComponent</a> | レイヤー ビューを操作するためのコンポーネント |</p>
+<table>
+<thead>
+<tr>
+<th>コンポーネント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/">JimuMapView</a></td>
+<td>MapView や SceneView インスタンスにアクセスするためのクラス</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/">JimuMapViewComponent</a></td>
+<td>マップ ウィジェットとビューを統合するためのコンポーネント</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerView/">JimuLayerView</a></td>
+<td>レイヤー ビューを扱うためのクラス</td>
+</tr>
+<tr>
+<td><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerViewComponent/">JimuLayerViewComponent</a></td>
+<td>レイヤー ビューを操作するためのコンポーネント</td>
+</tr>
+</tbody>
+</table>
 <p>以下にマップ コンポーネントの使用例を示します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">JimuMapViewComponent</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">JimuMapViewComponent</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-arcgis&#39;</span>;
 
 <span style="color:#75715e">// Example: Map integration
-</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">JimuMapViewComponent</span>
+</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">JimuMapViewComponent</span>
   <span style="color:#a6e22e">useMapWidgetId</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">useMapWidgetId</span>}
   <span style="color:#a6e22e">onActiveViewChange</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">jmv</span>) =&gt; {
     <span style="color:#75715e">// Handle map view changes
@@ -1186,7 +1209,7 @@ Experience Builder の機能を強化するエクステンション
       <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Map view ready&#39;</span>);
     });
   }}
-<span style="color:#960050;background-color:#1e0010">/&gt;</span>
+/&gt;
 </code></pre></div><h3 id="jimu-for-builder">jimu-for-builder</h3>
 <p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-for-builder/"><code>jimu-for-builder</code></a> パッケージは、ウィジェット設定ページの開発をサポートするために設計されています。設定ページは、エクスペリエンス作成者がウィジェット構成を追加するビルダー内のセクションです。</p>
 <p>このパッケージの主なコンポーネントは、<code>builderAppSync</code>、<code>appBuilderSync</code>、<code>WidgetSettingManager</code> です。Redux ストアを拡張し、<code>appStateInBuilder</code> や <code>builder</code> などのビルダー状態を追加するにはこのパッケージを使用します。</p>
@@ -1194,8 +1217,8 @@ Experience Builder の機能を強化するエクステンション
 <p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/"><code>jimu-theme</code></a> パッケージによって、エクスペリエンス構築のためのテーマ管理とスタイルを利用できます。このパッケージには以下が含まれます。</p>
 <ul>
 <li>styled component を作成するメソッドである <code>styled</code></li>
-<li>高階コンポーネントを使って、コンポーネントにテーマ情報（theme prop）を付与するための仕組みである<code>withTheme</code></li>
-<li><code>theme</code> にアクセスするためのReactフックとなる <code>useTheme</code></li>
+<li>高階コンポーネントを使って、コンポーネントにテーマ情報 (theme prop) を付与するための仕組みである <code>withTheme</code></li>
+<li><code>theme</code> にアクセスするための React フックとなる <code>useTheme</code></li>
 <li><code>ThemeVariable</code>、<code>ThemeOptions</code> などのテーマに関連したインターフェイス</li>
 </ul>
 <table>
@@ -1224,12 +1247,12 @@ Experience Builder の機能を強化するエクステンション
 </tr>
 <tr>
 <td><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/RawThemeOptions/">RawThemeOptions</a></td>
-<td>JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の <code>variables.json</code> )</td>
+<td>JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の <code>variables.json</code>)</td>
 </tr>
 </tbody>
 </table>
 <h3 id="jimu-layouts">jimu-layouts</h3>
-<p>jimu-layouts パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2つのエントリー ポイントがあります。</p>
+<p>jimu-layouts パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。</p>
 <ul>
 <li>アプリが実行時に開かれた場合の軽量エントリー ポイントである <code>layout-runtime</code>。レイアウト ツリー検索機能を提供する <code>selectors</code> や、ウィジェット レイアウト機能のための <code>LayoutEntry</code> コンポーネントをエクスポートします。</li>
 <li>アプリがビルダーで開かれた場合のエントリー ポイントである <code>layout-entry</code>。</li>
@@ -1238,40 +1261,40 @@ Experience Builder の機能を強化するエクステンション
 <h3 id="jimu-data-sources">jimu-data-sources</h3>
 <p><code>jimu-data-sources</code> パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、<code>jimu-core</code> からエクスポートされる <code>DataSourceComponent</code> を使用することが推奨されます。</p>
 <h3 id="jimu-for-test">jimu-for-test</h3>
-<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/"><code>jimu-for-test</code></a> パッケージは、テスト用のユーティリティーを提供します。ユーティリティ関数には、<code>wrapWidget</code>、<code>withThemeRender</code>、<code>withIntlRender</code>、<code>withStoreRender</code>、<code>mockService</code>、<code>mockItem</code>、<code>initGlobal</code>、<code>getInitState</code>、<code>widgetRender</code> があります。</p>
-<p>以下はテスト ユーティリティの使用例として示した、チェックボックス コンポーネントをテストするコードです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
+<p><a href="https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/"><code>jimu-for-test</code></a> パッケージは、テスト用のユーティリティーを提供します。ユーティリティー関数には、<code>wrapWidget</code>、<code>withThemeRender</code>、<code>withIntlRender</code>、<code>withStoreRender</code>、<code>mockService</code>、<code>mockItem</code>、<code>initGlobal</code>、<code>getInitState</code>、<code>widgetRender</code> があります。</p>
+<p>以下はテスト ユーティリティーの使用例として示した、チェックボックス コンポーネントをテストするコードです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">render</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@testing-library/react&#39;</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Checkbox</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-ui&#39;</span>
 
 <span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;checkbox component test&#39;</span>, () =&gt; {
   <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;test mount&#39;</span>, () =&gt; {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Checkbox</span> <span style="color:#f92672">/&gt;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Checkbox</span> /&gt;)
     <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">firstChild</span>).<span style="color:#a6e22e">not</span>.<span style="color:#a6e22e">toBeNull</span>()
   })
 
   <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;test default jimu class name&#39;</span>, () =&gt; {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Checkbox</span> <span style="color:#f92672">/&gt;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Checkbox</span> /&gt;)
     <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.jimu-checkbox&#39;</span>)).<span style="color:#a6e22e">toBeTruthy</span>()
   })
 
   <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;test &#34;checked&#34; attribute&#39;</span>, () =&gt; {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Checkbox</span> <span style="color:#a6e22e">checked</span> <span style="color:#f92672">/&gt;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Checkbox</span> <span style="color:#a6e22e">checked</span> /&gt;)
     <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.jimu-checked&#39;</span>)).<span style="color:#a6e22e">toBeTruthy</span>()
   })
 
   <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;test &#34;indeterminate&#34; attribute&#39;</span>, () =&gt; {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Checkbox</span> <span style="color:#a6e22e">indeterminate</span> <span style="color:#f92672">/&gt;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Checkbox</span> <span style="color:#a6e22e">indeterminate</span> /&gt;)
     <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.indeterminate&#39;</span>)).<span style="color:#a6e22e">toBeTruthy</span>()
   })
 
   <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;test &#34;disabled&#34; attribute&#39;</span>, () =&gt; {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Checkbox</span> <span style="color:#a6e22e">disabled</span> <span style="color:#f92672">/&gt;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">container</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Checkbox</span> <span style="color:#a6e22e">disabled</span> /&gt;)
     <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.jimu-disabled&#39;</span>)).<span style="color:#a6e22e">toBeTruthy</span>()
   })
 })
-</code></pre></div><p>テスト用ユーティリティの別の使用例として、ボタン コンポーネントをテストするコードを示します。この例は次のファイルでも確認することができます：<code>&lt;Experience Builder Developer Edition のインストールパス&gt;/client/dist/widgets/common/button/tests/button.test.tsx</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">Immutable</span>, <span style="color:#a6e22e">getAppStore</span>, <span style="color:#a6e22e">appActions</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
+</code></pre></div><p>テスト用ユーティリティーの別の使用例として、ボタン コンポーネントをテストするコードを示します。この例は次のファイルでも確認することができます：<code>&lt;Experience Builder Developer Edition のインストール パス&gt;/client/dist/widgets/common/button/tests/button.test.tsx</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">React</span>, <span style="color:#a6e22e">Immutable</span>, <span style="color:#a6e22e">getAppStore</span>, <span style="color:#a6e22e">appActions</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-core&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ButtonWidget</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../src/runtime/widget&#39;</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">wrapWidget</span>, <span style="color:#a6e22e">widgetRender</span>, <span style="color:#a6e22e">getInitState</span>, <span style="color:#a6e22e">getDefaultAppConfig</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jimu-for-test&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;@testing-library/jest-dom&#39;</span>
@@ -1296,7 +1319,7 @@ Experience Builder の機能を強化するエクステンション
     })
 
     <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;button widget should be render&#39;</span>, () =&gt; {
-      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">queryBySelector</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Widget</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">config</span>}<span style="color:#f92672">/&gt;</span>)
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">queryBySelector</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Widget</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">config</span>}/&gt;)
       <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">queryBySelector</span>(<span style="color:#e6db74">&#39;.widget-button-link&#39;</span>)).<span style="color:#a6e22e">not</span>.<span style="color:#a6e22e">toBeNull</span>()
     })
   })
@@ -1319,7 +1342,7 @@ Experience Builder の機能を強化するエクステンション
     })
 
     <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;button widget should be render&#39;</span>, () =&gt; {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">renderResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Widget</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">config</span>}<span style="color:#f92672">/&gt;</span>)
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">renderResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Widget</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">config</span>}/&gt;)
 
       <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">renderResult</span>.<span style="color:#a6e22e">queryBySelector</span>(<span style="color:#e6db74">&#39;.widget-button-link&#39;</span>)).<span style="color:#a6e22e">toBeInTheDocument</span>()
       <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">renderResult</span>.<span style="color:#a6e22e">queryByText</span>(<span style="color:#e6db74">&#39;textTest&#39;</span>)).<span style="color:#a6e22e">toBeInTheDocument</span>() <span style="color:#75715e">//text ok

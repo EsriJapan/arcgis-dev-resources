@@ -9,7 +9,7 @@ aliases = ["/jimu/"]
 ## Jimu
 Jimuは、ArcGIS Experience Builder の根幹となる JavaScript フレームワークです。Experience Builder を拡張可能かつカスタマイズ可能にする基盤です。Jimu は以下の機能を提供します。
 
-- 拡張性フレームワーク：カスタムコンポーネントを作成できるアーキテクチャー
+- 拡張性フレームワーク：カスタム コンポーネントを作成できるアーキテクチャー
 - 構成システム：ノーコードでエクスペリエンスをカスタマイズすることが可能
 - パッケージ ライブラリー：さまざまな開発ニーズに対応するライブラリーのコレクション
 - 開発ツール：アプリケーション構築のためのユーティリティーとパターン
@@ -18,17 +18,17 @@ Jimuはモジュール性を重視して設計されており、必要なもの�
 
 Jimu を使って次のものを作成できます。
 
-Experience Builder の機能を拡張するウィジェット
-Experience Builder の機能を強化するエクステンション
-エクスペリエンスに適用できるテーマ
-エクスペリエンスの動作や外観をカスタマイズする構成
+- Experience Builder の機能を拡張するウィジェット
+- Experience Builder の機能を強化するエクステンション
+- エクスペリエンスに適用できるテーマ
+- エクスペリエンスの動作や外観をカスタマイズする構成
 
 
 ## Jimu のアーキテクチャー
 Jimu は以下の主要な原則に基づくモジュール型アーキテクチャー パターンを採用しています：
 
 ### モジュール設計
-Jimuは、機能ごとに分けられたパッケージで構成されるモジュール型アーキテクチャを採用しています。この設計により、開発者は必要なパッケージのみを使用しながら、アプリケーション間で一貫性を維持できます。
+Jimu は、機能ごとに分けられたパッケージで構成されるモジュール型アーキテクチャーを採用しています。この設計により、開発者は必要なパッケージのみを使用しながら、アプリケーション間で一貫性を維持できます。
 
 |  **パッケージ**  |  **説明**  |
 |-----|-----|
@@ -39,11 +39,11 @@ Jimuは、機能ごとに分けられたパッケージで構成されるモジ�
 |  [jimu-theme](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-theme)  |  テーマ管理とスタイル  |
 |  [jimu-layouts](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-layouts)  |  レイアウト管理とコンポーネント  |
 |  [jimu-for-test](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-for-test)  |  テスト用ユーティリティー  |
-|  [jimu-icons](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-icons)  |  アイコン管理とSVG  |
+|  [jimu-icons](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/#jimu-icons)  |  アイコン管理と SVG  |
 
 ### 拡張パターン (Extensibility pattern)
 Jimu は、機能を拡張する上で、一貫したパターンを採用しています。カスタム ウィジェットを作成するコード例は次の通りです。
-```javascript
+```jsx
 // Example: Creating a custom widget
 import { type AllWidgetProps } from 'jimu-core'
 
@@ -59,7 +59,7 @@ export default Widget
 ```
 メッセージ アクション と データ アクション は JavaScript クラスであり、`AbstractDataAction` および `AbstractMessageAction` クラスを継承することが推奨されます。
 
-```javascript
+```jsx
 export default class MyDataAction extends AbstractDataAction {}
 
 export default class MyMessageAction extends AbstractMessageAction {}
@@ -90,15 +90,15 @@ Jimu アプリケーションは構成駆動型であり、実行時のカスタ
 Jimu は、開発ニーズに応じてパッケージとして構成されています。以下は各パッケージの概要です。
 
 ### jimu-core
-[`jimu-core`](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/) パッケージによって、エクスペリエンス構築のためのユーティリティと基底クラスを利用できます。
+[`jimu-core`](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/) パッケージによって、エクスペリエンス構築のためのユーティリティーと基底クラスを利用できます。
 
 | **コンポーネント** | **説明** |
 |----|----|
-| 基底クラスとインターフェイス | `Message`、`MessageAction`、`DataAction`、`BaseExtension`、`DataSource`など |
-| マネージャー | `WidgetManager`、`MessageManager`、`DataActionManager`、`ExtensionManager`、`DataSourceManager`、`SessionManager`など |
-| Reduxアクション | 状態管理のための`appActions`など |
-| ユーティリティー関数 | `utils`、`urlUtils`、`portalUrlUtils`、`appConfigUtils`、`dataSourceUtils`、`geometryUtils`など |
-| コンポーネント | `DataSourceComponent`、`ExpressionResolverComponent`など |
+| 基底クラスとインターフェイス | `Message`、`MessageAction`、`DataAction`、`BaseExtension`、`DataSource` など |
+| マネージャー | `WidgetManager`、`MessageManager`、`DataActionManager`、`ExtensionManager`、`DataSourceManager`、`SessionManager` など |
+| Redux アクション | 状態管理のための `appActions` など |
+| ユーティリティー関数 | `utils`、`urlUtils`、`portalUrlUtils`、`appConfigUtils`、`dataSourceUtils`、`geometryUtils` など |
+| コンポーネント | `DataSourceComponent`、`ExpressionResolverComponent` など |
 | モジュール ローダー | `moduleLoader`、`loadArcGISJSAPIModules`|
 
 ### jimu-ui
@@ -106,14 +106,14 @@ Jimu は、開発ニーズに応じてパッケージとして構成されてい
 
 | コンポーネント | 説明 |
 |----|----|
-| index | `Button`、`TextInput`、`Modal`などの一般的な UI コンポーネント |
-| Basic | `DatePicker`、`ColorPicker`などの特定機能に特化したコンポーネント |
-| Advanced | `ExpressionBuilder`、`DataSourceSelector`など Experience Builder 特有の複雑なコンポーネント |
+| index | `Button`、`TextInput`、`Modal` などの一般的な UI コンポーネント |
+| Basic | `DatePicker`、`ColorPicker` などの特定機能に特化したコンポーネント |
+| Advanced | `ExpressionBuilder`、`DataSourceSelector` など Experience Builder 特有の複雑なコンポーネント |
 
 UI コンポーネントを作成する推奨方法は styled component を使用することです。詳細は `jimu-ui` パッケージのドキュメントに記載されています。
 
 以下は UI コンポーネントの使用例です：
-```javascript
+```jsx
 import { Button, TextInput, Modal } from 'jimu-ui';
 import { css } from 'jimu-core';
 import { React } from 'jimu-core';
@@ -141,18 +141,19 @@ export default function MyWidget() {
 ```
 
 ### jimu-arcgis
-[`jimu-arcgis`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/) パッケージには、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/)を扱うためのコンポーネント、インターフェイス、クラス、プロパティ、メソッドが含まれています。
+[`jimu-arcgis`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/) パッケージには、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/) を扱うためのコンポーネント、インターフェイス、クラス、プロパティ、メソッドが含まれています。
 
 `jimu-arcgis` パッケージに含まれるクラスとコンポーネントは以下の通りです。
 
 | コンポーネント | 説明 |
+|----|----|
 | [JimuMapView](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) | MapView や SceneView インスタンスにアクセスするためのクラス |
 | [JimuMapViewComponent](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) | マップ ウィジェットとビューを統合するためのコンポーネント |
 | [JimuLayerView](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerView/) | レイヤー ビューを扱うためのクラス |
 | [JimuLayerViewComponent](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuLayerViewComponent/) | レイヤー ビューを操作するためのコンポーネント |
 
 以下にマップ コンポーネントの使用例を示します。
-```javascript
+```jsx
 import { JimuMapViewComponent } from 'jimu-arcgis';
 
 // Example: Map integration
@@ -176,8 +177,8 @@ import { JimuMapViewComponent } from 'jimu-arcgis';
 [`jimu-theme`](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/) パッケージによって、エクスペリエンス構築のためのテーマ管理とスタイルを利用できます。このパッケージには以下が含まれます。
 
 - styled component を作成するメソッドである `styled`
-- 高階コンポーネントを使って、コンポーネントにテーマ情報（theme prop）を付与するための仕組みである`withTheme`
-- `theme` にアクセスするためのReactフックとなる `useTheme`
+- 高階コンポーネントを使って、コンポーネントにテーマ情報 (theme prop) を付与するための仕組みである `withTheme`
+- `theme` にアクセスするための React フックとなる `useTheme`
 - `ThemeVariable`、`ThemeOptions` などのテーマに関連したインターフェイス
 
 | コンポーネント | 説明 |
@@ -186,10 +187,10 @@ import { JimuMapViewComponent } from 'jimu-arcgis';
 | [useTheme](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/useTheme/) | `theme` 変数にアクセスする React フック |
 | [withTheme](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/withTheme/) | コンポーネントにテーマ情報を付与するメソッド |
 | [ThemeVariable](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/ThemeVariable/) | テーマ変数のインターフェイス |
-| [RawThemeOptions](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/RawThemeOptions/) | JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の `variables.json` ) |
+| [RawThemeOptions](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/RawThemeOptions/) | JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の `variables.json`) |
 
 ### jimu-layouts
-jimu-layouts パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2つのエントリー ポイントがあります。
+jimu-layouts パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。
 
 - アプリが実行時に開かれた場合の軽量エントリー ポイントである `layout-runtime`。レイアウト ツリー検索機能を提供する `selectors` や、ウィジェット レイアウト機能のための `LayoutEntry` コンポーネントをエクスポートします。
 - アプリがビルダーで開かれた場合のエントリー ポイントである `layout-entry`。
@@ -199,10 +200,10 @@ jimu-layouts パッケージによって、レイアウト管理とコンポー�
 `jimu-data-sources` パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、`jimu-core` からエクスポートされる `DataSourceComponent` を使用することが推奨されます。
 
 ### jimu-for-test
-[`jimu-for-test`](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/) パッケージは、テスト用のユーティリティーを提供します。ユーティリティ関数には、`wrapWidget`、`withThemeRender`、`withIntlRender`、`withStoreRender`、`mockService`、`mockItem`、`initGlobal`、`getInitState`、`widgetRender` があります。
+[`jimu-for-test`](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/) パッケージは、テスト用のユーティリティーを提供します。ユーティリティー関数には、`wrapWidget`、`withThemeRender`、`withIntlRender`、`withStoreRender`、`mockService`、`mockItem`、`initGlobal`、`getInitState`、`widgetRender` があります。
 
-以下はテスト ユーティリティの使用例として示した、チェックボックス コンポーネントをテストするコードです。
-```javascript
+以下はテスト ユーティリティーの使用例として示した、チェックボックス コンポーネントをテストするコードです。
+```jsx
 import * as React from 'react'
 import { render } from '@testing-library/react'
 import { Checkbox } from 'jimu-ui'
@@ -234,9 +235,10 @@ describe('checkbox component test', () => {
   })
 })
 ```
-テスト用ユーティリティの別の使用例として、ボタン コンポーネントをテストするコードを示します。この例は次のファイルでも確認することができます：`<Experience Builder Developer Edition のインストールパス>/client/dist/widgets/common/button/tests/button.test.tsx` 
 
-```javascript
+テスト用ユーティリティーの別の使用例として、ボタン コンポーネントをテストするコードを示します。この例は次のファイルでも確認することができます：`<Experience Builder Developer Edition のインストール パス>/client/dist/widgets/common/button/tests/button.test.tsx` 
+
+```jsx
 import { React, Immutable, getAppStore, appActions } from 'jimu-core'
 import ButtonWidget from '../src/runtime/widget'
 import { wrapWidget, widgetRender, getInitState, getDefaultAppConfig } from 'jimu-for-test'
