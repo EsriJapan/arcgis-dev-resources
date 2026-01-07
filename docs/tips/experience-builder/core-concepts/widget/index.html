@@ -17,7 +17,7 @@ if (!doNotTrack) {
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2026-01-07T13:59:31 JST">
+<meta name="revised" content="2026-01-07T14:17:38 JST">
 <title>ウィジェット（Widget） :: ArcGIS Developers 開発リソース集</title>
 <link rel="shortcut icon" href="/arcgis-dev-resources/images/favicon.png" type="image/x-icon" />
 <link href="/arcgis-dev-resources/css/nucleus.css" rel="stylesheet">
@@ -987,18 +987,20 @@ if (!doNotTrack) {
 Developer Edition を使用して開発者が作成するコンポーネントで、特定の要件に対応するための機能を実装</li>
 </ul>
 <p>各ウィジェットは、動作や外観をカスタマイズするための設定が可能です。設定は次の方法で管理できます。</p>
-<p>標準プロパティを変更するためのインターフェイスである、ビルダー環境の設定 UI
-設定 UI がない場合に高度な設定オプションを編集できる、JSON エディター</p>
+<ul>
+<li>標準プロパティを変更するためのインターフェイスである、ビルダー環境の設定 UI</li>
+<li>設定 UI がない場合に高度な設定オプションを編集できる、JSON エディター</li>
+</ul>
 <h2 id="ウィジェットの機能">ウィジェットの機能</h2>
 <p>ほとんどのウィジェットには UI がありますが、必須ではありません。ウィジェットは UI 以外にもさまざまな機能があります。</p>
 <ul>
 <li>
-<p><strong>メッセージ アクションとデータ アクション</strong></p>
-<p>ウィジェットは、メッセージアクションを通じて他のウィジェットと連携し、データアクションを通じてデータを処理できます。これによりウィジェット同士が通信し、異なるソースからのデータを処理できます。詳細は <a href="https://developers.arcgis.com/experience-builder/guide/widget-communication/"><strong>ウィジェット コミュニケーション</strong></a>をご覧ください。</p>
+<p><strong>メッセージ アクションとデータ アクション</strong><br />
+ウィジェットは、メッセージ アクションを通じて他のウィジェットと連携し、データ アクションを通じてデータを処理できます。これによりウィジェット同士が通信し、異なるソースからのデータを処理できます。詳細は <a href="../../widget-development/widget-communication/"><strong>ウィジェット コミュニケーション</strong></a>をご覧ください。</p>
 </li>
 <li>
-<p><strong>拡張機能</strong></p>
-<p>ウィジェットは、拡張機能を用いることでアプリケーションライフサイクルの特定のポイントにフックできます。たとえば、<code>AppConfigProcessor</code> のエクステンション ポイントを使用すると、ウィジェットは実行時にアプリケーション構成を処理・変更できます。利用可能なエクステンション ポイントの詳細は、<a href="https://developers.arcgis.com/experience-builder/guide/extension-points/"><strong>エクステンション ポイント</strong></a>のガイドをご覧ください。</p>
+<p><strong>拡張機能</strong><br />
+ウィジェットは、拡張機能を用いることでアプリケーション ライフサイクルの特定のポイントにフックできます。たとえば、<code>AppConfigProcessor</code> 拡張ポイントを使用すると、ウィジェットは実行時にアプリケーション構成を処理・変更できます。利用可能な拡張ポイントの詳細は、<a href="../extension-points/"><strong>拡張ポイント</strong></a>のガイドをご覧ください。</p>
 </li>
 </ul>
 <h2 id="ウィジェットの使い方">ウィジェットの使い方</h2>
@@ -1021,7 +1023,7 @@ Developer Edition を使用して開発者が作成するコンポーネント�
 <p>次のステップに従って、エクスペリエンスにウィジェットを追加します。</p>
 <ol>
 <li>ArcGIS Experience Builder の<strong>ウィジェット</strong>パネルに移動します。</li>
-<li>追加したいウィジェットをページまたはレイアウト セクションに ドラッグ＆ドロップします。</li>
+<li>追加したいウィジェットをページまたはレイアウト セクションにドラッグ＆ドロップします。</li>
 <li>ウィジェットがエクスペリエンスに追加され、詳細な設定が可能になります。</li>
 </ol>
 <div class="notices note" >
@@ -1042,11 +1044,11 @@ Developer Edition を使用して開発者が作成するコンポーネント�
 <li>整列ツールや分布ツールを使用して、ユーザビリティーに配慮してウィジェットを整理します。</li>
 </ol>
 <h2 id="ウィジェットのui構築">ウィジェットのUI構築</h2>
-<p>カスタムウィジェットを開発する際、UI を構築するには下記の方法があります。</p>
+<p>カスタム ウィジェットを開発する際、UI を構築するには下記の方法があります。</p>
 <ul>
 <li>
-<p>Jimu-UI ライブラリ
-このライブラリはウィジェット開発に推奨される方法です。Experience Builderのテーマ システムと統合された事前構築済みコンポーネントを提供します。これにより、ウィジェット間で一貫したスタイルと動作が可能となります。</p>
+<p>Jimu-UI ライブラリー
+このライブラリーはウィジェット開発に推奨される方法です。Experience Builder のテーマ システムと統合された事前構築済みコンポーネントを提供します。これにより、ウィジェット間で一貫したスタイルと動作が可能となります。</p>
 </li>
 <li>
 <p>Calcite Design System
