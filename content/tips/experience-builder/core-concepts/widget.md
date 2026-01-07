@@ -82,7 +82,7 @@ ArcGIS Experience Builder でウィジェットを使用する一般的な手順
 
 {{% notice note %}}
 
-ウィジェット UI の構築やコンポーネント オプションについての詳細は、[**ウィジェット UI**](https://developers.arcgis.com/experience-builder/guide/widget-ui/)をご覧ください。
+ウィジェット UI の構築やコンポーネント オプションについての詳細は、[**ウィジェット UI**](https://developers.arcgis.com/experience-builder/guide/widget-ui/) をご覧ください。
 
 {{% /notice %}}
 
@@ -98,7 +98,7 @@ ArcGIS Experience Builder でウィジェットを使用する一般的な手順
   - 設定画面で MapWidgetSelector と JimuLayerViewSelector を使用
   - 実行時に JimuMapViewComponent を使用
 
-- カスタム ウィジェット開発
+## カスタム ウィジェット開発
 カスタム ウィジェットを作成することで、ArcGIS Experience Builder の機能の拡張が可能です。カスタム ウィジェットは、[ArcGIS Experience Builder Developer Edition](https://developers.arcgis.com/experience-builder/guide/install-guide/) を使用して構築します。Developer Edition は、新しいウィジェットをビルダー環境に作成・統合することができるツールと API を提供します。
 
 {{% notice note %}}
@@ -106,28 +106,3 @@ ArcGIS Experience Builder でウィジェットを使用する一般的な手順
 ウィジェットの実装やカスタマイズの詳細については、[**ウィジェットの実装**](https://developers.arcgis.com/experience-builder/guide/extend-base-widget/)をご覧ください。
 
 {{% /notice %}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ウィジェットは設定可能な機能単位で、エクスペリエンスのページを作成するために使用されるビルディング ブロックです。Experience Builder は、マップ、ボタン、リストなどのすぐに使える（OOB）ウィジェットが用意されており、カスタム ウィジェットを作成することも可能です。ウィジェットは通常、ユーザーがビルダー環境で機能を設定できるように設定 UI を提供します。ウィジェットに設定可能なオプションがありますが、設定 UI が含まれていない場合は、JSON エディタを使用して設定することが可能です。
-
-ウィジェットの実装については[こちら](https://developers.arcgis.com/experience-builder/guide/extend-base-widget/)をご覧ください。
-
-app config では、`widgets` でウィジェットを定義します。
