@@ -41,7 +41,7 @@ ArcGIS Maps SDK for Swift には Lite、Basic、Standard の 3 つのライセ�
 | Basic | ・Lite ライセンスで利用できるすべての機能<br>・フィーチャのオンライン/オフライン編集（ArcGIS Online/ArcGIS Enterprise のセキュアなフィーチャ サービス）<br>・モバイル ジオデータベースの編集 |
 | Standard | ・Basic ライセンスで利用できるすべての機能<br>・シェープファイルの表示/編集<br>・GeoPackage の表示/編集<br>・KML（ローカル ファイル）の表示/編集<br>・ラスター データの表示/解析<br>・航海用電子海図（ENC）の表示<br>・3D 解析 |
 | Analysis Extension | ・Standard ライセンスで利用可能なエクステンション</br>・オフラインでの到達圏解析/最寄り施設検索 |
-| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ブランチ バージョン ジオデータベースに新しいバージョンの作成</br>・ブランチ バージョン ジオデータベースのバージョンのフィーチャ/テーブルの編集</br>・ユーティリティー ネットワークのネットワーク フィーチャの編集</br>・ユーティリティー ネットワークのトポロジーの検証 |
+| Advanced Editing Extension | ・Basic ライセンス以上で利用可能なエクステンション</br>・ユーティリティー ネットワークのネットワーク フィーチャとその関連付けの編集</br>・ユーティリティー ネットワークのトポロジーの検証 |
 
 ライセンスの詳細は[ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-maps-sdk-for-swift/license/)をご参照ください。
 
