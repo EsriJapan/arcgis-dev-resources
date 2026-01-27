@@ -1,0 +1,21 @@
+<ul class="list-disc ml-6">
+  {{ $currentPath := .Page.Path }}
+  {{ $currentPrefix := replace $currentPath ".md" "" }}
+  {{ range .Site.Pages }}
+    {{ $itemPath := .Path }}
+    {{ if and (ne $itemPath $currentPath) (strings.HasPrefix $itemPath $currentPrefix) }}
+      {{ $relative := replace (strings.TrimPrefix $currentPrefix $itemPath) ".md" "" }}
+      {{ $depth := len (split $relative "/") }}
+      {{ if le $depth 2 }}
+        <li>
+          {{ if .IsSection }}
+             <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>{{ .Description }}
+          {{ else }}
+             <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>{{ .Description }}
+          {{ end }}
+        </li>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</ul>
+

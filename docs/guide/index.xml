@@ -1,74 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>スタートアップ ガイド on ArcGIS Developers 開発リソース集</title>
-    <link>https://esrijapan.github.io/arcgis-dev-resources/guide/</link>
-    <description>Recent content in スタートアップ ガイド on ArcGIS Developers 開発リソース集</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/guide/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>開発者アカウントの作成</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/</guid>
-      <description>開発者アカウントを作成すると、アプリの開発を無償で開始することができます。また、ArcGIS Location Platform が提供するロケーションサービスであるベースマップの利用やジオコーディング サービス (住所⇄緯度経度)、ネットワーク サービス (ルート検索、到達圏解析) などの様々な GIS サービスを利用したり、お手持ちのデータを GIS サービスとして配信したりすることが、無料枠/月の範囲で利用可能です。
-ArcGIS Location Platform アカウントの作成 以下の手順で ArcGIS Location Platform の新規アカウントを作成します。アカウントの作成中に問題が発生した場合は、ESRI ジャパンまでお問い合わせください。
-  ArcGIS Location Platform のサイト (英語) にアクセスし、[Sign Up For Free] をクリックします。
-  名前 (※名前には半角英字のみを使用してください)、E メールアドレス、メールの配信に関する設定を入力し [Continue] をクリックします。
-  ユーザー名、パスワード、ポータル URL、組織名、秘密の質問とその答えを入力します。
-  利用規約とプライバシー ポリシーに同意する場合は、同意欄にチェックを入れ、[Next] をクリックします。
-  手順 2 にて入力した、E メールアドレスの受信ボックスに届いた Esri からのメールを開き、メール本文にある [Activeate your account] をクリックします。
-  以上で ArcGIS Location Platform アカウントの作成は完了です。</description>
-    </item>
-    
-    <item>
-      <title>API キーの取得</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/get-api-key/</guid>
-      <description>出典：Security and authentication guide - Tutorial: Create an API key
-APIキーの認証情報を使用してAPIキーを作成し、管理する方法を学びます。
-API キーとは API キーは、ArcGIS のセキュアなサービス、コンテンツ、および機能へのアクセスをアプリケーションに許可する、長期間のアクセス トークンです。API キーは、ポータルでホストされているアイテムの一種である API キーの認証情報を使用して生成されます。API キーの認証情報には、API キーを生成し、その権限や有効期限などのプロパティを管理するための設定が含まれています。 API キーの認証情報を作成し、アプリケーションで API キーを使用するプロセスは、API キー認証として知られています。
-このガイドでは、APIキーの認証情報を作成し、以下のことを行う方法を説明します。
- 長期的な API キーを生成し、アプリケーションに保存 API キーが ArcGIS のサービス、コンテンツ、および機能にアクセスできる権限の設定 API キーの有効期限と参照元 URL の設定 API キーの認証情報のアイテムページを使用した、API キーの管理  API キーの詳細については Introduction to API key authentication (英語) をご参照ください。
-前提条件  ArcGIS Location Platform アカウント、ArcGIS Online アカウント、ArcGIS Enterprise アカウントのいずれかが必要です。ArcGIS Online アカウントおよび ArcGIS Enterprise アカウントの場合は、アカウントに適切なユーザー タイプとロールが設定されている必要があります。詳細については、製品およびアカウントの要件 を参照してください。 API キーに割り当てる権限を把握する必要があります。割り当てられた権限により、アプリケーションは特定の ArcGIS サービスおよびリソースにアクセスできるようになります。詳細は Privileges を参照してください。  API キーの作成手順 ポータルにサイン イン APIキーの認証情報を含むアイテムの作成と管理にはポータルを使用します。</description>
-    </item>
-    
-    <item>
-      <title>セキュリティと認証の紹介</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/security/</guid>
-      <description>出典：Security and authentication guide - Security and authentication
-ArcGIS は、許可されたユーザーとアプリケーションのみがセキュリティで保護されたリソースにアクセスできる安全なシステムです。開発者は、認証を使用してポータル、データ サービス、ロケーション サービスなどのセキュリティで保護されたリソースにアクセスするアプリケーションを構築できます。ArcGIS は 3 種類の認証をサポートしています。ロケーション サービスを利用した公開アプリを構築するための API キー認証、組織用のプライベートなアプリを構築するためのユーザー認証、ArcGIS Enterprise リソースで動作するサーバー対応のアプリケーションを構築するためのアプリ認証です。実装する認証の種類は、アプリケーションの要件と、ユーザーに ArcGIS アカウントを使用してサイン インさせるかどうかによって異なります。
-ガイドの内容 以下のガイドでは、次の種類の認証を使用して安全なリソースにアクセスする方法を説明します (英語)。 API キー認証 ユーザー認証 アプリ認証  認証の開始
-OAuth 2.0 を使用して ArcGIS にサイン イン
-ポータルで開発者認証情報を作成
-開発者認証情報の権限を選択
-ポータルで API キーの認証情報を管理
-ポータルで OAuth 認証情報を管理
-API キーの認証ワークフロー
-ユーザー認証 OAuth 2.</description>
-    </item>
-    
-    <item>
-      <title>デプロイの紹介</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/guide/deployment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/guide/deployment/</guid>
-      <description>出典：ArcGIS Location Platform - Deployment
-アプリケーションをデプロイするためのライセンスと配布の要件は、開発するアプリケーションのタイプと使用する API によって決まります。これには、Web、ネイティブ、およびサービスベースのアプリケーションが含まれます。このヘルプ トピックでは、ソリューションをデプロイする前に知っておく必要がある情報について説明します。
-アプリケーションをデプロイする前に、必ず利用規約を確認してください。 使用条件に従わない特別な導入要件がある場合はお問い合わせください。
-すべての ArcGIS Location Platform アカウントには、サブスクリプション プランが関連付けられています。各サブスクリプションには、無料枠のロケーション サービスが付属しており、従量課金は無効になっています。このアカウントを使用して、API キーまたは OAuth 2.0 のいずれかを使用してロケーション サービスにアクセスするアプリケーションを構築できますが、利用できるのは無料レベルの使用量でアクセスできるロケーション サービスのみです。すべてのロケーション サービスにアクセスするには、従量課金を有効にする必要があります。利用可能な機能の一覧については、以下の表をご確認ください。
-アプリケーションが特定の課金サイクルで無料枠を超えて使用した場合、従量課金を有効にしない限り、サービスへのアクセスは無効になります。従量課金は、アカウントのサブスクリプションの課金設定で構成することができます。従量課金と課金について詳しくはこちらをご覧ください。
-すべてのロケーション サービスのトランザクションは米ドルで課金されます。サービスの利用料については、価格をご確認ください。
-アプリケーションを導入する前に、従量課金を有効にして、中断のないサービス アクセスを確保することをお勧めします。
-    無料枠 従量課金     ベースマップ 〇 〇   プレイス 〇 〇   住所検索 (データ保存しない) 〇 〇   住所検索 (データ保存する) × 〇   ルート検索 〇 〇   ルート検索（経由地の最適化） × 〇   到達圏 〇 〇   配車ルート解析 × 〇   最寄りの検索 × 〇   ラスト マイル デリバリー × 〇   ロケーション-アロケーション × 〇   移動コスト マトリックス × 〇   インフォグラフィックス × 〇   レポート作成 × 〇   標高サービス 〇 〇   空間解析 × 〇   タイル、ファイル、アタッチメントの保存 (250 MB) 〇 〇   フィーチャの保存 (250 MB) 〇 〇   フィーチャのクエリ (転送量、125 MB) 〇 〇   フィーチャの編集 (転送量、125 MB) 〇 〇    〇：対応　△：一部対応　×：未対応</description>
-    </item>
-    
-  </channel>
-</rss>

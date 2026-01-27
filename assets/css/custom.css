@@ -1,0 +1,9 @@
+/* 前のページへのリンクを非表示 */
+div.hx\:mb-8.hx\:flex.hx\:border-t > a.hx\:ltr\:pr-4 {
+  display: none !important;
+}
+
+/* 次のページへのリンクを非表示 */
+div.hx\:mb-8.hx\:flex.hx\:border-t > a.hx\:ltr\:ml-auto {
+  display: none !important;
+}

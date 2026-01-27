@@ -1,0 +1,57 @@
+# Hugo configuration file
+title: ArcGIS リソース集
+
+publishDir: "docs"
+
+defaultContentLanguage: ja
+
+# import hextra as module
+module:
+  imports:
+    - path: hextra
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: ESRIジャパン
+      url: "https://www.esrij.com/"
+      weight: 2
+    - name: お問い合わせ
+      url: "https://www.esrij.com/contact/"
+      weight: 3
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
+      url: "https://github.com/EsriJapan/arcgis-resources-netlify"
+      params:
+        icon: github
+    - name: X
+      weight: 6
+      url: "https://x.com/ESRIJapan"
+      params:
+        icon: x-twitter
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    displayCopyright: true
+    displayPoweredBy: true
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: wide

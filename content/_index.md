@@ -1,34 +1,87 @@
 +++
-title = "ArcGIS Developers 開発リソース集"
-description = ""
+title = "ArcGIS リソース集"
+description = "ArcGIS リソース集"
+weight = 1
+alwaysopen = false
+publishDate = 2023-04-17T00:00:00+09:00
+draft = false
+author = "司馬"
+[[cascade]]
+  type = "docs"
 +++
 
 <span id="sidebar-toggle-span">
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
 </span>
 
-# ArcGIS Developers 開発リソース集
-本サイトは、ArcGIS の API / SDK を利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS Location Platform を利用した開発、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術 Tips 集を紹介しています。
 
-**[ArcGIS Location Platform](https://www.esri.com/en-us/arcgis/products/arcgis-location-platform/overview)** は、ロケーション サービスを提供する PaaS（Platform as a Service）です。サービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-location-platform/)をご覧ください。
+### ArcGIS リソース集
 
-**[ArcGIS Developers](https://developers.arcgis.com/)** が提供するサービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-developers/)をご覧ください。
+本サイトでは、ArcGIS を利用する方向けに、よりスムーズにスタートしていただけるよう、セットアップや簡単な利用方法を紹介しています。<br>
+ArcGIS 製品の概要は[ESRIジャパン製品ページ](https://www.esrij.com/products/)をご参照ください。
 
-{{% panel theme="success" header="目次" %}}
+また、Esri は、ニーズおよび技術動向を考慮し、継続的に製品を開発、提供していくために、今後非推奨とする機能やコンポーネントを事前に告知しています。[サポートからのお知らせ](https://tech-support.esrij.com/arcgis/article/web/general101.html)も併せてご確認ください。
 
-- [スタートアップガイド](guide)
-    
-    - 開発を始める方のために必要なアカウントの作成、API キーの取得、ロケーション サービスの利用、各 API / SDK を使った開発の基本的な流れからセキュリティ、デプロイまでと ArcGIS Location Platform を利用した開発手順にそって学べる情報をまとめています。
+#### ArcGIS 主要製品
+<table style="border:none;">
+  <tbody style="border:none;">
+    <tr style="border:none;">
+      <td width="33%" style="border:none;"><a href="./online">ArcGIS Online</a></td>
+      <td width="33%" style="border:none;"><a href="./pro">ArcGIS Pro</a></td>
+      <td width="33%" style="border:none;"><a href="https://www.esrij.com/products/arcgis-enterprise/documents/">ArcGIS Enterprise</a></td>
+    </tr>
+    <tr style="border:none;">
+      <td colspan="2" style="border:none;"><a href="https://esrijapan.github.io/arcgis-dev-resources/">ArcGIS Developer (ArcGIS 開発者リソース集)</a></td>
+    </tr>
+  </tbody>
+</table>
 
-- [もっと学ぶ](learn)
+---
 
-    - スタートアップガイドをひととおり学び終えた方は、次のステップとして、何を見て学習すれば良いのか、より深く学べるように情報をまとめています。米国 Esri 社が無償で提供している学習素材や、ESRIジャパンのスタッフが作成したサンプル プログラム、過去に実施したセミナーやハンズオンの資料、ブログ記事など、多くの情報をまとめています。
+#### ArcGIS Online 関連製品
+<table style="border:none;">
+  <tbody style="border:none;">
+    <tr style="border:none;">
+      <td width="33%" style="border:none;"><a href="./online">ArcGIS Online</a></td>
+      <td width="33%" style="border:none;"><a href="./hub">ArcGIS Hub</a></td>
+      <td width="33%" style="border:none;"></td>
+    </tr>
+  </tbody>
+</table>
 
-- [技術 Tips 集](tips)
- 
-    - 各 API / SDK を使用した開発をサポートするドキュメント（インストール ガイド、アプリケーションの配布など）や、データの可視化に関する技術 Tips をまとめています。
+---
 
-{{% /panel %}}
+#### ArcGIS Apps
+<table style="border:none;">
+  <tbody style="border:none;">
+    <tr style="border:none;">
+      <td width="33%" style="border:none;"><a href="./business-analyst">ArcGIS Business Analyst</a></td>
+      <td width="33%" style="border:none;"><a href="./cityengine">ArcGIS CityEngine</a></td>
+      <td width="33%" style="border:none;"><a href="./drone2map">ArcGIS Drone2Map</a></td>
+    </tr>
+    <tr style="border:none;">
+      <td style="border:none;"><a href="./fieldmaps">ArcGIS Field Maps</a></td>
+      <td style="border:none;"><a href="./insights">ArcGIS Insights</a></td>
+      <td style="border:none;"><a href="./survey123">ArcGIS Survey123</a></td>
+  </tbody>
+</table>
 
-### プライバシーポリシー
+---
+
+#### その他
+<table style="border:none;">
+  <tbody style="border:none;">
+    <tr style="border:none;">
+      <td width="33%" style="border:none;"><a href="./license-manager">ArcGIS License Manager</a></td>
+      <td width="33%" style="border:none;"><a href="https://tech-support.esrij.com/arcgis/article/web/knowledge1002.html">ArcGIS Desktop (ArcMap)</a></td>
+      <td width="33%" style="border:none;"><a href="https://www.esrij.com/products/arcgis-engine/documents/">ArcGIS Engine</a></td>
+    </tr>
+    <tr style="border:none;">
+      <td colspan="3" style="border:none;"><a href="https://doc.arcgis.com/">Esri 製品ヘルプ一覧</a></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+#### プライバシーポリシー
 - [ESRIジャパン Web サイトポリシー](https://www.esrij.com/legal/policy/)

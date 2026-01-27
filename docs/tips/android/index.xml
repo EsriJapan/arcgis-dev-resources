@@ -1,66 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ArcGIS Maps SDK for Kotlin on ArcGIS Developers 開発リソース集</title>
-    <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/</link>
-    <description>Recent content in ArcGIS Maps SDK for Kotlin on ArcGIS Developers 開発リソース集</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://esrijapan.github.io/arcgis-dev-resources/tips/android/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>インストール ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-200.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/install-android-200.x/</guid>
-      <description>出典：ArcGIS Maps SDK for Kotlin - Guide - Install and set up
-このインストール ガイドでは、ArcGIS Maps SDK for Kotlin (バージョン 200.x) のインストールとセットアップ手順を紹介します。マップを表示する方法については「アプリの作成」のチュートリアルをご覧ください。
-ArcGIS Maps SDK for Kotlin をインストールする前に、開発マシンがシステム要件を満たしていることを確認してください。アプリを実行するすべてのターゲット デバイスには、Android API レベルの最小バージョンが必要です。詳細については、システム要件を参照してください。
-Gradle を使用してインストールすることをお勧めします。これにより、Esri の Maven リポジトリーから必要な依存関係と SDK バイナリーがインストールされます。
-Gradle で API を取得する Android Studio で [New Project] ウィザードを実行する際、[Phone and Tablet]、[Empty Activity] の順に選択します。Empty Activity オプションは Compose 対応アプリを作成するために必要な Android からの Jetpack Compose 依存関係を提供します。
-Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。
-  プロジェクト ツール ウィンドウで、ドロップダウン メニューから [Android ビュー]を選択します。[Gradle Scripts] &amp;gt; [build.</description>
-    </item>
-    
-    <item>
-      <title>アプリケーション配布ガイド</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-200.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/distribution-android-200.x/</guid>
-      <description>ArcGIS Maps SDK for Kotlin (バージョン 200.x) を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
-API キーの設定 ArcGIS Location Platform のロケーション サービスを使用する場合は、アプリで API キーを設定する必要があります。API キーの詳細はAPI キーの取得を、API キーの設定方法はアプリの作成のAPI キーを設定するをご覧ください。
-ライセンス認証のステップ 開発したアプリケーションのライセンス認証のステップは以下の通りです。
-  使用するライセンスの選択
-  ライセンスの認証方法
- Lite ライセンスの認証方法 Basic ライセンスの認証方法 Standard ライセンスの認証方法 Analysis Extension ライセンスの認証方法 Advanced Editing Extension ライセンスの認証方法    ライセンスの認証
- Lite ライセンス キーを使用した認証 配布パックのライセンス キーを使用した認証 指定ユーザー アカウントを使用した認証    使用するライセンスの選択 ArcGIS Maps SDK for Kotlin には Lite、Basic、Standard の 3 つのライセンス レベルと Analysis エクステンションがあります。開発したアプリケーションが使用する機能に応じて、適切なライセンス レベルを選択してください。</description>
-    </item>
-    
-    <item>
-      <title>バージョン 10.2.x から 100.x への移行</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-100.x/</guid>
-      <description>ArcGIS Runtime SDK バージョン 100.x は新しいアーキテクチャを使用してゼロから開発された次世代の ArcGIS Runtime です。このバージョンアップに伴い API の再設計が行なわれています。このドキュメントでは、バージョン 100.x の変更点について説明します。
-ArcGIS Runtime SDK for Android に関しては、ESRIジャパン 製品ページをご参照ください。
-以下は、バージョン 100.x の主な変更点です。
- Gradle 参照プロジェクトの変更 マップ ビュー レイヤー クラス名の変更 フィーチャ レイヤーの表示 フィーチャの操作 個別属性表示 グラフィックス オーバーレイ ジオメトリとジオメトリ ビルダー ローダブル パターン 新しい同期パターン 既知の制限事項  Gradle 参照プロジェクトの変更 Android Studio のビルド ツールは Gradle を使用し、maven リポジトリとライブラリの参照を変更します。
-repositories {jcenter()maven {url &#39;https://esri.jfrog.io/artifactory/arcgis&#39;}}dependencies {implementation &#39;com.esri.arcgisruntime:arcgis-android:100.10.0&#39;}ArcGIS Runtime SDK for Android がサポートする最新の動作環境は、ESRIジャパン 製品ページ（動作環境）をご参照ください。</description>
-    </item>
-    
-    <item>
-      <title>バージョン 100.x から 200.x への移行</title>
-      <link>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-200.x/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://esrijapan.github.io/arcgis-dev-resources/tips/android/migration-android-200.x/</guid>
-      <description>出典：ArcGIS Maps SDK for Kotlin - Guide - Migrate from 100.x to 200.x
-ArcGIS Runtime SDK バージョン 100.15 は、不具合修正とマイナー アップデートのみに焦点を当てた長期サポート リリースです。ArcGIS Maps SDKs for Native Apps バージョン 200.x は、100.15 の実績あるアーキテクチャをベースに、最新の開発者フレームワークのイノベーションを活用するように設計されています。このトピックでは、変更された API の領域について概説し、200.x アプリ用に 100.x コードをリファクタリングするための手順を説明します。
-200.0 リリースでは、Android 向けの新しい Kotlin ベースの API「ArcGIS Maps SDK for Kotlin」が導入されました。
-このリリースは、ArcGIS Runtime SDK for Android を Kotlin ファーストの SDK として完全に再構築したもので、コルーチン、フロー、null 安全などの機能をすぐにサポートすることができます。Java ベースの ArcGIS Runtime SDK for Android は、長期サポート（LTS）となり、不具合修正は継続されますが、それ以上の機能アップデートはありません。
-新機能を利用するには、Java ベースの ArcGIS Runtime SDK for Android を置き換える ArcGIS Maps SDK for Kotlin に移行してください。詳細については、ブログ「ArcGIS Runtime SDK の今後のバージョンアップの計画についてのお知らせ」をご確認ください。</description>
-    </item>
-    
-  </channel>
-</rss>
