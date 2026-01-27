@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: ArcGIS Developers 開発リソース集
+title: ArcGIS Developers 開発リソース集 
 
 publishDir: "docs"
 
