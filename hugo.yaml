@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: ArcGIS リソース集
+title: ArcGIS Developers 開発リソース集
 
 publishDir: "docs"
 
@@ -34,7 +34,7 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/EsriJapan/arcgis-resources-netlify"
+      url: "https://github.com/EsriJapan/arcgis-dev-resources"
       params:
         icon: github
     - name: X
@@ -55,3 +55,5 @@ params:
   page:
     # full (100%), wide (90rem), normal (1280px)
     width: wide
+    tabs :
+      sync: true
