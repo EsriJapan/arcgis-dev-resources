@@ -211,7 +211,7 @@ OpenLayers の [Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.h
 
 ```
 
-2. [View](https://openlayers.org/en/latest/apidoc/module-ol_View-View.html) を作成し、[setView](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html#setView) を使ってマップに適用します。マップビューを中央に配置するために、center プロパティを [138.729858,35.362752] に、zoom プロパティを`12` に設定します。
+2. [View](https://openlayers.org/en/latest/apidoc/module-ol_View-View.html) を作成し、[setView](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html#setView) を使ってマップに適用します。マップ ビューを中央に配置するために、center プロパティを [138.729858,35.362752] に、zoom プロパティを `12` に設定します。
 
 ```HTML
 <html>
@@ -386,7 +386,7 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
 </html>
 ```
 
-4. [olms](https://github.com/openlayers/ol-mapbox-style#olms) を使用して、ベースマップ スタイルをマップに適用します。olms 関数は、マップ要素と Mapbox ベースマップ スタイル ファイルの URL の2 つの入力を受け取ります
+4. [`olms`](https://github.com/openlayers/ol-mapbox-style#olms) を使用して、ベースマップ スタイルをマップに適用します。`olms.apply` 関数は、マップ要素と Mapbox ベースマップ スタイル ファイルの URL の2 つの入力を受け取ります
 
 ```HTML
 <html>
@@ -453,7 +453,7 @@ Mapbox スタイルは、スタイルで使用されるベクター タイル �
 Esri テクノロジーを使用するすべてのアプリケーションにおいて、Esri およびデータの帰属表示を表示する必要があります。
 OpenLayers はベースマップ スタイル サービスに対して自動的にデータ帰属を表示しますが、Esri の帰属表示（「Powered by Esri」）を表示するには追加の手順が必要です。
 
-`olms` 関数呼び出しにロード イベント ハンドラを追加します。
+`olms.apply` 関数呼び出しにロード イベント ハンドラを追加します。
 内部でベースマップ ソースを取得し、`setAttributions()` を使用して「Powered by Esri」を先頭に追加します。
 
 
@@ -530,6 +530,11 @@ OpenLayers はベースマップ スタイル サービスに対して自動的�
   </body>
 </html>
 ```
+
+{{< callout type="info" >}}
+帰属表示の要件について詳しくは、[Esri とデータの帰属表示](https://developers.arcgis.com/documentation/esri-and-data-attribution/)をご覧ください。
+{{< / callout>}}
+
 
 ### アプリを実行する
 

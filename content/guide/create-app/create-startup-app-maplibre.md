@@ -14,7 +14,7 @@ aliases = ["/create-startup-app-maplibregl/"]
 
 ArcGIS ベースマップ スタイル サービスは、地形、道路、アウトドア、ナビゲーション、画像など、マップで使用できる複数のベースマップ スタイルを提供します。MapLibre GL JS アプリでこのサービスのベースマップ スタイルを表示するには、[MapLibre ArcGIS プラグイン](https://developers.arcgis.com/maplibre-gl-js/maplibre-arcgis-plugin/)を使用します。
 
-このチュートリアルでは、arcgis/topographic ベースマップ スタイルを使用して、富士山周辺の地図を表示します。
+このチュートリアルでは、`arcgis/topographic` ベースマップ スタイルを使用して、富士山周辺の地図を表示します。
 このアプリケーションは[ベースマップ タイルの使用モデル ](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemaps/basemap-usage-styles/)を利用します。
 
 {{< callout type="info" >}}

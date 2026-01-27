@@ -5,7 +5,7 @@ Weight=5
 aliases = ["/create-startup-app-cesium/"]
 +++
 
-出典：CesiumJS and ArcGIS - Tutorials - [Display a scene](https://developers.arcgis.com/cesiumjs/scenes/styled-basemap-tiles/display-a-scene/)
+出典：CesiumJS and ArcGIS - Tutorials - [Display a scene](https://developers.arcgis.com/cesiumjs/scenes/satellite-basemap-tiles/display-a-scene/)
 
 # シーンを表示する
 このチュートリアルでは、[CesiumJS](https://developers.arcgis.com/cesiumjs/) と ベースマップ レイヤー サービスを使用して、シーンを表示する方法を紹介します。
@@ -457,6 +457,82 @@ YOUR_ACCESS_TOKEN を、取得してきた API キーをアクセス トーク�
 </html>
 ```
 
+### 帰属表示を追加する
+Esri テクノロジーを使用するすべてのアプリケーションにおいて、Esri およびデータの帰属表示を表示する必要があります。
+CesiumJS は ArcGIS ベースマップ スタイル サービスに対してデータ帰属表示を自動的に行いますが、Esri 帰属表示（「Powered by Esri」）を表示するには追加の手順が必要です。
+
+「Powered by Esri」文字列用の新しいクレジットを作成し、`showOnScreen` を `true` に設定した後、ビューアに追加します。
+
+```HTML
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <meta charset="utf-8" />
+    <title>CesiumJS: Display a Scene</title>
+    <!-- cesium js のライブラリと css ファイルを指定 -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+        html, body, #cesiumContainer {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="cesiumContainer"></div>
+    <!--script のタグを追加-->
+    <script>
+      // ArcGIS API キーの追加
+      const accessToken = "YOUR_ACCESS_TOKEN";
+      // ArcGIS API キーを Cesium.ArcGisMapService.defaultAccessToken に設定 
+      Cesium.ArcGisMapService.defaultAccessToken = accessToken;
+
+      // 取得した Cesium ion のアクセス トークンを貼り付け
+       const cesiumAccessToken = "YOUR_CESIUM_ACCESS_TOKEN";
+      // Cesium ion へのアクセス トークンを cesiumAccessToken に設定
+       Cesium.Ion.defaultAccessToken = cesiumAccessToken;
+      // fromBasemapType メソッドを利用して ArcGIS のベースマップを呼び出し
+      const arcGisImagery = Cesium.ArcGisMapServerImageryProvider.fromBasemapType(Cesium.ArcGisBaseMapType.SATELLITE);
+      // CesiumContainer に接続された Cesium.Viewer クラスを作成
+      const viewer = new Cesium.Viewer("cesiumContainer", {
+        // Cesium のベースマップを SATELLITE に設定
+        baseLayer: Cesium.ImageryLayer.fromProviderAsync(arcGisImagery),
+        // Viewer のオプションを設定。
+        terrain: Cesium.Terrain.fromWorldTerrain(),
+        timeline: false,
+        animation: false,
+        geocoder:false
+
+      });
+      // カメラの位置と角度を設定
+      viewer.camera.setView({
+        destination : Cesium.Cartesian3.fromDegrees(138.74482706645605,35.509217041554955, 3500),
+        orientation : {
+          heading : Cesium.Math.toRadians(180.0),
+          pitch : Cesium.Math.toRadians(-10.0),
+        }
+      });
+
+      // Esri の帰属表示を追加する
+      // 詳細はこちらをご覧ください：https://esriurl.com/attribution
+      const poweredByEsri = new Cesium.Credit("Powered by <a href='https://www.esri.com/en-us/home' target='_blank'>Esri</a>", true);
+      viewer.creditDisplay.addStaticCredit(poweredByEsri);
+    </script>
+
+  </body>
+</html>
+```
+
+{{< callout type="info" >}}
+帰属表示の要件について詳しくは、[Esri とデータの帰属表示](https://developers.arcgis.com/documentation/esri-and-data-attribution/)をご覧ください。
+{{< / callout >}}
+
 ### アプリの実行
 __CodePen__ で、作成したコードを実行してシーンを表示します。
 
@@ -467,4 +543,4 @@ __CodePen__ で、作成したコードを実行してシーンを表示しま�
 
 - [ベース レイヤーの変更](https://developers.arcgis.com/cesiumjs/scenes/satellite-basemap-tiles/change-the-base-layer/)
 - [フィーチャの追加(GeoJSON)](https://developers.arcgis.com/cesiumjs/layers/add-features-as-geojson/)
-- [3D オブジェクト シーン レイヤーの追加]()
+- [3D オブジェクト シーン レイヤーの追加](https://developers.arcgis.com/cesiumjs/layers/add-3d-objects/)

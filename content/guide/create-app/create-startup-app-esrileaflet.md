@@ -15,7 +15,7 @@ aliases = ["/create-startup-app-esrileaflet/"]
 
 マップには、ベースマップ レイヤー サービスのベクター タイル ベースマップ レイヤーを使用しています。ベクター タイル ベースマップ レイヤーには、レイヤーをレンダリングするためのスタイル、レイヤー、フォントグリフ(Font Glyphs)、およびアイコンが含まれています。
 
-このチュートリアルでは、arcgis/topographic ベースマップ スタイルを使用して、富士山周辺の地図を表示します。
+このチュートリアルでは、`arcgis/topographic` ベースマップ スタイルを使用して、富士山周辺の地図を表示します。
 
 このアプリケーションは[ベースマップ タイルの使用モデル](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemaps/basemap-usage-styles/)を利用します。
 
@@ -129,7 +129,7 @@ YOUR_ACCESS_TOKEN を、取得してきた API キーをアクセス トーク�
 ```
 
 ### スクリプト参照を追加する
-ベクターベース マップ レイヤーにアクセスするには、[`Leaflet`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#leaflet) ライブラリに加え、[`esri-leaflet`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#esri-leaflet) および [`esri-leaflet-vector`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#esri-leaflet-vector) プラグインを参照します。
+ベクター ベースマップ レイヤーにアクセスするには、[`Leaflet`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#leaflet) ライブラリに加え、[`esri-leaflet`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#esri-leaflet) および [`esri-leaflet-vector`](https://developers.arcgis.com/esri-leaflet/esri-leaflet-plugin/#esri-leaflet-vector) プラグインを参照します。
 
 ```HTML
 <html>
@@ -180,7 +180,8 @@ YOUR_ACCESS_TOKEN を、取得してきた API キーをアクセス トーク�
 指定したベースマップを使用して、div 要素に `map` を追加します。
 ベースマップ スタイルの一覧を確認するには、[ベースマップ スタイル サービスの概要](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemaps/introduction-basemap-styles-service/)を参照してください。
 
-[`L.map`](https://leafletjs.com/reference.html#map) クラスを使って地図を作成し、[setView](https://leafletjs.com/reference.html#map-setview) メソッドで中心点を富士山周辺にし、ズーム レベルを `12` でセットします。  
+[`L.map`](https://leafletjs.com/reference.html#map) クラスを使って地図を作成します。
+[setView](https://leafletjs.com/reference.html#map-setview) メソッドで中心点を富士山周辺にし、ズーム レベルを `12` にセットします。  
 [`L.esri.Vector.vectorBasemapLayer`](https://developers.arcgis.com/esri-leaflet/api-reference/esri-leaflet-vector/vector-basemap/) クラスをインスタンス化し、`basemapEnum` と `accessToken` を設定してから、レイヤーを `map` に追加します。
 
 ```HTML
