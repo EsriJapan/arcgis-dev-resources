@@ -10,7 +10,7 @@ description = ""
 </span>
 
 ## ArcGIS Developers 開発リソース集
-本サイトは、ArcGIS の API / SDK を利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS Location Platform を利用した開発、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術 Tips 集を紹介しています。 
+本サイトは、ArcGIS の API / SDK を利用して開発する方向けに、開発をよりスムーズにスタートしていただけるよう、ArcGIS Location Platform を利用した開発、開発環境の構築から簡単なアプリケーション作成までのガイド、開発に役立つ 技術 Tips 集を紹介しています 
 
 **[ArcGIS Location Platform](https://www.esri.com/ja-jp/arcgis/products/arcgis-location-platform/overview)** は、ロケーション サービスを提供する PaaS（Platform as a Service）です。サービスの詳細は [ESRIジャパン製品ページ](https://www.esrij.com/products/arcgis-location-platform/)をご覧ください。
 
