@@ -1,5 +1,5 @@
 +++
-title = "インストール ガイド"
+title = "インストールとセットアップ"
 description = "ArcGIS Maps SDK for Unity のインストールとセットアップ手順を紹介します。"
 weight = 1
 aliases = ["/unity/install-and-set-up/"]
@@ -23,7 +23,7 @@ aliases = ["/unity/install-and-set-up/"]
 1. 新しいプロジェクトを作成するには、**Unity Hub** を開き、[プロジェクト] タブを選択し、[新しいプロジェクト] ボタンをクリックします。
 
 2. ポップアップ ウィンドウで、以下の設定を定義してください。
-    * エディター バージョン: ArcGIS Maps SDK for Unity は、Unity 2022.3 LTS、6.0 LTS、および 6.1 をサポートしています。複数の Unity エディター バージョンがインストールされている場合、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。
+    * エディター バージョン: ArcGIS Maps SDK for Unity は、Unity 2022.3 LTS、6.0 LTS、および 6.3 をサポートしています。複数の Unity エディター バージョンがインストールされている場合、ポップアップ ウィンドウの上部でサポートされているエディター バージョンを選択してください。
     * テンプレート: このプラグインは、High Definition Render Pipeline (12.x) と Universal Render Pipeline (12.x) の両方をサポートしています。High Definition 3D Core または Universal 3D Core テンプレートをダウンロードできます。これらのテンプレート以外のテンプレートを選択した場合、レンダリング パイプライン パッケージを手動でインストールする必要があります。（レガシー ビルトイン レンダリング パイプラインはサポートされていません。）
     * プロジェクト名: プロジェクトのメイン フォルダーの名前を設定します。このフォルダーには、プロジェクトに関連するアセット、シーン、その他のファイルが含まれます。
     * 場所: プロジェクトがコンピューターのファイル システム内に保存されている場所。デフォルトのプロジェクトの場所は、コンピュータのホーム フォルダーに設定されています。
@@ -35,7 +35,7 @@ aliases = ["/unity/install-and-set-up/"]
 
 #### Unity Asset Store からダウンロードする
 
-1. [Unity Asset Store](https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537) からプラグインをダウンローします。
+1. [Unity Asset Store](https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537) からプラグインをダウンロードします。
 2. ダウンロード後、上部メニューの [ウィンドウ（Window）] > [パッケージ マネージャー（Package Manager）] > [マイ アセット（My Assets）]を展開し、ダウンロードしたアセットを開きます。
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/unity-add-the-plugin/package-manager.png" width="800px">
 3. Unity ドキュメントの [Importing an Asset Store package](https://docs.unity3d.com/6000.0/Documentation/Manual/upm-ui-import.html) の手順に従ってください。
