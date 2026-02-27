@@ -2,7 +2,7 @@
 title = "移行計画"
 description = "ウィジェットからマップ コンポーネントへの移行計画について紹介します。"
 weight = 6
-aliases = ["/translation-plan/"]
+aliases = ["/transition-plan/"]
 +++
 
 出典：ArcGIS Maps SDK for JavaScript - [Transition plan: widgets to components](https://developers.arcgis.com/javascript/latest/components-transition-plan/)
