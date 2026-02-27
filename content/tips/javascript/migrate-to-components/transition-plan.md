@@ -1,5 +1,5 @@
 +++
-title = "移行計画"
+title = "移行計画：ウィジェットからコンポーネントへ"
 description = "ウィジェットからマップ コンポーネントへの移行計画について紹介します。"
 weight = 6
 aliases = ["/transition-plan/"]
@@ -7,17 +7,16 @@ aliases = ["/transition-plan/"]
 
 出典：ArcGIS Maps SDK for JavaScript - [Transition plan: widgets to components](https://developers.arcgis.com/javascript/latest/components-transition-plan/)
 
-# 移行計画：ウィジェットからコンポーネントへ
-Esri は、JavaScript Maps SDK のコア API を `<arcgis-map></arcgis-map>` のような再利用可能なカスタム HTML 要素へと拡張する、[Web コンポーネント](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)の開発に全面的に取り組んでいます。
+Esri は、ArcGIS Maps SDK for JavaScript のコア API を `<arcgis-map></arcgis-map>` のような再利用可能なカスタム HTML 要素へと拡張する、[Web コンポーネント](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)の開発に全面的に取り組んでいます。
 
-これは、ArcGIS 製品の内部開発にも、JavaScript Maps SDK の一部として提供される[ビルド済みの UI コンポーネント](https://developers.arcgis.com/javascript/latest/components/)にも当てはまります。
+これは、ArcGIS 製品の内部開発にも、ArcGIS Maps SDK for JavaScript の一部として提供される[ビルド済みの UI コンポーネント](https://developers.arcgis.com/javascript/latest/components/)にも当てはまります。
 現在、SDK を使用した Web アプリの構築では、コンポーネントを使用することが推奨されています。
 
 
 ## コンポーネントのメリット
 このアーキテクチャーの転換は、フロントエンド Web 開発の生産性を最大化します。
 カスタム要素は、使い慣れた（HTML、CSS、JS）プログラミング エクスペリエンスを提供し、アプリケーション フレームワークとのシームレスな統合を可能にします。
-さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている [Arcade Editor](https://developers.arcgis.com/javascript/latest/references/coding-components/arcgis-arcade-editor/) や [チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/)など）。
+さらに、ArcGIS のエクスペリエンスを Esri 製品の Web コンポーネントとしてカプセル化しているため、実績のあるワークフローを SDK の設定によって変更が可能なコンポーネントとして提供できます（すでにリリースされている [Arcade エディター](https://developers.arcgis.com/javascript/latest/references/coding-components/arcgis-arcade-editor/) や [チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/)など）。
 SDK の上位レベルのコンポーネント群は、今後も継続的に拡充されていきます。
 
 
@@ -31,11 +30,13 @@ SDK が最初に開発された当時、Web コンポーネントの規格はま
 * [Basemap Gallery](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-gallery/)
 * [Basemap Toggle](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-toggle/)
 * [Bookmarks](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/)
+* [Building Explorer](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-building-explorer/)
 * [Compass](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-compass/)
 * [Coordinate Conversion](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-coordinate-conversion/)
 * [Daylight](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-daylight/)
 * [Direct Line Measurement 3D](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-direct-line-measurement-3d/)
 * [Directional Pad](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-directional-pad/)
+* [Elevation Profile](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-elevation-profile/)
 * [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/)
 * [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/)
 * [Features](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-features/)
@@ -49,11 +50,13 @@ SDK が最初に開発された当時、Web コンポーネントの規格はま
 * [Print](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-print/)
 * [Scale Bar](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-scale-bar/)
 * [Search](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-search/)
+* [Shadow Cast](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-shadow-cast/)
 * [Slice](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-slice/)
 * [Swipe](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-swipe/)
 * [Time Zone Label](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-time-zone-label/)
 * [Track](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-track/)
 * [Video Player](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-video-player/)
+* [Volume Measurement](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-volume-measurement/)
 * [Weather](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-weather/)
 * [Zoom](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/)
 
@@ -66,11 +69,10 @@ SDK の多くのリソースは、すでにコンポーネント ベースにな
 
 
 ## ウィジェット ロードマップ
-最終的には、すべてのウィジェットは[非推奨](https://developers.arcgis.com/javascript/latest/faq/#what-does-it-mean-when-an-aspect-of-the-sdk-is-deprecated)となり、後に削除されます。しかし、コンポーネントへの移行にはアプリケーションの書き換えは必要ありませんが、相応の労力がかかり、計画と優先順位付けが必要であることを認識しています。多くの Esri 製品チームが同じ移行作業を行うことになります。
+バージョン 5.0 ですべてのウィジェットは[非推奨](https://developers.arcgis.com/javascript/latest/faq/#what-does-it-mean-when-an-aspect-of-the-sdk-is-deprecated)となり、その後削除される予定です。コンポーネントへの移行にはアプリケーションの書き換えは必要ありませんが、相応の労力がかかり、計画と優先順位付けが必要であることを認識しています。多くの Esri 製品チームが同じ移行作業を行うことになります。
 ウィジェットのロードマップは、この必要な労力とコンポーネント開発のロードマップの両方を考慮して策定されています。コンポーネントへの完全移行のために、以下のマイルストーンを目指しています。
 
-* [@arcgis/map-components](https://developers.arcgis.com/javascript/latest/references/map-components/) パッケージ内のコンポーネントが、ウィジェット コードをラップしない実装に更新された時点で、対応するウィジェットは非推奨となります。非推奨は[リリース ノート](https://developers.arcgis.com/javascript/latest/release-notes/#deprecations)、API リファレンス、コンソール メッセージで通知されます。
-* すべてのウィジェットは、早ければ 2026 年第 1 四半期に非推奨となります。
+* すべてのウィジェットは、2026 年第 1 四半期にリリースされるバージョン 5.0 で非推奨となります。非推奨となる機能については、[リリース ノート](https://developers.arcgis.com/javascript/latest/release-notes/#deprecations)、API リファレンス、コンソール メッセージで示されます。
 * すべてのウィジェットは、早ければ 2027 年第 1 四半期に SDK から削除されます。
 
 
@@ -81,13 +83,9 @@ SDK の多くのリソースは、すでにコンポーネント ベースにな
 ## コンポーネントによるアプリ構築の詳細
 コンポーネントを使ったアプリの作り方を学ぶためのリソースは以下のようにたくさんあります。
 
-* コンポーネントへのアクセス方法（CDNとnpm）、React や Angular などのフレームワークとの統合についてのガイドを含む、[開発の手順](../../get-started/)。
+* コンポーネントへのアクセス方法（CDN と npm）、React や Angular などのフレームワークとの統合についてのガイドを含む、[開発の手順](../../get-started/)。
 * [コンポーネントの概要](../../components/)
 * [チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/)
 * コンポーネントを使用した[サンプルコード](https://developers.arcgis.com/javascript/latest/sample-code/?tagged=map-components)
 * [プログラミング パターン](https://developers.arcgis.com/javascript/latest/programming-patterns/)
 * Core API と Maps SDK コンポーネントの[リファレンス](https://developers.arcgis.com/javascript/latest/references/)
-
-
-
-

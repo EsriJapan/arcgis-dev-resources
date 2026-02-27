@@ -17,7 +17,7 @@ JavaScript Maps SDK の使い始めは、目的や要件によって異なりま
 
 {{< /callout >}}
 
-> コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始めまられます。
+> コードの例：ArcGIS Maps SDK for JavaScript コア API とマップ コンポーネント テンプレート プロジェクトをチェックして、すぐに始められます。
 > - [CDN](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/cdn)
 > - [Vite](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
 > - [React](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/react)
