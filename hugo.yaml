@@ -57,3 +57,7 @@ params:
     width: wide
     tabs :
       sync: true
+
+services:
+  googleAnalytics:
+    ID: G-CZ63B79ERR
