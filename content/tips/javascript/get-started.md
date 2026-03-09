@@ -165,7 +165,7 @@ npx @arcgis/create -n my-arcgis-app -t vite
 
 {{< tab >}}
 ```cmd
-# SDK 統合済み React アプリテンプレート
+# SDK 統合済み React アプリ テンプレート
 npx @arcgis/create -n my-arcgis-app -t react
 ```
 {{< /tab >}}
@@ -173,7 +173,7 @@ npx @arcgis/create -n my-arcgis-app -t react
 {{< tab >}}
 
 ```cmd
-# SDK 統合済み Angular アプリテンプレート
+# SDK 統合済み Angular アプリ テンプレート
 npx @arcgis/create -n my-arcgis-app -t angular
 ```
 {{< /tab >}}
@@ -181,7 +181,7 @@ npx @arcgis/create -n my-arcgis-app -t angular
 {{< tab >}}
 
 ```
-# SDK 統合済み Vue アプリテンプレート
+# SDK 統合済み Vue アプリ テンプレート
 npx @arcgis/create -n my-arcgis-app -t vue
 ```
 {{< /tab >}}
@@ -189,7 +189,7 @@ npx @arcgis/create -n my-arcgis-app -t vue
 {{< tab >}}
 
 ```
-# SDK 統合済み Webpack アプリテンプレート
+# SDK 統合済み Webpack アプリ テンプレート
 npx @arcgis/create -n my-arcgis-app -t webpack
 ```
 {{< /tab >}}
