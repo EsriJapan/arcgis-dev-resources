@@ -9,7 +9,7 @@ aliases = ["/calcite-desgin-sysytem/tutorials/construct-a-mapping-app-with-web-c
 
 Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の [Map コンポーネント](https://developers.arcgis.com/javascript/latest/get-started-cdn/)を使用して、Web コンポーネントでマッピング アプリケーションの UI を構築する方法をご紹介します。
 
-Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インタフェースと[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)に焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。ArcGIS Maps SDK for JavaScript を初めてお使いになる場合は、このアプリケーションで使用されている同様のマッピングをコンセプトに扱った素晴らしい[チュートリアル](https://developers.arcgis.com/javascript/latest/display-a-web-map/)をご覧ください。
+Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インタフェースと[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)に焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。ArcGIS Maps SDK for JavaScript を初めてお使いになる場合は、このアプリケーションで使用されている同様のマッピングをコンセプトに扱った[チュートリアル](https://developers.arcgis.com/javascript/latest/display-a-web-map/)をご覧ください。
 
 ## 前提条件
 
@@ -67,27 +67,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
   <title>Calcite Components: Create a mapping app with web components</title>
 
   <!-- 追加開始 -->
-  <script src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js" type="module"></script>
-  <script src="https://js.arcgis.com/4.33/"></script>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
-  <!-- 追加終了 -->
-
-</head>
-```
-
-4. 次に、ArcGIS Maps SDK for JavaScript の[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/get-started-cdn/#components)への参照を追加します。
-
-```html
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Calcite Components: Create a mapping app with web components</title>
-
-  <script src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js" type="module"></script>
-  <script src="https://js.arcgis.com/4.33/"></script>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
-  <!-- 追加開始 -->
-  <script type="module" src="https://js.arcgis.com/4.33/map-components"></script>
+  <script type="module" src="https://js.arcgis.com/5.0/"></script>
   <!-- 追加終了 -->
 
 </head>
@@ -141,9 +121,9 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 この時点でアプリケーションはマップを表示します。 次に、Calcite コンポーネントを使ってアプリのユーザー インターフェイスを構築します。
 
 ### レイアウトの作成
-レイアウトを作るために、スロットを使ってページ上の他のコンポーネントを整理する [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) を使います。スロットは Web コンポーネントの概念であり、[コア コンセプト](../core-concepts/#スロット)のセクションに簡単な説明があります。Calcite コンポーネントにスロットがある場合は、その一覧が[リファレンス ページ](https://developers.arcgis.com/calcite-design-system/components/)に記載されています。たとえば、こちらが [シェルのスロット](https://developers.arcgis.com/calcite-design-system/components/shell/#slots)です。
+レイアウトを作るために、スロットを使ってページ上の他のコンポーネントを整理する [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) を使います。スロットは Web コンポーネントの概念であり、[コア コンセプト](../../core-concepts/#スロット)のセクションに簡単な説明があります。Calcite コンポーネントにスロットがある場合は、その一覧が[リファレンス ページ](https://developers.arcgis.com/calcite-design-system/components/)に記載されています。たとえば、こちらが [シェルのスロット](https://developers.arcgis.com/calcite-design-system/components/shell/#slots)です。
 
-1. calcite-shell コンポーネントを追加し、content-behind 属性を設定して、ユーザーがシェルの背後にある地図と操作できるようにします。
+1. [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) コンポーネントを追加し、[`content-behind`](https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-properties-contentBehind) 属性を設定して、ユーザーがシェルの背後にある地図と操作できるようにします。
 
 ```html
 <body>
@@ -207,7 +187,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ### マップ コンポーネントの追加
 レイアウトをさらに構築するために、ユーザーが [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) に操作したときに表示される[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)を追加します。
 
-1. はじめに calcite-block コンポーネントを追加する。
+1. はじめに [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントを追加する。
     * コンテンツを表示するために `expanded` 属性を追加します。
     * ユニークな `heading` を付けます。
     * 対応する `data-action-id` の値を、ブロックの `data-block-id` 属性に指定します。
@@ -275,9 +255,9 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 
 2. [`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) コンポーネントを追加します。
 
-3. カードに以下の子要素を、固有の ID を付けて追加します。
-    * カードの thumbnail スロットに img 要素を定義します。
-    * 3 つの div 要素を追加してください。1 つは heading スロットに、もう 1 つは description スロットに、最後の 1 つは footer-end スロットに配置します。
+3. カードに以下の子要素を、固有の `ID` を付けて追加します。
+    * カードの `thumbnail` スロットに `img` 要素を定義します。
+    * 3 つの `div` 要素を追加してください。1 つは `heading` スロットに、もう 1 つは `description` スロットに、最後の 1 つは `footer-end` スロットに配置します。
 
 ```html
       <calcite-block expanded heading="Print" data-block-id="print" hidden>
@@ -353,12 +333,13 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```
 
 ### コンポーネントをインタラクティブにする
-次のステップは、対応する calcite-action コンポーネントをクリックしたときに、マップ コンポーネントを含む calcite-block コンポーネントを表示します。
+次のステップは、対応する [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) コンポーネントをクリックしたときに、マップ コンポーネントを含む [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントを表示します。
 
 1. 各 [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) がクリックされたときに実行される関数を作成します。この関数は、現在表示されている [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) を非表示にし、クリックされたアクションに対応するブロックを表示します。ユーザーが現在アクティブなアクションをクリックした場合、対応するブロックは閉じられ、展開されたブロックは存在しなくなります。
 
 このステップでは、上で追加した[データ属性](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)を使って、アクション要素とブロック要素にアクセスするために[属性セレクター](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)を使用します。データ属性の値は、対応するマップコンポーネントの名前です。
 
+2. 上記の関数をコールバックとして使用し、calcite-action-barにクリックイベントリスナーを作成します。
 ```javascript
   mapEl.addEventListener("arcgisViewReadyChange", () => {
     const { title, thumbnailUrl, snippet, modified, tags } = mapEl.map.portalItem;
@@ -398,9 +379,9 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```
 
 ### ローダー コンポーネントの追加
-ここまでで、アプリケーションがインタラクティブになりました。Calcite コンポーネントを使用して、マップ コンポーネントを開いたり閉じたりできます。しかし、アプリケーションのロードには1秒かかるので、それをユーザーに伝える必要があります。
+ここまでで、アプリケーションがインタラクティブになりました。Calcite コンポーネントを使用して、マップ コンポーネントを開いたり閉じたりできます。しかし、アプリケーションのロードには少し時間がかかるので、それをユーザーに伝える必要があります。
 
-1. <body> 要素内で、シェルの終了タグの後に calcite-loader を追加して、コンポーネントを表示します。
+1. `<body>` 要素内で、シェルの終了タグの後に [`calcite-loader`](https://developers.arcgis.com/calcite-design-system/components/loader/) を追加して、コンポーネントを表示します。
 ```html
      </calcite-shell>
      <!-- 追加開始 -->
@@ -436,7 +417,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 1. `calcite-icon` をパネルの `"header-actions-start"` にスロットしている場合、そのコンポーネントを整列させるために [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex_containerk) の変数を追加します。
 
 2. 次に、パネルの幅と高さを設定するためのスタイルを追加します。
-    * calcite-shell-panel に --calcite-shell-panel-min-width を追加します。
+    * `calcite-shell-panel` に [`--calcite-shell-panel-min-width`](https://developers.arcgis.com/calcite-design-system/components/shell-panel/#api-reference-styles---calcite-shell-panel-min-height) を追加します。
     * `calcite-shell-panel` がスマートフォンなどの小型デバイスに対応できるように、[メディア クエリー](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)を追加します。
     * `data-block-id` 属性を含む `calcite-block` コンポーネントに対して、`max-height` を設定します。
 

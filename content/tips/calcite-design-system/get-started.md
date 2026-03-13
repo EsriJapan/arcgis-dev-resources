@@ -8,27 +8,34 @@ aliases = ["/calcite-desgin-sysytem/get-started/"]
 出典：Calcite Design System - [Get Started](https://developers.arcgis.com/calcite-design-system/get-started/)
 
 ## はじめに
-Calcite コンポーネントは、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリです。[Web コンセプトのページ](https://developers.arcgis.com/calcite-design-system/core-concepts/) では、Calcite Design System の構成要素について説明しています。
+Calcite コンポーネントは、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリーです。[Web コンセプトのページ](https://developers.arcgis.com/calcite-design-system/core-concepts/) では、Calcite Design System の構成要素について説明しています。
 
 例題、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、[コンポーネント ドキュメント](https://developers.arcgis.com/calcite-design-system/components/)をご覧ください。以下の手順で、Calcite コンポーネントを使い始めることができます。
+
+### 前提条件
 
 まず、Calcite コンポーネントを使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
 
 作成方法は、[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)をご覧ください。
 
-次に、CDN（Content Delivery Network）または NPM（Node Package Manager）ライブラリーを使用して、Calcite コンポーネントを読み込みます。
-
 ### CDN で利用する
 Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを配置することでロードできます:
 
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
+<script type="module" src="https://js.arcgis.com/calcite-components/5.0"></script>
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 
+### マッピングアプリを構築する
+ArcGIS Maps SDK for JavaScript を使用してソリューションを作成する場合、CDN ユーザー向けの[単一の script タグ](https://developers.arcgis.com/javascript/latest/release-notes/#cdn-specific-changes)が用意されています。これには Calcite Design System の [Core API](https://developers.arcgis.com/javascript/latest/references/core/)、[Map components](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts components](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[Coding components](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common components](https://developers.arcgis.com/javascript/latest/references/common-components/)、[AI components](https://developers.arcgis.com/javascript/latest/references/ai-components/)が含まれています。
+
+```cmd
+<script type="module" src="https://js.arcgis.com/5.0"></script>
+```
+
 ### NPM パッケージで利用する
-Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-components-examples)でご覧いただけます。
+Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-design-system/tree/main/examples/components)でご覧いただけます。
 ``` cmd
 npm install @esri/calcite-components
 ```
@@ -41,7 +48,7 @@ npm install @esri/calcite-components
 例えば、次のコマンドを使用してアセットをコピーできます。
 
 ```cmd
-cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/
+cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./your-asset-directory/
 ```
 
 アセットが用意できたら、アプリケーション内でアセットのパスを設定してください
@@ -52,9 +59,10 @@ setAssetPath("/path-to-your-assets/");
 ```
 
 #### スタイルのインポート
-最後に、カスケーディング スタイル シート（CSS）を読み込みます。これもフレームワークやビルド ツールに依存しますが、多くの場合、JavaScript で直接読み込むことができます。
+次に、カスケードスタイルシート（CSS）を読み込みます。ほとんどのフレームワークでは、Calcite の CSS は自動的に読み込まれます。ただし、Angular などの一部のフレームワークでは、プロジェクトのルート スタイル シート（`src/styles.css`）で手動でのインポートが必要です。
+
 ``` js
-import "@esri/calcite-components/dist/calcite/calcite.css";
+@import "@esri/calcite-components/main.css";
 ```
 
 #### ビルドの選択
@@ -75,7 +83,7 @@ import "@esri/calcite-components/components/calcite-icon";
 import "@esri/calcite-components/components/calcite-slider";
 ```
 
-#### ディストリビューション
+#### ディストリビューション ビルド
 ディストリビューション ビルドでは、グローバル `ウィンドウ` オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
 
 ``` js
