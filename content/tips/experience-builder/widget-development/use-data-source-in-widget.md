@@ -11,7 +11,7 @@ aliases = ["/use-data-source-in-widget/"]
 [データ ソース](http://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/core-concepts/data-source/)は、ウィジェットがデータにアクセスする方法を定義します。データ ソースを使用して行いたいことは様々ですが、それぞれについて紹介します。
 
 - ウィジェットの設定でデータ ソースを選択
-- ウィジェット ランタイムのデータを読み込んで表示
+- ウィジェット実行時のデータを読み込んで表示
 - ユーザー入力に基づくデータのフィルタリングやクエリー
 - データ上の選択を処理
 - ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期
@@ -20,9 +20,10 @@ aliases = ["/use-data-source-in-widget/"]
 
 {{< callout type="info" >}}
 
-本ドキュメントで使用している appConfig という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
+本ドキュメントで使用している `appConfig` という変数は、アプリの config JSON オブジェクトを指します。ArcGIS Online または Enterprise 版では、アプリの config JSON はアイテム データとして保存され、Developer Edition では server/public/apps/[appId]/config.json (公開版) または server/public/apps/[appId]/resources/config.json (ドラフト版) の下に保存されます。
 
 {{< /callout >}}
+
 
 ## ウィジェットの設定でデータ ソースを選択
 
@@ -54,13 +55,14 @@ aliases = ["/use-data-source-in-widget/"]
 }
 ```
 
-## ウィジェット ランタイムのデータを読み込んで表示
 
-ウィジェット設定でデータ ソースを選択すると、ウィジェット ランタイムは `props.useDataSources` で選択したデータ ソースを取得することができます。データを読み込むには、`DataSource` インスタンスを使用します。`DataSource` インスタンスを取得するには、`DataSourceManager` または`DataSourceComponent` を使用します。`DataSourceComponent` を使用する場合は、`useDataSource` プロパティを渡します。`DataSource` インスタンスを取得するには、`onDataSourceCreated` コールバックを使用します。
+## ウィジェット実行時のデータを読み込んで表示
 
-データを読み込むには、render 関数を使用してデータを表示します。こちらの[サンプル ウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。別の方法として、`onDataSourceInfoChange` コールバックを使用し、データ ソースの現在のデータに応じてこのコールバック関数でウィジェットの UI を更新することができます。ウィジェットがデータをロードする必要がある場合、`query` と `widgetId` プロパティを渡します。フレームワークは、複数のウィジェットが同じデータ ソースに適用するクエリー パラメータを管理するのにこのプロパティを使用するため、`widgetId` は必須です。
+ウィジェット設定でデータ ソースを選択すると、ウィジェット実行時に `props.useDataSources` で選択したデータ ソースを取得することができます。データを読み込むには、`DataSource` インスタンスを使用します。`DataSource` インスタンスを取得するには、`DataSourceManager` または`DataSourceComponent` を使用します。`DataSourceComponent` を使用する場合は、`useDataSource` プロパティを渡します。`DataSource` インスタンスを取得するには、`onDataSourceCreated` コールバックを使用します。
 
-データをロードしたいが、データ ソースのデータを変更したくない場合は、`localId` プロパティを渡します。これにより、ローカルデータ ソースが作成され、使用することができます。推奨される localId のパターンは、例えば、`widget_1_my_local` のように `widgetId + ???` とします。
+データを読み込むには、render 関数を使用してデータを表示します。こちらの[サンプル ウィジェット](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-function/)を参照してください。別の方法として、`onDataSourceInfoChange` コールバックを使用し、データ ソースの現在のデータに応じてこのコールバック関数でウィジェットの UI を更新することができます。
+
+ウィジェットがデータをロードする必要がある場合、`query` と `widgetId` プロパティを渡します。フレームワークは、複数のウィジェットが同じデータ ソースに適用するクエリー パラメータを管理するのにこのプロパティを使用するため、`widgetId` は必須です。データをロードしたいが、データ ソースのデータを変更したくない場合は、`localId` プロパティを渡します。これにより、ローカルデータ ソースが作成され、使用することができます。推奨される localId のパターンは、例えば、`widget_1_my_local` のように `widgetId + ???` とします。
 
 `DataSourceComponent` をレンダリングすると、データ ソースのインスタンスが作成されますが、データは初期状態ではロードされません。なぜなら、`query` プロパティを渡すことを期待しているので、別のネットワーク要求が発生するためです。読み込まれたデータを取得するには、`dataSource.getRecords()` を使用します。データはページングされ、デフォルトのページング サイズは 100 です。ユーザーはビルダー データ設定パネルでページング サイズを変更することができます。ロードされたデータはクライアント上にキャッシュされ、クエリー条件が変更されるとキャッシュはクリアされます。
 
@@ -83,6 +85,7 @@ aliases = ["/use-data-source-in-widget/"]
 ウィジェットがデータ ソースの情報変更を聞く必要があるが、データ ソースのデータ レコードを使う必要がない場合、`query` パラメーターを省略し、`onQueryRequired` コールバックでクエリーを実行することが可能です。
 
 データ ソースのフィールドを取得するには、`dataSource.getSchema().fields` を使用します。
+
 
 ## ユーザー入力に基づくデータのフィルタリングやクエリ
 
@@ -110,6 +113,7 @@ aliases = ["/use-data-source-in-widget/"]
 
 - データ ソースからデータをクエリーするには、`dataSource.query()` を使用します。データをクエリーする際には、このデータ ソースに適用されているフィルターも使用されます。
 
+
 ## データ上の選択を処理
 
 Experience Builder アプリで設計された選択の動作は、すべてのウィジェットが同じ選択を更新し、観察することです。例えば、ユーザーがリスト ウィジェット内のレコードを選択すると、選択ビューを使用しているテキスト ウィジェットにはその選択内容が表示されます。すべてのデータ ソースには、選択範囲を管理する選択範囲データ ビューがあります。選択データビューの他に、選択されたレコードの ID が Redux アプリ ストアーに保存されるので、データ ソースを使用するウィジェットは、選択内容が変更されたときに通知を受けることができます。
@@ -136,6 +140,7 @@ ArcGIS Maps SDK for JavaScript の WebMap と WebScene は、データ ソース
 
 ウィジェットは、多くの場合、同じデータを共有します。この良い例が、エクスペリエンスでマップ ウィジェットとリスト ウィジェットを使用する場合です。リスト ウィジェットでフィーチャを選択すると、対応するフィーチャがマップ上で選択されます。これを実現する最も簡単な方法は、両方のウィジェットに同じデータ ソースを使用することです。たとえば、リスト ウィジェットでアイテムが選択されると、ウィジェットは `datasource.selectRecord()` を呼び出して、app store のデータ ソースの状態を更新します。これにより、マップ ウィジェットでは、現在選択されているアイテムを適宜レンダリングすることができます。また、現在選択されているアイテムの ID が URL に配置されるため、現在のアプリの状態を他の人と共有することが可能になります。
 
+
 ## ArcGIS Maps SDK for JavaScript のフィーチャ オブジェクトとデータ ソースの同期
 
 Experience Builder ウィジェットでは、ArcGIS Maps SDK for JavaScript を使用してフィーチャを取得することができます。その後、他のウィジェットがこれらのフィーチャを使用できるようにしたい場合があります。たとえば、マップ上でこれらのフィーチャをハイライト表示したり、リスト ウィジェットでこれらのフィーチャを表示したりする必要があるかもしれません。これには、以下の 3 つのオプションがあります。
@@ -146,6 +151,7 @@ Experience Builder ウィジェットでは、ArcGIS Maps SDK for JavaScript を
     - [Widget output data source](https://developers.arcgis.com/experience-builder/guide/core-concepts/data-source/#widget-output-data-source) サンプルを参照してください。
 3. メッセージを公開する
     - ウィジェットが何らかのフィーチャを生成する場合、`DataRecordSetChangeMessage` メッセージを公開することで、他のウィジェットが監視できるようになります。
+
 
 ## MapView/SceneView または LayerView での作業
 

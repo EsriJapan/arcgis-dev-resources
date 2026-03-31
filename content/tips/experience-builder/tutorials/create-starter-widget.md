@@ -56,7 +56,6 @@ ArcGIS Experience Builder の開発者向け追加機能のインストール方
      "height": 500
    }
  }
-
 ```
 
 ### コンポーネントの実装

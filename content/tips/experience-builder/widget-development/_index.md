@@ -38,3 +38,6 @@ dist フォルダーへファイルをコピーする必要がある場合の方
 
 - [ウィジェットにヘルプを追加](https://developers.arcgis.com/experience-builder/guide/add-help-to-your-widget/)  
 作成したウィジェットのヘルプの追加する方法を紹介しています。 (米国 Esri のサイトに移動します)
+
+- [新しいテーマに更新](https://developers.arcgis.com/experience-builder/guide/upgrade-to-new-theme/)  
+古いテーマから新しいテーマへ移行するための手順と注意点を紹介しています。（米国 Esri のサイトに移動します）

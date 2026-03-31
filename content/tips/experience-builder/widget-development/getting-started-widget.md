@@ -39,7 +39,7 @@ Visual Studio Code をテキスト エディターとして使用している場
 ウィジェットは、Experience Builder で設定可能で共有可能な機能群です。基本的に、ウィジェットは jimu フレームワークによってこれらの共通のプロパティが設定された React コンポーネントです。
 
 - ウィジェットの設定 (id、label、configなど)
-- state や isClassLoaded などを含むウィジェットのランタイム情報
+- state や isClassLoaded などを含むウィジェット実行時の情報
 - ローカル言語の文字列
 - データ ソースのインスタンスとステータス情報
 - URL パラメータ情報
