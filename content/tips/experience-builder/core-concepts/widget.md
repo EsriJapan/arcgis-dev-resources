@@ -69,7 +69,7 @@ ArcGIS Experience Builder でウィジェットを使用する一般的な手順
 2. 背景、枠線、余白などのスタイルを適用して、各ウィジェットの外観をカスタマイズします。
 3. 整列ツールや分布ツールを使用して、ユーザビリティーに配慮してウィジェットを整理します。
 
-## ウィジェットのUI構築
+## ウィジェットの UI 構築
 カスタム ウィジェットを開発する際、UI を構築するには下記の方法があります。
 
 - Jimu-UI ライブラリー  
@@ -88,13 +88,13 @@ ArcGIS Experience Builder でウィジェットを使用する一般的な手順
 ウィジェットは、下記の方法でデータやマップと連携できます。
 
 - データを扱う場合 (例：フィーチャ レイヤー)
-  - 設定画面で DataSourceSelector を使用
-  - 実行時に DataSourceComponent を使用
+  - 設定画面で [**DataSourceSelector**](https://developers.arcgis.com/experience-builder/storybook/?path=/docs/components-jimu-ui-advanced-data-source-selector-datasourceselector--docs) を使用
+  - 実行時に [**DataSourceComponent**](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/DataSourceComponent/) を使用
   - 詳細は [**ウィジェットでのデータの使用**](https://developers.arcgis.com/experience-builder/guide/use-data-source-in-widget/)をご覧ください
 
-- マップウィジェットを扱う場合
-  - 設定画面で MapWidgetSelector と JimuLayerViewSelector を使用
-  - 実行時に JimuMapViewComponent を使用
+- マップ ウィジェットを扱う場合
+  - 設定画面で [**MapWidgetSelector**](https://developers.arcgis.com/experience-builder/storybook/?path=/docs/components-jimu-ui-advanced-setting-components-mapwidgetselector--docs) と [**JimuLayerViewSelector**](https://developers.arcgis.com/experience-builder/storybook/?path=/docs/components-jimu-ui-advanced-setting-components-jimulayerviewselector--docs) を使用
+  - 実行時に [**JimuMapViewComponent**](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) を使用
 
 ## カスタム ウィジェット開発
 カスタム ウィジェットを作成することで、ArcGIS Experience Builder の機能の拡張が可能です。カスタム ウィジェットは、[ArcGIS Experience Builder Developer Edition](https://developers.arcgis.com/experience-builder/guide/install-guide/) を使用して構築します。Developer Edition は、新しいウィジェットをビルダー環境に作成・統合することができるツールと API を提供します。

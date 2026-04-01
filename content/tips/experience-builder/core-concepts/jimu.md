@@ -176,9 +176,9 @@ import { JimuMapViewComponent } from 'jimu-arcgis';
 ### jimu-theme
 [`jimu-theme`](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/) パッケージによって、エクスペリエンス構築のためのテーマ管理とスタイルを利用できます。このパッケージには以下が含まれます。
 
-- styled component を作成するメソッドである `styled`
-- 高階コンポーネントを使って、コンポーネントにテーマ情報 (theme prop) を付与するための仕組みである `withTheme`
-- `theme` にアクセスするための React フックとなる `useTheme`
+- styled コンポーネントを作成する `styled` メソッド
+- 高階コンポーネントを使って、コンポーネントにテーマ情報 (theme prop) をラップするための `withTheme` メソッド
+- `theme` にアクセスするための React フックとなる `useTheme` コンポーネント関数
 - `ThemeVariable`、`ThemeOptions` などのテーマに関連したインターフェイス
 
 | コンポーネント | 説明 |
@@ -190,14 +190,14 @@ import { JimuMapViewComponent } from 'jimu-arcgis';
 | [RawThemeOptions](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/RawThemeOptions/) | JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の `variables.json`) |
 
 ### jimu-layouts
-jimu-layouts パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。
+[**jimu-layouts**](https://developers.arcgis.com/experience-builder/api-reference/jimu-layouts/) パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。
 
 - アプリが実行時に開かれた場合の軽量エントリー ポイントである `layout-runtime`。レイアウト ツリー検索機能を提供する `selectors` や、ウィジェット レイアウト機能のための `LayoutEntry` コンポーネントをエクスポートします。
 - アプリがビルダーで開かれた場合のエントリー ポイントである `layout-entry`。
 - レイアウト ツリー操作のためのユーティリティーである `searchUtils`。
 
 ### jimu-data-sources
-`jimu-data-sources` パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、`jimu-core` からエクスポートされる `DataSourceComponent` を使用することが推奨されます。
+[`jimu-data-sources`](https://developers.arcgis.com/experience-builder/api-reference/jimu-data-sources/) パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、`jimu-core` からエクスポートされる `DataSourceComponent` を使用することが推奨されます。
 
 ### jimu-for-test
 [`jimu-for-test`](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/) パッケージは、テスト用のユーティリティーを提供します。ユーティリティー関数には、`wrapWidget`、`withThemeRender`、`withIntlRender`、`withStoreRender`、`mockService`、`mockItem`、`initGlobal`、`getInitState`、`widgetRender` があります。
