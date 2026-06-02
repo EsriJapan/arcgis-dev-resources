@@ -2,9 +2,7 @@
 title = "アプリケーション配布ガイド"
 description = "ArcGIS Maps SDK for Kotlin を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を紹介します。"
 weight = 2
-aliases = [
-    "/distribution-android-200.x/"
-]
+aliases = ["distribution-android-200.x"]
 +++
 
 ArcGIS Maps SDK for Kotlin を使用して開発したアプリケーションを配布する場合に必要なライセンス認証の手順を説明します。
