@@ -2,7 +2,7 @@
 title = "インストール ガイド"
 description = "ArcGIS Maps SDK for Kotlin のインストールとセットアップ手順を紹介します。"
 weight = 1
-aliases = ["/android/install-android-300.x/"]
+aliases = ["install-android-200.x"]
 +++
 
 出典：ArcGIS Maps SDK for Kotlin - Guide - [Install and set up](https://developers.arcgis.com/kotlin/install-and-set-up/)
