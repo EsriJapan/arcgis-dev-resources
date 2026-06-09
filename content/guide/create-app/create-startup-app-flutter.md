@@ -24,6 +24,13 @@ aliases = ["/create-startup-app-flutter/"]
 
 {{< /callout >}}  
 
+{{< callout >}}
+
+Flutter のバージョンは、Esri のリリース サイクルの間に頻繁に更新されるため、パッケージの新しいリリースごとに、その時点で利用可能な最新の Flutter バージョンに対してビルドおよび検証を行っています。Esri のリリース期間の間に Flutter の新しいバージョンがリリースされた場合は、最新のSDKとの互換性に関するガイダンスを共有します。  
+Flutter 3.44.x に関する注意事項と依存関係の要件につきましては、[こちら](https://community.esri.com/t5/arcgis-maps-sdks-native-blog/arcgis-maps-sdk-for-flutter-300-0-0-compatibility/ba-p/1706472)をご覧ください。
+
+{{< /callout >}}
+
 <!--下記記述はバージョンを追えないのでコメントアウト。問い合わせ用に残しておく-->
 <!--
 {{< callout >}}
