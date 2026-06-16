@@ -2,7 +2,7 @@
 title = "インストール ガイド"
 description = "ArcGIS Maps SDK for Swift のインストールとセットアップ手順を紹介します。"
 weight = 1
-aliases = ["/ios/install-ios.x/"]
+aliases = ["install-ios-200"]
 +++
 
 出典：ArcGIS Maps SDK for Swift - Guide - [Install and set up](https://developers.arcgis.com/swift/install-and-set-up/)
