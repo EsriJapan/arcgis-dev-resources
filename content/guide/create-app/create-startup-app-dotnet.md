@@ -15,7 +15,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
 マップには、地理データのレイヤーが含まれています。マップには、ベースマップ レイヤーと、オプションで 1 つ以上のデータ レイヤーを追加できます。マップ ビューを使用し、場所とズーム レベルを設定することで、マップの特定の領域を表示できます。
 
-このチュートリアルでは、地形図ベクター タイル ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
+このチュートリアルでは、地形ベースマップ レイヤーを使用して、富士山付近を表示する地図を作成します。
 
 {{< callout >}}
 
@@ -47,7 +47,7 @@ aliases = ["/create-startup-app-dotnet/"]
    * 実装が最も簡単な認証方法です。
    * 新規の ArcGIS 開発者に推奨される方法です。
 
-    詳しくは [API キー認証](https://developers.arcgis.com/kotlin/security-and-authentication/#api-key-authentication)をご覧ください。
+    詳しくは [API キー認証](https://developers.arcgis.com/net/security-and-authentication/types-of-authentication/#api-key-authentication)をご覧ください。
 
     このチュートリアルで使用するセキュアなリソースにアクセスする権限を持つ、新しい API キーのアクセス トークンを作成します。
 
@@ -65,7 +65,7 @@ aliases = ["/create-startup-app-dotnet/"]
    * アプリケーションには、リダイレクト URL とクライアント ID を使用します。
    * サービスの使用料は、アプリケーションにサインインしたユーザーの組織に請求されます。
 
-    詳しくは、[ユーザー認証](https://developers.arcgis.com/kotlin/security-and-authentication/#user-authentication)をご覧ください。
+    詳しくは、[ユーザー認証](https://developers.arcgis.com/net/security-and-authentication/types-of-authentication/#user-authentication)をご覧ください。
 
     このチュートリアルで使用するセキュアなリソースにアクセスするための新しい OAuth 認証情報を作成します。
 
@@ -81,7 +81,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
             `Redirect URL`（Callback URL とも呼ばれます）は、OAuth ログイン後にシステムが制御をアプリに戻す際、認証サーバーからの応答を識別するために使用されます。Redirect URL は、必ずしもユーザーが移動できる有効なエンドポイントを表すわけではないため、`my-app://auth` のようなカスタム スキームを使用できます。アプリのコードで使用される Redirect URL が、認証サーバーで設定された Redirect URL と一致していることを確認することが重要です。
 
-   2. **ClientID** と **RedirectURL** をコピーして安全な場所に貼り付けます。これらは後のステップで使用します。
+   2. **ClientID** と **Redirect URL** をコピーして安全な場所に貼り付けます。これらは後のステップで使用します。
 
     このアプリケーションにアクセスするすべてのユーザーには、ベースマップ スタイル サービスにアクセスするためのアカウント権限が必要です。
 
@@ -282,14 +282,16 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             bsp.SpecificLanguage = System.Globalization.CultureInfo.CreateSpecificCulture("ja");
             Basemap basemap = new Basemap(BasemapStyle.ArcGISTopographic, bsp);
 
-            // Set the initial viewpoint around the Santa Monica Mountains in California.
-            // マップの中心位置として設定する MapPoint を作成
-            MapPoint mapCenterPoint = new MapPoint(138.727363, 35.360626, SpatialReferences.Wgs84);
-            // マップの視点を決める Viewpoint を設定
-            MainMapView.SetViewpoint(new Viewpoint(mapCenterPoint, 200000.0));
+            // ベースマップを設定した新しいマップを作成します。
+            var map = new Map(basemap);
 
-            //地形図ベクター タイル ベースマップを使用して新しいマップを作成します。
-            Map = new Map(basemap);
+            // 富士山をマップの中心位置として設定する MapPoint を作成します。
+            MapPoint mapCenterPoint = new MapPoint(138.727363, 35.360626, SpatialReferences.Wgs84);
+            // マップの視点を決める Viewpoint を設定します。
+            map.InitialViewpoint = new Viewpoint(mapCenterPoint, 200000.0);
+
+            //すべての設定を Map に渡します。
+            Map = map;
         }
         // 追加終了
     }
@@ -765,9 +767,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 ### ソリューションに開発者認証情報を設定する
 アプリのユーザーが ArcGIS ロケーション サービスやセキュアなコンテンツにアクセスできるようにするには、[認証の設定](#認証の設定)ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。
 
-{{<tabs items = "API キー認証, ユーザー認証">}}
+{{<tabs>}}
 
-    {{<tab>}}
+    {{<tab name="API キー認証">}}
    1. **Visual Studio** の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。
    2. `ArcGISEnvironment.ApiKey` プロパティに API キーのアクセス トークンを設定します。
 
@@ -805,14 +807,14 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
     {{< callout >}}
 
-    アクセス トークンは、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
+    **ベスト プラクティス**: アクセス トークンは、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
 
     {{< /callout >}}
 
     {{</tab>}}
 
-    {{<tab>}}
-   1. Visual Studio の<b>ソリューション エクスプローラー</b>から `ArcGISLoginPrompt.cs` ファイルを開きます。
+    {{<tab name="ユーザー認証">}}
+   1. Visual Studio の**ソリューション エクスプローラー**から `ArcGISLoginPrompt.cs` ファイルを開きます。
    2. クライアント ID (`OAuthClientID`) とリダイレクト URL (`OAuthRedirectUri`) の値を設定します。これらは[認証の設定](#認証の設定)で作成したユーザー認証設定です。
 
             ```csharp {filename = "ArcGISLoginPrompt.cs"}
@@ -848,7 +850,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
     {{< callout >}}
 
-    OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
+    **ベスト プラクティス**: OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
 
     {{< /callout >}}
 
