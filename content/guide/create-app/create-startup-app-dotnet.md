@@ -27,15 +27,15 @@ aliases = ["/create-startup-app-dotnet/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-1. API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
-2. 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
+* API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+* 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
 必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet-200.x/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 
 ## 認証の設定
 このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証またはユーザー認証を実装する必要があります。
 
-このチュートリアルでは、API キー認証またはユーザー認証を実装することができます。以下の違いを比較してください。
+このチュートリアルを完了するには、下の切り替えタブから、ご希望の認証タイプ（**API キー認証**または**ユーザー認証**）のタブをクリックしてください。
 
 {{<tabs>}}
 
@@ -75,7 +75,11 @@ aliases = ["/create-startup-app-dotnet/"]
 
     {{< /callout >}}
 
-   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了します。
+   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了し、**Client ID** と **Redirect URL** を取得するためのチュートリアル。  
+   
+          `Client ID` は、認証サーバー上でアプリを一意に識別するものです。サーバーが指定された Client ID を持つアプリを見つけられない場合、認証は続行されません。
+
+            `Redirect URL`（Callback URL とも呼ばれます）は、OAuth ログイン後にシステムが制御をアプリに戻す際、認証サーバーからの応答を識別するために使用されます。Redirect URL は、必ずしもユーザーが移動できる有効なエンドポイントを表すわけではないため、`my-app://auth` のようなカスタム スキームを使用できます。アプリのコードで使用される Redirect URL が、認証サーバーで設定された Redirect URL と一致していることを確認することが重要です。
 
    2. **ClientID** と **RedirectURL** をコピーして安全な場所に貼り付けます。これらは後のステップで使用します。
 
@@ -83,7 +87,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
     {{< callout >}}
 
-    **セキュリティと認証ガイド** : 認証の種類について詳しくは、[認証の種類](../../security/)をご覧ください。
+    **セキュリティーと認証ガイド** : 認証の種類について詳しくは、[認証の種類](../../security/)をご覧ください。
 
     {{</callout >}}
     {{</tab>}}
@@ -97,18 +101,18 @@ aliases = ["/create-startup-app-dotnet/"]
 
 ## オプション 1: コードを開発する
 ### 新しい Visual Studio プロジェクトを作成する
-ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal Windows Platform (UWP)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
+ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Windows UI Library (WinUI)、.NET MAUI 向けのアプリをサポートしています。
 このチュートリアルの説明は、Visual Studio for Windows を使用して WPF .NET プロジェクトを作成する手順を説明します。
 
 {{< callout type = "important">}}
 
-.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WPFと UWP のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
+.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WPF のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
 
 {{< /callout >}}
 
 1. Visual Studio を起動し、新しいプロジェクトを作成します。
    * Visual Studio の開始画面で、[新しいプロジェクトの作成] をクリックします。
-   * <b>C#</b> 用の [WPF アプリケーション]テンプレートを選択します。テンプレートが表示されていない場合は、**テンプレートの検索**テキストボックスに `WPF アプリケーション` と入力すると、テンプレートを見つけることができます。
+   * **C#** 用の [WPF アプリケーション]テンプレートを選択します。テンプレートが表示されていない場合は、[テンプレートの検索]テキスト ボックスに `WPF アプリケーション` と入力すると、テンプレートを見つけることができます。
    * [次へ] をクリックします。
    * [新しいプロジェクトを構成します] 画面で必要な値を入力します。
      * プロジェクト名: `DisplayAMap`
@@ -117,7 +121,7 @@ ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Universal 
         * フレームワークで `.NET 8.0 (長期的なサポート)` を選択します。
    * [作成] をクリックしてプロジェクトを作成します。
 
-Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET には、サポートされる .NET プラットフォームごとにプロジェクト テンプレート セットが用意されています。これらのテンプレートは、Model-View-ViewModel（MVVM）デザイン パターンに従っています。ArcGIS Maps SDK for .NET Visual Studio Extension をインストールして、テンプレートを Visual Studio に追加します（Windows のみ）。詳細については、[インストールとセットアップ](../../../tips/dotnet/install-dotnet-200.x/)を参照してください。
+Visual Studio for Windows で開発する場合、ArcGIS Maps SDK for .NET には、サポートされる .NET プラットフォームごとにプロジェクト テンプレート セットが用意されています。これらのテンプレートは、Model-View-ViewModel（MVVM）デザイン パターンに従っています。ArcGIS Maps SDK for .NET Visual Studio Extension をインストールして、テンプレートを Visual Studio に追加します（Windows のみ）。詳細については、[インストールとセットアップ](../../../tips/dotnet/install-dotnet/)を参照してください。
 
 {{< callout >}}
 
@@ -134,9 +138,9 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 {{< /callout >}}
 
 1. [NuGet パッケージをインストール](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
-   * <b>ソリューション エクスプローラー</b>で、[参照] を右クリックし、[NuGet パッケージの管理] を選択します。
+   * **ソリューション エクスプローラー**で、[参照] を右クリックし、[NuGet パッケージの管理] を選択します。
    * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に `nuget.org` (右上)が選択されていることを確認します。
-   * [参照] タブを選択して、<b>ArcGIS Maps SDK</b> を検索します。
+   * [参照] タブを選択して、**ArcGIS Maps SDK** を検索します。
    * 検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは<b>Esri.ArcGISRuntime.WPF</b> NuGet パッケージを選択します。
    * [バージョン] にパッケージの「最新の安定版...」が選択されていることを確認します。
    * [インストール] をクリックします。
@@ -147,7 +151,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 2. Visual Studio エラー リストに `The 'Esri.ArcGISRuntime.WPF' nuget package cannot be used to target 'net8.0-windows'. Target 'net8.0-windows10.0.19041.0' or later instead.` のようなエラーが表示される場合があります。その場合は、次の手順に従って対処してください。
 
-    * <b>ソリューション エクスプローラー</b>で、ツリー ビューの <b>DisplayAMap</b> プロジェクト エントリーを右クリックし、[プロジェクト ファイルの編集] を選択します。
+    * **ソリューション エクスプローラー**で、ツリー ビューのプロジェクト エントリーを右クリックし、[プロジェクト ファイルの編集] を選択します。
 
     *  `<TargetFramework>` 要素を `net8.0-windows10.0.19041.0`（またはそれ以上）で更新します。
 
@@ -166,7 +170,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 このアプリは、以降のすべてのチュートリアルで使用する基盤を構築するためのものです。堅固な設計で構築することをお勧めします。
 
-**Model-View-ViewModel (MVVM)** デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャを提供します。このパターンでは、`モデル`はアプリで消費されるデータを表し、`ビュー` はユーザー インターフェイスであり、`ビュー モデル` にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
+**Model-View-ViewModel (MVVM)** デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャーを提供します。このパターンでは、`モデル`はアプリで消費されるデータを表し、`ビュー` はユーザー インターフェイスであり、`ビュー モデル` にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
 
 MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインの`ビュー` コンポーネントになります。クラスの多くは、`モデル`の役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 `ビュー モデル` コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、`ビュー`に表示するためのデータを提供したりするため、記述するコードの多くはここになります。
 
@@ -254,11 +258,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     }
     ```
 
-6. `MapViewModel` クラスに `SetupMap` という関数を追加します。この関数は、新しいマップを作成して `Map` プロパティを設定します。
+6. `MapViewModel` クラスに `SetupMap` という関数を追加します。この関数は、新しいマップを作成して `Map` プロパティを設定します。地図は、セキュアな ArcGIS ベースマップ スタイルの1つを使用し、富士山を中心に表示されます。
 
-    地図は、セキュアな ArcGIS ベースマップ スタイルの1つを使用し、富士山を中心に表示されます。
-
-    マップは、地形図ベクター タイル ベースマップを使用します。ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
+    縮尺は、視点を設定する上で欠かせない要素です。縮尺によって、地図をどの程度の拡大率で表示するかが決まります。縮尺とは、地図上の寸法と実世界の寸法の比率のことです。この[変換ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/reference/zoom-levels-and-scale/#conversion-tool)を使って、ズームレベルと縮尺の関係を確かめ、両者の関連性について詳しく学びましょう。
 
     ```csharp {filename = "MapViewModel.cs"}
         private Map _map;
@@ -279,6 +281,13 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             BasemapStyleParameters bsp = new BasemapStyleParameters();
             bsp.SpecificLanguage = System.Globalization.CultureInfo.CreateSpecificCulture("ja");
             Basemap basemap = new Basemap(BasemapStyle.ArcGISTopographic, bsp);
+
+            // Set the initial viewpoint around the Santa Monica Mountains in California.
+            // マップの中心位置として設定する MapPoint を作成
+            MapPoint mapCenterPoint = new MapPoint(138.727363, 35.360626, SpatialReferences.Wgs84);
+            // マップの視点を決める Viewpoint を設定
+            MainMapView.SetViewpoint(new Viewpoint(mapCenterPoint, 200000.0));
+
             //地形図ベクター タイル ベースマップを使用して新しいマップを作成します。
             Map = new Map(basemap);
         }
@@ -309,19 +318,19 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 これで `MapViewModel` が完成しました。
 
-<b>MVVM</b> デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成した `ビュー モデル` のコードは、通常、サポートされているすべての .NET プラットフォームで動作します。
+**MVVM** デザイン パターンを使用する利点は、ビュー モデルのコードを再利用できることです。API はプラットフォーム間でほぼ標準的な API サーフェスを持っているため、１つのアプリ用に作成した `ビュー モデル` のコードは、通常、サポートされているすべての .NET プラットフォームで動作します。 このビューモデルは、ほとんど、あるいはまったく変更を加えることなく、.NET MAUI アプリや WinUI アプリで使用できます。
 
 
 ### 開発者認証情報の設定
 アプリのユーザーが ArcGIS ロケーション サービスやセキュアなコンテンツにアクセスできるようにするには、[認証の設定](#認証の設定)ステップで作成した開発者認証情報を使用して、リソースへのアクセスを認証します。
 
-{{<tabs items = "API キー認証, ユーザー認証">}}
+{{<tabs>}}
 
-    {{<tab>}}
+    {{<tab name="API キー認証">}}
 
    1. **ソリューション エクスプローラー**で、**App.xaml** のノードを展開し、**App.xaml.cs** をダブルクリックして開きます。
 
-   2. App クラスで、`OnStartup()` 関数のオーバーライドを追加して、[`ArcGISRuntimeEnvironment`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html) で `ApiKey` プロパティを設定します。
+   2. _App_ クラスで、`OnStartup()` 関数のオーバーライドを追加して、[`ArcGISRuntimeEnvironment`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.html) で `ApiKey` プロパティを設定します。
 
             ```csharp {filename = "App.xaml.cs"}
             public partial class App : Application
@@ -348,12 +357,23 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
     {{</tab>}}
 
-    {{<tab>}}
+    {{<tab name="ユーザー認証">}}
 
-   1. Visual Studio の [プロジェクト] メニューから [クラスの追加] を選択します。クラス名を `ArcGISLoginPrompt.cs` とし、[追加] をクリックします。新しいクラスがプロジェクトに追加され、Visual Studio で開きます。
-   2. 新しいクラスのコードをすべて選択し、削除します。
-   3. 以下のコードをすべてコピーし、プロジェクトの `ArcGISLoginPrompt.cs` クラスに貼り付けます。
-
+   1. Microsoft.Web.WebView2 NuGet パッケージを追加します。このパッケージは Microsoft Edge WebView2 コントロールを提供し、これによりネイティブ アプリに Web テクノロジー (HTML、CSS、JavaScript) を組み込むことができます。アプリでは、WebView2 コントロールを使用して、ユーザー認証のためのログイン UI を表示します。  
+   
+          * **ソリューション エクスプローラー**で[依存関係]を右クリックし、[NuGet パッケージの管理]を選択します。
+          * [NuGet パッケージ マネージャー]ウィンドウで、[パッケージ ソース]が `nuget.org`（右上）に設定されていることを確認します。
+          * [参照]タブを選択し、**Microsoft.Web.WebView2** を検索します。
+          * 検索結果から、**Microsoft.Web.WebView2** NuGet パッケージを選択します。
+          * [バージョン] ドロップダウンで、パッケージの[最新の安定版]が選択されていることを確認します。
+          * [インストール]をクリックします。
+          * [変更のプレビュー]ダイアログで、パッケージの依存関係や競合が確認されます。変更内容を確認し、[適用]をクリックしてパッケージのインストールを続行します。
+          * [ライセンス同意]ダイアログでライセンス情報を確認し、[同意する]をクリックしてパッケージをプロジェクトに追加します。
+          * Visual Studio の[出力]ウィンドウで、パッケージが正常にインストールされたことを確認します。
+          * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
+   2. Visual Studio の [プロジェクト] メニューから、[クラスの追加...] を選択します。クラス名を `ArcGISLoginPrompt.cs` と指定し、[追加] をクリックします。新しいクラスがプロジェクトに追加され、Visual Studio で開きます。
+   3. 新しいクラス内のコードをすべて選択して削除してください。
+   4. 以下のコードをすべてコピーし、プロジェクト内の `ArcGISLoginPrompt.cs` クラスに貼り付けてください。
             ```csharp {filename = "ArcGISLoginPrompt.cs"}
             // Copyright 2021 Esri.
             //
@@ -364,13 +384,14 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             // "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
             // language governing permissions and limitations under the License.
 
+            using Esri.ArcGISRuntime.Portal;
             using Esri.ArcGISRuntime.Security;
+            using Microsoft.Web.WebView2.Core;
+            using Microsoft.Web.WebView2.Wpf;
             using System;
             using System.Collections.Generic;
             using System.Threading.Tasks;
             using System.Windows;
-            using System.Windows.Controls;
-            using System.Windows.Navigation;
             using System.Windows.Threading;
 
             namespace UserAuth
@@ -381,7 +402,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                     private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
                     // Specify the Client ID and Redirect URL to use with OAuth authentication.
                     // See the instructions here for creating OAuth app settings:
-                    // https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/
+                    // https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/           create-oauth-credentials-user-auth/
 
                     private const string AppClientId = "YOUR_CLIENT_ID";
                     private const string OAuthRedirectUrl = "YOUR_REDIRECT_URL";
@@ -392,22 +413,10 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
                         try
                         {
-                            // Create a challenge request for portal credentials (OAuth credential request for arcgis.com)
-                            CredentialRequestInfo challengeRequest = new CredentialRequestInfo
-                            {
-                                // Use the OAuth authorization code workflow.
-                                GenerateTokenOptions = new GenerateTokenOptions
-                                {
-                                    TokenAuthenticationType = TokenAuthenticationType.OAuthAuthorizationCode
-                                },
-
-                                // Indicate the url (portal) to authenticate with (ArcGIS Online)
-                                ServiceUri = new Uri(ArcGISOnlineUrl)
-                            };
-
-                            // Call GetCredentialAsync on the AuthenticationManager to invoke the challenge handler
-                            Credential? cred = await AuthenticationManager.Current.GetCredentialAsync(challengeRequest, false);
-                            loggedIn = cred != null;
+                            // Create the portal, prompting the user to log in if they haven't already.
+                            var portal = await ArcGISPortal.CreateAsync(new Uri(ArcGISOnlineUrl), loginRequired: true);
+                            // If the user logged in successfully, the portal's User property will be non-null.
+                            loggedIn = portal.User != null;
                         }
                         catch (OperationCanceledException)
                         {
@@ -422,20 +431,20 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         return loggedIn;
                     }
 
-                    public static void SetChallengeHandler()
+                    public static void RegisterOAuthConfig()
                     {
                         var userConfig = new OAuthUserConfiguration(new Uri(ArcGISOnlineUrl), AppClientId, new Uri(OAuthRedirectUrl));
                         AuthenticationManager.Current.OAuthUserConfigurations.Add(userConfig);
-                        AuthenticationManager.Current.OAuthAuthorizeHandler = new OAuthAuthorize();
+                        AuthenticationManager.Current.OAuthHandler = new OAuthAuthorize();
                     }
 
                     #region OAuth handler
 
-                    // In a desktop (WPF) app, an IOAuthAuthorizeHandler component is used to handle some of the OAuth details. Specifically, it
+                    // In a desktop (WPF) app, an IOAuthHandler component is used to handle some of the OAuth details. Specifically, it
                     //     implements AuthorizeAsync to show the login UI (generated by the server that hosts secure content) in a web control.
                     //     When the user logs in successfully, cancels the login, or closes the window without continuing, the IOAuthAuthorizeHandler
                     //     is responsible for obtaining the authorization from the server or raising an OperationCanceledException.
-                    public class OAuthAuthorize : IOAuthAuthorizeHandler
+                    public class OAuthAuthorize : IOAuthHandler
                     {
                         // Window to contain the OAuth UI.
                         private Window? _authWindow;
@@ -449,8 +458,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         // URL that handles the OAuth request.
                         private string? _authorizeUrl;
 
-                        // Function to handle authorization requests, takes the URIs for the secured service, the authorization endpoint, and the redirect URI.
-                        public Task<IDictionary<string, string>> AuthorizeAsync(Uri serviceUri, Uri authorizeUri, Uri callbackUri)
+                        // Function to handle authorization requests, takes the URIs for the secured service, the authorization endpoint, and           the redirect URI.
+                        public Task<IDictionary<string, string>> LoginAsync(OAuthLoginParameters parameters)
                         {
                             if (_tcs != null && !_tcs.Task.IsCompleted)
                                 throw new Exception("Task in progress");
@@ -458,8 +467,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                             _tcs = new TaskCompletionSource<IDictionary<string, string>>();
 
                             // Store the authorization and redirect URLs.
-                            _authorizeUrl = authorizeUri.AbsoluteUri;
-                            _callbackUrl = callbackUri.AbsoluteUri;
+                            _authorizeUrl = parameters.AuthorizeUri.AbsoluteUri;
+                            _callbackUrl = parameters.RedirectUri.AbsoluteUri;
 
                             // Call a function to show the login controls, make sure it runs on the UI thread for this app.
                             Dispatcher dispatcher = Application.Current.Dispatcher;
@@ -480,18 +489,17 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         // Challenge for OAuth credentials on the UI thread.
                         private void AuthorizeOnUIThread(string authorizeUri)
                         {
-                            // Create a WebBrowser control to display the authorize page.
-                            WebBrowser webBrowser = new WebBrowser();
+                            // Initialize a WebView2 control to display the authorize page.
+                            WebView2 webBrowser = new WebView2() { MinWidth = 500, MinHeight = 500 };
 
                             // Handle the navigation event for the browser to check for a response to the redirect URL.
-                            webBrowser.Navigating += WebBrowserOnNavigating;
+                            webBrowser.NavigationStarting += WebBrowserOnNavigationStarting;
 
                             // Display the web browser in a new window.
                             _authWindow = new Window
                             {
                                 Content = webBrowser,
-                                Width = 450,
-                                Height = 450,
+                                SizeToContent = SizeToContent.WidthAndHeight,
                                 WindowStartupLocation = WindowStartupLocation.CenterOwner
                             };
 
@@ -501,9 +509,15 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                                 _authWindow.Owner = Application.Current.MainWindow;
                             }
 
-                            // Handle the window closed event then navigate to the authorize url.
+                            // Handle window loaded event as the WebView2 control can only be initialized after it is visible in the UI
+                            _authWindow.Loaded += async (s, e) =>
+                            {
+                                await webBrowser.EnsureCoreWebView2Async();
+                                webBrowser.CoreWebView2.Navigate(authorizeUri);
+                            };
+
+                            // Handle the window closed event
                             _authWindow.Closed += OnWindowClosed;
-                            webBrowser.Navigate(authorizeUri);
 
                             // Display the window.
                             _authWindow.ShowDialog();
@@ -528,17 +542,16 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                             _authWindow = null;
                         }
 
-                        // Handle browser navigation (content changing).
-                        private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
+                        // Handle browser navigation
+                        private void WebBrowserOnNavigationStarting(object? sender, CoreWebView2NavigationStartingEventArgs e)
                         {
                             // Check for a response to the callback url.
                             const string portalApprovalMarker = "/oauth2/approval";
-                            WebBrowser? webBrowser = sender as WebBrowser;
 
-                            Uri uri = e.Uri;
+                            Uri uri = new Uri(e.Uri);
 
                             // If no browser, uri, or an empty url, return.
-                            if (webBrowser == null || uri == null || string.IsNullOrEmpty(uri.AbsoluteUri))
+                            if (sender == null || uri == null || string.IsNullOrEmpty(uri.AbsoluteUri))
                                 return;
 
                             // Check for redirect.
@@ -608,7 +621,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             }
             ```
 
-   4. クライアント ID (`AppClientId`) とリダイレクト URL (`OAuthRedirectUri`)の値を追加します。これらは、[認証の設定](#認証の設定)ステップで作成したユーザー認証設定です。
+   5. クライアント ID (`AppClientId`) とリダイレクト URL (`OAuthRedirectUri`)の値を追加します。これらは、[認証の設定](#認証の設定)ステップで作成したユーザー認証設定です。
 
             ```csharp {filename = "ArcGISLoginPrompt.cs"}
             internal static class ArcGISLoginPrompt
@@ -624,8 +637,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                     // 更新終了
             ```
 
-   5. [ソリューション エクスプローラー] で <b>App.xaml</b> のノードを展開し、<b>App.xaml.cs</b> をダブルクリックして開きます。
-   6. App クラスで `OnStartup()` 関数のオーバーライドを追加して、静的 `ArcGISLoginPrompt` クラスの `SetChallengeHandler()` メソッドを呼び出します。
+   6. [ソリューション エクスプローラー] で **App.xaml** のノードを展開し、**App.xaml.cs** をダブルクリックして開きます。
+   7.  _App_ クラスで `OnStartup()` 関数のオーバーライドを追加して、静的 `ArcGISLoginPrompt` クラスの `SetChallengeHandler()` メソッドを呼び出します。
 
             ```csharp {filename = "App.xaml.cs"}
                 public partial class App : Application
@@ -637,8 +650,8 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         base.OnStartup(e);
 
                         // Call a function to set up the AuthenticationManager for OAuth.
-                        UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
-
+                        UserAuth.ArcGISLoginPrompt.RegisterOAuthConfig();
+                    
                     }
                     // 追加終了
 
@@ -646,12 +659,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
             }
             ```
 
-   7. App.xaml.cs ファイルを保存して閉じます。
-
+   8. `App.xaml.cs` ファイルを保存して閉じます。  
     {{< callout >}}
-
     OAuth 認証情報は、このチュートリアルの便宜上、コードに直接格納されていますが、本番環境では認証情報をソース コードに直接保存しないでください。
-
     {{< /callout >}}
 
     {{</tab>}}
@@ -663,8 +673,9 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 [`MapView`](https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html) コントロールは、マップを表示するために使用します。 マップ ビューをプロジェクトの UI に追加し、`MapViewModel` で定義したマップを使用するように設定します。
 
-1. 必要な XML 名前空間とリソースを追加します。
-   * `MainWindow.xaml` を開き、<b>XAML</b> ビューに切り替えます。
+1. `MainWindow.xaml` を開きます。
+2. 必要な XML 名前空間とリソース宣言を追加します。
+   * `MainWindow.xaml` を開き、**XAML** ビューに切り替えます。
    * 既存の名前空間の宣言内に、ArcGIS コントロールの `esri` XML 名前空間を追加します。
    * `MapViewModel` インスタンスを静的リソースとして定義する XAML を追加します。
 
@@ -689,9 +700,12 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
         </Grid>
     ```
 
-2. [`MapView`](https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html) コントロールを `MainWindow.xaml` に追加し、`MapViewModel` にバインドします。
-   * `MainMapView` という名前の `MapView` コントロールを定義する XAML を追加します。
-   * データ バインディングを使用して、`MapViewModel` リソースを使用しコントロールの `Map` プロパティを設定します。
+3. [`MapView`](https://developers.arcgis.com/net/api-reference/api/netwin/wpf/Esri.ArcGISRuntime.UI.Controls.MapView.html) コントロールを `MainWindow.xaml` に追加し、`MapViewModel` にバインドします。
+   * `MapView` コントロールを定義する XAML を追加します。
+   * データ バインディングを使用して、`MapViewModel` リソースからコントロールの `Map` プロパティを設定します。
+    {{<callout type="warning">}}
+    Visual Studio で、MapView が見つからないというエラーが表示される場合があります。これは、プロジェクトがまだビルドされていないためです。このエラーは、ひとまず無視して構いません。
+    {{</callout>}}
 
     ```xml {filename = "MainWindow.xaml"}
     <Window.Resources>
@@ -705,49 +719,11 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     </Grid>
     ```
 
-### マップ ビューの視点を設定する
-
-ウィンドウの読み込み時にマップ ビューの視点 (ビュー ポイント) を設定します。富士山を中心にマップを表示するための、位置と縮尺を定義します。
-
-1. `MainWindow.xaml.cs` を開きます。 これは、`MainWindow.xaml` に関連付けられたコードと、それが定義するユーザー インターフェイス要素を含むコード ビハインド ファイルです。
-2. 必要な using ステートメントを追加します。
-
-    ```csharp {filename = "MainWindow.xaml.cs"}
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
-
-    // 追加開始
-    using Esri.ArcGISRuntime.Geometry;
-    using Esri.ArcGISRuntime.Mapping;
-    // 追加終了
-
-    namespace DisplayAMap
-    {
-    ```
-
-3. `MainWindow` のコンストラクターで、新しい [`Viewpoint`](https://developers.arcgis.com/net/api-reference/api/netwin/Esri.ArcGISRuntime/Esri.ArcGISRuntime.Mapping.Viewpoint.html) を定義するコードを追加し、マップ ビューに適用します。
-
-    ```csharp {filename = "MainWindow.xaml.cs"}
-    public MainWindow()
-    {
-        InitializeComponent();
-
-        // 追加開始
-        // マップの中心位置として設定する MapPoint を作成
-        MapPoint mapCenterPoint = new MapPoint(138.727363, 35.360626, SpatialReferences.Wgs84);
-        // マップの視点を決める Viewpoint を設定
-        MainMapView.SetViewpoint(new Viewpoint(mapCenterPoint, 200000.0));
-        // 追加終了
-    }
-    ```
-
 ### アプリを実行する
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。
 
-富士山を中心に、地形図ベクター タイル ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
-
-プロジェクトは[こちら](https://developers.arcgis.com/net/zips/display-a-map.zip)からダウンロードできます (マップの表示場所は本チュートリアルで設定した場所とは異なります)。
+富士山を中心に、地形図ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
 ## Web マップを表示する
 「[Web マップの作成](../../services/create-webmap/)」のガイドで Web マップを作成している場合は、作成した Web マップも基本的に同じステップで表示できます。
@@ -793,7 +769,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
     {{<tab>}}
    1. **Visual Studio** の<b>ソリューション エクスプローラー</b>で、<b>App.xaml.cs</b> をクリックしてファイルを開きます。
-   2. `ArcGISEnvironment.ApiKey` プロパティーに API キーのアクセス トークンを設定します。
+   2. `ArcGISEnvironment.ApiKey` プロパティに API キーのアクセス トークンを設定します。
 
             ```csharp {filename = "App.xaml.cs"}
                     protected override void OnStartup(StartupEventArgs e)
@@ -883,7 +859,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 [デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの **\<F5>** キーを押して) アプリを実行します。
 
-富士山を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
+カリフォルニア州のサンタモニカ山脈を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
 
 ## 次のチュートリアル
 これらのチュートリアルでは、追加の [API 機能](https://developers.arcgis.com/net/key-features/)、[ArcGIS ロケーション サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)および [ArcGIS ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/tools/)の使用方法について説明します。(英語ページ)
