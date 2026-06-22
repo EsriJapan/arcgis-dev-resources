@@ -30,7 +30,7 @@ aliases = ["/create-startup-app-dotnet/"]
 * API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 * 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
-必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet-200.x/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
+必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
 
 ## 認証の設定
 このチュートリアルで使用するセキュアな ArcGIS ロケーション サービスにアクセスするには、ArcGIS Location Platform または ArcGIS Online アカウントを使用して、API キー認証またはユーザー認証を実装する必要があります。
@@ -75,7 +75,7 @@ aliases = ["/create-startup-app-dotnet/"]
 
     {{< /callout >}}
 
-   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了し、**Client ID** と **Redirect URL** を取得するためのチュートリアル。  
+   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了し、**Client ID** と **Redirect URL** を取得してください。  
    
           `Client ID` は、認証サーバー上でアプリを一意に識別するものです。サーバーが指定された Client ID を持つアプリを見つけられない場合、認証は続行されません。
 
@@ -106,7 +106,7 @@ ArcGIS Maps SDK for .NET は、Windows Presentation Framework (WPF)、Windows UI
 
 {{< callout type = "important">}}
 
-.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Visual Studio for Mac を使用する場合、WPF のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
+.NET API アプリを開発できるプラットフォームは、開発環境に応じて異なります。例えば、Mac で開発する場合、WPF のプロジェクトは利用できません。詳しくは、[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)をご覧ください。
 
 {{< /callout >}}
 
@@ -137,7 +137,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 {{< /callout >}}
 
-1. [NuGet パッケージをインストール](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
+1. [NuGet パッケージをインストール](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
    * **ソリューション エクスプローラー**で、[参照] を右クリックし、[NuGet パッケージの管理] を選択します。
    * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に `nuget.org` (右上)が選択されていることを確認します。
    * [参照] タブを選択して、**ArcGIS Maps SDK** を検索します。
@@ -361,7 +361,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
     {{<tab name="ユーザー認証">}}
 
-   1. Microsoft.Web.WebView2 NuGet パッケージを追加します。このパッケージは Microsoft Edge WebView2 コントロールを提供し、これによりネイティブ アプリに Web テクノロジー (HTML、CSS、JavaScript) を組み込むことができます。アプリでは、WebView2 コントロールを使用して、ユーザー認証のためのログイン UI を表示します。  
+   1. `Microsoft.Web.WebView2` [NuGet パッケージ](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio)を追加します。このパッケージは Microsoft Edge WebView2 コントロールを提供し、これによりネイティブ アプリに Web テクノロジー (HTML、CSS、JavaScript) を組み込むことができます。アプリでは、WebView2 コントロールを使用して、ユーザー認証のためのログイン UI を表示します。  
    
           * **ソリューション エクスプローラー**で[依存関係]を右クリックし、[NuGet パッケージの管理]を選択します。
           * [NuGet パッケージ マネージャー]ウィンドウで、[パッケージ ソース]が `nuget.org`（右上）に設定されていることを確認します。

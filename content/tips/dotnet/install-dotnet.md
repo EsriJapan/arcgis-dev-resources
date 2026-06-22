@@ -14,12 +14,12 @@ ArcGIS Maps の機能を .NET アプリケーションに組み込むには、1 
 
 ### プロジェクトでの ArcGIS Maps SDK for .NET の参照
 
-ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある [Visual Studio にパッケージをインストールして使用する (Windows)](https://learn.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) または [Visual Studio Code での NuGet の使用](https://code.visualstudio.com/docs/csharp/package-management) を参照してください。
+ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされています。NuGet を使用して Visual Studio でパッケージを使用するには、Microsoft のドキュメントにある [Visual Studio にパッケージをインストールして使用する (Windows)](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio) または [Visual Studio Code での NuGet の使用](https://code.visualstudio.com/docs/csharp/package-management) を参照してください。
 
 たとえば、Windows の Visual Studio で ArcGIS Maps SDK for.NET への参照を追加するには、次の手順に従います。
 
-1. [Visual Studio Solution Explorer] ウィンドウで、[Project] を右クリックし、[Manage NuGet Packages] を選択します。
-2. [Browse] タブを選択し、**パッケージソース**として [nuget.org] を選択します。
+1. [Visual Studio ソリューション エクスプローラー] ウィンドウで、[プロジェクト] を右クリックし、[NuGet パッケージの管理] を選択します。
+2. [参照] タブを選択し、**パッケージ ソース**として [nuget.org] を選択します。
 3. **検索** テキスト ボックスに「Esri」と入力します。ArcGIS Maps SDK for .NET がサポートするさまざまなフレームワークが表示されます。
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/nuget-package-manager.png" width="650px">
@@ -44,11 +44,11 @@ WPF、WinUI、.NET MAUI プロジェクト テンプレートには、Visual Stu
 
 #### 拡張機能のインストール
 
-Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの [Visual Studio の機能拡張を管理する](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions) のトピックを参照してください。
+Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。拡張機能の使用方法の詳細については、Microsoft のドキュメントの [Visual Studio の機能拡張を管理する](https://docs.microsoft.com/ja-jp/visualstudio/ide/finding-and-using-visual-studio-extensions) のトピックを参照してください。
 
 {{< callout type = "info">}}
 
-.NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は [PackageReference](https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files) をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために [packages.config](https://docs.microsoft.com/ja-jp/nuget/reference/packages-config) が既定になっています。`packages.config` を使用すると、バージョンをアップグレードするときに問題が発生する可能性があります。このような状況を軽減するには、Microsoft の推奨に従って、[packages.config から PackageReference に移行](https://learn.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference) することを検討してください。
+.NET Framework プロジェクト テンプレートなど、すぐに使用できる Visual Studio テンプレートの一部は [PackageReference](https://docs.microsoft.com/ja-jp/nuget/consume-packages/package-references-in-project-files) をサポートしていますが、現在、プロジェクトによって参照されるパッケージのリストを維持するために [packages.config](https://docs.microsoft.com/ja-jp/nuget/reference/packages-config) が既定になっています。`packages.config` を使用すると、バージョンをアップグレードするときに問題が発生する可能性があります。このような状況を軽減するには、Microsoft の推奨に従って、[packages.config から PackageReference に移行](https://learn.microsoft.com/ja-jp/nuget/consume-packages/migrate-packages-config-to-package-reference) することを検討してください。
 
 {{< /callout >}}
 
@@ -98,7 +98,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 ### サンプル コード
 アプリケーションに追加できるさまざまな ArcGIS Maps の強力な機能を説明するサンプル コードを入手できます。サンプルを検索し、[サンプル ドキュメント](https://developers.arcgis.com/net/wpf/sample-code/) で関連するコードを参照するか、[サンプル リポジトリー](https://github.com/Esri/arcgis-maps-sdk-dotnet-samples) からソース コードをダウンロードして、サンプルをローカルに構築および実行できます。
 
-コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、[Microsoft ストア](https://apps.microsoft.com/store/detail/arcgis-runtime-sdk-for-net-samples-wpf/9MTP5013343H?hl=ja-jp&gl=jp)で、.NET MAUI 版 サンプル ビューアーの Android 版が Google Play ストアで公開されています。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
+コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、[Microsoft ストア](https://apps.microsoft.com/store/detail/arcgis-runtime-sdk-for-net-samples-wpf/9MTP5013343H?hl=ja-jp&gl=jp)で、.NET MAUI 版 サンプル ビューアーの Android 版が [Google Play ストア](https://play.google.com/store/apps/details?id=com.esri.arcgisruntime.samples.maui)で公開されています。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
 
 ### Local Server
 
@@ -112,9 +112,9 @@ ArcGIS Maps SDK for Local Server は非推奨です。詳細は [サポート終
 
 ### 追加のデータ
 #### 投影エンジン データ
-測地系変換は、ある空間基準から別の空間基準へジオメトリを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッド ベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。
+測地系変換は、ある空間基準から別の空間基準へジオメトリーを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッドベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイルシステムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。
 
-[グリッド ベースの変換](https://developers.arcgis.com/net/geometry-and-spatial-reference/spatial-reference/#grid-based-transformations)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/net/downloads/#projection-engine-data)をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、[Spatial references](https://developers.arcgis.com/net/geometry-and-spatial-reference/spatial-reference/) のトピックを参照してください。
+[グリッドベースの変換](https://developers.arcgis.com/net/geometry-and-spatial-reference/spatial-reference/#projection-engine-grid-based-transformation-data-files)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/net/downloads/#projection-engine-data)をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、[Spatial references](https://developers.arcgis.com/net/geometry-and-spatial-reference/spatial-reference/) のトピックを参照してください。
 
 #### Electronic Navigational Charts (ENC)
 航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/) の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf)に準拠した ENC をサポートしています。
@@ -125,7 +125,7 @@ ENC データの操作の詳細については、[Display electronic navigationa
 
 ### ArcGIS Maps SDK for .NET を使用したオフライン環境での開発
 #### NuGet パッケージとプロジェクト テンプレート
-オンライン アクセスが制限された環境でアプリを開発している場合は、ローカルの NuGet パッケージ フィードから ArcGIS Maps SDK for .NET を参照することができます。 NuGet.org で公開されている NuGet パッケージのサブセットを含む、追加の Visual Studio (Windows) 拡張機能を利用できます。 この拡張機能をインストールすると、ユーザー プロファイルの `%localappdata%\Esri\NuGet` の下にローカル NuGet パッケージ ソースが構成されます。 詳細については、Microsoft のドキュメントの [ローカル NuGet パッケージ フィード](https://learn.microsoft.com/nuget/hosting-packages/local-feeds) を参照してください。
+オンライン アクセスが制限された環境でアプリを開発している場合は、ローカルの NuGet パッケージ フィードから ArcGIS Maps SDK for .NET を参照することができます。 NuGet.org で公開されている NuGet パッケージのサブセットを含む、追加の Visual Studio (Windows) 拡張機能を利用できます。 この拡張機能をインストールすると、ユーザー プロファイルの `%localappdata%\Esri\NuGet` の下にローカル NuGet パッケージ ソースが構成されます。 詳細については、Microsoft のドキュメントの [ローカル NuGet パッケージ フィード](https://learn.microsoft.com/ja-jp/nuget/hosting-packages/local-feeds) を参照してください。
 
 {{< callout type = "important">}}
 
@@ -142,7 +142,7 @@ ENC データの操作の詳細については、[Display electronic navigationa
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/vsix-installer-dialog-v200.png" width="450px">
 
-4. インストールが完了すると、選択した製品の確認が表示されます。 [閉じる] を選択して、インストールを終了します。 インストールしたら、Visual Studio の [拡張機能の管理] ダイアログを使用して、拡張機能を有効化、無効化、またはアンインストールします。 詳細については、Microsoft ドキュメントのトピック [[拡張機能の管理] ダイアログ ボックスを使用しないインストール](https://learn.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?#install-without-using-the-manage-extensions-dialog-box) を参照してください。
+4. インストールが完了すると、選択した製品の確認が表示されます。 [閉じる] を選択して、インストールを終了します。 インストールしたら、Visual Studio の [拡張機能の管理] ダイアログを使用して、拡張機能を有効化、無効化、またはアンインストールします。 詳細については、Microsoft ドキュメントのトピック [[拡張機能の管理] ダイアログ ボックスを使用しないインストール](https://learn.microsoft.com/ja-jp/visualstudio/ide/finding-and-using-visual-studio-extensions?#install-without-using-the-manage-extensions-dialog-box) を参照してください。
 
 #### ローカルの Esri パッケージ ソースから NuGet パッケージをインストールする
 ローカルの Esri パッケージ ソースから NuGet パッケージをインストールするには、次の手順に従います。
