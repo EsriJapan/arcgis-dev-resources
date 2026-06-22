@@ -3,6 +3,7 @@ title = "ベースマップ"
 description = "マッピングAPI＆ロケーションサービス内のベースマップについて紹介します"
 Weight=4
 aliases = ["/basemaps/"]
+draft = true
 +++
 
 出典：Mapping APIs and location services - [Basemaps](
