@@ -56,7 +56,7 @@ params:
     # full (100%), wide (90rem), normal (1280px)
     width: wide
     tabs :
-      sync: true
+      sync: false
 
 services:
   googleAnalytics:
