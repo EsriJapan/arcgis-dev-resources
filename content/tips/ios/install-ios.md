@@ -26,7 +26,7 @@ Xcode 26 での手順
 
     <img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
 
-6. ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、"ArcGIS" がまだ存在しない場合は追加します。
+6. ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、「ArcGIS」がまだ存在しない場合は追加します。
 
     <img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
 
@@ -59,7 +59,7 @@ Xcode 26 での手順
 ### スタンドアロンの開発者向けドキュメント
 [ダウンロード ページ](https://developers.arcgis.com/swift/downloads/) から、開発者向けドキュメントをアーカイブとしてダウンロードできます。アーカイブには、ローカル Web サーバーからドキュメントを提供する手順が含まれているため、インターネットに接続しなくてもドキュメントにアクセスできます。スタンドアロン ドキュメントには、開発者ガイド、API リファレンス、チュートリアル、およびサンプル ドキュメントが含まれています。このドキュメントは、ローカルのスタンドアロン コンピューターまたは内部ネットワーク上で実行するように設計されており、パブリックなインターネット上では実行できません。
 
-{{< callout >}}
+{{< callout type = "important">}}
 
 ダウンロードしたドキュメントのアーカイブを解凍するには、無料のオープンソース ファイル アーカイブ ユーティリティー [7-Zip](https://www.7-zip.org/) をお勧めします。
 
@@ -79,7 +79,7 @@ Xcode 26 での手順
 
 ### 追加のデータ
 #### 投影エンジン データ
-測地系変換は、ある空間基準から別の空間基準へジオメトリーを投影する際に、2つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッドベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。。
+測地系変換は、ある空間基準から別の空間基準へジオメトリーを投影する際に、2 つの空間基準の基礎となる測地系に違いがある場合に使用されます。測地系変換は、数学的に定義する（方程式ベースの変換）ことも、外部のサポート ファイルに依存する（グリッドベースの変換）ことも可能です。アプリでグリッドベースの変換を使用する場合、投影エンジン ファイルが存在する必要があります。API は、必要なファイルがローカルのファイル システムで利用可能かどうかを検出することができます。投影エンジン ファイルが無い状態で変換をしようとすると、エラーが発生します。API は、必要なファイルがローカル ファイル システムで利用可能かどうかを検出できます。
 
 [グリッドベースの変換](https://developers.arcgis.com/swift/geometry-and-spatial-reference/spatial-reference/#projection-engine-grid-based-transformation-data-files)を使用している場合は、ダウンロード ページからサポートする [Projection Engine ファイル](https://developers.arcgis.com/swift/downloads/#projection-engine-data)をダウンロードしてください。座標系、投影法、測地系変換の操作の詳細については、[Spatial references](https://developers.arcgis.com/swift/geometry-and-spatial-reference/spatial-reference/) のトピックを参照してください。
 
