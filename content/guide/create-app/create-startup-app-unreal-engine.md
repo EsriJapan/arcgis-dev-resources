@@ -2,7 +2,7 @@
 title = "Unreal Engine"
 description = "ArcGIS Maps SDK for Unreal Engine を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight=11
-aliases = ["/create-startup-app-unreal-engine/"]
+aliases = ["/create-startup-app-unreal-engine/","/tips/unreal-engine/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for Unreal Engine - Tutorials - [Display a map (UI)](https://developers.arcgis.com/unreal-engine/maps/tutorials/display-a-map-ui/)

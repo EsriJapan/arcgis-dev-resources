@@ -2,7 +2,7 @@
 title = "Flutter"
 description = "ArcGIS Maps SDK for Flutter を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight = 9
-aliases = ["/create-startup-app-flutter/"]
+aliases = ["/create-startup-app-flutter/","/tips/flutter/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for Flutter - Tutorials - [Display a map](https://developers.arcgis.com/flutter/maps-2d/tutorials/display-a-map/)

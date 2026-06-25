@@ -2,7 +2,7 @@
 title = "Kotlin"
 description = "ArcGIS Maps SDK for Kotlin を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight =7
-aliases = ["/create-startup-app-android/"]
+aliases = ["/create-startup-app-android/","/tips/android/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for Kotlin - Tutorials - [Display a map](https://developers.arcgis.com/kotlin/maps-2d/tutorials/display-a-map/)

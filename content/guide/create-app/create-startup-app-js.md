@@ -2,7 +2,7 @@
 title = "ArcGIS Maps SDK for JavaScript"
 description = "ArcGIS Maps SDK for JavaScript を用いた Web ブラウザー向け地図アプリの作成方法を紹介します。"
 Weight=1
-aliases = ["/create-startup-app-js/"]
+aliases = ["/create-startup-app-js/","/tips/javascript/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for JavaScript - Tutorials - [Display a map](https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/)

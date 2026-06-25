@@ -2,7 +2,7 @@
 title = "Unity"
 description = "ArcGIS Maps SDK for Unity を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight=10
-aliases = ["/create-startup-app-unity/"]
+aliases = ["/create-startup-app-unity/","/tips/unity/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for Unity - Tutorials - [Display a map（UI）](https://developers.arcgis.com/unity/maps/tutorials/display-a-map-ui/)

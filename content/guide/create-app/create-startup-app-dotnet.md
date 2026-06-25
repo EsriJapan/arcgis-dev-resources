@@ -2,7 +2,7 @@
 title = ".NET"
 description = "ArcGIS Maps SDK for .NET を用いたネイティブ地図アプリの作成方法を紹介します。"
 Weight=6
-aliases = ["/create-startup-app-dotnet/"]
+aliases = ["/create-startup-app-dotnet/","/tips/dotnet/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for .NET - Tutorials - [Display a map](https://developers.arcgis.com/net/maps-2d/tutorials/display-a-map/)

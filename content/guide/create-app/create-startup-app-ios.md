@@ -2,7 +2,7 @@
 title = "Swift"
 description = "ArcGIS Maps SDK for Swift を用いたモバイル地図アプリの作成方法を紹介します。"
 Weight=8
-aliases = ["/create-startup-app-ios/"]
+aliases = ["/create-startup-app-ios/","/tips/ios/create-app/"]
 +++
 
 出典：ArcGIS Maps SDK for Swift - Tutorials - [Display a map](https://developers.arcgis.com/swift/maps-2d/tutorials/display-a-map/)
