@@ -5,7 +5,7 @@ Weight=2
 aliases = ["/get-api-key/"]
 +++
 
-出典：Security and authentication guide - [Tutorial: Create an API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/)
+出典：Security and authentication guide - [Tutorial: Create an API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/location-platform/)
 
 APIキーの認証情報を使用してAPIキーを作成し、管理する方法を学びます。
 
@@ -18,6 +18,7 @@ API キーは、ArcGIS のセキュアなサービス、コンテンツ、およ
 * API キーの有効期限と参照元 URL の設定
 * API キーの認証情報のアイテムページを使用した、API キーの管理
 
+このガイドでは、ロケーション サービスにアクセスできる公開アプリケーション用の API キーの作成に焦点を当てています。
 API キーの詳細については [Introduction to API key authentication](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/) (英語) をご参照ください。
 
 ## 前提条件
@@ -31,38 +32,88 @@ API キーの詳細については [Introduction to API key authentication](http
 APIキーの認証情報を含むアイテムの作成と管理にはポータルを使用します。
 
 #### ArcGIS Location Platform
-1. ブラウザで [https://location.arcgis.com](https://location.arcgis.com) にアクセスし、ArcGIS Location Platform アカウントでサインインします。ダッシュボードで「My portal」をクリックして、ポータルに移動します。
+1. ブラウザーで [https://location.arcgis.com](https://location.arcgis.com) にアクセスし、ArcGIS Location Platform アカウントでサイン インします。ダッシュボードで「My portal」をクリックして、ポータルに移動します。
 
 #### ArcGIS Online
-1. ArcGIS Online アカウントで[ポータル](https://www.arcgis.com/index.html)にサインインしてください。
+1. ArcGIS Online アカウントで[ポータル](https://www.arcgis.com/index.html)にサイン インします。
 
 #### ArcGIS Enterprise
-1. ブラウザで、ArcGIS Enterprise ポータルにアクセスし、ArcGIS Enterprise アカウントでポータルにサインインしてください。
+1. ブラウザーで、ArcGIS Enterprise ポータルにアクセスし、ArcGIS Enterprise アカウントでポータルにサイン インします。
 
 
 ### API キーの作成
 
 1. ポータルで、[コンテンツ] > [マイ コンテンツ] > [新しいアイテム] をクリックします。
-2. [開発者の認証情報] > [API キーの認証情報]を選択し、[次へ] をクリックします。
+2. [開発者の認証情報] > [API キーの認証情報] を選択し、[次へ] をクリックします。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_1.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_01.png" width="800px">
 
 {{< callout >}}
 
-ArcGIS Online アカウントの場合は、アカウントに管理者権限または API キーの生成権限を持つカスタム ロールが設定されている必要があります。詳細については、[Limitations](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/#limitations) を参照してください。
+ArcGIS Online アカウントの場合は、アカウントに管理者権限または API キーの生成権限を持つカスタム ロールが設定されている必要があります。詳細については、[ロールに付与される権限](https://doc.arcgis.com/ja/arcgis-online/administer/privileges-for-roles-orgs.htm) を参照してください。
 
 {{< /callout >}}
+
+### アプリケーションの種類を選択
+このメニューでは、開発中のアプリケーションの種類に合わせて API キーの認証情報を設定できます。このメニューの設定によって、次の手順で選択可能な権限が決まります。
+
+1. [これらの認証情報はどこで使用しますか？] メニューで、[パブリック アプリケーション] を選択します。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_02.png" width="800px">
+
+{{< callout type="warning">}}
+
+公開アプリケーションを構築していない場合は、代わりにこのメニューにある「プライベート アプリケーション」のオプションのいずれかを選択してください。これらのオプションでは、「一般」および「管理」カテゴリの下にある追加の権限へのアクセスが可能になりますが、公開アプリケーションに組み込むべきではありません。
+
+{{< /callout >}}
+
+2. [次へ] をクリックします。
+
+### アイテムのアクセス権の選択 (オプション)
+アプリケーションが特定のプライベート アイテムへのアクセスを必要とする場合は、開発者の認証情報を設定してアクセスする必要があります。アイテムのアクセス権 メニューでは、ポータルのコンテンツを参照し、API キーに特定のアイテムへのアクセス権限をを付与することができます。
+
+1. トークンがアイテムへのアクセス権を必要としない場合は、[アイテムへのアクセスなし] を選択し、[次へ] をクリックします。
+2. そうでない場合は、[特定のアイテムへのアクセス権を付与] を選択します。
+3. アクセス権を付与したいアイテムを選択します。このメニューでは最大 100 件まで選択できます。
+4. [次へ] をクリックします。
+
+{{< callout type="warning">}}
+
+アプリケーションで、機密情報を含むデータ サービスにアクセスする必要がある場合は、他の[認証方式](../security)を使用してください。
+
+{{< /callout >}}
+
+### 権限の選択
+API キーの認証情報を設定を変更することで、生成される API キーの権限を構成できます。API キーをアプリケーションで機能させるためには、アプリケーションが使用するコンテンツやサービスにアクセスするための適切な権限が必要です。このメニューでアプリケーションに必要な権限を選択してください。
+
+{{< callout >}}
+
+API キーに必要な権限は、アプリケーションに必要なコンテンツ、サービス、機能によって異なります。[チュートリアル](https://developers.arcgis.com/documentation/mapping-and-location-services/tutorials/)を行う場合は、必要な権限の一覧を参照してください。
+
+{{< /callout >}}
+
+1. [開発者の認証情報を作成] の [権限] ウィンドウでアプリに必要な権限を選択します。
+
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_03.png" width="800px">
+
+{{< callout >}}
+
+権限の一覧は [Privileges](https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges) をご参照ください。
+
+{{< /callout >}}
+
+2. [次へ] をクリックします。
 
 ### 有効期限と参照元 URL の設定
 API キーの認証情報は、API キーと呼ばれる長期間のアクセス トークンを生成します。API キーは最大 1 年間有効で、有効期限は生成時に設定されます。また、APIキーに参照元を設定し、許可されたドメインからのみ使用できるように制限することもできます。
 
-1. [開発者の認証情報を作成] ウィンドウで、有効期限日をクリックします。アクセス トークンの有効期限を最大 1 年後まで設定できます。
+1. [開発者の認証情報を作成] ウィンドウで、[有効期限日] をクリックします。アクセス トークンの有効期限を最大 1 年後まで設定できます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_2.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_04.png" width="800px">
 
-2. 参照元 URL でアクセス トークンを制限したい Web ドメインを設定します。これはセキュリティのために強く推奨されます。参照元の詳細については、[API key credentials](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/api-key-credentials/#referrers) をご覧ください。
+2. [参照元 URL] でアクセス トークンを制限したい Web ドメインを設定します。これはセキュリティのために強く推奨されます。参照元 URL の詳細については、[API key credentials](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/api-key-credentials/#referrers) をご覧ください。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_3.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_05.png" width="800px">
 
 3. [次へ] をクリックします。
 
@@ -72,96 +123,39 @@ API キーの認証情報は、API キーと呼ばれる長期間のアクセス
 
 {{< /callout >}}
 
-### 権限の選択
-API キーの認証情報を設定することで、アクセス トークンの権限を構成できます。アプリケーションでアクセス トークンを正常に機能させるためには、アプリケーションが使用するコンテンツやサービスにアクセスするための適切な権限が必要です。必要な権限を選択して、API キーのアクセス トークンに適用してください。
-
-{{< callout >}}
-
-トークンに必要な権限は、アプリケーションに必要なコンテンツ、サービス、機能によって異なります。[チュートリアル](https://developers.arcgis.com/documentation/mapping-and-location-services/tutorials/)を行う場合は、そのアクセス トークンのセクションで必要な権限のリストを参照してください。
-
-{{< /callout >}}
-
-1. [開発者の認証情報を作成] の [権限] ウィンドウで利用可能な権限を参照します。
-
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_4.png" width="800px">
-
-{{< callout >}}
-
-開発者の認証情報に権限が表示されない場合は、アカウントに適切な権限が設定されていない可能性があります。[前提条件](#前提条件)をご確認ください。  
-また、アカウントの種類に応じて利用可能なロケーションサービスについては __[List of privileges](https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/#list-of-privileges)__ をご参照ください。
-
-{{< /callout >}}
-
-
-
-2. アプリケーションに必要な権限を選択し、[次へ] をクリックします。
-
-### アイテムの選択 (オプション)
-アプリケーションが特定のプライベート アイテムへのアクセスを必要とする場合は、開発者の認証情報を設定してアクセスする必要があります。アイテム アクセス メニューでは、ポータルのコンテンツを参照し、API キーに特定のアイテムへのアクセス権限をを付与することができます。
-
-1. トークンがアイテムへのアクセス権を必要としない場合は、[スキップ] をクリックします。
-2. そうでない場合は、[アイテムへのアクセス権を付与] ウィンドウで、[アイテムの参照] をクリックします。
-
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_5.png" width="800px">
-
-{{< callout >}}
-
-アイテムの参照が表示されない場合は、アカウントに適切な権限が設定されていない可能性があります。[前提条件](#前提条件)をご確認ください。  
-
-{{< /callout >}}
-
-3. アクセス権を与えたいアイテムを選択します。このメニューでは最大 100 件まで選択できます。
-
-{{< callout >}}
-
-一般的な権限 > フィーチャ > 編集などの特定の権限は、アカウントに関連するすべてのアイテムへのグローバルアクセスを許可します。このメニューを使用してアイテムへのアクセス権を設定すると、設定した権限が上書きされます。
-
-{{< /callout >}}
-
-4. [アイテムの追加] をクリックします。
 
 ### アイテムの保存
-API キーの認証情報のプロパティを設定した後、API キーを新しいアイテムとして保存できます。
+API キーの認証情報のプロパティを設定した後、API キーを新しいアイテムとして保存します。
 
 1. [開発者の認証情報を作成] ウィンドウで以下のプロパティを設定し、[次へ] をクリックします。
     * タイトル
-    * フォルダー
     * タグ
     * サマリー
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_6.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_06.png" width="800px">
 
-2. [サマリー] ウィンドウで、設定したプロパティ、権限、アイテム アクセス権を確認し、[次へ] をクリックします。
+2. [サマリー] ウィンドウで、設定したプロパティ、権限、アイテムのアクセス権を確認し、[次へ] をクリックします。
 
-{{< callout >}}
+{{< callout type="warning">}}
 
-個人範囲の権限は、公開アプリケーションにおいてセキュリティリスクを伴うため、個人用の自動化スクリプトでのみの使用を推奨します。詳細については、[Privilege scopes](https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/#privilege-scopes) をご参照ください。  
+この認証情報によって生成される API キー アクセス トークンにより、ここに記載されている権限へのアクセスが許可されます。アイテムが選択されている場合は、それらに機密情報や個人情報が含まれていないことを確認してください。API キーのローテーション、有効期限、参照元 URL に関しては、セキュリティーの[ベストプラクティス](https://developers.arcgis.com/documentation/security-and-authentication/security-best-practices/) に従ってください。
 
 {{< /callout >}}
 
 ### API キーのコピー
 
-1. [開発者の認証情報を作成] > [API キーの生成] ウィンドウで、[今すぐ API キーを生成します。 キーをコピーして保存する準備ができました。] を選択します。
+1. [開発者の認証情報を作成] > [API キーの生成] ウィンドウで、[今すぐ API キーを生成します。 トークンをコピーして保存する準備ができました。] を選択します。
+後で API キーを生成する場合は、アイテム詳細ページから生成できます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_7.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_07.png" width="800px">
 
 2. [次へ] をクリックします。
 3. 表示されたウィンドウから API キーをコピーし、アプリケーションに貼り付けます。
 
-<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_8.png" width="800px">
+<img src="https://apps.esrij.com/arcgis-dev/guide/img/get-api-key/create_apikey_08.png" width="800px">
 
 {{< callout >}}
 
 APIキーのアクセス トークンの値にアクセスできるのはこの時だけです。再度アクセスすることはできません。新しいキーを取得するには、API キーのアイテムページを使ってキーを再生成する必要があります。
 
 {{< /callout >}}
-
-### 認証情報の管理 (オプション)
-
-API キーのアイテムを作成した後、そのプロパティはアイテム詳細ページに移動していつでも管理できます。設定メニューでは、API キーの以下のプロパティを管理できます。
-* セカンダリ API キーの生成 : 同じ認証情報で、同じ権限と新しい有効期限を持つセカンダリ API キーを生成できます。
-* API キーの再生成 : API キーにアクセスできなくなった場合、新しい有効期限で再生成することができます。
-* API キーの無効化 : API キーを無効にして、アプリケーションで機能しなくすることができます。
-* 権限の編集 : API キーの認証レベルを調整するために、API キーの認証情報の権限を編集することができます。
-* アイテムのアクセス権を編集 : API キーの認証情報がアクセス許可されているアイテムを編集することができます。
-* 使用状況の表示 : API キーの使用状況を監視して、サービスの使用状況を追跡し、請求情報を表示することができます。詳しくは、[API key credentials](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/api-key-credentials/) をご覧ください。
