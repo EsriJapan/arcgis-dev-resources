@@ -13,8 +13,12 @@ ArcGIS Pro SDK の開発に役立つガイド集です。
     * ArcGIS Pro Extensions Nuget の使用方法や導入の利点を紹介します。
   * [ArcMap から ArcGIS Pro への移行](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-Migrating-to-ArcGIS-Pro)  
     * ArcMap のカスタマイズを ArcGIS Pro に移行する際のアプローチ、ベストプラクティス、および実装上の考慮事項の概要を説明します。
-  * [ArcGIS Pro 3.0 への移行](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-3.0-Migration-Guide)
-    * ArcGIS Pro 3.0 の変更点と 2.x から 3.0 への移行手順について説明します。 
+  * [ArcGIS Pro 3.x への移行](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-3.0-Migration-Guide)
+    * ArcGIS Pro 3.x の変更点と 2.x から 3.x への移行手順について説明します。 
+  * [.NET 8 への移行](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProGuide-NET-8-Upgrade)
+    * .NET 8 への移行手順について説明します。
+  * [.NET 10 への移行](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProGuide-NET-10-Upgrade)
+    * .NET 10 への移行手順について説明します。
   * [フレームワーク](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-Framework)  
     * 開発フレームワークの詳細を説明します。
   * [非同期プログラミング](https://github.com/EsriJapan/arcgis-pro-sdk/wiki/ProConcepts-Asynchronous-Programming-in-ArcGIS-Pro) 
