@@ -1,44 +1,42 @@
 +++
 title = "インストール ガイド"
-description = "ArcGIS Maps SDK for JavaScript ライブラリのインストール方法を紹介します。"
+description = "ArcGIS Maps SDK for JavaScript ライブラリーのインストール方法を紹介します。"
 weight = 2
 aliases = ["/javascript/install-jsapi/"]
 +++
 
 JavaScript ライブラリーをインストールする前に[利用規約](https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/EULA.pdf)をご覧ください。
-ArcGIS Maps SDK for JavaScript へのアクセスには、CDN[（Content Delivery Network）](https://en.wikipedia.org/wiki/Content_delivery_network) 上のホスト バージョンを使用することをお勧めします。
+ArcGIS Maps SDK for JavaScript へのアクセスには、CDN([Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network)) 上にホストされたバージョンを使用することをお勧めします。
 
 ```html
-<script type="module" src="https://js.arcgis.com/5.0/"></script>
+<script type="module" src="https://js.arcgis.com/5.1/"></script>
 ```
 
-ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、[「AMD モジュールをローカルでホストできますか？」](https://developers.arcgis.com/javascript/latest/faq/#can-i-host-the-arcgis-cdn-modules-locally) をお読みください。 FAQ トピックをご覧ください。
+ただし、API のコピーを自分の Web サーバー上でローカルにホストしたい場合もあります。 詳細については、[Can I host the ArcGIS CDN modules locally?](https://developers.arcgis.com/javascript/latest/faq/#can-i-host-the-arcgis-cdn-modules-locally) をお読みください。
 
 ## ライブラリーのダウンロード
 
-ライブラリーとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの <a href="https://developers.arcgis.com/javascript/latest/downloads/" target="_blank">Downloads ページ</a>からダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始します。
-
-※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロード フォルダー内にあります install.html をご参照ください。
+ライブラリーとヘルプ ドキュメントは ArcGIS Maps SDK for JavaScript リファレンスの [Downloads and previous versions ページ](https://developers.arcgis.com/javascript/latest/downloads-and-previous-versions/)からダウンロードできます。ダウンロードしたいバージョンの [API] ボタンをクリックするとダウンロードが開始されます。  
+※ バージョンによってはインストール方法が本手順とは異なる場合があります。詳しくはダウンロードしたフォルダーの install.html をご参照ください。
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/downloadPage.png" width="1150px">
 
-> [Documentation] ボタンをクリックすると <a href="https://developers.arcgis.com/javascript/" target="_blank">https://developers.arcgis.com/javascript/</a> で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
+> [Documentation] ボタンをクリックすると [https://developers.arcgis.com/javascript/](https://developers.arcgis.com/javascript/) で公開されているヘルプ ドキュメントとサンプル一式をダウンロードできます。
 
 ## ArcGIS Maps SDK for JavaScript ライブラリーのインストール
-Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。
+Windows オペレーティング システムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順と、Unix/Linux ベースのシステムに ArcGIS Maps SDK for JavaScript ライブラリーをインストールする手順は、オペレーティング システムと Web サーバー インスタンスに固有の Web サーバー ソフトウェアを構成する必要があるという事実を除いて、概念的に同じです。
 
 ### Apache HTTP サーバー
-これらの手順では、ArcGIS Maps SDK for JavaScript ライブラリーを [Apache HTTP サーバー](https://httpd.apache.org/)上の次の場所 https://www.example.com/javascript/api/5.0/ (/var/www/html/javascript/api/5.0) にインストールすることを前提としています。[www.example.com](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name) は、[Web サイトの完全修飾ドメイン名](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name)と[トップ レベル ドメイン](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%83%E3%83%97%E3%83%AC%E3%83%99%E3%83%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3)の組み合わせです。  
-ArcGIS Maps SDK for JavaScript ライブラリーは、そのすべてを Web サーバーのディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScriptのダウンロードファイルから、/arcgis_js_v50_api/javascript/5.0/ ディレクトリーとその中身をすべて Web サーバーにコピーします。この例では、ファイルは /var/www/html/javascript/api/5.0/ にコピーします。
+これらの手順では、ArcGIS Maps SDK for JavaScript ライブラリーを [Apache HTTP サーバー](https://httpd.apache.org/)上の次の場所 https://www.example.com/javascript/api/5.1/ (/var/www/html/javascript/api/5.1) にインストールすることを前提としています。[www.example.com](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name) は、[Web サイトの完全修飾ドメイン名](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name)と[トップ レベル ドメイン](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%83%E3%83%97%E3%83%AC%E3%83%99%E3%83%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3)の組み合わせです。  
+ArcGIS Maps SDK for JavaScript ライブラリーは、そのすべてを Web サーバーのディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロード ファイルから、/arcgis_js_v51_api/javascript/5.1/ ディレクトリーとその中身をすべて Web サーバーにコピーします。この例では、ファイルは /var/www/html/javascript/api/5.1/ にコピーします。
 
 ### インターネット インフォメーション サービス（IIS）
-この手順では、Windows® Server の [インターネット インフォメーション サービス (IIS)](https://www.iis.net/) 上の次の場所 https://www.example.com/javascript/api/5.0/ (C:\Inetpub\wwwroot\javascript\api\5.0\)  に ArcGIS Maps SDK for JavaScript ライブラリをインストールするものとします。[www.example.com](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name) は、[Web サイトの完全修飾ドメイン名](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name)と[トップ レベル ドメイン](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%83%E3%83%97%E3%83%AC%E3%83%99%E3%83%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3)の組み合わせです。
+この手順では、Windows® Server の [インターネット インフォメーション サービス (IIS)](https://www.iis.net/) 上の次の場所 https://www.example.com/javascript/api/5.1/ (C:\Inetpub\wwwroot\javascript\api\5.1\)  に ArcGIS Maps SDK for JavaScript ライブラリーをインストールするものとします。[www.example.com](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name) は、[Web サイトの完全修飾ドメイン名](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name)と[トップ レベル ドメイン](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%83%E3%83%97%E3%83%AC%E3%83%99%E3%83%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3)の組み合わせです。
 
-ArcGIS Maps SDK for JavaScript ライブラリーは、その全体を Web サーバー ディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロードから、\arcgis_js_v50_api\javascript\5.0\  ディレクトリーとその中のすべてのファイルを Web サーバーにコピーします。この例では、ファイルは次の場所にコピーしています。`C:\Inetpub\wwwroot\javascript\api\5.0\`
+ArcGIS Maps SDK for JavaScript ライブラリーは、その全体を Web サーバー ディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロードから、\arcgis_js_v51_api\javascript\5.0\  ディレクトリーとその中のすべてのファイルを Web サーバーにコピーします。この例では、ファイルは次の場所にコピーしています。`C:\Inetpub\wwwroot\javascript\api\5.1\`
 
 
 ## 必要条件
-
 ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントのデフォルトのホスティング構成は、いずれも HTTPS です。
 
 - HTTPS では、Web サーバーに Web サーバー証明書を使用する必要があります。
@@ -51,11 +49,11 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
   | `.woff2` | `application/font-woff2` | [WOFF File Format 2.0](https://www.w3.org/TR/WOFF2/) |
   | `.wsv` | `application/octet-stream` | SceneViewの星の可視化に対応 |(https://developers.arcgis.com/javascript/latest/labeling/#mapview)用のフォント |
 
-- [Google: HTTPSが重要な理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
-- [Google: HTTPS でサイトを保護する](https://support.google.com/webmasters/answer/6073543)
+- [Google: HTTPSが重要である理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
+- [Google: サーバーで HTTPS を有効にする](https://support.google.com/webmasters/answer/6073543)
+
 
 ## インストールのテスト
-
 次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_vv50_api/javascript/5.0/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション  https://www.example.com/javascript/api/5.0/index.html を開くことで API をテストできます。
 
 ```html
@@ -77,7 +75,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
     </style>
 
     <link rel="stylesheet" href="./esri/themes/light/main.css" />
-    <script type="module" src="./core.js"></script>
+    <script type="module" src="./index.js"></script>
 
     <script type="module">
       const [Basemap, TileLayer, Map, SceneView] = await $arcgis.import([
@@ -124,14 +122,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
               return response.blob();
             } else {
               // response not ok
-              logDiv.innerHTML +=
-                "* HTTP error " +
-                response.status +
-                ' for <a href="' +
-                url +
-                '">' +
-                url +
-                "</a><br/>";
+              logDiv.innerHTML += "* HTTP error " + response.status + ' for <a href="' + url + '">' + url + "</a><br/>";
               alert("Problem accessing " + desc);
             }
           })
@@ -154,12 +145,12 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
 リリース詳細
 ```json
 {
-  "builddate": "2026-04-01T23:37:37.111Z",
-  "commit": "42814086fee36c824cdfe45c9030212c4e8e8ff2",
-  "branch": "5.0-release",
-  "version": "5.0.15",
-  "@esri/calcite-components": "5.0.2",
+  "builddate": "2026-07-20T22:30:32.286Z",
+  "commit": "4a16195e9d5d7a2c39c2ffe802d23f4150e9ca45",
+  "branch": "5.1-release",
+  "version": "5.1.13",
+  "@esri/calcite-components": "5.1.1",
   "@esri/arcgis-html-sanitizer": "4.1.0",
-  "arcadeVersion": "1.35"
+  "arcadeVersion": "1.36"
 }
 ```
