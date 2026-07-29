@@ -33,7 +33,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーは、そのすべてを Web �
 ### インターネット インフォメーション サービス（IIS）
 この手順では、Windows® Server の [インターネット インフォメーション サービス (IIS)](https://www.iis.net/) 上の次の場所 https://www.example.com/javascript/api/5.1/ (C:\Inetpub\wwwroot\javascript\api\5.1\)  に ArcGIS Maps SDK for JavaScript ライブラリーをインストールするものとします。[www.example.com](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name) は、[Web サイトの完全修飾ドメイン名](https://ja.wikipedia.org/wiki/Fully_Qualified_Domain_Name)と[トップ レベル ドメイン](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%83%E3%83%97%E3%83%AC%E3%83%99%E3%83%AB%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3)の組み合わせです。
 
-ArcGIS Maps SDK for JavaScript ライブラリーは、その全体を Web サーバー ディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロードから、\arcgis_js_v51_api\javascript\5.0\  ディレクトリーとその中のすべてのファイルを Web サーバーにコピーします。この例では、ファイルは次の場所にコピーしています。`C:\Inetpub\wwwroot\javascript\api\5.1\`
+ArcGIS Maps SDK for JavaScript ライブラリーは、その全体を Web サーバー ディレクトリーにコピーできます。ArcGIS Maps SDK for JavaScript のダウンロードから、\arcgis_js_v51_api\javascript\5.1\  ディレクトリーとその中のすべてのファイルを Web サーバーにコピーします。この例では、ファイルは次の場所にコピーしています。`C:\Inetpub\wwwroot\javascript\api\5.1\`
 
 
 ## 必要条件
@@ -54,7 +54,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
 
 
 ## インストールのテスト
-次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_vv50_api/javascript/5.0/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション  https://www.example.com/javascript/api/5.0/index.html を開くことで API をテストできます。
+次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_vv50_api/javascript/5.1/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション  https://www.example.com/javascript/api/5.1/index.html を開くことで API をテストできます。
 
 ```html
 <!doctype html>
@@ -139,7 +139,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
   </body>
 </html>
 ```
-以下のスクリーンショットのような結果が表示されます。(X.YZの部分は 5.0 となります。)
+以下のスクリーンショットのような結果が表示されます。(X.YZの部分は 5.1 となります。)
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-jsapi/Install_test_image.png" width="1150px">
 
 リリース詳細
