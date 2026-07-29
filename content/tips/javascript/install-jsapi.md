@@ -54,7 +54,7 @@ ArcGIS Maps SDK for JavaScript ライブラリーおよびドキュメントの�
 
 
 ## インストールのテスト
-次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_vv50_api/javascript/5.1/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション  https://www.example.com/javascript/api/5.1/index.html を開くことで API をテストできます。
+次のサンプルは、ダウンロード版の ArcGIS Maps SDK for JavaScript に含まれています。 ダウンロードした ArcGIS Maps SDK for JavaScript から /arcgis_js_v51_api/javascript/5.1/ とそのすべてのコンテンツを Web サーバーにコピーした後、[サポート対象の Web ブラウザー](https://developers.arcgis.com/javascript/latest/system-requirements/)でアプリケーション  https://www.example.com/javascript/api/5.1/index.html を開くことで API をテストできます。
 
 ```html
 <!doctype html>
