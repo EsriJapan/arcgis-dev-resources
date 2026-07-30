@@ -25,6 +25,7 @@ Web アプリケーションを作成し、独自のサーバーでホストす�
 * 開発時
   * Node.js
   * Developer Edition
+  * ArcGIS Enterprise または ArcGIS Online
 * 運用時
   * ArcGIS Enterprise または ArcGIS Online
   * Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)
@@ -37,24 +38,25 @@ Web アプリケーションを作成し、独自のサーバーでホストす�
     * 詳しくは[インストール ガイド](../../install-guide/)をご覧ください。
     * カスタム ウィジェットを開発する際は、[カスタム ウィジェット開発ガイド](../../widget-development/)をご覧ください。
 2. 作成した Web アプリケーションを自身で用意した Web サーバーに配置
-    * ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。<br />
-      ※ ArcGIS Online を使用してホストすることはできません。
+    * ArcGIS Enterprise で使用している Web サーバーと併用することも可能です。  
+      ※ ArcGIS Online にアプリケーションをホストすることはできません。
     * 詳しくは、[エクスペリエンスのデプロイ](../../deployment/experience-deployment/#エクスペリエンスのデプロイ)をご覧ください。
 3. ユーザーが作成された Web アプリケーションを利用
     * ユーザーが Web アプリケーションにアクセスして利用します。
     * ArcGIS Enterprise や ArcGIS Online のポータルにアイテムとして表示させたい場合はアプリの URL をアイテムに登録する必要があります。
-      * 詳細は[アプリの追加](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-app-url.htm#ESRI_SECTION1_40AB67789DE04437B77EF15922C5A75C)及びその後の[アプリの登録](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-app-url.htm#REG_APP)をご覧ください。
+      * 詳細は[アプリの追加と登録](https://doc.arcgis.com/ja/arcgis-online/manage-data/add-app-url.htm)をご覧ください。
     * 内部的には、アプリは ArcGIS Online もしくは ArcGIS Enterprise の Web マップを参照してアプリ上に地図を表示します。
 
 ---
-## ウィジェットをデプロイ
-ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Online や ArcGIS Enterprise を使用して独自に Web アプリケーションを作成することを想定しているものの、デフォルトの Experience Builder のウィジェットには無い機能を拡張したい場合に活用できます。
+## カスタム ウィジェットのみをデプロイ
+ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィジェットのみを開発し、独自のサーバーでホストすることも可能です。ユーザーが ArcGIS Enterprise 内の Experience Builder を使用して独自に Web アプリケーションを作成することを想定しているものの、デフォルトの Experience Builder のウィジェットには無い機能を追加したい場合に活用できます。
 ![widget](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy-pattern2.png)
   
 ### 必要なコンポーネント
 * 開発時
   * Node.js
-  * Developer Edition 
+  * Developer Edition
+  * ArcGIS Enterprise
 * 運用時
   * ArcGIS Enterprise
   * Web サーバー (ArcGIS Enterprise の Web サーバーと併用も可)
@@ -63,7 +65,7 @@ ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィ�
 以下はカスタム ウィジェットの作成から、デプロイ、実際の運用までの流れの概要です。
 
 1. カスタム ウィジェットを作成
-    * Developer Edition を用いたウィジェットの作成には Node.js が必要です。
+    * Developer Edition を用いたカスタム ウィジェットの作成には Node.js が必要です。
     * 詳しくは[インストール ガイド](../../install-guide/)をご覧下さい。
     * カスタム ウィジェット開発の詳細については、[カスタム ウィジェット開発ガイド](../../widget-development/)をご覧下さい。
 1. 作成したカスタム ウィジェットを自身で用意した Web サーバーに配置
@@ -80,5 +82,5 @@ ArcGIS Enterprise 11 以降では、Experience Builder で使用できるウィ�
 ## 2 つのデプロイ パターンの比較表
 | パターン | 開発時に必要なコンポーネント | 運用時に必要なコンポーネント | ArcGIS Online での利用可否 | ArcGIS Enterprise での利用可否 |
 |---|---|---|---|---|
-| [Web アプリケーションをデプロイ](#web-アプリケーションをデプロイ) | Node.js、Developer Edition | Web サーバー、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 |
-| [ウィジェットをデプロイ](#ウィジェットをデプロイ) | Node.js、Developer Edition | Web サーバー、 ArcGIS Enterprise | × | 〇 |
+| [Web アプリケーションをデプロイ](#web-アプリケーションをデプロイ) | Node.js、Developer Edition、ArcGIS Online または ArcGIS Enterprise | Web サーバー、ArcGIS Online もしくは ArcGIS Enterprise | 〇 | 〇 |
+| [カスタム ウィジェットのみをデプロイ](#カスタム-ウィジェットのみをデプロイ) | Node.js、Developer Edition、ArcGIS Enterprise | Web サーバー、 ArcGIS Enterprise | × | 〇 |

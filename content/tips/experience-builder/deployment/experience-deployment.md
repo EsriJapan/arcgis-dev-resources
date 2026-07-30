@@ -8,13 +8,13 @@ aliases = ["/experience/deployment/experience-deployment/"]
 ArcGIS Experience Builder で作成したエクスペリエンスは、ダウンロードして Web サーバーにホストすることができます。プライベート コンテンツを使用しているエクスペリエンスは、ArcGIS Online または ArcGIS Enterprise にアプリを登録する必要があります。エンド ユーザーに最適なユーザー エクスペリエンスを提供するために、エクスペリエンスを展開する前に[システム要件](https://www.esrij.com/products/experience-builder-dev/spec/)を参照してください。
 
 ## エクスペリエンスのダウンロード
-エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように `● (3 つのドット)` をクリックして `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザー用に定義されたダウンロード ディレクトリーに保存されます。
+エクスペリエンス ギャラリーのホームページでエクスペリエンスをダウンロードするには、以下のように `⋯ (3 つのドット)` から `ダウンロード` をクリックします。ZIP ファイルが作成され、ローカル ドライブにダウンロードされます。ZIP ファイルは、お使いのブラウザー用に定義されたダウンロード ディレクトリーに保存されます。
 
 ![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/deploy2.png)
 
 {{< callout >}}
 
-アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する `web.config` ファイルが付属しており、このデフォルト `web.config` に [ArcGIS Maps SDK for JavaScript](../../../javascript/install-and-setup/#web-サーバーのホスティング設定) の設定が含まれるようになりました。
+アプリケーションをダウンロードするには事前にアプリケーションを公開する必要があります。ダウンロードされたエクスペリエンスには Web サーバーのいくつかのデフォルトの設定を構成する `web.config` ファイルが付属しており、このデフォルト `web.config` に ArcGIS Maps SDK for JavaScript の設定が含まれるようになりました。
 
 ダウンロードに失敗した場合は、お使いのマシンでウイルス対策ソフトがオンになっているか確認してください。ウイルス対策ソフトをオフにして、もう一度試してください。
 {{< /callout >}}
@@ -36,12 +36,13 @@ ArcGIS Experience Builder で作成したエクスペリエンスは、ダウン
 },
 ```
 
-server/app name/index.html にアクセスすることでアプリを利用することができます。
+ここまでの手順が完了したら https://<Web サーバー名>/<アプリ名>/index.html にアクセスすることで、アプリを利用できます。
+
 
 ## デプロイの自動化
 Experience Builder サーバーを実行せずにターミナルからアプリの ZIP エクスポートを自動で生成するには、`zipApp` コマンドを使用します。これは自動デプロイのための DevOps ワークフローでよく使用されます。
 
-ターミナルで Experience Builder (Developer Edition) がインストールされた解凍済みのルート ディレクトリ ("client" フォルダーと "server" フォルダーが含まれるディレクトリ) を参照し、次のコマンドを実行します。
+ターミナルで Experience Builder (Developer Edition) がインストールされた解凍済みのルート ディレクトリー ("client" フォルダーと "server" フォルダーが含まれるディレクトリー) を参照し、次のコマンドを実行します。
 
 ```shell
 node -e "require('./server/src/middlewares/dev/apps/app-download.js').zipApp('0', 'app.zip', 'my_client_id');"
@@ -72,7 +73,7 @@ node -e "require('./server/src/middlewares/dev/apps/app-download.js').zipApp('0'
 ## サービス ワーカー キャッシュ
 Experience Builder では[サービス ワーカー](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)を使用してアセットのキャッシュを先読みし、アプリケーションのロード時間を改善します。デプロイ済みのアプリケーションのソース コード、config.json、またはその他の変更の更新が必要な場合は、Experience Builder (Developer Edition) で更新を行い、アプリケーションを再ダウンロードしてデプロイできます。ただし、ダウンロード パッケージを直接更新する必要がある場合は、次の手順を実行してサービス ワーカー キャッシュを更新する必要があります。
 
-1. app ディレクトリで、`cdn/0` を `cdn/1` にリネームします。
+1. app ディレクトリーで、`cdn/0` を `cdn/1` にリネームします。
 2. アプリに必要なソース コードの修正や変更を行います。
 3. アプリケーションのルート フォルダーで `index.html` を開きます。
     - `<base href="./cdn/0/"/>` を `<base href="./cdn/1/"/>` に変更します。
