@@ -75,7 +75,7 @@ aliases = ["/create-startup-app-android/","/tips/android/create-app/"]
 
     このチュートリアルで使用するセキュアなリソースにアクセスするための新しい OAuth 認証情報を作成します。
 
-   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了します。  
+   1. [ユーザー認証用の OAuth 認証情報を作成する](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/tutorials/create-oauth-credentials-user-auth/)チュートリアルを完了し、**クライアント ID** と**リダイレクト URL** を取得します。  
    <br>
     `クライアント ID` は、認証サーバー上でアプリを一意に識別するためのものです。サーバーが指定されたクライアント ID に該当するアプリを見つけられない場合、認証処理は実行されません。  
     `リダイレクト URL` (コールバック URL とも呼ばれます) は、OAuth ログイン後にシステムがアプリへ制御を戻す際、認証サーバーからの応答を識別するために使用されます。リダイレクト URL は必ずしもユーザーがアクセスできる有効なエンドポイントである必要はないため、my-app://auth のようなカスタム スキームを使用することができます。アプリのコードで使用するリダイレクト URL が、認証サーバー側に設定されたリダイレクト URL と一致していることが重要です。
@@ -123,23 +123,23 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     // すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
     plugins {
         alias(libs.plugins.android.application) apply false
-        alias(libs.plugins.kotlin.android) apply false
         alias(libs.plugins.kotlin.compose) apply false
     }
     ```
 
 4. [Android] ビューから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
-    ```gradle {filename = "build.gradle.kts (Project: Tutorial)"}
+    ```gradle {filename = "build.gradle.kts (Module: app)"}
     plugins {
         alias(libs.plugins.android.application)
-        alias(libs.plugins.kotlin.android)
         alias(libs.plugins.kotlin.compose)
     }
 
     android {
         namespace = "com.example.app"
-        compileSdk = libs.versions.compileSdk.get().toInt()
+        compileSdk {
+            version = release(libs.versions.compileSdk.get().toInt())
+        }
 
         defaultConfig {
             applicationId = "com.example.app"
@@ -163,16 +163,8 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
         }
-        kotlinOptions {
-            jvmTarget = "17"
-        }
         buildFeatures {
             compose = true
-        }
-        packaging {
-            resources {
-                excludes += "/META-INF/{AL2.0,LGPL2.1}"
-            }
         }
     }
 
@@ -196,7 +188,6 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
         // ArcGIS Maps for Kotlin - SDK dependency
         implementation(libs.arcgis.maps.kotlin)
-        // Toolkit dependencies
         implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
         implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
         implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
@@ -224,25 +215,29 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
     ```toml {filename = "gradle/libs.versions.toml"}
     [versions]
-    arcgisMapsKotlin = "300.0.0"
+
+    arcgisMapsKotlin = "300.1.0"
+
 
     # Version numbers added by Android Studio New Project Wizard
-    agp = "8.12.1"
-    kotlin = "2.2.10"
-    coreKtx = "1.17.0"
+    agp = "9.2.1"
+    kotlin = "2.3.21"
+    coreKtx = "1.18.0"
     junit = "4.13.2"
     junitVersion = "1.3.0"
     espressoCore = "3.7.0"
     lifecycleRuntimeKtx = "2.9.2"
-    activityCompose = "1.10.1"
-    composeBom = "2025.08.00"
-
+    activityCompose = "1.13.0"
+    composeBom = "2026.04.01"
     # Other version numbers
-    compileSdk = "36"
+
+    compileSdk = "37"
     minSdk = "28"
-    targetSdk = "36"
+    targetSdk = "37"
+
 
     [libraries]
+
     arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
     arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
     arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
@@ -262,16 +257,29 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
     androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
     androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
     [plugins]
     android-application = { id = "com.android.application", version.ref = "agp" }
-    kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
     kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
     ```
 
-6. [Android] ビューから、[Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を次のコードに置き換えます。
+6. [Android] ビューで [Gradle Scripts] > [settings.gradle.kts] を開きます。ファイルの内容を以下のコードに置き換えます。
 
-    ```gradle {filename = "settings.gradle.kts (Tutorial)"}
+    ```kts {filename = "settings.gradle.kts (Tutorial)"}
+    pluginManagement {
+        repositories {
+            google {
+                content {
+                    includeGroupByRegex("com\\.android.*")
+                    includeGroupByRegex("com\\.google.*")
+                    includeGroupByRegex("androidx.*")
+                }
+            }
+            mavenCentral()
+            gradlePluginPortal()
+        }
+    }
+
+
     dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
@@ -294,7 +302,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     今後のチュートリアルで追加する ArcGIS の機能によっては、マニフェストに追加のアクセス許可を追加する必要がある可能性があります。
 
     ```xml {filename = "AndroidManifest.xml"}
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <!--追加開始-->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -306,7 +314,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
 
 ### マップを作成する
-1. [Android] ビューから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に **com.example.app.screens** と入力し、キーボードの **Enter** キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成されます。
+1. [Android] ビューから、[app] > [Kotlin+java] > [com.example.app] を右クリックし、リストから [New] > [package] を選択します。パッケージ名に **com.example.app.screens** と入力し、キーボードの **Enter** キーを押します。このステップで、すべての UI ファイルを含む新しいパッケージが作成します。
 
 2. 作成した **screens** パッケージを右クリックし、リストから [New] > [Kotlin Class/File] を選択します。ポップアップ ウィンドウで [File] を選択し、ファイル名に **MainScreen** と入力し、キーボードの **Enter** キーを押します。
 
@@ -350,7 +358,7 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
     // 追加終了
     ```
 
-5. [`BasemapStyle.ArcGISTopographic`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-basemap-style/-arc-g-i-s-topographic/index.html) を使用して [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で `apply{}` を呼び出します。この関数は [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
+5. [`BasemapStyle.ArcGISTopographic`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-basemap-style/-arc-g-i-s-topographic/index.html) を使用して [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を作成し、マップ上で `apply {}` を呼び出します。この関数は [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) を返します。
 
     `apply {}` の詳細については Kotlin の [Scope functions](https://kotlinlang.org/docs/scope-functions.html) を参照してください。
 
@@ -368,6 +376,8 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
 6. `apply` ブロックで、x (経度) と y (緯度) の座標と縮尺を持つ [`Viewpoint`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-viewpoint/index.html) を作成します。この Viewpoint を [`ArcGISMap`](https://developers.arcgis.com/kotlin/api-reference/arcgis-maps-kotlin/com.arcgismaps.mapping/-arc-g-i-s-map/index.html) の `initialViewpoint` プロパティに割り当てます。  
 また、ベースマップのデフォルトのラベル表示は英語のため、日本語に変更します。
+
+    縮尺は、視点を作成する際の重要な要素です。縮尺によって、マップをどの程度の近さで表示するかが決まります。縮尺とは、地図上の距離と実世界の距離との比率を表します。この[変換ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/reference/zoom-levels-and-scale/#conversion-tool)を使用すると、ズーム レベルに対して縮尺がどのように変化するかを確認でき、両者の関係についてさらに理解を深めることができます。
 
     ```kt {filename = "MainScreen.kt"}
     fun createMap(): ArcGISMap {
@@ -566,21 +576,23 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
             }
             ```
 
-   2. `MainActivity` クラスの [`onCreate()`](https://developer.android.com/guide/components/activities/activity-lifecycle) ライフサイクル メソッドで、`OAuthUserConfiguration` をインスタンス化して `authenticatorState.oAuthUserConfiguration` プロパティを設定します。以前のステップで作成した clientId と redirectURL を渡します。  
+   2. `MainActivity` クラスの [`onCreate()`](https://developer.android.com/guide/components/activities/activity-lifecycle) ライフサイクル メソッドで、`OAuthUserConfiguration` をインスタンス化、リストに追加し、そのリストを割り当てることで `authenticatorState.oAuthUserConfiguration` プロパティを設定します。以前のステップで作成した`クライアント ID` と`リダイレクト URL` を渡します。  
     <br>
-    redirectURL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は `scheme://host` です。たとえば、リダイレクト URL が `myscheme://myhost` の場合、スキームは `myscheme`、ホストは `myhost` となります。[認証の設定](#認証の設定)ステップの`ユーザー認証`の部分で、アプリに指定した**リダイレクト URL** を使用する必要があります。
+    リダイレクト URL は、scheme と host コンポーネントで構成されます。リダイレクト URL の形式は `scheme://host` です。たとえば、リダイレクト URL が `myscheme://myhost` の場合、スキームは `myscheme`、ホストは `myhost` となります。[認証の設定](#認証の設定)ステップの`ユーザー認証`の部分で、アプリに指定した**リダイレクト URL** を使用する必要があります。
 
             ```kt {filename = "MainActivity.kt"}
             override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
 
                 //追加開始
-                authenticatorState.oAuthUserConfiguration = OAuthUserConfiguration(
-                
-                    portalUrl = "https://www.arcgis.com",
-                    clientId = "YOUR_CLIENT_ID",
-                    redirectUrl = "YOUR_REDIRECT_URL"
+                authenticatorState.oAuthUserConfigurations = listOf(
+                    OAuthUserConfiguration(
 
+                        portalUrl = "https://www.arcgis.com",
+                        clientId = "YOUR_CLIENT_ID",
+                        redirectUrl = "YOUR_REDIRECT_URL"
+
+                    )
                 )
                 //追加終了
 
@@ -632,17 +644,20 @@ Android Studio を使用してアプリを作成し、API を参照するよう�
 
             <!--追加開始-->
             <activity
-                android:name="com.arcgismaps.toolkit.authentication.OAuthUserSignInActivity"
+                android:name="com.arcgismaps.toolkit.authentication.AuthenticationActivity"
                 android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
                 android:exported="true"
                 android:launchMode="singleTop" >
                 <intent-filter>
-                    <action android:name="android.intent.action.VIEW" />        
+                    <action android:name="android.intent.action.VIEW" />
+
                     <category android:name="android.intent.category.DEFAULT" />
-                    <category android:name="android.intent.category.BROWSABLE" />       
+                    <category android:name="android.intent.category.BROWSABLE" />
+
                     <data
                         android:scheme="your_redirect_url_scheme"
-                        android:host="your_redirect_url_host" />        
+                        android:host="your_redirect_url_host" />
+
                 </intent-filter>
             </activity>
             <!--追加終了-->

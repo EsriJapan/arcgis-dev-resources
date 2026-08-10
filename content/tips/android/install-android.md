@@ -29,9 +29,8 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 	```gradle {filename = "build.gradle.kts (Project: Display_a_map)"}
 	// すべてのサブプロジェクト/モジュールに共通の構成オプションを追加できる最上位のビルド ファイル
 	plugins {
-			alias(libs.plugins.android.application) apply false
-			alias(libs.plugins.kotlin.android) apply false
-			alias(libs.plugins.kotlin.compose) apply false
+		alias(libs.plugins.android.application) apply false
+		alias(libs.plugins.kotlin.compose) apply false
 	}
 	``` 
 
@@ -39,74 +38,66 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 	```gradle {filename="build.gradle.kts (Module: app)"}
 	plugins {
-			alias(libs.plugins.android.application)
-			alias(libs.plugins.kotlin.android)
-			alias(libs.plugins.kotlin.compose)
+		alias(libs.plugins.android.application)
+		alias(libs.plugins.kotlin.compose)
 	}
 
 	android {
-			namespace = "com.example.app"
-			compileSdk = libs.versions.compileSdk.get().toInt()
+		namespace = "com.example.app"
+		compileSdk {
+			version = release(libs.versions.compileSdk.get().toInt())
+		}
 
-			defaultConfig {
-					applicationId = "com.example.app"
-					minSdk = libs.versions.minSdk.get().toInt()
-					targetSdk = libs.versions.targetSdk.get().toInt()
-					versionCode = 1
-					versionName = "1.0"
-					testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-					vectorDrawables {
-							useSupportLibrary = true
-					}
+		defaultConfig {
+			applicationId = "com.example.app"
+			minSdk = libs.versions.minSdk.get().toInt()
+			targetSdk = libs.versions.targetSdk.get().toInt()
+			versionCode = 1
+			versionName = "1.0"
+			testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+			vectorDrawables {
+				useSupportLibrary = true
 			}
+		}
 
-			buildTypes {
-					release {
-							isMinifyEnabled = false
-							proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-					}
+		buildTypes {
+			release {
+				isMinifyEnabled = false
+				proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 			}
-			compileOptions {
-					sourceCompatibility = JavaVersion.VERSION_17
-					targetCompatibility = JavaVersion.VERSION_17
-			}
-			kotlinOptions {
-					jvmTarget = "17"
-			}
-			buildFeatures {
-					compose = true
-			}
-			packaging {
-					resources {
-							excludes += "/META-INF/{AL2.0,LGPL2.1}"
-					}
-			}
+		}
+		compileOptions {
+			sourceCompatibility = JavaVersion.VERSION_17
+			targetCompatibility = JavaVersion.VERSION_17
+		}
+		buildFeatures {
+			compose = true
+		}
 	}
 
 	dependencies {
 
-			implementation(libs.androidx.core.ktx)
-			implementation(libs.androidx.lifecycle.runtime.ktx)
-			implementation(libs.androidx.activity.compose)
-			implementation(platform(libs.androidx.compose.bom))
-			implementation(libs.androidx.ui)
-			implementation(libs.androidx.ui.graphics)
-			implementation(libs.androidx.ui.tooling.preview)
-			implementation(libs.androidx.material3)
-			testImplementation(libs.junit)
-			androidTestImplementation(libs.androidx.junit)
-			androidTestImplementation(libs.androidx.espresso.core)
-			androidTestImplementation(platform(libs.androidx.compose.bom))
-			androidTestImplementation(libs.androidx.ui.test.junit4)
-			debugImplementation(libs.androidx.ui.tooling)
-			debugImplementation(libs.androidx.ui.test.manifest)
+		implementation(libs.androidx.core.ktx)
+		implementation(libs.androidx.lifecycle.runtime.ktx)
+		implementation(libs.androidx.activity.compose)
+		implementation(platform(libs.androidx.compose.bom))
+		implementation(libs.androidx.ui)
+		implementation(libs.androidx.ui.graphics)
+		implementation(libs.androidx.ui.tooling.preview)
+		implementation(libs.androidx.material3)
+		testImplementation(libs.junit)
+		androidTestImplementation(libs.androidx.junit)
+		androidTestImplementation(libs.androidx.espresso.core)
+		androidTestImplementation(platform(libs.androidx.compose.bom))
+		androidTestImplementation(libs.androidx.ui.test.junit4)
+		debugImplementation(libs.androidx.ui.tooling)
+		debugImplementation(libs.androidx.ui.test.manifest)
 
-			// ArcGIS Maps for Kotlin - SDK dependency
-			implementation(libs.arcgis.maps.kotlin)
-			// Toolkit dependencies
-			implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
-			implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
-			implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
+		// ArcGIS Maps for Kotlin - SDK dependency
+		implementation(libs.arcgis.maps.kotlin)
+		implementation(platform(libs.arcgis.maps.kotlin.toolkit.bom))
+		implementation(libs.arcgis.maps.kotlin.toolkit.geoview.compose)
+		implementation(libs.arcgis.maps.kotlin.toolkit.authentication)
 
 	}
 	``` 
@@ -129,7 +120,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
    ```toml {filename = "gradle/libs.versions.toml"}   
 	[versions]
-	arcgisMapsKotlin = "300.0.0"
+	arcgisMapsKotlin = "300.1.0"
 
 	[libraries]
 	arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
@@ -144,25 +135,29 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 ```toml {filename = "gradle/libs.versions.toml"}
 [versions]
-arcgisMapsKotlin = "300.0.0"
+
+arcgisMapsKotlin = "300.1.0"
+
 
 # Version numbers added by Android Studio New Project Wizard
-agp = "8.12.1"
-kotlin = "2.2.10"
-coreKtx = "1.17.0"
+agp = "9.2.1"
+kotlin = "2.3.21"
+coreKtx = "1.18.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.9.2"
-activityCompose = "1.10.1"
-composeBom = "2025.08.00"
-
+activityCompose = "1.13.0"
+composeBom = "2026.04.01"
 # Other version numbers
-compileSdk = "36"
+
+compileSdk = "37"
 minSdk = "28"
-targetSdk = "36"
+targetSdk = "37"
+
 
 [libraries]
+
 arcgis-maps-kotlin = { group = "com.esri", name = "arcgis-maps-kotlin", version.ref = "arcgisMapsKotlin" }
 arcgis-maps-kotlin-toolkit-bom = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-bom", version.ref = "arcgisMapsKotlin" }
 arcgis-maps-kotlin-toolkit-geoview-compose = { group = "com.esri", name = "arcgis-maps-kotlin-toolkit-geoview-compose" }
@@ -182,10 +177,8 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ```
 	{{< /callout >}}
@@ -283,7 +276,7 @@ Android マニフェストに [uses-feature 要素](https://developer.android.co
 [ArcGIS Maps SDK for Kotlin Toolkit](https://github.com/Esri/arcgis-maps-sdk-kotlin-toolkit/tree/main) には、アプリ開発を簡素化する Compose に対応したコンポーネント (コントロールとユーティリティー) が含まれています。[`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と [`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) のコンポーザブル関数を使用するには、モジュール レベルの `build.gradle.kts` に次の依存関係を含めます。
 
 ```gradle
-implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:300.0.0"))
+implementation(platform("com.esri:arcgis-maps-kotlin-toolkit-bom:300.1.0"))
 implementation("com.esri:arcgis-maps-kotlin-toolkit-geoview-compose")
 implementation("com.esri:arcgis-maps-kotlin-toolkit-authentication")
 ```
@@ -336,5 +329,6 @@ Toolkit には、Compose に対応した他の特別なコンポーネントも�
 #### Electronic Navigational Charts (ENC)
 航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/)の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf) に準拠した ENC をサポートしています。
 
-航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography](https://developers.arcgis.com/kotlin/downloads/#hydrography-data) データをダウンロードします。ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/kotlin/layers/display-electronic-navigational-charts/) のトピックを参照してください。
+航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography](https://developers.arcgis.com/kotlin/downloads/#hydrography-data) データをダウンロードします。
 
+ENC データの操作の詳細については、[Display electronic navigational charts](https://developers.arcgis.com/kotlin/layers/display-electronic-navigational-charts/) のトピックを参照してください。
