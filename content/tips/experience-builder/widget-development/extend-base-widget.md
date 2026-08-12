@@ -43,7 +43,7 @@ Experience Builder (Developer Edition) で必要なモジュールをインス�
 
 {{< callout >}}
 
-default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じとすることを推奨します。
+default.ts の `_widgetLabel` は、常に manifest.json の `label` と同じとすることを推奨します。
 
 {{< /callout >}}
 
@@ -70,8 +70,9 @@ default.ts の `_widgetLabel` は、常に manifest.json のラベルと同じ�
 ```jsx
 /** @jsx jsx */
 import { AllWidgetProps, jsx} from "jimu-core";
+import type { IMConfig } from '../config'
 
-export default function Widget (props:AllWidgetProps) {
+export default function Widget (props: AllWidgetProps<IMConfig> ) {
     return <div className="widget-starter jimu-widget" style={{ overflow: "auto" }}>
         <p>Hello world!</p>
         <p>Widget Name: {props.label}</p>
@@ -82,6 +83,7 @@ export default function Widget (props:AllWidgetProps) {
 ### クラス コンポーネントを使ったウィジェットの作成
 
 以下の例では、React.PureComponent クラスを拡張して、シンプルな hello world クラスの widget/component を作成する方法を示しています。ウィジェットは、`export default class Widget extends React.Component<AllWidgetProps>, any>` で `AllWidgetProps` 型で宣言されており、ウィジェットの props を使用しています。 `render()` メソッドは、translations ファイル内の `_widgetLabel` のプロパティで設定した テキスト名：`hello world` とウィジェット名を返すために呼び出されます。
+この React コンポーネントのパターンは[React チームによって推奨されていません](https://react.dev/reference/react/Component)。一般的には、前のセクションで説明した関数型コンポーネントを使用しましょう。
 
 ```jsx
 //a custom pragma to transform your jsx into plain JavaScript
@@ -176,7 +178,7 @@ render(){
 
 ウィジェットには様々な props を設定できます。クラス コンポーネントの `this.props` や関数コンポーネントの props パラメータ `{props}` を通してアクセスすることができます。例えば、クラス コンポーネントを使用してウィジェットの config.json にある props にアクセスするには、`this.props.config` を使用します。関数コンポーネントでアクセスするには、`props.config` を使用します。利用可能なプロパティの詳細については、Experience Builder の `client/jimu-core/lib/types/props.ts` を参照してください。
 
-場合によっては、this.props にないプロパティにアクセスする必要があるかもしれません。そのためには、ウィジェット クラスに以下のコード スニペットのような静的関数を定義します。
+場合によっては、`this.props` にないプロパティにアクセスする必要があるかもしれません。そのためには、ウィジェット クラスに以下のコード スニペットのような静的関数を定義します。
 
 ```jsx
 static mapExtraStateProps = (state: IMState) => {

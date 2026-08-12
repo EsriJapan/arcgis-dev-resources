@@ -85,8 +85,8 @@ Web 拡張機能リポジトリーのルート フォルダーには、`widgets`
 
 ウィジェット フォルダー内には、有効なウィジェットとして、manifest.json とその他の必要なファイルが含まれている必要があります。
 
-- `manifest.json` ファイルの詳細については、[ウィジェット manifest](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/widget-manifest/) を参照してください。
-- その他の必要なファイルや一般的なウィジェット開発の詳細については、[ウィジェットの実装](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/widget-development/extend-base-widget/) を参照してください。
+- `manifest.json` ファイルの詳細については、[ウィジェット manifest](../widget-manifest/) を参照してください。
+- その他の必要なファイルや一般的なウィジェット開発の詳細については、[ウィジェットの実装](../extend-base-widget/) を参照してください。
 - 必要最小限のファイルですぐに始めるには、`your-extensions/widgets` フォルダーにある、`simple` ウィジェットを参照してください。
 
 ## 基本的な考え方

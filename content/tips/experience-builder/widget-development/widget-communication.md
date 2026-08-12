@@ -31,7 +31,7 @@ Configurable とはユーザーがビルダー内でウィジェット間の通�
 
 ## ウィジェット間で同じマップ ウィジェットを使用する
 
-複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ `JimuMapView` インスタンスを取得します。この `JimuMapView` インスタンスは ArcGIS Maps SDK for JavaScript の `MapView` インスタンスをラップしたものです。 `JimuMapView` インスタンスを取得した後、ウィジェットは `addJimuLayerViewCreatedListener()` と addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、[ウィジェットでのマップ ウィジェットの使用](https://developers.arcgis.com/experience-builder/guide/use-map-widget-in-widget/)を参照してください。
+複数のウィジェットが同じマップ ウィジェットを使用する場合、それらのウィジェットは同じ `JimuMapView` インスタンスを取得します。この `JimuMapView` インスタンスは ArcGIS Maps SDK for JavaScript の `MapView` インスタンスをラップしたものです。 `JimuMapView` インスタンスを取得した後、ウィジェットは `addJimuLayerViewCreatedListener()` と `addJimuLayerViewRemovedListener` を呼び出して、レイヤー ビューの作成と削除のイベントを監視し、他のウィジェットによる変更を読み取ることができます。詳細については、[ウィジェットでのマップ ウィジェットの使用](https://developers.arcgis.com/experience-builder/guide/use-map-widget-in-widget/)を参照してください。
 
 ## ウィジェットの出力するデータ ソースを使用する
 詳細は[ウィジェット出力データ ソース](../../core-concepts/data-source/#ウィジェット出力データ-ソースwidget-output-data-source)を参照してください。
@@ -45,7 +45,7 @@ Configurable とはユーザーがビルダー内でウィジェット間の通�
 
 ## ウィジェットの state を使用してウィジェット間で状態を共有
 
-React コンポーネントとしての Widget は内部 state (状態) を持つことができますが、他の Widget はこの state にアクセスすることができません。Jimu は state 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは `widgetsState` と呼ばれるもので、型の定義は `jimu-core/lib/types/state` にあります。`widgetState` に保存された情報は、他のすべてのウィジェットからアクセス可能です。`widgetsState` に情報を保存するには、以下のコードを参照してください。
+React コンポーネントとしてのウィジェットは内部 state （状態） を持つことができますが、他のウィジェットはこの state にアクセスすることができません。Jimu は state 管理 として Redux を使用しています。多くの情報を Redux store に保存します。情報の一つは `widgetsState` と呼ばれるもので、型の定義は `jimu-core/lib/types/state` にあります。`widgetState` に保存された情報は、他のすべてのウィジェットからアクセス可能です。`widgetsState` に情報を保存するには、以下のコードを参照してください。
 
 ```tsx
 import {appActions} from 'jimu-core';
@@ -75,10 +75,10 @@ widgetsState: {
 
 ウィジェット2 の `w1` が格納した情報にアクセスするには、`mapExtraStateProps` を使用するか、`useSelect` フックを使用して store から値を選択することができます。
 
-ただし、`widgetState` にはプレーンな JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクトを格納するには、`this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))` を使用して値を格納し、`MutableStoreManager.getInstance().getStateValue()` を使用してアクセスすることができます。
+ただし、`widgetState` にはプレーンな（つまり、関数を持たない）JavaScript オブジェクトのみを格納することができます。複雑な JavaScript オブジェクト（例：関数コンストラクタから作成されたものや、関数メンバーを持つもの）を格納するには、`this.props.dispatch(appActions.widgetMutableStatePropChange(widgetId, propKey, value))` を使用して値を格納し、`MutableStoreManager.getInstance().getStateValue()` を使用してアクセスすることができます。
 
 ## ウィジェット間で state を共有するための独自の redux store/action/reducer を用意
-これにより、state (状態) 管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は `ReduxStore` 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。
+これにより、state の管理をより柔軟にカスタマイズすることができます。これは通常の Redux で行う方法とほぼ同じです。ご存知のように、Redux には 1 つの store と 1 つの root reducer があり、これは jimu によって使用されます。ウィジェット開発者が通常の Redux の方法で state を管理できるようにするために、jimu は `ReduxStore` 拡張ポイントを定義しています。Redux を使用する必要があるウィジェットはこの拡張ポイント用の拡張を提供できます。
 
 - `ReduxStoreExtension` インターフェイスを実装する拡張クラスを作成します。このクラスは `my-store.ts` として作成します。
 

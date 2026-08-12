@@ -56,3 +56,6 @@ ArcGIS Experience Builder (Developer Edition) におけるテーマ開発の概�
 
 - [新しいテーマに更新](https://developers.arcgis.com/experience-builder/guide/upgrade-to-new-theme/)  
 古いテーマから新しいテーマへ移行するための手順と注意点を紹介しています。（米国 Esri のサイトに移動します）
+
+- [多言語サポート](https://developers.arcgis.com/experience-builder/guide/multi-language-support/)  
+アプリを多言語対応するためのカスタム ウィジェット開発の方法を紹介しています。（米国 Esri のサイトに移動します）

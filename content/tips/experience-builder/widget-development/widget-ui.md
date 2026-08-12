@@ -24,7 +24,6 @@ Experience Builder は クラスコンポーネントと関数コンポーネン
 
 ```jsx
 // widget.tsx 内:
-// in widget.tsx:
 import { React, AllWidgetProps } from 'jimu-core';
 
 export default class Widget extends React.PureComponent<AllWidgetProps<{}>, unknown> {
@@ -87,7 +86,7 @@ Jimu UI は Experience Builder の公式 UI ライブラリーであり、この
 
 
 ### コンポーネントのインポート
-基本的な UI コンポーネントは「jimu-ui」から直接インポートでき、高度な UI コンポーネントはパスを使用して個別にインポートする必要があります。
+基本的な UI コンポーネントは `jimu-ui` から直接インポートでき、高度な UI コンポーネントはパスを使用して個別にインポートする必要があります。
 
 ```jsx
 import { Button, Icon, Paper, TextInput } from 'jimu-ui'; // 基本
@@ -95,7 +94,7 @@ import { DatePicker } from 'jimu-ui/date-picker'; // 高度
 ```
 
 
-### コード例
+### コード 例
 ここでは、"primary" スタイルの `Button` コンポーネントとスター アイコンをウィジェットに追加しています。
 
 ```jsx
@@ -116,7 +115,7 @@ export default class Widget extends React.PureComponent<AllWidgetProps, any>{
 ```
 
 Output 例:
-![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png)
+![primary スタイルのボタン](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/widgetUIButton.png)
 
 
 ### Paper コンポーネントをウィジェット コンテナーとして使用
@@ -150,8 +149,7 @@ const Widget = () => {
 * BorderRadius：`<Paper shape="shape1" />`（デフォルトは `shape2`）
 * Transparent background：`<Paper variant="flat" transparent />`
 
-![](https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ThemeGuideSurfaceText.svg)
-
+<div style="background-color: #fff;"><img src="https://apps.esrij.com/arcgis-dev/guide/img/experience-builder/ThemeGuideSurfaceText.svg" alt="Paper コンポーネントでスタイルの一貫性を保つ"></div>
 
 {{< callout type="info" >}}
 
@@ -536,6 +534,6 @@ Jimu テーマと Calcite テーマの間のテーマ トークンのマッピ�
 * [styled](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/styled/)
 * [useTheme](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/useTheme/)
 * [withTheme](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/withTheme/)
-* [ThemeVariables](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/ThemeVariables/)
+* [ThemeVariables](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/ThemeVariable/)
 * [IMThemeVariables](https://developers.arcgis.com/experience-builder/api-reference/jimu-core/IMThemeVariables/)
 * [Calcite-JimuTheme Token mapping](https://developers.arcgis.com/experience-builder/storybook/?path=/docs/theme-theme-references-calcite-token-jimu-theme-token-mapping--docs)
