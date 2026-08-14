@@ -27,7 +27,7 @@ aliases = ["/create-startup-app-dotnet/","/tips/dotnet/create-app/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-* API キーにアクセスするための開発者アカウントもしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+* API キーにアクセスするための ArcGIS Location Platform もしくは ArcGIS Online アカウントが必要です。アカウントをお持ちでない場合は、[サインアップ](https://location.arcgis.com/sign-up/) (無料)してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 * 開発環境が[システム要件](https://developers.arcgis.com/net/reference/system-requirements/)を満たしていることを確認します。
 
 必要に応じて、[ArcGIS Maps SDK for .NET をインストール](../../../tips/dotnet/install-dotnet/)して、Visual Studio プロジェクト テンプレート (Windows のみ) とオフラインにコピーされた NuGet パッケージを利用することもできます。
@@ -138,13 +138,13 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 {{< /callout >}}
 
 1. [NuGet パッケージをインストール](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio)して、API への参照を追加します。
-   * **ソリューション エクスプローラー**で、[参照] を右クリックし、[NuGet パッケージの管理] を選択します。
+   * **ソリューション エクスプローラー**で、[依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。
    * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] に `nuget.org` (右上)が選択されていることを確認します。
    * [参照] タブを選択して、**ArcGIS Maps SDK** を検索します。
    * 検索結果から、プラットフォームに適したパッケージを選択します。このチュートリアルでは<b>Esri.ArcGISRuntime.WPF</b> NuGet パッケージを選択します。
    * [バージョン] にパッケージの「最新の安定版...」が選択されていることを確認します。
    * [インストール] をクリックします。
-   * NuGet は、パッケージの依存関係または競合を自動的に解決します。デフォルトでは、[変更のプレビュー] ダイアログが表示されます。 変更を確認し [OK] をクリックしてパッケージのインストールを続行します。
+   * NuGet は、パッケージの依存関係または競合を自動的に解決します。デフォルトでは、[変更のプレビュー] ダイアログが表示されます。 変更を確認し [適用] をクリックしてパッケージのインストールを続行します。
    * [ライセンスへの同意] ダイアログでライセンス条項を確認し、[同意する] をクリックしてパッケージをプロジェクトに追加します。
    * Visual Studio の [出力] ウィンドウで、パッケージが正常にインストールされたことを確認します。ターゲットの Windows バージョンに関するエラーが表示された場合は、次の手順で修正します。
    * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
@@ -172,7 +172,7 @@ ArcGIS Maps SDK for .NET プロジェクト テンプレートの 1 つからプ
 
 **Model-View-ViewModel (MVVM)** デザイン パターンは、ユーザー インターフェイス要素 (および関連するコード) をアプリの基礎となるロジックから分離するアーキテクチャーを提供します。このパターンでは、`モデル`はアプリで消費されるデータを表し、`ビュー` はユーザー インターフェイスであり、`ビュー モデル` にはモデルとビューをバインド (結合) するロジックが含まれます。このようなパターンに必要な追加のフレームワークは、小規模なプロジェクトでは大変な作業に思えるかもしれませんが、プロジェクトの複雑さが増すにつれて、堅固な設計を行うことでコードの保守性と柔軟性が大幅に向上します。
 
-MVVM で設計された ArcGIS アプリでは、通常、マップ ビューがメインの`ビュー` コンポーネントになります。クラスの多くは、`モデル`の役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 `ビュー モデル` コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、`ビュー`に表示するためのデータを提供したりするため、記述するコードの多くはここになります。
+MVVM で設計された ArcGIS アプリでは、通常、マップ ビューまたはシーン ビューがメインの`ビュー` コンポーネントになります。クラスの多くは、`モデル`の役割を果たします (データをマップ、レイヤー、グラフィックス、フィーチャなどとして表します)。 `ビュー モデル` コンポーネントには、ArcGIS オブジェクトを操作するためのロジックを追加したり、`ビュー`に表示するためのデータを提供したりするため、記述するコードの多くはここになります。
 
 {{< callout type = "info">}}
 
@@ -184,13 +184,15 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
    * [プロジェクト] メニュー > [クラスの追加...] をクリックします。
    * 新しいクラスに `MapViewModel.cs` と名前を付けます。
    * [追加] をクリックして新しいクラスを作成し、プロジェクトに追加します。
-   * 新しいクラスが VisualStudio で開きます。
+   * 新しいクラスが Visual Studio で開きます。
 2. 必要な `using` ステートメントをビュー モデルに追加します。
 
     ```csharp {filename = "MapViewModel.cs"}
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
 
     // 追加開始
     using Esri.ArcGISRuntime.Mapping;
@@ -221,7 +223,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
     ビュー モデルのプロパティが変更されると、`OnPropertyChanged` の呼び出しにより、このイベントが発生します。
 
     ```csharp {filename = "MapViewModel.cs"}
-    class MapViewModel : INotifyPropertyChanged
+    internal class MapViewModel : INotifyPropertyChanged
     {
         // 追加開始
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -302,7 +304,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
    `MapViewModel newMapVM = new MapViewModel();` のようなコードを書くと、クラス コンストラクターが実行されます。これはクラスが初期化された時に実行する必要があるコードを追加するのに良い場所です。
 
     ```csharp {filename = "MapViewModel.cs"}
-    class MapViewModel : INotifyPropertyChanged
+    internal class MapViewModel : INotifyPropertyChanged
     {
         // 追加開始
         public MapViewModel()
@@ -363,15 +365,15 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
    1. `Microsoft.Web.WebView2` [NuGet パッケージ](https://learn.microsoft.com/ja-jp/nuget/quickstart/install-and-use-a-package-in-visual-studio)を追加します。このパッケージは Microsoft Edge WebView2 コントロールを提供し、これによりネイティブ アプリに Web テクノロジー (HTML、CSS、JavaScript) を組み込むことができます。アプリでは、WebView2 コントロールを使用して、ユーザー認証のためのログイン UI を表示します。  
    
-          * **ソリューション エクスプローラー**で[依存関係]を右クリックし、[NuGet パッケージの管理]を選択します。
-          * [NuGet パッケージ マネージャー]ウィンドウで、[パッケージ ソース]が `nuget.org`（右上）に設定されていることを確認します。
-          * [参照]タブを選択し、**Microsoft.Web.WebView2** を検索します。
+          * **ソリューション エクスプローラー**で [依存関係] を右クリックし、[NuGet パッケージの管理] を選択します。
+          * [NuGet パッケージ マネージャー] ウィンドウで、[パッケージ ソース] が `nuget.org`（右上）に設定されていることを確認します。
+          * [参照] タブを選択し、**Microsoft.Web.WebView2** を検索します。
           * 検索結果から、**Microsoft.Web.WebView2** NuGet パッケージを選択します。
-          * [バージョン] ドロップダウンで、パッケージの[最新の安定版]が選択されていることを確認します。
-          * [インストール]をクリックします。
-          * [変更のプレビュー]ダイアログで、パッケージの依存関係や競合が確認されます。変更内容を確認し、[適用]をクリックしてパッケージのインストールを続行します。
-          * [ライセンス同意]ダイアログでライセンス情報を確認し、[同意する]をクリックしてパッケージをプロジェクトに追加します。
-          * Visual Studio の[出力]ウィンドウで、パッケージが正常にインストールされたことを確認します。
+          * [バージョン] ドロップダウンで、パッケージの [最新の安定版] が選択されていることを確認します。
+          * [インストール] をクリックします。
+          * [変更のプレビュー] ダイアログで、パッケージの依存関係や競合が確認されます。変更内容を確認し、[適用] をクリックしてパッケージのインストールを続行します。
+          * [ライセンス同意] ダイアログでライセンス情報を確認し、[同意する] をクリックしてパッケージをプロジェクトに追加します。
+          * Visual Studio の [出力] ウィンドウで、パッケージが正常にインストールされたことを確認します。
           * [NuGet パッケージ マネージャー] ウィンドウを閉じます。
    2. Visual Studio の [プロジェクト] メニューから、[クラスの追加...] を選択します。クラス名を `ArcGISLoginPrompt.cs` と指定し、[追加] をクリックします。新しいクラスがプロジェクトに追加され、Visual Studio で開きます。
    3. 新しいクラス内のコードをすべて選択して削除してください。
@@ -723,7 +725,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 ### アプリを実行する
 
-[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。
+[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの <b>\<F5></b> キーを押して) アプリを実行します。アプリでユーザー認証を使用している場合は、プロンプトが表示されたら ArcGIS Online の認証情報を入力してください。
 
 富士山を中心に、地形図ベースマップ レイヤーが追加されたマップが表示されます。マップ ビュー上でマウス ホイールをダブルクリック、ドラッグ、およびスクロールして、マップを操作します。
 
@@ -782,7 +784,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ApiKey = "YOUR_ACCESS_TOKEN";
 
                         // Call a function to set up the AuthenticationManager for OAuth.
-                        UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+                        UserAuth.ArcGISLoginPrompt.RegisterOAuthConfig();
 
                     }
             ```
@@ -799,7 +801,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
                         // 削除開始
                         // Call a function to set up the AuthenticationManager for OAuth.
-                        UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+                        UserAuth.ArcGISLoginPrompt.RegisterOAuthConfig();
                         // 削除終了
 
                     }
@@ -843,7 +845,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
                         // 削除終了
         
                         // Call a function to set up the AuthenticationManager for OAuth.
-                        UserAuth.ArcGISLoginPrompt.SetChallengeHandler();
+                        UserAuth.ArcGISLoginPrompt.RegisterOAuthConfig();
         
                     }
             ```
@@ -859,7 +861,7 @@ MVVM で設計された ArcGIS アプリでは、通常、マップ ビューが
 
 ### アプリを実行する
 
-[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの **\<F5>** キーを押して) アプリを実行します。
+[デバッグ] メニュー > [デバッグの開始] をクリックして (またはキーボードの **\<F5>** キーを押して) アプリを実行します。アプリでユーザー認証を使用している場合は、プロンプトが表示されたら ArcGIS Online の認証情報を入力してください。
 
 カリフォルニア州のサンタモニカ山脈を中心とした地形図ベースマップ レイヤーの地図が表示されます。マップ ビューをダブルクリック、ドラッグ、マウス ホイールをスクロールしてマップを操作します。
 

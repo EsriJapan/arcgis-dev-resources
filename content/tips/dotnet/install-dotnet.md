@@ -34,7 +34,7 @@ ArcGIS Maps SDK for .NET NuGet パッケージは、NuGet.org でホストされ
 
 ### Visual Studio プロジェクト テンプレートのインストール（オプション）
 
-Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テンプレート 拡張機能は、Android、iOS、および Windows 用のアプリケーション プロジェクト テンプレートを提供します。プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します
+プロジェクト テンプレートは、各プラットフォームに適した NuGet パッケージを参照し、Model-View-ViewModel（MVVM）デザイン パターンを使用します。これらのテンプレートは、Visual Studio 拡張機能または NuGet パッケージとして利用可能です。
 
 {{< callout type = "info">}}
 
@@ -54,7 +54,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 
 1. Visual Studio で、[拡張機能] メニュー > [拡張機能の管理] を選択して、[拡張機能の管理] ダイアログを表示します。
 2. [検索] テキスト ボックスに、「ArcGIS」と入力します。
-3. [ArcGIS Maps SDK for .NET Project Templates] 拡張機能を選択し、[ダウンロード] を選択します。この拡張機能のインストールがスケジュールされて、Visual Studio のすべてのインスタンスが終了した後にインストールされます。
+3. [ArcGIS Maps SDK for .NET Project Templates] 拡張機能を選択し、[インストール] を選択します。この拡張機能のインストールがスケジュールされて、Visual Studio のすべてのインスタンスが終了した後にインストールされます。
 
     <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-dotnet/manage-extensions-dialog.png" width="650px">
 
@@ -75,7 +75,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 
 #### Nuget パッケージからインストールする
 
-[nuget.org](https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/) で公開されている `Esri.ArcGISRuntime.ProjectTemplates` NuGet パッケージは .NET MAUI（iOS、Android、WinUI）、WPF、WinUI、および UWP 用のアプリケーション プロジェクト テンプレートを提供します。
+[nuget.org](https://www.nuget.org/packages/Esri.ArcGISRuntime.ProjectTemplates/) で公開されている `Esri.ArcGISRuntime.ProjectTemplates` NuGet パッケージは .NET MAUI（iOS、Android、WinUI）、WPF、および WinUI 用のアプリケーション プロジェクト テンプレートを提供します。
 
 以下の手順に従って、コマンドライン インターフェイスを使用してプロジェクト テンプレートをインストールします。
 
@@ -96,7 +96,7 @@ Visual Studio（Windows）用の ArcGIS Maps SDK for .NET プロジェクト テ
 [サンプルコード](#サンプル-コード)、[データ、コンポーネント](#追加のデータ) の追加のリソースを利用できます。また、このガイドを[スタンドアロンな開発者向けドキュメント](#スタンドアロンの開発者向けドキュメント) として、ダウンロードすることも可能です。
 
 ### サンプル コード
-アプリケーションに追加できるさまざまな ArcGIS Maps の強力な機能を説明するサンプル コードを入手できます。サンプルを検索し、[サンプル ドキュメント](https://developers.arcgis.com/net/wpf/sample-code/) で関連するコードを参照するか、[サンプル リポジトリー](https://github.com/Esri/arcgis-maps-sdk-dotnet-samples) からソース コードをダウンロードして、サンプルをローカルに構築および実行できます。
+アプリケーションに追加できるさまざまな ArcGIS Maps の強力な機能を説明するサンプル コードを入手できます。サンプルを検索し、[サンプル ドキュメント](https://developers.arcgis.com/net/wpf/sample-code/) で関連するコードを参照するか、[サンプル リポジトリー](https://github.com/Esri/arcgis-maps-sdk-dotnet-samples) からソース コードをダウンロードして、サンプルをローカルにビルドおよび実行できます。
 
 コンパイル済みのサンプル ビューアー アプリ (WPF 版) は、[Microsoft ストア](https://apps.microsoft.com/store/detail/arcgis-runtime-sdk-for-net-samples-wpf/9MTP5013343H?hl=ja-jp&gl=jp)で、.NET MAUI 版 サンプル ビューアーの Android 版が [Google Play ストア](https://play.google.com/store/apps/details?id=com.esri.arcgisruntime.samples.maui)で公開されています。 アプリを実行する前に、システム要件を参照して、正常に実行できることを確認してください。
 
