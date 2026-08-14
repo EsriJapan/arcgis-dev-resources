@@ -24,11 +24,11 @@ Xcode 26 での手順
 
 5. [Add to Target] リストからアプリを選択します。[Add Package] をクリックします。
 
-    <img src="https://developers.arcgis.com/swift/static/2dd70de575f5618041f2391d01b7deef/874d1/xcode-select-target.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/xcode-select-target.webp" width="650px">
 
 6. ターゲットでアプリを選択します。[Frameworks, Libraries, and Embedded Content] で + 記号をクリックし、「ArcGIS」がまだ存在しない場合は追加します。
 
-    <img src="https://developers.arcgis.com/swift/static/908bbaabea25038c6645f48d3c7c7354/eb1d2/xcode-embed-frameworks.png" width="650px">
+    <img src="https://apps.esrij.com/arcgis-dev/guide/img/install-ios/xcode-embed-frameworks.webp" width="650px">
 
 7. ArcGIS の API を使用するには、次のインポートステートメントを任意の Swift コード（.swift）ファイルに追加します。
     ```swift
