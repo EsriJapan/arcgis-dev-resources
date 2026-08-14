@@ -19,10 +19,10 @@ Calcite コンポーネントは、Web アプリケーションを構築する�
 作成方法は、[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)をご覧ください。
 
 ### CDN で利用する
-Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを配置することでロードできます:
+Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを記述することでロードできます:
 
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/5.0"></script>
+<script type="module" src="https://js.arcgis.com/calcite-components/5.1"></script>
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
@@ -31,14 +31,30 @@ Calcite コンポーネントをロードする最も一般的な方法は、Arc
 ArcGIS Maps SDK for JavaScript を使用してソリューションを作成する場合、CDN ユーザー向けの[単一の script タグ](https://developers.arcgis.com/javascript/latest/release-notes/#cdn-specific-changes)が用意されています。これには Calcite Design System の [Core API](https://developers.arcgis.com/javascript/latest/references/core/)、[Map components](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts components](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[Coding components](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common components](https://developers.arcgis.com/javascript/latest/references/common-components/)、[AI components](https://developers.arcgis.com/javascript/latest/references/ai-components/)が含まれています。
 
 ```cmd
-<script type="module" src="https://js.arcgis.com/5.0"></script>
+<script type="module" src="https://js.arcgis.com/5.1"></script>
 ```
 
 ### NPM パッケージで利用する
 Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-design-system/tree/main/examples/components)でご覧いただけます。
-``` cmd
-npm install @esri/calcite-components
-```
+
+{{<tabs>}}
+
+    {{<tab name = "npm">}}
+    ``` cmd
+    npm install @esri/calcite-components
+    ```
+    {{</tab>}}
+    {{<tab  name = "yarn">}}
+    ``` cmd
+    yarn add @esri/calcite-components
+    ```
+    {{</tab>}}
+    {{<tab  name = "pnpm">}}
+    ``` cmd
+    pnpm install @esri/calcite-components
+    ```
+    {{</tab>}}
+{{</tabs>}}
 
 #### アセットの読み込み
 一部のコンポーネント（例：`calcite-icon`、`calcite-date-picker`）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。

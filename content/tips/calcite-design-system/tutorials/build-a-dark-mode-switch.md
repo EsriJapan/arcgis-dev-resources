@@ -7,7 +7,7 @@ aliases = ["/calcite-desgin-sysytem/tutorials/build-a-dark-mode-switch"]
 
 出典：Calcite Design System - [Build a dark mode switch](https://developers.arcgis.com/calcite-design-system/tutorials/build-a-dark-mode-switch/)
 
-Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の明色 (light) モードと暗色 (dark) モードを切り替えるコンポーネントの作成方法について学びます。
+Calcite コンポーネントと [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/) の明色 (light) モードと暗色 (dark) モードを切り替えるコンポーネントの作成方法について学びます。
 
 Calcite コンポーネントを使用して、Calcite コンポーネント、ArcGIS Maps SDK for JavaScript のコンポーネントおよびベースマップに対して暗色 (dark) モードを有効にするスイッチを設計します。このアプリケーションは[マッピング アプリの作成](../create-a-mapping-app)チュートリアルで作成したアプリケーションを基にしています。
 
@@ -25,8 +25,8 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 
 ## ステップ
 
-### 新しいペンの作成
-1. まずは[マッピング アプリの作成](../create-a-mapping-app)チュートリアルを完了するか、コード例のペンを使用してください。
+### 新しいアプリの作成
+1. まずは[マッピング アプリの作成](../create-a-mapping-app)チュートリアルを完了するか、こちらの CodePen を使用してください。
 
 ### API キーの設定
 1. このチュートリアルで使用されるロケーション サービスにアクセスするには、適切な権限を持つ API キーが必要です。
@@ -36,7 +36,7 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 
     1.2. <b>CodePen</b> で、`esriConfig.apiKey` に作成した API キーを設定してください。
 
-```js
+```html
 <!-- esriConfig 変数は、他の Esri ライブラリーを追加する前に定義する必要があります -->
 <script type="module">
   var esriConfig = {
@@ -48,7 +48,7 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 アクセス トークンを取得するほかの方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) 参照してください。
 
 ### HTML の追加
-暗色 (dark) モード切り替えの主要なコンポーネントは [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) です。モードの切り替えには、[calcite-label](https://developers.arcgis.com/calcite-design-system/components/label/) を使用して、暗色 (dark) モードに切り替えられた際のコンテキストを付与します。
+ダークモードの切り替えボタンの主要なコンポーネントは [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) です。その `label-text-start` および `label-text-end` 属性を使用して状態を明確にし、`calcite-label` を使用して目的を明示してください。詳細については、[フォームとラベルに関するガイダンス](https://developers.arcgis.com/calcite-design-system/foundations/accessibility/#forms-and-labels)を参照してください。
 
 1. [`calcite-navigation`](https://developers.arcgis.com/calcite-design-system/components/navigation/) コンポーネント内に `div` 要素を追加し、ナビゲーションの [`content-end`](https://developers.arcgis.com/calcite-design-system/components/navigation/#api-reference-slots-content-end) スロットに配置します。この `div` には、後でスタイリングに使用する `id` 属性を付与します。
 2. [`calcite-label`](https://developers.arcgis.com/calcite-design-system/components/label/) コンポーネントを追加します。[`layout`](https://developers.arcgis.com/calcite-design-system/components/label/#component-api-properties-layout) 属性を `"inline"` に設定し、後でスタイリングに使用する `class` 属性も付与します。
@@ -58,6 +58,8 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 
 ```html
 <body>
+  <calcite-loader label="loading" text="Loading..." id="app-loader"></calcite-loader>
+
   <calcite-shell content-behind>
     <calcite-navigation slot="header">
       <calcite-navigation-logo id="header-title" heading-level="1" slot="logo">
@@ -76,6 +78,7 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
       <!-- 追加終了 -->
 
     </calcite-navigation>
+    <!--省略-->
 ```
 
 ### CSS の追加
@@ -87,7 +90,7 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 
     CSS 変数の基本的な概念については、コア コンセプトの [CSS 変数](../../core-concepts/#css-変数) セクションを参照してください。Calcite の[カラー モード](https://developers.arcgis.com/calcite-design-system/foundations/colors/)には明色 (light) と暗色 (dark) の値があり、モードの切り替え時に自動で変更されます。モードを切り替えるアプリケーションでは、Calcite 以外の要素にもカラー モード変数を使用してください。
 
-2. 次に、`calcite-label` に [`--calcite-label-margin-bottom`](https://developers.arcgis.com/calcite-design-system/components/label/#component-api-styles---calcite-label-margin-bottom) CSS 変数を追加して、コンポーネントの下にスペースを設定します。また、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) の `cursor` プロパティを `"pointer"` に設定し、スイッチのコンテナーがクリック可能であることを示します。
+2. 次に、Label の [`--calcite-label-margin-bottom`](https://developers.arcgis.com/calcite-design-system/components/label/#component-api-styles---calcite-label-margin-bottom) CSS 変数を追加して、コンポーネントの下にスペースを設定します。また、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) の `cursor` プロパティを `"pointer"` に設定し、スイッチのコンテナーがクリック可能であることを示します。
 
 ```css
 .label-wrapper {
