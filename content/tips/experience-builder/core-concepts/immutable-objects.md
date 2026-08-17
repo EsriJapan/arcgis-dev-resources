@@ -14,9 +14,9 @@ ArcGIS Experience Builder では、[seamless-immutable](https://www.npmjs.com/pa
 
 ## なぜイミュータブル オブジェクトを使うのか
 ArcGIS Experience Builder が基盤としている React と Redux は、次の理由でイミュータブルな状態更新が必要です。
-- **予測可能な状態変化**: 変更のタイミングや方法を追跡しやすい。
-- **パフォーマンス最適化**: React が再レンダリングすべき箇所を効率的に判断できる。
-- **デバッグ**: 状態変化の追跡が簡単になり、問題を特定しやすい。
+- **予測可能な状態変化**: 不変の更新により、状態がいつ、どのように変化したかを追跡しやすくなります
+- **パフォーマンス最適化**: React は、何が再レンダリングされる必要があるかを効率的に判断できます
+- **デバッグ**: 不変のデータがあれば、状態の変化を追跡したり、問題を特定したりするのが容易になります
 
 ## イミュータブル型  
 Experience Builder 内のイミュータブル型は、次のように慣例として `IM` で始まります。
@@ -36,6 +36,7 @@ interface IMDataSource {
 ```
 ## コード例
 ### イミュータブル オブジェクトのプロパティ更新
+次の例は、不変オブジェクトのプロパティを更新する方法を示しています。
 
 ```jsx
 import { Immutable } from 'jimu-core';
@@ -43,7 +44,10 @@ import { Immutable } from 'jimu-core';
 // Create an immutable object
 const config = Immutable({
   title: 'My Widget',
-  settings: { theme: 'light', size: 'medium' }
+  settings: {
+    theme: 'light',
+    size: 'medium'
+  }
 });
 
 // Update single property
@@ -55,7 +59,9 @@ const nestedUpdate = config.setIn(['settings', 'theme'], 'dark');
 // Merge multiple properties
 const mergedConfig = config.merge({
   title: 'Merged Widget',
-  settings: { size: 'large' }
+  settings: {
+    size: 'large'
+  }
 });
 ```
 イミュータブル オブジェクトの更新に利用できるメソッドは下記があります。

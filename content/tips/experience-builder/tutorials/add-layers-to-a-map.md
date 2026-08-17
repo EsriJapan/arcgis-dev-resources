@@ -22,7 +22,7 @@ ArcGIS Experience Builder のマップ ウィジェットは、ロードする�
 ## ステップ
 ### スターター ウィジェットの取得
 1. スターター ウィジェットのテンプレートを[こちら](https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip)からダウンロードします。  
-  すでにスターター ウィジェットの作成チュートリアルを完了している場合は、それを使用して開始できます。**client/your-extensions/widgets** 内のウィジェット フォルダーをコピーしてください。  
+  すでに[スターター ウィジェットの作成チュートリアル](https://developers.arcgis.com/experience-builder/guide/create-a-starter-widget/)を完了している場合は、それを使用して開始できます。**client/your-extensions/widgets** 内のウィジェット フォルダーをコピーしてください。  
 
 2. 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder **フォルダー**内で、zip ファイルを以下のパスに展開してください。  
 **/client/your-extensions/widgets**
@@ -122,7 +122,7 @@ return (
 ```
 
 ### マップにアクセスする
-これまでのステップでは、設定パネルに機能を追加し、マップ ウィジェットを選択できるようになりました。Map オブジェクトは [JimuMapViewComponent](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) を使用してアクセスできます。
+これまでのステップでは、設定パネルに機能を追加し、マップ ウィジェットを選択できるようになりました。Map オブジェクトは [`JimuMapViewComponent`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) を使用してアクセスできます。
 
 1. **widget.tsx** ファイルに、`jimu-arcgis` ライブラリから [`JimuMapViewComponent`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapViewComponent/) と [`JimuMapView`](https://developers.arcgis.com/experience-builder/api-reference/jimu-arcgis/JimuMapView/) の型を追加し、React 変数をデストラクチャリング (分割代入) して `getState` import にアクセスします。
 
@@ -158,7 +158,7 @@ return (
 )
 ```
 
-4. `setState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の状態を更新します。
+4. `useState` コマンドのすぐ下に `activeViewChangeHandler` 関数を定義します。この関数は、マップの準備ができたときに一度だけ呼び出され、この関数で jimuMapView の状態を更新します。
 
 ```jsx
 /** 追加 **/
@@ -240,8 +240,12 @@ Experience Builder タブが開かなかった場合は、https://localhost:3001
    2. [プレビュー エリア] の**マップ** ウィジェットをクリックし、[ウィジェット設定パネル]の[**マップの選択**]をクリックします。
    3. [**データの選択**] パネルの [**新しいデータの追加**] ボタンをクリックします。
    4. [**データの追加**] モーダルで、[**ArcGIS Online**] タブを選択し、Web マップの `eb1be6543e304b4d81ed55439c412c2c` を検索します。検索結果をクリックして選択し、[**終了**]をクリックします。 (この Web マップには意図的に操作するレイヤーがないことに注意してください。)
-   5. [**データの選択**] パネルに新しく追加された [LA Parks and Trails Map] をクリックして、Web マップを選択してください。
+   5. [**データの選択**] パネルに新しく追加された [**LA Parks and Trails Map**] をクリックして、Web マップを選択してください。
 4. [**ウィジェットの挿入**] パネルが開きます。そこから、新しく作成した [**add layers to a map**] ウィジェットをエクスペリエンスにドラッグします。
 作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。
 5. ウィジェットの設定パネルで、マップを選択するドロップダウンから「**Map**」を選択します。
 6. Experience Builder のツールバーで [**保存**] をクリックし、[**プレビュー**] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。[Add Layer] ボタンをクリックするとレイヤーをマップに追加されます。
+
+### 関連トピック
+[カスタムウィジェットにフィーチャーレイヤーをデータソースとして追加する方法](https://developers.arcgis.com/experience-builder/sample-code/widgets/feature-layer-class/)
+

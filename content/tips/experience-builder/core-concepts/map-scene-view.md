@@ -6,13 +6,61 @@ aliases = ["/map-scene-view/"]
 
 出典：ArcGIS Experience Builder - Guide - [Map/Scene View](https://developers.arcgis.com/experience-builder/guide/core-concepts/map-scene-view/)
 
-### マップ/シーン ビュー (Map/Scene View)
+### マップ ビューとシーン ビューとは何か
 
-ビューの概念は ArcGIS Maps SDK for JavaScript と同じですが、Experience Builder では、ウィジェットやメッセージ/アクションなどを作成する際に一貫した拡張性モデルを確保するために、ビューは `JimuMapView` としてラップされます。`JimuMapView` オブジェクトを作成するには、ウィジェットは `JimuMapViewManager.createJimuMapView()` メソッドを使用します。`JimuMapView` オブジェクトは、主に以下のプロパティを持っています。
+ArcGIS Experience Builder は、ArcGIS Maps SDK for JavaScript と同じマップおよびシーン ビューの概念を採用しています。Experience Builder では、ランタイム ビューが  `JimuMapView` によってラップされているため、ウィジェットはマップ操作、メッセージ、アクションに関して一貫した拡張性モデルに基づいて動作します。
 
-- `view`: マップ/シーン ビュー オブジェクト
-- `datasourceId`: ビューを作成するデータ ソース (webmap/webscene)
-- `mapWidgetId`: オブジェクトを作成するビュー
-- `jimuLayerViews`: レイヤー ビュー オブジェクトのラッパー
+### インターフェイスとライフサイクル
+`JimuMapView`` のインスタンスは、Map ウィジェットによって作成および管理されます。
+- Map ウィジェットは、設定された Web マップまたは Web シーンに対して `JimuMapView` オブジェクトを作成します。
+- 他のウィジェットは、ほとんどのワークフローにおいて、マップビューを直接作成することはありません。その代わりに、既存の `JimuMapView` インスタンスをサブスクライブして利用します。
+- 実行時、ウィジェットはアクティブな `JimuMapView` を受け取り、それを介して基盤となる ArcGIS Maps SDK ビューとやり取りを行うことができます。
 
-Experience Builder では、マップ ウィジェットが `JimuMapView` オブジェクトを作成します。ウィジェットが `JimuMapView` オブジェクトを使用する必要がある場合、設定ページの `MapWidgetSelector` コンポーネントを使用して マップ ウィジェットを選択することができます。マップ ウィジェットの ID を取得した後、ウィジェットは `<JimuMapViewComponent>` を使って、作成された `JimuMapView` オブジェクトを取得することができます。`JimuMapView` オブジェクトを選択するには、設定ページの `JimuMapViewSelector` コンポーネントを利用します。
+### プロパティ
+`JimuMapView` には、いくつかの重要なプロパティーが用意されています。
+- `view`: ArcGIS Maps SDK のマップ　ビューまたはシーン　ビュー　オブジェクト。
+- `datasourceId`: そのビューを作成した Web マップまたは Web シーンのデータ ソース ID。
+- `mapWidgetId`: そのビューを所有するマップ ウィジェットの ID。
+- `jimuLayerViews`: そのビューに関連付けられたレイヤー ビューのラッパーの集合。
+
+### ウィジェットで JimuMapView を使用する方法
+ウィジェットでマップやシーン ビューが必要な場合、一般的なワークフローは次のとおりです。
+
+1. ウィジェットの設定ページで、`MapWidgetSelector` を使用して、作成者がマップ ウィジェットを選択できるようにします。
+2. 選択されたマップ ウィジェットの ID をウィジェットの設定に保存します。
+3. 実行時に、`JimuMapViewComponent` をレンダリングし、選択されたマップ ウィジェットの ID を渡します。
+4. `onActiveViewChange` コールバックを使用して、現在の `JimuMapView` を取得します。
+
+ユーザーに特定のビューを直接選択してもらう必要がある場合は、設定で `JimuMapViewSelector` を使用することもできます。
+
+### コード例
+以下は、アクティブな `JimuMapView` を取得し、その基盤となる ArcGIS Maps SDK ビューにアクセスする、最小限のウィジェット ランタイムの例です。
+
+```jsx
+import { React, type AllWidgetProps } from 'jimu-core'
+import { JimuMapViewComponent, type JimuMapView } from 'jimu-arcgis'
+
+export default function Widget (props: AllWidgetProps<any>) {
+  const [jimuMapView, setJimuMapView] = React.useState<JimuMapView>(null)
+
+  const onActiveViewChange = (activeView: JimuMapView) => {
+    setJimuMapView(activeView)
+  }
+
+  return (
+    <div className='widget-map-scene-view'>
+      <JimuMapViewComponent
+        useMapWidgetId={props.useMapWidgetIds?.[0]}
+        onActiveViewChange={onActiveViewChange}
+      />
+
+      {jimuMapView?.view && (
+        <div>
+          Active view type: {jimuMapView.view.type}
+        </div>
+      )}
+    </div>
+  )
+}
+
+```

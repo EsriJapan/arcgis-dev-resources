@@ -6,6 +6,8 @@ aliases = ["/jimu/"]
 
 出典：ArcGIS Experience Builder - Guide - [Jimu](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/)
 
+<img src="https://developers.arcgis.com/experience-builder/static/7e01e3198aa6764375279e714ee56f3d/4cdf7/jimu-framework.png"></img>
+
 ## Jimu
 Jimuは、ArcGIS Experience Builder の根幹となる JavaScript フレームワークです。Experience Builder を拡張可能かつカスタマイズ可能にする基盤です。Jimu は以下の機能を提供します。
 
@@ -99,7 +101,7 @@ Jimu は、開発ニーズに応じてパッケージとして構成されてい
 | Redux アクション | 状態管理のための `appActions` など |
 | ユーティリティー関数 | `utils`、`urlUtils`、`portalUrlUtils`、`appConfigUtils`、`dataSourceUtils`、`geometryUtils` など |
 | コンポーネント | `DataSourceComponent`、`ExpressionResolverComponent` など |
-| モジュール ローダー | `moduleLoader`、`loadArcGISJSAPIModules`|
+| モジュール ローダー | moduleLoader、loadArcGISJSAPIModules|
 
 ### jimu-ui
 [`jimu-ui`](https://developers.arcgis.com/experience-builder/api-reference/jimu-ui/) パッケージによって、エクスペリエンス構築のためのすべての UI コンポーネントを利用できます。スタイリングには [emotion-js](https://emotion.sh/docs/introduction) を使用し、コンポーネントは `index`、`basic`、`advanced` のいずれかのカテゴリーに分類されます。
@@ -190,14 +192,14 @@ import { JimuMapViewComponent } from 'jimu-arcgis';
 | [RawThemeOptions](https://developers.arcgis.com/experience-builder/api-reference/jimu-theme/RawThemeOptions/) | JSON 形式のテーマ オプションのインターフェイス (theme フォルダ内の `variables.json`) |
 
 ### jimu-layouts
-[**jimu-layouts**](https://developers.arcgis.com/experience-builder/api-reference/jimu-layouts/) パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。
+`jimu-layouts` パッケージによって、レイアウト管理とコンポーネントの利用が可能となります。2 つのエントリー ポイントがあります。
 
 - アプリが実行時に開かれた場合の軽量エントリー ポイントである `layout-runtime`。レイアウト ツリー検索機能を提供する `selectors` や、ウィジェット レイアウト機能のための `LayoutEntry` コンポーネントをエクスポートします。
 - アプリがビルダーで開かれた場合のエントリー ポイントである `layout-entry`。
 - レイアウト ツリー操作のためのユーティリティーである `searchUtils`。
 
 ### jimu-data-sources
-[`jimu-data-sources`](https://developers.arcgis.com/experience-builder/api-reference/jimu-data-sources/) パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、`jimu-core` からエクスポートされる `DataSourceComponent` を使用することが推奨されます。
+`jimu-data-sources` パッケージによって、データ ソースを実装することができます。ただ、ほとんどのケースではこのパッケージを直接使うより、`jimu-core` からエクスポートされる `DataSourceComponent` を使用することが推奨されます。
 
 ### jimu-for-test
 [`jimu-for-test`](https://developers.arcgis.com/experience-builder/api-reference/jimu-for-test/) パッケージは、テスト用のユーティリティーを提供します。ユーティリティー関数には、`wrapWidget`、`withThemeRender`、`withIntlRender`、`withStoreRender`、`mockService`、`mockItem`、`initGlobal`、`getInitState`、`widgetRender` があります。
