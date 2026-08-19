@@ -60,7 +60,7 @@ import 'package:arcgis_maps/arcgis_maps.dart';
 ```
 
 ## プラットフォーム固有の構成
-Android、iOS、またはその両方のアプリを開発する際、Flutter のツールセットでは、いくつかの設定バージョンに対してデフォルト値が設定されています。これらは、新しいプロジェクトを作成する際にあらかじめ設定されます。以下に示す更新内容は、最新バージョンの ArcGIS Maps SDK for Flutter パッケージを使用してアプリケーションをコンパイルするために、これらのデフォルト設定に変更を加える必要があるものです。詳細については、[システム要件](https://developers.arcgis.com/flutter/system-requirements/system-requirements-for-300-0/)のページをご覧ください。
+Android、iOS、またはその両方のアプリを開発する際、Flutter のツールセットでは、いくつかの設定バージョンに対してデフォルト値が設定されています。これらは、新しいプロジェクトを作成する際にあらかじめ設定されます。以下に示す更新内容は、最新バージョンの ArcGIS Maps SDK for Flutter パッケージを使用してアプリケーションをコンパイルするために、これらのデフォルト設定に変更を加える必要があるものです。詳細については、[システム要件](https://developers.arcgis.com/flutter/system-requirements/system-requirements-for-300-1/)のページをご覧ください。
 
 {{< tabs >}}
 
@@ -125,38 +125,110 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
 	{{< /tab >}}
 
 	{{< tab name="iOS" >}}
-   1. iOS 17.0 以上を設定します。 行のコメントを解除し、バージョン番号を更新します。
+	Flutter [3.44](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers) 以降、iOS アプリケーションのデフォルトの依存関係管理ツールとして、CocoaPods に代わって [Swift Package Manager](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/) が採用されました。この変更に対応するため、Flutter Maps SDK パッケージである `arcgis_maps` では、CocoaPods から Swift Package Manager への移行が行われました。Swift Package Manager を使用して ArcGIS Maps SDK for Flutter パッケージを利用するように iOS プロジェクトを設定する方法については、[新しい iOS アプリケーション](#新しい-ios-アプリケーション)または[既存の iOS アプリケーションの移行](#既存の-ios-アプリケーションの移行)を参照してください。
 
-			```ruby {filename="ios/Podfile"}
-			# Uncomment this line to define a global platform for your project
-			platform :ios, '17.0' #変更
+	#### 新しい iOS アプリケーション
+	`arcgis_maps` パッケージを依存関係として使用する新しい iOS アプリケーションの場合、`iOS Deployment Target` をバージョン `18` に更新し、アプリケーションで Swift Package Manager を有効にする必要があります。プロジェクトに必要な変更を加えるには、以下の手順に従ってください。
+   1. ターミナルを開き、Flutter プロジェクトのディレクトリーに移動します。
+	
+   2. 以下のコマンドを実行して、プロジェクトのデフォルトの Xcode ワークスペースを開きます。
+
+			```powerShell
+			open ios/Runner.xcworkspace
 			```  
 	
-   2. `Runtimecore` ポッドと `arcgis_maps_ffi` ポッドを `Runner` ターゲット セクションに追加します。
+   3. Xcode で、`Runner` プロジェクトを選択します。`Build Settings` タブに移動し、`Deployment` セクションを見つけます。`iOS Deployment Target` をバージョン `18` に設定し、Xcode を閉じます。
+	<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/xcode-ios-deployment-target.webp" width="750px">
 
-			```ruby {filename="ios/Podfile"}
-			target 'Runner' do
-				use_frameworks!
-				use_modular_headers!
+   4. Flutter 3.44 以降、Swift Package Manager はデフォルトで有効になっています。Swift Package Manager が有効になっていることを確認するには、2 つの方法があります。1 つ目の方法は、単一のプロジェクトに対して Swift Package Manager を有効にするものです。これにより、グローバルな設定に関係なく、ローカル開発環境でそのプロジェクトを読み込むすべてのユーザーが Swift Package Manager を使用するようになります。
 
-				#変更開始
-				pod 'Runtimecore', :podspec => '../arcgis_maps_core/ios/Runtimecore.podspec'
-				pod 'arcgis_maps_ffi', :podspec => '../arcgis_maps_core/ios/arcgis_maps_ffi.podspec'
-				#変更終了
+			```yaml {filename = "pubspec.yaml"}
+			# ...
 
-				flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-				target 'RunnerTests' do
-					inherit! :search_paths
-				end
-			end
+			flutter:
+			  	uses-material-design: true
+
+            #追加開始
+			  	config:
+    				enable-swift-package-manager: true
+			#追加終了
+			```
+			
+			2 つ目のアプローチは、すべてのプロジェクトに対して Swift Package Manager をグローバルに有効にするもので、Flutter 3.44 以降ではデフォルトで有効になっています。以下のコマンドを実行することで、この機能を有効にし、確認することができます。
+
+			```powerShell
+			flutter config --enable-swift-package-manager
 			```  
-	
-   3. `pod update` を使用して Pods を設定します。
-	
-			```powershell
-			cd ios && pod update && cd ..
-			```  
+			
+			詳細については、Flutter のドキュメント「[アプリ開発者向け Swift Package Manager（英語）](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)」を参照し、プロジェクトに最適なアプローチを選択してください。
 
+	#### 既存の iOS アプリケーションの移行
+	バージョン 300.0 以前の `arcgis_maps` パッケージを使用している既存の iOS アプリケーションについては、以下の手順に従って、プロジェクトを Swift Package Manager に対応するように移行してください。
+
+	{{<callout>}}
+	この手順では、プロジェクトの Podfile に記述されているカスタム コードが ArcGIS Maps SDK for Flutter のみであることを前提としています。
+	{{</callout>}}
+
+   1. 開発用マシンが[システム要件](https://developers.arcgis.com/flutter/system-requirements/system-requirements-for-300-1/)を満たしていることを確認してください。
+   2. Flutter 3.44 以降、Swift Package Manager はデフォルトで有効になっています。Swift Package Manager が有効になっていることを確認するには、2 つの方法があります。1 つ目の方法は、単一のプロジェクトに対して Swift Package Manager を有効にするものです。これにより、グローバルな設定に関係なく、ローカル開発環境でそのプロジェクトを読み込むすべてのユーザーが Swift Package Manager を使用するようになります。
+
+			```yaml {filename = "pubspec.yaml"}
+			# ...
+
+			flutter:
+			  	uses-material-design: true
+
+            #追加開始
+			  	config:
+    				enable-swift-package-manager: true
+			#追加終了
+			```
+			
+			2 つ目のアプローチは、すべてのプロジェクトに対して Swift Package Manager をグローバルに有効にするもので、Flutter 3.44 以降ではデフォルトで有効になっています。以下のコマンドを実行することで、この機能を有効にし、確認することができます。
+
+			```powerShell
+			flutter config --enable-swift-package-manager
+			``` 
+
+			詳細については、Flutter のドキュメント「[アプリ開発者向け Swift Package Manager（英語）](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)」を参照し、プロジェクトに最適なアプローチを選択してください。
+	
+   3. ターミナルを開き、Flutter プロジェクト ディレクトリー内の `ios` フォルダーに移動してください。
+   4. `Podfile`、`Podfile.lock`、および `Pods` ディレクトリーを削除してください。
+   5. 以下のコマンドを実行してください。
+			```powerShell
+			pod deintegrate
+			``` 
+   6. 以下のコマンドを実行して、プロジェクトのデフォルトの Xcode ワークスペースを開きます。
+			```powerShell
+			open Runner.xcworkspace
+			```
+   7. ワークスペースから Pods プロジェクトを削除してください。
+   <img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/delete-pods-project.png" width="300px">
+   8. deintegrate で検出されなかった場合は、Runner プロジェクトから Pods の参照を削除してください。
+   9.  `Runner` ターゲットの `全般` タブで、iOS の `Minimum Deployment` を手動で `18.0` 以上に更新してください。
+	<img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/minimum-deployment-version.png" width="850px">
+
+	{{<callout>}}
+	
+	プロジェクトの性質上、CocoaPods を完全に解除することが適切でない場合は、Podfile 内の `Runner` ターゲットから `Runtimecore` および `arcgis_maps_ffi` の Pod を削除することで、`arcgis_maps` の CocoaPods 設定のみを削除することができます。
+```ruby {filename = "podfile"}
+target 'Runner' do
+		use_frameworks!
+
+		pod 'Runtimecore', :podspec => '../arcgis_maps_core/ios/Runtimecore.podspec'
+		pod 'arcgis_maps_ffi', :podspec => '../arcgis_maps_core/ios/arcgis_maps_ffi.podspec'
+
+		flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+		target 'RunnerTests' do
+			inherit! :search_paths
+		end
+end
+``` 
+
+	{{</callout>}}
+
+
+	
 	#### パーミッションを必要とする機能
 
 	ArcGIS Maps SDK for Flutter の一部の機能には、追加の権限が必要です。 ArcGIS Maps SDK for Flutter に依存する iOS アプリを App Store にデプロイするには、以下の記述が必要です。 位置情報へのアクセス許可を必要とする API をアプリがアクティブに使用している場合のみ、ユーザーに位置情報へのアクセス許可を求めるプロンプトが表示されます。

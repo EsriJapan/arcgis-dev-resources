@@ -24,7 +24,7 @@ aliases = ["/create-startup-app-flutter/","/tips/flutter/create-app/"]
 
 {{< /callout >}}  
 
-{{< callout >}}
+{{< callout type = "important" >}}
 
 Flutter のバージョンは、Esri のリリース サイクルの間に頻繁に更新されるため、パッケージの新しいリリースごとに、その時点で利用可能な最新の Flutter バージョンに対してビルドおよび検証を行っています。Esri のリリース期間の間に Flutter の新しいバージョンがリリースされた場合は、最新のSDKとの互換性に関するガイダンスを共有します。  
 Flutter 3.44.x に関する注意事項と依存関係の要件につきましては、[こちら](https://community.esri.com/t5/arcgis-maps-sdks-native-blog/arcgis-maps-sdk-for-flutter-300-0-0-compatibility/ba-p/1706472)をご覧ください。
@@ -71,7 +71,7 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     {{<tab name = "API キー認証">}}
    * ユーザーはサインインする必要がありません。
    * 適切な権限を持つ API キーの認証情報を作成する必要があります。
-   * API キーは長期間のアクセス トークンです。
+   * API キーは有効期限の長いアクセス トークンです。
    * サービス使用料は、API キーの所有者/開発者に請求されます。
    * 実装が最も簡単な認証方法です。
    * 新規の ArcGIS 開発者に推奨される方法です。
@@ -137,7 +137,7 @@ ArcGIS Maps SDK for Flutter を使用する際、データの変更に応じて 
 
 1. VS Code で、**lib/main.dart** を開きます。
 2. `main()` 関数内で、[`runApp()`](https://api.flutter.dev/flutter/widgets/runApp.html) 内に [`MaterialApp`](https://api.flutter.dev/flutter/material/MaterialApp-class.html) をインスタンス化し、名前付き引数 [`home`](https://api.flutter.dev/flutter/material/MaterialApp/home.html) に `MainApp` のインスタンスを設定します。
-    ```dart {name = "main.dart"}
+    ```dart {filename = "main.dart"}
     void main() {
         runApp(
 
@@ -147,7 +147,7 @@ ArcGIS Maps SDK for Flutter を使用する際、データの変更に応じて 
     }
     ```
 3. テンプレートの `MainApp` クラスの定義を、[`StatefulWidget`](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html) を継承するようにリファクタリングします。[`StatelessWidget`](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) キーワードにマウスを合わせ、右クリックして [Refactor...] を選択し、[Convert to StatefulWidget] を選んでコードをリファクタリングします。 
-    ```dart {name = "main.dart"}
+    ```dart {filename = "main.dart"}
     class MainApp extends StatefulWidget { //変更
 
         const MainApp({super.key});
@@ -171,7 +171,7 @@ ArcGIS Maps SDK for Flutter を使用する際、データの変更に応じて 
     //追加終了
     ```
 4. クラス `_MainAppState` の build メソッド内で返されている `MaterialApp` ウィジェットを削除してください。このコードは Flutter の作成テンプレートによって生成されたものであり、後の手順で、マップを含むウィジェットを返すコードに置き換えられます。
-    ```dart {name = "main.dart"}
+    ```dart {filename = "main.dart"}
     class _MainAppState extends State<MainApp> {
         @override
         Widget build(BuildContext context) {
@@ -208,7 +208,7 @@ ArcGIS Maps SDK for Flutter を使用する際、データの変更に応じて 
     ```
 5. **main.dart** に戻ります。
 6. `arcgis_maps` パッケージをインポートします。
-    ```dart {name = "main.dart"}
+    ```dart {filename = "main.dart"}
     import 'package:arcgis_maps/arcgis_maps.dart';//追加
     ```
 ### プラットフォーム固有の構成
@@ -216,7 +216,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
 {{< tabs >}}
 
     {{< tab  name="Android" >}}
-   1. プロジェクトの `android/app/build.gradle.kts` ファイルを編集して、最小要件を更新します。
+   1. プロジェクトの `android/app/build.gradle.kts` ファイルを編集して、Android の最小 SDK 要件を更新します。
 
             ```gradle {filename = "build.gradle.kts"}
             defaultConfig {
@@ -244,37 +244,31 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
     {{< /tab >}}
     {{< tab name="iOS" >}}
 
-   1. `ios/Podfile` ファイルを編集して iOS 17.0 を最小に設定します。行のコメントを解除し、バージョン番号を更新します。
+   1. 以下のコマンドを実行して、プロジェクト内のデフォルトの Xcode ワークスペースを開きます。
 
-    	    ```ruby {filename = "podfile"}
-    	    # Uncomment this line to define a global platform for your project
-    	    platform :ios, '17.0'  #変更
+    	    ```powrshell
+    	    open ios/Runner.xcworkspace
     	    ```  
 
-   2. `Runtimecore` pod と `arcgis_maps_ffi` pod を `Runner` ターゲット セクションに追加します。
+   2. Xcode で、`Runner` プロジェクトを選択します。[`Build Settings`] タブに移動し、[`Deployment`] セクションを見つけます。[`iOS Deployment Target`] をバージョン `18` に設定し、Xcode を閉じます。
 
-    	    ```ruby {filename = "podfile"}
-    	    target 'Runner' do
-    	    	use_frameworks!
-    	    	use_modular_headers!
+    <img src = "https://apps.esrij.com/arcgis-dev/guide/img/startup-flutter/xcode-ios-deployment-target.webp" width="750px">
 
-                #変更開始
-    	    	pod 'Runtimecore', :podspec => '../arcgis_maps_core/ios/Runtimecore.podspec'
-    	    	pod 'arcgis_maps_ffi', :podspec => '../arcgis_maps_core/ios/arcgis_maps_ffi.podspec'
-                #変更終了
+   3. VS Code に戻り、`pubspec.yaml` を開き、`flutter:` セクションの下に次のブロックを追加します。
 
-    	    	flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-    	    	target 'RunnerTests' do
-    	    		inherit! :search_paths
-    	    	end
-    	    end
-    	    ```  
+            ```yaml{filename = "pubspec.yaml"}
+            # ...
 
-   3. `pod update` を使用して Pods を設定します。
+            flutter:
+                uses-material-design: true
 
-            ```powershell
-            cd ios && pod update && cd ..
-            ```  
+                #追加開始
+                config:
+                    enable-swift-package-manager: true
+                #追加終了
+            ```
+
+            このソリューションでは、チュートリアルのソリューションが期待どおりに動作するように、`pubspec.yaml` 内でアプリケーション レベルで Swift Package Manager を有効にしています。実際には、Flutter 3.44 以降では、Flutter 環境内でグローバル レベルで Swift Package Manager がデフォルトで有効になっているため、ご自身のプロジェクトではこのアプリ レベルの設定は必要ない場合があります。詳細については、[アプリ開発者向け Swift Package Manager](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers) を参照してください。
     {{< /tab >}}
 {{< /tabs >}}
 
@@ -288,10 +282,15 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
    1. **main.dart** に戻ります。
    2. `main()` 関数で、[ArcGISEnvironment.apiKey](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISEnvironment/apiKey.html) の値をアクセス トークンに設定します。
 
-            ```dart {filename = "main.dart"}
+            ```Dart {filename = "main.dart"}
             void main() {
                 ArcGISEnvironment.apiKey = ''; // アクセス トークンをここに記入します。 //追加
-                runApp(const MainApp());
+                
+                runApp(
+                
+                    const MainApp()
+                
+                );
             }
             ```
 
@@ -366,7 +365,6 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
             </activity>
             ```
             `YOUR_CALLBACK_URL_SCHEME_HERE` を、先ほど[認証を設定した](#認証の設定)際に使用しダイレクト URL のスキームに置き換えてください。これは、ログイン フローが完了した後、ブラウザーがアプリに通信を戻すために必要です。  
-            たとえば、**my-app://auth** のようなリダイレクト URL がある場合、スキームの値は **my-app** となります。この値が、アクティビティー内の `YOUR_CALLBACK_URL_SCHEME_HERE` を置き換えることになります。
     {{</tab>}}
 {{</tabs>}}
 
@@ -431,7 +429,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
 2. {{<tabs>}}
         {{<tab name = "API キー認証">}}
         
-        build メソッド内で [`Scaffold`](https://api.flutter.dev/flutter/material/Scaffold-class.html)、[`Column`](https://api.flutter.dev/flutter/widgets/Column-class.html)、[`Expanded`](https://api.flutter.dev/flutter/widgets/Expanded-class.html) からなるウィジェット ツリーに [`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) ウィジェットを追加します。マップ ビューの名前付き引数 [`controllerProvider`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/controllerProvider.html) をクラス メンバー変数 `_mapViewController` に設定し、[`onMapViewReady`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/onMapViewReady.html) 引数を次に定義する引数と同じ名前の新しいメソッドに設定します。  
+        `build()` 内で [`Scaffold`](https://api.flutter.dev/flutter/material/Scaffold-class.html)、[`Column`](https://api.flutter.dev/flutter/widgets/Column-class.html)、[`Expanded`](https://api.flutter.dev/flutter/widgets/Expanded-class.html) から構成されるウィジェット ツリーに [`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) ウィジェットを追加します。マップ ビューの名前付き引数 [`controllerProvider`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/controllerProvider.html) をクラス メンバー変数 `_mapViewController` に設定し、[`onMapViewReady`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView/onMapViewReady.html) 引数を、その引数と同じ名前の新しいメソッドに設定します。この新しいメソッドについては、次で定義します。  
 
         [`Scaffold`](https://api.flutter.dev/flutter/material/Scaffold-class.html) ウィジェットは基本的な[マテリアル デザイン](https://m3.material.io/)のビジュアル レイアウト構造を提供し、[`Column`](https://api.flutter.dev/flutter/widgets/Column-class.html) ウィジェットは子ウィジェットを垂直配列で表示します。[`ArcGISMapView`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/ArcGISMapView-class.html) ウィジェットは、サイズが制限されたウィジェット内でのみ使用できます。 サイズが制限されていない状態で使用すると、アプリケーションは例外をスローします。 たとえば、`ArcGISMapView` を `Column` ウィジェット内で使用すると、サイズが制限されないため、このような例外が発生します。 代わりに、チュートリアルのこのステップで説明するように、`ArcGISMapView` を [`Expanded`](https://api.flutter.dev/flutter/widgets/Expanded-class.html) ウィジェットでラップして、適切な境界を提供することができます。
         ```csharp {filename = "main.dart"}
@@ -601,7 +599,11 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
             
                  ArcGISEnvironment.apiKey = ''; // アクセス トークンをここに記入します。 //追加
         
-                runApp(const MainApp());
+                runApp(
+                    
+                    const MainApp()
+                    
+                );
             }
             ```
 
@@ -615,7 +617,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
     {{<tab name = "ユーザー認証">}}
     OAuth 認証情報を管理するために、[`Authenticator`](https://developers.arcgis.com/flutter/toolkit-api-reference/arcgis_maps_toolkit/Authenticator-class.html) ツールキット コンポーネントを追加してください。
 
-    1. 以下の[手順](https://developers.arcgis.com/flutter/toolkit/#vs-code)に従って、アプリに ArcGIS Maps SDK for Flutter Toolkit パッケージを追加してください
+    1. [手順](https://developers.arcgis.com/flutter/toolkit/#vs-code)に従って、アプリに ArcGIS Maps SDK for Flutter Toolkit パッケージを追加してください
     2. **main.dart** に以下のコードを追加します。
 
         * `_MainAppState` クラス内に final クラス メンバー変数 `_oAuthUserConfiguration` を定義し、`portalUri`、`clientId`、`redirectUri` の値を渡して [`OAuthUserConfiguration`](https://developers.arcgis.com/flutter/api-reference/reference/arcgis_maps/OAuthUserConfiguration-class.html) で初期化します。
@@ -626,12 +628,15 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
 
             final _mapViewController = ArcGISMapView.createController();
 
+            //追加開始
             final _oAuthUserConfiguration = OAuthUserConfiguration(
                 portalUri: Uri.parse('https://www.arcgis.com'),
                 clientId: 'YOUR_CLIENT_ID',
                 redirectUri: Uri.parse('YOUR_REDIRECT_URL'),
             );
+            //追加終了
 
+            //追加開始
             @override
             void dispose() {
                 Authenticator.revokeOAuthTokens().whenComplete(
@@ -640,6 +645,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
 
                 super.dispose();
             }
+            //追加終了
 
             @override
             Widget build(BuildContext context) {
@@ -648,13 +654,15 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
                     body: Column(
                         children: [
                             Expanded(
+                                //追加開始
                                 child: Authenticator(
                                     oAuthUserConfigurations: [_oAuthUserConfiguration],
+                                //追加開始
                                     child: ArcGISMapView(
                                         controllerProvider: () => _mapViewController,
                                         onMapViewReady: onMapViewReady,
                                     ),
-                                ),
+                                ),//追加
                             ),
                         ],
                     ),
@@ -668,8 +676,9 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
     {{</callout >}}
     3. Android のみ、ユーザー認証にはシステム ブラウザーが必要です。プロジェクトの Android マニフェストに、以下のアクティビティーを追加してください。
         ```xml {filename = "android/app/src/main/AndroidManifest.xml"}
-         <!-- ... -->
+        <!-- ... -->
 
+        <!-- 追加開始 -->
         <activity
             android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
             android:exported="true">
@@ -680,6 +689,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
                 <data android:scheme="YOUR_CALLBACK_URL_SCHEME_HERE" />
             </intent-filter>
         </activity>
+        <!-- 追加終了 -->
 
         <!-- ... -->
         ```
@@ -705,7 +715,7 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
     ```
 
 3. Android エミュレーター、iOS シミュレーター、または物理的なデバイスが設定され、実行されていることを確認します。
-4. VS Codeで、[Run] > [Run Without Debugging] を選択します。
+4. VS Code で、[Run] > [Run Without Debugging] を選択します。
 
 カリフォルニア州のサンタモニカ山脈を中心に、地形図のベースマップ レイヤーが表示された地図が表示されます。地図ビューをピンチ、ドラッグ、またはダブルタップして、地図を閲覧してください。
 

@@ -23,7 +23,7 @@ Android Studio で [New Project] ウィザードを実行する際、[Phone and 
 
 Android Studio の [New Project] ウィザードで作成したプロジェクトで、次のセットアップ手順を実行します。
 
-1. プロジェクト ツール ウィンドウで、ドロップダウン メニューから [Android ビュー]を選択します。[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を以下のコードに置き換えます。
+1. プロジェクト ツール ウィンドウで、ドロップダウン メニューから [Android] ビューを選択します。[Gradle Scripts] > [build.gradle.kts (Project: Display_a_map)] を開きます。ファイルの内容を以下のコードに置き換えます。
 
 
 	```gradle {filename = "build.gradle.kts (Project: Display_a_map)"}
@@ -34,7 +34,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 	}
 	``` 
 
-2. Android ビューから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
+2. [Android] ビューから、[Gradle Scripts] > [build.gradle.kts (Module: app)] を開きます。ファイルの内容を次のコードに置き換えます。
 
 	```gradle {filename="build.gradle.kts (Module: app)"}
 	plugins {
@@ -106,10 +106,10 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
 	2.0 より前の Kotlin バージョンを使用している場合は、Compose コンパイラーと Kotlin コンパイラーのバージョンが互換性があることを確認する必要があります。詳細については、[Compose to Kotlin Compatibility Map](https://developer.android.com/jetpack/androidx/releases/compose-kotlin?hl=ja) を参照してください。
 	
-3. Android ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、次のライブラリーの宣言を追加します。
+3. [Android] ビューから、[Gradle Scripts] > [libs.versions.toml] を開きます。`[version]` セクションで、ArcGIS Maps SDK for Kotlin のバージョン番号を宣言します。また、`[libraries]` セクションには、次のライブラリーの宣言を追加します。
 	* ArcGIS Maps SDK for Kotlin SDK
 	* ArcGIS Maps SDK for Kotlin Toolkit BOM
-	* アプリで使用するすべてのツールキット コンポーネント。マップビューまたはシーンビューを表示するには、コンポーザブルな [`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と[`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) を含む `geoview-compose` モジュールの宣言が必要です。ユーザー認証を実装するには、`authentication` モジュールが必要です。
+	* アプリで使用するすべてのツールキット コンポーネント。マップ ビューまたはシーン ビューを表示するには、コンポーザブルな [`MapView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-map-view.html) と[`SceneView`](https://developers.arcgis.com/kotlin/toolkit-api-reference/arcgis-maps-kotlin-toolkit/com.arcgismaps.toolkit.geoviewcompose/-scene-view.html) を含む `geoview-compose` モジュールの宣言が必要です。ユーザー認証を実装するには、`authentication` モジュールが必要です。
 
 	Toolkit BOM のバージョンは、宣言したすべての Toolkit コンポーネントに適用されます。
 
@@ -131,7 +131,7 @@ Android Studio の [New Project] ウィザードで作成したプロジェク�
 
    	{{< callout type = "warning" >}}
 
-   	`libs.versions.toml` を手で編集しないでください。代わりに、次のコードを展開し、展開した内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
+   	`libs.versions.toml` を手で編集しないでください。代わりに、次のコードの内容をすべてコピーして `libs.versions.toml` ファイルに貼り付け、新規プロジェクト ウィザードで生成された元の内容を置き換えてください。
 
 ```toml {filename = "gradle/libs.versions.toml"}
 [versions]
@@ -233,9 +233,9 @@ ArcGIS Maps SDK for Kotlinの機能の中には、アプリで使用する際に
 ```
 
 ### Android のストレージと権限
-Android API レベル 30 以降、すべてのアプリは Android デバイスのファイル システムにアクセスするためにスコープ付きストレージを使用します。スコープ付きストレージでは、アプリは (1)自身のファイルと (2)メディア ストア内の共有ファイルにアクセスできます。`<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>` 権限の宣言はサポートされなくなりました。
+Android API レベル 30 以降、すべてのアプリは Android デバイスのファイル システムにアクセスするために[対象範囲別ストレージ](https://developer.android.com/training/data-storage#scoped-storage)を使用します。対象範囲別ストレージでは、アプリは (1)自身のファイルと (2)メディア ストア内の共有ファイルにアクセスできます。`<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>` 権限の宣言はサポートされなくなりました。
 
-Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージとパーミッションの詳細については、次のリンクを参照してください。
+Android のストレージは、API レベル 29 以降、劇的に変化しています。Android のストレージと権限の詳細については、次のリンクを参照してください。
 
 * [データ ストレージとファイル ストレージの概要](https://developer.android.com/training/data-storage?hl=ja#permissions)
 * [Android ストレージのユース ケースとおすすめの方法](https://developer.android.com/training/data-storage/use-cases?hl=ja)

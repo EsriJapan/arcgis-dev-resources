@@ -243,7 +243,7 @@ aliases = ["/create-startup-app-ios/","/tips/ios/create-app/"]
     // 追加終了
     ```
 
-3. デフォルト値を持つ [`Map`](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/) タイプの `map` という名前の @State プロパティー ラッパーを追加します。`arcGISTopographic` ベースマップ スタイルで `Map` を作成し、それを返します。
+3. デフォルト値を持つ [`Map`](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/map/) タイプの `map` という名前の @State プロパティ ラッパーを追加します。`arcGISTopographic` ベースマップ スタイルで `Map` を作成し、それを返します。
 
     ```swift {filename = "ContentView.swift"}
     struct ContentView: View {
@@ -266,14 +266,15 @@ aliases = ["/create-startup-app-ios/","/tips/ios/create-app/"]
 
 -->
 
-{{< callout tyoe = "important">}}
+{{< callout type = "important">}}
 
 ArcGIS Enterprise ユーザーは、ArcGIS Location ベースマップ スタイル サービスにアクセスできません。ArcGIS Enterprise ユーザー向けのアプリを作成する場合は、ユーザーがアクセスできるベースマップを含む `Map` を作成する必要があります。
 
 {{< /callout >}}
 
-4. マップの initialViewpoint プロパティーを、富士山付近の座標を持つ [`Viewpoint`](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/viewpoint/) で設定します。<br>
-縮尺は、視点を作成する上で欠かせない要素です。縮尺によって、地図をどの程度拡大して表示するかが決まります。縮尺とは、地図上の測定値と実世界の測定値との比率のことです。この[換算ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/reference/zoom-levels-and-scale/#conversion-tool)を使用して、ズームレベルと縮尺の関係を把握し、その関連性についてさらに詳しく学びましょう。
+4. マップの initialViewpoint プロパティを、富士山付近の座標を持つ [`Viewpoint`](https://developers.arcgis.com/swift/api-reference/documentation/arcgis/viewpoint/) で設定します。
+   
+    縮尺は、視点を作成する上で欠かせない要素です。縮尺によって、地図をどの程度拡大して表示するかが決まります。縮尺とは、地図上の測定値と実世界の測定値との比率のことです。この[換算ツール](https://developers.arcgis.com/documentation/mapping-and-location-services/reference/zoom-levels-and-scale/#conversion-tool)を使用して、ズームレベルと縮尺の関係を把握し、その関連性についてさらに詳しく学びましょう。
 
     ```swift {filename = "ContentView.swift"}
     struct ContentView: View {
