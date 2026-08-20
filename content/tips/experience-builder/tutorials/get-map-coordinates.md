@@ -10,13 +10,14 @@ aliases = ["/experience/tutorials/"]
 ## 概要
 学習内容：カスタム ウィジェットでマップの緯度と経度、縮尺、ズーム レベルを表示する方法
 
-ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) インスタンスが含まれています。[View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) はマップと対話し、位置情報を取得する方法を提供します。[View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の[空間参照](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html)の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
+ArcGIS Experience Builder 標準のマップ ウィジェットには、ArcGIS Maps SDK for JavaScript の [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) インスタンスが含まれています。[`View`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) はマップと対話し、位置情報を取得する方法を提供します。[`View`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html) のプロパティとイベント ハンドラーを使用して、マップ画面上の任意のポイントの位置に関する現在の[空間参照](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html)の情報、緯度と経度、縮尺、ズーム レベルを確認することができます。確認した情報は、カスタム ウィジェットに表示したり、地球上の他の場所に移動したり、エクスペリエンスの開始時にマップの初期表示範囲を設定したりするために使用できます。
 
 このチュートリアルでは、マップ ウィジェットにアクセスし、カスタム ウィジェットでマウス カーソルが地図上にある時の緯度と経度を表示します。
 
 
 ## 前提条件
-ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) のダウンロード、インストール、設定を行います。
+1. ArcGIS Experience Builder のインストール ガイドを参照して、ArcGIS Experience Builder (Developer Edition) の[ダウンロード、インストール、設定](https://developers.arcgis.com/experience-builder/guide/install-guide/)を行います。
+2. [スターターウィジェットの作成チュートリアル](https://esrijapan.github.io/arcgis-dev-resources/tips/experience-builder/tutorials/create-starter-widget/)を完了してください。これが、このチュートリアルの基礎となります。
 
 
 ## ステップ
@@ -24,14 +25,14 @@ ArcGIS Experience Builder のインストール ガイドを参照して、ArcGI
 1. スターター ウィジェット テンプレートを[こちら](https://developers.arcgis.com/experience-builder/zips/create-a-starter-widget.zip)からダウンロードします。  
 すでに、[スターター ウィジェットの作成](../../tutorials/create-starter-widget/)チュートリアルを完了している場合は、それを使用して開始できます。  
 **/client/your-extensions/widgets** 内のウィジェット フォルダーをコピーしてください。
-2. 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder フォルダー内で、zip ファイルを以下のパスに展開してください。  
+2. 手順 1 でテンプレートをダウンロードした場合は ArcGIS Experience Builder **フォルダー**内で、zip ファイルを以下のパスに展開してください。  
 **/client/your-extensions/widgets**
 
 
 ### ウィジェット名の変更
 1. ArcGIS Experience Builder の **client** フォルダーで `npm start` が実行されたターミナルがある場合、`ctrl + c` を押してスクリプトを停止します。
 2. **ファイル ブラウザー**で Experience Builder が展開されたフォルダーに移動します。
-3. Experience Builder フォルダー内で以下のパスを開きます。  
+3. Experience Builder **フォルダー内**で以下のパスを開きます。  
 **/client/your-extensions/widgets**
 4. **widgets** フォルダー内で、**starter-widget** フォルダーの名前を `get-map-coordinates` に変更します。
 5. 新しく名前を変更した **get-map-coordinates** フォルダー内で、**manifest.json** ファイルをコード エディターで開きます。
@@ -45,7 +46,7 @@ ArcGIS Experience Builder のインストール ガイドを参照して、ArcGI
    "name": "get-map-coordinates",
    "type": "widget",
    "version": "1.17.0",
-   ・・・
+   
 ```
 
 7. **manifest.json** の `version` プロパティの後に `jimu-arcgis` 依存関係を追加します。これを宣言することで、ウィジェット内で [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/) モジュールを使用できるようになります。
@@ -76,7 +77,7 @@ ArcGIS Experience Builder のインストール ガイドを参照して、ArcGI
 
 ``` jsx
 import { React } from 'jimu-core'
-import { type AllWidgetSettingProps } from 'jimu-for-builder'
+import type { AllWidgetSettingProps } from 'jimu-for-builder'
 ```
 
 5. コンポーネントを実装するためのコードを追加します。
@@ -138,7 +139,7 @@ import { JimuMapViewComponent, type JimuMapView } from 'jimu-arcgis'
 const { useState } = React
 ```
 
-2. マウスの位置の緯度と経度のプロパティを表示するには、マウス ポインターの状態を追跡する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として追跡できるように設定します。
+2. マウスの位置の`緯度`と`経度`のプロパティを表示するには、マウス ポインターの状態を追跡する必要があります。これにはコンポーネント内で、`useState()` を使用し [state](https://reactjs.org/docs/state-and-lifecycle.html) として追跡できるように設定します。
 
 ``` jsx
 const { useState } = React
@@ -216,11 +217,13 @@ return (
 コードの変更が完了したら、ArcGIS Experience Builder を実行してエクスペリエンスを表示することでウィジェットをテストできます。
 
 1. Web ブラウザーで、Experience Builder にアクセスします。  
-例：https://localhost:3001  
-Experience Builder タブが開かなかった場合は、https://localhost:3001 にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。
+例：[https://localhost:3001](https://localhost:3001/page/set-portalurl)  
+Experience Builder タブが開かなかった場合は、[https://localhost:3001](https://localhost:3001/page/set-portalurl) にアクセスしてください。「無効な SSL 証明書」の問題が発生した場合は「続行」をクリックします。
 2. Experience Builder で [**新規作成**] をクリックして新しいエクスペリエンス ページを作成します。
 3. [**空白のスクロール**] の [**作成**] ボタンをクリックします。
 4. [**ウィジェットの挿入**] パネルが開きます。そこから、**マップ** ウィジェットと新しく作成した「**Get Map Coordinates**」ウィジェットをエクスペリエンスにドラッグします。  
 作成したウィジェットには無効を示すアイコンが表示されているかもしれませんが、まだアイコンを作成していないため、それは問題ありません。
 5. ウィジェットの設定パネルで、マップを選択するドロップダウンから「**Map**」を選択します。
 6. Experience Builder のツールバーで [**保存**] をクリックし、[**プレビュー**] をクリックすると、カスタム ウィジェットとマップを含むエクスペリエンスが新しいブラウザー タブで開きます。マップ上にマウスを移動させると、カーソルの位置の緯度と経度が表示されます。
+
+Experience Builderのプレビュー画面で、地図にカーソルを合わせると、カスタムウィジェット内の緯度・経度の値が動的に変化します。ご自身のウィジェットを当社の[完成済みのウィジェット](https://developers.arcgis.com/experience-builder/zips/get-map-coordinates.zip)と比較し、このページの上部に掲載されている「エクスペリエンス」の表示例をご確認ください。
