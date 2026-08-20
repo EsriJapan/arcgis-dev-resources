@@ -130,6 +130,8 @@ Android Studio の最新リリースである Meerkat 2024.3.1 以降を使用�
     ```powershell
     flutter create -e display_a_map --platforms ios,android --org com.example.app
     ```
+    [Flutter command-line tool](https://docs.flutter.dev/reference/flutter-cli#flutter-commands) を使えば、Flutter アプリの作成と実行が簡単に行えます。`flutter create -e` を実行すると、最小限のアプリケーション テンプレートに基づいて新しい Flutter プロジェクトが作成されます。生成される `main.dart` にはコメントが含まれておらず、デフォルトの widget test も省略されているため、新しいアプリケーションの開発を始めるための出発点となります。
+
 
 ### テンプレート コードをリファクタリングする
 ArcGIS Maps SDK for Flutter を使用する際、データの変更に応じて UI を更新するなど、アプリケーションの状態を更新する必要が生じることはよくあります。アプリがこうした処理に対応できるよう、ステートフル ウィジェットを実装します。  
@@ -365,7 +367,8 @@ Android、iOS、またはその両方のアプリを開発する際、Flutter �
             </activity>
             ```
             `YOUR_CALLBACK_URL_SCHEME_HERE` を、先ほど[認証を設定した](#認証の設定)際に使用しダイレクト URL のスキームに置き換えてください。これは、ログイン フローが完了した後、ブラウザーがアプリに通信を戻すために必要です。  
-    {{</tab>}}
+
+            たとえば、**my-app://auth** のようなリダイレクト URL がある場合、スキームの値は **my-app** となります。この値は、アクティビティー内の `YOUR_CALLBACK_URL_SCHEME_HERE` を置き換えることになります。
 {{</tabs>}}
 
 ### マップを追加する
