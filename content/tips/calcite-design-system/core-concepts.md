@@ -78,7 +78,7 @@ Calcite コンポーネントには、コンポーネントおよびそのすべ
 
 Calcite コンポーネントでは、ハイドレーションが完了すると `calcite-hydrated` 属性がコンポーネントに追加されます。この属性はアプリケーションをデバッグする際に便利です。
 
-### 定義された際の挙動 (when Defined)
+### 定義された際の挙動 (When defined)
 {{< callout type="warning" >}}
 
 フレームワークを使っている場合や、&lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。
@@ -103,8 +103,6 @@ await document.querySelector("calcite-alert").componentOnReady();
 document.querySelector("calcite-loader").hidden = true;
 ```
 
-{{% details title="もっと詳しく" closed="true" %}}
-
 フレームワークを使用している場合や &lt;script type="module"&gt; を読み込んでいる場合は、`whenDefined()` メソッドを使用する必要はありません。しかし、&lt;script type="module"&gt; を追加できない状況では、非同期関数と [`whenDefined()`](https://developers.arcgis.com/calcite-design-system/core-concepts/#when-defined) を組み合わせて使用する必要があります。
 
 ```js
@@ -114,7 +112,6 @@ document.querySelector("calcite-loader").hidden = true;
   document.querySelector("calcite-loader").hidden = true;
 })();
 ```
-{{% /details %}}
 
 [`requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) のコールバックとしてコンポーネントのメソッドを呼び出すことで、ユーザー インターフェイスがコンポーネントの状態に応じて更新されることが保証されます。例えば、ユーザーの閲覧履歴に基づいて [`calcite-stepper`](https://developers.arcgis.com/calcite-design-system/components/stepper/) の現在のステップを設定したい場合は、[`goToStep()`](https://developers.arcgis.com/calcite-design-system/components/stepper/#component-api-methods-goToStep) メソッドを使用することができます。
 
@@ -133,7 +130,8 @@ document.querySelector("calcite-loader").hidden = true;
 <!-- ボタンのラベルと icon-start 属性 -->
 <calcite-button label="Add new folder" icon-start="folder-plus"></calcite-button>
 ```
-```html
+
+```js
 /* ボタンのラベルとアイコン開始プロパティ */
 document.querySelector("calcite-button").label = "Remove folder";
 document.querySelector("calcite-button").iconStart = "recycle-bin";

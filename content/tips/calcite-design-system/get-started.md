@@ -30,7 +30,7 @@ Calcite コンポーネントをロードする最も一般的な方法は、Arc
 ### マッピングアプリを構築する
 ArcGIS Maps SDK for JavaScript を使用してソリューションを作成する場合、CDN ユーザー向けの[単一の script タグ](https://developers.arcgis.com/javascript/latest/release-notes/#cdn-specific-changes)が用意されています。これには Calcite Design System の [Core API](https://developers.arcgis.com/javascript/latest/references/core/)、[Map components](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts components](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[Coding components](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common components](https://developers.arcgis.com/javascript/latest/references/common-components/)、[AI components](https://developers.arcgis.com/javascript/latest/references/ai-components/)が含まれています。
 
-```cmd
+```html
 <script type="module" src="https://js.arcgis.com/5.1"></script>
 ```
 
@@ -59,7 +59,7 @@ Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/p
 #### アセットの読み込み
 一部のコンポーネント（例：`calcite-icon`、`calcite-date-picker`）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。
 
-ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリーにコピーできます。互換性を維持するため、ローカルのアセットは「`assets`」という名前のディレクトリーに配置してください。
+ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリーにコピーできます。互換性を維持するため、ローカルのアセットは `assets` という名前のディレクトリーに配置してください。
 
 例えば、次のコマンドを使用してアセットをコピーできます。
 
@@ -100,7 +100,7 @@ import "@esri/calcite-components/components/calcite-slider";
 ```
 
 #### ディストリビューション ビルド
-ディストリビューション ビルドでは、グローバル `ウィンドウ` オブジェクトにカスタム要素を定義する必要があります。カスタム要素 ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
+ディストリビューション ビルドでは、`ウィンドウ` グローバル オブジェクトにカスタム要素を定義する必要があります。カスタム要素ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
 
 ``` js
 import { defineCustomElements } from "@esri/calcite-components/loader";
