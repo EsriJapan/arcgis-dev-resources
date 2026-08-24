@@ -37,12 +37,10 @@ aliases = ["/create-startup-app-js/","/tips/javascript/create-app/"]
 ### 新しい Pen の作成
 [CodePen](https://codepen.io/pen/?editors=1000) にアクセスして、マッピングアプリケーション用の新しい Pen を作成します。
 
-{{% details title="より詳細に" closed="true" %}}
-CodePen では、`<!doctype html></html>` タグは不要です。別のエディターを使用している場合やローカルサーバーでページを実行する場合は、開始タグと終了タグの両方を必ず追加してください。
-{{% /details %}}
+CodePen では、`<!doctype html>` タグは不要です。別のエディターを使用している場合やローカルサーバーでページを実行する場合は、開始タグと終了タグの両方を必ず追加してください。
 
-### 基本的なHTMLの追加
-基本的なHTMLページを定義します。
+### 基本的な HTML の追加
+基本的な HTML ページを定義します。
   1. **CodePen** > **HTML** で、基本的なページを作成するための HTML を追加してください。 
   ```html
 <html lang="ja">
@@ -89,10 +87,10 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
 
 ### アクセス トークンの取得
 このチュートリアルで使用される[位置情報サービス](https://developers.arcgis.com/documentation/glossary/arcgis-location-services/)にアクセスするには、適切な権限を持つ[アクセス トークン](https://developers.arcgis.com/documentation/glossary/access-token/)が必要です。
-  1. [API キーの取得](../../get-api-key/)のチュートリアルを参照し、以下の[権限](https://developers.arcgis.com/documentation/glossary/privileges/)を持つ [API キ](https://developers.arcgis.com/documentation/glossary/api-key/)ーを作成してください。  
+  1. [API キーの取得](../../get-api-key/)のチュートリアルを参照し、以下の[権限](https://developers.arcgis.com/documentation/glossary/privileges/)を持つ [API キー](https://developers.arcgis.com/documentation/glossary/api-key/)を作成してください。  
       * **権限**
       * **Location services** > **Basemaps**
-  2. **CodePen** では、グローバル `esriConfig`変数 の `apiKey` プロパティに、アクセストークンを設定してください。
+  2. **CodePen** では、`esriConfig` グローバル変数 の `apiKey` プロパティに、アクセス トークンを設定してください。
   ``` html
 <html lang="ja">
   <head>
@@ -126,7 +124,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
   ```
   アクセス トークンを取得するその他の方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
 
-### ArcGIS Maps SDK for JavaScriptのスクリプトタグを追加する
+### ArcGIS Maps SDK for JavaScriptのスクリプト タグを追加する
   1. `<head>` タグ内に、JavaScript Maps SDK 用の `<script>` タグを追加します。
   ``` html
 <html lang="ja">
@@ -151,7 +149,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込みを追加 -->
-    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
     <!-- 追加終了 -->
   </head>
 
@@ -188,7 +186,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込み -->
-    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
   </head>
 
   <body>
@@ -202,7 +200,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
 </html>
   ```
 
-  2. `<arcgis-map>` コンポーネント内に、`<arcgis-zoom>` コンポーネントを追加します。これにより、ユーザーはマウス ホイールを使用せずにズームインおよびズームアウトが可能になります。
+  2. `<arcgis-map>` コンポーネント内に、`<arcgis-zoom>` コンポーネントを追加します。これにより、ユーザーはマウス ホイールを使用せずにズーム インおよびズーム アウトが可能になります。
   ``` html
 <html lang="ja">
   <head>
@@ -226,7 +224,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込み -->
-    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
   </head>
 
   <body>
@@ -242,7 +240,7 @@ CodePen では、`<!doctype html></html>` タグは不要です。別のエデ�
 
 ### アプリを実行
 **CodePen** でコードを実行してマップを表示してください。
-マップには、富士山を中心とした地形[ベースマップレイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)が表示されます。  
+マップには、富士山を中心とした地形図[ベースマップ レイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)が表示されます。  
 
 ## 次のチュートリアル
 以下のチュートリアルで、追加の [SDK 機能](https://developers.arcgis.com/javascript/latest/key-features/)と [ArcGIS サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)の使用方法を学びましょう（英語ページ）。

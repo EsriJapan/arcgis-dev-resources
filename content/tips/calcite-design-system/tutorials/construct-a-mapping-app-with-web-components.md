@@ -63,7 +63,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 </html>
 ```
 
-3. `<head>` 要素に、Calcite コンポーネントと [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/) への参照を追加します。CDN ユーザー向けの単一のスクリプトタグの詳細については、[マッピングアプリの構築](https://developers.arcgis.com/calcite-design-system/get-started/#build-mapping-apps)をご覧ください。
+3. `<head>` 要素に、Calcite コンポーネントと [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/) への参照を追加します。CDN ユーザー向けの単一のスクリプト タグの詳細については、[マッピング アプリの構築](https://developers.arcgis.com/calcite-design-system/get-started/#build-mapping-apps)をご覧ください。
 
 ```html
 <head>
@@ -72,7 +72,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
   <title>Calcite Components: Create a mapping app with web components</title>
 
   <!-- 追加開始 -->
-  <script type="module" src="https://js.arcgis.com/5.0/"></script>
+  <script type="module" src="https://js.arcgis.com/5.1/"></script>
   <!-- 追加終了 -->
 
 </head>
@@ -111,13 +111,13 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 </body>
 ```
 
-2. 次に、[`arcgis-zoom`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/) コンポーネントを追加し、[`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) コンポーネントに対する`位置`を設定します。
+2. 次に、[`arcgis-zoom`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/) コンポーネントを追加し、[`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) コンポーネントに対する `slot` を設定します。
 
 ```html
 <body>
     <arcgis-map id="mapEl" item-id="03d584a7c9874b44821c6a766c3bbc11">
         <!-- 追加開始 -->
-        <arcgis-zoom position="top-left"></arcgis-zoom>
+        <arcgis-zoom slot="top-left"></arcgis-zoom>
         <!-- 追加終了 -->
     </arcgis-map>
 </body>
@@ -126,9 +126,9 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 この時点でアプリケーションは[マップ](https://developers.arcgis.com/documentation/glossary/map/)を表示します。 次に、Calcite コンポーネントを使ってアプリのユーザー インターフェイスを構築します。
 
 ### レイアウトの作成
-レイアウトを作るために、スロットを使ってページ上の他のコンポーネントを整理する [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) を使います。スロットは Web コンポーネントの概念であり、[コア コンセプトのセクション](../../core-concepts/#スロット)に簡単な説明があります。Calcite コンポーネントにスロットがある場合は、その一覧が[リファレンス ページ](https://developers.arcgis.com/calcite-design-system/components/)に記載されています。たとえば、こちらが [シェルのスロット](https://developers.arcgis.com/calcite-design-system/components/shell/#slots)です。
+レイアウトを作るために、スロットを使ってページ上の他のコンポーネントを整理する [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) を使います。スロットは Web コンポーネントの概念であり、[コア コンセプトのセクション](../../core-concepts/#スロット)に簡単な説明があります。Calcite コンポーネントにスロットがある場合は、その一覧が[リファレンス ページ](https://developers.arcgis.com/calcite-design-system/components/)に記載されています。たとえば、こちらの [shell のスロット](https://developers.arcgis.com/calcite-design-system/components/shell/#slots) を参照してください。
 
-1. [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) コンポーネントを追加し、[`content-behind`](https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-properties-contentBehind) 属性を設定して、ユーザーがシェルの背後にある[地図](https://developers.arcgis.com/documentation/glossary/map/)と操作できるようにします。
+1. [`calcite-shell`](https://developers.arcgis.com/calcite-design-system/components/shell/) コンポーネントを追加し、[`content-behind`](https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-properties-contentBehind) 属性を設定して、ユーザーが shell の背後にある[マップ](https://developers.arcgis.com/documentation/glossary/map/)と操作できるようにします。
 
 ```html
 <body>
@@ -136,7 +136,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
     <calcite-shell content-behind>
     <!-- 追加終了 -->
         <arcgis-map id="mapEl" item-id="03d584a7c9874b44821c6a766c3bbc11">
-            <arcgis-zoom position="top-left"></arcgis-zoom>
+            <arcgis-zoom slot="top-left"></arcgis-zoom>
         </arcgis-map>
     <!-- 追加開始 -->
      </calcite-shell>
@@ -144,9 +144,9 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 </body>
 ```
 
-2. 次に、[`calcite-shell-panel`](https://developers.arcgis.com/calcite-design-system/components/shell-panel/) コンポーネントを追加し、それをシェルの [`"panel-end"`](https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-slots-panel-end) スロットに配置します。
+2. 次に、[`calcite-shell-panel`](https://developers.arcgis.com/calcite-design-system/components/shell-panel/) コンポーネントを追加し、それを shell の [`"panel-end"`](https://developers.arcgis.com/calcite-design-system/components/shell/#api-reference-slots-panel-end) スロットに配置します。
 
-3. 次に、シェル パネルの [`displayMode`](https://developers.arcgis.com/calcite-design-system/components/shell-panel/#api-reference-properties-displayMode) 属性を `"float"` に設定して、コンテンツが[地図](https://developers.arcgis.com/documentation/glossary/map/)の上に浮かんで表示されるようにします。
+3. 次に、shell panel の [`displayMode`](https://developers.arcgis.com/calcite-design-system/components/shell-panel/#api-reference-properties-displayMode) 属性を `"float"` に設定して、コンテンツが[マップ](https://developers.arcgis.com/documentation/glossary/map/)の上に浮かんで表示されるようにします。
 
 ```html
     <calcite-shell content-behind>
@@ -156,7 +156,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
         </calcite-shell-panel>
         <!-- 追加終了 -->
         <arcgis-map id="mapEl" item-id="03d584a7c9874b44821c6a766c3bbc11">
-            <arcgis-zoom position="top-left"></arcgis-zoom>
+            <arcgis-zoom slot="top-left"></arcgis-zoom>
         </arcgis-map>
      </calcite-shell>
 ```
@@ -198,7 +198,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
     * 対応する `data-action-id` の値を、ブロックの `data-block-id` 属性に指定します。
     * アプリの初期化時にコンポーネントとそのコンテンツが表示されないように、`hidden` 属性を追加します。
 
-2. [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) に、[`arcgis-layer-list`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) マップ コンポーネントをスロットに挿入します。
+2. [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) に、[`arcgis-layer-list`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) マップ コンポーネントを配置します。
     * `reference-element` にマップ コンポーネントの `id` に設定します。
 
 ```html
@@ -260,7 +260,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 
 2. [`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) コンポーネントを追加します。
 
-3. カードに以下の子要素を、固有の `ID` を付けて追加します。
+3. カードに以下の子要素を、固有の `id` を付けて追加します。
     * カードの `thumbnail` スロットに `img` 要素を定義します。
     * 3 つの `div` 要素を追加してください。1 つは `heading` スロットに、もう 1 つは `description` スロットに、最後の 1 つは `footer-end` スロットに配置します。
 
@@ -337,7 +337,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 
 ```
 
-### コンポーネントをインタラクティブにする
+### コンポーネントを動的に変更
 次のステップは、対応する [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) コンポーネントをクリックしたときに、マップ コンポーネントを含む [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントを表示します。
 
 1. 各 [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) がクリックされたときに実行される関数を作成します。この関数は、現在表示されている [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) を非表示にし、クリックされたアクションに対応するブロックを表示します。ユーザーが現在アクティブなアクションをクリックした場合、対応するブロックは閉じられ、展開されたブロックは存在しなくなります。
@@ -417,7 +417,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```
 
 ### スタイルの追加
-`<style>` 要素内で、見出しの [`calcite-panel`](https://developers.arcgis.com/calcite-design-system/components/panel/) と情報の [`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) のユーザー インターフェースを強化するために、追加の CSS を記述します。
+`<style>` 要素内で、見出しの [`calcite-panel`](https://developers.arcgis.com/calcite-design-system/components/panel/) と情報の [`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) のユーザー インターフェイスを強化するために、追加の CSS を記述します。
 
 1. `calcite-icon` をパネルの `"header-actions-start"` にスロットしている場合、そのコンポーネントを整列させるために [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex_containerk) の変数を追加します。
 
@@ -466,7 +466,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 </style>
 ```
 
-3. 最後に、[`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) にスタイルを追加してください。具体的には、コンポーネントに`パディング`を追加し、[CSS 変数](https://developers.arcgis.com/calcite-design-system/foundations/tokens/reference/#font)を使って`フォント サイズ`を更新し、タグを `flex-wrap` で折り返すようにしてください。
+3. 最後に、[`calcite-card`](https://developers.arcgis.com/calcite-design-system/components/card/) にスタイルを追加してください。具体的には、コンポーネントに `padding` を追加し、[CSS 変数](https://developers.arcgis.com/calcite-design-system/foundations/tokens/reference/#font)を使って `font-size` を更新し、タグを `flex-wrap` で折り返すようにしてください。
 
 ```html
 <style>
@@ -495,6 +495,6 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```
 
 ### アプリの実行
-<b>CodePen</b> でコードを実行すると、アプリケーションが表示されます。
+**CodePen** でコードを実行すると、アプリケーションが表示されます。
 
 アプリケーションの読み込みが完了すると、[マップ](https://developers.arcgis.com/documentation/glossary/map/)が表示され、[Web マップ](https://developers.arcgis.com/documentation/glossary/web-map/)のタイトルと [`calcite-action-bar`](https://developers.arcgis.com/calcite-design-system/components/action-bar/) も一緒に表示されます。[`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) コンポーネントをクリックすると、[`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントが展開・折りたたみされます。これらのブロックには、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/) のマップ コンポーネントが含まれています。
