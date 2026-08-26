@@ -8,20 +8,20 @@ aliases = ["/immutable-objects/"]
 
 ## イミュータブル オブジェクトとは
 **イミュータビリティ** (不変性) とは、一度作成されたデータは変更できないという性質を指します。
-対して、ミュータブル (可変) なデータは作成後に変更可能です。
-JavaScript のオブジェクトや配列はデフォルトでミュータブルですが、[React](https://react.dev/) や [Redux](https://redux.js.org/) では状態更新をイミュータブルに行うことが推奨されています。
-ArcGIS Experience Builder では、[seamless-immutable](https://www.npmjs.com/package/seamless-immutable-mod) ライブラリーを使用して、不変性を実現しています。
+一方、ミュータブル (可変) なデータは作成後に変更可能です。
+JavaScript のオブジェクトや配列はデフォルトでミュータブルですが、[React](https://react.dev/) や [Redux](https://redux.js.org/) では状態をイミュータブルに更新することが求められます。
+ArcGIS Experience Builder では、[seamless immutable](https://www.npmjs.com/package/seamless-immutable-mod) ライブラリーを使用して、データの不変性を確保しています。
 
 ## なぜイミュータブル オブジェクトを使うのか
-ArcGIS Experience Builder が基盤としている React と Redux は、次の理由でイミュータブルな状態更新が必要です。
-- **予測可能な状態変化**: 不変の更新により、状態がいつ、どのように変化したかを追跡しやすくなります
-- **パフォーマンス最適化**: React は、何が再レンダリングされる必要があるかを効率的に判断できます
-- **デバッグ**: 不変のデータがあれば、状態の変化を追跡したり、問題を特定したりするのが容易になります
+ArcGIS Experience Builder が基盤としている React と Redux は、次の理由から状態をイミュータブルに更新する必要があります。
+- **予測可能な状態変化**: イミュータブルな更新により、状態がいつ、どのように変化したかを追跡しやすくなります。
+- **パフォーマンスの最適化**: React は、再レンダリングが必要な箇所を効率的に判断できます。
+- **デバッグ**: イミュータブルなデータを使用すると、状態の変化を追跡したり、問題を特定したりするのが容易になります。
 
 ## イミュータブル型  
 Experience Builder 内のイミュータブル型は、次のように慣例として `IM` で始まります。
 
-```javascript
+```jsx
 // Examples of immutable types
 interface IMConfig {
   title: string;
@@ -64,16 +64,16 @@ const mergedConfig = config.merge({
   }
 });
 ```
-イミュータブル オブジェクトの更新に利用できるメソッドは下記があります。
+イミュータブル オブジェクトの更新に利用できるメソッドは次のとおりです。
 
-| 方法 | 説明 | 例 |
+| メソッド | 説明 | 例 |
 |----|----|----|
-| `set()` | 単一プロパティを設定 | `obj.set('title', 'New Title')` |
+| `set()` | 単一のプロパティを設定 | `obj.set('title', 'New Title')` |
 | `setIn()` | ネストされたプロパティを設定 | `obj.setIn(['user', 'name'], 'John')` |
-| `merge()` | 複数プロパティを統合 | `obj.merge({title: 'New', active: true})` |
+| `merge()` | 複数のプロパティを統合 | `obj.merge({title: 'New', active: true})` |
 
 ### 配列へのアイテムの追加
-イミュータブルな配列へのアイテムの追加方法を下記に例示します。
+次の例は、イミュータブルな配列にアイテムを追加する方法を示しています。
 
 ```jsx
 // Recommended approach
@@ -87,8 +87,8 @@ mutableArray.push(newItem);
 const immutableArray = Immutable(mutableArray);
 ```
 
-### 配列からのアイテムの消去
-イミュータブルな配列からアイテムを消去する方法を下記に例示します。
+### 配列からのアイテムの削除
+次の例は、イミュータブルな配列からアイテムを削除する方法を示しています。
 
 ```jsx
 // Remove item by ID
@@ -152,15 +152,15 @@ for (let i = 0; i < 100000; i ++) {
 const imNewObject = imObject.merge(modifierObject)
 ```
 
-### パフォーマンスのベストプラクティス
-イミュータブルなオブジェクトに関するパフォーマンスのベストプラクティスを、下表で示します。
+### パフォーマンスのベスト プラクティス
+イミュータブルなオブジェクトに関するパフォーマンスのベスト プラクティスを次の表に示します。
 
 | シナリオ | 推奨される方法 | 理由 |
 |----|----|----|
-| 単一プロパティの更新 | `set()` または `setIn()` | 効率的 |
-| 複数プロパティの更新 | `merge()` | オブジェクトの生成数を削減 |
+| 単一のプロパティの更新 | `set()` または `setIn()` | 効率的 |
+| 複数のプロパティの更新 | `merge()` | オブジェクトの生成数を削減 |
 | 配列のフィルタリング | `flatMap()` | 機能的なアプローチ |
-| 複数操作をまとめて行う | `asMutable()` に続けて `Immutable()` | 中間オブジェクトの削減 |
+| 配列に対する複数の操作をまとめて行う | `asMutable()` に続けて `Immutable()` | 中間オブジェクトの削減 |
 | 深い階層のオブジェクト更新 | `setIn()` | ディープ クローニングの回避 |
 
 ## リソース

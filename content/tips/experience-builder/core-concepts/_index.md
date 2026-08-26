@@ -10,7 +10,7 @@ alwaysopen = false
 
 ArcGIS Experience Builder Developer Edition は、開発者がノー コード/ロー コード アプローチでカスタム Web アプリケーションを作成できる Web アプリケーション フレームワークです。 ArcGIS のサービスやデータと統合できる、インタラクティブで応答性の高いアプリケーションを構築するためのツールやコンポーネントのセットを提供します。
 
-開発者は、カスタム ウィジェット、テーマ、およびアクションを作成して、ArcGIS Experience Builder を拡張できます。**Jimu** と呼ばれるこの拡張性フレームワークにより、開発ニーズに合ったアプリケーションを構築することができる。
+開発者は、カスタム ウィジェット、テーマ、およびアクションを作成して、ArcGIS Experience Builder を拡張できます。**Jimu** と呼ばれるこの拡張性フレームワークにより、開発ニーズに合ったアプリケーションを構築することができます。
 
 ## Jimu とは
 [Jimu](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/) は、ArcGIS Experience Builder の拡張フレームワークであり、開発者がカスタム ウィジェット、テーマ、およびアクションを作成できるようにするものです。Jimu は、Experience Builder アプリケーションの機能を拡張するための一連の API とツールを提供します。
@@ -26,7 +26,7 @@ Jimu フレームワークは、以下を含むいくつかの技術の上に構
 
 - 型宣言によるエラー検出
 - よりよい IDE エクスペリエンス
-- セルフ-ドキュメント コード
+- セルフドキュメント コード
 - より読みやすく、わかりやすい
 
 ## コア コンセプト
@@ -36,9 +36,9 @@ Experience Builder のエクスペリエンスは、Web アプリケーション
 |:---|:---:|
 | [Page](https://developers.arcgis.com/experience-builder/guide/core-concepts/page/) |1 つの画面に、複数のセクションやビューを含めることができます。|  
 | [Window](https://developers.arcgis.com/experience-builder/guide/core-concepts/window/) | ページと同様に、固定表示モードやアンカー表示モードに対応した、設定可能なコンテナーです。 |
-| [Section and view](https://developers.arcgis.com/experience-builder/guide/core-concepts/section-view/) | セクションとは、複数のビューを含めることができるページの一部です。ビューとは、ページやウィンドウのようなレイアウトコンテナですが、セクション内にのみ配置することができます。 |
+| [Section and view](https://developers.arcgis.com/experience-builder/guide/core-concepts/section-view/) | セクションとは、複数のビューを含めることができるページの一部です。ビューとは、ページやウィンドウのようなレイアウト コンテナーですが、セクション内にのみ配置することができます。 |
 | [Screen group](https://developers.arcgis.com/experience-builder/guide/core-concepts/screen/) | アプリケーションのレイアウトを整理・管理するために使用できる一連の画面。 |
-| [Layout](https://developers.arcgis.com/experience-builder/guide/core-concepts/layout/) | レイアウトコンテナー内のウィジェット、セクション、またはスクリーン グループにおけるコンテンツの配置を定義します。 |
+| [Layout](https://developers.arcgis.com/experience-builder/guide/core-concepts/layout/) | レイアウト コンテナー内のウィジェット、セクション、またはスクリーン グループにおけるコンテンツの配置を定義します。 |
 | [Theme](https://developers.arcgis.com/experience-builder/guide/core-concepts/theme/) | アプリケーションの視覚的なスタイルや外観。これには、色、フォント、その他のデザイン要素が含まれます。 |
 | [Widget](https://developers.arcgis.com/experience-builder/guide/core-concepts/widget/) | ページやセクションに追加できる再利用可能なコンポーネント。ウィジェットはデータを表示したり、インタラクティブな機能を提供したり、ユーザー体験を向上させたりすることができます。 |
 | [Jimu](https://developers.arcgis.com/experience-builder/guide/core-concepts/jimu/) | ArcGIS Experience Builder の拡張性フレームワーク。開発者がカスタム ウィジェット、テーマ、アクションを作成できるようにするものです。 |
@@ -96,7 +96,3 @@ ArcGIS Experience Builder はモバイル対応を前提に設計されており
 
 - [高速モード (Express mode)](https://doc.arcgis.com/ja/experience-builder/latest/build-apps/express-mode.htm) (外部サイトに移動します)
 - [高度な書式設定](https://doc.arcgis.com/ja/experience-builder/latest/configure-widgets/advanced-formatting.htm) (外部サイトに移動します)
-
-
-
-
