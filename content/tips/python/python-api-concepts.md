@@ -49,7 +49,7 @@ Python API は次の環境と動作要件が必要です。
 
 * オペレーティング システム</br>
   * Windows (64 ビット) /macOS/ Linux</br>
-* Python バージョン 3.10.x - 3.12.x
+* Python バージョン 3.10.x - 3.13.x
 
 * 開発環境
   * [Jupyter Notebook](http://jupyter.org/)※
