@@ -5,6 +5,8 @@ weight = 3
 aliases = ["/python/python-api-install/"]
 +++
 
+出典：ArcGIS API for Python - [Install anf set up - ArcGIS Pro](https://developers.arcgis.com/python/latest/guide/install-and-set-up/arcgis-pro/)
+
 Python には、ArcGIS Pro で使用できるパッケージが豊富に用意されています。Python パッケージの使用を簡素化するために、ArcGIS Pro には [conda](https://docs.conda.io/en/latest/) と呼ばれるパッケージ管理システムが含まれています。 conda は、パッケージとその依存関係のインストールや更新の手間を省きます。
 個のガイドでは ArcGIS Pro を使用したインストールの流れについてご紹介します。
 
@@ -217,6 +219,9 @@ arcgis.__version__
 
 ### 参考
 #### オフライン時のインストール方法
+
+出典：ArcGIS API for Python - [Install anf set up - Offline](https://developers.arcgis.com/python/latest/guide/install-and-set-up/offline/)
+
 
 インターネットに接続していない環境の場合、次の手順で Python API のインストールが可能です。<br>
 ただし、この場合、すべての依存パッケージがインストールされるわけではないため、Jupyter Notebook の利用など、一部の機能が制限される可能性があります (※ 組織やコンテンツの管理など特定のタスクは以下手順でインストールする [six](https://pypi.org/project/six/) パッケージのみで可能です。)<br>
