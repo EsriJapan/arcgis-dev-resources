@@ -58,6 +58,10 @@ params:
     tabs :
       sync: false
 
+disableKinds:
+  - taxonomy
+  - term
+  
 services:
   googleAnalytics:
     ID: G-CZ63B79ERR
