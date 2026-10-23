@@ -291,7 +291,7 @@ end
 [グリッドベースの変換](https://developers.arcgis.com/flutter/geometry-and-spatial-reference/spatial-reference/#projection-engine-grid-based-transformation-data-files)を使用している場合は、ダウンロード ページからサポートする [投影エンジン ファイル](https://developers.arcgis.com/flutter/downloads/#projection-engine-data)をダウンロードしてください。 座標系、投影、測地系変換の操作に関する詳細は、[Spatial references トピック](https://developers.arcgis.com/flutter/geometry-and-spatial-reference/spatial-reference/)を参照してください。
 
 #### Electronic Navigational Charts (ENC)
-航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/)の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf) に準拠した ENC をサポートしています。
+航海用電子海図（ENC）は、水路や海上の情報を可視化し、分析するためのジオリファレンスされたベクター データセットです。SDK は、[国際水路機関（IHO）](https://iho.int/en/)の [S-57 規格](https://iho.int/uploads/user/pubs/standards/s-57/31Main.pdf)に準拠した ENC をサポートしています。
 
 航海用電子海図 (ENC) を使用する場合は、ダウンロード ページから [hydrography](https://developers.arcgis.com/kotlin/downloads/#hydrography-data) データをダウンロードします。
 
