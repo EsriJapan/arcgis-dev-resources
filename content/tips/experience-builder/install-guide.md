@@ -269,6 +269,47 @@ Experience Builder の開発では、ローカルの Experience Builder で使�
 5. ArcGIS Enterprise 組織の URL を指定し、このセクションの最初で作成した`クライアント ID` を貼り付けます。
 
 
+### オフライン Node cache（1.20 以前）
+バージョン 1.20 以前の場合、Experience Builder の Developer edition では、`npm` を使用して依存関係をインストールします。以下の手順に従って、オフライン用の Node cashe ZIP ファイルを使用してください。
+
+1. Experience Builder は Node.js を使用しています。お使いの Experience Builder のバージョンに対応する [推奨された Node バージョン](https://developers.arcgis.com/experience-builder/guide/release-versions/)を確認し、お使いのオペレーティング システムに対応したそのバージョンの [Node.js](https://nodejs.org/en/download/) をダウンロードしてインストールしてください。
+
+2. Experience Builder（Developer edition） を[ダウンロード](https://developers.arcgis.com/experience-builder/guide/downloads/)し、ローカル ドライブに解凍してください。
+
+3. Experience Builder（Developer Edition）の [Node cache ZIP](https://developers.arcgis.com/experience-builder/guide/downloads/) ファイルをダウンロードし、ローカル ドライブに解凍してください。
+
+4. コマンド プロンプトまたはターミナルで、ユーザー フォルダを開きます。`npm config get cache` と入力し、Enter キーを押します。フォルダのパスが表示されます。
+{{< callout type="info" >}}
+- Windows では、ユーザー フォルダーは `C:\Users\my_username` のようなパスになります。
+- macOSでは、ユーザー フォルダーは `/Users/my_username` のような形式になります。
+{{< /callout >}}
+
+5. 前の手順で取得したフォルダーのパスをコピーし、Windows エクスプローラーまたは Finder でそのディレクトリーを開きます。
+
+6. (手順3で) ダウンロードした Node cache ファイルを、このディレクトリーにコピーしてください。
+
+7. コマンド プロンプトまたはターミナル ウィンドウを開きます。
+
+8. ターミナル内で、`cd` コマンドを使用して、このセクションの冒頭で解凍した Experience Builder ファイルの `/client` ディレクトリーに移動します。
+
+9. `npm install --offline` と入力し、`Enter` キーを押して、必要なモジュールをインストールしてください。
+
+10. 別のコマンド プロンプトまたはターミナル ウィンドウを開きます。
+
+11. ターミナル内で、`cd` コマンドを使用して、このセクションの冒頭で解凍した Experience Builder ファイルの `/server` ディレクトリーに移動します。
+
+12. `npm install --offline` と入力し、`Enter` キーを押して、必要なモジュールをインストールしてください。
+
+
+## オフライン ライブラリーのインストール
+オフライン環境では、Experience Builder の実行に必要な CDN ライブラリーにアクセスできません：
+1. ArcGIS Maps SDK for JavaScript CDN
+2. Calcite Components CDN
+
+このため、これらのライブラリーをダウンロードしてローカルにホストし、Experience Builder (Developer Edition) で、そのローカルにホストされたバージョンを使用するように設定する必要があります。
+
+
+詳細については[インストール ガイド](https://esrijapan.github.io/arcgis-dev-resources/tips/javascript/install-jsapi/)をご参照ください。
 ## Windows サービスとしてインストール
 
 1. お使いの OS に対応した最新の [Node.js LTS バージョン](https://nodejs.org/en/download/)をダウンロードし、インストールしてください。
