@@ -291,7 +291,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 次に、ナビゲーション ロゴの [`heading`](https://developers.arcgis.com/calcite-design-system/components/navigation-logo/#api-reference-properties-heading) と情報パネルに [Web マップ](https://developers.arcgis.com/documentation/glossary/web-map/)のコンテンツを反映させます。
 
 1. 既存の JavaScript コードの `<script>` 要素の中に、[`arcgisViewReadyChange`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/#events) イベントを使用して、マップが[非同期](https://developers.arcgis.com/documentation/glossary/asynchronous/)で読み込みが完了するのを待ちます。
-2. マップが読み込まれると、[`querySelector()` メソッド](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)を使用して DOM にアクセスし、コンテンツを格納します。
+2. マップが読み込まれると、支援技術にマップのコンテキストを提供するために [aria](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#aria) プロパティを追加し、[`querySelector()` メソッド](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)を使用して DOM にアクセスし、コンテンツを格納します。
 3. 次に、[`--arcgis-layout-overlay-space-left`](https://developers.arcgis.com/javascript/latest/building-your-ui/#map-component-layout-css-variables) CSS 変数を追加して、[`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/)のコンテンツ間隔を調整し、[ArcGIS Maps SDK for JavaScript コンポーネント](https://developers.arcgis.com/javascript/latest/components/)用のスペースを確保します。
 
 ``` HTML

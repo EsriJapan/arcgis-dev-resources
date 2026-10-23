@@ -22,7 +22,7 @@ Calcite コンポーネントは、Web アプリケーションを構築する�
 Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを記述することでロードできます:
 
 ``` html
-<script type="module" src="https://js.arcgis.com/calcite-components/5.1"></script>
+<script type="module" src="https://js.arcgis.com/calcite-components/5.2"></script>
 ```
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
@@ -64,7 +64,7 @@ Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/p
 例えば、次のコマンドを使用してアセットをコピーできます。
 
 ```cmd
-cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./your-asset-directory/
+cp -r node_modules/@esri/calcite-components/dist/cdn/assets/* ./your-asset-directory/
 ```
 
 アセットが用意できたら、アプリケーション内でアセットのパスを設定してください
@@ -73,6 +73,10 @@ cp -r node_modules/@esri/calcite-components/dist/calcite/assets/* ./your-asset-d
 import { setAssetPath } from "@esri/calcite-components";
 setAssetPath("/path-to-your-assets/");
 ```
+
+{{< callout type="info" >}}
+アセット（そのデフォルトの構造を含む）は、どのリリースにおいても、互換性を損なう変更とはみなされることなく変更される可能性があります。
+ {{< /callout >}}
 
 #### スタイルのインポート
 次に、カスケードスタイルシート（CSS）を読み込みます。ほとんどのフレームワークでは、Calcite の CSS は自動的に読み込まれます。ただし、Angular などの一部のフレームワークでは、プロジェクトのルート スタイル シート（`src/styles.css`）で手動でのインポートが必要です。
