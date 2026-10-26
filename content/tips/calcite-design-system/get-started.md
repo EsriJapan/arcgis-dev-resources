@@ -10,15 +10,15 @@ aliases = ["/calcite-desgin-sysytem/get-started/"]
 ## はじめに
 Calcite コンポーネントは、Web アプリケーションを構築するための、柔軟でフレームワークに依存しない Web コンポーネントの豊富なライブラリーです。[Web コンセプトのページ](https://developers.arcgis.com/calcite-design-system/core-concepts/) では、Calcite Design System の構成要素について説明しています。
 
-例題、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、[コンポーネント ドキュメント](https://developers.arcgis.com/calcite-design-system/components/)をご覧ください。以下の手順で、Calcite コンポーネントを使い始めることができます。
+使用例や、プロパティ、スロット、スタイル、イベント、モードなどの API リファレンスについては、[コンポーネント ドキュメント](https://developers.arcgis.com/calcite-design-system/components/)をご覧ください。以下の手順で、Calcite コンポーネントを使い始めることができます。
 
-### 前提条件
+## 前提条件
 
 まず、Calcite コンポーネントを使用するには、ArcGIS アカウントが必要です。アカウントをお持ちでない場合は、無料で作成することができます。
 
 作成方法は、[開発者アカウントの作成](https://esrijapan.github.io/arcgis-dev-resources/guide/get-dev-account/)をご覧ください。
 
-### CDN で利用する
+## CDN で利用する
 Calcite コンポーネントをロードする最も一般的な方法は、ArcGIS CDN にホストされているバージョンを使用することです。コンポーネントは、HTML ドキュメントの head セクションに `<script>` タグを記述することでロードできます:
 
 ``` html
@@ -27,14 +27,14 @@ Calcite コンポーネントをロードする最も一般的な方法は、Arc
 
 これらのタグを追加すると、他の HTML 要素と同様にコンポーネントを使用することができます。アプリケーションで使用されるコンポーネントのみが読み込まれます。
 
-### マッピングアプリを構築する
-ArcGIS Maps SDK for JavaScript を使用してソリューションを作成する場合、CDN ユーザー向けの[単一の script タグ](https://developers.arcgis.com/javascript/latest/release-notes/#cdn-specific-changes)が用意されています。これには Calcite Design System の [Core API](https://developers.arcgis.com/javascript/latest/references/core/)、[Map components](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts components](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[Coding components](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common components](https://developers.arcgis.com/javascript/latest/references/common-components/)、[AI components](https://developers.arcgis.com/javascript/latest/references/ai-components/)が含まれています。
+### マッピング アプリを構築する
+ArcGIS Maps SDK for JavaScript を使用してソリューションを作成する場合、CDN ユーザー向けの[単一の script タグ](https://developers.arcgis.com/javascript/latest/release-notes/#cdn-specific-changes)が用意されています。これには Calcite Design System の [Core API](https://developers.arcgis.com/javascript/latest/api-reference/)、[Map components](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts components](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[Coding components](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common components](https://developers.arcgis.com/javascript/latest/references/common-components/)、[AI components](https://developers.arcgis.com/javascript/latest/references/ai-components/)が含まれています。
 
 ```html
 <script type="module" src="https://js.arcgis.com/5.1"></script>
 ```
 
-### NPM パッケージで利用する
+## NPM パッケージで利用する
 Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/package/@esri/calcite-components)としても提供されています。使い始めるには、まずパッケージをインストールし、以下のステップに従います。また、様々なフレームワークやビルドツールを使用したサンプルは[こちら](https://github.com/Esri/calcite-design-system/tree/main/examples/components)でご覧いただけます。
 
 {{<tabs>}}
@@ -56,7 +56,7 @@ Calcite コンポーネントは、[NPM パッケージ](https://www.npmjs.com/p
     {{</tab>}}
 {{</tabs>}}
 
-#### アセットの読み込み
+### アセットの読み込み
 一部のコンポーネント（例：`calcite-icon`、`calcite-date-picker`）は静的リソースに依存しています。デフォルトでは、リソースは CDN から自動的に配信されるため、ほとんどのケースで手動でのパス設定が不要になります。
 
 ローカルにアセットをホストしたい場合やオフライン環境をサポートする必要がある場合は、アセットをプロジェクトのディレクトリーにコピーできます。互換性を維持するため、ローカルのアセットは `assets` という名前のディレクトリーに配置してください。
@@ -78,14 +78,14 @@ setAssetPath("/path-to-your-assets/");
 アセット（そのデフォルトの構造を含む）は、どのリリースにおいても、互換性を損なう変更とはみなされることなく変更される可能性があります。
  {{< /callout >}}
 
-#### スタイルのインポート
+### スタイルのインポート
 次に、カスケードスタイルシート（CSS）を読み込みます。ほとんどのフレームワークでは、Calcite の CSS は自動的に読み込まれます。ただし、Angular などの一部のフレームワークでは、プロジェクトのルート スタイル シート（`src/styles.css`）で手動でのインポートが必要です。
 
 ``` js
 @import "@esri/calcite-components/main.css";
 ```
 
-#### ビルドの選択
+### ビルドの選択
 Calcite コンポーネントは、異なる用途に対応するため、2 つのビルドを提供しています
 
 #### カスタム要素
@@ -104,7 +104,8 @@ import "@esri/calcite-components/components/calcite-slider";
 ```
 
 #### ディストリビューション ビルド
-ディストリビューション ビルドでは、`ウィンドウ` グローバル オブジェクトにカスタム要素を定義する必要があります。カスタム要素ビルドと同様に、ローカルまたは CDN ホストされたアセットを使用するかを選択できます。
+ディストリビューション ビルドでは、`ウィンドウ` グローバル オブジェクトにカスタム要素を定義する必要があります。カスタム要素ビルドと同様に、ローカルまたは CDN にホストされたアセットを使用するかを選択できます。  
+ディストリビューション ビルドを使用するには、次のように記述します。
 
 ``` js
 import { defineCustomElements } from "@esri/calcite-components/loader";

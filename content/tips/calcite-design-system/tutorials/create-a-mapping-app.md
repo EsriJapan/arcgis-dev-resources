@@ -40,7 +40,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Calcite Components: Create a mapping app</title>
   </head>
   <style>
@@ -64,12 +64,12 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 </html>
 ```
 
-1. `<head>` 要素に、Calcite コンポーネント、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/)、およびマップ コンポーネントへの参照を追加します。
+1. `<head>` 要素に、[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/)、への参照を追加します。
     CDN ユーザー向けの単一の script タグの詳細については、 [Build Mapping Apps](https://developers.arcgis.com/calcite-design-system/get-started/#build-mapping-apps) をご覧ください。 
 ``` HTML
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Calcite Components: Create a mapping app</title>
 
 <!-- 追加開始 -->
@@ -120,7 +120,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 </script>
 ```
 
-アクセス トークンを取得するほかの方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) 参照してください。
+アクセス トークンを取得するほかの方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) を参照してください。
 
 
 ### マップの表示
@@ -217,7 +217,7 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 
     </calcite-shell-panel>
 ```
-1. アクション バーの下に、[ArcGIS Maps SDK for JavaScript コンポーネント](https://developers.arcgis.com/javascript/latest/components/) （[`arcgis-layer-list`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/)、[`arcgis-basemap-gallery`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-gallery/)、[`arcgis-legend`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/)、[`arcgis-bookmarks`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/)、[`arcgis-print`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-print/) を含む）用のコンテナを含む [`calcite-panel`](https://developers.arcgis.com/calcite-design-system/components/panel/) コンポーネントを追加します。
+1. アクション バーの下に、[ArcGIS Maps SDK for JavaScript コンポーネント](https://developers.arcgis.com/javascript/latest/components/) （[`arcgis-layer-list`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/)、[`arcgis-basemap-gallery`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-gallery/)、[`arcgis-legend`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/)、[`arcgis-bookmarks`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/)、[`arcgis-print`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-print/) を含む）用のコンテナーを含む [`calcite-panel`](https://developers.arcgis.com/calcite-design-system/components/panel/) コンポーネントを追加します。
     - パネルのタイトルの [`heading`](https://developers.arcgis.com/calcite-design-system/components/panel/#component-api-properties-heading) 属性を設定します。
     - パネルの高さを [`height`](https://developers.arcgis.com/calcite-design-system/components/panel/#component-api-properties-height) 属性を使用して設定します。
     - 対応するアクションをクリックした際に削除される `closed` 属性を設定します。
