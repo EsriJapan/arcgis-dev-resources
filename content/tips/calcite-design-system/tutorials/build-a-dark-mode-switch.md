@@ -1,23 +1,23 @@
 +++
-title = "暗色 (dark) モード スイッチの構築"
-description = "Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の明色 (light) モードと暗色 (dark) モードを切り替えるコンポーネントの作成方法について学びます。"
+title = "ダーク モード スイッチの構築"
+description = "Calcite コンポーネントと ArcGIS Maps SDK for JavaScript のライト モードとダーク モードを切り替えるコンポーネントの作成方法について学びます。"
 weight = 5
-aliases = ["/calcite-desgin-sysytem/tutorials/build-a-dark-mode-switch"]
+aliases = ["/calcite-design-sysytem/tutorials/build-a-dark-mode-switch"]
 +++
 
 出典：Calcite Design System - [Build a dark mode switch](https://developers.arcgis.com/calcite-design-system/tutorials/build-a-dark-mode-switch/)
 
-Calcite コンポーネントと [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/) の明色 (light) モードと暗色 (dark) モードを切り替えるコンポーネントの作成方法について学びます。
+Calcite コンポーネントと [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/latest/) のライト モードとダーク モードを切り替えるコンポーネントの作成方法について学びます。
 
-Calcite コンポーネントを使用して、Calcite コンポーネント、ArcGIS Maps SDK for JavaScript のコンポーネントおよびベースマップに対して暗色 (dark) モードを有効にするスイッチを設計します。このアプリケーションは[マッピング アプリの作成](../create-a-mapping-app)チュートリアルで作成したアプリケーションを基にしています。
+Calcite コンポーネントを使用して、Calcite コンポーネント、ArcGIS Maps SDK for JavaScript のコンポーネントおよびベースマップに対してダーク モードを有効にするスイッチを設計します。このアプリケーションは[マッピング アプリの作成](../create-a-mapping-app)チュートリアルで作成したアプリケーションを基にしています。
 
-Calcite では CSS クラスを使用して明色 (light) モードと暗色 (dark) モードを切り替えることができます (`calcite-mode-light` (デフォルト) と `calcite-mode-dark`)。また、`calcite-mode-auto` クラスも用意されており、これはブラウザーの CSS の [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) メディア クエリーに従います。モード クラスを要素に設定すると、そのすべての子ノードにも適用されます。
+Calcite では CSS クラスを使用してライト モードとダーク モードを切り替えることができます (`calcite-mode-light` (デフォルト) と `calcite-mode-dark`)。また、`calcite-mode-auto` クラスも用意されており、これはブラウザーの CSS の [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) メディア クエリーに従います。モード クラスを要素に設定すると、そのすべての子ノードにも適用されます。
 
 モードやスタイリングに関する詳細は、Calcite Design System の [colors and modes](https://developers.arcgis.com/calcite-design-system/foundations/colors/) および ArcGIS Maps SDK for JavaScript の [Styling](https://developers.arcgis.com/javascript/latest/styling) ドキュメントを参照してください。
 
 {{< callout >}}
 
-<b>ArcGIS 開発者アカウント</b></br>
+**ArcGIS 開発者アカウント**  
 このチュートリアルで使用するサービスにアクセスするには、無料の [ArcGIS Location Platform アカウント](../../../../guide/get-dev-account/)または ArcGIS Online 組織のアカウントが必要です。
 
 {{< /callout >}}
@@ -32,9 +32,9 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 1. このチュートリアルで使用されるロケーション サービスにアクセスするには、適切な権限を持つ API キーが必要です。
 
     1.1. [API キーの取得](../../../../guide/get-api-key/)の手順に従って、以下の権限を持つ API キーを作成します。
-    - 権限：<b>ロケーション サービス > ベースマップ</b>
+    - 権限：**ロケーション サービス > ベースマップ**
 
-    1.2. <b>CodePen</b> で、`esriConfig.apiKey` に作成した API キーを設定してください。
+    1.2. **CodePen** で、`esriConfig.apiKey` に作成した API キーを設定してください。
 
 ```html
 <!-- esriConfig 変数は、他の Esri ライブラリーを追加する前に定義する必要があります -->
@@ -48,15 +48,16 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 アクセス トークンを取得するほかの方法については、[Types of authentication](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) 参照してください。
 
 ### HTML の追加
-ダークモードの切り替えボタンの主要なコンポーネントは [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) です。その `label-text-start` および `label-text-end` 属性を使用して状態を明確にし、`calcite-label` を使用して目的を明示してください。詳細については、[フォームとラベルに関するガイダンス](https://developers.arcgis.com/calcite-design-system/foundations/accessibility/#forms-and-labels)を参照してください。
+ダーク モードの切り替えボタンの主要なコンポーネントは [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) です。その `label-text-start` および `label-text-end` 属性を使用して状態を明確にし、`calcite-label` を使用して目的を明示してください。詳細については、[フォームとラベルに関するガイダンス](https://developers.arcgis.com/calcite-design-system/foundations/accessibility/#forms-and-labels)を参照してください。
 
 1. [`calcite-navigation`](https://developers.arcgis.com/calcite-design-system/components/navigation/) コンポーネント内に `div` 要素を追加し、ナビゲーションの [`content-end`](https://developers.arcgis.com/calcite-design-system/components/navigation/#api-reference-slots-content-end) スロットに配置します。この `div` には、後でスタイリングに使用する `id` 属性を付与します。
 2. [`calcite-label`](https://developers.arcgis.com/calcite-design-system/components/label/) コンポーネントを追加します。[`layout`](https://developers.arcgis.com/calcite-design-system/components/label/#component-api-properties-layout) 属性を `"inline"` に設定し、後でスタイリングに使用する `class` 属性も付与します。
 3. [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) コンポーネントを追加します。
 
-[スロット](https://developers.arcgis.com/calcite-design-system/core-concepts/#slots)の概念について詳しくはコア コンセプト内のセクションを参照してください。次のステップで CSS を追加した後、ナビゲーションの [`content-end`](https://developers.arcgis.com/calcite-design-system/components/navigation/#api-reference-slots-content-end) スロットからコンポーネントを削除することで、暗色 (dark) モードへのスイッチをマップ上に配置できます。
+[スロット](https://developers.arcgis.com/calcite-design-system/core-concepts/#slots)の概念について詳しくはコア コンセプト内のセクションを参照してください。次のステップで CSS を追加した後、ナビゲーションの [`content-end`](https://developers.arcgis.com/calcite-design-system/components/navigation/#api-reference-slots-content-end) スロットからコンポーネントを削除することで、ダーク モードへのスイッチをマップ上に配置できます。
 
 ```html
+<!--省略-->
 <body>
   <calcite-loader label="loading" text="Loading..." id="app-loader"></calcite-loader>
 
@@ -68,7 +69,7 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 
       <!-- 追加開始 -->
       <div slot="content-end">
-        <!-- 暗色 (dark) モード スイッチ -->
+        <!-- ダーク モード スイッチ -->
         <calcite-label layout="inline" class="label-wrapper">
           Dark mode: Off
           <calcite-switch></calcite-switch>
@@ -82,13 +83,13 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 ```
 
 ### CSS の追加
-この時点でアプリを実行すると、暗色 (dark) モード スイッチがナビゲーションの `"content-end"` スロットに配置されていることが確認できます。
+この時点でアプリを実行すると、ダーク モード スイッチがナビゲーションの `"content-end"` スロットに配置されていることが確認できます。
 
 次に、Flexbox を使用してコンポーネントの位置を調整するための CSS スタイリングを追加します。
 
-1. `<style>` 要素内に、暗色 (dark) モード スイッチのレイアウトを設定する CSS プロパティを設定します。`margin-inline` と `padding` の CSS プロパティを設定します。`--calcite-color-border-1` CSS 変数を使用して境界線を追加します。次に、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) に `margin` CSS プロパティを追加し、将来的にインターフェイスをコントロールできるようにします。
+1. `<style>` 要素内に、ダーク モード スイッチのレイアウトを設定する CSS プロパティを設定します。`margin-inline` と `padding` の CSS プロパティを設定します。`--calcite-color-border-1` CSS 変数を使用して境界線を追加します。次に、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) に `margin` CSS プロパティを追加し、将来的にインターフェイスをコントロールできるようにします。
 
-    CSS 変数の基本的な概念については、コア コンセプトの [CSS 変数](../../core-concepts/#css-変数) セクションを参照してください。Calcite の[カラー モード](https://developers.arcgis.com/calcite-design-system/foundations/colors/)には明色 (light) と暗色 (dark) の値があり、モードの切り替え時に自動で変更されます。モードを切り替えるアプリケーションでは、Calcite 以外の要素にもカラー モード変数を使用してください。
+    CSS 変数の基本的な概念については、コア コンセプトの [CSS 変数](../../core-concepts/#css-変数) セクションを参照してください。Calcite の[カラー モード](https://developers.arcgis.com/calcite-design-system/foundations/colors/)にはライト とダーク の値があり、モードの切り替え時に自動で変更されます。モードを切り替えるアプリケーションでは、Calcite 以外の要素にもカラー モード変数を使用してください。
 
 2. 次に、Label の [`--calcite-label-margin-bottom`](https://developers.arcgis.com/calcite-design-system/components/label/#component-api-styles---calcite-label-margin-bottom) CSS 変数を追加して、コンポーネントの下にスペースを設定します。また、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) の `cursor` プロパティを `"pointer"` に設定し、スイッチのコンテナーがクリック可能であることを示します。
 
@@ -104,9 +105,9 @@ Calcite では CSS クラスを使用して明色 (light) モードと暗色 (da
 ```
 
 ### JavaScript の追加
-ここまでの手順で見栄えの良いコンポーネントが完成しましたが、まだ暗色 (dark) モードは有効になっていません。次に、JavaScript を使って暗色 (dark) モード スイッチを実装します。
+ここまでの手順で見栄えの良いコンポーネントが完成しましたが、まだダーク モードは有効になっていません。次に、JavaScript を使ってダーク モード スイッチを実装します。
 
-1. `<script>` 要素内の既存の JavaScript コードの下に、新しく暗色 (dark) モードを有効にする関数を作成します。
+1. `<script>` 要素内の既存の JavaScript コードの下に、新しくダーク モードを有効にする関数を作成します。
 2. `<body>` 要素の `calcite-mode-dark` クラスを切り替えます。`calcite-mode-light` クラスはデフォルトのため追加する必要はありません。
 3. 現在のモードに応じて、ベースマップを `gray-vector` と `dark-gray-vector` を切り替えます。
 4. [`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) コンポーネントにイベント リスナーを追加します。[`calciteSwitchChange`](https://developers.arcgis.com/calcite-design-system/components/switch/#component-api-events) イベントを監視し、作成した関数を実行します。
@@ -143,6 +144,6 @@ Calcite では、多くのコンポーネントに対してカスタム イベ�
 ```
 
 ### アプリの実行
-<b>CodePen</b> でコードを実行すると、アプリケーションが表示されます。
+**CodePen** でコードを実行すると、アプリケーションが表示されます。
 
-画面右上には、新しく暗色 (dark) モード スイッチ コンポーネントが表示されます。コンポーネントの任意の場所をクリックすると、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) が切り替わります。イベント リスナーに設定した関数が実行され、Calcite コンポーネントを暗色 (dark) モードに切り替えると同時に、ArcGIS Maps SDK for JavaScript のベースマップやコンポーネントも暗色に切り替わります。
+画面右上には、新しくダーク モード スイッチ コンポーネントが表示されます。コンポーネントの任意の場所をクリックすると、[`calcite-switch`](https://developers.arcgis.com/calcite-design-system/components/switch/) が切り替わります。イベント リスナーに設定した関数が実行され、Calcite コンポーネントをダーク モードに切り替えると同時に、ArcGIS Maps SDK for JavaScript のベースマップやコンポーネントも暗色に切り替わります。

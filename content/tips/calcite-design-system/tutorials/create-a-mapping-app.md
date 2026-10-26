@@ -2,7 +2,7 @@
 title = "マッピング アプリの作成"
 description = "Calcite コンポーネントとArcGIS Maps SDK for JavaScript Mapコンポーネントを使用して、シンプルなマッピング アプリケーションのUIを作成する方法について学びます。"
 weight = 4
-aliases = ["/calcite-desgin-sysytem/tutorials/create-a-mapping-app/"]
+aliases = ["/calcite-design-sysytem/tutorials/create-a-mapping-app/"]
 +++
 
 出典：Calcite Design System - [Create a mapping app](https://developers.arcgis.com/calcite-design-system/tutorials/create-a-mapping-app/)

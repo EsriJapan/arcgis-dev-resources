@@ -2,7 +2,7 @@
 title = "Web コンポーネントでマッピング アプリを構築"
 description = "Calcite コンポーネントと Map コンポーネントを使用して、インタラクティブなマッピング アプリケーションを構築する方法を学びます。"
 weight = 6
-aliases = ["/calcite-desgin-sysytem/tutorials/construct-a-mapping-app-with-web-components"]
+aliases = ["/calcite-design-sysytem/tutorials/construct-a-mapping-app-with-web-components"]
 +++
 
 出典：Calcite Design System - [Construct a mapping app with web components](https://developers.arcgis.com/calcite-design-system/tutorials/construct-a-mapping-app-components/)
@@ -14,7 +14,7 @@ Calcite コンポーネントと ArcGIS Maps SDK for JavaScript の [Map コン�
   style="width:100%; height:450px; border:none;">
 </iframe>
 
-Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インタフェースと[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)に焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/) を初めてお使いになる場合は、このアプリケーションで使用されている同様のマッピングをコンセプトに扱った[チュートリアル](https://developers.arcgis.com/javascript/latest/display-a-web-map/)をご覧ください。
+Calcite コンポーネントを使用して、マッピング アプリケーションのユーザー エクスペリエンスを向上させ、インタラクションを促進します。このチュートリアルでは、アプリの作成を効率化するためのユーザー インターフェイスと[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)に焦点を当て、ArcGIS Maps SDK for JavaScript の予備知識は必要ありません。[ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/documentation/glossary/arcgis-maps-sdk-for-javascript/) を初めてお使いになる場合は、このアプリケーションと共通するマッピングの基本概念を学べる[チュートリアル](https://developers.arcgis.com/javascript/latest/display-a-web-map/)をご覧ください。
 
 ## 前提条件
 
@@ -28,14 +28,14 @@ Calcite コンポーネントを使用して、マッピング アプリケー�
 ## ステップ
 
 ### 新しいペンの作成
-1. [CodePen](https://codepen.io/pen/?editors=1000) に移動し、マッピングアプリケーション用の新しいペンを作成します。
+1. [CodePen](https://codepen.io/pen/?editors=1000) に移動し、マッピング アプリケーション用の新しいペンを作成します。
 
 ### HTML の追加
 1. CodePen > HTML で、[地図](https://developers.arcgis.com/documentation/glossary/map/)を表示する [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) コンポーネントを含むページを作成するための HTML と CSS を追加してください。
 
-2. [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) コンポーネントに `id` を追加して、アプリ開発全体で参照できるようにし、CSS を使って幅と高さをブラウザーのウィンドウに合わせて設定し、さらにアプリのスタイリングを補うために [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_flex_container) を使用してください。
+2. arcgis-map コンポーネントに id を追加し、アプリの開発中に参照できるようにします。次に、CSS で幅と高さをブラウザー ウィンドウに合わせ、以降のスタイル設定に使用する Flexbox も適用します。
 
-CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別のエディターを使用している場合や、ローカル サーバーでページを運営している場合は、必ずこのタグを HTML ページの先頭に追加してください。
+CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別のエディターを使用している場合や、ローカル サーバーでページをホストしている場合は、必ずこのタグを HTML ページの先頭に追加してください。
 
 ```html
 <html>
@@ -167,7 +167,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 
 6. 次に、[`calcite-action-bar`](https://developers.arcgis.com/calcite-design-system/components/action-bar/) をパネルの [`"action-bar"`](https://developers.arcgis.com/calcite-design-system/components/panel/#api-reference-slots-action-bar) スロットに挿入します。ここに [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) を追加して、マップ コンポーネントを表示できるようにします。
 
-7. 各アクションに、一意の `data-action-id` の値を追加する。
+7. 各アクションに、一意の `data-action-id` の値を追加します。
 
 ```html
     <calcite-shell content-behind>
@@ -190,7 +190,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```
 
 ### マップ コンポーネントの追加
-レイアウトをさらに構築するために、ユーザーが [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) に操作したときに表示される[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)を追加します。
+レイアウトをさらに構築するために、ユーザーが [`calcite-action`](https://developers.arcgis.com/calcite-design-system/components/action/) を操作したときに表示される[マップ コンポーネント](https://developers.arcgis.com/javascript/latest/components/)を追加します。
 
 1. はじめに [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) コンポーネントを追加する。
     * コンテンツを表示するために `expanded` 属性を追加します。
@@ -199,7 +199,7 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
     * アプリの初期化時にコンポーネントとそのコンテンツが表示されないように、`hidden` 属性を追加します。
 
 2. [`calcite-block`](https://developers.arcgis.com/calcite-design-system/components/block/) に、[`arcgis-layer-list`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) マップ コンポーネントを配置します。
-    * `reference-element` にマップ コンポーネントの `id` に設定します。
+    * `reference-element` にマップ コンポーネントの `id` を設定します。
 
 ```html
         <calcite-shell-panel id="shell-panel-nav" slot="panel-end" display-mode="float" height="l">
@@ -322,6 +322,10 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
   // 追加開始
   mapEl.addEventListener("arcgisViewReadyChange", () => {
     const { title, thumbnailUrl, snippet, modified, tags } = mapEl.map.portalItem;
+    mapEl.aria = {
+      label: title,
+      description: snippet,
+    };
     document.getElementById("app-heading").heading = `${title} Explorer`;
     document.getElementById("card-heading").innerHTML = title;
     document.getElementById("card-thumbnail").src = thumbnailUrl;
@@ -348,6 +352,10 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```javascript
   mapEl.addEventListener("arcgisViewReadyChange", () => {
     const { title, thumbnailUrl, snippet, modified, tags } = mapEl.map.portalItem;
+    mapEl.aria = {
+      label: title,
+      description: snippet,
+    };
     document.getElementById("app-heading").heading = `${title} Explorer`;
     document.getElementById("card-heading").innerHTML = title;
     document.getElementById("card-thumbnail").src = thumbnailUrl;
@@ -400,6 +408,10 @@ CodePen では、`<!DOCTYPE html>` タグは必須ではありません。別の
 ```javascript
   mapEl.addEventListener("arcgisViewReadyChange", () => {
     const { title, thumbnailUrl, snippet, modified, tags } = mapEl.map.portalItem;
+    mapEl.aria = {
+      label: title,
+      description: snippet,
+    };
     document.getElementById("app-heading").heading = `${title} Explorer`;
     document.getElementById("card-heading").innerHTML = title;
     document.getElementById("card-thumbnail").src = thumbnailUrl;
