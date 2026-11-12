@@ -149,7 +149,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込みを追加 -->
-    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+    <script type="module" src="https://js.arcgis.com/5.2/"></script>
     <!-- 追加終了 -->
   </head>
 
@@ -186,7 +186,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込み -->
-    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+    <script type="module" src="https://js.arcgis.com/5.2/"></script>
   </head>
 
   <body>
@@ -224,7 +224,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
     </script>
 
     <!-- CDN から ArcGIS Maps SDK for JavaScript の読み込み -->
-    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+    <script type="module" src="https://js.arcgis.com/5.2/"></script>
   </head>
 
   <body>

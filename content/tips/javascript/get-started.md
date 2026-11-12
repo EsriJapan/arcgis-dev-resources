@@ -15,6 +15,11 @@ JavaScript Maps SDK の使用を開始する最適な方法は、目的と要件
 - **ローカル パッケージをインストールせずに、純粋な JavaScript と HTML でアプリを構築する場合** — [ArcGIS CDNを使用したアプリの作成](./#arcgis-cdn-を使用してアプリを作成)を参照
 - **テンプレートからプロジェクトを作成する場合** — [npm を使用したアプリの作成](#npm-でアプリを作成)を参照
 
+{{< callout type="important">}}
+AIコーディングアシスタントを使っていますか？
+[AI を使って新しいアプリを作成する](https://developers.arcgis.com/javascript/latest/ai-assisted-development/create-a-new-app/)の手順に従い、テンプレートから開始して結果を確認してください。これはオプションのワークフローであり、別の SDK インストール方法ではありません。
+{{< /callout >}}
+
 ## 前提条件
 ArcGIS Maps SDK for JavaScript を使用して[コンテンツ](https://developers.arcgis.com/documentation/glossary/content/)、[サービス](https://developers.arcgis.com/documentation/glossary/service/)、または組織にアクセスするには、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)、[ArcGIS Online アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-online-account/)、または [ArcGIS Enterprise アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-enterprise-account/)が必要です。必要なアカウントの種類、ユーザータイプ、およびロールは、アクセスする必要があるリソースと実行したい操作によって異なります。
 
@@ -43,7 +48,7 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、標準的な JavaScript �
 開始するには、基本的な HTML ファイルの `<head>` セクションに ArcGIS CDNの `<script>` を含めてください。アプリケーションにコア API ライブラリー、すべてのコンポーネント パッケージ、および CSS を追加するためのメインのエントリー ポイントです。 CDN は `MAJOR.MINOR` 形式で提供され、パッチ固有のバージョンは `MAJOR.MINOR.PATCH` 形式で提供されます。最新のパッチ バージョンについては[リリース ノート](https://developers.arcgis.com/javascript/latest/release-notes/#patch-fixes)を参照してください。
 ```html {filename = "index.html"}
 <!-- CDNからArcGIS Maps SDK for JavaScriptを読み込む -->
-<script type="module" src="https://js.arcgis.com/5.1/"></script>
+<script type="module" src="https://js.arcgis.com/5.2/"></script>
 ```
 
 ### CSSの設定
@@ -61,11 +66,11 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、標準的な JavaScript �
 [Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)で明るいまたは暗い[テーマ](https://developers.arcgis.com/javascript/latest/building-your-ui/#light-and-dark-modes)を選択してください。
 
 {{< callout type="warning">}}
-まだ SDK のコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/references/core/widgets/Widget/)を使用している場合は、今すぐ[コンポーネントへの移行](./migrate-to-components/)をご検討ください。ウィジェットを使用する場合、および／または [MapView](https://developers.arcgis.com/javascript/latest/references/core/views/MapView/) または [SceneView](https://developers.arcgis.com/javascript/latest/references/core/views/SceneView/) をプログラムで初期化する場合、コア API の CSS スタイルシートを手動で含める必要があります。
+まだ SDK のコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/references/core/widgets/Widget/)を使用している場合は、今すぐ[コンポーネントへの移行](https://developers.arcgis.com/javascript/latest/components-transition-plan/)をご検討ください。ウィジェットを使用する場合、および／または [MapView](https://developers.arcgis.com/javascript/latest/references/core/views/MapView/) または [SceneView](https://developers.arcgis.com/javascript/latest/references/core/views/SceneView/) をプログラムで初期化する場合、コア API の CSS スタイルシートを手動で含める必要があります。
 
 ```html {filename = "index.html"}
 <!-- ウィジェット用の CSS を読み込みます -->
-<link rel="stylesheet" href="https://js.arcgis.com/5.1/esri/themes/light/main.css" />
+<link rel="stylesheet" href="https://js.arcgis.com/5.2/esri/themes/light/main.css" />
 ```
 {{< /callout >}}
 
