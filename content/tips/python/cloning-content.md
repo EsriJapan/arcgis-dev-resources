@@ -32,9 +32,7 @@ ContentManger の [clone_items()](https://developers.arcgis.com/python/api-refer
 - ArcGIS survey123 フォーム
 - ArcGIS Workforce プロジェクト
 - ArcGIS StoryMaps
-  - [Cloning Complex Items](https://developers.arcgis.com/python/guide/cloning-complex-apps) を参照
-- ArcGIS Experience Builder
-  - [Cloning Complex Items](https://developers.arcgis.com/python/guide/cloning-complex-apps/) を参照
+  - [Cloning Complex Items](https://developers.arcgis.com/python/guide/cloning-complex-apps) を参照  
 - ArcGIS Dashboards
   - [Cloning Complex Apps](https://developers.arcgis.com/python/guide/cloning-complex-apps) を参照
 - ArcGIS QuickCapture プロジェクト
@@ -143,6 +141,8 @@ cloned_items #アイテム「品川駅」は上でクローンを作成済み
 
 `clone_items()` は、`items` 引数に渡したリスト内のすべてのアイテムをクローンしていることがわかります。また、`owner` 引数を渡さないことで、`clone_items()` を実行したログイン ユーザーにアイテムがクローンされます。
 
+
+
 `clone_items()` がソースからターゲットへアイテムをクローンする簡単な例をご紹介しました。次に、ホスト フィーチャ レイヤーのリストを繰り返し処理し、いくつかの追加パラメーターを使用して、それらを利用する ArcGIS コンテンツのクローンを作成します。
 
 ### クローンのプロセス
@@ -152,7 +152,7 @@ cloned_items #アイテム「品川駅」は上でクローンを作成済み
 
 デフォルト値は True です。この値が True に設定されている場合の動作を説明します。クローン元`アイテム`がターゲットにクローンされると、`clone_items()` は、クローンされた`アイテム`にすべての必須アイテム タイプ [typeKeywords](https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm) (アイテムに自動的に割り当てられる `typeKeywords` についてはハイパーリンクを参照) に加えて、`source-<source_item_id_value>` という追加の typeKeyword を割り当てます。たとえば、`clone_items()` が `ID d879c7d972b1d989b97d037c7a7737d6` のアイテムをソースとしてフィーチャ レイヤー アイテムをクローンする場合、ターゲットのフィーチャ レイヤー アイテムは、必須の `typeKeyword` に加えて、`source-d879c7d972b1d989b97d037c7a7737d6` の `typeKeyword` を持つことになります。実際にクローンされる前に、`clone_items()` は、そのパターンに一致する `typeKeyword` を持つアイテムをターゲットから検索し、見つかった場合は、アイテムを再度クローンするのではなく、既存のターゲットアイテムを使用します。
 
-引数を False に設定すると、指定されたアイテムと参照するアイテムは、それらが既に存在するかどうかに関係なく、ターゲットにクローンされます。
+引数を `False` に設定すると、指定されたアイテムと参照するアイテムは、それらが既に存在するかどうかに関係なく、ターゲットにクローンされます。
 
 ### Web マップ
 
@@ -305,13 +305,9 @@ cloned_wm_obj
 
 マップが同じレイヤーを含んでいるように見えることが視覚的にわかります。`wm_map` ディクショナリの他の `Web マップ`のソースとターゲットのペアにもこのプロセスを繰り返して、視覚的に比較することができます。
 
-### ArcGIS Dashboards
+### ArcGIS Dashboards と Story Maps
 
-ArcGIS Dashboards のクローンの詳細については、[Cloning and Troubleshooting Complex Items](https://developers.arcgis.com/python/guide/cloning-complex-apps#dashboards-and-editing-item-data)ガイドを参照してください。
-
-### Story Maps
-
-ArcGIS StoryMap のクローンの詳細については、[Cloning and Troubleshooting Complex Items](https://developers.arcgis.com/python/guide/#storymaps-web-scenes-and-item-remapping)ガイドを参照してください。
+ArcGIS Dashboards および ArcGIS StoryMaps の複製に関する詳細については、[複雑なアイテムの複製とトラブルシューティング](https://developers.arcgis.com/python/latest/guide/cloning-complex-apps/#dashboards-and-editing-item-data) ガイドを参照してください。
 
 ## まとめ
 

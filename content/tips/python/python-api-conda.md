@@ -13,6 +13,8 @@ ArcGIS API for Python (以下、Python API) を使用する際、Conda を利用
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/pythonAPI/introduction-to-conda/conda.png" width="500px">
 </div>
 
+お使いのシステムには、conda および ArcGIS API for Python がインストールされている必要があります。インストールされていない場合は、[インストールおよびセットアップガイド](https://esrijapan.github.io/arcgis-dev-resources/tips/python/python-api-install/)の手順をご参照ください。
+
 Conda の基本について説明します。Conda は Python と Python で使用できるライブラリのインストールやバージョンを管理するためのツールです。
 Conda を使用する場合、次の 2 つの選択肢があります。
 
@@ -26,9 +28,9 @@ Conda を理解する最も簡単な方法は、[チュートリアル](https://
 
 Condaは プラットフォームに依存しないパッケージ マネージャー アプリケーションで、Python パッケージのインストールや更新、削除などを行うことができます。[パッケージ](https://docs.conda.io/projects/conda/en/latest/glossary.html#packages)は、[チャネル](https://docs.conda.io/projects/conda/en/latest/glossary.html#channels)と呼ばれるさまざまなリポジトリに保存されているソフトウェアとサポートファイルのバンドルです。チャネルは、Anaconda Cloud のようなクラウド ロケーションのデフォルト セットである場合もあれば、個人や組織が作成したプライベート リポジトリである場合もあります。Conda は、パッケージのリストアップやインストールを行う際に、デフォルトのチャネルを検索します。特定のチャネルを検索するように Conda を設定する方法など、詳細については [Channels](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html) を参照してください。
 
-Esri は、esri という名前のチャネルに、arcgis パッケージを格納するための Conda リポジトリを作成しています。conda install コマンドのフラグでチャネルにアクセスし、特定の [Conda の環境](https://docs.conda.io/projects/conda/en/latest/glossary.html#conda-environment)にパッケージをインストールするよう Conda に指示することができます。
+Esri は、`esri` という名前のチャネルに、`arcgis` パッケージを格納するための Conda リポジトリを作成しています。conda install コマンドのフラグでチャネルにアクセスし、特定の [Conda の環境](https://docs.conda.io/projects/conda/en/latest/glossary.html#conda-environment)にパッケージをインストールするよう Conda に指示することができます。
 
----
+
 ## Conda の環境
 Conda の環境を作成するとき、特定の Python インタプリターと環境にインストールするパッケージを隔離する物理的なディレクトリを作成します。これにより、Python を含むソフトウェアの異なるバージョンを持つ複数の環境を作ることができます。新しい環境を簡単に作成し、他の環境に影響を与えることなく切り替えることができます。詳細な説明と手順については、Conda のドキュメント [Managing environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) を参照してください。
 
@@ -52,10 +54,17 @@ ArcGIS Pro の conda の環境は、次の 3 つの方法を使用して管理�
 ArcGIS Pro プロジェクトタブからアクセス可能な GUI ツール。
 
 * [Python コマンド プロンプト](https://pro.arcgis.com/ja/pro-app/latest/arcpy/get-started/installing-python-for-arcgis-pro.htm#ESRI_SECTION2_7FDA7FD13D724C51B442D8859F3A25A8)  
-arcgispro-py3 の環境に直接アクセスしアクティブにするコマンドライン ショートカット。Windows のスタートメニューで Python Command Prompt を検索すると開くことができます。  
+arcgispro-py3 の環境に直接アクセスしアクティブにするコマンドライン ショートカット。Windows のスタートメニューで **Python Command Prompt** を検索すると開くことができます。  
 
 * [コマンド プロンプト (windows)](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754340(v=ws.11)?redirectedfrom=MSDN)  
 標準の MS-DOS Windows コマンドライン アプリケーション。
+
+注:conda および ArcGIS Pro に関するその他の技術情報については、以下の記事をご覧ください。
+- Python and ArcGIS Pro 1.3: Conda
+- [Conda and ArcGIS Pro 1.4](https://arcpy.wordpress.com/2016/10/21/conda-and-arcgis-pro/)
+- [ArcGIS Notebooks in ArcGIS Pro (2.9) FAQ](https://community.esri.com/ja/discussion/1116141/arcgis-notebooks-in-arcgis-pro-2-9-faq)
+- [ArcGIS Notebooks in ArcGIS Pro (3.0) FAQ](https://community.esri.com/ja/discussion/1196582/arcgis-notebooks-in-arcgis-pro-3-0-faq)
+
 
 ### Anaconda
 Anaconda をインストールすると Python、conda、その他多数のパッケージが `base` という 1 つの環境にインストールされます。
@@ -78,6 +87,9 @@ Conda には複数の環境があり、環境を利用するためには、対�
 
 詳細については、[Activating an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment)を参照してください。
 
+* **macOS and Linux**
+
+` source activate <environment_name> `
 
 ---
 ## パッケージの追加
@@ -113,4 +125,42 @@ IDE でプロジェクトを始めるには、Python インタプリターへの
 
 * `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe`
 
-詳細な手順については、[Finding your Anaconda Python interpreter path](https://docs.anaconda.com/working-with-conda/ide-tutorials/python-path/) を参照してください。
+詳細な手順については、[Finding your Anaconda Python interpreter path](https://www.anaconda.com/docs/main) を参照してください。
+
+
+---
+# macOS での手順：GIS 環境の構築
+以下の手順では、環境を作成し、ArcGIS API for Python をインストールし、環境を有効化し、その環境から Jupyter Notebook IDE を起動します。
+
+## 環境の作成
+```
+conda create --name gis-enviro
+```
+
+```
+環境名は任意のものに設定できます。
+```
+
+## ArcGIS API for Python のインストール
+```
+conda install --name gis-enviro -c esri arcgis
+```
+
+```
+環境名を入力しない場合、パッケージはアクティブな環境にインストールされます。
+```
+
+
+## 環境を有効化
+```
+source activate gis-enviro
+```
+ArcGIS API for Python は Jupyter Notebook と連携しています。 [Jupyter ドキュメント](https://jupyter.org/)には、このソフトウェアおよびツールに関する詳細情報が掲載されています。
+
+## Jupyter Notebook を起動
+ノートブックを作成したいディレクトリ（またはノートブックがすでに存在するディレクトリ）に移動します。
+```
+jupyter notebook
+```
+
+正しくインストールされると、Web サーバーが起動したことを示すメッセージが表示されます。現在のディレクトリーから、デフォルトの Web ブラウザが起動します。サンプルや API リファレンスを含む完全なドキュメントは、[https://developers.arcgis.com/python](https://developers.arcgis.com/python/latest/) にあります。
