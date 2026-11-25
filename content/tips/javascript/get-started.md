@@ -7,23 +7,23 @@ aliases = ["/javascript/get-started/"]
 
 出典：ArcGIS Maps SDK for JavaScript - [Get Started](https://developers.arcgis.com/javascript/latest/get-started/)
 
-ArcGIS Maps SDK for JavaScript には、[コア API](https://developers.arcgis.com/javascript/latest/api-reference/) と、API の機能をすぐに使用できる UI 要素にカプセル化する [Web コンポーネント](https://developer.mozilla.org/ja/docs/Web/API/Web_components) ライブラリーのセットが含まれています。アプリケーションのニーズに応じて、6 つのコンポーネント ライブラリー（[Map](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[AI（ベータ版）](https://developers.arcgis.com/javascript/latest/references/ai-components/)、[Embeddable](https://developers.arcgis.com/javascript/latest/references/embeddable-components/)）、[Coding](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common](https://developers.arcgis.com/javascript/latest/references/common-components/)のどれからでもコンポーネントを使用することができます。
+ArcGIS Maps SDK for JavaScript には、[コア API](https://developers.arcgis.com/javascript/latest/api-reference/) と、API の機能をすぐに使用できる UI 要素にカプセル化する [Web コンポーネント](https://developer.mozilla.org/ja/docs/Web/API/Web_components) ライブラリーのセットが含まれています。アプリケーションのニーズに応じて、6 つのコンポーネント ライブラリー ([Map](https://developers.arcgis.com/javascript/latest/references/map-components/)、[Charts](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[AI(ベータ版)](https://developers.arcgis.com/javascript/latest/references/ai-components/)、[Embeddable](https://developers.arcgis.com/javascript/latest/references/embeddable-components/)、[Coding](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[Common](https://developers.arcgis.com/javascript/latest/references/common-components/)) のどれからでもコンポーネントを使用することができます。
 
-SDK は、一貫性とアクセシビリティーを備えたユーザー エクスペリエンスを実現するため、Esri の [Calcite Design System](https://developers.arcgis.com/calcite-design-system/) とも統合されています。Calcite は、豊富な [Web コンポーネント](https://developers.arcgis.com/calcite-design-system/components/)、[アイコン](https://developers.arcgis.com/calcite-design-system/icons/)、[カラー スキーム](https://developers.arcgis.com/calcite-design-system/foundations/colors/)、[デザイン パターン](https://developers.arcgis.com/calcite-design-system/foundations/)を含む完全な UI ツールキットを提供します。
+SDK は、一貫性とアクセシビリティーを備えたユーザー エクスペリエンスを実現するため、Esri の [Calcite Design System](https://developers.arcgis.com/calcite-design-system/) とも統合されています。Calcite は、豊富な [Web コンポーネント](https://developers.arcgis.com/calcite-design-system/components/)、[アイコン](https://developers.arcgis.com/calcite-design-system/icons/)、[カラー スキーマ](https://developers.arcgis.com/calcite-design-system/foundations/colors/)、[デザイン パターン](https://developers.arcgis.com/calcite-design-system/foundations/)を含む完全な UI ツールキットを提供します。
 
 JavaScript Maps SDK の使用を開始する最適な方法は、目的と要件によって異なります。
-- **ローカル パッケージをインストールせずに、純粋な JavaScript と HTML でアプリを構築する場合** — [ArcGIS CDNを使用したアプリの作成](./#arcgis-cdn-を使用してアプリを作成)を参照
-- **テンプレートからプロジェクトを作成する場合** — [npm を使用したアプリの作成](#npm-でアプリを作成)を参照
+- **ローカル パッケージをインストールせずに、純粋な JavaScript と HTML でアプリを構築する場合** — [ArcGIS CDN を使用したアプリの作成](./#arcgis-cdn-を使用してアプリを作成)
+- **テンプレートからプロジェクトを作成する場合** — [npm を使用したアプリの作成](#npm-でアプリを作成)
 
 {{< callout type="important">}}
-AIコーディングアシスタントを使っていますか？
+AI コーディングアシスタントを使っていますか？
 [AI を使って新しいアプリを作成する](https://developers.arcgis.com/javascript/latest/ai-assisted-development/create-a-new-app/)の手順に従い、テンプレートから開始して結果を確認してください。これはオプションのワークフローであり、別の SDK インストール方法ではありません。
 {{< /callout >}}
 
 ## 前提条件
-ArcGIS Maps SDK for JavaScript を使用して[コンテンツ](https://developers.arcgis.com/documentation/glossary/content/)、[サービス](https://developers.arcgis.com/documentation/glossary/service/)、または組織にアクセスするには、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)、[ArcGIS Online アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-online-account/)、または [ArcGIS Enterprise アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-enterprise-account/)が必要です。必要なアカウントの種類、ユーザータイプ、およびロールは、アクセスする必要があるリソースと実行したい操作によって異なります。
+ArcGIS Maps SDK for JavaScript を使用して[コンテンツ](https://developers.arcgis.com/documentation/glossary/content/)、[サービス](https://developers.arcgis.com/documentation/glossary/service/)、または組織にアクセスするには、[ArcGIS Location Platform アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/)、[ArcGIS Online アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-online-account/)、または [ArcGIS Enterprise アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-enterprise-account/)が必要です。必要なアカウントの種類、ユーザー タイプ、およびロールは、アクセスする必要があるリソースと実行したい操作によって異なります。
 
-アカウントをお持ちでない場合は、以下のいずれかのオプションを選択してください
+アカウントをお持ちでない場合は、以下のいずれかのオプションを選択してください。
 {{< callout >}}
 
 ArcGIS アカウント：[ArcGIS Location Platform](https://location.arcgis.com/sign-up/) または [ArcGIS Online](https://www.esri.com/ja-jp/arcgis/products/arcgis-online/trial) アカウントが必要です。
@@ -32,12 +32,12 @@ ArcGIS アカウント：[ArcGIS Location Platform](https://location.arcgis.com/
 
 ## アクセス トークン
 {{< callout type="important">}}
-[ArcGIS Online](https://developers.arcgis.com/documentation/glossary/arcgis-online-account/) または [ArcGIS Enterprise アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-enterprise-account/)を持つ開発者は、アプリケーションの[共有レベル](https://developers.arcgis.com/documentation/glossary/sharing-level/)が「すべての人（パブリック）」に設定されたアイテムやリソースにのみアクセスする場合、[パブリック アプリ](https://developers.arcgis.com/documentation/glossary/public-application/)での認証を省略することができます。
+[ArcGIS Online](https://developers.arcgis.com/documentation/glossary/arcgis-online-account/) または [ArcGIS Enterprise アカウント](https://developers.arcgis.com/documentation/glossary/arcgis-enterprise-account/)を持つ開発者は、アプリケーションの[共有レベル](https://developers.arcgis.com/documentation/glossary/sharing-level/)が「すべての人(パブリック)」に設定されたアイテムやリソースにのみアクセスする場合、[パブリック アプリ](https://developers.arcgis.com/documentation/glossary/public-application/)での認証を省略することができます。
 {{< /callout >}}
 
-[アクセス トークン](https://developers.arcgis.com/documentation/glossary/access-token/)は、[ルート検索](https://developers.arcgis.com/documentation/glossary/routing-service/)や[プレイス](https://developers.arcgis.com/documentation/glossary/places-service/)などのセキュリティ保護された ArcGIS リソースにアクセスするために必要です。ポータルにアクセスし、サポートされている認証方法（[OAuth 2.0 ユーザー認証](https://developers.arcgis.com/documentation/glossary/user-authentication/)、[アプリ認証](https://developers.arcgis.com/documentation/glossary/app-authentication/)、または [API キー認証](https://developers.arcgis.com/documentation/glossary/api-key-authentication/)）のいずれかを使用して、アクセス トークンを作成してください。
+[アクセス トークン](https://developers.arcgis.com/documentation/glossary/access-token/)は、[ルート検索](https://developers.arcgis.com/documentation/glossary/routing-service/)や[プレイス](https://developers.arcgis.com/documentation/glossary/places-service/)などのセキュリティ保護された ArcGIS リソースにアクセスするために必要です。ポータルにアクセスし、サポートされている認証方法 ([OAuth 2.0 ユーザー認証](https://developers.arcgis.com/documentation/glossary/user-authentication/)、[アプリ認証](https://developers.arcgis.com/documentation/glossary/app-authentication/)、または [API キー認証](https://developers.arcgis.com/documentation/glossary/api-key-authentication/)) のいずれかを使用して、アクセス トークンを作成してください。
 
-アプリケーションやユースケースに最適な認証方法を確認するには、[認証ガイド](https://developers.arcgis.com/javascript/latest/authentication/access-tokens/)をご覧ください。
+アプリケーションやユース ケースに最適な認証方法を確認するには、[認証ガイド](https://developers.arcgis.com/javascript/latest/authentication/access-tokens/)をご覧ください。
 
 ## ArcGIS CDN を使用してアプリを作成
 このセクションでは手動設定について説明します。スターター プロジェクトをご希望の場合は、[CDN テンプレート](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-cdn)をご利用ください。
@@ -45,7 +45,8 @@ ArcGIS アカウント：[ArcGIS Location Platform](https://location.arcgis.com/
 JavaScript Maps SDK は、ArcGIS CDN を使用して、標準的な JavaScript および HTML アプリケーションに統合できます。このアプローチは最適化されたクラウド キャッシュを活用し、ローカル ビルドの要件を排除し、最新の SDK バージョンへの更新を容易にします。
 
 ### セットアップ
-開始するには、基本的な HTML ファイルの `<head>` セクションに ArcGIS CDNの `<script>` を含めてください。アプリケーションにコア API ライブラリー、すべてのコンポーネント パッケージ、および CSS を追加するためのメインのエントリー ポイントです。 CDN は `MAJOR.MINOR` 形式で提供され、パッチ固有のバージョンは `MAJOR.MINOR.PATCH` 形式で提供されます。最新のパッチ バージョンについては[リリース ノート](https://developers.arcgis.com/javascript/latest/release-notes/#patch-fixes)を参照してください。
+開始するには、基本的な HTML ファイルの `<head>` セクションに ArcGIS CDN の `<script>` を含めてください。アプリケーションにコア API ライブラリー、すべてのコンポーネント パッケージ、および CSS を追加するためのメインのエントリー ポイントです。CDN は `MAJOR.MINOR` 形式で提供され、パッチ固有のバージョンは `MAJOR.MINOR.PATCH` 形式で提供されます。最新のパッチ バージョンについては[リリース ノート](https://developers.arcgis.com/javascript/latest/release-notes/#patch-fixes)を参照してください。
+
 ```html {filename = "index.html"}
 <!-- CDNからArcGIS Maps SDK for JavaScriptを読み込む -->
 <script type="module" src="https://js.arcgis.com/5.2/"></script>
@@ -53,6 +54,7 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、標準的な JavaScript �
 
 ### CSSの設定
 カスタム CSS を追加して、コンポーネントがアプリケーションに表示されるようにします。これは、CDN から ArcGIS ライブラリーをインポートした後、`<head>` セクションの最後の項目である必要があります。
+
 ```html {filename = "index.html"}
 <style>
   html,
@@ -63,10 +65,10 @@ JavaScript Maps SDK は、ArcGIS CDN を使用して、標準的な JavaScript �
 </style>  
 ```
 
-[Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)で明るいまたは暗い[テーマ](https://developers.arcgis.com/javascript/latest/building-your-ui/#light-and-dark-modes)を選択してください。
+[Calcite モード](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes)でライトまたはダーク [テーマ](https://developers.arcgis.com/javascript/latest/building-your-ui/#light-and-dark-modes)を選択してください。
 
 {{< callout type="warning">}}
-まだ SDK のコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/references/core/widgets/Widget/)を使用している場合は、今すぐ[コンポーネントへの移行](https://developers.arcgis.com/javascript/latest/components-transition-plan/)をご検討ください。ウィジェットを使用する場合、および／または [MapView](https://developers.arcgis.com/javascript/latest/references/core/views/MapView/) または [SceneView](https://developers.arcgis.com/javascript/latest/references/core/views/SceneView/) をプログラムで初期化する場合、コア API の CSS スタイルシートを手動で含める必要があります。
+まだ SDK のコンポーネントに移行しておらず、[ウィジェット](https://developers.arcgis.com/javascript/latest/references/core/widgets/Widget/)を使用している場合は、今すぐ[コンポーネントへの移行](https://developers.arcgis.com/javascript/latest/components-transition-plan/)をご検討ください。ウィジェットを使用する場合、および / または [MapView](https://developers.arcgis.com/javascript/latest/references/core/views/MapView/) または [SceneView](https://developers.arcgis.com/javascript/latest/references/core/views/SceneView/) をプログラムで初期化する場合、コア API の CSS スタイルシートを手動で含める必要があります。
 
 ```html {filename = "index.html"}
 <!-- ウィジェット用の CSS を読み込みます -->
@@ -90,13 +92,14 @@ WebMap または WebScene を使用していない場合、代わりに Map コ�
 ### コア API モジュールの追加
 HTML の `<body>` 内かつ最下部に配置した `<script>` タグ内で、コア API を使用して[プロパティの設定](https://developers.arcgis.com/javascript/latest/programming-patterns/#attributes-and-properties)、[変更の監視](https://developers.arcgis.com/javascript/latest/watch-for-changes/)、カスタム JavaScript ロジックの追加が可能です。スクリプトは `<script type="module">` としてマークされていることを確認してください。
 
-コア API のモジュールは、グローバルな `$arcgis.import()` メソッドを介してロードできます。このメソッドはモジュールパスまたはモジュール パスの配列を受け取り、要求されたモジュールで解決するプロミスを返します。各 API リファレンス ページの上部にモジュール識別子が表示されています。詳細は [Graphic](https://developers.arcgis.com/javascript/latest/references/core/Graphic/) を参照してください。
+コア API のモジュールは、グローバルな `$arcgis.import()` メソッドを介してロードできます。このメソッドはモジュール パスまたはモジュール パスの配列を受け取り、要求されたモジュールで解決する Promise を返します。各 API リファレンス ページの上部にモジュール識別子が表示されています。参考として [Graphic](https://developers.arcgis.com/javascript/latest/references/core/Graphic/) を参照してください。
 
 {{< callout type="important">}}
 `$arcgis.import()` メソッドは、CDN 経由で使用する場合に限り ArcGIS Maps SDK for JavaScript 専用であり、標準的な ES モジュール システムのネイティブ機能ではありません。
 {{< /callout >}}
 
 以下のコードはマップのビューが準備完了になるまで待機します。ビューの準備が整ったら、追加の機能を追加できます。
+
 ```html {filename = "index.html"}
 <script type="module">
   const Graphic = await $arcgis.import("@arcgis/core/Graphic.js");
@@ -116,29 +119,30 @@ HTML の `<body>` 内かつ最下部に配置した `<script>` タグ内で、�
 ```
 
 ## npm でアプリを作成
-ローカル ビルドで作業する場合、JavaScript Maps SDK を手動でインストールするか、@arcgis/create CLI ツールを使用するか、Esri/jsapi-resources GitHub リポジトリーにアクセスしてアプリケーション テンプレートをダウンロードできます。このリポジトリーには、最初のアプリケーションを素早く構築するための様々なテンプレートが含まれています。 これらのテンプレートは、SDK のコア API、コンポーネント、OAuth、および Calcite の操作方法を示しています。
+ローカル ビルドで作業する場合、ArcGIS Maps SDK for JavaScript を手動でインストールするか、@arcgis/create CLI ツールを使用するか、[`Esri/jsapi-resources`](https://github.com/Esri/jsapi-resources/tree/main) GitHub リポジトリーにアクセスしてアプリケーション テンプレートをダウンロードできます。このリポジトリーには、最初のアプリケーションを素早く構築するための様々なテンプレートが含まれています。 これらのテンプレートは、SDK のコア API、コンポーネント、OAuth、および Calcite の操作方法を示しています。
 
 ### 手動インストール
 プロジェクトで Map コンポーネントを使用するには、[`@arcgis/map-components`](https://www.npmjs.com/package/@arcgis/map-components) パッケージとその依存関係をインストールしてください。
+
 {{< tabs items="npm,yarn,pnpm" >}}
 
 {{< tab >}}
 ```cmd
-npm install @arcgis/map-components @arcgis/core @esri/calcite-components
+npm install @arcgis/map-components @arcgis/common-components @arcgis/core @esri/calcite-components
 ```
 {{< /tab >}}
 
 {{< tab >}}
 
 ```cmd
-yarn add @arcgis/map-components @arcgis/core @esri/calcite-components
+yarn add @arcgis/map-components @arcgis/common-components @arcgis/core @esri/calcite-components
 ```
 {{< /tab >}}
 
 {{< tab >}}
 
 ```cmd
-pnpm install @arcgis/map-components @arcgis/core @esri/calcite-components
+pnpm add @arcgis/map-components @arcgis/common-components @arcgis/core @esri/calcite-components
 ```
 {{< /tab >}}
 
@@ -156,6 +160,7 @@ pnpm install @arcgis/map-components @arcgis/core @esri/calcite-components
 `npm init @arcgis` または `npx @arcgis/create` を実行して、新しいマッピング アプリケーションを素早く作成します。
 
 `npx` を使用する際、すべての対話型プロンプトをスキップする CLI オプションを渡すこともできます。
+
 ```cmd
 # CLI options:
 #   -n, --name <name>          Name of the project

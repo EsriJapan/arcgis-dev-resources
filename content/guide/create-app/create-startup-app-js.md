@@ -13,9 +13,9 @@ aliases = ["/create-startup-app-js/","/tips/javascript/create-app/"]
 
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/create-app/create-startup-app-js.png" width="600px">
 
-マップには、地理データの[レイヤー](https://developers.arcgis.com/documentation/glossary/layer/)が含まれています。マップには、[ベースマップ レイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)と、オプションで1つ以上の[データレイヤー](https://developers.arcgis.com/documentation/glossary/data-layer/)を追加できます。マップビューを使用し、[場所](https://developers.arcgis.com/documentation/glossary/location/)と[ズームレベル](https://developers.arcgis.com/documentation/glossary/zoom-level/)を設定することで、マップの特定の領域を表示できます。
+マップには、地理データの[レイヤー](https://developers.arcgis.com/documentation/glossary/layer/)が含まれています。マップには、[ベースマップ レイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)と、オプションで1つ以上の[データ レイヤー](https://developers.arcgis.com/documentation/glossary/data-layer/)を追加できます。マップビューを使用し、[位置](https://developers.arcgis.com/documentation/glossary/location/)と[ズーム レベル](https://developers.arcgis.com/documentation/glossary/zoom-level/)を設定することで、マップの特定の領域を表示できます。
 
-このチュートリアルでは、地形[ベースマップレイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)を使用して、富士山付近を表示する[地図](https://developers.arcgis.com/documentation/glossary/map/)を作成します。
+このチュートリアルでは、地形図[ベースマップ レイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)を使用して、富士山付近を表示する[マップ](https://developers.arcgis.com/documentation/glossary/map/)を作成します。
 
 このチュートリアルのマップとコードは、他の 2D チュートリアルの出発点として使用されます。
 
@@ -29,15 +29,15 @@ aliases = ["/create-startup-app-js/","/tips/javascript/create-app/"]
 
 このチュートリアルを実施するには、以下が必要です。
 
-- API キーにアクセスするための [ArcGIS Online](https://www.esri.com/en-us/arcgis/products/arcgis-online/trial) アカウントもしくは [ArcGIS Location Platform](https://location.arcgis.com/sign-up/)
-- アカウントをお持ちでない場合は、ArcGIS 開発者アカウントに[サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
+- API キーにアクセスするための [ArcGIS Online](https://www.esri.com/en-us/arcgis/products/arcgis-online/trial) アカウントもしくは [ArcGIS Location Platform](https://location.arcgis.com/sign-up/) アカウント
+- アカウントをお持ちでない場合は、ArcGIS 開発者アカウントに[サインアップ](https://location.arcgis.com/sign-up/) (無料) してください。アカウントの作成方法は「[開発者アカウントの作成](../../get-dev-account/)」をご覧ください。
 
 ## ステップ
 
 ### 新しい Pen の作成
-[CodePen](https://codepen.io/pen/?editors=1000) にアクセスして、マッピングアプリケーション用の新しい Pen を作成します。
+[CodePen](https://codepen.io/pen/?editors=1000) にアクセスして、マッピング アプリケーション用の新しい Pen を作成します。
 
-CodePen では、`<!doctype html>` タグは不要です。別のエディターを使用している場合やローカルサーバーでページを実行する場合は、開始タグと終了タグの両方を必ず追加してください。
+CodePen では、`<!doctype html>` タグは不要です。別のエディターを使用している場合やローカル サーバーでページを実行する場合は、開始タグと終了タグの両方を必ず追加してください。
 
 ### 基本的な HTML の追加
 基本的な HTML ページを定義します。
@@ -86,7 +86,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
   ```
 
 ### アクセス トークンの取得
-このチュートリアルで使用される[位置情報サービス](https://developers.arcgis.com/documentation/glossary/arcgis-location-services/)にアクセスするには、適切な権限を持つ[アクセス トークン](https://developers.arcgis.com/documentation/glossary/access-token/)が必要です。
+このチュートリアルで使用される[ロケーション サービス](https://developers.arcgis.com/documentation/glossary/arcgis-location-services/)にアクセスするには、適切な権限を持つ[アクセス トークン](https://developers.arcgis.com/documentation/glossary/access-token/)が必要です。
   1. [API キーの取得](../../get-api-key/)のチュートリアルを参照し、以下の[権限](https://developers.arcgis.com/documentation/glossary/privileges/)を持つ [API キー](https://developers.arcgis.com/documentation/glossary/api-key/)を作成してください。  
       * **権限**
       * **Location services** > **Basemaps**
@@ -109,7 +109,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
     <!-- アクセス トークンを追加 -->
     <!-- esriConfig 変数は、他の esri ライブラリーを追加する前に定義する必要があります。 -->
     <script>
-      var esriConfig = {
+      globalThis.esriConfig = {
         apiKey: "YOUR_ACCESS_TOKEN",
       };
     </script>
@@ -143,7 +143,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
 
     <!-- esriConfig 変数は、他の esri ライブラリーを追加する前に定義する必要があります。 -->
     <script>
-      var esriConfig = {
+      globalThis.esriConfig = {
         apiKey: "YOUR_ACCESS_TOKEN",
       };
     </script>
@@ -161,7 +161,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
   ```
 
 ### マップの追加
-[`マップ`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-map/) コンポーネントを使用して、[ベースマップ](https://developers.arcgis.com/documentation/glossary/basemap-layer/) レイヤー、[位置](https://developers.arcgis.com/documentation/glossary/location/)、[ズームレベル](https://developers.arcgis.com/documentation/glossary/zoom-level/)を設定します。
+[`マップ`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/) コンポーネントを使用して、[ベースマップ](https://developers.arcgis.com/documentation/glossary/basemap-layer/) レイヤー、[位置](https://developers.arcgis.com/documentation/glossary/location/)、[ズームレベル](https://developers.arcgis.com/documentation/glossary/zoom-level/)を設定します。
   1. `<body>` タグ内に `<arcgis-map>` コンポーネントを追加し、`ベースマップ`、`中心座標`、`ズームレベル`を指定します。
   ``` html
 <html lang="ja">
@@ -180,7 +180,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
 
     <!-- esriConfig 変数は、他の esri ライブラリーを追加する前に定義する必要があります。 -->
     <script>
-      var esriConfig = {
+      globalThis.esriConfig = {
         apiKey: "YOUR_ACCESS_TOKEN",
       };
     </script>
@@ -218,7 +218,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
 
     <!-- esriConfig 変数は、他の esri ライブラリーを追加する前に定義する必要があります。 -->
     <script>
-      var esriConfig = {
+      globalThis.esriConfig = {
         apiKey: "YOUR_ACCESS_TOKEN",
       };
     </script>
@@ -243,7 +243,7 @@ CodePen では、`<!doctype html>` タグは不要です。別のエディター
 マップには、富士山を中心とした地形図[ベースマップ レイヤー](https://developers.arcgis.com/documentation/glossary/basemap-layer/)が表示されます。  
 
 ## 次のチュートリアル
-以下のチュートリアルで、追加の [SDK 機能](https://developers.arcgis.com/javascript/latest/key-features/)と [ArcGIS サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)の使用方法を学びましょう（英語ページ）。
+以下のチュートリアルで、追加の [SDK 機能](https://developers.arcgis.com/javascript/latest/key-features/)と [ArcGIS サービス](https://developers.arcgis.com/documentation/mapping-and-location-services/)の使用方法を学びましょう (英語ページ)。
 * [ポイント、ライン、ポリゴンを追加する](https://developers.arcgis.com/javascript/latest/tutorials/add-a-point-line-and-polygon/)
 * [フィーチャ レイヤーを追加する](https://developers.arcgis.com/javascript/latest/tutorials/add-a-feature-layer/)
 * [ベースマップ レイヤーを変更する](https://developers.arcgis.com/javascript/latest/tutorials/change-the-basemap-style/)
