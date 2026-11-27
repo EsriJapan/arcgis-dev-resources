@@ -62,14 +62,13 @@ ArcGIS Maps SDK for .NET には Lite、Basic、Standard、Advanced の 4 つの�
 ArcGIS Native Apps Lite のライセンス キーを My Esri のダッシュボードから取得し、取得したライセンス キーを利用して、アプリケーションを Lite ライセンスで認証することができます。
 以下の手順で Lite レベルのライセンス キーを取得します。
 
- 1. [My Esri](https://my.esri.com/) にアクセスしサインインします。
+ 1. ArcGIS Location Platform、または ArcGIS Online にサイン インし、[My Esri](https://my.esri.com/) にアクセスしサインインします。
     * ArcGIS Location Platform アカウント、または、ArcGIS Online アカウントにサインインしてない場合は、いずれかのアカウントでサインインします。
     * いずれかのアカウントもお持ちでない場合は、ArcGIS Location Platform アカウントに [サインアップ](https://location.arcgis.com/sign-up/)（無料）してください。アカウントの作成方法は「[開発者アカウントの作成](../../../guide/get-dev-account/)」をご覧ください。
- 2. 画面右上のプロフィール アイコンをクリックし、[Profiel & Settings] をクリックします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/myesri.png" width="600px">
- 3. ダッシュボードの中にあるパネルから、[ArcGIS Maps SDKs for Native Apps ライセンス文字列] というパネルをクリックします。
- <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/myesri_profiel.png" width="600px">
- 4. お使いの SDK バージョン向けのライセンス キーをコピーし、入手してください。
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/online_profile.png" width="600px">
+ 2. ダッシュボードの中にあるパネルから、[ArcGIS Maps SDKs for Native Apps ライセンス文字列] というパネルをクリックします。
+ <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/myesri_profile.png" width="600px">
+ 3. お使いの SDK のバージョン向けのライセンス キーをコピーし、入手してください。
  <img src="https://apps.esrij.com/arcgis-dev/guide/img/distribution/myesri_lite_license.png" width="600px">
 
 ### Lite ライセンスの認証
