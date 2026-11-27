@@ -15,7 +15,7 @@ ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコード�
 ## マップ コンポーネント
 [`@arcgis/map-components`](https://developers.arcgis.com/javascript/latest/references/map-components/) パッケージには、Map コンポーネント、Scene コンポーネント、および SDK の既存のウィジェットと同等の機能を持つ他のコンポーネントが含まれています。
 
-以下は、`item-id` 属性を持つ Map コンポーネント `<arcgis-map>` の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込む方法を示してます。
+以下は、`item-id` 属性を持つ Map コンポーネント `<arcgis-map>` の使い方を示すコード スニペットで、指定されたアイテム ID を使用して ArcGIS マップを Web ページに埋め込む方法を示しています。
 ```html
 <arcgis-map item-id="05e015c5f0314db9a487a9b46cb37eca">
    <arcgis-zoom slot="top-left"></arcgis-zoom>
@@ -24,7 +24,7 @@ ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコード�
 <img src="https://apps.esrij.com/arcgis-dev/guide/img/components/map-component-v51.png">
 
 ## チャート コンポーネント
-[`@arcgis/charts-components`](https://developers.arcgis.com/javascript/latest/references/charts-components/) パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用される[チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-chart/)と[チャート アクション バー コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/arcgis-charts-action-bar/)が含まれています。各チャートは、共有チャート仕様に準拠した `model` オブジェクトを設定することでレンダリングできます。この `model` オブジェクトは、フィーチャ レイヤーから読み込むか、チャート モデルを使用してプログラムで構成できます。
+[`@arcgis/charts-components`](https://developers.arcgis.com/javascript/latest/references/charts-components/) パッケージには、ArcGIS Maps SDK for JavaScript アプリケーションでチャートを作成するために使用される[チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/)と[チャート アクション バー コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/)が含まれています。各チャートは、共有チャート仕様に準拠した `model` オブジェクトを設定することでレンダリングできます。この `model` オブジェクトは、フィーチャ レイヤーから読み込むか、チャート モデルを使用してプログラムで構成できます。
 
 以下は、[`<arcgis-chart>`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/) コンポーネントとデフォルトのチャート操作を追加する [`<arcgis-charts-action-bar>`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/) の使用方法を示すコード スニペットです。[`layer-item-id`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/#layerItemId) と [`chart-index`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/#chartIndex) の 2 つの属性を使用して、データ ソースとレンダリングするチャートのインデックスを指定します。
 
@@ -48,7 +48,7 @@ ArcGIS Maps SDK for JavaScript コンポーネントは、最小限のコード�
 
 
 ## 埋め込み可能なコンポーネント
-[埋め込み可能なコンポーネント](https://developers.arcgis.com/javascript/latest/references/embeddable-components/)には、[埋め込みマップ コンポーネント](https://developers.arcgis.com/javascript/latest/references/embeddable-components/arcgis-embedded-map/)が含まれています。 このコンポーネントを使用すると、デフォルトのコンポーネント（ズーム、凡例、ブックマークなど）があらかじめ設定された Web マップを、あらゆる Web サイトにすばやく統合することができます。ユーザーは ArcGIS Online のマップ ビューアーから、最小限の設定でインタラクティブなマップを追加できます。
+[埋め込み可能なコンポーネント](https://developers.arcgis.com/javascript/latest/references/embeddable-components/)には、[埋め込みマップ コンポーネント](https://developers.arcgis.com/javascript/latest/references/embeddable-components/components/arcgis-embedded-map/)が含まれています。 このコンポーネントを使用すると、デフォルトのコンポーネント（ズーム、凡例、ブックマークなど）があらかじめ設定された Web マップを、あらゆる Web サイトにすばやく統合することができます。ユーザーは ArcGIS Online のマップ ビューアーから、最小限の設定でインタラクティブなマップを追加できます。
 
 ```html
 <arcgis-embedded-map

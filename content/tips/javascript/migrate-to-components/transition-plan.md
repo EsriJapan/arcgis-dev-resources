@@ -14,7 +14,7 @@ Esri は、ArcGIS Maps SDK for JavaScript のコア API を `<arcgis-map></arcgi
 **知っておくべきポイント**
 - すべての新規開発ではコンポーネントを使用してください。
 - ウィジェットはバージョン 5.0 以降で非推奨となっており、将来のリリースで削除される予定です。
-- より詳細な移行ガイドについては[移行のヒント](../components/)をご覧ください。
+- より詳細な移行ガイドについては[移行のヒント](../tips-for-migrating/)をご覧ください。
 
 {{</ callout >}}
 
@@ -22,7 +22,7 @@ Esri は、ArcGIS Maps SDK for JavaScript のコア API を `<arcgis-map></arcgi
 Web コンポーネントは、SDK が推奨する UI 構築ブロックであり、その理由は次のとおりです。
 
 - モダンなフロントエンド開発 (HTML、CSS、JavaScript) に自然に溶け込みます。
-- さまざまなフレームワーク (React、Angular、Vue、Svelte など) に対応しているほか、フレームワークを塩茹しない環境でも動作します。
+- さまざまなフレームワーク (React、Angular、Vue、Svelte など) に対応しているほか、フレームワークを使用しない環境でも動作します。
 - プラットフォームとの親和性が高く、フレームワーク固有のラッパーではなく、標準的な DOM パターンでレイアウトを構築できます。
 - Esri の内部方針と一致しており、ArcGIS 製品全体で使用されるコンポーネントと同じ標準ベースのアプローチを SDK でも採用しています。
 - 設定可能な UI として、より高レベルでそのまま使える機能を提供します (例：[Arcade エディター](https://developers.arcgis.com/javascript/latest/references/coding-components/components/arcgis-arcade-editor/)や[チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/))。
@@ -45,45 +45,45 @@ SDK が最初に開発された当時、Web コンポーネントの規格はま
 {{</ callout >}}
 
 * [Area Measurement 2D](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-area-measurement-2d/)
-* [Area Measurement 3D](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-area-measurement-3d/)
-* [Basemap Gallery](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-gallery/)
-* [Basemap Toggle](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-basemap-toggle/)
-* [Bookmarks](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/)
+* [Area Measurement 3D](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-area-measurement-3d/)
+* [Basemap Gallery](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-basemap-gallery/)
+* [Basemap Toggle](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-basemap-toggle/)
+* [Bookmarks](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-bookmarks/)
 * [Building Explorer](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-building-explorer/)
-* [Compass](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-compass/)
-* [Coordinate Conversion](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-coordinate-conversion/)
-* [Daylight](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-daylight/)
-* [Direct Line Measurement 3D](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-direct-line-measurement-3d/)
-* [Directional Pad](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-directional-pad/)
+* [Compass](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-compass/)
+* [Coordinate Conversion](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-coordinate-conversion/)
+* [Daylight](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-daylight/)
+* [Direct Line Measurement 3D](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-direct-line-measurement-3d/)
+* [Directional Pad](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-directional-pad/)
 * [Distance Measurement 2D](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-distance-measurement-2d/)
 * [Elevation Profile](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-elevation-profile/)
-* [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/)
-* [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/)
-* [Features](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-features/)
+* [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-expand/)
+* [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-feature/)
+* [Features](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-features/)
 * [Floor Filter](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-floor-filter/)
-* [Fullscreen](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-fullscreen/)
+* [Fullscreen](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-fullscreen/)
 * [Grid Controls](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-grid-controls/)
-* [Home](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-home/)
-* [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/)
-* [Line Of Sight](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-line-of-sight/)
-* [Locate](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-locate/)
-* [Navigation Toggle](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-navigation-toggle/)
-* [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-popup/)（ベータ版）
-* [Print](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-print/)
-* [Scale Bar](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-scale-bar/)
-* [Search](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-search/)
+* [Home](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-home/)
+* [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-legend/)
+* [Line Of Sight](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-line-of-sight/)
+* [Locate](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-locate/)
+* [Navigation Toggle](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-navigation-toggle/)
+* [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/)（ベータ版）
+* [Print](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-print/)
+* [Scale Bar](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scale-bar/)
+* [Search](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-search/)
 * [Shadow Cast](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-shadow-cast/)
-* [Slice](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-slice/)
-* [Swipe](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-swipe/)
-* [Time Zone Label](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-time-zone-label/)
-* [Track](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-track/)
+* [Slice](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-slice/)
+* [Swipe](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-swipe/)
+* [Time Zone Label](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-time-zone-label/)
+* [Track](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-track/)
 * [Utility Network Trace Analysis](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-utility-network-trace-analysis/)
-* [Video Player](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-video-player/)
+* [Video Player](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-video-player/)
 * [Volume Measurement](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-volume-measurement/) (ベータ版)
-* [Weather](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-weather/)
-* [Zoom](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-zoom/)
+* [Weather](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-weather/)
+* [Zoom](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-zoom/)
 
-すべてのコンポーネントの再実装が完了した後、slots（スロット）機能のサポートが追加される予定です。これにより、コンポーネント内にカスタム コントロールや機能を統合できるようになります。
+すべてのウィジェットは非推奨ですが、対応するコンポーネントが再実装され、ウィジェットのコードを内部で使用しなくなるまでは、API から削除されません。
 
 
 ## ウィジェット ロードマップ

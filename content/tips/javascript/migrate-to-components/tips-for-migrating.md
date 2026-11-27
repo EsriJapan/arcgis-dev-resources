@@ -1,11 +1,11 @@
 +++
-title = "移行のヒント"
+title = "コンポーネントへの移行"
 description = "マップ コンポーネントへの移行のヒントについて紹介します。"
 weight = 5
 aliases = ["/tips-for-migrating/"]
 +++
 
-出典：ArcGIS Maps SDK for JavaScript - [Tips for migrating](https://developers.arcgis.com/javascript/latest/migrating-to-components/)
+出典：ArcGIS Maps SDK for JavaScript - [Migrate to components](https://developers.arcgis.com/javascript/latest/migrating-to-components/)
 
 ## 移行のヒント
 {{< callout type="warning">}}
@@ -18,10 +18,16 @@ aliases = ["/tips-for-migrating/"]
 
 アプリケーションは、[Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/) コンポーネントや [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/) コンポーネントといったコンポーネント（カスタム HTML 要素）を使って宣言的に定義できるようになりました。これにより、ビューやコンテナーの設定、モジュールのインポート作業が軽減されます。
 
+{{< callout type="info">}}
+
+AI コーディング アシスタントを使って移行する場合は、まず既存のウィジェットを洗い出すワークフローを説明した[AI を使ったウィジェットからコンポーネントへの移行](https://developers.arcgis.com/javascript/latest/ai-assisted-development/migrate-widgets-to-components/)を参照してください。
+
+{{< /callout >}}
+
 ```html
 <head>
   <!-- ArcGIS Maps SDK for JavaScript のマップ コンポーネントおよびその他のコンポーネントのロード -->
-  <script type="module" src="https://js.arcgis.com/5.1/"></script>
+  <script type="module" src="https://js.arcgis.com/5.2/"></script>
 </head>
 <body>
   <arcgis-map basemap="topo-vector" zoom="4" center="15, 65"></arcgis-map>
@@ -30,7 +36,7 @@ aliases = ["/tips-for-migrating/"]
 
 {{< callout type="info">}}
 
-コンポーネントを使用する場合、個別のスタイルシートへのリンク (例：`https://js.arcgis.com/5.0/esri/themes/light/main.css`) を追加で読み込む必要はありません。SDK およびコンポーネント パッケージに必要なスタイルは自動的に処理されます。
+コンポーネントのみを使用するアプリでは、SDK のスタイルシートを別途読み込む必要はなく、コンポーネントのスタイルは自動的に読み込まれます。移行中は、ウィジェットが残っている場合、または `MapView` や `SceneView` をプログラムで初期化している場合、`esri/themes/.../main.css` のスタイルシートを引き続き読み込んでください。どちらにも該当しなくなった時点で削除できます。詳しくは[スタイルシートの設定](../../get-started/#cssの設定)を参照してください。
 
 {{< /callout >}}
 
@@ -46,7 +52,7 @@ Web コンポーネントが初めての方、またはこのトピックのブ�
 
 - [AI コンポーネント (ベータ版)](https://developers.arcgis.com/javascript/latest/references/ai-components/)、[チャート コンポーネント](https://developers.arcgis.com/javascript/latest/references/charts-components/)、[コーディング コンポーネント](https://developers.arcgis.com/javascript/latest/references/coding-components/)、[共通コンポーネント](https://developers.arcgis.com/javascript/latest/references/common-components/)、[埋め込み可能なコンポーネント](https://developers.arcgis.com/javascript/latest/references/embeddable-components/) など、追加のコンポーネント パッケージについてはそれぞれのページをご覧ください。
 
-- JavaScript Maps SDK コンポーネントでアプリを構築するブログ ([Build GIS Web Apps with the JavaScript Maps SDK components](https://community.esri.com/t5/a/a/ta-p/1384758/)) をご覧ください。
+- JavaScript Maps SDK コンポーネントでアプリを構築するブログ ([Build GIS Web Apps with the JavaScript Maps SDK components](https://community.esri.com/ja/discussion/1384758)) をご覧ください。
 
 - MDN [ウェブコンポーネント](https://developer.mozilla.org/ja/docs/Web/API/Web_components) リソース ページをご覧ください。
 
@@ -67,7 +73,7 @@ const view = new MapView({
   container: "viewDiv",
   map: map,
   zoom: 14,
-  center: [8.5, 47.37],
+  center: [15, 65],
 });
 ```
 
@@ -164,4 +170,12 @@ viewElement.map.add(weatherStationsLayer);
 詳細は[開発の手順](../../get-started/)をご覧ください。
 
 {{< /callout >}}
+
+## 追加リソース
+
+- [チュートリアル](https://developers.arcgis.com/javascript/latest/tutorials/)
+- [プログラミング パターン](https://developers.arcgis.com/javascript/latest/programming-patterns/)
+- [Map コンポーネントのサンプル コード](https://developers.arcgis.com/javascript/latest/sample-code/?tagged=map-components)
+- [コンポーネントのリファレンス](https://developers.arcgis.com/javascript/latest/references/)
+- [ウィジェットからコンポーネントへの移行計画](../transition-plan)
 
